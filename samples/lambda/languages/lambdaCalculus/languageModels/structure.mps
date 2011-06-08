@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)">
+<model modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="1">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+  <language namespace="22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
+  <import index="id7i" modelUID="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" version="0" />
+  <import index="uhxm" modelUID="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="qjd" modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="1" implicit="yes" />
@@ -151,7 +154,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5249919352014727761">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5249919352014727759" resolveInfo="VariableExpression" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5249919352014727759" resolveInfo="VariableOwner" />
     </node>
   </root>
   <root id="4022026349914673025">
@@ -194,6 +197,9 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4022026349915669399">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1375871677230246903">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="uhxm.747009152928925145" resolveInfo="IMainClass" />
     </node>
   </root>
   <root id="4022026349915821199">
@@ -329,7 +335,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8360767178776325736" resolveInfo="LetVariable" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5249919352014727760">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5249919352014727759" resolveInfo="VariableExpression" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5249919352014727759" resolveInfo="VariableOwner" />
     </node>
   </root>
   <root id="4939219901992083820">

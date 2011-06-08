@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1048802521465134864">
     <nodeInfo nodeId="1048802521465134864" fileName="AbstractRunConfigurationExecutor_Constraints.java" startLine="19" startPosition="36" endLine="20" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1048802521465134864" fileName="AbstractRunConfigurationExecutor_Constraints.java" startLine="23" startPosition="68" endLine="24" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

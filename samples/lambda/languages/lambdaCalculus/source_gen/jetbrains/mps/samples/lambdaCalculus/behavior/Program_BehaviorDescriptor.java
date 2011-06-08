@@ -4,11 +4,17 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.execution.configurations.behavior.IMainClass_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.execution.configurations.behavior.IMainClass_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class Program_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public class Program_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMainClass_BehaviorDescriptor {
   public Program_BehaviorDescriptor() {
+  }
+
+  public String virtual_getUnitName_747009152928925147(SNode thisNode) {
+    return IMainClass_Behavior.virtual_getUnitName_747009152928925147(thisNode);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

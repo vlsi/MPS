@@ -130,6 +130,10 @@ public class Java_Command {
     return getDebuggerConfiguration().getDebugger();
   }
 
+  public static boolean isUnitNode(SNode node) {
+    return StringUtils.isNotEmpty(Java_Command.getClassName(node));
+  }
+
   private static String getClassName(final SNode node) {
     final Wrappers._T<String> className = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {

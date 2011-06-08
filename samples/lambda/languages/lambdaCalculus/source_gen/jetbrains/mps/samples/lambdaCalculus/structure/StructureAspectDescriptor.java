@@ -63,7 +63,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 20:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"}, new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 21:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.lambdaCalculus.structure.Program", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.lambdaCalculus.structure.Program", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.configurations.structure.IMainClass"}, new String[]{}, new String[]{"jetbrains.mps.execution.configurations.structure.IMainClass", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 22:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"}, new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
       case 23:

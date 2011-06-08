@@ -9,52 +9,52 @@ import jetbrains.mps.smodel.structure.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 
 public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsDescriptor> {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", "jetbrains.mps.execution.configurations.structure.StartedProcessType"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.IMainClass", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement", "jetbrains.mps.execution.configurations.structure.StartedProcessType"};
 
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
-      case 16:
+      case 17:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfiguration"));
-      case 19:
+      case 20:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.RunConfigurationKind"));
       case 0:
         return new DataHolderConstraintsDescriptor(new AbstractRunConfigurationExecutor_Constraints());
       case 9:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"));
-      case 15:
+      case 16:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
-      case 18:
+      case 19:
         return new DataHolderConstraintsDescriptor(new RunConfigurationExecutor_Constraints());
       case 5:
         return new DataHolderConstraintsDescriptor(new ConfigurationFromExecutorReference_Constraints());
       case 7:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
-      case 24:
+      case 25:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"));
-      case 20:
-        return new DataHolderConstraintsDescriptor(new RunConfigurationProducer_Constraints());
-      case 22:
-        return new DataHolderConstraintsDescriptor(new RunConfigurationSource_Constraints());
       case 21:
+        return new DataHolderConstraintsDescriptor(new RunConfigurationProducer_Constraints());
+      case 23:
+        return new DataHolderConstraintsDescriptor(new RunConfigurationSource_Constraints());
+      case 22:
         return new DataHolderConstraintsDescriptor(new RunConfigurationProducerPart_Constraints());
       case 6:
         return new DataHolderConstraintsDescriptor(new Create_ConceptFunction_Constraints());
-      case 23:
+      case 24:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter"));
-      case 17:
+      case 18:
         return new DataHolderConstraintsDescriptor(new RunConfigurationCreator_Constraints());
-      case 10:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ModelSource"));
-      case 14:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ProjectSource"));
-      case 12:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.NodeListSource"));
       case 11:
-        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ModuleSource"));
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ModelSource"));
+      case 15:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ProjectSource"));
       case 13:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.NodeListSource"));
+      case 12:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.ModuleSource"));
+      case 14:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.NodeSource"));
       case 1:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.BeforeTask"));
@@ -66,8 +66,10 @@ public class ConstraintsAspectDescriptor extends DescriptorProvider<ConstraintsD
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.BeforeTaskParameter"));
       case 4:
         return new DataHolderConstraintsDescriptor(new BeforeTaskParameterReference_Constraints());
-      case 25:
+      case 26:
         return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.StartedProcessType"));
+      case 10:
+        return new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder("jetbrains.mps.execution.configurations.structure.IMainClass"));
       default:
         return null;
     }

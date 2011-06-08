@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="NodeSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.NodeSource_BehaviorDescriptor" />
-  <unitInfo fileName="ModuleSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ModuleSource_BehaviorDescriptor" />
-  <unitInfo fileName="NodeListSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.NodeListSource_BehaviorDescriptor" />
-  <unitInfo fileName="ProjectSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ProjectSource_BehaviorDescriptor" />
-  <unitInfo fileName="ModelSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ModelSource_BehaviorDescriptor" />
+  <unitInfo fileName="IMainClass_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.IMainClass_BehaviorDescriptor" />
   <unitInfo fileName="RunConfigurationExecutor_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_BehaviorDescriptor" />
-  <unitInfo fileName="StartedProcessType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.StartedProcessType_BehaviorDescriptor" />
-  <unitInfo fileName="BeforeTaskParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskParameterReference_BehaviorDescriptor" />
-  <unitInfo fileName="BeforeTaskCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskCall_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor" />
-  <unitInfo fileName="RunConfigurationCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationCreator_BehaviorDescriptor" />
-  <unitInfo fileName="Source_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.Source_ConceptFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="RunConfigurationSource_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationSource_BehaviorDescriptor" />
-  <unitInfo fileName="StartProcessHandlerStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_BehaviorDescriptor" />
-  <unitInfo fileName="DebuggerSettings_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.DebuggerSettings_Parameter_BehaviorDescriptor" />
-  <unitInfo fileName="Project_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.Project_Parameter_BehaviorDescriptor" />
+  <unitInfo fileName="ModelSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ModelSource_BehaviorDescriptor" />
+  <unitInfo fileName="ProjectSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ProjectSource_BehaviorDescriptor" />
+  <unitInfo fileName="NodeListSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.NodeListSource_BehaviorDescriptor" />
+  <unitInfo fileName="ModuleSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ModuleSource_BehaviorDescriptor" />
+  <unitInfo fileName="NodeSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.NodeSource_BehaviorDescriptor" />
   <unitInfo fileName="RunConfiguration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfiguration_BehaviorDescriptor" />
-  <unitInfo fileName="BeforeTaskParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskParameter_BehaviorDescriptor" />
+  <unitInfo fileName="Project_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.Project_Parameter_BehaviorDescriptor" />
+  <unitInfo fileName="DebuggerSettings_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.DebuggerSettings_Parameter_BehaviorDescriptor" />
+  <unitInfo fileName="StartProcessHandlerStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_BehaviorDescriptor" />
+  <unitInfo fileName="RunConfigurationSource_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationSource_BehaviorDescriptor" />
+  <unitInfo fileName="Source_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.Source_ConceptFunctionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="RunConfigurationCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationCreator_BehaviorDescriptor" />
+  <unitInfo fileName="ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor" />
+  <unitInfo fileName="BeforeTaskCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskCall_BehaviorDescriptor" />
+  <unitInfo fileName="BeforeTaskParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskParameterReference_BehaviorDescriptor" />
+  <unitInfo fileName="StartedProcessType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.StartedProcessType_BehaviorDescriptor" />
   <unitInfo fileName="Create_ConceptFunction_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.Create_ConceptFunction_BehaviorDescriptor" />
+  <unitInfo fileName="BeforeTaskParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskParameter_BehaviorDescriptor" />
   <unitInfo fileName="ConfigurationFromExecutorReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_BehaviorDescriptor" />
   <unitInfo fileName="ExecuteConfiguration_Function_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ExecuteConfiguration_Function_BehaviorDescriptor" />
-  <unitInfo fileName="BeforeTask_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTask_BehaviorDescriptor" />
   <unitInfo fileName="RunConfigurationProducerPart_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationProducerPart_BehaviorDescriptor" />
-  <unitInfo fileName="RunConfigurationProducer_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationProducer_BehaviorDescriptor" />
+  <unitInfo fileName="BeforeTask_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTask_BehaviorDescriptor" />
   <unitInfo fileName="RunConfigurationKind_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationKind_BehaviorDescriptor" />
+  <unitInfo fileName="RunConfigurationProducer_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationProducer_BehaviorDescriptor" />
   <unitInfo fileName="AbstractRunConfigurationExecutor_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.AbstractRunConfigurationExecutor_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
   <root nodeId="3642991921658055425">
     <nodeInfo nodeId="3642991921658067841" fileName="Create_ConceptFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3642991921658055425" fileName="Create_ConceptFunction_Behavior.java" startLine="9" startPosition="46" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -196,6 +197,35 @@
     <scopeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="8" startPosition="34" endLine="11" endPosition="0" />
     <scopeInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="11" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="7037083547576032051" fileName="BeforeTask_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTask_Behavior" />
+  </root>
+  <root nodeId="747009152928925146">
+    <nodeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="14" startPosition="34" endLine="15" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_747009152928925147" />
+    <nodeInfo nodeId="747009152928925151" fileName="IMainClass_Behavior.java" startLine="20" startPosition="85" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="747009152928925157" fileName="IMainClass_Behavior.java" startLine="23" startPosition="25" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="747009152928925162" fileName="IMainClass_Behavior.java" startLine="26" startPosition="7" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="30" startPosition="76" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="31" startPosition="113" endLine="32" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="35" startPosition="109" endLine="36" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="747009152928925155" fileName="IMainClass_Behavior.java" startLine="22" startPosition="57" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getUnitName_747009152928925147#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="747009152928925154" fileName="IMainClass_Behavior.java" startLine="21" startPosition="67" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getUnitName_747009152928925147#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUnitName_747009152928925147#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="747009152928925165" fileName="IMainClass_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="747009152928925156" fileName="IMainClass_Behavior.java" startLine="23" startPosition="25" endLine="24" endPosition="61" />
+    <scopeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="35" startPosition="109" endLine="36" endPosition="265" />
+    <scopeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="30" startPosition="76" endLine="32" endPosition="220" />
+    <scopeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="747009152928925155" fileName="IMainClass_Behavior.java" startLine="22" startPosition="57" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="747009152928925150" fileName="IMainClass_Behavior.java" startLine="20" startPosition="85" endLine="27" endPosition="26">
+      <varInfo nodeId="747009152928925152" varName="unitName" />
+    </scopeInfo>
+    <scopeInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
+    <unitInfo nodeId="747009152928925155" fileName="IMainClass_Behavior.java" startLine="22" startPosition="45" endLine="26" endPosition="5" unitName="jetbrains.mps.execution.configurations.behavior.IMainClass_Behavior$1" />
+    <unitInfo nodeId="747009152928925146" fileName="IMainClass_Behavior.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.IMainClass_Behavior" />
   </root>
   <root nodeId="7806358006983709805">
     <nodeInfo nodeId="442015021861811748" fileName="RunConfigurationExecutor_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
