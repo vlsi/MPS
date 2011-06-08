@@ -40,7 +40,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   public Component getComponentForTabIndex(int index) {
-    return myToolbar.getComponent(index + 1);
+    return myToolbar.getComponent(index);
   }
 
   protected void updateTabs() {
