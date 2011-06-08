@@ -1230,94 +1230,108 @@
     <unitInfo nodeId="7551811584090935086" fileName="MergeDriverMain.java" startLine="7" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverMain" />
   </root>
   <root nodeId="980809437931131508">
-    <nodeInfo nodeId="980809437931132294" fileName="MergerRoleIdsHandler.java" startLine="13" startPosition="83" endLine="14" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsistent" />
-    <nodeInfo nodeId="980809437931132307" fileName="MergerRoleIdsHandler.java" startLine="14" startPosition="38" endLine="15" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConceptsToIds" />
-    <nodeInfo nodeId="980809437931232177" fileName="MergerRoleIdsHandler.java" startLine="15" startPosition="101" endLine="16" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeRolesToIds" />
-    <nodeInfo nodeId="980809437931232195" fileName="MergerRoleIdsHandler.java" startLine="16" startPosition="140" endLine="17" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferenceRolesToIds" />
-    <nodeInfo nodeId="980809437931232208" fileName="MergerRoleIdsHandler.java" startLine="17" startPosition="145" endLine="18" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyNamesToIds" />
-    <nodeInfo nodeId="980809437931298888" fileName="MergerRoleIdsHandler.java" startLine="24" startPosition="63" endLine="25" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="980809437931298867" fileName="MergerRoleIdsHandler.java" startLine="26" startPosition="12" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="980809437931298911" fileName="MergerRoleIdsHandler.java" startLine="31" startPosition="68" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="980809437931298918" fileName="MergerRoleIdsHandler.java" startLine="35" startPosition="83" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="980809437931298930" fileName="MergerRoleIdsHandler.java" startLine="39" startPosition="97" endLine="40" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="980809437931298939" fileName="MergerRoleIdsHandler.java" startLine="43" startPosition="91" endLine="44" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="980809437931298948" fileName="MergerRoleIdsHandler.java" startLine="47" startPosition="53" endLine="48" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="980809437931298954" fileName="MergerRoleIdsHandler.java" startLine="51" startPosition="71" endLine="52" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="980809437931298964" fileName="MergerRoleIdsHandler.java" startLine="55" startPosition="85" endLine="56" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="980809437931298972" fileName="MergerRoleIdsHandler.java" startLine="59" startPosition="79" endLine="60" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="980809437931132305" fileName="MergerRoleIdsHandler.java" startLine="63" startPosition="33" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="980809437931131510" fileName="MergerRoleIdsHandler.java" startLine="19" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergerRoleIdsHandler#()V" />
-    <nodeInfo nodeId="980809437931298865" fileName="MergerRoleIdsHandler.java" startLine="26" startPosition="10" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="980809437931132264" fileName="MergerRoleIdsHandler.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="conceptRead#(Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;)V" />
-    <nodeInfo nodeId="980809437931132254" fileName="MergerRoleIdsHandler.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeRoleRead#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;)V" />
-    <nodeInfo nodeId="980809437931132244" fileName="MergerRoleIdsHandler.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceRoleRead#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;)V" />
-    <nodeInfo nodeId="980809437931132234" fileName="MergerRoleIdsHandler.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyNameRead#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;)V" />
-    <nodeInfo nodeId="980809437931132228" fileName="MergerRoleIdsHandler.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptId#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="980809437931132220" fileName="MergerRoleIdsHandler.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeRoleId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="980809437931132212" fileName="MergerRoleIdsHandler.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceRoleId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="980809437931132204" fileName="MergerRoleIdsHandler.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyNameId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="980809437931132301" fileName="MergerRoleIdsHandler.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConsistent#()Z" />
-    <nodeInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="67" startPosition="66" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="980809437931298815" fileName="MergerRoleIdsHandler.java" startLine="23" startPosition="99" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_clnjnl_a0a0a0a0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="980809437931234647" fileName="MergerRoleIdsHandler.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeAndCheckConsistency#(Ljava/util/Map;nullLjetbrains/mps/smodel/SNodeId;)V" />
-    <scopeInfo nodeId="980809437931131513" fileName="MergerRoleIdsHandler.java" startLine="20" startPosition="38" endLine="20" endPosition="38" />
-    <scopeInfo nodeId="980809437931298817" fileName="MergerRoleIdsHandler.java" startLine="24" startPosition="63" endLine="25" endPosition="110" />
-    <scopeInfo nodeId="980809437931298866" fileName="MergerRoleIdsHandler.java" startLine="26" startPosition="12" endLine="27" endPosition="58" />
-    <scopeInfo nodeId="980809437931132271" fileName="MergerRoleIdsHandler.java" startLine="31" startPosition="68" endLine="32" endPosition="72" />
-    <scopeInfo nodeId="980809437931132263" fileName="MergerRoleIdsHandler.java" startLine="35" startPosition="83" endLine="36" endPosition="112" />
-    <scopeInfo nodeId="980809437931132253" fileName="MergerRoleIdsHandler.java" startLine="39" startPosition="97" endLine="40" endPosition="126" />
-    <scopeInfo nodeId="980809437931132243" fileName="MergerRoleIdsHandler.java" startLine="43" startPosition="91" endLine="44" endPosition="120" />
-    <scopeInfo nodeId="980809437931132233" fileName="MergerRoleIdsHandler.java" startLine="47" startPosition="53" endLine="48" endPosition="67" />
-    <scopeInfo nodeId="980809437931132227" fileName="MergerRoleIdsHandler.java" startLine="51" startPosition="71" endLine="52" endPosition="110" />
-    <scopeInfo nodeId="980809437931132219" fileName="MergerRoleIdsHandler.java" startLine="55" startPosition="85" endLine="56" endPosition="124" />
-    <scopeInfo nodeId="980809437931132211" fileName="MergerRoleIdsHandler.java" startLine="59" startPosition="79" endLine="60" endPosition="118" />
-    <scopeInfo nodeId="980809437931132304" fileName="MergerRoleIdsHandler.java" startLine="63" startPosition="33" endLine="64" endPosition="24" />
-    <scopeInfo nodeId="980809437931131510" fileName="MergerRoleIdsHandler.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="980809437931132264" fileName="MergerRoleIdsHandler.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <nodeInfo nodeId="980809437931132294" fileName="MergerRoleIdsHandler.java" startLine="14" startPosition="83" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsistent" />
+    <nodeInfo nodeId="980809437931132307" fileName="MergerRoleIdsHandler.java" startLine="15" startPosition="38" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConceptsToIds" />
+    <nodeInfo nodeId="980809437931232177" fileName="MergerRoleIdsHandler.java" startLine="16" startPosition="101" endLine="17" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeRolesToIds" />
+    <nodeInfo nodeId="980809437931232195" fileName="MergerRoleIdsHandler.java" startLine="17" startPosition="140" endLine="18" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferenceRolesToIds" />
+    <nodeInfo nodeId="980809437931232208" fileName="MergerRoleIdsHandler.java" startLine="18" startPosition="145" endLine="19" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyNamesToIds" />
+    <nodeInfo nodeId="5911625124420838870" fileName="MergerRoleIdsHandler.java" startLine="19" startPosition="144" endLine="20" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelVersions" />
+    <nodeInfo nodeId="980809437931298888" fileName="MergerRoleIdsHandler.java" startLine="26" startPosition="55" endLine="27" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="980809437931298867" fileName="MergerRoleIdsHandler.java" startLine="28" startPosition="12" endLine="29" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="980809437931298911" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="68" endLine="34" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="980809437931298918" fileName="MergerRoleIdsHandler.java" startLine="37" startPosition="83" endLine="38" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="980809437931298930" fileName="MergerRoleIdsHandler.java" startLine="41" startPosition="97" endLine="42" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5911625124420838895" fileName="MergerRoleIdsHandler.java" startLine="45" startPosition="66" endLine="46" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="980809437931298939" fileName="MergerRoleIdsHandler.java" startLine="49" startPosition="91" endLine="50" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="980809437931298948" fileName="MergerRoleIdsHandler.java" startLine="53" startPosition="53" endLine="54" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="980809437931298954" fileName="MergerRoleIdsHandler.java" startLine="57" startPosition="71" endLine="58" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="980809437931298964" fileName="MergerRoleIdsHandler.java" startLine="61" startPosition="85" endLine="62" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="980809437931298972" fileName="MergerRoleIdsHandler.java" startLine="65" startPosition="79" endLine="66" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5911625124420838905" fileName="MergerRoleIdsHandler.java" startLine="69" startPosition="57" endLine="70" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="980809437931132305" fileName="MergerRoleIdsHandler.java" startLine="73" startPosition="38" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="980809437931131510" fileName="MergerRoleIdsHandler.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergerRoleIdsHandler#()V" />
+    <nodeInfo nodeId="980809437931298865" fileName="MergerRoleIdsHandler.java" startLine="28" startPosition="10" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="980809437931132264" fileName="MergerRoleIdsHandler.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="conceptRead#(Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="980809437931132254" fileName="MergerRoleIdsHandler.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeRoleRead#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="980809437931132244" fileName="MergerRoleIdsHandler.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceRoleRead#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="5911625124420838862" fileName="MergerRoleIdsHandler.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelVersionRead#(Ljetbrains/mps/smodel/SModelReference;I)V" />
+    <nodeInfo nodeId="980809437931132234" fileName="MergerRoleIdsHandler.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyNameRead#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="980809437931132228" fileName="MergerRoleIdsHandler.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptId#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="980809437931132220" fileName="MergerRoleIdsHandler.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeRoleId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="980809437931132212" fileName="MergerRoleIdsHandler.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceRoleId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="980809437931132204" fileName="MergerRoleIdsHandler.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyNameId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="5911625124420838856" fileName="MergerRoleIdsHandler.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelVersion#(Ljetbrains/mps/smodel/SModelReference;)I" />
+    <nodeInfo nodeId="980809437931132301" fileName="MergerRoleIdsHandler.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConsistent#()Z" />
+    <nodeInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="77" startPosition="66" endLine="81" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="980809437931298815" fileName="MergerRoleIdsHandler.java" startLine="25" startPosition="82" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_clnjnl_a0a0a0a0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="980809437931234647" fileName="MergerRoleIdsHandler.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeAndCheckConsistency#(Ljava/util/Map;nullnull)V" />
+    <scopeInfo nodeId="980809437931131513" fileName="MergerRoleIdsHandler.java" startLine="22" startPosition="38" endLine="22" endPosition="38" />
+    <scopeInfo nodeId="980809437931298817" fileName="MergerRoleIdsHandler.java" startLine="26" startPosition="55" endLine="27" endPosition="102" />
+    <scopeInfo nodeId="980809437931298866" fileName="MergerRoleIdsHandler.java" startLine="28" startPosition="12" endLine="29" endPosition="50" />
+    <scopeInfo nodeId="980809437931132271" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="68" endLine="34" endPosition="72" />
+    <scopeInfo nodeId="980809437931132263" fileName="MergerRoleIdsHandler.java" startLine="37" startPosition="83" endLine="38" endPosition="112" />
+    <scopeInfo nodeId="980809437931132253" fileName="MergerRoleIdsHandler.java" startLine="41" startPosition="97" endLine="42" endPosition="126" />
+    <scopeInfo nodeId="5911625124420838869" fileName="MergerRoleIdsHandler.java" startLine="45" startPosition="66" endLine="46" endPosition="60" />
+    <scopeInfo nodeId="980809437931132243" fileName="MergerRoleIdsHandler.java" startLine="49" startPosition="91" endLine="50" endPosition="120" />
+    <scopeInfo nodeId="980809437931132233" fileName="MergerRoleIdsHandler.java" startLine="53" startPosition="53" endLine="54" endPosition="67" />
+    <scopeInfo nodeId="980809437931132227" fileName="MergerRoleIdsHandler.java" startLine="57" startPosition="71" endLine="58" endPosition="110" />
+    <scopeInfo nodeId="980809437931132219" fileName="MergerRoleIdsHandler.java" startLine="61" startPosition="85" endLine="62" endPosition="124" />
+    <scopeInfo nodeId="980809437931132211" fileName="MergerRoleIdsHandler.java" startLine="65" startPosition="79" endLine="66" endPosition="118" />
+    <scopeInfo nodeId="5911625124420838861" fileName="MergerRoleIdsHandler.java" startLine="69" startPosition="57" endLine="70" endPosition="63" />
+    <scopeInfo nodeId="980809437931132304" fileName="MergerRoleIdsHandler.java" startLine="73" startPosition="38" endLine="74" endPosition="24" />
+    <scopeInfo nodeId="980809437931131510" fileName="MergerRoleIdsHandler.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="980809437931132264" fileName="MergerRoleIdsHandler.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="980809437931132269" varName="conceptId" />
       <varInfo nodeId="980809437931132267" varName="conceptFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="980809437931132254" fileName="MergerRoleIdsHandler.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="980809437931132254" fileName="MergerRoleIdsHandler.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="980809437931132261" varName="linkId" />
       <varInfo nodeId="980809437931132259" varName="linkRole" />
       <varInfo nodeId="980809437931132257" varName="conceptFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="980809437931132244" fileName="MergerRoleIdsHandler.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="980809437931132244" fileName="MergerRoleIdsHandler.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="980809437931132251" varName="linkId" />
       <varInfo nodeId="980809437931132247" varName="conceptFqName" />
       <varInfo nodeId="980809437931132249" varName="referenceLinkRole" />
     </scopeInfo>
-    <scopeInfo nodeId="980809437931132234" fileName="MergerRoleIdsHandler.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="5911625124420838862" fileName="MergerRoleIdsHandler.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="5911625124420838865" varName="reference" />
+      <varInfo nodeId="5911625124420838867" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931132234" fileName="MergerRoleIdsHandler.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="980809437931132239" varName="propertyName" />
       <varInfo nodeId="980809437931132237" varName="conceptFqName" />
       <varInfo nodeId="980809437931132241" varName="nameId" />
     </scopeInfo>
-    <scopeInfo nodeId="980809437931132228" fileName="MergerRoleIdsHandler.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="980809437931132228" fileName="MergerRoleIdsHandler.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="980809437931132231" varName="conceptFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="980809437931132220" fileName="MergerRoleIdsHandler.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="980809437931132220" fileName="MergerRoleIdsHandler.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="980809437931132225" varName="linkRole" />
       <varInfo nodeId="980809437931132223" varName="conceptFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="980809437931132212" fileName="MergerRoleIdsHandler.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="980809437931132212" fileName="MergerRoleIdsHandler.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="980809437931132215" varName="conceptFqName" />
       <varInfo nodeId="980809437931132217" varName="referenceLinkRole" />
     </scopeInfo>
-    <scopeInfo nodeId="980809437931132204" fileName="MergerRoleIdsHandler.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="980809437931132204" fileName="MergerRoleIdsHandler.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="980809437931132209" varName="propertyName" />
       <varInfo nodeId="980809437931132207" varName="conceptFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="980809437931132301" fileName="MergerRoleIdsHandler.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="67" startPosition="66" endLine="71" endPosition="6" />
-    <scopeInfo nodeId="980809437931234649" fileName="MergerRoleIdsHandler.java" startLine="23" startPosition="99" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="980809437931234647" fileName="MergerRoleIdsHandler.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="980809437931234651" varName="somethingToIds" />
+    <scopeInfo nodeId="5911625124420838856" fileName="MergerRoleIdsHandler.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="5911625124420838859" varName="reference" />
+    </scopeInfo>
+    <scopeInfo nodeId="980809437931132301" fileName="MergerRoleIdsHandler.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="77" startPosition="66" endLine="81" endPosition="6" />
+    <scopeInfo nodeId="980809437931234649" fileName="MergerRoleIdsHandler.java" startLine="25" startPosition="82" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="76" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="980809437931234647" fileName="MergerRoleIdsHandler.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="980809437931298811" varName="value" />
+      <varInfo nodeId="980809437931234651" varName="theMap" />
       <varInfo nodeId="980809437931298808" varName="key" />
     </scopeInfo>
-    <unitInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="13" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler" />
+    <unitInfo nodeId="980809437931131508" fileName="MergerRoleIdsHandler.java" startLine="14" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler" />
   </root>
 </debugInfo>
 

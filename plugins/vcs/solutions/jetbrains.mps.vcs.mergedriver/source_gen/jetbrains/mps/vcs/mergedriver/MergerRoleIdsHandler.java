@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 /*package*/ class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {
@@ -16,15 +17,16 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
   private Map<Tuples._2<String, String>, SNodeId> myNodeRolesToIds = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodeId>());
   private Map<Tuples._2<String, String>, SNodeId> myReferenceRolesToIds = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodeId>());
   private Map<Tuples._2<String, String>, SNodeId> myPropertyNamesToIds = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodeId>());
+  private Map<SModelReference, Integer> myModelVersions = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
 
   /*package*/ MergerRoleIdsHandler() {
   }
 
-  private <K> void storeAndCheckConsistency(Map<K, SNodeId> somethingToIds, K key, SNodeId value) {
-    if (MapSequence.fromMap(somethingToIds).containsKey(key)) {
-      myConsistent = myConsistent && eq_clnjnl_a0a0a0a0a(MapSequence.fromMap(somethingToIds).get(key), value);
+  private <K, V> void storeAndCheckConsistency(Map<K, V> theMap, K key, V value) {
+    if (MapSequence.fromMap(theMap).containsKey(key)) {
+      myConsistent = myConsistent && eq_clnjnl_a0a0a0a0a(MapSequence.fromMap(theMap).get(key), value);
     } else {
-      MapSequence.fromMap(somethingToIds).put(key, value);
+      MapSequence.fromMap(theMap).put(key, value);
     }
   }
 
@@ -38,6 +40,10 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
   public void referenceRoleRead(String conceptFqName, String referenceLinkRole, SNodeId linkId) {
     storeAndCheckConsistency(myReferenceRolesToIds, MultiTuple.<String,String>from(conceptFqName, referenceLinkRole), linkId);
+  }
+
+  public void modelVersionRead(SModelReference reference, int i) {
+    storeAndCheckConsistency(myModelVersions, reference, i);
   }
 
   public void propertyNameRead(String conceptFqName, String propertyName, SNodeId nameId) {
@@ -60,7 +66,11 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
     return MapSequence.fromMap(myPropertyNamesToIds).get(MultiTuple.<String,String>from(conceptFqName, propertyName));
   }
 
-  public boolean isConsistent() {
+  public int getModelVersion(SModelReference reference) {
+    return MapSequence.fromMap(myModelVersions).get(reference);
+  }
+
+  /*package*/ boolean isConsistent() {
     return myConsistent;
   }
 

@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent.RoleIdsHandler;
 
 import java.security.PublicKey;
@@ -66,6 +65,12 @@ public class RoleIdsComponent {
     }
   }
 
+  public static void modelVersionRead(ImportElement importElement) {
+    if (ourHandler != null) {
+      ourHandler.modelVersionRead(importElement.getModelReference(), importElement.getUsedVersion());
+    }
+  }
+
   public static SNodeId getConceptId(SNode node) {
     if (ourHandler != null) {
       return ourHandler.getConceptId(node.getConceptFqName());
@@ -106,15 +111,25 @@ public class RoleIdsComponent {
     }
   }
 
+  public static int getModelVersion(SModelReference modelReference) {
+    if (ourHandler != null) {
+      return ourHandler.getModelVersion(modelReference);
+    } else {
+      return -1;
+    }
+  }
+
   public interface RoleIdsHandler {
     void conceptRead(String conceptFqName, SNodeId conceptId);
     void nodeRoleRead(String conceptFqName, String linkRole, SNodeId linkId);
     void referenceRoleRead(String conceptFqName, String referenceLinkRole, SNodeId linkId);
     void propertyNameRead(String conceptFqName, String propertyName, SNodeId linkId);
+    void modelVersionRead(SModelReference modelReference, int version);
 
     SNodeId getConceptId(String conceptFqName);
     SNodeId getNodeRoleId(String conceptFqName, String linkRole);
     SNodeId getReferenceRoleId(String conceptFqName, String referenceLinkRole);
     SNodeId getPropertyNameId(String conceptFqName, String propertyName);
+    int getModelVersion(SModelReference modelReference);
   }
 }
