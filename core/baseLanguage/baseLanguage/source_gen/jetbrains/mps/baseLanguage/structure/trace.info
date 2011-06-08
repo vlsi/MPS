@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ClassifierMember.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassifierMember" />
+  <unitInfo fileName="IAnonymousClass.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IAnonymousClass" />
   <unitInfo fileName="IFinalWrapper.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IFinalWrapper" />
   <unitInfo fileName="IWillBeClassifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IWillBeClassifier" />
   <unitInfo fileName="IControlFlowInterrupter.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter" />
@@ -188,7 +189,7 @@
   <unitInfo fileName="ArrayLiteral.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayLiteral" />
   <unitInfo fileName="EnumClass.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.EnumClass" />
   <unitInfo fileName="TrimKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="512" startPosition="0" endLine="551" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="514" startPosition="0" endLine="553" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="SubstringExpression.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SubstringExpression" />
   <unitInfo fileName="TernaryOperatorExpression.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" />
   <unitInfo fileName="UsingStatement.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UsingStatement" />
@@ -252,6 +253,6 @@
   <unitInfo fileName="BaseMethodDeclaration.java" startLine="16" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
   <unitInfo fileName="Classifier.java" startLine="15" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Classifier" />
   <unitInfo fileName="ClassConcept.java" startLine="14" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="552" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="554" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
 </debugInfo>
 

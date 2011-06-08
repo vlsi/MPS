@@ -9,5 +9,6 @@ public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", new ExtractStatementListExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", new ExtractStatementListInnerExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator", new InternalAnonymousClassCreator_DataFlow());
   }
 }

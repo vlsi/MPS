@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", "jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.AbstractForStatement", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.AbstractOperation", "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.AndAssignmentExpression", "jetbrains.mps.baseLanguage.structure.AndExpression", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayCreator", "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.ArrayType", "jetbrains.mps.baseLanguage.structure.AsExpression", "jetbrains.mps.baseLanguage.structure.AssertStatement", "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "jetbrains.mps.baseLanguage.structure.BLBottomType", "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseStringOperation", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation", "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation", "jetbrains.mps.baseLanguage.structure.BinaryOperation", "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression", "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression", "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression", "jetbrains.mps.baseLanguage.structure.BlockStatement", "jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.BooleanType", "jetbrains.mps.baseLanguage.structure.BreakStatement", "jetbrains.mps.baseLanguage.structure.ByteType", "jetbrains.mps.baseLanguage.structure.CastExpression", "jetbrains.mps.baseLanguage.structure.CatchClause", "jetbrains.mps.baseLanguage.structure.CharConstant", "jetbrains.mps.baseLanguage.structure.CharType", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.Closure", "jetbrains.mps.baseLanguage.structure.ClosureParameter", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.Closureoid", "jetbrains.mps.baseLanguage.structure.CommentPart", "jetbrains.mps.baseLanguage.structure.CommentedStatement", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "jetbrains.mps.baseLanguage.structure.ContinueStatement", "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor", "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", "jetbrains.mps.baseLanguage.structure.DimensionExpression", "jetbrains.mps.baseLanguage.structure.DivAssignmentExpression", "jetbrains.mps.baseLanguage.structure.DivExpression", "jetbrains.mps.baseLanguage.structure.DoWhileStatement", "jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.baseLanguage.structure.DoubleType", "jetbrains.mps.baseLanguage.structure.ElsifClause", "jetbrains.mps.baseLanguage.structure.EnumClass", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.EqualsExpression", "jetbrains.mps.baseLanguage.structure.EscapeOperation", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ExpressionStatement", "jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.FloatType", "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", "jetbrains.mps.baseLanguage.structure.ForStatement", "jetbrains.mps.baseLanguage.structure.ForeachStatement", "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.GenericNewExpression", "jetbrains.mps.baseLanguage.structure.GetAccessor", "jetbrains.mps.baseLanguage.structure.GreaterThanExpression", "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable", "jetbrains.mps.baseLanguage.structure.IFinalWrapper", "jetbrains.mps.baseLanguage.structure.IInternalType", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration", "jetbrains.mps.baseLanguage.structure.ILocalReference", "jetbrains.mps.baseLanguage.structure.ILocalVariableElement", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList", "jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.baseLanguage.structure.IMethodCall", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IParameter", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods", "jetbrains.mps.baseLanguage.structure.IThisExpression", "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier", "jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.InstanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", "jetbrains.mps.baseLanguage.structure.IntegerConstant", "jetbrains.mps.baseLanguage.structure.IntegerLiteral", "jetbrains.mps.baseLanguage.structure.IntegerType", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.IsEmptyOperation", "jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation", "jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression", "jetbrains.mps.baseLanguage.structure.LessThanExpression", "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", "jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.LongLiteral", "jetbrains.mps.baseLanguage.structure.LongType", "jetbrains.mps.baseLanguage.structure.LoopLabel", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.LowerBoundType", "jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression", "jetbrains.mps.baseLanguage.structure.MinusExpression", "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", "jetbrains.mps.baseLanguage.structure.MulExpression", "jetbrains.mps.baseLanguage.structure.NPEEqualsExpression", "jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression", "jetbrains.mps.baseLanguage.structure.NotEqualsExpression", "jetbrains.mps.baseLanguage.structure.NotExpression", "jetbrains.mps.baseLanguage.structure.NullLiteral", "jetbrains.mps.baseLanguage.structure.NullType", "jetbrains.mps.baseLanguage.structure.Number", "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression", "jetbrains.mps.baseLanguage.structure.OrAssignmentExpression", "jetbrains.mps.baseLanguage.structure.OrExpression", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", "jetbrains.mps.baseLanguage.structure.ParameterReference", "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression", "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveType", "jetbrains.mps.baseLanguage.structure.PrivateVisibility", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyImplementation", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.ProtectedVisibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility", "jetbrains.mps.baseLanguage.structure.RemAssignmentExpression", "jetbrains.mps.baseLanguage.structure.RemExpression", "jetbrains.mps.baseLanguage.structure.RemarkStatement", "jetbrains.mps.baseLanguage.structure.ReturnStatement", "jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression", "jetbrains.mps.baseLanguage.structure.SetAccessor", "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression", "jetbrains.mps.baseLanguage.structure.ShiftRightExpression", "jetbrains.mps.baseLanguage.structure.ShortType", "jetbrains.mps.baseLanguage.structure.SingleLineComment", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.StatementCommentPart", "jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StringBooleanOperation", "jetbrains.mps.baseLanguage.structure.StringLiteral", "jetbrains.mps.baseLanguage.structure.StringType", "jetbrains.mps.baseLanguage.structure.StubStatementList", "jetbrains.mps.baseLanguage.structure.SubstringExpression", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.SwitchCase", "jetbrains.mps.baseLanguage.structure.SwitchStatement", "jetbrains.mps.baseLanguage.structure.SynchronizedStatement", "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", "jetbrains.mps.baseLanguage.structure.TextCommentPart", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.ThrowStatement", "jetbrains.mps.baseLanguage.structure.TrimOperation", "jetbrains.mps.baseLanguage.structure.TryCatchStatement", "jetbrains.mps.baseLanguage.structure.TryStatement", "jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.TypeAnnotable", "jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.UnaryMinus", "jetbrains.mps.baseLanguage.structure.UndefinedType", "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference", "jetbrains.mps.baseLanguage.structure.UpperBoundType", "jetbrains.mps.baseLanguage.structure.UsingStatement", "jetbrains.mps.baseLanguage.structure.ValueParameter", "jetbrains.mps.baseLanguage.structure.VarType", "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VarVariableReference", "jetbrains.mps.baseLanguage.structure.VariableArityType", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.Visibility", "jetbrains.mps.baseLanguage.structure.VoidType", "jetbrains.mps.baseLanguage.structure.WhileStatement", "jetbrains.mps.baseLanguage.structure.WildCardType", "jetbrains.mps.baseLanguage.structure.XorAssignmentExpression"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", "jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.AbstractForStatement", "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.AbstractOperation", "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", "jetbrains.mps.baseLanguage.structure.AndAssignmentExpression", "jetbrains.mps.baseLanguage.structure.AndExpression", "jetbrains.mps.baseLanguage.structure.Annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", "jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", "jetbrains.mps.baseLanguage.structure.ArrayCreator", "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", "jetbrains.mps.baseLanguage.structure.ArrayLiteral", "jetbrains.mps.baseLanguage.structure.ArrayType", "jetbrains.mps.baseLanguage.structure.AsExpression", "jetbrains.mps.baseLanguage.structure.AssertStatement", "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "jetbrains.mps.baseLanguage.structure.BLBottomType", "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "jetbrains.mps.baseLanguage.structure.BaseMethodCall", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.BaseStringOperation", "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "jetbrains.mps.baseLanguage.structure.BaseVariableReference", "jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation", "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation", "jetbrains.mps.baseLanguage.structure.BinaryOperation", "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression", "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression", "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression", "jetbrains.mps.baseLanguage.structure.BlockStatement", "jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.BooleanType", "jetbrains.mps.baseLanguage.structure.BreakStatement", "jetbrains.mps.baseLanguage.structure.ByteType", "jetbrains.mps.baseLanguage.structure.CastExpression", "jetbrains.mps.baseLanguage.structure.CatchClause", "jetbrains.mps.baseLanguage.structure.CharConstant", "jetbrains.mps.baseLanguage.structure.CharType", "jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.ClassifierType", "jetbrains.mps.baseLanguage.structure.Closure", "jetbrains.mps.baseLanguage.structure.ClosureParameter", "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "jetbrains.mps.baseLanguage.structure.Closureoid", "jetbrains.mps.baseLanguage.structure.CommentPart", "jetbrains.mps.baseLanguage.structure.CommentedStatement", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", "jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "jetbrains.mps.baseLanguage.structure.ContinueStatement", "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor", "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", "jetbrains.mps.baseLanguage.structure.DimensionExpression", "jetbrains.mps.baseLanguage.structure.DivAssignmentExpression", "jetbrains.mps.baseLanguage.structure.DivExpression", "jetbrains.mps.baseLanguage.structure.DoWhileStatement", "jetbrains.mps.baseLanguage.structure.DotExpression", "jetbrains.mps.baseLanguage.structure.DoubleType", "jetbrains.mps.baseLanguage.structure.ElsifClause", "jetbrains.mps.baseLanguage.structure.EnumClass", "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", "jetbrains.mps.baseLanguage.structure.EqualsExpression", "jetbrains.mps.baseLanguage.structure.EscapeOperation", "jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.ExpressionStatement", "jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "jetbrains.mps.baseLanguage.structure.FloatType", "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", "jetbrains.mps.baseLanguage.structure.ForStatement", "jetbrains.mps.baseLanguage.structure.ForeachStatement", "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.GenericNewExpression", "jetbrains.mps.baseLanguage.structure.GetAccessor", "jetbrains.mps.baseLanguage.structure.GreaterThanExpression", "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", "jetbrains.mps.baseLanguage.structure.IAnonymousClass", "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable", "jetbrains.mps.baseLanguage.structure.IFinalWrapper", "jetbrains.mps.baseLanguage.structure.IInternalType", "jetbrains.mps.baseLanguage.structure.ILocalDeclaration", "jetbrains.mps.baseLanguage.structure.ILocalReference", "jetbrains.mps.baseLanguage.structure.ILocalVariableElement", "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList", "jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.baseLanguage.structure.IMethodCall", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IOperation", "jetbrains.mps.baseLanguage.structure.IParameter", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods", "jetbrains.mps.baseLanguage.structure.IThisExpression", "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableAssignment", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.baseLanguage.structure.IWillBeClassifier", "jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.InstanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", "jetbrains.mps.baseLanguage.structure.IntegerConstant", "jetbrains.mps.baseLanguage.structure.IntegerLiteral", "jetbrains.mps.baseLanguage.structure.IntegerType", "jetbrains.mps.baseLanguage.structure.Interface", "jetbrains.mps.baseLanguage.structure.IsEmptyOperation", "jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation", "jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression", "jetbrains.mps.baseLanguage.structure.LessThanExpression", "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", "jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.LongLiteral", "jetbrains.mps.baseLanguage.structure.LongType", "jetbrains.mps.baseLanguage.structure.LoopLabel", "jetbrains.mps.baseLanguage.structure.LoopLabelReference", "jetbrains.mps.baseLanguage.structure.LowerBoundType", "jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression", "jetbrains.mps.baseLanguage.structure.MinusExpression", "jetbrains.mps.baseLanguage.structure.MulAssignmentExpression", "jetbrains.mps.baseLanguage.structure.MulExpression", "jetbrains.mps.baseLanguage.structure.NPEEqualsExpression", "jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression", "jetbrains.mps.baseLanguage.structure.NotEqualsExpression", "jetbrains.mps.baseLanguage.structure.NotExpression", "jetbrains.mps.baseLanguage.structure.NullLiteral", "jetbrains.mps.baseLanguage.structure.NullType", "jetbrains.mps.baseLanguage.structure.Number", "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression", "jetbrains.mps.baseLanguage.structure.OrAssignmentExpression", "jetbrains.mps.baseLanguage.structure.OrExpression", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", "jetbrains.mps.baseLanguage.structure.ParameterReference", "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression", "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", "jetbrains.mps.baseLanguage.structure.PrimitiveType", "jetbrains.mps.baseLanguage.structure.PrivateVisibility", "jetbrains.mps.baseLanguage.structure.Property", "jetbrains.mps.baseLanguage.structure.PropertyImplementation", "jetbrains.mps.baseLanguage.structure.PropertyReference", "jetbrains.mps.baseLanguage.structure.ProtectedVisibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility", "jetbrains.mps.baseLanguage.structure.RemAssignmentExpression", "jetbrains.mps.baseLanguage.structure.RemExpression", "jetbrains.mps.baseLanguage.structure.RemarkStatement", "jetbrains.mps.baseLanguage.structure.ReturnStatement", "jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression", "jetbrains.mps.baseLanguage.structure.SetAccessor", "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression", "jetbrains.mps.baseLanguage.structure.ShiftRightExpression", "jetbrains.mps.baseLanguage.structure.ShortType", "jetbrains.mps.baseLanguage.structure.SingleLineComment", "jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.StatementCommentPart", "jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.baseLanguage.structure.StaticMethodCall", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StringBooleanOperation", "jetbrains.mps.baseLanguage.structure.StringLiteral", "jetbrains.mps.baseLanguage.structure.StringType", "jetbrains.mps.baseLanguage.structure.StubStatementList", "jetbrains.mps.baseLanguage.structure.SubstringExpression", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", "jetbrains.mps.baseLanguage.structure.SuperMethodCall", "jetbrains.mps.baseLanguage.structure.SwitchCase", "jetbrains.mps.baseLanguage.structure.SwitchStatement", "jetbrains.mps.baseLanguage.structure.SynchronizedStatement", "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", "jetbrains.mps.baseLanguage.structure.TextCommentPart", "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", "jetbrains.mps.baseLanguage.structure.ThisExpression", "jetbrains.mps.baseLanguage.structure.ThrowStatement", "jetbrains.mps.baseLanguage.structure.TrimOperation", "jetbrains.mps.baseLanguage.structure.TryCatchStatement", "jetbrains.mps.baseLanguage.structure.TryStatement", "jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.TypeAnnotable", "jetbrains.mps.baseLanguage.structure.TypeDerivable", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableReference", "jetbrains.mps.baseLanguage.structure.UnaryMinus", "jetbrains.mps.baseLanguage.structure.UndefinedType", "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference", "jetbrains.mps.baseLanguage.structure.UpperBoundType", "jetbrains.mps.baseLanguage.structure.UsingStatement", "jetbrains.mps.baseLanguage.structure.ValueParameter", "jetbrains.mps.baseLanguage.structure.VarType", "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", "jetbrains.mps.baseLanguage.structure.VarVariableReference", "jetbrains.mps.baseLanguage.structure.VariableArityType", "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.baseLanguage.structure.VariableReference", "jetbrains.mps.baseLanguage.structure.Visibility", "jetbrains.mps.baseLanguage.structure.VoidType", "jetbrains.mps.baseLanguage.structure.WhileStatement", "jetbrains.mps.baseLanguage.structure.WildCardType", "jetbrains.mps.baseLanguage.structure.XorAssignmentExpression"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -26,20 +26,20 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new FieldDeclaration_BehaviorDescriptor();
       case 49:
         return new ClassConcept_BehaviorDescriptor();
-      case 166:
+      case 167:
         return new ParameterDeclaration_BehaviorDescriptor();
-      case 220:
+      case 221:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Type 
         return null;
-      case 235:
-        return new VariableDeclaration_BehaviorDescriptor();
       case 236:
+        return new VariableDeclaration_BehaviorDescriptor();
+      case 237:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.VariableReference 
         return null;
       case 29:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration 
         return null;
-      case 196:
+      case 197:
         return new StatementList_BehaviorDescriptor();
       case 41:
         return new BooleanConstant_BehaviorDescriptor();
@@ -49,45 +49,45 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new EqualsExpression_BehaviorDescriptor();
       case 86:
         return new ExpressionStatement_BehaviorDescriptor();
-      case 194:
+      case 195:
         return new Statement_BehaviorDescriptor();
-      case 125:
+      case 126:
         return new IfStatement_BehaviorDescriptor();
-      case 129:
+      case 130:
         return new InstanceMethodDeclaration_BehaviorDescriptor();
-      case 131:
+      case 132:
         return new IntegerConstant_BehaviorDescriptor();
-      case 144:
-        return new LocalVariableDeclaration_BehaviorDescriptor();
       case 145:
-        return new LocalVariableDeclarationStatement_BehaviorDescriptor();
+        return new LocalVariableDeclaration_BehaviorDescriptor();
       case 146:
+        return new LocalVariableDeclarationStatement_BehaviorDescriptor();
+      case 147:
         return new LocalVariableReference_BehaviorDescriptor();
-      case 148:
+      case 149:
         return new LongType_BehaviorDescriptor();
-      case 153:
+      case 154:
         return new MinusExpression_BehaviorDescriptor();
-      case 167:
+      case 168:
         return new ParameterReference_BehaviorDescriptor();
-      case 171:
+      case 172:
         return new PlusExpression_BehaviorDescriptor();
-      case 187:
+      case 188:
         return new ReturnStatement_BehaviorDescriptor();
-      case 238:
+      case 239:
         return new VoidType_BehaviorDescriptor();
-      case 197:
-        return new StaticFieldDeclaration_BehaviorDescriptor();
-      case 207:
-        return new SuperConstructorInvocation_BehaviorDescriptor();
-      case 203:
-        return new StringLiteral_BehaviorDescriptor();
       case 198:
+        return new StaticFieldDeclaration_BehaviorDescriptor();
+      case 208:
+        return new SuperConstructorInvocation_BehaviorDescriptor();
+      case 204:
+        return new StringLiteral_BehaviorDescriptor();
+      case 199:
         return new StaticFieldReference_BehaviorDescriptor();
-      case 192:
+      case 193:
         return new ShortType_BehaviorDescriptor();
-      case 160:
+      case 161:
         return new NullLiteral_BehaviorDescriptor();
-      case 133:
+      case 134:
         return new IntegerType_BehaviorDescriptor();
       case 89:
         return new FloatType_BehaviorDescriptor();
@@ -103,29 +103,29 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new ArrayType_BehaviorDescriptor();
       case 45:
         return new CastExpression_BehaviorDescriptor();
-      case 208:
+      case 209:
         return new SuperMethodCall_BehaviorDescriptor();
-      case 158:
+      case 159:
         return new NotEqualsExpression_BehaviorDescriptor();
-      case 239:
+      case 240:
         return new WhileStatement_BehaviorDescriptor();
-      case 168:
+      case 169:
         return new ParenthesizedExpression_BehaviorDescriptor();
       case 8:
         return new AndExpression_BehaviorDescriptor();
-      case 165:
+      case 166:
         return new OrExpression_BehaviorDescriptor();
-      case 200:
-        return new StaticMethodCall_BehaviorDescriptor();
       case 201:
+        return new StaticMethodCall_BehaviorDescriptor();
+      case 202:
         return new StaticMethodDeclaration_BehaviorDescriptor();
-      case 130:
+      case 131:
         return new InstanceOfExpression_BehaviorDescriptor();
       case 97:
         return new GreaterThanExpression_BehaviorDescriptor();
-      case 138:
+      case 139:
         return new LessThanExpression_BehaviorDescriptor();
-      case 159:
+      case 160:
         return new NotExpression_BehaviorDescriptor();
       case 43:
         return new BreakStatement_BehaviorDescriptor();
@@ -142,7 +142,7 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new EnumConstantDeclaration_BehaviorDescriptor();
       case 80:
         return new EnumConstantReference_BehaviorDescriptor();
-      case 155:
+      case 156:
         return new MulExpression_BehaviorDescriptor();
       case 73:
         return new DivExpression_BehaviorDescriptor();
@@ -154,14 +154,14 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return null;
       case 54:
         return new ClassifierType_BehaviorDescriptor();
-      case 134:
+      case 135:
         return new Interface_BehaviorDescriptor();
-      case 223:
+      case 224:
         return new TypeVariableDeclaration_BehaviorDescriptor();
       case 94:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.GenericDeclaration 
         return null;
-      case 224:
+      case 225:
         return new TypeVariableReference_BehaviorDescriptor();
       case 90:
         return new FloatingPointConstant_BehaviorDescriptor();
@@ -182,14 +182,14 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return null;
       case 95:
         return new GenericNewExpression_BehaviorDescriptor();
-      case 237:
+      case 238:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Visibility 
         return null;
-      case 183:
+      case 184:
         return new PublicVisibility_BehaviorDescriptor();
-      case 178:
+      case 179:
         return new PrivateVisibility_BehaviorDescriptor();
-      case 182:
+      case 183:
         return new ProtectedVisibility_BehaviorDescriptor();
       case 55:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Closure 
@@ -201,53 +201,53 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new ClosureParameterReference_BehaviorDescriptor();
       case 98:
         return new GreaterThanOrEqualsExpression_BehaviorDescriptor();
-      case 185:
+      case 186:
         return new RemExpression_BehaviorDescriptor();
-      case 139:
+      case 140:
         return new LessThanOrEqualsExpression_BehaviorDescriptor();
-      case 219:
+      case 220:
         return new TryStatement_BehaviorDescriptor();
       case 3:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.AbstractLoopStatement 
         return null;
       case 19:
         return new ArrayCreatorWithInitializer_BehaviorDescriptor();
-      case 162:
+      case 163:
         return new Number_BehaviorDescriptor();
       case 24:
         return new AssertStatement_BehaviorDescriptor();
-      case 215:
+      case 216:
         return new ThisExpression_BehaviorDescriptor();
-      case 212:
+      case 213:
         return new TernaryOperatorExpression_BehaviorDescriptor();
-      case 210:
+      case 211:
         return new SwitchStatement_BehaviorDescriptor();
-      case 209:
+      case 210:
         return new SwitchCase_BehaviorDescriptor();
-      case 177:
+      case 178:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.PrimitiveType 
         return null;
-      case 218:
+      case 219:
         return new TryCatchStatement_BehaviorDescriptor();
       case 46:
         return new CatchClause_BehaviorDescriptor();
-      case 216:
+      case 217:
         return new ThrowStatement_BehaviorDescriptor();
-      case 186:
+      case 187:
         return new RemarkStatement_BehaviorDescriptor();
-      case 211:
+      case 212:
         return new SynchronizedStatement_BehaviorDescriptor();
       case 14:
         return new AnonymousClass_BehaviorDescriptor();
-      case 240:
+      case 241:
         return new WildCardType_BehaviorDescriptor();
-      case 151:
+      case 152:
         return new LowerBoundType_BehaviorDescriptor();
-      case 228:
+      case 229:
         return new UpperBoundType_BehaviorDescriptor();
-      case 142:
-        return new LocalStaticFieldReference_BehaviorDescriptor();
       case 143:
+        return new LocalStaticFieldReference_BehaviorDescriptor();
+      case 144:
         return new LocalStaticMethodCall_BehaviorDescriptor();
       case 16:
         return new ArrayAccessExpression_BehaviorDescriptor();
@@ -255,19 +255,19 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new CommentedStatementsBlock_BehaviorDescriptor();
       case 74:
         return new DoWhileStatement_BehaviorDescriptor();
-      case 231:
+      case 232:
         return new VarType_BehaviorDescriptor();
       case 53:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ClassifierMember 
         return null;
-      case 123:
+      case 124:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IVisible 
         return null;
-      case 214:
+      case 215:
         return new ThisConstructorInvocation_BehaviorDescriptor();
       case 100:
         return new HexIntegerLiteral_BehaviorDescriptor();
-      case 132:
+      case 133:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IntegerLiteral 
         return null;
       case 15:
@@ -291,58 +291,58 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new AnnotationInstanceValue_BehaviorDescriptor();
       case 21:
         return new ArrayLiteral_BehaviorDescriptor();
-      case 111:
+      case 112:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IMemberContainer 
         return null;
       case 75:
         return new DotExpression_BehaviorDescriptor();
-      case 114:
+      case 115:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IOperation 
         return null;
       case 88:
         return new FieldReferenceOperation_BehaviorDescriptor();
-      case 116:
+      case 117:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IStatementListContainer 
         return null;
       case 47:
         return new CharConstant_BehaviorDescriptor();
-      case 222:
+      case 223:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.TypeDerivable 
         return null;
-      case 179:
-        return new Property_BehaviorDescriptor();
       case 180:
+        return new Property_BehaviorDescriptor();
+      case 181:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.PropertyImplementation 
         return null;
       case 69:
         return new DefaultPropertyImplementation_BehaviorDescriptor();
-      case 181:
+      case 182:
         return new PropertyReference_BehaviorDescriptor();
       case 67:
         return new CustomPropertyImplementation_BehaviorDescriptor();
       case 96:
         return new GetAccessor_BehaviorDescriptor();
-      case 189:
+      case 190:
         return new SetAccessor_BehaviorDescriptor();
-      case 230:
+      case 231:
         return new ValueParameter_BehaviorDescriptor();
       case 68:
         return new DefaultGetAccessor_BehaviorDescriptor();
       case 70:
         return new DefaultSetAccessor_BehaviorDescriptor();
-      case 128:
+      case 129:
         return new InstanceMethodCallOperation_BehaviorDescriptor();
-      case 112:
+      case 113:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IMethodCall 
         return null;
-      case 161:
+      case 162:
         return new NullType_BehaviorDescriptor();
-      case 106:
+      case 107:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IInternalType 
         return null;
       case 77:
         return new ElsifClause_BehaviorDescriptor();
-      case 127:
+      case 128:
         return new InstanceInitializer_BehaviorDescriptor();
       case 58:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.Closureoid 
@@ -352,38 +352,38 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return null;
       case 20:
         return new ArrayLengthOperation_BehaviorDescriptor();
-      case 120:
+      case 121:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IValidIdentifier 
         return null;
       case 50:
         return new ClassCreator_BehaviorDescriptor();
-      case 173:
+      case 174:
         return new PostfixIncrementExpression_BehaviorDescriptor();
-      case 172:
+      case 173:
         return new PostfixDecrementExpression_BehaviorDescriptor();
       case 27:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression 
         return null;
-      case 170:
+      case 171:
         return new PlusAssignmentExpression_BehaviorDescriptor();
-      case 152:
+      case 153:
         return new MinusAssignmentExpression_BehaviorDescriptor();
-      case 234:
+      case 235:
         return new VariableArityType_BehaviorDescriptor();
-      case 104:
+      case 105:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable 
         return null;
-      case 199:
+      case 200:
         return new StaticInitializer_BehaviorDescriptor();
-      case 117:
+      case 118:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods 
         return null;
-      case 121:
+      case 122:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IVariableAssignment 
         return null;
       case 23:
         return new AsExpression_BehaviorDescriptor();
-      case 229:
+      case 230:
         return new UsingStatement_BehaviorDescriptor();
       case 82:
         return new EnumValuesExpression_BehaviorDescriptor();
@@ -398,68 +398,68 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new BitwiseOrExpression_BehaviorDescriptor();
       case 36:
         return new BitwiseAndExpression_BehaviorDescriptor();
-      case 118:
+      case 119:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IThisExpression 
         return null;
-      case 101:
+      case 102:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IBLDeprecatable 
         return null;
-      case 204:
+      case 205:
         return new StringType_BehaviorDescriptor();
-      case 157:
+      case 158:
         return new NPENotEqualsExpression_BehaviorDescriptor();
-      case 156:
+      case 157:
         return new NPEEqualsExpression_BehaviorDescriptor();
       case 30:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseStringOperation 
         return null;
-      case 135:
-        return new IsEmptyOperation_BehaviorDescriptor();
       case 136:
+        return new IsEmptyOperation_BehaviorDescriptor();
+      case 137:
         return new IsNotEmptyOperation_BehaviorDescriptor();
-      case 202:
+      case 203:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.StringBooleanOperation 
         return null;
-      case 206:
+      case 207:
         return new SubstringExpression_BehaviorDescriptor();
-      case 217:
+      case 218:
         return new TrimOperation_BehaviorDescriptor();
-      case 115:
+      case 116:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IParameter 
         return null;
-      case 190:
-        return new ShiftLeftExpression_BehaviorDescriptor();
       case 191:
+        return new ShiftLeftExpression_BehaviorDescriptor();
+      case 192:
         return new ShiftRightExpression_BehaviorDescriptor();
       case 37:
         return new BitwiseNotExpression_BehaviorDescriptor();
       case 60:
         return new CommentedStatement_BehaviorDescriptor();
-      case 221:
+      case 222:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.TypeAnnotable 
         return null;
-      case 232:
-        return new VarVariableDeclaration_BehaviorDescriptor();
       case 233:
+        return new VarVariableDeclaration_BehaviorDescriptor();
+      case 234:
         return new VarVariableReference_BehaviorDescriptor();
-      case 102:
+      case 103:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IContainsStatementList 
         return null;
-      case 109:
+      case 110:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ILocalVariableElement 
         return null;
-      case 110:
+      case 111:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ILocalVariableElementList 
         return null;
-      case 113:
+      case 114:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IMethodLike 
         return null;
       case 34:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BinaryCompareOperation 
         return null;
-      case 175:
+      case 176:
         return new PrefixIncrementExpression_BehaviorDescriptor();
-      case 174:
+      case 175:
         return new PrefixDecrementExpression_BehaviorDescriptor();
       case 5:
         return new AbstractUnaryNumberOperation_BehaviorDescriptor();
@@ -468,92 +468,95 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
       case 65:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement 
         return null;
-      case 147:
+      case 148:
         return new LongLiteral_BehaviorDescriptor();
       case 91:
         return new FloatingPointFloatConstant_BehaviorDescriptor();
-      case 225:
+      case 226:
         return new UnaryMinus_BehaviorDescriptor();
-      case 169:
+      case 170:
         return new PlaceholderMethodDeclaration_BehaviorDescriptor();
       case 31:
         return new BaseVariableDeclaration_BehaviorDescriptor();
       case 32:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.BaseVariableReference 
         return null;
-      case 149:
-        return new LoopLabel_BehaviorDescriptor();
       case 150:
+        return new LoopLabel_BehaviorDescriptor();
+      case 151:
         return new LoopLabelReference_BehaviorDescriptor();
-      case 193:
+      case 194:
         return new SingleLineComment_BehaviorDescriptor();
       case 59:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.CommentPart 
         return null;
-      case 213:
+      case 214:
         return new TextCommentPart_BehaviorDescriptor();
-      case 195:
+      case 196:
         return new StatementCommentPart_BehaviorDescriptor();
-      case 154:
+      case 155:
         return new MulAssignmentExpression_BehaviorDescriptor();
       case 72:
         return new DivAssignmentExpression_BehaviorDescriptor();
-      case 184:
+      case 185:
         return new RemAssignmentExpression_BehaviorDescriptor();
-      case 164:
+      case 165:
         return new OrAssignmentExpression_BehaviorDescriptor();
       case 7:
         return new AndAssignmentExpression_BehaviorDescriptor();
-      case 241:
+      case 242:
         return new XorAssignmentExpression_BehaviorDescriptor();
-      case 137:
+      case 138:
         return new LeftShiftAssignmentExpression_BehaviorDescriptor();
-      case 188:
+      case 189:
         return new RightShiftAssignmentExpression_BehaviorDescriptor();
       case 6:
         return new AdditionalForLoopVariable_BehaviorDescriptor();
       case 0:
         return new AbstractClassifierReference_BehaviorDescriptor();
-      case 126:
+      case 127:
         return new ImplicitAnnotationInstanceValue_BehaviorDescriptor();
-      case 176:
+      case 177:
         return new PrimitiveClassExpression_BehaviorDescriptor();
-      case 122:
+      case 123:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IVariableDeclaration 
         return null;
-      case 119:
+      case 120:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ITryCatchStatement 
         return null;
-      case 141:
+      case 142:
         return new LocalInstanceMethodCall_BehaviorDescriptor();
-      case 140:
+      case 141:
         return new LocalInstanceFieldReference_BehaviorDescriptor();
-      case 107:
+      case 108:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ILocalDeclaration 
         return null;
-      case 108:
+      case 109:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.ILocalReference 
         return null;
       case 17:
         return new ArrayCloneOperation_BehaviorDescriptor();
-      case 227:
+      case 228:
         return new UnresolvedNameReference_BehaviorDescriptor();
-      case 205:
+      case 206:
         return new StubStatementList_BehaviorDescriptor();
-      case 163:
+      case 164:
         return new OperationAssignmentExpression_BehaviorDescriptor();
-      case 103:
+      case 104:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter 
         return null;
-      case 124:
+      case 125:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IWillBeClassifier 
         return null;
       case 84:
         return new EscapeOperation_BehaviorDescriptor();
-      case 226:
+      case 227:
         return new UndefinedType_BehaviorDescriptor();
-      case 105:
+      case 106:
         // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IFinalWrapper 
+        return null;
+      case 101:
+        // interface or abstract concept behavior jetbrains.mps.baseLanguage.structure.IAnonymousClass 
         return null;
       default:
         return null;

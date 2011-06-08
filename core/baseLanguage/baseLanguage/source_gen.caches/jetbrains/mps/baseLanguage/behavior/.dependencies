@@ -171,6 +171,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IAnonymousClass_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodCall_BehaviorDescriptor" />
@@ -1597,6 +1598,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.IAnonymousClass_BehaviorDescriptor" file="IAnonymousClass_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" file="IBLDeprecatable_Behavior.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />

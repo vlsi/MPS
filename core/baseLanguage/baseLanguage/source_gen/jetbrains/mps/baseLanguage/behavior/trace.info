@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IAnonymousClass_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IAnonymousClass_BehaviorDescriptor" />
   <unitInfo fileName="IFinalWrapper_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IFinalWrapper_BehaviorDescriptor" />
   <unitInfo fileName="IControlFlowInterrupter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor" />
   <unitInfo fileName="IThisExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IThisExpression_BehaviorDescriptor" />
@@ -425,7 +426,7 @@
   <unitInfo fileName="ClassifierType_Behavior.java" startLine="31" startPosition="0" endLine="351" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior" />
   <unitInfo fileName="Type_Behavior.java" startLine="29" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
   <unitInfo fileName="Classifier_Behavior.java" startLine="29" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="563" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="566" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877208326">
     <nodeInfo nodeId="1213877208329" fileName="LongType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877208335" fileName="LongType_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

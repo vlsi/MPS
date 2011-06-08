@@ -39,6 +39,9 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3928209435773827186">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp68.8791205313600585946" resolveInfo="WeakClassReference" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3421461530438560155">
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp68.3421461530438559753" resolveInfo="InternalAnonymousClass" />
+    </node>
   </roots>
   <root id="5857910569715972120">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="5857910569715972159">
@@ -318,5 +321,6 @@
       </node>
     </node>
   </root>
+  <root id="3421461530438560155" />
 </model>
 

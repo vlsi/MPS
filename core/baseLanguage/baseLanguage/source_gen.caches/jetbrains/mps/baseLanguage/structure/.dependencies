@@ -153,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Classifier" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IAnonymousClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Type" />
@@ -1127,6 +1128,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.IAnonymousClass" file="IAnonymousClass.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" file="IBLDeprecatable.java">
     <classNode dependClassName="java.lang.String" />
