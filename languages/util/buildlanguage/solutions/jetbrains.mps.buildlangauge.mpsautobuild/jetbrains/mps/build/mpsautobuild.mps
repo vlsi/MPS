@@ -433,7 +433,7 @@
             <property name="name" nameId="tps4.1223641503366" value="languages" />
           </node>
           <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2235195415637077028">
-            <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472948" resolveInfo="platform" />
+            <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472948" resolveInfo="util" />
           </node>
           <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2235195415637077029">
             <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472682" resolveInfo="generate.ant.task.jar" />
@@ -1046,7 +1046,7 @@
       <property name="includes" nameId="tps4.1206439615350" value="**/*.java" />
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Antcall" typeId="tps4.1210777529562" id="8431776905956472412">
         <property name="includes" nameId="tps4.1206439615350" value="**/*.java" />
-        <link role="project" roleId="tps4.1210777812278" targetNodeId="2235195415637076848" resolveInfo="help-build-src" />
+        <link role="project" roleId="tps4.1210777812278" targetNodeId="2235195415637076848" resolveInfo="help-build" />
         <link role="targetDeclaration" roleId="tps4.1224178284812" targetNodeId="2235195415637076859" resolveInfo="repack.sources" />
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="8431776905956472423">
           <property name="excludes" nameId="tps4.1204107522064" value="**/sandbox/**" />
@@ -1083,19 +1083,6 @@
             <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="4789416207834247955">
               <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4789416207834247958">
                 <property name="path" nameId="tps4.1220974398640" value="languages" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="8431776905956472418">
-          <property name="excludes" nameId="tps4.1204107522064" value="**/sandbox/**" />
-          <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="8431776905956472419">
-            <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="8431776905956472420">
-              <property name="name" nameId="tps4.1220976068141" value="mps_home" />
-            </node>
-            <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="8431776905956472421">
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8431776905956472422">
-                <property name="path" nameId="tps4.1220974398640" value="platform" />
               </node>
             </node>
           </node>
@@ -1176,8 +1163,11 @@
             <property name="name" nameId="tps4.1220976068141" value="mps_home" />
           </node>
           <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="8431776905956472689">
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8431776905956472690">
-              <property name="path" nameId="tps4.1220974398640" value="platform" />
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3749843785778538831">
+              <property name="path" nameId="tps4.1220974398640" value="languages" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3749843785778538833">
+              <property name="path" nameId="tps4.1220974398640" value="util" />
             </node>
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8431776905956472691">
               <property name="path" nameId="tps4.1220974398640" value="buildlanguage" />
@@ -1755,10 +1745,13 @@
             <property name="name" nameId="tps4.1220976068141" value="mps_home" />
           </node>
           <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="4423212183691725333">
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4423212183691725334">
-              <property name="path" nameId="tps4.1220974398640" value="platform" />
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3749843785778538837">
+              <property name="path" nameId="tps4.1220974398640" value="languages" />
             </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4423212183691725337">
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3749843785778538836">
+              <property name="path" nameId="tps4.1220974398640" value="util" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="3749843785778538838">
               <property name="path" nameId="tps4.1220974398640" value="uiLanguage" />
             </node>
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="4423212183691725338">

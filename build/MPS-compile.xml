@@ -552,6 +552,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -703,6 +704,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -854,6 +856,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1008,6 +1011,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1159,6 +1163,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1310,6 +1315,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1461,6 +1467,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1612,6 +1619,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1763,6 +1771,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1914,6 +1923,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2065,6 +2075,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2217,6 +2228,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2368,6 +2380,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2520,6 +2533,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2671,6 +2685,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2822,6 +2837,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2975,6 +2991,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3126,6 +3143,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3279,6 +3297,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3432,6 +3451,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3583,6 +3603,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3734,6 +3755,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3885,6 +3907,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4036,6 +4059,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4187,6 +4211,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4338,6 +4363,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4489,6 +4515,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4640,6 +4667,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4791,6 +4819,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4942,6 +4971,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5093,6 +5123,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5244,6 +5275,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5395,6 +5427,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5547,6 +5580,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5698,6 +5732,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5849,6 +5884,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6001,6 +6037,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6153,6 +6190,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6304,6 +6342,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6456,6 +6495,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6607,6 +6647,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6758,6 +6799,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -6909,6 +6951,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7061,6 +7104,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -7214,6 +7258,7 @@
     <path path="lib/guava-r06.jar" />
     <path path="lib/junit-4.8.2.jar" />
     <path path="lib/tools.jar" />
+    <path path="plugins/modelchecker/classes" />
     <path path="plugins/mpsmake/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
