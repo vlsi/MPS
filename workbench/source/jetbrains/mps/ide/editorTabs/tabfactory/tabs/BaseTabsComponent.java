@@ -208,7 +208,9 @@ public abstract class BaseTabsComponent implements TabsComponent {
       super(new BorderLayout());
 
       JLabel label = new JLabel("Click to create new aspect");
-      label.addMouseListener(new MouseAdapter() {
+      add(label, BorderLayout.CENTER);
+
+      this.addMouseListener(new MouseAdapter() {
         public void mouseClicked(final MouseEvent e) {
           ActionGroup group = ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
             public ActionGroup compute() {
@@ -226,9 +228,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
           popupComponent.show(e.getComponent(), e.getX(), e.getY());
         }
       });
-      label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-
-      add(label, BorderLayout.CENTER);
     }
   }
 }
