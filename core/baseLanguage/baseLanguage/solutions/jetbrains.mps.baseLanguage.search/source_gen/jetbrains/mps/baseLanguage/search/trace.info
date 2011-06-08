@@ -2596,32 +2596,36 @@
     <unitInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
   </root>
   <root nodeId="3161373106581143413">
-    <nodeInfo nodeId="3161373106581143425" fileName="VisibleThrowablesScope.java" startLine="15" startPosition="91" endLine="16" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3161373106581143434" fileName="VisibleThrowablesScope.java" startLine="20" startPosition="39" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581143441" fileName="VisibleThrowablesScope.java" startLine="21" startPosition="48" endLine="22" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581143462" fileName="VisibleThrowablesScope.java" startLine="24" startPosition="101" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581143467" fileName="VisibleThrowablesScope.java" startLine="27" startPosition="5" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581143416" fileName="VisibleThrowablesScope.java" startLine="14" startPosition="69" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VisibleThrowablesScope#(Ljetbrains/mps/smodel/SNode;ILjetbrains/mps/smodel/IScope;)V" />
-    <nodeInfo nodeId="3161373106581143453" fileName="VisibleThrowablesScope.java" startLine="23" startPosition="46" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581143448" fileName="VisibleThrowablesScope.java" startLine="22" startPosition="196" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161373106581143429" fileName="VisibleThrowablesScope.java" startLine="18" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifiers#()Ljava/util/List;" />
-    <scopeInfo nodeId="3161373106581143424" fileName="VisibleThrowablesScope.java" startLine="15" startPosition="91" endLine="16" endPosition="42" />
-    <scopeInfo nodeId="3161373106581143461" fileName="VisibleThrowablesScope.java" startLine="24" startPosition="101" endLine="25" endPosition="24" />
-    <scopeInfo nodeId="3161373106581143416" fileName="VisibleThrowablesScope.java" startLine="14" startPosition="69" endLine="17" endPosition="3">
+    <nodeInfo nodeId="1874070707401052380" fileName="VisibleThrowablesScope.java" startLine="14" startPosition="69" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THROWABLE_FQ_NAME" />
+    <nodeInfo nodeId="3161373106581143425" fileName="VisibleThrowablesScope.java" startLine="17" startPosition="91" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3161373106581143434" fileName="VisibleThrowablesScope.java" startLine="22" startPosition="39" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1874070707401112023" fileName="VisibleThrowablesScope.java" startLine="26" startPosition="41" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581143462" fileName="VisibleThrowablesScope.java" startLine="29" startPosition="24" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581143467" fileName="VisibleThrowablesScope.java" startLine="32" startPosition="5" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581143416" fileName="VisibleThrowablesScope.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VisibleThrowablesScope#(Ljetbrains/mps/smodel/SNode;ILjetbrains/mps/smodel/IScope;)V" />
+    <nodeInfo nodeId="1874070707401109145" fileName="VisibleThrowablesScope.java" startLine="25" startPosition="135" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3161373106581143453" fileName="VisibleThrowablesScope.java" startLine="24" startPosition="46" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581143448" fileName="VisibleThrowablesScope.java" startLine="23" startPosition="48" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161373106581143429" fileName="VisibleThrowablesScope.java" startLine="20" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifiers#()Ljava/util/List;" />
+    <scopeInfo nodeId="3161373106581143424" fileName="VisibleThrowablesScope.java" startLine="17" startPosition="91" endLine="18" endPosition="42" />
+    <scopeInfo nodeId="1874070707401109146" fileName="VisibleThrowablesScope.java" startLine="26" startPosition="41" endLine="27" endPosition="67" />
+    <scopeInfo nodeId="3161373106581143461" fileName="VisibleThrowablesScope.java" startLine="29" startPosition="24" endLine="30" endPosition="24" />
+    <scopeInfo nodeId="3161373106581143416" fileName="VisibleThrowablesScope.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
       <varInfo nodeId="3161373106581143418" varName="contextNode" />
       <varInfo nodeId="3161373106581143422" varName="scope" />
       <varInfo nodeId="3161373106581143420" varName="constraint" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143452" fileName="VisibleThrowablesScope.java" startLine="23" startPosition="46" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="3161373106581143448" fileName="VisibleThrowablesScope.java" startLine="22" startPosition="196" endLine="27" endPosition="5">
+    <scopeInfo nodeId="1874070707401109145" fileName="VisibleThrowablesScope.java" startLine="25" startPosition="135" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="3161373106581143452" fileName="VisibleThrowablesScope.java" startLine="24" startPosition="46" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="3161373106581143448" fileName="VisibleThrowablesScope.java" startLine="23" startPosition="48" endLine="32" endPosition="5">
       <varInfo nodeId="3161373106581143450" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143433" fileName="VisibleThrowablesScope.java" startLine="20" startPosition="39" endLine="28" endPosition="18">
-      <varInfo nodeId="3161373106581143442" varName="throwable" />
+    <scopeInfo nodeId="3161373106581143433" fileName="VisibleThrowablesScope.java" startLine="22" startPosition="39" endLine="33" endPosition="18">
       <varInfo nodeId="3161373106581143435" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581143429" fileName="VisibleThrowablesScope.java" startLine="18" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="3161373106581143413" fileName="VisibleThrowablesScope.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope" />
+    <scopeInfo nodeId="3161373106581143429" fileName="VisibleThrowablesScope.java" startLine="20" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="1874070707401109145" fileName="VisibleThrowablesScope.java" startLine="25" startPosition="112" endLine="29" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope$1" />
+    <unitInfo nodeId="3161373106581143413" fileName="VisibleThrowablesScope.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope" />
   </root>
   <root nodeId="3161373106581143470">
     <nodeInfo nodeId="3573019447813594675" fileName="ClassifierVisibleStaticMembersScope.java" startLine="13" startPosition="119" endLine="14" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

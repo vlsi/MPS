@@ -7,11 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.NameUtil;
 
 public class VisibleThrowablesScope extends VisibleClassifiersScope {
+  private static String THROWABLE_FQ_NAME = "java.lang.Throwable";
+
   public VisibleThrowablesScope(@NotNull SNode contextNode, int constraint, IScope scope) {
     super(contextNode, constraint, scope);
   }
@@ -19,9 +21,12 @@ public class VisibleThrowablesScope extends VisibleClassifiersScope {
   @NotNull
   public List<SNode> getClassifiers() {
     List<SNode> result = new ArrayList<SNode>();
-    SNode throwable = SModelUtil.findNodeByFQName("java.lang.Throwable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), GlobalScope.getInstance());
     for (SNode cls : super.getClassifiers()) {
-      if (ClassifierAndSuperClassifiersCache.getInstance(cls).getClassifiers().contains(throwable)) {
+      if (ListSequence.fromList(ClassifierAndSuperClassifiersCache.getInstance(cls).getClassifiers()).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return THROWABLE_FQ_NAME.equals(NameUtil.nodeFQName(it));
+        }
+      }).isNotEmpty()) {
         result.add(cls);
       }
     }
