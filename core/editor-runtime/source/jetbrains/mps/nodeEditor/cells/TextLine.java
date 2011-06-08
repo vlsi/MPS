@@ -120,6 +120,9 @@ public class TextLine {
       text = "";
     }
 
+    if (text.equals(myText)) {
+      return;
+    }
     myText = text;
     myCaretPosition = Math.min(myText.length(), myCaretPosition);
     myStartTextSelectionPosition = myCaretPosition;
