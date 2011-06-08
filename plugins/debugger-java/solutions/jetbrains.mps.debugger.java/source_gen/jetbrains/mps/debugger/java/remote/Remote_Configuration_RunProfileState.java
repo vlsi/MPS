@@ -48,9 +48,8 @@ public class Remote_Configuration_RunProfileState extends DebuggerRunProfileStat
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    RemoteProcessHandler handler = new RemoteProcessHandler(project);
     {
-      ProcessHandler _processHandler = handler;
+      ProcessHandler _processHandler = new RemoteProcessHandler(project);
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

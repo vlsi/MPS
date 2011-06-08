@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
+  <root nodeId="203908296139530389">
+    <nodeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="11" startPosition="36" endLine="12" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="7" startPosition="83" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorOperationDeclaration_Constraints#()V" />
+    <nodeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptFqName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="8" startPosition="51" endLine="8" endPosition="51" />
+    <scopeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="11" startPosition="36" endLine="12" endPosition="83" />
+    <scopeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="7" startPosition="83" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
+    <unitInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.EditorOperationDeclaration_Constraints" />
+  </root>
   <root nodeId="5365453833390705323">
     <nodeInfo nodeId="5365453833390705323" fileName="GetEditorOperation_Constraints.java" startLine="21" startPosition="36" endLine="22" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5365453833390705323" fileName="GetEditorOperation_Constraints.java" startLine="28" startPosition="60" endLine="29" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="breakingNode" />

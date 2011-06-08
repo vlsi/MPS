@@ -100,6 +100,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteProcessHandler" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.Remote_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
