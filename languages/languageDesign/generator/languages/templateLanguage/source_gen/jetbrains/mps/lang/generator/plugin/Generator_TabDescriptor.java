@@ -83,6 +83,10 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     return SetSequence.fromSet(nodes).toListSequence();
   }
 
+  public boolean isSingle() {
+    return false;
+  }
+
   public List<SNode> getConcepts(final SNode node) {
     List<SNode> result = ConceptEditorHelper.getAvailableConceptAspects(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch")), node);
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));

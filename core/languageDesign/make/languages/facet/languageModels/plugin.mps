@@ -1636,7 +1636,7 @@
                 <property name="value" nameId="tpee.1068580320021" value="1000" />
               </node>
               <node role="comment" roleId="q9ra.1906791586424011776" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5501885975813668936">
-                <property name="value" nameId="tpee.1070475926801" value="Warming up..." />
+                <property name="value" nameId="tpee.1070475926801" value="cleaning up" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8591529878792419840">
@@ -5853,6 +5853,13 @@
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1058439120356650950">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1058439120356650963">
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1058439120356650964">
+                <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="2300063808769142738">
+                  <property name="workName" nameId="q9ra.682890046602602769" value="Reloading classes" />
+                  <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2300063808769142742">
+                    <property name="value" nameId="tpee.1068580320021" value="1" />
+                  </node>
+                  <node role="ofTotal" roleId="q9ra.187226666892740071" type="q9ra.AllWorkLeftExpression" typeId="q9ra.3297237684108627658" id="2300063808769142741" />
+                </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4311275104556556106">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4311275104556556109">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4311275104556556108">
@@ -5883,6 +5890,15 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="2300063808769142744">
+                  <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="2300063808769142738" />
+                  <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2300063808769142746">
+                    <property name="value" nameId="tpee.1068580320021" value="1" />
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="2300063808769142748">
+                  <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="2300063808769142738" />
                 </node>
               </node>
               <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1058439120356650971">

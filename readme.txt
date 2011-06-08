@@ -5,10 +5,9 @@ Thank you for downloading JetBrains MPS!
 CONTENTS
 	bin/                startup files
 	Contents/           configuration directory for Mac OS X (in Mac Os X distributions only)
-	core/               core languages
 	lib/                libraries
 	license/            license files
-	platform/           platform languages
+	languages/          packaged languages
 	plugin/             MPS plugin for IntelliJ IDEA
 	plugins/            plugins for MPS
 	workbench/          workbench languages

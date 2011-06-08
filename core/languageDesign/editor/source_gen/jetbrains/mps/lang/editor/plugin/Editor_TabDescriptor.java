@@ -57,6 +57,10 @@ public class Editor_TabDescriptor extends EditorTabDescriptor {
     return ConceptEditorHelper.sortRootsByConcept(nodes, new SNode[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponent"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheet")});
   }
 
+  public boolean isSingle() {
+    return false;
+  }
+
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.EDITOR, node);
   }

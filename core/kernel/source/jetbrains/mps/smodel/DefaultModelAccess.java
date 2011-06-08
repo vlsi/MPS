@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.command.UndoConfirmationPolicy;
-import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -153,6 +152,35 @@ public class DefaultModelAccess extends ModelAccess {
     }
   }
 
+  @Override
+  public void requireRead(Runnable r) {
+    int i;
+    int MAX_TRIES = 4;
+    for (i = 0; i < MAX_TRIES && !tryRead(r); ++i) {
+      try {
+        Thread.sleep((1<<i)*100);
+      } catch (InterruptedException ignore) {}
+    }
+    if (i >= MAX_TRIES) {
+      throw new RuntimeException("Failed to acquire read lock");
+    }
+  }
+
+  @Override
+  public <T> T requireRead(Computable<T> c) {
+    T result = null;
+    int i;
+    int MAX_TRIES = 4;
+    for (i = 0; i < MAX_TRIES && (result = tryRead(c)) == null; ++i) {
+      try {
+        Thread.sleep((1<<i)*100);
+      } catch (InterruptedException ignore) {}
+    }
+    if (i >= MAX_TRIES) {
+      throw new RuntimeException("Failed to acquire read lock");
+    }
+    return result;
+  }
 
   @Override
   public boolean tryWrite(Runnable r) {
@@ -180,6 +208,37 @@ public class DefaultModelAccess extends ModelAccess {
       return null;
     }
   }
+
+  @Override
+  public void requireWrite(Runnable r) {
+    int i;
+    int MAX_TRIES = 4;
+    for (i = 0; i < MAX_TRIES && !tryWrite(r); ++i) {
+      try {
+        Thread.sleep((1<<i)*100);
+      } catch (InterruptedException ignore) {}
+    }
+    if (i >= MAX_TRIES) {
+      throw new RuntimeException("Failed to acquire write lock");
+    }
+  }
+
+  @Override
+  public <T> T requireWrite(Computable<T> c) {
+    T result = null;
+    int i;
+    int MAX_TRIES = 4;
+    for (i = 0; i < MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
+      try {
+        Thread.sleep((1<<i)*100);
+      } catch (InterruptedException ignore) {}
+    }
+    if (i >= MAX_TRIES) {
+      throw new RuntimeException("Failed to acquire write lock");
+    }
+    return result;
+  }
+
 
   @Override
   public boolean tryWriteInCommand(Runnable r, Project p) {

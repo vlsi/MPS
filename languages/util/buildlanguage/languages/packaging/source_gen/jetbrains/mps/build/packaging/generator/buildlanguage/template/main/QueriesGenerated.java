@@ -181,11 +181,31 @@ public class QueriesGenerated {
     return "pack." + SPropertyOperations.getString(_context.getNode(), "name").replace(File.separator, "_");
   }
 
+  public static Object propertyMacro_GetPropertyValue_3749843785777956372(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Util.SEPARATOR + Module_Behavior.call_getModuleJarPath_1213877515137(_context.getNode()) + ".jtmp";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3749843785777956509(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Util.SEPARATOR + Module_Behavior.call_getModuleJarPath_1213877515137(_context.getNode()) + ".jtmp/module.xml";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3749843785778431470(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1210098113087(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Util.SEPARATOR + Module_Behavior.call_getModuleJarPath_1213877515137(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1237395828460(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractModule.MODULE_DIR;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3749843785778432734(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Util.SEPARATOR + Module_Behavior.call_getModuleJarPath_1213877515137(_context.getNode()) + ".jtmp/module.xml";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3749843785778432725(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractModule.MODULE_DIR;
   }
 
@@ -202,6 +222,10 @@ public class QueriesGenerated {
       s = "/" + s;
     }
     return AbstractModule.MODULE_DIR + s;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3749843785777956683(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Util.SEPARATOR + Module_Behavior.call_getModuleJarPath_1213877515137(_context.getNode()) + ".jtmp";
   }
 
   public static Object propertyMacro_GetPropertyValue_1210098064936(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -871,8 +895,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0tg;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0tg_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0zg;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0zg_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -895,13 +919,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0tg_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0zg_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0tg_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0zg_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0tg = this._7__yield_x583g4_a0a0a0a0a0tg_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0zg = this._7__yield_x583g4_a0a0a0a0a0zg_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -913,7 +937,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0tg);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0zg);
                       return true;
                     case 12:
                       this.__CP__ = 3;

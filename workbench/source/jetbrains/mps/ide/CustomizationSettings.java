@@ -20,11 +20,15 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.CustomizationSettings.MyState;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 
 @State(
   name = "CustomizationSettings",
@@ -39,6 +43,7 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
   private MyState myState = new MyState();
   private JCheckBox myPlainCheckbox;
   private JCheckBox myGrayedCheckbox;
+  private JCheckBox myShowCheckbox;
 
   @Nls
   public String getDisplayName() {
@@ -65,8 +70,18 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
     JPanel eTabs = new JPanel();
     eTabs.setLayout(new BoxLayout(eTabs, BoxLayout.Y_AXIS));
     eTabs.setBorder(BorderFactory.createTitledBorder("Editor tabs"));
+
+    myShowCheckbox = new JCheckBox(new AbstractAction("show") {
+      public void actionPerformed(ActionEvent e) {
+        myPlainCheckbox.setEnabled(myShowCheckbox.isSelected());
+        myGrayedCheckbox.setEnabled(myShowCheckbox.isSelected());
+      }
+    });
+
     myPlainCheckbox = new JCheckBox("show plain");
     myGrayedCheckbox = new JCheckBox("show grayed");
+
+    eTabs.add(myShowCheckbox);
     eTabs.add(myPlainCheckbox);
     eTabs.add(myGrayedCheckbox);
 
@@ -78,17 +93,24 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
 
   public boolean isModified() {
     return myPlainCheckbox.isSelected() != myState.showPlain ||
-      myGrayedCheckbox.isSelected() != myState.showGrayed;
+      myGrayedCheckbox.isSelected() != myState.showGrayed||
+      myShowCheckbox.isSelected() != myState.show;
   }
 
   public void apply() throws ConfigurationException {
     myState.showPlain = myPlainCheckbox.isSelected();
     myState.showGrayed = myGrayedCheckbox.isSelected();
+    myState.show = myShowCheckbox.isSelected();
+
+    for (Project p:ProjectManager.getInstance().getOpenProjects()){
+      p.getComponent(ProjectPluginManager.class).recreateTabbedEditors();
+    }
   }
 
   public void reset() {
     myPlainCheckbox.setSelected(myState.showPlain);
     myGrayedCheckbox.setSelected(myState.showGrayed);
+    myShowCheckbox.setSelected(myState.show);
   }
 
   public void disposeUIResources() {
@@ -98,5 +120,6 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
   public static class MyState {
     public boolean showPlain = true;
     public boolean showGrayed = true;
+    public boolean show = true;
   }
 }

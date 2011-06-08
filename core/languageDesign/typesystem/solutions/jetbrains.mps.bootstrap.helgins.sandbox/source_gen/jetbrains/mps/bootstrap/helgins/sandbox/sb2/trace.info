@@ -15,8 +15,8 @@
   </root>
   <root nodeId="1198000897975">
     <nodeInfo nodeId="1198073370731" fileName="BClass.java" startLine="8" startPosition="24" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198073381541" fileName="BClass.java" startLine="9" startPosition="36" endLine="10" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198250164479" fileName="BClass.java" startLine="10" startPosition="33" endLine="11" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198073381541" fileName="BClass.java" startLine="9" startPosition="36" endLine="10" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198250164479" fileName="BClass.java" startLine="10" startPosition="17" endLine="11" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198073342670" fileName="BClass.java" startLine="7" startPosition="52" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foobar#()V" />
     <scopeInfo nodeId="1198073342673" fileName="BClass.java" startLine="8" startPosition="24" endLine="11" endPosition="13">
       <varInfo nodeId="1198250164480" varName="a" />

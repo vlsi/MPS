@@ -69,34 +69,34 @@ public class EditorCell_Property extends EditorCell_Label {
     boolean oldSelected = isSelected();
     super.setSelected(selected);
     if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (myCommitInCommand) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                commit();
-              }
-            });
-          } else {
+      if (myCommitInCommand) {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
             commit();
           }
-        }
-      });
+        }, getOperationContext().getProject());
+      } else {
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          public void run() {
+            commit();
+          }
+        });
+      }
     }
   }
 
+  /**
+   * should be executed inside write action
+   */
   public void commit() {
+    assert ModelAccess.instance().canWrite();
     if (myCommitInProgress) return;
     myCommitInProgress = true;
     try {
       if (myModelAccessor instanceof TransactionalModelAccessor) {
         ((TransactionalModelAccessor) myModelAccessor).commit();
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            synchronizeViewWithModel();
-            getEditorContext().getNodeEditorComponent().relayout();
-          }
-        });
+        synchronizeViewWithModel();
+        getEditorContext().getNodeEditorComponent().relayout();
       }
     } finally {
       myCommitInProgress = false;

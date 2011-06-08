@@ -17,12 +17,15 @@ package jetbrains.mps.ide.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Progressive;
+import com.intellij.openapi.progress.util.ProgressWindow;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
@@ -33,10 +36,7 @@ import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
+import java.util.concurrent.CountDownLatch;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -52,6 +52,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   // changed only in EDT
   private volatile boolean myDistributedLocksMode = false;
+  private static final int REQUIRE_MAX_TRIES = 8;
 
   public WorkbenchModelAccess() {
   }
@@ -251,10 +252,10 @@ public class WorkbenchModelAccess extends ModelAccess {
       return;
     }
 
-    final CyclicBarrier barr = new CyclicBarrier(2);
-    final boolean canRead = canRead();
+    final CountDownLatch latch = new CountDownLatch(1);
+    final boolean ownRead = ownReadLock();
     try {
-      if (canRead) getReadLock().unlock();
+      if (ownRead) getReadLock().unlock();
       myEDTExecutor.scheduleWrite(new Runnable() {
         @Override
         public void run() {
@@ -262,20 +263,15 @@ public class WorkbenchModelAccess extends ModelAccess {
             r.run();
           }
           finally {
-            try {
-              barr.await();
-            }
-            catch (InterruptedException ignore) {}
-            catch (BrokenBarrierException ignore) {}
+            latch.countDown();
           }
         }
       });
-      barr.await();
+      latch.await();
     }
     catch (InterruptedException ignore) {}
-    catch (BrokenBarrierException ignore) {}
     finally {
-      if (canRead) getReadLock().lock();
+      if (ownRead) getReadLock().lock();
     }
   }
 
@@ -317,6 +313,73 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
+  public <T> T tryRead(final Computable<T> c) {
+    if(canRead()) {
+      return c.compute();
+    }
+
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      return null;
+    }
+
+    return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
+      public T compute() {
+        if (getReadLock().tryLock()) {
+          try {
+            return c.compute();
+          } finally {
+            getReadLock().unlock();
+          }
+        } else {
+          return null;
+        }
+      }
+    });
+  }
+
+  @Override
+  public void requireRead(Runnable r) {
+    int i;
+    long start;
+    long waited;
+    do {
+      start = System.currentTimeMillis();
+      for (i = 0; i < REQUIRE_MAX_TRIES && !tryRead(r); ++i) {
+        try {
+          Thread.sleep((1<<i)*100);
+        } catch (InterruptedException ignore) {}
+      }
+      waited = System.currentTimeMillis() - start;
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
+
+    if (i >= REQUIRE_MAX_TRIES) {
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for "+ waited +"ms");
+    }
+  }
+
+  @Override
+  public <T> T requireRead(Computable<T> c) {
+    T result = null;
+    int i;
+    long start;
+    long waited;
+    do {
+      start = System.currentTimeMillis();
+      for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryRead(c)) == null; ++i) {
+        try {
+          Thread.sleep((1<<i)*100);
+        } catch (InterruptedException ignore) {}
+      }
+      waited = System.currentTimeMillis() - start;
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
+
+    if (i >= REQUIRE_MAX_TRIES) {
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for "+ waited +"ms");
+    }
+    return result;
+  }
+
+  @Override
   public boolean tryWrite(final Runnable r) {
     if(canWrite()) {
       r.run();
@@ -351,9 +414,9 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     };
 
-    final boolean canRead = canRead();
+    final boolean ownRead = ownReadLock();
     try {
-      if (canRead) getReadLock().unlock();
+      if (ownRead) getReadLock().unlock();
       if (ThreadUtils.isEventDispatchThread()) {
         return ApplicationManager.getApplication().runWriteAction(computable);
       } else {
@@ -361,33 +424,8 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     }
     finally {
-      if (canRead) getReadLock().lock();
+      if (ownRead) getReadLock().lock();
     }
-  }
-
-  @Override
-  public <T> T tryRead(final Computable<T> c) {
-    if(canRead()) {
-      return c.compute();
-    }
-
-    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      return null;
-    }
-
-    return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
-      public T compute() {
-        if (getReadLock().tryLock()) {
-          try {
-            return c.compute();
-          } finally {
-            getReadLock().unlock();
-          }
-        } else {
-          return null;
-        }
-      }
-    });
   }
 
 
@@ -419,9 +457,9 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     };
 
-    final boolean canRead = canRead();
+    final boolean ownRead = ownReadLock();
     try {
-      if (canRead) getReadLock().unlock();
+      if (ownRead) getReadLock().unlock();
       if (ThreadUtils.isEventDispatchThread()) {
         return ApplicationManager.getApplication().runWriteAction(computable);
       } else {
@@ -429,8 +467,50 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     }
     finally {
-      if (canRead) getReadLock().lock();
+      if (ownRead) getReadLock().lock();
     }
+  }
+
+  @Override
+  public void requireWrite(Runnable r) {
+    int i;
+    long start;
+    long waited;
+    do {
+      start = System.currentTimeMillis();
+      for (i = 0; i < REQUIRE_MAX_TRIES && !tryWrite(r); ++i) {
+        try {
+          Thread.sleep((1<<i)*100);
+        } catch (InterruptedException ignore) {}
+      }
+      waited = System.currentTimeMillis() - start;
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
+
+    if (i >= REQUIRE_MAX_TRIES) {
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for "+ waited +"ms");
+    }
+  }
+
+  @Override
+  public <T> T requireWrite(Computable<T> c) {
+    T result = null;
+    int i;
+    long start;
+    long waited;
+    do {
+      start = System.currentTimeMillis();
+      for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
+        try {
+          Thread.sleep((1<<i)*100);
+        } catch (InterruptedException ignore) {}
+      }
+      waited = System.currentTimeMillis() - start;
+    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
+
+    if (i >= REQUIRE_MAX_TRIES) {
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for "+ waited +"ms");
+    }
+    return result;
   }
 
   @Override
@@ -443,9 +523,9 @@ public class WorkbenchModelAccess extends ModelAccess {
 
     final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
 
-    final boolean canRead = canRead();
+    final boolean ownRead = ownReadLock();
     try {
-      if (canRead) getReadLock().unlock();
+      if (ownRead) getReadLock().unlock();
       CommandProcessor.getInstance().executeCommand(
         project,
         new Runnable() {
@@ -469,7 +549,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
     }
     finally {
-      if (canRead) getReadLock().lock();
+      if (ownRead) getReadLock().lock();
     }
 
     return res[0];
@@ -485,9 +565,9 @@ public class WorkbenchModelAccess extends ModelAccess {
 
     final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
 
-    final boolean canRead = canRead();
+    final boolean ownRead = ownReadLock();
     try {
-      if (canRead) getReadLock().unlock();
+      if (ownRead) getReadLock().unlock();
         CommandProcessor.getInstance().executeCommand(
           project,
           new Runnable() {
@@ -510,7 +590,7 @@ public class WorkbenchModelAccess extends ModelAccess {
           "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
     }
     finally {
-      if (canRead) getReadLock().lock();
+      if (ownRead) getReadLock().lock();
     }
     return res[0];
   }
@@ -598,6 +678,39 @@ public class WorkbenchModelAccess extends ModelAccess {
         myIndexingThreads.remove(Thread.currentThread());
       }
     }
+  }
+
+  private boolean confirmActionCancellation () {
+    if (((ApplicationEx)ApplicationManager.getApplication()).holdsReadLock()) {
+      return true;
+    }
+
+    final int[] chosen = new int [1];
+    final boolean ownRead = ownReadLock();
+    final ProgressIndicator pi = ProgressManager.getInstance().getProgressIndicator();
+    try {
+      if (ownRead) getReadLock().unlock();
+
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        @Override
+        public void run() {
+          if (pi instanceof ProgressWindow && !((ProgressWindow) pi).isBackgrounded()) {
+            ((ProgressWindow) pi).background();
+          }
+
+          chosen[0] = Messages.showYesNoDialog("The current action is taking too long, do you want to abort it?", "Unresponsive Process", null);
+        }
+      });
+    }
+    finally {
+      if (ownRead) getReadLock().lock();
+    }
+
+    return chosen[0] == 0;
+  }
+
+  private boolean ownReadLock() {
+    return canRead() && !canWrite() && !isSharedReadInWriteMode();
   }
 
   //--------command events listening

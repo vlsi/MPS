@@ -94,7 +94,7 @@ public class GeneratorManager {
 
     options.getGenerationTracer().startTracing();
 
-    ModelAccess.requireWrite(new Runnable() {
+    ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         fireBeforeGeneration(inputModels, options, invocationContext);
       }
@@ -103,32 +103,39 @@ public class GeneratorManager {
     GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
     final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, progress);
-    ModelAccess.requireRead(new Runnable() {
+    ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {
         result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
             final boolean success = gc.generate();
-            if(success) {
-              try {
-                ModelAccess.requireWrite(new Runnable() {
-                  public void run() {
-                    fireModelsGenerated(Collections.unmodifiableList(inputModels), success);
-                  }
-                });
-              }
-              catch (RuntimeException e) {LOG.error(e);}
-            }
             return success;
           }
         });
       }
     });
+    ModelAccess.instance().requireWrite(new Runnable() {
+      @Override
+      public void run() {
+        CleanupManager.getInstance().cleanup();
+      }
+    });
+
+    if(result[0]) {
+      try {
+        ModelAccess.instance().requireWrite(new Runnable() {
+          public void run() {
+            fireModelsGenerated(Collections.unmodifiableList(inputModels), result[0]);
+          }
+        });
+      }
+      catch (RuntimeException e) {LOG.error(e);}
+    }
 
     options.getGenerationTracer().finishTracing();
 
-    ModelAccess.requireWrite(new Runnable() {
+    ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         fireAfterGeneration(inputModels, options, invocationContext);
         transientModelsComponent.publishAll();

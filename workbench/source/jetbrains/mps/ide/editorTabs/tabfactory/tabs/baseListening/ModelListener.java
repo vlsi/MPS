@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabs.baseListening;
+package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -43,7 +43,7 @@ public abstract class ModelListener {
 
   //------event&callback------
 
-  public void clearAspects(){
+  public void clearAspects() {
     stopListening();
     startListening();
   }

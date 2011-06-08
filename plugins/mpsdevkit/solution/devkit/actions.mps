@@ -584,7 +584,7 @@
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1744445256079578802" resolveInfo="GoToRules" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1744445256079578828">
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_R" />
-        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt+shift" />
       </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="1744445256079578764">
@@ -3236,7 +3236,7 @@
   <root id="1936689137035777973">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1936689137035777975">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991224874" resolveInfo="LanguageActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1936689137035777594" resolveInfo="properties" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1936689137035777594" resolveInfo="ex" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1936689137035777976">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1936689137035777977">
@@ -9215,7 +9215,7 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2191995028863167436" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2191995028863167437">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.5361317699454624365" resolveInfo="InternalTools" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.5361317699454624365" resolveInfo="ToolsInternal" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.5361317699454624368" resolveInfo="internal" />
     </node>
   </root>

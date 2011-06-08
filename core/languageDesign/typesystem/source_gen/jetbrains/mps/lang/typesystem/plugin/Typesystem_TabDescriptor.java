@@ -85,6 +85,10 @@ public class Typesystem_TabDescriptor extends EditorTabDescriptor {
     }, false).toListSequence();
   }
 
+  public boolean isSingle() {
+    return false;
+  }
+
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.TYPESYSTEM, node);
   }

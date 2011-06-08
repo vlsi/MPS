@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabs;
+package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -30,14 +31,16 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class EditorTab {
-  private TabsComponent myTabComponent;
+class ButtonEditorTab {
+  private ButtonTabsComponent myTabComponent;
+  private NodeChangeCallback myCallback;
   private int myIndex;
   private EditorTabDescriptor myDescriptor;
   private SNodePointer myBaseNode;
 
-  public EditorTab(TabsComponent tabComponent, int index, EditorTabDescriptor descriptor, SNodePointer baseNode) {
+  public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode) {
     myTabComponent = tabComponent;
+    myCallback = callback;
     myIndex = index;
     myDescriptor = descriptor;
     myBaseNode = baseNode;
@@ -91,7 +94,7 @@ public class EditorTab {
     public void actionPerformed(AnActionEvent e) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          myTabComponent.onNodeChange(myNode);
+          myCallback.changeNode(myNode);
         }
       });
     }
@@ -109,7 +112,7 @@ public class EditorTab {
     public boolean isSelected(AnActionEvent e) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          return myTabComponent.isCurrent(EditorTab.this);
+          return myTabComponent.isCurrent(ButtonEditorTab.this);
         }
       });
     }
@@ -119,7 +122,7 @@ public class EditorTab {
         public void run() {
           List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
           if (nodes.size() == 1) {
-            myTabComponent.onNodeChange(nodes.get(0).getContainingRoot());
+            myCallback.changeNode(nodes.get(0).getContainingRoot());
             return;
           }
 

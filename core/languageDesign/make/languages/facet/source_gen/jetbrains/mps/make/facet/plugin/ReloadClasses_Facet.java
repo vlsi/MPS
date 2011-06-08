@@ -69,11 +69,14 @@ public class ReloadClasses_Facet implements IFacet {
                   return ((TResource) in).module().reloadClassesAfterGeneration();
                 }
               })) {
+                monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
                 ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
                   public void run() {
                     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
                   }
                 });
+                monitor.currentProgress().advanceWork("Reloading classes", 1);
+                monitor.currentProgress().finishWork("Reloading classes");
               }
               _output_i849au_a0a = Sequence.fromIterable(_output_i849au_a0a).concat(Sequence.fromIterable(input));
             default:

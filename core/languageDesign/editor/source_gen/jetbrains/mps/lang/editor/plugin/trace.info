@@ -4,7 +4,7 @@
   <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ApplicationPlugin" />
   <unitInfo fileName="Editor_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" />
   <unitInfo fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" />
-  <unitInfo fileName="Editor_TabDescriptor.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_TabDescriptor" />
+  <unitInfo fileName="Editor_TabDescriptor.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_TabDescriptor" />
   <root nodeId="1207844373881">
     <nodeInfo nodeId="1215438685387" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="10" startPosition="83" endLine="11" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAutoResolver" />
     <nodeInfo nodeId="1700208213243723076" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="11" startPosition="38" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHighlighter" />
@@ -26,11 +26,11 @@
     <nodeInfo nodeId="7157723551789028053" fileName="Editor_TabDescriptor.java" startLine="54" startPosition="43" endLine="55" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7157723551789028059" fileName="Editor_TabDescriptor.java" startLine="55" startPosition="47" endLine="56" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7157723551789028067" fileName="Editor_TabDescriptor.java" startLine="56" startPosition="187" endLine="57" endPosition="690" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7157723551789028047" fileName="Editor_TabDescriptor.java" startLine="60" startPosition="52" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7157723551789028040" fileName="Editor_TabDescriptor.java" startLine="64" startPosition="66" endLine="65" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789028047" fileName="Editor_TabDescriptor.java" startLine="64" startPosition="52" endLine="65" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157723551789028040" fileName="Editor_TabDescriptor.java" startLine="68" startPosition="66" endLine="69" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7157723551789028037" fileName="Editor_TabDescriptor.java" startLine="38" startPosition="32" endLine="38" endPosition="32" />
-    <scopeInfo nodeId="7157723551789028046" fileName="Editor_TabDescriptor.java" startLine="60" startPosition="52" endLine="61" endPosition="87" />
-    <scopeInfo nodeId="7157723551789028039" fileName="Editor_TabDescriptor.java" startLine="64" startPosition="66" endLine="65" endPosition="100" />
+    <scopeInfo nodeId="7157723551789028046" fileName="Editor_TabDescriptor.java" startLine="64" startPosition="52" endLine="65" endPosition="87" />
+    <scopeInfo nodeId="7157723551789028039" fileName="Editor_TabDescriptor.java" startLine="68" startPosition="66" endLine="69" endPosition="100" />
     <scopeInfo nodeId="7157723551789028052" fileName="Editor_TabDescriptor.java" startLine="54" startPosition="43" endLine="57" endPosition="690">
       <varInfo nodeId="7157723551789028054" varName="nodes" />
     </scopeInfo>

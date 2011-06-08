@@ -15,7 +15,9 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectModules />
+    <projectModules>
+      <modulePath path="${project}/solutions/testjava/testjava.msd" folder="" />
+    </projectModules>
     <genConfs />
   </component>
   <component name="ProjectLibraryManager">

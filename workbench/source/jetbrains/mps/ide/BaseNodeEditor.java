@@ -40,11 +40,13 @@ import java.awt.Color;
 
 public abstract class BaseNodeEditor implements IEditor {
   private EditorComponent myEditorComponent;
-  private JPanel myComponent = new EditorPanel();
+  private JComponent myComponent = new EditorPanel();
+  private IOperationContext myContext;
+  private JComponent myReplace = null;
 
   public BaseNodeEditor(IOperationContext context) {
-    myEditorComponent = new NodeEditorComponent(context);
-    myComponent.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
+    myContext = context;
+    showEditor();
   }
 
   public JComponent getComponent() {
@@ -56,20 +58,22 @@ public abstract class BaseNodeEditor implements IEditor {
   }
 
   public EditorContext getEditorContext() {
-    return myEditorComponent.getEditorContext();
+    return myEditorComponent == null ? null : myEditorComponent.getEditorContext();
   }
 
   @NotNull
   public IOperationContext getOperationContext() {
-    return myEditorComponent.getOperationContext();
+    return myContext;
   }
 
   public SNodePointer getCurrentlyEditedNode() {
-    return myEditorComponent.getEditedNodePointer();
+    return myEditorComponent == null ? null : myEditorComponent.getEditedNodePointer();
   }
 
   public void dispose() {
-    myEditorComponent.dispose();
+    if (myEditorComponent != null) {
+      myEditorComponent.dispose();
+    }
   }
 
   private class EditorPanel extends JPanel implements DataProvider {
@@ -88,8 +92,35 @@ public abstract class BaseNodeEditor implements IEditor {
         Object data = ((DataProvider) BaseNodeEditor.this).getData(dataId);
         if (data != null) return data;
       }
-      return getCurrentEditorComponent().getData(dataId);
+      EditorComponent ec = getCurrentEditorComponent();
+      return ec == null ? null : ec.getData(dataId);
     }
+  }
+
+  protected void showEditor() {
+    if (myReplace != null) {
+      myComponent.remove(myReplace);
+      myReplace = null;
+    }
+    myEditorComponent = new NodeEditorComponent(myContext);
+    myComponent.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
+  }
+
+  protected void showComponent(JComponent replace) {
+    if (myEditorComponent != null) {
+      myComponent.remove(myEditorComponent.getExternalComponent());
+      myEditorComponent.dispose();
+      myEditorComponent = null;
+    }
+
+    if (myReplace != null) {
+      myComponent.remove(myReplace);
+      myReplace = null;
+    }
+
+    myReplace = replace;
+    myComponent.add(myReplace, BorderLayout.CENTER);
+    myComponent.validate();
   }
 
   //---state---

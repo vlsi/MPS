@@ -466,7 +466,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       MouseAdapter adapter = new MouseAdapter() {
         @Override
         public void mousePressed(MouseEvent e) {
-          myBlinkingDemo.changeSelection(null);
+          myBlinkingDemo.getSelectionManager().clearSelection();
         }
       };
       panel.addMouseListener(adapter);

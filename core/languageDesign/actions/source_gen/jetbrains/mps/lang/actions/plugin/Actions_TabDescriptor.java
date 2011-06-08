@@ -52,6 +52,10 @@ public class Actions_TabDescriptor extends EditorTabDescriptor {
     return AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(node, LanguageAspect.ACTIONS);
   }
 
+  public boolean isSingle() {
+    return false;
+  }
+
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.ACTIONS, node);
   }

@@ -107,7 +107,7 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   private void clearAll() {
-    ModelAccess.requireWrite(new Runnable() {
+    ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
         myModuleMap.clear();
@@ -125,7 +125,7 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   public synchronized void publishAll() {
-    ModelAccess.requireWrite(new Runnable() {
+    ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         for(TransientModelsModule m : myModuleMap.values()) {
           m.publishAll();
@@ -135,9 +135,7 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   public TransientModelsModule getModule(final IModule module) {
-    TransientModelsModule transientModelsModule = null;
-    int i;
-    for (i = 0; i < 3 && null == (transientModelsModule = ModelAccess.instance().tryWrite(new Computable<TransientModelsModule>() {
+    TransientModelsModule transientModelsModule = ModelAccess.instance().requireWrite(new Computable<TransientModelsModule>() {
       @Override
       public TransientModelsModule compute() {
         TransientModelsModule transientModelsModule = myModuleMap.get(module);
@@ -150,14 +148,7 @@ public class TransientModelsComponent implements ProjectComponent {
         myModuleMap.put(module, transientModelsModule);
         return transientModelsModule;
       }
-    })); ++i) {
-      try {
-        Thread.sleep((1<<i)*100);
-      } catch (InterruptedException ignore) {}
-    }
-    if (i >= 3) {
-      throw new RuntimeException("Failed to acquire write lock");
-    }
+    });
     return transientModelsModule;
   }
 

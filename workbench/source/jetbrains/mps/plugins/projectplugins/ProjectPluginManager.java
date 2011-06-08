@@ -44,7 +44,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
-import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
@@ -63,7 +62,7 @@ import java.util.*;
     )
   }
 )
-public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState>, MPSEditorOpenHandlerOwner {
+public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = Logger.getLogger(ProjectPluginManager.class);
 
   private MPSEditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
@@ -74,13 +73,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
   private FileEditorManager myManager;
-  private MPSEditorOpener myEditorOpener;
 
   @SuppressWarnings({"UnusedDeclaration"})
   public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager, MPSEditorOpener editorOpener) {
     myProject = project;
     myManager = manager;
-    myEditorOpener = editorOpener;
+    MPSEditorOpener editorOpener1 = editorOpener;
   }
 
   public void projectOpened() {
@@ -196,6 +194,10 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     myLoaded = false;
   }
 
+  public MPSEditorOpenHandler getEditorOpenHandler() {
+    return myTabsHandler;
+  }
+
   //----------------COMPONENT STUFF---------------------
 
   @NonNls
@@ -205,11 +207,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   public void initComponent() {
-    myEditorOpener.registerOpenHandler(myTabsHandler, this);
+
   }
 
   public void disposeComponent() {
-    myEditorOpener.unregisterOpenHandlers(this);
+
   }
 
   //----------------STATE STUFF------------------------
@@ -249,7 +251,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //--------------ADDITIONAL----------------
 
-  private void recreateTabbedEditors() {
+  public void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         editors:

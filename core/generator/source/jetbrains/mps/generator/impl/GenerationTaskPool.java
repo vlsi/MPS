@@ -63,7 +63,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     @Override
     public void run() {
       if (myTask.requiresReadAccess()) {
-        ModelAccess.instance().runReadInWriteWorker(new Runnable() {
+        ModelAccess.instance().runReadAction(new Runnable() {
           @Override
           public void run() {
             runInternal();

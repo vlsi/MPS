@@ -13,7 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.ide.editorTabs.tabfactory;
 
-public interface MPSEditorOpenHandlerOwner {
+import com.intellij.openapi.editor.Document;
+import jetbrains.mps.smodel.SNodePointer;
+
+import javax.swing.JComponent;
+import java.util.List;
+
+public interface TabsComponent {
+  void dispose();
+
+  List<SNodePointer> getAllEditedNodes();
+
+  List<Document> getAllEditedDocuments();
+
+  void setLastNode(SNodePointer sNodePointer);
+
+  JComponent getComponent();
 }

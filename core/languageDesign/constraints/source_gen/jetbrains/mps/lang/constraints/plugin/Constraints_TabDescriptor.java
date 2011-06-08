@@ -61,6 +61,10 @@ public class Constraints_TabDescriptor extends EditorTabDescriptor {
     return list;
   }
 
+  public boolean isSingle() {
+    return true;
+  }
+
   public SNode getNode(SNode node) {
     List<SNode> nodes = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(node, LanguageAspect.CONSTRAINTS);
     return (ListSequence.fromList(nodes).isEmpty() ?

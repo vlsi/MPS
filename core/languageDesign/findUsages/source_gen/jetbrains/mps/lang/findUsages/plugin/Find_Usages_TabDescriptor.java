@@ -52,6 +52,10 @@ public class Find_Usages_TabDescriptor extends EditorTabDescriptor {
     return AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(node, LanguageAspect.FIND_USAGES);
   }
 
+  public boolean isSingle() {
+    return false;
+  }
+
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.FIND_USAGES, node);
   }

@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.editors;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
@@ -24,14 +25,15 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
+import jetbrains.mps.ide.CustomizationSettings;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -44,51 +46,20 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.awt.Component;
-import java.util.*;
 
 public class MPSEditorOpener {
-  private static final Logger LOG = Logger.getLogger(MPSEditorOpener.class);
-
   private Project myProject;
-
-  private List<MPSEditorOpenHandler> myEditorOpenHandlers = new ArrayList<MPSEditorOpenHandler>();
-  private Map<MPSEditorOpenHandlerOwner, Set<MPSEditorOpenHandler>> myEditorOpenHandlersToOwners = new HashMap<MPSEditorOpenHandlerOwner, Set<MPSEditorOpenHandler>>();
 
   public MPSEditorOpener(Project project) {
     myProject = project;
     assert myProject != null;
   }
 
-  public SNode getBaseNode(IOperationContext context, SNode node) {
-    List<MPSEditorOpenHandler> badHandlers = new ArrayList<MPSEditorOpenHandler>();
-    for (MPSEditorOpenHandler h : myEditorOpenHandlers) {
-      try {
-        SNode result = h.getBaseNode(context, node);
-        if (result != null) {
-          return result;
-        }
-      } catch (Exception e) {
-        LOG.error(e);
-      } catch (Error e) {
-        LOG.error(e);
-        badHandlers.add(h);
-      }
-    }
-    myEditorOpenHandlers.removeAll(badHandlers);
-    return null;
-  }
-
   public IEditor createEditorFor(IOperationContext operationContext, SNode node) {
     IEditor nodeEditor = null;
-    for (MPSEditorOpenHandler handler : myEditorOpenHandlers) {
-      try {
-        if (handler.canOpen(operationContext, node)) {
-          nodeEditor = handler.open(operationContext, node);
-          break;
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
+    MPSEditorOpenHandler handler = getOpenHandler(operationContext);
+    if (handler.canOpen(operationContext, node)) {
+      nodeEditor = handler.open(operationContext, node);
     }
 
     if (nodeEditor != null) return nodeEditor;
@@ -96,24 +67,8 @@ public class MPSEditorOpener {
     return new NodeEditor(operationContext, node);
   }
 
-  public void registerOpenHandler(MPSEditorOpenHandler handler, MPSEditorOpenHandlerOwner owner) {
-    myEditorOpenHandlers.add(handler);
-
-    if (!myEditorOpenHandlersToOwners.containsKey(owner)) {
-      myEditorOpenHandlersToOwners.put(owner, new HashSet<MPSEditorOpenHandler>());
-    }
-
-    myEditorOpenHandlersToOwners.get(owner).add(handler);
-  }
-
-  public void unregisterOpenHandlers(MPSEditorOpenHandlerOwner owner) {
-    if (!myEditorOpenHandlersToOwners.containsKey(owner)) return;
-
-    for (MPSEditorOpenHandler handler : myEditorOpenHandlersToOwners.get(owner)) {
-      myEditorOpenHandlers.remove(handler);
-    }
-
-    myEditorOpenHandlersToOwners.remove(owner);
+  private MPSEditorOpenHandler getOpenHandler(IOperationContext operationContext) {
+    return operationContext.getProject().getComponent(ProjectPluginManager.class).getEditorOpenHandler();
   }
 
   @Deprecated
@@ -222,8 +177,8 @@ public class MPSEditorOpener {
   private IEditor openEditor(final SNode root, IOperationContext context, boolean openBaseNode) {
     SNode baseNode = null;
 
-    if (openBaseNode) {
-      baseNode = getBaseNode(context, root);
+    if (openBaseNode && isUseTabs()) {
+      baseNode = getOpenHandler(context).getBaseNode(context, root);
     }
 
     if (baseNode == null) {
@@ -242,6 +197,7 @@ public class MPSEditorOpener {
     assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodePointer: " + new SNodePointer(baseNode).getNode();
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+    editorManager.closeFile(file);
     FileEditor fileEditor = editorManager.openFile(file, false)[0];
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
@@ -253,6 +209,10 @@ public class MPSEditorOpener {
     }
 
     return nodeEditor;
+  }
+
+  private boolean isUseTabs() {
+    return ApplicationManager.getApplication().getComponent(CustomizationSettings.class).getState().show;
   }
 
   //----------util

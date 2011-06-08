@@ -13,21 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.tabs;
+package jetbrains.mps.ide.editorTabs.tabfactory;
 
-import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.smodel.SNode;
 
-import java.util.Comparator;
-
-public class EditorTabComparator implements Comparator<EditorTabDescriptor> {
-  public int compare(EditorTabDescriptor d1, EditorTabDescriptor d2) {
-    int r1 = d1.compareTo(d2);
-    int r2 = d2.compareTo(d1);
-
-    if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
-
-    assert r1 * r2 <= 0 : "can't determine order";
-
-    return r1;
-  }
+public interface NodeChangeCallback {
+  void changeNode(SNode newNode);
 }
