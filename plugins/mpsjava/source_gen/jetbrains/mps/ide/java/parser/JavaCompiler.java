@@ -22,6 +22,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.util.FileUtil;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -87,11 +88,8 @@ public class JavaCompiler {
     }
     String prefixPath = NameUtil.pathFromNamespace(myPrefix);
     String sourcePath = mySourceDir.getPath();
-    if (prefixPath.endsWith(File.separator)) {
-      prefixPath = prefixPath.substring(0, prefixPath.length() - 1);
-    }
-    if (!((sourcePath.endsWith(prefixPath)))) {
-      LOG.warning("source directory path does not match package structure");
+    if (!(sourcePath.endsWith(prefixPath))) {
+      LOG.warning("source directory " + sourcePath + " does not match package structure (" + myPrefix + ")");
       return null;
     }
     int index = sourcePath.length() - prefixPath.length();
@@ -114,14 +112,11 @@ public class JavaCompiler {
 
   public void addSourceFromFile(File file, String packageNameWithoutPrefix) {
     try {
+      final String str = "package ";
       String fileContents = FileUtil.read(file);
-      String str = "package ";
-      int packageIndex = fileContents.indexOf(str) + str.length();
-      int i = packageIndex;
       StringBuilder classFQName = new StringBuilder();
-      while (i < fileContents.length()) {
+      for (int i = fileContents.indexOf(str) + str.length(); i < fileContents.length(); i++) {
         char c = fileContents.charAt(i);
-        i++;
         if (Character.isWhitespace(c) || c == ';') {
           break;
         }
@@ -130,24 +125,24 @@ public class JavaCompiler {
       String packageNameFromFile = classFQName.toString();
       if (myPrefix != null) {
         String pattern;
-        if ("".equals(packageNameWithoutPrefix) && myPrefix.endsWith(".")) {
-          pattern = myPrefix.substring(0, myPrefix.length() - 1);
-        } else
-        if ("".equals(packageNameWithoutPrefix) || "".equals(myPrefix) || myPrefix.endsWith(".")) {
+        if ("".equals(packageNameWithoutPrefix) || "".equals(myPrefix)) {
           pattern = myPrefix + packageNameWithoutPrefix;
         } else {
           pattern = myPrefix + "." + packageNameWithoutPrefix;
         }
-        if (!(((pattern).equals(packageNameFromFile)))) {
-          LOG.error("package name in a source file does not correpond to file path");
+        if (!(pattern.equals(packageNameFromFile))) {
+          LOG.error("package " + packageNameFromFile + " in a source file " + file.getName() + " does not correspond to file path: " + pattern);
           return;
         }
       } else {
         if (packageNameFromFile.endsWith(packageNameWithoutPrefix)) {
           int index = packageNameFromFile.length() - packageNameWithoutPrefix.length();
           myPrefix = packageNameFromFile.substring(0, index);
+          if (myPrefix.endsWith(".")) {
+            myPrefix = myPrefix.substring(0, myPrefix.length() - 1);
+          }
         } else {
-          LOG.error("package name in a source file does not correpond to file path");
+          LOG.error("package " + packageNameFromFile + " in a source file " + file.getName() + " does not correspond to file path: " + packageNameWithoutPrefix);
           return;
         }
       }
@@ -172,24 +167,12 @@ public class JavaCompiler {
     assert dir.isDirectory();
     for (File file : dir.listFiles()) {
       if (file.isDirectory()) {
-        String dirName = file.getName();
-        String nestedPackageName;
-        if ("".equals(packageNameWithoutPrefix)) {
-          nestedPackageName = dirName;
-        } else {
-          nestedPackageName = packageNameWithoutPrefix + '.' + dirName;
-        }
-        addSourceFromDirectory(file, nestedPackageName);
-      } else {
-        String extension;
-        String nameAndExtension = file.getName();
-        int offset = nameAndExtension.lastIndexOf('.');
-        if (offset >= 0) {
-          extension = nameAndExtension.substring(offset + 1);
-          if ("java".equals(extension)) {
-            addSourceFromFile(file, packageNameWithoutPrefix);
-          }
-        }
+        addSourceFromDirectory(file, packageNameWithoutPrefix + ((StringUtils.isEmpty(packageNameWithoutPrefix) ?
+          "" :
+          "."
+        )) + file.getName());
+      } else if (file.getName().endsWith(".java")) {
+        addSourceFromFile(file, packageNameWithoutPrefix);
       }
     }
   }

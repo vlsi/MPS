@@ -107,6 +107,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
     <classNode dependClassName="org.eclipse.jdt.core.compiler.IProblem" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />

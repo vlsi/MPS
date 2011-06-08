@@ -22,6 +22,7 @@
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="library" name="commons-lang" level="project" />
   </component>
 </module>
 
