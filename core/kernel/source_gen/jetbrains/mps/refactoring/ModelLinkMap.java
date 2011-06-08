@@ -186,6 +186,9 @@ public class ModelLinkMap {
 
   public void fillRoleIdsComponent() {
     if (RoleIdsComponent.isEnabled()) {
+      for (SModel.ImportElement i : ListSequence.fromList(myModel.getAdditionalModelVersions())) {
+        RoleIdsComponent.modelVersionRead(i);
+      }
       for (SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
         final SNodeId roleId = ptr.getNodeId();
         ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
