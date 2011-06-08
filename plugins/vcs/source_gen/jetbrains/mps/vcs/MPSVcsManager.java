@@ -42,7 +42,6 @@ public class MPSVcsManager implements ProjectComponent {
   private final Project myProject;
   private final ProjectLevelVcsManager myManager;
   private final ChangeListManager myChangeListManager;
-  private boolean myIsInitialized = false;
   private volatile boolean myChangeListManagerInitialized = false;
   private final GenerationListener myGenerationListener = new MPSVcsManager.GenerationWatcher();
   private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
@@ -61,7 +60,6 @@ public class MPSVcsManager implements ProjectComponent {
     if (isChangeListManagerInitialized() && !(synchronously)) {
       return ChangeListManager.getInstance(myProject).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
     }
-    ensureVcssInitialized();
     AbstractVcs vcs = myManager.getVcsFor(vfile);
     if (vcs == null) {
       return false;
@@ -91,13 +89,6 @@ public class MPSVcsManager implements ProjectComponent {
   @NotNull
   public String getComponentName() {
     return "VCS Manager";
-  }
-
-  public void ensureVcssInitialized() {
-    if (!(myIsInitialized)) {
-      myManager.updateActiveVcss();
-      myIsInitialized = true;
-    }
   }
 
   public boolean isChangeListManagerInitialized() {
