@@ -5,7 +5,7 @@
   <unitInfo fileName="ShowHelp_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup" />
   <unitInfo fileName="Structure_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ActionGroup" />
   <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
-  <unitInfo fileName="Structure_TabDescriptor.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_TabDescriptor" />
+  <unitInfo fileName="Structure_TabDescriptor.java" startLine="15" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_TabDescriptor" />
   <unitInfo fileName="ShowDefaultHelp_Action.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action" />
   <unitInfo fileName="ShowHelpForRoot_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action" />
   <unitInfo fileName="ShowHelpForNode_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForNode_Action" />
@@ -174,7 +174,7 @@
   <root nodeId="2542706524531725660">
     <nodeInfo nodeId="2542706524531725663" fileName="Structure_TabDescriptor.java" startLine="32" startPosition="40" endLine="33" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2542706524531725669" fileName="Structure_TabDescriptor.java" startLine="36" startPosition="43" endLine="37" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6388164970935847743" fileName="Structure_TabDescriptor.java" startLine="55" startPosition="36" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6388164970935847743" fileName="Structure_TabDescriptor.java" startLine="59" startPosition="36" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6388164970935847746" fileName="Structure_TabDescriptor.java" startLine="29" startPosition="32" endLine="29" endPosition="32" />
   </root>
   <root nodeId="3552608880959246745">

@@ -3,17 +3,17 @@
   <unitInfo fileName="Textgen_Order.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.textGen.plugin.Textgen_Order" />
   <unitInfo fileName="TextGen_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.textGen.plugin.TextGen_ApplicationPlugin" />
   <unitInfo fileName="TextGen_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.textGen.plugin.TextGen_ProjectPlugin" />
-  <unitInfo fileName="Textgen_TabDescriptor.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.textGen.plugin.Textgen_TabDescriptor" />
+  <unitInfo fileName="Textgen_TabDescriptor.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.textGen.plugin.Textgen_TabDescriptor" />
   <root nodeId="3911341278723505828">
     <nodeInfo nodeId="3911341278723505831" fileName="Textgen_TabDescriptor.java" startLine="37" startPosition="40" endLine="38" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3911341278723505836" fileName="Textgen_TabDescriptor.java" startLine="41" startPosition="43" endLine="42" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3911341278723505852" fileName="Textgen_TabDescriptor.java" startLine="60" startPosition="36" endLine="61" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3911341278723505870" fileName="Textgen_TabDescriptor.java" startLine="68" startPosition="52" endLine="69" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3911341278723505845" fileName="Textgen_TabDescriptor.java" startLine="72" startPosition="66" endLine="73" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3911341278723505859" fileName="Textgen_TabDescriptor.java" startLine="61" startPosition="144" endLine="65" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3911341278723505852" fileName="Textgen_TabDescriptor.java" startLine="64" startPosition="36" endLine="65" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3911341278723505870" fileName="Textgen_TabDescriptor.java" startLine="72" startPosition="52" endLine="73" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3911341278723505845" fileName="Textgen_TabDescriptor.java" startLine="76" startPosition="66" endLine="77" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3911341278723505859" fileName="Textgen_TabDescriptor.java" startLine="65" startPosition="144" endLine="69" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3911341278723505842" fileName="Textgen_TabDescriptor.java" startLine="34" startPosition="32" endLine="34" endPosition="32" />
-    <scopeInfo nodeId="3911341278723505869" fileName="Textgen_TabDescriptor.java" startLine="68" startPosition="52" endLine="69" endPosition="174" />
-    <scopeInfo nodeId="3911341278723505844" fileName="Textgen_TabDescriptor.java" startLine="72" startPosition="66" endLine="73" endPosition="202" />
+    <scopeInfo nodeId="3911341278723505869" fileName="Textgen_TabDescriptor.java" startLine="72" startPosition="52" endLine="73" endPosition="174" />
+    <scopeInfo nodeId="3911341278723505844" fileName="Textgen_TabDescriptor.java" startLine="76" startPosition="66" endLine="77" endPosition="202" />
   </root>
 </debugInfo>
 
