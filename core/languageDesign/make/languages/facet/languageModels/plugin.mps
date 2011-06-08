@@ -1636,7 +1636,7 @@
                 <property name="value" nameId="tpee.1068580320021" value="1000" />
               </node>
               <node role="comment" roleId="q9ra.1906791586424011776" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5501885975813668936">
-                <property name="value" nameId="tpee.1070475926801" value="...warming up..." />
+                <property name="value" nameId="tpee.1070475926801" value="cleaning up" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8591529878792419840">

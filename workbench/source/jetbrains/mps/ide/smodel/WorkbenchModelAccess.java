@@ -52,7 +52,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   // changed only in EDT
   private volatile boolean myDistributedLocksMode = false;
-  private static final int REQUIRE_MAX_TRIES = 5;
+  private static final int REQUIRE_MAX_TRIES = 8;
 
   public WorkbenchModelAccess() {
   }
@@ -340,16 +340,20 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public void requireRead(Runnable r) {
     int i;
+    long start;
+    long waited;
     do {
+      start = System.currentTimeMillis();
       for (i = 0; i < REQUIRE_MAX_TRIES && !tryRead(r); ++i) {
         try {
           Thread.sleep((1<<i)*100);
         } catch (InterruptedException ignore) {}
       }
+      waited = System.currentTimeMillis() - start;
     } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
 
     if (i >= REQUIRE_MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire read lock");
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for "+ waited +"ms");
     }
   }
 
@@ -357,16 +361,20 @@ public class WorkbenchModelAccess extends ModelAccess {
   public <T> T requireRead(Computable<T> c) {
     T result = null;
     int i;
+    long start;
+    long waited;
     do {
+      start = System.currentTimeMillis();
       for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryRead(c)) == null; ++i) {
         try {
           Thread.sleep((1<<i)*100);
         } catch (InterruptedException ignore) {}
       }
+      waited = System.currentTimeMillis() - start;
     } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
 
     if (i >= REQUIRE_MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire read lock");
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for "+ waited +"ms");
     }
     return result;
   }
@@ -466,16 +474,20 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public void requireWrite(Runnable r) {
     int i;
+    long start;
+    long waited;
     do {
+      start = System.currentTimeMillis();
       for (i = 0; i < REQUIRE_MAX_TRIES && !tryWrite(r); ++i) {
         try {
           Thread.sleep((1<<i)*100);
         } catch (InterruptedException ignore) {}
       }
+      waited = System.currentTimeMillis() - start;
     } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
 
     if (i >= REQUIRE_MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire write lock");
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for "+ waited +"ms");
     }
   }
 
@@ -483,16 +495,20 @@ public class WorkbenchModelAccess extends ModelAccess {
   public <T> T requireWrite(Computable<T> c) {
     T result = null;
     int i;
+    long start;
+    long waited;
     do {
+      start = System.currentTimeMillis();
       for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
         try {
           Thread.sleep((1<<i)*100);
         } catch (InterruptedException ignore) {}
       }
+      waited = System.currentTimeMillis() - start;
     } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
 
     if (i >= REQUIRE_MAX_TRIES) {
-      throw new RuntimeException("Failed to acquire write lock");
+      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for "+ waited +"ms");
     }
     return result;
   }
