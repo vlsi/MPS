@@ -319,7 +319,11 @@ public class JavaCompiler {
             }
             if (cpe != null) {
               myModule.getModuleDescriptor().getStubModelEntries().add(ModelRootUtil.fromClassPathEntry(cpe));
-              myModule.save();
+              ModelAccess.instance().runWriteInEDT(new Runnable() {
+                public void run() {
+                  myModule.save();
+                }
+              });
             }
           }
           return true;
