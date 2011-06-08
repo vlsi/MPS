@@ -156,6 +156,7 @@ public class NodePresentationUtil {
   }
 
   public static String getPathToRoot(SNode node) {
+    if (node == null) return "null";
     if (node.isRoot()) return node.getName();
     return getPathToRoot(node.getParent()) + " > " + node.getName();
   }
