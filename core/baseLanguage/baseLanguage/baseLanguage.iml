@@ -18,6 +18,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="workbench" />
+    <orderEntry type="library" name="commons-logging" level="project" />
   </component>
 </module>
 
