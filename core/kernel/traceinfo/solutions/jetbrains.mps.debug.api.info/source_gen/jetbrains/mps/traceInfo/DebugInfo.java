@@ -16,8 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.ArrayList;
 import org.jdom.Element;
 import java.util.Arrays;
 import org.jdom.DataConversionException;
@@ -198,7 +198,11 @@ public class DebugInfo {
   public UnitPositionInfo getUnitForNode(String nodeId) {
     for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
       public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
-        return it.getUnitPositions();
+        return SetSequence.fromSet(it.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
+          public Comparable<?> select(UnitPositionInfo position) {
+            return position.getStartLine();
+          }
+        }, true);
       }
     })) {
       if (eq_exfyrk_a0a0a0k(element.getNodeId(), nodeId)) {
