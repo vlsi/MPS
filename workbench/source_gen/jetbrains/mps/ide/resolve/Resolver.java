@@ -105,7 +105,7 @@ public class Resolver {
           }
         };
         List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
-        if (!(filtered.isEmpty())) {
+        if (filtered.size() == 1) {
           ResolveResult resolveResult = new ResolveResult(referenceNode, filtered.get(0), reference.getRole(), null);
           results.add(resolveResult);
           if (forceResolve) {
