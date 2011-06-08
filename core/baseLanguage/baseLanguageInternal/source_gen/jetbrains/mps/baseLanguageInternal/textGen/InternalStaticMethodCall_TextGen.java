@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 
 public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -27,6 +26,15 @@ public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
       this.append(">");
     }
     this.append(SPropertyOperations.getString(node, "methodName"));
-    BaseLanguageTextGen.arguments(node, this);
+    this.append("(");
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+      for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
+        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
+          this.append(", ");
+        }
+      }
+    }
+    this.append(")");
   }
 }

@@ -7,10 +7,10 @@
   <unitInfo fileName="InternalPartialFieldReference_TextGen.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialFieldReference_TextGen" />
   <unitInfo fileName="InternalClassifierType_TextGen.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalClassifierType_TextGen" />
   <unitInfo fileName="InternalClassExpression_TextGen.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalClassExpression_TextGen" />
-  <unitInfo fileName="InternalNewExpression_TextGen.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalNewExpression_TextGen" />
-  <unitInfo fileName="InternalStaticMethodCall_TextGen.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticMethodCall_TextGen" />
   <unitInfo fileName="InternalPartialInstanceMethodCall_TextGen.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialInstanceMethodCall_TextGen" />
   <unitInfo fileName="BaseLangInternal.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.BaseLangInternal" />
+  <unitInfo fileName="InternalNewExpression_TextGen.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalNewExpression_TextGen" />
+  <unitInfo fileName="InternalStaticMethodCall_TextGen.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticMethodCall_TextGen" />
   <root nodeId="1236701327640">
     <nodeInfo nodeId="1997029474304170771" fileName="BaseLangInternal.java" startLine="11" startPosition="30" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1997029474304170774" fileName="BaseLangInternal.java" startLine="12" startPosition="27" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -94,29 +94,38 @@
     <scopeInfo nodeId="1237463992238" fileName="InternalClassifierType_TextGen.java" startLine="16" startPosition="98" endLine="26" endPosition="23" />
   </root>
   <root nodeId="1236702647578">
-    <nodeInfo nodeId="1237463992247" fileName="InternalNewExpression_TextGen.java" startLine="14" startPosition="42" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237463992247" fileName="InternalNewExpression_TextGen.java" startLine="14" startPosition="42" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4334355694050023638" fileName="InternalNewExpression_TextGen.java" startLine="15" startPosition="24" endLine="16" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4334355694050023638" fileName="InternalNewExpression_TextGen.java" startLine="15" startPosition="24" endLine="16" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="17" startPosition="98" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="20" startPosition="80" endLine="21" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="22" startPosition="106" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="26" startPosition="7" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240934855718" fileName="InternalNewExpression_TextGen.java" startLine="28" startPosition="5" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240934855718" fileName="InternalNewExpression_TextGen.java" startLine="28" startPosition="5" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="21" startPosition="111" endLine="24" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="19" startPosition="100" endLine="25" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="18" startPosition="23" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="17" startPosition="98" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240934842242" fileName="InternalNewExpression_TextGen.java" startLine="16" startPosition="89" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1237463992247" fileName="InternalNewExpression_TextGen.java" startLine="14" startPosition="42" endLine="15" endPosition="24" />
-    <scopeInfo nodeId="4334355694050023638" fileName="InternalNewExpression_TextGen.java" startLine="15" startPosition="24" endLine="16" endPosition="89" />
-    <scopeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="22" startPosition="106" endLine="23" endPosition="30" />
-    <scopeInfo nodeId="1240934855718" fileName="InternalNewExpression_TextGen.java" startLine="28" startPosition="5" endLine="29" endPosition="46" />
-    <scopeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="20" startPosition="80" endLine="24" endPosition="11" />
-    <scopeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="19" startPosition="100" endLine="25" endPosition="9" />
-    <scopeInfo nodeId="1240934842243" fileName="InternalNewExpression_TextGen.java" startLine="17" startPosition="98" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="17" startPosition="98" endLine="27" endPosition="23" />
+    <nodeInfo nodeId="1237463992247" fileName="InternalNewExpression_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237463992247" fileName="InternalNewExpression_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4334355694050023638" fileName="InternalNewExpression_TextGen.java" startLine="14" startPosition="24" endLine="15" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4334355694050023638" fileName="InternalNewExpression_TextGen.java" startLine="14" startPosition="24" endLine="15" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="16" startPosition="98" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="19" startPosition="80" endLine="20" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="21" startPosition="106" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="25" startPosition="7" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="27" startPosition="5" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="30" startPosition="83" endLine="31" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="32" startPosition="109" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="36" startPosition="5" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="20" startPosition="111" endLine="23" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="31" startPosition="109" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="18" startPosition="100" endLine="24" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="29" startPosition="103" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="17" startPosition="23" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="28" startPosition="21" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="16" startPosition="98" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="27" startPosition="5" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240934842242" fileName="InternalNewExpression_TextGen.java" startLine="15" startPosition="89" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1237463992247" fileName="InternalNewExpression_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="24" />
+    <scopeInfo nodeId="4334355694050023638" fileName="InternalNewExpression_TextGen.java" startLine="14" startPosition="24" endLine="15" endPosition="89" />
+    <scopeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="21" startPosition="106" endLine="22" endPosition="30" />
+    <scopeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="32" startPosition="109" endLine="33" endPosition="28" />
+    <scopeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="19" startPosition="80" endLine="23" endPosition="11" />
+    <scopeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="30" startPosition="83" endLine="34" endPosition="9" />
+    <scopeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="18" startPosition="100" endLine="24" endPosition="9" />
+    <scopeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="29" startPosition="103" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="1240934842243" fileName="InternalNewExpression_TextGen.java" startLine="16" startPosition="98" endLine="26" endPosition="23" />
+    <scopeInfo nodeId="1240934842244" fileName="InternalNewExpression_TextGen.java" startLine="16" startPosition="98" endLine="26" endPosition="23" />
+    <scopeInfo nodeId="319021450862604076" fileName="InternalNewExpression_TextGen.java" startLine="27" startPosition="5" endLine="37" endPosition="21" />
   </root>
   <root nodeId="1236702681346">
     <nodeInfo nodeId="1237463991695" fileName="InternalPartialFieldReference_TextGen.java" startLine="14" startPosition="70" endLine="15" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -168,28 +177,39 @@
     <scopeInfo nodeId="1237463991745" fileName="InternalStaticFieldReference_TextGen.java" startLine="10" startPosition="42" endLine="13" endPosition="66" />
   </root>
   <root nodeId="1236703055726">
-    <nodeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="14" startPosition="42" endLine="15" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="15" startPosition="89" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="17" startPosition="102" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="20" startPosition="84" endLine="21" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="22" startPosition="110" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="26" startPosition="7" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237566968011" fileName="InternalStaticMethodCall_TextGen.java" startLine="28" startPosition="5" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237566968011" fileName="InternalStaticMethodCall_TextGen.java" startLine="29" startPosition="67" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="14" startPosition="42" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237566968011" fileName="InternalStaticMethodCall_TextGen.java" startLine="28" startPosition="5" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="21" startPosition="111" endLine="24" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="19" startPosition="104" endLine="25" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="18" startPosition="23" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="17" startPosition="102" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1236703091960" fileName="InternalStaticMethodCall_TextGen.java" startLine="16" startPosition="21" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="22" startPosition="110" endLine="23" endPosition="30" />
-    <scopeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="14" startPosition="42" endLine="16" endPosition="21" />
-    <scopeInfo nodeId="1237566968011" fileName="InternalStaticMethodCall_TextGen.java" startLine="28" startPosition="5" endLine="30" endPosition="46" />
-    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="20" startPosition="84" endLine="24" endPosition="11" />
-    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="19" startPosition="104" endLine="25" endPosition="9" />
-    <scopeInfo nodeId="1236703091961" fileName="InternalStaticMethodCall_TextGen.java" startLine="17" startPosition="102" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="17" startPosition="102" endLine="27" endPosition="23" />
+    <nodeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="14" startPosition="89" endLine="15" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="16" startPosition="102" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="19" startPosition="84" endLine="20" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="21" startPosition="110" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="25" startPosition="7" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237566968011" fileName="InternalStaticMethodCall_TextGen.java" startLine="27" startPosition="5" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237566968011" fileName="InternalStaticMethodCall_TextGen.java" startLine="27" startPosition="5" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="28" startPosition="67" endLine="29" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="31" startPosition="83" endLine="32" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="33" startPosition="109" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="37" startPosition="5" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="13" startPosition="42" endLine="15" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="20" startPosition="111" endLine="23" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="32" startPosition="109" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="18" startPosition="104" endLine="24" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="30" startPosition="103" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="17" startPosition="23" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="29" startPosition="21" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="16" startPosition="102" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="28" startPosition="67" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1236703091960" fileName="InternalStaticMethodCall_TextGen.java" startLine="15" startPosition="21" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="21" startPosition="110" endLine="22" endPosition="30" />
+    <scopeInfo nodeId="1237566968011" fileName="InternalStaticMethodCall_TextGen.java" startLine="27" startPosition="5" endLine="28" endPosition="67" />
+    <scopeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="33" startPosition="109" endLine="34" endPosition="28" />
+    <scopeInfo nodeId="1237463992002" fileName="InternalStaticMethodCall_TextGen.java" startLine="13" startPosition="42" endLine="15" endPosition="21" />
+    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="19" startPosition="84" endLine="23" endPosition="11" />
+    <scopeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="31" startPosition="83" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="18" startPosition="104" endLine="24" endPosition="9" />
+    <scopeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="30" startPosition="103" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="1236703091961" fileName="InternalStaticMethodCall_TextGen.java" startLine="16" startPosition="102" endLine="26" endPosition="23" />
+    <scopeInfo nodeId="1237463991818" fileName="InternalStaticMethodCall_TextGen.java" startLine="16" startPosition="102" endLine="26" endPosition="23" />
+    <scopeInfo nodeId="319021450862604103" fileName="InternalStaticMethodCall_TextGen.java" startLine="28" startPosition="67" endLine="38" endPosition="21" />
   </root>
   <root nodeId="1236703160772">
     <nodeInfo nodeId="7376433222636453067" fileName="InternalThisExpression_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
