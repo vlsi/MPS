@@ -28,7 +28,7 @@ public abstract class MPSMatcher extends DefaultMatcher implements EntityMatcher
   }
 
   public boolean nameMatches(String shortPattern, String shortName) {
-    return super.nameMatches(shortPattern, shortName);
+    return true;
   }
 
   public Set<Object> getElementsByPattern(String fullPattern, String shortName, boolean checkboxState, Computable<Boolean> isCancelled) {
@@ -36,6 +36,8 @@ public abstract class MPSMatcher extends DefaultMatcher implements EntityMatcher
   }
 
   private String transformPattern(String pattern) {
-    return pattern.endsWith(" ") ? pattern : pattern + ".*";
+    if ("".equals(pattern)) return "*";
+    if (pattern.endsWith(" ")) return pattern;
+    else return pattern + ".*";
   }
 }
