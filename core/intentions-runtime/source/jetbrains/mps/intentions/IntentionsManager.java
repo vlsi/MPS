@@ -85,7 +85,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myClassLoaderManager = manager;
   }
 
-  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {
+  public synchronized Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {
     checkLoaded();
     Computable<Set<Pair<Intention, SNode>>> computable = new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
@@ -118,7 +118,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  public boolean intentionIsDisabled(Intention intention) {
+  public synchronized boolean intentionIsDisabled(Intention intention) {
     checkLoaded();
     return getDisabledIntentions().contains(intention);
   }
@@ -231,11 +231,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------disabled state control-----------------
 
-  public void invertIntentionState(Intention intention) {
+  public synchronized void invertIntentionState(Intention intention) {
     setIntentionState(intention, !intentionIsDisabled(intention));
   }
 
-  public void setIntentionState(Intention intention, boolean disabled) {
+  public synchronized void setIntentionState(Intention intention, boolean disabled) {
     if (disabled) {
       disableIntention(intention);
     } else {
@@ -243,13 +243,13 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  public void disableIntention(Intention intention) {
+  public synchronized void disableIntention(Intention intention) {
     checkLoaded();
     myState.myDisabledIntentions.add(intention.getClass().getName());
     myDisabledIntentionsCache.add(intention);
   }
 
-  public void enableIntention(Intention intention) {
+  public synchronized void enableIntention(Intention intention) {
     checkLoaded();
     myState.myDisabledIntentions.remove(intention.getClass().getName());
     myDisabledIntentionsCache.remove(intention);
@@ -258,7 +258,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------node info by intention-----------------
 
   @Nullable
-  public Language getIntentionLanguage(Intention intention) {
+  public synchronized Language getIntentionLanguage(Intention intention) {
     checkLoaded();
     ModuleReference ref = myIntentionsLanguages.get(intention.getClass());
     if (ref == null) return null;
@@ -266,7 +266,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   @Nullable
-  public SNode getNodeByIntention(Intention intention) {
+  public synchronized SNode getNodeByIntention(Intention intention) {
     checkLoaded();
     SNodePointer pointer = myNodesByIntentions.get(intention);
     if (pointer == null) return intention.getNodeByIntention();
@@ -276,14 +276,14 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   @NotNull
-  public Set<Intention> getAllIntentions() {
+  public synchronized Set<Intention> getAllIntentions() {
     checkLoaded();
     return Collections.unmodifiableSet(myNodesByIntentions.keySet());
   }
 
   //-------------reloading-----------------
 
-  public void addIntention(Intention intention, @Nullable ModuleReference lang, @Nullable SNodePointer node) {
+  public synchronized void addIntention(Intention intention, @Nullable ModuleReference lang, @Nullable SNodePointer node) {
     Set<Intention> intentions = myIntentions.get(intention.getConcept());
     if (intentions == null) {
       intentions = new HashSet<Intention>();
