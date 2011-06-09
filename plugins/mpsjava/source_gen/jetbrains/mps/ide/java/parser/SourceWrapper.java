@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.apache.commons.lang.StringUtils;
 
 public abstract class SourceWrapper {
   protected String mySource;
@@ -156,8 +157,14 @@ public abstract class SourceWrapper {
           i++;
         }
         myClassName = sb.toString();
+        // add package if necessary 
+        int iPackage = source.indexOf("package ");
+        if (0 <= iPackage && iPackage < i || StringUtils.isEmpty(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model))) {
+          myWrappedSource = source;
+        } else {
+          myWrappedSource = "package " + jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model) + ";\n" + source;
+        }
       }
-      myWrappedSource = source;
     }
 
     @Override
