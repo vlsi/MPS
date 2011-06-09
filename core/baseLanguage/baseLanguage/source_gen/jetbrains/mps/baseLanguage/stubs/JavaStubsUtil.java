@@ -14,7 +14,10 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.stubs.IStubRootNodeDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.stubs.StubDescriptor;
+import jetbrains.mps.smodel.LanguageID;
 
 /*package*/ class JavaStubsUtil {
   public JavaStubsUtil() {
@@ -54,18 +57,33 @@ import jetbrains.mps.stubs.StubDescriptor;
     return ClassPathFactory.getInstance().createFromPath(location.getPath());
   }
 
-  public static Set<StubDescriptor> iterateClassPath(IClassPathItem item) {
-    Set<StubDescriptor> result = new HashSet<StubDescriptor>();
-    iterateClassPath(item, result, "");
+  public static Set<IStubRootNodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {
+    Set<IStubRootNodeDescriptor> result = new HashSet<IStubRootNodeDescriptor>();
+    iterateClassPath(module, item, result, "");
     return result;
   }
 
-  private static void iterateClassPath(IClassPathItem item, Set<StubDescriptor> result, String packageName) {
+  private static void iterateClassPath(final ModuleReference module, IClassPathItem item, Set<IStubRootNodeDescriptor> result, String packageName) {
     for (String cls : item.getRootClasses(packageName)) {
-      result.add(new StubDescriptor(cls, packageName, item));
+      final StubDescriptor sd = new StubDescriptor(cls, packageName, item);
+      final SModelReference model = StubHelper.uidForPackageInStubs(sd.getPackage(), LanguageID.JAVA, module);
+
+      result.add(new IStubRootNodeDescriptor() {
+        public String getConceptName() {
+          return sd.getConceptFqName();
+        }
+
+        public String getName() {
+          return sd.getClassName();
+        }
+
+        public SModelReference getModelReference() {
+          return model;
+        }
+      });
     }
     for (String subpack : item.getSubpackages(packageName)) {
-      iterateClassPath(item, result, subpack);
+      iterateClassPath(module, item, result, subpack);
     }
   }
 }

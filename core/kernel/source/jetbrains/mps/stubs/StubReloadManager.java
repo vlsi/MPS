@@ -50,8 +50,8 @@ public class StubReloadManager implements ApplicationComponent {
     updateLoadedStubPaths();
   }
 
-  public List<StubDescriptor> getRootNodeDescriptors(AbstractModule module) {
-    List<StubDescriptor> result = new ArrayList<StubDescriptor>();
+  public List<IStubRootNodeDescriptor> getRootNodeDescriptors(AbstractModule module) {
+    List<IStubRootNodeDescriptor> result = new ArrayList<IStubRootNodeDescriptor>();
 
     ModuleReference ref = module.getModuleReference();
     for (StubPath path : myLoadedStubPaths.get(ref.getModuleId())) {

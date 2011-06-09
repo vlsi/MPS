@@ -150,7 +150,7 @@
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3798212845297795142">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="n3kn.3671542447677113727" resolveInfo="StubsCreatorDeclaration" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="3798212845297797388" resolveInfo="map_StubsCreatorDeclaration" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="3798212845297797388" resolveInfo="StubsModelRootManager" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="5516999836374471947" resolveInfo="map_StubCreator" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="5553449326502992791">
@@ -179,7 +179,7 @@
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="6021028498538121118">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="n3kn.8529737993487825733" resolveInfo="LibraryStubDescriptor" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="6021028498538122649" resolveInfo="map_LibraryStubDescriptor" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="6021028498538122649" resolveInfo="LibraryStubDescriptor" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="6021028498538122656" resolveInfo="map_StubDescr" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="972176972348244548">
@@ -263,7 +263,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="562112407431544846">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="562112407431544848">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="562112407431544847">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="562112407431528048" resolveInfo="result" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="562112407431528048" resolveInfo="moduleIds" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="562112407431544852">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Set%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
@@ -556,8 +556,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3798212845297904665" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3798212845297904666">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Set" resolveInfo="Set" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8725534055980737227">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ltn8.~StubDescriptor" resolveInfo="StubDescriptor" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="90243805691822222">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ltn8.~IStubRootNodeDescriptor" resolveInfo="IStubRootNodeDescriptor" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3798212845297904668">

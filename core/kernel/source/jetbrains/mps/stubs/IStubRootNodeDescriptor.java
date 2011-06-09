@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.stubs;
 
-import jetbrains.mps.smodel.SNodePointer;
-
-import javax.swing.Icon;
+import jetbrains.mps.smodel.SModelReference;
 
 public interface IStubRootNodeDescriptor {
-  Icon getIcon();
-  String getFullName();
-  SNodePointer getNodePointer();
+  String getConceptName();
+
+  String getName();
+
+  SModelReference getModelReference();
 }
