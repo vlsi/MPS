@@ -58,6 +58,9 @@ public class FixDependenciesEverywhere_Action extends GeneratedAction {
         if (!(model instanceof EditableSModelDescriptor)) {
           continue;
         }
+        if (model.getModule() == null) {
+          continue;
+        }
         new MissingDependenciesFixer(((IOperationContext) MapSequence.fromMap(_params).get("context")), model).fix(false);
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
