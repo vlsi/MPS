@@ -1246,6 +1246,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "extendedClass", true) != null);
   }
 
+  public static boolean ifMacro_Condition_2409615978587297658(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "styleItem", true).isEmpty();
+  }
+
   public static boolean ifMacro_Condition_7533883740978111754(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "position", "FIRST", "NONE");
   }
@@ -1700,6 +1704,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1221820503559(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "styleClass", true);
+  }
+
+  public static Iterable sourceNodesQuery_2409615978587301052(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
   }
 
   public static Iterable sourceNodesQuery_7943820734261953509(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
