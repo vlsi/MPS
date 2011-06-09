@@ -53,7 +53,7 @@ public class MissingDependenciesFixer {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         module[0] = myModelDescriptor.getModule();
-        assert module[0] != null;
+        assert module[0] != null : myModelDescriptor.getSModelReference().toString();
         moduleScope[0] = module[0].getScope();
         md[0] = module[0].getModuleDescriptor();
 
