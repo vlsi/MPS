@@ -8,6 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.make.IMakeService;
 import javax.swing.tree.TreeNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -33,6 +34,9 @@ public class MakeNamespace_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (IMakeService.INSTANCE.get().isSessionActive()) {
+      return false;
+    }
     for (TreeNode selectedNode : ((List<TreeNode>) MapSequence.fromMap(_params).get("ppNodes"))) {
       if (!(selectedNode instanceof NamespaceTextNode)) {
         return false;
@@ -82,6 +86,7 @@ public class MakeNamespace_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null), MakeNamespace_Action.this.cleanMake).executeAction();
+
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MakeNamespace", t);

@@ -9,11 +9,21 @@ public class MakeSession {
   private IOperationContext context;
   private IMessageHandler messageHandler;
   private boolean cleanMake;
+  private boolean sticky;
+
+  public MakeSession(IOperationContext context) {
+    this(context, null, true);
+  }
 
   public MakeSession(IOperationContext context, IMessageHandler messageHandler, boolean cleanMake) {
+    this(context, messageHandler, cleanMake, false);
+  }
+
+  public MakeSession(IOperationContext context, IMessageHandler messageHandler, boolean cleanMake, boolean sticky) {
     this.context = context;
     this.messageHandler = messageHandler;
     this.cleanMake = cleanMake;
+    this.sticky = sticky;
   }
 
   public IOperationContext getContext() {
@@ -26,6 +36,10 @@ public class MakeSession {
 
   public boolean isCleanMake() {
     return cleanMake;
+  }
+
+  public boolean isSticky() {
+    return sticky;
   }
 
   public void doExecute(Runnable scriptRunnable) {

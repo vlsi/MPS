@@ -16,8 +16,9 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
-import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -53,12 +54,15 @@ public class RunUtil {
     if (ListSequence.fromList(models).isNotEmpty()) {
       final ProjectOperationContext context = ProjectOperationContext.get(project);
       IResult result = null;
-      Future<IResult> future = new WorkbenchMakeService(context, true).make(new ModelsToResources(context, models).resources(false));
-      try {
-        result = future.get();
-      } catch (CancellationException ignore) {
-      } catch (InterruptedException ignore) {
-      } catch (ExecutionException ignore) {
+      MakeSession session = new MakeSession(context, null, true);
+      if (IMakeService.INSTANCE.get().startNewSession(session)) {
+        Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context, models).resources(false));
+        try {
+          result = future.get();
+        } catch (CancellationException ignore) {
+        } catch (InterruptedException ignore) {
+        } catch (ExecutionException ignore) {
+        }
       }
       return result != null && result.isSucessful();
       // <node> 
