@@ -491,7 +491,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     addFocusListener(new FocusListener() {
       public void focusGained(FocusEvent e) {
-        if(isDisposed()) {
+        if (isDisposed()) {
           return;
         }
         if (getSelectionManager().getSelection() == null) {
@@ -986,6 +986,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
     BaseGroup baseGroup = ActionUtils.getGroup(EDITOR_POPUP_MENU_ACTIONS);
+    if (baseGroup == null) return;
+
     baseGroup.setPopup(false);
 
     DefaultActionGroup group = ActionUtils.groupFromActions(
@@ -3115,6 +3117,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   private static final Field decrButtonField;
   private static final Field incrButtonField;
+
   static {
     try {
       decrButtonField = BasicScrollBarUI.class.getDeclaredField("decrButton");
@@ -3122,14 +3125,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       incrButtonField = BasicScrollBarUI.class.getDeclaredField("incrButton");
       incrButtonField.setAccessible(true);
-    }
-    catch (NoSuchFieldException e) {
+    } catch (NoSuchFieldException e) {
       throw new IllegalStateException(e);
     }
   }
 
   class MyScrollBar extends JBScrollBar implements IdeGlassPane.TopComponent {
-    @NonNls private static final String APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS = "apple.laf.AquaScrollBarUI";
+    @NonNls
+    private static final String APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS = "apple.laf.AquaScrollBarUI";
     private ScrollBarUI myPersistentUI;
 
     MyScrollBar(int orientation) {
@@ -3162,19 +3165,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ScrollBarUI barUI = getUI();
       Insets insets = getInsets();
       if (barUI instanceof ButtonlessScrollBarUI) {
-        return insets.top + ((ButtonlessScrollBarUI)barUI).getDecrButtonHeight();
-      }
-      else if (barUI instanceof BasicScrollBarUI) {
+        return insets.top + ((ButtonlessScrollBarUI) barUI).getDecrButtonHeight();
+      } else if (barUI instanceof BasicScrollBarUI) {
         try {
-          JButton decrButtonValue = (JButton)decrButtonField.get(barUI);
+          JButton decrButtonValue = (JButton) decrButtonField.get(barUI);
           LOG.assertLog(decrButtonValue != null);
           return insets.top + decrButtonValue.getHeight();
-        }
-        catch (Exception exc) {
+        } catch (Exception exc) {
           throw new IllegalStateException(exc);
         }
-      }
-      else {
+      } else {
         return insets.top + 15;
       }
     }
@@ -3189,22 +3189,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ScrollBarUI barUI = getUI();
       Insets insets = getInsets();
       if (barUI instanceof ButtonlessScrollBarUI) {
-        return insets.top + ((ButtonlessScrollBarUI)barUI).getIncrButtonHeight();
-      }
-      else if (barUI instanceof BasicScrollBarUI) {
+        return insets.top + ((ButtonlessScrollBarUI) barUI).getIncrButtonHeight();
+      } else if (barUI instanceof BasicScrollBarUI) {
         try {
-          JButton incrButtonValue = (JButton)incrButtonField.get(barUI);
+          JButton incrButtonValue = (JButton) incrButtonField.get(barUI);
           LOG.assertLog(incrButtonValue != null);
           return insets.bottom + incrButtonValue.getHeight();
-        }
-        catch (Exception exc) {
+        } catch (Exception exc) {
           throw new IllegalStateException(exc.getMessage());
         }
-      }
-      else if (APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS.equals(barUI.getClass().getName())) {
+      } else if (APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS.equals(barUI.getClass().getName())) {
         return insets.bottom + 30;
-      }
-      else {
+      } else {
         return insets.bottom + 15;
       }
     }
