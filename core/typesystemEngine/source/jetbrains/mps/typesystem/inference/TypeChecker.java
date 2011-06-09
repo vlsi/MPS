@@ -204,21 +204,6 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     }
   }
 
-  @Deprecated
-  public void setIsGeneration(boolean isGeneration) {
-    setIsGeneration(isGeneration, null);
-  }
-
-  @Deprecated
-  public void setIsGeneration(boolean isGeneration, IPerformanceTracer performanceTracer) {
-    myIsGeneration = isGeneration;
-    if (isGeneration) {
-      generationStarted(performanceTracer);
-    } else {
-      generationFinished();
-    }
-  }
-
   public void generationStarted(IPerformanceTracer performanceTracer) {
     myGenerationSubTypingCache = createSubtypingCache();
     initTracing(performanceTracer);
