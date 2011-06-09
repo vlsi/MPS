@@ -265,6 +265,7 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ASTNode" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AllocationExpression" />
