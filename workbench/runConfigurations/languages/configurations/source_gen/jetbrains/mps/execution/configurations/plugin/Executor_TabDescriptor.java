@@ -46,6 +46,10 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
     return list;
   }
 
+  public boolean isSingle() {
+    return true;
+  }
+
   public SNode getNode(SNode node) {
     final SNode nodeFinal = node;
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {

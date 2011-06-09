@@ -39,6 +39,10 @@ public class Run_Configuration_TabDescriptor extends EditorTabDescriptor {
     return list;
   }
 
+  public boolean isSingle() {
+    return false;
+  }
+
   public SNode getNode(SNode node) {
     return node;
   }

@@ -47,6 +47,10 @@ public class UICode_TabDescriptor extends EditorTabDescriptor {
     }).toListSequence();
   }
 
+  public boolean isSingle() {
+    return false;
+  }
+
   public SNode createNode(final SNode node, final SNode concept) {
     String defVal = "<default>";
     Object[] msg = new Object[]{"Choose destination model for the new template:"};
