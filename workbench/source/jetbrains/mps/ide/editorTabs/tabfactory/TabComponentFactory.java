@@ -31,13 +31,13 @@ import java.util.Set;
 public abstract class TabComponentFactory {
   public static TabsComponent createTabsComponent(final SNodePointer baseNode, final Set<EditorTabDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback, CreateModeCallback createModeCallback) {
     MyState state = ApplicationManager.getApplication().getComponent(CustomizationSettings.class).getState();
-    if (!state.show) {
+    if (!state.isShow()) {
       return new EmptyTabsComponent(baseNode);
     } else {
-      if (state.showPlain) {
-        return new PlainTabsComponent(baseNode, possibleTabs, component, callback, state.showGrayed, createModeCallback);
+      if (state.isShowPlain()) {
+        return new PlainTabsComponent(baseNode, possibleTabs, component, callback, state.isShowGrayed(), createModeCallback);
       } else {
-        return new ButtonTabsComponent(baseNode, possibleTabs, component, callback, state.showGrayed);
+        return new ButtonTabsComponent(baseNode, possibleTabs, component, callback, state.isShowGrayed());
       }
     }
   }

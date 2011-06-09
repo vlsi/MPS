@@ -212,7 +212,7 @@ public class MPSEditorOpener {
   }
 
   private boolean isUseTabs() {
-    return ApplicationManager.getApplication().getComponent(CustomizationSettings.class).getState().show;
+    return ApplicationManager.getApplication().getComponent(CustomizationSettings.class).getState().isShow();
   }
 
   //----------util
