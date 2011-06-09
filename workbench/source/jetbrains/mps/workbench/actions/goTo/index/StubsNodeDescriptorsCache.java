@@ -8,6 +8,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.stubs.IStubRootNodeDescriptor;
 import jetbrains.mps.stubs.StubReloadManager;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,7 +69,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
           }
 
           public String getConceptFqName() {
-            return sd.getConceptName();
+            return NameUtil.nodeFQName(sd.getConcept());
           }
         });
       }

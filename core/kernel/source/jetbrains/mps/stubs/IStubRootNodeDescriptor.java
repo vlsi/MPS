@@ -16,11 +16,12 @@
 package jetbrains.mps.stubs;
 
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 
 public interface IStubRootNodeDescriptor {
-  String getConceptName();
-
   String getName();
+
+  SNode getConcept();
 
   SModelReference getModelReference();
 }
