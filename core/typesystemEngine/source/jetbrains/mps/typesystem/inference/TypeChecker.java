@@ -242,7 +242,7 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
   }
 
   public boolean isGenerationMode() {
-    return myIsGeneration || myGenerationThreads.contains(Thread.currentThread());
+    return myIsGeneration;// || myGenerationThreads.contains(Thread.currentThread());
   }
 
   private void initTracing(IPerformanceTracer performanceTracer) {
