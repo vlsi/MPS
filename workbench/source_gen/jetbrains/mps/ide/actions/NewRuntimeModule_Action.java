@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -28,7 +30,7 @@ import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.ide.util.gotoByName.ChooseByNamePopupMPS;
+
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;

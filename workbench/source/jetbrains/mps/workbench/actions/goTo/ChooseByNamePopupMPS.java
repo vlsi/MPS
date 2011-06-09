@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.ide.util.gotoByName;
+package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import jetbrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.ComponentPopupBuilder;

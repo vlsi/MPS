@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.ide.util.gotoByName;
+package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.Patches;
 import com.intellij.ide.IdeBundle;
@@ -22,8 +22,8 @@ import com.intellij.ide.actions.CopyReferenceAction;
 import com.intellij.ide.ui.UISettings;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
-import jetbrains.mps.ide.util.gotoByName.matchers.DefaultMatcher;
-import jetbrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.matchers.DefaultMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 import com.intellij.openapi.MnemonicHelper;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;

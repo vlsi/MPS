@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.actions.goTo;
 
-import jetbrains.mps.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;

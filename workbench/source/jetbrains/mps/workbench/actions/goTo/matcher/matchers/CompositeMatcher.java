@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.matcher;
+package jetbrains.mps.workbench.actions.goTo.matcher.matchers;
 
-import jetbrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 
 import java.util.HashSet;
 import java.util.Set;

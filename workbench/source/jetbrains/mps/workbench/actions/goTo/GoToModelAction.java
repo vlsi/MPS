@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.actions.goTo;
 
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.ide.util.gotoByName.ChooseByNamePopupMPS;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;

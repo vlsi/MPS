@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.util.gotoByName.matchers;
+package jetbrains.mps.workbench.actions.goTo.matcher.matchers;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.CustomMatcherModel;
@@ -27,7 +27,8 @@ import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.util.Function;
 import com.intellij.util.SmartList;
 import com.intellij.util.containers.ContainerUtil;
-import jetbrains.mps.ide.util.gotoByName.ChooseByNameBaseMPS;
+import jetbrains.mps.workbench.actions.goTo.ChooseByNameBaseMPS;
+import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 
 import java.lang.ref.WeakReference;
 import java.util.*;

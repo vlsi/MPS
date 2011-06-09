@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.matcher;
+package jetbrains.mps.workbench.actions.goTo.matcher.matchers;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
-import jetbrains.mps.ide.util.gotoByName.matchers.DefaultMatcher;
-import jetbrains.mps.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.workbench.actions.goTo.matcher.EntityMatcher;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 import java.util.Set;
