@@ -281,6 +281,7 @@ public class ReferentsCreator {
           if (superClassBinding != null) {
             SNode superClass = SNodeOperations.cast(createType(superClassBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType");
             SLinkOperations.setTarget(anonymousClass, "classifier", SLinkOperations.getTarget(superClass, "classifier", false), false);
+            SNodeOperations.getReference(anonymousClass, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier")).setResolveInfo(new String(superClassBinding.sourceName));
             for (SNode t : SLinkOperations.getTargets(superClass, "parameter", true)) {
               ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).addElement(SNodeOperations.copyNode(t));
             }
