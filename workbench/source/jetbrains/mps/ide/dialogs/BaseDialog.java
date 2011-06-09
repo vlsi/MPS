@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.dialogs;
 
+import com.intellij.openapi.Disposable;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.logging.Logger;
@@ -35,48 +37,48 @@ import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.List;
 
-/**
- * @author Kostik
- */
-public abstract class BaseDialog extends JDialog {
+public abstract class BaseDialog extends JDialog implements Disposable {
   private static final Logger LOG = Logger.getLogger(BaseDialog.class);
 
-  private JLabel myErrorLabel = new JLabel("") {
-    {
-      setForeground(Color.RED);
-      setFont(getFont().deriveFont(Font.BOLD));
-      setBorder(null);
+  private JLabel myErrorLabel = new ErrorLabel();
+  private boolean myPrepared = false;
+
+  private Disposable myDisposable = new Disposable() {
+    public void dispose() {
+
+    }
+
+    public String toString() {
+      return "Containing class: "+BaseDialog.this.getClass().getName();
     }
   };
 
-  static final String D_LEFT = "left";
-  static final String D_TOP = "top";
-  static final String D_WIDTH = "width";
-  static final String D_HEIGHT = "height";
-
-  private boolean myPrepared = false;
+  protected BaseDialog(Frame owner) throws HeadlessException {
+    this(owner, null);
+  }
 
   protected BaseDialog(Frame mainFrame, String text) throws HeadlessException {
     this(mainFrame, text, true);
   }
 
-  //required for invocation of "super" in descendants before initialization
+  protected BaseDialog(Dialog owner, String title) throws HeadlessException {
+    super(owner, title);
+    Disposer.register(this, myDisposable);
+    doInit(owner);
+  }
 
+  //required for invocation of "super" in descendants before initialization
   protected BaseDialog(Frame mainFrame, String text, boolean init) throws HeadlessException {
     super(mainFrame, text, true);
+    Disposer.register(this, myDisposable);
     if (init) {
       doInit(mainFrame);
     }
   }
 
-  protected BaseDialog(Dialog owner, String title) throws HeadlessException {
-    super(owner, title);
-    doInit(owner);
-  }
-
-  protected BaseDialog(Frame owner) throws HeadlessException {
-    this(owner, null);
-    doInit(owner);
+  public void dispose() {
+    Disposer.dispose(this);
+    super.dispose();
   }
 
   protected void doInit(Component mainFrame) {
@@ -322,5 +324,14 @@ public abstract class BaseDialog extends JDialog {
     @Deprecated String shortcut() default "";
 
     boolean defaultButton() default false;
+  }
+
+  private class ErrorLabel extends JLabel {
+    public ErrorLabel() {
+      super("");
+      setForeground(Color.RED);
+      setFont(getFont().deriveFont(Font.BOLD));
+      setBorder(null);
+    }
   }
 }
