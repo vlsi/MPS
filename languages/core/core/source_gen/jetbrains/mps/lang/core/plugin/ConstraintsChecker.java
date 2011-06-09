@@ -116,7 +116,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       });
       if (!(canSetValue)) {
         // TODO this is a hack for anonymous classes 
-        if ("name".equals(SPropertyOperations.getString(p, "name")) && "AnonymousClass".equals(SPropertyOperations.getString(concept, "name"))) {
+        if ("name".equals(SPropertyOperations.getString(p, "name")) && ("AnonymousClass".equals(SPropertyOperations.getString(concept, "name")) || "InternalAnonymousClass".equals(SPropertyOperations.getString(concept, "name")))) {
           continue;
         }
         // todo find a rule 

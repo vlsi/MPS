@@ -109,6 +109,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3380580423598782941" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3380580423598782943">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3380580423598782944">
+            <node role="creator" roleId="tpee.1145553007750" type="tp68.InternalAnonymousClassCreator" typeId="tp68.3421461530438559752" id="3380580423598782946">
+              <node role="cls" roleId="tp68.3421461530438560031" type="tp68.InternalAnonymousClass" typeId="tp68.3421461530438559753" id="3380580423598782947">
+                <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+                <property name="fqClassName" nameId="tp68.3421461530438559973" value="java.io.Closeable" />
+                <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3380580423598782948" />
+                <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3380580423598782950">
+                  <property name="name" nameId="tpck.1169194664001" value="close" />
+                  <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3380580423598782951" />
+                  <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3380580423598782952" />
+                  <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3380580423598782953" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3769619919556058565">
         <property name="name" nameId="tpck.1169194664001" value="task" />
