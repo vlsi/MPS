@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -71,7 +72,6 @@ public class GoToModelAction extends BaseAction {
       }
     };
     ChooseByNamePopupMPS popup = ChooseByNamePopupMPS.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
-
     popup.setShowListForEmptyPattern(true);
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);
   }

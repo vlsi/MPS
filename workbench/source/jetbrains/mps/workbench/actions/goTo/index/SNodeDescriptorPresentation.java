@@ -16,6 +16,9 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +33,10 @@ public class SNodeDescriptorPresentation extends BasePresentation {
   }
 
   public String getModelName() {
-    return myNodeResult.getModelReference().getSModelFqName().toString();
+    SModelReference mr = myNodeResult.getModelReference();
+    SModelFqName modelFqName = mr.getSModelFqName();
+    if (modelFqName!=null) return modelFqName.toString();
+    return SModelRepository.getInstance().getModelDescriptor(mr).getLongName();
   }
 
   @NotNull
