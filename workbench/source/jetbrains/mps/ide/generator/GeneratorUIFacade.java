@@ -190,67 +190,69 @@ public class GeneratorUIFacade {
     final boolean[] result = new boolean[]{false};
 
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
-      public void run(@NotNull ProgressIndicator progress) {
-        if (!saveTransientModels) {
-          IGenerationTracer component = project.getComponent(IGenerationTracer.class);
-          if (component != null) {
-            component.discardTracing();
+        public void run(@NotNull ProgressIndicator progress) {
+          if (!saveTransientModels) {
+            IGenerationTracer component = project.getComponent(IGenerationTracer.class);
+            if (component != null) {
+              component.discardTracing();
+            }
           }
+
+          IGenerationTracer tracer = saveTransientModels
+            ? project.getComponent(IGenerationTracer.class)
+            : null;
+
+          if (tracer == null) {
+            tracer = new NullGenerationTracer();
+          }
+
+          final boolean incremental = settings.isIncremental();
+          final GenerationCacheContainer cache = incremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
+          IncrementalGenerationStrategy strategy = new IncrementalGenerationStrategy() {
+            @Override
+            public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+              if (!sm.isGeneratable()) return null;
+              if (!(sm instanceof EditableSModelDescriptor)) {
+                String hash = sm.getModelHash();
+                return hash != null ? Collections.singletonMap(ModelDigestHelper.FILE, hash) : null;
+              }
+              EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+
+              IFile modelFile = esm.getModelFile();
+              if (modelFile == null) return null;
+
+              return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
+            }
+
+            @Override
+            public GenerationCacheContainer getContainer() {
+              return cache;
+            }
+
+            @Override
+            public GenerationDependencies getDependencies(SModelDescriptor sm) {
+              return incremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
+            }
+
+            @Override
+            public boolean isIncrementalEnabled() {
+              return incremental;
+            }
+          };
+
+          GenerationOptions options = GenerationOptions.getDefaults()
+            .saveTransientModels(saveTransientModels)
+            .strictMode(settings.isStrictMode())
+            .rebuildAll(rebuildAll)
+            .incremental(strategy)
+            .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
+            .tracing(settings.getPerformanceTracingLevel(), tracer)
+            .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
+            .create();
+
+          result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, progress, messages, options);
         }
-
-        IGenerationTracer tracer = saveTransientModels
-          ? project.getComponent(IGenerationTracer.class)
-          : null;
-
-        if (tracer == null) {
-          tracer = new NullGenerationTracer();
-        }
-
-        final boolean incremental = settings.isIncremental();
-        final GenerationCacheContainer cache = incremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
-        IncrementalGenerationStrategy strategy = new IncrementalGenerationStrategy() {
-          @Override
-          public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
-            if (!(sm instanceof EditableSModelDescriptor)) return null;
-            EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-            if (esm.isPackaged()) return null;
-            if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
-
-            IFile modelFile = esm.getModelFile();
-            if (modelFile == null) return null;
-
-            return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
-          }
-
-          @Override
-          public GenerationCacheContainer getContainer() {
-            return cache;
-          }
-
-          @Override
-          public GenerationDependencies getDependencies(SModelDescriptor sm) {
-            return incremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
-          }
-
-          @Override
-          public boolean isIncrementalEnabled() {
-            return incremental;
-          }
-        };
-
-        GenerationOptions options = GenerationOptions.getDefaults()
-          .saveTransientModels(saveTransientModels)
-          .strictMode(settings.isStrictMode())
-          .rebuildAll(rebuildAll)
-          .incremental(strategy)
-          .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
-          .tracing(settings.getPerformanceTracingLevel(), tracer)
-          .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
-          .create();
-
-        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, progress, messages, options);
-      }
-    }, "Generation", true, invocationContext.getProject());
+      }, "Generation", true, invocationContext.getProject());
 
     return result[0];
   }
@@ -274,7 +276,7 @@ public class GeneratorUIFacade {
 
     for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(model.getSModel())) {
       Generator g = MPSModuleRepository.getInstance().getGenerator(templateModule.getReference());
-      if(g == null) continue;
+      if (g == null) continue;
 
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
         if (SModelStereotype.isUserModel(sm)) {

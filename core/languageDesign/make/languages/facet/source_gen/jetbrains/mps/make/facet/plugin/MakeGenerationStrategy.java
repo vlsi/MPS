@@ -10,9 +10,9 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.vfs.IFile;
+import java.util.Collections;
 import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.vfs.IFile;
 
 public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   private final GenerationCacheContainer cache;
@@ -35,16 +35,17 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   }
 
   public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext context) {
-    if (!((sm instanceof EditableSModelDescriptor))) {
+    if (!(sm.isGeneratable())) {
       return null;
+    }
+    if (!((sm instanceof EditableSModelDescriptor))) {
+      String hash = sm.getModelHash();
+      return (hash != null ?
+        Collections.singletonMap(ModelDigestHelper.FILE, hash) :
+        null
+      );
     }
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-    if (esm.isPackaged()) {
-      return null;
-    }
-    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
-      return null;
-    }
 
     IFile modelFile = esm.getModelFile();
     if (modelFile == null) {
