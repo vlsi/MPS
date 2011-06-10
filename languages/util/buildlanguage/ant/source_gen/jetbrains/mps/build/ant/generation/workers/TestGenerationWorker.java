@@ -60,7 +60,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.ConditionalIterable;
 import java.lang.reflect.Modifier;
 import junit.framework.TestCase;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.generator.GenParameters;
@@ -452,11 +451,11 @@ public class TestGenerationWorker extends MpsWorker {
 
   private List<TestGenerationWorker.Cycle> computeGenerationOrder(MPSProject project, MpsWorker.ObjectsToProcess go) {
     List<TestGenerationWorker.Cycle> cycles = new ArrayList<TestGenerationWorker.Cycle>();
-    Map<IModule, List<EditableSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<EditableSModelDescriptor>>();
-    extractModels(go.getProjects(), go.getModules(), go.getModels(), (Map) moduleToModels);
+    Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
+    extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);
     for (IModule module : moduleToModels.keySet()) {
-      List<EditableSModelDescriptor> modelsForModule = moduleToModels.get(module);
-      for (EditableSModelDescriptor smodel : modelsForModule) {
+      List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
+      for (SModelDescriptor smodel : modelsForModule) {
         cycles.add(new TestGenerationWorker.ModelCycle(smodel, module, project));
       }
     }
@@ -633,9 +632,9 @@ public class TestGenerationWorker extends MpsWorker {
   private class ModelCycle implements TestGenerationWorker.Cycle {
     private final IModule myModule;
     private final MPSProject myProject;
-    private final EditableSModelDescriptor mySModel;
+    private final SModelDescriptor mySModel;
 
-    public ModelCycle(EditableSModelDescriptor sModel, IModule module, MPSProject project) {
+    public ModelCycle(SModelDescriptor sModel, IModule module, MPSProject project) {
       mySModel = sModel;
       myProject = project;
       myModule = module;
