@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.util.containers.MultiMap;
 import gnu.trove.THashMap;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.cleanup.CleanupManager;
@@ -49,7 +50,7 @@ public class SModelRepository implements ApplicationComponent {
 
   private final Map<String, EditableSModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, EditableSModelDescriptor>();
   private final Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModelDescriptor>();
-  private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
+  private final MultiMap<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new MultiMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
   private final Map<SModelDescriptor, List<ModelOwner>> myModelsWithOwners = new THashMap<SModelDescriptor, List<ModelOwner>>();
@@ -180,7 +181,7 @@ public class SModelRepository implements ApplicationComponent {
       if (modelReference.getSModelId() != null) {
         myIdToModelDescriptorMap.put(modelReference.getSModelId(), modelDescriptor);
       }
-      myFqNameToModelDescriptorMap.put(modelDescriptor.getSModelReference().getSModelFqName(), modelDescriptor);
+      myFqNameToModelDescriptorMap.putValue(modelDescriptor.getSModelReference().getSModelFqName(), modelDescriptor);
 
       if (modelDescriptor instanceof EditableSModelDescriptor) {
         addModelToFileCache(((EditableSModelDescriptor) modelDescriptor));
@@ -209,7 +210,7 @@ public class SModelRepository implements ApplicationComponent {
       if (md.getSModelReference().getSModelId() != null) {
         myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
       }
-      myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
+      myFqNameToModelDescriptorMap.removeValue(md.getSModelReference().getSModelFqName(), md);
       if (md instanceof EditableSModelDescriptor) {
         boolean result = removeModelFromFileCache(((EditableSModelDescriptor) md));
         LOG.assertLog(result, "model " + md + " do not have a path in file cache");
@@ -462,6 +463,14 @@ public class SModelRepository implements ApplicationComponent {
   @Deprecated
   public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
     if (fqName == null) return null;
+    Collection<SModelDescriptor> modelDescriptors = myFqNameToModelDescriptorMap.get(fqName);
+    return modelDescriptors.isEmpty() ? null : modelDescriptors.iterator().next();
+  }
+
+  @Deprecated
+  @NotNull
+  public Collection<SModelDescriptor> getModelDescriptors(SModelFqName fqName) {
+    if (fqName == null) return Collections.emptyList();
     return myFqNameToModelDescriptorMap.get(fqName);
   }
 
@@ -486,8 +495,8 @@ public class SModelRepository implements ApplicationComponent {
 
     public void modelRenamed(SModelRenamedEvent event) {
       synchronized (myModelsLock) {
-        myFqNameToModelDescriptorMap.remove(event.getOldName());
-        myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
+        myFqNameToModelDescriptorMap.removeValue(event.getOldName(), event.getModelDescriptor());
+        myFqNameToModelDescriptorMap.putValue(event.getNewName(), event.getModelDescriptor());
       }
       SModelDescriptor md = event.getModelDescriptor();
       if (md instanceof EditableSModelDescriptor) {

@@ -50,13 +50,20 @@ public abstract class DefaultScope extends BaseScope {
       return null;
     }
 
+    Collection<SModelDescriptor> models = Arrays.asList(model);
+    if (modelReference.getSModelId() == null) {
+      models = SModelRepository.getInstance().getModelDescriptors(modelReference.getSModelFqName());
+    }
+
     synchronized (LOCK) {
       initialize();
 
-      if (myVisibleModules.contains(model.getModule())) return model;
+      for (SModelDescriptor md : models) {
+        if (myVisibleModules.contains(md.getModule())) return md;
 
-      for (Language l : myUsedLanguages) {
-        if (l.getAccessoryModels().contains(model)) return model;
+        for (Language l : myUsedLanguages) {
+          if (l.getAccessoryModels().contains(md)) return md;
+        }
       }
     }
 
