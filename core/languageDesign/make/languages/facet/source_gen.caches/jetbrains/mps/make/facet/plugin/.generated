@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7oo4r5qxsj15l53yxobz9cwt5u0spnw">
+<dependencies version="2" modelHash="7vniv70fkau6dvpqn2332mwc7k13qjx">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.extensions(MPS.Classpath/com.intellij.openapi.extensions@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(MPS.Classpath/com.intellij.openapi.progress@java_stub)" />
@@ -210,7 +210,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MakeGenerationStrategy.java" />
   </source>
-  <source id="4328738523548214510" name="TextGen" hash="-5oxy0q7ijtfpf6hduopbn3rdmwvlvw0">
+  <source id="4328738523548214510" name="TextGen" hash="alof5u0ng5srfyxqygxn2p3g5yututv">
     <dep root="2383991756720431443" />
     <dep root="4853833103870841534" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.cleanup(MPS.Classpath/jetbrains.mps.cleanup@java_stub)" />

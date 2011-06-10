@@ -152,4 +152,10 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       myCache.clear();
     }
   }
+
+  public void clean(SModelDescriptor model) {
+    synchronized (myCache) {
+      myCache.remove(model);
+    }
+  }
 }
