@@ -269,7 +269,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public static Class getOldConstraintsDescriptor(String languageNamespace) {
     Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-    assert l != null;
+    // assert l != null;
+    if (l == null) {
+      return null;
+    }
     String packageName = languageNamespace + ".constraints";
     SModelDescriptor constraintsModelDescriptor = l.getConstraintsModelDescriptor();
     if (constraintsModelDescriptor == null) {
