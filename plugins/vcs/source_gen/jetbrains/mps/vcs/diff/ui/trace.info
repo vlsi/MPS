@@ -285,26 +285,31 @@
     <unitInfo nodeId="278581607615156826" fileName="DiffModelTree.java" startLine="28" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.DiffModelTree" />
   </root>
   <root nodeId="278581607615217307">
-    <nodeInfo nodeId="278581607615217353" fileName="InvokeRootDifferenceAction.java" startLine="10" startPosition="60" endLine="11" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDifferenceDialog" />
-    <nodeInfo nodeId="278581607615217329" fileName="InvokeRootDifferenceAction.java" startLine="11" startPosition="56" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootId" />
-    <nodeInfo nodeId="278581607615219216" fileName="InvokeRootDifferenceAction.java" startLine="18" startPosition="7" endLine="19" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="278581607615217362" fileName="InvokeRootDifferenceAction.java" startLine="19" startPosition="35" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="278581607615217337" fileName="InvokeRootDifferenceAction.java" startLine="20" startPosition="52" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="278581607615217368" fileName="InvokeRootDifferenceAction.java" startLine="24" startPosition="74" endLine="25" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="278581607615217314" fileName="InvokeRootDifferenceAction.java" startLine="14" startPosition="98" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="278581607615217343" fileName="InvokeRootDifferenceAction.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="278581607615217309" fileName="InvokeRootDifferenceAction.java" startLine="13" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvokeRootDifferenceAction#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;Ljetbrains/mps/smodel/SNodeId;)V" />
-    <scopeInfo nodeId="278581607615217352" fileName="InvokeRootDifferenceAction.java" startLine="24" startPosition="74" endLine="25" endPosition="59" />
-    <scopeInfo nodeId="278581607615217343" fileName="InvokeRootDifferenceAction.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <nodeInfo nodeId="278581607615217353" fileName="InvokeRootDifferenceAction.java" startLine="12" startPosition="60" endLine="13" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDifferenceDialog" />
+    <nodeInfo nodeId="278581607615217329" fileName="InvokeRootDifferenceAction.java" startLine="13" startPosition="56" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootId" />
+    <nodeInfo nodeId="278581607615219216" fileName="InvokeRootDifferenceAction.java" startLine="20" startPosition="73" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="278581607615217362" fileName="InvokeRootDifferenceAction.java" startLine="21" startPosition="35" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="278581607615217337" fileName="InvokeRootDifferenceAction.java" startLine="22" startPosition="52" endLine="23" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1033791555378056443" fileName="InvokeRootDifferenceAction.java" startLine="23" startPosition="22" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="278581607615217368" fileName="InvokeRootDifferenceAction.java" startLine="27" startPosition="74" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1033791555378056456" fileName="InvokeRootDifferenceAction.java" startLine="31" startPosition="50" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="278581607615217314" fileName="InvokeRootDifferenceAction.java" startLine="16" startPosition="98" endLine="20" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="278581607615217343" fileName="InvokeRootDifferenceAction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1033791555378093584" fileName="InvokeRootDifferenceAction.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultDiffAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
+    <nodeInfo nodeId="278581607615217309" fileName="InvokeRootDifferenceAction.java" startLine="15" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvokeRootDifferenceAction#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;Ljetbrains/mps/smodel/SNodeId;)V" />
+    <scopeInfo nodeId="278581607615217352" fileName="InvokeRootDifferenceAction.java" startLine="27" startPosition="74" endLine="28" endPosition="59" />
+    <scopeInfo nodeId="1033791555378056455" fileName="InvokeRootDifferenceAction.java" startLine="31" startPosition="50" endLine="32" endPosition="69" />
+    <scopeInfo nodeId="278581607615217343" fileName="InvokeRootDifferenceAction.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="278581607615217346" varName="event" />
       <varInfo nodeId="278581607615217348" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="278581607615217312" fileName="InvokeRootDifferenceAction.java" startLine="14" startPosition="98" endLine="21" endPosition="22" />
-    <scopeInfo nodeId="278581607615217309" fileName="InvokeRootDifferenceAction.java" startLine="13" startPosition="0" endLine="22" endPosition="3">
+    <scopeInfo nodeId="1033791555378093584" fileName="InvokeRootDifferenceAction.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="278581607615217312" fileName="InvokeRootDifferenceAction.java" startLine="16" startPosition="98" endLine="24" endPosition="45" />
+    <scopeInfo nodeId="278581607615217309" fileName="InvokeRootDifferenceAction.java" startLine="15" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="278581607615217333" varName="rootId" />
       <varInfo nodeId="278581607615217357" varName="modelDifferenceDialog" />
     </scopeInfo>
-    <unitInfo nodeId="278581607615217307" fileName="InvokeRootDifferenceAction.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceAction" />
+    <unitInfo nodeId="278581607615217307" fileName="InvokeRootDifferenceAction.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceAction" />
   </root>
   <root nodeId="3021948350273458186">
     <nodeInfo nodeId="3021948350273458508" fileName="ChangeGroupBuilder.java" startLine="26" startPosition="33" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMergeContext" />
