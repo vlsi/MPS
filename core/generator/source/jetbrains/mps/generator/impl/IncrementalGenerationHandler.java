@@ -67,7 +67,7 @@ public class IncrementalGenerationHandler {
     }
 
     GenerationDependencies dependencies = incrementalStrategy.getDependencies(myModel);
-    if (dependencies == null || myGenerationHashes == null) {
+    if (dependencies == null || !dependencies.isContainsIncrementalInfo() || myGenerationHashes == null) {
       if (myTracer != null) {
         if (dependencies == null) {
           myTracer.report("No dependencies data found");
@@ -532,7 +532,7 @@ public class IncrementalGenerationHandler {
 
   public DependenciesBuilder createDependenciesBuilder() {
     if (myGenerationOptions.getIncrementalStrategy() == null) {
-      return new NonIncrementalDependenciesBuilder();
+      return new NonIncrementalDependenciesBuilder(myGenerationHashes, myParametersHash);
     }
 
     IncrementalDependenciesBuilder result = new IncrementalDependenciesBuilder(myModel.getSModel(), myGenerationHashes, myParametersHash, myCache);
