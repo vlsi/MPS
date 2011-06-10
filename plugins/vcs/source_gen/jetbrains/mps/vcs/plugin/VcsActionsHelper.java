@@ -56,7 +56,7 @@ public class VcsActionsHelper {
         final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            modelDialog.value = new ModelDifferenceDialog(project, context, oldModel, model, new SimpleDiffRequest(project, revisionNumber.asString() + " (Read-Only)", "Your Version"));
+            modelDialog.value = new ModelDifferenceDialog(oldModel, model, new SimpleDiffRequest(project, revisionNumber.asString() + " (Read-Only)", "Your Version"));
             id.value = node.getSNodeId();
           }
         });

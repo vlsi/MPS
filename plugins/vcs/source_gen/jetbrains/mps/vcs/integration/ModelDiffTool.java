@@ -61,7 +61,7 @@ public class ModelDiffTool implements DiffTool {
           boolean modal = !(request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
           if (isNewDiffEnabled()) {
-            return new ModelDifferenceDialog(request.getProject(), context, oldModel, newModel, request);
+            return new ModelDifferenceDialog(oldModel, newModel, request);
           } else {
             final OldModelDifferenceDialog d = new OldModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
             d.addAction(new AnAction("View as Text", "View as Text", Icons.TEXT_ICON) {

@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
@@ -52,14 +51,13 @@ public class ModelDifferenceDialog extends BaseDialog {
   private boolean myGoingToNeighbour = false;
   private String[] myContentTitles;
 
-  public ModelDifferenceDialog(Project project, IOperationContext operationContext, final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
-    super(WindowManager.getInstance().getFrame(project), "Difference for model: " + SModelOperations.getModelName(newModel));
-    // TODO get rid of extra parameters: operationContext and project 
-    DiffTemporaryModule.createModuleForModel(oldModel, "old", project);
-    DiffTemporaryModule.createModuleForModel(newModel, "new", project);
+  public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
+    super(WindowManager.getInstance().getFrame(diffRequest.getProject()), "Difference for model: " + SModelOperations.getModelName(newModel));
+    myProject = diffRequest.getProject();
+    DiffTemporaryModule.createModuleForModel(oldModel, "old", myProject);
+    DiffTemporaryModule.createModuleForModel(newModel, "new", myProject);
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
-    myProject = project;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);

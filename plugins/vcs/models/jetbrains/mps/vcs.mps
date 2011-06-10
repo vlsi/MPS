@@ -5940,12 +5940,6 @@
                                 <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1783158492204753664">
                                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1783158492204753666">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="p37l.3724655318819767367" resolveInfo="ModelDifferenceDialog" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1783158492204753667">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897714960" resolveInfo="project" />
-                                    </node>
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1783158492204753671">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897715161" resolveInfo="context" />
-                                    </node>
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1783158492204753673">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897714954" resolveInfo="diskModel" />
                                     </node>
