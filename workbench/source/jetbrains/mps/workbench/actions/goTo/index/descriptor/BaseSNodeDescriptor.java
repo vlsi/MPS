@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index.descriptor;
 
-import com.sun.istack.internal.NotNull;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
