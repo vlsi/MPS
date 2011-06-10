@@ -17,6 +17,8 @@
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="Closures-runtime" />
   </component>
 </module>
 
