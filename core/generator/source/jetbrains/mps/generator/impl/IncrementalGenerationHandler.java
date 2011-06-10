@@ -3,11 +3,8 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
-import jetbrains.mps.generator.impl.dependencies.DefaultDependenciesBuilder;
-import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
-import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
+import jetbrains.mps.generator.impl.dependencies.*;
+import jetbrains.mps.generator.impl.dependencies.NonIncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;
@@ -22,9 +19,9 @@ import java.util.Map.Entry;
 /**
  * Evgeny Gryaznov, Jun 3, 2010
  */
-public class GenerationFilter {
+public class IncrementalGenerationHandler {
 
-  private static final Logger LOG = Logger.getLogger(GenerationFilter.class);
+  private static final Logger LOG = Logger.getLogger(IncrementalGenerationHandler.class);
 
   private static final String CONDITIONALS_ID = "";
 
@@ -43,7 +40,7 @@ public class GenerationFilter {
   private GenerationDependencies mySavedDependencies;
   private IntermediateModelsCache myCache;
 
-  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options, String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
+  public IncrementalGenerationHandler(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options, String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
     myModel = model;
     myGenerationOptions = options;
     myOperationContext = operationContext;
@@ -535,10 +532,10 @@ public class GenerationFilter {
 
   public DependenciesBuilder createDependenciesBuilder() {
     if (myGenerationOptions.getIncrementalStrategy() == null) {
-      return new NullDependenciesBuilder();
+      return new NonIncrementalDependenciesBuilder();
     }
 
-    DefaultDependenciesBuilder result = new DefaultDependenciesBuilder(myModel.getSModel(), myGenerationHashes, myParametersHash, myCache);
+    IncrementalDependenciesBuilder result = new IncrementalDependenciesBuilder(myModel.getSModel(), myGenerationHashes, myParametersHash, myCache);
     result.propagateDependencies(myUnchangedRoots, myRequiredRoots, myConditionalsUnchanged, myConditionalsRequired, mySavedDependencies);
     return result;
   }

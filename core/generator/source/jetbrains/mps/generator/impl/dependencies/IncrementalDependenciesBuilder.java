@@ -22,9 +22,9 @@ import java.util.*;
  * <p/>
  * Evgeny Gryaznov, May 11, 2010
  */
-public class DefaultDependenciesBuilder implements DependenciesBuilder {
+public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
-  private static final Logger LOG = Logger.getLogger(DefaultDependenciesBuilder.class);
+  private static final Logger LOG = Logger.getLogger(IncrementalDependenciesBuilder.class);
 
   /* generation data */
   private final Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
@@ -49,8 +49,8 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   private Map<String, SNode> myUnchangedSet;
   private Map<String, SNode> myRequiredSet;
 
-  public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes,
-                                    String parametersHash, IntermediateModelsCache cache) {
+  public IncrementalDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes,
+                                        String parametersHash, IntermediateModelsCache cache) {
     currentInputModel = originalInputModel;
     myParametersHash = parametersHash;
     myCache = cache;
