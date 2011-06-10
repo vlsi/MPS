@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Facet_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ProjectPlugin" />
-  <unitInfo fileName="Make_Facet.java" startLine="71" startPosition="89" endLine="75" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
-  <unitInfo fileName="Make_Facet.java" startLine="75" startPosition="31" endLine="79" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
-  <unitInfo fileName="Make_Facet.java" startLine="80" startPosition="89" endLine="84" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
-  <unitInfo fileName="Make_Facet.java" startLine="84" startPosition="31" endLine="88" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
-  <unitInfo fileName="Make_Facet.java" startLine="159" startPosition="17" endLine="168" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$1" />
   <unitInfo fileName="SaveTransient_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
   <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
-  <unitInfo fileName="Make_Facet.java" startLine="69" startPosition="62" endLine="90" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$2" />
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.FacetManifest" />
-  <unitInfo fileName="MakeGenerationHandler.java" startLine="20" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeGenerationHandler" />
   <unitInfo fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
   <unitInfo fileName="Facets_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
-  <unitInfo fileName="Make_Facet.java" startLine="64" startPosition="17" endLine="96" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$1" />
-  <unitInfo fileName="Make_Facet.java" startLine="149" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$Target_pm9z_b" />
-  <unitInfo fileName="Make_Facet.java" startLine="54" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$Target_pm9z_a" />
   <unitInfo fileName="ReloadClasses_Facet.java" startLine="24" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet" />
   <unitInfo fileName="Binaries_Facet.java" startLine="43" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Binaries_Facet" />
   <unitInfo fileName="Make_Facet.java" startLine="25" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet" />
@@ -192,8 +182,8 @@
       <varInfo nodeId="2383991756720270217" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270170" fileName="MakeGenerationHandler.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="2383991756720270181" varName="b" />
       <varInfo nodeId="2383991756720270183" varName="helper" />
+      <varInfo nodeId="2383991756720270181" varName="b" />
       <varInfo nodeId="2383991756720270173" varName="context" />
       <varInfo nodeId="2383991756720270175" varName="list" />
     </scopeInfo>
@@ -203,8 +193,8 @@
     <scopeInfo nodeId="2383991756720270198" fileName="MakeGenerationHandler.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2383991756720270201" varName="module" />
       <varInfo nodeId="2383991756720270209" varName="helper" />
-      <varInfo nodeId="2383991756720270203" varName="descriptor" />
       <varInfo nodeId="2383991756720270205" varName="status" />
+      <varInfo nodeId="2383991756720270203" varName="descriptor" />
       <varInfo nodeId="2383991756720270207" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270225" fileName="MakeGenerationHandler.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
