@@ -15,14 +15,19 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.ModelDigestHelper;
 
 public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
-  private GenerationCacheContainer cache;
+  private final GenerationCacheContainer cache;
+  private final boolean isIncremental;
 
-  public MakeGenerationStrategy(GenerationCacheContainer cache) {
+  public MakeGenerationStrategy(GenerationCacheContainer cache, boolean isIncremental) {
     this.cache = cache;
+    this.isIncremental = isIncremental;
   }
 
   public GenerationDependencies getDependencies(SModelDescriptor descriptor) {
-    return GenerationDependenciesCache.getInstance().get(descriptor);
+    return (isIncremental ?
+      GenerationDependenciesCache.getInstance().get(descriptor) :
+      null
+    );
   }
 
   public GenerationCacheContainer getContainer() {
@@ -47,5 +52,9 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
     }
 
     return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, context);
+  }
+
+  public boolean isIncrementalEnabled() {
+    return isIncremental;
   }
 }

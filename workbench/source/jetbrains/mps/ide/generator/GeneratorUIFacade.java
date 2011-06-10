@@ -206,34 +206,37 @@ public class GeneratorUIFacade {
           tracer = new NullGenerationTracer();
         }
 
-        IncrementalGenerationStrategy strategy = null;
-        if (settings.isIncremental()) {
-          final GenerationCacheContainer cache = settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
-          strategy = new IncrementalGenerationStrategy() {
-            @Override
-            public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
-              if (!(sm instanceof EditableSModelDescriptor)) return null;
-              EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-              if (esm.isPackaged()) return null;
-              if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
+        final boolean incremental = settings.isIncremental();
+        final GenerationCacheContainer cache = incremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
+        IncrementalGenerationStrategy strategy = new IncrementalGenerationStrategy() {
+          @Override
+          public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+            if (!(sm instanceof EditableSModelDescriptor)) return null;
+            EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+            if (esm.isPackaged()) return null;
+            if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
 
-              IFile modelFile = esm.getModelFile();
-              if (modelFile == null) return null;
+            IFile modelFile = esm.getModelFile();
+            if (modelFile == null) return null;
 
-              return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
-            }
+            return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
+          }
 
-            @Override
-            public GenerationCacheContainer getContainer() {
-              return cache;
-            }
+          @Override
+          public GenerationCacheContainer getContainer() {
+            return cache;
+          }
 
-            @Override
-            public GenerationDependencies getDependencies(SModelDescriptor sm) {
-              return GenerationDependenciesCache.getInstance().get(sm);
-            }
-          };
-        }
+          @Override
+          public GenerationDependencies getDependencies(SModelDescriptor sm) {
+            return incremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
+          }
+
+          @Override
+          public boolean isIncrementalEnabled() {
+            return incremental;
+          }
+        };
 
         GenerationOptions options = GenerationOptions.getDefaults()
           .saveTransientModels(saveTransientModels)

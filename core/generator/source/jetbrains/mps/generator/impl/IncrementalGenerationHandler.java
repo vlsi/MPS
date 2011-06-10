@@ -62,7 +62,7 @@ public class IncrementalGenerationHandler {
 
     myGenerationHashes = incrementalStrategy.getModelHashes(myModel, myOperationContext);
 
-    if (myGenerationOptions.isRebuildAll()) {
+    if (myGenerationOptions.isRebuildAll() || !incrementalStrategy.isIncrementalEnabled()) {
       return;
     }
 
@@ -531,7 +531,8 @@ public class IncrementalGenerationHandler {
   }
 
   public DependenciesBuilder createDependenciesBuilder() {
-    if (myGenerationOptions.getIncrementalStrategy() == null) {
+    IncrementalGenerationStrategy incrementalStrategy = myGenerationOptions.getIncrementalStrategy();
+    if (incrementalStrategy == null || !incrementalStrategy.isIncrementalEnabled()) {
       return new NonIncrementalDependenciesBuilder(myGenerationHashes, myParametersHash);
     }
 

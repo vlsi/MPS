@@ -320,12 +320,10 @@ public class Generate_Facet implements IFacet {
                 pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions() :
                 GenerationOptions.fromSettings(settings)
               ));
-              if (settings.isIncremental()) {
-                pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions(pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncrementalUseCache() ?
-                  GeneratorCacheComponent.getInstance().getCache() :
-                  null
-                ))));
-              }
+              pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ?
+                GeneratorCacheComponent.getInstance().getCache() :
+                null
+              ), settings.isIncremental()));
               IGenerationTracer tracer = (pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient() ?
                 pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(IGenerationTracer.class) :
                 new NullGenerationTracer()

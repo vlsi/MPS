@@ -30,4 +30,6 @@ public interface IncrementalGenerationStrategy {
   GenerationCacheContainer getContainer();
 
   GenerationDependencies getDependencies(SModelDescriptor sm);
+
+  boolean isIncrementalEnabled();
 }

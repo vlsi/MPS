@@ -78,7 +78,7 @@ public class GenerationTestBase {
 
     GenerationOptions options = GenerationOptions.getDefaults()
       .generateInParallel(false, 1)
-      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(null).create();
+      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
     IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
     GenerationFacade.generateModels(p.getProject(),
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
@@ -91,7 +91,7 @@ public class GenerationTestBase {
 
     options = GenerationOptions.getDefaults()
       .generateInParallel(false, 1)
-      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(null).create();
+      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
     generationHandler = new IncrementalTestGenerationHandler();
     long start = System.nanoTime();
     GenerationFacade.generateModels(p.getProject(),
@@ -104,7 +104,7 @@ public class GenerationTestBase {
 
     options = GenerationOptions.getDefaults()
       .generateInParallel(true, threads)
-      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(null).create();
+      .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
     generationHandler = new IncrementalTestGenerationHandler();
     start = System.nanoTime();
     GenerationFacade.generateModels(p.getProject(),
@@ -407,8 +407,36 @@ public class GenerationTestBase {
       return myDependencies;
     }
 
+    @Override
+    public boolean isIncrementalEnabled() {
+      return true;
+    }
+
     public void setDependencies(GenerationDependencies dependencies) {
       myDependencies = dependencies;
+    }
+  }
+
+  private static class MyNonIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
+
+    @Override
+    public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+      return Collections.emptyMap();
+    }
+
+    @Override
+    public GenerationCacheContainer getContainer() {
+      return null;
+    }
+
+    @Override
+    public GenerationDependencies getDependencies(SModelDescriptor sm) {
+      return null;
+    }
+
+    @Override
+    public boolean isIncrementalEnabled() {
+      return false;
     }
   }
 

@@ -158,6 +158,10 @@ public class GenerationOptions {
     }
 
     public GenerationOptions create() {
+      if(myIncrementalStrategy == null) {
+        throw new IllegalArgumentException("incremental strategy is not set");
+      }
+
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer, myIncrementalStrategy,
@@ -184,7 +188,7 @@ public class GenerationOptions {
       return this;
     }
 
-    public OptionsBuilder incremental(IncrementalGenerationStrategy incrementalStrategy) {
+    public OptionsBuilder incremental(@NotNull IncrementalGenerationStrategy incrementalStrategy) {
       myIncrementalStrategy = incrementalStrategy;
       return this;
     }
