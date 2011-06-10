@@ -463,7 +463,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3754120030656264535">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i9so.3754120030656252184" resolveInfo="setPredecessor" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3754120030656264536">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3754120030656264524" resolveInfo="predParamPool" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5087391486143156467" resolveInfo="predParamPool" />
                 </node>
               </node>
             </node>
@@ -474,7 +474,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6828477339626437156" resolveInfo="ppool" />
               </node>
               <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3754120030656264539">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3754120030656264524" resolveInfo="predParamPool" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5087391486143156467" resolveInfo="predParamPool" />
               </node>
             </node>
           </node>
@@ -1020,6 +1020,13 @@
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6828477339626436912" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2c.FunctionType" typeId="tp2c.1199542442495" id="6828477339626436913">
           <node role="resultType" roleId="tp2c.1199542457201" type="tpee.VoidType" typeId="tpee.1068581517677" id="6828477339626436914" />
+        </node>
+      </node>
+      <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5087391486143156467">
+        <property name="name" nameId="tpck.1169194664001" value="predParamPool" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5087391486143156468" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5087391486143156469">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i9so.6872280991287216857" resolveInfo="IParametersPool" />
         </node>
       </node>
     </node>
@@ -3022,13 +3029,6 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5530986327995634541" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7425375255954609464">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yif3.2130030975859798586" resolveInfo="ProgressIndicatorDelegate" />
-      </node>
-    </node>
-    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3754120030656264524">
-      <property name="name" nameId="tpck.1169194664001" value="predParamPool" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3754120030656264525" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3754120030656264527">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i9so.6872280991287216857" resolveInfo="IParametersPool" />
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3180200298862744728">
