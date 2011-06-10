@@ -36,6 +36,12 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   /* support of temporary downgrading write lock to shared read lock */
   protected final ReentrantReadWriteLock mySharedReadInWriteLock = new ReentrantReadWriteLock();
   protected volatile boolean mySharedReadInWriteMode = false;
+  private ThreadLocal<Boolean> myReadEnabledFlag = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return Boolean.FALSE;
+    }
+  };
 
   protected ModelAccess() {
     allowSharedRead = !("false".equalsIgnoreCase(System.getProperty("mps.sharedread")));
@@ -64,7 +70,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   @Override
   public boolean canRead() {
     if (allowSharedRead) {
-      if (myReadWriteLock.getReadHoldCount() != 0) {
+      if (isReadEnabledFlag() || myReadWriteLock.getReadHoldCount() != 0) {
         return true;
       }
     }
@@ -169,4 +175,14 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     UnregisteredNodes.instance().disable();
   }
 
+  @Override
+  public boolean setReadEnabledFlag(boolean flag) {
+    Boolean oldValue = myReadEnabledFlag.get();
+    myReadEnabledFlag.set(flag);
+    return oldValue;
+  }
+
+  private boolean isReadEnabledFlag () {
+    return Boolean.TRUE == myReadEnabledFlag.get();
+  }
 }

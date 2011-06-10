@@ -27,6 +27,15 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface ModelCommandExecutor {
 
+  /**
+   * Enables canRead() without actually acquiring the read lock (screw you, ReadWriteLock!).
+   * Requires read lock in the "parent" thread.
+   * Thread local. Returns previous value, to which it must be reset after use (in finally{}).
+   * @param flag
+   * @return
+   */
+  boolean setReadEnabledFlag (boolean flag);
+
   boolean isInEDT();
 
   boolean canRead();

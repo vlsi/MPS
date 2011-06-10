@@ -67,12 +67,13 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     @Override
     public void run() {
       if (myTask.requiresReadAccess()) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            runInternal();
-          }
-        });
+        boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
+        try {
+          runInternal();
+        }
+        finally {
+          ModelAccess.instance().setReadEnabledFlag(oldFlag);
+        }
       } else {
         runInternal();
       }
