@@ -475,10 +475,10 @@ public class Generate_Facet implements IFacet {
               Sequence.fromIterable(input).visitAll(new IVisitor<IResource>() {
                 public void visit(IResource mod) {
                   MResource mres = ((MResource) mod);
+                  monitor.currentProgress().advanceWork("Pre-loading models", 100);
                   Sequence.fromIterable(mres.models()).visitAll(new IVisitor<SModelDescriptor>() {
                     public void visit(final SModelDescriptor smd) {
                       if (smd instanceof DefaultSModelDescriptor) {
-                        monitor.currentProgress().advanceWork("Pre-loading models", 100, smd.getSModelReference().getCompactPresentation());
                         ModelAccess.instance().runReadAction(new Runnable() {
                           public void run() {
                             smd.getSModel();
@@ -640,7 +640,7 @@ public class Generate_Facet implements IFacet {
                   return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
                 }
               }) + 1000, monitor.currentProgress().workLeft());
-              monitor.currentProgress().advanceWork("Generating", 1000, "cleaning up");
+              monitor.currentProgress().advanceWork("Generating", 1000);
               List<SModelDescriptor> models = Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();
