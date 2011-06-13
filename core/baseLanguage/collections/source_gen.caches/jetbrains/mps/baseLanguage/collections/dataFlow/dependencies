@@ -118,6 +118,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.ForEachVariableReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.GetElementOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.GetIndexOfOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.GetLastIndexOfOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.HashMapCreator_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.HeadListOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.HeadMapOperation_DataFlow" />
@@ -183,6 +184,13 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.GetIndexOfOperation_DataFlow" file="GetIndexOfOperation_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.GetLastIndexOfOperation_DataFlow" file="GetLastIndexOfOperation_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

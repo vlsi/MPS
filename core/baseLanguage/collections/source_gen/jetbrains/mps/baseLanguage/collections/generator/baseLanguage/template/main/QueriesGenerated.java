@@ -1235,6 +1235,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "argument", true);
   }
 
+  public static SNode sourceNodeQuery_4020503625588460580(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "argument", true);
+  }
+
   public static SNode sourceNodeQuery_1227874612729(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }

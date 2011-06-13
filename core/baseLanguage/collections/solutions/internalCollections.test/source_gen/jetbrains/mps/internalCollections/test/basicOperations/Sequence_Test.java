@@ -279,12 +279,23 @@ __switch__:
     for (Integer i : this.input5()) {
       Assert.assertEquals(true, Sequence.fromIterable(input).contains(i));
       Assert.assertEquals(i - 1, Sequence.fromIterable(input).indexOf(i));
+      Assert.assertEquals(i - 1, Sequence.fromIterable(input).lastIndexOf(i));
     }
     Assert.assertEquals(false, Sequence.fromIterable(input).contains(-1));
     Assert.assertEquals(false, Sequence.fromIterable(input).isEmpty());
     Assert.assertEquals(true, Sequence.fromIterable(input).isNotEmpty());
     Assert.assertEquals(true, Sequence.fromIterable(this.inputEmpty()).isEmpty());
     Assert.assertEquals(false, Sequence.fromIterable(this.inputEmpty()).isNotEmpty());
+  }
+
+  public void test_lastIndexOf() throws Exception {
+    Iterable<Integer> input = this.input5();
+    input = Sequence.fromIterable(input).concat(Sequence.fromIterable(input));
+    for (Integer i : this.input5()) {
+      Assert.assertEquals(true, Sequence.fromIterable(input).contains(i));
+      Assert.assertEquals(i - 1, Sequence.fromIterable(input).indexOf(i));
+      Assert.assertEquals(5 + i - 1, Sequence.fromIterable(input).lastIndexOf(i));
+    }
   }
 
   public void test_toOperations() throws Exception {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.DFABuilders" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.DFABuilders" />
   <root nodeId="1207060282352">
     <nodeInfo nodeId="1207060299994" fileName="ForEachStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207323166495" fileName="ForEachStatement_DataFlow.java" startLine="16" startPosition="110" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -403,6 +403,16 @@
     <scopeInfo nodeId="3602611744238064785" fileName="PushOperation_DataFlow.java" startLine="11" startPosition="61" endLine="13" endPosition="3" />
     <scopeInfo nodeId="3602611744238064785" fileName="PushOperation_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="3602611744238064785" fileName="PushOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.PushOperation_DataFlow" />
+  </root>
+  <root nodeId="4020503625588457174">
+    <nodeInfo nodeId="4020503625588457177" fileName="GetLastIndexOfOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4020503625588457174" fileName="GetLastIndexOfOperation_DataFlow.java" startLine="11" startPosition="71" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetLastIndexOfOperation_DataFlow#()V" />
+    <nodeInfo nodeId="4020503625588457174" fileName="GetLastIndexOfOperation_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="4020503625588457174" fileName="GetLastIndexOfOperation_DataFlow.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
+    <scopeInfo nodeId="4020503625588457176" fileName="GetLastIndexOfOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" />
+    <scopeInfo nodeId="4020503625588457174" fileName="GetLastIndexOfOperation_DataFlow.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="4020503625588457174" fileName="GetLastIndexOfOperation_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="4020503625588457174" fileName="GetLastIndexOfOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.GetLastIndexOfOperation_DataFlow" />
   </root>
   <root nodeId="5232196642625575046">
     <nodeInfo nodeId="5232196642625575049" fileName="HeadListOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

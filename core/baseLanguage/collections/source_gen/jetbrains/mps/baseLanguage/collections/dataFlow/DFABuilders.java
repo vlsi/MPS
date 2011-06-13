@@ -26,6 +26,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", new ForEachVariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation", new GetElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", new GetIndexOfOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.GetLastIndexOfOperation", new GetLastIndexOfOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", new HashMapCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", new HeadListOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", new HeadMapOperation_DataFlow());

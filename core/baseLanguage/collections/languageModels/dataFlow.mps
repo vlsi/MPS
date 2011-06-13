@@ -201,6 +201,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="list" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.1225645868993" resolveInfo="SetElementOperation" />
     </node>
+    <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="4020503625588457174">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.4020503625588385966" resolveInfo="GetLastIndexOfOperation" />
+    </node>
   </roots>
   <root id="1207060282352">
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="1207060282353">
@@ -1145,6 +1149,20 @@
             <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="3091159734392890682" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3091159734392890687">
               <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.1225645893898" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4020503625588457174">
+    <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="4020503625588457175">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4020503625588457176">
+        <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="4020503625588457177">
+          <node role="codeFor" roleId="tp41.1206454079161" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4020503625588457178">
+            <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="4020503625588457179" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4020503625588460586">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.4020503625588385967" />
             </node>
           </node>
         </node>

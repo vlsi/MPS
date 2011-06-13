@@ -167,6 +167,10 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return IterableUtils.indexOf(toIterable(), t);
   }
 
+  public int lastIndexOf(T t) {
+    return IterableUtils.lastIndexOf(toIterable(), t);
+  }
+
   public int count() {
     return IterableUtils.count(toIterable());
   }

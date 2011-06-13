@@ -3780,6 +3780,30 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4020503625588457181">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.4020503625588385966" resolveInfo="GetLastIndexOfOperation" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4020503625588460556">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4020503625588460577">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="urs3.4020503625588236701" resolveInfo="lastIndexOf" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="4020503625588460578">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="4020503625588460579">
+              <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="4020503625588460580">
+                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4020503625588460581">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4020503625588460582">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4020503625588460583">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4020503625588460584" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4020503625588460585">
+                        <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.4020503625588385967" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1204991230312">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1162935959151" resolveInfo="GetSizeOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1204991259420">

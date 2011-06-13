@@ -33,6 +33,7 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
   public boolean contains(T t);
   public boolean containsSequence(ISequence<T> that);
   public int indexOf(T t);
+  public int lastIndexOf(T t);
   public int count();
   public boolean isEmpty();
   public boolean isNotEmpty();

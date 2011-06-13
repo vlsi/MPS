@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Collections_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.Collections_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.StructureAspectDescriptor" />
   <root nodeId="1151688443754">
     <nodeInfo nodeId="1151688443754" fileName="ListType.java" startLine="11" startPosition="36" endLine="12" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1151688443754" fileName="ListType.java" startLine="12" startPosition="99" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_TYPE" />
@@ -4169,6 +4169,22 @@
     <scopeInfo nodeId="3358009230509553641" fileName="LinkedListType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="3358009230509553641" fileName="LinkedListType.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="3358009230509553641" fileName="LinkedListType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.LinkedListType" />
+  </root>
+  <root nodeId="4020503625588385966">
+    <nodeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="10" startPosition="78" endLine="11" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="13" startPosition="46" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="17" startPosition="78" endLine="18" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="21" startPosition="64" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetLastIndexOfOperation#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/collections/structure/GetLastIndexOfOperation;" />
+    <nodeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/collections/structure/GetLastIndexOfOperation;" />
+    <scopeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="13" startPosition="46" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="17" startPosition="78" endLine="18" endPosition="208" />
+    <scopeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="21" startPosition="64" endLine="22" endPosition="58" />
+    <scopeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.GetLastIndexOfOperation" />
   </root>
   <root nodeId="497032923610827734">
     <nodeInfo nodeId="497032923610827734" fileName="IQueueOperation.java" startLine="6" startPosition="62" endLine="7" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
