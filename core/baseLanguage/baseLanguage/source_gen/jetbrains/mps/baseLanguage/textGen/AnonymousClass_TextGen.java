@@ -14,7 +14,9 @@ import jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior;
 
 public class AnonymousClass_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TraceInfoGenerationUtil.createUnitInfo(this, node);
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.createUnitInfo(this, node);
+    }
     BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "classifier", false), this);
     this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier")), true));
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
@@ -65,6 +67,8 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     BaseClassConceptTextGen.body(node, this);
     this.decreaseDepth();
     this.appendWithIndent("}");
-    TraceInfoGenerationUtil.fillUnitInfo(this, node, UnitConcept_Behavior.call_getUnitName_3822000666564591112(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UnitConcept")));
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.fillUnitInfo(this, node, UnitConcept_Behavior.call_getUnitName_3822000666564591112(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UnitConcept")));
+    }
   }
 }

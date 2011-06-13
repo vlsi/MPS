@@ -12,7 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TryCatchStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TraceInfoGenerationUtil.createPositionInfo(this, node);
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.createPositionInfo(this, node);
+    }
     this.appendNewLine();
     this.indentBuffer();
     this.append("try {");
@@ -25,6 +27,8 @@ public class TryCatchStatement_TextGen extends SNodeTextGen {
       this.appendNewLine();
     }
     this.appendWithIndent("}");
-    TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+    }
   }
 }

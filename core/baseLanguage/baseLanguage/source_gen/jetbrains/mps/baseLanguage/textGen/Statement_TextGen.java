@@ -12,7 +12,9 @@ import jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior;
 
 public class Statement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TraceInfoGenerationUtil.createPositionInfo(this, node);
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.createPositionInfo(this, node);
+    }
     if (SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement")) {
       this.append("/* error: statement w/o textGen:");
       this.append(BaseConcept_Behavior.call_getPresentation_1213877396640(node));
@@ -20,6 +22,8 @@ public class Statement_TextGen extends SNodeTextGen {
     } else {
       this.appendNewLine();
     }
-    TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+    }
   }
 }
