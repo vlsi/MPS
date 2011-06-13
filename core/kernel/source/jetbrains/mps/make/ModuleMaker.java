@@ -137,8 +137,8 @@ public class ModuleMaker {
       }
 
       ModuleSources sources = getModuleSources(m);
-      hasFilesToCopyOrDelete |= sources.isResourcesUpToDate();
-      hasJavaToCompile |= sources.isJavaUpToDate();
+      hasFilesToCopyOrDelete |= !sources.isResourcesUpToDate();
+      hasJavaToCompile |= !sources.isJavaUpToDate();
 
       for (File f : sources.getFilesToDelete()) {
         f.delete();
