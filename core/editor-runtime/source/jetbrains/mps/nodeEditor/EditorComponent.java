@@ -1193,7 +1193,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   /**
-   * Can be used to check if editor is in vadid state or not.
+   * Can be used to check if editor is in valid state or not.
    * Editor can be in invalid state then corresponding model
    * was reloaded, but current editor instance was not
    * updated yet.
