@@ -8,6 +8,7 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.*;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
 
@@ -53,8 +54,10 @@ public class ProjectTree extends MPSTree {
     myModulesPoolTreeNode = new ProjectModulesPoolTreeNode(project);
     root.add(myModulesPoolTreeNode);
 
-    for(TransientModelsModule module : myProject.getComponent(TransientModelsComponent.class).getModules()) {
-      root.add(new TransientModelsTreeNode(myProject, module));
+    if (!IMakeService.INSTANCE.get().isSessionActive()) {
+      for(TransientModelsModule module : myProject.getComponent(TransientModelsComponent.class).getModules()) {
+        root.add(new TransientModelsTreeNode(myProject, module));
+      }
     }
     return root;
   }
