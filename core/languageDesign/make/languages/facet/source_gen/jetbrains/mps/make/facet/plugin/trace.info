@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Facet_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ProjectPlugin" />
+  <unitInfo fileName="Make_Facet.java" startLine="71" startPosition="89" endLine="75" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
+  <unitInfo fileName="Make_Facet.java" startLine="75" startPosition="31" endLine="79" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
+  <unitInfo fileName="Make_Facet.java" startLine="80" startPosition="89" endLine="84" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
+  <unitInfo fileName="Make_Facet.java" startLine="84" startPosition="31" endLine="88" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$3" />
+  <unitInfo fileName="Make_Facet.java" startLine="159" startPosition="17" endLine="168" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$1" />
   <unitInfo fileName="SaveTransient_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
   <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
+  <unitInfo fileName="Make_Facet.java" startLine="69" startPosition="62" endLine="90" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$2" />
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.FacetManifest" />
+  <unitInfo fileName="MakeGenerationHandler.java" startLine="20" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeGenerationHandler" />
   <unitInfo fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
   <unitInfo fileName="Facets_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
+  <unitInfo fileName="Make_Facet.java" startLine="64" startPosition="17" endLine="96" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$1" />
+  <unitInfo fileName="MakeGenerationStrategy.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeGenerationStrategy" />
+  <unitInfo fileName="Make_Facet.java" startLine="149" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$Target_pm9z_b" />
+  <unitInfo fileName="Make_Facet.java" startLine="54" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$Target_pm9z_a" />
   <unitInfo fileName="ReloadClasses_Facet.java" startLine="24" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet" />
   <unitInfo fileName="Binaries_Facet.java" startLine="43" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Binaries_Facet" />
   <unitInfo fileName="Make_Facet.java" startLine="25" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet" />
   <unitInfo fileName="TextGen_Facet.java" startLine="54" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="51" startPosition="0" endLine="517" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet" />
+  <unitInfo fileName="JavaCompile_Facet.java" startLine="51" startPosition="0" endLine="545" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet" />
   <unitInfo fileName="Generate_Facet.java" startLine="58" startPosition="0" endLine="729" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet" />
   <root nodeId="1058439120356650938">
     <nodeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="52" startPosition="58" endLine="53" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
@@ -38,7 +49,7 @@
     <nodeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="133" startPosition="61" endLine="134" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="134" startPosition="34" endLine="135" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="57" startPosition="0" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_i849au_a#()V" />
-    <nodeInfo nodeId="1058439120356650974" fileName="ReloadClasses_Facet.java" startLine="67" startPosition="82" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
+    <nodeInfo nodeId="1058439120356650974" fileName="ReloadClasses_Facet.java" startLine="67" startPosition="201" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
     <nodeInfo nodeId="4311275104556556610" fileName="ReloadClasses_Facet.java" startLine="73" startPosition="76" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
     <nodeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
@@ -75,7 +86,7 @@
     <scopeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="129" startPosition="49" endLine="130" endPosition="18" />
     <scopeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="57" startPosition="0" endLine="59" endPosition="5" />
     <scopeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="133" startPosition="61" endLine="135" endPosition="15" />
-    <scopeInfo nodeId="1058439120356650974" fileName="ReloadClasses_Facet.java" startLine="67" startPosition="82" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1058439120356650974" fileName="ReloadClasses_Facet.java" startLine="67" startPosition="201" endLine="71" endPosition="0" />
     <scopeInfo nodeId="4311275104556556610" fileName="ReloadClasses_Facet.java" startLine="73" startPosition="76" endLine="77" endPosition="0" />
     <scopeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
@@ -95,7 +106,7 @@
     <scopeInfo nodeId="1058439120356650949" fileName="ReloadClasses_Facet.java" startLine="62" startPosition="25" endLine="86" endPosition="0" />
     <scopeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="61" startPosition="29" endLine="86" endPosition="8" />
     <scopeInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="60" startPosition="0" endLine="88" endPosition="0" />
-    <unitInfo nodeId="1058439120356650974" fileName="ReloadClasses_Facet.java" startLine="67" startPosition="55" endLine="71" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet$2" />
+    <unitInfo nodeId="1058439120356650974" fileName="ReloadClasses_Facet.java" startLine="67" startPosition="174" endLine="71" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet$2" />
     <unitInfo nodeId="4311275104556556610" fileName="ReloadClasses_Facet.java" startLine="73" startPosition="64" endLine="77" endPosition="17" unitName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet$2" />
     <unitInfo nodeId="1058439120356650949" fileName="ReloadClasses_Facet.java" startLine="62" startPosition="17" endLine="86" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet$1" />
     <unitInfo nodeId="1058439120356650947" fileName="ReloadClasses_Facet.java" startLine="52" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet$Target_i849au_a" />
@@ -182,8 +193,8 @@
       <varInfo nodeId="2383991756720270217" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270170" fileName="MakeGenerationHandler.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="2383991756720270183" varName="helper" />
       <varInfo nodeId="2383991756720270181" varName="b" />
+      <varInfo nodeId="2383991756720270183" varName="helper" />
       <varInfo nodeId="2383991756720270173" varName="context" />
       <varInfo nodeId="2383991756720270175" varName="list" />
     </scopeInfo>
@@ -193,8 +204,8 @@
     <scopeInfo nodeId="2383991756720270198" fileName="MakeGenerationHandler.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2383991756720270201" varName="module" />
       <varInfo nodeId="2383991756720270209" varName="helper" />
-      <varInfo nodeId="2383991756720270205" varName="status" />
       <varInfo nodeId="2383991756720270203" varName="descriptor" />
+      <varInfo nodeId="2383991756720270205" varName="status" />
       <varInfo nodeId="2383991756720270207" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270225" fileName="MakeGenerationHandler.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
@@ -853,463 +864,489 @@
     <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="82" startPosition="126" endLine="83" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
     <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="84" startPosition="0" endLine="85" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="92" startPosition="120" endLine="93" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8670285774175170298" fileName="JavaCompile_Facet.java" startLine="104" startPosition="30" endLine="105" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="273167807853687455" fileName="JavaCompile_Facet.java" startLine="106" startPosition="15" endLine="107" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5964195490229321802" fileName="JavaCompile_Facet.java" startLine="108" startPosition="71" endLine="109" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4328738523548357483" fileName="JavaCompile_Facet.java" startLine="110" startPosition="44" endLine="111" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272238693" fileName="JavaCompile_Facet.java" startLine="113" startPosition="56" endLine="114" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3668957831723482041" fileName="JavaCompile_Facet.java" startLine="115" startPosition="17" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1869374704144772112" fileName="JavaCompile_Facet.java" startLine="116" startPosition="0" endLine="117" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1869374704144773740" fileName="JavaCompile_Facet.java" startLine="117" startPosition="125" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4328738523548357376" fileName="JavaCompile_Facet.java" startLine="118" startPosition="0" endLine="119" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2593769038861410876" fileName="JavaCompile_Facet.java" startLine="121" startPosition="37" endLine="122" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1027996956588784933" fileName="JavaCompile_Facet.java" startLine="126" startPosition="63" endLine="127" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3668957831723474292" fileName="JavaCompile_Facet.java" startLine="132" startPosition="51" endLine="133" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3668957831723482056" fileName="JavaCompile_Facet.java" startLine="134" startPosition="60" endLine="135" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3668957831723482061" fileName="JavaCompile_Facet.java" startLine="136" startPosition="28" endLine="137" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548357431" fileName="JavaCompile_Facet.java" startLine="139" startPosition="19" endLine="140" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="273167807853742532" fileName="JavaCompile_Facet.java" startLine="141" startPosition="17" endLine="142" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548357502" fileName="JavaCompile_Facet.java" startLine="142" startPosition="71" endLine="143" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="273167807853742536" fileName="JavaCompile_Facet.java" startLine="144" startPosition="15" endLine="145" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="146" startPosition="20" endLine="147" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="153" startPosition="35" endLine="154" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="157" startPosition="46" endLine="158" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="161" startPosition="43" endLine="162" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="165" startPosition="47" endLine="166" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="169" startPosition="44" endLine="170" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="173" startPosition="35" endLine="174" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="177" startPosition="36" endLine="178" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="181" startPosition="37" endLine="182" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="185" startPosition="65" endLine="186" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="189" startPosition="66" endLine="190" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="193" startPosition="49" endLine="194" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="197" startPosition="61" endLine="198" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="198" startPosition="34" endLine="199" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="203" startPosition="58" endLine="204" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="204" startPosition="126" endLine="205" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="206" startPosition="0" endLine="207" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="214" startPosition="120" endLine="215" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8670285774175170309" fileName="JavaCompile_Facet.java" startLine="226" startPosition="30" endLine="227" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8298579931287336647" fileName="JavaCompile_Facet.java" startLine="229" startPosition="265" endLine="230" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8298579931287336648" fileName="JavaCompile_Facet.java" startLine="231" startPosition="15" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7017136043751668670" fileName="JavaCompile_Facet.java" startLine="232" startPosition="0" endLine="233" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1443658396473687169" fileName="JavaCompile_Facet.java" startLine="234" startPosition="54" endLine="235" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5480883955381170026" fileName="JavaCompile_Facet.java" startLine="235" startPosition="121" endLine="236" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3668957831723482065" fileName="JavaCompile_Facet.java" startLine="237" startPosition="15" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="273167807853742569" fileName="JavaCompile_Facet.java" startLine="238" startPosition="0" endLine="239" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="273167807853742540" fileName="JavaCompile_Facet.java" startLine="239" startPosition="124" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2404343298109995414" fileName="JavaCompile_Facet.java" startLine="240" startPosition="0" endLine="241" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2974008768272239240" fileName="JavaCompile_Facet.java" startLine="242" startPosition="71" endLine="243" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2974008768272239248" fileName="JavaCompile_Facet.java" startLine="244" startPosition="44" endLine="245" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239256" fileName="JavaCompile_Facet.java" startLine="247" startPosition="53" endLine="248" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="2974008768272240510" fileName="JavaCompile_Facet.java" startLine="250" startPosition="57" endLine="251" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3668957831723482064" fileName="JavaCompile_Facet.java" startLine="252" startPosition="17" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1869374704144773743" fileName="JavaCompile_Facet.java" startLine="253" startPosition="0" endLine="254" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2404343298109995427" fileName="JavaCompile_Facet.java" startLine="255" startPosition="35" endLine="256" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2404343298109995440" fileName="JavaCompile_Facet.java" startLine="256" startPosition="56" endLine="257" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3668957831723482066" fileName="JavaCompile_Facet.java" startLine="258" startPosition="17" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4824283731825934369" fileName="JavaCompile_Facet.java" startLine="259" startPosition="0" endLine="260" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1027996956588784941" fileName="JavaCompile_Facet.java" startLine="262" startPosition="57" endLine="263" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4824283731825934386" fileName="JavaCompile_Facet.java" startLine="268" startPosition="45" endLine="269" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4824283731825934400" fileName="JavaCompile_Facet.java" startLine="270" startPosition="54" endLine="271" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4824283731825934404" fileName="JavaCompile_Facet.java" startLine="272" startPosition="28" endLine="273" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4824283731825934409" fileName="JavaCompile_Facet.java" startLine="275" startPosition="19" endLine="276" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="273167807853742577" fileName="JavaCompile_Facet.java" startLine="277" startPosition="17" endLine="278" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2974008768272239298" fileName="JavaCompile_Facet.java" startLine="278" startPosition="88" endLine="279" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="273167807853742582" fileName="JavaCompile_Facet.java" startLine="280" startPosition="15" endLine="281" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="282" startPosition="20" endLine="283" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="289" startPosition="35" endLine="290" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="293" startPosition="46" endLine="294" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="297" startPosition="43" endLine="298" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="301" startPosition="47" endLine="302" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="305" startPosition="44" endLine="306" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="309" startPosition="35" endLine="310" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="313" startPosition="36" endLine="314" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="317" startPosition="37" endLine="318" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="321" startPosition="65" endLine="322" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="325" startPosition="66" endLine="326" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="329" startPosition="49" endLine="330" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="333" startPosition="61" endLine="334" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="335" startPosition="22" endLine="336" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="337" startPosition="7" endLine="338" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="342" startPosition="27" endLine="343" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="346" startPosition="49" endLine="347" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="350" startPosition="52" endLine="351" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="354" startPosition="39" endLine="355" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="359" startPosition="95" endLine="360" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="365" startPosition="58" endLine="366" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="366" startPosition="126" endLine="367" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="368" startPosition="0" endLine="369" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="376" startPosition="120" endLine="377" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="695262645446176879" fileName="JavaCompile_Facet.java" startLine="379" startPosition="19" endLine="380" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6161320994961460854" fileName="JavaCompile_Facet.java" startLine="380" startPosition="57" endLine="381" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="695262645446209954" fileName="JavaCompile_Facet.java" startLine="382" startPosition="64" endLine="383" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="695262645446209985" fileName="JavaCompile_Facet.java" startLine="385" startPosition="65" endLine="386" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6161320994961460878" fileName="JavaCompile_Facet.java" startLine="389" startPosition="44" endLine="390" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8031938343755633155" fileName="JavaCompile_Facet.java" startLine="392" startPosition="15" endLine="393" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="695262645446296845" fileName="JavaCompile_Facet.java" startLine="396" startPosition="39" endLine="397" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="695262645446251937" fileName="JavaCompile_Facet.java" startLine="397" startPosition="133" endLine="398" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="695262645446251979" fileName="JavaCompile_Facet.java" startLine="399" startPosition="83" endLine="400" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6161320994961460896" fileName="JavaCompile_Facet.java" startLine="404" startPosition="17" endLine="405" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1908075475464761884" fileName="JavaCompile_Facet.java" startLine="407" startPosition="35" endLine="408" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6161320994961513292" fileName="JavaCompile_Facet.java" startLine="410" startPosition="59" endLine="411" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6161320994961513301" fileName="JavaCompile_Facet.java" startLine="415" startPosition="17" endLine="416" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="695262645446298396" fileName="JavaCompile_Facet.java" startLine="417" startPosition="139" endLine="418" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6744662691136368231" fileName="JavaCompile_Facet.java" startLine="421" startPosition="71" endLine="422" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="425" startPosition="20" endLine="426" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="432" startPosition="35" endLine="433" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="436" startPosition="46" endLine="437" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="440" startPosition="43" endLine="441" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="444" startPosition="47" endLine="445" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="448" startPosition="44" endLine="449" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="452" startPosition="35" endLine="453" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="456" startPosition="36" endLine="457" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="460" startPosition="37" endLine="461" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="464" startPosition="65" endLine="465" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="468" startPosition="66" endLine="469" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="472" startPosition="49" endLine="473" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="476" startPosition="61" endLine="477" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="478" startPosition="22" endLine="479" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="479" startPosition="140" endLine="480" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="481" startPosition="7" endLine="482" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="486" startPosition="27" endLine="487" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="490" startPosition="77" endLine="491" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="494" startPosition="81" endLine="495" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="498" startPosition="44" endLine="499" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="502" startPosition="51" endLine="503" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="506" startPosition="31" endLine="507" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="511" startPosition="121" endLine="512" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4695116324703451586" fileName="JavaCompile_Facet.java" startLine="95" startPosition="19" endLine="96" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8670285774175170298" fileName="JavaCompile_Facet.java" startLine="105" startPosition="30" endLine="106" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="273167807853687455" fileName="JavaCompile_Facet.java" startLine="107" startPosition="15" endLine="108" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5964195490229321802" fileName="JavaCompile_Facet.java" startLine="109" startPosition="71" endLine="110" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4328738523548357483" fileName="JavaCompile_Facet.java" startLine="111" startPosition="44" endLine="112" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272238693" fileName="JavaCompile_Facet.java" startLine="114" startPosition="56" endLine="115" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3668957831723482041" fileName="JavaCompile_Facet.java" startLine="116" startPosition="17" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1869374704144772112" fileName="JavaCompile_Facet.java" startLine="117" startPosition="0" endLine="118" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1869374704144773740" fileName="JavaCompile_Facet.java" startLine="118" startPosition="125" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4328738523548357376" fileName="JavaCompile_Facet.java" startLine="119" startPosition="0" endLine="120" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2593769038861410876" fileName="JavaCompile_Facet.java" startLine="122" startPosition="37" endLine="123" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4695116324703451597" fileName="JavaCompile_Facet.java" startLine="126" startPosition="39" endLine="127" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1027996956588784933" fileName="JavaCompile_Facet.java" startLine="128" startPosition="63" endLine="129" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3668957831723474292" fileName="JavaCompile_Facet.java" startLine="134" startPosition="51" endLine="135" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3668957831723482056" fileName="JavaCompile_Facet.java" startLine="136" startPosition="60" endLine="137" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3668957831723482061" fileName="JavaCompile_Facet.java" startLine="138" startPosition="28" endLine="139" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4328738523548357431" fileName="JavaCompile_Facet.java" startLine="141" startPosition="19" endLine="142" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="273167807853742532" fileName="JavaCompile_Facet.java" startLine="143" startPosition="17" endLine="144" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4328738523548357502" fileName="JavaCompile_Facet.java" startLine="144" startPosition="71" endLine="145" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="273167807853742536" fileName="JavaCompile_Facet.java" startLine="146" startPosition="15" endLine="147" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="148" startPosition="20" endLine="149" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="155" startPosition="35" endLine="156" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="159" startPosition="46" endLine="160" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="163" startPosition="43" endLine="164" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="167" startPosition="47" endLine="168" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="171" startPosition="44" endLine="172" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="175" startPosition="35" endLine="176" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="179" startPosition="36" endLine="180" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="183" startPosition="37" endLine="184" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="187" startPosition="65" endLine="188" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="191" startPosition="66" endLine="192" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="195" startPosition="49" endLine="196" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="199" startPosition="61" endLine="200" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="201" startPosition="22" endLine="202" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="203" startPosition="7" endLine="204" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="208" startPosition="27" endLine="209" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="212" startPosition="51" endLine="213" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="216" startPosition="54" endLine="217" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="220" startPosition="41" endLine="221" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="225" startPosition="95" endLine="226" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="231" startPosition="58" endLine="232" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="232" startPosition="126" endLine="233" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="234" startPosition="0" endLine="235" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="242" startPosition="120" endLine="243" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8670285774175170309" fileName="JavaCompile_Facet.java" startLine="254" startPosition="30" endLine="255" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8298579931287336647" fileName="JavaCompile_Facet.java" startLine="257" startPosition="265" endLine="258" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8298579931287336648" fileName="JavaCompile_Facet.java" startLine="259" startPosition="15" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7017136043751668670" fileName="JavaCompile_Facet.java" startLine="260" startPosition="0" endLine="261" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1443658396473687169" fileName="JavaCompile_Facet.java" startLine="262" startPosition="54" endLine="263" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5480883955381170026" fileName="JavaCompile_Facet.java" startLine="263" startPosition="121" endLine="264" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3668957831723482065" fileName="JavaCompile_Facet.java" startLine="265" startPosition="15" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="273167807853742569" fileName="JavaCompile_Facet.java" startLine="266" startPosition="0" endLine="267" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="273167807853742540" fileName="JavaCompile_Facet.java" startLine="267" startPosition="124" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2404343298109995414" fileName="JavaCompile_Facet.java" startLine="268" startPosition="0" endLine="269" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2974008768272239240" fileName="JavaCompile_Facet.java" startLine="270" startPosition="71" endLine="271" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2974008768272239248" fileName="JavaCompile_Facet.java" startLine="272" startPosition="44" endLine="273" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239256" fileName="JavaCompile_Facet.java" startLine="275" startPosition="53" endLine="276" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="2974008768272240510" fileName="JavaCompile_Facet.java" startLine="278" startPosition="57" endLine="279" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3668957831723482064" fileName="JavaCompile_Facet.java" startLine="280" startPosition="17" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1869374704144773743" fileName="JavaCompile_Facet.java" startLine="281" startPosition="0" endLine="282" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2404343298109995427" fileName="JavaCompile_Facet.java" startLine="283" startPosition="35" endLine="284" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2404343298109995440" fileName="JavaCompile_Facet.java" startLine="284" startPosition="56" endLine="285" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3668957831723482066" fileName="JavaCompile_Facet.java" startLine="286" startPosition="17" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4824283731825934369" fileName="JavaCompile_Facet.java" startLine="287" startPosition="0" endLine="288" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1027996956588784941" fileName="JavaCompile_Facet.java" startLine="290" startPosition="57" endLine="291" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4824283731825934386" fileName="JavaCompile_Facet.java" startLine="296" startPosition="45" endLine="297" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4824283731825934400" fileName="JavaCompile_Facet.java" startLine="298" startPosition="54" endLine="299" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4824283731825934404" fileName="JavaCompile_Facet.java" startLine="300" startPosition="28" endLine="301" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4824283731825934409" fileName="JavaCompile_Facet.java" startLine="303" startPosition="19" endLine="304" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="273167807853742577" fileName="JavaCompile_Facet.java" startLine="305" startPosition="17" endLine="306" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2974008768272239298" fileName="JavaCompile_Facet.java" startLine="306" startPosition="88" endLine="307" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="273167807853742582" fileName="JavaCompile_Facet.java" startLine="308" startPosition="15" endLine="309" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="310" startPosition="20" endLine="311" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="317" startPosition="35" endLine="318" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="321" startPosition="46" endLine="322" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="325" startPosition="43" endLine="326" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="329" startPosition="47" endLine="330" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="333" startPosition="44" endLine="334" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="337" startPosition="35" endLine="338" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="341" startPosition="36" endLine="342" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="345" startPosition="37" endLine="346" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="349" startPosition="65" endLine="350" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="353" startPosition="66" endLine="354" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="357" startPosition="49" endLine="358" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="361" startPosition="61" endLine="362" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="363" startPosition="22" endLine="364" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="365" startPosition="7" endLine="366" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="370" startPosition="27" endLine="371" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="374" startPosition="49" endLine="375" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="378" startPosition="52" endLine="379" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="382" startPosition="39" endLine="383" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="387" startPosition="95" endLine="388" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="393" startPosition="58" endLine="394" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="394" startPosition="126" endLine="395" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="396" startPosition="0" endLine="397" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="404" startPosition="120" endLine="405" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="695262645446176879" fileName="JavaCompile_Facet.java" startLine="407" startPosition="19" endLine="408" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6161320994961460854" fileName="JavaCompile_Facet.java" startLine="408" startPosition="57" endLine="409" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="695262645446209954" fileName="JavaCompile_Facet.java" startLine="410" startPosition="64" endLine="411" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="695262645446209985" fileName="JavaCompile_Facet.java" startLine="413" startPosition="65" endLine="414" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6161320994961460878" fileName="JavaCompile_Facet.java" startLine="417" startPosition="44" endLine="418" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8031938343755633155" fileName="JavaCompile_Facet.java" startLine="420" startPosition="15" endLine="421" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="695262645446296845" fileName="JavaCompile_Facet.java" startLine="424" startPosition="39" endLine="425" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="695262645446251937" fileName="JavaCompile_Facet.java" startLine="425" startPosition="133" endLine="426" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="695262645446251979" fileName="JavaCompile_Facet.java" startLine="427" startPosition="83" endLine="428" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6161320994961460896" fileName="JavaCompile_Facet.java" startLine="432" startPosition="17" endLine="433" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1908075475464761884" fileName="JavaCompile_Facet.java" startLine="435" startPosition="35" endLine="436" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6161320994961513292" fileName="JavaCompile_Facet.java" startLine="438" startPosition="59" endLine="439" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6161320994961513301" fileName="JavaCompile_Facet.java" startLine="443" startPosition="17" endLine="444" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="695262645446298396" fileName="JavaCompile_Facet.java" startLine="445" startPosition="139" endLine="446" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6744662691136368231" fileName="JavaCompile_Facet.java" startLine="449" startPosition="71" endLine="450" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="453" startPosition="20" endLine="454" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="460" startPosition="35" endLine="461" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="464" startPosition="46" endLine="465" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="468" startPosition="43" endLine="469" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="472" startPosition="47" endLine="473" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="476" startPosition="44" endLine="477" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="480" startPosition="35" endLine="481" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="484" startPosition="36" endLine="485" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="488" startPosition="37" endLine="489" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="492" startPosition="65" endLine="493" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="496" startPosition="66" endLine="497" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="500" startPosition="49" endLine="501" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="504" startPosition="61" endLine="505" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="506" startPosition="22" endLine="507" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="507" startPosition="140" endLine="508" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="509" startPosition="7" endLine="510" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="514" startPosition="27" endLine="515" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="518" startPosition="77" endLine="519" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="522" startPosition="81" endLine="523" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="526" startPosition="44" endLine="527" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="530" startPosition="51" endLine="531" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="534" startPosition="31" endLine="535" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="539" startPosition="121" endLine="540" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="86" startPosition="0" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_wf1ya0_a#()V" />
-    <nodeInfo nodeId="3668957831723482059" fileName="JavaCompile_Facet.java" startLine="136" startPosition="26" endLine="138" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="208" startPosition="0" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_wf1ya0_b#()V" />
-    <nodeInfo nodeId="4824283731825934402" fileName="JavaCompile_Facet.java" startLine="272" startPosition="26" endLine="274" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="370" startPosition="0" endLine="372" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_wf1ya0_c#()V" />
-    <nodeInfo nodeId="8670285774175170289" fileName="JavaCompile_Facet.java" startLine="103" startPosition="17" endLine="106" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4328738523548357466" fileName="JavaCompile_Facet.java" startLine="109" startPosition="60" endLine="112" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2974008768272211648" fileName="JavaCompile_Facet.java" startLine="112" startPosition="17" endLine="115" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1027996956588784926" fileName="JavaCompile_Facet.java" startLine="125" startPosition="39" endLine="128" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8670285774175170300" fileName="JavaCompile_Facet.java" startLine="225" startPosition="17" endLine="228" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8298579931287336630" fileName="JavaCompile_Facet.java" startLine="228" startPosition="15" endLine="231" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2974008768272239246" fileName="JavaCompile_Facet.java" startLine="243" startPosition="54" endLine="246" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2974008768272239254" fileName="JavaCompile_Facet.java" startLine="246" startPosition="17" endLine="249" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2974008768272239709" fileName="JavaCompile_Facet.java" startLine="249" startPosition="17" endLine="252" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1027996956588784939" fileName="JavaCompile_Facet.java" startLine="261" startPosition="33" endLine="264" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="334" startPosition="34" endLine="337" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="341" startPosition="67" endLine="344" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="345" startPosition="0" endLine="348" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/lang/Boolean;)V" />
-    <nodeInfo nodeId="6161320994961460864" fileName="JavaCompile_Facet.java" startLine="388" startPosition="19" endLine="391" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="695262645446251944" fileName="JavaCompile_Facet.java" startLine="398" startPosition="78" endLine="401" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="695262645446298389" fileName="JavaCompile_Facet.java" startLine="416" startPosition="36" endLine="419" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="485" startPosition="93" endLine="488" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="489" startPosition="0" endLine="492" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/lang/Iterable;Ljava/lang/Boolean;)V" />
-    <nodeInfo nodeId="273167807853742511" fileName="JavaCompile_Facet.java" startLine="97" startPosition="65" endLine="101" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2593769038861410881" fileName="JavaCompile_Facet.java" startLine="120" startPosition="69" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="168" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="172" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="176" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="180" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="184" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="188" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="273167807853742549" fileName="JavaCompile_Facet.java" startLine="219" startPosition="65" endLine="223" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5480883955381170017" fileName="JavaCompile_Facet.java" startLine="233" startPosition="184" endLine="237" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2404343298109995420" fileName="JavaCompile_Facet.java" startLine="254" startPosition="142" endLine="258" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="288" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="292" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="296" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="300" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="304" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="308" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="312" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="316" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="320" startPosition="0" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="324" startPosition="0" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="328" startPosition="0" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="349" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="skipAuxCompile#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="353" startPosition="0" endLine="357" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="skipAuxCompile#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="695262645446210020" fileName="JavaCompile_Facet.java" startLine="384" startPosition="104" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/internal/collections/runtime/IMapping;)V" />
-    <nodeInfo nodeId="6161320994961513288" fileName="JavaCompile_Facet.java" startLine="409" startPosition="194" endLine="413" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/reloading/IClassPathItem;)V" />
-    <nodeInfo nodeId="6744662691136368227" fileName="JavaCompile_Facet.java" startLine="420" startPosition="170" endLine="424" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassLoader#(Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="431" startPosition="0" endLine="435" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="435" startPosition="0" endLine="439" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="439" startPosition="0" endLine="443" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="443" startPosition="0" endLine="447" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="447" startPosition="0" endLine="451" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="451" startPosition="0" endLine="455" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="455" startPosition="0" endLine="459" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="459" startPosition="0" endLine="463" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="463" startPosition="0" endLine="467" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="467" startPosition="0" endLine="471" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="471" startPosition="0" endLine="475" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="477" startPosition="34" endLine="481" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="493" startPosition="0" endLine="497" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classPath#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="497" startPosition="0" endLine="501" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="errors#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="501" startPosition="0" endLine="505" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classPath#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="505" startPosition="0" endLine="509" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="errors#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="2593769038861410880" fileName="JavaCompile_Facet.java" startLine="119" startPosition="101" endLine="124" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1027996956588784910" fileName="JavaCompile_Facet.java" startLine="124" startPosition="19" endLine="129" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="196" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="1027996956588784937" fileName="JavaCompile_Facet.java" startLine="260" startPosition="94" endLine="265" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="357" startPosition="0" endLine="362" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/mps/make/facet/plugin/JavaCompile_Facet/Target_wf1ya0_b/Parameters;" />
-    <nodeInfo nodeId="695262645446210008" fileName="JavaCompile_Facet.java" startLine="383" startPosition="49" endLine="388" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6161320994961513279" fileName="JavaCompile_Facet.java" startLine="408" startPosition="110" endLine="413" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6744662691136329590" fileName="JavaCompile_Facet.java" startLine="419" startPosition="15" endLine="424" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="509" startPosition="0" endLine="514" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/make/facet/plugin/JavaCompile_Facet/Target_wf1ya0_c/Parameters;" />
-    <nodeInfo nodeId="273167807853742509" fileName="JavaCompile_Facet.java" startLine="96" startPosition="109" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="3668957831723474278" fileName="JavaCompile_Facet.java" startLine="131" startPosition="41" endLine="138" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="273167807853742547" fileName="JavaCompile_Facet.java" startLine="218" startPosition="109" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="4824283731825934384" fileName="JavaCompile_Facet.java" startLine="267" startPosition="35" endLine="274" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="695262645446251968" fileName="JavaCompile_Facet.java" startLine="395" startPosition="71" endLine="402" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="273167807853742503" fileName="JavaCompile_Facet.java" startLine="95" startPosition="19" endLine="103" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="273167807853742541" fileName="JavaCompile_Facet.java" startLine="217" startPosition="19" endLine="225" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="332" startPosition="0" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="3668957831723482082" fileName="JavaCompile_Facet.java" startLine="130" startPosition="61" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4824283731825934382" fileName="JavaCompile_Facet.java" startLine="266" startPosition="49" endLine="275" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1908075475464761889" fileName="JavaCompile_Facet.java" startLine="406" startPosition="67" endLine="415" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="475" startPosition="0" endLine="484" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="695262645446230541" fileName="JavaCompile_Facet.java" startLine="394" startPosition="78" endLine="404" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCompilationResult#(Lorg/eclipse/jdt/internal/compiler/CompilationResult;)V" />
-    <nodeInfo nodeId="1908075475464761888" fileName="JavaCompile_Facet.java" startLine="405" startPosition="104" endLine="415" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="695262645446176886" fileName="JavaCompile_Facet.java" startLine="381" startPosition="87" endLine="392" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="695262645446210026" fileName="JavaCompile_Facet.java" startLine="393" startPosition="128" endLine="404" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548357404" fileName="JavaCompile_Facet.java" startLine="129" startPosition="17" endLine="141" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4824283731825934380" fileName="JavaCompile_Facet.java" startLine="265" startPosition="17" endLine="277" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5964195490229321793" fileName="JavaCompile_Facet.java" startLine="107" startPosition="107" endLine="144" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2974008768272239236" fileName="JavaCompile_Facet.java" startLine="241" startPosition="40" endLine="280" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="377" startPosition="56" endLine="427" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="375" startPosition="25" endLine="429" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="93" startPosition="56" endLine="148" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="374" startPosition="29" endLine="429" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="373" startPosition="0" endLine="431" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <nodeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="91" startPosition="25" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="90" startPosition="29" endLine="150" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="89" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <nodeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="215" startPosition="56" endLine="284" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="213" startPosition="25" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="212" startPosition="29" endLine="286" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="211" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <nodeInfo nodeId="3668957831723482059" fileName="JavaCompile_Facet.java" startLine="138" startPosition="26" endLine="140" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="236" startPosition="0" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_wf1ya0_b#()V" />
+    <nodeInfo nodeId="4824283731825934402" fileName="JavaCompile_Facet.java" startLine="300" startPosition="26" endLine="302" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="398" startPosition="0" endLine="400" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_wf1ya0_c#()V" />
+    <nodeInfo nodeId="8670285774175170289" fileName="JavaCompile_Facet.java" startLine="104" startPosition="17" endLine="107" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4328738523548357466" fileName="JavaCompile_Facet.java" startLine="110" startPosition="60" endLine="113" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2974008768272211648" fileName="JavaCompile_Facet.java" startLine="113" startPosition="17" endLine="116" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1027996956588784926" fileName="JavaCompile_Facet.java" startLine="127" startPosition="288" endLine="130" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="200" startPosition="34" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="207" startPosition="67" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="211" startPosition="0" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/lang/Boolean;)V" />
+    <nodeInfo nodeId="8670285774175170300" fileName="JavaCompile_Facet.java" startLine="253" startPosition="17" endLine="256" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8298579931287336630" fileName="JavaCompile_Facet.java" startLine="256" startPosition="15" endLine="259" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2974008768272239246" fileName="JavaCompile_Facet.java" startLine="271" startPosition="54" endLine="274" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2974008768272239254" fileName="JavaCompile_Facet.java" startLine="274" startPosition="17" endLine="277" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2974008768272239709" fileName="JavaCompile_Facet.java" startLine="277" startPosition="17" endLine="280" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1027996956588784939" fileName="JavaCompile_Facet.java" startLine="289" startPosition="33" endLine="292" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="362" startPosition="34" endLine="365" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="369" startPosition="67" endLine="372" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="373" startPosition="0" endLine="376" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/lang/Boolean;)V" />
+    <nodeInfo nodeId="6161320994961460864" fileName="JavaCompile_Facet.java" startLine="416" startPosition="19" endLine="419" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="695262645446251944" fileName="JavaCompile_Facet.java" startLine="426" startPosition="78" endLine="429" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="695262645446298389" fileName="JavaCompile_Facet.java" startLine="444" startPosition="36" endLine="447" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="513" startPosition="93" endLine="516" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#()V" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="517" startPosition="0" endLine="520" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Parameters#(Ljava/lang/Iterable;Ljava/lang/Boolean;)V" />
+    <nodeInfo nodeId="273167807853742511" fileName="JavaCompile_Facet.java" startLine="98" startPosition="65" endLine="102" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2593769038861410881" fileName="JavaCompile_Facet.java" startLine="121" startPosition="69" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="162" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="166" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="170" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="174" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="178" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="182" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="186" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="190" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="194" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="215" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compiledAnything#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="219" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compiledAnything#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="273167807853742549" fileName="JavaCompile_Facet.java" startLine="247" startPosition="65" endLine="251" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5480883955381170017" fileName="JavaCompile_Facet.java" startLine="261" startPosition="184" endLine="265" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2404343298109995420" fileName="JavaCompile_Facet.java" startLine="282" startPosition="142" endLine="286" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="316" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="320" startPosition="0" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="324" startPosition="0" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="328" startPosition="0" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="332" startPosition="0" endLine="336" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="336" startPosition="0" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="340" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="344" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="348" startPosition="0" endLine="352" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="352" startPosition="0" endLine="356" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="356" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="377" startPosition="0" endLine="381" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="skipAuxCompile#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="381" startPosition="0" endLine="385" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="skipAuxCompile#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="695262645446210020" fileName="JavaCompile_Facet.java" startLine="412" startPosition="104" endLine="416" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/internal/collections/runtime/IMapping;)V" />
+    <nodeInfo nodeId="6161320994961513288" fileName="JavaCompile_Facet.java" startLine="437" startPosition="194" endLine="441" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/reloading/IClassPathItem;)V" />
+    <nodeInfo nodeId="6744662691136368227" fileName="JavaCompile_Facet.java" startLine="448" startPosition="170" endLine="452" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassLoader#(Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="459" startPosition="0" endLine="463" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="463" startPosition="0" endLine="467" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="467" startPosition="0" endLine="471" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="471" startPosition="0" endLine="475" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="475" startPosition="0" endLine="479" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="479" startPosition="0" endLine="483" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="483" startPosition="0" endLine="487" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="487" startPosition="0" endLine="491" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="491" startPosition="0" endLine="495" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="495" startPosition="0" endLine="499" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="499" startPosition="0" endLine="503" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="505" startPosition="34" endLine="509" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="521" startPosition="0" endLine="525" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classPath#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="525" startPosition="0" endLine="529" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="errors#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="529" startPosition="0" endLine="533" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classPath#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="533" startPosition="0" endLine="537" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="errors#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="2593769038861410880" fileName="JavaCompile_Facet.java" startLine="120" startPosition="101" endLine="125" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="223" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/mps/make/facet/plugin/JavaCompile_Facet/Target_wf1ya0_a/Parameters;" />
+    <nodeInfo nodeId="1027996956588784937" fileName="JavaCompile_Facet.java" startLine="288" startPosition="94" endLine="293" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="385" startPosition="0" endLine="390" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_1;)Ljetbrains/mps/make/facet/plugin/JavaCompile_Facet/Target_wf1ya0_b/Parameters;" />
+    <nodeInfo nodeId="695262645446210008" fileName="JavaCompile_Facet.java" startLine="411" startPosition="49" endLine="416" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6161320994961513279" fileName="JavaCompile_Facet.java" startLine="436" startPosition="110" endLine="441" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6744662691136329590" fileName="JavaCompile_Facet.java" startLine="447" startPosition="15" endLine="452" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="537" startPosition="0" endLine="542" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/make/facet/plugin/JavaCompile_Facet/Target_wf1ya0_c/Parameters;" />
+    <nodeInfo nodeId="1027996956588784910" fileName="JavaCompile_Facet.java" startLine="125" startPosition="19" endLine="131" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="273167807853742509" fileName="JavaCompile_Facet.java" startLine="97" startPosition="109" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="3668957831723474278" fileName="JavaCompile_Facet.java" startLine="133" startPosition="41" endLine="140" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="273167807853742547" fileName="JavaCompile_Facet.java" startLine="246" startPosition="109" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/make/resources/IResource;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="4824283731825934384" fileName="JavaCompile_Facet.java" startLine="295" startPosition="35" endLine="302" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="695262645446251968" fileName="JavaCompile_Facet.java" startLine="423" startPosition="71" endLine="430" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="273167807853742503" fileName="JavaCompile_Facet.java" startLine="96" startPosition="138" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="198" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
+    <nodeInfo nodeId="273167807853742541" fileName="JavaCompile_Facet.java" startLine="245" startPosition="19" endLine="253" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="360" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
+    <nodeInfo nodeId="3668957831723482082" fileName="JavaCompile_Facet.java" startLine="132" startPosition="61" endLine="141" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4824283731825934382" fileName="JavaCompile_Facet.java" startLine="294" startPosition="49" endLine="303" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1908075475464761889" fileName="JavaCompile_Facet.java" startLine="434" startPosition="67" endLine="443" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="503" startPosition="0" endLine="512" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
+    <nodeInfo nodeId="695262645446230541" fileName="JavaCompile_Facet.java" startLine="422" startPosition="78" endLine="432" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCompilationResult#(Lorg/eclipse/jdt/internal/compiler/CompilationResult;)V" />
+    <nodeInfo nodeId="1908075475464761888" fileName="JavaCompile_Facet.java" startLine="433" startPosition="104" endLine="443" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="695262645446176886" fileName="JavaCompile_Facet.java" startLine="409" startPosition="87" endLine="420" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="695262645446210026" fileName="JavaCompile_Facet.java" startLine="421" startPosition="128" endLine="432" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4328738523548357404" fileName="JavaCompile_Facet.java" startLine="131" startPosition="17" endLine="143" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4824283731825934380" fileName="JavaCompile_Facet.java" startLine="293" startPosition="17" endLine="305" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5964195490229321793" fileName="JavaCompile_Facet.java" startLine="108" startPosition="107" endLine="146" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2974008768272239236" fileName="JavaCompile_Facet.java" startLine="269" startPosition="40" endLine="308" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="405" startPosition="56" endLine="455" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="403" startPosition="25" endLine="457" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="402" startPosition="29" endLine="457" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="93" startPosition="56" endLine="150" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="401" startPosition="0" endLine="459" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <nodeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="91" startPosition="25" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="90" startPosition="29" endLine="152" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="89" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <nodeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="243" startPosition="56" endLine="312" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="241" startPosition="25" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="240" startPosition="29" endLine="314" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="239" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
     <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="87" startPosition="30" endLine="87" endPosition="30" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="209" startPosition="30" endLine="209" endPosition="30" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="371" startPosition="30" endLine="371" endPosition="30" />
-    <scopeInfo nodeId="8670285774175170290" fileName="JavaCompile_Facet.java" startLine="104" startPosition="30" endLine="105" endPosition="63" />
-    <scopeInfo nodeId="4328738523548357467" fileName="JavaCompile_Facet.java" startLine="110" startPosition="44" endLine="111" endPosition="65" />
-    <scopeInfo nodeId="2974008768272211649" fileName="JavaCompile_Facet.java" startLine="113" startPosition="56" endLine="114" endPosition="27" />
-    <scopeInfo nodeId="2593769038861410882" fileName="JavaCompile_Facet.java" startLine="121" startPosition="37" endLine="122" endPosition="119" />
-    <scopeInfo nodeId="1027996956588784927" fileName="JavaCompile_Facet.java" startLine="126" startPosition="63" endLine="127" endPosition="71" />
-    <scopeInfo nodeId="3668957831723474279" fileName="JavaCompile_Facet.java" startLine="132" startPosition="51" endLine="133" endPosition="92" />
-    <scopeInfo nodeId="3668957831723482045" fileName="JavaCompile_Facet.java" startLine="134" startPosition="60" endLine="135" endPosition="94" />
-    <scopeInfo nodeId="3668957831723482060" fileName="JavaCompile_Facet.java" startLine="136" startPosition="28" endLine="137" endPosition="98" />
-    <scopeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="146" startPosition="20" endLine="147" endPosition="61" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="153" startPosition="35" endLine="154" endPosition="18" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="157" startPosition="46" endLine="158" endPosition="18" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="161" startPosition="43" endLine="162" endPosition="81" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="165" startPosition="47" endLine="166" endPosition="18" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="169" startPosition="44" endLine="170" endPosition="78" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="173" startPosition="35" endLine="174" endPosition="18" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="177" startPosition="36" endLine="178" endPosition="18" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="181" startPosition="37" endLine="182" endPosition="18" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="185" startPosition="65" endLine="186" endPosition="48" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="189" startPosition="66" endLine="190" endPosition="18" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="193" startPosition="49" endLine="194" endPosition="18" />
-    <scopeInfo nodeId="8670285774175170301" fileName="JavaCompile_Facet.java" startLine="226" startPosition="30" endLine="227" endPosition="63" />
-    <scopeInfo nodeId="8298579931287336631" fileName="JavaCompile_Facet.java" startLine="229" startPosition="265" endLine="230" endPosition="63" />
-    <scopeInfo nodeId="2974008768272239247" fileName="JavaCompile_Facet.java" startLine="244" startPosition="44" endLine="245" endPosition="65" />
-    <scopeInfo nodeId="2974008768272239255" fileName="JavaCompile_Facet.java" startLine="247" startPosition="53" endLine="248" endPosition="27" />
-    <scopeInfo nodeId="2974008768272239710" fileName="JavaCompile_Facet.java" startLine="250" startPosition="57" endLine="251" endPosition="65" />
-    <scopeInfo nodeId="1027996956588784940" fileName="JavaCompile_Facet.java" startLine="262" startPosition="57" endLine="263" endPosition="71" />
-    <scopeInfo nodeId="4824283731825934385" fileName="JavaCompile_Facet.java" startLine="268" startPosition="45" endLine="269" endPosition="86" />
-    <scopeInfo nodeId="4824283731825934399" fileName="JavaCompile_Facet.java" startLine="270" startPosition="54" endLine="271" endPosition="88" />
-    <scopeInfo nodeId="4824283731825934403" fileName="JavaCompile_Facet.java" startLine="272" startPosition="28" endLine="273" endPosition="92" />
-    <scopeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="282" startPosition="20" endLine="283" endPosition="61" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="289" startPosition="35" endLine="290" endPosition="18" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="293" startPosition="46" endLine="294" endPosition="18" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="297" startPosition="43" endLine="298" endPosition="81" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="301" startPosition="47" endLine="302" endPosition="18" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="305" startPosition="44" endLine="306" endPosition="78" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="309" startPosition="35" endLine="310" endPosition="18" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="313" startPosition="36" endLine="314" endPosition="18" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="317" startPosition="37" endLine="318" endPosition="18" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="321" startPosition="65" endLine="322" endPosition="48" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="325" startPosition="66" endLine="326" endPosition="18" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="329" startPosition="49" endLine="330" endPosition="40" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="335" startPosition="22" endLine="336" endPosition="150" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="342" startPosition="27" endLine="343" endPosition="16" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="346" startPosition="49" endLine="347" endPosition="30" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="350" startPosition="52" endLine="351" endPosition="31" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="354" startPosition="39" endLine="355" endPosition="26" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="359" startPosition="95" endLine="360" endPosition="81" />
-    <scopeInfo nodeId="695262645446210021" fileName="JavaCompile_Facet.java" startLine="385" startPosition="65" endLine="386" endPosition="61" />
-    <scopeInfo nodeId="6161320994961460865" fileName="JavaCompile_Facet.java" startLine="389" startPosition="44" endLine="390" endPosition="73" />
-    <scopeInfo nodeId="695262645446251959" fileName="JavaCompile_Facet.java" startLine="399" startPosition="83" endLine="400" endPosition="122" />
-    <scopeInfo nodeId="6161320994961513289" fileName="JavaCompile_Facet.java" startLine="410" startPosition="59" endLine="411" endPosition="41" />
-    <scopeInfo nodeId="695262645446298390" fileName="JavaCompile_Facet.java" startLine="417" startPosition="139" endLine="418" endPosition="63" />
-    <scopeInfo nodeId="6744662691136368230" fileName="JavaCompile_Facet.java" startLine="421" startPosition="71" endLine="422" endPosition="51" />
-    <scopeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="425" startPosition="20" endLine="426" endPosition="61" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="432" startPosition="35" endLine="433" endPosition="18" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="436" startPosition="46" endLine="437" endPosition="18" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="440" startPosition="43" endLine="441" endPosition="89" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="444" startPosition="47" endLine="445" endPosition="18" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="448" startPosition="44" endLine="449" endPosition="18" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="452" startPosition="35" endLine="453" endPosition="18" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="456" startPosition="36" endLine="457" endPosition="18" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="460" startPosition="37" endLine="461" endPosition="18" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="464" startPosition="65" endLine="465" endPosition="48" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="468" startPosition="66" endLine="469" endPosition="18" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="472" startPosition="49" endLine="473" endPosition="40" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="486" startPosition="27" endLine="487" endPosition="16" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="490" startPosition="77" endLine="491" endPosition="33" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="494" startPosition="81" endLine="495" endPosition="31" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="498" startPosition="44" endLine="499" endPosition="31" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="502" startPosition="51" endLine="503" endPosition="26" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="506" startPosition="31" endLine="507" endPosition="26" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="511" startPosition="121" endLine="512" endPosition="81" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="237" startPosition="30" endLine="237" endPosition="30" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="399" startPosition="30" endLine="399" endPosition="30" />
+    <scopeInfo nodeId="8670285774175170290" fileName="JavaCompile_Facet.java" startLine="105" startPosition="30" endLine="106" endPosition="63" />
+    <scopeInfo nodeId="4328738523548357467" fileName="JavaCompile_Facet.java" startLine="111" startPosition="44" endLine="112" endPosition="65" />
+    <scopeInfo nodeId="2974008768272211649" fileName="JavaCompile_Facet.java" startLine="114" startPosition="56" endLine="115" endPosition="27" />
+    <scopeInfo nodeId="2593769038861410882" fileName="JavaCompile_Facet.java" startLine="122" startPosition="37" endLine="123" endPosition="119" />
+    <scopeInfo nodeId="1027996956588784927" fileName="JavaCompile_Facet.java" startLine="128" startPosition="63" endLine="129" endPosition="71" />
+    <scopeInfo nodeId="3668957831723474279" fileName="JavaCompile_Facet.java" startLine="134" startPosition="51" endLine="135" endPosition="92" />
+    <scopeInfo nodeId="3668957831723482045" fileName="JavaCompile_Facet.java" startLine="136" startPosition="60" endLine="137" endPosition="94" />
+    <scopeInfo nodeId="3668957831723482060" fileName="JavaCompile_Facet.java" startLine="138" startPosition="28" endLine="139" endPosition="98" />
+    <scopeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="148" startPosition="20" endLine="149" endPosition="61" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="155" startPosition="35" endLine="156" endPosition="18" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="159" startPosition="46" endLine="160" endPosition="18" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="163" startPosition="43" endLine="164" endPosition="81" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="167" startPosition="47" endLine="168" endPosition="18" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="171" startPosition="44" endLine="172" endPosition="78" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="175" startPosition="35" endLine="176" endPosition="18" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="179" startPosition="36" endLine="180" endPosition="18" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="183" startPosition="37" endLine="184" endPosition="18" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="187" startPosition="65" endLine="188" endPosition="48" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="191" startPosition="66" endLine="192" endPosition="18" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="195" startPosition="49" endLine="196" endPosition="40" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="201" startPosition="22" endLine="202" endPosition="154" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="208" startPosition="27" endLine="209" endPosition="16" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="212" startPosition="51" endLine="213" endPosition="32" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="216" startPosition="54" endLine="217" endPosition="31" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="220" startPosition="41" endLine="221" endPosition="26" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="225" startPosition="95" endLine="226" endPosition="81" />
+    <scopeInfo nodeId="8670285774175170301" fileName="JavaCompile_Facet.java" startLine="254" startPosition="30" endLine="255" endPosition="63" />
+    <scopeInfo nodeId="8298579931287336631" fileName="JavaCompile_Facet.java" startLine="257" startPosition="265" endLine="258" endPosition="63" />
+    <scopeInfo nodeId="2974008768272239247" fileName="JavaCompile_Facet.java" startLine="272" startPosition="44" endLine="273" endPosition="65" />
+    <scopeInfo nodeId="2974008768272239255" fileName="JavaCompile_Facet.java" startLine="275" startPosition="53" endLine="276" endPosition="27" />
+    <scopeInfo nodeId="2974008768272239710" fileName="JavaCompile_Facet.java" startLine="278" startPosition="57" endLine="279" endPosition="65" />
+    <scopeInfo nodeId="1027996956588784940" fileName="JavaCompile_Facet.java" startLine="290" startPosition="57" endLine="291" endPosition="71" />
+    <scopeInfo nodeId="4824283731825934385" fileName="JavaCompile_Facet.java" startLine="296" startPosition="45" endLine="297" endPosition="86" />
+    <scopeInfo nodeId="4824283731825934399" fileName="JavaCompile_Facet.java" startLine="298" startPosition="54" endLine="299" endPosition="88" />
+    <scopeInfo nodeId="4824283731825934403" fileName="JavaCompile_Facet.java" startLine="300" startPosition="28" endLine="301" endPosition="92" />
+    <scopeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="310" startPosition="20" endLine="311" endPosition="61" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="317" startPosition="35" endLine="318" endPosition="18" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="321" startPosition="46" endLine="322" endPosition="18" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="325" startPosition="43" endLine="326" endPosition="81" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="329" startPosition="47" endLine="330" endPosition="18" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="333" startPosition="44" endLine="334" endPosition="78" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="337" startPosition="35" endLine="338" endPosition="18" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="341" startPosition="36" endLine="342" endPosition="18" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="345" startPosition="37" endLine="346" endPosition="18" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="349" startPosition="65" endLine="350" endPosition="48" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="353" startPosition="66" endLine="354" endPosition="18" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="357" startPosition="49" endLine="358" endPosition="40" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="363" startPosition="22" endLine="364" endPosition="150" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="370" startPosition="27" endLine="371" endPosition="16" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="374" startPosition="49" endLine="375" endPosition="30" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="378" startPosition="52" endLine="379" endPosition="31" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="382" startPosition="39" endLine="383" endPosition="26" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="387" startPosition="95" endLine="388" endPosition="81" />
+    <scopeInfo nodeId="695262645446210021" fileName="JavaCompile_Facet.java" startLine="413" startPosition="65" endLine="414" endPosition="61" />
+    <scopeInfo nodeId="6161320994961460865" fileName="JavaCompile_Facet.java" startLine="417" startPosition="44" endLine="418" endPosition="73" />
+    <scopeInfo nodeId="695262645446251959" fileName="JavaCompile_Facet.java" startLine="427" startPosition="83" endLine="428" endPosition="122" />
+    <scopeInfo nodeId="6161320994961513289" fileName="JavaCompile_Facet.java" startLine="438" startPosition="59" endLine="439" endPosition="41" />
+    <scopeInfo nodeId="695262645446298390" fileName="JavaCompile_Facet.java" startLine="445" startPosition="139" endLine="446" endPosition="63" />
+    <scopeInfo nodeId="6744662691136368230" fileName="JavaCompile_Facet.java" startLine="449" startPosition="71" endLine="450" endPosition="51" />
+    <scopeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="453" startPosition="20" endLine="454" endPosition="61" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="460" startPosition="35" endLine="461" endPosition="18" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="464" startPosition="46" endLine="465" endPosition="18" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="468" startPosition="43" endLine="469" endPosition="89" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="472" startPosition="47" endLine="473" endPosition="18" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="476" startPosition="44" endLine="477" endPosition="18" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="480" startPosition="35" endLine="481" endPosition="18" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="484" startPosition="36" endLine="485" endPosition="18" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="488" startPosition="37" endLine="489" endPosition="18" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="492" startPosition="65" endLine="493" endPosition="48" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="496" startPosition="66" endLine="497" endPosition="18" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="500" startPosition="49" endLine="501" endPosition="40" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="514" startPosition="27" endLine="515" endPosition="16" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="518" startPosition="77" endLine="519" endPosition="33" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="522" startPosition="81" endLine="523" endPosition="31" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="526" startPosition="44" endLine="527" endPosition="31" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="530" startPosition="51" endLine="531" endPosition="26" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="534" startPosition="31" endLine="535" endPosition="26" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="539" startPosition="121" endLine="540" endPosition="81" />
     <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="86" startPosition="0" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="197" startPosition="61" endLine="199" endPosition="15" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="208" startPosition="0" endLine="210" endPosition="5" />
-    <scopeInfo nodeId="5480883955381170018" fileName="JavaCompile_Facet.java" startLine="234" startPosition="54" endLine="236" endPosition="63" />
-    <scopeInfo nodeId="2404343298109995421" fileName="JavaCompile_Facet.java" startLine="255" startPosition="35" endLine="257" endPosition="35" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="370" startPosition="0" endLine="372" endPosition="5" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="478" startPosition="22" endLine="480" endPosition="144" />
-    <scopeInfo nodeId="1027996956588784911" fileName="JavaCompile_Facet.java" startLine="125" startPosition="39" endLine="128" endPosition="19" />
-    <scopeInfo nodeId="1027996956588784926" fileName="JavaCompile_Facet.java" startLine="125" startPosition="39" endLine="128" endPosition="19">
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="236" startPosition="0" endLine="238" endPosition="5" />
+    <scopeInfo nodeId="5480883955381170018" fileName="JavaCompile_Facet.java" startLine="262" startPosition="54" endLine="264" endPosition="63" />
+    <scopeInfo nodeId="2404343298109995421" fileName="JavaCompile_Facet.java" startLine="283" startPosition="35" endLine="285" endPosition="35" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="398" startPosition="0" endLine="400" endPosition="5" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="506" startPosition="22" endLine="508" endPosition="144" />
+    <scopeInfo nodeId="1027996956588784926" fileName="JavaCompile_Facet.java" startLine="127" startPosition="288" endLine="130" endPosition="19">
       <varInfo nodeId="1027996956588784928" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="1027996956588784938" fileName="JavaCompile_Facet.java" startLine="261" startPosition="33" endLine="264" endPosition="19" />
-    <scopeInfo nodeId="1027996956588784939" fileName="JavaCompile_Facet.java" startLine="261" startPosition="33" endLine="264" endPosition="19">
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="207" startPosition="67" endLine="210" endPosition="7" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="211" startPosition="0" endLine="214" endPosition="7" />
+    <scopeInfo nodeId="1027996956588784938" fileName="JavaCompile_Facet.java" startLine="289" startPosition="33" endLine="292" endPosition="19" />
+    <scopeInfo nodeId="1027996956588784939" fileName="JavaCompile_Facet.java" startLine="289" startPosition="33" endLine="292" endPosition="19">
       <varInfo nodeId="1027996956588784943" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="341" startPosition="67" endLine="344" endPosition="7" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="345" startPosition="0" endLine="348" endPosition="7" />
-    <scopeInfo nodeId="695262645446251944" fileName="JavaCompile_Facet.java" startLine="398" startPosition="78" endLine="401" endPosition="21">
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="369" startPosition="67" endLine="372" endPosition="7" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="373" startPosition="0" endLine="376" endPosition="7" />
+    <scopeInfo nodeId="695262645446251944" fileName="JavaCompile_Facet.java" startLine="426" startPosition="78" endLine="429" endPosition="21">
       <varInfo nodeId="695262645446251954" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="485" startPosition="93" endLine="488" endPosition="7" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="489" startPosition="0" endLine="492" endPosition="7" />
-    <scopeInfo nodeId="273167807853742510" fileName="JavaCompile_Facet.java" startLine="97" startPosition="65" endLine="101" endPosition="21" />
-    <scopeInfo nodeId="2593769038861410881" fileName="JavaCompile_Facet.java" startLine="120" startPosition="69" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="152" startPosition="0" endLine="156" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="156" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="160" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="168" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="172" startPosition="0" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="176" startPosition="0" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="180" startPosition="0" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="184" startPosition="0" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="188" startPosition="0" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="273167807853742548" fileName="JavaCompile_Facet.java" startLine="219" startPosition="65" endLine="223" endPosition="21" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="288" startPosition="0" endLine="292" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="292" startPosition="0" endLine="296" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="296" startPosition="0" endLine="300" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="300" startPosition="0" endLine="304" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="304" startPosition="0" endLine="308" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="308" startPosition="0" endLine="312" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="312" startPosition="0" endLine="316" endPosition="0" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="513" startPosition="93" endLine="516" endPosition="7" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="517" startPosition="0" endLine="520" endPosition="7" />
+    <scopeInfo nodeId="273167807853742510" fileName="JavaCompile_Facet.java" startLine="98" startPosition="65" endLine="102" endPosition="21" />
+    <scopeInfo nodeId="2593769038861410881" fileName="JavaCompile_Facet.java" startLine="121" startPosition="69" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="1027996956588784911" fileName="JavaCompile_Facet.java" startLine="126" startPosition="39" endLine="130" endPosition="19" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="162" startPosition="0" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="166" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="170" startPosition="0" endLine="174" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="174" startPosition="0" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="186" startPosition="0" endLine="190" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="190" startPosition="0" endLine="194" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="194" startPosition="0" endLine="198" endPosition="0" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="215" startPosition="0" endLine="219" endPosition="0" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="219" startPosition="0" endLine="223" endPosition="0" />
+    <scopeInfo nodeId="273167807853742548" fileName="JavaCompile_Facet.java" startLine="247" startPosition="65" endLine="251" endPosition="21" />
     <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="316" startPosition="0" endLine="320" endPosition="0" />
     <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="320" startPosition="0" endLine="324" endPosition="0" />
     <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="324" startPosition="0" endLine="328" endPosition="0" />
     <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="328" startPosition="0" endLine="332" endPosition="0" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="349" startPosition="0" endLine="353" endPosition="0" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="353" startPosition="0" endLine="357" endPosition="0" />
-    <scopeInfo nodeId="695262645446210020" fileName="JavaCompile_Facet.java" startLine="384" startPosition="104" endLine="388" endPosition="0" />
-    <scopeInfo nodeId="6161320994961513288" fileName="JavaCompile_Facet.java" startLine="409" startPosition="194" endLine="413" endPosition="0" />
-    <scopeInfo nodeId="6744662691136368227" fileName="JavaCompile_Facet.java" startLine="420" startPosition="170" endLine="424" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="431" startPosition="0" endLine="435" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="435" startPosition="0" endLine="439" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="439" startPosition="0" endLine="443" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="443" startPosition="0" endLine="447" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="447" startPosition="0" endLine="451" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="451" startPosition="0" endLine="455" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="455" startPosition="0" endLine="459" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="332" startPosition="0" endLine="336" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="336" startPosition="0" endLine="340" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="340" startPosition="0" endLine="344" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="344" startPosition="0" endLine="348" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="348" startPosition="0" endLine="352" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="352" startPosition="0" endLine="356" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="356" startPosition="0" endLine="360" endPosition="0" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="377" startPosition="0" endLine="381" endPosition="0" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="381" startPosition="0" endLine="385" endPosition="0" />
+    <scopeInfo nodeId="695262645446210020" fileName="JavaCompile_Facet.java" startLine="412" startPosition="104" endLine="416" endPosition="0" />
+    <scopeInfo nodeId="6161320994961513288" fileName="JavaCompile_Facet.java" startLine="437" startPosition="194" endLine="441" endPosition="0" />
+    <scopeInfo nodeId="6744662691136368227" fileName="JavaCompile_Facet.java" startLine="448" startPosition="170" endLine="452" endPosition="0" />
     <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="459" startPosition="0" endLine="463" endPosition="0" />
     <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="463" startPosition="0" endLine="467" endPosition="0" />
     <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="467" startPosition="0" endLine="471" endPosition="0" />
     <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="471" startPosition="0" endLine="475" endPosition="0" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="493" startPosition="0" endLine="497" endPosition="0" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="497" startPosition="0" endLine="501" endPosition="0" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="501" startPosition="0" endLine="505" endPosition="0" />
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="505" startPosition="0" endLine="509" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="196" startPosition="0" endLine="201" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="333" startPosition="61" endLine="338" endPosition="15" />
-    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="357" startPosition="0" endLine="362" endPosition="0" />
-    <scopeInfo nodeId="695262645446251969" fileName="JavaCompile_Facet.java" startLine="396" startPosition="39" endLine="401" endPosition="21">
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="475" startPosition="0" endLine="479" endPosition="0" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="479" startPosition="0" endLine="483" endPosition="0" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="483" startPosition="0" endLine="487" endPosition="0" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="487" startPosition="0" endLine="491" endPosition="0" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="491" startPosition="0" endLine="495" endPosition="0" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="495" startPosition="0" endLine="499" endPosition="0" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="499" startPosition="0" endLine="503" endPosition="0" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="521" startPosition="0" endLine="525" endPosition="0" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="525" startPosition="0" endLine="529" endPosition="0" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="529" startPosition="0" endLine="533" endPosition="0" />
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="533" startPosition="0" endLine="537" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="199" startPosition="61" endLine="204" endPosition="15" />
+    <scopeInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="223" startPosition="0" endLine="228" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="361" startPosition="61" endLine="366" endPosition="15" />
+    <scopeInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="385" startPosition="0" endLine="390" endPosition="0" />
+    <scopeInfo nodeId="695262645446251969" fileName="JavaCompile_Facet.java" startLine="424" startPosition="39" endLine="429" endPosition="21">
       <varInfo nodeId="695262645446251938" varName="categorizedProblems" />
     </scopeInfo>
-    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="509" startPosition="0" endLine="514" endPosition="0" />
-    <scopeInfo nodeId="1908075475464761890" fileName="JavaCompile_Facet.java" startLine="407" startPosition="35" endLine="413" endPosition="21" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="476" startPosition="61" endLine="482" endPosition="15" />
-    <scopeInfo nodeId="273167807853742509" fileName="JavaCompile_Facet.java" startLine="96" startPosition="109" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="3668957831723482083" fileName="JavaCompile_Facet.java" startLine="131" startPosition="41" endLine="138" endPosition="21" />
-    <scopeInfo nodeId="273167807853742547" fileName="JavaCompile_Facet.java" startLine="218" startPosition="109" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="4824283731825934383" fileName="JavaCompile_Facet.java" startLine="267" startPosition="35" endLine="274" endPosition="21" />
-    <scopeInfo nodeId="695262645446230546" fileName="JavaCompile_Facet.java" startLine="395" startPosition="71" endLine="402" endPosition="19" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="332" startPosition="0" endLine="340" endPosition="0" />
-    <scopeInfo nodeId="695262645446176889" fileName="JavaCompile_Facet.java" startLine="382" startPosition="64" endLine="391" endPosition="17">
+    <scopeInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="537" startPosition="0" endLine="542" endPosition="0" />
+    <scopeInfo nodeId="1908075475464761890" fileName="JavaCompile_Facet.java" startLine="435" startPosition="35" endLine="441" endPosition="21" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="504" startPosition="61" endLine="510" endPosition="15" />
+    <scopeInfo nodeId="273167807853742509" fileName="JavaCompile_Facet.java" startLine="97" startPosition="109" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="3668957831723482083" fileName="JavaCompile_Facet.java" startLine="133" startPosition="41" endLine="140" endPosition="21" />
+    <scopeInfo nodeId="273167807853742547" fileName="JavaCompile_Facet.java" startLine="246" startPosition="109" endLine="253" endPosition="0" />
+    <scopeInfo nodeId="4824283731825934383" fileName="JavaCompile_Facet.java" startLine="295" startPosition="35" endLine="302" endPosition="21" />
+    <scopeInfo nodeId="695262645446230546" fileName="JavaCompile_Facet.java" startLine="423" startPosition="71" endLine="430" endPosition="19" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="198" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="360" startPosition="0" endLine="368" endPosition="0" />
+    <scopeInfo nodeId="695262645446176889" fileName="JavaCompile_Facet.java" startLine="410" startPosition="64" endLine="419" endPosition="17">
       <varInfo nodeId="695262645446209955" varName="fres" />
     </scopeInfo>
-    <scopeInfo nodeId="1908075475464761889" fileName="JavaCompile_Facet.java" startLine="406" startPosition="67" endLine="415" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="475" startPosition="0" endLine="484" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357405" fileName="JavaCompile_Facet.java" startLine="130" startPosition="61" endLine="140" endPosition="65" />
-    <scopeInfo nodeId="4824283731825934381" fileName="JavaCompile_Facet.java" startLine="266" startPosition="49" endLine="276" endPosition="65" />
-    <scopeInfo nodeId="695262645446230541" fileName="JavaCompile_Facet.java" startLine="394" startPosition="78" endLine="404" endPosition="0">
+    <scopeInfo nodeId="1908075475464761889" fileName="JavaCompile_Facet.java" startLine="434" startPosition="67" endLine="443" endPosition="0" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="503" startPosition="0" endLine="512" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357405" fileName="JavaCompile_Facet.java" startLine="132" startPosition="61" endLine="142" endPosition="65" />
+    <scopeInfo nodeId="4824283731825934381" fileName="JavaCompile_Facet.java" startLine="294" startPosition="49" endLine="304" endPosition="65" />
+    <scopeInfo nodeId="695262645446230541" fileName="JavaCompile_Facet.java" startLine="422" startPosition="78" endLine="432" endPosition="0">
       <varInfo nodeId="695262645446230544" varName="cr" />
     </scopeInfo>
-    <scopeInfo nodeId="695262645446176886" fileName="JavaCompile_Facet.java" startLine="381" startPosition="87" endLine="392" endPosition="15" />
-    <scopeInfo nodeId="5964195490229321796" fileName="JavaCompile_Facet.java" startLine="108" startPosition="71" endLine="143" endPosition="146">
+    <scopeInfo nodeId="695262645446176886" fileName="JavaCompile_Facet.java" startLine="409" startPosition="87" endLine="420" endPosition="15" />
+    <scopeInfo nodeId="5964195490229321796" fileName="JavaCompile_Facet.java" startLine="109" startPosition="71" endLine="145" endPosition="146">
       <varInfo nodeId="4328738523548357377" varName="cr" />
       <varInfo nodeId="5964195490229321803" varName="tres" />
     </scopeInfo>
-    <scopeInfo nodeId="5964195490229321793" fileName="JavaCompile_Facet.java" startLine="107" startPosition="107" endLine="144" endPosition="15" />
-    <scopeInfo nodeId="2974008768272239239" fileName="JavaCompile_Facet.java" startLine="242" startPosition="71" endLine="279" endPosition="146">
+    <scopeInfo nodeId="2974008768272239239" fileName="JavaCompile_Facet.java" startLine="270" startPosition="71" endLine="307" endPosition="146">
       <varInfo nodeId="4824283731825934370" varName="cr" />
       <varInfo nodeId="2974008768272239241" varName="tres" />
     </scopeInfo>
-    <scopeInfo nodeId="2974008768272239236" fileName="JavaCompile_Facet.java" startLine="241" startPosition="40" endLine="280" endPosition="15" />
-    <scopeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="379" startPosition="19" endLine="424" endPosition="20">
+    <scopeInfo nodeId="5964195490229321793" fileName="JavaCompile_Facet.java" startLine="108" startPosition="107" endLine="146" endPosition="15" />
+    <scopeInfo nodeId="2974008768272239236" fileName="JavaCompile_Facet.java" startLine="269" startPosition="40" endLine="308" endPosition="15" />
+    <scopeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="407" startPosition="19" endLine="452" endPosition="20">
       <varInfo nodeId="695262645446176880" varName="jc" />
       <varInfo nodeId="6161320994961460897" varName="ccp" />
       <varInfo nodeId="6161320994961460855" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="95" startPosition="19" endLine="145" endPosition="64">
+    <scopeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="404" startPosition="120" endLine="455" endPosition="11" />
+    <scopeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="95" startPosition="19" endLine="147" endPosition="64">
       <varInfo nodeId="273167807853742504" varName="work" />
     </scopeInfo>
-    <scopeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="376" startPosition="120" endLine="427" endPosition="11" />
-    <scopeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="375" startPosition="25" endLine="429" endPosition="0" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="374" startPosition="29" endLine="429" endPosition="8" />
-    <scopeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="92" startPosition="120" endLine="148" endPosition="11" />
-    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="373" startPosition="0" endLine="431" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="91" startPosition="25" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="90" startPosition="29" endLine="150" endPosition="8" />
-    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="89" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="217" startPosition="19" endLine="281" endPosition="81">
+    <scopeInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="403" startPosition="25" endLine="457" endPosition="0" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="402" startPosition="29" endLine="457" endPosition="8" />
+    <scopeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="92" startPosition="120" endLine="150" endPosition="11" />
+    <scopeInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="401" startPosition="0" endLine="459" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="91" startPosition="25" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="90" startPosition="29" endLine="152" endPosition="8" />
+    <scopeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="245" startPosition="19" endLine="309" endPosition="81">
       <varInfo nodeId="7017136043751668671" varName="peer" />
       <varInfo nodeId="273167807853742542" varName="work" />
       <varInfo nodeId="2404343298109995415" varName="refreshed" />
     </scopeInfo>
-    <scopeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="214" startPosition="120" endLine="284" endPosition="11" />
-    <scopeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="213" startPosition="25" endLine="286" endPosition="0" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="212" startPosition="29" endLine="286" endPosition="8" />
-    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="211" startPosition="0" endLine="288" endPosition="0" />
-    <unitInfo nodeId="2593769038861410881" fileName="JavaCompile_Facet.java" startLine="120" startPosition="57" endLine="124" endPosition="17" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
-    <unitInfo nodeId="695262645446210020" fileName="JavaCompile_Facet.java" startLine="384" startPosition="66" endLine="388" endPosition="17" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
-    <unitInfo nodeId="6161320994961513288" fileName="JavaCompile_Facet.java" startLine="409" startPosition="166" endLine="413" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$3" />
-    <unitInfo nodeId="6744662691136368227" fileName="JavaCompile_Facet.java" startLine="420" startPosition="154" endLine="424" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
-    <unitInfo nodeId="273167807853742509" fileName="JavaCompile_Facet.java" startLine="96" startPosition="70" endLine="103" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
-    <unitInfo nodeId="273167807853742547" fileName="JavaCompile_Facet.java" startLine="218" startPosition="70" endLine="225" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
-    <unitInfo nodeId="1908075475464761889" fileName="JavaCompile_Facet.java" startLine="406" startPosition="55" endLine="415" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
-    <unitInfo nodeId="695262645446230539" fileName="JavaCompile_Facet.java" startLine="394" startPosition="50" endLine="404" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
-    <unitInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="341" startPosition="0" endLine="363" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet.Target_wf1ya0_b$Parameters" />
-    <unitInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="485" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet.Target_wf1ya0_c$Parameters" />
-    <unitInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="375" startPosition="17" endLine="429" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
-    <unitInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="91" startPosition="17" endLine="150" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
-    <unitInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="213" startPosition="17" endLine="286" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
-    <unitInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="81" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_a" />
-    <unitInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="365" startPosition="0" endLine="516" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_c" />
-    <unitInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="203" startPosition="0" endLine="364" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_b" />
+    <scopeInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="89" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="242" startPosition="120" endLine="312" endPosition="11" />
+    <scopeInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="241" startPosition="25" endLine="314" endPosition="0" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="240" startPosition="29" endLine="314" endPosition="8" />
+    <scopeInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="239" startPosition="0" endLine="316" endPosition="0" />
+    <unitInfo nodeId="2593769038861410881" fileName="JavaCompile_Facet.java" startLine="121" startPosition="57" endLine="125" endPosition="17" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+    <unitInfo nodeId="695262645446210020" fileName="JavaCompile_Facet.java" startLine="412" startPosition="66" endLine="416" endPosition="17" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+    <unitInfo nodeId="6161320994961513288" fileName="JavaCompile_Facet.java" startLine="437" startPosition="166" endLine="441" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$3" />
+    <unitInfo nodeId="6744662691136368227" fileName="JavaCompile_Facet.java" startLine="448" startPosition="154" endLine="452" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+    <unitInfo nodeId="273167807853742509" fileName="JavaCompile_Facet.java" startLine="97" startPosition="70" endLine="104" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+    <unitInfo nodeId="273167807853742547" fileName="JavaCompile_Facet.java" startLine="246" startPosition="70" endLine="253" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+    <unitInfo nodeId="1908075475464761889" fileName="JavaCompile_Facet.java" startLine="434" startPosition="55" endLine="443" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+    <unitInfo nodeId="695262645446230539" fileName="JavaCompile_Facet.java" startLine="422" startPosition="50" endLine="432" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+    <unitInfo nodeId="4695116324703451579" fileName="JavaCompile_Facet.java" startLine="207" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet.Target_wf1ya0_a$Parameters" />
+    <unitInfo nodeId="8298579931287336624" fileName="JavaCompile_Facet.java" startLine="369" startPosition="0" endLine="391" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet.Target_wf1ya0_b$Parameters" />
+    <unitInfo nodeId="695262645446296831" fileName="JavaCompile_Facet.java" startLine="513" startPosition="0" endLine="543" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet.Target_wf1ya0_c$Parameters" />
+    <unitInfo nodeId="695262645446171549" fileName="JavaCompile_Facet.java" startLine="403" startPosition="17" endLine="457" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
+    <unitInfo nodeId="4328738523548357347" fileName="JavaCompile_Facet.java" startLine="91" startPosition="17" endLine="152" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
+    <unitInfo nodeId="2974008768272239234" fileName="JavaCompile_Facet.java" startLine="241" startPosition="17" endLine="314" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
+    <unitInfo nodeId="4328738523548357345" fileName="JavaCompile_Facet.java" startLine="81" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_a" />
+    <unitInfo nodeId="695262645446171547" fileName="JavaCompile_Facet.java" startLine="393" startPosition="0" endLine="544" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_c" />
+    <unitInfo nodeId="2974008768272239230" fileName="JavaCompile_Facet.java" startLine="231" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_b" />
   </root>
   <root nodeId="4853833103870841534">
     <nodeInfo nodeId="2340850238541827739" fileName="Generate_Facet.java" startLine="90" startPosition="58" endLine="91" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />

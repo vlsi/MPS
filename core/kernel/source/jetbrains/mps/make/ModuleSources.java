@@ -57,6 +57,15 @@ public class ModuleSources {
     return myFilesToDelete.isEmpty() && myFilesToCompile.isEmpty() && myResourcesToCopy.isEmpty();
   }
 
+  public boolean isJavaUpToDate() {
+    return myFilesToCompile.isEmpty();
+  }
+
+  public boolean isResourcesUpToDate() {
+    return myFilesToDelete.isEmpty() && myResourcesToCopy.isEmpty();
+  }
+
+
   public JavaFile getJavaFile(String fqName) {
     return myJavaFiles.get(fqName);
   }

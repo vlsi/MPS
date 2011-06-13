@@ -122,6 +122,8 @@ public class ModuleMaker {
     }
 
     JavaCompiler compiler = new JavaCompiler();
+    boolean hasJavaToCompile = false;
+    boolean hasFilesToCopyOrDelete = false;
 
     Set<IModule> modulesWithRemovals = new HashSet<IModule>();
     for (IModule m : modules) {
@@ -135,6 +137,8 @@ public class ModuleMaker {
       }
 
       ModuleSources sources = getModuleSources(m);
+      hasFilesToCopyOrDelete |= sources.isResourcesUpToDate();
+      hasJavaToCompile |= sources.isJavaUpToDate();
 
       for (File f : sources.getFilesToDelete()) {
         f.delete();
@@ -147,16 +151,23 @@ public class ModuleMaker {
       }
     }
 
+    if(!hasJavaToCompile && !hasFilesToCopyOrDelete) {
+      return new MPSCompilationResult(0, 0, false, false, messages);
+    }
+
     //todo:do we need this invalidation?
     invalidateClasspath(modulesWithRemovals);
 
-    IClassPathItem classPathItems = computeDependenciesClassPath(modules);
-    MyCompilationResultAdapter listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
-    compiler.addCompilationResultListener(listener);
-    compiler.compile(classPathItems);
-    compiler.removeCompilationResultListener(listener);
+    MyCompilationResultAdapter listener = null;
+    if(hasJavaToCompile) {
+      IClassPathItem classPathItems = computeDependenciesClassPath(modules);
+      listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
+      compiler.addCompilationResultListener(listener);
+      compiler.compile(classPathItems);
+      compiler.removeCompilationResultListener(listener);
 
-    invalidateClasspath(modules);
+      invalidateClasspath(modules);
+    }
 
     for (IModule module : modules) {
       ModuleSources sources = getModuleSources(module);
@@ -179,7 +190,7 @@ public class ModuleMaker {
       module.updateClassPath();
     }
 
-    return new MPSCompilationResult(listener.getErrorCount(), 0, false, true, messages);
+    return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, hasJavaToCompile, messages);
   }
 
   private String getName(char[][] compoundName) {
