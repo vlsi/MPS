@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Collections_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.Collections_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.StructureAspectDescriptor" />
   <root nodeId="1151688443754">
     <nodeInfo nodeId="1151688443754" fileName="ListType.java" startLine="11" startPosition="36" endLine="12" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1151688443754" fileName="ListType.java" startLine="12" startPosition="99" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_TYPE" />
@@ -4822,6 +4822,175 @@
   <root nodeId="6801639034384909355">
     <nodeInfo nodeId="6801639034384909355" fileName="IStackOperation.java" startLine="6" startPosition="62" endLine="7" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="6801639034384909355" fileName="IStackOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IStackOperation" />
+  </root>
+  <root nodeId="8293956702609956630">
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="11" startPosition="63" endLine="12" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="12" startPosition="120" endLine="13" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="15" startPosition="52" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="19" startPosition="45" endLine="20" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="23" startPosition="54" endLine="24" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="27" startPosition="84" endLine="28" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="31" startPosition="70" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultiForEachVariableReference#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariable#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVariable#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/collections/structure/MultiForEachVariableReference;" />
+    <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/collections/structure/MultiForEachVariableReference;" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="15" startPosition="52" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="19" startPosition="45" endLine="20" endPosition="119" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="23" startPosition="54" endLine="24" endPosition="68" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="27" startPosition="84" endLine="28" endPosition="220" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="31" startPosition="70" endLine="32" endPosition="64" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference" />
+  </root>
+  <root nodeId="9042586985346099698">
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="13" startPosition="66" endLine="14" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="14" startPosition="112" endLine="15" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FOR_EACH" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="17" startPosition="44" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="21" startPosition="33" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="29" startPosition="47" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="33" startPosition="49" endLine="34" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="37" startPosition="75" endLine="38" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="41" startPosition="76" endLine="42" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="45" startPosition="62" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultiForEachStatement#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getForEachsCount#()I" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forEachs#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getForEachs#()Ljava/util/List;" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addForEach#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertForEach#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/collections/structure/MultiForEachStatement;" />
+    <nodeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/collections/structure/MultiForEachStatement;" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="17" startPosition="44" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="21" startPosition="33" endLine="22" endPosition="62" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="25" startPosition="48" endLine="26" endPosition="81" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="29" startPosition="47" endLine="30" endPosition="84" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="33" startPosition="49" endLine="34" endPosition="56" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="37" startPosition="75" endLine="38" endPosition="65" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="41" startPosition="76" endLine="42" endPosition="204" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="45" startPosition="62" endLine="46" endPosition="56" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="9042586985346099698" fileName="MultiForEachStatement.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement" />
+  </root>
+  <root nodeId="9042586985346099733">
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="12" startPosition="51" endLine="13" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="13" startPosition="107" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="14" startPosition="51" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INPUT" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="17" startPosition="39" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="21" startPosition="45" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="25" startPosition="54" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="29" startPosition="32" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="33" startPosition="41" endLine="34" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="37" startPosition="71" endLine="38" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="41" startPosition="57" endLine="42" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultiForEachPair#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariable#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVariable#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInput#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInput#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/collections/structure/MultiForEachPair;" />
+    <nodeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/collections/structure/MultiForEachPair;" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="17" startPosition="39" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="21" startPosition="45" endLine="22" endPosition="103" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="25" startPosition="54" endLine="26" endPosition="52" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="29" startPosition="32" endLine="30" endPosition="80" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="33" startPosition="41" endLine="34" endPosition="49" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="37" startPosition="71" endLine="38" endPosition="194" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="41" startPosition="57" endLine="42" endPosition="51" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <unitInfo nodeId="9042586985346099733" fileName="MultiForEachPair.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair" />
+  </root>
+  <root nodeId="9042586985346099736">
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="17" startPosition="120" endLine="18" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="18" startPosition="111" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="19" startPosition="43" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="20" startPosition="68" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="21" startPosition="45" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="22" startPosition="64" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="25" startPosition="43" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="29" startPosition="27" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="33" startPosition="37" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="37" startPosition="39" endLine="38" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="41" startPosition="49" endLine="42" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="45" startPosition="28" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="49" startPosition="38" endLine="50" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="53" startPosition="37" endLine="54" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="57" startPosition="47" endLine="58" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="61" startPosition="41" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="65" startPosition="49" endLine="66" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="69" startPosition="48" endLine="70" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="73" startPosition="50" endLine="74" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="77" startPosition="69" endLine="78" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="81" startPosition="75" endLine="82" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="85" startPosition="61" endLine="86" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultiForEachVariable#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/collections/structure/MultiForEachVariable;" />
+    <nodeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/collections/structure/MultiForEachVariable;" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="25" startPosition="43" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="29" startPosition="27" endLine="30" endPosition="55" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="33" startPosition="37" endLine="34" endPosition="55" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="37" startPosition="39" endLine="38" endPosition="68" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="41" startPosition="49" endLine="42" endPosition="68" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="45" startPosition="28" endLine="46" endPosition="56" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="49" startPosition="38" endLine="50" endPosition="56" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="53" startPosition="37" endLine="54" endPosition="66" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="57" startPosition="47" endLine="58" endPosition="66" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="61" startPosition="41" endLine="62" endPosition="69" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="65" startPosition="49" endLine="66" endPosition="81" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="69" startPosition="48" endLine="70" endPosition="84" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="73" startPosition="50" endLine="74" endPosition="63" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="77" startPosition="69" endLine="78" endPosition="72" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="81" startPosition="75" endLine="82" endPosition="202" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="85" startPosition="61" endLine="86" endPosition="55" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <unitInfo nodeId="9042586985346099736" fileName="MultiForEachVariable.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable" />
   </root>
 </debugInfo>
 

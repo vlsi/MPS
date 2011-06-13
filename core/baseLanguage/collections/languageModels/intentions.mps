@@ -29,6 +29,7 @@
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1193396656620">
       <property name="name" nameId="tpck.1169194664001" value="ConvertForEachStatementToForeachStatement" />
       <property name="isErrorIntention" nameId="tp3j.2522969319638091385" value="false" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tp2q.1153943597977" resolveInfo="ForEachStatement" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1206658014161">
@@ -241,7 +242,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="1193397470227">
               <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1193397770170">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1193397770168" resolveInfo="type" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1193397770168" resolveInfo="variableType" />
               </node>
             </node>
           </node>

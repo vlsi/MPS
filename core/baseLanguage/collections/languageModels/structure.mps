@@ -34,10 +34,12 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1153943597977">
       <property name="name" nameId="tpck.1169194664001" value="ForEachStatement" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1153944233411">
       <property name="name" nameId="tpck.1169194664001" value="ForEachVariableReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1160600644654">
@@ -733,6 +735,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1153944193378">
       <property name="name" nameId="tpck.1169194664001" value="ForEachVariable" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/core/baseLanguage/baseLanguage/icons/variable.png" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1522217801069359738">
@@ -759,6 +762,26 @@
       <property name="name" nameId="tpck.1169194664001" value="GetLastIndexOfOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9042586985346099698">
+      <property name="name" nameId="tpck.1169194664001" value="MultiForEachStatement" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9042586985346099733">
+      <property name="name" nameId="tpck.1169194664001" value="MultiForEachPair" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9042586985346099736">
+      <property name="name" nameId="tpck.1169194664001" value="MultiForEachVariable" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8293956702609956630">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
+      <property name="name" nameId="tpck.1169194664001" value="MultiForEachVariableReference" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </roots>
   <root id="1151688443754">
@@ -3116,6 +3139,55 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4020503625588385969">
       <property name="value" nameId="tpce.1105725733873" value="get the index of an element" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </root>
+  <root id="9042586985346099698">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="9042586985346099792">
+      <property name="value" nameId="tpce.1105725733873" value="foreach" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="9042586985346099794">
+      <property name="value" nameId="tpce.1105725733873" value="foreach loop over multiple variables" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9042586985346099734">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="forEach" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="9042586985346099733" resolveInfo="MultiForEachPair" />
+    </node>
+  </root>
+  <root id="9042586985346099733">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9042586985346099778">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="variable" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="9042586985346099736" resolveInfo="MultiForEachVariable" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9042586985346099735">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="input" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+  </root>
+  <root id="9042586985346099736">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9042586985346099737">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9042586985346099738">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9042586985346099739">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
+    </node>
+  </root>
+  <root id="8293956702609956630">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8293956702609966325">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="variable" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="9042586985346099736" resolveInfo="MultiForEachVariable" />
     </node>
   </root>
 </model>
