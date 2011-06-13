@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
+import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -27,6 +29,7 @@ import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
+import javax.swing.Icon;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -56,6 +59,10 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
           return AbstractCellMenuPart_Generic_Group.this.getDescriptionText(parameterObject);
         }
 
+        public Icon getIconFor(String pattern, boolean referent_presentation) {
+          return AbstractCellMenuPart_Generic_Group.this.getIconFor(parameterObject);
+        }
+
         public SNode doSubstitute(String pattern) {
           handleAction(parameterObject, node, node.getModel(), context.getScope(), context, editorContext);
           return null;
@@ -79,6 +86,13 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
       return NodePresentationUtil.descriptionText((SNode) parameterObject, isReferentPresentation());
     }
     return "";
+  }
+
+  protected Icon getIconFor(Object parameterObject) {
+    if (parameterObject instanceof SNode) {
+      return NodeIconUtil.getIcon((SNode) parameterObject, isReferentPresentation());
+    }
+    return Icons.DEFAULT_ICON;
   }
 
   protected abstract List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext);
