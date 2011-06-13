@@ -142,10 +142,9 @@ public class FileClassPathItem extends RealClassPathItem {
     Set<String> classes = null;
     File dir = getModelDir(namespace);
 
-    File[] files = dir.listFiles();
+    String[] files = dir.list();
     if (files != null) {
-      for (File file : files) {
-        String name = file.getName();
+      for (String name : files) {
         if (name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
           if (classes == null) {
             classes = new THashSet<String>(files.length);
@@ -153,6 +152,7 @@ public class FileClassPathItem extends RealClassPathItem {
           String classname = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
           classes.add(InternUtil.intern(classname));
         } else {
+          File file = new File(dir, name);
           if (file.isDirectory()) {
             if (subpacks == null) {
               subpacks = new THashSet<String>();

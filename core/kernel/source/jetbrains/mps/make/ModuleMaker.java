@@ -75,7 +75,7 @@ public class ModuleMaker {
       indicator.setText("Compiling...");
       indicator.setIndeterminate(true);
 
-      Set<IModule> candidates = new DependencyCollector(modules, IModule.class).collect();
+      Set<IModule> candidates = new DependencyCollector(modules).collect();
       indicator.setText2("Loading dependencies..");
       myDependencies = new Dependencies(candidates);
 
@@ -250,10 +250,12 @@ public class ModuleMaker {
   }
 
   private ModuleSources getModuleSources(IModule module) {
-    if (!myModuleSources.containsKey(module)) {
-      myModuleSources.put(module, new ModuleSources(module, myDependencies));
+    ModuleSources moduleSources = myModuleSources.get(module);
+    if (moduleSources == null) {
+      moduleSources = new ModuleSources(module, myDependencies);
+      myModuleSources.put(module, moduleSources);
     }
-    return myModuleSources.get(module);
+    return moduleSources;
   }
 
   private boolean isExcluded(IModule m) {
@@ -288,7 +290,7 @@ public class ModuleMaker {
 
     @Override
     public void onFatalError(String error) {
-      myMessages.add(new MyMessage(MessageKind.ERROR, "Fatal error. "+error, null));
+      myMessages.add(new MyMessage(MessageKind.ERROR, "Fatal error. " + error, null));
       LOG.debug("Fatal error. " + error);
       LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
       myErrorCount += 1;
@@ -396,7 +398,7 @@ public class ModuleMaker {
     private String myText;
     private Object myHintObject;
 
-    public MyMessage (MessageKind kind, String text, Object hintObject) {
+    public MyMessage(MessageKind kind, String text, Object hintObject) {
       myKind = kind;
       myText = text;
       myHintObject = hintObject;

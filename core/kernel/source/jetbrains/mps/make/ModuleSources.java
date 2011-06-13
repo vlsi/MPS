@@ -29,10 +29,9 @@ public class ModuleSources {
   private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
 
-  private Set<File> myFilesToDelete = new HashSet<File>();
-  private Set<JavaFile> myFilesToCompile = new HashSet<JavaFile>();
-
-  private Set<ResourceFile> myResourcesToCopy = new HashSet<ResourceFile>();
+  private List<File> myFilesToDelete = new ArrayList<File>();
+  private List<JavaFile> myFilesToCompile = new LinkedList<JavaFile>();
+  private List<ResourceFile> myResourcesToCopy = new LinkedList<ResourceFile>();
 
   ModuleSources(IModule module, Dependencies deps) {
     myModule = module;
@@ -43,19 +42,19 @@ public class ModuleSources {
   }
 
   public Collection<File> getFilesToDelete() {
-    return Collections.unmodifiableSet(myFilesToDelete);
+    return myFilesToDelete;
   }
 
   public Collection<JavaFile> getFilesToCompile() {
-    return Collections.unmodifiableSet(myFilesToCompile);
+    return myFilesToCompile;
   }
 
   public Collection<ResourceFile> getResourcesToCopy() {
-    return Collections.unmodifiableSet(myResourcesToCopy);
+    return myResourcesToCopy;
   }
 
   public boolean isUpToDate() {
-    return getFilesToDelete().isEmpty() && getFilesToCompile().isEmpty() && getResourcesToCopy().isEmpty();
+    return myFilesToDelete.isEmpty() && myFilesToCompile.isEmpty() && myResourcesToCopy.isEmpty();
   }
 
   public JavaFile getJavaFile(String fqName) {
@@ -80,12 +79,14 @@ public class ModuleSources {
         String className = childName.substring(0, childName.length() - MPSExtentions.DOT_JAVAFILE.length());
         String fqName = toPack(addSubPath(path, className));
         myJavaFiles.put(fqName, new JavaFile(child, fqName));
+        continue;
       }
 
       if (!child.isDirectory() && isResourceFileName(childName)) {
         String resourceName = child.getName();
         String childPath = addSubPath(path, resourceName);
         myResourceFiles.put(childPath, new ResourceFile(child, childPath));
+        continue;
       }
 
       collectInput(child, addSubPath(path, childName));
@@ -98,42 +99,7 @@ public class ModuleSources {
 
     IFile classesGen = myModule.getClassesGen();
     if (classesGen == null) return;
-    collectOutput(new File(classesGen.getPath()), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
-  }
-
-  private void collectOutput(File classesGen, String path, Set<JavaFile> toCompile, Set<File> toDelete, Set<ResourceFile> resourcesToCopy) {
-    File[] files = classesGen.listFiles();
-    if (files == null) return;
-
-    for (File file : files) {
-      if (isIgnoredFileName(file.getName())) continue;
-
-      if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
-        boolean isInnerClass = false;
-        String containerName = file.getName().substring(0, file.getName().length() - MPSExtentions.DOT_CLASSFILE.length());
-        if (containerName.contains("$")) {
-          containerName = containerName.substring(0, containerName.indexOf("$"));
-          isInnerClass = true;
-        }
-        String fqName = toPack(addSubPath(path, containerName));
-        JavaFile javaFile = myJavaFiles.get(fqName);
-        if (javaFile == null) {
-          toDelete.add(file);
-        } else if (!isInnerClass && isFileUpToDate(javaFile, file.lastModified())) {
-          toCompile.remove(javaFile);
-        }
-      } else if (!file.isDirectory() && isResourceFileName(file.getName())) {
-        String childPath = addSubPath(path, file.getName());
-        ResourceFile resourceFile = myResourceFiles.get(childPath);
-        if (resourceFile == null) {
-          toDelete.add(file);
-        } else if (resourceFile.getFile().lastModified() < file.lastModified()) {
-          resourcesToCopy.remove(resourceFile);
-        }
-      } else {
-        collectOutput(file, addSubPath(path, file.getName()), toCompile, toDelete, resourcesToCopy);
-      }
-    }
+    collectOutput(new File(classesGen.getPath()), "");
   }
 
   private boolean isFileUpToDate(JavaFile javaFile, long classFileLastModified) {
@@ -149,6 +115,48 @@ public class ModuleSources {
       return true;
     }
     return false;
+  }
+
+  private void collectOutput(File outputDir, String path) {
+    String[] files = outputDir.list();
+    if (files == null) return;
+
+    for (String fileName : files) {
+      if (isIgnoredFileName(fileName)) continue;
+
+      File file = new File(outputDir, fileName);
+      if (fileName.endsWith(MPSExtentions.DOT_CLASSFILE)) {
+        boolean isInnerClass = false;
+        String containerName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_CLASSFILE.length());
+        int indexOfDollar = containerName.indexOf("$");
+        if (indexOfDollar > 0) {
+          containerName = containerName.substring(0, indexOfDollar);
+          isInnerClass = true;
+        }
+
+        String fqName = toPack(addSubPath(path, containerName));
+        JavaFile javaFile = myJavaFiles.get(fqName);
+        if (javaFile == null) {
+          myFilesToDelete.add(file);
+        } else if (!isInnerClass && isFileUpToDate(javaFile, file.lastModified())) {
+          myFilesToCompile.remove(javaFile);
+        }
+        continue;
+      }
+
+      if (!file.isDirectory() && isResourceFileName(fileName)) {
+        String childPath = addSubPath(path, fileName);
+        ResourceFile resourceFile = myResourceFiles.get(childPath);
+        if (resourceFile == null) {
+          myFilesToDelete.add(file);
+        } else if (resourceFile.getFile().lastModified() < file.lastModified()) {
+          myResourcesToCopy.remove(resourceFile);
+        }
+        continue;
+      }
+
+      collectOutput(file, addSubPath(path, fileName));
+    }
   }
 
   private boolean isIgnoredFileName(String fileName) {

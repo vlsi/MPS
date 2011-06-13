@@ -22,15 +22,14 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.CompositeIterable;
+import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.util.*;
 
 class Dependencies {
+
   private final Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
   private final Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
   private final Map<String, IModule> myModules = new HashMap<String, IModule>();
@@ -42,8 +41,11 @@ class Dependencies {
     }
   }
 
+  /*
+   *  returns collection with duplicates
+   */
   public Iterable<String> getAllDependencies(String fqName) {
-    CompositeIterable<String> result = new CompositeIterable<String>();
+    FlattenIterable<String> result = new FlattenIterable<String>();
     Set<String> deps = myDependencies.get(fqName);
     if (deps != null) {
       result.add(deps);
@@ -52,7 +54,7 @@ class Dependencies {
     return result;
   }
 
-  private void fillExtendsDependencies(String fqName, CompositeIterable<String> result) {
+  private void fillExtendsDependencies(String fqName, FlattenIterable<String> result) {
     Set<String> extendDeps = myExtendsDependencies.get(fqName);
     if (extendDeps == null) return;
 
@@ -62,12 +64,12 @@ class Dependencies {
     }
   }
 
-  public IFile getJavaFile(String fqName) {
+  private File getJavaFile(String fqName) {
     IModule m = myModules.get(fqName);
     if (m == null) return null;
 
     String outputPath = m.getGeneratorOutputPath() + File.separator + NameUtil.pathFromNamespace(fqName) + MPSExtentions.DOT_JAVAFILE;
-    return FileSystem.getInstance().getFileByPath(outputPath);
+    return new File(outputPath);
   }
 
   private void collectDependencies(IModule m) {
@@ -98,8 +100,8 @@ class Dependencies {
   public Long getJavaFileLastModified(String fqName) {
     Long value = myLastModified.get(fqName);
     if (value == null) {
-      IFile iFile = getJavaFile(fqName);
-      if (iFile == null) {
+      File iFile = getJavaFile(fqName);
+      if (!iFile.exists()) {
         value = 0L;
       } else {
         value = iFile.lastModified();
