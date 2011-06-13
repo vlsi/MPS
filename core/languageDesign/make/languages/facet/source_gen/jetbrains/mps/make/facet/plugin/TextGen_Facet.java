@@ -132,9 +132,13 @@ public class TextGen_Facet implements IFacet {
 
                 final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, cachesDir);
                 final Wrappers._boolean ok = new Wrappers._boolean();
-                final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator());
+                boolean generateDI = pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).generateDebugInfo() == null || pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).generateDebugInfo();
+                final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), (generateDI ?
+                  TraceInfoCache.getInstance().getGenerator() :
+                  null
+                ), GenerationDependenciesCache.getInstance().getGenerator());
                 textgen.setFailIfNoTextgen(pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).failIfNoTextgen() != null && pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).failIfNoTextgen());
-                textgen.setGenerateDebugInfo(pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).generateDebugInfo() == null || pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).generateDebugInfo());
+                textgen.setGenerateDebugInfo(generateDI);
                 try {
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
