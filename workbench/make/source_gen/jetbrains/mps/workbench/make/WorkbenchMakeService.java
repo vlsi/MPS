@@ -361,9 +361,10 @@ public class WorkbenchMakeService implements IMakeService {
         });
       }
 
-      Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.parameters(new ITarget.Name("textGen"), Object.class);
+      Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean> tparams = (Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean>) ppool.parameters(new ITarget.Name("textGen"), Object.class);
       if (tparams != null) {
         tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
+        tparams._2(GenerationSettings.getInstance().isGenerateDebugInfo());
       }
 
       if (delegateScrCtr != null) {

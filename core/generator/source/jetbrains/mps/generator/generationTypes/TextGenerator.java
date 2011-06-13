@@ -44,6 +44,7 @@ public class TextGenerator {
   private CacheGenerator[] myCacheGenerators;
   private List<String> myTextGenErrors = new ArrayList<String>();
   private boolean myFailIfNoTextgen = false;
+  private boolean myGenerateDebugInfo = true;
 
   public TextGenerator(StreamHandler streamHandler, CacheGenerator ...generators) {
     myStreamHandler = streamHandler;
@@ -52,6 +53,10 @@ public class TextGenerator {
 
   public void setFailIfNoTextgen(boolean failIfNoTextgen) {
     myFailIfNoTextgen = failIfNoTextgen;
+  }
+
+  public void setGenerateDebugInfo(boolean needDebugInfo) {
+    myGenerateDebugInfo = needDebugInfo;
   }
 
   public Collection<String> errors () {

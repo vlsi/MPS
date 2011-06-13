@@ -258,6 +258,15 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myFailOnMissingTextGen = fail;
   }
 
+  public boolean isGenerateDebugInfo() {
+    return myState.myGenerateDebugInfo;
+  }
+
+  public void setGenerateDebugInfo(boolean generateDebugInfo) {
+    myState.myGenerateDebugInfo = generateDebugInfo;
+  }
+
+
   public enum GenerateRequirementsPolicy {
     ALWAYS("Always generate"), ASK("Ask"), NEVER("Never generate");
 
@@ -291,6 +300,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myIncremental = true;
     private boolean myIncrementalUseCache = false;
     private boolean myFailOnMissingTextGen = false;
+    private boolean myGenerateDebugInfo = true;
 
     public int getNumberOfModelsToKeep() {
       return myNumberOfModelsToKeep;
@@ -410,6 +420,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setFailOnMissingTextGen(boolean failOnMissingTextGen) {
       myFailOnMissingTextGen = failOnMissingTextGen;
+    }
+
+    public boolean isGenerateDebugInfo() {
+      return myGenerateDebugInfo;
+    }
+
+    public void setGenerateDebugInfo(boolean generateDebugInfo) {
+      myGenerateDebugInfo = generateDebugInfo;
     }
   }
 }

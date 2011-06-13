@@ -52,6 +52,7 @@ class GenerationSettingsPreferencesPage {
   private JFormattedTextField myNumberOfModelsToKeep = new JFormattedTextField(new RangeDecimalFormatter(0, 1000));
 
   private JCheckBox myFailOnMissingTextgen = new JCheckBox("Fail if textgen not found");
+  private JCheckBox myGenerateDebugInfo = new JCheckBox("Generate debug information");
 
   private GenerationSettings myGenerationSettings;
 
@@ -223,6 +224,7 @@ class GenerationSettingsPreferencesPage {
     JPanel textgenPanel = new JPanel();
     textgenPanel.setLayout(new BoxLayout(textgenPanel, BoxLayout.Y_AXIS));
     textgenPanel.add(myFailOnMissingTextgen);
+    textgenPanel.add(myGenerateDebugInfo);
     textgenPanel.setBorder(BorderFactory.createTitledBorder("TextGen options"));
     return textgenPanel;
   }
@@ -246,6 +248,7 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.setIncremental(myIncremental.isSelected());
     myGenerationSettings.setIncrementalUseCache(myIncrementalCache.isSelected());
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
+    myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
   }
 
   private int getTracingLevel() {
@@ -274,7 +277,8 @@ class GenerationSettingsPreferencesPage {
       myGenerationSettings.isStrictMode() == myStrictMode.isSelected() &&
       myGenerationSettings.isIncremental() == myIncremental.isSelected() &&
       myGenerationSettings.isIncrementalUseCache() == myIncrementalCache.isSelected() &&
-      myGenerationSettings.isFailOnMissingTextGen() == myFailOnMissingTextgen.isSelected());
+      myGenerationSettings.isFailOnMissingTextGen() == myFailOnMissingTextgen.isSelected() &&
+      myGenerationSettings.isGenerateDebugInfo() == myGenerateDebugInfo.isSelected());
   }
 
   public void update() {
@@ -301,6 +305,7 @@ class GenerationSettingsPreferencesPage {
     myLimitNumberOfModels.setSelected(myGenerationSettings.getNumberOfModelsToKeep() != -1);
 
     myFailOnMissingTextgen.setSelected(myGenerationSettings.isFailOnMissingTextGen());
+    myGenerateDebugInfo.setSelected(myGenerationSettings.isGenerateDebugInfo());
 
     final JRadioButton[] allbuttons = {myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes};
     allbuttons[myGenerationSettings.getPerformanceTracingLevel()].setSelected(true);
