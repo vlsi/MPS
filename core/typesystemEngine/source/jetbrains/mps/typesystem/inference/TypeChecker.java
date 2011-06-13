@@ -67,14 +67,18 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
-  @Deprecated private boolean myIsGeneration = false;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 
   private final LanguageRegistry myLanguageRegistry;
 
-  private List<Thread> myGenerationThreads = new ArrayList<Thread>();
+  private ThreadLocal<Boolean> myIsGenerationThread = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return Boolean.FALSE;
+    }
+  };
   private Thread myMainGenerationThread;
 
   public TypeChecker(LanguageRegistry languageRegistry) {
@@ -146,10 +150,12 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     return myRuntimeSupport;
   }
 
-  //todo sync
   public SubtypingCache getSubtypingCache() {
     if (isGenerationMode()) {
-      return myGenerationSubTypingCache;
+      SubtypingCache generationSubTypingCache = myGenerationSubTypingCache;
+      if (generationSubTypingCache != null) {
+        return generationSubTypingCache;
+      }
     }
     return mySubtypingCache;
   }
@@ -207,27 +213,27 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
   public void generationStarted(IPerformanceTracer performanceTracer) {
     myGenerationSubTypingCache = createSubtypingCache();
     initTracing(performanceTracer);
-    myGenerationThreads.add(Thread.currentThread());
+    myIsGenerationThread.set(Boolean.TRUE);
     myMainGenerationThread = Thread.currentThread();
   }
 
   public void generationFinished() {
     myGenerationSubTypingCache = null;
     disposeTracing();
-    myGenerationThreads.remove(Thread.currentThread());
+    myIsGenerationThread.set(Boolean.FALSE);
     myMainGenerationThread = null;
   }
 
   public void generationWorkerStarted() {
-    myGenerationThreads.add(Thread.currentThread());
+    myIsGenerationThread.set(Boolean.TRUE);
   }
 
   public void generationWorkerFinished() {
-    myGenerationThreads.remove(Thread.currentThread());
+    myIsGenerationThread.set(Boolean.FALSE);
   }
 
   public boolean isGenerationMode() {
-    return myIsGeneration;// || myGenerationThreads.contains(Thread.currentThread());
+    return myIsGenerationThread.get();
   }
 
   private void initTracing(IPerformanceTracer performanceTracer) {
