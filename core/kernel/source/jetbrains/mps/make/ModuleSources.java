@@ -16,7 +16,6 @@
 package jetbrains.mps.make;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vfs.IFile;
@@ -43,15 +42,15 @@ public class ModuleSources {
     collectOutputFilesInfo();
   }
 
-  public Set<File> getFilesToDelete() {
+  public Collection<File> getFilesToDelete() {
     return Collections.unmodifiableSet(myFilesToDelete);
   }
 
-  public Set<JavaFile> getFilesToCompile() {
+  public Collection<JavaFile> getFilesToCompile() {
     return Collections.unmodifiableSet(myFilesToCompile);
   }
 
-  public Set<ResourceFile> getResourcesToCopy() {
+  public Collection<ResourceFile> getResourcesToCopy() {
     return Collections.unmodifiableSet(myResourcesToCopy);
   }
 
@@ -70,25 +69,26 @@ public class ModuleSources {
   }
 
   private void collectInput(File dir, String path) {
-    File[] list = dir.listFiles();
+    String[] list = dir.list();
     if (list == null) return;
 
-    for (File child : list) {
-      if (isIgnoredFileName(child.getName())) continue;
+    for (String childName : list) {
+      if (isIgnoredFileName(childName)) continue;
 
-      if (isJavaFile(child)) {
-        String className = child.getName().substring(0, child.getName().length() - MPSExtentions.DOT_JAVAFILE.length());
+      File child = new File(dir, childName);
+      if (childName.endsWith(MPSExtentions.DOT_JAVAFILE) && child.isFile()) {
+        String className = childName.substring(0, childName.length() - MPSExtentions.DOT_JAVAFILE.length());
         String fqName = toPack(addSubPath(path, className));
         myJavaFiles.put(fqName, new JavaFile(child, fqName));
       }
 
-      if (!child.isDirectory() && isResourceFileName(child.getName())) {
+      if (!child.isDirectory() && isResourceFileName(childName)) {
         String resourceName = child.getName();
         String childPath = addSubPath(path, resourceName);
         myResourceFiles.put(childPath, new ResourceFile(child, childPath));
       }
 
-      collectInput(child, addSubPath(path, child.getName()));
+      collectInput(child, addSubPath(path, childName));
     }
   }
 
@@ -167,14 +167,9 @@ public class ModuleSources {
     return path.replace('/', '.');
   }
 
-  private boolean isJavaFile(File file) {
-    return !file.isDirectory() && file.getName().endsWith(MPSExtentions.DOT_JAVAFILE);
-  }
-
   private boolean isResourceFileName(String fileName) {
     int extPos = fileName.lastIndexOf('.');
-    return extPos != -1 && !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
-      !fileName.endsWith(MPSExtentions.DOT_CLASSFILE) &&
-      !AllCaches.getInstance().isCacheFile(fileName);
+    return extPos > 0 && !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
+      !fileName.endsWith(MPSExtentions.DOT_CLASSFILE);
   }
 }

@@ -35,8 +35,7 @@ import java.io.InputStream;
 public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   private static final Logger LOG = Logger.getLogger(XmlBasedModelCache.class);
 
-  protected XmlBasedModelCache(AllCaches allCaches) {
-    super(allCaches);
+  protected XmlBasedModelCache() {
   }
 
   protected abstract Element toXml(T t);
@@ -56,7 +55,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
       return load(is);
     } catch (IOException e) {
       /* not a valid XML? ignore */
-      if(!(e.getCause() instanceof SAXParseException)) {
+      if (!(e.getCause() instanceof SAXParseException)) {
         LOG.error(e);
       }
     } finally {

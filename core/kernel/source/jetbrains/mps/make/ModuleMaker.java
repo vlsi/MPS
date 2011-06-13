@@ -200,7 +200,7 @@ public class ModuleMaker {
   }
 
   private Set<IModule> getModulesToCompile(Set<IModule> modules) {
-    Set<IModule> dirtyModules = new HashSet<IModule>();
+    List<IModule> dirtyModules = new ArrayList<IModule>(modules.size());
     for (IModule m : modules) {
       if (isDirty(m)) {
         dirtyModules.add(m);

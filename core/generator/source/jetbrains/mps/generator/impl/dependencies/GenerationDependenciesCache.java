@@ -4,7 +4,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -16,8 +15,7 @@ import org.jetbrains.annotations.NotNull;
 public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> {
   private final CleanupManager myCleanupManager;
 
-  public GenerationDependenciesCache(CleanupManager cleanupManager, AllCaches allCaches) {
-    super(allCaches);
+  public GenerationDependenciesCache(CleanupManager cleanupManager) {
     myCleanupManager = cleanupManager;
   }
 

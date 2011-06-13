@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.CompositeIterable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -30,10 +31,10 @@ import java.io.File;
 import java.util.*;
 
 class Dependencies {
-  private Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
-  private Map<String, IModule> myModules = new HashMap<String, IModule>();
-  private Map<String, Long> myLastModified = new HashMap<String, Long>();
+  private final Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
+  private final Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
+  private final Map<String, IModule> myModules = new HashMap<String, IModule>();
+  private final Map<String, Long> myLastModified = new HashMap<String, Long>();
 
   public Dependencies(Collection<IModule> ms) {
     for (IModule m : ms) {
@@ -42,22 +43,21 @@ class Dependencies {
   }
 
   public Iterable<String> getAllDependencies(String fqName) {
-    Set<String> result = new HashSet<String>();
-    fillDependencies(fqName, result);
+    CompositeIterable<String> result = new CompositeIterable<String>();
+    Set<String> deps = myDependencies.get(fqName);
+    if (deps != null) {
+      result.add(deps);
+    }
     fillExtendsDependencies(fqName, result);
     return result;
   }
 
-  private void fillDependencies(String fqName, Set<String> result) {
-    if (!myDependencies.containsKey(fqName)) return;
-    result.addAll(myDependencies.get(fqName));
-  }
+  private void fillExtendsDependencies(String fqName, CompositeIterable<String> result) {
+    Set<String> extendDeps = myExtendsDependencies.get(fqName);
+    if (extendDeps == null) return;
 
-  private void fillExtendsDependencies(String fqName, Set<String> result) {
-    if (!myExtendsDependencies.containsKey(fqName)) return;
-
-    for (String ext : myExtendsDependencies.get(fqName)) {
-      result.add(ext);
+    result.add(extendDeps);
+    for (String ext : extendDeps) {
       fillExtendsDependencies(ext, result);
     }
   }
@@ -103,7 +103,6 @@ class Dependencies {
         value = 0L;
       } else {
         value = iFile.lastModified();
-
       }
       myLastModified.put(fqName, value);
     }
