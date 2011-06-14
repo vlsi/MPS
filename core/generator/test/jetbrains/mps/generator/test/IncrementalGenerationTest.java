@@ -67,9 +67,9 @@ public class IncrementalGenerationTest extends GenerationTestBase {
       new ModelChangeRunnable() {
         public void run(SModelDescriptor descr) {
           SModel model = descr.getSModel();
-          SNode root = SModelOperations.getRootByName(model,"Generate");
+          SNode root = SModelOperations.getRootByName(model,"GoToFile");
           Assert.assertNotNull("No root in model", root);
-          root.setName("GenerateIt");
+          root.setName("GoToFile2");
         }
       });
 
