@@ -26,13 +26,14 @@ import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.CanBeASomethingMethod;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.structure.ConstraintsDataHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.naming.Reference;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -40,9 +41,11 @@ import java.util.Set;
 
 @Deprecated
 public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescriptor {
-  private ConstraintsDescriptor inner;
+  private final String fqName;
+  private final ConstraintsDescriptor inner;
 
   public DataHolderConstraintsDescriptor(final ConstraintsDataHolder dataHolder) {
+    fqName = dataHolder.getConceptFqName();
     inner = new BaseConstraintsDescriptor(dataHolder.getConceptFqName()) {
       private ReferenceScopeProvider defaultScopeProvider = null;
       private Map<String, PropertyConstraintsDescriptor> properties;
@@ -171,15 +174,14 @@ public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescript
         if (properties.containsKey(name)) {
           return properties.get(name);
         }
-        // todo
+
         ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
         if (conceptDescriptor.hasProperty(name)) {
           PropertyConstraintsDescriptor property = new BasePropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
           properties.put(name, property);
           return property;
         } else {
-          // todo: return IllegalProperty
-          return null;
+          return new IllegalPropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
         }
       }
 
@@ -188,15 +190,13 @@ public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescript
         if (references.containsKey(refName)) {
           return references.get(refName);
         }
-        // todo
         ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
         if (conceptDescriptor.hasReference(refName)) {
           ReferenceConstraintsDescriptor reference = new BaseReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
           references.put(refName, reference);
           return reference;
         } else {
-          // todo: return IllegalReference
-          return null;
+          return new IllegalReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
         }
       }
 
@@ -228,5 +228,10 @@ public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescript
   @Override
   protected ConstraintsDescriptor delegate() {
     return inner;
+  }
+
+  @Override
+  public String getConceptFqName() {
+    return fqName;
   }
 }
