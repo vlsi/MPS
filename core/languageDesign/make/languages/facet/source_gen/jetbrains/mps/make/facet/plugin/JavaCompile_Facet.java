@@ -50,7 +50,7 @@ import jetbrains.mps.compiler.IClassesData;
 
 public class JavaCompile_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("JavaCompile");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.JavaCompile");
 
   public JavaCompile_Facet() {
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_a());

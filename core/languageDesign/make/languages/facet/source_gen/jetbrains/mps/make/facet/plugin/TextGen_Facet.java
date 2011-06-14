@@ -53,7 +53,7 @@ import jetbrains.mps.util.JavaNameUtil;
 
 public class TextGen_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("TextGen");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.TextGen");
 
   public TextGen_Facet() {
     ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_21gswx_a());

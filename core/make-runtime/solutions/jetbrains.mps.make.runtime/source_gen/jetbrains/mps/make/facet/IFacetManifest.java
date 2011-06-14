@@ -5,4 +5,5 @@ package jetbrains.mps.make.facet;
 
 public interface IFacetManifest {
   public Iterable<IFacet> facets();
+  public IFacet lookup(IFacet.Name fn);
 }

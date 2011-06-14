@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.IFacet.Name;
 import jetbrains.mps.make.facet.IFacetManifest;
 
 /**
@@ -23,6 +24,10 @@ public class InterpretedFacetProvider extends DescriptorProvider<FacetDescriptor
     private static final IFacetManifest EMPTY_MANIFEST = new IFacetManifest() {
       @Override
       public Iterable<IFacet> facets() {
+        return null;
+      }
+
+      public IFacet lookup(Name fn) {
         return null;
       }
     };

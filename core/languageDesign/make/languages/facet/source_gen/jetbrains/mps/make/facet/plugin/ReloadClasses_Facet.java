@@ -23,7 +23,7 @@ import jetbrains.mps.make.script.IConfig;
 
 public class ReloadClasses_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("ReloadClasses");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.ReloadClasses");
 
   public ReloadClasses_Facet() {
     ListSequence.fromList(targets).addElement(new ReloadClasses_Facet.Target_i849au_a());
