@@ -18,6 +18,7 @@ package jetbrains.mps.migration20;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import jetbrains.mps.migration20.MigrationState.MyState;
 
 @State(
   name = "MigrationState",
@@ -28,10 +29,10 @@ import com.intellij.openapi.components.Storage;
     )
   }
 )
-public class MigrationState implements PersistentStateComponent<Integer> {
+public class MigrationState implements PersistentStateComponent<MyState> {
   private MState myState = MState.INITIAL;
 
-  public MState getMigrationState(){
+  public MState getMigrationState() {
     return myState;
   }
 
@@ -39,33 +40,17 @@ public class MigrationState implements PersistentStateComponent<Integer> {
     myState = state;
   }
 
-  public Integer getState() {
-    return myState.toInt();
+  public MyState getState() {
+    MyState state = new MyState();
+    state.myState = myState.toInt();
+    return state;
   }
 
-  public void loadState(Integer state) {
-    myState = MState.fromInt(state);
+  public void loadState(MyState state) {
+    myState = MState.fromInt(state.myState);
   }
 
-  public enum MState {
-    INITIAL(0),
-    DONE(10);
-
-    private int intValue;
-
-    MState(int intValue) {
-      this.intValue = intValue;
-    }
-
-    public int toInt() {
-      return intValue;
-    }
-
-    public static MState fromInt(int value){
-      for (MState ms:MState .values()){
-        if (ms.intValue==value) return ms;
-      }
-      throw new IllegalStateException();
-    }
+  public static class MyState {
+    public int myState;
   }
 }
