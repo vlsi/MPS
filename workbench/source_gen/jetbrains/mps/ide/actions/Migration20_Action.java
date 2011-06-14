@@ -11,6 +11,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.migration20.MigrationState;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.migration20.MState;
 
 public class Migration20_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -37,8 +40,8 @@ public class Migration20_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -46,7 +49,35 @@ public class Migration20_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      MigrationState msComponent = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class);
+      if (msComponent.getMigrationState() == MState.INITIAL) {
+        msComponent.setMigrationState(MState.CACHES_INVALIDATED);
 
+      }
+      if (msComponent.getMigrationState() == MState.CACHES_INVALIDATED) {
+        msComponent.setMigrationState(MState.LANGUAGES_DEPS_CORRECTED);
+
+      }
+      if (msComponent.getMigrationState() == MState.LANGUAGES_DEPS_CORRECTED) {
+        msComponent.setMigrationState(MState.STUBS_CONVERTED);
+
+      }
+      if (msComponent.getMigrationState() == MState.STUBS_CONVERTED) {
+        msComponent.setMigrationState(MState.ATTRIBUTES_CONVERTED);
+
+      }
+      if (msComponent.getMigrationState() == MState.ATTRIBUTES_CONVERTED) {
+        msComponent.setMigrationState(MState.LANGUAGES_MIGRATION);
+
+      }
+      if (msComponent.getMigrationState() == MState.LANGUAGES_MIGRATION) {
+        msComponent.setMigrationState(MState.REGENERATION);
+
+      }
+      if (msComponent.getMigrationState() == MState.REGENERATION) {
+        msComponent.setMigrationState(MState.DONE);
+
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Migration20", t);

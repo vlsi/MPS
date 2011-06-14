@@ -124,6 +124,7 @@
   <import index="u5xh" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.impl(MPS.Classpath/com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="wzsw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.common(MPS.Classpath/jetbrains.mps.ide.common@java_stub)" version="-1" />
   <import index="hp43" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui(MPS.Classpath/com.intellij.ui@java_stub)" version="-1" />
+  <import index="o9p7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.migration20(MPS.Classpath/jetbrains.mps.migration20@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -29782,13 +29783,265 @@
     </node>
   </root>
   <root id="7738949347381662887">
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="7738949347381743936">
-      <property name="name" nameId="tpck.1169194664001" value="frame" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dFRAME" resolveInfo="FRAME" />
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1222034107202286005">
+      <property name="name" nameId="tpck.1169194664001" value="project" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="4zw2.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="7738949347381662888">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7738949347381662889">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7738949347381743964" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1222034107202417851">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1222034107202417852">
+            <property name="name" nameId="tpck.1169194664001" value="msComponent" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1222034107202417853">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="o9p7.~MigrationState" resolveInfo="MigrationState" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202417854">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202417855">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1222034107202417856" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1222034107202417857">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="1222034107202286005" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202417858">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bw1v.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1222034107202417859">
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="o9p7.~MigrationState" resolveInfo="MigrationState" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1222034107202417836">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222034107202417837">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222034107202417865">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202417867">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202417866">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202417871">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dsetMigrationState(jetbrains%dmps%dmigration20%dMState)%cvoid" resolveInfo="setMigrationState" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422594">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dCACHES_INVALIDATED" resolveInfo="CACHES_INVALIDATED" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1222034107202477882" />
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1222034107202417841">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202417845">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dINITIAL" resolveInfo="INITIAL" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202417861">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202417862">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202417863">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dgetMigrationState()%cjetbrains%dmps%dmigration20%dMState" resolveInfo="getMigrationState" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1222034107202417873">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222034107202417874">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222034107202417875">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202417876">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202417877">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202417878">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dsetMigrationState(jetbrains%dmps%dmigration20%dMState)%cvoid" resolveInfo="setMigrationState" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422595">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dLANGUAGES_DEPS_CORRECTED" resolveInfo="LANGUAGES_DEPS_CORRECTED" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1222034107202422596" />
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1222034107202417882">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422593">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dCACHES_INVALIDATED" resolveInfo="CACHES_INVALIDATED" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202417884">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202417885">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202417886">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dgetMigrationState()%cjetbrains%dmps%dmigration20%dMState" resolveInfo="getMigrationState" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1222034107202422597">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222034107202422598">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222034107202422599">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422600">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422601">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422602">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dsetMigrationState(jetbrains%dmps%dmigration20%dMState)%cvoid" resolveInfo="setMigrationState" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422663">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dSTUBS_CONVERTED" resolveInfo="STUBS_CONVERTED" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1222034107202422604" />
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1222034107202422605">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422662">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dLANGUAGES_DEPS_CORRECTED" resolveInfo="LANGUAGES_DEPS_CORRECTED" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422607">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422608">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422609">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dgetMigrationState()%cjetbrains%dmps%dmigration20%dMState" resolveInfo="getMigrationState" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1222034107202422610">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222034107202422611">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222034107202422612">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422613">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422614">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422615">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dsetMigrationState(jetbrains%dmps%dmigration20%dMState)%cvoid" resolveInfo="setMigrationState" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422665">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dATTRIBUTES_CONVERTED" resolveInfo="ATTRIBUTES_CONVERTED" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1222034107202422617" />
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1222034107202422618">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422664">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dSTUBS_CONVERTED" resolveInfo="STUBS_CONVERTED" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422620">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422621">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422622">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dgetMigrationState()%cjetbrains%dmps%dmigration20%dMState" resolveInfo="getMigrationState" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1222034107202422623">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222034107202422624">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222034107202422625">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422626">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422627">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422628">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dsetMigrationState(jetbrains%dmps%dmigration20%dMState)%cvoid" resolveInfo="setMigrationState" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422667">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dLANGUAGES_MIGRATION" resolveInfo="LANGUAGES_MIGRATION" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1222034107202422630" />
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1222034107202422631">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422666">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dATTRIBUTES_CONVERTED" resolveInfo="ATTRIBUTES_CONVERTED" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422633">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422634">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422635">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dgetMigrationState()%cjetbrains%dmps%dmigration20%dMState" resolveInfo="getMigrationState" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1222034107202422636">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222034107202422637">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222034107202422638">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422639">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422640">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422641">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dsetMigrationState(jetbrains%dmps%dmigration20%dMState)%cvoid" resolveInfo="setMigrationState" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422669">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dREGENERATION" resolveInfo="REGENERATION" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1222034107202422643" />
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1222034107202422644">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422668">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dLANGUAGES_MIGRATION" resolveInfo="LANGUAGES_MIGRATION" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422646">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422647">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422648">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dgetMigrationState()%cjetbrains%dmps%dmigration20%dMState" resolveInfo="getMigrationState" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1222034107202422649">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1222034107202422650">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222034107202422651">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422652">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422653">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422654">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dsetMigrationState(jetbrains%dmps%dmigration20%dMState)%cvoid" resolveInfo="setMigrationState" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422671">
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dDONE" resolveInfo="DONE" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1222034107202422656" />
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1222034107202422657">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1222034107202422670">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="o9p7.~MState%dREGENERATION" resolveInfo="REGENERATION" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="o9p7.~MState" resolveInfo="MState" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202422659">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222034107202422660">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222034107202417852" resolveInfo="msComponent" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1222034107202422661">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationState%dgetMigrationState()%cjetbrains%dmps%dmigration20%dMState" resolveInfo="getMigrationState" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </root>
