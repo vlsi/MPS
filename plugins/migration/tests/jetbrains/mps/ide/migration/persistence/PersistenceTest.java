@@ -101,7 +101,7 @@ public class PersistenceTest extends BaseMPSTest {
           new ProjectRunnable() {
             public boolean execute(final MPSProject project) {
 
-              final EditableSModelDescriptor testModel = ModelAccess.instance().runReadAction(new Computable<EditableSModelDescriptor>() {
+              final EditableSModelDescriptor testModel = ModelAccess.instance().runWriteAction(new Computable<EditableSModelDescriptor>() {
                 public EditableSModelDescriptor compute() {
                   EditableSModelDescriptor modelDescr = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                   modelDescr.reloadFromDisk();   // no way to remove model from repository, so reloading
