@@ -203,6 +203,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.migration20.MigrationState</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.smodel.LanguageHierarchyCache</implementation-class>
     </component>
 
