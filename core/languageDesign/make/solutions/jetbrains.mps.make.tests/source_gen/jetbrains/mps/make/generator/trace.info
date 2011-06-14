@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.make.generator.FacetAspectDescriptor$1" />
+  <unitInfo fileName="FacetManifest.java" startLine="40" startPosition="55" endLine="44" endPosition="5" unitName="jetbrains.mps.make.generator.FacetManifest$1" />
   <unitInfo fileName="Bar_Option.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.generator.Bar_Option" />
-  <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.generator.FacetManifest" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.make.generator.FacetAspectDescriptor" />
   <unitInfo fileName="Askfoo_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.generator.Askfoo_Query" />
+  <unitInfo fileName="FacetManifest.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.generator.FacetManifest" />
   <unitInfo fileName="Maker__Facet.java" startLine="18" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.make.generator.Maker__Facet" />
   <unitInfo fileName="Worker__Facet.java" startLine="18" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.make.generator.Worker__Facet" />
   <unitInfo fileName="TextGen__Facet.java" startLine="19" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.make.generator.TextGen__Facet" />

@@ -282,17 +282,11 @@ public class ProjectTestHelper {
       if (Sequence.fromIterable(onames).disjunction(Sequence.fromIterable(rnames)).isNotEmpty()) {
         Sequence.fromIterable(onames).subtract(Sequence.fromIterable(rnames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
-            if ("trace.info".equals(it)) {
-              return;
-            }
             ListSequence.fromList(diffs).addElement("Removed: " + new File(orig, it));
           }
         });
         Sequence.fromIterable(rnames).subtract(Sequence.fromIterable(onames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
-            if ("trace.info".equals(it)) {
-              return;
-            }
             ListSequence.fromList(diffs).addElement("Created: " + new File(orig, it));
           }
         });
