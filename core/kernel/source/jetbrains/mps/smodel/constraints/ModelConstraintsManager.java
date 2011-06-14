@@ -366,14 +366,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptFqName();
   }
 
-  public static boolean isAlternativeIcon(SNode conceptDeclaration) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptDeclaration)).isAlternativeIcon();
-  }
-
-  public static String getAlternativeIcon(SNode conceptDeclaration, SNode node) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptDeclaration)).getAlternativeIcon(node);
-  }
-
   // canBeASomething section
   private static <T> boolean executeCanBeASomethingMethod(@Nullable CanBeASomethingMethod<T> method,
                                                           IOperationContext operationContext,

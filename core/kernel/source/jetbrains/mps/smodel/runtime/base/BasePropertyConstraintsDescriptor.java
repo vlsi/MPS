@@ -57,11 +57,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   @Nullable
   private static PropertyConstraintsDescriptor getSomethingUsingInheritance(String conceptFqName, String propertyName, InheritanceCalculateParameters parameters) {
     for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
-      // todo: remove case, wrong code
-      ConstraintsDescriptor parentDescriptor = (ConstraintsDescriptor) ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
-      if (parentDescriptor == null) {
-        continue;
-      }
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
       PropertyConstraintsDescriptor parentPropertyDescriptor = parentDescriptor.getProperty(propertyName);
       if (parentPropertyDescriptor == null) {
         continue;

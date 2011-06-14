@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.*;
+import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.Nullable;
@@ -40,6 +42,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   private final Map<String, ReferenceConstraintsDescriptor> referencesConstraints = new HashMap<String, ReferenceConstraintsDescriptor>();
 
   protected BaseConstraintsDescriptor(String fqName) {
+
     this.fqName = fqName;
 
     if (hasOwnCanBeChildMethod()) {
@@ -75,11 +78,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   private ConstraintsDescriptor getMethodUsingInheritance(String conceptFqName, InheritanceCalculateParameters parameters) {
     for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
-      // todo: remove, wrong code
-      ConstraintsDescriptor parentDescriptor = (ConstraintsDescriptor) ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
-      if (parentDescriptor == null) {
-        continue;
-      }
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
 
       if (parentDescriptor instanceof BaseConstraintsDescriptor) {
         return parameters.getParentCalculatedDescriptor((BaseConstraintsDescriptor) parentDescriptor);
@@ -156,9 +155,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       return propertiesConstraints.get(name);
     }
 
-    // todo!
     if (!ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName()).hasProperty(name)) {
-      return null;
+      return new IllegalPropertyConstraintsDescriptor(name, this);
     }
 
     propertiesConstraints.put(name, new BasePropertyConstraintsDescriptor(name, this));
@@ -172,9 +170,8 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       return referencesConstraints.get(refName);
     }
 
-    // todo!
     if (!ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName()).hasReference(refName)) {
-      return null;
+      return new IllegalReferenceConstraintsDescriptor(refName, this);
     }
 
     referencesConstraints.put(refName, new BaseReferenceConstraintsDescriptor(refName, this));

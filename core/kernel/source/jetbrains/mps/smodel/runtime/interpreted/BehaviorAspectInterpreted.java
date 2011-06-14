@@ -20,6 +20,8 @@ import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalBehaviorDescriptor;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -28,6 +30,7 @@ public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
   private static BehaviorAspectInterpreted INSTANCE = new BehaviorAspectInterpreted();
   // todo: remove?
   private Map<String, BehaviorDescriptor> pool = new ConcurrentHashMap<String, BehaviorDescriptor>();
+  private BehaviorDescriptor NULL_BEHAVIOR_DESCRIPTOR = new InterpretedBehaviorDescriptor(null);
 
   private BehaviorAspectInterpreted() {
   }
@@ -37,7 +40,11 @@ public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
   }
 
   @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
+  public BehaviorDescriptor getDescriptor(@Nullable String fqName) {
+    if (fqName == null) {
+      return NULL_BEHAVIOR_DESCRIPTOR;
+    }
+
     if (pool.containsKey(fqName)) {
       return pool.get(fqName);
     } else {

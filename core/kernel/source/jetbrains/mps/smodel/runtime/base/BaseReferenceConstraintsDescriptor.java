@@ -49,11 +49,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
   @Nullable
   private static ReferenceConstraintsDescriptor getSomethingUsingInheritance(String conceptFqName, String roleName, InheritanceCalculateParameters parameters) {
     for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
-      // todo: remove, wrong code
-      ConstraintsDescriptor parentDescriptor = (ConstraintsDescriptor) ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
-      if (parentDescriptor == null) {
-        continue;
-      }
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
       ReferenceConstraintsDescriptor parentReferenceDescriptor = parentDescriptor.getReference(roleName);
       if (parentReferenceDescriptor == null) {
         continue;

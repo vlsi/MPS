@@ -20,8 +20,10 @@ import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
+import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.structure.*;
 
@@ -87,5 +89,9 @@ public abstract class LanguageRuntime {
 
   public BehaviorAspectDescriptor getBehaviorAspectDescriptor() {
     return BehaviorAspectInterpreted.getInstance();
+  }
+
+  public ConstraintsAspectDescriptor getConstraintsAspectDescriptor() {
+    return ConstraintsAspectInterpreted.getInstance();
   }
 }

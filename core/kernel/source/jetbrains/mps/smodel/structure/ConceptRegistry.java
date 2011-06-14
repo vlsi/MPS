@@ -3,7 +3,6 @@ package jetbrains.mps.smodel.structure;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.containers.MultiMap;
-import com.sun.org.apache.xpath.internal.functions.FuncQname;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
@@ -13,7 +12,10 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRuntimeInterpreted;
 import jetbrains.mps.smodel.runtime.illegal.IllegalBehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
+import jetbrains.mps.smodel.structure.adapter.BehaviorDescriptorAdapter;
+import jetbrains.mps.smodel.structure.adapter.ConceptDescriptorAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashMap;
@@ -25,9 +27,7 @@ import java.util.*;
 public class ConceptRegistry implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ConceptRegistry.class);
 
-  private final Map<String, StructureDescriptor> structureDescriptors = new HashMap<String, StructureDescriptor>();
-  private final Map<String, BehaviorDescriptor> _behaviorDescriptors = new HashMap<String, BehaviorDescriptor>();
-  private final Map<String, ConstraintsDescriptor> constraintsDescriptors = new HashMap<String, ConstraintsDescriptor>();
+  private final Map<String, ConstraintsDescriptor> _constraintsDescriptors = new HashMap<String, ConstraintsDescriptor>();
 
   private final MultiMap<String, String> languageToConcepts = new MultiMap<String, String>();
 
@@ -77,18 +77,8 @@ public class ConceptRegistry implements ApplicationComponent {
     }
 
     switch (languageAspect) {
-      case STRUCTURE:
-        if (structureDescriptors.containsKey(fqName)) {
-          return;
-        }
-        break;
-      case BEHAVIOR:
-        if (_behaviorDescriptors.containsKey(fqName)) {
-          return;
-        }
-        break;
       case CONSTRAINTS:
-        if (constraintsDescriptors.containsKey(fqName)) {
+        if (_constraintsDescriptors.containsKey(fqName)) {
           return;
         }
         break;
@@ -105,27 +95,15 @@ public class ConceptRegistry implements ApplicationComponent {
 
     if (languageRuntime != null) {
       switch (languageAspect) {
-        case STRUCTURE:
-          structureDescriptors.put(fqName, getDescriptor(languageRuntime.getStructureAspect(), fqName, LanguageRuntimeInterpreted.STRUCTURE_PROVIDER));
-          break;
-        case BEHAVIOR:
-          _behaviorDescriptors.put(fqName, getDescriptor(languageRuntime.getBehaviorAspect(), fqName, LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER));
-          break;
         case CONSTRAINTS:
-          constraintsDescriptors.put(fqName, getDescriptor(languageRuntime.getConstraintsAspect(), fqName, LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER));
+          _constraintsDescriptors.put(fqName, getDescriptor(languageRuntime.getConstraintsAspect(), fqName, LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER));
           break;
       }
     } else {
       // todo: MPS-12650, no way to get NPE
       switch (languageAspect) {
-        case STRUCTURE:
-          structureDescriptors.put(fqName, LanguageRuntimeInterpreted.STRUCTURE_PROVIDER.getDescriptor(fqName));
-          break;
-        case BEHAVIOR:
-          _behaviorDescriptors.put(fqName, LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER.getDescriptor(fqName));
-          break;
         case CONSTRAINTS:
-          constraintsDescriptors.put(fqName, LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER.getDescriptor(fqName));
+          _constraintsDescriptors.put(fqName, LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER.getDescriptor(fqName));
           break;
       }
     }
@@ -137,39 +115,33 @@ public class ConceptRegistry implements ApplicationComponent {
 
   @Deprecated
   public synchronized StructureDescriptor getStructureDescriptor(String fqName) {
-    checkConceptIsLoaded(fqName, LanguageAspect.STRUCTURE);
-    return structureDescriptors.get(fqName);
+    return new ConceptDescriptorAdapter(getConceptDescriptor(fqName));
   }
 
   @Deprecated
   public synchronized BehaviorDescriptor getBehaviorDescriptor(String fqName) {
-    checkConceptIsLoaded(fqName, LanguageAspect.BEHAVIOR);
-    return _behaviorDescriptors.get(fqName);
+    return new BehaviorDescriptorAdapter(getBehaviorDescriptorNew(fqName));
   }
 
   public synchronized ConstraintsDescriptor getConstraintsDescriptor(String fqName) {
     checkConceptIsLoaded(fqName, LanguageAspect.CONSTRAINTS);
-    return constraintsDescriptors.get(fqName);
+    return _constraintsDescriptors.get(fqName);
   }
 
   @Deprecated
   public synchronized BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
-    if (node == null) {
-      // todo: more clearly logic
-      return LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER.getDescriptor(null);
-    } else {
-      return getBehaviorDescriptor(node.getConceptFqName());
-    }
+    return new BehaviorDescriptorAdapter(getBehaviorDescriptorForInstanceNodeNew(node));
   }
 
   @Deprecated
   public synchronized ConceptDescriptor getConceptDescriptorForInstanceNode(@Nullable SNode node) {
-    return new NullableBehaviorConceptDescriptor(getBehaviorDescriptorForInstanceNode(node));
+    return new NullableBehaviorConceptDescriptor(getBehaviorDescriptorForInstanceNodeNew(node));
   }
 
   // new api
   private Map<String, jetbrains.mps.smodel.runtime.ConceptDescriptor> conceptDescriptors = new java.util.HashMap<String, jetbrains.mps.smodel.runtime.ConceptDescriptor>();
   private Map<String, jetbrains.mps.smodel.runtime.BehaviorDescriptor> behaviorDescriptors = new java.util.HashMap<String, jetbrains.mps.smodel.runtime.BehaviorDescriptor>();
+  private Map<String, jetbrains.mps.smodel.runtime.ConstraintsDescriptor> constraintsDescriptors = new java.util.HashMap<String, jetbrains.mps.smodel.runtime.ConstraintsDescriptor>();
 
   private synchronized void checkConceptDescriptorIsLoaded(@Nullable String fqName) {
     Pair<String, LanguageAspect> currentConceptAndLanguageAspect = new Pair<String, LanguageAspect>(fqName, LanguageAspect.STRUCTURE);
@@ -230,28 +202,62 @@ public class ConceptRegistry implements ApplicationComponent {
   }
 
   @NotNull
-  public synchronized jetbrains.mps.smodel.runtime.BehaviorDescriptor getNewBehaviorDescriptor(@Nullable String fqName) {
-    checkConceptDescriptorIsLoaded(fqName);
+  public synchronized jetbrains.mps.smodel.runtime.BehaviorDescriptor getBehaviorDescriptorNew(@Nullable String fqName) {
+    checkBehaviorDescriptorIsLoaded(fqName);
 
     // todo: unnecessary?
     return behaviorDescriptors.get(fqName) == null ? new IllegalBehaviorDescriptor(fqName) : behaviorDescriptors.get(fqName);
   }
 
-  public synchronized jetbrains.mps.smodel.runtime.BehaviorDescriptor getNewBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
+  public synchronized jetbrains.mps.smodel.runtime.BehaviorDescriptor getBehaviorDescriptorForInstanceNodeNew(@Nullable SNode node) {
     if (node == null) {
       // todo: more clearly logic
       return BehaviorAspectInterpreted.getInstance().getDescriptor(null);
     } else {
-      return getNewBehaviorDescriptor(node.getConceptFqName());
+      return getBehaviorDescriptorNew(node.getConceptFqName());
     }
+  }
+
+
+  private synchronized void checkConstraintsDescriptorIsLoaded(@Nullable String fqName) {
+    Pair<String, LanguageAspect> currentConceptAndLanguageAspect = new Pair<String, LanguageAspect>(fqName, LanguageAspect.CONSTRAINTS);
+
+    if (conceptsInLoading.contains(currentConceptAndLanguageAspect) || constraintsDescriptors.containsKey(fqName)) {
+      return;
+    }
+
+    conceptsInLoading.add(currentConceptAndLanguageAspect);
+
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = null;
+    try {
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+      descriptor = languageRuntime.getConstraintsAspectDescriptor().getDescriptor(fqName);
+    } catch (Exception ignored) {
+    }
+
+    if (descriptor == null) {
+      descriptor = new IllegalConstraintsDescriptor(fqName);
+    }
+
+    constraintsDescriptors.put(fqName, descriptor);
+
+    conceptsInLoading.remove(currentConceptAndLanguageAspect);
+  }
+
+  @NotNull
+  public synchronized jetbrains.mps.smodel.runtime.ConstraintsDescriptor getConstraintsDescriptorNew(@Nullable String fqName) {
+    checkConstraintsDescriptorIsLoaded(fqName);
+
+    // todo: unnecessary?
+    return constraintsDescriptors.get(fqName) == null ? new IllegalConstraintsDescriptor(fqName) : constraintsDescriptors.get(fqName);
   }
 
   // end new api
 
   private class NullableBehaviorConceptDescriptor extends ConceptDescriptor {
-    private final BehaviorDescriptor behaviorDescriptor;
+    private final jetbrains.mps.smodel.runtime.BehaviorDescriptor behaviorDescriptor;
 
-    NullableBehaviorConceptDescriptor(BehaviorDescriptor behaviorDescriptor) {
+    NullableBehaviorConceptDescriptor(jetbrains.mps.smodel.runtime.BehaviorDescriptor behaviorDescriptor) {
       this.behaviorDescriptor = behaviorDescriptor;
     }
 
@@ -267,7 +273,7 @@ public class ConceptRegistry implements ApplicationComponent {
 
     @Override
     public BehaviorDescriptor behavior() {
-      return behaviorDescriptor;
+      return new BehaviorDescriptorAdapter(behaviorDescriptor);
     }
 
     @Override
@@ -284,11 +290,10 @@ public class ConceptRegistry implements ApplicationComponent {
 
   public synchronized void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
     // todo
-    structureDescriptors.clear();
-    behaviorDescriptors.clear();
     constraintsDescriptors.clear();
 
     // new api
     conceptDescriptors.clear();
+    behaviorDescriptors.clear();
   }
 }
