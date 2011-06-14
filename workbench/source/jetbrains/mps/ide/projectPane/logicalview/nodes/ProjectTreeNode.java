@@ -19,7 +19,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -63,6 +62,6 @@ public class ProjectTreeNode extends MPSTreeNode {
   }
 
   public int getToggleClickCount() {
-    return -1;
+    return 2;
   }
 }
