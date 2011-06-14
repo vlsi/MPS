@@ -1165,6 +1165,18 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4533699301447536554">
       <property name="name" nameId="tpck.1169194664001" value="AnalyzeStacktraceDialog" />
     </node>
+    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7738949347381662887">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu.ToolsActions.Migration" />
+      <property name="name" nameId="tpck.1169194664001" value="Migration20" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to MPS 2.0" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+    </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="7738949347381711887">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu.ToolsActions.Migration" />
+      <property name="name" nameId="tpck.1169194664001" value="Migrations20" />
+      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Migrations 2.0" />
+    </node>
   </roots>
   <root id="1204991215587">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148449406">
@@ -1841,6 +1853,13 @@
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1215012161252" resolveInfo="IDEATools" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148372239">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7738949347381711894">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7738949347381662887" resolveInfo="Migration20" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="7738949347381711892">
+        <property name="name" nameId="tpck.1169194664001" value="migration20" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="7738949347381711896" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1234190474703">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1234190163902" resolveInfo="ShowBookmarks" />
       </node>
@@ -29760,6 +29779,24 @@
           <node role="value" roleId="tpee.1188214607812" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4533699301447536748" />
         </node>
       </node>
+    </node>
+  </root>
+  <root id="7738949347381662887">
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="7738949347381743936">
+      <property name="name" nameId="tpck.1169194664001" value="frame" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dFRAME" resolveInfo="FRAME" />
+    </node>
+    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="7738949347381662888">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7738949347381662889">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7738949347381743964" />
+      </node>
+    </node>
+  </root>
+  <root id="7738949347381711887">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="7738949347381737766" />
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="7738949347381737767">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991238062" resolveInfo="Tools" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="7738949347381711892" resolveInfo="migration20" />
     </node>
   </root>
 </model>
