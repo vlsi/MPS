@@ -37,10 +37,12 @@ import java.util.Map;
  */
 public class EditorCellSelection implements SingularSelection {
   private static final String CARET_X_PROPERTY_NAME = "caretX";
+  private static final String SIDE_SELECT_DIRECTION_PROPERTY_NAME = "sideSelectDirection";
 
   private EditorCell myEditorCell;
   private int myCaretX;
   private boolean myActive = false;
+  private SideSelectDirection mySideSelectDirection = SideSelectDirection.NONE;
 
   public EditorCellSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
     if (cellInfo == null) {
@@ -52,6 +54,7 @@ public class EditorCellSelection implements SingularSelection {
       throw new SelectionRestoreException();
     }
     myCaretX = SelectionInfo.Util.getIntProperty(properties, CARET_X_PROPERTY_NAME);
+    mySideSelectDirection = (SideSelectDirection) SelectionInfo.Util.getEnumProperty(properties, SIDE_SELECT_DIRECTION_PROPERTY_NAME, SideSelectDirection.class, mySideSelectDirection);
   }
 
   public EditorCellSelection(@NotNull EditorCell editorCell) {
@@ -63,6 +66,16 @@ public class EditorCellSelection implements SingularSelection {
   @Override
   public EditorCell getEditorCell() {
     return myEditorCell;
+  }
+
+  @Override
+  public void setSideSelectDirection(SideSelectDirection direction) {
+    mySideSelectDirection = direction;
+  }
+
+  @Override
+  public SideSelectDirection getSideSelectDirection() {
+    return mySideSelectDirection;
   }
 
   public int getCaretX() {
@@ -99,6 +112,7 @@ public class EditorCellSelection implements SingularSelection {
     }
     selectionInfo.setCellInfo((DefaultCellInfo) cellInfo);
     selectionInfo.getPropertiesMap().put(CARET_X_PROPERTY_NAME, Integer.toString(getCaretX()));
+    selectionInfo.getPropertiesMap().put(SIDE_SELECT_DIRECTION_PROPERTY_NAME, mySideSelectDirection.name());
     return selectionInfo;
   }
 
@@ -116,6 +130,9 @@ public class EditorCellSelection implements SingularSelection {
     }
     EditorCellSelection that = (EditorCellSelection) another;
     if (!myEditorCell.equals(that.myEditorCell)) {
+      return false;
+    }
+    if (mySideSelectDirection != that.mySideSelectDirection) {
       return false;
     }
     if (getCaretX() != that.getCaretX()) {
