@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRuntimeInterpreted;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashMap;
@@ -132,6 +133,7 @@ public class ConceptRegistry implements ApplicationComponent {
     conceptsInLoading.remove(currentConceptAndLanguageAspect);
   }
 
+  @Deprecated
   public synchronized StructureDescriptor getStructureDescriptor(String fqName) {
     checkConceptIsLoaded(fqName, LanguageAspect.STRUCTURE);
     return structureDescriptors.get(fqName);
@@ -160,6 +162,48 @@ public class ConceptRegistry implements ApplicationComponent {
   public synchronized ConceptDescriptor getConceptDescriptorForInstanceNode(@Nullable SNode node) {
     return new NullableBehaviorConceptDescriptor(getBehaviorDescriptorForInstanceNode(node));
   }
+
+  // new api
+  private Map<String, jetbrains.mps.smodel.runtime.ConceptDescriptor> conceptDescriptors = new java.util.HashMap<String, jetbrains.mps.smodel.runtime.ConceptDescriptor>();
+
+  private synchronized void checkConceptDescriptorIsLoaded(@Nullable String fqName) {
+    Pair<String, LanguageAspect> currentConceptAndLanguageAspect = new Pair<String, LanguageAspect>(fqName, LanguageAspect.STRUCTURE);
+
+    if (conceptsInLoading.contains(currentConceptAndLanguageAspect)) {
+      return;
+    }
+
+    if (conceptDescriptors.containsKey(fqName)) {
+      return;
+    }
+
+    conceptsInLoading.add(currentConceptAndLanguageAspect);
+
+    jetbrains.mps.smodel.runtime.ConceptDescriptor descriptor = null;
+    try {
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+      descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
+    } catch (Exception ignored) {
+    }
+
+    if (descriptor == null) {
+      descriptor = new IllegalConceptDescriptor(fqName);
+    }
+
+    conceptDescriptors.put(fqName, descriptor);
+
+    conceptsInLoading.remove(currentConceptAndLanguageAspect);
+  }
+
+  @NotNull
+  public synchronized jetbrains.mps.smodel.runtime.ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
+    checkConceptDescriptorIsLoaded(fqName);
+
+    // todo: unnecessary?
+    return conceptDescriptors.get(fqName) == null ? new IllegalConceptDescriptor(fqName) : conceptDescriptors.get(fqName);
+  }
+
+  // end new api
 
   private class NullableBehaviorConceptDescriptor extends ConceptDescriptor {
     private final BehaviorDescriptor behaviorDescriptor;
@@ -200,5 +244,8 @@ public class ConceptRegistry implements ApplicationComponent {
     structureDescriptors.clear();
     behaviorDescriptors.clear();
     constraintsDescriptors.clear();
+
+    // new api
+    conceptDescriptors.clear();
   }
 }

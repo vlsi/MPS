@@ -201,7 +201,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Ap
         // ancestors
         ancestors = new HashSet<String>(parents);
         for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-          ancestors.addAll(parentDescriptor.getAncestorNames());
+          ancestors.addAll(parentDescriptor.getAncestorsNames());
         }
 
         // properties
@@ -257,7 +257,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Ap
     }
 
     @Override
-    public Set<String> getAncestorNames() {
+    public Set<String> getAncestorsNames() {
       return ancestors;
     }
   }

@@ -74,7 +74,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   private ConstraintsDescriptor getMethodUsingInheritance(String conceptFqName, InheritanceCalculateParameters parameters) {
-    for (String parent : ConceptRegistry.getInstance().getStructureDescriptor(conceptFqName).getParentsNames()) {
+    for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
       // todo: remove, wrong code
       ConstraintsDescriptor parentDescriptor = (ConstraintsDescriptor) ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
       if (parentDescriptor == null) {
@@ -157,7 +157,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     }
 
     // todo!
-    if (!((ConceptDescriptor) ConceptRegistry.getInstance().getStructureDescriptor(getConceptFqName())).hasProperty(name)) {
+    if (!ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName()).hasProperty(name)) {
       return null;
     }
 
@@ -173,7 +173,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     }
 
     // todo!
-    if (!((ConceptDescriptor) ConceptRegistry.getInstance().getStructureDescriptor(getConceptFqName())).hasReference(refName)) {
+    if (!ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName()).hasReference(refName)) {
       return null;
     }
 

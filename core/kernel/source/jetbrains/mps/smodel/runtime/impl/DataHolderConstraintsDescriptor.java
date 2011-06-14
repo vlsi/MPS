@@ -172,7 +172,7 @@ public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescript
           return properties.get(name);
         }
         // todo
-        ConceptDescriptor conceptDescriptor = (ConceptDescriptor) ConceptRegistry.getInstance().getStructureDescriptor(getConceptFqName());
+        ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
         if (conceptDescriptor.hasProperty(name)) {
           PropertyConstraintsDescriptor property = new BasePropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
           properties.put(name, property);
@@ -189,7 +189,7 @@ public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescript
           return references.get(refName);
         }
         // todo
-        ConceptDescriptor conceptDescriptor = (ConceptDescriptor) ConceptRegistry.getInstance().getStructureDescriptor(getConceptFqName());
+        ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
         if (conceptDescriptor.hasReference(refName)) {
           ReferenceConstraintsDescriptor reference = new BaseReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
           references.put(refName, reference);

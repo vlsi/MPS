@@ -41,7 +41,7 @@ public interface ConceptDescriptor {
 
   boolean isAssignableTo(String toConceptFqName);
 
-  Set<String> getAncestorNames();
+  Set<String> getAncestorsNames();
 
 //  Set<String> getDescendantsOfConcept(String conceptFQName);
 //  Set<String> getAllDescendantsOfConcept(String conceptFqName);

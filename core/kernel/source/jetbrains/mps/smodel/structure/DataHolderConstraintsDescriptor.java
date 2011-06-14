@@ -124,7 +124,7 @@ public class DataHolderConstraintsDescriptor extends ConstraintsDescriptor imple
     List<ConstraintsDescriptor> descriptors = new ArrayList<ConstraintsDescriptor>();
 
     ConceptRegistry conceptRegistry = ConceptRegistry.getInstance();
-    for (String parentName : conceptRegistry.getStructureDescriptor(fqName).getParentsNames()) {
+    for (String parentName : conceptRegistry.getConceptDescriptor(fqName).getParentsNames()) {
       ConstraintsDescriptor childDescriptor = conceptRegistry.getConstraintsDescriptor(parentName);
       if (childDescriptor != null) {
         // todo: else?

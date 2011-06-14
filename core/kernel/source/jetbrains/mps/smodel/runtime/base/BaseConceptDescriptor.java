@@ -26,7 +26,7 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
 
   @Override
   public boolean isAssignableTo(String toConceptFqName) {
-    return getAncestorNames().contains(toConceptFqName);
+    return getAncestorsNames().contains(toConceptFqName);
   }
 
   @Override

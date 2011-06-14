@@ -74,7 +74,7 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public Set<String> getAncestorNames() {
+  public Set<String> getAncestorsNames() {
     return Collections.emptySet();
   }
 }
