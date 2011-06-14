@@ -19,7 +19,9 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.structure.*;
 
@@ -48,12 +50,14 @@ public abstract class LanguageRuntime {
 
   public abstract Collection<TemplateModule> getGenerators();
 
+  @Deprecated
   private <T> DescriptorProvider<T> getDescriptorProvider(String aspectName, DescriptorProvider<T> defaultProvider) {
     String className = getNamespace() + "." + aspectName;
     DescriptorProvider<T> compiled = (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
     return compiled != null ? compiled : defaultProvider;
   }
 
+  @Deprecated
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
     if (structureDescriptor == null) {
       structureDescriptor = getDescriptorProvider("structure.StructureAspectDescriptor", LanguageRuntimeInterpreted.STRUCTURE_PROVIDER);
@@ -61,6 +65,7 @@ public abstract class LanguageRuntime {
     return structureDescriptor;
   }
 
+  @Deprecated
   public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
     if (behaviorDescriptor == null) {
       behaviorDescriptor = getDescriptorProvider("behavior.BehaviorAspectDescriptor", LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER);
@@ -68,6 +73,7 @@ public abstract class LanguageRuntime {
     return behaviorDescriptor;
   }
 
+  @Deprecated
   public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
     if (constraintsDescriptor == null) {
       constraintsDescriptor = getDescriptorProvider("constraints.ConstraintsAspectDescriptor", LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER);
@@ -77,5 +83,9 @@ public abstract class LanguageRuntime {
 
   public StructureAspectDescriptor getStructureAspectDescriptor() {
     return StructureAspectInterpreted.getInstance();
+  }
+
+  public BehaviorAspectDescriptor getBehaviorAspectDescriptor() {
+    return BehaviorAspectInterpreted.getInstance();
   }
 }
