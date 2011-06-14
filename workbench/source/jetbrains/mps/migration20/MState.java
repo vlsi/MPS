@@ -17,7 +17,13 @@ package jetbrains.mps.migration20;
 
 public enum MState {
   INITIAL(0),
-  DONE(10);
+  CACHES_INVALIDATED(10),
+  LANGUAGES_DEPS_CORRECTED(20),
+  STUBS_CONVERTED(30),
+  ATTRIBUTES_CONVERTED(40),
+  LANGUAGES_MIGRATION(50),
+  REGENERATION(60),
+  DONE(100);
 
   private int intValue;
 
@@ -27,10 +33,6 @@ public enum MState {
 
   public int toInt() {
     return intValue;
-  }
-
-  public boolean isBefore(MState state) {
-    return intValue < state.intValue;
   }
 
   public static MState fromInt(int value) {
