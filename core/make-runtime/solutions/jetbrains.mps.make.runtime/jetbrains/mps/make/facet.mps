@@ -22,6 +22,9 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6168415856807659069">
       <property name="name" nameId="tpck.1169194664001" value="FacetRegistry" />
     </node>
+    <node type="tpee.Interface" typeId="tpee.1107796713796" id="2192279360708028642">
+      <property name="name" nameId="tpck.1169194664001" value="IFacetManifest" />
+    </node>
   </roots>
   <root id="6168415856807657096">
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6168415856807657097">
@@ -570,6 +573,20 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6168415856807659178" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6168415856807659179" />
     </node>
+  </root>
+  <root id="2192279360708028642">
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2192279360708028648">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="facets" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="2192279360708028652">
+        <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2192279360708028654">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6168415856807657096" resolveInfo="IFacet" />
+        </node>
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2192279360708028650" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2192279360708028651" />
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2192279360708028643" />
   </root>
 </model>
 

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="2192279360708028642">
+    <nodeInfo nodeId="2192279360708028648" fileName="IFacetManifest.java" startLine="6" startPosition="33" endLine="7" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="facets#()Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="2192279360708028648" fileName="IFacetManifest.java" startLine="6" startPosition="33" endLine="7" endPosition="35" />
+    <unitInfo nodeId="2192279360708028642" fileName="IFacetManifest.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.facet.IFacetManifest" />
+  </root>
   <root nodeId="6168415856807657096">
     <nodeInfo nodeId="6168415856807657109" fileName="IFacet.java" startLine="7" startPosition="25" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
     <nodeInfo nodeId="6168415856807657113" fileName="IFacet.java" startLine="8" startPosition="31" endLine="9" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />

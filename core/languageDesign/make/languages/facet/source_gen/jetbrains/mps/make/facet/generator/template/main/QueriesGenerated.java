@@ -33,6 +33,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isNotEmpty();
   }
 
+  public static boolean createRootRule_Condition_2824583209542435179(final IOperationContext operationContext, final CreateRootRuleContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isNotEmpty();
+  }
+
   public static Object propertyMacro_GetPropertyValue_5086995156117240631(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode());
   }
@@ -247,7 +251,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_4902059885395546854(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return new QueriesGenerated.QuotationClass_x583g4_a0a0wb().createNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+    return new QueriesGenerated.QuotationClass_x583g4_a0a0xb().createNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode cls) {
         return SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
       }
@@ -255,11 +259,11 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_4902059885395479710(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return new QueriesGenerated.QuotationClass_x583g4_a0a0xb().createNode(_context.getNode());
+    return new QueriesGenerated.QuotationClass_x583g4_a0a0yb().createNode(_context.getNode());
   }
 
   public static SNode mapSrcMacro_mapper_4902059885395547328(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return new QueriesGenerated.QuotationClass_x583g4_a0a0yb().createNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+    return new QueriesGenerated.QuotationClass_x583g4_a0a0zb().createNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode cls) {
         return SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
       }
@@ -267,11 +271,11 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_4902059885395479721(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return new QueriesGenerated.QuotationClass_x583g4_a0a0zb().createNode(_context.getNode());
+    return new QueriesGenerated.QuotationClass_x583g4_a0a0ac().createNode(_context.getNode());
   }
 
-  public static class QuotationClass_x583g4_a0a0wb {
-    public QuotationClass_x583g4_a0a0wb() {
+  public static class QuotationClass_x583g4_a0a0xb {
+    public QuotationClass_x583g4_a0a0xb() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -288,8 +292,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0xb {
-    public QuotationClass_x583g4_a0a0xb() {
+  public static class QuotationClass_x583g4_a0a0yb {
+    public QuotationClass_x583g4_a0a0yb() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -306,8 +310,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0yb {
-    public QuotationClass_x583g4_a0a0yb() {
+  public static class QuotationClass_x583g4_a0a0zb {
+    public QuotationClass_x583g4_a0a0zb() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -324,8 +328,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0zb {
-    public QuotationClass_x583g4_a0a0zb() {
+  public static class QuotationClass_x583g4_a0a0ac {
+    public QuotationClass_x583g4_a0a0ac() {
     }
 
     public SNode createNode(Object parameter_3) {

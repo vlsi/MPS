@@ -45,7 +45,15 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacetManifest" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.FacetManifest" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.FacetDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
+  </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.FacetManifest" file="FacetManifest.java">
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -57,6 +65,7 @@
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.Make_Facet" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.ReloadClasses_Facet" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" file="Facet_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
