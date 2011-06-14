@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class SelectTwoCells_Test extends BaseTransformationTest {
@@ -25,7 +23,8 @@ public class SelectTwoCells_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1230119716735", "1230119724125");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "shift RIGHT", "shift RIGHT"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectRight_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectRight_Action");
     }
   }
 }

@@ -17,11 +17,11 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.CopyThisDown_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.Delete_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.DeleteLine_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.End_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.Escape_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.ExtractComponent_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.End_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.Home_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.Insert_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.InsertBefore_Action");
@@ -36,10 +36,12 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.RootEnd_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.RootHome_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectDown_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectLeft_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectLocalHome_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectNext_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectRight_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);

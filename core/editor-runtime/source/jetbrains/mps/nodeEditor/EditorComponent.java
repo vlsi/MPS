@@ -1310,12 +1310,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && shiftDown(keyEvent)) {
-      return CellActionType.SELECT_LEFT;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && shiftDown(keyEvent)) {
-      return CellActionType.SELECT_RIGHT;
-    }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
       return CellActionType.SELECT_HOME;
     }

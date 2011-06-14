@@ -216,6 +216,16 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Backspace" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     </node>
+    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8257980988067921114">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="name" nameId="tpck.1169194664001" value="SelectLeft" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Left with Selection" />
+    </node>
+    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8257980988067921117">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="name" nameId="tpck.1169194664001" value="SelectRight" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Right with Selection" />
+    </node>
   </roots>
   <root id="6273762573614482316" />
   <root id="4362199797783336764">
@@ -448,6 +458,13 @@
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_W" />
       </node>
     </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="8257980988067925451">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="8257980988067921114" resolveInfo="SelectLeft" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8257980988067925452">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_LEFT" />
+      </node>
+    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7791284463049111143">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="7791284463049069924" resolveInfo="SelectLocalEnd" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7791284463049111158">
@@ -490,6 +507,13 @@
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4225699205371339271">
         <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_UP" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="8257980988067925454">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="8257980988067921117" resolveInfo="SelectRight" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8257980988067925455">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_RIGHT" />
       </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7791284463049111145">
@@ -1689,20 +1713,20 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032919">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8896169282213320720" resolveInfo="Delete" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032923">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3774693388238498747" resolveInfo="DeleteLine" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032921">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8896169282213957015" resolveInfo="DeleteToWordEnd" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032923">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3774693388238498747" resolveInfo="DeleteLine" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032929">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7791284463049069760" resolveInfo="End" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032925">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6743831156946309831" resolveInfo="Escape" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032927">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="4362199797783336771" resolveInfo="ExtractComponent" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032929">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7791284463049069760" resolveInfo="End" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032931">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7791284463049069771" resolveInfo="Home" />
@@ -1746,6 +1770,9 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7791284463049069756">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7791284463049069913" resolveInfo="SelectDown" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8257980988067925447">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="8257980988067921114" resolveInfo="SelectLeft" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7791284463049069750">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7791284463049069924" resolveInfo="SelectLocalEnd" />
       </node>
@@ -1757,6 +1784,9 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9150544359732032940">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="4225699205371269977" resolveInfo="SelectPrevious" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8257980988067925449">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="8257980988067921117" resolveInfo="SelectRight" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7791284463049069755">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7791284463049070082" resolveInfo="SelectUp" />
@@ -4581,6 +4611,134 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9216084166067822732">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3b9a.~SelectionManager%dgetSelection()%cjetbrains%dmps%dnodeEditor%dselection%dSelection" resolveInfo="getSelection" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="8257980988067921114">
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="8257980988067925458">
+      <property name="name" nameId="tpck.1169194664001" value="editorComponent" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dEDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
+    </node>
+    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8257980988067921115">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8257980988067921116">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8257980988067934155">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945098">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945093">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945088">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067934156">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8257980988067934157" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8257980988067934158">
+                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="8257980988067925458" resolveInfo="editorComponent" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945092">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~EditorComponent%dgetSelectionManager()%cjetbrains%dmps%dnodeEditor%dselection%dSelectionManager" resolveInfo="getSelectionManager" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945097">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3b9a.~SelectionManager%dgetSelection()%cjetbrains%dmps%dnodeEditor%dselection%dSelection" resolveInfo="getSelection" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945102">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3b9a.~Selection%dexecuteAction(jetbrains%dmps%dnodeEditor%dCellActionType)%cvoid" resolveInfo="executeAction" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8257980988067945104">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="qxeo.~CellActionType%dSELECT_LEFT" resolveInfo="SELECT_LEFT" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="qxeo.~CellActionType" resolveInfo="CellActionType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="8257980988067934159">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8257980988067934160">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8257980988067934161">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="8257980988067945084">
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8257980988067945087">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3b9a.~SingularSelection" resolveInfo="SingularSelection" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945055">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067936131">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067934162">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8257980988067934163" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8257980988067934164">
+                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="8257980988067925458" resolveInfo="editorComponent" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945054">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~EditorComponent%dgetSelectionManager()%cjetbrains%dmps%dnodeEditor%dselection%dSelectionManager" resolveInfo="getSelectionManager" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945059">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3b9a.~SelectionManager%dgetSelection()%cjetbrains%dmps%dnodeEditor%dselection%dSelection" resolveInfo="getSelection" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="8257980988067921117">
+    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="8257980988067925460">
+      <property name="name" nameId="tpck.1169194664001" value="editorComponent" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dEDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
+    </node>
+    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8257980988067921118">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8257980988067921119">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8257980988067945105">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945119">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945114">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945109">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945106">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8257980988067945107" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8257980988067945108">
+                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="8257980988067925460" resolveInfo="editorComponent" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945113">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~EditorComponent%dgetSelectionManager()%cjetbrains%dmps%dnodeEditor%dselection%dSelectionManager" resolveInfo="getSelectionManager" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945118">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3b9a.~SelectionManager%dgetSelection()%cjetbrains%dmps%dnodeEditor%dselection%dSelection" resolveInfo="getSelection" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945123">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3b9a.~Selection%dexecuteAction(jetbrains%dmps%dnodeEditor%dCellActionType)%cvoid" resolveInfo="executeAction" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8257980988067945125">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="qxeo.~CellActionType%dSELECT_RIGHT" resolveInfo="SELECT_RIGHT" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="qxeo.~CellActionType" resolveInfo="CellActionType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="8257980988067945064">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8257980988067945065">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8257980988067945066">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="8257980988067945080">
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8257980988067945083">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3b9a.~SingularSelection" resolveInfo="SingularSelection" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945075">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945070">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8257980988067945067">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8257980988067945068" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8257980988067945069">
+                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="8257980988067925460" resolveInfo="editorComponent" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945074">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qxeo.~EditorComponent%dgetSelectionManager()%cjetbrains%dmps%dnodeEditor%dselection%dSelectionManager" resolveInfo="getSelectionManager" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8257980988067945079">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3b9a.~SelectionManager%dgetSelection()%cjetbrains%dmps%dnodeEditor%dselection%dSelection" resolveInfo="getSelection" />
               </node>
             </node>
           </node>
