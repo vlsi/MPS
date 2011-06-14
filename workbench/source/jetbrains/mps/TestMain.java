@@ -97,6 +97,8 @@ public class TestMain {
 
   public static void testProject(File projectFile, ProjectRunnable pr) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
+    Logger.setThreshold("INFO");
+    org.apache.log4j.BasicConfigurator.configure();
     TestMain.configureMPS();
     final MPSProject project = loadProject(projectFile);
     pr.execute(project);
@@ -112,6 +114,8 @@ public class TestMain {
                                           final String projectName, ProjectRunnable pr,
                                           final String... plugins) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
+    Logger.setThreshold("WARN");
+    org.apache.log4j.BasicConfigurator.configure();
     TestMain.configureMPS(plugins);
 
     if (destinationDir.exists()) {
