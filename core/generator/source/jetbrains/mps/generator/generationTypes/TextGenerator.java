@@ -87,9 +87,19 @@ public class TextGenerator {
     SModel outputModel = status.getOutputModel();
     if (outputModel == null) return !hasErrors;
 
+    StringBuilder[] buffers = new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768) };
+
     for (SNode outputNode : outputModel.roots()) {
       try {
-        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, myFailIfNoTextgen, myGenerateDebugInfo);
+        buffers[0].setLength(0);
+        buffers[1].setLength(0);
+        if(buffers[0].capacity() > 100000) {
+          buffers[0] = new StringBuilder(8192);
+        }
+        if(buffers[1].capacity() > 200000) {
+          buffers[1] = new StringBuilder(32768);
+        }
+        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, myFailIfNoTextgen, myGenerateDebugInfo, buffers);
         hasErrors |= result.hasErrors();
         if (result.hasErrors()) {
           myTextGenErrors.addAll(result.errors());

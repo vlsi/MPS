@@ -25,12 +25,12 @@ public class TextGenerationUtil {
   public static final String NO_TEXTGEN = "\33\33NO TEXTGEN\33\33";
 
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {
-    return TextGenerationUtil.generateText(context, node, false, false);
+    return TextGenerationUtil.generateText(context, node, false, false, null);
   }
 
-  public static TextGenerationResult generateText(IOperationContext context, SNode node, boolean failIfNoTextgen, boolean withDebugInfo) {
+  public static TextGenerationResult generateText(IOperationContext context, SNode node, boolean failIfNoTextgen, boolean withDebugInfo, StringBuilder[] buffers) {
     if (TextGenManager.instance().canGenerateTextFor(node)) {
-      return TextGenManager.instance().generateText(context, node, withDebugInfo);
+      return TextGenManager.instance().generateText(context, node, withDebugInfo, buffers);
     } else if (failIfNoTextgen) {
       String error = "Can't generate text from " + node;
       return new TextGenerationResult(NO_TEXTGEN, true, Collections.singleton(error), null, null, null, null);

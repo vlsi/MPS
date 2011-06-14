@@ -61,10 +61,10 @@ public class TextGenManager {
 
   private Map<String, Class<SNodeTextGen>> myClassesCache;
 
-  /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node, boolean withDebugInfo) {
+  /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node, boolean withDebugInfo, StringBuilder[] buffers) {
     myClassesCache = new HashMap<String, Class<SNodeTextGen>>();
 
-    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo);
+    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     myClassesCache = null;

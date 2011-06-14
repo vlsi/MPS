@@ -29,10 +29,7 @@ public final class TextGenBuffer {
   public static final String LINE_SEPARATOR = System.getProperty("line.separator");
   public static final String SPACES = "                                ";
 
-  private StringBuilder[] myBuffers = new StringBuilder[]{
-    new StringBuilder(512),
-    new StringBuilder(2048)
-  };
+  private StringBuilder[] myBuffers;
 
   private int myCurrBuffer = 1;
   private HashMap myUserObjects = new HashMap();
@@ -45,14 +42,15 @@ public final class TextGenBuffer {
   private final int[] myPostions;
   private final int[] myLineNumbers;
 
-  TextGenBuffer(boolean positionsSupport) {
-    if(positionsSupport) {
+  TextGenBuffer(boolean positionsSupport, StringBuilder[] buffers) {
+    if (positionsSupport) {
       myPostions = new int[2];
       myLineNumbers = new int[2];
     } else {
       myPostions = null;
       myLineNumbers = null;
     }
+    myBuffers = buffers != null ? buffers : new StringBuilder[]{new StringBuilder(2048), new StringBuilder(4096)};
   }
 
   public String getText() {
@@ -69,7 +67,7 @@ public final class TextGenBuffer {
     return myContainsErrors;
   }
 
-  public Collection<String> errors () {
+  public Collection<String> errors() {
     return Collections.unmodifiableList(myErrors);
   }
 
@@ -94,7 +92,7 @@ public final class TextGenBuffer {
     if (s == null) {
       return;
     }
-    if(myPostions != null) {
+    if (myPostions != null) {
       if (s.contains(LINE_SEPARATOR)) {
         myLineNumbers[myCurrBuffer] += s.split(LINE_SEPARATOR, -1).length - 1;
         myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(LINE_SEPARATOR) - LINE_SEPARATOR.length();
@@ -112,7 +110,7 @@ public final class TextGenBuffer {
 
   protected void indentBuffer() {
     int spaces = myIndent * myDepth;
-    if(myPostions != null) {
+    if (myPostions != null) {
       myPostions[myCurrBuffer] += spaces;
     }
 
@@ -152,12 +150,12 @@ public final class TextGenBuffer {
   }
 
   public int getLineNumber() {
-    if(myLineNumbers == null) throw new IllegalStateException();
+    if (myLineNumbers == null) throw new IllegalStateException();
     return myLineNumbers[DEFAULT];
   }
 
   public int getPosition() {
-    if(myPostions == null) throw new IllegalStateException();
+    if (myPostions == null) throw new IllegalStateException();
     return myPostions[DEFAULT];
   }
 
