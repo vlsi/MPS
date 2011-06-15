@@ -21,7 +21,6 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_vcs = ID + "vcs";
-  public static final String LABEL_ID_migration = ID + "migration";
   public static final String LABEL_ID_scripts = ID + "scripts";
   public static final String LABEL_ID_find_javastub_usages = ID + "find_javastub_usages";
   public static final String LABEL_ID_ex = ID + "ex";
@@ -110,12 +109,6 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
         LanguageActions_ActionGroup.this.addAction(action);
       }
       LanguageActions_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_migration);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        LanguageActions_ActionGroup.this.addAction(action);
-      }
       {
         LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_scripts);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

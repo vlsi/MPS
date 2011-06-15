@@ -33,12 +33,8 @@ public class MPSCompilationResult implements Serializable {
   private boolean myCompiledAnything;
   private List<? extends IMessage> myMessages;
 
-  public MPSCompilationResult(int errors, int warnings, boolean aborted) {
-    this(errors, warnings, aborted, true);
-  }
-
   public MPSCompilationResult(int errors, int warnings, boolean aborted, boolean compiled) {
-    this(errors, warnings, aborted, true, Collections.<IMessage>emptyList());
+    this(errors, warnings, aborted, compiled, Collections.<IMessage>emptyList());
   }
 
   public MPSCompilationResult(int errors, int warnings, boolean aborted, boolean compiled, List<? extends IMessage> messages) {

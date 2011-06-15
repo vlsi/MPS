@@ -154,7 +154,7 @@ public class SelectionInfo {
     static int getIntProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
       String propertyValue = properties.get(propertyName);
       if (propertyValue == null) {
-        throw new SelectionStoreException("Canot load int property - property value was not specified for propertyName = " + propertyName);
+        throw new SelectionStoreException("Cannot load int property - property value was not specified for propertyName = " + propertyName);
       }
       try {
         return Integer.parseInt(propertyValue);
@@ -166,9 +166,22 @@ public class SelectionInfo {
     static boolean getBooleanProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
       String propertyValue = properties.get(propertyName);
       if (propertyValue == null) {
-        throw new SelectionStoreException("Canot load int property - property value was not specified for propertyName = " + propertyName);
+        throw new SelectionStoreException("Cannot load boolean property - property value was not specified for propertyName = " + propertyName);
       }
       return Boolean.parseBoolean(propertyValue);
+    }
+
+    static Enum getEnumProperty(Map<String, String> properties, String propertyName, Class<? extends Enum> enumClass, Enum defaultPropertyValue) throws SelectionStoreException {
+      String propertyValue = properties.get(propertyName);
+      if (propertyValue == null) {
+        return defaultPropertyValue;
+//        throw new SelectionStoreException("Cannot load enum property - property value was not specified for propertyName = " + propertyName);
+      }
+      try {
+        return Enum.valueOf(enumClass, propertyValue);
+      } catch (IllegalArgumentException ex) {
+        throw new SelectionStoreException("Invalid enum literal name specified: " + propertyValue + " for enum: " + enumClass.getCanonicalName());
+      }
     }
   }
 }

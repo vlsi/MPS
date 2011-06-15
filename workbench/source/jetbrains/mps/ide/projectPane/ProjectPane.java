@@ -37,7 +37,7 @@ import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.projectPane.logicalview.*;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -58,7 +58,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.JScrollPane;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -202,6 +201,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public void rebuildTree() {
     getTree().rebuildNow();
+    getTree().expandProjectNode();
   }
 
   public void activate() {

@@ -295,7 +295,7 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacets(new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("ReloadClasses"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make")).toScript();
+    return new ScriptBuilder().withFacets(new IFacet.Name("jetbrains.mps.make.facet.Binaries"), new IFacet.Name("jetbrains.mps.make.facet.Generate"), new IFacet.Name("jetbrains.mps.make.facet.TextGen"), new IFacet.Name("jetbrains.mps.make.facet.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facet.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facet.Make")).withFinalTarget(new ITarget.Name("make")).toScript();
   }
 
   private class Controller implements IScriptController {
@@ -361,9 +361,10 @@ public class WorkbenchMakeService implements IMakeService {
         });
       }
 
-      Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.parameters(new ITarget.Name("textGen"), Object.class);
+      Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean> tparams = (Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean>) ppool.parameters(new ITarget.Name("textGen"), Object.class);
       if (tparams != null) {
         tparams._1(GenerationSettings.getInstance().isFailOnMissingTextGen());
+        tparams._2(GenerationSettings.getInstance().isGenerateDebugInfo());
       }
 
       if (delegateScrCtr != null) {

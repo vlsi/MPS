@@ -1,5 +1,6 @@
 package jetbrains.mps.util;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -11,6 +12,10 @@ import java.util.Iterator;
 public class FlattenIterable<T> implements Iterable<T> {
 
   private Collection<Iterable<T>> myContent;
+
+  public FlattenIterable() {
+    this(new ArrayList<Iterable<T>>());
+  }
 
   public FlattenIterable(Collection<Iterable<T>> content) {
     myContent = content;

@@ -57,7 +57,7 @@ import jetbrains.mps.generator.TransientModelsComponent;
 
 public class Generate_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("Generate");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.Generate");
 
   public Generate_Facet() {
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_a());

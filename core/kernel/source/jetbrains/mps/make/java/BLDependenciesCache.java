@@ -17,7 +17,6 @@ package jetbrains.mps.make.java;
 
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
@@ -36,8 +35,7 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
     return ApplicationManager.getApplication().getComponent(BLDependenciesCache.class);
   }
 
-  public BLDependenciesCache(AllCaches allCaches) {
-    super(allCaches);
+  public BLDependenciesCache() {
   }
 
   protected String getCacheFileName() {
@@ -68,13 +66,13 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
       BLDependenciesHandler handler = new BLDependenciesHandler();
       saxParser.parse(new InputSource(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)), handler);
       ModelDependencies dependencies = handler.getResult();
-      if(dependencies != null) {
+      if (dependencies != null) {
         return dependencies;
-     }
+      }
       throw new IOException("empty result");
-    } catch(SAXParseException ex) {
+    } catch (SAXParseException ex) {
       throw new IOException(ex);
-    } catch(Exception ex) {
+    } catch (Exception ex) {
       throw new IOException(ex);
     }
   }

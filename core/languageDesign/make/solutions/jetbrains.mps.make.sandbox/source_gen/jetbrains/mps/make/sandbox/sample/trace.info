@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.make.sandbox.sample.FacetAspectDescriptor$1" />
+  <unitInfo fileName="FacetManifest.java" startLine="40" startPosition="55" endLine="44" endPosition="5" unitName="jetbrains.mps.make.sandbox.sample.FacetManifest$1" />
   <unitInfo fileName="outlook1_outlook.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.outlook1_outlook" />
+  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.FacetAspectDescriptor" />
   <unitInfo fileName="what_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.what_Option" />
-  <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.FacetManifest" />
   <unitInfo fileName="GGG_Facet.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.GGG_Facet" />
   <unitInfo fileName="DOH_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.DOH_Query" />
+  <unitInfo fileName="FacetManifest.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.FacetManifest" />
   <unitInfo fileName="Generate_Facet.java" startLine="19" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.Generate_Facet" />
   <unitInfo fileName="GenerateSpecial_Facet.java" startLine="21" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet" />
   <unitInfo fileName="FFFFacet_Facet.java" startLine="18" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.FFFFacet_Facet" />
@@ -37,7 +40,7 @@
     <nodeInfo nodeId="3297237684108626081" fileName="FFFFacet_Facet.java" startLine="137" startPosition="0" endLine="138" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3297237684108626087" fileName="FFFFacet_Facet.java" startLine="138" startPosition="102" endLine="139" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3297237684108626091" fileName="FFFFacet_Facet.java" startLine="139" startPosition="66" endLine="140" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="682890046602567448" fileName="FFFFacet_Facet.java" startLine="140" startPosition="61" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1919086248986855418" fileName="FFFFacet_Facet.java" startLine="140" startPosition="61" endLine="141" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="505095865854424942" fileName="FFFFacet_Facet.java" startLine="142" startPosition="20" endLine="143" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3130298387011951907" fileName="FFFFacet_Facet.java" startLine="149" startPosition="35" endLine="150" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3130298387011951907" fileName="FFFFacet_Facet.java" startLine="153" startPosition="46" endLine="154" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -202,7 +205,7 @@
     <scopeInfo nodeId="3130298387011990041" fileName="FFFFacet_Facet.java" startLine="256" startPosition="0" endLine="260" endPosition="0" />
     <scopeInfo nodeId="3130298387011990041" fileName="FFFFacet_Facet.java" startLine="260" startPosition="0" endLine="264" endPosition="0" />
     <scopeInfo nodeId="8351679702044371556" fileName="FFFFacet_Facet.java" startLine="115" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="505095865854424942" fileName="FFFFacet_Facet.java" startLine="136" startPosition="19" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="505095865854424942" fileName="FFFFacet_Facet.java" startLine="136" startPosition="19" endLine="141" endPosition="37" />
     <scopeInfo nodeId="3130298387011951907" fileName="FFFFacet_Facet.java" startLine="192" startPosition="0" endLine="197" endPosition="0" />
     <scopeInfo nodeId="3130298387011990041" fileName="FFFFacet_Facet.java" startLine="264" startPosition="0" endLine="269" endPosition="0" />
     <scopeInfo nodeId="505095865854424945" fileName="FFFFacet_Facet.java" startLine="210" startPosition="120" endLine="216" endPosition="11" />

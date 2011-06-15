@@ -15,19 +15,24 @@
   <unitInfo fileName="AbstractAntiquotation_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.AbstractAntiquotation_Editor" />
   <unitInfo fileName="PropertyAntiquotation_Editor.java" startLine="140" startPosition="83" endLine="151" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_Editor$3" />
   <unitInfo fileName="ReferenceAntiquotation_Editor.java" startLine="140" startPosition="83" endLine="151" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_Editor$3" />
+  <unitInfo fileName="Quotation_Editor.java" startLine="228" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Quotation_Editor$Quotation_component_cellMenu_a0b0a" />
+  <unitInfo fileName="Quotation_Editor.java" startLine="240" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Quotation_Editor$Quotation_component_cellMenu_a0c0a" />
+  <unitInfo fileName="Quotation_Editor.java" startLine="161" startPosition="83" endLine="175" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.Quotation_Editor$1" />
   <unitInfo fileName="ListAntiquotation_Editor.java" startLine="139" startPosition="83" endLine="155" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.ListAntiquotation_Editor$3" />
   <unitInfo fileName="Antiquotation_Editor.java" startLine="141" startPosition="83" endLine="157" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.Antiquotation_Editor$3" />
   <unitInfo fileName="PropertyAntiquotation_Editor.java" startLine="162" startPosition="83" endLine="178" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_Editor$4" />
   <unitInfo fileName="ReferenceAntiquotation_Editor.java" startLine="162" startPosition="83" endLine="178" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_Editor$4" />
   <unitInfo fileName="ListAntiquotation_Editor.java" startLine="166" startPosition="83" endLine="182" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.ListAntiquotation_Editor$4" />
   <unitInfo fileName="Antiquotation_Editor.java" startLine="168" startPosition="83" endLine="184" endPosition="5" unitName="jetbrains.mps.lang.quotation.editor.Antiquotation_Editor$4" />
+  <unitInfo fileName="Quotation_quotedNode.java" startLine="27" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Quotation_quotedNode$Quotation_generic_cellMenu_a0" />
+  <unitInfo fileName="Quotation_quotedNode.java" startLine="22" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Quotation_quotedNode" />
   <unitInfo fileName="_Quotation_createModel.java" startLine="23" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._Quotation_createModel$_Quotation_createModel_Action0" />
   <unitInfo fileName="_Quotation_createModel.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._Quotation_createModel" />
   <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="36" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action0" />
   <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="94" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action1" />
   <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="227" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action3" />
   <unitInfo fileName="_CreateAntiquotationKeyMap.java" startLine="154" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap$_CreateAntiquotationKeyMap_Action2" />
-  <unitInfo fileName="Quotation_Editor.java" startLine="24" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Quotation_Editor" />
+  <unitInfo fileName="Quotation_Editor.java" startLine="38" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.Quotation_Editor" />
   <unitInfo fileName="PropertyAntiquotation_Editor.java" startLine="29" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_Editor" />
   <unitInfo fileName="ReferenceAntiquotation_Editor.java" startLine="29" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.ReferenceAntiquotation_Editor" />
   <unitInfo fileName="ListAntiquotation_Editor.java" startLine="28" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.ListAntiquotation_Editor" />
@@ -90,8 +95,14 @@
     </scopeInfo>
   </root>
   <root nodeId="1196350915656">
-    <nodeInfo nodeId="1196350915667" fileName="Quotation_Editor.java" startLine="133" startPosition="111" endLine="134" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1196350915666" fileName="Quotation_Editor.java" startLine="133" startPosition="111" endLine="134" endPosition="74" />
+    <nodeInfo nodeId="1196350915667" fileName="Quotation_Editor.java" startLine="216" startPosition="111" endLine="217" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8802842484753189875" fileName="Quotation_Editor.java" startLine="220" startPosition="112" endLine="221" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8802842484753233888" fileName="Quotation_Editor.java" startLine="224" startPosition="112" endLine="225" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="681861606971196093" fileName="Quotation_Editor.java" startLine="162" startPosition="31" endLine="166" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1196350915666" fileName="Quotation_Editor.java" startLine="216" startPosition="111" endLine="217" endPosition="74" />
+    <scopeInfo nodeId="8802842484753189874" fileName="Quotation_Editor.java" startLine="220" startPosition="112" endLine="221" endPosition="71" />
+    <scopeInfo nodeId="8802842484753233887" fileName="Quotation_Editor.java" startLine="224" startPosition="112" endLine="225" endPosition="71" />
+    <scopeInfo nodeId="1137617423250066356" fileName="Quotation_Editor.java" startLine="162" startPosition="31" endLine="166" endPosition="10" />
   </root>
   <root nodeId="1196350915673">
     <nodeInfo nodeId="1226062535913" fileName="ReferenceAntiquotation_Editor.java" startLine="141" startPosition="31" endLine="142" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -264,6 +275,25 @@
     <scopeInfo nodeId="1214399678939" fileName="PropertyAntiquotation_Editor.java" startLine="246" startPosition="107" endLine="247" endPosition="24" />
     <scopeInfo nodeId="1226062528307" fileName="PropertyAntiquotation_Editor.java" startLine="163" startPosition="31" endLine="169" endPosition="9">
       <varInfo nodeId="1226062528309" varName="parent" />
+    </scopeInfo>
+  </root>
+  <root nodeId="8802842484753224561">
+    <nodeInfo nodeId="8802842484753224594" fileName="Quotation_quotedNode.java" startLine="31" startPosition="105" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8802842484753224604" fileName="Quotation_quotedNode.java" startLine="33" startPosition="189" endLine="34" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8802842484753224621" fileName="Quotation_quotedNode.java" startLine="35" startPosition="7" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8802842484753224625" fileName="Quotation_quotedNode.java" startLine="43" startPosition="163" endLine="44" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8802842484753224631" fileName="Quotation_quotedNode.java" startLine="44" startPosition="78" endLine="45" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8802842484753224641" fileName="Quotation_quotedNode.java" startLine="46" startPosition="32" endLine="47" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8802842484753224601" fileName="Quotation_quotedNode.java" startLine="32" startPosition="73" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8802842484753224639" fileName="Quotation_quotedNode.java" startLine="45" startPosition="140" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8802842484753224603" fileName="Quotation_quotedNode.java" startLine="33" startPosition="189" endLine="34" endPosition="70" />
+    <scopeInfo nodeId="8802842484753224640" fileName="Quotation_quotedNode.java" startLine="46" startPosition="32" endLine="47" endPosition="48" />
+    <scopeInfo nodeId="8802842484753224601" fileName="Quotation_quotedNode.java" startLine="32" startPosition="73" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="8802842484753224593" fileName="Quotation_quotedNode.java" startLine="31" startPosition="105" endLine="36" endPosition="20">
+      <varInfo nodeId="8802842484753224595" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8802842484753224624" fileName="Quotation_quotedNode.java" startLine="43" startPosition="163" endLine="48" endPosition="7">
+      <varInfo nodeId="8802842484753224626" varName="oldInstance" />
     </scopeInfo>
   </root>
 </debugInfo>

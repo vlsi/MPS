@@ -19,9 +19,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.JavaNameUtil;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Author: Sergey Dmitriev
@@ -54,7 +52,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     return mySNode;
   }
 
-  public void setSNode(SNode contextNode) {
+  public void setSNode(@Nullable SNode contextNode) {
     mySNode = contextNode;
   }
 
@@ -103,7 +101,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     foundError(null);
   }
 
-  public void foundError(String info) {
+  public void foundError(@Nullable String info) {
     String message = info != null ?
       "textgen error: '" + info + "' in " + getSNode().getDebugText() :
       "textgen error in " + getSNode().getDebugText();

@@ -12,9 +12,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CExpressionStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TraceInfoGenerationUtil.createPositionInfo(this, node);
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.createPositionInfo(this, node);
+    }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "expression", true), this.getSNode());
     this.append(";");
-    TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+    }
   }
 }

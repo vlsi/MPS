@@ -16,7 +16,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FieldDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TraceInfoGenerationUtil.createPositionInfo(this, node);
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.createPositionInfo(this, node);
+    }
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), this.getSNode());
     }
@@ -31,6 +33,8 @@ public class FieldDeclaration_TextGen extends SNodeTextGen {
     }
     BaseLanguageTextGen.variableDeclaration(node, this);
     this.append(";");
-    TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+    }
   }
 }

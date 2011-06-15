@@ -194,7 +194,7 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1453248744423276149">
       <property name="name" nameId="tpck.1169194664001" value="ShowModelChecker" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Model Checker" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Model Checker..." />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="false" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Actions" />
@@ -235,6 +235,7 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5361317699454626937">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DevKit" />
       <property name="name" nameId="tpck.1169194664001" value="ToolsInternalEx" />
+      <property name="isInternal" nameId="tp4k.1205160838084" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6550340959293376935">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DevKit.Internal" />
@@ -9981,9 +9982,6 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091399">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/modelChecker.png" />
-    </node>
   </root>
   <root id="1453248744423276216">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1453248744423276217">
@@ -12261,8 +12259,7 @@
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5361317699454650269">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.5361317699454624365" resolveInfo="ToolsInternal" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.5361317699454624368" resolveInfo="internal" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.2899596005954254197" resolveInfo="ToolsInternal" />
     </node>
   </root>
   <root id="6550340959293376935">

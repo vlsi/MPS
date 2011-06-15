@@ -29,13 +29,8 @@ public final class TextGenBuffer {
   public static final String LINE_SEPARATOR = System.getProperty("line.separator");
   public static final String SPACES = "                                ";
 
-  private StringBuilder[] myBuffers = new StringBuilder[]{
-    new StringBuilder(512),
-    new StringBuilder(2048)
-  };
+  private StringBuilder[] myBuffers;
 
-  private int[] myPostions = new int[2];
-  private int[] myLineNumbers = new int[2];
   private int myCurrBuffer = 1;
   private HashMap myUserObjects = new HashMap();
 
@@ -44,7 +39,18 @@ public final class TextGenBuffer {
   private boolean myContainsErrors = false;
   private List<String> myErrors = new ArrayList<String>();
 
-  TextGenBuffer() {
+  private final int[] myPostions;
+  private final int[] myLineNumbers;
+
+  TextGenBuffer(boolean positionsSupport, StringBuilder[] buffers) {
+    if (positionsSupport) {
+      myPostions = new int[2];
+      myLineNumbers = new int[2];
+    } else {
+      myPostions = null;
+      myLineNumbers = null;
+    }
+    myBuffers = buffers != null ? buffers : new StringBuilder[]{new StringBuilder(2048), new StringBuilder(4096)};
   }
 
   public String getText() {
@@ -61,7 +67,7 @@ public final class TextGenBuffer {
     return myContainsErrors;
   }
 
-  public Collection<String> errors () {
+  public Collection<String> errors() {
     return Collections.unmodifiableList(myErrors);
   }
 
@@ -86,11 +92,13 @@ public final class TextGenBuffer {
     if (s == null) {
       return;
     }
-    if (s.contains(LINE_SEPARATOR)) {
-      myLineNumbers[myCurrBuffer] += s.split(LINE_SEPARATOR, -1).length - 1;
-      myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(LINE_SEPARATOR) - LINE_SEPARATOR.length();
-    } else {
-      myPostions[myCurrBuffer] += s.length();
+    if (myPostions != null) {
+      if (s.contains(LINE_SEPARATOR)) {
+        myLineNumbers[myCurrBuffer] += s.split(LINE_SEPARATOR, -1).length - 1;
+        myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(LINE_SEPARATOR) - LINE_SEPARATOR.length();
+      } else {
+        myPostions[myCurrBuffer] += s.length();
+      }
     }
     myBuffers[myCurrBuffer].append(s);
   }
@@ -102,7 +110,9 @@ public final class TextGenBuffer {
 
   protected void indentBuffer() {
     int spaces = myIndent * myDepth;
-    myPostions[myCurrBuffer] += spaces;
+    if (myPostions != null) {
+      myPostions[myCurrBuffer] += spaces;
+    }
 
     while (spaces > 0) {
       int i = spaces > SPACES.length() ? SPACES.length() : spaces;
@@ -140,11 +150,17 @@ public final class TextGenBuffer {
   }
 
   public int getLineNumber() {
+    if (myLineNumbers == null) throw new IllegalStateException();
     return myLineNumbers[DEFAULT];
   }
 
   public int getPosition() {
+    if (myPostions == null) throw new IllegalStateException();
     return myPostions[DEFAULT];
+  }
+
+  public boolean hasPositionsSupport() {
+    return myPostions != null;
   }
 
   public int selectPart(int partId) {

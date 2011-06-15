@@ -418,7 +418,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1220973916698" resolveInfo="Path" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1203617926238">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1203617883391" resolveInfo="ICompositComponent" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1203617883391" resolveInfo="ICompositeComponent" />
     </node>
   </root>
   <root id="1203599702327">
@@ -699,7 +699,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="moduleReference" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1217524754911" resolveInfo="ModuleReference" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1217524754911" resolveInfo="NewModuleReference" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7857794759871898776">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -871,7 +871,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="manifestAttribute" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1239621743648" resolveInfo="Attribute" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1239621743648" resolveInfo="ManifestAttribute" />
     </node>
   </root>
   <root id="1239621743648">
@@ -947,7 +947,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="layout" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1202916958754" resolveInfo="MPSLayout" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1202916958754" resolveInfo="Layout" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="701559220729218131">
       <property name="value" nameId="tpce.1105725733873" value="block" />
@@ -964,6 +964,9 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7323513735995554360">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1234968728594" resolveInfo="IMacroHolder" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7551441060912375141">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1234864659795" resolveInfo="IVariableHolder" />
     </node>
   </root>
   <root id="7857794759871898774">

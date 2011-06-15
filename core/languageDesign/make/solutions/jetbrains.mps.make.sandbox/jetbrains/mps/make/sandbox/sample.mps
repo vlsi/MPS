@@ -266,7 +266,13 @@
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="3297237684108626091">
               <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="3297237684108626081" />
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="682890046602567448" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1919086248986855418">
+              <node role="expression" roleId="tpee.1068580123156" type="vvvw.FacetReferenceExpression" typeId="vvvw.7178445679340358576" id="1919086248986855419">
+                <node role="reference" roleId="vvvw.7178445679340358578" type="vvvw.NamedFacetReference" typeId="vvvw.1919086248986845077" id="1919086248986855421">
+                  <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="127305800529643681" resolveInfo="GGG" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

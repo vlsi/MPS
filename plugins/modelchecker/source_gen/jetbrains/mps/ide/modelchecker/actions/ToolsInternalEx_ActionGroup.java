@@ -11,7 +11,7 @@ public class ToolsInternalEx_ActionGroup extends GeneratedActionGroup {
 
   public ToolsInternalEx_ActionGroup() {
     super("ToolsInternalEx", ID);
-    this.setIsInternal(false);
+    this.setIsInternal(true);
     this.setPopup(false);
     try {
       ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.modelchecker.actions.FindlAllBrokenReferences_Action");

@@ -99,10 +99,6 @@
     <!-- generator -->
 
     <component>
-      <implementation-class>jetbrains.mps.generator.cache.AllCaches</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.make.java.BLDependenciesCache</implementation-class>
     </component>
 

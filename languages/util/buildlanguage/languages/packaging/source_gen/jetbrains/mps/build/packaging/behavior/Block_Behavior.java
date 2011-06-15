@@ -25,4 +25,11 @@ public class Block_Behavior {
     }
     return "";
   }
+
+  public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
+    if ((SLinkOperations.getTarget(thisNode, "layout", false) != null)) {
+      return IVariableHolder_Behavior.call_getAllVariable_1234864693585(SLinkOperations.getTarget(thisNode, "layout", false));
+    }
+    return ListSequence.fromList(new ArrayList<SNode>());
+  }
 }

@@ -20,7 +20,7 @@ public class UpgradeModelPersistenceGlobally_Action extends GeneratedAction {
 
   public UpgradeModelPersistenceGlobally_Action() {
     super("Upgrade Models Persistence", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 

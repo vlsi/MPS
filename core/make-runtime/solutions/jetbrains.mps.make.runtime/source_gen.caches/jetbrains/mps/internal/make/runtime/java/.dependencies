@@ -2,13 +2,18 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.internal.make.runtime.java.FileProcessor" file="FileProcessor.java">
     <classNode dependClassName="java.io.BufferedOutputStream" />
+    <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.io.OutputStreamWriter" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />

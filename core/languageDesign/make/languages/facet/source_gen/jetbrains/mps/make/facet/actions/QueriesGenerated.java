@@ -231,6 +231,44 @@ __switch__:
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_FacetReferenceExpression_7178445679340358586(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.FacetReferenceExpression");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+          public Object calculate() {
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g().createNode((item));
+              }
+
+              public String getMatchingText(String pattern) {
+                return "&" + SPropertyOperations.getString((item), "name");
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
+              public String getDescriptionText(String pattern) {
+                return "reference to facet " + SPropertyOperations.getString((item), "name");
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
   public static class QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a4 {
     public QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a4() {
     }
@@ -325,6 +363,30 @@ __switch__:
           }
         }
         result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.FacetReferenceExpression", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.facet.structure.NamedFacetReference", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.setReferent("facet", (SNode) parameter_5);
+          quotedNode_1.addChild("reference", quotedNode1_4);
+        }
+        result = quotedNode1_3;
       }
       return result;
     }

@@ -75,7 +75,7 @@ public class ModuleMaker {
       indicator.setText("Compiling...");
       indicator.setIndeterminate(true);
 
-      Set<IModule> candidates = new DependencyCollector(modules, IModule.class).collect();
+      Set<IModule> candidates = new DependencyCollector(modules).collect();
       indicator.setText2("Loading dependencies..");
       myDependencies = new Dependencies(candidates);
 
@@ -122,6 +122,8 @@ public class ModuleMaker {
     }
 
     JavaCompiler compiler = new JavaCompiler();
+    boolean hasJavaToCompile = false;
+    boolean hasFilesToCopyOrDelete = false;
 
     Set<IModule> modulesWithRemovals = new HashSet<IModule>();
     for (IModule m : modules) {
@@ -135,6 +137,8 @@ public class ModuleMaker {
       }
 
       ModuleSources sources = getModuleSources(m);
+      hasFilesToCopyOrDelete |= !sources.isResourcesUpToDate();
+      hasJavaToCompile |= !sources.isJavaUpToDate();
 
       for (File f : sources.getFilesToDelete()) {
         f.delete();
@@ -147,16 +151,23 @@ public class ModuleMaker {
       }
     }
 
+    if(!hasJavaToCompile && !hasFilesToCopyOrDelete) {
+      return new MPSCompilationResult(0, 0, false, false, messages);
+    }
+
     //todo:do we need this invalidation?
     invalidateClasspath(modulesWithRemovals);
 
-    IClassPathItem classPathItems = computeDependenciesClassPath(modules);
-    MyCompilationResultAdapter listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
-    compiler.addCompilationResultListener(listener);
-    compiler.compile(classPathItems);
-    compiler.removeCompilationResultListener(listener);
+    MyCompilationResultAdapter listener = null;
+    if(hasJavaToCompile) {
+      IClassPathItem classPathItems = computeDependenciesClassPath(modules);
+      listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
+      compiler.addCompilationResultListener(listener);
+      compiler.compile(classPathItems);
+      compiler.removeCompilationResultListener(listener);
 
-    invalidateClasspath(modules);
+      invalidateClasspath(modules);
+    }
 
     for (IModule module : modules) {
       ModuleSources sources = getModuleSources(module);
@@ -179,7 +190,7 @@ public class ModuleMaker {
       module.updateClassPath();
     }
 
-    return new MPSCompilationResult(listener.getErrorCount(), 0, false, true, messages);
+    return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, hasJavaToCompile, messages);
   }
 
   private String getName(char[][] compoundName) {
@@ -200,7 +211,7 @@ public class ModuleMaker {
   }
 
   private Set<IModule> getModulesToCompile(Set<IModule> modules) {
-    Set<IModule> dirtyModules = new HashSet<IModule>();
+    List<IModule> dirtyModules = new ArrayList<IModule>(modules.size());
     for (IModule m : modules) {
       if (isDirty(m)) {
         dirtyModules.add(m);
@@ -250,10 +261,12 @@ public class ModuleMaker {
   }
 
   private ModuleSources getModuleSources(IModule module) {
-    if (!myModuleSources.containsKey(module)) {
-      myModuleSources.put(module, new ModuleSources(module, myDependencies));
+    ModuleSources moduleSources = myModuleSources.get(module);
+    if (moduleSources == null) {
+      moduleSources = new ModuleSources(module, myDependencies);
+      myModuleSources.put(module, moduleSources);
     }
-    return myModuleSources.get(module);
+    return moduleSources;
   }
 
   private boolean isExcluded(IModule m) {
@@ -288,7 +301,7 @@ public class ModuleMaker {
 
     @Override
     public void onFatalError(String error) {
-      myMessages.add(new MyMessage(MessageKind.ERROR, "Fatal error. "+error, null));
+      myMessages.add(new MyMessage(MessageKind.ERROR, "Fatal error. " + error, null));
       LOG.debug("Fatal error. " + error);
       LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
       myErrorCount += 1;
@@ -396,7 +409,7 @@ public class ModuleMaker {
     private String myText;
     private Object myHintObject;
 
-    public MyMessage (MessageKind kind, String text, Object hintObject) {
+    public MyMessage(MessageKind kind, String text, Object hintObject) {
       myKind = kind;
       myText = text;
       myHintObject = hintObject;

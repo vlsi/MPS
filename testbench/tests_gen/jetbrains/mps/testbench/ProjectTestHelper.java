@@ -119,7 +119,7 @@ public class ProjectTestHelper {
   }
 
   private ScriptBuilder defaultScriptBuilder() {
-    return new ScriptBuilder().withFacets(new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make"));
+    return new ScriptBuilder().withFacets(new IFacet.Name("jetbrains.mps.make.facet.Binaries"), new IFacet.Name("jetbrains.mps.make.facet.Generate"), new IFacet.Name("jetbrains.mps.make.facet.TextGen"), new IFacet.Name("jetbrains.mps.make.facet.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facet.Make")).withFinalTarget(new ITarget.Name("make"));
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
@@ -282,11 +282,17 @@ public class ProjectTestHelper {
       if (Sequence.fromIterable(onames).disjunction(Sequence.fromIterable(rnames)).isNotEmpty()) {
         Sequence.fromIterable(onames).subtract(Sequence.fromIterable(rnames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
+            if ("trace.info".equals(it)) {
+              return;
+            }
             ListSequence.fromList(diffs).addElement("Removed: " + new File(orig, it));
           }
         });
         Sequence.fromIterable(rnames).subtract(Sequence.fromIterable(onames)).visitAll(new IVisitor<String>() {
           public void visit(String it) {
+            if ("trace.info".equals(it)) {
+              return;
+            }
             ListSequence.fromList(diffs).addElement("Created: " + new File(orig, it));
           }
         });

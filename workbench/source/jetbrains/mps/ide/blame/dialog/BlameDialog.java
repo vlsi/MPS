@@ -174,7 +174,7 @@ public class BlameDialog extends BaseDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(200, 200, 400, 300);
+    return new DialogDimensions(200, 200, 600, 500);
   }
 
   protected JComponent getMainComponent() {

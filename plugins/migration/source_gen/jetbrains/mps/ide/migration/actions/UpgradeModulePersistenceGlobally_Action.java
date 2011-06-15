@@ -19,7 +19,7 @@ public class UpgradeModulePersistenceGlobally_Action extends GeneratedAction {
 
   public UpgradeModulePersistenceGlobally_Action() {
     super("Upgrade Modules Persistence", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 

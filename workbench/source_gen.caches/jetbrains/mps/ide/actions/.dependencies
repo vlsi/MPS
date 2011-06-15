@@ -3152,12 +3152,9 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" file="ToolsInternal_ActionGroup.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Tools_ActionGroup" file="Tools_ActionGroup.java">

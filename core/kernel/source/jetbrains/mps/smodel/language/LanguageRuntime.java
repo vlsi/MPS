@@ -38,6 +38,7 @@ public abstract class LanguageRuntime {
   private DescriptorProvider<StructureDescriptor> structureDescriptor;
   private DescriptorProvider<BehaviorDescriptor> behaviorDescriptor;
   private DescriptorProvider<ConstraintsDescriptor> constraintsDescriptor;
+  private DescriptorProvider<FacetDescriptor> facetDescriptor;
 
   public abstract String getNamespace();
 
@@ -81,6 +82,13 @@ public abstract class LanguageRuntime {
       constraintsDescriptor = getDescriptorProvider("constraints.ConstraintsAspectDescriptor", LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER);
     }
     return constraintsDescriptor;
+  }
+
+  public DescriptorProvider<FacetDescriptor> getFacetProvider () {
+    if (facetDescriptor == null) {
+      facetDescriptor = getDescriptorProvider("plugin.FacetAspectDescriptor", LanguageRuntimeInterpreted.FACET_PROVIDER);
+    }
+    return facetDescriptor;
   }
 
   public StructureAspectDescriptor getStructureAspectDescriptor() {

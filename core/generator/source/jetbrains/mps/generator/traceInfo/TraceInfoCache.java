@@ -29,7 +29,6 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
   private final CleanupManager myCleanupManager;
 
   public TraceInfoCache(CleanupManager cleanupManager) {
-    super(null);
     myCleanupManager = cleanupManager;
   }
 

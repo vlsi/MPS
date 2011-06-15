@@ -13,12 +13,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StatementList_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TraceInfoGenerationUtil.createScopeInfo(this, node);
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.createScopeInfo(this, node);
+    }
     int size = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
     for (int i = 0; i < size; i++) {
       SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
     }
-    TraceInfoGenerationUtil.fillScopeInfo(this, node, ScopeConcept_Behavior.call_getScopeVariables_3822000666564591100(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ScopeConcept")));
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.fillScopeInfo(this, node, ScopeConcept_Behavior.call_getScopeVariables_3822000666564591100(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ScopeConcept")));
+    }
   }
 }

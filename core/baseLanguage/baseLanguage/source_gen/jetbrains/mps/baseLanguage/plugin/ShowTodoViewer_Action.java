@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -15,11 +14,11 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class ShowTodoViewer_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ShowTodoViewer_Action.class.getResource("todo.png"));
+  private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowTodoViewer_Action.class);
 
   public ShowTodoViewer_Action() {
-    super("Show Todo Tool", "", ICON);
+    super("Todo...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }

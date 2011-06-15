@@ -29,7 +29,7 @@
   <unitInfo fileName="TodoViewer_Tool.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
   <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
-  <unitInfo fileName="ShowTodoViewer_Action.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
+  <unitInfo fileName="ShowTodoViewer_Action.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
   <unitInfo fileName="JavaApplication_ConfigurationType.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
   <unitInfo fileName="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="304" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MySettingsEditor" />
@@ -310,7 +310,7 @@
     <scopeInfo nodeId="1214308524983" fileName="TodoViewer_Tool.java" startLine="37" startPosition="36" endLine="38" endPosition="44" />
   </root>
   <root nodeId="1217597602946">
-    <nodeInfo nodeId="1217598015336" fileName="ShowTodoViewer_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217598015336" fileName="ShowTodoViewer_Action.java" startLine="47" startPosition="9" endLine="48" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1217598080127">
     <nodeInfo nodeId="1217598105552" fileName="BaseLanguageToolsAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -176,7 +176,7 @@ public class BuildMakeService implements IMakeService {
   }
 
   public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacets(new IFacet.Name("Binaries"), new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("make")).toScript();
+    return new ScriptBuilder().withFacets(new IFacet.Name("jetbrains.mps.make.facet.Binaries"), new IFacet.Name("jetbrains.mps.make.facet.Generate"), new IFacet.Name("jetbrains.mps.make.facet.TextGen"), new IFacet.Name("jetbrains.mps.make.facet.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facet.Make")).withFinalTarget(new ITarget.Name("make")).toScript();
   }
 
   public static class MessageFeedbackStrategy {

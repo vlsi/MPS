@@ -22,18 +22,18 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.util.*;
 
 class Dependencies {
-  private Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
-  private Map<String, IModule> myModules = new HashMap<String, IModule>();
-  private Map<String, Long> myLastModified = new HashMap<String, Long>();
+
+  private final Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
+  private final Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
+  private final Map<String, IModule> myModules = new HashMap<String, IModule>();
+  private final Map<String, Long> myLastModified = new HashMap<String, Long>();
 
   public Dependencies(Collection<IModule> ms) {
     for (IModule m : ms) {
@@ -41,33 +41,35 @@ class Dependencies {
     }
   }
 
+  /*
+   *  returns collection with duplicates
+   */
   public Iterable<String> getAllDependencies(String fqName) {
-    Set<String> result = new HashSet<String>();
-    fillDependencies(fqName, result);
+    FlattenIterable<String> result = new FlattenIterable<String>();
+    Set<String> deps = myDependencies.get(fqName);
+    if (deps != null) {
+      result.add(deps);
+    }
     fillExtendsDependencies(fqName, result);
     return result;
   }
 
-  private void fillDependencies(String fqName, Set<String> result) {
-    if (!myDependencies.containsKey(fqName)) return;
-    result.addAll(myDependencies.get(fqName));
-  }
+  private void fillExtendsDependencies(String fqName, FlattenIterable<String> result) {
+    Set<String> extendDeps = myExtendsDependencies.get(fqName);
+    if (extendDeps == null) return;
 
-  private void fillExtendsDependencies(String fqName, Set<String> result) {
-    if (!myExtendsDependencies.containsKey(fqName)) return;
-
-    for (String ext : myExtendsDependencies.get(fqName)) {
-      result.add(ext);
+    result.add(extendDeps);
+    for (String ext : extendDeps) {
       fillExtendsDependencies(ext, result);
     }
   }
 
-  public IFile getJavaFile(String fqName) {
+  private File getJavaFile(String fqName) {
     IModule m = myModules.get(fqName);
     if (m == null) return null;
 
     String outputPath = m.getGeneratorOutputPath() + File.separator + NameUtil.pathFromNamespace(fqName) + MPSExtentions.DOT_JAVAFILE;
-    return FileSystem.getInstance().getFileByPath(outputPath);
+    return new File(outputPath);
   }
 
   private void collectDependencies(IModule m) {
@@ -98,12 +100,11 @@ class Dependencies {
   public Long getJavaFileLastModified(String fqName) {
     Long value = myLastModified.get(fqName);
     if (value == null) {
-      IFile iFile = getJavaFile(fqName);
-      if (iFile == null) {
+      File iFile = getJavaFile(fqName);
+      if (!iFile.exists()) {
         value = 0L;
       } else {
         value = iFile.lastModified();
-
       }
       myLastModified.put(fqName, value);
     }

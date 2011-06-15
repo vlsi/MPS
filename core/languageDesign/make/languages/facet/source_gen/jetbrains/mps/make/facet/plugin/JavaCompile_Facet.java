@@ -25,10 +25,10 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.resources.IFResource;
 import jetbrains.mps.compiler.JavaCompiler;
 import java.util.Set;
@@ -50,7 +50,7 @@ import jetbrains.mps.compiler.IClassesData;
 
 public class JavaCompile_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("JavaCompile");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.JavaCompile");
 
   public JavaCompile_Facet() {
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_a());
@@ -93,6 +93,7 @@ public class JavaCompile_Facet implements IFacet {
           Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
+              pool.parameters(Target_wf1ya0_a.this.getName(), JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything(false);
               int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + ((((TResource) it).module().isCompileInMPS() ?
@@ -123,6 +124,7 @@ public class JavaCompile_Facet implements IFacet {
                   }
                 });
                 if (cr.value != null) {
+                  pool.parameters(Target_wf1ya0_a.this.getName(), JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything(pool.parameters(Target_wf1ya0_a.this.getName(), JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
                   for (IMessage msg : cr.value.getMessages()) {
                     monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                   }
@@ -191,12 +193,38 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public <T> T createParameters(Class<T> cls) {
-      return null;
+      return cls.cast(new Parameters());
     }
 
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
+      if (t != null) {
+        ((JavaCompile_Facet.Target_wf1ya0_a.Parameters) t).compiledAnything(((JavaCompile_Facet.Target_wf1ya0_a.Parameters) copyFrom).compiledAnything());
+      }
       return t;
+    }
+
+    public static class Parameters extends MultiTuple._1<Boolean> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(Boolean compiledAnything) {
+        super(compiledAnything);
+      }
+
+      public Boolean compiledAnything(Boolean value) {
+        return super._0(value);
+      }
+
+      public Boolean compiledAnything() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public JavaCompile_Facet.Target_wf1ya0_a.Parameters assignFrom(Tuples._1<Boolean> from) {
+        return (JavaCompile_Facet.Target_wf1ya0_a.Parameters) super.assign(from);
+      }
     }
   }
 

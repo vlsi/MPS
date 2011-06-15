@@ -53,7 +53,7 @@ import jetbrains.mps.util.JavaNameUtil;
 
 public class TextGen_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("TextGen");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.TextGen");
 
   public TextGen_Facet() {
     ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_21gswx_a());
@@ -132,8 +132,13 @@ public class TextGen_Facet implements IFacet {
 
                 final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, cachesDir);
                 final Wrappers._boolean ok = new Wrappers._boolean();
-                final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), TraceInfoCache.getInstance().getGenerator(), GenerationDependenciesCache.getInstance().getGenerator());
+                boolean generateDI = pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).generateDebugInfo() == null || pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).generateDebugInfo();
+                final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), (generateDI ?
+                  TraceInfoCache.getInstance().getGenerator() :
+                  null
+                ), GenerationDependenciesCache.getInstance().getGenerator());
                 textgen.setFailIfNoTextgen(pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).failIfNoTextgen() != null && pool.parameters(Target_21gswx_a.this.getName(), TextGen_Facet.Target_21gswx_a.Parameters.class).failIfNoTextgen());
+                textgen.setGenerateDebugInfo(generateDI);
                 try {
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
@@ -227,17 +232,18 @@ public class TextGen_Facet implements IFacet {
       if (t != null) {
         ((TextGen_Facet.Target_21gswx_a.Parameters) t).pathToFile(((TextGen_Facet.Target_21gswx_a.Parameters) copyFrom).pathToFile());
         ((TextGen_Facet.Target_21gswx_a.Parameters) t).failIfNoTextgen(((TextGen_Facet.Target_21gswx_a.Parameters) copyFrom).failIfNoTextgen());
+        ((TextGen_Facet.Target_21gswx_a.Parameters) t).generateDebugInfo(((TextGen_Facet.Target_21gswx_a.Parameters) copyFrom).generateDebugInfo());
       }
       return t;
     }
 
-    public static class Parameters extends MultiTuple._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> {
+    public static class Parameters extends MultiTuple._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean> {
       public Parameters() {
         super();
       }
 
-      public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile, Boolean failIfNoTextgen) {
-        super(pathToFile, failIfNoTextgen);
+      public Parameters(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile, Boolean failIfNoTextgen, Boolean generateDebugInfo) {
+        super(pathToFile, failIfNoTextgen, generateDebugInfo);
       }
 
       public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> value) {
@@ -248,6 +254,10 @@ public class TextGen_Facet implements IFacet {
         return super._1(value);
       }
 
+      public Boolean generateDebugInfo(Boolean value) {
+        return super._2(value);
+      }
+
       public _FunctionTypes._return_P1_E0<? extends IFile, ? super String> pathToFile() {
         return super._0();
       }
@@ -256,8 +266,12 @@ public class TextGen_Facet implements IFacet {
         return super._1();
       }
 
+      public Boolean generateDebugInfo() {
+        return super._2();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public TextGen_Facet.Target_21gswx_a.Parameters assignFrom(Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> from) {
+      public TextGen_Facet.Target_21gswx_a.Parameters assignFrom(Tuples._3<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean, Boolean> from) {
         return (TextGen_Facet.Target_21gswx_a.Parameters) super.assign(from);
       }
     }

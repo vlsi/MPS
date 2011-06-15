@@ -36,6 +36,8 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.build.ant.ProjectNested;
 
 public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
+  public static final String CONFIGURATION_NAME = "configuration.name";
+  public static final String BUILD_NUMBER = "build.number";
   private File myMpsHome;
   protected final WhatToDo myWhatToDo = new WhatToDo();
   private boolean myUsePropertiesAsMacro = false;
@@ -204,6 +206,42 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     }
   }
 
+  private void outputBuildNumber() {
+    String antTaskBuildNumber = null;
+    URL resource = getClass().getResource("/build.number");
+    if (resource == null) {
+      log("Can't determine version of ant task.", Project.MSG_DEBUG);
+      return;
+    }
+    try {
+      antTaskBuildNumber = readBuildNumber(resource.openStream());
+      if (antTaskBuildNumber == null || antTaskBuildNumber.isEmpty()) {
+        log("Can't determine version of ant task.", Project.MSG_DEBUG);
+        return;
+      }
+    } catch (IOException ignore) {
+      log("Can't determine version of ant task.", Project.MSG_DEBUG);
+      return;
+    }
+    String mpsBuildNumber = null;
+    try {
+      mpsBuildNumber = readBuildNumber(new FileInputStream(new File(myMpsHome.getAbsolutePath() + File.separator + "build.number")));
+      if (mpsBuildNumber == null || mpsBuildNumber.isEmpty()) {
+        log("Can't determine version of MPS.", Project.MSG_DEBUG);
+        return;
+      }
+    } catch (IOException ignore) {
+      log("Can't determine version of MPS.", Project.MSG_DEBUG);
+      return;
+    }
+    if (mpsBuildNumber.equals(antTaskBuildNumber)) {
+      log("Build number " + mpsBuildNumber, Project.MSG_INFO);
+    } else {
+      log("MPS build number is " + mpsBuildNumber + ", while ant task build number is " + antTaskBuildNumber + ".\n" +
+        "This may cause errors.", Project.MSG_WARN);
+    }
+  }
+
   private void processNonZeroExitCode(int i) {
     throw new BuildException("Process exited with code " + i + ".");
   }
@@ -227,6 +265,8 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       }
       myMpsHome = getProject().resolveFile(mpsHomePath);
     }
+
+    outputBuildNumber();
   }
 
   private Set<File> calculateClassPath() {
@@ -297,6 +337,40 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         }
       }
     }
+  }
+
+  public static String readBuildNumber(InputStream stream) {
+    BufferedReader bufferedReader = null;
+    try {
+      bufferedReader = new BufferedReader(new InputStreamReader(stream));
+
+      String buildNumber = null;
+      String configurationName = null;
+      while (true) {
+        String line = bufferedReader.readLine();
+        if (line == null) break;
+        if (line.startsWith(CONFIGURATION_NAME)) {
+          String tmp = line.substring(CONFIGURATION_NAME.length());
+          configurationName = tmp.replaceAll("(\\s*)=(\\s*)(.*)", "$3");
+        } else if (line.startsWith(BUILD_NUMBER)) {
+          String tmp = line.substring(BUILD_NUMBER.length());
+          buildNumber = tmp.replaceAll("(\\s*)=(\\s*)(.*)", "$3");
+        }
+      }
+      if (buildNumber != null && configurationName != null) {
+        return configurationName + "." + buildNumber;
+      }
+    } catch (FileNotFoundException ignore) {
+    } catch (IOException ignore) {
+    } finally {
+      if (bufferedReader != null) {
+        try {
+          bufferedReader.close();
+        } catch (IOException ignore) {
+        }
+      }
+    }
+    return null;
   }
 
   private static enum LogLevel {

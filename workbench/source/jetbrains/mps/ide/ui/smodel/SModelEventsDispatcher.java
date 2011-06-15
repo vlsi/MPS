@@ -3,7 +3,6 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.apache.commons.collections.map.HashedMap;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -17,7 +16,7 @@ public class SModelEventsDispatcher {
   private static SModelEventsDispatcher myInstance;
 
   private EventsCollector myEventsCollector;
-  private Map<SModelDescriptor, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashedMap();
+  private Map<SModelDescriptor, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashMap<SModelDescriptor, Set<SModelEventsListener>>();
 
   public static SModelEventsDispatcher getInstance() {
     if (myInstance == null) {
@@ -76,7 +75,7 @@ public class SModelEventsDispatcher {
 
     @Override
     protected void eventsHappened(List<SModelEvent> events) {
-      Map<SModelDescriptor, List<SModelEvent>> descriptorsToEventsMap = new HashedMap();
+      Map<SModelDescriptor, List<SModelEvent>> descriptorsToEventsMap = new HashMap<SModelDescriptor, List<SModelEvent>>();
       for (SModelEvent event : events) {
         SModelDescriptor descriptor = event.getModelDescriptor();
         List<SModelEvent> collectedEvents = descriptorsToEventsMap.get(descriptor);

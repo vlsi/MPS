@@ -6,6 +6,8 @@ import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collections;
 
 public class FacetRegistry {
@@ -31,8 +33,18 @@ public class FacetRegistry {
     MapSequence.fromMap(facetMap).removeKey(facet.getName());
   }
 
-  public IFacet lookup(IFacet.Name name) {
-    return MapSequence.fromMap(facetMap).get(name);
+  public IFacet lookup(IFacet.Name fn) {
+    LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(fn.getNamespace());
+    if (lr != null) {
+      IFacetManifest fm = lr.getFacetProvider().getDescriptor(null).getManifest();
+      IFacet fct = fm.lookup(fn);
+      if (fct != null) {
+        return fct;
+      }
+    }
+    // fallback to the "old" mechanism 
+    LOG.debug("facet not found, loading using deprecated mechanism " + fn);
+    return MapSequence.fromMap(facetMap).get(fn);
   }
 
   public Map<IFacet.Name, IFacet> allFacets() {

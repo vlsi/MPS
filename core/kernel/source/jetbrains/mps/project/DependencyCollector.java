@@ -15,26 +15,18 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.util.CollectionUtil;
+import java.util.HashSet;
+import java.util.Set;
 
-import java.util.*;
-
-public class DependencyCollector<T extends IModule> {
+public class DependencyCollector {
   private Set<IModule> myStart;
-  private Class<T> myResultElementType;
-
   private Set<IModule> myResult;
 
-  public DependencyCollector(IModule start, Class<T> elementType) {
-    this(Collections.singleton(start), elementType);
-  }
-
-  public DependencyCollector(Set<IModule> start, Class<T> elementType) {
+  public DependencyCollector(Set<IModule> start) {
     myStart = new HashSet<IModule>(start);
-    myResultElementType = elementType;
   }
 
-  public Set<T> collect() {
+  public Set<IModule> collect() {
     myResult = new HashSet<IModule>();
 
     for (IModule s : myStart) {
@@ -43,15 +35,11 @@ public class DependencyCollector<T extends IModule> {
       }
     }
 
-    if (myResultElementType == IModule.class) {
-      return (Set<T>) myResult;
-    } else {
-      return CollectionUtil.filter(myResultElementType, myResult);
-    }
+    return myResult;
   }
 
   private void doCollect(IModule current) {
-    for (IModule module : (List<IModule>) new ArrayList<IModule>(current.getDependenciesManager().getDependOnModules())) {
+    for (IModule module : current.getDependenciesManager().getDependOnModules()) {
       if (myResult.add(module)) {
         doCollect(module);
       }

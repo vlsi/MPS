@@ -34,9 +34,6 @@ import java.util.WeakHashMap;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
 
-  @Nullable
-  private final AllCaches myAllCaches;
-
   private final Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
   private final BaseModelCache<T>.MyCacheGenerator myCacheGenerator;
 
@@ -49,8 +46,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   protected abstract String getCacheFileName();
 
-  protected BaseModelCache(AllCaches allCaches) {
-    myAllCaches = allCaches;
+  protected BaseModelCache() {
     myCacheGenerator = new MyCacheGenerator();
   }
 
@@ -59,9 +55,6 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   public void initComponent() {
-    if (myAllCaches != null) {
-      myAllCaches.registerCache(this);
-    }
   }
 
   public void disposeComponent() {

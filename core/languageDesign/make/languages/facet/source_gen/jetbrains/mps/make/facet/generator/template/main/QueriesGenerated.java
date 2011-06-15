@@ -7,16 +7,17 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -33,11 +34,23 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isNotEmpty();
   }
 
+  public static boolean createRootRule_Condition_2824583209542435179(final IOperationContext operationContext, final CreateRootRuleContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isNotEmpty();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1919086248986829201(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return FacetDeclaration_Behavior.call_getFqName_1919086248986828221(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "reference", true), "facet", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5086995156117240631(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_5189627237350277729(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode origMod = SModelOperations.getModuleStub(_context.getOriginalInputModel());
+    if (SNodeOperations.isInstanceOf(origMod, "jetbrains.mps.lang.project.structure.Language")) {
+      return SPropertyOperations.getString(SNodeOperations.cast(origMod, "jetbrains.mps.lang.project.structure.Language"), "namespace") + "." + SPropertyOperations.getString(_context.getNode(), "name");
+    }
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
@@ -247,18 +260,6 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_4902059885395546854(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return new QueriesGenerated.QuotationClass_x583g4_a0a0wb().createNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode cls) {
-        return SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
-      }
-    }));
-  }
-
-  public static SNode mapSrcMacro_mapper_4902059885395479710(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return new QueriesGenerated.QuotationClass_x583g4_a0a0xb().createNode(_context.getNode());
-  }
-
-  public static SNode mapSrcMacro_mapper_4902059885395547328(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     return new QueriesGenerated.QuotationClass_x583g4_a0a0yb().createNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode cls) {
         return SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
@@ -266,44 +267,20 @@ public class QueriesGenerated {
     }));
   }
 
-  public static SNode mapSrcMacro_mapper_4902059885395479721(final IOperationContext operationContext, final MapSrcMacroContext _context) {
+  public static SNode mapSrcMacro_mapper_4902059885395479710(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     return new QueriesGenerated.QuotationClass_x583g4_a0a0zb().createNode(_context.getNode());
   }
 
-  public static class QuotationClass_x583g4_a0a0wb {
-    public QuotationClass_x583g4_a0a0wb() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
+  public static SNode mapSrcMacro_mapper_4902059885395547328(final IOperationContext operationContext, final MapSrcMacroContext _context) {
+    return new QueriesGenerated.QuotationClass_x583g4_a0a0ac().createNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode cls) {
+        return SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
       }
-      return result;
-    }
+    }));
   }
 
-  public static class QuotationClass_x583g4_a0a0xb {
-    public QuotationClass_x583g4_a0a0xb() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("component", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  public static SNode mapSrcMacro_mapper_4902059885395479721(final IOperationContext operationContext, final MapSrcMacroContext _context) {
+    return new QueriesGenerated.QuotationClass_x583g4_a0a0bc().createNode(_context.getNode());
   }
 
   public static class QuotationClass_x583g4_a0a0yb {
@@ -326,6 +303,42 @@ public class QueriesGenerated {
 
   public static class QuotationClass_x583g4_a0a0zb {
     public QuotationClass_x583g4_a0a0zb() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("component", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0ac {
+    public QuotationClass_x583g4_a0a0ac() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0bc {
+    public QuotationClass_x583g4_a0a0bc() {
     }
 
     public SNode createNode(Object parameter_3) {

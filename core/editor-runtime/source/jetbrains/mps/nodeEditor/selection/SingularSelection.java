@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,5 +26,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
  * To change this template use File | Settings | File Templates.
  */
 public interface SingularSelection extends Selection {
+  @NotNull
   EditorCell getEditorCell();
+
+  void setSideSelectDirection(SideSelectDirection direction);
+
+  SideSelectDirection getSideSelectDirection();
+
+  enum SideSelectDirection {
+    LEFT, RIGHT, NONE;
+  }
 }

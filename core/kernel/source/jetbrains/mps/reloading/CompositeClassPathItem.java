@@ -16,7 +16,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.util.CompositeIterable;
+import jetbrains.mps.util.FlattenIterable;
 
 import java.net.URL;
 import java.util.*;
@@ -60,7 +60,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public Iterable<String> getAvailableClasses(String namespace) {
-    CompositeIterable<String> result = new CompositeIterable<String>();
+    FlattenIterable<String> result = new FlattenIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
       result.add(item.getAvailableClasses(namespace));
@@ -69,7 +69,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   public Iterable<String> getSubpackages(String namespace) {
-    CompositeIterable<String> result = new CompositeIterable<String>();
+    FlattenIterable<String> result = new FlattenIterable<String>();
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
       result.add(item.getSubpackages(namespace));

@@ -615,7 +615,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public List<SNode> getSelectedNodes() {
-    return mySelectionManager.getSelection().getSelectedNodes();
+    Selection selection = mySelectionManager.getSelection();
+    return selection != null ? selection.getSelectedNodes() : Collections.<SNode>emptyList();
   }
 
   public EditorMessageOwner getHighlightMessagesOwner() {
@@ -1192,7 +1193,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   /**
-   * Can be used to check if editor is in vadid state or not.
+   * Can be used to check if editor is in valid state or not.
    * Editor can be in invalid state then corresponding model
    * was reloaded, but current editor instance was not
    * updated yet.
@@ -2483,12 +2484,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public Object getData(@NonNls String dataId) {
     //MPSDK
     if (dataId.equals(MPSDataKeys.NODE.getName())) {
-      EditorCell selectedCell = getSelectedCell();
-      if (selectedCell != null) {
-        return selectedCell.getSNode();
-      } else {
-        return getRootCell().getSNode();
-      }
+      List<SNode> selectedNodes = getSelectedNodes();
+      return selectedNodes.isEmpty() ? getRootCell().getSNode() : selectedNodes.iterator().next();
     }
     if (dataId.equals(MPSDataKeys.NODES.getName())) return getSelectedNodes();
     if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) {

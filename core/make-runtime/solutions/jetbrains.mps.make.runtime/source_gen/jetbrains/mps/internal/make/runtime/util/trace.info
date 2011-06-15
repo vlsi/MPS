@@ -267,91 +267,174 @@
     <unitInfo nodeId="1936544640085949704" fileName="GraphAnalyzer.java" startLine="189" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$Wrapper" />
     <unitInfo nodeId="1936544640085949692" fileName="GraphAnalyzer.java" startLine="18" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" />
   </root>
+  <root nodeId="315679020132025010">
+    <nodeInfo nodeId="315679020132025026" fileName="FqName.java" startLine="8" startPosition="21" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAMESPACE" />
+    <nodeInfo nodeId="315679020132025120" fileName="FqName.java" startLine="9" startPosition="69" endLine="10" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_NS" />
+    <nodeInfo nodeId="315679020132025016" fileName="FqName.java" startLine="11" startPosition="0" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="namespace" />
+    <nodeInfo nodeId="315679020132025020" fileName="FqName.java" startLine="12" startPosition="27" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="315679020132025137" fileName="FqName.java" startLine="15" startPosition="29" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="315679020132026281" fileName="FqName.java" startLine="19" startPosition="32" endLine="20" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132026288" fileName="FqName.java" startLine="23" startPosition="27" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132025235" fileName="FqName.java" startLine="28" startPosition="28" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132025202" fileName="FqName.java" startLine="33" startPosition="25" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="315679020132025213" fileName="FqName.java" startLine="34" startPosition="33" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132025159" fileName="FqName.java" startLine="40" startPosition="23" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132025170" fileName="FqName.java" startLine="43" startPosition="36" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132025172" fileName="FqName.java" startLine="45" startPosition="5" endLine="46" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132025054" fileName="FqName.java" startLine="49" startPosition="33" endLine="50" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="315679020132025067" fileName="FqName.java" startLine="51" startPosition="28" endLine="52" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="315679020132025085" fileName="FqName.java" startLine="52" startPosition="40" endLine="53" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="315679020132025104" fileName="FqName.java" startLine="54" startPosition="12" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="315679020132025126" fileName="FqName.java" startLine="55" startPosition="34" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="315679020132025012" fileName="FqName.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FqName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="315679020132025157" fileName="FqName.java" startLine="39" startPosition="38" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="315679020132025164" fileName="FqName.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="315679020132025102" fileName="FqName.java" startLine="54" startPosition="10" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="315679020132026276" fileName="FqName.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNamespace#()Ljava/lang/String;" />
+    <nodeInfo nodeId="315679020132026283" fileName="FqName.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="60" startPosition="63" endLine="64" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="67" startPosition="65" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="315679020132025228" fileName="FqName.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="315679020132025140" fileName="FqName.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
+    <nodeInfo nodeId="315679020132025044" fileName="FqName.java" startLine="50" startPosition="45" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_hgd34b_a0a2a4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_hgd34b_a0a2a4_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="315679020132025147" fileName="FqName.java" startLine="37" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="315679020132025037" fileName="FqName.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljava/lang/String;)V" />
+    <scopeInfo nodeId="315679020132025015" fileName="FqName.java" startLine="15" startPosition="29" endLine="16" endPosition="14" />
+    <scopeInfo nodeId="315679020132026279" fileName="FqName.java" startLine="19" startPosition="32" endLine="20" endPosition="21" />
+    <scopeInfo nodeId="315679020132026286" fileName="FqName.java" startLine="23" startPosition="27" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="315679020132025231" fileName="FqName.java" startLine="28" startPosition="28" endLine="29" endPosition="34" />
+    <scopeInfo nodeId="315679020132025158" fileName="FqName.java" startLine="40" startPosition="23" endLine="41" endPosition="18" />
+    <scopeInfo nodeId="315679020132025169" fileName="FqName.java" startLine="43" startPosition="36" endLine="44" endPosition="19" />
+    <scopeInfo nodeId="315679020132025143" fileName="FqName.java" startLine="33" startPosition="25" endLine="35" endPosition="36">
+      <varInfo nodeId="315679020132025203" varName="h" />
+    </scopeInfo>
+    <scopeInfo nodeId="315679020132025046" fileName="FqName.java" startLine="51" startPosition="28" endLine="53" endPosition="35" />
+    <scopeInfo nodeId="315679020132025103" fileName="FqName.java" startLine="54" startPosition="12" endLine="56" endPosition="22" />
+    <scopeInfo nodeId="315679020132025012" fileName="FqName.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="315679020132025024" varName="fqn" />
+    </scopeInfo>
+    <scopeInfo nodeId="315679020132026276" fileName="FqName.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="315679020132026283" fileName="FqName.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="60" startPosition="63" endLine="64" endPosition="6" />
+    <scopeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="67" startPosition="65" endLine="71" endPosition="6" />
+    <scopeInfo nodeId="315679020132025228" fileName="FqName.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="315679020132025140" fileName="FqName.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="315679020132025152" fileName="FqName.java" startLine="39" startPosition="38" endLine="46" endPosition="126" />
+    <scopeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="59" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="315679020132025010" fileName="FqName.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="315679020132025040" fileName="FqName.java" startLine="49" startPosition="33" endLine="57" endPosition="5">
+      <varInfo nodeId="315679020132025055" varName="matcher" />
+    </scopeInfo>
+    <scopeInfo nodeId="315679020132025147" fileName="FqName.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="315679020132025150" varName="that" />
+    </scopeInfo>
+    <scopeInfo nodeId="315679020132025037" fileName="FqName.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="315679020132025042" varName="fqn" />
+    </scopeInfo>
+    <unitInfo nodeId="315679020132025010" fileName="FqName.java" startLine="8" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.FqName" />
+  </root>
   <root nodeId="505174985642691359">
-    <nodeInfo nodeId="5675045708290411509" fileName="DeltaReconciler.java" startLine="14" startPosition="30" endLine="15" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="topContainer" />
-    <nodeInfo nodeId="505174985642741940" fileName="DeltaReconciler.java" startLine="20" startPosition="56" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411722" fileName="DeltaReconciler.java" startLine="24" startPosition="38" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411727" fileName="DeltaReconciler.java" startLine="30" startPosition="35" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411798" fileName="DeltaReconciler.java" startLine="38" startPosition="60" endLine="39" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411583" fileName="DeltaReconciler.java" startLine="46" startPosition="64" endLine="47" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5675045708290411591" fileName="DeltaReconciler.java" startLine="49" startPosition="10" endLine="50" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290409144" fileName="DeltaReconciler.java" startLine="54" startPosition="39" endLine="55" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delta" />
-    <nodeInfo nodeId="5675045708290411503" fileName="DeltaReconciler.java" startLine="55" startPosition="25" endLine="56" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="content" />
-    <nodeInfo nodeId="5675045708290411604" fileName="DeltaReconciler.java" startLine="58" startPosition="41" endLine="59" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411616" fileName="DeltaReconciler.java" startLine="63" startPosition="39" endLine="64" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411632" fileName="DeltaReconciler.java" startLine="64" startPosition="41" endLine="65" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411671" fileName="DeltaReconciler.java" startLine="66" startPosition="46" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411714" fileName="DeltaReconciler.java" startLine="68" startPosition="14" endLine="69" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5675045708290411718" fileName="DeltaReconciler.java" startLine="70" startPosition="7" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5675045708290411774" fileName="DeltaReconciler.java" startLine="76" startPosition="76" endLine="77" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="505174985642691361" fileName="DeltaReconciler.java" startLine="16" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeltaReconciler#()V" />
-    <nodeInfo nodeId="5675045708290411676" fileName="DeltaReconciler.java" startLine="68" startPosition="12" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="505174985642741923" fileName="DeltaReconciler.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeltaReconciler#(Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="5675045708290409140" fileName="DeltaReconciler.java" startLine="57" startPosition="0" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeltaContainer#(Ljetbrains/mps/make/delta/IDelta;)V" />
-    <nodeInfo nodeId="505174985642740520" fileName="DeltaReconciler.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDelta#(Ljetbrains/mps/make/delta/IDelta;)V" />
-    <nodeInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="29" startPosition="72" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/make/delta/IDelta;)V" />
-    <nodeInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="37" startPosition="97" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/internal/make/runtime/util/DeltaReconciler/DeltaContainer;)V" />
-    <nodeInfo nodeId="5675045708290411579" fileName="DeltaReconciler.java" startLine="45" startPosition="94" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/internal/make/runtime/util/DeltaReconciler/DeltaContainer;)Z" />
-    <nodeInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="75" startPosition="128" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/make/delta/IDelta;Ljetbrains/mps/internal/make/runtime/util/DeltaReconciler/DeltaContainer;)Ljetbrains/mps/make/delta/IDelta;" />
-    <nodeInfo nodeId="505174985642750272" fileName="DeltaReconciler.java" startLine="28" startPosition="58" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411787" fileName="DeltaReconciler.java" startLine="36" startPosition="30" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5675045708290411751" fileName="DeltaReconciler.java" startLine="74" startPosition="34" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5675045708290411568" fileName="DeltaReconciler.java" startLine="44" startPosition="93" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="505174985642741930" fileName="DeltaReconciler.java" startLine="27" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAll#(Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="505174985642750481" fileName="DeltaReconciler.java" startLine="35" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reconcileAll#()V" />
-    <nodeInfo nodeId="5675045708290411530" fileName="DeltaReconciler.java" startLine="62" startPosition="44" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5675045708290411732" fileName="DeltaReconciler.java" startLine="73" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContent#()Ljetbrains/mps/make/delta/IDelta;" />
-    <nodeInfo nodeId="5675045708290411555" fileName="DeltaReconciler.java" startLine="43" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insert#(Ljetbrains/mps/make/delta/IDelta;Ljava/util/List;)V" />
-    <nodeInfo nodeId="5675045708290411519" fileName="DeltaReconciler.java" startLine="61" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryInsert#(Ljetbrains/mps/make/delta/IDelta;)Z" />
-    <scopeInfo nodeId="505174985642691364" fileName="DeltaReconciler.java" startLine="17" startPosition="28" endLine="17" endPosition="28" />
-    <scopeInfo nodeId="505174985642741926" fileName="DeltaReconciler.java" startLine="20" startPosition="56" endLine="21" endPosition="24" />
-    <scopeInfo nodeId="505174985642740523" fileName="DeltaReconciler.java" startLine="24" startPosition="38" endLine="25" endPosition="32" />
-    <scopeInfo nodeId="505174985642750280" fileName="DeltaReconciler.java" startLine="30" startPosition="35" endLine="31" endPosition="32" />
-    <scopeInfo nodeId="5675045708290411795" fileName="DeltaReconciler.java" startLine="38" startPosition="60" endLine="39" endPosition="38" />
-    <scopeInfo nodeId="5675045708290411580" fileName="DeltaReconciler.java" startLine="46" startPosition="64" endLine="47" endPosition="35" />
-    <scopeInfo nodeId="5675045708290411570" fileName="DeltaReconciler.java" startLine="49" startPosition="10" endLine="50" endPosition="88" />
-    <scopeInfo nodeId="5675045708290409143" fileName="DeltaReconciler.java" startLine="58" startPosition="41" endLine="59" endPosition="25" />
-    <scopeInfo nodeId="5675045708290411645" fileName="DeltaReconciler.java" startLine="66" startPosition="46" endLine="67" endPosition="31" />
-    <scopeInfo nodeId="5675045708290411677" fileName="DeltaReconciler.java" startLine="68" startPosition="14" endLine="69" endPosition="21" />
-    <scopeInfo nodeId="5675045708290411759" fileName="DeltaReconciler.java" startLine="76" startPosition="76" endLine="77" endPosition="44" />
-    <scopeInfo nodeId="505174985642691361" fileName="DeltaReconciler.java" startLine="16" startPosition="0" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="5675045708290411532" fileName="DeltaReconciler.java" startLine="63" startPosition="39" endLine="65" endPosition="27" />
-    <scopeInfo nodeId="505174985642741923" fileName="DeltaReconciler.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
+    <nodeInfo nodeId="5675045708290411509" fileName="DeltaReconciler.java" startLine="15" startPosition="30" endLine="16" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="topContainer" />
+    <nodeInfo nodeId="505174985642741940" fileName="DeltaReconciler.java" startLine="21" startPosition="56" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1040398553439436270" fileName="DeltaReconciler.java" startLine="25" startPosition="38" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1040398553439436278" fileName="DeltaReconciler.java" startLine="31" startPosition="35" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5675045708290411798" fileName="DeltaReconciler.java" startLine="39" startPosition="60" endLine="40" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5675045708290409144" fileName="DeltaReconciler.java" startLine="45" startPosition="39" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delta" />
+    <nodeInfo nodeId="5675045708290411503" fileName="DeltaReconciler.java" startLine="46" startPosition="25" endLine="47" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="content" />
+    <nodeInfo nodeId="5675045708290411604" fileName="DeltaReconciler.java" startLine="49" startPosition="42" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5675045708290411774" fileName="DeltaReconciler.java" startLine="55" startPosition="76" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5675045708290411671" fileName="DeltaReconciler.java" startLine="62" startPosition="39" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5675045708290411718" fileName="DeltaReconciler.java" startLine="63" startPosition="31" endLine="64" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5675045708290411714" fileName="DeltaReconciler.java" startLine="65" startPosition="7" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1040398553439436296" fileName="DeltaReconciler.java" startLine="69" startPosition="95" endLine="70" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1040398553439436232" fileName="DeltaReconciler.java" startLine="71" startPosition="113" endLine="72" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1040398553439436302" fileName="DeltaReconciler.java" startLine="74" startPosition="27" endLine="75" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1040398553439436318" fileName="DeltaReconciler.java" startLine="76" startPosition="11" endLine="77" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1040398553439436339" fileName="DeltaReconciler.java" startLine="77" startPosition="61" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1040398553439436363" fileName="DeltaReconciler.java" startLine="81" startPosition="23" endLine="82" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1040398553439436408" fileName="DeltaReconciler.java" startLine="84" startPosition="66" endLine="85" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1040398553439436257" fileName="DeltaReconciler.java" startLine="87" startPosition="12" endLine="88" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="505174985642691361" fileName="DeltaReconciler.java" startLine="17" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeltaReconciler#()V" />
+    <nodeInfo nodeId="505174985642741923" fileName="DeltaReconciler.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeltaReconciler#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="5675045708290409140" fileName="DeltaReconciler.java" startLine="48" startPosition="0" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeltaContainer#(Ljetbrains/mps/make/delta/IDelta;)V" />
+    <nodeInfo nodeId="1040398553439436308" fileName="DeltaReconciler.java" startLine="73" startPosition="41" endLine="76" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="505174985642740520" fileName="DeltaReconciler.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDelta#(Ljetbrains/mps/make/delta/IDelta;)V" />
+    <nodeInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="30" startPosition="72" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/make/delta/IDelta;)V" />
+    <nodeInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="38" startPosition="97" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/internal/make/runtime/util/DeltaReconciler/DeltaContainer;)V" />
+    <nodeInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="54" startPosition="128" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljetbrains/mps/make/delta/IDelta;Ljetbrains/mps/internal/make/runtime/util/DeltaReconciler/DeltaContainer;)Ljetbrains/mps/make/delta/IDelta;" />
+    <nodeInfo nodeId="5675045708290411530" fileName="DeltaReconciler.java" startLine="61" startPosition="45" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1040398553439436406" fileName="DeltaReconciler.java" startLine="83" startPosition="103" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/internal/make/runtime/util/DeltaReconciler/DeltaContainer;)Z" />
+    <nodeInfo nodeId="505174985642750272" fileName="DeltaReconciler.java" startLine="29" startPosition="58" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5675045708290411787" fileName="DeltaReconciler.java" startLine="37" startPosition="30" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5675045708290411751" fileName="DeltaReconciler.java" startLine="53" startPosition="35" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1040398553439436238" fileName="DeltaReconciler.java" startLine="72" startPosition="56" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="505174985642741930" fileName="DeltaReconciler.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAll#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="505174985642750481" fileName="DeltaReconciler.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reconcileAll#()V" />
+    <nodeInfo nodeId="5675045708290411732" fileName="DeltaReconciler.java" startLine="52" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContent#()Ljetbrains/mps/make/delta/IDelta;" />
+    <nodeInfo nodeId="5675045708290411519" fileName="DeltaReconciler.java" startLine="60" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryInsert#(Ljetbrains/mps/make/delta/IDelta;)Z" />
+    <nodeInfo nodeId="1040398553439436354" fileName="DeltaReconciler.java" startLine="80" startPosition="7" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1040398553439436224" fileName="DeltaReconciler.java" startLine="70" startPosition="47" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1040398553439436197" fileName="DeltaReconciler.java" startLine="68" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insert#(Ljetbrains/mps/make/delta/IDelta;Ljava/util/List;)V" />
+    <scopeInfo nodeId="505174985642691364" fileName="DeltaReconciler.java" startLine="18" startPosition="28" endLine="18" endPosition="28" />
+    <scopeInfo nodeId="505174985642741926" fileName="DeltaReconciler.java" startLine="21" startPosition="56" endLine="22" endPosition="24" />
+    <scopeInfo nodeId="505174985642740523" fileName="DeltaReconciler.java" startLine="25" startPosition="38" endLine="26" endPosition="63" />
+    <scopeInfo nodeId="505174985642750280" fileName="DeltaReconciler.java" startLine="31" startPosition="35" endLine="32" endPosition="63" />
+    <scopeInfo nodeId="5675045708290411795" fileName="DeltaReconciler.java" startLine="39" startPosition="60" endLine="40" endPosition="38" />
+    <scopeInfo nodeId="5675045708290409143" fileName="DeltaReconciler.java" startLine="49" startPosition="42" endLine="50" endPosition="25" />
+    <scopeInfo nodeId="5675045708290411759" fileName="DeltaReconciler.java" startLine="55" startPosition="76" endLine="56" endPosition="44" />
+    <scopeInfo nodeId="1040398553439436309" fileName="DeltaReconciler.java" startLine="74" startPosition="27" endLine="75" endPosition="59" />
+    <scopeInfo nodeId="1040398553439436355" fileName="DeltaReconciler.java" startLine="81" startPosition="23" endLine="82" endPosition="51" />
+    <scopeInfo nodeId="1040398553439436407" fileName="DeltaReconciler.java" startLine="84" startPosition="66" endLine="85" endPosition="37" />
+    <scopeInfo nodeId="1040398553439436400" fileName="DeltaReconciler.java" startLine="87" startPosition="12" endLine="88" endPosition="90" />
+    <scopeInfo nodeId="505174985642691361" fileName="DeltaReconciler.java" startLine="17" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="5675045708290411645" fileName="DeltaReconciler.java" startLine="62" startPosition="39" endLine="64" endPosition="20" />
+    <scopeInfo nodeId="505174985642741923" fileName="DeltaReconciler.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
       <varInfo nodeId="505174985642741927" varName="toReconcile" />
     </scopeInfo>
-    <scopeInfo nodeId="5675045708290409140" fileName="DeltaReconciler.java" startLine="57" startPosition="0" endLine="60" endPosition="5">
+    <scopeInfo nodeId="5675045708290409140" fileName="DeltaReconciler.java" startLine="48" startPosition="0" endLine="51" endPosition="5">
       <varInfo nodeId="5675045708290411602" varName="delta" />
     </scopeInfo>
-    <scopeInfo nodeId="505174985642740520" fileName="DeltaReconciler.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="505174985642740520" fileName="DeltaReconciler.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="505174985642740526" varName="delta" />
     </scopeInfo>
-    <scopeInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="29" startPosition="72" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="37" startPosition="97" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5675045708290411579" fileName="DeltaReconciler.java" startLine="45" startPosition="94" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="75" startPosition="128" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="505174985642741932" fileName="DeltaReconciler.java" startLine="28" startPosition="58" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="505174985642750484" fileName="DeltaReconciler.java" startLine="36" startPosition="30" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="5675045708290411735" fileName="DeltaReconciler.java" startLine="74" startPosition="34" endLine="79" endPosition="9" />
-    <scopeInfo nodeId="5675045708290411558" fileName="DeltaReconciler.java" startLine="44" startPosition="93" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="505174985642741930" fileName="DeltaReconciler.java" startLine="27" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="30" startPosition="72" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="38" startPosition="97" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="54" startPosition="128" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1040398553439436406" fileName="DeltaReconciler.java" startLine="83" startPosition="103" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="505174985642741932" fileName="DeltaReconciler.java" startLine="29" startPosition="58" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="505174985642750484" fileName="DeltaReconciler.java" startLine="37" startPosition="30" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="5675045708290411735" fileName="DeltaReconciler.java" startLine="53" startPosition="35" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="5675045708290411522" fileName="DeltaReconciler.java" startLine="61" startPosition="45" endLine="66" endPosition="19" />
+    <scopeInfo nodeId="1040398553439436251" fileName="DeltaReconciler.java" startLine="73" startPosition="41" endLine="78" endPosition="22" />
+    <scopeInfo nodeId="505174985642741930" fileName="DeltaReconciler.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="505174985642741936" varName="toReconcile" />
     </scopeInfo>
-    <scopeInfo nodeId="505174985642750481" fileName="DeltaReconciler.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="5675045708290411732" fileName="DeltaReconciler.java" startLine="73" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="5675045708290411522" fileName="DeltaReconciler.java" startLine="62" startPosition="44" endLine="71" endPosition="18" />
-    <scopeInfo nodeId="5675045708290411555" fileName="DeltaReconciler.java" startLine="43" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="5675045708290411561" varName="delta" />
-      <varInfo nodeId="5675045708290411563" varName="into" />
-    </scopeInfo>
-    <scopeInfo nodeId="5675045708290411519" fileName="DeltaReconciler.java" startLine="61" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="505174985642750481" fileName="DeltaReconciler.java" startLine="36" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5675045708290411732" fileName="DeltaReconciler.java" startLine="52" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5675045708290411519" fileName="DeltaReconciler.java" startLine="60" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="5675045708290411524" varName="delta" />
     </scopeInfo>
-    <unitInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="29" startPosition="52" endLine="33" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$2" />
-    <unitInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="37" startPosition="53" endLine="41" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$3" />
-    <unitInfo nodeId="5675045708290411579" fileName="DeltaReconciler.java" startLine="45" startPosition="46" endLine="49" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$1" />
-    <unitInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="75" startPosition="69" endLine="79" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$1" />
-    <unitInfo nodeId="5675045708290409138" fileName="DeltaReconciler.java" startLine="54" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$DeltaContainer" />
-    <unitInfo nodeId="505174985642691359" fileName="DeltaReconciler.java" startLine="14" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" />
+    <scopeInfo nodeId="1040398553439436231" fileName="DeltaReconciler.java" startLine="71" startPosition="113" endLine="79" endPosition="9">
+      <varInfo nodeId="1040398553439436233" varName="next" />
+    </scopeInfo>
+    <scopeInfo nodeId="1040398553439436224" fileName="DeltaReconciler.java" startLine="70" startPosition="47" endLine="80" endPosition="7">
+      <varInfo nodeId="1040398553439436225" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1040398553439436200" fileName="DeltaReconciler.java" startLine="69" startPosition="95" endLine="89" endPosition="7">
+      <varInfo nodeId="1040398553439436297" varName="dc" />
+    </scopeInfo>
+    <scopeInfo nodeId="1040398553439436197" fileName="DeltaReconciler.java" startLine="68" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1040398553439436264" varName="delta" />
+      <varInfo nodeId="1040398553439436266" varName="into" />
+    </scopeInfo>
+    <unitInfo nodeId="505174985642750279" fileName="DeltaReconciler.java" startLine="30" startPosition="52" endLine="34" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$1" />
+    <unitInfo nodeId="5675045708290411794" fileName="DeltaReconciler.java" startLine="38" startPosition="53" endLine="42" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$2" />
+    <unitInfo nodeId="5675045708290411758" fileName="DeltaReconciler.java" startLine="54" startPosition="69" endLine="58" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$2" />
+    <unitInfo nodeId="1040398553439436406" fileName="DeltaReconciler.java" startLine="83" startPosition="55" endLine="87" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$1" />
+    <unitInfo nodeId="5675045708290409138" fileName="DeltaReconciler.java" startLine="45" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler$DeltaContainer" />
+    <unitInfo nodeId="505174985642691359" fileName="DeltaReconciler.java" startLine="15" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" />
   </root>
   <root nodeId="505174985642693148">
     <nodeInfo nodeId="3227965627236270953" fileName="FilesDelta.java" startLine="28" startPosition="43" endLine="29" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
