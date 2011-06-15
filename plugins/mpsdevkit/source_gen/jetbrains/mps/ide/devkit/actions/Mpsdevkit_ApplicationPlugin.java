@@ -57,10 +57,8 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeImportsInGlobalScope_Action());
     addAction(new PrintNodeID_Action());
     addAction(new ReloadAll_Action());
-    addAction(new ReloadStubs_Action());
     addAction(new RemoveBootstrapLanguagesDevKitFromLanguageModels_Action());
     addAction(new RemoveLanguageDesignDevKitFromModels_Action());
-    addAction(new RenameAspects_Action());
     addAction(new RenameLanguage_Action());
     addAction(new ShowCellInExplorer_Action());
     addAction(new ShowGenerationTrace_Action());
