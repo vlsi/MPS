@@ -19,6 +19,8 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.migration20.MigrationState.MyState;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,6 +35,11 @@ import org.jetbrains.annotations.NotNull;
 )
 public class MigrationState implements PersistentStateComponent<MyState>, ProjectComponent {
   private MState myState = MState.INITIAL;
+  private Project myProject;
+
+  public MigrationState(Project project) {
+    myProject = project;
+  }
 
   public MState getMigrationState() {
     return myState;
@@ -61,7 +68,12 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   //----------component stuff-------------
 
   public void projectOpened() {
-
+    if (myState== MState.INITIAL || myState== MState.DONE) return;
+    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        new MigrationHelper(myProject).migrate();
+      }
+    });
   }
 
   public void projectClosed() {
@@ -80,5 +92,4 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   public String getComponentName() {
     return MigrationState.class.getSimpleName();
   }
-
 }
