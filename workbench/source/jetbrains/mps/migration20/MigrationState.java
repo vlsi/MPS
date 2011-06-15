@@ -21,6 +21,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.migration20.MigrationState.MyState;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,9 +69,23 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   //----------component stuff-------------
 
   public void projectOpened() {
-    if (myState== MState.INITIAL || myState== MState.DONE) return;
+    if (myState == MState.INITIAL || myState == MState.DONE) return;
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
+        String message = "Migration from 1.5 to 2.0 was started, but hasn't finished yet.\n" +
+          "Current state: " + myState.toString() + "\n" +
+          "Continue migration?";
+        int res = Messages.showDialog(myProject,
+          message,
+          "Migration to 2.0",
+          new String[]{"Continue", "Not now", "Abort"}, 0, Messages.getQuestionIcon()
+        );
+        if (res > 0) {
+          if (res == 1) {
+            myState = MState.DONE;
+          }
+          return;
+        }
         new MigrationHelper(myProject).migrate();
       }
     });
