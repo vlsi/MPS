@@ -20,7 +20,7 @@ public class PersistenceAddition_ActionGroup extends GeneratedActionGroup {
       PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModule_Action");
       PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModel_Action");
       PersistenceAddition_ActionGroup.this.addSeparator();
-      PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceGlobally_Action");
+      PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceInProject_Action");
       PersistenceAddition_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

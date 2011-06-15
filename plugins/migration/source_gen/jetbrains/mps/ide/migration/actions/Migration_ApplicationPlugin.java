@@ -41,6 +41,7 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new UpgradeModelPersistenceInModule_Action());
     addAction(new UpgradeModelPersistenceInProject_Action());
     addAction(new UpgradeModulePersistenceGlobally_Action());
+    addAction(new UpgradeModulePersistenceInProject_Action());
     // groups 
     addGroup(new ImportsAddition_ActionGroup());
     addGroup(new InternalAddition_ActionGroup());

@@ -16,6 +16,7 @@ public class InternalAddition_ActionGroup extends GeneratedActionGroup {
     try {
       InternalAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.LoadNonStubModels_Action");
       InternalAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.OptimizeImportsInGlobalScope_Action");
+      InternalAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceGlobally_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

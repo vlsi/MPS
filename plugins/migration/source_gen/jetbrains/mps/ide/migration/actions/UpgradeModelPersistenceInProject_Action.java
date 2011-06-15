@@ -21,7 +21,7 @@ public class UpgradeModelPersistenceInProject_Action extends GeneratedAction {
 
   public UpgradeModelPersistenceInProject_Action() {
     super("Upgrade Models Persistence in Project", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 
