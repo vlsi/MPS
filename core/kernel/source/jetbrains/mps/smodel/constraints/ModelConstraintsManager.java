@@ -293,31 +293,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
   // end language watching stuff
 
-  private static boolean isBootstrapProperty(String fqName, String propertyName) {
-    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
-
-    // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.property_INamedConcept_name)
-      && !fqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
-      return true;
-    }
-
-    if (fqName.equals("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
-      // helgins ku-ku!
-      return true;
-    }
-
-    return false;
-  }
-
-  public static INodePropertySetter getNodePropertySetter(String conceptFqName, String propertyName) {
-    if (isBootstrapProperty(conceptFqName, propertyName)) {
-      return null;
-    } else {
-      return ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName).getNodePropertySetter(propertyName);
-    }
-  }
-
   @Nullable
   public static INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
     INodeReferentSearchScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getNodeNonDefaultSearchScopeProvider(referentRole);

@@ -90,7 +90,6 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
       ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
       PropertyConstraintsDescriptor parentPropertyDescriptor = parentDescriptor.getProperty(propertyName);
 
-      // todo: rename getter -> ?
       PropertyConstraintsDescriptor parentCalculated;
 
       if (parentPropertyDescriptor instanceof BasePropertyConstraintsDescriptor) {
@@ -160,7 +159,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     if (setterDescriptor != null) {
       setterDescriptor.setValue(node, value, scope);
     } else {
-      // todo: base set
+      node.setProperty(getName(), value, false);
     }
   }
 

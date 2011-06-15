@@ -425,17 +425,15 @@ public final class SNode {
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
       if (!threadSet.contains(pair) && !myModel.isLoading()) {
-        INodePropertySetter setter = ModelConstraintsManager.getNodePropertySetter(this.getConceptFqName(), propertyName);
-        if (setter != null) {
-          threadSet.add(pair);
-          try {
-            setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
-            return;
-          } catch (Exception t) {
-            LOG.error(t);
-          } finally {
-            threadSet.remove(pair);
-          }
+        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(this.getConceptFqName()).getProperty(propertyName);
+        threadSet.add(pair);
+        try {
+          descriptor.setValue(this, propertyValue, GlobalScope.getInstance());
+          return;
+        } catch (Exception t) {
+          LOG.error(t);
+        } finally {
+          threadSet.remove(pair);
         }
       }
     }
