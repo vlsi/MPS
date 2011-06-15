@@ -29,23 +29,29 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 
 public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
-  private final String fqName;
+  private String fqName;
 
-  private final ConstraintsDescriptor canBeChildDescriptor;
-  private final ConstraintsDescriptor canBeRootDescriptor;
-  private final ConstraintsDescriptor canBeParentDescriptor;
-  private final ConstraintsDescriptor canBeAncestorDescriptor;
+  private ConstraintsDescriptor canBeChildDescriptor;
+  private ConstraintsDescriptor canBeRootDescriptor;
+  private ConstraintsDescriptor canBeParentDescriptor;
+  private ConstraintsDescriptor canBeAncestorDescriptor;
 
-  private final ConstraintsDescriptor defaultScopeProviderDescriptor;
+  private ConstraintsDescriptor defaultScopeProviderDescriptor;
 
   private final Map<String, PropertyConstraintsDescriptor> propertiesConstraints = new HashMap<String, PropertyConstraintsDescriptor>();
 
   private final Map<String, ReferenceConstraintsDescriptor> referencesConstraints = new HashMap<String, ReferenceConstraintsDescriptor>();
 
   protected BaseConstraintsDescriptor(String fqName) {
-
     this.fqName = fqName;
 
+    calcInheritance();
+  }
+
+  protected BaseConstraintsDescriptor() {
+  }
+
+  protected void calcInheritance() {
     if (hasOwnCanBeChildMethod()) {
       canBeChildDescriptor = this;
     } else {

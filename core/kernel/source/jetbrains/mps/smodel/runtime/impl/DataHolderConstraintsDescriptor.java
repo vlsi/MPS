@@ -40,200 +40,188 @@ import java.util.Map;
 import java.util.Set;
 
 @Deprecated
-public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescriptor {
-  private final String fqName;
-  private final ConstraintsDescriptor inner;
+public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
+  private final ConstraintsDataHolder dataHolder;
+
+  private ReferenceScopeProvider defaultScopeProvider = null;
+  private Map<String, PropertyConstraintsDescriptor> properties;
+  private Map<String, ReferenceConstraintsDescriptor> references;
 
   public DataHolderConstraintsDescriptor(final ConstraintsDataHolder dataHolder) {
-    fqName = dataHolder.getConceptFqName();
-    inner = new BaseConstraintsDescriptor(dataHolder.getConceptFqName()) {
-      private ReferenceScopeProvider defaultScopeProvider = null;
-      private Map<String, PropertyConstraintsDescriptor> properties;
-      private Map<String, ReferenceConstraintsDescriptor> references;
+    this.dataHolder = dataHolder;
 
-      {
-        // default scope provider
-        if (dataHolder.getNodeDefaultSearchScopeProvider() != null) {
-          defaultScopeProvider = new INodeReferentSearchScopeProviderWrapper(dataHolder.getNodeDefaultSearchScopeProvider());
-        }
+    // default scope provider
+    if (dataHolder.getNodeDefaultSearchScopeProvider() != null) {
+      defaultScopeProvider = new INodeReferentSearchScopeProviderWrapper(dataHolder.getNodeDefaultSearchScopeProvider());
+    }
 
-        // properties
-        properties = new HashMap<String, PropertyConstraintsDescriptor>();
+    // properties
+    properties = new HashMap<String, PropertyConstraintsDescriptor>();
 
-        Set<String> overriddenProperties = new HashSet<String>();
-        overriddenProperties.addAll(dataHolder.getNodePropertyGetters().keySet());
-        overriddenProperties.addAll(dataHolder.getNodePropertySetters().keySet());
-        overriddenProperties.addAll(dataHolder.getNodePropertyValidators().keySet());
+    Set<String> overriddenProperties = new HashSet<String>();
+    overriddenProperties.addAll(dataHolder.getNodePropertyGetters().keySet());
+    overriddenProperties.addAll(dataHolder.getNodePropertySetters().keySet());
+    overriddenProperties.addAll(dataHolder.getNodePropertyValidators().keySet());
 
-        for (String propertyName : overriddenProperties) {
-          // todo: is initialization order ok?
-          properties.put(propertyName, PropertyWrapper.getProperty(propertyName, DataHolderConstraintsDescriptor.this,
-            dataHolder.getNodePropertyGetters().get(propertyName),
-            dataHolder.getNodePropertySetters().get(propertyName),
-            dataHolder.getNodePropertyValidators().get(propertyName)));
-        }
+    for (String propertyName : overriddenProperties) {
+      // todo: is initialization order ok?
+      properties.put(propertyName, PropertyWrapper.getProperty(propertyName, DataHolderConstraintsDescriptor.this,
+        dataHolder.getNodePropertyGetters().get(propertyName),
+        dataHolder.getNodePropertySetters().get(propertyName),
+        dataHolder.getNodePropertyValidators().get(propertyName)));
+    }
 
-        // references
-        references = new HashMap<String, ReferenceConstraintsDescriptor>();
-        Set<String> overriddenReferences = new HashSet<String>();
-        overriddenReferences.addAll(dataHolder.getNodeReferentSetEventHandlers().keySet());
-        overriddenReferences.addAll(dataHolder.getNodeNonDefaultSearchScopeProviders().keySet());
+    // references
+    references = new HashMap<String, ReferenceConstraintsDescriptor>();
+    Set<String> overriddenReferences = new HashSet<String>();
+    overriddenReferences.addAll(dataHolder.getNodeReferentSetEventHandlers().keySet());
+    overriddenReferences.addAll(dataHolder.getNodeNonDefaultSearchScopeProviders().keySet());
 
-        for (String role : overriddenReferences) {
-          // todo: is initialization order ok?
-          references.put(role, ReferenceWrapper.getReference(role, DataHolderConstraintsDescriptor.this,
-            dataHolder.getNodeNonDefaultSearchScopeProviders().get(role),
-            dataHolder.getNodeReferentSetEventHandlers().get(role)));
-        }
-      }
+    for (String role : overriddenReferences) {
+      // todo: is initialization order ok?
+      references.put(role, ReferenceWrapper.getReference(role, DataHolderConstraintsDescriptor.this,
+        dataHolder.getNodeNonDefaultSearchScopeProviders().get(role),
+        dataHolder.getNodeReferentSetEventHandlers().get(role)));
+    }
 
-      @Override
-      public boolean hasOwnCanBeChildMethod() {
-        return dataHolder.getCanBeAChildMethod() != null;
-      }
-
-      @Override
-      public boolean hasOwnCanBeRootMethod() {
-        return dataHolder.getCanBeARootMethod() != null;
-      }
-
-      @Override
-      public boolean hasOwnCanBeParentMethod() {
-        return dataHolder.getCanBeAParentMethod() != null;
-      }
-
-      @Override
-      public boolean hasOwnCanBeAncestorMethod() {
-        return dataHolder.getCanBeAnAncestorMethod() != null;
-      }
-
-      @Override
-      public boolean hasOwnDefaultScopeProvider() {
-        return dataHolder.getNodeDefaultSearchScopeProvider() != null;
-      }
-
-      @Override
-      public String getConceptFqName() {
-        return dataHolder.getConceptFqName();
-      }
-
-      private <T> boolean executeCanBeMethod(@NotNull CanBeASomethingMethod<T> method, IOperationContext operationContext, T context, @Nullable CheckingNodeContext checkingNodeContext) {
-        jetbrains.mps.smodel.structure.CheckingNodeContext _checkingNodeContext = null;
-        if (checkingNodeContext != null) {
-          _checkingNodeContext = new jetbrains.mps.smodel.structure.CheckingNodeContext();
-          _checkingNodeContext.setBreakingNode(checkingNodeContext.getBreakingNode());
-        }
-
-        boolean result = method.canBe(operationContext, context, _checkingNodeContext);
-
-        if (checkingNodeContext != null) {
-          checkingNodeContext.setBreakingNode(_checkingNodeContext.getBreakingNode());
-        }
-
-        return result;
-      }
-
-      @Override
-      public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
-        if (dataHolder.getCanBeAChildMethod() != null) {
-          return executeCanBeMethod(dataHolder.getCanBeAChildMethod(), operationContext, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
-        } else {
-          return super.canBeChild(operationContext, parentNode, link, concept, checkingNodeContext);
-        }
-      }
-
-      @Override
-      public boolean canBeRoot(IOperationContext operationContext, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-        if (dataHolder.getCanBeARootMethod() != null) {
-          return executeCanBeMethod(dataHolder.getCanBeARootMethod(), operationContext, new CanBeARootContext(model), checkingNodeContext);
-        } else {
-          return super.canBeRoot(operationContext, model, checkingNodeContext);
-        }
-      }
-
-      @Override
-      public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
-        if (dataHolder.getCanBeAParentMethod() != null) {
-          return executeCanBeMethod(dataHolder.getCanBeAParentMethod(), operationContext, new CanBeAParentContext(node, childConcept, link), checkingNodeContext);
-        } else {
-          return super.canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
-        }
-      }
-
-      @Override
-      public boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
-        if (dataHolder.getCanBeAnAncestorMethod() != null) {
-          return executeCanBeMethod(dataHolder.getCanBeAnAncestorMethod(), operationContext, new CanBeAnAncestorContext(node, childConcept), checkingNodeContext);
-        } else {
-          return super.canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
-        }
-      }
-
-      @NotNull
-      @Override
-      public PropertyConstraintsDescriptor getProperty(String name) {
-        if (properties.containsKey(name)) {
-          return properties.get(name);
-        }
-
-        ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
-        if (conceptDescriptor.hasProperty(name)) {
-          PropertyConstraintsDescriptor property = new BasePropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
-          properties.put(name, property);
-          return property;
-        } else {
-          return new IllegalPropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
-        }
-      }
-
-      @NotNull
-      @Override
-      public ReferenceConstraintsDescriptor getReference(String refName) {
-        if (references.containsKey(refName)) {
-          return references.get(refName);
-        }
-        ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
-        if (conceptDescriptor.hasReference(refName)) {
-          ReferenceConstraintsDescriptor reference = new BaseReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
-          references.put(refName, reference);
-          return reference;
-        } else {
-          return new IllegalReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
-        }
-      }
-
-      @Override
-      public ReferenceScopeProvider getDefaultScopeProvider() {
-        if (defaultScopeProvider != null) {
-          return defaultScopeProvider;
-        } else {
-          return super.getDefaultScopeProvider();
-        }
-      }
-
-      @Override
-      public String getAlternativeIcon(SNode node) {
-        if (dataHolder.isAlternativeIcon()) {
-          return dataHolder.getAlternativeIcon(node);
-        } else {
-          return super.getAlternativeIcon(node);
-        }
-      }
-
-      @Override
-      public String getDefaultConcreteConceptFqName() {
-        return dataHolder.getDefaultConcreteConceptFqName();
-      }
-    };
+    calcInheritance();
   }
 
   @Override
-  protected ConstraintsDescriptor delegate() {
-    return inner;
+  public boolean hasOwnCanBeChildMethod() {
+    return dataHolder.getCanBeAChildMethod() != null;
+  }
+
+  @Override
+  public boolean hasOwnCanBeRootMethod() {
+    return dataHolder.getCanBeARootMethod() != null;
+  }
+
+  @Override
+  public boolean hasOwnCanBeParentMethod() {
+    return dataHolder.getCanBeAParentMethod() != null;
+  }
+
+  @Override
+  public boolean hasOwnCanBeAncestorMethod() {
+    return dataHolder.getCanBeAnAncestorMethod() != null;
+  }
+
+  @Override
+  public boolean hasOwnDefaultScopeProvider() {
+    return dataHolder.getNodeDefaultSearchScopeProvider() != null;
   }
 
   @Override
   public String getConceptFqName() {
-    return fqName;
+    return dataHolder.getConceptFqName();
+  }
+
+  private <T> boolean executeCanBeMethod(@NotNull CanBeASomethingMethod<T> method, IOperationContext operationContext, T context, @Nullable CheckingNodeContext checkingNodeContext) {
+    jetbrains.mps.smodel.structure.CheckingNodeContext _checkingNodeContext = null;
+    if (checkingNodeContext != null) {
+      _checkingNodeContext = new jetbrains.mps.smodel.structure.CheckingNodeContext();
+      _checkingNodeContext.setBreakingNode(checkingNodeContext.getBreakingNode());
+    }
+
+    boolean result = method.canBe(operationContext, context, _checkingNodeContext);
+
+    if (checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(_checkingNodeContext.getBreakingNode());
+    }
+
+    return result;
+  }
+
+  @Override
+  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (dataHolder.getCanBeAChildMethod() != null) {
+      return executeCanBeMethod(dataHolder.getCanBeAChildMethod(), operationContext, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
+    } else {
+      return super.canBeChild(operationContext, parentNode, link, concept, checkingNodeContext);
+    }
+  }
+
+  @Override
+  public boolean canBeRoot(IOperationContext operationContext, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (dataHolder.getCanBeARootMethod() != null) {
+      return executeCanBeMethod(dataHolder.getCanBeARootMethod(), operationContext, new CanBeARootContext(model), checkingNodeContext);
+    } else {
+      return super.canBeRoot(operationContext, model, checkingNodeContext);
+    }
+  }
+
+  @Override
+  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (dataHolder.getCanBeAParentMethod() != null) {
+      return executeCanBeMethod(dataHolder.getCanBeAParentMethod(), operationContext, new CanBeAParentContext(node, childConcept, link), checkingNodeContext);
+    } else {
+      return super.canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
+    }
+  }
+
+  @Override
+  public boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (dataHolder.getCanBeAnAncestorMethod() != null) {
+      return executeCanBeMethod(dataHolder.getCanBeAnAncestorMethod(), operationContext, new CanBeAnAncestorContext(node, childConcept), checkingNodeContext);
+    } else {
+      return super.canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
+    }
+  }
+
+  @NotNull
+  @Override
+  public PropertyConstraintsDescriptor getProperty(String name) {
+    if (properties.containsKey(name)) {
+      return properties.get(name);
+    }
+
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
+    if (conceptDescriptor.hasProperty(name)) {
+      PropertyConstraintsDescriptor property = new BasePropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
+      properties.put(name, property);
+      return property;
+    } else {
+      return new IllegalPropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
+    }
+  }
+
+  @NotNull
+  @Override
+  public ReferenceConstraintsDescriptor getReference(String refName) {
+    if (references.containsKey(refName)) {
+      return references.get(refName);
+    }
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
+    if (conceptDescriptor.hasReference(refName)) {
+      ReferenceConstraintsDescriptor reference = new BaseReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
+      references.put(refName, reference);
+      return reference;
+    } else {
+      return new IllegalReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
+    }
+  }
+
+  @Override
+  public ReferenceScopeProvider getDefaultScopeProvider() {
+    if (defaultScopeProvider != null) {
+      return defaultScopeProvider;
+    } else {
+      return super.getDefaultScopeProvider();
+    }
+  }
+
+  @Override
+  public String getAlternativeIcon(SNode node) {
+    if (dataHolder.isAlternativeIcon()) {
+      return dataHolder.getAlternativeIcon(node);
+    } else {
+      return super.getAlternativeIcon(node);
+    }
+  }
+
+  @Override
+  public String getDefaultConcreteConceptFqName() {
+    return dataHolder.getDefaultConcreteConceptFqName();
   }
 }
