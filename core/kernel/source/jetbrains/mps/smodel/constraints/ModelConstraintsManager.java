@@ -26,10 +26,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -291,7 +291,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   @Nullable
   public static ReferenceScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
-    ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptorNew(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
+    ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
     if (result != null) return result;
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
     if (linkDeclaration == null) {
@@ -299,11 +299,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
       return EMPTY_REFERENCE_SCOPE_PROVIDER;
     }
     SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    return ConceptRegistry.getInstance().getConstraintsDescriptorNew(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
   }
 
   public static String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptorNew(fqName).getDefaultConcreteConceptFqName();
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptFqName();
   }
 
   // canBeASomething section
@@ -313,7 +313,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     ConceptRegistry registry = ConceptRegistry.getInstance();
 
     while (currentNode != null) {
-      jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = registry.getConstraintsDescriptorNew(currentNode.getConceptFqName());
+      jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConceptFqName());
 
       if (!descriptor.canBeAncestor(context, currentNode, childConcept, checkingNodeContext)) {
         return false;
@@ -330,7 +330,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
-    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parentNode.getConceptFqName());
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConceptFqName());
     return canBeParent(descriptor, parentNode, childConcept, link, context, null);
   }
 
@@ -339,7 +339,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
-    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(fqName);
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
     return canBeChild(descriptor, fqName, context, parentNode, link, null);
   }
 
@@ -365,7 +365,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
-    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(conceptFqName);
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName);
     return canBeRoot(descriptor, context, conceptFqName, model, null);
   }
 

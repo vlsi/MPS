@@ -18,10 +18,10 @@ package jetbrains.mps.smodel.runtime.base;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -85,7 +85,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   private ConstraintsDescriptor getMethodUsingInheritance(String conceptFqName, InheritanceCalculateParameters parameters) {
     for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
-      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
 
       ConstraintsDescriptor parentCalculated;
 

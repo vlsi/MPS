@@ -20,12 +20,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.constraints.*;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.apache.commons.lang.ObjectUtils;
@@ -375,7 +374,7 @@ public final class SNode {
 
     getters.add(current);
     try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(this.getConceptFqName()).getProperty(propertyName);
+      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
       Object getterValue = descriptor.getValue(this, GlobalScope.getInstance());
       return getterValue == null ? null : String.valueOf(getterValue);
     } finally {
@@ -425,7 +424,7 @@ public final class SNode {
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
       if (!threadSet.contains(pair) && !myModel.isLoading()) {
-        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(this.getConceptFqName()).getProperty(propertyName);
+        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
         threadSet.add(pair);
         try {
           descriptor.setValue(this, propertyValue, GlobalScope.getInstance());
@@ -912,7 +911,7 @@ public final class SNode {
       Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
       if (!threadSet.contains(pair)) {
-        ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(this.getConceptFqName()).getReference(role);
+        ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getReference(role);
 
         if (!(descriptor instanceof IllegalReferenceConstraintsDescriptor)) {
           handlerFound = true;

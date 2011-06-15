@@ -19,7 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -45,14 +45,14 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public void initNode(SNode node) {
-    ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNodeNew(node).initNode(node);
+    ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).initNode(node);
   }
 
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNodeNew(node).invoke(returnType, node, methodName, parametersTypes, parameters);
+    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNodeNew(node).invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
+    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
   }
 }

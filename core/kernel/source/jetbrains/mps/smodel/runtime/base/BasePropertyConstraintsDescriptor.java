@@ -18,11 +18,10 @@ package jetbrains.mps.smodel.runtime.base;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
-import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -87,7 +86,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
         continue;
       }
 
-      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
       PropertyConstraintsDescriptor parentPropertyDescriptor = parentDescriptor.getProperty(propertyName);
 
       PropertyConstraintsDescriptor parentCalculated;

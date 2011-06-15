@@ -17,10 +17,8 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.*;
-import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
 import org.jetbrains.annotations.Nullable;
 
 public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsDispatchable {
@@ -55,7 +53,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
         continue;
       }
 
-      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
       ReferenceConstraintsDescriptor parentReferenceDescriptor = parentDescriptor.getReference(roleName);
 
       ReferenceConstraintsDescriptor parentCalculated;

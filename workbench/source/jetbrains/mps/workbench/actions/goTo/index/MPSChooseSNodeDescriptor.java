@@ -27,9 +27,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
@@ -79,7 +79,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
 
       boolean needToLoad = false;
       for (BaseSNodeDescriptor snd : descriptors.get(0)) {
-        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(snd.getConceptFqName()).getProperty(SNodeUtil.property_INamedConcept_name);
+        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConceptFqName()).getProperty(SNodeUtil.property_INamedConcept_name);
         if (descriptor instanceof BasePropertyConstraintsDescriptor && ((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
           needToLoad = true;
           break;

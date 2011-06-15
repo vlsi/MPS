@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -89,7 +89,7 @@ public class IconManager {
         if ((concept != null)) {
           Icon alternativeIcon = null;
           try {
-            String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptorNew(NameUtil.nodeFQName(concept)).getAlternativeIcon(node);
+            String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(concept)).getAlternativeIcon(node);
             if (alternativeIconPath != null) {
               alternativeIcon = IconManager.getIconForConcept(concept, alternativeIconPath);
             }

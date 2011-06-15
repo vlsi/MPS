@@ -18,8 +18,8 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +38,7 @@ public abstract class PropertySupport {
     if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
     if (value == null) value = "";
     if (!canSetValue(value)) return false;
-    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(node.getConceptFqName()).getProperty(propertyName);
+    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getProperty(propertyName);
     return canSetValue(descriptor, node, propertyName, value, scope);
   }
 
