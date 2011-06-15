@@ -19,6 +19,14 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder;
+import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
+import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.library.BootstrapLanguages_DevKit;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.library.LanguageDesign_DevKit;
@@ -26,6 +34,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.ConditionalIterable;
 
 import java.util.*;
 
@@ -67,6 +76,7 @@ public class MigrationHelper {
     }
 
     if (msComponent.getMigrationState() == MState.STUBS_CONVERTED) {
+      stage_4_1_convertAttributes(mpsProject);
 
       msComponent.setMigrationState(MState.ATTRIBUTES_CONVERTED);
       ApplicationManager.getApplication().restart();
@@ -262,6 +272,29 @@ public class MigrationHelper {
   //--------------- stage 4 : attributes -----------------
 
   public static void stage_4_1_convertAttributes(MPSProject p) {
-
+    List<SNodePointer> scripts = new ArrayList<SNodePointer>();
+    scripts.add(getScript("jetbrains.mps.lang.core", "ConvertAttributes"));
+    executeScripts(p.getProject(), scripts);
   }
+
+  private static SNodePointer getScript(String lang, String nodeName) {
+    Language l = MPSModuleRepository.getInstance().getLanguage(lang);
+    EditableSModelDescriptor md = LanguageAspect.SCRIPTS.get(l);
+    ConditionalIterable<SNode> nodesByName = new ConditionalIterable<SNode>(md.getSModel().roots(), new NameCondition(nodeName));
+    return new SNodePointer(nodesByName.iterator().next());
+  }
+
+  private static void executeScripts(Project project, List<SNodePointer> scripts) {
+    SearchQuery query = new SearchQuery(project.getComponent(ProjectScope.class));
+    MigrationScriptFinder finder = new MigrationScriptFinder(scripts, ProjectOperationContext.get(project));
+    IResultProvider provider = FindUtils.makeProvider(finder);
+    SearchResults<SNode> results = FindUtils.getSearchResults(new EmptyProgressIndicator(), query, provider);
+
+    for (SearchResult<SNode> aliveIncludedResult : results.getAliveResults()) {
+      SNode node = aliveIncludedResult.getObject();
+      AbstractMigrationRefactoring migrationRefactoring = finder.getRefactoring(aliveIncludedResult);
+      MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
+    }
+  }
+
 }
