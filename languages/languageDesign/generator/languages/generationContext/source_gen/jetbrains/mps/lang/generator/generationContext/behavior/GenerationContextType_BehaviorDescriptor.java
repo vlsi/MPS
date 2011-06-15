@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class GenerationContextType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public GenerationContextType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType";
+  }
 }

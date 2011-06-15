@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ConfigurationReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ConfigurationReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.ConfigurationReference";
+  }
 }

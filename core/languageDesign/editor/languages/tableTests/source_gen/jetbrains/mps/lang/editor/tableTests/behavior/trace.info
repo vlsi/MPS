@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="HierarchycalTable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_BehaviorDescriptor" />
-  <unitInfo fileName="Transition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Transition_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractStateMachineElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
-  <unitInfo fileName="UltimateContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.UltimateContainer_BehaviorDescriptor" />
-  <unitInfo fileName="EventReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.EventReference_BehaviorDescriptor" />
-  <unitInfo fileName="StateReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateReference_BehaviorDescriptor" />
-  <unitInfo fileName="Row_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Row_BehaviorDescriptor" />
-  <unitInfo fileName="DataCell_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.DataCell_BehaviorDescriptor" />
   <unitInfo fileName="AbstractStateMachineElement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_Behavior" />
-  <unitInfo fileName="State_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.State_BehaviorDescriptor" />
-  <unitInfo fileName="Event_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Event_BehaviorDescriptor" />
-  <unitInfo fileName="ContentElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.ContentElement_BehaviorDescriptor" />
-  <unitInfo fileName="YElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.YElement_BehaviorDescriptor" />
-  <unitInfo fileName="XElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.XElement_BehaviorDescriptor" />
-  <unitInfo fileName="Matrix_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Matrix_BehaviorDescriptor" />
-  <unitInfo fileName="StateMachine_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_BehaviorDescriptor" />
-  <unitInfo fileName="Table_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Table_BehaviorDescriptor" />
+  <unitInfo fileName="HierarchycalTable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_BehaviorDescriptor" />
+  <unitInfo fileName="Transition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Transition_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractStateMachineElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
+  <unitInfo fileName="UltimateContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.UltimateContainer_BehaviorDescriptor" />
+  <unitInfo fileName="EventReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.EventReference_BehaviorDescriptor" />
+  <unitInfo fileName="StateReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateReference_BehaviorDescriptor" />
+  <unitInfo fileName="Row_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Row_BehaviorDescriptor" />
+  <unitInfo fileName="DataCell_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.DataCell_BehaviorDescriptor" />
   <unitInfo fileName="HierarchycalTable_Behavior.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_Behavior" />
+  <unitInfo fileName="State_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.State_BehaviorDescriptor" />
+  <unitInfo fileName="Event_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Event_BehaviorDescriptor" />
+  <unitInfo fileName="ContentElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.ContentElement_BehaviorDescriptor" />
+  <unitInfo fileName="YElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.YElement_BehaviorDescriptor" />
+  <unitInfo fileName="XElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.XElement_BehaviorDescriptor" />
+  <unitInfo fileName="Matrix_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Matrix_BehaviorDescriptor" />
+  <unitInfo fileName="StateMachine_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_BehaviorDescriptor" />
+  <unitInfo fileName="Table_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Table_BehaviorDescriptor" />
   <unitInfo fileName="Table_Behavior.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Table_Behavior" />
   <unitInfo fileName="StateMachine_Behavior.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2882388703616228638">
     <nodeInfo nodeId="2882388703616228649" fileName="Table_Behavior.java" startLine="14" startPosition="98" endLine="15" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2882388703616228657" fileName="Table_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

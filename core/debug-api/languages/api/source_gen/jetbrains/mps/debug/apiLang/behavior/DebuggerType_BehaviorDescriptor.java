@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class DebuggerType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public DebuggerType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.apiLang.structure.DebuggerType";
+  }
 }

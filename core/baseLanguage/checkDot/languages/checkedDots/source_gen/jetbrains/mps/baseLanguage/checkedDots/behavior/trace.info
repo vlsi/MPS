@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CheckedDotExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor" />
+  <unitInfo fileName="CheckedDotExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor" />
   <unitInfo fileName="CheckedDotExpression_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_Behavior" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.behavior.BehaviorAspectDescriptor" />
   <root nodeId="3674434577577159919">

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class ValueFunctionParam_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ValueFunctionParam_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.ValueFunctionParam";
+  }
 }

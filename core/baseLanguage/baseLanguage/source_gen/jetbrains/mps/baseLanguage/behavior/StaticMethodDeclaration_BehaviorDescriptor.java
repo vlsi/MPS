@@ -30,4 +30,9 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclar
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return StaticMethodDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration";
+  }
 }

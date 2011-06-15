@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class EventHandlerSetup_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public EventHandlerSetup_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.EventHandlerSetup";
+  }
 }

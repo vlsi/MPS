@@ -17,4 +17,9 @@ public class SortedSetType_BehaviorDescriptor extends SetType_BehaviorDescriptor
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return SortedSetType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.SortedSetType";
+  }
 }

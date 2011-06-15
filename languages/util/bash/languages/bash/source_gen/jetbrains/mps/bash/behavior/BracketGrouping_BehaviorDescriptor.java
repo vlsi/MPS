@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class BracketGrouping_BehaviorDescriptor extends GroupingCommand_BehaviorDescriptor {
   public BracketGrouping_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BracketGrouping";
+  }
 }

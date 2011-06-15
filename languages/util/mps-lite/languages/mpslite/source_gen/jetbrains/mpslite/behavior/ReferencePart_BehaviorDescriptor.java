@@ -12,4 +12,9 @@ public abstract class ReferencePart_BehaviorDescriptor extends LinePart_Behavior
   public SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     return ReferencePart_Behavior.virtual_createCellModel_1238614099938(thisNode, partsToLinks);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.ReferencePart";
+  }
 }

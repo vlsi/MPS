@@ -12,4 +12,9 @@ public abstract class PropertyPart_BehaviorDescriptor extends LinePart_BehaviorD
   public SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     return PropertyPart_Behavior.virtual_createCellModel_1238614099938(thisNode, partsToLinks);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.PropertyPart";
+  }
 }

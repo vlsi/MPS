@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ParenthesizedExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ParenthesizedExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression";
+  }
 }

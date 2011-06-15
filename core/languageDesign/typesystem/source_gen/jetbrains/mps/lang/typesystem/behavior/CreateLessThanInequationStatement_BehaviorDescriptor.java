@@ -6,4 +6,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class CreateLessThanInequationStatement_BehaviorDescriptor extends AbstractInequationStatement_BehaviorDescriptor {
   public CreateLessThanInequationStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement";
+  }
 }

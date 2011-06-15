@@ -16,4 +16,9 @@ public abstract class UIObjectStatement_BehaviorDescriptor extends Statement_Beh
   public boolean virtual_shouldReturnValue_7109250785404509292(SNode thisNode) {
     return UIObjectStatement_Behavior.virtual_shouldReturnValue_7109250785404509292(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.UIObjectStatement";
+  }
 }

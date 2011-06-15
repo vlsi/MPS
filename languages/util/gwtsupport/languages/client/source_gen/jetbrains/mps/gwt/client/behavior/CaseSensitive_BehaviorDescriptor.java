@@ -11,4 +11,9 @@ public class CaseSensitive_BehaviorDescriptor extends Attr_BehaviorDescriptor {
   public String virtual_getXmlAttr_3852159904898525999(SNode thisNode) {
     return CaseSensitive_Behavior.virtual_getXmlAttr_3852159904898525999(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.gwt.client.structure.CaseSensitive";
+  }
 }

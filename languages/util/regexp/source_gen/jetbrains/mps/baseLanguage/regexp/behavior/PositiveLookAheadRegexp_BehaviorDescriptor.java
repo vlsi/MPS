@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public class PositiveLookAheadRegexp_BehaviorDescriptor extends LookRegexp_BehaviorDescriptor {
   public PositiveLookAheadRegexp_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp";
+  }
 }

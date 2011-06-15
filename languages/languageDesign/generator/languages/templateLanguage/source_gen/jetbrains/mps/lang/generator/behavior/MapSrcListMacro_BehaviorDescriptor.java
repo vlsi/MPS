@@ -11,4 +11,9 @@ public class MapSrcListMacro_BehaviorDescriptor extends SourceSubstituteMacro_Be
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return MapSrcListMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.MapSrcListMacro";
+  }
 }

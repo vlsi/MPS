@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class SimpleWord_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IGeneralizedWordUnit_BehaviorDescriptor {
   public SimpleWord_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.SimpleWord";
+  }
 }

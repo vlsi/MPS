@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class EncodingDeclaration_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements EncodingDeclarationBase_BehaviorDescriptor {
   public EncodingDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.EncodingDeclaration";
+  }
 }

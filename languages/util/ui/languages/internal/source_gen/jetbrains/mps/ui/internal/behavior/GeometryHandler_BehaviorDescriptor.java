@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class GeometryHandler_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public GeometryHandler_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.internal.structure.GeometryHandler";
+  }
 }

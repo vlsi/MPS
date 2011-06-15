@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class AnonymousClassCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public AnonymousClassCreator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator";
+  }
 }

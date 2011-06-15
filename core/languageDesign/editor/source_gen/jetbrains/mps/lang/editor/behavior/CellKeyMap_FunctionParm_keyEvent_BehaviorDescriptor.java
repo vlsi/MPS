@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class CellKeyMap_FunctionParm_keyEvent_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public CellKeyMap_FunctionParm_keyEvent_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_keyEvent";
+  }
 }

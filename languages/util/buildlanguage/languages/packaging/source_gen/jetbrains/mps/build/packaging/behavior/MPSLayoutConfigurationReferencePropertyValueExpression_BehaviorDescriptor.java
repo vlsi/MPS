@@ -16,4 +16,9 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_BehaviorDesc
   public String virtual_toString_1213877472569(SNode thisNode) {
     return MPSLayoutConfigurationReferencePropertyValueExpression_Behavior.virtual_toString_1213877472569(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression";
+  }
 }

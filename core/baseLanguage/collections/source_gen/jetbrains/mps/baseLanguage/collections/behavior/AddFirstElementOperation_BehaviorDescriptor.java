@@ -11,4 +11,9 @@ public class AddFirstElementOperation_BehaviorDescriptor extends SingleArgumentS
   public SNode virtual_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
     return IContainerOperation_Behavior.virtual_expectedOperandType_2141797557973018589(thisNode, elementType);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation";
+  }
 }

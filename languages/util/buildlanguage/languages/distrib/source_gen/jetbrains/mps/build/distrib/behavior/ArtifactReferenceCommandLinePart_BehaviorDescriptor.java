@@ -11,4 +11,9 @@ public class ArtifactReferenceCommandLinePart_BehaviorDescriptor extends Abstrac
   public String virtual_getText_1231864533228(SNode thisNode) {
     return ArtifactReferenceCommandLinePart_Behavior.virtual_getText_1231864533228(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart";
+  }
 }

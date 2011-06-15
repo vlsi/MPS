@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 public class ReferenceMacro_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor {
   public ReferenceMacro_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.ReferenceMacro";
+  }
 }

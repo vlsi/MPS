@@ -11,4 +11,9 @@ public class IncludeMacro_BehaviorDescriptor extends SourceSubstituteMacro_Behav
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return IncludeMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.IncludeMacro";
+  }
 }

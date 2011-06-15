@@ -12,4 +12,9 @@ public class XMLSAXNodeCreator_BehaviorDescriptor extends ConceptFunction_Behavi
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return XMLSAXNodeCreator_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator";
+  }
 }

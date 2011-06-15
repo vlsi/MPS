@@ -6,4 +6,9 @@ package jetbrains.mps.lang.pattern.behavior;
 public class ListPattern_BehaviorDescriptor extends AsPattern_BehaviorDescriptor {
   public ListPattern_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.structure.ListPattern";
+  }
 }

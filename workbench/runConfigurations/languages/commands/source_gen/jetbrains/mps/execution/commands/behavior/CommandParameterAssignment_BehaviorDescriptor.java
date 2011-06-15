@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class CommandParameterAssignment_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public CommandParameterAssignment_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.CommandParameterAssignment";
+  }
 }

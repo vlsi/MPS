@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class PowExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public PowExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.PowExpression";
+  }
 }

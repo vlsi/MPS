@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class MigrationScriptPart_node_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public MigrationScriptPart_node_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.script.structure.MigrationScriptPart_node";
+  }
 }

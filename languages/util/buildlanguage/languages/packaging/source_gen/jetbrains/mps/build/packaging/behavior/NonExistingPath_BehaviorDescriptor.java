@@ -13,4 +13,9 @@ public class NonExistingPath_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public File virtual_getFile_1233322718999(SNode thisNode) {
     return NonExistingPath_Behavior.virtual_getFile_1233322718999(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.NonExistingPath";
+  }
 }

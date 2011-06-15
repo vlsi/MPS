@@ -12,4 +12,9 @@ public abstract class SimpleTextGenOperation_BehaviorDescriptor extends Statemen
   public String virtual_getMethodName_1234789420862(SNode thisNode) {
     return SimpleTextGenOperation_Behavior.virtual_getMethodName_1234789420862(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation";
+  }
 }

@@ -11,4 +11,9 @@ public class SimpleBuilderExtensionDeclaration_BehaviorDescriptor extends BaseSi
   public SNode virtual_getContextDeclaration_6254726786820551255(SNode thisNode) {
     return SimpleBuilderExtensionDeclaration_Behavior.virtual_getContextDeclaration_6254726786820551255(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration";
+  }
 }

@@ -38,4 +38,9 @@ public class DefaultClassifierMethodDeclaration_BehaviorDescriptor extends BaseM
   public SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
     return IMember_Behavior.virtual_getOperationConcept_1213877352972(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration";
+  }
 }

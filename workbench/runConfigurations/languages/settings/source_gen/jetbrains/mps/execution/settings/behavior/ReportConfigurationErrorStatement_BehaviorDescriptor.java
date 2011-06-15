@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class ReportConfigurationErrorStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ReportConfigurationErrorStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement";
+  }
 }

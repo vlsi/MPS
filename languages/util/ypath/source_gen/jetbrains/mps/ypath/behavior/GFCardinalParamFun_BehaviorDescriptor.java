@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class GFCardinalParamFun_BehaviorDescriptor extends GFCardinalFun_BehaviorDescriptor implements IParamFeatureFun_BehaviorDescriptor, IDesignFunction_BehaviorDescriptor {
   public GFCardinalParamFun_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.GFCardinalParamFun";
+  }
 }

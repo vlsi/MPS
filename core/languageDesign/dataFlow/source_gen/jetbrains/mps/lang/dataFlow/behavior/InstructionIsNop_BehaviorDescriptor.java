@@ -6,4 +6,9 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class InstructionIsNop_BehaviorDescriptor extends BooleanInstructionOperation_BehaviorDescriptor {
   public InstructionIsNop_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop";
+  }
 }

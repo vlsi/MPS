@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class WithIndentOperation_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public WithIndentOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.WithIndentOperation";
+  }
 }

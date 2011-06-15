@@ -33,4 +33,9 @@ public class SNodeListType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return SNodeListType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SNodeListType";
+  }
 }

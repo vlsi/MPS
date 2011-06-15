@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class DoUpdateGroupBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements GroupContents_BehaviorDescriptor {
   public DoUpdateGroupBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.build.distrib.behavior;
 public class UnixConfig_BehaviorDescriptor extends SystemSpecificConfig_BehaviorDescriptor {
   public UnixConfig_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.UnixConfig";
+  }
 }

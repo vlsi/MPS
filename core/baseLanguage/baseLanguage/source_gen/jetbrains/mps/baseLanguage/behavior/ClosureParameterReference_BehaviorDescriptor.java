@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ClosureParameterReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ClosureParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ClosureParameterReference";
+  }
 }

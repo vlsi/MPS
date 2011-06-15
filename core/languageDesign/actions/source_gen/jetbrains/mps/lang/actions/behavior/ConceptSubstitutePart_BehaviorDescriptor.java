@@ -6,4 +6,9 @@ package jetbrains.mps.lang.actions.behavior;
 public class ConceptSubstitutePart_BehaviorDescriptor extends MenuBuilderPart_BehaviorDescriptor {
   public ConceptSubstitutePart_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public class Action_BehaviorDescriptor extends AbstractAction_BehaviorDescriptor implements IActionItem_BehaviorDescriptor {
   public Action_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.Action";
+  }
 }

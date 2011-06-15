@@ -15,4 +15,9 @@ public class CellModel_ModelAccess_BehaviorDescriptor extends CellModel_Abstract
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_ModelAccess_Behavior.virtual_getClosingText_1220339738643(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess";
+  }
 }

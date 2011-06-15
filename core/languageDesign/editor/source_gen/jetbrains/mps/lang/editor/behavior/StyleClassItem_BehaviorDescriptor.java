@@ -16,4 +16,9 @@ public abstract class StyleClassItem_BehaviorDescriptor extends BaseConcept_Beha
   public SNode virtual_getStyleConstant_1215703564594(SNode thisNode) {
     return StyleClassItem_Behavior.virtual_getStyleConstant_1215703564594(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.StyleClassItem";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescripto
 public class VisitParameterDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor {
   public VisitParameterDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.VisitParameterDeclaration";
+  }
 }

@@ -11,4 +11,9 @@ public class ConstrainedDataTypeDeclaration_BehaviorDescriptor extends DataTypeD
   public SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
     return ConstrainedDataTypeDeclaration_Behavior.virtual_toBaseLanguageType_1213877229718(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration";
+  }
 }

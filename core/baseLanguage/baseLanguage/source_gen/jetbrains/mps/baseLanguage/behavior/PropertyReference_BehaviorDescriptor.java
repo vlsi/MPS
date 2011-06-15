@@ -24,4 +24,9 @@ public class PropertyReference_BehaviorDescriptor extends BaseConcept_BehaviorDe
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return PropertyReference_Behavior.virtual_isLValue_1213877410080(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.PropertyReference";
+  }
 }

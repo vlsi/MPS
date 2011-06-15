@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableReference_BehaviorDescriptor;
 public class ActionParameterReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public ActionParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ActionParameterReference";
+  }
 }

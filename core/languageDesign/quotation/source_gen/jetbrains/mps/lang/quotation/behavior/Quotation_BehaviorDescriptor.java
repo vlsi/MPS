@@ -13,4 +13,9 @@ public class Quotation_BehaviorDescriptor extends Expression_BehaviorDescriptor 
   public int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return Quotation_Behavior.virtual_getMetaLevelChange_201537367881074474(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.quotation.structure.Quotation";
+  }
 }

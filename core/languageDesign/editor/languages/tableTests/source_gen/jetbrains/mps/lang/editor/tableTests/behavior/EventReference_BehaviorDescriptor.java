@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class EventReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public EventReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.tableTests.structure.EventReference";
+  }
 }

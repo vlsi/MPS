@@ -11,4 +11,9 @@ public class MappingConfigNormalRef_BehaviorDescriptor extends MappingConfigRefB
   public boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
     return MappingConfigNormalRef_Behavior.virtual_isComplete_2721285250110257005(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.project.structure.MappingConfigNormalRef";
+  }
 }

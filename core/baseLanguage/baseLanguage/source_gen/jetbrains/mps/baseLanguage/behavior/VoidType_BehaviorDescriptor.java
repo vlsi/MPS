@@ -15,4 +15,9 @@ public class VoidType_BehaviorDescriptor extends PrimitiveType_BehaviorDescripto
   public SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
     return VoidType_Behavior.virtual_getUnboxedType_1213877337320(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.VoidType";
+  }
 }

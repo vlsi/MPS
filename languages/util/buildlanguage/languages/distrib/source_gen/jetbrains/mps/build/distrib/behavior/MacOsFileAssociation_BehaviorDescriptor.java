@@ -6,4 +6,9 @@ package jetbrains.mps.build.distrib.behavior;
 public class MacOsFileAssociation_BehaviorDescriptor extends FileAssociation_BehaviorDescriptor {
   public MacOsFileAssociation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.MacOsFileAssociation";
+  }
 }

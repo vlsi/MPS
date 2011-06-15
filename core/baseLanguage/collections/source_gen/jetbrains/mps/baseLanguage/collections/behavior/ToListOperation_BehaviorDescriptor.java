@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class ToListOperation_BehaviorDescriptor extends NoArgumentsSequenceOperation_BehaviorDescriptor {
   public ToListOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ToListOperation";
+  }
 }

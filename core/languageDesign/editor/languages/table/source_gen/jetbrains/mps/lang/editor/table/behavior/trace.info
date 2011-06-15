@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CellModel_HierarchycalTable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_TableModel_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_Table_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.CellModel_Table_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_HierarchycalTable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_TableModel_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_BehaviorDescriptor" />
+  <unitInfo fileName="CellModel_Table_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.CellModel_Table_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_HierarchycalTable_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_Behavior" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.BehaviorAspectDescriptor" />
   <root nodeId="6216065619544941718">

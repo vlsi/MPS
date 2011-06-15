@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class XMLSAXFieldReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public XMLSAXFieldReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.xmlQuery.structure.XMLSAXFieldReference";
+  }
 }

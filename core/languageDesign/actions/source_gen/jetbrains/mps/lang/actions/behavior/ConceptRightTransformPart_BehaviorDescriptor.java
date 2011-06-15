@@ -6,4 +6,9 @@ package jetbrains.mps.lang.actions.behavior;
 public class ConceptRightTransformPart_BehaviorDescriptor extends MenuBuilderPart_BehaviorDescriptor {
   public ConceptRightTransformPart_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart";
+  }
 }

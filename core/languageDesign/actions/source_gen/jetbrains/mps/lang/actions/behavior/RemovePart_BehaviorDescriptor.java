@@ -6,4 +6,9 @@ package jetbrains.mps.lang.actions.behavior;
 public class RemovePart_BehaviorDescriptor extends MenuBuilderPart_BehaviorDescriptor {
   public RemovePart_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.RemovePart";
+  }
 }

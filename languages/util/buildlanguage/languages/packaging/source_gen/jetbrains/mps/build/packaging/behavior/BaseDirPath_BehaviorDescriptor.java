@@ -11,4 +11,9 @@ public class BaseDirPath_BehaviorDescriptor extends Path_BehaviorDescriptor {
   public String virtual_getName_1221141245424(SNode thisNode) {
     return BaseDirPath_Behavior.virtual_getName_1221141245424(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.BaseDirPath";
+  }
 }

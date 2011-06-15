@@ -16,4 +16,9 @@ public class StringLiteralRegexp_BehaviorDescriptor extends Regexp_BehaviorDescr
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return StringLiteralRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp";
+  }
 }

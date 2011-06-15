@@ -25,5 +25,10 @@ public abstract class Builder_BehaviorDescriptor extends BaseConcept_BehaviorDes
     return Builder_Behavior.virtual_isLeaf_7057666463730595159(thisNode);
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.Builder";
+  }
+
   public abstract SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef);
 }

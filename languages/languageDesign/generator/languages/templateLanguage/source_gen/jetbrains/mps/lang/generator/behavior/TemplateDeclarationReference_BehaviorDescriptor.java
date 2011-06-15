@@ -16,4 +16,9 @@ public class TemplateDeclarationReference_BehaviorDescriptor extends RuleConsequ
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return ITemplateCall_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor;
 public class CustomOperatorUsage_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public CustomOperatorUsage_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage";
+  }
 }

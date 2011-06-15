@@ -15,4 +15,9 @@ public class GenerationContextOp_NodePatternRef_BehaviorDescriptor extends Gener
   public SNode virtual_getTarget_1758784108620114792(SNode thisNode) {
     return GenerationContextOp_NodePatternRef_Behavior.virtual_getTarget_1758784108620114792(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public abstract class ActionStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ActionStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.structure.ActionStatement";
+  }
 }

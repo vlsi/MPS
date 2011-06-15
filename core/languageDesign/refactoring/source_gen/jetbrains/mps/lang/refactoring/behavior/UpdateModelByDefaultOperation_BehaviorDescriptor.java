@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class UpdateModelByDefaultOperation_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public UpdateModelByDefaultOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation";
+  }
 }

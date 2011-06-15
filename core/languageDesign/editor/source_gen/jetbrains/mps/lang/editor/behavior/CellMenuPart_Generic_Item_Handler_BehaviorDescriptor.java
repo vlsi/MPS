@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class CellMenuPart_Generic_Item_Handler_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public CellMenuPart_Generic_Item_Handler_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler";
+  }
 }

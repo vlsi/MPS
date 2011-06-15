@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodelTests.behavior;
 public class Child_BehaviorDescriptor extends NamedConcept_BehaviorDescriptor {
   public Child_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodelTests.structure.Child";
+  }
 }

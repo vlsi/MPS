@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class LessThanOrEqualsExpression_BehaviorDescriptor extends BinaryCompareOperation_BehaviorDescriptor {
   public LessThanOrEqualsExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression";
+  }
 }

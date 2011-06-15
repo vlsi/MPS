@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public abstract class RegexpExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public RegexpExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ElsifClause_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ElsifClause_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ElsifClause";
+  }
 }

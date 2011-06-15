@@ -15,5 +15,10 @@ public abstract class ApplicableCondition_BehaviorDescriptor extends BaseConcept
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.analyzers.structure.ApplicableCondition";
+  }
+
   public abstract SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode);
 }

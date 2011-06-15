@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public abstract class BaseVariableDocReference_BehaviorDescriptor extends BaseDocReference_BehaviorDescriptor {
   public BaseVariableDocReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference";
+  }
 }

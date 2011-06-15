@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class RightShiftAssingmentExpression_BehaviorDescriptor extends BaseAssingmentExpression_BehaviorDescriptor {
   public RightShiftAssingmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.RightShiftAssingmentExpression";
+  }
 }

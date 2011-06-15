@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class MenuPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public MenuPart_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.MenuPart";
+  }
 }

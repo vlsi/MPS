@@ -6,4 +6,9 @@ package jetbrains.mps.quickQueryLanguage.behavior;
 public class QueryReplace_BehaviorDescriptor extends AbstractQueryFunction_BehaviorDescriptor {
   public QueryReplace_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.quickQueryLanguage.structure.QueryReplace";
+  }
 }

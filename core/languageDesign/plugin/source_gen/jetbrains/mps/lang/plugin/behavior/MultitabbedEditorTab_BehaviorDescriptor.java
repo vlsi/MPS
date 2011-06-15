@@ -11,4 +11,9 @@ public class MultitabbedEditorTab_BehaviorDescriptor extends AbstractEditorTab_B
   public SNode virtual_createType_1213877527970(SNode thisNode) {
     return MultitabbedEditorTab_Behavior.virtual_createType_1213877527970(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class VisitNodesStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public VisitNodesStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.VisitNodesStatement";
+  }
 }

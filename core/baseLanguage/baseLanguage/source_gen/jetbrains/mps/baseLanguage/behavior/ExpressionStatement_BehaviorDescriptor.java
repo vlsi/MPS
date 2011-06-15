@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor;
 public class ExpressionStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IWrapper_BehaviorDescriptor {
   public ExpressionStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
+  }
 }

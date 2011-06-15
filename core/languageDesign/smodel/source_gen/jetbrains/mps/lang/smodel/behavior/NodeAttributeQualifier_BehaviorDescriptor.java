@@ -11,4 +11,9 @@ public class NodeAttributeQualifier_BehaviorDescriptor extends AttributeQualifie
   public SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
     return NodeAttributeQualifier_Behavior.virtual_getTargetConcept_6407023681583066586(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class VariableValue_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public VariableValue_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.testLang.structure.VariableValue";
+  }
 }

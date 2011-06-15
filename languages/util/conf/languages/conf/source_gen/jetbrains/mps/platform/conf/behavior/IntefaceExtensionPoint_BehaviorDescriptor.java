@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public class IntefaceExtensionPoint_BehaviorDescriptor extends ExtensionPoint_BehaviorDescriptor {
   public IntefaceExtensionPoint_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint";
+  }
 }

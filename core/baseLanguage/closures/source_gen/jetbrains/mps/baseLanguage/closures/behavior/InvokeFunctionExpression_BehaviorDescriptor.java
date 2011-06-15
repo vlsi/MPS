@@ -18,4 +18,9 @@ public class InvokeFunctionExpression_BehaviorDescriptor extends Expression_Beha
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression";
+  }
 }

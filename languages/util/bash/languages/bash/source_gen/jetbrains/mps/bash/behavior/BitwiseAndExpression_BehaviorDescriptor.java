@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class BitwiseAndExpression_BehaviorDescriptor extends BinaryArithmeticExpression_BehaviorDescriptor {
   public BitwiseAndExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BitwiseAndExpression";
+  }
 }

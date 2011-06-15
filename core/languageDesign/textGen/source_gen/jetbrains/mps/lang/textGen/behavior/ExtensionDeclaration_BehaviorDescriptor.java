@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ExtensionDeclaration_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ExtensionDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.ExtensionDeclaration";
+  }
 }

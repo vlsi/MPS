@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class IntegerLiteral_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IBaseTestBlock_BehaviorDescriptor {
   public IntegerLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral";
+  }
 }

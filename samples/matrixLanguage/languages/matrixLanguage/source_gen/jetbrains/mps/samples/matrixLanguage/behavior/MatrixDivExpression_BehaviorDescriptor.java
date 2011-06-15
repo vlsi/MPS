@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor;
 public class MatrixDivExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public MatrixDivExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression";
+  }
 }

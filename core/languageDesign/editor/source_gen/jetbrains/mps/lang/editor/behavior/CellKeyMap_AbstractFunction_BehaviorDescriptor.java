@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public abstract class CellKeyMap_AbstractFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public CellKeyMap_AbstractFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction";
+  }
 }

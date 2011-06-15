@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class GetActionUIFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public GetActionUIFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.GetActionUIFunction";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ActionAccessOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ActionAccessOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ActionAccessOperation";
+  }
 }

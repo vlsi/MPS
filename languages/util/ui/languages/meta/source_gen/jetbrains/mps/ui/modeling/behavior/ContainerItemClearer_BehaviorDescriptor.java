@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ContainerItemClearer_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ContainerItemClearer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.ContainerItemClearer";
+  }
 }

@@ -12,4 +12,9 @@ public class AtLeastNTimesRegexp_BehaviorDescriptor extends UnaryRegexp_Behavior
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return AtLeastNTimesRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ReadingWritingRedirection_BehaviorDescriptor extends IORedirection_BehaviorDescriptor {
   public ReadingWritingRedirection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ReadingWritingRedirection";
+  }
 }

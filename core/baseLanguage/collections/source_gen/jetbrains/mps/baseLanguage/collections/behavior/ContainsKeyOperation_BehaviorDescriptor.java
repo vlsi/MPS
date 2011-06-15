@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class ContainsKeyOperation_BehaviorDescriptor extends MapOperation_BehaviorDescriptor {
   public ContainsKeyOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation";
+  }
 }

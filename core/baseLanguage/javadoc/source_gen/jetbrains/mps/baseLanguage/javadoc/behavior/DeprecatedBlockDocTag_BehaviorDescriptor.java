@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class DeprecatedBlockDocTag_BehaviorDescriptor extends BaseBlockDocTag_BehaviorDescriptor {
   public DeprecatedBlockDocTag_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag";
+  }
 }

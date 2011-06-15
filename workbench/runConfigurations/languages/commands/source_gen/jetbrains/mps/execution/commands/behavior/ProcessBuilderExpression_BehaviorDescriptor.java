@@ -12,4 +12,9 @@ public class ProcessBuilderExpression_BehaviorDescriptor extends Expression_Beha
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return ProcessBuilderExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.ProcessBuilderExpression";
+  }
 }

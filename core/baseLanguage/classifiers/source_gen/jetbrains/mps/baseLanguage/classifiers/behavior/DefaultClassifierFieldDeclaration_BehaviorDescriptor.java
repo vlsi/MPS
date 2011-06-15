@@ -28,4 +28,9 @@ public class DefaultClassifierFieldDeclaration_BehaviorDescriptor extends FieldD
   public SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
     return IMember_Behavior.virtual_getOperationConcept_1213877352972(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration";
+  }
 }

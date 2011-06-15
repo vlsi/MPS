@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class PageOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor {
   public PageOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.PageOperation";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.nanoj.behavior;
 public class NanoStatementList_BehaviorDescriptor extends NanoStatement_BehaviorDescriptor {
   public NanoStatementList_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.nanoj.structure.NanoStatementList";
+  }
 }

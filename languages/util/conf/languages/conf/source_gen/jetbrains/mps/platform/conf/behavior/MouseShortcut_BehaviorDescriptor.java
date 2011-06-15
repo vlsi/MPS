@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public class MouseShortcut_BehaviorDescriptor extends Shortcut_BehaviorDescriptor {
   public MouseShortcut_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.MouseShortcut";
+  }
 }

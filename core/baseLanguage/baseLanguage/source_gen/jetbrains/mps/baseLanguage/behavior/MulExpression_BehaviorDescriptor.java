@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class MulExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public MulExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.MulExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDecla
 public class SmartDisposeClosureParameterDeclaration_BehaviorDescriptor extends UnboundClosureParameterDeclaration_BehaviorDescriptor {
   public SmartDisposeClosureParameterDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration";
+  }
 }

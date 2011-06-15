@@ -12,4 +12,9 @@ public class SmartActionParameterReference_BehaviorDescriptor extends Expression
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return SmartActionParameterReference_Behavior.virtual_isLValue_1213877519786(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.SmartActionParameterReference";
+  }
 }

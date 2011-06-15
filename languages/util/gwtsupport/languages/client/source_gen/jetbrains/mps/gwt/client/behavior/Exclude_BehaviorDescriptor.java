@@ -11,4 +11,9 @@ public class Exclude_BehaviorDescriptor extends PatternHolder_BehaviorDescriptor
   public String virtual_getXmlElement_3852159904898386595(SNode thisNode) {
     return Exclude_Behavior.virtual_getXmlElement_3852159904898386595(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.gwt.client.structure.Exclude";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.build.distrib.behavior;
 public class MacConfig_BehaviorDescriptor extends SystemSpecificConfig_BehaviorDescriptor {
   public MacConfig_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.MacConfig";
+  }
 }

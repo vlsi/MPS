@@ -15,4 +15,9 @@ public class CheckDataFlowOperation_BehaviorDescriptor extends NodeOperation_Beh
   public void virtual_perform_1215601182156(SNode thisNode, SNode node) {
     CheckDataFlowOperation_Behavior.virtual_perform_1215601182156(thisNode, node);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.CheckDataFlowOperation";
+  }
 }

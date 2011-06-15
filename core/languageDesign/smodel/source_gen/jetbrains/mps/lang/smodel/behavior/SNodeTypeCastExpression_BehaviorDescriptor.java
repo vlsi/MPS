@@ -12,4 +12,9 @@ public class SNodeTypeCastExpression_BehaviorDescriptor extends Expression_Behav
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SNodeTypeCastExpression_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression";
+  }
 }

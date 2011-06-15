@@ -11,4 +11,9 @@ public class AnnotationMethodDeclaration_BehaviorDescriptor extends InstanceMeth
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return AnnotationMethodDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration";
+  }
 }

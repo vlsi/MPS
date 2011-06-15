@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class IsApplicableBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public IsApplicableBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.findUsages.structure.IsApplicableBlock";
+  }
 }

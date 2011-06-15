@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class LessThanOrEqualExpression_BehaviorDescriptor extends BinaryArithmeticExpression_BehaviorDescriptor {
   public LessThanOrEqualExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.LessThanOrEqualExpression";
+  }
 }

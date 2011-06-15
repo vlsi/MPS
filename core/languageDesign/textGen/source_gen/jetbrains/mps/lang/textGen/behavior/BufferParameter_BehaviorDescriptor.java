@@ -6,4 +6,9 @@ package jetbrains.mps.lang.textGen.behavior;
 public class BufferParameter_BehaviorDescriptor extends AbstractTextGenParameter_BehaviorDescriptor {
   public BufferParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.BufferParameter";
+  }
 }

@@ -8,4 +8,9 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescripto
 public class ActionConstructionParameterDeclaration_BehaviorDescriptor extends DefaultClassifierFieldDeclaration_BehaviorDescriptor implements IMember_BehaviorDescriptor {
   public ActionConstructionParameterDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration";
+  }
 }

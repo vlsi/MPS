@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public abstract class AbstractEquationStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public AbstractEquationStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class InlineSwitch_RuleConsequence_BehaviorDescriptor extends RuleConsequence_BehaviorDescriptor {
   public InlineSwitch_RuleConsequence_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class DivExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public DivExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.DivExpression";
+  }
 }

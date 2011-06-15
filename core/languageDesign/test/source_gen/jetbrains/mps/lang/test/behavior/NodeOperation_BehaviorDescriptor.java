@@ -30,4 +30,9 @@ public abstract class NodeOperation_BehaviorDescriptor extends BaseConcept_Behav
   public String virtual_getTestName_1216136419751(SNode thisNode) {
     return NodeOperation_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.NodeOperation";
+  }
 }

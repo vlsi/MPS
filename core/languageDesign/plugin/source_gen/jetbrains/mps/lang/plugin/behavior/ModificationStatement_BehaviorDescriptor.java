@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ModificationStatement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ModificationStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ModificationStatement";
+  }
 }

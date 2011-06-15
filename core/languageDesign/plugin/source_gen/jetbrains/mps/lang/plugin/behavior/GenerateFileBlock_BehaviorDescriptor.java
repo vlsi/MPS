@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class GenerateFileBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public GenerateFileBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.GenerateFileBlock";
+  }
 }

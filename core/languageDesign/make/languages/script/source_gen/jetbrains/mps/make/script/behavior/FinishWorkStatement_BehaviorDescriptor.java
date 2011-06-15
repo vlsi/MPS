@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class FinishWorkStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public FinishWorkStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.FinishWorkStatement";
+  }
 }

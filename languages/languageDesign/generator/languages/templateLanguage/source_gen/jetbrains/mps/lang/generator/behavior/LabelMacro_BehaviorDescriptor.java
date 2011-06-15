@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class LabelMacro_BehaviorDescriptor extends NodeMacro_BehaviorDescriptor {
   public LabelMacro_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.LabelMacro";
+  }
 }

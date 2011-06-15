@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class StubLocation_ConceptFunctionParameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public StubLocation_ConceptFunctionParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class JoinOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor {
   public JoinOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.JoinOperation";
+  }
 }

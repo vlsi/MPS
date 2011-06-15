@@ -13,4 +13,9 @@ public class UIObjectReference_BehaviorDescriptor extends Expression_BehaviorDes
   public SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
     return UIObjectReference_Behavior.virtual_getDeclaration_3262277503800831941(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.UIObjectReference";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class CoerceStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public CoerceStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.CoerceStatement";
+  }
 }

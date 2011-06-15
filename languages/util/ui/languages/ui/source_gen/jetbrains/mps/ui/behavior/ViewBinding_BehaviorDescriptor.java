@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ViewBinding_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ViewBinding_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.ViewBinding";
+  }
 }

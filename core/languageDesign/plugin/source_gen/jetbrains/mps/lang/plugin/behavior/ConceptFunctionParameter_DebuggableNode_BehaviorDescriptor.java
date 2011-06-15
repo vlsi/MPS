@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode";
+  }
 }

@@ -17,4 +17,9 @@ public class QueryFunction_SideTransform_String_BehaviorDescriptor extends Conce
   public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     return QueryFunction_SideTransform_String_Behavior.virtual_getParameters_1213877374450(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String";
+  }
 }

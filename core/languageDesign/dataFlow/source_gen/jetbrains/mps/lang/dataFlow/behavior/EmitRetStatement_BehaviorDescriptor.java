@@ -6,4 +6,9 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class EmitRetStatement_BehaviorDescriptor extends EmitStatement_BehaviorDescriptor {
   public EmitRetStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement";
+  }
 }

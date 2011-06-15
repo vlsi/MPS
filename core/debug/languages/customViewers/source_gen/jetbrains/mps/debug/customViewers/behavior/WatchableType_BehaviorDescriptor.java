@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class WatchableType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public WatchableType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.customViewers.structure.WatchableType";
+  }
 }

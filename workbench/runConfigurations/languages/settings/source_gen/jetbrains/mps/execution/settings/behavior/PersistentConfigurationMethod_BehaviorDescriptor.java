@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDe
 public class PersistentConfigurationMethod_BehaviorDescriptor extends DefaultClassifierMethodDeclaration_BehaviorDescriptor {
   public PersistentConfigurationMethod_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod";
+  }
 }

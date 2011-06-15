@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class DirectoryConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public DirectoryConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.DirectoryConditionalExpression";
+  }
 }

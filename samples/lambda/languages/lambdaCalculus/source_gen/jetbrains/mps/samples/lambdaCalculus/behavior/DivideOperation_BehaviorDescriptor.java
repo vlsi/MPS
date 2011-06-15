@@ -6,4 +6,9 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class DivideOperation_BehaviorDescriptor extends BinaryNumericOperation_BehaviorDescriptor {
   public DivideOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation";
+  }
 }

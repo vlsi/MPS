@@ -11,4 +11,9 @@ public class IntMPSParameterType_BehaviorDescriptor extends MPSParameterType_Beh
   public SNode virtual_getCreatorMethod_4413749148913760555(SNode thisNode) {
     return IntMPSParameterType_Behavior.virtual_getCreatorMethod_4413749148913760555(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.IntMPSParameterType";
+  }
 }

@@ -12,4 +12,9 @@ public class AnalyzerFunFunction_BehaviorDescriptor extends ConceptFunction_Beha
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return AnalyzerFunFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.analyzers.structure.AnalyzerFunFunction";
+  }
 }

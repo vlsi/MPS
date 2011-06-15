@@ -12,4 +12,9 @@ public class NamePropertyNamePart_BehaviorDescriptor extends PropertyPart_Behavi
   public SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     return NamePropertyNamePart_Behavior.virtual_createCellModel_1238614099938(thisNode, partsToLinks);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.NamePropertyNamePart";
+  }
 }

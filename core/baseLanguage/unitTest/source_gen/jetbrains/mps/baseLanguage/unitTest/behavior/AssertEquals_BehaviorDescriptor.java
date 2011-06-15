@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 public class AssertEquals_BehaviorDescriptor extends BinaryAssert_BehaviorDescriptor {
   public AssertEquals_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals";
+  }
 }

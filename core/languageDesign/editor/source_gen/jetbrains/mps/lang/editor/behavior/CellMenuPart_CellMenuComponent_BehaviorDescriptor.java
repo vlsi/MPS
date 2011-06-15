@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellMenuPart_CellMenuComponent_BehaviorDescriptor extends CellMenuPart_Abstract_BehaviorDescriptor {
   public CellMenuPart_CellMenuComponent_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent";
+  }
 }

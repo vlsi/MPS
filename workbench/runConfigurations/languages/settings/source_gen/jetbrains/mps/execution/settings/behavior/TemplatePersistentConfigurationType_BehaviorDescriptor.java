@@ -6,4 +6,9 @@ package jetbrains.mps.execution.settings.behavior;
 public class TemplatePersistentConfigurationType_BehaviorDescriptor extends PersistentConfigurationType_BehaviorDescriptor {
   public TemplatePersistentConfigurationType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType";
+  }
 }

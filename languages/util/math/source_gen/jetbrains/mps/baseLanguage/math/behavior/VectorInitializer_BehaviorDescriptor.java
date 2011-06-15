@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class VectorInitializer_BehaviorDescriptor extends Expression_BehaviorDescriptor implements MatrixOrVectorInitializer_BehaviorDescriptor {
   public VectorInitializer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.VectorInitializer";
+  }
 }

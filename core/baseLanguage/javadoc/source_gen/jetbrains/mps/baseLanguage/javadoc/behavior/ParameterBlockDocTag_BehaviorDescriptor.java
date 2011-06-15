@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class ParameterBlockDocTag_BehaviorDescriptor extends BaseBlockDocTag_BehaviorDescriptor {
   public ParameterBlockDocTag_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag";
+  }
 }

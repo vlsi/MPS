@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class LessThanNumber_BehaviorDescriptor extends BinaryConditionalExpression_BehaviorDescriptor {
   public LessThanNumber_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.LessThanNumber";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class SReferenceType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public SReferenceType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SReferenceType";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode";
+  }
 }

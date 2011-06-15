@@ -6,4 +6,9 @@ package jetbrains.mps.lang.test.behavior;
 public class CheckNodeDataflow_BehaviorDescriptor extends AbstractNodeAssert_BehaviorDescriptor {
   public CheckNodeDataflow_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.CheckNodeDataflow";
+  }
 }

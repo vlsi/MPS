@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public class Service_BehaviorDescriptor extends Extension_BehaviorDescriptor implements HasLevel_BehaviorDescriptor {
   public Service_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.Service";
+  }
 }

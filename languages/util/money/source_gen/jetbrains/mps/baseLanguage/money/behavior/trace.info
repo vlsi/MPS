@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MoneyIsZeroMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyGetCurrencyMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyGetAmountMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
   <unitInfo fileName="MoneyCreator_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_Behavior" />
   <unitInfo fileName="MoneyGetCurrencyMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_Behavior" />
   <unitInfo fileName="MoneyLiteral_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_Behavior" />
-  <unitInfo fileName="MoneyType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyIsZeroMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyGetCurrencyMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyGetAmountMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
+  <unitInfo fileName="MoneyLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
   <unitInfo fileName="MoneyType_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="MoneyType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877266178">
     <scopeInfo nodeId="1213877266180" fileName="MoneyLiteral_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

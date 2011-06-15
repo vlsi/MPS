@@ -29,4 +29,9 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
   public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return Interface_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.Interface";
+  }
 }

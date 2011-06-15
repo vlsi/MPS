@@ -21,4 +21,9 @@ public class ConceptMethodDeclaration_BehaviorDescriptor extends BaseMethodDecla
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return ConceptMethodDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
+  }
 }

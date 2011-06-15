@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ContainerItemInserter_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ContainerItemInserter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.ContainerItemInserter";
+  }
 }

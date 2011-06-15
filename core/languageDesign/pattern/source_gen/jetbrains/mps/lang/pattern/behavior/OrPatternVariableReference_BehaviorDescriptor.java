@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class OrPatternVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public OrPatternVariableReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference";
+  }
 }

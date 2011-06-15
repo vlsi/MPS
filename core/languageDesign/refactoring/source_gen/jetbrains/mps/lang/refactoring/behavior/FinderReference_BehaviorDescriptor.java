@@ -8,4 +8,9 @@ import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 public class FinderReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IResolveInfo_BehaviorDescriptor {
   public FinderReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.FinderReference";
+  }
 }

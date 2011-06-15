@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class IfMacro_Condition_BehaviorDescriptor extends TemplateQueryBase_BehaviorDescriptor {
   public IfMacro_Condition_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.IfMacro_Condition";
+  }
 }

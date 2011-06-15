@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class BracesStubBlock_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IBaseTestBlock_BehaviorDescriptor {
   public BracesStubBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock";
+  }
 }

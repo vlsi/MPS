@@ -12,4 +12,9 @@ public class UnrestrictedClosureLiteral_BehaviorDescriptor extends ClosureLitera
   public SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return UnrestrictedClosureLiteral_Behavior.virtual_getType_1229718192182(thisNode, paramTypes, resultType, returnType, termType, throwsTypes);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral";
+  }
 }

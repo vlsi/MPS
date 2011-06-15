@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class RemoveSetElementOperation_BehaviorDescriptor extends AbstractSetOperation_BehaviorDescriptor {
   public RemoveSetElementOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation";
+  }
 }

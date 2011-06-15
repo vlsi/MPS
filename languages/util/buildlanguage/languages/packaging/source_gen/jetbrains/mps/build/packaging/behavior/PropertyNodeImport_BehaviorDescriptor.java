@@ -6,4 +6,9 @@ package jetbrains.mps.build.packaging.behavior;
 public class PropertyNodeImport_BehaviorDescriptor extends PropertiesImport_BehaviorDescriptor {
   public PropertyNodeImport_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.PropertyNodeImport";
+  }
 }

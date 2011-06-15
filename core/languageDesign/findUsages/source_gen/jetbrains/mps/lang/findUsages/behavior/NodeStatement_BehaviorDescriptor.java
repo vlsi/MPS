@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class NodeStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public NodeStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.findUsages.structure.NodeStatement";
+  }
 }

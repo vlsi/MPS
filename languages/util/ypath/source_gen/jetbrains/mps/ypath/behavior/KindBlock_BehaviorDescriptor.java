@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class KindBlock_BehaviorDescriptor extends LambdaMethod_BehaviorDescriptor {
   public KindBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.KindBlock";
+  }
 }

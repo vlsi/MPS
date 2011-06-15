@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDecla
 public class FunctionParameterDeclaration_BehaviorDescriptor extends UnboundClosureParameterDeclaration_BehaviorDescriptor {
   public FunctionParameterDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.FunctionParameterDeclaration";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.intentions.behavior;
 public class GenerateIntentionDeclaration_BehaviorDescriptor extends BaseIntentionDeclaration_BehaviorDescriptor {
   public GenerateIntentionDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration";
+  }
 }

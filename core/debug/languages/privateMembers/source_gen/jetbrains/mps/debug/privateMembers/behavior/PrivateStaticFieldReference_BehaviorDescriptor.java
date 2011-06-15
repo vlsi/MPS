@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.StaticFieldReference_BehaviorDescript
 public class PrivateStaticFieldReference_BehaviorDescriptor extends StaticFieldReference_BehaviorDescriptor {
   public PrivateStaticFieldReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference";
+  }
 }

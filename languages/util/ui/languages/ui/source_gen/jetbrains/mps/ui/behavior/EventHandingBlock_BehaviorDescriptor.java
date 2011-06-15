@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescr
 public class EventHandingBlock_BehaviorDescriptor extends ClosureLiteral_BehaviorDescriptor {
   public EventHandingBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.EventHandingBlock";
+  }
 }

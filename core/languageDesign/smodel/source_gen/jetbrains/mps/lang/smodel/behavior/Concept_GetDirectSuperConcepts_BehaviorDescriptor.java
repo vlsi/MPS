@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class Concept_GetDirectSuperConcepts_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Concept_GetDirectSuperConcepts_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts";
+  }
 }

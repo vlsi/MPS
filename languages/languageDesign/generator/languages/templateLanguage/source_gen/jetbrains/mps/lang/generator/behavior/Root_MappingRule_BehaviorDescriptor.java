@@ -11,4 +11,9 @@ public class Root_MappingRule_BehaviorDescriptor extends BaseMappingRule_Behavio
   public SNode virtual_getTemplateType_1213877498511(SNode thisNode) {
     return Root_MappingRule_Behavior.virtual_getTemplateType_1213877498511(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.Root_MappingRule";
+  }
 }

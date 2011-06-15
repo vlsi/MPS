@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class BitwiseNotExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public BitwiseNotExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression";
+  }
 }

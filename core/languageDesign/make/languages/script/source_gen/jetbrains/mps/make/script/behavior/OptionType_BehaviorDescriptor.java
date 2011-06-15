@@ -23,4 +23,9 @@ public class OptionType_BehaviorDescriptor extends Type_BehaviorDescriptor imple
   public SNode virtual_baseClassifier_4125795553993767872(SNode thisNode) {
     return IWillBeClassifier_Behavior.virtual_baseClassifier_4125795553993767872(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.OptionType";
+  }
 }

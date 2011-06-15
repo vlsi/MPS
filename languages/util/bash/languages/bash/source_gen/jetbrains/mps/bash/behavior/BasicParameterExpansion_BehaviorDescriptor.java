@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class BasicParameterExpansion_BehaviorDescriptor extends ArithmeticExpression_BehaviorDescriptor implements IGeneralizedWordUnit_BehaviorDescriptor, IConcreteWordUnit_BehaviorDescriptor {
   public BasicParameterExpansion_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BasicParameterExpansion";
+  }
 }

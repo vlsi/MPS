@@ -11,4 +11,9 @@ public class TextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor extend
   public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return TextBackgroundColorSelectedStyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem";
+  }
 }

@@ -13,4 +13,9 @@ public class GroupType_BehaviorDescriptor extends BaseClassifierType_BehaviorDes
   public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return GroupType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.GroupType";
+  }
 }

@@ -21,4 +21,9 @@ public abstract class AbstractContainerType_BehaviorDescriptor extends Type_Beha
   public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return AbstractContainerType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType";
+  }
 }

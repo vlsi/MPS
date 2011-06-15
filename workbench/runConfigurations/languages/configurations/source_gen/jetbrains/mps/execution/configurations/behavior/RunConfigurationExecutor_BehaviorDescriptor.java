@@ -31,4 +31,9 @@ public abstract class RunConfigurationExecutor_BehaviorDescriptor extends BaseCo
   public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
     return RunConfigurationExecutor_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor";
+  }
 }

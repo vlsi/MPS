@@ -6,4 +6,9 @@ package jetbrains.mps.lang.constraints.behavior;
 public class ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor extends ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor {
   public ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator";
+  }
 }

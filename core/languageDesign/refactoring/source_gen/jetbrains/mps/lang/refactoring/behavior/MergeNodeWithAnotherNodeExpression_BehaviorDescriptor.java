@@ -6,4 +6,9 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class MergeNodeWithAnotherNodeExpression_BehaviorDescriptor extends AbstractMoveNodeExpression_BehaviorDescriptor {
   public MergeNodeWithAnotherNodeExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression";
+  }
 }

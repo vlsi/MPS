@@ -18,4 +18,9 @@ public class ExecuteConfiguration_Function_BehaviorDescriptor extends ConceptFun
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return ExecuteConfiguration_Function_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function";
+  }
 }

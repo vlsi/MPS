@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class EqualsExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public EqualsExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.EqualsExpression";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public abstract class IORedirection_BehaviorDescriptor extends Redirection_BehaviorDescriptor implements IToWordRedirection_BehaviorDescriptor {
   public IORedirection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.IORedirection";
+  }
 }

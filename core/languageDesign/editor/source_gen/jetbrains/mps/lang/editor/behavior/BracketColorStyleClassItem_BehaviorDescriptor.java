@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class BracketColorStyleClassItem_BehaviorDescriptor extends ColorStyleClassItem_BehaviorDescriptor {
   public BracketColorStyleClassItem_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public abstract class BinaryCompareOperation_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public BinaryCompareOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation";
+  }
 }

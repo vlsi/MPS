@@ -6,4 +6,9 @@ package jetbrains.mps.execution.configurations.behavior;
 public class StartProcessHandlerStatement_BehaviorDescriptor extends StartStatement_BehaviorDescriptor {
   public StartProcessHandlerStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement";
+  }
 }

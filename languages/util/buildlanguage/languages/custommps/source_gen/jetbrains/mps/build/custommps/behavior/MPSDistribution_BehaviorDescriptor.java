@@ -23,4 +23,9 @@ public class MPSDistribution_BehaviorDescriptor extends AbstractProjectComponent
   public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     return MPSDistribution_Behavior.virtual_getChildrenTargetDir_1237389224202(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.custommps.structure.MPSDistribution";
+  }
 }

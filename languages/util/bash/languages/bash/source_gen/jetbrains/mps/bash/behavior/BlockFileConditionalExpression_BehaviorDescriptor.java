@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class BlockFileConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public BlockFileConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BlockFileConditionalExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter";
+  }
 }

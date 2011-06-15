@@ -16,4 +16,9 @@ public class RGBColor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
   public String virtual_getRGBValue_1225468086082(SNode thisNode) {
     return RGBColor_Behavior.virtual_getRGBValue_1225468086082(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.RGBColor";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class SelectionType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public SelectionType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.SelectionType";
+  }
 }

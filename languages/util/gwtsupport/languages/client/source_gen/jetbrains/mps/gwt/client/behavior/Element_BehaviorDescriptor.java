@@ -9,5 +9,10 @@ public abstract class Element_BehaviorDescriptor extends BaseConcept_BehaviorDes
   public Element_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.gwt.client.structure.Element";
+  }
+
   public abstract String virtual_getXmlElement_3852159904898386595(SNode thisNode);
 }

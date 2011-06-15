@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class EffectiveGroupIdConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public EffectiveGroupIdConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.EffectiveGroupIdConditionalExpression";
+  }
 }

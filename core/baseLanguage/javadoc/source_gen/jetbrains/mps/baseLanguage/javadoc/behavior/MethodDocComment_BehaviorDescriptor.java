@@ -11,4 +11,9 @@ public class MethodDocComment_BehaviorDescriptor extends BaseDocComment_Behavior
   public boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
     return MethodDocComment_Behavior.virtual_isTagSectionEmpty_8465538089690623795(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment";
+  }
 }

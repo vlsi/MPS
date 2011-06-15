@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class ConfigurationXmlNode_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IConfigurationFragment_BehaviorDescriptor {
   public ConfigurationXmlNode_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.ConfigurationXmlNode";
+  }
 }

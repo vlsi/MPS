@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class RootTemplateAnnotation_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public RootTemplateAnnotation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation";
+  }
 }

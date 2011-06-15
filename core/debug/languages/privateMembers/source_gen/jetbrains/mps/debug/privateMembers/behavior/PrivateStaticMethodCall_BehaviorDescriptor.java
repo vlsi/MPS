@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_BehaviorDescriptor;
 public class PrivateStaticMethodCall_BehaviorDescriptor extends StaticMethodCall_BehaviorDescriptor {
   public PrivateStaticMethodCall_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall";
+  }
 }

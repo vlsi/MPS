@@ -12,4 +12,9 @@ public class CellMenuPart_ReplaceChild_Group_Query_BehaviorDescriptor extends Co
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return CellMenuPart_ReplaceChild_Group_Query_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query";
+  }
 }

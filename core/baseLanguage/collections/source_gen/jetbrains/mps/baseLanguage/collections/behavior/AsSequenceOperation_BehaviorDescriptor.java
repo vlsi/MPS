@@ -8,4 +8,9 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
 public class AsSequenceOperation_BehaviorDescriptor extends AbstractOperation_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
   public AsSequenceOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation";
+  }
 }

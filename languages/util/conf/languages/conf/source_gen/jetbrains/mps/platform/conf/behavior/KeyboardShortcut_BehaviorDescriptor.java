@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public class KeyboardShortcut_BehaviorDescriptor extends Shortcut_BehaviorDescriptor {
   public KeyboardShortcut_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.KeyboardShortcut";
+  }
 }

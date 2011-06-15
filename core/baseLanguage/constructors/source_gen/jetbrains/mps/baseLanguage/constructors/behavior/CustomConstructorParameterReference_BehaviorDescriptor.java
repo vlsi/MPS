@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class CustomConstructorParameterReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public CustomConstructorParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference";
+  }
 }

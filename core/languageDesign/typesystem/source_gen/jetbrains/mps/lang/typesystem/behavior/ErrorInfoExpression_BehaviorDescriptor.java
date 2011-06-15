@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ErrorInfoExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ErrorInfoExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression";
+  }
 }

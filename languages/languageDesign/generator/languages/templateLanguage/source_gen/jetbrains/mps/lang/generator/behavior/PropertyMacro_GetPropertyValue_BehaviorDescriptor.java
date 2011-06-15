@@ -11,4 +11,9 @@ public class PropertyMacro_GetPropertyValue_BehaviorDescriptor extends TemplateQ
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return PropertyMacro_GetPropertyValue_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue";
+  }
 }

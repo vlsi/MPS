@@ -12,4 +12,9 @@ public class BuilderBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDes
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return BuilderBlock_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.BuilderBlock";
+  }
 }

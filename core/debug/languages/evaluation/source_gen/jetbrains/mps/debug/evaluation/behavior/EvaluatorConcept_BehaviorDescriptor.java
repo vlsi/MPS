@@ -31,4 +31,9 @@ public class EvaluatorConcept_BehaviorDescriptor extends BaseConcept_BehaviorDes
   public SNode virtual_getBody_1239354440022(SNode thisNode) {
     return EvaluatorConcept_Behavior.virtual_getBody_1239354440022(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept";
+  }
 }

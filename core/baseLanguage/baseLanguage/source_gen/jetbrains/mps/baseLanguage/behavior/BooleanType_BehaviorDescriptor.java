@@ -23,4 +23,9 @@ public class BooleanType_BehaviorDescriptor extends PrimitiveType_BehaviorDescri
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return BooleanType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BooleanType";
+  }
 }

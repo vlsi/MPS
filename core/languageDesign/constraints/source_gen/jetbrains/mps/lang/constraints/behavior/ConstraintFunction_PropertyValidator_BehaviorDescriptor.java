@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ConstraintFunction_PropertyValidator_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ConstraintFunction_PropertyValidator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator";
+  }
 }

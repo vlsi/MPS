@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class QuickFixSetSelectionBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QuickFixSetSelectionBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock";
+  }
 }

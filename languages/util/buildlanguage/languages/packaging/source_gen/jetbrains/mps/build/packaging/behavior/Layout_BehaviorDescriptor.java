@@ -32,4 +32,9 @@ public class Layout_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor im
   public List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
     return IMacroHolder_Behavior.virtual_getAllMacroNames_1234975567387(thisNode, addBasedir);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Layout";
+  }
 }

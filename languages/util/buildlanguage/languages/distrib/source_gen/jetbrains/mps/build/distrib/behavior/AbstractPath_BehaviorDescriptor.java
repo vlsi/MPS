@@ -9,5 +9,10 @@ public abstract class AbstractPath_BehaviorDescriptor extends BaseConcept_Behavi
   public AbstractPath_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.AbstractPath";
+  }
+
   public abstract String virtual_getFullPath_1230059208735(SNode thisNode);
 }

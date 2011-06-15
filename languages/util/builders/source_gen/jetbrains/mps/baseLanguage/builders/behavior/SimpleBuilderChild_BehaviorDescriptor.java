@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class SimpleBuilderChild_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public SimpleBuilderChild_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild";
+  }
 }

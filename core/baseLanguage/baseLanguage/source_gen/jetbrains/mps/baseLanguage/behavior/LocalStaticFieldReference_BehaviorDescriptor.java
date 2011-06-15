@@ -20,4 +20,9 @@ public class LocalStaticFieldReference_BehaviorDescriptor extends VariableRefere
   public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     return LocalStaticFieldReference_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference";
+  }
 }

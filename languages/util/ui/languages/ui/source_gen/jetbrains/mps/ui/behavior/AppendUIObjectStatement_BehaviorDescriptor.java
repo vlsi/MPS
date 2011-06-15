@@ -15,4 +15,9 @@ public class AppendUIObjectStatement_BehaviorDescriptor extends UIObjectStatemen
   public boolean virtual_shouldReturnValue_7109250785404509292(SNode thisNode) {
     return AppendUIObjectStatement_Behavior.virtual_shouldReturnValue_7109250785404509292(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.AppendUIObjectStatement";
+  }
 }

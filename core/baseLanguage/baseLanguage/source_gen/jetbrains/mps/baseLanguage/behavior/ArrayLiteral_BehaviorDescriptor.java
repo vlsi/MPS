@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ArrayLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ArrayLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ArrayLiteral";
+  }
 }

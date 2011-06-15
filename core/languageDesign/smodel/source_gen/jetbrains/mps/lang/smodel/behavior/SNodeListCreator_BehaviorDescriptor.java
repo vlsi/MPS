@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 public class SNodeListCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public SNodeListCreator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SNodeListCreator";
+  }
 }

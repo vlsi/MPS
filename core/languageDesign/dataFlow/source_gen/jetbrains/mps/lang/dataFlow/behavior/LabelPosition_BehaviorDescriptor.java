@@ -6,4 +6,9 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class LabelPosition_BehaviorDescriptor extends Position_BehaviorDescriptor {
   public LabelPosition_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.LabelPosition";
+  }
 }

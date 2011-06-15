@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class QueryFunction_ReturnSmallPart_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_ReturnSmallPart_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart";
+  }
 }

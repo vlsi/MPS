@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellKeyMap_IsApplicableFunction_BehaviorDescriptor extends CellKeyMap_AbstractFunction_BehaviorDescriptor {
   public CellKeyMap_IsApplicableFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class InputResourcesParameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public InputResourcesParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.InputResourcesParameter";
+  }
 }

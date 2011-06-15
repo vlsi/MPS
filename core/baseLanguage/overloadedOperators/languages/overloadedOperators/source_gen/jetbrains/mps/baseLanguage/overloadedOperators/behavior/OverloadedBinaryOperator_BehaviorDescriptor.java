@@ -12,4 +12,9 @@ public class OverloadedBinaryOperator_BehaviorDescriptor extends ConceptFunction
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return OverloadedBinaryOperator_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator";
+  }
 }

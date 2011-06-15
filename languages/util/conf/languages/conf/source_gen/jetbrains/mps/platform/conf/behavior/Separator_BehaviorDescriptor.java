@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class Separator_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IActionItem_BehaviorDescriptor {
   public Separator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.Separator";
+  }
 }

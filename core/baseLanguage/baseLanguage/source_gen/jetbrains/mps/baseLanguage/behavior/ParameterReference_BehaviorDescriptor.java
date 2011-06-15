@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ParameterReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public ParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ParameterReference";
+  }
 }

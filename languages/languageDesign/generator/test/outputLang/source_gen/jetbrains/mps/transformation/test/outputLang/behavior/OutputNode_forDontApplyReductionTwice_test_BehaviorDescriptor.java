@@ -6,4 +6,9 @@ package jetbrains.mps.transformation.test.outputLang.behavior;
 public class OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor extends OutputNode_BehaviorDescriptor {
   public OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test";
+  }
 }

@@ -13,4 +13,9 @@ public class DequeType_BehaviorDescriptor extends QueueType_BehaviorDescriptor {
   public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     return DequeType_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.DequeType";
+  }
 }

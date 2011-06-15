@@ -19,4 +19,9 @@ public class Folder_BehaviorDescriptor extends AbstractProjectComponent_Behavior
   public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     return Folder_Behavior.virtual_getChildrenTargetDir_1237389224202(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Folder";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class FromOperation_BehaviorDescriptor extends TreePathOperation_BehaviorDescriptor {
   public FromOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.FromOperation";
+  }
 }

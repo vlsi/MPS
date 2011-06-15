@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class TerminalConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public TerminalConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.TerminalConditionalExpression";
+  }
 }

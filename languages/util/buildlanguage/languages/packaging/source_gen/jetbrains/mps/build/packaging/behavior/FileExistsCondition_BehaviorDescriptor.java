@@ -16,4 +16,9 @@ public class FileExistsCondition_BehaviorDescriptor extends BaseConcept_Behavior
   public boolean virtual_isTrueWhileGeneration_1233161599461(SNode thisNode) {
     return FileExistsCondition_Behavior.virtual_isTrueWhileGeneration_1233161599461(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.FileExistsCondition";
+  }
 }

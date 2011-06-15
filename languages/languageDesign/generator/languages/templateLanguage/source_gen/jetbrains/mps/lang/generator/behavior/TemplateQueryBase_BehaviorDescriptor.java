@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public abstract class TemplateQueryBase_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public TemplateQueryBase_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateQueryBase";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class LongLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public LongLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.LongLiteral";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDes
 public class FunctionMethodDeclaration_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor {
   public FunctionMethodDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration";
+  }
 }

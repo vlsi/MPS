@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class BracketExpression_BehaviorDescriptor extends ArithmeticExpression_BehaviorDescriptor {
   public BracketExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BracketExpression";
+  }
 }

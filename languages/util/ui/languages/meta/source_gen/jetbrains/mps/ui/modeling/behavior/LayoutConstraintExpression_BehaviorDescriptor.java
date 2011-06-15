@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class LayoutConstraintExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public LayoutConstraintExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression";
+  }
 }

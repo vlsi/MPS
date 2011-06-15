@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public abstract class AbstractLoopCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor implements ICompoundCommand_BehaviorDescriptor {
   public AbstractLoopCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.AbstractLoopCommand";
+  }
 }

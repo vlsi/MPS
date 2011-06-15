@@ -24,4 +24,9 @@ public class CellModel_Component_BehaviorDescriptor extends EditorCellModel_Beha
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_Component_Behavior.virtual_getClosingText_1220339738643(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_Component";
+  }
 }

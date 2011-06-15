@@ -6,4 +6,9 @@ package jetbrains.mps.ui.modeling.behavior;
 public class CellLayoutConstraint_BehaviorDescriptor extends LayoutConstraint_BehaviorDescriptor {
   public CellLayoutConstraint_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.CellLayoutConstraint";
+  }
 }

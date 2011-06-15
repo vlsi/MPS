@@ -11,4 +11,9 @@ public class ModelManagerDeclaration_BehaviorDescriptor extends AbstractModelCre
   public SNode virtual_createType_1213877527970(SNode thisNode) {
     return ModelManagerDeclaration_Behavior.virtual_createType_1213877527970(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration";
+  }
 }

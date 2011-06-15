@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class KeyStrokeType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public KeyStrokeType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.KeyStrokeType";
+  }
 }

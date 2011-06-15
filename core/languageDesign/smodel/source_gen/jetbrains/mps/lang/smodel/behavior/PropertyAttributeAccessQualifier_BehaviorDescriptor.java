@@ -20,4 +20,9 @@ public class PropertyAttributeAccessQualifier_BehaviorDescriptor extends BaseCon
   public boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
     return PropertyAttributeAccessQualifier_Behavior.virtual_isAggregation_4024382256428848854(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.structure.behavior;
 public class ReferenceConceptLinkDeclaration_BehaviorDescriptor extends ConceptLinkDeclaration_BehaviorDescriptor {
   public ReferenceConceptLinkDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration";
+  }
 }

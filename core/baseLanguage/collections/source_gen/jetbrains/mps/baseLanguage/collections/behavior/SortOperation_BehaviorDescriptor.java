@@ -11,4 +11,9 @@ public class SortOperation_BehaviorDescriptor extends InternalSequenceOperation_
   public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return SortOperation_Behavior.virtual_isDotExpressionLegalAsStatement_1239212437413(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.SortOperation";
+  }
 }

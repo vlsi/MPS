@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class StaticFieldDocReference_BehaviorDescriptor extends BaseVariableDocReference_BehaviorDescriptor {
   public StaticFieldDocReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class PastePostProcessor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PastePostProcessor_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.PastePostProcessor";
+  }
 }

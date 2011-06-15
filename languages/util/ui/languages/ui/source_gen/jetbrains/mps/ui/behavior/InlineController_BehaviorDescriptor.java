@@ -17,4 +17,9 @@ public class InlineController_BehaviorDescriptor extends Controller_BehaviorDesc
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return InlineController_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.InlineController";
+  }
 }

@@ -30,4 +30,9 @@ public class DistribConfiguration_BehaviorDescriptor extends BaseConcept_Behavio
   public List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
     return IMacroHolder_Behavior.virtual_getAllMacroNames_1234975567387(thisNode, addBasedir);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.DistribConfiguration";
+  }
 }

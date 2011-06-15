@@ -12,4 +12,9 @@ public class DefaultClassifierType_BehaviorDescriptor extends BaseClassifierType
   public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return DefaultClassifierType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType";
+  }
 }

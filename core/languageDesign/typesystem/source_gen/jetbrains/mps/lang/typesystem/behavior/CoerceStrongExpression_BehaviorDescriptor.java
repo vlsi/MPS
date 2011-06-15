@@ -6,4 +6,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class CoerceStrongExpression_BehaviorDescriptor extends CoerceExpression_BehaviorDescriptor {
   public CoerceStrongExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression";
+  }
 }

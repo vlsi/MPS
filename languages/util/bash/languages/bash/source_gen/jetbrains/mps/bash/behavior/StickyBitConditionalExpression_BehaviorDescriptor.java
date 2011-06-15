@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class StickyBitConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public StickyBitConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.StickyBitConditionalExpression";
+  }
 }

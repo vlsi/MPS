@@ -16,4 +16,9 @@ public class NullLiteral_BehaviorDescriptor extends Expression_BehaviorDescripto
   public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     return NullLiteral_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.NullLiteral";
+  }
 }

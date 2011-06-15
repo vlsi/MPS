@@ -8,11 +8,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.AbstractFunctionType_BehaviorDescriptor" file="AbstractFunctionType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.AbstractFunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
@@ -35,15 +36,18 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ClosureControlStatement_Behavior" file="ClosureControlStatement_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ClosureControlStatement_BehaviorDescriptor" file="ClosureControlStatement_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_Behavior" file="ClosureLiteral_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -71,6 +75,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescriptor" file="ClosureLiteral_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
@@ -85,11 +90,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.CompactInvokeFunctionExpression_BehaviorDescriptor" file="CompactInvokeFunctionExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_Behavior" file="ControlAbstractionContainer_Behavior.java">
     <classNode dependClassName="java.util.List" />
@@ -99,13 +106,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_BehaviorDescriptor" file="ControlAbstractionContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionDeclaration_BehaviorDescriptor" file="ControlAbstractionDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor" />
@@ -115,11 +126,13 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ControlClosureLiteral_BehaviorDescriptor" file="ControlClosureLiteral_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedClosureLiteral_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil" file="ControlMethodUtil.java">
     <classNode dependClassName="java.util.ArrayList" />
@@ -146,8 +159,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_BehaviorDescriptor" file="FunctionMethodDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" file="FunctionType_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
@@ -185,21 +200,25 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor" file="FunctionType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_BehaviorDescriptor" file="InvokeExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_Behavior" file="InvokeFunctionExpression_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_BehaviorDescriptor" file="InvokeFunctionExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_Behavior" />
@@ -207,7 +226,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_Behavior" file="InvokeFunctionOperation_Behavior.java">
     <classNode dependClassName="java.util.ArrayList" />
@@ -218,17 +237,20 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_BehaviorDescriptor" file="InvokeFunctionOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.PairOfInts_BehaviorDescriptor" file="PairOfInts_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils" file="RuntimeUtils.java">
     <classNode dependClassName="java.lang.String" />
@@ -252,16 +274,20 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.StringPropertyHolder_BehaviorDescriptor" file="StringPropertyHolder_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDeclaration_Behavior" file="UnboundClosureParameterDeclaration_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDeclaration_BehaviorDescriptor" file="UnboundClosureParameterDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ParameterDeclaration_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedClosureLiteral_Behavior" file="UnrestrictedClosureLiteral_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
@@ -274,11 +300,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedClosureLiteral_BehaviorDescriptor" file="UnrestrictedClosureLiteral_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedClosureLiteral_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_Behavior" file="UnrestrictedFunctionType_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
@@ -298,29 +326,34 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_BehaviorDescriptor" file="UnrestrictedFunctionType_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_Behavior" file="YieldAllStatement_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_BehaviorDescriptor" file="YieldAllStatement_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_Behavior" file="YieldStatement_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_BehaviorDescriptor" file="YieldStatement_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>
 

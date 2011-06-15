@@ -34,4 +34,9 @@ public class ListType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return ListType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ListType";
+  }
 }

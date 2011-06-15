@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class RefactoringTarget_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public RefactoringTarget_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.RefactoringTarget";
+  }
 }

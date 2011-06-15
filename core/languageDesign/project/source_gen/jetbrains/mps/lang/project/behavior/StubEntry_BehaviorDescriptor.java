@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class StubEntry_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public StubEntry_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.project.structure.StubEntry";
+  }
 }

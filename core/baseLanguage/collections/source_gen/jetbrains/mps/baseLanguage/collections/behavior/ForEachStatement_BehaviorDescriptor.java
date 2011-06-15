@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescrip
 public class ForEachStatement_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor {
   public ForEachStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement";
+  }
 }

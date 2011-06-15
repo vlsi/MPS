@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class TemplateFunctionParameter_generationContext_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public TemplateFunctionParameter_generationContext_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext";
+  }
 }

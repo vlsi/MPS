@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class Line_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Line_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.Line";
+  }
 }

@@ -19,4 +19,9 @@ public class TypesCheckOperation_BehaviorDescriptor extends NodeOperation_Behavi
   public String virtual_getTestName_1216136419751(SNode thisNode) {
     return TypesCheckOperation_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.TypesCheckOperation";
+  }
 }

@@ -14,4 +14,9 @@ public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDec
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration";
+  }
 }

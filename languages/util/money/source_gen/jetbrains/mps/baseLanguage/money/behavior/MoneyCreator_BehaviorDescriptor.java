@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 public class MoneyCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public MoneyCreator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.money.structure.MoneyCreator";
+  }
 }

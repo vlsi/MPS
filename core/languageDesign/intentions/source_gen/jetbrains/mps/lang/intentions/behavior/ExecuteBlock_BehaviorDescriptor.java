@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ExecuteBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ExecuteBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.intentions.structure.ExecuteBlock";
+  }
 }

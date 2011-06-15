@@ -12,4 +12,9 @@ public class LinkPatternVariableReference_BehaviorDescriptor extends Expression_
   public void virtual_abxcdef_1225210740874(SNode thisNode, @Deprecated Object o) {
     LinkPatternVariableReference_Behavior.virtual_abxcdef_1225210740874(thisNode, o);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference";
+  }
 }

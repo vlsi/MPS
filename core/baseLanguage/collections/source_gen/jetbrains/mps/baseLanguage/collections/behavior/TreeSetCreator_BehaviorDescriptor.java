@@ -15,4 +15,9 @@ public class TreeSetCreator_BehaviorDescriptor extends HashSetCreator_BehaviorDe
   public boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
     return TreeSetCreator_Behavior.virtual_canHaveParameter_2261417478150191157(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator";
+  }
 }

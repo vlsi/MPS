@@ -9,5 +9,10 @@ public abstract class AbstractCommandLinePart_BehaviorDescriptor extends BaseCon
   public AbstractCommandLinePart_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.AbstractCommandLinePart";
+  }
+
   public abstract String virtual_getText_1231864533228(SNode thisNode);
 }

@@ -28,4 +28,9 @@ public class CellModel_ConceptProperty_BehaviorDescriptor extends CellModel_With
   public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return CellModel_ConceptProperty_Behavior.virtual_getDefaultFontStyle_1221472292001(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class VariableReference_BehaviorDescriptor extends LValue_BehaviorDescriptor implements IGeneralizedWordUnit_BehaviorDescriptor {
   public VariableReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.VariableReference";
+  }
 }

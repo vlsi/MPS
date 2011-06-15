@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableReference_BehaviorDescriptor;
 public class SubstituteNodeBuilderVariableReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public SubstituteNodeBuilderVariableReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference";
+  }
 }

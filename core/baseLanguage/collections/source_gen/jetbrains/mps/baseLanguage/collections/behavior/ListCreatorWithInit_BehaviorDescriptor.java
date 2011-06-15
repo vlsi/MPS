@@ -11,4 +11,9 @@ public class ListCreatorWithInit_BehaviorDescriptor extends AbstractContainerCre
   public SNode virtual_createType_1237722437229(SNode thisNode) {
     return ListCreatorWithInit_Behavior.virtual_createType_1237722437229(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit";
+  }
 }

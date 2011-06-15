@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ClassifierType_BehaviorDescriptor;
 public class InternalClassifierType_BehaviorDescriptor extends ClassifierType_BehaviorDescriptor {
   public InternalClassifierType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType";
+  }
 }

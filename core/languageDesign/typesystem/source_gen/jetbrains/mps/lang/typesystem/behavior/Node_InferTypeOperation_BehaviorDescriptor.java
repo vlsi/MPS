@@ -7,4 +7,9 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor;
 public class Node_InferTypeOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Node_InferTypeOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation";
+  }
 }

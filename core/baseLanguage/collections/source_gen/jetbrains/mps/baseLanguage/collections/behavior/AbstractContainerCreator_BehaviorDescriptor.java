@@ -13,5 +13,10 @@ public abstract class AbstractContainerCreator_BehaviorDescriptor extends Abstra
     return AbstractContainerCreator_Behavior.virtual_canHaveParameter_2261417478150191157(thisNode);
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
+  }
+
   public abstract SNode virtual_createType_1237722437229(SNode thisNode);
 }

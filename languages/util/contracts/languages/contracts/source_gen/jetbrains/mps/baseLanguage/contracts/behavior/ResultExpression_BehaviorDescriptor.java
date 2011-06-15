@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ResultExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ResultExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.contracts.structure.ResultExpression";
+  }
 }

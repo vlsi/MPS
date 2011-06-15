@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class GetWatchablesBlock_ConceptFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public GetWatchablesBlock_ConceptFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction";
+  }
 }

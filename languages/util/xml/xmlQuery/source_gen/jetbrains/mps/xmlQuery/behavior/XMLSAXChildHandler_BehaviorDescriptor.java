@@ -6,4 +6,9 @@ package jetbrains.mps.xmlQuery.behavior;
 public class XMLSAXChildHandler_BehaviorDescriptor extends XMLSAXHandlerFunction_BehaviorDescriptor {
   public XMLSAXChildHandler_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.xmlQuery.structure.XMLSAXChildHandler";
+  }
 }

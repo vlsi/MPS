@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction";
+  }
 }

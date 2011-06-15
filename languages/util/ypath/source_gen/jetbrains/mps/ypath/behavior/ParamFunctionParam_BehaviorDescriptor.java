@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class ParamFunctionParam_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IFunctionParam_BehaviorDescriptor {
   public ParamFunctionParam_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.ParamFunctionParam";
+  }
 }

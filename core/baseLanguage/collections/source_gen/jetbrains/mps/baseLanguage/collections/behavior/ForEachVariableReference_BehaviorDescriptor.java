@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ForEachVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ForEachVariableReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference";
+  }
 }

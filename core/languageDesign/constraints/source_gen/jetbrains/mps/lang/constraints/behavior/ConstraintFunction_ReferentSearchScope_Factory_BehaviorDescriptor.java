@@ -11,4 +11,9 @@ public class ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor e
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ConstraintFunction_ReferentSearchScope_Factory_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory";
+  }
 }

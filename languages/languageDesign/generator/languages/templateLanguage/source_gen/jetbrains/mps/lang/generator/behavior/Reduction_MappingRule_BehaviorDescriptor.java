@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class Reduction_MappingRule_BehaviorDescriptor extends BaseMappingRule_BehaviorDescriptor implements ReductionRule_BehaviorDescriptor {
   public Reduction_MappingRule_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
+  }
 }

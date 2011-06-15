@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ChildTypeRestrictionReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ChildTypeRestrictionReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference";
+  }
 }

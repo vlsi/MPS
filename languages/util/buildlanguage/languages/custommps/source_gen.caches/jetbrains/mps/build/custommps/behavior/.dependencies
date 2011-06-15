@@ -7,8 +7,9 @@
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSBuild_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSDistribution_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" file="LibraryFolder_Behavior.java">
     <classNode dependClassName="java.lang.String" />
@@ -20,8 +21,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.LibraryFolder_BehaviorDescriptor" file="LibraryFolder_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Folder_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" file="MPSBuild_Behavior.java">
     <classNode dependClassName="java.io.File" />
@@ -56,6 +59,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.MPSBuild_BehaviorDescriptor" file="MPSBuild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_BehaviorDescriptor" />
@@ -64,7 +68,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.INotBuildableComponent_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" file="MPSDistribution_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
@@ -79,6 +83,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.MPSDistribution_BehaviorDescriptor" file="MPSDistribution_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_BehaviorDescriptor" />
@@ -87,7 +92,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.INotBuildableComponent_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_Behavior" file="UndeclaredVariableReference_Behavior.java">
     <classNode dependClassName="java.lang.String" />
@@ -95,6 +100,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_BehaviorDescriptor" file="UndeclaredVariableReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior" />
@@ -102,7 +108,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>
 

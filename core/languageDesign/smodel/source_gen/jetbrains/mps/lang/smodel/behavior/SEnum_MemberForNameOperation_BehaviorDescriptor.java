@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class SEnum_MemberForNameOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements SEnumOperation_BehaviorDescriptor {
   public SEnum_MemberForNameOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation";
+  }
 }

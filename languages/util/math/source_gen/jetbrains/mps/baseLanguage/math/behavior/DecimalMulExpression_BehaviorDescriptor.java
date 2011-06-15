@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class DecimalMulExpression_BehaviorDescriptor extends DecimalBinaryOperation_BehaviorDescriptor {
   public DecimalMulExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression";
+  }
 }

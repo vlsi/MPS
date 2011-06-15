@@ -15,4 +15,9 @@ public class IntentionDeclaration_BehaviorDescriptor extends BaseIntentionDeclar
   public SNode virtual_getDescendantToCheck_3745452943050928880(SNode thisNode) {
     return IntentionDeclaration_Behavior.virtual_getDescendantToCheck_3745452943050928880(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.intentions.structure.IntentionDeclaration";
+  }
 }

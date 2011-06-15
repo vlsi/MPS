@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class XorAssignmentExpression_BehaviorDescriptor extends OperationAssignmentExpression_BehaviorDescriptor {
   public XorAssignmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.XorAssignmentExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class AskBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public AskBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.AskBlock";
+  }
 }

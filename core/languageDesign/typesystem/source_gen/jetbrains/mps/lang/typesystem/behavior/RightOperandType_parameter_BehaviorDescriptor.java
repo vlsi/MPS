@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class RightOperandType_parameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public RightOperandType_parameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter";
+  }
 }

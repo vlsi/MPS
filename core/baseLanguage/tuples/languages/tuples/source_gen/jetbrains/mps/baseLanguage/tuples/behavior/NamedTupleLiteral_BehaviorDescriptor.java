@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class NamedTupleLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public NamedTupleLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral";
+  }
 }

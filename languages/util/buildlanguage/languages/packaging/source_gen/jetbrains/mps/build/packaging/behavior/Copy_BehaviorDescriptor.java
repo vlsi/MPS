@@ -16,4 +16,9 @@ public class Copy_BehaviorDescriptor extends AbstractProjectComponent_BehaviorDe
   public boolean virtual_equals_1213877333900(SNode thisNode, SNode snode) {
     return Copy_Behavior.virtual_equals_1213877333900(thisNode, snode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Copy";
+  }
 }

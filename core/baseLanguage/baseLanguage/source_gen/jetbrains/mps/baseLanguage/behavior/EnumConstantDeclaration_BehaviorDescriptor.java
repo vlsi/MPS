@@ -60,4 +60,9 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
+  }
 }

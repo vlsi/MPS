@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class LinkedHashSetCreator_BehaviorDescriptor extends HashSetCreator_BehaviorDescriptor {
   public LinkedHashSetCreator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator";
+  }
 }

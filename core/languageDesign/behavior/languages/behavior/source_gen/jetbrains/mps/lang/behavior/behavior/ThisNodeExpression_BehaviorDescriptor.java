@@ -8,4 +8,9 @@ import jetbrains.mps.baseLanguage.behavior.IThisExpression_BehaviorDescriptor;
 public class ThisNodeExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IThisExpression_BehaviorDescriptor {
   public ThisNodeExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.behavior.structure.ThisNodeExpression";
+  }
 }

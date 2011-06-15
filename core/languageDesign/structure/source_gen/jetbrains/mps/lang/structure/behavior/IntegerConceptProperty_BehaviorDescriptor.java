@@ -6,4 +6,9 @@ package jetbrains.mps.lang.structure.behavior;
 public class IntegerConceptProperty_BehaviorDescriptor extends ConceptProperty_BehaviorDescriptor {
   public IntegerConceptProperty_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.structure.structure.IntegerConceptProperty";
+  }
 }

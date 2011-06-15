@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class InputRedirection_BehaviorDescriptor extends IORedirection_BehaviorDescriptor {
   public InputRedirection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.InputRedirection";
+  }
 }

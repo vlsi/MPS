@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition";
+  }
 }

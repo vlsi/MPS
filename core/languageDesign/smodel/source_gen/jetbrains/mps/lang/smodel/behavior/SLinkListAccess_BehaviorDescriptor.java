@@ -23,4 +23,9 @@ public class SLinkListAccess_BehaviorDescriptor extends SNodeOperation_BehaviorD
   public boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
     return SLinkListAccess_Behavior.virtual_isAggregation_4024382256428848854(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
+  }
 }

@@ -15,5 +15,10 @@ public abstract class Attr_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.gwt.client.structure.Attr";
+  }
+
   public abstract String virtual_getXmlAttr_3852159904898525999(SNode thisNode);
 }

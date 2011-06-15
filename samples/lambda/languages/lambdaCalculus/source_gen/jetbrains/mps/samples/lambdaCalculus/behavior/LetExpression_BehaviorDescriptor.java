@@ -12,4 +12,9 @@ public class LetExpression_BehaviorDescriptor extends LambdaExpression_BehaviorD
   public List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
     return LetExpression_Behavior.virtual_getVariables_8981808925914841576(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression";
+  }
 }

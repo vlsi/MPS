@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class SubExpression_BehaviorDescriptor extends BinaryArithmeticExpression_BehaviorDescriptor {
   public SubExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.SubExpression";
+  }
 }

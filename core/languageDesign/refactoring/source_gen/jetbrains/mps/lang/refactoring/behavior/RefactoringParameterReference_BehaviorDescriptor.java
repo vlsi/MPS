@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class RefactoringParameterReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements RefactoringArgumentReference_BehaviorDescriptor {
   public RefactoringParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class PostIncExpression_BehaviorDescriptor extends PostVariableExpression_BehaviorDescriptor {
   public PostIncExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.PostIncExpression";
+  }
 }

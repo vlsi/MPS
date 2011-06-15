@@ -6,4 +6,9 @@ package jetbrains.mps.execution.commands.behavior;
 public class ProcessBuilderPart_BehaviorDescriptor extends AbstractProcessBuilderPart_BehaviorDescriptor {
   public ProcessBuilderPart_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.ProcessBuilderPart";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public abstract class IdeaPluginRoot_BehaviorDescriptor extends ConfigurationXmlRootNode_BehaviorDescriptor implements IConfiguration_BehaviorDescriptor {
   public IdeaPluginRoot_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.IdeaPluginRoot";
+  }
 }

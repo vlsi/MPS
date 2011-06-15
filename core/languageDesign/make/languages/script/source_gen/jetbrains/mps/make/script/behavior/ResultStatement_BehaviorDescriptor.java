@@ -12,4 +12,9 @@ public class ResultStatement_BehaviorDescriptor extends Statement_BehaviorDescri
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return ResultStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.ResultStatement";
+  }
 }

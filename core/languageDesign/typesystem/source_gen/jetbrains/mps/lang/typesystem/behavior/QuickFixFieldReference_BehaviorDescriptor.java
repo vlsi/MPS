@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class QuickFixFieldReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public QuickFixFieldReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class GetKeysOperation_BehaviorDescriptor extends MapOperation_BehaviorDescriptor {
   public GetKeysOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation";
+  }
 }

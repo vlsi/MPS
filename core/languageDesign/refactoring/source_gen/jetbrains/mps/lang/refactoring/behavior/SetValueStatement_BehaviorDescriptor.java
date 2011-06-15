@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class SetValueStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public SetValueStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.SetValueStatement";
+  }
 }

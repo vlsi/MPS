@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class PositionChildrenStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public PositionChildrenStyleClassItem_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem";
+  }
 }

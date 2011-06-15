@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class NamedConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public NamedConcept_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodelTests.structure.NamedConcept";
+  }
 }

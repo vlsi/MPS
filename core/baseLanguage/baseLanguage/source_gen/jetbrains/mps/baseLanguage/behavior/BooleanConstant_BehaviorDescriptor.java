@@ -12,4 +12,9 @@ public class BooleanConstant_BehaviorDescriptor extends Expression_BehaviorDescr
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     return BooleanConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BooleanConstant";
+  }
 }

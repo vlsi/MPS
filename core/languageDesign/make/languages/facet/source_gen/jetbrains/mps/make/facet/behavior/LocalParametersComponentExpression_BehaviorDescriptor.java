@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor;
 public class LocalParametersComponentExpression_BehaviorDescriptor extends DotExpression_BehaviorDescriptor {
   public LocalParametersComponentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression";
+  }
 }

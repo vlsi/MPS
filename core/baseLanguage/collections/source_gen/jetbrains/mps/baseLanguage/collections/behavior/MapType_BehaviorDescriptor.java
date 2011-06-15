@@ -22,4 +22,9 @@ public class MapType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return MapType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.MapType";
+  }
 }

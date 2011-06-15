@@ -27,4 +27,9 @@ public abstract class ConceptFunctionParameter_BehaviorDescriptor extends Expres
   public String virtual_getParameterName_1225280611056(SNode thisNode) {
     return ConceptFunctionParameter_Behavior.virtual_getParameterName_1225280611056(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter";
+  }
 }

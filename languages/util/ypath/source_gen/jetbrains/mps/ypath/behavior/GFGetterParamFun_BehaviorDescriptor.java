@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class GFGetterParamFun_BehaviorDescriptor extends GFGetterFun_BehaviorDescriptor implements IParamFeatureFun_BehaviorDescriptor, IDesignFunction_BehaviorDescriptor {
   public GFGetterParamFun_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.GFGetterParamFun";
+  }
 }

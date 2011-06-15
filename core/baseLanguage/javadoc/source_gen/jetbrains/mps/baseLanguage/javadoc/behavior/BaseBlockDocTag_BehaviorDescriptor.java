@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class BaseBlockDocTag_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BaseBlockDocTag_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag";
+  }
 }

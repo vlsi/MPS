@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class WeaveMacro_BehaviorDescriptor extends NodeMacro_BehaviorDescriptor {
   public WeaveMacro_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.WeaveMacro";
+  }
 }

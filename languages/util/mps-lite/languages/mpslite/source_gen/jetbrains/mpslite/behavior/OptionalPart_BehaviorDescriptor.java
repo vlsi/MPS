@@ -6,4 +6,9 @@ package jetbrains.mpslite.behavior;
 public class OptionalPart_BehaviorDescriptor extends LinePart_BehaviorDescriptor {
   public OptionalPart_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.OptionalPart";
+  }
 }

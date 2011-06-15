@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class Link_SetTargetOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Link_SetTargetOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation";
+  }
 }

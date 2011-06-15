@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class EnclosingContextCompartmentExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public EnclosingContextCompartmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.EnclosingContextCompartmentExpression";
+  }
 }

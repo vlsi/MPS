@@ -11,4 +11,9 @@ public class NodesCreatorTarget_BehaviorDescriptor extends BaseCreatorTarget_Beh
   public SNode virtual_getParameter_7559322914920378168(SNode thisNode) {
     return NodesCreatorTarget_Behavior.virtual_getParameter_7559322914920378168(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.NodesCreatorTarget";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor;
 public class MatrixAddExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public MatrixAddExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression";
+  }
 }

@@ -42,4 +42,9 @@ public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclara
   public String virtual_jniSignature_8847328628797656446(SNode thisNode) {
     return ConstructorDeclaration_Behavior.virtual_jniSignature_8847328628797656446(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration";
+  }
 }

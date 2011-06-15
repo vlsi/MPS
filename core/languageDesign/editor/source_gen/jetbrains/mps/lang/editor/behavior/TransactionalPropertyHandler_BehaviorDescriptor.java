@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class TransactionalPropertyHandler_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public TransactionalPropertyHandler_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler";
+  }
 }

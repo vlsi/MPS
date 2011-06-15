@@ -16,4 +16,9 @@ public class NamedTupleDeclaration_BehaviorDescriptor extends Classifier_Behavio
   public SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     return NamedTupleDeclaration_Behavior.virtual_getThisType_3305065273710880775(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class EncodingLiteral_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements EncodingDeclarationBase_BehaviorDescriptor {
   public EncodingLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.EncodingLiteral";
+  }
 }

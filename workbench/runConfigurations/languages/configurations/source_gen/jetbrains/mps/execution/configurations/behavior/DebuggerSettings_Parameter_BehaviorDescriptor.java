@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class DebuggerSettings_Parameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public DebuggerSettings_Parameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter";
+  }
 }

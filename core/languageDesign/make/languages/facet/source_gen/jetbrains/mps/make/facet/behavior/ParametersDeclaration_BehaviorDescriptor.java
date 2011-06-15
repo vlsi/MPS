@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior
 public class ParametersDeclaration_BehaviorDescriptor extends NamedTupleDeclaration_BehaviorDescriptor {
   public ParametersDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.facet.structure.ParametersDeclaration";
+  }
 }

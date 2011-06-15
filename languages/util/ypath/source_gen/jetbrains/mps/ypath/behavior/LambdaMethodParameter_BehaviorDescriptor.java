@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ClosureParameter_BehaviorDescriptor;
 public class LambdaMethodParameter_BehaviorDescriptor extends ClosureParameter_BehaviorDescriptor {
   public LambdaMethodParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.LambdaMethodParameter";
+  }
 }

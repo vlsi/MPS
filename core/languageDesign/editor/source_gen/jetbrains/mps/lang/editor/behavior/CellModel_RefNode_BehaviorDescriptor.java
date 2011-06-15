@@ -28,4 +28,9 @@ public class CellModel_RefNode_BehaviorDescriptor extends CellModel_WithRole_Beh
   public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return CellModel_RefNode_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_RefNode";
+  }
 }

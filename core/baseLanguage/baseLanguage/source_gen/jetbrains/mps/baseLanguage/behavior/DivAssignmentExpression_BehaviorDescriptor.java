@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class DivAssignmentExpression_BehaviorDescriptor extends OperationAssignmentExpression_BehaviorDescriptor {
   public DivAssignmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.DivAssignmentExpression";
+  }
 }

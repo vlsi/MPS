@@ -13,4 +13,9 @@ public class BuilderCreator_BehaviorDescriptor extends AbstractCreator_BehaviorD
   public boolean virtual_isLeaf_932644095877881871(SNode thisNode) {
     return BuilderContainer_Behavior.virtual_isLeaf_932644095877881871(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class EnumValueOfExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public EnumValueOfExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression";
+  }
 }

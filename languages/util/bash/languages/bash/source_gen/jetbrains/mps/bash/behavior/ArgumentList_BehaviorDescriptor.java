@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ArgumentList_BehaviorDescriptor extends ExternalOptionDeclaration_BehaviorDescriptor {
   public ArgumentList_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ArgumentList";
+  }
 }

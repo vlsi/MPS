@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class MatchDefaultPropertyOperation_BehaviorDescriptor extends TreePathOperation_BehaviorDescriptor {
   public MatchDefaultPropertyOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation";
+  }
 }

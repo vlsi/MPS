@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class ConjugateOperation_BehaviorDescriptor extends MatrixExponentialOperation_BehaviorDescriptor {
   public ConjugateOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation";
+  }
 }

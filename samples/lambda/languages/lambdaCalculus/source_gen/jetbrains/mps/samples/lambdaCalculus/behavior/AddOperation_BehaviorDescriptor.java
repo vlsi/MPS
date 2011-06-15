@@ -6,4 +6,9 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class AddOperation_BehaviorDescriptor extends BinaryNumericOperation_BehaviorDescriptor {
   public AddOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.AddOperation";
+  }
 }

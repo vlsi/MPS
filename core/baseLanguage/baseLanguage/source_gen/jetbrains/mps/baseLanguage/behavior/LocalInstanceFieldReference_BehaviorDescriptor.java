@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class LocalInstanceFieldReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public LocalInstanceFieldReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference";
+  }
 }

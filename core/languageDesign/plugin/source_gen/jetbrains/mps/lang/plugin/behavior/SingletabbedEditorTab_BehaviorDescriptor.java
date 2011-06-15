@@ -11,4 +11,9 @@ public class SingletabbedEditorTab_BehaviorDescriptor extends AbstractEditorTab_
   public SNode virtual_createType_1213877527970(SNode thisNode) {
     return SingletabbedEditorTab_Behavior.virtual_createType_1213877527970(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab";
+  }
 }

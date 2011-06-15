@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class SimpleBuilderParameterReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public SimpleBuilderParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference";
+  }
 }

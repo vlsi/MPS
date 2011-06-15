@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class EverywhereActionPlace_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ActionPlaceSpecification_BehaviorDescriptor {
   public EverywhereActionPlace_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.EverywhereActionPlace";
+  }
 }

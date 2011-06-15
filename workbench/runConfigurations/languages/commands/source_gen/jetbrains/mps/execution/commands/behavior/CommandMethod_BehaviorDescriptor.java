@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDe
 public class CommandMethod_BehaviorDescriptor extends DefaultClassifierMethodDeclaration_BehaviorDescriptor {
   public CommandMethod_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.CommandMethod";
+  }
 }

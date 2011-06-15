@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class AllWorkLeftExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public AllWorkLeftExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.AllWorkLeftExpression";
+  }
 }

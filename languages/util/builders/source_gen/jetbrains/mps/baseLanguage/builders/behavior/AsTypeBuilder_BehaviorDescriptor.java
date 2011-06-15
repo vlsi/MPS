@@ -15,4 +15,9 @@ public class AsTypeBuilder_BehaviorDescriptor extends Builder_BehaviorDescriptor
   public SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     return AsTypeBuilder_Behavior.virtual_getCreatorExpression_7057666463730727863(thisNode, parentRef);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class WhileLoopCommand_BehaviorDescriptor extends AbstractLoopCommand_BehaviorDescriptor {
   public WhileLoopCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.WhileLoopCommand";
+  }
 }

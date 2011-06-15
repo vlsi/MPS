@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class SemicolonTerminator_BehaviorDescriptor extends CommandTerminator_BehaviorDescriptor {
   public SemicolonTerminator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.SemicolonTerminator";
+  }
 }

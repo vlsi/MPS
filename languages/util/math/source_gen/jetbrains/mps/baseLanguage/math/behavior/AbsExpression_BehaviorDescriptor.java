@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class AbsExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public AbsExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.AbsExpression";
+  }
 }

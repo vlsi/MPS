@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public class Components_BehaviorDescriptor extends ConfigurationXmlNode_BehaviorDescriptor implements IConfiguration_BehaviorDescriptor, HasLevel_BehaviorDescriptor {
   public Components_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.Components";
+  }
 }

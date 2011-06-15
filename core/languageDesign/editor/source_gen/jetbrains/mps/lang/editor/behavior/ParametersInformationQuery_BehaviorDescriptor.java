@@ -42,4 +42,9 @@ public class ParametersInformationQuery_BehaviorDescriptor extends BaseConcept_B
   public SNode virtual_createSuperType_1217433657148(SNode thisNode) {
     return IClassifier_Behavior.virtual_createSuperType_1217433657148(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.ParametersInformationQuery";
+  }
 }

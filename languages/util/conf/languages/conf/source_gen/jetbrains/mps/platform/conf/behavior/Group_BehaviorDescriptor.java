@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public class Group_BehaviorDescriptor extends AbstractAction_BehaviorDescriptor {
   public Group_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.Group";
+  }
 }

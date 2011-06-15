@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class Query_node_Parameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public Query_node_Parameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter";
+  }
 }

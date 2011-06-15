@@ -12,4 +12,9 @@ public class YieldStatement_BehaviorDescriptor extends Statement_BehaviorDescrip
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return YieldStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.YieldStatement";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class PostDecExpression_BehaviorDescriptor extends PostVariableExpression_BehaviorDescriptor {
   public PostDecExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.PostDecExpression";
+  }
 }

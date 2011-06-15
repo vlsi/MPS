@@ -19,4 +19,9 @@ public class BeanPropertyBuilder_BehaviorDescriptor extends Builder_BehaviorDesc
   public SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     return BeanPropertyBuilder_Behavior.virtual_getCreatorExpression_7057666463730727863(thisNode, parentRef);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer";
+  }
 }

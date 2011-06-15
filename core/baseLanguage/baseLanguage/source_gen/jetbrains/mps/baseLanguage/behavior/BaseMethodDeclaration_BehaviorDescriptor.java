@@ -98,4 +98,9 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
   public SNode virtual_getBody_1239354440022(SNode thisNode) {
     return BaseMethodDeclaration_Behavior.virtual_getBody_1239354440022(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
+  }
 }

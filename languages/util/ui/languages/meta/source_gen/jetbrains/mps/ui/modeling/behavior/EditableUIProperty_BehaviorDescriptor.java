@@ -13,4 +13,9 @@ public class EditableUIProperty_BehaviorDescriptor extends UIProperty_BehaviorDe
   public SNode virtual_findTemplate_3939571372331676060(SNode thisNode, SModel model, IScope scope) {
     return EditableUIProperty_Behavior.virtual_findTemplate_3939571372331676060(thisNode, model, scope);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.EditableUIProperty";
+  }
 }

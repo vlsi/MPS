@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class ClosureControlStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ClosureControlStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement";
+  }
 }

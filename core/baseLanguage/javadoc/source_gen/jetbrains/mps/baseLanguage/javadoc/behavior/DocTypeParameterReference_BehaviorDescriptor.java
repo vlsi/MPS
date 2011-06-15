@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class DocTypeParameterReference_BehaviorDescriptor extends BaseParameterReference_BehaviorDescriptor {
   public DocTypeParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference";
+  }
 }

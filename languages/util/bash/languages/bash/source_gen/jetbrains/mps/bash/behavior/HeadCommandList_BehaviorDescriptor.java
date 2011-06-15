@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class HeadCommandList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public HeadCommandList_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.HeadCommandList";
+  }
 }

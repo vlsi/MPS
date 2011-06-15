@@ -6,4 +6,9 @@ package jetbrains.mps.lang.plugin.behavior;
 public class ConceptFunctionParameter_IModule_BehaviorDescriptor extends ConceptFunctionParameter_CreatorType_BehaviorDescriptor {
   public ConceptFunctionParameter_IModule_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule";
+  }
 }

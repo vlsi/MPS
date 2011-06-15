@@ -11,4 +11,9 @@ public class LocalVariableReference_BehaviorDescriptor extends VariableReference
   public SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
     return LocalVariableReference_Behavior.virtual_getDeclaration_3262277503800831941(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.LocalVariableReference";
+  }
 }

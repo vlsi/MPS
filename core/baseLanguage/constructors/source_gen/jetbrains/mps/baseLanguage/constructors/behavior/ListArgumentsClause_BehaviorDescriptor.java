@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.constructors.behavior;
 public class ListArgumentsClause_BehaviorDescriptor extends ArgumentClause_BehaviorDescriptor {
   public ListArgumentsClause_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause";
+  }
 }

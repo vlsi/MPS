@@ -19,4 +19,9 @@ public class CellModel_Alternation_BehaviorDescriptor extends EditorCellModel_Be
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_Alternation_Behavior.virtual_getClosingText_1220339738643(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_Alternation";
+  }
 }

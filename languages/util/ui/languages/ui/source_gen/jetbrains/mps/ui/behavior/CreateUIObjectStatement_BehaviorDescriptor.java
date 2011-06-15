@@ -25,4 +25,9 @@ public class CreateUIObjectStatement_BehaviorDescriptor extends UIObjectStatemen
   public SNode virtual_getType_6410919744913609596(SNode thisNode) {
     return CreateUIObjectStatement_Behavior.virtual_getType_6410919744913609596(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.CreateUIObjectStatement";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ModExpression_BehaviorDescriptor extends BinaryArithmeticExpression_BehaviorDescriptor {
   public ModExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ModExpression";
+  }
 }

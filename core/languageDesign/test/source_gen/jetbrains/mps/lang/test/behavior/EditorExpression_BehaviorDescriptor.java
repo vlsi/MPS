@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class EditorExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public EditorExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.EditorExpression";
+  }
 }

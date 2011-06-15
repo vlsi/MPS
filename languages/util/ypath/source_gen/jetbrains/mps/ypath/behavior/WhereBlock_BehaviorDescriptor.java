@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class WhereBlock_BehaviorDescriptor extends LambdaMethod_BehaviorDescriptor {
   public WhereBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.WhereBlock";
+  }
 }

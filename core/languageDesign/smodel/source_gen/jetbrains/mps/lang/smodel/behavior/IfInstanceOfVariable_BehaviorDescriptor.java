@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BaseVariableDeclaration_BehaviorDescr
 public class IfInstanceOfVariable_BehaviorDescriptor extends BaseVariableDeclaration_BehaviorDescriptor {
   public IfInstanceOfVariable_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable";
+  }
 }

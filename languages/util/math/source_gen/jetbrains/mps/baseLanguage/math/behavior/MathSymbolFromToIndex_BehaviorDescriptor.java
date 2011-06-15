@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class MathSymbolFromToIndex_BehaviorDescriptor extends AbstractIndex_BehaviorDescriptor {
   public MathSymbolFromToIndex_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex";
+  }
 }

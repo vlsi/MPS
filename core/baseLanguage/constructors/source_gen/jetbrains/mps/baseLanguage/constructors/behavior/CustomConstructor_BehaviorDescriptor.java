@@ -18,4 +18,9 @@ public class CustomConstructor_BehaviorDescriptor extends ConceptFunction_Behavi
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return CustomConstructor_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor";
+  }
 }

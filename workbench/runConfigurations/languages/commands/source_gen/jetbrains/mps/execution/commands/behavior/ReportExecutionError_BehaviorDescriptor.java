@@ -11,4 +11,9 @@ public class ReportExecutionError_BehaviorDescriptor extends ReportErrorStatemen
   public SNode virtual_getException_856705193941282181(SNode thisNode) {
     return ReportExecutionError_Behavior.virtual_getException_856705193941282181(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.ReportExecutionError";
+  }
 }

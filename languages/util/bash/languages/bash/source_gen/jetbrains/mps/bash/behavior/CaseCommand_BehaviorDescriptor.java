@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class CaseCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor implements ICompoundCommand_BehaviorDescriptor {
   public CaseCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.CaseCommand";
+  }
 }

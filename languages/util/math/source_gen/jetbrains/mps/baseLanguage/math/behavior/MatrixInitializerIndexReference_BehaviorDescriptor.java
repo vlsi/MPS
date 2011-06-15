@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class MatrixInitializerIndexReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MatrixInitializerIndexReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference";
+  }
 }

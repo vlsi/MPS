@@ -7,4 +7,9 @@ import jetbrains.mps.build.packaging.behavior.Folder_BehaviorDescriptor;
 public class LibraryFolder_BehaviorDescriptor extends Folder_BehaviorDescriptor {
   public LibraryFolder_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.custommps.structure.LibraryFolder";
+  }
 }

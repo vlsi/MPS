@@ -16,4 +16,9 @@ public class LanguageTextGenDeclaration_BehaviorDescriptor extends AbstractTextG
   public String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return LanguageTextGenDeclaration_Behavior.virtual_getTextGenNode_1234784577703(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration";
+  }
 }

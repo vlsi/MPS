@@ -6,4 +6,9 @@ package jetbrains.mps.lang.stubs.behavior;
 public class StubsCreatorType_BehaviorDescriptor extends BaseCreatorType_BehaviorDescriptor {
   public StubsCreatorType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.stubs.structure.StubsCreatorType";
+  }
 }

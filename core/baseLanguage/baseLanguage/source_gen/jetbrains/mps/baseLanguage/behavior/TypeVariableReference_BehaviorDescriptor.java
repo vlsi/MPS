@@ -23,4 +23,9 @@ public class TypeVariableReference_BehaviorDescriptor extends Type_BehaviorDescr
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return TypeVariableReference_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.TypeVariableReference";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class InitialPropertyValueClause_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public InitialPropertyValueClause_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause";
+  }
 }

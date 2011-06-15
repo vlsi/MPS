@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class NotCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public NotCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.NotCommand";
+  }
 }

@@ -11,4 +11,9 @@ public class ModuleMPSParameterType_BehaviorDescriptor extends MPSParameterType_
   public SNode virtual_getCreatorMethod_4413749148913760555(SNode thisNode) {
     return ModuleMPSParameterType_Behavior.virtual_getCreatorMethod_4413749148913760555(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType";
+  }
 }

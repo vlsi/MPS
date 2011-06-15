@@ -6,4 +6,9 @@ package jetbrains.mps.lang.project.behavior;
 public class Solution_BehaviorDescriptor extends Module_BehaviorDescriptor {
   public Solution_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.project.structure.Solution";
+  }
 }

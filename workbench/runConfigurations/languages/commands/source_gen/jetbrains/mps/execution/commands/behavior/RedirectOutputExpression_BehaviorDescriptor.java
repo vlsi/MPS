@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class RedirectOutputExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public RedirectOutputExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.RedirectOutputExpression";
+  }
 }

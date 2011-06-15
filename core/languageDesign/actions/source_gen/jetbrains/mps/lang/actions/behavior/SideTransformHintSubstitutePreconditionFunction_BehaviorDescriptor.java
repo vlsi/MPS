@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class SideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public SideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction";
+  }
 }

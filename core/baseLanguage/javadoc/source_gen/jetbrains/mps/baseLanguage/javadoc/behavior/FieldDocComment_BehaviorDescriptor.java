@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class FieldDocComment_BehaviorDescriptor extends BaseDocComment_BehaviorDescriptor {
   public FieldDocComment_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment";
+  }
 }

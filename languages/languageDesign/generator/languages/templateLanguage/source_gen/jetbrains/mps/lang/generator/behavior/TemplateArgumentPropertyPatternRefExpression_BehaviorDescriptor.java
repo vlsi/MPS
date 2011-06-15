@@ -11,4 +11,9 @@ public class TemplateArgumentPropertyPatternRefExpression_BehaviorDescriptor ext
   public String virtual_getVariableName_2902001550281937661(SNode thisNode) {
     return TemplateArgumentPropertyPatternRefExpression_Behavior.virtual_getVariableName_2902001550281937661(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression";
+  }
 }

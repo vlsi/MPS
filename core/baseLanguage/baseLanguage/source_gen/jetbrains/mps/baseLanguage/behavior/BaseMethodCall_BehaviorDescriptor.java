@@ -41,4 +41,9 @@ public abstract class BaseMethodCall_BehaviorDescriptor extends Expression_Behav
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return BaseMethodCall_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
+  }
 }

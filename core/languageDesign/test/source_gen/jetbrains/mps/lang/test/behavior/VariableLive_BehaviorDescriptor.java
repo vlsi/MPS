@@ -6,4 +6,9 @@ package jetbrains.mps.lang.test.behavior;
 public class VariableLive_BehaviorDescriptor extends NodeProperty_BehaviorDescriptor {
   public VariableLive_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.VariableLive";
+  }
 }

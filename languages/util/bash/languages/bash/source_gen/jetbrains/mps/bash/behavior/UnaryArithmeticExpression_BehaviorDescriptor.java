@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public abstract class UnaryArithmeticExpression_BehaviorDescriptor extends ArithmeticExpression_BehaviorDescriptor {
   public UnaryArithmeticExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.UnaryArithmeticExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableReference_BehaviorDescriptor;
 public class ExtensionStaticFieldReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public ExtensionStaticFieldReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference";
+  }
 }

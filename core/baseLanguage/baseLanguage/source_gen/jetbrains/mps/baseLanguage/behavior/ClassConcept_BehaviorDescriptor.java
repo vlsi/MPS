@@ -63,4 +63,9 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
   public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return ClassConcept_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+  }
 }

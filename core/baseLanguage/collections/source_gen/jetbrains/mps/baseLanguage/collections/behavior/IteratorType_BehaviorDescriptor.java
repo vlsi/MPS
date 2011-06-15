@@ -25,4 +25,9 @@ public class IteratorType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return IteratorType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.IteratorType";
+  }
 }

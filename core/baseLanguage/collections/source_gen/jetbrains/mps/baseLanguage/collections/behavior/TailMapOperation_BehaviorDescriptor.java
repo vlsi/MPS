@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class TailMapOperation_BehaviorDescriptor extends SortedMapOperation_BehaviorDescriptor {
   public TailMapOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.TailMapOperation";
+  }
 }

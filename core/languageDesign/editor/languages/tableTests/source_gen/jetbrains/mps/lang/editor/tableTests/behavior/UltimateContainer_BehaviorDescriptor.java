@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class UltimateContainer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public UltimateContainer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer";
+  }
 }

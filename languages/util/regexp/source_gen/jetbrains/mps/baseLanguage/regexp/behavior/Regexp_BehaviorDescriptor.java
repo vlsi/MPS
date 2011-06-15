@@ -25,4 +25,9 @@ public abstract class Regexp_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return Regexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.Regexp";
+  }
 }

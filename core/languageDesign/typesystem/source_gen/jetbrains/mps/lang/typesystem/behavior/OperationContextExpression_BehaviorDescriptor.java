@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class OperationContextExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public OperationContextExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.OperationContextExpression";
+  }
 }

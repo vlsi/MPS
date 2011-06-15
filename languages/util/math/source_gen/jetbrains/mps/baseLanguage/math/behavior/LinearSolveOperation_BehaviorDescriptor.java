@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_BehaviorDesc
 public class LinearSolveOperation_BehaviorDescriptor extends LocalVariableDeclaration_BehaviorDescriptor {
   public LinearSolveOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation";
+  }
 }

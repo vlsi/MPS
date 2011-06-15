@@ -14,4 +14,9 @@ public class ExtractStatementListExpression_BehaviorDescriptor extends Expressio
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return ExtractStatementListExpression_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescripto
 public class SideTransformVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor {
   public SideTransformVariableDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration";
+  }
 }

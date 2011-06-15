@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 public class ControlClosureLiteral_BehaviorDescriptor extends UnrestrictedClosureLiteral_BehaviorDescriptor {
   public ControlClosureLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral";
+  }
 }

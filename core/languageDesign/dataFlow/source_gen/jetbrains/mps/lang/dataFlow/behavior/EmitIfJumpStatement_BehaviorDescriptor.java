@@ -6,4 +6,9 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class EmitIfJumpStatement_BehaviorDescriptor extends BaseEmitJumpStatement_BehaviorDescriptor {
   public EmitIfJumpStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement";
+  }
 }

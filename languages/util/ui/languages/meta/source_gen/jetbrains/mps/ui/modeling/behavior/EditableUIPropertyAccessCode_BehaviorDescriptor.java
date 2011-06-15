@@ -6,4 +6,9 @@ package jetbrains.mps.ui.modeling.behavior;
 public class EditableUIPropertyAccessCode_BehaviorDescriptor extends UIPropertyAccessCode_BehaviorDescriptor {
   public EditableUIPropertyAccessCode_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.EditableUIPropertyAccessCode";
+  }
 }

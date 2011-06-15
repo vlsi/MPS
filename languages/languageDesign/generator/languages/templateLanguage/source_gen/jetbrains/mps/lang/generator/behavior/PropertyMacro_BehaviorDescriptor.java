@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
 public class PropertyMacro_BehaviorDescriptor extends PropertyAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor {
   public PropertyMacro_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.PropertyMacro";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.plugin.behavior;
 public class DoUpdateBlock_BehaviorDescriptor extends UpdateBlock_BehaviorDescriptor {
   public DoUpdateBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.DoUpdateBlock";
+  }
 }

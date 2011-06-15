@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class SizeConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public SizeConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.SizeConditionalExpression";
+  }
 }

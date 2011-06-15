@@ -47,4 +47,9 @@ public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   public String virtual_getTestName_1216136419751(SNode thisNode) {
     return EditorTestCase_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.EditorTestCase";
+  }
 }

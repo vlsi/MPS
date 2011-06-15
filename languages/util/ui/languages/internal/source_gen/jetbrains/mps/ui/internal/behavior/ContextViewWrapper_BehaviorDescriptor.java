@@ -6,4 +6,9 @@ package jetbrains.mps.ui.internal.behavior;
 public class ContextViewWrapper_BehaviorDescriptor extends ContextWrapper_BehaviorDescriptor {
   public ContextViewWrapper_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.internal.structure.ContextViewWrapper";
+  }
 }

@@ -13,4 +13,9 @@ public class QueryFunction_SideTransform_Icon_BehaviorDescriptor extends Concept
   public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     return QueryFunction_SideTransform_Icon_Behavior.virtual_getParameters_1213877374450(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon";
+  }
 }

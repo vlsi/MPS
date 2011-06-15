@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class Concept_GetHierarchy_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Concept_GetHierarchy_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy";
+  }
 }

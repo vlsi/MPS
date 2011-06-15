@@ -11,4 +11,9 @@ public class WindowsConfig_BehaviorDescriptor extends SystemSpecificConfig_Behav
   public String virtual_getVMOptionsFilePath_1231769123888(SNode thisNode) {
     return WindowsConfig_Behavior.virtual_getVMOptionsFilePath_1231769123888(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.WindowsConfig";
+  }
 }

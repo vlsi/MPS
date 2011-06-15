@@ -6,4 +6,9 @@ package jetbrains.mps.make.facet.behavior;
 public class NamedFacetReference_BehaviorDescriptor extends FacetReference_BehaviorDescriptor {
   public NamedFacetReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.facet.structure.NamedFacetReference";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class InequationReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public InequationReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.InequationReference";
+  }
 }

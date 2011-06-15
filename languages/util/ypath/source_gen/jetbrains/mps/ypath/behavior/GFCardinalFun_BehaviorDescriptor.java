@@ -12,4 +12,9 @@ public abstract class GFCardinalFun_BehaviorDescriptor extends ConceptFunction_B
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return GFCardinalFun_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.GFCardinalFun";
+  }
 }

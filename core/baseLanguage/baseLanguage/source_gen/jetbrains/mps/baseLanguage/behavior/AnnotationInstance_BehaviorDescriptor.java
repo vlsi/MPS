@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class AnnotationInstance_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public AnnotationInstance_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.AnnotationInstance";
+  }
 }

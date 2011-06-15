@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescrip
 public class UtilityMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor {
   public UtilityMethodDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public class DotRegexp_BehaviorDescriptor extends Regexp_BehaviorDescriptor {
   public DotRegexp_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp";
+  }
 }

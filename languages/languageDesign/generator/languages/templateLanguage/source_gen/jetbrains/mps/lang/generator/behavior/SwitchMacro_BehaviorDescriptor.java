@@ -11,4 +11,9 @@ public class SwitchMacro_BehaviorDescriptor extends SourceSubstituteMacro_Behavi
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return SwitchMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.SwitchMacro";
+  }
 }

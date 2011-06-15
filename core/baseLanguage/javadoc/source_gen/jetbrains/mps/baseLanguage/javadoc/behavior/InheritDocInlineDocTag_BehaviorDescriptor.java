@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class InheritDocInlineDocTag_BehaviorDescriptor extends BaseInlineDocTag_BehaviorDescriptor {
   public InheritDocInlineDocTag_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag";
+  }
 }

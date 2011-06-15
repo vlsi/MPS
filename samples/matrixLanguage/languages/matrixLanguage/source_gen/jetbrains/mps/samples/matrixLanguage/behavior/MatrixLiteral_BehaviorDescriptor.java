@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class MatrixLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MatrixLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral";
+  }
 }

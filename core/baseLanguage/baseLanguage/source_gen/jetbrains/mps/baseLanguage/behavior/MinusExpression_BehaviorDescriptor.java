@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class MinusExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public MinusExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.MinusExpression";
+  }
 }

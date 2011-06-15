@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class CommentLine_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public CommentLine_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine";
+  }
 }

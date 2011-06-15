@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class VariableNodeExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public VariableNodeExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.VariableNodeExpression";
+  }
 }

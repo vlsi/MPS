@@ -6,4 +6,9 @@ package jetbrains.mps.lang.test.behavior;
 public class VariableInialized_BehaviorDescriptor extends NodeProperty_BehaviorDescriptor {
   public VariableInialized_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.VariableInialized";
+  }
 }

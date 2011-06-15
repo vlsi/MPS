@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class XorAssingmentExpression_BehaviorDescriptor extends BaseAssingmentExpression_BehaviorDescriptor {
   public XorAssingmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.XorAssingmentExpression";
+  }
 }

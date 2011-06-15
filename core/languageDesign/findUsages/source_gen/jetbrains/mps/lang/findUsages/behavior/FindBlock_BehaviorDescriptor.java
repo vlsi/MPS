@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class FindBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public FindBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.findUsages.structure.FindBlock";
+  }
 }

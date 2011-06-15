@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class OutputErrorRedirection_BehaviorDescriptor extends Redirection_BehaviorDescriptor implements IToWordRedirection_BehaviorDescriptor {
   public OutputErrorRedirection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.OutputErrorRedirection";
+  }
 }

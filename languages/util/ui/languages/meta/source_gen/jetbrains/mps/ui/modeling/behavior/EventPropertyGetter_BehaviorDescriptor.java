@@ -12,4 +12,9 @@ public class EventPropertyGetter_BehaviorDescriptor extends ConceptFunction_Beha
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return EventPropertyGetter_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.EventPropertyGetter";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class RequiredUserEnteredArgument_BehaviorDescriptor extends RequiredAdditionalArgument_BehaviorDescriptor {
   public RequiredUserEnteredArgument_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument";
+  }
 }

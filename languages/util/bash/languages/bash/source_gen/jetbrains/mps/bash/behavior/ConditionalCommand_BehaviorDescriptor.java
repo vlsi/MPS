@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ConditionalCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor implements ICompoundCommand_BehaviorDescriptor {
   public ConditionalCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ConditionalCommand";
+  }
 }

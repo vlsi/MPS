@@ -11,4 +11,9 @@ public class ReferenceMacro_GetReferent_BehaviorDescriptor extends TemplateQuery
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ReferenceMacro_GetReferent_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent";
+  }
 }

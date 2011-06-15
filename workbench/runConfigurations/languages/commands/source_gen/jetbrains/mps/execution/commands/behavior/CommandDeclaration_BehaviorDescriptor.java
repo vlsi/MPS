@@ -80,4 +80,9 @@ public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorD
   public SNode virtual_getBody_1239354440022(SNode thisNode) {
     return CommandDeclaration_Behavior.virtual_getBody_1239354440022(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.CommandDeclaration";
+  }
 }

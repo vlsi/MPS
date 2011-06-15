@@ -24,4 +24,9 @@ public class Zip_BehaviorDescriptor extends AbstractProjectComponent_BehaviorDes
   public List<SNode> virtual_getPostProcessingTasks_1213877333861(SNode thisNode) {
     return Zip_Behavior.virtual_getPostProcessingTasks_1213877333861(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Zip";
+  }
 }

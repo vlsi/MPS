@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class AndAssingmentExpression_BehaviorDescriptor extends BaseAssingmentExpression_BehaviorDescriptor {
   public AndAssingmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.AndAssingmentExpression";
+  }
 }

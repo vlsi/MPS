@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class CharFileConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public CharFileConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.CharFileConditionalExpression";
+  }
 }

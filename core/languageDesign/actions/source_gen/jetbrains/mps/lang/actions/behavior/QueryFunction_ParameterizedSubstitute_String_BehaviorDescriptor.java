@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements ISubstitute_String_BehaviorDescriptor {
   public QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String";
+  }
 }

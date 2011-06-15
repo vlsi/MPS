@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class BitwiseNegationExpression_BehaviorDescriptor extends UnaryArithmeticExpression_BehaviorDescriptor {
   public BitwiseNegationExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BitwiseNegationExpression";
+  }
 }

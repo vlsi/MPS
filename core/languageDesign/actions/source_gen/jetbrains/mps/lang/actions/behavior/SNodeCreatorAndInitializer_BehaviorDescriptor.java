@@ -7,4 +7,9 @@ import jetbrains.mps.lang.smodel.behavior.SNodeCreator_BehaviorDescriptor;
 public class SNodeCreatorAndInitializer_BehaviorDescriptor extends SNodeCreator_BehaviorDescriptor {
   public SNodeCreatorAndInitializer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer";
+  }
 }

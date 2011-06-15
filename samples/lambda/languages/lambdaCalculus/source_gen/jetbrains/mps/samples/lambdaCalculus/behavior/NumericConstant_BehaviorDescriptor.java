@@ -6,4 +6,9 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class NumericConstant_BehaviorDescriptor extends LambdaExpression_BehaviorDescriptor {
   public NumericConstant_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant";
+  }
 }

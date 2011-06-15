@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class FreeCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public FreeCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.FreeCommand";
+  }
 }

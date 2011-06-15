@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 public class GenerationContextOp_ShowInfoMessage_BehaviorDescriptor extends GenerationContextOp_ShowMessageBase_BehaviorDescriptor {
   public GenerationContextOp_ShowInfoMessage_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage";
+  }
 }

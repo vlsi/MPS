@@ -53,4 +53,9 @@ public abstract class ConceptFunction_BehaviorDescriptor extends BaseConcept_Beh
   public SNode virtual_getBody_1239354440022(SNode thisNode) {
     return ConceptFunction_Behavior.virtual_getBody_1239354440022(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ConceptFunction";
+  }
 }

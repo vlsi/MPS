@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class LogStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public LogStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.logging.structure.LogStatement";
+  }
 }

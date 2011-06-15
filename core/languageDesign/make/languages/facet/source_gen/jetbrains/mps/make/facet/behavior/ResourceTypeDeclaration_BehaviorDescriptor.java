@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ResourceTypeDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ResourceTypeDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration";
+  }
 }

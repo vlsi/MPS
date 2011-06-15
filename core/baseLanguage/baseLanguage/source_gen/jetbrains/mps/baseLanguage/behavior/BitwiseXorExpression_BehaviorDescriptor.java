@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class BitwiseXorExpression_BehaviorDescriptor extends BinaryBitwiseOperation_BehaviorDescriptor {
   public BitwiseXorExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_BehaviorDescr
 public class PrivateFieldReferenceOperation_BehaviorDescriptor extends FieldReferenceOperation_BehaviorDescriptor {
   public PrivateFieldReferenceOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation";
+  }
 }

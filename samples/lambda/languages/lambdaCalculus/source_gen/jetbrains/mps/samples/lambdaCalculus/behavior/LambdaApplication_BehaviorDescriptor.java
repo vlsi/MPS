@@ -6,4 +6,9 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class LambdaApplication_BehaviorDescriptor extends LambdaExpression_BehaviorDescriptor {
   public LambdaApplication_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication";
+  }
 }

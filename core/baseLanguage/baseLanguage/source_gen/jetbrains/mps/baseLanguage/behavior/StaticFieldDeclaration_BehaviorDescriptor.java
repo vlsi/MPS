@@ -54,4 +54,9 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
+  }
 }

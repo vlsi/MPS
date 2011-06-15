@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class MethodConditions_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public MethodConditions_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.contracts.structure.MethodConditions";
+  }
 }

@@ -33,4 +33,9 @@ public abstract class EditorCellModel_BehaviorDescriptor extends BaseConcept_Beh
   public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return EditorCellModel_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.EditorCellModel";
+  }
 }

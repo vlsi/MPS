@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class TableComponentStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public TableComponentStyleClassItem_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem";
+  }
 }

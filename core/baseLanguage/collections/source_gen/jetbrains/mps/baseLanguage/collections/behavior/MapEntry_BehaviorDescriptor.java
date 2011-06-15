@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class MapEntry_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public MapEntry_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.MapEntry";
+  }
 }

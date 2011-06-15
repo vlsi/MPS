@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public abstract class GroupingCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor implements ICompoundCommand_BehaviorDescriptor {
   public GroupingCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.GroupingCommand";
+  }
 }

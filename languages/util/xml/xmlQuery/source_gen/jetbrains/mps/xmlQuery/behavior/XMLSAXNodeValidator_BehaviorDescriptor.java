@@ -6,4 +6,9 @@ package jetbrains.mps.xmlQuery.behavior;
 public class XMLSAXNodeValidator_BehaviorDescriptor extends XMLSAXHandlerFunction_BehaviorDescriptor {
   public XMLSAXNodeValidator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.xmlQuery.structure.XMLSAXNodeValidator";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class HereStringRedirection_BehaviorDescriptor extends Redirection_BehaviorDescriptor implements IToWordRedirection_BehaviorDescriptor {
   public HereStringRedirection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.HereStringRedirection";
+  }
 }

@@ -80,4 +80,9 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return Classifier_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.Classifier";
+  }
 }

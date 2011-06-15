@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class UnaryMinus_BehaviorDescriptor extends AbstractUnaryNumberOperation_BehaviorDescriptor {
   public UnaryMinus_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.UnaryMinus";
+  }
 }

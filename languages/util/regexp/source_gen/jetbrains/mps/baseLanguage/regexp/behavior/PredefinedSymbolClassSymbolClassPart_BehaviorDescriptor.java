@@ -11,4 +11,9 @@ public class PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor extends Sym
   public String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return PredefinedSymbolClassSymbolClassPart_Behavior.virtual_getRepresentation_8173814113624650482(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ArrayCreatorWithInitializer_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public ArrayCreatorWithInitializer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer";
+  }
 }

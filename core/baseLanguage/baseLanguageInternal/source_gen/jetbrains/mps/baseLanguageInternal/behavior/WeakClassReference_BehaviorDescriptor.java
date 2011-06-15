@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class WeakClassReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public WeakClassReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference";
+  }
 }

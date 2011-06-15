@@ -9,6 +9,11 @@ public abstract class EditorOperationDeclaration_BehaviorDescriptor extends Conc
   public EditorOperationDeclaration_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration";
+  }
+
   public abstract SNode virtual_getJavaMethod_946964771156066991(SNode thisNode);
 
   public abstract SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode);

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.structure.behavior;
 public class AggregationConceptLinkDeclaration_BehaviorDescriptor extends ConceptLinkDeclaration_BehaviorDescriptor {
   public AggregationConceptLinkDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration";
+  }
 }

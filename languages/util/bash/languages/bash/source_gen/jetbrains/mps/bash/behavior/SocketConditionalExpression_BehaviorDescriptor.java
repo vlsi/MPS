@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class SocketConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public SocketConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.SocketConditionalExpression";
+  }
 }

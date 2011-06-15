@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class DependentComputationItem_BlockingBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public DependentComputationItem_BlockingBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_BlockingBlock";
+  }
 }

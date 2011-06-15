@@ -11,4 +11,9 @@ public class EntryPoint_BehaviorDescriptor extends Element_BehaviorDescriptor {
   public String virtual_getXmlElement_3852159904898386595(SNode thisNode) {
     return EntryPoint_Behavior.virtual_getXmlElement_3852159904898386595(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.gwt.client.structure.EntryPoint";
+  }
 }

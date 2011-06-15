@@ -6,4 +6,9 @@ package jetbrains.mps.lang.test.behavior;
 public class SimpleNodeTest_BehaviorDescriptor extends NodesTestMethod_BehaviorDescriptor {
   public SimpleNodeTest_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.SimpleNodeTest";
+  }
 }

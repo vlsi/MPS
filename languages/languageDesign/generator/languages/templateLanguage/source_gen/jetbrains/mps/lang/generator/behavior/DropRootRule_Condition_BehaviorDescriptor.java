@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class DropRootRule_Condition_BehaviorDescriptor extends TemplateQueryBase_BehaviorDescriptor {
   public DropRootRule_Condition_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.DropRootRule_Condition";
+  }
 }

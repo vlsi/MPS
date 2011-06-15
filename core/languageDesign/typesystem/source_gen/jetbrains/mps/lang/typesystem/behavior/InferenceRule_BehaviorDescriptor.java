@@ -11,4 +11,9 @@ public class InferenceRule_BehaviorDescriptor extends AbstractCheckingRule_Behav
   public void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     InferenceRule_Behavior.virtual_setBaseConcept_6261424444345963020(thisNode, baseConcept);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.InferenceRule";
+  }
 }

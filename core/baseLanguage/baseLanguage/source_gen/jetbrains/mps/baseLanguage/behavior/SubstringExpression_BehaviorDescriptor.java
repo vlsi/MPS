@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class SubstringExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public SubstringExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.SubstringExpression";
+  }
 }

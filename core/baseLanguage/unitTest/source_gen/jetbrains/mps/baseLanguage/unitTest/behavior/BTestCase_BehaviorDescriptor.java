@@ -34,4 +34,9 @@ public class BTestCase_BehaviorDescriptor extends ClassConcept_BehaviorDescripto
   public String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
     return BTestCase_Behavior.virtual_getSimpleClassName_1229278847513(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase";
+  }
 }

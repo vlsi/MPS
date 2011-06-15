@@ -6,4 +6,9 @@ package jetbrains.mps.lang.pattern.behavior;
 public class OrPattern_BehaviorDescriptor extends Pattern_BehaviorDescriptor {
   public OrPattern_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.structure.OrPattern";
+  }
 }

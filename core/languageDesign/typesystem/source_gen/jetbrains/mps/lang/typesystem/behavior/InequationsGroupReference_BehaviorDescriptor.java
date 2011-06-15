@@ -11,4 +11,9 @@ public class InequationsGroupReference_BehaviorDescriptor extends DefaultGroupRe
   public String virtual_createGeneratedNodeId_7342618720440051599(SNode thisNode) {
     return InequationsGroupReference_Behavior.virtual_createGeneratedNodeId_7342618720440051599(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference";
+  }
 }

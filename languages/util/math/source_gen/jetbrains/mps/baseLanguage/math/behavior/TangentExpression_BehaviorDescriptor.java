@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class TangentExpression_BehaviorDescriptor extends MathFuncExpression_BehaviorDescriptor {
   public TangentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.TangentExpression";
+  }
 }

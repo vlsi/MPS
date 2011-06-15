@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class IsApplicableToNodeClause_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public IsApplicableToNodeClause_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class AsyncTerminator_BehaviorDescriptor extends CommandTerminator_BehaviorDescriptor {
   public AsyncTerminator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.AsyncTerminator";
+  }
 }

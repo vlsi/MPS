@@ -24,4 +24,9 @@ public class UIObjectProviderStatement_BehaviorDescriptor extends Statement_Beha
   public SNode virtual_getContainer_8923564134258257521(SNode thisNode) {
     return UIObjectProviderStatement_Behavior.virtual_getContainer_8923564134258257521(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.UIObjectProviderStatement";
+  }
 }

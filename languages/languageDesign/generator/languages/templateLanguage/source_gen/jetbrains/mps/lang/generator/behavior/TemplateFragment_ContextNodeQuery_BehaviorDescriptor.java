@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class TemplateFragment_ContextNodeQuery_BehaviorDescriptor extends TemplateQueryBase_BehaviorDescriptor {
   public TemplateFragment_ContextNodeQuery_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery";
+  }
 }

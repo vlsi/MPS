@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 public class SimpleBuilderPropertyValue_BehaviorDescriptor extends SimpleBuilderPropertyExpression_BehaviorDescriptor {
   public SimpleBuilderPropertyValue_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue";
+  }
 }

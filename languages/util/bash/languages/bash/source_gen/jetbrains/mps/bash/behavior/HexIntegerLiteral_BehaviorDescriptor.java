@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class HexIntegerLiteral_BehaviorDescriptor extends IntegerLiteral_BehaviorDescriptor {
   public HexIntegerLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.HexIntegerLiteral";
+  }
 }

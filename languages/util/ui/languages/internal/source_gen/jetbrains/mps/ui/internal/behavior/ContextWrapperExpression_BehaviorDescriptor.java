@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ContextWrapperExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IContextWrapper_BehaviorDescriptor {
   public ContextWrapperExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.internal.structure.ContextWrapperExpression";
+  }
 }

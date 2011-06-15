@@ -8,5 +8,10 @@ public abstract class ExportScope_BehaviorDescriptor extends NodeAttribute_Behav
   public ExportScope_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.core.structure.ExportScope";
+  }
+
   public abstract boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode);
 }

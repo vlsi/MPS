@@ -19,4 +19,9 @@ public class StatementList_BehaviorDescriptor extends BaseConcept_BehaviorDescri
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return StatementList_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.StatementList";
+  }
 }

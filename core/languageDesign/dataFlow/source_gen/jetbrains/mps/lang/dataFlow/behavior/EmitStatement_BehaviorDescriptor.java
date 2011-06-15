@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public abstract class EmitStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public EmitStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.EmitStatement";
+  }
 }

@@ -19,4 +19,9 @@ public class FloatType_BehaviorDescriptor extends PrimitiveType_BehaviorDescript
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return FloatType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.FloatType";
+  }
 }

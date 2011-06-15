@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.IntegerConstant_BehaviorDescriptor;
 public class AllConstant_BehaviorDescriptor extends IntegerConstant_BehaviorDescriptor {
   public AllConstant_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.AllConstant";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public abstract class BinaryAssert_BehaviorDescriptor extends Statement_BehaviorDescriptor implements MessageHolder_BehaviorDescriptor {
   public BinaryAssert_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert";
+  }
 }

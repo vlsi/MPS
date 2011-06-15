@@ -83,4 +83,9 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return Type_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.Type";
+  }
 }

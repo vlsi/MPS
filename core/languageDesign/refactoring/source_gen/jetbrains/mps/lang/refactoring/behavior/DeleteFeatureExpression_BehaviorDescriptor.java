@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class DeleteFeatureExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements RefactoringAction_BehaviorDescriptor {
   public DeleteFeatureExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableReference_BehaviorDescriptor;
 public class VisitParameterReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public VisitParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.VisitParameterReference";
+  }
 }

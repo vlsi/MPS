@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescripto
 public class SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor {
   public SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration";
+  }
 }

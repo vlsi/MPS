@@ -16,4 +16,9 @@ public class ComponentsList_BehaviorDescriptor extends AbstractProjectComponent_
   public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     return ComponentsList_Behavior.virtual_getChildrenTargetDir_1237389224202(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.ComponentsList";
+  }
 }

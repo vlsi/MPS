@@ -6,4 +6,9 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class ScopeExpression_BehaviorDescriptor extends AbstractUIArgumentExpression_BehaviorDescriptor {
   public ScopeExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.ScopeExpression";
+  }
 }

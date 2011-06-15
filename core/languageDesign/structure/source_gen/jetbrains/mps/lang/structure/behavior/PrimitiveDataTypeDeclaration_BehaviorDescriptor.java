@@ -11,4 +11,9 @@ public class PrimitiveDataTypeDeclaration_BehaviorDescriptor extends DataTypeDec
   public SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
     return PrimitiveDataTypeDeclaration_Behavior.virtual_toBaseLanguageType_1213877229718(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration";
+  }
 }

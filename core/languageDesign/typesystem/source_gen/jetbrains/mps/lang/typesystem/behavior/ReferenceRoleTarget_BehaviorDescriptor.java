@@ -6,4 +6,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class ReferenceRoleTarget_BehaviorDescriptor extends MessageTarget_BehaviorDescriptor {
   public ReferenceRoleTarget_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget";
+  }
 }

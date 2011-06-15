@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor;
 public class CheckedDotExpression_BehaviorDescriptor extends DotExpression_BehaviorDescriptor {
   public CheckedDotExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression";
+  }
 }

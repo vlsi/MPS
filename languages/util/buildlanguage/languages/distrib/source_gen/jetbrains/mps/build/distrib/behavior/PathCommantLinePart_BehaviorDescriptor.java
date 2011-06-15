@@ -11,4 +11,9 @@ public class PathCommantLinePart_BehaviorDescriptor extends AbstractCommandLineP
   public String virtual_getText_1231864533228(SNode thisNode) {
     return PathCommantLinePart_Behavior.virtual_getText_1231864533228(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.PathCommantLinePart";
+  }
 }

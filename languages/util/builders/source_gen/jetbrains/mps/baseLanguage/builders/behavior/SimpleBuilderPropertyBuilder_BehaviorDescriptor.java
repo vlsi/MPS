@@ -23,4 +23,9 @@ public class SimpleBuilderPropertyBuilder_BehaviorDescriptor extends Builder_Beh
   public boolean virtual_isLeaf_7057666463730595159(SNode thisNode) {
     return SimpleBuilderPropertyBuilder_Behavior.virtual_isLeaf_7057666463730595159(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder";
+  }
 }

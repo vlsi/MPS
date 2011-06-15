@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ConditionalOperation_BehaviorDescriptor extends ArithmeticExpression_BehaviorDescriptor {
   public ConditionalOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ConditionalOperation";
+  }
 }

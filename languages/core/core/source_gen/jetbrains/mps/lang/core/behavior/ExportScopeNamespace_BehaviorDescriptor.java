@@ -11,4 +11,9 @@ public class ExportScopeNamespace_BehaviorDescriptor extends ExportScope_Behavio
   public boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
     return ExportScopeNamespace_Behavior.virtual_checkExport_2565736246230026584(thisNode, sourceNamespace, targetNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.core.structure.ExportScopeNamespace";
+  }
 }

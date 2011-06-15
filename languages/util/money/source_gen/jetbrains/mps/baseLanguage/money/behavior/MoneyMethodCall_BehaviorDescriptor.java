@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public abstract class MoneyMethodCall_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MoneyMethodCall_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall";
+  }
 }

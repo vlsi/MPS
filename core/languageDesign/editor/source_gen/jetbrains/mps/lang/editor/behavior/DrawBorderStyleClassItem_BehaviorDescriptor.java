@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class DrawBorderStyleClassItem_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
   public DrawBorderStyleClassItem_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem";
+  }
 }

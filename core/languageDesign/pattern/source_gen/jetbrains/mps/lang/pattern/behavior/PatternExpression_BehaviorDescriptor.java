@@ -13,4 +13,9 @@ public class PatternExpression_BehaviorDescriptor extends Expression_BehaviorDes
   public int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return PatternExpression_Behavior.virtual_getMetaLevelChange_201537367881074474(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.structure.PatternExpression";
+  }
 }

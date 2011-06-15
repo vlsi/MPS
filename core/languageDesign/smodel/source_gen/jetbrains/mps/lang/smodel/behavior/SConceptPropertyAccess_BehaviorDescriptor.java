@@ -11,4 +11,9 @@ public class SConceptPropertyAccess_BehaviorDescriptor extends SNodeOperation_Be
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return SConceptPropertyAccess_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess";
+  }
 }

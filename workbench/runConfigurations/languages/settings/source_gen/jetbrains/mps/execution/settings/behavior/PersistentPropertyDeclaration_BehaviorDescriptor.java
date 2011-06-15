@@ -12,4 +12,9 @@ public class PersistentPropertyDeclaration_BehaviorDescriptor extends VariableDe
   public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return PersistentPropertyDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration";
+  }
 }

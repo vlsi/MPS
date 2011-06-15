@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class NodeDefaultSearchScope_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public NodeDefaultSearchScope_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope";
+  }
 }

@@ -12,4 +12,9 @@ public abstract class MappingConfigRefBase_BehaviorDescriptor extends BaseConcep
   public boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
     return MappingConfigRefBase_Behavior.virtual_isComplete_2721285250110257005(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.project.structure.MappingConfigRefBase";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class SimpleShortcutChange_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ShortcutChange_BehaviorDescriptor {
   public SimpleShortcutChange_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange";
+  }
 }

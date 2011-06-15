@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class CommentedFollowingCommandList_BehaviorDescriptor extends AbstractFollowingCommandList_BehaviorDescriptor implements IComment_BehaviorDescriptor {
   public CommentedFollowingCommandList_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.CommentedFollowingCommandList";
+  }
 }

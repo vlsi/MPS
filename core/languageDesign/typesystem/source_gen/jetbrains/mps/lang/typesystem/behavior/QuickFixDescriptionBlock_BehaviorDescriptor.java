@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class QuickFixDescriptionBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QuickFixDescriptionBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock";
+  }
 }

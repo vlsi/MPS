@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class SuperNodeExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public SuperNodeExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.behavior.structure.SuperNodeExpression";
+  }
 }

@@ -12,4 +12,9 @@ public class CommandParameterDeclaration_BehaviorDescriptor extends VariableDecl
   public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return CommandParameterDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration";
+  }
 }

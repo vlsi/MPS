@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class StubBlock_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IBaseTestBlock_BehaviorDescriptor {
   public StubBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.editorTest.structure.StubBlock";
+  }
 }

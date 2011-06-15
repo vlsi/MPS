@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ValueParameter_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ValueParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ValueParameter";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.stubs.behavior;
 public class ModelManagerType_BehaviorDescriptor extends BaseCreatorType_BehaviorDescriptor {
   public ModelManagerType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.stubs.structure.ModelManagerType";
+  }
 }

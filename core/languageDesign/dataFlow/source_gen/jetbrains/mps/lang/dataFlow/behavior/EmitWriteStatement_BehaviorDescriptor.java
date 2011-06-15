@@ -6,4 +6,9 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class EmitWriteStatement_BehaviorDescriptor extends BaseEmitVariableStatement_BehaviorDescriptor {
   public EmitWriteStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement";
+  }
 }

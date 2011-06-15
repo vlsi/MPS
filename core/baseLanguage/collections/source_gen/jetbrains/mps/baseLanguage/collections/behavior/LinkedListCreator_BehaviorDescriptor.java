@@ -11,4 +11,9 @@ public class LinkedListCreator_BehaviorDescriptor extends AbstractContainerCreat
   public SNode virtual_createType_1237722437229(SNode thisNode) {
     return LinkedListCreator_Behavior.virtual_createType_1237722437229(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator";
+  }
 }

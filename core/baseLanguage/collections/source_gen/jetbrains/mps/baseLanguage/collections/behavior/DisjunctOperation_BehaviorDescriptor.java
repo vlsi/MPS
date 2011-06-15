@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class DisjunctOperation_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public DisjunctOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation";
+  }
 }

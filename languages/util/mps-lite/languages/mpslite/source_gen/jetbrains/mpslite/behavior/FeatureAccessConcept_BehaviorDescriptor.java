@@ -38,4 +38,9 @@ public class FeatureAccessConcept_BehaviorDescriptor extends BaseConcept_Behavio
   public SNode virtual_createAdditionalEditor_1239891670850(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     return IMPSLiteConcept_Behavior.virtual_createAdditionalEditor_1239891670850(thisNode, conceptsToTargets, partsToLinks);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.FeatureAccessConcept";
+  }
 }

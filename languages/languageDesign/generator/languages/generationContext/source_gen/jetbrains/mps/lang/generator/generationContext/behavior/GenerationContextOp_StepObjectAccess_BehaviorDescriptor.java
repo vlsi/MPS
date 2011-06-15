@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 public class GenerationContextOp_StepObjectAccess_BehaviorDescriptor extends GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor {
   public GenerationContextOp_StepObjectAccess_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess";
+  }
 }

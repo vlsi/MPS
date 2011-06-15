@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public abstract class Closure_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements Closureoid_BehaviorDescriptor {
   public Closure_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.Closure";
+  }
 }

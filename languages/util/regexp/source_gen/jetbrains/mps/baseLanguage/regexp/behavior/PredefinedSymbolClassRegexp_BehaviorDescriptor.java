@@ -12,4 +12,9 @@ public class PredefinedSymbolClassRegexp_BehaviorDescriptor extends Regexp_Behav
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return PredefinedSymbolClassRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp";
+  }
 }

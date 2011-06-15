@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public class LazyPlusRegexp_BehaviorDescriptor extends UnaryRegexp_BehaviorDescriptor {
   public LazyPlusRegexp_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp";
+  }
 }

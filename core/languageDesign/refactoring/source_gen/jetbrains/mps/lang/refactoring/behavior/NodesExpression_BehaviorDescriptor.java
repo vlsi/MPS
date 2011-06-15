@@ -6,4 +6,9 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class NodesExpression_BehaviorDescriptor extends AbstractUIArgumentExpression_BehaviorDescriptor {
   public NodesExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.NodesExpression";
+  }
 }

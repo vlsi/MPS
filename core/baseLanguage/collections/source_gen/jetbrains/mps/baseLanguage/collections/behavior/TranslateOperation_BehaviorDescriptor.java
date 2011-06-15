@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class TranslateOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public TranslateOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation";
+  }
 }

@@ -11,4 +11,9 @@ public class ScriptKindClassItem_BehaviorDescriptor extends StyleClassItem_Behav
   public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return ScriptKindClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.ScriptKindClassItem";
+  }
 }

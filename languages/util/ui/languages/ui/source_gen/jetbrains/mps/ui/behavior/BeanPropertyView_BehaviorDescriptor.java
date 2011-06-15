@@ -6,4 +6,9 @@ package jetbrains.mps.ui.behavior;
 public class BeanPropertyView_BehaviorDescriptor extends View_BehaviorDescriptor {
   public BeanPropertyView_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.BeanPropertyView";
+  }
 }

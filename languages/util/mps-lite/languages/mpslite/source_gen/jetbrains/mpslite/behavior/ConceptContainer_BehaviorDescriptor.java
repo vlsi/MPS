@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ConceptContainer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ConceptContainer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.ConceptContainer";
+  }
 }

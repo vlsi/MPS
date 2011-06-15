@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class IsEmptyOperation_BehaviorDescriptor extends NoArgumentsSequenceOperation_BehaviorDescriptor {
   public IsEmptyOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation";
+  }
 }

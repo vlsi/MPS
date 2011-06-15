@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
 public class HierarchycalTable_BehaviorDescriptor extends Table_BehaviorDescriptor {
   public HierarchycalTable_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable";
+  }
 }

@@ -21,4 +21,9 @@ public class _LinkAccessT_BehaviorDescriptor extends Type_BehaviorDescriptor imp
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _LinkAccessT_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure._LinkAccessT";
+  }
 }

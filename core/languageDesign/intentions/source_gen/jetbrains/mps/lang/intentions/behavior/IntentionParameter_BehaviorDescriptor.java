@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class IntentionParameter_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public IntentionParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.intentions.structure.IntentionParameter";
+  }
 }

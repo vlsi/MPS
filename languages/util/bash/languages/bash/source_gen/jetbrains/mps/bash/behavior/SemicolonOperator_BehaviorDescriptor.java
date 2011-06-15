@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class SemicolonOperator_BehaviorDescriptor extends FollowingCommandList_BehaviorDescriptor {
   public SemicolonOperator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.SemicolonOperator";
+  }
 }

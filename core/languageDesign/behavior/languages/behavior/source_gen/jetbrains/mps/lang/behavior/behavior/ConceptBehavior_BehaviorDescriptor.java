@@ -58,4 +58,9 @@ public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return ConceptBehavior_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.behavior.structure.ConceptBehavior";
+  }
 }

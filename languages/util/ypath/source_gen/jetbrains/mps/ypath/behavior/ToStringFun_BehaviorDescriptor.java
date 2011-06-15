@@ -12,4 +12,9 @@ public class ToStringFun_BehaviorDescriptor extends ConceptFunction_BehaviorDesc
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ToStringFun_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.ToStringFun";
+  }
 }
