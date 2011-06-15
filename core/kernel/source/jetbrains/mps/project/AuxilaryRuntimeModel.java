@@ -68,5 +68,10 @@ public class AuxilaryRuntimeModel implements ModelOwner {
 
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
+
+    @Override
+    protected void setLoadingState(ModelLoadingState state) {
+      throw new UnsupportedOperationException();
+    }
   }
 }
