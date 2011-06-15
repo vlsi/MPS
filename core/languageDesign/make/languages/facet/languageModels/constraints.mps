@@ -54,7 +54,7 @@
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3344436107830239602">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="target" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vvvw.3344436107830227888" resolveInfo="ForeignVarialblesExpression" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vvvw.3344436107830227888" resolveInfo="ForeignParametersExpression" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="119022571402110884">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="target" />
@@ -63,6 +63,10 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="119022571402207414">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="target" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vvvw.119022571402207412" resolveInfo="ResourceClassifierType" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1919086248986845080">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="facet" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vvvw.1919086248986845077" resolveInfo="NamedFacetReference" />
     </node>
   </roots>
   <root id="7854369758457864776">
@@ -459,6 +463,24 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dvalueOf(java%dlang%dObject)%cjava%dlang%dString" resolveInfo="valueOf" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~String" resolveInfo="String" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_parameterNode" typeId="tp1t.3906442776579549644" id="119022571402326719" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1919086248986845080">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1919086248986845081">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="vvvw.6447445394688422643" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.ConstraintFunction_ReferentSearchScope_Factory" typeId="tp1t.1148684180339" id="1919086248986845084">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1919086248986845085">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1919086248986845086">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1919086248986845088">
+              <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="1919086248986845089" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="1919086248986845090">
+                <link role="concept" roleId="tp25.1182511038750" targetNodeId="vvvw.6418371274763029523" resolveInfo="FacetDeclaration" />
+                <node role="scope" roleId="tp25.1182511038749" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="1919086248986845091" />
+              </node>
             </node>
           </node>
         </node>

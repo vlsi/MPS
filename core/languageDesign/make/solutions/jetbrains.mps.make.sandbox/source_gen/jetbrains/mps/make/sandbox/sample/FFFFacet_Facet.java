@@ -138,7 +138,7 @@ public class FFFFacet_Facet implements IFacet {
               monitor.currentProgress().beginWork("Foobar", 10, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("Foobar", 10);
               monitor.currentProgress().finishWork("Foobar");
-
+              new IFacet.Name("GGG");
             default:
               return new IResult.SUCCESS(_output_chixuw_a0b);
           }

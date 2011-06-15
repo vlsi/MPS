@@ -37,6 +37,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="ow94" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.make.facet(MPS.Classpath/jetbrains.mps.make.facet@java_stub)" version="-1" implicit="yes" />
   <import index="rk9m" modelUID="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" version="-1" implicit="yes" />
+  <import index="vke5" modelUID="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="5086995156117116955">
       <property name="name" nameId="tpck.1169194664001" value="main" />
@@ -282,6 +283,44 @@
                   <property name="name" nameId="tp68.1176743296073" value="pool" />
                   <node role="type" roleId="tp68.1176743202636" type="nupp.ClassifierType" typeId="tpee.1107535904670" id="1977954644795162330">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i9so.6872280991287216857" resolveInfo="IParametersPool" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1919086248986829194">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="vvvw.7178445679340358576" resolveInfo="FacetReferenceExpression" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1919086248986829195">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="nupp.GenericNewExpression" typeId="tpee.1145552977093" id="1919086248986829196">
+          <node role="creator" roleId="tpee.1145553007750" type="nupp.ClassCreator" typeId="tpee.1212685548494" id="1919086248986829198">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.StringLiteral" typeId="tpee.1070475926800" id="1919086248986829199">
+              <property name="value" nameId="tpee.1070475926801" value="" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1919086248986829200">
+                <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1919086248986829201">
+                  <node role="body" roleId="tpee.1137022507850" type="nupp.StatementList" typeId="tpee.1068580123136" id="1919086248986829202">
+                    <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="1919086248986829203">
+                      <node role="expression" roleId="tpee.1068580123156" type="nupp.DotExpression" typeId="tpee.1197027756228" id="1919086248986829215">
+                        <node role="operand" roleId="tpee.1197027771414" type="nupp.DotExpression" typeId="tpee.1197027756228" id="1919086248986829210">
+                          <node role="operand" roleId="tpee.1197027771414" type="nupp.DotExpression" typeId="tpee.1197027756228" id="1919086248986829205">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1919086248986829204" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1919086248986829209">
+                              <link role="link" roleId="tp25.1138056516764" targetNodeId="vvvw.7178445679340358578" />
+                            </node>
+                          </node>
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1919086248986829214">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="vvvw.6447445394688422643" />
+                          </node>
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1919086248986829219">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vke5.1919086248986828221" resolveInfo="getFqName" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
