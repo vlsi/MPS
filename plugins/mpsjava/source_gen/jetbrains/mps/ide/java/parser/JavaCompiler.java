@@ -467,7 +467,8 @@ public class JavaCompiler {
 
     @Override
     public void initializeParser() {
-      super.initializeParser();
+      // <node> 
+      this.parser = new CommentRecorderParser(this.problemReporter, this.options.parseLiteralExpressionsAsConstants);
     }
   }
 }

@@ -31,6 +31,20 @@
     <classNode extendsClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.NodeData" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.java.parser.CommentRecorderParser" file="CommentRecorderParser.java">
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.CommentRecorderScanner" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.impl.CompilerOptions" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.problem.ProblemReporter" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.problem.ProblemSeverities" />
+    <classNode extendsClassName="org.eclipse.jdt.internal.compiler.parser.Parser" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.parser.CommentRecorderScanner" file="CommentRecorderScanner.java">
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.parser.TerminalTokens" />
+    <classNode extendsClassName="org.eclipse.jdt.internal.compiler.parser.Scanner" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.ConversionFailedException" file="ConversionFailedException.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="java.lang.RuntimeException" />
@@ -78,6 +92,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.Vector" />
     <classNode dependClassName="javax.swing.JOptionPane" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.CommentRecorderParser" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaConverterTreeBuilder" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.ReferentsCreator" />
