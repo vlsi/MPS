@@ -101,8 +101,6 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
 
   @Override
   public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
-    // todo: чтобы не забыть. нужно ли имя передавать в сеттерах геттерах параметром, ведь без него с наследование гипотетически проблемы могут быть
-    // todo: еще если сделать hasOwn = true но не переопредить второй метод будет грусть
     if (onReferenceSetHandlerDescriptor != null) {
       onReferenceSetHandlerDescriptor.onReferenceSet(referenceNode, oldReferentNode, newReferentNode, scope);
     }
