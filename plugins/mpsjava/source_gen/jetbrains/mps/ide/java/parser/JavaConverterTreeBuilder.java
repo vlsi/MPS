@@ -633,7 +633,7 @@ public class JavaConverterTreeBuilder {
     ReferenceBinding declaredClassBinding = getDeclaredClassBinding(fieldBinding);
     if (fieldBinding.isStatic()) {
       SNodePointer classifierPointer = myTypesProvider.createClassifierPointer(declaredClassBinding);
-      if (SNodeOperations.isInstanceOf(((SNode) classifierPointer.getNode()), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      if (fieldBinding.declaringClass.isEnum()) {
         SNode enumConstantReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
         role = "enumConstantDeclaration";
         sourceNode = enumConstantReference;

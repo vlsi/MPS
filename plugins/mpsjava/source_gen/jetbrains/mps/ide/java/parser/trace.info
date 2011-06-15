@@ -2125,7 +2125,7 @@
     <nodeInfo nodeId="5646944109420320953" fileName="JavaConverterTreeBuilder.java" startLine="631" startPosition="21" endLine="632" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646944109420320956" fileName="JavaConverterTreeBuilder.java" startLine="632" startPosition="17" endLine="633" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646944109420321044" fileName="JavaConverterTreeBuilder.java" startLine="634" startPosition="34" endLine="635" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420321116" fileName="JavaConverterTreeBuilder.java" startLine="636" startPosition="130" endLine="637" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420321116" fileName="JavaConverterTreeBuilder.java" startLine="636" startPosition="49" endLine="637" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646944109420321121" fileName="JavaConverterTreeBuilder.java" startLine="637" startPosition="153" endLine="638" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646944109420321125" fileName="JavaConverterTreeBuilder.java" startLine="638" startPosition="41" endLine="639" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646944109420321131" fileName="JavaConverterTreeBuilder.java" startLine="639" startPosition="43" endLine="640" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3352,7 +3352,7 @@
       <varInfo nodeId="5646944109420320912" varName="sourceNode" />
       <varInfo nodeId="5646944109420320907" varName="sfr" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420321115" fileName="JavaConverterTreeBuilder.java" startLine="636" startPosition="130" endLine="641" endPosition="39">
+    <scopeInfo nodeId="5646944109420321115" fileName="JavaConverterTreeBuilder.java" startLine="636" startPosition="49" endLine="641" endPosition="39">
       <varInfo nodeId="5646944109420321117" varName="enumConstantReference" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420321065" fileName="JavaConverterTreeBuilder.java" startLine="648" startPosition="14" endLine="653" endPosition="21">
