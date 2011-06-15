@@ -798,9 +798,10 @@ public class JavaConverterTreeBuilder {
     MethodBinding b = x.binding;
     SNode classCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ClassCreator", null);
     SReference methodReference = myTypesProvider.createMethodReference(b, "baseMethodDeclaration", classCreator);
-    if (methodReference != null) {
-      classCreator.addReference(methodReference);
+    if (methodReference == null) {
+      methodReference = myTypesProvider.createErrorReference("baseMethodDeclaration", new String(x.resolvedType.sourceName()), classCreator);
     }
+    classCreator.addReference(methodReference);
     if (x.enumConstant != null) {
       throw new JavaConverterException("unexpected enum constant creation");
     }
@@ -923,8 +924,7 @@ public class JavaConverterTreeBuilder {
     SNode result;
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       SNode reference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-      SLinkOperations.setTarget(reference, "variableDeclaration", SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
-      SNodeOperations.getReference(reference, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "localVariableDeclaration")).setResolveInfo(SPropertyOperations.getString(variable, "name"));
+      reference.addReference(SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")));
       result = reference;
     } else
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
@@ -1079,10 +1079,8 @@ public class JavaConverterTreeBuilder {
   }
 
   /*package*/ SNode processStatement(ForStatement x) {
-    List<SNode> init = processStatements(x.initializations);
-    SNode expr = processExpressionRefl(x.condition);
     SNode forStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ForStatement", null);
-    SLinkOperations.setTarget(forStatement, "condition", expr, true);
+    List<SNode> init = processStatements(x.initializations);
     if (!(init.isEmpty())) {
       boolean first = true;
       for (SNode statement : init) {
@@ -1107,6 +1105,8 @@ public class JavaConverterTreeBuilder {
         }
       }
     }
+    SNode expr = processExpressionRefl(x.condition);
+    SLinkOperations.setTarget(forStatement, "condition", expr, true);
     List<SNode> incr = processExpressionStatements(x.increments);
     if (!(incr.isEmpty())) {
       for (SNode expressionStatement : incr) {

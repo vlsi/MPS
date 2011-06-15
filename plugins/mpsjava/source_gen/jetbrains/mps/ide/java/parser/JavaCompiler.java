@@ -213,6 +213,7 @@ public class JavaCompiler {
     options.sourceLevel = ClassFileConstants.JDK1_5;
     options.targetJDK = ClassFileConstants.JDK1_5;
     options.produceDebugAttributes = 0;
+    options.docCommentSupport = true;
     return options;
   }
 
@@ -462,6 +463,11 @@ public class JavaCompiler {
         myCompilationUnitDeclarations.add(cud);
         myProcessedCompilationUnits.add(icu);
       }
+    }
+
+    @Override
+    public void initializeParser() {
+      super.initializeParser();
     }
   }
 }

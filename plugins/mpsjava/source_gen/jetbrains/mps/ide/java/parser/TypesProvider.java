@@ -303,7 +303,7 @@ public class TypesProvider {
       SNodePointer pointer = getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.FIELD);
       return SReference.create(role, sourceNode, pointer, new String(binding.name));
     }
-    return null;
+    return createErrorReference(role, new String(binding.name), sourceNode);
   }
 
   public SNode getRaw(Binding binding) {
