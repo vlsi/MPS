@@ -10,7 +10,7 @@ public class SimpleDiffRequest extends DiffRequest {
   private String[] myContentTitles;
 
   public SimpleDiffRequest(Project project, String... contentTitles) {
-    super(null);
+    super(project);
     myContentTitles = contentTitles;
   }
 

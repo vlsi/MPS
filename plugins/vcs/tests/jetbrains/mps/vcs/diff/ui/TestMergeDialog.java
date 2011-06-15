@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.mock.MockProject;
+import com.intellij.openapi.command.impl.DummyProject;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
@@ -24,6 +26,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -46,6 +49,15 @@ import java.io.IOException;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
+  private static Project ourProject = new MockProject() {
+    @Override
+    public <T> T getComponent(Class<T> interfaceClass) {
+      if (interfaceClass == EditorManager.class) {
+        return (T) ourEditorManager;
+      }
+      return null;
+    }
+  };
 
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
@@ -76,59 +88,12 @@ public class TestMergeDialog {
       System.err.println("There must be 2 or 4 parameters");
       return;
     }
-
-    /*ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        LibraryManager manager = LibraryManager.getInstance();
-        MyState state = manager.getState();
-        Library webrdnq = new Library();
-        webrdnq.setName("webr-dnq");
-        webrdnq.setPath("/media/d/devel/webr-dnq");
-        state.getLibraries().put(webrdnq.getName(), webrdnq);
-        Library charisma = new Library();
-        charisma.setName("charisma");
-        charisma.setPath("/media/d/devel/charisma");
-        state.getLibraries().put(charisma.getName(), charisma);
-        manager.loadState(state);
-        manager.update();
-      }
-    });
-*/
     final String finalResultFile = resultFile;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            IOperationContext context = new StandaloneMPSContext() {
-              @Override
-              public Project getProject() {
-                return null;
-              }
-
-              public IModule getModule() {
-                return null;
-              }
-
-              @NotNull
-              public IScope getScope() {
-                return GlobalScope.getInstance();
-              }
-
-              @Override
-              public boolean isTestMode() {
-                return true;
-              }
-
-              @Override
-              public <T> T getComponent(Class<T> clazz) {
-                if (clazz == EditorManager.class) {
-                  return (T) ourEditorManager;
-                }
-                return null;
-              }
-            };
-
-            return new MergeModelsDialog(null, context, models[0], models[1], models[2], new SimpleDiffRequest(null, "Local Version", "Merge Result", "Remote Version"));
+            return new MergeModelsDialog(null, null, models[0], models[1], models[2], new SimpleDiffRequest(ourProject, "Local Version", "Merge Result", "Remote Version"));
             // Local Version, Merge Result, Remote Version
           }
         });

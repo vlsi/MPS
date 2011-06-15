@@ -12,16 +12,18 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -77,10 +79,13 @@ public class DiffTemporaryModule extends AbstractModule {
     if (reference.equals(myModel.getSModelReference())) {
       return myModel.getModelDescriptor();
     }
+    List<IScope> scopes = ListSequence.fromList(new ArrayList<IScope>());
     ProjectScope ps = myProject.getComponent(ProjectScope.class);
-    GlobalScope gs = GlobalScope.getInstance();
-    Iterable<IScope> scopes = Arrays.<IScope>asList(ps, gs);
-    for (IScope scope : Sequence.fromIterable(scopes)) {
+    if (ps != null) {
+      ListSequence.fromList(scopes).addElement(ps);
+    }
+    ListSequence.fromList(scopes).addElement(GlobalScope.getInstance());
+    for (IScope scope : ListSequence.fromList(scopes)) {
       SModelDescriptor md = scope.getModelDescriptor(reference);
       if (md != null) {
         return md;
@@ -88,7 +93,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
     // if we can't find model using full reference, try to find by fq-name 
     // this is needed for viewing diff on models saved before MPS 2.0 M5 
-    for (IScope scope : Sequence.fromIterable(scopes)) {
+    for (IScope scope : ListSequence.fromList(scopes)) {
       SModelDescriptor md = scope.getModelDescriptor(reference.getSModelFqName());
       if (md != null) {
         return md;

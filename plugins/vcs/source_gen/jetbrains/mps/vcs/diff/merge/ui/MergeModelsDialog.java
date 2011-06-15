@@ -6,18 +6,19 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.vcs.diff.merge.MergeContextState;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.ui.DiffTemporaryModule;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
@@ -53,7 +54,7 @@ public class MergeModelsDialog extends BaseDialog {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class);
   public static final Icon RESET = IconLoader.getIcon("/actions/reset.png", Icons.class);
 
-  private IOperationContext myOperationContext;
+  private Project myProject;
   private MergeContext myMergeContext;
   private MergeContextState myInitialState;
   private MergeModelsDialog.MergeModelsTree myMergeTree;
@@ -63,17 +64,22 @@ public class MergeModelsDialog extends BaseDialog {
   private String[] myContentTitles;
   private ActionToolbar myToolbar;
 
-  public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
-    super(WindowManager.getInstance().getFrame(project), "Merging " + SModelOperations.getModelName(baseModel));
+  public MergeModelsDialog(@Deprecated Project project, @Deprecated IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
+    super(WindowManager.getInstance().getFrame(request.getProject()), "Merging " + SModelOperations.getModelName(baseModel));
+    // TODO remove useless arguments: project and operationContext 
+    myProject = request.getProject();
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
-    myOperationContext = operationContext;
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myInitialState = myMergeContext.getCurrentState();
       }
     });
+    DiffTemporaryModule.createModuleForModel(myMergeContext.getResultModel(), "result", myProject);
+    DiffTemporaryModule.createModuleForModel(mineModel, "mine", myProject);
+    DiffTemporaryModule.createModuleForModel(repositoryModel, "repository", myProject);
+
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ResetState(this), new MergeNonConflictingRoots(this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this), Separator.getInstance(), new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request));
@@ -123,8 +129,8 @@ public class MergeModelsDialog extends BaseDialog {
     myMergeTree.rebuildLater();
   }
 
-  /*package*/ IOperationContext getOperationContext() {
-    return myOperationContext;
+  /*package*/ Project getProject() {
+    return myProject;
   }
 
   @Nullable
@@ -262,8 +268,13 @@ public class MergeModelsDialog extends BaseDialog {
     return myMergeContext;
   }
 
+  /*package*/ void restoreState(MergeContextState state) {
+    myMergeContext.restoreState(state);
+    DiffTemporaryModule.createModuleForModel(myMergeContext.getResultModel(), "result", myProject);
+  }
+
   public void resetState() {
-    myMergeContext.restoreState(myInitialState);
+    restoreState(myInitialState);
     rebuildLater();
   }
 
@@ -286,7 +297,7 @@ public class MergeModelsDialog extends BaseDialog {
 
   private class MergeModelsTree extends DiffModelTree {
     private MergeModelsTree() {
-      super(myOperationContext);
+      super(DiffTemporaryModule.getOperationContext(myProject, myMergeContext.getResultModel()));
     }
 
     protected Iterable<BaseAction> getRootActions(@Nullable final SNodeId rootId) {
