@@ -3,7 +3,6 @@ package jetbrains.mps.smodel.structure;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.containers.MultiMap;
-import com.sun.org.apache.xpath.internal.functions.FuncQname;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
@@ -12,12 +11,10 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRuntimeInterpreted;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ConceptRegistry implements ApplicationComponent {
@@ -28,8 +25,6 @@ public class ConceptRegistry implements ApplicationComponent {
   private final Map<String, ConstraintsDescriptor> constraintsDescriptors = new ConcurrentHashMap<String, ConstraintsDescriptor>();
 
   private final MultiMap<String, String> languageToConcepts = new MultiMap<String, String>();
-
-  private final Set<Pair<String, LanguageAspect>> conceptsInLoading = new HashSet<Pair<String, LanguageAspect>>();
 
   private final Object lock = new Object();
 
@@ -56,38 +51,30 @@ public class ConceptRegistry implements ApplicationComponent {
     // ?
   }
 
-  private <T> T checkConceptIsLoaded(final String fqName, LanguageAspect languageAspect) {
-    Pair<String, LanguageAspect> currentConceptAndLanguageAspect = new Pair<String, LanguageAspect>(fqName, languageAspect);
-
-    if (conceptsInLoading.contains(currentConceptAndLanguageAspect)) {
-      // todo: ?
-      return null;
-    }
-
-    T descriptor = null;
+  private Object getCachedDescriptor(final String fqName, LanguageAspect languageAspect) {
     switch (languageAspect) {
       case STRUCTURE:
-        descriptor = (T) structureDescriptors.get(fqName);
-        if (descriptor != null) {
-          return descriptor;
-        }
-        break;
+        return structureDescriptors.get(fqName);
       case BEHAVIOR:
-        descriptor = (T) behaviorDescriptors.get(fqName);
-        if (descriptor != null) {
-          return descriptor;
-        }
-        break;
+        return behaviorDescriptors.get(fqName);
       case CONSTRAINTS:
-        descriptor = (T) constraintsDescriptors.get(fqName);
-        if (descriptor != null) {
-          return descriptor;
-        }
-        break;
+        return constraintsDescriptors.get(fqName);
+    }
+
+    return null;
+  }
+
+  private <T> T checkConceptIsLoaded(final String fqName, LanguageAspect languageAspect) {
+    T descriptor = (T) getCachedDescriptor(fqName, languageAspect);
+    if (descriptor != null) {
+      return descriptor;
     }
 
     synchronized (lock) {
-      conceptsInLoading.add(currentConceptAndLanguageAspect);
+      descriptor = (T) getCachedDescriptor(fqName, languageAspect);
+      if (descriptor != null) {
+        return descriptor;
+      }
 
       languageToConcepts.putValue(NameUtil.namespaceFromConceptFQName(fqName), fqName);
 
@@ -105,28 +92,24 @@ public class ConceptRegistry implements ApplicationComponent {
         descriptor = (T) getDefaultProvider(languageAspect).getDescriptor(fqName);
       }
 
-      if (descriptor == null) {
-        LOG.error("Null descriptor after all", new RuntimeException());
-      } else {
-        switch (languageAspect) {
-          case STRUCTURE:
-            structureDescriptors.put(fqName, (StructureDescriptor) descriptor);
-            break;
-          case BEHAVIOR:
-            behaviorDescriptors.put(fqName, (BehaviorDescriptor) descriptor);
-            break;
-          case CONSTRAINTS:
-            constraintsDescriptors.put(fqName, (ConstraintsDescriptor) descriptor);
-            break;
-        }
+      assert descriptor != null;
+
+      switch (languageAspect) {
+        case STRUCTURE:
+          structureDescriptors.put(fqName, (StructureDescriptor) descriptor);
+          break;
+        case BEHAVIOR:
+          behaviorDescriptors.put(fqName, (BehaviorDescriptor) descriptor);
+          break;
+        case CONSTRAINTS:
+          constraintsDescriptors.put(fqName, (ConstraintsDescriptor) descriptor);
+          break;
       }
-
-      conceptsInLoading.remove(currentConceptAndLanguageAspect);
-
       return descriptor;
     }
   }
 
+  @NotNull
   private static DescriptorProvider<?> getDefaultProvider(LanguageAspect languageAspect) {
     switch (languageAspect) {
       case STRUCTURE:
@@ -136,7 +119,8 @@ public class ConceptRegistry implements ApplicationComponent {
       case CONSTRAINTS:
         return LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER;
     }
-    return null;
+
+    throw new IllegalArgumentException("unknown aspect: " + languageAspect.toString());
   }
 
   private static DescriptorProvider<?> getRuntimeProvider(@NotNull LanguageRuntime runtime, LanguageAspect languageAspect) {
