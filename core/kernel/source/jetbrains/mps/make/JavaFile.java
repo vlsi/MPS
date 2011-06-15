@@ -20,12 +20,14 @@ import jetbrains.mps.util.FileUtil;
 import java.io.File;
 
 public class JavaFile {
-  private File myFile;
-  private String myClassName;
+  private final File myFile;
+  private final String myClassName;
+  private final long myLastModified;
 
-  JavaFile(File file, String className) {
+  JavaFile(File file, String className, long lastModified) {
     myFile = file;
     myClassName = className;
+    myLastModified = lastModified;
   }
 
   File getFile() {
@@ -34,6 +36,10 @@ public class JavaFile {
 
   String getClassName() {
     return myClassName;
+  }
+
+  long getLastModified() {
+    return myLastModified;
   }
 
   String getContents() {

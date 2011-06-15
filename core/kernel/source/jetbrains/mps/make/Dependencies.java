@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.make;
 
+import gnu.trove.TObjectLongHashMap;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.make.java.RootDependencies;
@@ -33,7 +34,7 @@ class Dependencies {
   private final Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
   private final Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
   private final Map<String, IModule> myModules = new HashMap<String, IModule>();
-  private final Map<String, Long> myLastModified = new HashMap<String, Long>();
+  private final TObjectLongHashMap<String> myLastModified = new TObjectLongHashMap<String>();
 
   public Dependencies(Collection<IModule> ms) {
     for (IModule m : ms) {
@@ -97,19 +98,15 @@ class Dependencies {
     }
   }
 
-  public Long getJavaFileLastModified(String fqName) {
-    Long value = myLastModified.get(fqName);
-    if (value == null) {
+  public long getJavaFileLastModified(String fqName) {
+    long value = myLastModified.get(fqName);
+    if (value == 0) {
       File iFile = getJavaFile(fqName);
-      if (!iFile.exists()) {
-        value = 0L;
-      } else {
-        value = iFile.lastModified();
-      }
-      myLastModified.put(fqName, value);
+      value = iFile.lastModified();
+      myLastModified.put(fqName, value == 0 ? -1 : 0);
     }
 
-    return value;
+    return value == -1 ? 0 : value;
   }
 
   public IModule getModule(String fqName) {

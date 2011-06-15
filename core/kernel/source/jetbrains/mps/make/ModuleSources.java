@@ -72,33 +72,56 @@ public class ModuleSources {
 
   private void collectInputFilesInfo() {
     for (String source : myModule.getSourcePaths()) {
-      collectInput(new File(source), "");
+      File dir = new File(source);
+      collectInput(dir, dir.list(), new StringBuilder(), new StringBuilder());
     }
   }
 
-  private void collectInput(File dir, String path) {
-    String[] list = dir.list();
+  private void collectInput(File dir, String[] list, StringBuilder path, StringBuilder package_) {
     if (list == null) return;
+    int initialLength = path.length();
 
     for (String childName : list) {
       if (isIgnoredFileName(childName)) continue;
 
       File child = new File(dir, childName);
-      if (childName.endsWith(MPSExtentions.DOT_JAVAFILE) && child.isFile()) {
-        String className = childName.substring(0, childName.length() - MPSExtentions.DOT_JAVAFILE.length());
-        String fqName = toPack(addSubPath(path, className));
-        myJavaFiles.put(fqName, new JavaFile(child, fqName));
-        continue;
+      if (childName.endsWith(MPSExtentions.DOT_JAVAFILE)) {
+        long lastModified = child.lastModified();
+        if(lastModified > 0) {
+          String className = childName.substring(0, childName.length() - MPSExtentions.DOT_JAVAFILE.length());
+          package_.setLength(initialLength);
+          if(initialLength > 0) {
+            package_.append('.');
+          }
+          package_.append(className);
+          String fqName = package_.toString();
+          myJavaFiles.put(fqName, new JavaFile(child, fqName, lastModified));
+          continue;
+        }
       }
 
-      if (!child.isDirectory() && isResourceFileName(childName)) {
-        String resourceName = child.getName();
-        String childPath = addSubPath(path, resourceName);
+      String[] subList = child.list();
+
+      if(subList != null) {
+        path.setLength(initialLength);
+        package_.setLength(initialLength);
+        if(initialLength > 0) {
+          path.append('/');
+          package_.append('.');
+        }
+        path.append(childName);
+        package_.append(childName);
+        collectInput(child, subList, path, package_);
+
+      } else if (isResourceFileName(childName)) {
+        path.setLength(initialLength);
+        if(initialLength > 0) {
+          path.append('/');
+        }
+        path.append(childName);
+        String childPath = path.toString();
         myResourceFiles.put(childPath, new ResourceFile(child, childPath));
-        continue;
       }
-
-      collectInput(child, addSubPath(path, childName));
     }
   }
 
@@ -108,42 +131,49 @@ public class ModuleSources {
 
     IFile classesGen = myModule.getClassesGen();
     if (classesGen == null) return;
-    collectOutput(new File(classesGen.getPath()), "");
+    File outputDir = new File(classesGen.getPath());
+    collectOutput(outputDir, outputDir.list(), new StringBuilder(), new StringBuilder());
   }
 
   private boolean isFileUpToDate(JavaFile javaFile, long classFileLastModified) {
-    if (javaFile.getFile().lastModified() < classFileLastModified) {
-      for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
-        if (myDependencies.getModule(fqName) != null) {
-          Long javaFileLastModified = myDependencies.getJavaFileLastModified(fqName);
-          if (javaFileLastModified == 0 || javaFileLastModified > classFileLastModified) {
-            return false;
-          }
+    if (javaFile.getLastModified() >= classFileLastModified) {
+      return false;
+    }
+
+    for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
+      if (myDependencies.getModule(fqName) != null) {
+        JavaFile file = myJavaFiles.get(fqName);
+        long javaFileLastModified = file != null ? file.getLastModified() : myDependencies.getJavaFileLastModified(fqName);
+        if (javaFileLastModified == 0 || javaFileLastModified > classFileLastModified) {
+          return false;
         }
       }
-      return true;
     }
-    return false;
+    return true;
   }
 
-  private void collectOutput(File outputDir, String path) {
-    String[] files = outputDir.list();
+  private void collectOutput(File outputDir, String[] files, StringBuilder path, StringBuilder package_) {
     if (files == null) return;
+    int initialLength = path.length();
 
-    for (String fileName : files) {
-      if (isIgnoredFileName(fileName)) continue;
+    for (String childName : files) {
+      if (isIgnoredFileName(childName)) continue;
 
-      File file = new File(outputDir, fileName);
-      if (fileName.endsWith(MPSExtentions.DOT_CLASSFILE)) {
+      File file = new File(outputDir, childName);
+      if (childName.endsWith(MPSExtentions.DOT_CLASSFILE)) {
         boolean isInnerClass = false;
-        String containerName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_CLASSFILE.length());
+        String containerName = childName.substring(0, childName.length() - MPSExtentions.DOT_CLASSFILE.length());
         int indexOfDollar = containerName.indexOf("$");
         if (indexOfDollar > 0) {
           containerName = containerName.substring(0, indexOfDollar);
           isInnerClass = true;
         }
-
-        String fqName = toPack(addSubPath(path, containerName));
+        package_.setLength(initialLength);
+        if(initialLength > 0) {
+          package_.append('.');
+        }
+        package_.append(containerName);
+        String fqName = package_.toString();
         JavaFile javaFile = myJavaFiles.get(fqName);
         if (javaFile == null) {
           myFilesToDelete.add(file);
@@ -153,35 +183,38 @@ public class ModuleSources {
         continue;
       }
 
-      if (!file.isDirectory() && isResourceFileName(fileName)) {
-        String childPath = addSubPath(path, fileName);
+      String[] subList = file.list();
+
+      if(subList != null) {
+        path.setLength(initialLength);
+        package_.setLength(initialLength);
+        if(initialLength > 0) {
+          path.append('/');
+          package_.append('.');
+        }
+        path.append(childName);
+        package_.append(childName);
+        collectOutput(file, subList, path, package_);
+
+      } else if (isResourceFileName(childName)) {
+        path.setLength(initialLength);
+        if(initialLength > 0) {
+          path.append('/');
+        }
+        path.append(childName);
+        String childPath = path.toString();
         ResourceFile resourceFile = myResourceFiles.get(childPath);
         if (resourceFile == null) {
           myFilesToDelete.add(file);
         } else if (resourceFile.getFile().lastModified() < file.lastModified()) {
           myResourcesToCopy.remove(resourceFile);
         }
-        continue;
       }
-
-      collectOutput(file, addSubPath(path, fileName));
     }
   }
 
   private boolean isIgnoredFileName(String fileName) {
     return FileTypeManager.getInstance().isFileIgnored(fileName);
-  }
-
-  private String addSubPath(String path, String name) {
-    if (path.length() > 0) {
-      return path + "/" + name;
-    } else {
-      return name;
-    }
-  }
-
-  private String toPack(String path) {
-    return path.replace('/', '.');
   }
 
   private boolean isResourceFileName(String fileName) {
