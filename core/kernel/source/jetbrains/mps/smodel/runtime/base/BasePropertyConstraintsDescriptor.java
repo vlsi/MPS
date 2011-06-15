@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
+import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
@@ -82,25 +83,30 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   @Nullable
   private static PropertyConstraintsDescriptor getSomethingUsingInheritance(String conceptFqName, String propertyName, InheritanceCalculateParameters parameters) {
     for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
-      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
-      PropertyConstraintsDescriptor parentPropertyDescriptor = parentDescriptor.getProperty(propertyName);
-      if (parentPropertyDescriptor == null) {
+      if (!ConceptRegistry.getInstance().getConceptDescriptor(parent).hasProperty(propertyName)) {
         continue;
       }
 
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
+      PropertyConstraintsDescriptor parentPropertyDescriptor = parentDescriptor.getProperty(propertyName);
+
+      // todo: rename getter -> ?
+      PropertyConstraintsDescriptor parentCalculated;
+
       if (parentPropertyDescriptor instanceof BasePropertyConstraintsDescriptor) {
-        return parameters.getParentCalculatedDescriptor((BasePropertyConstraintsDescriptor) parentPropertyDescriptor);
+        parentCalculated = parameters.getParentCalculatedDescriptor((BasePropertyConstraintsDescriptor) parentPropertyDescriptor);
       } else if (parentPropertyDescriptor instanceof PropertyConstraintsDispatchable) {
         if (parameters.hasOwn((PropertyConstraintsDispatchable) parentPropertyDescriptor)) {
-          return parentPropertyDescriptor;
+          parentCalculated = parentPropertyDescriptor;
         } else {
-          PropertyConstraintsDescriptor parentGetter = getSomethingUsingInheritance(parent, propertyName, parameters);
-          if (parentGetter != null) {
-            return parentGetter;
-          }
+          parentCalculated = getSomethingUsingInheritance(parent, propertyName, parameters);
         }
       } else {
-        return parentPropertyDescriptor;
+        parentCalculated = parentPropertyDescriptor;
+      }
+
+      if (parentCalculated != null) {
+        return parentCalculated;
       }
     }
 

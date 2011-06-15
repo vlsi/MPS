@@ -87,19 +87,22 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
       ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
 
+      ConstraintsDescriptor parentCalculated;
+
       if (parentDescriptor instanceof BaseConstraintsDescriptor) {
-        return parameters.getParentCalculatedDescriptor((BaseConstraintsDescriptor) parentDescriptor);
+        parentCalculated = parameters.getParentCalculatedDescriptor((BaseConstraintsDescriptor) parentDescriptor);
       } else if (parentDescriptor instanceof ConstraintsDispatchable) {
         if (parameters.hasOwn((ConstraintsDispatchable) parentDescriptor)) {
-          return parentDescriptor;
+          parentCalculated = parentDescriptor;
         } else {
-          ConstraintsDescriptor parentGetter = getMethodUsingInheritance(conceptFqName, parameters);
-          if (parentGetter != null) {
-            return parentGetter;
-          }
+          parentCalculated = getMethodUsingInheritance(conceptFqName, parameters);
         }
       } else {
-        return parentDescriptor;
+        parentCalculated = parentDescriptor;
+      }
+
+      if (parentCalculated != null) {
+        return parentCalculated;
       }
     }
 

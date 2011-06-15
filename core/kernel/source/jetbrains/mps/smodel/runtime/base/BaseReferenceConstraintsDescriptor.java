@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.runtime.base;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.*;
+import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import org.jetbrains.annotations.Nullable;
 
@@ -49,25 +51,29 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
   @Nullable
   private static ReferenceConstraintsDescriptor getSomethingUsingInheritance(String conceptFqName, String roleName, InheritanceCalculateParameters parameters) {
     for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
-      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
-      ReferenceConstraintsDescriptor parentReferenceDescriptor = parentDescriptor.getReference(roleName);
-      if (parentReferenceDescriptor == null) {
+      if (!ConceptRegistry.getInstance().getConceptDescriptor(parent).hasReference(roleName)) {
         continue;
       }
 
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(parent);
+      ReferenceConstraintsDescriptor parentReferenceDescriptor = parentDescriptor.getReference(roleName);
+
+      ReferenceConstraintsDescriptor parentCalculated;
+
       if (parentReferenceDescriptor instanceof BaseReferenceConstraintsDescriptor) {
-        return parameters.getParentCalculatedDescriptor((BaseReferenceConstraintsDescriptor) parentReferenceDescriptor);
+        parentCalculated = parameters.getParentCalculatedDescriptor((BaseReferenceConstraintsDescriptor) parentReferenceDescriptor);
       } else if (parentReferenceDescriptor instanceof PropertyConstraintsDispatchable) {
         if (parameters.hasOwn((ReferenceConstraintsDispatchable) parentReferenceDescriptor)) {
-          return parentReferenceDescriptor;
+          parentCalculated = parentReferenceDescriptor;
         } else {
-          ReferenceConstraintsDescriptor parentGetter = getSomethingUsingInheritance(parent, roleName, parameters);
-          if (parentGetter != null) {
-            return parentGetter;
-          }
+          parentCalculated = getSomethingUsingInheritance(parent, roleName, parameters);
         }
       } else {
-        return parentReferenceDescriptor;
+        parentCalculated = parentReferenceDescriptor;
+      }
+
+      if (parentCalculated != null) {
+        return parentCalculated;
       }
     }
 
