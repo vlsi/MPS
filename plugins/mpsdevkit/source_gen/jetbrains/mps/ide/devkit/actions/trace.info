@@ -10,6 +10,7 @@
   <unitInfo fileName="LanguageActionsEx_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageActionsEx_ActionGroup" />
   <unitInfo fileName="GeneratorActions_Delete_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GeneratorActions_Delete_ActionGroup" />
   <unitInfo fileName="LanguageRefactoring_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageRefactoring_ActionGroup" />
+  <unitInfo fileName="DevKitTools_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" />
   <unitInfo fileName="RepositoryToolsGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.RepositoryToolsGroup_ActionGroup" />
   <unitInfo fileName="GenerationTraceActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GenerationTraceActions_ActionGroup" />
   <unitInfo fileName="AccessoriesGroupActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.AccessoriesGroupActions_ActionGroup" />
@@ -18,7 +19,6 @@
   <unitInfo fileName="Trace_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Trace_KeymapChanges" />
   <unitInfo fileName="Mac_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mac_KeymapChanges" />
   <unitInfo fileName="ToolsInternalEx_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ToolsInternalEx_ActionGroup" />
-  <unitInfo fileName="DevKitTools_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" />
   <unitInfo fileName="GotoConceptAspect_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GotoConceptAspect_ActionGroup" />
   <unitInfo fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
   <unitInfo fileName="TraceTool_Tool.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.TraceTool_Tool" />
@@ -305,8 +305,7 @@
   </root>
   <root nodeId="2191995028863072547">
     <nodeInfo nodeId="2191995028863072549" fileName="DevKitTools_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2191995028863072551" fileName="DevKitTools_ActionGroup.java" startLine="17" startPosition="98" endLine="18" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2191995028863072552" fileName="DevKitTools_ActionGroup.java" startLine="18" startPosition="50" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2191995028863072552" fileName="DevKitTools_ActionGroup.java" startLine="17" startPosition="98" endLine="18" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="2191995028863072555">
     <nodeInfo nodeId="2191995028863072573" fileName="ReloadAll_Action.java" startLine="57" startPosition="69" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -15,7 +15,6 @@ public class DevKitTools_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       DevKitTools_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ReloadAll_Action");
-      DevKitTools_ActionGroup.this.addSeparator();
       DevKitTools_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.InstallIDEAPlugin_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);

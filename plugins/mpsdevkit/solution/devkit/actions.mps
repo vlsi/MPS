@@ -7426,7 +7426,6 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2191995028863072549">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2191995028863072555" resolveInfo="ReloadAll" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2191995028863072551" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2191995028863072552">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2191995028863072592" resolveInfo="InstallIDEAPlugin" />
       </node>
