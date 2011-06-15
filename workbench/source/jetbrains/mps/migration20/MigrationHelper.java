@@ -83,21 +83,21 @@ public class MigrationHelper {
     }
 
     if (msComponent.getMigrationState() == MState.ATTRIBUTES_CONVERTED) {
+      stage_5_1_migrations(mpsProject);
 
       msComponent.setMigrationState(MState.LANGUAGES_MIGRATION);
       ApplicationManager.getApplication().restart();
     }
 
     if (msComponent.getMigrationState() == MState.LANGUAGES_MIGRATION) {
+      stage_6_1_regeneration(mpsProject);
 
       msComponent.setMigrationState(MState.REGENERATION);
       ApplicationManager.getApplication().restart();
     }
 
     if (msComponent.getMigrationState() == MState.REGENERATION) {
-
       msComponent.setMigrationState(MState.DONE);
-      ApplicationManager.getApplication().restart();
     }
   }
 
@@ -295,6 +295,18 @@ public class MigrationHelper {
       AbstractMigrationRefactoring migrationRefactoring = finder.getRefactoring(aliveIncludedResult);
       MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
     }
+  }
+
+  //--------------- stage 5 : language migrations -----------------
+
+  public static void stage_5_1_migrations(MPSProject p) {
+
+  }
+
+  //--------------- stage 6 : regeneration -----------------
+
+  public static void stage_6_1_regeneration(MPSProject p) {
+    //do we need to handle deps by hand?
   }
 
 }
