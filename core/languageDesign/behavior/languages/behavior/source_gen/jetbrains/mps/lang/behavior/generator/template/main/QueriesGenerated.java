@@ -162,7 +162,7 @@ public class QueriesGenerated {
     SNode extendsNode = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", false);
 
     if (SConceptOperations.isExactly(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.core.structure.BaseConcept")) {
-      return "jetbrains.mps.smodel.structure.CompiledBehaviorDescriptor";
+      return "jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor";
     }
     if ((extendsNode == null)) {
       extendsNode = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
@@ -184,6 +184,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7923290658387314663(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_420948651745787987(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "concept", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1144956008583624134(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -227,10 +231,6 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2056529430201935371(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2056529430201935314(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
 
@@ -350,18 +350,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1225195370848(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
-  }
-
-  public static boolean ifMacro_Condition_2056529430201968045(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract"));
-  }
-
-  public static boolean ifMacro_Condition_2056529430201968133(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract"));
-  }
-
-  public static boolean ifMacro_Condition_2056529430201968179(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && !(SConceptPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract"));
   }
 
   public static SNode sourceNodeQuery_1225195370232(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -716,7 +704,7 @@ public class QueriesGenerated {
 
     return ListSequence.fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && !(SConceptPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract"));
       }
     });
   }

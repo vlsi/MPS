@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalBehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
@@ -54,7 +53,7 @@ public class BehaviorAspectInterpreted implements BehaviorAspectDescriptor {
     }
   }
 
-  class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
+  public static class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     private final String fqName;
 
     public InterpretedBehaviorDescriptor(String fqName) {
