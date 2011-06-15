@@ -90,6 +90,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
     return container;
   }
 
+  @Nullable
   @Override
   public ReferenceScopeProvider getScopeProvider() {
     return scopeProviderDescriptor != null ? scopeProviderDescriptor.getScopeProvider() : null;

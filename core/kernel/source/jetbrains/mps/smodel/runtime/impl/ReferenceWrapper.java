@@ -40,6 +40,7 @@ public class ReferenceWrapper {
         }
       }
 
+      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         if (referenceScopeProvider != null) {

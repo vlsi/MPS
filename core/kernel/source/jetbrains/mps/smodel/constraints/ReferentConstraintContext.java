@@ -17,8 +17,9 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 
-public class ReferentConstraintContext {
+public class ReferentConstraintContext implements ReferenceConstraintsContext {
   private SModel myModel;
   private SNode myEnclosingNode;
   private SNode myReferenceNode;

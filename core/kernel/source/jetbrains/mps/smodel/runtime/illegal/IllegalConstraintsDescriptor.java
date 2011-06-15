@@ -68,7 +68,7 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
 
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new IllegalReferenceScopeProvider();
+    return null;
   }
 
   @Override

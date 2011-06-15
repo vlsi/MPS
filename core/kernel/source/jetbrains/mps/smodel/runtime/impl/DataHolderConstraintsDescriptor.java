@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.smodel.constraints.CanBeARootContext;
 import jetbrains.mps.smodel.constraints.CanBeAnAncestorContext;
 import jetbrains.mps.smodel.runtime.*;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
@@ -117,7 +118,7 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
     return dataHolder.getConceptFqName();
   }
 
-  private <T> boolean executeCanBeMethod(@NotNull CanBeASomethingMethod<T> method, IOperationContext operationContext, T context, @Nullable CheckingNodeContext checkingNodeContext) {
+  private <T> boolean executeCanBeMethod(@NotNull CanBeASomethingMethod<T> method, IOperationContext operationContext, T context, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
     jetbrains.mps.smodel.structure.CheckingNodeContext _checkingNodeContext = null;
     if (checkingNodeContext != null) {
       _checkingNodeContext = new jetbrains.mps.smodel.structure.CheckingNodeContext();

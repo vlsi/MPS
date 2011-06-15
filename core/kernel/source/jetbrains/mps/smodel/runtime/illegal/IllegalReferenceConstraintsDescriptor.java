@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import org.jetbrains.annotations.Nullable;
 
 public class IllegalReferenceConstraintsDescriptor implements ReferenceConstraintsDescriptor {
   private final String role;
@@ -40,9 +41,10 @@ public class IllegalReferenceConstraintsDescriptor implements ReferenceConstrain
     return container;
   }
 
+  @Nullable
   @Override
   public ReferenceScopeProvider getScopeProvider() {
-    return new IllegalReferenceScopeProvider();
+    return null;
   }
 
   @Override

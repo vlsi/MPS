@@ -38,6 +38,7 @@ public interface ConstraintsDescriptor {
   @NotNull
   ReferenceConstraintsDescriptor getReference(String refName);
 
+  @Nullable
   ReferenceScopeProvider getDefaultScopeProvider();
 
   // todo: remove/move this methods

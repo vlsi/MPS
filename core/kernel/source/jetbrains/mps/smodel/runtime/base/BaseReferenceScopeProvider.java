@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.runtime.illegal;
+package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
@@ -22,11 +22,34 @@ import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.smodel.search.UndefinedSearchScope;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 
-public class IllegalReferenceScopeProvider implements ReferenceScopeProvider {
+public class BaseReferenceScopeProvider implements ReferenceScopeProvider {
+  public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, ReferenceConstraintsContext _context) {
+    return new UndefinedSearchScope();
+  }
+
   @Override
   public ISearchScope createSearchScope(IOperationContext operationContext, ReferenceConstraintsContext _context) {
-    return new EmptySearchScope();
+    Object searchScopeOrListOfNodes = this.createSearchScopeOrListOfNodes(operationContext, _context);
+    if (searchScopeOrListOfNodes == null) {
+      return new EmptySearchScope();
+    }
+    if (searchScopeOrListOfNodes instanceof ISearchScope) {
+      return (ISearchScope) searchScopeOrListOfNodes;
+    }
+/*    if (searchScopeOrListOfNodes instanceof List) {
+      Iterable iterable = CollectionUtil.withoutNulls((Iterable) searchScopeOrListOfNodes);
+      return new SimpleSearchScope(IterableUtil.asList(iterable));
+    }*/
+    if (searchScopeOrListOfNodes instanceof Iterable) {
+      Iterable iterable = CollectionUtil.withoutNulls((Iterable) searchScopeOrListOfNodes);
+      return new SimpleSearchScope(IterableUtil.asList(iterable));
+    }
+    throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
   }
 
   @Override
@@ -36,7 +59,7 @@ public class IllegalReferenceScopeProvider implements ReferenceScopeProvider {
 
   @Override
   public String getPresentation(IOperationContext operationContext, ReferencePresentationContext _context) {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @Override
