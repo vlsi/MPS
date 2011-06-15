@@ -54,4 +54,9 @@ public class IllegalPropertyConstraintsDescriptor implements PropertyConstraints
   public boolean validateValue(SNode node, String value, IScope scope) {
     return false;
   }
+
+  @Override
+  public boolean isReadOnly() {
+    return true;
+  }
 }

@@ -28,4 +28,6 @@ public interface PropertyConstraintsDescriptor {
   void setValue(SNode node, String value, IScope scope);
 
   boolean validateValue(SNode node, String value, IScope scope);
+
+  boolean isReadOnly();
 }

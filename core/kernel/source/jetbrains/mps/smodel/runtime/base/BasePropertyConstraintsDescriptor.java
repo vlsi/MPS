@@ -168,6 +168,11 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     return validatorDescriptor == null || validatorDescriptor.validateValue(node, value, scope);
   }
 
+  @Override
+  public boolean isReadOnly() {
+    return !(isSetterDefault() && isGetterDefault());
+  }
+
   private static interface InheritanceCalculateParameters {
     PropertyConstraintsDescriptor getParentCalculatedDescriptor(BasePropertyConstraintsDescriptor parentDescriptor);
 
