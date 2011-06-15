@@ -63,7 +63,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new MPSProjectPaths_Action());
-    addAction(new Migration20_Action());
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
     addAction(new ModuleProperties_Action());
@@ -138,7 +137,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new LanguageActions_ActionGroup());
     addGroup(new LanguageNewActions_ActionGroup());
     addGroup(new LibraryActions_ActionGroup());
-    addGroup(new Migrations20_ActionGroup());
     addGroup(new ModelActionsInternal_ActionGroup());
     addGroup(new ModelActions_ActionGroup());
     addGroup(new ModelNewActions_ActionGroup());
@@ -195,7 +193,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);
-    insertGroupIntoAnother(Migrations20_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration20);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
     insertGroupIntoAnother(SolutionNewActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
     insertGroupIntoAnother(GeneratorNewActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);

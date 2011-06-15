@@ -17,7 +17,6 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_check = ID + "check";
   public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_runConfig = ID + "runConfig";
-  public static final String LABEL_ID_migration = ID + "migration";
 
   public ProjectActions_ActionGroup() {
     super("ProjectActions", ID);
@@ -63,12 +62,6 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
         ProjectActions_ActionGroup.this.addAction(action);
       }
       ProjectActions_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_migration);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        ProjectActions_ActionGroup.this.addAction(action);
-      }
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MPSProjectPaths_Action");
     } catch (Throwable t) {

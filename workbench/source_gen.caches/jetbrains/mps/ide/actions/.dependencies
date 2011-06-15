@@ -1509,8 +1509,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.LibraryActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSProjectPaths_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.Migration20_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.Migrations20_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelNewActions_ActionGroup" />
@@ -1748,30 +1746,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode extendsClassName="jetbrains.mps.ide.actions.CollectMethodsStrategy" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.Migration20_Action" file="Migration20_Action.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.migration20.MigrationHelper" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.Migrations20_ActionGroup" file="Migrations20_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" file="ModelActionsInternal_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -3178,12 +3152,9 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" file="ToolsInternal_ActionGroup.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Tools_ActionGroup" file="Tools_ActionGroup.java">

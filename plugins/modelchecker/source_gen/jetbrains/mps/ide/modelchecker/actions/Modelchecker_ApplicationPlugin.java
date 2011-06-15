@@ -50,7 +50,7 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CheckModuleLanguage_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModuleGenerator_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModel_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_check);
-    insertGroupIntoAnother(ToolsInternalEx_ActionGroup.ID, ToolsInternal_ActionGroup.ID, ToolsInternal_ActionGroup.LABEL_ID_internal);
+    insertGroupIntoAnother(ToolsInternalEx_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

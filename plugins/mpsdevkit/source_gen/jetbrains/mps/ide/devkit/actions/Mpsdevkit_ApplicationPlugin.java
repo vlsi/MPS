@@ -35,11 +35,8 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AddAccessoryModel_Action());
-    addAction(new AddGeneralPurposeDevKitToLanguageModels_Action());
-    addAction(new AddLanguageDesingDevKitToLanguages_Action());
     addAction(new CellProperties_Action());
     addAction(new DeleteGenerator_Action());
-    addAction(new DumpKeyStrokes_Action());
     addAction(new FixDependenciesEverywhere_Action());
     addAction(new GenerationIntentions_Action());
     addAction(new GoToConceptDeclaration_Action());
@@ -57,8 +54,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeImportsInGlobalScope_Action());
     addAction(new PrintNodeID_Action());
     addAction(new ReloadAll_Action());
-    addAction(new RemoveBootstrapLanguagesDevKitFromLanguageModels_Action());
-    addAction(new RemoveLanguageDesignDevKitFromModels_Action());
     addAction(new RenameLanguage_Action());
     addAction(new ShowCellInExplorer_Action());
     addAction(new ShowGenerationTrace_Action());
@@ -96,7 +91,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GenerateGeneratorPopup_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goto);
-    insertGroupIntoAnother(ToolsInternalEx_ActionGroup.ID, ToolsInternal_ActionGroup.ID, ToolsInternal_ActionGroup.LABEL_ID_internal);
+    insertGroupIntoAnother(ToolsInternalEx_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(RepositoryToolsGroup_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);

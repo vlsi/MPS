@@ -14,15 +14,9 @@ public class ToolsInternalEx_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.DumpKeyStrokes_Action");
       ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.OptimizeImportsInGlobalScope_Action");
       ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.FixDependenciesEverywhere_Action");
-      ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.RemoveLanguageDesignDevKitFromModels_Action");
-      ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.RemoveBootstrapLanguagesDevKitFromLanguageModels_Action");
-      ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.AddGeneralPurposeDevKitToLanguageModels_Action");
-      ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.AddLanguageDesingDevKitToLanguages_Action");
       ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.LoadNonStubModels_Action");
-      ToolsInternalEx_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

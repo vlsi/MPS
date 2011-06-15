@@ -8,7 +8,6 @@ import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 import jetbrains.mps.ide.actions.Build_ActionGroup;
-import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
@@ -30,11 +29,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new BuildAllBehaviors_Action());
-    addAction(new BuildAllConstraints_Action());
-    addAction(new BuildAllGenerators_Action());
-    addAction(new BuildAllLanguageDescriptors_Action());
-    addAction(new BuildAllStructures_Action());
     addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CleanAllModules_Action());
     addAction(new CleanModule_Action());
@@ -66,7 +60,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SaveTransientModels_ActionGroup());
     addGroup(new TextPreviewGroup_ActionGroup());
     addGroup(new ToolbarMake_ActionGroup());
-    addGroup(new ToolsInternalMake_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -76,7 +69,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Compile_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
     insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
-    insertGroupIntoAnother(ToolsInternalMake_ActionGroup.ID, ToolsInternal_ActionGroup.ID, ToolsInternal_ActionGroup.LABEL_ID_internal);
     insertGroupIntoAnother(Make_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(Make_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(Make_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_make);
