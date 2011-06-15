@@ -44,9 +44,9 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
       String concept2 = rule.getApplicableConceptFQName2();
       Pair<String, String> pair = new Pair<String, String>(concept1, concept2);
       Set<T> existingRules = myRules.get(pair);
-      if (existingRules == null) {
-        existingRules = Collections.synchronizedSet(new HashSet<T>(1));
-        myRules.put(pair, existingRules);
+      while (existingRules == null) {
+        myRules.putIfAbsent(pair, Collections.synchronizedSet(new HashSet<T>(1)));
+        existingRules = myRules.get(pair);
       }
       existingRules.add(rule);
     }
@@ -79,8 +79,8 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
             synchronized (result) {
               Set<T> clone = Collections.unmodifiableSet(new THashSet<T>(result));
               myRulesCache.putIfAbsent(key, clone);
+              return clone;
             }
-            return Collections.unmodifiableSet(result);
           }
         }
       }
@@ -104,7 +104,11 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
           Set<T> parentRules = myRules.get(new Pair<String, String>(conceptDeclaration1, conceptDeclaration2));
           if (parentRules != null) {
             if (conceptDeclaration1 != pair.o1 || conceptDeclaration2 != pair.o2) {
-              rules.addAll(parentRules);
+              Set<T> clone;
+              synchronized (parentRules) {
+                clone = new THashSet<T>(parentRules);
+              }
+              rules.addAll(clone);
             }
           }
         }

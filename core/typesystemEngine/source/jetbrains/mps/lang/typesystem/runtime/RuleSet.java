@@ -20,20 +20,20 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.Collections;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /*
  *  Synchronized.
  */
 public class RuleSet<T extends IApplicableToConcept> {
-  Map<String, Set<T>> myRules = new ConcurrentHashMap<String, Set<T>>();
-  Map<String, Set<T>> myRulesCache = new ConcurrentHashMap<String, Set<T>>();
+  ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
+  ConcurrentMap<String, Set<T>> myRulesCache = new ConcurrentHashMap<String, /* unmodifiable */ Set<T>>();
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      addRule(rule);
+      addRule_internal(rule);
     }
     myRulesCache.clear();
   }
@@ -46,9 +46,9 @@ public class RuleSet<T extends IApplicableToConcept> {
   private void addRule_internal(T rule) {
     String concept = rule.getApplicableConceptFQName();
     Set<T> existingRules = myRules.get(concept);
-    if (existingRules == null) {
-      existingRules = Collections.synchronizedSet(new THashSet<T>(2));
-      myRules.put(concept, existingRules);
+    while (existingRules == null) {
+      myRules.putIfAbsent(concept, Collections.synchronizedSet(new THashSet<T>(2)));
+      existingRules = myRules.get(concept);
     }
     existingRules.add(rule);
   }
@@ -60,12 +60,12 @@ public class RuleSet<T extends IApplicableToConcept> {
   protected Set<T> get(String key) {
     Set<T> cachedResult = myRulesCache.get(key);
     if (cachedResult != null) {
-      return Collections.unmodifiableSet(cachedResult);
+      return cachedResult;
     }
 
-    Set<T> result = computeRuleSet(key);
+    Set<T> result = Collections.unmodifiableSet(computeRuleSet(key));
     myRulesCache.put(key, result);
-    return Collections.unmodifiableSet(result);
+    return result;
   }
 
   private Set<T> computeRuleSet(String concept) {
@@ -79,10 +79,12 @@ public class RuleSet<T extends IApplicableToConcept> {
         Set<T> rules = myRules.get(abstractConcept);
         boolean overrides = false;
         if (rules != null) {
-          result.addAll(rules);
-          for (T rule : rules) {
-            if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides()) {
-              overrides = true;
+          synchronized (rules) {
+            result.addAll(rules);
+            for (T rule : rules) {
+              if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides()) {
+                overrides = true;
+              }
             }
           }
         }
