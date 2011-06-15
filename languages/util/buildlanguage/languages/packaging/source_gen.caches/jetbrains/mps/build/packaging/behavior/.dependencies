@@ -131,6 +131,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -140,6 +141,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Block_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
