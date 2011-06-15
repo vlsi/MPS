@@ -15,99 +15,110 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
+/*
+ *   Synchronized.
+ */
 public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
-  Map<Pair<SNode, SNode>, Set<T>> myRules =
-    new HashMap<Pair<SNode, SNode>, Set<T>>();
+  ConcurrentMap<Pair<String, String>, Set<T>> myRules = new ConcurrentHashMap<Pair<String, String>, Set<T>>();
+  ConcurrentMap<Pair<String, String>, Set<T>> myRulesCache = new ConcurrentHashMap<Pair<String, String>, Set<T>>();
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      SNode concept1 = SModelUtil.findConceptDeclaration(
-        rule.getApplicableConceptFQName1(), GlobalScope.getInstance());
-      SNode concept2 = SModelUtil.findConceptDeclaration(
-        rule.getApplicableConceptFQName2(), GlobalScope.getInstance());
-      Pair<SNode, SNode> pair = new Pair<SNode, SNode>(concept1, concept2);
+      String concept1 = rule.getApplicableConceptFQName1();
+      String concept2 = rule.getApplicableConceptFQName2();
+      Pair<String, String> pair = new Pair<String, String>(concept1, concept2);
       Set<T> existingRules = myRules.get(pair);
       if (existingRules == null) {
-        existingRules = new HashSet<T>(1);
-        myRules.put(pair,
-          existingRules);
+        existingRules = Collections.synchronizedSet(new HashSet<T>(1));
+        myRules.put(pair, existingRules);
       }
       existingRules.add(rule);
     }
+    myRulesCache.clear();
   }
 
   public Set<T> getRules(SNode node1, SNode node2) {
-    SNode conceptDeclaration1 = node1.getConceptDeclarationNode();
-    SNode conceptDeclaration2 = node2.getConceptDeclarationNode();
-    return get(new Pair<SNode, SNode>(conceptDeclaration1, conceptDeclaration2));
+    return get(new Pair<String, String>(node1.getConceptFqName(), node2.getConceptFqName()));
   }
 
-  protected Set<T> get(Pair<SNode, SNode> key) {
-    SNode c1 = key.o1;
-    SNode c2 = key.o2;
-    if (SNodeUtil.isInstanceOfConceptDeclaration(c1) && SNodeUtil.isInstanceOfConceptDeclaration(c2)) {
-      SNode conceptDeclaration1 = c1;
-      SNode conceptDeclaration2 = c2;
-      while (conceptDeclaration1 != null) {
-        while (conceptDeclaration2 != null) {
-          Pair<SNode, SNode> newKey =
-            new Pair<SNode, SNode>(conceptDeclaration1, conceptDeclaration2);
-          Set<T> rules = myRules.get(newKey);
-          if (rules != null) {
+  protected Set<T> get(@NotNull final Pair<String, String> key) {
+    Set<T> result = myRulesCache.get(key);
+    if(result != null) {
+      return Collections.unmodifiableSet(result);
+    }
+
+    String c1 = key.o1;
+    String c2 = key.o2;
+    if (!isInterfaceConcept(c1) && !isInterfaceConcept(c2)) {
+      for (String conceptDeclaration1 = c1; conceptDeclaration1 != null; conceptDeclaration1 = getSuperConcept(conceptDeclaration1)) {
+        for (String conceptDeclaration2 = c2; conceptDeclaration2 != null; conceptDeclaration2 = getSuperConcept(conceptDeclaration2)) {
+          Pair<String, String> newKey =
+            new Pair<String, String>(conceptDeclaration1, conceptDeclaration2);
+          result = myRules.get(newKey);
+          if (result != null) {
             if (conceptDeclaration1 != key.o1 || conceptDeclaration2 != key.o2) {
-              myRules.put(key, rules);
+              myRules.putIfAbsent(key, result);
             }
-            return rules;
+            myRulesCache.putIfAbsent(key, new THashSet<T>(result));
+            return Collections.unmodifiableSet(result);
           }
-          conceptDeclaration2 = SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration2);
         }
-        conceptDeclaration2 = c2;
-        conceptDeclaration1 = SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration1);
       }
     }
-    Set<T> hashSet = new HashSet<T>(1);
-    myRules.put(key, hashSet);
-    return hashSet;
+    result = Collections.synchronizedSet(new HashSet<T>(1));
+    myRules.putIfAbsent(key, result);
+    myRulesCache.putIfAbsent(key, new HashSet<T>(1));
+    return Collections.unmodifiableSet(result);
   }
 
   public void makeConsistent() {
-    for (Pair<SNode, SNode>
-      pair : myRules.keySet()) {
-
-
+    for (Pair<String, String> pair : myRules.keySet()) {
       if (pair == null) {
         continue;
       }
       Set<T> rules = myRules.get(pair);
       if (rules == null) continue;
-      if (!(SNodeUtil.isInstanceOfConceptDeclaration(pair.o1))) continue;
-      if (!(SNodeUtil.isInstanceOfConceptDeclaration(pair.o2))) continue;
+      if (isInterfaceConcept(pair.o1) || isInterfaceConcept(pair.o2)) continue;
 
-      SNode parent1 = SNodeUtil.getConceptDeclaration_Extends(pair.o1);
-      SNode parent2 = SNodeUtil.getConceptDeclaration_Extends(pair.o2);
-
-      while (parent1 != null) {
-        while (parent2 != null) {
-          Set<T> parentRules = myRules.get(new Pair<SNode, SNode>(parent1, parent2));
+      for (String conceptDeclaration1 = pair.o1; conceptDeclaration1 != null; conceptDeclaration1 = getSuperConcept(conceptDeclaration1)) {
+        for (String conceptDeclaration2 = pair.o2; conceptDeclaration2 != null; conceptDeclaration2 = getSuperConcept(conceptDeclaration2)) {
+          Set<T> parentRules = myRules.get(new Pair<String, String>(conceptDeclaration1, conceptDeclaration2));
           if (parentRules != null) {
-            rules.addAll(parentRules);
+            if (conceptDeclaration1 != pair.o1 || conceptDeclaration2 != pair.o2) {
+              rules.addAll(parentRules);
+            }
           }
-          parent2 = SNodeUtil.getConceptDeclaration_Extends(parent2);
         }
-        parent1 = SNodeUtil.getConceptDeclaration_Extends(parent1);
       }
     }
+  }
+
+  // TODO rewrite using ConceptDescriptor
+  private boolean isInterfaceConcept(String conceptFqName) {
+    SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    return !SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration);
+  }
+
+  // TODO rewrite using ConceptDescriptor
+  private String getSuperConcept(String conceptFqName) {
+    SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode superConcept = SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration) ? SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration) : null;
+    return superConcept != null ? NameUtil.nodeFQName(superConcept) : null;
   }
 
   public void clear() {
