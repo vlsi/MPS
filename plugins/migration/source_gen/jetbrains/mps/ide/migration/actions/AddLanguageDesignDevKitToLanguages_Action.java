@@ -14,12 +14,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.migration20.MigrationHelper;
 import jetbrains.mps.project.MPSProject;
 
-public class RemoveBootstrapLanguagesDevKitFromLanguageModels_Action extends GeneratedAction {
+public class AddLanguageDesignDevKitToLanguages_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RemoveBootstrapLanguagesDevKitFromLanguageModels_Action.class);
+  protected static Log log = LogFactory.getLog(AddLanguageDesignDevKitToLanguages_Action.class);
 
-  public RemoveBootstrapLanguagesDevKitFromLanguageModels_Action() {
-    super("Remove Bootstrap Languages Devkit from Language Models", "", ICON);
+  public AddLanguageDesignDevKitToLanguages_Action() {
+    super("Add Language Design Devkit to All Languages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -29,7 +29,7 @@ public class RemoveBootstrapLanguagesDevKitFromLanguageModels_Action extends Gen
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RemoveBootstrapLanguagesDevKitFromLanguageModels", t);
+        log.error("User's action doUpdate method failed. Action:" + "AddLanguageDesignDevKitToLanguages", t);
       }
       this.disable(event.getPresentation());
     }
@@ -48,10 +48,10 @@ public class RemoveBootstrapLanguagesDevKitFromLanguageModels_Action extends Gen
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MigrationHelper.stage_2_4_removeBootstrapLanguagesDevKitFromLanguageModels(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      MigrationHelper.stage_2_1_addLanguageDesingDevKitToLanguages(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RemoveBootstrapLanguagesDevKitFromLanguageModels", t);
+        log.error("User's action execute method failed. Action:" + "AddLanguageDesignDevKitToLanguages", t);
       }
     }
   }

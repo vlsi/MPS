@@ -16,8 +16,17 @@
 package jetbrains.mps.migration20;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
+import jetbrains.mps.library.BootstrapLanguages_DevKit;
+import jetbrains.mps.library.GeneralPurpose_DevKit;
+import jetbrains.mps.library.LanguageDesign_DevKit;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class MigrationHelper {
   private Project myProject;
@@ -29,12 +38,18 @@ public class MigrationHelper {
   public void migrate() {
     MigrationState msComponent = myProject.getComponent(MigrationState.class);
     if (msComponent.getMigrationState() == MState.INITIAL) {
-      FSRecords.invalidateCaches();
+      stage_1_1_invalidateCaches();
       msComponent.setMigrationState(MState.CACHES_INVALIDATED);
       ApplicationManager.getApplication().restart();
     }
 
     if (msComponent.getMigrationState() == MState.CACHES_INVALIDATED) {
+      MPSProject mpsProject = myProject.getComponent(MPSProject.class);
+      stage_2_1_addLanguageDesingDevKitToLanguages(mpsProject);
+      stage_2_2_addGeneralPurposeDevKitToLanguageModels(mpsProject);
+      stage_2_3_removeLanguageDesignDevKitFromModels(mpsProject);
+      stage_2_4_removeBootstrapLanguagesDevKitFromLanguageModels(mpsProject);
+      stage_2_5_fixDependenciesEverywhere(mpsProject);
 
       msComponent.setMigrationState(MState.LANGUAGES_DEPS_CORRECTED);
       ApplicationManager.getApplication().restart();
@@ -70,4 +85,62 @@ public class MigrationHelper {
       ApplicationManager.getApplication().restart();
     }
   }
+
+  //--------------- stage 1 : invalidate caches -----------------
+
+  public static void stage_1_1_invalidateCaches() {
+    FSRecords.invalidateCaches();
+  }
+
+  //--------------- stage 2 : new dependencies -----------------
+
+  public static void stage_2_1_addLanguageDesingDevKitToLanguages(MPSProject p) {
+    for (Language lang : p.getProjectModules(Language.class)) {
+      lang.addUsedDevkit(LanguageDesign_DevKit.MODULE_REFERENCE);
+      lang.save();
+    }
+  }
+
+
+  public static void stage_2_2_addGeneralPurposeDevKitToLanguageModels(MPSProject p) {
+    for (Language l : p.getProjectModules(Language.class)) {
+      for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
+        aspect.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+      }
+    }
+    SModelRepository.getInstance().saveAll();
+  }
+
+  public static void stage_2_3_removeLanguageDesignDevKitFromModels(MPSProject p) {
+    for (Language l : p.getProjectModules(Language.class)) {
+      for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
+        aspect.getSModel().deleteDevKit(LanguageDesign_DevKit.MODULE_REFERENCE);
+      }
+    }
+    SModelRepository.getInstance().saveAll();
+  }
+
+  public static void stage_2_4_removeBootstrapLanguagesDevKitFromLanguageModels(MPSProject p) {
+    for (Language l : p.getProjectModules(Language.class)) {
+      for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
+        SModel sModel = aspect.getSModel();
+        if (sModel.importedDevkits().contains(BootstrapLanguages_DevKit.MODULE_REFERENCE)) {
+          sModel.deleteDevKit(BootstrapLanguages_DevKit.MODULE_REFERENCE);
+        }
+      }
+    }
+    SModelRepository.getInstance().saveAll();
+  }
+
+  public static void stage_2_5_fixDependenciesEverywhere(MPSProject p) {
+    for (SModelDescriptor model : p.getProjectModels()) {
+      if (!(model instanceof EditableSModelDescriptor)) continue;
+      if (model.getModule() == null) continue;
+      new MissingDependenciesFixer(ProjectOperationContext.get(p.getProject()), model).fix(false);
+    }
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+  }
+
+  //--------------- stage 3 : stubs -----------------
+
 }

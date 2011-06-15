@@ -9,13 +9,10 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.library.GeneralPurpose_DevKit;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.migration20.MigrationHelper;
+import jetbrains.mps.project.MPSProject;
 
 public class AddGeneralPurposeDevKitToLanguageModels_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -42,17 +39,16 @@ public class AddGeneralPurposeDevKitToLanguageModels_Action extends GeneratedAct
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (Language l : ListSequence.fromList(MPSModuleRepository.getInstance().getAllLanguages())) {
-        for (EditableSModelDescriptor aspect : SetSequence.fromSet(l.getAspectModelDescriptors())) {
-          aspect.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-        }
-      }
-      SModelRepository.getInstance().saveAll();
+      MigrationHelper.stage_2_2_addGeneralPurposeDevKitToLanguageModels(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddGeneralPurposeDevKitToLanguageModels", t);
