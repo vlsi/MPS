@@ -309,6 +309,9 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1919086248986855434">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1241531154556" resolveInfo="legalAsStatement" />
     </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6085445418775248849">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </root>
   <root id="1919086248986845077" />
 </model>
