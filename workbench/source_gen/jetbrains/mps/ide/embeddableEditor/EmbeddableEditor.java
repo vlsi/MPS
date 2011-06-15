@@ -144,7 +144,8 @@ public class EmbeddableEditor {
   }
 
   public void make(final Set<IClassPathItem> classPath) {
-    final IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("compileToMemory")).toScript();
+    final IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("jetbrains.mps.make.facet.Generate"), new IFacet.Name("jetbrains.mps.make.facet.TextGen"), new IFacet.Name("jetbrains.mps.make.facet.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facet.Make")).withFinalTarget(new ITarget.Name("compileToMemory")).toScript();
+
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
