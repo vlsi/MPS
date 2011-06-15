@@ -148,7 +148,6 @@ public class MigrationHelper {
 
   //--------------- stage 3 : stubs -----------------
 
-
   public static void stage_3_1_updateLanguageAccessories(MPSProject p) {
     for (Language l : p.getProjectModules(Language.class)) {
       Set<SModelReference> toRemove = new HashSet<SModelReference>();
@@ -258,5 +257,11 @@ public class MigrationHelper {
     }
     SModelRepository.getInstance().saveAll();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+  }
+
+  //--------------- stage 4 : attributes -----------------
+
+  public static void stage_4_1_convertAttributes(MPSProject p) {
+
   }
 }

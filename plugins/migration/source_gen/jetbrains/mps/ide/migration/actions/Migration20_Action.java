@@ -9,12 +9,14 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.migration20.MState;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.migration20.MigrationState;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.migration20.MigrationHelper;
-import com.intellij.openapi.project.Project;
 
 public class Migration20_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -28,7 +30,15 @@ public class Migration20_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        MState state = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class).getMigrationState();
+        event.getPresentation().setEnabled(state != MState.DONE);
+        String act = (state == MState.INITIAL ?
+          "Start" :
+          "Continue"
+        );
+        event.getPresentation().setText(act + " migration to MPS 2.0");
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "Migration20", t);
