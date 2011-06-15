@@ -21,7 +21,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.constraints.*;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.apache.commons.lang.ObjectUtils;
@@ -371,10 +373,8 @@ public final class SNode {
 
     getters.add(current);
     try {
-      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this.getConceptFqName(), propertyName);
-      if (getter == null) return getPersistentProperty(propertyName);
-
-      Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
+      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(this.getConceptFqName()).getProperty(propertyName);
+      Object getterValue = descriptor.getValue(this, GlobalScope.getInstance());
       return getterValue == null ? null : String.valueOf(getterValue);
     } finally {
       getters.remove(current);

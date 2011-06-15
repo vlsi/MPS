@@ -340,10 +340,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  public static boolean hasGetter(String conceptFqName, String property) {
-    return getNodePropertyGetter(conceptFqName, property) != null;
-  }
-
   public static INodePropertyValidator getNodePropertyValidator(final SNode node, @NotNull final String propertyName) {
     if (node == null) return null;
     return ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getNodePropertyValidator(propertyName);
