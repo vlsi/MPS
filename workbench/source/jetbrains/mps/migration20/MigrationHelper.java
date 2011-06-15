@@ -22,11 +22,12 @@ import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.library.BootstrapLanguages_DevKit;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+
+import java.util.*;
 
 public class MigrationHelper {
   private Project myProject;
@@ -37,6 +38,8 @@ public class MigrationHelper {
 
   public void migrate() {
     MigrationState msComponent = myProject.getComponent(MigrationState.class);
+    MPSProject mpsProject = myProject.getComponent(MPSProject.class);
+
     if (msComponent.getMigrationState() == MState.INITIAL) {
       stage_1_1_invalidateCaches();
       msComponent.setMigrationState(MState.CACHES_INVALIDATED);
@@ -44,7 +47,6 @@ public class MigrationHelper {
     }
 
     if (msComponent.getMigrationState() == MState.CACHES_INVALIDATED) {
-      MPSProject mpsProject = myProject.getComponent(MPSProject.class);
       stage_2_1_addLanguageDesingDevKitToLanguages(mpsProject);
       stage_2_2_addGeneralPurposeDevKitToLanguageModels(mpsProject);
       stage_2_3_removeLanguageDesignDevKitFromModels(mpsProject);
@@ -56,6 +58,9 @@ public class MigrationHelper {
     }
 
     if (msComponent.getMigrationState() == MState.LANGUAGES_DEPS_CORRECTED) {
+      stage_3_1_updateLanguageAccessories(mpsProject);
+      stage_3_2_reResolveStubRefs(mpsProject);
+      stage_3_3_optimizeImports(mpsProject);
 
       msComponent.setMigrationState(MState.STUBS_CONVERTED);
       ApplicationManager.getApplication().restart();
@@ -144,4 +149,114 @@ public class MigrationHelper {
   //--------------- stage 3 : stubs -----------------
 
 
+  public static void stage_3_1_updateLanguageAccessories(MPSProject p) {
+    for (Language l : p.getProjectModules(Language.class)) {
+      Set<SModelReference> toRemove = new HashSet<SModelReference>();
+      Set<SModelReference> toAdd = new HashSet<SModelReference>();
+
+      List<SModelReference> acc = l.getModuleDescriptor().getAccessoryModels();
+      for (SModelReference ref : acc) {
+        if (!(ref.getSModelId() instanceof SModelId.ForeignSModelId)) continue;
+
+        toRemove.add(ref);
+
+        for (SModelDescriptor md : l.getScope().getModelDescriptors()) {
+          if (md.getLongName().equals(ref.getLongName())) {
+            toAdd.add(md.getSModelReference());
+            break;
+          }
+        }
+      }
+
+      acc.removeAll(toRemove);
+      acc.addAll(toAdd);
+
+      l.save();
+    }
+  }
+
+  public static int stage_3_2_reResolveStubRefs(MPSProject p) {
+    int i = 0;
+    Map<String, SModelReference> cache = new HashMap<String, SModelReference>();
+    for (SModelDescriptor d : p.getProject().getComponent(ProjectScope.class).getModelDescriptors()) {
+      if (!(d instanceof EditableSModelDescriptor)) continue;
+      if (!(SModelStereotype.isUserModel(d))) continue;
+      if (d == null) continue;
+
+      IModule module = d.getModule();
+      if (module == null) continue;
+
+      Set<SModelReference> toRemove = new HashSet<SModelReference>();
+      for (SNode node : d.getSModel().nodes()) {
+        for (SReference ref : node.getReferences()) {
+          SModelId modelId = ref.getTargetSModelReference().getSModelId();
+          SNodeId nodeId = ref.getTargetNodeId();
+
+          if (modelId instanceof SModelId.RegularSModelId) continue;
+          if (ref.getTargetNode() != null) continue;
+
+          String oldId = ((SModelId.ForeignSModelId) modelId).getId();
+          SModelReference replacement = null;
+
+          SModelReference cachedReplacement = cache.get(oldId);
+          if (cachedReplacement != null && module.getScope().getModelDescriptor(cachedReplacement) != null) {
+            replacement = cachedReplacement;
+          } else {
+            for (SModelDescriptor md : module.getScope().getModelDescriptors()) {
+              SModelReference mdRef = md.getSModelReference();
+              SModelId mdId = mdRef.getSModelId();
+              if (mdId instanceof SModelId.RegularSModelId) continue;
+              if (!(matches(oldId, ((SModelId.ForeignSModelId) mdId).getId()))) continue;
+              if (md.getSModel().getNodeById(nodeId) == null) continue;
+
+              replacement = md.getSModelReference();
+              cache.put(oldId, replacement);
+              break;
+            }
+          }
+
+          if (replacement != null) {
+            toRemove.add(ref.getTargetSModelReference());
+
+            SModelReference mr = replacement;
+            d.getSModel().addModelImport(mr, false);
+            ref.setTargetSModelReference(mr);
+
+            i++;
+          }
+        }
+      }
+      for (SModelReference ref : toRemove) {
+        d.getSModel().deleteModelImport(ref);
+      }
+    }
+    return i;
+  }
+
+  private static boolean matches(String id1, String id2) {
+    String id1Ste = id1.substring(0, id1.indexOf("#"));
+    String id2Ste = id2.substring(0, id1.indexOf("#"));
+
+    if (!(id1Ste.equals(id2Ste))) {
+      return false;
+    }
+
+    String id1M = id1.substring(id1.lastIndexOf("#") + 1, id1.length());
+    String id2M = id2.substring(id2.lastIndexOf("#") + 1, id2.length());
+
+    if (!(id1M.equals(id2M))) {
+      return false;
+    }
+
+    return true;
+  }
+
+  public static void stage_3_3_optimizeImports(MPSProject p) {
+    new OptimizeImportsHelper(ProjectOperationContext.get(p.getProject())).optimizeProjectImports(p);
+    for (IModule module : p.getModules()) {
+      module.save();
+    }
+    SModelRepository.getInstance().saveAll();
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+  }
 }

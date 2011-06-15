@@ -32,6 +32,7 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new LoadNonStubModels_Action());
     addAction(new Migration20_Action());
     addAction(new OptimizeImportsInGlobalScope_Action());
+    addAction(new OptimizeProjectImports_Action());
     addAction(new ReResolveStubRefs_Action());
     addAction(new RemoveBootstrapLanguagesDevKitFromLanguageModels_Action());
     addAction(new RemoveLanguageDesignDevKitFromModels_Action());

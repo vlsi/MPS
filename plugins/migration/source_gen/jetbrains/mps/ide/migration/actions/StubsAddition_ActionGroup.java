@@ -17,7 +17,7 @@ public class StubsAddition_ActionGroup extends GeneratedActionGroup {
       StubsAddition_ActionGroup.this.addSeparator();
       StubsAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpdateLanguageAccessories_Action");
       StubsAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.ReResolveStubRefs_Action");
-      StubsAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.FindDuplicatedStubs_Action");
+      StubsAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.OptimizeProjectImports_Action");
       StubsAddition_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

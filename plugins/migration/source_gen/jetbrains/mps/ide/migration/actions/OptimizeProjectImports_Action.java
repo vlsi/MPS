@@ -14,13 +14,13 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.migration20.MigrationHelper;
 import jetbrains.mps.project.MPSProject;
 
-public class UpdateLanguageAccessories_Action extends GeneratedAction {
+public class OptimizeProjectImports_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(UpdateLanguageAccessories_Action.class);
+  protected static Log log = LogFactory.getLog(OptimizeProjectImports_Action.class);
 
-  public UpdateLanguageAccessories_Action() {
-    super("Update Language Accessories Refs", "", ICON);
-    this.setIsAlwaysVisible(false);
+  public OptimizeProjectImports_Action() {
+    super("Optimize Imports", "", ICON);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
@@ -29,7 +29,7 @@ public class UpdateLanguageAccessories_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "UpdateLanguageAccessories", t);
+        log.error("User's action doUpdate method failed. Action:" + "OptimizeProjectImports", t);
       }
       this.disable(event.getPresentation());
     }
@@ -48,10 +48,10 @@ public class UpdateLanguageAccessories_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MigrationHelper.stage_3_1_updateLanguageAccessories(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      MigrationHelper.stage_3_3_optimizeImports(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "UpdateLanguageAccessories", t);
+        log.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);
       }
     }
   }
