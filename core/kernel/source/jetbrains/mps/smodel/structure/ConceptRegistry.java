@@ -2,7 +2,7 @@ package jetbrains.mps.smodel.structure;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.util.containers.MultiMap;
+import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
@@ -14,8 +14,8 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalBehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
-import jetbrains.mps.smodel.structure.adapter.BehaviorDescriptorAdapter;
-import jetbrains.mps.smodel.structure.adapter.ConceptDescriptorAdapter;
+import jetbrains.mps.smodel.runtime.adapter.BehaviorDescriptorAdapter;
+import jetbrains.mps.smodel.runtime.adapter.ConceptDescriptorAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashMap;
@@ -29,9 +29,7 @@ public class ConceptRegistry implements ApplicationComponent {
 
   private final Map<String, ConstraintsDescriptor> _constraintsDescriptors = new HashMap<String, ConstraintsDescriptor>();
 
-  private final MultiMap<String, String> languageToConcepts = new MultiMap<String, String>();
-
-  private final Set<Pair<String, LanguageAspect>> conceptsInLoading = new HashSet<Pair<String, LanguageAspect>>();
+  private final Set<Pair<String, LanguageAspect>> conceptsInLoading = new ConcurrentHashSet<Pair<String, LanguageAspect>>();
 
   public ConceptRegistry() {
   }
@@ -85,8 +83,6 @@ public class ConceptRegistry implements ApplicationComponent {
     }
 
     conceptsInLoading.add(currentConceptAndLanguageAspect);
-
-    languageToConcepts.putValue(NameUtil.namespaceFromConceptFQName(fqName), fqName);
 
 //    ModelAccess.instance().runReadAction(new Runnable() {
 //      @Override

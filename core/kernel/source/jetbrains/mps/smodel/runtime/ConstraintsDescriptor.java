@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.runtime;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public interface ConstraintsDescriptor {
@@ -31,10 +32,10 @@ public interface ConstraintsDescriptor {
 
   boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext);
 
-  @Nullable
+  @NotNull
   PropertyConstraintsDescriptor getProperty(String name);
 
-  @Nullable
+  @NotNull
   ReferenceConstraintsDescriptor getReference(String refName);
 
   ReferenceScopeProvider getDefaultScopeProvider();

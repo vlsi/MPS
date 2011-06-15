@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor
 import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.misc.hash.HashMap;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
@@ -149,6 +150,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return canBeAncestorDescriptor == null || canBeAncestorDescriptor.canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
   }
 
+  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String name) {
     if (propertiesConstraints.containsKey(name)) {
@@ -164,6 +166,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return propertiesConstraints.get(name);
   }
 
+  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(String refName) {
     if (referencesConstraints.containsKey(refName)) {

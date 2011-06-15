@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.structure.adapter;
+package jetbrains.mps.smodel.runtime.adapter;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;

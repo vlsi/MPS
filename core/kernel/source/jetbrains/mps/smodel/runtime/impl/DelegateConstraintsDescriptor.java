@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.*;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class DelegateConstraintsDescriptor implements ConstraintsDescriptor {
@@ -49,11 +50,13 @@ public abstract class DelegateConstraintsDescriptor implements ConstraintsDescri
     return delegate().canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
   }
 
+  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String name) {
     return delegate().getProperty(name);
   }
 
+  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(String refName) {
     return delegate().getReference(refName);

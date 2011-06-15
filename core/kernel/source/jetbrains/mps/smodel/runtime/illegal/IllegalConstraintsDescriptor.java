@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.*;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
@@ -53,11 +54,13 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
     return false;
   }
 
+  @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String name) {
     return new IllegalPropertyConstraintsDescriptor(name, this);
   }
 
+  @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(String refName) {
     return new IllegalReferenceConstraintsDescriptor(refName, this);

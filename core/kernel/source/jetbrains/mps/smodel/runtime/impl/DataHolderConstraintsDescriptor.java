@@ -169,6 +169,7 @@ public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescript
         }
       }
 
+      @NotNull
       @Override
       public PropertyConstraintsDescriptor getProperty(String name) {
         if (properties.containsKey(name)) {
@@ -185,6 +186,7 @@ public class DataHolderConstraintsDescriptor extends DelegateConstraintsDescript
         }
       }
 
+      @NotNull
       @Override
       public ReferenceConstraintsDescriptor getReference(String refName) {
         if (references.containsKey(refName)) {

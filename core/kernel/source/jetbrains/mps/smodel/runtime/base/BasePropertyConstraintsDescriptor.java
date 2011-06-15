@@ -17,10 +17,12 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
 public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
@@ -35,23 +37,46 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     this.name = propertyName;
     this.container = container;
 
-    if (hasOwnGetter()) {
-      getterDescriptor = this;
+    if (!isBootstrapProperty(container.getConceptFqName(), propertyName)) {
+      if (hasOwnGetter()) {
+        getterDescriptor = this;
+      } else {
+        getterDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), GETTER_INHERITANCE_PARAMETERS);
+      }
+
+      if (hasOwnSetter()) {
+        setterDescriptor = this;
+      } else {
+        setterDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), SETTER_INHERITANCE_PARAMETERS);
+      }
+
+      if (hasOwnValidator()) {
+        validatorDescriptor = this;
+      } else {
+        validatorDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), VALIDATOR_INHERITANCE_PARAMETERS);
+      }
     } else {
-      getterDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), GETTER_INHERITANCE_PARAMETERS);
+      getterDescriptor = null;
+      setterDescriptor = null;
+      validatorDescriptor = null;
+    }
+  }
+
+  private static boolean isBootstrapProperty(String fqName, String propertyName) {
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
+
+    // 'bootstrap' properties
+    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.property_INamedConcept_name)
+      && !fqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
+      return true;
     }
 
-    if (hasOwnSetter()) {
-      setterDescriptor = this;
-    } else {
-      setterDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), SETTER_INHERITANCE_PARAMETERS);
+    if (fqName.equals("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+      // helgins ku-ku!
+      return true;
     }
 
-    if (hasOwnValidator()) {
-      validatorDescriptor = this;
-    } else {
-      validatorDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), VALIDATOR_INHERITANCE_PARAMETERS);
-    }
+    return false;
   }
 
   @Nullable
@@ -82,15 +107,15 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     return null;
   }
 
-  public boolean isSetterDefault(BasePropertyConstraintsDescriptor propertyConstraintsDescriptor) {
+  public boolean isSetterDefault() {
     return setterDescriptor == null;
   }
 
-  public boolean isGetterDefault(BasePropertyConstraintsDescriptor propertyConstraintsDescriptor) {
+  public boolean isGetterDefault() {
     return getterDescriptor == null;
   }
 
-  public boolean isValidatorDefault(BasePropertyConstraintsDescriptor propertyConstraintsDescriptor) {
+  public boolean isValidatorDefault() {
     return validatorDescriptor == null;
   }
 
