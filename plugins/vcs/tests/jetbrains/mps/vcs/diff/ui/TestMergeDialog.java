@@ -93,7 +93,7 @@ public class TestMergeDialog {
       public void run() {
         final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            return new MergeModelsDialog(null, null, models[0], models[1], models[2], new SimpleDiffRequest(ourProject, "Local Version", "Merge Result", "Remote Version"));
+            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(ourProject, "Local Version", "Merge Result", "Remote Version"));
             // Local Version, Merge Result, Remote Version
           }
         });

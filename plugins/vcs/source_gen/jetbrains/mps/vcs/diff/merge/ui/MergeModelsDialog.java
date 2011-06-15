@@ -12,7 +12,6 @@ import jetbrains.mps.vcs.diff.merge.MergeContextState;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.wm.WindowManager;
@@ -64,9 +63,8 @@ public class MergeModelsDialog extends BaseDialog {
   private String[] myContentTitles;
   private ActionToolbar myToolbar;
 
-  public MergeModelsDialog(@Deprecated Project project, @Deprecated IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
+  public MergeModelsDialog(SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
     super(WindowManager.getInstance().getFrame(request.getProject()), "Merging " + SModelOperations.getModelName(baseModel));
-    // TODO remove useless arguments: project and operationContext 
     myProject = request.getProject();
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
