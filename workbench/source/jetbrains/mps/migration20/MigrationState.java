@@ -16,20 +16,22 @@
 package jetbrains.mps.migration20;
 
 import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.migration20.MigrationState.MyState;
+import org.jetbrains.annotations.NotNull;
 
 @State(
   name = "MigrationState",
   storages = {
     @Storage(
       id = "other",
-      file = "$APP_CONFIG$/MigrationState.xml"
+      file = "$WORKSPACE_FILE$"
     )
   }
 )
-public class MigrationState implements PersistentStateComponent<MyState> {
+public class MigrationState implements PersistentStateComponent<MyState>, ProjectComponent {
   private MState myState = MState.INITIAL;
 
   public MState getMigrationState() {
@@ -39,6 +41,8 @@ public class MigrationState implements PersistentStateComponent<MyState> {
   public void setMigrationState(MState state) {
     myState = state;
   }
+
+  //----------load/save stuff-------------
 
   public MyState getState() {
     MyState state = new MyState();
@@ -53,4 +57,28 @@ public class MigrationState implements PersistentStateComponent<MyState> {
   public static class MyState {
     public int myState;
   }
+
+  //----------component stuff-------------
+
+  public void projectOpened() {
+
+  }
+
+  public void projectClosed() {
+
+  }
+
+  public void initComponent() {
+
+  }
+
+  public void disposeComponent() {
+
+  }
+
+  @NotNull
+  public String getComponentName() {
+    return MigrationState.class.getSimpleName();
+  }
+
 }
