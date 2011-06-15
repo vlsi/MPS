@@ -18,9 +18,9 @@ package jetbrains.mps.smodel.runtime.interpreted;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.impl.DataHolderConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.ConstraintsDataHolder;
-import jetbrains.mps.smodel.structure.EmptyConstraintsDataHolder;
 import jetbrains.mps.smodel.structure.InterpretedConstraintsDataHolder;
 import jetbrains.mps.util.NameUtil;
 
@@ -47,7 +47,7 @@ public class ConstraintsAspectInterpreted implements jetbrains.mps.smodel.runtim
     if (constraintsObject == null) {
       // if ConstraintsDescriptor not exist too - return EmptyConstraintsDataHolder
       if (ModelConstraintsManager.getOldConstraintsDescriptor(NameUtil.namespaceFromConceptFQName(fqName)) == null) {
-        descriptor = new DataHolderConstraintsDescriptor(new EmptyConstraintsDataHolder(fqName));
+        descriptor = new BaseConstraintsDescriptor(fqName);
       }
     } else {
       if (ConstraintsDataHolder.class.isAssignableFrom(constraintsObject.getClass())) {

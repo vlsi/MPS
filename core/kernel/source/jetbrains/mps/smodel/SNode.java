@@ -22,6 +22,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.constraints.*;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.util.*;
@@ -906,28 +908,23 @@ public final class SNode {
     }
     SReference resultReference = null;
     boolean handlerFound = false;
+
     if (useHandler && !getModel().isLoading()) {
       // invoke custom referent set event handler
       Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
       if (!threadSet.contains(pair)) {
-        INodeReferentSetEventHandler handler = ModelConstraintsManager.getNodeReferentSetEventHandler(this, role);
-        if (handler != null) {
-          boolean referenceKept = true;
+        ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(this.getConceptFqName()).getReference(role);
+
+        if (!(descriptor instanceof IllegalReferenceConstraintsDescriptor)) {
           handlerFound = true;
           threadSet.add(pair);
+
           try {
-            if (handler instanceof INodeReferenceFullSetHandler) {
-              if (((INodeReferenceFullSetHandler) handler).keepsOriginalReference(this, oldReferent, newReferent, GlobalScope.getInstance())) {
-                resultReference = doSetReference(role, newReferent, toDelete);
-              } else {
-                referenceKept = false;
-              }
-            } else {
+            if (descriptor.validate(this, oldReferent, newReferent, GlobalScope.getInstance())) {
               resultReference = doSetReference(role, newReferent, toDelete);
-            }
-            handler.processReferentSetEvent(this, oldReferent, newReferent, GlobalScope.getInstance());
-            if (!referenceKept) {
+              descriptor.onReferenceSet(this, oldReferent, newReferent, GlobalScope.getInstance());
+            } else {
               if (myReferences != null) {
                 for (SReference reference : myReferences) {
                   if (reference.getRole().equals(role)) {
@@ -940,9 +937,12 @@ public final class SNode {
           } finally {
             threadSet.remove(pair);
           }
+        } else {
+          // todo: ?
         }
       }
     }
+
     if (!handlerFound) {
       resultReference = doSetReference(role, newReferent, toDelete);
     }

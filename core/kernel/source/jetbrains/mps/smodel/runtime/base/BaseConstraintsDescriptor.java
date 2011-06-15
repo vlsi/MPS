@@ -42,7 +42,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   private final Map<String, ReferenceConstraintsDescriptor> referencesConstraints = new HashMap<String, ReferenceConstraintsDescriptor>();
 
-  protected BaseConstraintsDescriptor(String fqName) {
+  public BaseConstraintsDescriptor(String fqName) {
     this.fqName = fqName;
 
     calcInheritance();

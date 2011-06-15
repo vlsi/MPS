@@ -320,10 +320,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return false;
   }
 
-  public static INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getNodeReferentSetEventHandler(referentRole);
-  }
-
   public static INodePropertySetter getNodePropertySetter(String conceptFqName, String propertyName) {
     if (isBootstrapProperty(conceptFqName, propertyName)) {
       return null;
