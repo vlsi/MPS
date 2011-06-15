@@ -64,19 +64,19 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2494245796547321807">
       <property name="name" nameId="tpck.1169194664001" value="UpgradeModelPersistenceInModule" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Upgrade Models Persistence" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Upgrade Models Persistence in Selected Module" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Migration.Persistence" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2494245796547321827">
       <property name="name" nameId="tpck.1169194664001" value="UpgradeModelPersistenceInProject" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Upgrade Models Persistence" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Upgrade Models Persistence in Project" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Migration.Persistence" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2195176318621671122">
       <property name="name" nameId="tpck.1169194664001" value="UpgradeModelPersistenceInModel" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Upgrade Model Persistence" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Upgrade Model Persistence in Selected Model" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Migration.Persistence" />
     </node>
