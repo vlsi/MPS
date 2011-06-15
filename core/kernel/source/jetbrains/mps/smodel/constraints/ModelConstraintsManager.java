@@ -324,25 +324,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getNodeReferentSetEventHandler(referentRole);
   }
 
-  public static INodePropertyGetter getNodePropertyGetter(String conceptFqName, String propertyName) {
-    if (isBootstrapProperty(conceptFqName, propertyName)) {
-      return null;
-    } else {
-      return ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName).getNodePropertyGetter(propertyName);
-    }
-  }
-
   public static INodePropertySetter getNodePropertySetter(String conceptFqName, String propertyName) {
     if (isBootstrapProperty(conceptFqName, propertyName)) {
       return null;
     } else {
       return ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName).getNodePropertySetter(propertyName);
     }
-  }
-
-  public static INodePropertyValidator getNodePropertyValidator(final SNode node, @NotNull final String propertyName) {
-    if (node == null) return null;
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getNodePropertyValidator(propertyName);
   }
 
   @Nullable

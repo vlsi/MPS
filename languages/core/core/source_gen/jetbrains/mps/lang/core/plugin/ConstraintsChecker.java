@@ -18,7 +18,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.constraints.INodePropertyValidator;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 
 public class ConstraintsChecker extends AbstractConstraintsChecker {
@@ -29,6 +29,8 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
 
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext) {
     final ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName());
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(node.getConceptFqName());
+
     final CheckingNodeContext checkingNodeContext = new CheckingNodeContext();
 
     if (SNodeOperations.getParent(node) != null) {
@@ -108,10 +110,10 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         continue;
       }
       final String value = ps.fromInternalValue(node.getProperty(propertyName));
-      final INodePropertyValidator propertyValidator = ps.getValidator(node, propertyName);
+      final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyName);
       boolean canSetValue = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ps.canSetValue(propertyValidator, node, propertyName, value, operationContext.getScope());
+          return ps.canSetValue(propertyDescriptor, node, propertyName, value, operationContext.getScope());
         }
       });
       if (!(canSetValue)) {
