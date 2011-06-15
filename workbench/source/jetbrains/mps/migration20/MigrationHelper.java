@@ -29,33 +29,45 @@ public class MigrationHelper {
   public void migrate() {
     MigrationState msComponent = myProject.getComponent(MigrationState.class);
     if (msComponent.getMigrationState() == MState.INITIAL) {
-      msComponent.setMigrationState(MState.CACHES_INVALIDATED);
       FSRecords.invalidateCaches();
+      msComponent.setMigrationState(MState.CACHES_INVALIDATED);
       ApplicationManager.getApplication().restart();
     }
+
     if (msComponent.getMigrationState() == MState.CACHES_INVALIDATED) {
+
       msComponent.setMigrationState(MState.LANGUAGES_DEPS_CORRECTED);
-
+      ApplicationManager.getApplication().restart();
     }
+
     if (msComponent.getMigrationState() == MState.LANGUAGES_DEPS_CORRECTED) {
+
       msComponent.setMigrationState(MState.STUBS_CONVERTED);
-
+      ApplicationManager.getApplication().restart();
     }
+
     if (msComponent.getMigrationState() == MState.STUBS_CONVERTED) {
+
       msComponent.setMigrationState(MState.ATTRIBUTES_CONVERTED);
-
+      ApplicationManager.getApplication().restart();
     }
+
     if (msComponent.getMigrationState() == MState.ATTRIBUTES_CONVERTED) {
+
       msComponent.setMigrationState(MState.LANGUAGES_MIGRATION);
-
+      ApplicationManager.getApplication().restart();
     }
+
     if (msComponent.getMigrationState() == MState.LANGUAGES_MIGRATION) {
+
       msComponent.setMigrationState(MState.REGENERATION);
-
+      ApplicationManager.getApplication().restart();
     }
-    if (msComponent.getMigrationState() == MState.REGENERATION) {
-      msComponent.setMigrationState(MState.DONE);
 
+    if (msComponent.getMigrationState() == MState.REGENERATION) {
+
+      msComponent.setMigrationState(MState.DONE);
+      ApplicationManager.getApplication().restart();
     }
   }
 }
