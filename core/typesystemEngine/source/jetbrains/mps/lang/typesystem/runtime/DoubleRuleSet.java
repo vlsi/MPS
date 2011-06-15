@@ -34,8 +34,9 @@ import java.util.concurrent.ConcurrentMap;
  *   Synchronized.
  */
 public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
-  ConcurrentMap<Pair<String, String>, Set<T>> myRules = new ConcurrentHashMap<Pair<String, String>, Set<T>>();
-  ConcurrentMap<Pair<String, String>, Set<T>> myRulesCache = new ConcurrentHashMap<Pair<String, String>, Set<T>>();
+
+  ConcurrentMap<Pair<String, String>, Set<T>> myRules = new ConcurrentHashMap<Pair<String, String>, /* synchronized */ Set<T>>();
+  ConcurrentMap<Pair<String, String>, Set<T>> myRulesCache = new ConcurrentHashMap<Pair<String, String>, /* unmodifiable */ Set<T>>();
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
@@ -59,7 +60,7 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   protected Set<T> get(@NotNull final Pair<String, String> key) {
     Set<T> result = myRulesCache.get(key);
     if(result != null) {
-      return Collections.unmodifiableSet(result);
+      return result;
     }
 
     String c1 = key.o1;
@@ -74,16 +75,19 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
             if (conceptDeclaration1 != key.o1 || conceptDeclaration2 != key.o2) {
               myRules.putIfAbsent(key, result);
             }
-            myRulesCache.putIfAbsent(key, new THashSet<T>(result));
+            // synchronized collection (result) requires external synchronization for iteration/clone
+            synchronized (result) {
+              Set<T> clone = Collections.unmodifiableSet(new THashSet<T>(result));
+              myRulesCache.putIfAbsent(key, clone);
+            }
             return Collections.unmodifiableSet(result);
           }
         }
       }
     }
-    result = Collections.synchronizedSet(new HashSet<T>(1));
-    myRules.putIfAbsent(key, result);
-    myRulesCache.putIfAbsent(key, new HashSet<T>(1));
-    return Collections.unmodifiableSet(result);
+    myRules.putIfAbsent(key, Collections.synchronizedSet(new HashSet<T>(1)));
+    myRulesCache.putIfAbsent(key, Collections.<T>emptySet());
+    return Collections.emptySet();
   }
 
   public void makeConsistent() {
@@ -123,5 +127,6 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
 
   public void clear() {
     myRules.clear();
+    myRulesCache.clear();
   }
 }

@@ -139,9 +139,9 @@ public class RulesManager {
   public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
     List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
     Set<InferenceRule_Runtime> ruleSet;
-    synchronized (RULES_LOCK) {
+    //synchronized (RULES_LOCK) {
       ruleSet = myInferenceRules.getRules(node);
-    }
+    //}
     for (InferenceRule_Runtime rule : ruleSet) {
       IsApplicableStatus status = rule.isApplicableAndPattern(node);
       if (status.isApplicable()) {
@@ -156,9 +156,9 @@ public class RulesManager {
     List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
       new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
     Set<NonTypesystemRule_Runtime> ruleSet;
-    synchronized (RULES_LOCK) {
+    //synchronized (RULES_LOCK) {
       ruleSet = myNonTypesystemRules.getRules(node);
-    }
+    //}
     for (NonTypesystemRule_Runtime rule : ruleSet) {
       IsApplicableStatus status = rule.isApplicableAndPattern(node);
       if (status.isApplicable()) {
@@ -172,10 +172,10 @@ public class RulesManager {
   public List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
     List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
     Set<SubtypingRule_Runtime> ruleSet;
-    synchronized (RULES_LOCK) {
+    //synchronized (RULES_LOCK) {
       //loadLanguage(node.getLanguageNamespace());
       ruleSet = mySubtypingRules.getRules(node);
-    }
+    //}
     for (SubtypingRule_Runtime rule : ruleSet) {
       if ((isWeak || !rule.isWeak())) {
         IsApplicableStatus status = rule.isApplicableAndPattern(node);
@@ -206,11 +206,11 @@ public class RulesManager {
   public List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
     List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
     Set<ComparisonRule_Runtime> ruleSet;
-    synchronized (RULES_LOCK) {
+    //synchronized (RULES_LOCK) {
       // loadLanguage(node1.getLanguageNamespace());
       // loadLanguage(node2.getLanguageNamespace());
       ruleSet = myComparisonRules.getRules(node1, node2);
-    }
+    //}
     for (ComparisonRule_Runtime rule : ruleSet) {
       if (isWeak || !rule.isWeak()) {
         IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
@@ -226,9 +226,9 @@ public class RulesManager {
   public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> getReplacementRules(final SNode node1, final SNode node2) {
     List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>();
     Set<InequationReplacementRule_Runtime> ruleSet;
-    synchronized (RULES_LOCK) {
+    //synchronized (RULES_LOCK) {
       ruleSet = myReplacementRules.getRules(node1, node2);
-    }
+    //}
     for (InequationReplacementRule_Runtime rule : ruleSet) {
       IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
       if (status.isApplicable()) {
@@ -252,9 +252,9 @@ public class RulesManager {
 
   public Set<AbstractDependentComputation_Runtime> getDependentComputations(final SNode node) {
     Set<AbstractDependentComputation_Runtime> rules;
-    synchronized (RULES_LOCK) {
+    //synchronized (RULES_LOCK) {
       rules = myDependentComputations.getRules(node);
-    }
+    //}
     return CollectionUtil.filter(rules, new Condition<AbstractDependentComputation_Runtime>() {
       @Override
       public boolean met(AbstractDependentComputation_Runtime dependentComputation) {
@@ -265,9 +265,9 @@ public class RulesManager {
 
   public boolean isBlockingDependentComputationNode(SNode node) {
     Set<DependentComputationWrapper> set;
-    synchronized (RULES_LOCK) {
+    //synchronized (RULES_LOCK) {
       set = myDependentComputationsBlockedNodes.getRules(node);
-    }
+    //}
     if (set == null) return false;
     for (DependentComputationWrapper wrapper : set) {
       if (wrapper.isBlocking(node)) {
