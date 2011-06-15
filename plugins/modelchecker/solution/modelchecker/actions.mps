@@ -235,6 +235,7 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5361317699454626937">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DevKit" />
       <property name="name" nameId="tpck.1169194664001" value="ToolsInternalEx" />
+      <property name="isInternal" nameId="tp4k.1205160838084" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6550340959293376935">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DevKit.Internal" />
@@ -12258,8 +12259,7 @@
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5361317699454650269">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.5361317699454624365" resolveInfo="ToolsInternal" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.5361317699454624368" resolveInfo="internal" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.2899596005954254197" resolveInfo="ToolsInternal" />
     </node>
   </root>
   <root id="6550340959293376935">

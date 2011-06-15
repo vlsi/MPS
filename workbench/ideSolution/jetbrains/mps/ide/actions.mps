@@ -485,7 +485,7 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1234190163902">
       <property name="name" nameId="tpck.1169194664001" value="ShowBookmarks" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Bookmarks" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Bookmarks..." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu.ToolsActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1235219887263">
@@ -1103,12 +1103,6 @@
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Language" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5361317699454624365">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
-      <property name="name" nameId="tpck.1169194664001" value="ToolsInternal" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Internal" />
-    </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5384922150955313088">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
       <property name="name" nameId="tpck.1169194664001" value="GoToEditorPopupAddition" />
@@ -1167,17 +1161,12 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4533699301447536554">
       <property name="name" nameId="tpck.1169194664001" value="AnalyzeStacktraceDialog" />
     </node>
-    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7738949347381662887">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu.ToolsActions.Migration" />
-      <property name="name" nameId="tpck.1169194664001" value="Migration20" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to MPS 2.0" />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-    </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="7738949347381711887">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu.ToolsActions.Migration" />
-      <property name="name" nameId="tpck.1169194664001" value="Migrations20" />
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2899596005954254197">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
+      <property name="name" nameId="tpck.1169194664001" value="ToolsInternal" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Migrations 2.0" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Internal" />
+      <property name="isInternal" nameId="tp4k.1205160838084" value="true" />
     </node>
   </roots>
   <root id="1204991215587">
@@ -1371,9 +1360,6 @@
         <property name="name" nameId="tpck.1169194664001" value="runConfig" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1208361663328" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2494245796547321700">
-        <property name="name" nameId="tpck.1169194664001" value="migration" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1215889588091">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1215889139721" resolveInfo="OptimizeProjectImports" />
       </node>
@@ -1472,9 +1458,6 @@
         <property name="name" nameId="tpck.1169194664001" value="vcs" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1234535904313" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2494245796547321052">
-        <property name="name" nameId="tpck.1169194664001" value="migration" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="4555696683442018009">
         <property name="name" nameId="tpck.1169194664001" value="scripts" />
       </node>
@@ -1554,9 +1537,6 @@
         <property name="name" nameId="tpck.1169194664001" value="vcs" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2834677590308140832" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2494245796547321054">
-        <property name="name" nameId="tpck.1169194664001" value="migration" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="4555696683442018013">
         <property name="name" nameId="tpck.1169194664001" value="scripts" />
       </node>
@@ -1600,10 +1580,6 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1236184333509">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1236184251962" resolveInfo="CopyModuleName" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1216226754723" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2494245796547321048">
-        <property name="name" nameId="tpck.1169194664001" value="migration" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2494245796547321050" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2834677590308140829">
@@ -1855,9 +1831,7 @@
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1215012161252" resolveInfo="IDEATools" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148372239">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7738949347381711894">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7738949347381662887" resolveInfo="Migration20" />
-      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2899596005953599664" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="7738949347381711892">
         <property name="name" nameId="tpck.1169194664001" value="migration20" />
       </node>
@@ -28362,20 +28336,6 @@
       </node>
     </node>
   </root>
-  <root id="5361317699454624365">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5361317699454624367">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5361317699454626936">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1215890512584" resolveInfo="RemoveTransientModels" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="5361317699454624368">
-        <property name="name" nameId="tpck.1169194664001" value="internal" />
-      </node>
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5361317699454624370">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991238062" resolveInfo="Tools" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1784959407586156229" resolveInfo="internal" />
-    </node>
-  </root>
   <root id="5384922150955313088">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5384922150955313092">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
@@ -29783,59 +29743,12 @@
       </node>
     </node>
   </root>
-  <root id="7738949347381662887">
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1222034107202286005">
-      <property name="name" nameId="tpck.1169194664001" value="project" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="4zw2.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
-    </node>
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1222034107202555109">
-      <property name="name" nameId="tpck.1169194664001" value="frame" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dFRAME" resolveInfo="FRAME" />
-    </node>
-    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="7738949347381662888">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7738949347381662889">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1222034107202543929">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1222034107202555107">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JOptionPane%dshowMessageDialog(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="showMessageDialog" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dbrf.~JOptionPane" resolveInfo="JOptionPane" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1222034107202555110">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1222034107202555111" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="2899596005953506601">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="1222034107202555109" resolveInfo="frame" />
-              </node>
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1222034107202555114">
-              <property name="value" nameId="tpee.1070475926801" value="This action helps migrating from MPS 1.5 to MPS 2.0." />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2899596005953433066">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2899596005953433073">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2899596005953433067">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2899596005953433069">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationHelper%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject)" resolveInfo="MigrationHelper" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2899596005953433070">
-                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2899596005953433071" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="2899596005953433072">
-                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="1222034107202286005" resolveInfo="project" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2899596005953433077">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o9p7.~MigrationHelper%dmigrate()%cvoid" resolveInfo="migrate" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="7738949347381711887">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="7738949347381737766" />
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="7738949347381737767">
+  <root id="2899596005954254197">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2899596005954254200">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991238062" resolveInfo="Tools" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="7738949347381711892" resolveInfo="migration20" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1784959407586156229" resolveInfo="internal" />
     </node>
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2899596005954254199" />
   </root>
 </model>
 
