@@ -346,13 +346,13 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1212767491070836945">
       <property name="name" nameId="tpck.1169194664001" value="ShowModelRepository" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Model Repository" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Model Repository..." />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Repositories" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1212767491070836962">
       <property name="name" nameId="tpck.1169194664001" value="ShowModuleRepository" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Module Repository" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Module Repository..." />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Repositories" />
     </node>

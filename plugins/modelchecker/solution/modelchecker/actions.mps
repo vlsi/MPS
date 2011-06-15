@@ -194,7 +194,7 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1453248744423276149">
       <property name="name" nameId="tpck.1169194664001" value="ShowModelChecker" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Model Checker" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Model Checker..." />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="false" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Actions" />
@@ -9980,9 +9980,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091399">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/modelChecker.png" />
     </node>
   </root>
   <root id="1453248744423276216">

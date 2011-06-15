@@ -19,7 +19,7 @@ public class ShowModelRepository_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(ShowModelRepository_Action.class);
 
   public ShowModelRepository_Action() {
-    super("Show Model Repository", "", ICON);
+    super("Model Repository...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
