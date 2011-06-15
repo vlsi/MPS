@@ -148,6 +148,7 @@
     <file name="InputResourcesParameter.java" />
   </source>
   <source id="505095865854368555" name="QueryDefinition" hash="-b7g63zqa2bqtma02c4v8c3ab3051i6a">
+    <dep root="505095865854369479" />
     <dep root="505095865854369482" />
     <dep root="505095865854384059" />
     <dep root="505095865854384070" />
@@ -169,6 +170,7 @@
     <file name="QueryDefinition.java" />
   </source>
   <source id="505095865854369479" name="QueryParameterDeclaration" hash="-6n8sd39rxrlk6pn60s2ers62dvx9g5g">
+    <dep root="505095865854368555" />
     <dep root="505095865854384059" />
     <dep root="505095865854384070" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -188,6 +190,8 @@
     <file name="QueryParameterDeclaration.java" />
   </source>
   <source id="505095865854369481" name="Option" hash="-17ob4cbsmm9b9xl3u5hdfcmizjhfej1">
+    <dep root="505095865854368555" />
+    <dep root="505095865854369479" />
     <dep root="505095865854369482" />
     <dep root="505095865854384059" />
     <dep root="505095865854384070" />
@@ -237,6 +241,8 @@
     <file name="OptionExpression.java" />
   </source>
   <source id="505095865854384053" name="OptionType" hash="2t56vcf1mbxiz0mwcasyiix602xokh8">
+    <dep root="505095865854368555" />
+    <dep root="505095865854369479" />
     <dep root="505095865854384059" />
     <dep root="505095865854384070" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -256,6 +262,8 @@
     <file name="OptionType.java" />
   </source>
   <source id="505095865854384059" name="ExpectedOption" hash="q529umh3xqdqydkqs5icugwliix80i">
+    <dep root="505095865854368555" />
+    <dep root="505095865854369479" />
     <dep root="505095865854369481" />
     <dep root="505095865854384070" />
     <dep root="505095865854427623" />
@@ -287,6 +295,8 @@
     <file name="Expected.java" />
   </source>
   <source id="505095865854384070" name="ExpectedInput" hash="-e60k5oyn94g3v1x4w9ttcsjk70x60sn">
+    <dep root="505095865854368555" />
+    <dep root="505095865854369479" />
     <dep root="505095865854427623" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -357,8 +367,31 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConfigDefinition.java" />
   </source>
-  <source id="3668957831723333672" name="ReportFeedbackStatement" hash="-7ap3hhvq0awxohd4a74ac66cw1x0dft">
+  <source id="3668957831723333672" name="ReportFeedbackStatement" hash="-7ap3hhvq0awxohd4a74ac66cw1x0dft" dependsOnCreated="true" dependsOnNodes="true">
+    <dep root="187226666892683650" />
+    <dep root="187226666892683652" />
+    <dep root="187226666892683655" />
+    <dep root="1977954644795311519" />
+    <dep root="1977954644795375332" />
+    <dep root="2360002718792446594" />
+    <dep root="2360002718792446682" />
+    <dep root="2360002718792622184" />
+    <dep root="2360002718792625579" />
+    <dep root="2360002718792625580" />
+    <dep root="3297237684108627658" />
     <dep root="3668957831723333674" />
+    <dep root="505095865854368555" />
+    <dep root="505095865854369479" />
+    <dep root="505095865854369481" />
+    <dep root="505095865854369482" />
+    <dep root="505095865854384050" />
+    <dep root="505095865854384053" />
+    <dep root="505095865854384059" />
+    <dep root="505095865854384066" />
+    <dep root="505095865854384070" />
+    <dep root="505095865854384109" />
+    <dep root="505095865854427623" />
+    <dep root="7077360340906447917" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
