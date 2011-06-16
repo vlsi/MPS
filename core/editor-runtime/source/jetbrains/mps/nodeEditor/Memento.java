@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 
+import java.awt.Point;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -30,6 +31,7 @@ class Memento {
   private Set<CellInfo> myFolded = new HashSet<CellInfo>();
 
   private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
+  private Point myViewPosition;
 
   private Memento() {}
 
@@ -50,6 +52,7 @@ class Memento {
     if (full) {
       collectErrors(nodeEditor);
     }
+    myViewPosition = nodeEditor.getViewport().getViewPosition();
   }
 
   private void collectErrors(EditorComponent editor) {
@@ -91,7 +94,9 @@ class Memento {
     if (needsRelayout) {
       editor.relayout();
     }
-    editor.ensureSelectionVisible();
+    if (myViewPosition != null) {
+      editor.getViewport().setViewPosition(myViewPosition);
+    }
   }
 
   private boolean restoreErrors(EditorComponent editor) {
@@ -140,6 +145,8 @@ class Memento {
   private static final String STACK_ELEMENT = "stackElement";
   private static final String FOLDED = "folded";
   private static final String FOLDED_ELEMENT = "foldedElement";
+  private static final String VIEW_POSITION_X = "viewPositionX";
+  private static final String VIEW_POSITION_Y = "viewPositionY";
 
   public void save(Element e) {
     Element selectionStack = new Element(SELECTION_STACK);
@@ -165,6 +172,8 @@ class Memento {
     if (success) {
       e.addContent(folded);
     }
+    e.setAttribute(VIEW_POSITION_X, String.valueOf(myViewPosition.x));
+    e.setAttribute(VIEW_POSITION_Y, String.valueOf(myViewPosition.y));
   }
 
   public static Memento load(Element e) {
@@ -182,6 +191,12 @@ class Memento {
       for (Object o : children) {
         memento.myFolded.add(DefaultCellInfo.loadFrom((Element) o));
       }
+    }
+    try {
+      int viewPositionX = Integer.valueOf(e.getAttributeValue(VIEW_POSITION_X));
+      int viewPositionY = Integer.valueOf(e.getAttributeValue(VIEW_POSITION_Y));
+      memento.myViewPosition = new Point(viewPositionX, viewPositionY);
+    } catch (NumberFormatException nfe) {
     }
     return memento;
   }
