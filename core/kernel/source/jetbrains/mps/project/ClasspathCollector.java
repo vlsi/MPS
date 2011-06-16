@@ -39,7 +39,7 @@ public class ClasspathCollector {
 
   public IClassPathItem collect(boolean includeStubSolutions) {
     for (IModule m : myStart) {
-      doCollect(m, true);
+      doCollect(m);
     }
 
     CompositeClassPathItem result = new CompositeClassPathItem();
@@ -71,36 +71,34 @@ public class ClasspathCollector {
     return myPaths.get(item);
   }
 
-  private void doCollect(@NotNull IModule current, boolean includeStubSolutions) {
+  private void doCollect(@NotNull IModule current) {
     try {
       myStack.push(current);
 
       if (myVisited.contains(current)) return;
 
       myVisited.add(current);
-      if (includeStubSolutions || !isStubSolution(current)) {
-        addPart(current.getClassPathItem());
-      }
+      addPart(current.getClassPathItem());
 
       ArrayList<IModule> dependOnCopy = new ArrayList<IModule>(current.getDependenciesManager().getDependOnModules());
       for (IModule dep : dependOnCopy) {
-        doCollect(dep, includeStubSolutions);
+        doCollect(dep);
       }
 
       for (Language l : current.getDependenciesManager().getAllUsedLanguages()) {
         myStack.push(l);
         addPart(l.getLanguageRuntimeClasspath());
         for (IModule runtimeModule : ((LanguageDepsManager) l.getDependenciesManager()).getRuntimeDependOnModules()) {
-          doCollect(runtimeModule, includeStubSolutions);
+          doCollect(runtimeModule);
         }
         myStack.pop();
       }
 
       if (current instanceof Language) {
         Language l = (Language) current;
-        doCollect(BootstrapLanguages.coreLanguage(), includeStubSolutions);
+        doCollect(BootstrapLanguages.coreLanguage());
         for (Language extended : l.getExtendedLanguages()) {
-          doCollect(extended, includeStubSolutions);
+          doCollect(extended);
         }
       }
     } finally {
