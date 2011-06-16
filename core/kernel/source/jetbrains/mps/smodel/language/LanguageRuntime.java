@@ -40,6 +40,8 @@ public abstract class LanguageRuntime {
   private DescriptorProvider<ConstraintsDescriptor> _constraintsDescriptor;
   private DescriptorProvider<FacetDescriptor> facetDescriptor;
 
+  private StructureAspectDescriptor structureDescriptor;
+  private BehaviorAspectDescriptor behaviorDescriptor;
   private ConstraintsAspectDescriptor constraintsDescriptor;
 
   public abstract String getNamespace();
@@ -86,7 +88,7 @@ public abstract class LanguageRuntime {
     return _constraintsDescriptor;
   }
 
-  public DescriptorProvider<FacetDescriptor> getFacetProvider () {
+  public DescriptorProvider<FacetDescriptor> getFacetProvider() {
     if (facetDescriptor == null) {
       facetDescriptor = getDescriptorProvider("plugin.FacetAspectDescriptor", LanguageRuntimeInterpreted.FACET_PROVIDER);
     }
@@ -94,11 +96,35 @@ public abstract class LanguageRuntime {
   }
 
   public StructureAspectDescriptor getStructureAspectDescriptor() {
-    return StructureAspectInterpreted.getInstance();
+//    return StructureAspectInterpreted.getInstance();
+    if (structureDescriptor == null) {
+      String className = getNamespace() + ".structure.StructureAspectDescriptor";
+      Object compiled = getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+
+      if (compiled instanceof StructureAspectDescriptor) {
+        structureDescriptor = (StructureAspectDescriptor) compiled;
+      } else {
+        structureDescriptor = StructureAspectInterpreted.getInstance();
+      }
+    }
+
+    return structureDescriptor;
   }
 
   public BehaviorAspectDescriptor getBehaviorAspectDescriptor() {
-    return BehaviorAspectInterpreted.getInstance();
+//    return BehaviorAspectInterpreted.getInstance();
+    if (behaviorDescriptor == null) {
+      String className = getNamespace() + ".behavior.BehaviorAspectDescriptor";
+      Object compiled = getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+
+      if (compiled instanceof BehaviorAspectDescriptor) {
+        behaviorDescriptor = (BehaviorAspectDescriptor) compiled;
+      } else {
+        behaviorDescriptor = BehaviorAspectInterpreted.getInstance();
+      }
+    }
+
+    return behaviorDescriptor;
   }
 
   public ConstraintsAspectDescriptor getConstraintsAspectDescriptor() {
