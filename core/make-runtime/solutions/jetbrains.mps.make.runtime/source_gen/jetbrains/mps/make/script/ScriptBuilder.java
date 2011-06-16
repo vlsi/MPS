@@ -37,7 +37,7 @@ public class ScriptBuilder {
   public ScriptBuilder() {
   }
 
-  public ScriptBuilder withFacet(IFacet.Name facetName) {
+  public ScriptBuilder withFacetName(IFacet.Name facetName) {
     IFacet fct = FacetRegistry.getInstance().lookup(facetName);
     if (fct != null) {
       MapSequence.fromMap(facetsView).put(facetName, fct);
@@ -49,11 +49,11 @@ public class ScriptBuilder {
     return this;
   }
 
-  public ScriptBuilder withFacets(IFacet.Name... facetNames) {
-    return withFacets(Sequence.fromArray(facetNames));
+  public ScriptBuilder withFacetNames(IFacet.Name... facetNames) {
+    return withFacetNames(Sequence.fromArray(facetNames));
   }
 
-  public ScriptBuilder withFacets(Iterable<IFacet.Name> facetNames) {
+  public ScriptBuilder withFacetNames(Iterable<IFacet.Name> facetNames) {
     for (IFacet.Name fn : Sequence.fromIterable(facetNames)) {
       IFacet fct = FacetRegistry.getInstance().lookup(fn);
       if (fct != null) {
@@ -63,6 +63,13 @@ public class ScriptBuilder {
         LOG.error(msg);
         error(fn, msg);
       }
+    }
+    return this;
+  }
+
+  public ScriptBuilder withFacets(Iterable<IFacet> facets) {
+    for (IFacet fct : Sequence.fromIterable(facets)) {
+      MapSequence.fromMap(facetsView).put(fct.getName(), fct);
     }
     return this;
   }

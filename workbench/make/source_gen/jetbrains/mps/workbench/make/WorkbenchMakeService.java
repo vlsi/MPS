@@ -25,9 +25,11 @@ import dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
@@ -36,9 +38,6 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -60,6 +59,7 @@ import com.intellij.openapi.progress.Task;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 import org.jetbrains.annotations.Nullable;
+import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
@@ -252,49 +252,21 @@ public class WorkbenchMakeService implements IMakeService {
         }
       }
     });
-    Iterable<IScript> scripts = Sequence.fromClosure(new ISequenceClosure<IScript>() {
-      public Iterable<IScript> iterable() {
-        return new Iterable<IScript>() {
-          public Iterator<IScript> iterator() {
-            return new YieldingIterator<IScript>() {
-              private int __CP__ = 0;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 2:
-                      if (true) {
-                        this.__CP__ = 3;
-                        break;
-                      }
-                      this.__CP__ = 1;
-                      break;
-                    case 4:
-                      this.__CP__ = 2;
-                      this.yield(script);
-                      return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
-                    case 3:
-                      this.__CP__ = 4;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-            };
+    Iterable<IScript> scripts = Sequence.fromIterable(usedLangs.value).<IScript>select(new ISelector<Iterable<String>, IScript>() {
+      public IScript select(Iterable<String> langs) {
+        final ScriptBuilder scb = new ScriptBuilder();
+        Sequence.fromIterable(langs).visitAll(new IVisitor<String>() {
+          public void visit(String ns) {
+            LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
+            Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
+            scb.withFacets(fcts);
           }
-        };
+        });
+        IScript scr = scb.withFinalTarget(new ITarget.Name("make")).toScript();
+        System.out.println("*** script valid=" + scr.isValid());
+        return script;
       }
-    });
+    }).toListSequence();
     final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(this.getSession().getContext().getProject(), scrName, scripts, scrName, clInput.value, ctl, mh, new PerformInBackgroundOption() {
       public boolean shouldStartInBackground() {
         return false;
@@ -355,7 +327,7 @@ __switch__:
   }
 
   public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacets(new IFacet.Name("jetbrains.mps.make.facet.Binaries"), new IFacet.Name("jetbrains.mps.make.facet.Generate"), new IFacet.Name("jetbrains.mps.make.facet.TextGen"), new IFacet.Name("jetbrains.mps.make.facet.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facet.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facet.Make")).withFinalTarget(new ITarget.Name("make")).toScript();
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.make.facet.Binaries"), new IFacet.Name("jetbrains.mps.make.facet.Generate"), new IFacet.Name("jetbrains.mps.make.facet.TextGen"), new IFacet.Name("jetbrains.mps.make.facet.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facet.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facet.Make")).withFinalTarget(new ITarget.Name("make")).toScript();
   }
 
   private class Controller implements IScriptController {
@@ -536,7 +508,7 @@ __switch__:
 
         Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
         Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
-        for (int foo = 0; scit.hasNext() && clit.hasNext();) {
+        while (scit.hasNext() && clit.hasNext()) {
           Iterable<IResource> cl = clit.next();
           IScript scr = scit.next();
           pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {

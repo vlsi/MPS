@@ -29,7 +29,7 @@ public class ScriptBuilder_Test extends MockTestCase {
   @Test
   public void test_make() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    scb.withFacets(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+    scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
       public IFacet.Name select(IFacet f) {
         return f.getName();
       }
@@ -49,7 +49,7 @@ public class ScriptBuilder_Test extends MockTestCase {
   @Test
   public void test_gen() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    scb.withFacets(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+    scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
       public IFacet.Name select(IFacet f) {
         return f.getName();
       }
@@ -70,7 +70,7 @@ public class ScriptBuilder_Test extends MockTestCase {
   @ExpectLogEvent(text = "target not found: ITarget.Name[none]", level = Priority.ERROR_INT)
   public void test_none() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    scb.withFacets(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+    scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
       public IFacet.Name select(IFacet f) {
         return f.getName();
       }

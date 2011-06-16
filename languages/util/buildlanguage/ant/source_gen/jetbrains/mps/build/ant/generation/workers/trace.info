@@ -1425,7 +1425,7 @@
     <nodeInfo nodeId="7874190907999476903" fileName="BuildMakeService.java" startLine="157" startPosition="9" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7874190907999476906" fileName="BuildMakeService.java" startLine="159" startPosition="26" endLine="160" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8695426379435219094" fileName="BuildMakeService.java" startLine="171" startPosition="36" endLine="172" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6085445418775341921" fileName="BuildMakeService.java" startLine="178" startPosition="45" endLine="179" endPosition="363" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6085445418775341921" fileName="BuildMakeService.java" startLine="178" startPosition="45" endLine="179" endPosition="367" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7874190907999477674" fileName="BuildMakeService.java" startLine="182" startPosition="47" endLine="183" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="handler" />
     <nodeInfo nodeId="7874190907999477666" fileName="BuildMakeService.java" startLine="185" startPosition="61" endLine="186" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7874190907999477594" fileName="BuildMakeService.java" startLine="189" startPosition="47" endLine="190" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1496,7 +1496,7 @@
     <scopeInfo nodeId="7874190907999476897" fileName="BuildMakeService.java" startLine="153" startPosition="47" endLine="154" endPosition="32" />
     <scopeInfo nodeId="7874190907999476905" fileName="BuildMakeService.java" startLine="159" startPosition="26" endLine="160" endPosition="26" />
     <scopeInfo nodeId="8695426379435219089" fileName="BuildMakeService.java" startLine="171" startPosition="36" endLine="172" endPosition="16" />
-    <scopeInfo nodeId="7874190907999486672" fileName="BuildMakeService.java" startLine="178" startPosition="45" endLine="179" endPosition="363" />
+    <scopeInfo nodeId="7874190907999486672" fileName="BuildMakeService.java" startLine="178" startPosition="45" endLine="179" endPosition="367" />
     <scopeInfo nodeId="7874190907999477665" fileName="BuildMakeService.java" startLine="185" startPosition="61" endLine="186" endPosition="29" />
     <scopeInfo nodeId="7874190907999476503" fileName="BuildMakeService.java" startLine="43" startPosition="86" endLine="45" endPosition="41" />
     <scopeInfo nodeId="7874190907999476667" fileName="BuildMakeService.java" startLine="103" startPosition="22" endLine="105" endPosition="21">
