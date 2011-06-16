@@ -255,7 +255,7 @@ public class TextGenerator {
         }
         if (debugInfoCache != null) {
           DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(rdep.getRootId());
-          if (infoRoot != null) {
+          if (infoRoot != null && status.getDebugInfo() != null) {
             status.getDebugInfo().replaceRoot(infoRoot);
           }
         }
