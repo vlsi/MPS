@@ -79,7 +79,6 @@ public abstract class MpsWorker {
   protected final WhatToDo myWhatToDo;
   private final AntLogger myLogger;
   private MpsWorker.MyMessageHandlerAppender myMessageHandler = new MyMessageHandlerAppender();
-  private FileSystemProvider myWasFileSystemProvider;
   private final List<BaseApplicationPlugin> myPlugins = new ArrayList<BaseApplicationPlugin>();
 
   private MpsWorker() {
@@ -153,7 +152,6 @@ public abstract class MpsWorker {
         e.printStackTrace();
       }
     }
-    FileSystem.getInstance().setFileSystemProvider(myWasFileSystemProvider);
     jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
   }
 
@@ -179,10 +177,6 @@ public abstract class MpsWorker {
     } catch (Exception ex) {
       throw new RuntimeException(ex);
     }
-
-    myWasFileSystemProvider = FileSystem.getInstance().getFileSystemProvider();
-//    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
-    // TODO we use idea vfs until MPS-12571 is fixed
 
     setMacro();
     loadLibraries();
