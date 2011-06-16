@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9ebx9fwu4i9s2ljzym3ln0wkruq525g">
+<dependencies version="2" modelHash="9awuqv897a6ic4a1wwoh8cyzheyl1jh">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.behaviour(MPS.Classpath/jetbrains.mps.smodel.behaviour@java_stub)" />
@@ -74,7 +74,7 @@
   <source id="1213106217514" name="ConstraintsClass" hash="e77zc5xt0w9bc99ru80lrhhboepfz6c">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5979740912231381158" name="BaseReferenceScopeProvider" hash="-59nxcp0ogj6fqn430xs8b4rp4zht0g5">
+  <source id="5979740912231381158" name="BaseReferenceScopeProvider" hash="b6qtg8u1xoq0idwthlng3bw59j10t4b">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="6490356536635205689" name="ConstraintsAspectDescriptor" hash="-93ydffm4ufl0xbuvz93p8ch6ickkgkp">

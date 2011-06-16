@@ -3001,6 +3001,9 @@
               </node>
             </node>
           </node>
+          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6341107661090650047">
+            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+          </node>
         </node>
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5979740912231422670">
           <property name="name" nameId="tpck.1169194664001" value="getPresentation" />
@@ -3018,8 +3021,8 @@
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5979740912231422675">
             <property name="name" nameId="tpck.1169194664001" value="_context" />
             <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5979740912231422676">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8sbz.~PresentationReferentConstraintContext" resolveInfo="PresentationReferentConstraintContext" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6341107661090655098">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wya9.~ReferencePresentationContext" resolveInfo="ReferencePresentationContext" />
             </node>
           </node>
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5979740912231422677">
@@ -3062,6 +3065,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6341107661090650048">
+            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
           </node>
         </node>
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5979740912231476000">
@@ -3125,9 +3131,12 @@
               </node>
             </node>
           </node>
+          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6341107661090650049">
+            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+          </node>
         </node>
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5979740912231476045">
-          <property name="name" nameId="tpck.1169194664001" value="createNodeReferentSearchScope" />
+          <property name="name" nameId="tpck.1169194664001" value="createSearchScope" />
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5979740912231476046">
             <property name="name" nameId="tpck.1169194664001" value="operationContext" />
             <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -3239,9 +3248,12 @@
               </node>
             </node>
           </node>
+          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6341107661090650050">
+            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+          </node>
         </node>
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5979740912231476099">
-          <property name="name" nameId="tpck.1169194664001" value="getSearchScopeValidatorNodePointer" />
+          <property name="name" nameId="tpck.1169194664001" value="getSearchScopeValidatorNode" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5979740912231476100" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5979740912231476101">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7423954551252434662">
@@ -3357,6 +3369,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6341107661090650051">
+            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
           </node>
         </node>
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5979740912231475950" />
