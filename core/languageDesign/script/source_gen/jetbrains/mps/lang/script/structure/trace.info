@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Script_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.structure.Script_Language" />
+  <unitInfo fileName="ScriptType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.script.structure.ScriptType_PropertySupport" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="38" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.script.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="ScriptType.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.script.structure.ScriptType" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.script.structure.StructureAspectDescriptor" />
 </debugInfo>
 

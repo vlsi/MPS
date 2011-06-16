@@ -191,7 +191,7 @@ public class RunMigrationScriptsDialog extends JDialog {
 
   private class MyTableModel extends DefaultTableModel {
     public MyTableModel() {
-      super(new String[]{"", "script", "category", "migrate from b."}, ListSequence.fromList(myScripts).count());
+      super(new String[]{"", "script", "category", "migrate to"}, ListSequence.fromList(myScripts).count());
     }
 
     public boolean isCellEditable(int row, int column) {
@@ -214,13 +214,13 @@ public class RunMigrationScriptsDialog extends JDialog {
         return "  " + SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "title");
       }
       if (column == 2) {
-        String cat = SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "category");
+        String cat = SPropertyOperations.getString_def(ListSequence.fromList(myScripts).getElement(row), "type", "enhancement");
         return (cat != null ?
           " " + cat :
           ""
         );
       }
-      String build = SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "migrationFromBuild");
+      String build = SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "toBuild");
       return (build != null ?
         " " + build :
         ""

@@ -31,26 +31,27 @@ public class ScriptsActionGroupHelper {
   public static void sortScripts(List<SNode> scripts) {
     Collections.sort(scripts, new Comparator<SNode>() {
       public int compare(SNode s1, SNode s2) {
-        String fromBuild1 = SPropertyOperations.getString(s1, "migrationFromBuild");
-        String fromBuild2 = SPropertyOperations.getString(s2, "migrationFromBuild");
-        if (fromBuild1 == null) {
-          fromBuild1 = "";
+        String cat1 = SPropertyOperations.getString_def(s1, "type", "enhancement");
+        String cat2 = SPropertyOperations.getString_def(s2, "type", "enhancement");
+        if (cat1 == null) {
+          cat1 = "";
         }
-        if (fromBuild2 == null) {
-          fromBuild2 = "";
+        if (cat2 == null) {
+          cat2 = "";
         }
-        if (fromBuild1.compareTo(fromBuild2) == 0) {
-          String cat1 = SPropertyOperations.getString(s1, "category");
-          String cat2 = SPropertyOperations.getString(s2, "category");
-          if (cat1 == null) {
-            cat1 = "";
+        if (cat1.compareTo(cat2) == 0) {
+          String fromBuild1 = SPropertyOperations.getString(s1, "toBuild");
+          String fromBuild2 = SPropertyOperations.getString(s2, "toBuild");
+          if (fromBuild1 == null) {
+            fromBuild1 = "";
           }
-          if (cat2 == null) {
-            cat2 = "";
+          if (fromBuild2 == null) {
+            fromBuild2 = "";
           }
-          return cat1.compareTo(cat2);
+          return fromBuild1.compareTo(fromBuild2);
         }
-        return fromBuild1.compareTo(fromBuild2);
+
+        return cat1.compareTo(cat2);
       }
     });
   }
@@ -66,7 +67,7 @@ public class ScriptsActionGroupHelper {
   public static void populateByCategoryGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     Map<String, List<SNode>> byCategory = new HashMap<String, List<SNode>>();
     for (SNode migrationScript : migrationScripts) {
-      String cat = SPropertyOperations.getString(migrationScript, "category");
+      String cat = SPropertyOperations.getString_def(migrationScript, "type", "enhancement");
       if (cat == null) {
         cat = "<uncategorized>";
       }
@@ -90,7 +91,7 @@ public class ScriptsActionGroupHelper {
     for (String cat : sorted) {
       BaseGroup categoryGroup = new BaseGroup(cat, "");
       for (SNode script : byCategory.get(cat)) {
-        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "migrationFromBuild")), applyToSelection));
+        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "toBuild")), applyToSelection));
       }
       categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
@@ -100,7 +101,7 @@ public class ScriptsActionGroupHelper {
   public static void populateByBuildGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     Map<String, List<SNode>> byBuild = new HashMap<String, List<SNode>>();
     for (SNode migrationScript : migrationScripts) {
-      String build = SPropertyOperations.getString(migrationScript, "migrationFromBuild");
+      String build = SPropertyOperations.getString(migrationScript, "toBuild");
       if (build == null) {
         build = "<unspecified>";
       }
@@ -113,7 +114,7 @@ public class ScriptsActionGroupHelper {
     for (String build : sorted) {
       BaseGroup categoryGroup = new BaseGroup("migrate from b." + build, "");
       for (SNode script : byBuild.get(build)) {
-        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString(script, "category"), SPropertyOperations.getString(script, "title"), null), applyToSelection));
+        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, "type", "enhancement"), SPropertyOperations.getString(script, "title"), null), applyToSelection));
       }
       categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
@@ -127,7 +128,7 @@ public class ScriptsActionGroupHelper {
     }
     BaseGroup languageScriptsGroup = new BaseGroup(language.getModuleFqName(), "");
     for (SNode script : migrationScripts) {
-      languageScriptsGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString(script, "category"), SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "migrationFromBuild")), applyToSelection));
+      languageScriptsGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, "type", "enhancement"), SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "toBuild")), applyToSelection));
     }
     if (!((migrationScripts.isEmpty()))) {
       languageScriptsGroup.addSeparator();
