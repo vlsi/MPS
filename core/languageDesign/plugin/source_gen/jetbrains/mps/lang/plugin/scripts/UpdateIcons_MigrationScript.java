@@ -10,8 +10,8 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class UpdateActionIcons_MigrationScript extends BaseMigrationScript {
-  public UpdateActionIcons_MigrationScript(IOperationContext operationContext) {
+public class UpdateIcons_MigrationScript extends BaseMigrationScript {
+  public UpdateIcons_MigrationScript(IOperationContext operationContext) {
     super("Update Icons");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {

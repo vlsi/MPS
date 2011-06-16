@@ -14,8 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
-public class UpdateMacros_MigrationScript extends BaseMigrationScript {
-  public UpdateMacros_MigrationScript(IOperationContext operationContext) {
+public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
+  public UpdateGeneratorMacros_MigrationScript(IOperationContext operationContext) {
     super("Update Generator Macros");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {

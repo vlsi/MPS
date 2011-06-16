@@ -20,9 +20,11 @@
       <property name="name" nameId="tpck.1169194664001" value="TypesLanguageScriptsUtil" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="6587431012884472434">
-      <property name="name" nameId="tpck.1169194664001" value="GetRidOfInequalityPriorities" />
-      <property name="title" nameId="tp33.1177457669450" value="Get rid of inequalities' priorities" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveInequalityPriorities" />
+      <property name="title" nameId="tp33.1177457669450" value="Remove Inequality Priorities" />
       <property name="category" nameId="tp33.1206123296179" value="typeSystem" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="1759628044690734764">

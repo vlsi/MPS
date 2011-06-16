@@ -10,9 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class GetRidOfInequalityPriorities_MigrationScript extends BaseMigrationScript {
-  public GetRidOfInequalityPriorities_MigrationScript(IOperationContext operationContext) {
-    super("Get rid of inequalities' priorities");
+public class RemoveInequalityPriorities_MigrationScript extends BaseMigrationScript {
+  public RemoveInequalityPriorities_MigrationScript(IOperationContext operationContext) {
+    super("Remove Inequality Priorities");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Get";

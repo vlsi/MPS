@@ -10,9 +10,9 @@ import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior;
 
-public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
-  public ConvertToLocal_MigrationScript(IOperationContext operationContext) {
-    super("convert to local");
+public class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrationScript {
+  public RemoveThisWhereAppropriate_MigrationScript(IOperationContext operationContext) {
+    super("Remove \"this\" Where Appropriate");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "ConvertLocalFieldReference";

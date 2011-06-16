@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript {
   public HorizontalGapMigration_MigrationScript(IOperationContext operationContext) {
-    super("horizontal gap migration");
+    super("Horizontal Gap Migration");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Padding right delete";

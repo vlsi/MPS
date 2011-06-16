@@ -18,8 +18,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class NewKeymaps_MigrationScript extends BaseMigrationScript {
-  public NewKeymaps_MigrationScript(IOperationContext operationContext) {
+public class MoveKeyStrokesToKeymaps_MigrationScript extends BaseMigrationScript {
+  public MoveKeyStrokesToKeymaps_MigrationScript(IOperationContext operationContext) {
     super("Move Key Strokes to Keymaps");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
@@ -50,7 +50,7 @@ public class NewKeymaps_MigrationScript extends BaseMigrationScript {
           SPropertyOperations.set(keymap, "name", "Default");
         }
 
-        ListSequence.fromList(SLinkOperations.getTargets(keymap, "shortcutChange", true)).addElement(new NewKeymaps_MigrationScript.QuotationClass_ft56mw_a0a0d0e0a0a0b0a().createNode(SLinkOperations.getTarget(node, "keystroke", true), node));
+        ListSequence.fromList(SLinkOperations.getTargets(keymap, "shortcutChange", true)).addElement(new MoveKeyStrokesToKeymaps_MigrationScript.QuotationClass_guynmc_a0a0d0e0a0a0b0a().createNode(SLinkOperations.getTarget(node, "keystroke", true), node));
         SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "keystroke", true));
       }
 
@@ -60,8 +60,8 @@ public class NewKeymaps_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static class QuotationClass_ft56mw_a0a0d0e0a0a0b0a {
-    public QuotationClass_ft56mw_a0a0d0e0a0a0b0a() {
+  public static class QuotationClass_guynmc_a0a0d0e0a0a0b0a {
+    public QuotationClass_guynmc_a0a0d0e0a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {

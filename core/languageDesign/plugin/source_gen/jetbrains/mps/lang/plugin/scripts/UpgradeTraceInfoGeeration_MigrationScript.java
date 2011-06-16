@@ -28,8 +28,8 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
-public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript {
-  public MoveTraceInfoToTextGen_MigrationScript(IOperationContext operationContext) {
+public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScript {
+  public UpgradeTraceInfoGeeration_MigrationScript(IOperationContext operationContext) {
     super("Upgrade Trace Info Generation");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
@@ -57,7 +57,7 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
           SNode debugInfoProvider = SConceptOperations.createNewNode("jetbrains.mps.debug.apiLang.structure.BreakpointCreator", null);
           SModelOperations.addRootNode(SNodeOperations.getModel(node), debugInfoProvider);
           for (SNode conceptToDebug : ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true))) {
-            ListSequence.fromList(SLinkOperations.getTargets(debugInfoProvider, "breakpointableConcepts", true)).addElement(new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a0a0c0a0e0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptToDebug, "createBreakpoint", true), "body", true), SLinkOperations.getTarget(conceptToDebug, "declaration", false), SLinkOperations.getTarget(conceptToDebug, "declaration", false)));
+            ListSequence.fromList(SLinkOperations.getTargets(debugInfoProvider, "breakpointableConcepts", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0c0a0e0a0a0b0a().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptToDebug, "createBreakpoint", true), "body", true), SLinkOperations.getTarget(conceptToDebug, "declaration", false), SLinkOperations.getTarget(conceptToDebug, "declaration", false)));
             SNodeOperations.deleteNode(SLinkOperations.getTarget(conceptToDebug, "createBreakpoint", true));
           }
           for (SNode projectRef : ListSequence.fromList(SNodeOperations.getDescendants(debugInfoProvider, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Debug_Project", false, new String[]{}))) {
@@ -95,20 +95,20 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
           public boolean accept(SNode it) {
             return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "declaration", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode interfaceRef) {
-                return eq_3y9ork_a0a0a0a0a0a0a0a0a0a7a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a0a0a0a0a0a0a7a4a0a0a1a0().createNode(), "intfc", false));
+                return eq_nt6246_a0a0a0a0a0a0a0a0a0a7a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0a0a0a0a0a7a4a0a0a1a0().createNode(), "intfc", false));
               }
             }) == null;
           }
         })) {
           SNode conceptDeclaration = SLinkOperations.getTarget(traceableConcept, "declaration", false);
-          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a0b0h0e0a0a0b0a().createNode());
+          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0h0e0a0a0b0a().createNode());
           if ((SLinkOperations.getTarget(traceableConcept, "propertyStringGetter", true) != null)) {
             SNode conceptBehavior = getOrCreateBehavior.invoke(conceptDeclaration);
-            SNode methodImpl = new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a1a2a7a4a0a0a1a0().createNode();
+            SNode methodImpl = new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a1a2a7a4a0a0a1a0().createNode();
             SLinkOperations.setTarget(methodImpl, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(traceableConcept, "propertyStringGetter", true), "body", true)), true);
             ListSequence.fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
             for (SNode debuggableNode : ListSequence.fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_DebuggableNode", false, new String[]{}))) {
-              SNodeOperations.replaceWithAnother(debuggableNode, new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a1a0a4a2a7a4a0a0a1a0().createNode());
+              SNodeOperations.replaceWithAnother(debuggableNode, new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a1a0a4a2a7a4a0a0a1a0().createNode());
             }
           }
         }
@@ -118,19 +118,19 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
           public boolean accept(SNode it) {
             return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "scopeConcept", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode interfaceRef) {
-                return eq_3y9ork_a0a0a0a0a0a0a0a0a0a01a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a0a0a0a0a0a0a01a4a0a0a1a0().createNode(), "intfc", false));
+                return eq_nt6246_a0a0a0a0a0a0a0a0a0a01a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0a0a0a0a0a01a4a0a0a1a0().createNode(), "intfc", false));
               }
             }) == null;
           }
         })) {
           SNode conceptDeclaration = SLinkOperations.getTarget(scopeConcept, "scopeConcept", false);
-          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a0b0k0e0a0a0b0a().createNode());
+          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0k0e0a0a0b0a().createNode());
           SNode conceptBehavior = getOrCreateBehavior.invoke(conceptDeclaration);
-          SNode methodImpl = new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a3a01a4a0a0a1a0().createNode();
+          SNode methodImpl = new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a3a01a4a0a0a1a0().createNode();
           SLinkOperations.setTarget(methodImpl, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(scopeConcept, "variablesGetter", true), "body", true)), true);
           ListSequence.fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
           for (SNode scopeNode : ListSequence.fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ScopeNode", false, new String[]{}))) {
-            SNodeOperations.replaceWithAnother(scopeNode, new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a1a0a6a01a4a0a0a1a0().createNode());
+            SNodeOperations.replaceWithAnother(scopeNode, new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a1a0a6a01a4a0a0a1a0().createNode());
           }
         }
 
@@ -139,19 +139,19 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
           public boolean accept(SNode it) {
             return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "unitConcept", false), "implements", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode interfaceRef) {
-                return eq_3y9ork_a0a0a0a0a0a0a0a0a0a31a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a0a0a0a0a0a0a31a4a0a0a1a0().createNode(), "intfc", false));
+                return eq_nt6246_a0a0a0a0a0a0a0a0a0a31a4a0a0a1a0(SLinkOperations.getTarget(interfaceRef, "intfc", false), SLinkOperations.getTarget(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0a0a0a0a0a0a31a4a0a0a1a0().createNode(), "intfc", false));
               }
             }) == null;
           }
         })) {
           SNode conceptDeclaration = SLinkOperations.getTarget(unitConcept, "unitConcept", false);
-          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a0b0n0e0a0a0b0a().createNode());
+          ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).addElement(new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a0b0n0e0a0a0b0a().createNode());
           SNode conceptBehavior = getOrCreateBehavior.invoke(conceptDeclaration);
-          SNode methodImpl = new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a0a3a31a4a0a0a1a0().createNode();
+          SNode methodImpl = new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a0a3a31a4a0a0a1a0().createNode();
           SLinkOperations.setTarget(methodImpl, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(unitConcept, "getUnitName", true), "body", true)), true);
           ListSequence.fromList(SLinkOperations.getTargets(conceptBehavior, "method", true)).addElement(methodImpl);
           for (SNode unitNode : ListSequence.fromList(SNodeOperations.getDescendants(methodImpl, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_UnitNode", false, new String[]{}))) {
-            SNodeOperations.replaceWithAnother(unitNode, new MoveTraceInfoToTextGen_MigrationScript.QuotationClass_3y9ork_a1a0a6a31a4a0a0a1a0().createNode());
+            SNodeOperations.replaceWithAnother(unitNode, new UpgradeTraceInfoGeeration_MigrationScript.QuotationClass_nt6246_a1a0a6a31a4a0a0a1a0().createNode());
           }
         }
 
@@ -164,29 +164,29 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     });
   }
 
-  private static boolean eq_3y9ork_a0a0a0a0a0a0a0a0a0a7a4a0a0a1a0(Object a, Object b) {
+  private static boolean eq_nt6246_a0a0a0a0a0a0a0a0a0a7a4a0a0a1a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_3y9ork_a0a0a0a0a0a0a0a0a0a01a4a0a0a1a0(Object a, Object b) {
+  private static boolean eq_nt6246_a0a0a0a0a0a0a0a0a0a01a4a0a0a1a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_3y9ork_a0a0a0a0a0a0a0a0a0a31a4a0a0a1a0(Object a, Object b) {
+  private static boolean eq_nt6246_a0a0a0a0a0a0a0a0a0a31a4a0a0a1a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_3y9ork_a0a0a0c0a0e0a0a0b0a {
-    public QuotationClass_3y9ork_a0a0a0c0a0e0a0a0b0a() {
+  public static class QuotationClass_nt6246_a0a0a0c0a0e0a0a0b0a {
+    public QuotationClass_nt6246_a0a0a0c0a0e0a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
@@ -230,8 +230,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a0b0h0e0a0a0b0a {
-    public QuotationClass_3y9ork_a0a0b0h0e0a0a0b0a() {
+  public static class QuotationClass_nt6246_a0a0b0h0e0a0a0b0a {
+    public QuotationClass_nt6246_a0a0b0h0e0a0a0b0a() {
     }
 
     public SNode createNode() {
@@ -248,8 +248,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a1a2a7a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a0a1a2a7a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a0a1a2a7a4a0a0a1a0 {
+    public QuotationClass_nt6246_a0a1a2a7a4a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -305,8 +305,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a1a0a4a2a7a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a1a0a4a2a7a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a1a0a4a2a7a4a0a0a1a0 {
+    public QuotationClass_nt6246_a1a0a4a2a7a4a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -322,8 +322,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a0a0a0a0a0a0a7a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a0a0a0a0a0a0a0a7a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a0a0a0a0a0a0a0a7a4a0a0a1a0 {
+    public QuotationClass_nt6246_a0a0a0a0a0a0a0a7a4a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -340,8 +340,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a0b0k0e0a0a0b0a {
-    public QuotationClass_3y9ork_a0a0b0k0e0a0a0b0a() {
+  public static class QuotationClass_nt6246_a0a0b0k0e0a0a0b0a {
+    public QuotationClass_nt6246_a0a0b0k0e0a0a0b0a() {
     }
 
     public SNode createNode() {
@@ -358,8 +358,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a3a01a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a0a3a01a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a0a3a01a4a0a0a1a0 {
+    public QuotationClass_nt6246_a0a3a01a4a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -409,8 +409,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a1a0a6a01a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a1a0a6a01a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a1a0a6a01a4a0a0a1a0 {
+    public QuotationClass_nt6246_a1a0a6a01a4a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -426,8 +426,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a0a0a0a0a0a0a01a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a0a0a0a0a0a0a0a01a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a0a0a0a0a0a0a0a01a4a0a0a1a0 {
+    public QuotationClass_nt6246_a0a0a0a0a0a0a0a01a4a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -444,8 +444,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a0b0n0e0a0a0b0a {
-    public QuotationClass_3y9ork_a0a0b0n0e0a0a0b0a() {
+  public static class QuotationClass_nt6246_a0a0b0n0e0a0a0b0a {
+    public QuotationClass_nt6246_a0a0b0n0e0a0a0b0a() {
     }
 
     public SNode createNode() {
@@ -462,8 +462,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a3a31a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a0a3a31a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a0a3a31a4a0a0a1a0 {
+    public QuotationClass_nt6246_a0a3a31a4a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -512,8 +512,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a1a0a6a31a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a1a0a6a31a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a1a0a6a31a4a0a0a1a0 {
+    public QuotationClass_nt6246_a1a0a6a31a4a0a0a1a0() {
     }
 
     public SNode createNode() {
@@ -529,8 +529,8 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
     }
   }
 
-  public static class QuotationClass_3y9ork_a0a0a0a0a0a0a0a31a4a0a0a1a0 {
-    public QuotationClass_3y9ork_a0a0a0a0a0a0a0a31a4a0a0a1a0() {
+  public static class QuotationClass_nt6246_a0a0a0a0a0a0a0a31a4a0a0a1a0 {
+    public QuotationClass_nt6246_a0a0a0a0a0a0a0a31a4a0a0a1a0() {
     }
 
     public SNode createNode() {

@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RemoveWildcardsFromUnboundParams_MigrationScript extends BaseMigrationScript {
   public RemoveWildcardsFromUnboundParams_MigrationScript(IOperationContext operationContext) {
-    super("remove wildcards from unbound params");
+    super("Remove Wildcards from Unbound Params");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "remove wildcards from unbound params";

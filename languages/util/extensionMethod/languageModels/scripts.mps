@@ -22,8 +22,8 @@
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="7517860079983491720">
       <property name="category" nameId="tp33.1206123296179" value="Extension Methods" />
-      <property name="title" nameId="tp33.1177457669450" value="convert to local method calls" />
-      <property name="name" nameId="tpck.1169194664001" value="ConvertToLocalMethodCall" />
+      <property name="title" nameId="tp33.1177457669450" value="Convert ExtensionMethodCall to Local" />
+      <property name="name" nameId="tpck.1169194664001" value="ConvertExtensionMethodCallToLocal" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="6252" />
     </node>
   </roots>

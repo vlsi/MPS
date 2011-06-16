@@ -19,7 +19,7 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
       <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
       <property name="category" nameId="tp33.1206123296179" value="editor language" />
-      <property name="title" nameId="tp33.1177457669450" value="horizontal gap migration" />
+      <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">

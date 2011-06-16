@@ -22,12 +22,12 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1239475791620">
-      <property name="name" nameId="tpck.1169194664001" value="SModelLanguageMigration" />
-      <property name="title" nameId="tp33.1177457669450" value="SModel language migration" />
+      <property name="name" nameId="tpck.1169194664001" value="SModelLanguageEnhancements" />
+      <property name="title" nameId="tp33.1177457669450" value="SModel Language Enhancements" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1240143495251">
-      <property name="title" nameId="tp33.1177457669450" value="findAdapters" />
-      <property name="name" nameId="tpck.1169194664001" value="AdapterElimination" />
+      <property name="title" nameId="tp33.1177457669450" value="Show Adapter Usages" />
+      <property name="name" nameId="tpck.1169194664001" value="ShowAdapterUsages" />
     </node>
   </roots>
   <root id="1239475791620">

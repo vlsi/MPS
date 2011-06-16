@@ -18,9 +18,9 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
-public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
-  public BaseLanguageMigration_MigrationScript(IOperationContext operationContext) {
-    super("BaseLanguage migration");
+public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScript {
+  public BaseLanguageEnhancements_MigrationScript(IOperationContext operationContext) {
+    super("BaseLanguage Enhancements");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "ConvertToIncrements";
@@ -135,7 +135,7 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new BaseLanguageMigration_MigrationScript.QuotationClass_g7rti7_a0a0a0d0a0a0d0a().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new BaseLanguageEnhancements_MigrationScript.QuotationClass_3alopx_a0a0a0d0a0a0d0a().createNode(), "classifier", false);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -148,8 +148,8 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static class QuotationClass_g7rti7_a0a0a0d0a0a0d0a {
-    public QuotationClass_g7rti7_a0a0a0d0a0a0d0a() {
+  public static class QuotationClass_3alopx_a0a0a0d0a0a0d0a {
+    public QuotationClass_3alopx_a0a0a0d0a0a0d0a() {
     }
 
     public SNode createNode() {

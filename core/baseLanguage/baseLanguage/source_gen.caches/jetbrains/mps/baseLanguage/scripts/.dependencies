@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.BaseLanguageMigration_MigrationScript" file="BaseLanguageMigration_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript" file="BaseLanguageEnhancements_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.ConvertToLocal_MigrationScript" file="ConvertToLocal_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript" file="RemoveThisWhereAppropriate_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior" />
@@ -37,7 +37,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.scripts.JavaUtilReferences_MigrationScript" file="JavaUtilReferences_MigrationScript.java">
+  <dependency className="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript" file="ShowJavaUtilReferences_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

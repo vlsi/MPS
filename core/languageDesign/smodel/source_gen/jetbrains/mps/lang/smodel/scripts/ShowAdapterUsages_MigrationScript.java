@@ -18,9 +18,9 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
-public class AdapterElimination_MigrationScript extends BaseMigrationScript {
-  public AdapterElimination_MigrationScript(IOperationContext operationContext) {
-    super("findAdapters");
+public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
+  public ShowAdapterUsages_MigrationScript(IOperationContext operationContext) {
+    super("Show Adapter Usages");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "find adapter class usages in variable declarations";
@@ -41,7 +41,7 @@ public class AdapterElimination_MigrationScript extends BaseMigrationScript {
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           return false;
         }
-        return Classifier_Behavior.call_isDescendant_7165541881557222913(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(SLinkOperations.getTarget(new AdapterElimination_MigrationScript.QuotationClass_9c65zs_a0a0a0c0d0a0a0b0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        return Classifier_Behavior.call_isDescendant_7165541881557222913(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(SLinkOperations.getTarget(new ShowAdapterUsages_MigrationScript.QuotationClass_lvkajz_a0a0a0c0d0a0a0b0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -71,7 +71,7 @@ public class AdapterElimination_MigrationScript extends BaseMigrationScript {
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
           return false;
         }
-        return Classifier_Behavior.call_isDescendant_7165541881557222913(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), SNodeOperations.cast(SLinkOperations.getTarget(new AdapterElimination_MigrationScript.QuotationClass_9c65zs_a0a0a0c0d0a0a0c0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"));
+        return Classifier_Behavior.call_isDescendant_7165541881557222913(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), SNodeOperations.cast(SLinkOperations.getTarget(new ShowAdapterUsages_MigrationScript.QuotationClass_lvkajz_a0a0a0c0d0a0a0c0a().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -166,8 +166,8 @@ public class AdapterElimination_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static class QuotationClass_9c65zs_a0a0a0c0d0a0a0b0a {
-    public QuotationClass_9c65zs_a0a0a0c0d0a0a0b0a() {
+  public static class QuotationClass_lvkajz_a0a0a0c0d0a0a0b0a {
+    public QuotationClass_lvkajz_a0a0a0c0d0a0a0b0a() {
     }
 
     public SNode createNode() {
@@ -184,8 +184,8 @@ public class AdapterElimination_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_9c65zs_a0a0a0c0d0a0a0c0a {
-    public QuotationClass_9c65zs_a0a0a0c0d0a0a0c0a() {
+  public static class QuotationClass_lvkajz_a0a0a0c0d0a0a0c0a {
+    public QuotationClass_lvkajz_a0a0a0c0d0a0a0c0a() {
     }
 
     public SNode createNode() {

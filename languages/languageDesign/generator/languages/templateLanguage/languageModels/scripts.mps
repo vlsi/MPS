@@ -19,9 +19,11 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="2533362239921665181">
-      <property name="name" nameId="tpck.1169194664001" value="UpdateMacros" />
+      <property name="name" nameId="tpck.1169194664001" value="UpdateGeneratorMacros" />
       <property name="category" nameId="tp33.1206123296179" value="Generator" />
       <property name="title" nameId="tp33.1177457669450" value="Update Generator Macros" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="2533362239921665181">

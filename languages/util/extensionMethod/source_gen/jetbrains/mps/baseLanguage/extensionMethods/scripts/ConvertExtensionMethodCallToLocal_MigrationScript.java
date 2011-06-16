@@ -16,9 +16,9 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class ConvertToLocalMethodCall_MigrationScript extends BaseMigrationScript {
-  public ConvertToLocalMethodCall_MigrationScript(IOperationContext operationContext) {
-    super("convert to local method calls");
+public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigrationScript {
+  public ConvertExtensionMethodCallToLocal_MigrationScript(IOperationContext operationContext) {
+    super("Convert ExtensionMethodCall to Local");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "ConvertLocalInstanceMethodCall";

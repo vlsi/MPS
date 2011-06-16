@@ -24,25 +24,27 @@
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1240068519431">
-      <property name="name" nameId="tpck.1169194664001" value="JavaUtilReferences" />
+      <property name="name" nameId="tpck.1169194664001" value="ShowJavaUtilReferences" />
       <property name="category" nameId="tp33.1206123296179" value="find java util reference" />
-      <property name="title" nameId="tp33.1177457669450" value="find java util references" />
+      <property name="title" nameId="tp33.1177457669450" value="Show java.util.* References" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4581730695772514123">
-      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageMigration" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageEnhancements" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
-      <property name="title" nameId="tp33.1177457669450" value="BaseLanguage migration" />
+      <property name="title" nameId="tp33.1177457669450" value="BaseLanguage Enhancements" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1704189004094297789">
-      <property name="name" nameId="tpck.1169194664001" value="ConvertToLocal" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveThisWhereAppropriate" />
       <property name="category" nameId="tp33.1206123296179" value="baseLanguage" />
-      <property name="title" nameId="tp33.1177457669450" value="convert to local" />
+      <property name="title" nameId="tp33.1177457669450" value="Remove &quot;this&quot; Where Appropriate" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="6252" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="8647043020514320142">
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
       <property name="name" nameId="tpck.1169194664001" value="ConvertAnnotationInstances" />
-      <property name="title" nameId="tp33.1177457669450" value="Convert deprecated annotation instances" />
+      <property name="title" nameId="tp33.1177457669450" value="Convert Deprecated Annotation Instances" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="1240068519431">

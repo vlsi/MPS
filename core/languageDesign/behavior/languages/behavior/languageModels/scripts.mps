@@ -18,9 +18,11 @@
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="7148319044498588900">
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="1193" />
-      <property name="name" nameId="tpck.1169194664001" value="BehaviorConvertToLocal" />
-      <property name="title" nameId="tp33.1177457669450" value="Convert to Local Behavior Call" />
+      <property name="name" nameId="tpck.1169194664001" value="ConvertBehaviorMethodCallToLocal" />
+      <property name="title" nameId="tp33.1177457669450" value="Convert BehaviorMethodCall to Local" />
       <property name="category" nameId="tp33.1206123296179" value="behavior" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="7148319044498588900">

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ShowGetNameUsages_MigrationScript.java" startLine="15" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ShowGetNameUsages_MigrationScript$1" />
-  <unitInfo fileName="package2virtualPackage_MigrationScript.java" startLine="14" startPosition="28" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.package2virtualPackage_MigrationScript$1" />
+  <unitInfo fileName="RestoreVirtualPackages_MigrationScript.java" startLine="14" startPosition="28" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.RestoreVirtualPackages_MigrationScript$1" />
   <unitInfo fileName="ConvertAttributes_MigrationScript.java" startLine="182" startPosition="28" endLine="208" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ConvertAttributes_MigrationScript$4" />
   <unitInfo fileName="ConvertAttributes_MigrationScript.java" startLine="154" startPosition="28" endLine="181" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ConvertAttributes_MigrationScript$3" />
-  <unitInfo fileName="package2virtualPackage_MigrationScript.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.package2virtualPackage_MigrationScript" />
+  <unitInfo fileName="RestoreVirtualPackages_MigrationScript.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.RestoreVirtualPackages_MigrationScript" />
   <unitInfo fileName="ShowGetNameUsages_MigrationScript.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.ShowGetNameUsages_MigrationScript" />
   <unitInfo fileName="SafeDelete.java" startLine="21" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.SafeDelete" />
   <unitInfo fileName="ConvertAttributes_MigrationScript.java" startLine="22" startPosition="28" endLine="84" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ConvertAttributes_MigrationScript$1" />
@@ -159,12 +159,12 @@
     </scopeInfo>
   </root>
   <root nodeId="3180819252996380865">
-    <nodeInfo nodeId="3180819252996397572" fileName="package2virtualPackage_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8395149331650549294" fileName="package2virtualPackage_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8395149331650548854" fileName="package2virtualPackage_MigrationScript.java" startLine="32" startPosition="50" endLine="33" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3180819252996398029" fileName="package2virtualPackage_MigrationScript.java" startLine="33" startPosition="42" endLine="34" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="3180819252996394576" fileName="package2virtualPackage_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="51" />
-    <scopeInfo nodeId="3180819252996380868" fileName="package2virtualPackage_MigrationScript.java" startLine="31" startPosition="52" endLine="34" endPosition="62">
+    <nodeInfo nodeId="3180819252996397572" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8395149331650549294" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8395149331650548854" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="32" startPosition="50" endLine="33" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3180819252996398029" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="33" startPosition="42" endLine="34" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="3180819252996394576" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="51" />
+    <scopeInfo nodeId="3180819252996380868" fileName="RestoreVirtualPackages_MigrationScript.java" startLine="31" startPosition="52" endLine="34" endPosition="62">
       <varInfo nodeId="8395149331650549295" varName="pack" />
     </scopeInfo>
   </root>

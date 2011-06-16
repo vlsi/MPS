@@ -23,7 +23,7 @@
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1236765926225">
       <property name="name" nameId="tpck.1169194664001" value="MigrationToCollections" />
-      <property name="title" nameId="tp33.1177457669450" value="Migration from List to collections" />
+      <property name="title" nameId="tp33.1177457669450" value="Migration from List to Collections" />
       <property name="category" nameId="tp33.1206123296179" value="collections" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
     </node>
@@ -36,7 +36,7 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1238516564139">
       <property name="name" nameId="tpck.1169194664001" value="MigrationFromMapsToCollections" />
       <property name="category" nameId="tp33.1206123296179" value="collections" />
-      <property name="title" nameId="tp33.1177457669450" value="Migration from map to collections" />
+      <property name="title" nameId="tp33.1177457669450" value="Migration from Map to Collections" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
     </node>
   </roots>

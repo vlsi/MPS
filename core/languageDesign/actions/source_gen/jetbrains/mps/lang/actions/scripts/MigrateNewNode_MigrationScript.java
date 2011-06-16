@@ -13,9 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
-public class NodeFactories_for_actions_only_MigrationScript extends BaseMigrationScript {
-  public NodeFactories_for_actions_only_MigrationScript(IOperationContext operationContext) {
-    super("Update node creation operations in actions/intentions/editor");
+public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
+  public MigrateNewNode_MigrationScript(IOperationContext operationContext) {
+    super("Migrate \"new node<>\" in actions/intentions/editor");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "replace new node<>";

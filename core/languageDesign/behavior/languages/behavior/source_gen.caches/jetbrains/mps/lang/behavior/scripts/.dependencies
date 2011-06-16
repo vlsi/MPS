@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.behavior.scripts.BehaviorConvertToLocal_MigrationScript" file="BehaviorConvertToLocal_MigrationScript.java">
+  <dependency className="jetbrains.mps.lang.behavior.scripts.ConvertBehaviorMethodCallToLocal_MigrationScript" file="ConvertBehaviorMethodCallToLocal_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

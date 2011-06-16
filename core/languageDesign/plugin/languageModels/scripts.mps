@@ -37,21 +37,29 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4729897692521570243">
-      <property name="name" nameId="tpck.1169194664001" value="NewKeymaps" />
+      <property name="name" nameId="tpck.1169194664001" value="MoveKeyStrokesToKeymaps" />
       <property name="title" nameId="tp33.1177457669450" value="Move Key Strokes to Keymaps" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="5866603471302721315">
       <property name="name" nameId="tpck.1169194664001" value="SplitTabbedEditors" />
       <property name="title" nameId="tp33.1177457669450" value="Split Tabbed Editors" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="3822000666564607217">
-      <property name="name" nameId="tpck.1169194664001" value="MoveTraceInfoToTextGen" />
+      <property name="name" nameId="tpck.1169194664001" value="UpgradeTraceInfoGeeration" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="7121" />
       <property name="title" nameId="tp33.1177457669450" value="Upgrade Trace Info Generation" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4470409037200904672">
-      <property name="name" nameId="tpck.1169194664001" value="UpdateActionIcons" />
+      <property name="name" nameId="tpck.1169194664001" value="UpdateIcons" />
       <property name="title" nameId="tp33.1177457669450" value="Update Icons" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="4729897692521570243">

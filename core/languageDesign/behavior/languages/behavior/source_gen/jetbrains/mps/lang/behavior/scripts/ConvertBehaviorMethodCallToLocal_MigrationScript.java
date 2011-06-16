@@ -13,9 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
-public class BehaviorConvertToLocal_MigrationScript extends BaseMigrationScript {
-  public BehaviorConvertToLocal_MigrationScript(IOperationContext operationContext) {
-    super("Convert to Local Behavior Call");
+public class ConvertBehaviorMethodCallToLocal_MigrationScript extends BaseMigrationScript {
+  public ConvertBehaviorMethodCallToLocal_MigrationScript(IOperationContext operationContext) {
+    super("Convert BehaviorMethodCall to Local");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Convert to local behavior method call";

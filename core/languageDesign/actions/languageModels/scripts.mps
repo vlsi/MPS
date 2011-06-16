@@ -15,8 +15,10 @@
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="7836612869650926685">
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="7213" />
-      <property name="name" nameId="tpck.1169194664001" value="NodeFactories_for_actions_only" />
-      <property name="title" nameId="tp33.1177457669450" value="Update node creation operations in actions/intentions/editor" />
+      <property name="name" nameId="tpck.1169194664001" value="MigrateNewNode" />
+      <property name="title" nameId="tp33.1177457669450" value="Migrate &quot;new node&lt;&gt;&quot; in actions/intentions/editor" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="7836612869650926685">

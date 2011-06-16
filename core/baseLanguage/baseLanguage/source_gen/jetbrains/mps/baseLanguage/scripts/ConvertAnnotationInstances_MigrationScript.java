@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConvertAnnotationInstances_MigrationScript extends BaseMigrationScript {
   public ConvertAnnotationInstances_MigrationScript(IOperationContext operationContext) {
-    super("Convert deprecated annotation instances");
+    super("Convert Deprecated Annotation Instances");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "convert deprecated annotation instances";

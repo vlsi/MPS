@@ -15,9 +15,9 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Migrate_ExecuteFinders_MigrationScript extends BaseMigrationScript {
-  public Migrate_ExecuteFinders_MigrationScript(IOperationContext operationContext) {
-    super("Convert refactoring.ExecuteFindersExpression");
+public class ConvertExecuteFinders_MigrationScript extends BaseMigrationScript {
+  public ConvertExecuteFinders_MigrationScript(IOperationContext operationContext) {
+    super("Convert ExecuteFindersExpression");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "convert refactoring finder to findUsages' one";
@@ -43,7 +43,7 @@ public class Migrate_ExecuteFinders_MigrationScript extends BaseMigrationScript 
           ListSequence.fromList(SLinkOperations.getTargets(replacer, "finder", true)).addElement(finderRef);
         }
         SLinkOperations.setTarget(replacer, "queryNode", ((SLinkOperations.getTarget(node, "searchNode", true) == null) ?
-          new Migrate_ExecuteFinders_MigrationScript.QuotationClass_rcezr7_a0a0c0e0a0a0b0a().createNode() :
+          new ConvertExecuteFinders_MigrationScript.QuotationClass_v4ym8i_a0a0c0e0a0a0b0a().createNode() :
           SLinkOperations.getTarget(node, "searchNode", true)
         ), true);
         SLinkOperations.setTarget(replacer, "scope", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "searchScope", true)), true);
@@ -56,8 +56,8 @@ public class Migrate_ExecuteFinders_MigrationScript extends BaseMigrationScript 
     });
   }
 
-  public static class QuotationClass_rcezr7_a0a0c0e0a0a0b0a {
-    public QuotationClass_rcezr7_a0a0c0e0a0a0b0a() {
+  public static class QuotationClass_v4ym8i_a0a0c0e0a0a0b0a {
+    public QuotationClass_v4ym8i_a0a0c0e0a0a0b0a() {
     }
 
     public SNode createNode() {

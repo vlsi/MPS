@@ -69,12 +69,16 @@
       <property name="title" nameId="tp33.1177457669450" value="Show getters for name property" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="3180819252996380865">
-      <property name="name" nameId="tpck.1169194664001" value="package2virtualPackage" />
+      <property name="name" nameId="tpck.1169194664001" value="RestoreVirtualPackages" />
       <property name="title" nameId="tp33.1177457669450" value="Restore Virtual Packages" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="3364660638048049979">
       <property name="name" nameId="tpck.1169194664001" value="ConvertAttributes" />
       <property name="title" nameId="tp33.1177457669450" value="Convert Attributes" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="1198076144993">
