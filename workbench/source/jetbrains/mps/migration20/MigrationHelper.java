@@ -24,8 +24,11 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.make.actions.MakeActionImpl;
+import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.library.BootstrapLanguages_DevKit;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
@@ -306,7 +309,7 @@ public class MigrationHelper {
   //--------------- stage 6 : regeneration -----------------
 
   public static void stage_6_1_regeneration(MPSProject p) {
-    //do we need to handle deps by hand?
+    ProjectOperationContext poc = ProjectOperationContext.get(p.getProject());
+    new MakeActionImpl(poc, new MakeActionParameters(poc, null, null, p.getModules(), null), true).executeAction();
   }
-
 }

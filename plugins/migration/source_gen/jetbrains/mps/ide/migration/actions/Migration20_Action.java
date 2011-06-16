@@ -24,7 +24,7 @@ public class Migration20_Action extends GeneratedAction {
 
   public Migration20_Action() {
     super("Migrate to MPS 2.0", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 

@@ -90,6 +90,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Migration20" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to MPS 2.0" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2899596005953728721">
       <property name="name" nameId="tpck.1169194664001" value="Migrations20" />
