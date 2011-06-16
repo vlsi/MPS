@@ -114,6 +114,7 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
         }
       }
     }
+    myRulesCache.clear();
   }
 
   // TODO rewrite using ConceptDescriptor
