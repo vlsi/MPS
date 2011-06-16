@@ -16,6 +16,7 @@ import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.workbench.action.BaseGroup;
 import java.util.Map;
 import java.util.HashMap;
+import jetbrains.mps.util.NameUtil;
 import java.util.TreeSet;
 
 public class ScriptsActionGroupHelper {
@@ -67,7 +68,7 @@ public class ScriptsActionGroupHelper {
   public static void populateByCategoryGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     Map<String, List<SNode>> byCategory = new HashMap<String, List<SNode>>();
     for (SNode migrationScript : migrationScripts) {
-      String cat = SPropertyOperations.getString_def(migrationScript, "type", "enhancement");
+      String cat = NameUtil.pluralize(NameUtil.capitalize(SPropertyOperations.getString_def(migrationScript, "type", "enhancement")));
       if (cat == null) {
         cat = "<uncategorized>";
       }
@@ -112,7 +113,7 @@ public class ScriptsActionGroupHelper {
     }
     Set<String> sorted = new TreeSet<String>(byBuild.keySet());
     for (String build : sorted) {
-      BaseGroup categoryGroup = new BaseGroup("migrate from b." + build, "");
+      BaseGroup categoryGroup = new BaseGroup("migrate to " + build, "");
       for (SNode script : byBuild.get(build)) {
         categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, "type", "enhancement"), SPropertyOperations.getString(script, "title"), null), applyToSelection));
       }
@@ -144,7 +145,7 @@ public class ScriptsActionGroupHelper {
     }
     sb.append(title);
     if (build != null) {
-      sb.append(" [migrate from b.").append(build).append("]");
+      sb.append(" [migrate to ").append(build).append("]");
     }
     return sb.toString();
   }

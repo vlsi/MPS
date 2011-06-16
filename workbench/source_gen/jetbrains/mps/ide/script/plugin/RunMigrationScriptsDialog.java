@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.table.DefaultTableModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
 import javax.swing.JLabel;
@@ -60,7 +61,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     mySelectedScriptIds = selectedScriptIds;
     init();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    setSize(700, 500);
+    setSize(750, 600);
   }
 
   private void init() {
@@ -80,7 +81,8 @@ public class RunMigrationScriptsDialog extends JDialog {
     TableColumnModel columnModel = myTable.getColumnModel();
     columnModel.getColumn(0).setMaxWidth(20);
     columnModel.getColumn(0).setResizable(false);
-    columnModel.getColumn(1).setMinWidth(440);
+    columnModel.getColumn(1).setMinWidth(300);
+    columnModel.getColumn(2).setMinWidth(120);
     panel.add(ScrollPaneFactory.createScrollPane(myTable), BorderLayout.CENTER);
     JPanel buttonsFlow = new JPanel();
     myCheckButton = new JButton("Check");
@@ -191,7 +193,7 @@ public class RunMigrationScriptsDialog extends JDialog {
 
   private class MyTableModel extends DefaultTableModel {
     public MyTableModel() {
-      super(new String[]{"", "script", "category", "migrate to"}, ListSequence.fromList(myScripts).count());
+      super(new String[]{"", "script", "category", "language"}, ListSequence.fromList(myScripts).count());
     }
 
     public boolean isCellEditable(int row, int column) {
@@ -206,25 +208,25 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
 
     public Object getValueAt(int row, int column) {
+      SNode sn = ListSequence.fromList(myScripts).getElement(row);
       if (column == 0) {
-        SNode script = ListSequence.fromList(myScripts).getElement(row);
+        SNode script = sn;
         return mySelectedScriptIds.contains(script.getId());
       }
       if (column == 1) {
-        return "  " + SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "title");
+        return "  " + SPropertyOperations.getString(sn, "title");
       }
       if (column == 2) {
-        String cat = SPropertyOperations.getString_def(ListSequence.fromList(myScripts).getElement(row), "type", "enhancement");
-        return (cat != null ?
-          " " + cat :
-          ""
-        );
+        if (SPropertyOperations.hasValue(sn, "type", "migration", "enhancement")) {
+          return SPropertyOperations.getString_def(sn, "type", "enhancement") + " (" + SPropertyOperations.getString(sn, "toBuild") + ")";
+        } else {
+          return SPropertyOperations.getString_def(sn, "type", "enhancement");
+        }
       }
-      String build = SPropertyOperations.getString(ListSequence.fromList(myScripts).getElement(row), "toBuild");
-      return (build != null ?
-        " " + build :
-        ""
-      );
+      if (column == 3) {
+        return SNodeOperations.getModel(sn).getModelDescriptor().getModule().getModuleFqName();
+      }
+      return null;
     }
 
     public void setValueAt(Object aValue, int row, int column) {

@@ -31,7 +31,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
   private boolean selectionOnly;
 
   public RunMigrationScripts_Action(List<SNode> scripts_par, boolean selectionOnly_par) {
-    super("More...", "", ICON);
+    super("All Scripts...", "", ICON);
     this.scripts = scripts_par;
     this.selectionOnly = selectionOnly_par;
     this.setIsAlwaysVisible(false);

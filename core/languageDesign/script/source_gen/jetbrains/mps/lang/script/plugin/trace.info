@@ -3,7 +3,7 @@
   <unitInfo fileName="Script_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.Script_ProjectPlugin" />
   <unitInfo fileName="Script_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.Script_ApplicationPlugin" />
   <unitInfo fileName="ScriptsForSelection_ActionGroup.java" startLine="20" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup" />
-  <unitInfo fileName="ScriptsGlobally_ActionGroup.java" startLine="20" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.ScriptsGlobally_ActionGroup" />
+  <unitInfo fileName="ScriptsGlobally_ActionGroup.java" startLine="22" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.ScriptsGlobally_ActionGroup" />
   <unitInfo fileName="RunMigrationScripts_Action.java" startLine="26" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action" />
   <root nodeId="1207489199158">
     <nodeInfo nodeId="1207492364648" fileName="ScriptsForSelection_ActionGroup.java" startLine="37" startPosition="9" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -81,22 +81,26 @@
     <unitInfo nodeId="1215713862581" fileName="ScriptsMenuBuilder.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.ScriptsMenuBuilder" />
   </root>
   <root nodeId="1215715702629">
-    <nodeInfo nodeId="1215715702637" fileName="ScriptsGlobally_ActionGroup.java" startLine="38" startPosition="9" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215715702641" fileName="ScriptsGlobally_ActionGroup.java" startLine="39" startPosition="51" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218729807077" fileName="ScriptsGlobally_ActionGroup.java" startLine="40" startPosition="47" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215715702666" fileName="ScriptsGlobally_ActionGroup.java" startLine="42" startPosition="28" endLine="43" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215715702673" fileName="ScriptsGlobally_ActionGroup.java" startLine="43" startPosition="50" endLine="44" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215715702674" fileName="ScriptsGlobally_ActionGroup.java" startLine="45" startPosition="7" endLine="46" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453047" fileName="ScriptsGlobally_ActionGroup.java" startLine="46" startPosition="47" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1215715702682" fileName="ScriptsGlobally_ActionGroup.java" startLine="47" startPosition="9" endLine="48" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215715702688" fileName="ScriptsGlobally_ActionGroup.java" startLine="48" startPosition="69" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215715702692" fileName="ScriptsGlobally_ActionGroup.java" startLine="49" startPosition="81" endLine="50" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215715702696" fileName="ScriptsGlobally_ActionGroup.java" startLine="50" startPosition="78" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453461" fileName="ScriptsGlobally_ActionGroup.java" startLine="51" startPosition="81" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="765469998256375574" fileName="ScriptsGlobally_ActionGroup.java" startLine="52" startPosition="9" endLine="53" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215715702655" fileName="ScriptsGlobally_ActionGroup.java" startLine="41" startPosition="59" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1215715702665" fileName="ScriptsGlobally_ActionGroup.java" startLine="42" startPosition="28" endLine="44" endPosition="15" />
-    <scopeInfo nodeId="1215715702636" fileName="ScriptsGlobally_ActionGroup.java" startLine="38" startPosition="9" endLine="53" endPosition="211">
+    <nodeInfo nodeId="1215715702637" fileName="ScriptsGlobally_ActionGroup.java" startLine="40" startPosition="9" endLine="41" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215715702641" fileName="ScriptsGlobally_ActionGroup.java" startLine="41" startPosition="51" endLine="42" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218729807077" fileName="ScriptsGlobally_ActionGroup.java" startLine="42" startPosition="47" endLine="43" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215715702666" fileName="ScriptsGlobally_ActionGroup.java" startLine="44" startPosition="28" endLine="45" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215715702673" fileName="ScriptsGlobally_ActionGroup.java" startLine="45" startPosition="50" endLine="46" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215715702674" fileName="ScriptsGlobally_ActionGroup.java" startLine="47" startPosition="7" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453047" fileName="ScriptsGlobally_ActionGroup.java" startLine="48" startPosition="47" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1215715702682" fileName="ScriptsGlobally_ActionGroup.java" startLine="49" startPosition="9" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5066936557122800165" fileName="ScriptsGlobally_ActionGroup.java" startLine="50" startPosition="69" endLine="51" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5066936557122858156" fileName="ScriptsGlobally_ActionGroup.java" startLine="52" startPosition="53" endLine="53" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="765469998256375574" fileName="ScriptsGlobally_ActionGroup.java" startLine="54" startPosition="7" endLine="55" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066936557122813289" fileName="ScriptsGlobally_ActionGroup.java" startLine="51" startPosition="64" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1215715702655" fileName="ScriptsGlobally_ActionGroup.java" startLine="43" startPosition="59" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="5066936557122813290" fileName="ScriptsGlobally_ActionGroup.java" startLine="52" startPosition="53" endLine="53" endPosition="48" />
+    <scopeInfo nodeId="1215715702665" fileName="ScriptsGlobally_ActionGroup.java" startLine="44" startPosition="28" endLine="46" endPosition="15" />
+    <scopeInfo nodeId="5066936557122813289" fileName="ScriptsGlobally_ActionGroup.java" startLine="51" startPosition="64" endLine="54" endPosition="7">
+      <varInfo nodeId="5066936557122813292" varName="a" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215715702636" fileName="ScriptsGlobally_ActionGroup.java" startLine="40" startPosition="9" endLine="55" endPosition="211">
+      <varInfo nodeId="5066936557122800166" varName="catGroup" />
       <varInfo nodeId="1218729807078" varName="project" />
       <varInfo nodeId="1215715702683" varName="menuBuilder" />
     </scopeInfo>
