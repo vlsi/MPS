@@ -31,15 +31,16 @@ public class check_StringSwitchCase_NonTypesystemRule extends AbstractNonTypesys
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(caseElement, "expression", true), "Case expression should be string literal", "r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)", "400642802550421757", null, errorTarget);
         }
-      }
-      String current = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(caseElement, "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
-      if (SetSequence.fromSet(caseElements).contains(current)) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(caseElement, "expression", true), "Case expressions should be unique", "r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)", "364584182801859254", null, errorTarget);
+      } else {
+        String current = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(caseElement, "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
+        if (SetSequence.fromSet(caseElements).contains(current)) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(caseElement, "expression", true), "Case expressions should be unique", "r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)", "3446170115498222133", null, errorTarget);
+          }
         }
+        SetSequence.fromSet(caseElements).addElement(current);
       }
-      SetSequence.fromSet(caseElements).addElement(current);
     }
   }
 
