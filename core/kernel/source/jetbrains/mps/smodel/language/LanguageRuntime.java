@@ -35,10 +35,12 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * evgeny, 3/11/11
  */
 public abstract class LanguageRuntime {
-  private DescriptorProvider<StructureDescriptor> structureDescriptor;
-  private DescriptorProvider<BehaviorDescriptor> behaviorDescriptor;
-  private DescriptorProvider<ConstraintsDescriptor> constraintsDescriptor;
+  private DescriptorProvider<StructureDescriptor> _structureDescriptor;
+  private DescriptorProvider<BehaviorDescriptor> _behaviorDescriptor;
+  private DescriptorProvider<ConstraintsDescriptor> _constraintsDescriptor;
   private DescriptorProvider<FacetDescriptor> facetDescriptor;
+
+  private ConstraintsAspectDescriptor constraintsDescriptor;
 
   public abstract String getNamespace();
 
@@ -62,26 +64,26 @@ public abstract class LanguageRuntime {
 
   @Deprecated
   public DescriptorProvider<StructureDescriptor> getStructureAspect() {
-    if (structureDescriptor == null) {
-      structureDescriptor = getDescriptorProvider("structure.StructureAspectDescriptor", LanguageRuntimeInterpreted.STRUCTURE_PROVIDER);
+    if (_structureDescriptor == null) {
+      _structureDescriptor = getDescriptorProvider("structure.StructureAspectDescriptor", LanguageRuntimeInterpreted.STRUCTURE_PROVIDER);
     }
-    return structureDescriptor;
+    return _structureDescriptor;
   }
 
   @Deprecated
   public DescriptorProvider<BehaviorDescriptor> getBehaviorAspect() {
-    if (behaviorDescriptor == null) {
-      behaviorDescriptor = getDescriptorProvider("behavior.BehaviorAspectDescriptor", LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER);
+    if (_behaviorDescriptor == null) {
+      _behaviorDescriptor = getDescriptorProvider("behavior.BehaviorAspectDescriptor", LanguageRuntimeInterpreted.BEHAVIOR_PROVIDER);
     }
-    return behaviorDescriptor;
+    return _behaviorDescriptor;
   }
 
   @Deprecated
   public DescriptorProvider<ConstraintsDescriptor> getConstraintsAspect() {
-    if (constraintsDescriptor == null) {
-      constraintsDescriptor = getDescriptorProvider("constraints.ConstraintsAspectDescriptor", LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER);
+    if (_constraintsDescriptor == null) {
+      _constraintsDescriptor = getDescriptorProvider("constraints.ConstraintsAspectDescriptor", LanguageRuntimeInterpreted.CONSTRAINTS_PROVIDER);
     }
-    return constraintsDescriptor;
+    return _constraintsDescriptor;
   }
 
   public DescriptorProvider<FacetDescriptor> getFacetProvider () {
@@ -100,6 +102,18 @@ public abstract class LanguageRuntime {
   }
 
   public ConstraintsAspectDescriptor getConstraintsAspectDescriptor() {
-    return ConstraintsAspectInterpreted.getInstance();
+//    return ConstraintsAspectInterpreted.getInstance();
+    if (constraintsDescriptor == null) {
+      String className = getNamespace() + ".constraints.ConstraintsAspectDescriptor";
+      Object compiled = getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+
+      if (compiled instanceof ConstraintsAspectDescriptor) {
+        constraintsDescriptor = (ConstraintsAspectDescriptor) compiled;
+      } else {
+        constraintsDescriptor = ConstraintsAspectInterpreted.getInstance();
+      }
+    }
+
+    return constraintsDescriptor;
   }
 }
