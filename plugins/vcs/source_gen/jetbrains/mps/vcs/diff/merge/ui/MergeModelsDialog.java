@@ -11,6 +11,10 @@ import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.vcs.diff.merge.MergeContextState;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.util.Set;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
@@ -32,7 +36,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -61,6 +64,7 @@ public class MergeModelsDialog extends BaseDialog {
   private boolean myApplyChanges = false;
   private boolean myRootsDialogInvoked = false;
   private String[] myContentTitles;
+  private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private ActionToolbar myToolbar;
 
   public MergeModelsDialog(SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
@@ -151,11 +155,7 @@ public class MergeModelsDialog extends BaseDialog {
           return myMergeContext.isChangeResolved(ch);
         }
       });
-      interestingChanges = ListSequence.fromList(allChanges).where(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange ch) {
-          return myMergeContext.isChangeApplied(ch);
-        }
-      });
+      interestingChanges = myAppliedMetadataChanges;
       allResolved = true;
     } else {
       interestingChanges = allChanges;
@@ -196,6 +196,7 @@ public class MergeModelsDialog extends BaseDialog {
       if (ans == Messages.YES) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
+            SetSequence.fromSet(myAppliedMetadataChanges).addSequence(ListSequence.fromList(myMergeContext.getMetadataChanges()));
             myMergeContext.applyChanges(myMergeContext.getMetadataChanges());
             rebuildLater();
           }
@@ -239,6 +240,9 @@ public class MergeModelsDialog extends BaseDialog {
         if (!(myMergeContext.isChangeResolved(change))) {
           if (mine == myMergeContext.isMyChange(change)) {
             ListSequence.fromList(changesToApply).addElement(change);
+            if (root == null) {
+              SetSequence.fromSet(myAppliedMetadataChanges).addElement(change);
+            }
           } else {
             ListSequence.fromList(changesToExclude).addElement(change);
           }

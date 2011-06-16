@@ -35,8 +35,7 @@ public class MergeContext {
   private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
   private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
   private SModel myResultModel;
-  private Set<ModelChange> myAppliedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
-  private Set<ModelChange> myExcludedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
+  private Set<ModelChange> myResolvedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private NodeCopier myNodeCopier;
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
@@ -127,17 +126,13 @@ public class MergeContext {
   public Iterable<ModelChange> getConflictedWith(ModelChange change) {
     return ListSequence.fromList(MapSequence.fromMap(myConflictingChanges).get(change)).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange other) {
-        return !(SetSequence.fromSet(myExcludedChanges).contains(other));
+        return !(SetSequence.fromSet(myResolvedChanges).contains(other));
       }
     });
   }
 
-  public boolean isChangeApplied(ModelChange change) {
-    return SetSequence.fromSet(myAppliedChanges).contains(change);
-  }
-
   public boolean isChangeResolved(ModelChange change) {
-    return SetSequence.fromSet(myExcludedChanges).contains(change) || SetSequence.fromSet(myAppliedChanges).contains(change);
+    return SetSequence.fromSet(myResolvedChanges).contains(change);
   }
 
   public void applyChanges(Iterable<ModelChange> changes) {
@@ -175,10 +170,10 @@ public class MergeContext {
     if (isChangeResolved(change)) {
     } else {
       change.apply(myResultModel, myNodeCopier);
-      SetSequence.fromSet(myAppliedChanges).addElement(change);
+      SetSequence.fromSet(myResolvedChanges).addElement(change);
       for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
-        assert !(SetSequence.fromSet(myAppliedChanges).contains(symmetric));
-        SetSequence.fromSet(myExcludedChanges).addElement(symmetric);
+        assert !(SetSequence.fromSet(myResolvedChanges).contains(symmetric));
+        SetSequence.fromSet(myResolvedChanges).addElement(symmetric);
       }
       excludeChangesNoRestoreIds(getConflictedWith(change));
     }
@@ -187,10 +182,10 @@ public class MergeContext {
   private void excludeChange(ModelChange change) {
     if (isChangeResolved(change)) {
     } else {
-      SetSequence.fromSet(myExcludedChanges).addElement(change);
+      SetSequence.fromSet(myResolvedChanges).addElement(change);
       for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
-        assert !(SetSequence.fromSet(myAppliedChanges).contains(symmetric));
-        SetSequence.fromSet(myExcludedChanges).addElement(symmetric);
+        assert !(SetSequence.fromSet(myResolvedChanges).contains(symmetric));
+        SetSequence.fromSet(myResolvedChanges).addElement(symmetric);
       }
       applyChangesNoRestoreIds(Sequence.fromIterable(getConflictedWith(change)).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {
@@ -237,14 +232,13 @@ public class MergeContext {
   }
 
   public MergeContextState getCurrentState() {
-    return new MergeContextState(myResultModel, myAppliedChanges, myExcludedChanges, myNodeCopier.getState());
+    return new MergeContextState(myResultModel, myResolvedChanges, myNodeCopier.getState());
   }
 
   public void restoreState(MergeContextState state) {
     MergeContextState stateCopy = new MergeContextState(state);
     myResultModel = stateCopy.myResultModel;
-    myAppliedChanges = stateCopy.myAppliedChanges;
-    myExcludedChanges = stateCopy.myExcludedChanges;
+    myResolvedChanges = stateCopy.myResolvedChanges;
     myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
   }
 }

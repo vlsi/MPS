@@ -17,14 +17,12 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class MergeContextState {
   /*package*/ SModel myResultModel;
-  /*package*/ Set<ModelChange> myAppliedChanges;
-  /*package*/ Set<ModelChange> myExcludedChanges;
+  /*package*/ Set<ModelChange> myResolvedChanges;
   /*package*/ Map<SNodeId, SNodeId> myIdReplacementCache;
 
-  /*package*/ MergeContextState(SModel resultModel, Set<ModelChange> appliedChanges, Set<ModelChange> excludedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
+  /*package*/ MergeContextState(SModel resultModel, Set<ModelChange> resolvedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
     myResultModel = CopyUtil.copyModel(resultModel);
-    myAppliedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), appliedChanges);
-    myExcludedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), excludedChanges);
+    myResolvedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), resolvedChanges);
     myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.fromMap(idReplacementCache).count()));
     MapSequence.fromMap(idReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {
       public void visit(IMapping<SNodeId, SNodeId> m) {
@@ -34,6 +32,6 @@ public class MergeContextState {
   }
 
   /*package*/ MergeContextState(MergeContextState copy) {
-    this(copy.myResultModel, copy.myAppliedChanges, copy.myExcludedChanges, copy.myIdReplacementCache);
+    this(copy.myResultModel, copy.myResolvedChanges, copy.myIdReplacementCache);
   }
 }
