@@ -23,7 +23,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
@@ -98,7 +102,7 @@ public class WorkbenchMakeService implements IMakeService {
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
     this.checkValidUsage();
     this.checkValidSession(session);
-    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), null);
+    return doMake(resources, defaultMakeScript(), null);
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
@@ -218,13 +222,26 @@ public class WorkbenchMakeService implements IMakeService {
     }
 
     final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
+    final Wrappers._T<Iterable<Iterable<String>>> usedLangs = new Wrappers._T<Iterable<Iterable<String>>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        clInput.value = new ModulesClusterizer().clusterize(Sequence.fromIterable(inputRes).<IResource>select(new ISelector<IResource, IResource>() {
+        final ModulesClusterizer mcr = new ModulesClusterizer();
+        clInput.value = mcr.clusterize(Sequence.fromIterable(inputRes).<IResource>select(new ISelector<IResource, IResource>() {
           public IResource select(IResource r) {
             return (IResource) r;
           }
         }));
+        usedLangs.value = Sequence.fromIterable(clInput.value).<Iterable<String>>select(new ISelector<Iterable<IResource>, Iterable<String>>() {
+          public Iterable<String> select(Iterable<IResource> it) {
+            return mcr.allUsedLangNamespaces(it);
+          }
+        }).toListSequence();
+        System.out.println("*** used langs by cluster");
+        Sequence.fromIterable(usedLangs.value).visitAll(new IVisitor<Iterable<String>>() {
+          public void visit(Iterable<String> it) {
+            System.out.println("   " + it);
+          }
+        });
       }
     });
     final Wrappers._boolean alreadySentToBg = new Wrappers._boolean(false);
@@ -235,7 +252,50 @@ public class WorkbenchMakeService implements IMakeService {
         }
       }
     });
-    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(this.getSession().getContext().getProject(), scrName, script, scrName, clInput.value, ctl, mh, new PerformInBackgroundOption() {
+    Iterable<IScript> scripts = Sequence.fromClosure(new ISequenceClosure<IScript>() {
+      public Iterable<IScript> iterable() {
+        return new Iterable<IScript>() {
+          public Iterator<IScript> iterator() {
+            return new YieldingIterator<IScript>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      if (true) {
+                        this.__CP__ = 3;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 4:
+                      this.__CP__ = 2;
+                      this.yield(script);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 3:
+                      this.__CP__ = 4;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(this.getSession().getContext().getProject(), scrName, scripts, scrName, clInput.value, ctl, mh, new PerformInBackgroundOption() {
       public boolean shouldStartInBackground() {
         return false;
       }
@@ -433,16 +493,16 @@ public class WorkbenchMakeService implements IMakeService {
   private abstract class MakeTask extends Task.Backgroundable implements Future<IResult> {
     private CountDownLatch myLatch = new CountDownLatch(1);
     private AtomicReference<WorkbenchMakeService.TaskState> myState = new AtomicReference<WorkbenchMakeService.TaskState>(WorkbenchMakeService.TaskState.NOT_STARTED);
-    private final IScript myScript;
+    private final Iterable<IScript> myScripts;
     private final String myScrName;
     private final Iterable<? extends Iterable<IResource>> myClInput;
     private IResult myResult = null;
     private final IScriptController myController;
     private final IMessageHandler myMessageHandler;
 
-    public MakeTask(@Nullable Project project, @NotNull String title, IScript script, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
+    public MakeTask(@Nullable Project project, @NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
       super(project, title, true, bgoption);
-      this.myScript = script;
+      this.myScripts = scripts;
       this.myScrName = scrName;
       this.myClInput = clInput;
       this.myController = ctl;
@@ -473,13 +533,18 @@ public class WorkbenchMakeService implements IMakeService {
           public void setText2(String string) {
           }
         };
-        for (Iterable<IResource> cl : this.myClInput) {
+
+        Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
+        Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
+        for (int foo = 0; scit.hasNext() && clit.hasNext();) {
+          Iterable<IResource> cl = clit.next();
+          IScript scr = scit.next();
           pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
             public String select(IResource r) {
               return ((IResource) r).describe();
             }
           }), ","));
-          this.myResult = this.myScript.execute(this.myController, cl);
+          this.myResult = scr.execute(this.myController, cl);
           if (!(this.myResult.isSucessful()) || progInd.isCanceled()) {
             break;
           }

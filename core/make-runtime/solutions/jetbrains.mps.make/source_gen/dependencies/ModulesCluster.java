@@ -15,10 +15,10 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -75,8 +75,25 @@ public class ModulesCluster {
   }
 
   public Iterable<? extends Iterable<IModule>> buildOrder() {
+    List<List<ModuleReference>> order = new ModulesCluster.ModulesGraph().totalOrder();
+    Iterable<? extends Iterable<ModuleReference>> compacted = (true ?
+      order :
+      this.compact(order)
+    );
+    return Sequence.fromIterable(compacted).<List<IModule>>select(new ISelector<Iterable<ModuleReference>, IListSequence<IModule>>() {
+      public IListSequence<IModule> select(Iterable<ModuleReference> cycle) {
+        return Sequence.fromIterable(cycle).<IModule>select(new ISelector<ModuleReference, IModule>() {
+          public IModule select(ModuleReference mr) {
+            return MapSequence.fromMap(modulesView).get(mr);
+          }
+        }).toListSequence();
+      }
+    }).toListSequence();
+  }
+
+  private Iterable<Iterable<ModuleReference>> compact(List<List<ModuleReference>> order) {
     final Wrappers._T<Iterable<ModuleReference>> prev = new Wrappers._T<Iterable<ModuleReference>>(null);
-    Iterable<Iterable<ModuleReference>> compacted = ListSequence.fromList(new ModulesCluster.ModulesGraph().totalOrder()).concat(Sequence.fromIterable(Sequence.<List<ModuleReference>>singleton(null))).<Iterable<ModuleReference>>translate(new ITranslator2<List<ModuleReference>, Iterable<ModuleReference>>() {
+    return ListSequence.fromList(order).concat(Sequence.fromIterable(Sequence.<List<ModuleReference>>singleton(null))).<Iterable<ModuleReference>>translate(new ITranslator2<List<ModuleReference>, Iterable<ModuleReference>>() {
       public Iterable<Iterable<ModuleReference>> translate(final List<ModuleReference> cycle) {
         return new Iterable<Iterable<ModuleReference>>() {
           public Iterator<Iterable<ModuleReference>> iterator() {
@@ -159,15 +176,6 @@ __switch__:
         };
       }
     });
-    return Sequence.fromIterable(compacted).<List<IModule>>select(new ISelector<Iterable<ModuleReference>, IListSequence<IModule>>() {
-      public IListSequence<IModule> select(Iterable<ModuleReference> cycle) {
-        return Sequence.fromIterable(cycle).<IModule>select(new ISelector<ModuleReference, IModule>() {
-          public IModule select(ModuleReference mr) {
-            return MapSequence.fromMap(modulesView).get(mr);
-          }
-        }).toListSequence();
-      }
-    }).toListSequence();
   }
 
   private boolean isDirty(IModule mod) {
