@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -26,9 +27,9 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
+import jetbrains.mps.ide.migration.persistence.PersistenceUpdater;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.library.BootstrapLanguages_DevKit;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
@@ -53,50 +54,32 @@ public class MigrationHelper {
     MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     if (msComponent.getMigrationState() == MState.INITIAL) {
-      stage_1_1_invalidateCaches();
-      msComponent.setMigrationState(MState.CACHES_INVALIDATED);
-      ApplicationManager.getApplication().restart();
+      stageUpgradePersistence(mpsProject);
+      msComponent.setMigrationState(MState.PERSISTENCE_UPGRADED);
+      cleanRestart();
     }
 
-    if (msComponent.getMigrationState() == MState.CACHES_INVALIDATED) {
-      stage_2_1_addLanguageDesingDevKitToLanguages(mpsProject);
-      stage_2_2_addGeneralPurposeDevKitToLanguageModels(mpsProject);
-      stage_2_3_removeLanguageDesignDevKitFromModels(mpsProject);
-      stage_2_4_removeBootstrapLanguagesDevKitFromLanguageModels(mpsProject);
-      stage_2_5_fixDependenciesEverywhere(mpsProject);
-
+    if (msComponent.getMigrationState() == MState.PERSISTENCE_UPGRADED) {
+      stageFixDependencies(mpsProject);
       msComponent.setMigrationState(MState.LANGUAGES_DEPS_CORRECTED);
-      ApplicationManager.getApplication().restart();
+      cleanRestart();
     }
 
     if (msComponent.getMigrationState() == MState.LANGUAGES_DEPS_CORRECTED) {
-      stage_3_1_updateLanguageAccessories(mpsProject);
-      stage_3_2_reResolveStubRefs(mpsProject);
-      stage_3_3_optimizeImports(mpsProject);
-
+      stageStubsMigration(mpsProject);
       msComponent.setMigrationState(MState.STUBS_CONVERTED);
-      ApplicationManager.getApplication().restart();
+      cleanRestart();
     }
 
     if (msComponent.getMigrationState() == MState.STUBS_CONVERTED) {
-      stage_4_1_convertAttributes(mpsProject);
-
-      msComponent.setMigrationState(MState.ATTRIBUTES_CONVERTED);
-      ApplicationManager.getApplication().restart();
-    }
-
-    if (msComponent.getMigrationState() == MState.ATTRIBUTES_CONVERTED) {
-      stage_5_1_migrations(mpsProject);
-
+      stageLanguageMigrations(mpsProject);
       msComponent.setMigrationState(MState.LANGUAGES_MIGRATION);
-      ApplicationManager.getApplication().restart();
+      cleanRestart();
     }
 
     if (msComponent.getMigrationState() == MState.LANGUAGES_MIGRATION) {
-      stage_6_1_regeneration(mpsProject);
-
+      stageRegeneration(mpsProject);
       msComponent.setMigrationState(MState.REGENERATION);
-      ApplicationManager.getApplication().restart();
     }
 
     if (msComponent.getMigrationState() == MState.REGENERATION) {
@@ -104,41 +87,40 @@ public class MigrationHelper {
     }
   }
 
-  //--------------- stage 1 : invalidate caches -----------------
-
-  public static void stage_1_1_invalidateCaches() {
+  private void cleanRestart() {
     FSRecords.invalidateCaches();
+    ApplicationManager.getApplication().restart();
   }
 
-  //--------------- stage 2 : new dependencies -----------------
+  //--------------- stage : new dependencies -----------------
 
-  public static void stage_2_1_addLanguageDesingDevKitToLanguages(MPSProject p) {
+  public static void stageUpgradePersistence(MPSProject p) {
+    for (IModule module : p.getModules()) {
+      if (module.isPackaged()) continue;
+      module.save();
+    }
+
+    PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
+    persistenceUpdater.upgradePersistenceInProject(p.getProject(), WindowManager.getInstance().getFrame(p.getProject()));
+  }
+
+  //--------------- stage : new dependencies -----------------
+
+  public static void stageFixDependencies(MPSProject p) {
     for (Language lang : p.getProjectModules(Language.class)) {
       lang.addUsedDevkit(LanguageDesign_DevKit.MODULE_REFERENCE);
       lang.save();
     }
-  }
-
-
-  public static void stage_2_2_addGeneralPurposeDevKitToLanguageModels(MPSProject p) {
     for (Language l : p.getProjectModules(Language.class)) {
       for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
         aspect.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
       }
     }
-    SModelRepository.getInstance().saveAll();
-  }
-
-  public static void stage_2_3_removeLanguageDesignDevKitFromModels(MPSProject p) {
     for (Language l : p.getProjectModules(Language.class)) {
       for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
         aspect.getSModel().deleteDevKit(LanguageDesign_DevKit.MODULE_REFERENCE);
       }
     }
-    SModelRepository.getInstance().saveAll();
-  }
-
-  public static void stage_2_4_removeBootstrapLanguagesDevKitFromLanguageModels(MPSProject p) {
     for (Language l : p.getProjectModules(Language.class)) {
       for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
         SModel sModel = aspect.getSModel();
@@ -147,21 +129,18 @@ public class MigrationHelper {
         }
       }
     }
-    SModelRepository.getInstance().saveAll();
-  }
-
-  public static void stage_2_5_fixDependenciesEverywhere(MPSProject p) {
     for (SModelDescriptor model : p.getProjectModels()) {
       if (!(model instanceof EditableSModelDescriptor)) continue;
       if (model.getModule() == null) continue;
       new MissingDependenciesFixer(ProjectOperationContext.get(p.getProject()), model).fix(false);
     }
+    SModelRepository.getInstance().saveAll();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
-  //--------------- stage 3 : stubs -----------------
+  //--------------- stage : stubs -----------------
 
-  public static void stage_3_1_updateLanguageAccessories(MPSProject p) {
+  public static void stageStubsMigration(MPSProject p) {
     for (Language l : p.getProjectModules(Language.class)) {
       Set<SModelReference> toRemove = new HashSet<SModelReference>();
       Set<SModelReference> toAdd = new HashSet<SModelReference>();
@@ -185,9 +164,19 @@ public class MigrationHelper {
 
       l.save();
     }
+
+    reResolveStubRefs(p);
+    SModelRepository.getInstance().saveAll();
+
+    new OptimizeImportsHelper(ProjectOperationContext.get(p.getProject())).optimizeProjectImports(p);
+    for (IModule module : p.getModules()) {
+      module.save();
+    }
+    SModelRepository.getInstance().saveAll();
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
-  public static int stage_3_2_reResolveStubRefs(MPSProject p) {
+  public static int reResolveStubRefs(MPSProject p) {
     int i = 0;
     Map<String, SModelReference> cache = new HashMap<String, SModelReference>();
     for (SModelDescriptor d : p.getProject().getComponent(ProjectScope.class).getModelDescriptors()) {
@@ -263,18 +252,9 @@ public class MigrationHelper {
     return true;
   }
 
-  public static void stage_3_3_optimizeImports(MPSProject p) {
-    new OptimizeImportsHelper(ProjectOperationContext.get(p.getProject())).optimizeProjectImports(p);
-    for (IModule module : p.getModules()) {
-      module.save();
-    }
-    SModelRepository.getInstance().saveAll();
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-  }
+  //--------------- stage : language migrations -----------------
 
-  //--------------- stage 4 : attributes -----------------
-
-  public static void stage_4_1_convertAttributes(MPSProject p) {
+  public static void stageLanguageMigrations(MPSProject p) {
     List<SNodePointer> scripts = new ArrayList<SNodePointer>();
     scripts.add(getScript("jetbrains.mps.lang.core", "ConvertAttributes"));
     executeScripts(p.getProject(), scripts);
@@ -300,15 +280,9 @@ public class MigrationHelper {
     }
   }
 
-  //--------------- stage 5 : language migrations -----------------
+  //--------------- stage : regeneration -----------------
 
-  public static void stage_5_1_migrations(MPSProject p) {
-
-  }
-
-  //--------------- stage 6 : regeneration -----------------
-
-  public static void stage_6_1_regeneration(MPSProject p) {
+  public static void stageRegeneration(MPSProject p) {
     ProjectOperationContext poc = ProjectOperationContext.get(p.getProject());
     new MakeActionImpl(poc, new MakeActionParameters(poc, null, null, p.getModules(), null), true).executeAction();
   }

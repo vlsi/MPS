@@ -10,18 +10,12 @@ public class PersistenceAddition_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.migration.actions.PersistenceAddition_ActionGroup";
 
   public PersistenceAddition_ActionGroup() {
-    super("PersistenceAddition", ID);
+    super("Persistence", ID);
     this.setIsInternal(false);
-    this.setPopup(false);
+    this.setPopup(true);
     try {
-      PersistenceAddition_ActionGroup.this.addSeparator();
-      PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceGlobally_Action");
-      PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInProject_Action");
       PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModule_Action");
       PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModel_Action");
-      PersistenceAddition_ActionGroup.this.addSeparator();
-      PersistenceAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceInProject_Action");
-      PersistenceAddition_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

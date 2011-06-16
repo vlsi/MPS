@@ -14,7 +14,9 @@ public class Migrations20_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      Migrations20_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.FixVirtualPackages_Action");
+      Migrations20_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradePersistence_Action");
+      Migrations20_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.FixModuleDependencies_Action");
+      Migrations20_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.MigrateStubs_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

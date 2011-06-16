@@ -14,12 +14,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.migration20.MigrationHelper;
 import jetbrains.mps.project.MPSProject;
 
-public class FixDependenciesEverywhere_Action extends GeneratedAction {
+public class FixModuleDependencies_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FixDependenciesEverywhere_Action.class);
+  protected static Log log = LogFactory.getLog(FixModuleDependencies_Action.class);
 
-  public FixDependenciesEverywhere_Action() {
-    super("Add Necessary Module Deps Everywhere", "", ICON);
+  public FixModuleDependencies_Action() {
+    super("Fix Module Dependencies", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -29,7 +29,7 @@ public class FixDependenciesEverywhere_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FixDependenciesEverywhere", t);
+        log.error("User's action doUpdate method failed. Action:" + "FixModuleDependencies", t);
       }
       this.disable(event.getPresentation());
     }
@@ -48,10 +48,10 @@ public class FixDependenciesEverywhere_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MigrationHelper.stage_2_5_fixDependenciesEverywhere(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      MigrationHelper.stageFixDependencies(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FixDependenciesEverywhere", t);
+        log.error("User's action execute method failed. Action:" + "FixModuleDependencies", t);
       }
     }
   }

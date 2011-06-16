@@ -17,6 +17,7 @@ public class InternalAddition_ActionGroup extends GeneratedActionGroup {
       InternalAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.LoadNonStubModels_Action");
       InternalAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.OptimizeImportsInGlobalScope_Action");
       InternalAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceGlobally_Action");
+      InternalAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceGlobally_Action");
       InternalAddition_ActionGroup.this.addAction("jetbrains.mps.ide.migration.actions.FindDuplicatedStubs_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);

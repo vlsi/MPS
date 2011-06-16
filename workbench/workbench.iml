@@ -41,6 +41,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="mpsmake" />
+    <orderEntry type="module" module-name="migration" />
   </component>
 </module>
 

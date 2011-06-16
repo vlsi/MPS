@@ -14,12 +14,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.migration20.MigrationHelper;
 import jetbrains.mps.project.MPSProject;
 
-public class RemoveBootstrapLanguagesDevKitFromLanguageModels_Action extends GeneratedAction {
+public class MigrateStubs_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RemoveBootstrapLanguagesDevKitFromLanguageModels_Action.class);
+  protected static Log log = LogFactory.getLog(MigrateStubs_Action.class);
 
-  public RemoveBootstrapLanguagesDevKitFromLanguageModels_Action() {
-    super("Remove Bootstrap Languages Devkit from Language Models", "", ICON);
+  public MigrateStubs_Action() {
+    super("Migrate Stub Models", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -29,7 +29,7 @@ public class RemoveBootstrapLanguagesDevKitFromLanguageModels_Action extends Gen
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RemoveBootstrapLanguagesDevKitFromLanguageModels", t);
+        log.error("User's action doUpdate method failed. Action:" + "MigrateStubs", t);
       }
       this.disable(event.getPresentation());
     }
@@ -48,10 +48,10 @@ public class RemoveBootstrapLanguagesDevKitFromLanguageModels_Action extends Gen
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MigrationHelper.stage_2_4_removeBootstrapLanguagesDevKitFromLanguageModels(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      MigrationHelper.stageStubsMigration(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RemoveBootstrapLanguagesDevKitFromLanguageModels", t);
+        log.error("User's action execute method failed. Action:" + "MigrateStubs", t);
       }
     }
   }

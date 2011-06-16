@@ -11,18 +11,17 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.migration.persistence.PersistenceUpdater;
-import com.intellij.openapi.project.Project;
-import java.awt.Frame;
+import jetbrains.mps.migration20.MigrationHelper;
+import jetbrains.mps.project.MPSProject;
 
-public class UpgradeModelPersistenceInProject_Action extends GeneratedAction {
+public class UpgradePersistence_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(UpgradeModelPersistenceInProject_Action.class);
+  protected static Log log = LogFactory.getLog(UpgradePersistence_Action.class);
 
-  public UpgradeModelPersistenceInProject_Action() {
-    super("Upgrade Models Persistence in Project", "", ICON);
+  public UpgradePersistence_Action() {
+    super("Upgrade Persistence", "", ICON);
     this.setIsAlwaysVisible(true);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -30,7 +29,7 @@ public class UpgradeModelPersistenceInProject_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "UpgradeModelPersistenceInProject", t);
+        log.error("User's action doUpdate method failed. Action:" + "UpgradePersistence", t);
       }
       this.disable(event.getPresentation());
     }
@@ -40,11 +39,7 @@ public class UpgradeModelPersistenceInProject_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mainFrame", event.getData(MPSDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("mainFrame") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -53,11 +48,10 @@ public class UpgradeModelPersistenceInProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
-      persistenceUpdater.upgradePersistenceInProject(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("mainFrame")));
+      MigrationHelper.stageUpgradePersistence(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "UpgradeModelPersistenceInProject", t);
+        log.error("User's action execute method failed. Action:" + "UpgradePersistence", t);
       }
     }
   }

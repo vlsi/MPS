@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
@@ -104,7 +105,7 @@ public class PersistenceUpdater {
     }
   }
 
-  public void upgradePersistenceInProject(Project project, Frame mainFrame) {
+  public void upgradePersistenceInProject(Project project, JFrame mainFrame) {
     MPSProject p = project.getComponent(MPSProject.class);
     upgradePersistenceInUnit(project.getComponent(ProjectScope.class), "Project " + p.getProjectFile().toString(), mainFrame);
   }
