@@ -6,11 +6,10 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,64 +21,6 @@ import jetbrains.mps.smodel.SNodeId;
 public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
   public BaseLanguageMigration_MigrationScript(IOperationContext operationContext) {
     super("BaseLanguage migration");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "convert commented statements";
-      }
-
-      public String getAdditionalInfo() {
-        return "convert commented statements";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.CommentedStatement";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return true;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode comment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
-        SNode statementCommentPart = SLinkOperations.addNewChild(comment, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
-        SNodeOperations.replaceWithAnother(node, comment);
-        SLinkOperations.setTarget(statementCommentPart, "commentedStatement", SLinkOperations.getTarget(node, "statement", true), true);
-      }
-
-      public boolean isShowAsIntention() {
-        return true;
-      }
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "convert remark statements";
-      }
-
-      public String getAdditionalInfo() {
-        return "convert remark statements";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.RemarkStatement";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return true;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode comment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
-        SNodeOperations.replaceWithAnother(node, comment);
-        if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "value"))) {
-          SNode textCommentPart = SLinkOperations.addNewChild(comment, "commentPart", "jetbrains.mps.baseLanguage.structure.TextCommentPart");
-          SPropertyOperations.set(textCommentPart, "text", SPropertyOperations.getString(node, "value"));
-        }
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "ConvertToIncrements";
@@ -194,7 +135,7 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new BaseLanguageMigration_MigrationScript.QuotationClass_g7rti7_a0a0a0d0a0a0f0a().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new BaseLanguageMigration_MigrationScript.QuotationClass_g7rti7_a0a0a0d0a0a0d0a().createNode(), "classifier", false);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -207,8 +148,8 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
     });
   }
 
-  public static class QuotationClass_g7rti7_a0a0a0d0a0a0f0a {
-    public QuotationClass_g7rti7_a0a0a0d0a0a0f0a() {
+  public static class QuotationClass_g7rti7_a0a0a0d0a0a0d0a {
+    public QuotationClass_g7rti7_a0a0a0d0a0a0d0a() {
     }
 
     public SNode createNode() {

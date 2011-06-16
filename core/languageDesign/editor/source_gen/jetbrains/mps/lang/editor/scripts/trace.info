@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="GetRidOfConceptsInInlineEditors_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.GetRidOfConceptsInInlineEditors_MigrationScript$1" />
-  <unitInfo fileName="RemoveQueryEnumItem_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.RemoveQueryEnumItem_MigrationScript$1" />
   <unitInfo fileName="MigrationToIndentLayout_MigrationScript.java" startLine="19" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.MigrationToIndentLayout_MigrationScript$1" />
   <unitInfo fileName="HorizontalGapMigration_MigrationScript.java" startLine="20" startPosition="28" endLine="44" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript$1" />
   <unitInfo fileName="HorizontalGapMigration_MigrationScript.java" startLine="45" startPosition="28" endLine="69" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript$2" />
   <unitInfo fileName="HorizontalGapMigration_MigrationScript.java" startLine="70" startPosition="28" endLine="96" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript$3" />
   <unitInfo fileName="HorizontalGapMigration_MigrationScript.java" startLine="97" startPosition="28" endLine="124" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript$4" />
-  <unitInfo fileName="GetRidOfConceptsInInlineEditors_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.GetRidOfConceptsInInlineEditors_MigrationScript" />
-  <unitInfo fileName="RemoveQueryEnumItem_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.RemoveQueryEnumItem_MigrationScript" />
   <unitInfo fileName="MigrationToIndentLayout_MigrationScript.java" startLine="44" startPosition="28" endLine="74" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.MigrationToIndentLayout_MigrationScript$2" />
-  <unitInfo fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="16" startPosition="28" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.ReplacingOfVerticalProperty_MigrationScript$1" />
-  <unitInfo fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="49" startPosition="28" endLine="81" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.ReplacingOfVerticalProperty_MigrationScript$2" />
   <unitInfo fileName="HorizontalGapMigration_MigrationScript.java" startLine="125" startPosition="28" endLine="157" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript$5" />
   <unitInfo fileName="HorizontalGapMigration_MigrationScript.java" startLine="158" startPosition="28" endLine="195" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript$6" />
   <unitInfo fileName="MigrationToIndentLayout_MigrationScript.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.MigrationToIndentLayout_MigrationScript" />
-  <unitInfo fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="13" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.ReplacingOfVerticalProperty_MigrationScript" />
   <unitInfo fileName="HorizontalGapMigration_MigrationScript.java" startLine="17" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript" />
-  <root nodeId="1221476747257">
-    <nodeInfo nodeId="1221477043695" fileName="RemoveQueryEnumItem_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1221477052534" fileName="RemoveQueryEnumItem_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1221477040022" fileName="RemoveQueryEnumItem_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="77" />
-    <scopeInfo nodeId="1221476959653" fileName="RemoveQueryEnumItem_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="56" />
-  </root>
   <root nodeId="1234198385755">
     <nodeInfo nodeId="1234791364190" fileName="HorizontalGapMigration_MigrationScript.java" startLine="33" startPosition="59" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234791394534" fileName="HorizontalGapMigration_MigrationScript.java" startLine="37" startPosition="52" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -107,42 +94,6 @@
       <varInfo nodeId="1237818564824" varName="indentStyle" />
     </scopeInfo>
     <scopeInfo nodeId="1237817800470" fileName="MigrationToIndentLayout_MigrationScript.java" startLine="61" startPosition="52" endLine="68" endPosition="9" />
-  </root>
-  <root nodeId="1239814822884">
-    <nodeInfo nodeId="1239815206314" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239872497015" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="34" startPosition="66" endLine="35" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239872480498" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="37" startPosition="67" endLine="38" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239872480508" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="39" startPosition="18" endLine="40" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239815229383" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="62" startPosition="59" endLine="63" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239872540190" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="67" startPosition="66" endLine="68" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239872535141" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="70" startPosition="67" endLine="71" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239872535151" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="72" startPosition="18" endLine="73" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239872480506" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="39" startPosition="16" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239872535149" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="72" startPosition="16" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239872480493" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="36" startPosition="16" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1239872535136" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="69" startPosition="16" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1239872477702" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="36" startPosition="14" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239872531312" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="69" startPosition="14" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239872464185" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="33" startPosition="52" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1239872519183" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="66" startPosition="52" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1239815188158" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="75" />
-    <scopeInfo nodeId="1239872464186" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="34" startPosition="66" endLine="35" endPosition="163" />
-    <scopeInfo nodeId="1239872480497" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="37" startPosition="67" endLine="38" endPosition="167" />
-    <scopeInfo nodeId="1239872480507" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="39" startPosition="18" endLine="40" endPosition="163" />
-    <scopeInfo nodeId="1239815229066" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="62" startPosition="59" endLine="63" endPosition="75" />
-    <scopeInfo nodeId="1239872519184" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="67" startPosition="66" endLine="68" endPosition="163" />
-    <scopeInfo nodeId="1239872535140" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="70" startPosition="67" endLine="71" endPosition="167" />
-    <scopeInfo nodeId="1239872535150" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="72" startPosition="18" endLine="73" endPosition="163" />
-    <scopeInfo nodeId="1239872477703" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="36" startPosition="16" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="1239872531313" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="69" startPosition="16" endLine="74" endPosition="11" />
-    <scopeInfo nodeId="1239814907757" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="33" startPosition="52" endLine="42" endPosition="9" />
-    <scopeInfo nodeId="1239815147976" fileName="ReplacingOfVerticalProperty_MigrationScript.java" startLine="66" startPosition="52" endLine="75" endPosition="9" />
-  </root>
-  <root nodeId="7055725856389047980">
-    <nodeInfo nodeId="7055725856389068426" fileName="GetRidOfConceptsInInlineEditors_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7055725856389068445" fileName="GetRidOfConceptsInInlineEditors_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="7055725856389054428" fileName="GetRidOfConceptsInInlineEditors_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="86" />
-    <scopeInfo nodeId="7055725856389047983" fileName="GetRidOfConceptsInInlineEditors_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="75" />
   </root>
 </debugInfo>
 

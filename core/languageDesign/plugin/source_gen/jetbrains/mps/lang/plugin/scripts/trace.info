@@ -16,13 +16,9 @@
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="132" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a4a4a0a0a1a0" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="156" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a5a4a0a0a1a0" />
   <unitInfo fileName="UpdateActionIcons_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateActionIcons_MigrationScript$1" />
-  <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript$1" />
   <unitInfo fileName="UpdateActionIcons_MigrationScript.java" startLine="43" startPosition="28" endLine="69" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.UpdateActionIcons_MigrationScript$2" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="63" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript$QuotationClass_ft56mw_a0a0d0e0a0a0b0a" />
-  <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="24" startPosition="28" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript$1" />
-  <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="18" startPosition="28" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript$1" />
-  <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="62" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript$2" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="188" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$QuotationClass_3y9ork_a0a0a0c0a0e0a0a0b0a" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="465" startPosition="0" endLine="514" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$QuotationClass_3y9ork_a0a3a31a4a0a0a1a0" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="361" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$QuotationClass_3y9ork_a0a3a01a4a0a0a1a0" />
@@ -32,19 +28,10 @@
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="181" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a7a4a0a0a1a0" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="344" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a0a81a4a0a0a1a0" />
-  <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="31" startPosition="28" endLine="129" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$1" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="34" startPosition="28" endLine="164" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript$1" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="28" startPosition="0" endLine="455" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript" />
   <unitInfo fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="31" startPosition="0" endLine="550" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MoveTraceInfoToTextGen_MigrationScript" />
-  <root nodeId="1239976380271">
-    <nodeInfo nodeId="1239976508272" fileName="ConvertUpdateMethod_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239976518423" fileName="ConvertUpdateMethod_MigrationScript.java" startLine="34" startPosition="149" endLine="35" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239976550681" fileName="ConvertUpdateMethod_MigrationScript.java" startLine="35" startPosition="155" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="1239976431845" fileName="ConvertUpdateMethod_MigrationScript.java" startLine="33" startPosition="52" endLine="36" endPosition="58">
-      <varInfo nodeId="1239976508273" varName="newNode" />
-    </scopeInfo>
-  </root>
   <root nodeId="3822000666564607217">
     <nodeInfo nodeId="7037272110513679994" fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="53" startPosition="43" endLine="54" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3410240535682315209" fileName="MoveTraceInfoToTextGen_MigrationScript.java" startLine="56" startPosition="21" endLine="57" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -327,72 +314,6 @@
     </scopeInfo>
     <unitInfo nodeId="2974336669142017057" fileName="SplitTabbedEditors_MigrationScript.java" startLine="57" startPosition="175" endLine="61" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$2" />
     <unitInfo nodeId="2974336669142017111" fileName="SplitTabbedEditors_MigrationScript.java" startLine="62" startPosition="187" endLine="66" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$2" />
-  </root>
-  <root nodeId="8849278392331870380">
-    <nodeInfo nodeId="8849278392331870503" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="31" startPosition="59" endLine="32" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8849278392331870397" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="35" startPosition="52" endLine="36" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870543" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="36" startPosition="124" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8849278392331870520" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="37" startPosition="0" endLine="38" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870564" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="38" startPosition="73" endLine="39" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="40" startPosition="9" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="41" startPosition="27" endLine="42" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="44" startPosition="51" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="46" startPosition="13" endLine="47" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="47" startPosition="52" endLine="48" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8849278392331870562" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="47" startPosition="52" endLine="48" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8849278392331870528" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="50" startPosition="9" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8849278392331870531" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="51" startPosition="0" endLine="52" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870432" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="52" startPosition="126" endLine="53" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8849278392331870540" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="53" startPosition="71" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8849278392331870460" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="54" startPosition="0" endLine="55" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8849278392331870637" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="75" startPosition="59" endLine="76" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8849278392331870581" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="79" startPosition="52" endLine="80" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870589" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="80" startPosition="124" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8849278392331870590" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="81" startPosition="0" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870596" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="82" startPosition="73" endLine="83" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="84" startPosition="9" endLine="85" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="85" startPosition="27" endLine="86" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="88" startPosition="51" endLine="89" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="90" startPosition="13" endLine="91" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7380893767129149052" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="91" startPosition="52" endLine="92" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="91" startPosition="52" endLine="92" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8849278392331870614" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="94" startPosition="9" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8849278392331870615" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="95" startPosition="0" endLine="96" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8849278392331870623" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="96" startPosition="135" endLine="97" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8849278392331870630" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="97" startPosition="74" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8849278392331870631" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="98" startPosition="0" endLine="99" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="43" startPosition="24" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="87" startPosition="24" endLine="90" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="42" startPosition="94" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="86" startPosition="94" endLine="93" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="39" startPosition="175" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="83" startPosition="175" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="8849278392331870502" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="31" startPosition="59" endLine="32" endPosition="128" />
-    <scopeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="44" startPosition="51" endLine="45" endPosition="20" />
-    <scopeInfo nodeId="8849278392331870550" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="47" startPosition="52" endLine="48" endPosition="132" />
-    <scopeInfo nodeId="8849278392331870636" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="75" startPosition="59" endLine="76" endPosition="128" />
-    <scopeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="88" startPosition="51" endLine="89" endPosition="20" />
-    <scopeInfo nodeId="8849278392331870609" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="91" startPosition="52" endLine="92" endPosition="51" />
-    <scopeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="43" startPosition="24" endLine="48" endPosition="132" />
-    <scopeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="87" startPosition="24" endLine="92" endPosition="51" />
-    <scopeInfo nodeId="8849278392331870545" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="40" startPosition="9" endLine="49" endPosition="11">
-      <varInfo nodeId="8849278392331870547" varName="projectRef" />
-    </scopeInfo>
-    <scopeInfo nodeId="8849278392331870604" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="84" startPosition="9" endLine="93" endPosition="11">
-      <varInfo nodeId="8849278392331870606" varName="projectRef" />
-    </scopeInfo>
-    <scopeInfo nodeId="8849278392331870383" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="35" startPosition="52" endLine="55" endPosition="41">
-      <varInfo nodeId="8849278392331870532" varName="initBlock" />
-      <varInfo nodeId="8849278392331870521" varName="methodBody" />
-      <varInfo nodeId="8849278392331870565" varName="projectRefs" />
-      <varInfo nodeId="8849278392331870398" varName="tool" />
-    </scopeInfo>
-    <scopeInfo nodeId="8849278392331870580" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="79" startPosition="52" endLine="99" endPosition="41">
-      <varInfo nodeId="8849278392331870591" varName="methodBody" />
-      <varInfo nodeId="8849278392331870616" varName="disposeBlock" />
-      <varInfo nodeId="8849278392331870597" varName="projectRefs" />
-      <varInfo nodeId="8849278392331870582" varName="tool" />
-    </scopeInfo>
   </root>
 </debugInfo>
 

@@ -19,11 +19,11 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
     super("horizontal gap migration");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "Padding rigth delete";
+        return "Padding right delete";
       }
 
       public String getAdditionalInfo() {
-        return "Padding rigth delete";
+        return "Padding right delete";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -96,11 +96,11 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "Last position allowad replacement";
+        return "Last position allowed replacement";
       }
 
       public String getAdditionalInfo() {
-        return "Last position allowad replacement";
+        return "Last position allowed replacement";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
