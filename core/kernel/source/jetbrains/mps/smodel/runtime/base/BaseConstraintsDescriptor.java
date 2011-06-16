@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescripto
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -50,7 +51,18 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   protected BaseConstraintsDescriptor() {
   }
 
+  protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
+    return Collections.emptyMap();
+  }
+
+  protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
+    return Collections.emptyMap();
+  }
+
   protected void calcInheritance() {
+    propertiesConstraints.putAll(getNotDefaultProperties());
+    referencesConstraints.putAll(getNotDefaultReferences());
+
     if (hasOwnCanBeChildMethod()) {
       canBeChildDescriptor = this;
     } else {

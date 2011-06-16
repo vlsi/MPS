@@ -22,14 +22,9 @@ import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.smodel.constraints.CanBeARootContext;
 import jetbrains.mps.smodel.constraints.CanBeAnAncestorContext;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.CanBeASomethingMethod;
 import jetbrains.mps.smodel.structure.ConstraintsDataHolder;
 import org.jetbrains.annotations.NotNull;
@@ -45,8 +40,6 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
   private final ConstraintsDataHolder dataHolder;
 
   private ReferenceScopeProvider defaultScopeProvider = null;
-  private Map<String, PropertyConstraintsDescriptor> properties;
-  private Map<String, ReferenceConstraintsDescriptor> references;
 
   public DataHolderConstraintsDescriptor(final ConstraintsDataHolder dataHolder) {
     this.dataHolder = dataHolder;
@@ -56,8 +49,12 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
       defaultScopeProvider = new INodeReferentSearchScopeProviderWrapper(dataHolder.getNodeDefaultSearchScopeProvider());
     }
 
-    // properties
-    properties = new HashMap<String, PropertyConstraintsDescriptor>();
+    calcInheritance();
+  }
+
+  @Override
+  protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
+    Map<String, PropertyConstraintsDescriptor> properties = new HashMap<String, PropertyConstraintsDescriptor>();
 
     Set<String> overriddenProperties = new HashSet<String>();
     overriddenProperties.addAll(dataHolder.getNodePropertyGetters().keySet());
@@ -66,26 +63,30 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
 
     for (String propertyName : overriddenProperties) {
       // todo: is initialization order ok?
-      properties.put(propertyName, PropertyWrapper.getProperty(propertyName, DataHolderConstraintsDescriptor.this,
+      properties.put(propertyName, PropertyWrapper.getProperty(propertyName, this,
         dataHolder.getNodePropertyGetters().get(propertyName),
         dataHolder.getNodePropertySetters().get(propertyName),
         dataHolder.getNodePropertyValidators().get(propertyName)));
     }
 
-    // references
-    references = new HashMap<String, ReferenceConstraintsDescriptor>();
+    return properties;
+  }
+
+  @Override
+  protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
+    Map<String, ReferenceConstraintsDescriptor> references = new HashMap<String, ReferenceConstraintsDescriptor>();
     Set<String> overriddenReferences = new HashSet<String>();
     overriddenReferences.addAll(dataHolder.getNodeReferentSetEventHandlers().keySet());
     overriddenReferences.addAll(dataHolder.getNodeNonDefaultSearchScopeProviders().keySet());
 
     for (String role : overriddenReferences) {
       // todo: is initialization order ok?
-      references.put(role, ReferenceWrapper.getReference(role, DataHolderConstraintsDescriptor.this,
+      references.put(role, ReferenceWrapper.getReference(role, this,
         dataHolder.getNodeNonDefaultSearchScopeProviders().get(role),
         dataHolder.getNodeReferentSetEventHandlers().get(role)));
     }
 
-    calcInheritance();
+    return references;
   }
 
   @Override
@@ -167,39 +168,6 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
       return executeCanBeMethod(dataHolder.getCanBeAnAncestorMethod(), operationContext, new CanBeAnAncestorContext(node, childConcept), checkingNodeContext);
     } else {
       return super.canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
-    }
-  }
-
-  @NotNull
-  @Override
-  public PropertyConstraintsDescriptor getProperty(String name) {
-    if (properties.containsKey(name)) {
-      return properties.get(name);
-    }
-
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
-    if (conceptDescriptor.hasProperty(name)) {
-      PropertyConstraintsDescriptor property = new BasePropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
-      properties.put(name, property);
-      return property;
-    } else {
-      return new IllegalPropertyConstraintsDescriptor(name, DataHolderConstraintsDescriptor.this);
-    }
-  }
-
-  @NotNull
-  @Override
-  public ReferenceConstraintsDescriptor getReference(String refName) {
-    if (references.containsKey(refName)) {
-      return references.get(refName);
-    }
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(getConceptFqName());
-    if (conceptDescriptor.hasReference(refName)) {
-      ReferenceConstraintsDescriptor reference = new BaseReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
-      references.put(refName, reference);
-      return reference;
-    } else {
-      return new IllegalReferenceConstraintsDescriptor(refName, DataHolderConstraintsDescriptor.this);
     }
   }
 
