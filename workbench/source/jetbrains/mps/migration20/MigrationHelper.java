@@ -38,6 +38,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.ConditionalIterable;
 
 import java.util.*;
@@ -256,7 +257,14 @@ public class MigrationHelper {
 
   public static void stageLanguageMigrations(MPSProject p) {
     List<SNodePointer> scripts = new ArrayList<SNodePointer>();
-    scripts.add(getScript("jetbrains.mps.lang.core", "ConvertAttributes"));
+    for (Language l:p.getProjectModules(Language.class)){
+      EditableSModelDescriptor smd = LanguageAspect.SCRIPTS.get(l);
+      if (smd==null) continue;
+      Iterable<SNode> scriptNodes = new ConditionalIterable<SNode>(smd.getSModel().roots(),new IsInstanceCondition("jetbrains.mps.lang.script.MigrationScript"));
+      for (SNode mn:scriptNodes){
+        scripts.add(new SNodePointer(mn));
+      }
+    }
     executeScripts(p.getProject(), scripts);
   }
 
