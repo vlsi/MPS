@@ -187,11 +187,6 @@ public class MergeContext {
         assert !(SetSequence.fromSet(myResolvedChanges).contains(symmetric));
         SetSequence.fromSet(myResolvedChanges).addElement(symmetric);
       }
-      applyChangesNoRestoreIds(Sequence.fromIterable(getConflictedWith(change)).where(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange c) {
-          return Sequence.fromIterable(getConflictedWith(c)).isEmpty();
-        }
-      }));
     }
   }
 
