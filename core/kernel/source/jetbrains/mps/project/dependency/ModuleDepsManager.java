@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.*;
 
@@ -30,11 +30,7 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
     myModule = module;
   }
 
-  public final List<IModule> getDependOnModules() {
-    return doGetDependOnModules();
-  }
-
-  public List<Language> getAllUsedLanguages() {
+  public final List<Language> getAllUsedLanguages() {
     Set<Language> result = new LinkedHashSet<Language>();
     result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
@@ -46,6 +42,58 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
     return new ArrayList<Language>(result);
   }
 
+  public void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
+    dependencies.add(myModule);
+    for (Dependency dep : myModule.getDependOn()) {
+      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      if (m == null) continue;
+      if (!dependencies.contains(m)) {
+        m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+      }
+    }
+    for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
+      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+      if (dk == null) continue;
+      for (Solution exportedSolution : dk.getAllExportedSolutions()) {
+        if (exportedSolution != null && !dependencies.contains(exportedSolution)) {
+          exportedSolution.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+        }
+      }
+      for (Language language : dk.getAllExportedLanguages()) {
+        collectAllCompileTimeDependenciesInUsedLanguage(language, dependencies, languagesWithRuntime);
+      }
+    }
+    for (ModuleReference ref : myModule.getUsedLanguagesReferences()) {
+      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
+      if (l == null) continue;
+      collectAllCompileTimeDependenciesInUsedLanguage(l, dependencies, languagesWithRuntime);
+    }
+  }
+
+  protected void collectAllCompileTimeDependenciesInUsedLanguage(Language l, /* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
+    for (Language language : l.getAllExtendedLanguages()) {
+      if (language == null) continue;
+      for (Dependency dep : language.getRuntimeDependOn()) {
+        IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+        if (m == null) continue;
+        if (!dependencies.contains(m)) {
+          m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+        }
+      }
+      if (!languagesWithRuntime.contains(language)) {
+        if (!language.getRuntimeStubPaths().isEmpty()) {
+          languagesWithRuntime.add(language);
+        }
+      }
+    }
+  }
+
+
+  /**
+   * ******* deprecated **************
+   */
+
+  @Deprecated
   public Set<IModule> getAllDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));
@@ -55,10 +103,17 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
     return result;
   }
 
+  @Deprecated
   public Set<IModule> getDesignTimeDeps() {
     return getAllDependOnModules();
   }
 
+  @Deprecated
+  public final List<IModule> getDependOnModules() {
+    return doGetDependOnModules();
+  }
+
+  @Deprecated
   protected List<IModule> doGetDependOnModules() {
     List<IModule> res = new LinkedList<IModule>();
     res.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));

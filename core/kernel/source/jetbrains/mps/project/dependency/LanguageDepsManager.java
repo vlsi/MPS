@@ -17,6 +17,7 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 
 import java.util.List;
@@ -25,6 +26,16 @@ import java.util.Set;
 public class LanguageDepsManager extends ModuleDepsManager<Language> {
   public LanguageDepsManager(Language language) {
     super(language);
+  }
+
+  @Override
+  public void collectAllCompileTimeDependencies(Set<IModule> dependencies, Set<Language> languagesWithRuntime) {
+    super.collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+
+    Language core = BootstrapLanguages.coreLanguage();
+    if(!dependencies.contains(core)) {
+      core.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+    }
   }
 
   protected List<IModule> doGetDependOnModules() {

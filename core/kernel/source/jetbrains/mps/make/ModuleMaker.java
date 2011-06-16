@@ -75,7 +75,7 @@ public class ModuleMaker {
       indicator.setText("Compiling...");
       indicator.setIndeterminate(true);
 
-      Set<IModule> candidates = new DependencyCollector(modules).collect();
+      Set<IModule> candidates = collectCandidates(modules);
       indicator.setText2("Loading dependencies..");
       myDependencies = new Dependencies(candidates);
 
@@ -105,6 +105,17 @@ public class ModuleMaker {
     } finally {
       indicator.popState();
     }
+  }
+
+  private Set<IModule> collectCandidates(Set<IModule> startSet) {
+    Set<IModule> modules = new LinkedHashSet<IModule>();
+    Set<Language> usedLanguages = new LinkedHashSet<Language>();
+
+    for (IModule m : startSet) {
+      m.getDependenciesManager().collectAllCompileTimeDependencies(modules, usedLanguages);
+    }
+    modules.addAll(usedLanguages);
+    return modules;
   }
 
   private MPSCompilationResult compile(Set<IModule> modules) {

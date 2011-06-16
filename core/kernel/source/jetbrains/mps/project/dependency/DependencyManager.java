@@ -23,22 +23,29 @@ import java.util.Set;
 
 public interface DependencyManager {
 
-  /**
-   * Transitive closure of all used langs + langs exported from used devkits and all langs being extended by those.
-   * @return
+  /*
+   *  Transitive closure of all used langs + langs exported from used devkits and all langs being extended by those.
    */
   List<Language> getAllUsedLanguages();
+
+
+  /*
+   *  All modules required for compilation + languages with runtime stub paths
+   */
+  void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime);
 
   /**
    * Explicitly declared deps + all solutions exported from used devkits.
    * @return
    */
+  @Deprecated
   Set<IModule> getAllDependOnModules();
 
   /**
    * AKA getAllDependOnModules()
    * @return
    */
+  @Deprecated
   Set<IModule> getDesignTimeDeps();
 
   /**
@@ -47,5 +54,6 @@ public interface DependencyManager {
    * <p>all extended devkits + all exported langs + all exported solutions (for a devkit)
    * @return
    */
+  @Deprecated
   List<IModule> getDependOnModules();
 }
