@@ -10,7 +10,6 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import java.util.HashMap;
 
 public class PathItemsReloadableCache {
-  private static Map<String, PathItem> Cache = null;
   private static Map<Object, PathItemsReloadableCache> Instances = MapSequence.fromMap(new WeakHashMap<Object, PathItemsReloadableCache>());
 
   private Map<String, PathItem> cache = null;
@@ -39,9 +38,9 @@ public class PathItemsReloadableCache {
         try {
           pi = pathItemClass.getDeclaredConstructor(String.class).newInstance(path);
         } catch (Exception checked) {
-          throw new NullPointerException(checked.getMessage());
+          throw new PathItemsReloadableCache.CantCreatePathItemException("Exception while creating path item.\n" + "Path: " + path + "\nPath item class: " + pathItemClass, checked);
         }
-        MapSequence.fromMap(Cache).put(path, pi);
+        MapSequence.fromMap(cache).put(path, pi);
       }
       return pi;
     }
@@ -59,5 +58,22 @@ public class PathItemsReloadableCache {
       }
     }
     return inst;
+  }
+
+  public class CantCreatePathItemException extends RuntimeException {
+    public CantCreatePathItemException() {
+    }
+
+    public CantCreatePathItemException(String message) {
+      super(message);
+    }
+
+    public CantCreatePathItemException(String message, Throwable throwable) {
+      super(message, throwable);
+    }
+
+    public CantCreatePathItemException(Throwable throwable) {
+      super(throwable);
+    }
   }
 }
