@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="FinderDeclaration_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.findUsages.constraints.FinderDeclaration_Constraints$1" />
-  <unitInfo fileName="CheckCancelledStatusStatement_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.findUsages.constraints.CheckCancelledStatusStatement_Constraints$1" />
-  <unitInfo fileName="NodeStatement_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.findUsages.constraints.NodeStatement_Constraints$1" />
-  <unitInfo fileName="ResultStatement_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.findUsages.constraints.ResultStatement_Constraints$1" />
-  <unitInfo fileName="ExecuteFinderExpression_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.findUsages.constraints.ExecuteFinderExpression_Constraints$1" />
-  <unitInfo fileName="FinderDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.FinderDeclaration_Constraints" />
-  <unitInfo fileName="CheckCancelledStatusStatement_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.CheckCancelledStatusStatement_Constraints" />
-  <unitInfo fileName="NodeStatement_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.NodeStatement_Constraints" />
-  <unitInfo fileName="ResultStatement_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ResultStatement_Constraints" />
-  <unitInfo fileName="ExecuteFinderExpression_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ExecuteFinderExpression_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="FinderDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.FinderDeclaration_Constraints" />
+  <unitInfo fileName="CheckCancelledStatusStatement_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.CheckCancelledStatusStatement_Constraints" />
+  <unitInfo fileName="NodeStatement_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.NodeStatement_Constraints" />
+  <unitInfo fileName="ResultStatement_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ResultStatement_Constraints" />
+  <unitInfo fileName="ExecuteFinderExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.findUsages.constraints.ExecuteFinderExpression_Constraints" />
   <root nodeId="1213107434939">
-    <nodeInfo nodeId="1213107434958" fileName="ExecuteFinderExpression_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107434957" fileName="ExecuteFinderExpression_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="234" />
+    <nodeInfo nodeId="1213107434958" fileName="ExecuteFinderExpression_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107434957" fileName="ExecuteFinderExpression_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="234" />
   </root>
   <root nodeId="1213107435774">
-    <nodeInfo nodeId="1213107435777" fileName="ResultStatement_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107435776" fileName="ResultStatement_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="140" />
+    <nodeInfo nodeId="1213107435777" fileName="ResultStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107435776" fileName="ResultStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="140" />
   </root>
   <root nodeId="1213107437616">
-    <nodeInfo nodeId="1213107437619" fileName="NodeStatement_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107437618" fileName="NodeStatement_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="149" />
+    <nodeInfo nodeId="1213107437619" fileName="NodeStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107437618" fileName="NodeStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="149" />
   </root>
   <root nodeId="1213107437756">
-    <nodeInfo nodeId="1213107437759" fileName="CheckCancelledStatusStatement_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213107437758" fileName="CheckCancelledStatusStatement_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="140" />
+    <nodeInfo nodeId="1213107437759" fileName="CheckCancelledStatusStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213107437758" fileName="CheckCancelledStatusStatement_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="140" />
   </root>
   <root nodeId="1227089325743">
-    <nodeInfo nodeId="1227089330683" fileName="FinderDeclaration_Constraints.java" startLine="38" startPosition="112" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227089327526" fileName="FinderDeclaration_Constraints.java" startLine="38" startPosition="112" endLine="39" endPosition="62" />
+    <nodeInfo nodeId="1227089330683" fileName="FinderDeclaration_Constraints.java" startLine="37" startPosition="119" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227089327526" fileName="FinderDeclaration_Constraints.java" startLine="37" startPosition="119" endLine="38" endPosition="62" />
   </root>
 </debugInfo>
 

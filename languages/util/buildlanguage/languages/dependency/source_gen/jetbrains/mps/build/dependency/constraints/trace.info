@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ProjectDescriptionReference_Constraints.java" startLine="26" startPosition="34" endLine="40" endPosition="5" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="ProjectDescriptionReference_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints" />
+  <unitInfo fileName="ProjectDescriptionReference_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints$2" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ProjectDescriptionReference_Constraints.java" startLine="28" startPosition="38" endLine="49" endPosition="5" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints$1" />
+  <unitInfo fileName="ProjectDescriptionReference_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_Constraints" />
   <root nodeId="1224776365671">
-    <nodeInfo nodeId="1224776422011" fileName="ProjectDescriptionReference_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1224776378345" fileName="ProjectDescriptionReference_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="125" />
+    <nodeInfo nodeId="1224776422011" fileName="ProjectDescriptionReference_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1224776378345" fileName="ProjectDescriptionReference_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="129" />
   </root>
 </debugInfo>
 

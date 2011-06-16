@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="SystemSpecificConfig_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.build.distrib.constraints.SystemSpecificConfig_Constraints$1" />
-  <unitInfo fileName="DistribConfiguration_Constraints.java" startLine="26" startPosition="36" endLine="40" endPosition="5" unitName="jetbrains.mps.build.distrib.constraints.DistribConfiguration_Constraints$1" />
-  <unitInfo fileName="ExternalVariableReference_Constraints.java" startLine="32" startPosition="31" endLine="50" endPosition="5" unitName="jetbrains.mps.build.distrib.constraints.ExternalVariableReference_Constraints$1" />
-  <unitInfo fileName="SystemSpecificConfig_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.SystemSpecificConfig_Constraints" />
-  <unitInfo fileName="DistribConfiguration_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.DistribConfiguration_Constraints" />
-  <unitInfo fileName="ExternalVariableReference_Constraints.java" startLine="22" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.ExternalVariableReference_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="DistribConfiguration_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.build.distrib.constraints.DistribConfiguration_Constraints$2" />
+  <unitInfo fileName="ExternalVariableReference_Constraints.java" startLine="43" startPosition="19" endLine="57" endPosition="9" unitName="jetbrains.mps.build.distrib.constraints.ExternalVariableReference_Constraints$2" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="DistribConfiguration_Constraints.java" startLine="28" startPosition="40" endLine="49" endPosition="5" unitName="jetbrains.mps.build.distrib.constraints.DistribConfiguration_Constraints$1" />
+  <unitInfo fileName="ExternalVariableReference_Constraints.java" startLine="34" startPosition="35" endLine="59" endPosition="5" unitName="jetbrains.mps.build.distrib.constraints.ExternalVariableReference_Constraints$1" />
+  <unitInfo fileName="SystemSpecificConfig_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.SystemSpecificConfig_Constraints" />
+  <unitInfo fileName="DistribConfiguration_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.DistribConfiguration_Constraints" />
+  <unitInfo fileName="ExternalVariableReference_Constraints.java" startLine="24" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.ExternalVariableReference_Constraints" />
   <root nodeId="1230207820573">
-    <nodeInfo nodeId="1230207830478" fileName="SystemSpecificConfig_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1230207824559" fileName="SystemSpecificConfig_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="128" />
+    <nodeInfo nodeId="1230207830478" fileName="SystemSpecificConfig_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1230207824559" fileName="SystemSpecificConfig_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="128" />
   </root>
   <root nodeId="1230295100092">
-    <nodeInfo nodeId="1230295113464" fileName="DistribConfiguration_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1230295109356" fileName="DistribConfiguration_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="113" />
+    <nodeInfo nodeId="1230295113464" fileName="DistribConfiguration_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1230295109356" fileName="DistribConfiguration_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="117" />
   </root>
   <root nodeId="1234515214530">
-    <nodeInfo nodeId="1234515262336" fileName="ExternalVariableReference_Constraints.java" startLine="39" startPosition="136" endLine="40" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234515309619" fileName="ExternalVariableReference_Constraints.java" startLine="40" startPosition="157" endLine="41" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234515273341" fileName="ExternalVariableReference_Constraints.java" startLine="41" startPosition="82" endLine="42" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234515367177" fileName="ExternalVariableReference_Constraints.java" startLine="42" startPosition="258" endLine="43" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234515402474" fileName="ExternalVariableReference_Constraints.java" startLine="43" startPosition="251" endLine="44" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1234515222367" fileName="ExternalVariableReference_Constraints.java" startLine="39" startPosition="136" endLine="44" endPosition="29">
+    <nodeInfo nodeId="1234515262336" fileName="ExternalVariableReference_Constraints.java" startLine="45" startPosition="142" endLine="46" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234515309619" fileName="ExternalVariableReference_Constraints.java" startLine="46" startPosition="161" endLine="47" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234515273341" fileName="ExternalVariableReference_Constraints.java" startLine="47" startPosition="86" endLine="48" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234515367177" fileName="ExternalVariableReference_Constraints.java" startLine="48" startPosition="262" endLine="49" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234515402474" fileName="ExternalVariableReference_Constraints.java" startLine="49" startPosition="255" endLine="50" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1234515222367" fileName="ExternalVariableReference_Constraints.java" startLine="45" startPosition="142" endLine="50" endPosition="33">
       <varInfo nodeId="1234515309620" varName="availableVars" />
       <varInfo nodeId="1234515262337" varName="ancestor" />
     </scopeInfo>

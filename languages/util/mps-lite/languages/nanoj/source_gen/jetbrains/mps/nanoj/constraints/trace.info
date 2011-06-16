@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="VarDeclReference_Constraints.java" startLine="31" startPosition="34" endLine="64" endPosition="5" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$1" />
-  <unitInfo fileName="VarDeclReference_Constraints.java" startLine="21" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="VarDeclReference_Constraints.java" startLine="42" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$2" />
+  <unitInfo fileName="VarDeclReference_Constraints.java" startLine="33" startPosition="38" endLine="73" endPosition="5" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$1" />
+  <unitInfo fileName="VarDeclReference_Constraints.java" startLine="23" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints" />
   <root nodeId="689680155165915392">
-    <nodeInfo nodeId="689680155165915396" fileName="VarDeclReference_Constraints.java" startLine="38" startPosition="136" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="689680155165915403" fileName="VarDeclReference_Constraints.java" startLine="39" startPosition="75" endLine="40" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="689680155165915417" fileName="VarDeclReference_Constraints.java" startLine="41" startPosition="42" endLine="42" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="689680155165915427" fileName="VarDeclReference_Constraints.java" startLine="43" startPosition="39" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="689680155165915453" fileName="VarDeclReference_Constraints.java" startLine="47" startPosition="45" endLine="48" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="689680155165915438" fileName="VarDeclReference_Constraints.java" startLine="51" startPosition="48" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="689680155165915439" fileName="VarDeclReference_Constraints.java" startLine="53" startPosition="13" endLine="54" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="689680155165915462" fileName="VarDeclReference_Constraints.java" startLine="55" startPosition="11" endLine="56" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="689680155165915471" fileName="VarDeclReference_Constraints.java" startLine="57" startPosition="9" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="689680155165915425" fileName="VarDeclReference_Constraints.java" startLine="42" startPosition="174" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="689680155165915433" fileName="VarDeclReference_Constraints.java" startLine="50" startPosition="15" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="46" startPosition="131" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="689680155165915431" fileName="VarDeclReference_Constraints.java" startLine="45" startPosition="11" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="689680155165915412" fileName="VarDeclReference_Constraints.java" startLine="40" startPosition="150" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <scopeInfo nodeId="689680155165915426" fileName="VarDeclReference_Constraints.java" startLine="43" startPosition="39" endLine="44" endPosition="18" />
-    <scopeInfo nodeId="689680155165915452" fileName="VarDeclReference_Constraints.java" startLine="47" startPosition="45" endLine="48" endPosition="101" />
-    <scopeInfo nodeId="689680155165915437" fileName="VarDeclReference_Constraints.java" startLine="51" startPosition="48" endLine="52" endPosition="20" />
-    <scopeInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="46" startPosition="131" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="689680155165915432" fileName="VarDeclReference_Constraints.java" startLine="50" startPosition="15" endLine="54" endPosition="149" />
-    <scopeInfo nodeId="689680155165915431" fileName="VarDeclReference_Constraints.java" startLine="45" startPosition="11" endLine="55" endPosition="11">
+    <nodeInfo nodeId="689680155165915396" fileName="VarDeclReference_Constraints.java" startLine="44" startPosition="142" endLine="45" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="689680155165915403" fileName="VarDeclReference_Constraints.java" startLine="45" startPosition="79" endLine="46" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="689680155165915417" fileName="VarDeclReference_Constraints.java" startLine="47" startPosition="46" endLine="48" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="689680155165915427" fileName="VarDeclReference_Constraints.java" startLine="49" startPosition="43" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="689680155165915453" fileName="VarDeclReference_Constraints.java" startLine="53" startPosition="49" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="689680155165915438" fileName="VarDeclReference_Constraints.java" startLine="57" startPosition="52" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="689680155165915439" fileName="VarDeclReference_Constraints.java" startLine="59" startPosition="17" endLine="60" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="689680155165915462" fileName="VarDeclReference_Constraints.java" startLine="61" startPosition="15" endLine="62" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="689680155165915471" fileName="VarDeclReference_Constraints.java" startLine="63" startPosition="13" endLine="64" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="689680155165915425" fileName="VarDeclReference_Constraints.java" startLine="48" startPosition="178" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="689680155165915433" fileName="VarDeclReference_Constraints.java" startLine="56" startPosition="19" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="52" startPosition="135" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="689680155165915431" fileName="VarDeclReference_Constraints.java" startLine="51" startPosition="15" endLine="61" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="689680155165915412" fileName="VarDeclReference_Constraints.java" startLine="46" startPosition="154" endLine="63" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <scopeInfo nodeId="689680155165915426" fileName="VarDeclReference_Constraints.java" startLine="49" startPosition="43" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="689680155165915452" fileName="VarDeclReference_Constraints.java" startLine="53" startPosition="49" endLine="54" endPosition="105" />
+    <scopeInfo nodeId="689680155165915437" fileName="VarDeclReference_Constraints.java" startLine="57" startPosition="52" endLine="58" endPosition="24" />
+    <scopeInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="52" startPosition="135" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="689680155165915432" fileName="VarDeclReference_Constraints.java" startLine="56" startPosition="19" endLine="60" endPosition="153" />
+    <scopeInfo nodeId="689680155165915431" fileName="VarDeclReference_Constraints.java" startLine="51" startPosition="15" endLine="61" endPosition="15">
       <varInfo nodeId="689680155165915460" varName="statement" />
     </scopeInfo>
-    <scopeInfo nodeId="689680155165915416" fileName="VarDeclReference_Constraints.java" startLine="41" startPosition="42" endLine="56" endPosition="131">
+    <scopeInfo nodeId="689680155165915416" fileName="VarDeclReference_Constraints.java" startLine="47" startPosition="46" endLine="62" endPosition="135">
       <varInfo nodeId="689680155165915418" varName="currentBlock" />
     </scopeInfo>
-    <scopeInfo nodeId="689680155165915395" fileName="VarDeclReference_Constraints.java" startLine="38" startPosition="136" endLine="58" endPosition="22">
+    <scopeInfo nodeId="689680155165915395" fileName="VarDeclReference_Constraints.java" startLine="44" startPosition="142" endLine="64" endPosition="26">
       <varInfo nodeId="689680155165915397" varName="result" />
       <varInfo nodeId="689680155165915404" varName="currentStatement" />
     </scopeInfo>
-    <unitInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="46" startPosition="108" endLine="50" endPosition="11" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$2" />
+    <unitInfo nodeId="689680155165915451" fileName="VarDeclReference_Constraints.java" startLine="52" startPosition="112" endLine="56" endPosition="15" unitName="jetbrains.mps.nanoj.constraints.VarDeclReference_Constraints$3" />
   </root>
 </debugInfo>
 

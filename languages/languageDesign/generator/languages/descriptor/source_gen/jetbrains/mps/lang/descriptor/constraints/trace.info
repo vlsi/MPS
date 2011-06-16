@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="LanguageDescriptor_Constraints.java" startLine="23" startPosition="27" endLine="27" endPosition="5" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="LanguageDescriptor_Constraints.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints" />
+  <unitInfo fileName="LanguageDescriptor_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints$1" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="LanguageDescriptor_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.descriptor.constraints.LanguageDescriptor_Constraints" />
   <root nodeId="8780540425167303919">
-    <nodeInfo nodeId="8780540425167303923" fileName="LanguageDescriptor_Constraints.java" startLine="24" startPosition="84" endLine="25" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="8780540425167303922" fileName="LanguageDescriptor_Constraints.java" startLine="24" startPosition="84" endLine="25" endPosition="28" />
+    <nodeInfo nodeId="8780540425167303923" fileName="LanguageDescriptor_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8780540425167303922" fileName="LanguageDescriptor_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="28" />
   </root>
 </debugInfo>
 

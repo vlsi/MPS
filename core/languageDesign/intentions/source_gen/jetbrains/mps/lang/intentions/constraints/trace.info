@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionContextParameterDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParameterDeclaration_Constraints" />
-  <unitInfo fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.intentions.constraints.SurroundWithIntentionDeclaration_Constraints$1" />
-  <unitInfo fileName="GenerateIntentionDeclaration_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.intentions.constraints.GenerateIntentionDeclaration_Constraints$1" />
-  <unitInfo fileName="IntentionDeclaration_Constraints.java" startLine="26" startPosition="15" endLine="36" endPosition="5" unitName="jetbrains.mps.lang.intentions.constraints.IntentionDeclaration_Constraints$1" />
-  <unitInfo fileName="IntentionContextParamReference_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints$1" />
-  <unitInfo fileName="IntentionContextParamReference_Constraints.java" startLine="47" startPosition="43" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints$2" />
-  <unitInfo fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.SurroundWithIntentionDeclaration_Constraints" />
-  <unitInfo fileName="GenerateIntentionDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.GenerateIntentionDeclaration_Constraints" />
-  <unitInfo fileName="IntentionDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionDeclaration_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="IntentionContextParamReference_Constraints.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints" />
+  <unitInfo fileName="IntentionContextParameterDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParameterDeclaration_Constraints" />
+  <unitInfo fileName="IntentionContextParamReference_Constraints.java" startLine="58" startPosition="19" endLine="68" endPosition="9" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints$2" />
+  <unitInfo fileName="IntentionContextParamReference_Constraints.java" startLine="49" startPosition="47" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints$1" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.SurroundWithIntentionDeclaration_Constraints" />
+  <unitInfo fileName="GenerateIntentionDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.GenerateIntentionDeclaration_Constraints" />
+  <unitInfo fileName="IntentionDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionDeclaration_Constraints" />
+  <unitInfo fileName="IntentionContextParamReference_Constraints.java" startLine="22" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionContextParamReference_Constraints" />
   <root nodeId="1227089946706">
-    <nodeInfo nodeId="1227089964162" fileName="IntentionDeclaration_Constraints.java" startLine="39" startPosition="112" endLine="40" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1227089959349" fileName="IntentionDeclaration_Constraints.java" startLine="39" startPosition="112" endLine="40" endPosition="119" />
+    <nodeInfo nodeId="1227089964162" fileName="IntentionDeclaration_Constraints.java" startLine="38" startPosition="119" endLine="39" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227089959349" fileName="IntentionDeclaration_Constraints.java" startLine="38" startPosition="119" endLine="39" endPosition="119" />
   </root>
   <root nodeId="6263518417926802262">
-    <nodeInfo nodeId="6263518417926802265" fileName="GenerateIntentionDeclaration_Constraints.java" startLine="38" startPosition="112" endLine="39" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6263518417926802264" fileName="GenerateIntentionDeclaration_Constraints.java" startLine="38" startPosition="112" endLine="39" endPosition="61" />
+    <nodeInfo nodeId="6263518417926802265" fileName="GenerateIntentionDeclaration_Constraints.java" startLine="37" startPosition="119" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6263518417926802264" fileName="GenerateIntentionDeclaration_Constraints.java" startLine="37" startPosition="119" endLine="38" endPosition="61" />
   </root>
   <root nodeId="6263518417926802270">
-    <nodeInfo nodeId="6263518417926802274" fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="38" startPosition="112" endLine="39" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6263518417926802273" fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="38" startPosition="112" endLine="39" endPosition="61" />
+    <nodeInfo nodeId="6263518417926802274" fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="37" startPosition="119" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6263518417926802273" fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="37" startPosition="119" endLine="38" endPosition="61" />
   </root>
   <root nodeId="786327826249385741">
-    <nodeInfo nodeId="1379737298155044542" fileName="IntentionContextParamReference_Constraints.java" startLine="54" startPosition="136" endLine="55" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1379737298155043958" fileName="IntentionContextParamReference_Constraints.java" startLine="65" startPosition="114" endLine="66" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1379737298155043975" fileName="IntentionContextParamReference_Constraints.java" startLine="54" startPosition="136" endLine="55" endPosition="205" />
-    <scopeInfo nodeId="1379737298155043957" fileName="IntentionContextParamReference_Constraints.java" startLine="65" startPosition="114" endLine="66" endPosition="161" />
+    <nodeInfo nodeId="1379737298155044542" fileName="IntentionContextParamReference_Constraints.java" startLine="60" startPosition="142" endLine="61" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1379737298155043958" fileName="IntentionContextParamReference_Constraints.java" startLine="74" startPosition="121" endLine="75" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1379737298155043975" fileName="IntentionContextParamReference_Constraints.java" startLine="60" startPosition="142" endLine="61" endPosition="209" />
+    <scopeInfo nodeId="1379737298155043957" fileName="IntentionContextParamReference_Constraints.java" startLine="74" startPosition="121" endLine="75" endPosition="161" />
   </root>
 </debugInfo>
 

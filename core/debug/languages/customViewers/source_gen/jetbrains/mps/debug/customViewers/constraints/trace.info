@@ -1,137 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.GetHighLevelWatchablesBlock_ConceptFunction_Constraints$1" />
-  <unitInfo fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.CanWrapHighLevelValue_ConceptFunction_Constraints$1" />
-  <unitInfo fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.GetHighLevelValuePresentation_ConceptFunction_Constraints$1" />
-  <unitInfo fileName="IsInstanceOfOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.IsInstanceOfOperation_Constraints$1" />
-  <unitInfo fileName="StringValueOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.StringValueOperation_Constraints$1" />
-  <unitInfo fileName="JavaValueOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.JavaValueOperation_Constraints$1" />
-  <unitInfo fileName="CallMethodOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.CallMethodOperation_Constraints$1" />
-  <unitInfo fileName="ElementsRangeOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.ElementsRangeOperation_Constraints$1" />
-  <unitInfo fileName="AllElementsOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.AllElementsOperation_Constraints$1" />
-  <unitInfo fileName="SizeOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.SizeOperation_Constraints$1" />
-  <unitInfo fileName="ClassFqNameOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.ClassFqNameOperation_Constraints$1" />
-  <unitInfo fileName="ClassNameOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.ClassNameOperation_Constraints$1" />
-  <unitInfo fileName="ElementOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.ElementOperation_Constraints$1" />
-  <unitInfo fileName="FieldOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.FieldOperation_Constraints$1" />
-  <unitInfo fileName="FieldsListOperation_Constraints.java" startLine="32" startPosition="15" endLine="42" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.FieldsListOperation_Constraints$1" />
-  <unitInfo fileName="IsInstanceOfOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.IsInstanceOfOperation_Constraints$QuotationClass_d1mhjo_a1a0a0a" />
-  <unitInfo fileName="StringValueOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.StringValueOperation_Constraints$QuotationClass_8i3xdb_a1a0a0a" />
-  <unitInfo fileName="JavaValueOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.JavaValueOperation_Constraints$QuotationClass_e21q8n_a1a0a0a" />
-  <unitInfo fileName="CallMethodOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.CallMethodOperation_Constraints$QuotationClass_j1qytb_a1a0a0a" />
-  <unitInfo fileName="ElementsRangeOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementsRangeOperation_Constraints$QuotationClass_s7amnw_a1a0a0a" />
-  <unitInfo fileName="AllElementsOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.AllElementsOperation_Constraints$QuotationClass_4d9cg3_a1a0a0a" />
-  <unitInfo fileName="SizeOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.SizeOperation_Constraints$QuotationClass_gu6z0u_a1a0a0a" />
-  <unitInfo fileName="ClassFqNameOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ClassFqNameOperation_Constraints$QuotationClass_6xr5tk_a1a0a0a" />
-  <unitInfo fileName="ClassNameOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ClassNameOperation_Constraints$QuotationClass_o51nct_a1a0a0a" />
-  <unitInfo fileName="ElementOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementOperation_Constraints$QuotationClass_6iz4rl_a1a0a0a" />
-  <unitInfo fileName="FieldOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldOperation_Constraints$QuotationClass_t39zya_a1a0a0a" />
-  <unitInfo fileName="FieldsListOperation_Constraints.java" startLine="49" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldsListOperation_Constraints$QuotationClass_t4u4vn_a1a0a0a" />
-  <unitInfo fileName="HighLevelWatchableCreator_Constraints.java" startLine="31" startPosition="32" endLine="49" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.HighLevelWatchableCreator_Constraints$1" />
-  <unitInfo fileName="WatchableCreator_Constraints.java" startLine="31" startPosition="32" endLine="49" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.WatchableCreator_Constraints$1" />
-  <unitInfo fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.GetHighLevelWatchablesBlock_ConceptFunction_Constraints" />
-  <unitInfo fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.CanWrapHighLevelValue_ConceptFunction_Constraints" />
-  <unitInfo fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.GetHighLevelValuePresentation_ConceptFunction_Constraints" />
-  <unitInfo fileName="HighLevelWatchableCreator_Constraints.java" startLine="21" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.HighLevelWatchableCreator_Constraints" />
-  <unitInfo fileName="WatchableCreator_Constraints.java" startLine="21" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.WatchableCreator_Constraints" />
-  <unitInfo fileName="IsInstanceOfOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.IsInstanceOfOperation_Constraints" />
-  <unitInfo fileName="StringValueOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.StringValueOperation_Constraints" />
-  <unitInfo fileName="JavaValueOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.JavaValueOperation_Constraints" />
-  <unitInfo fileName="CallMethodOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.CallMethodOperation_Constraints" />
-  <unitInfo fileName="ElementsRangeOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementsRangeOperation_Constraints" />
-  <unitInfo fileName="AllElementsOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.AllElementsOperation_Constraints" />
-  <unitInfo fileName="SizeOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.SizeOperation_Constraints" />
-  <unitInfo fileName="ClassFqNameOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ClassFqNameOperation_Constraints" />
-  <unitInfo fileName="ClassNameOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ClassNameOperation_Constraints" />
-  <unitInfo fileName="ElementOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementOperation_Constraints" />
-  <unitInfo fileName="FieldOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldOperation_Constraints" />
-  <unitInfo fileName="FieldsListOperation_Constraints.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldsListOperation_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="HighLevelWatchableCreator_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.debug.customViewers.constraints.HighLevelWatchableCreator_Constraints$2" />
+  <unitInfo fileName="WatchableCreator_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.debug.customViewers.constraints.WatchableCreator_Constraints$2" />
+  <unitInfo fileName="IsInstanceOfOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.IsInstanceOfOperation_Constraints$QuotationClass_d1mhjo_a1a0a0a" />
+  <unitInfo fileName="StringValueOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.StringValueOperation_Constraints$QuotationClass_8i3xdb_a1a0a0a" />
+  <unitInfo fileName="JavaValueOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.JavaValueOperation_Constraints$QuotationClass_e21q8n_a1a0a0a" />
+  <unitInfo fileName="CallMethodOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.CallMethodOperation_Constraints$QuotationClass_j1qytb_a1a0a0a" />
+  <unitInfo fileName="ElementsRangeOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementsRangeOperation_Constraints$QuotationClass_s7amnw_a1a0a0a" />
+  <unitInfo fileName="AllElementsOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.AllElementsOperation_Constraints$QuotationClass_4d9cg3_a1a0a0a" />
+  <unitInfo fileName="SizeOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.SizeOperation_Constraints$QuotationClass_gu6z0u_a1a0a0a" />
+  <unitInfo fileName="ClassFqNameOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ClassFqNameOperation_Constraints$QuotationClass_6xr5tk_a1a0a0a" />
+  <unitInfo fileName="ClassNameOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ClassNameOperation_Constraints$QuotationClass_o51nct_a1a0a0a" />
+  <unitInfo fileName="ElementOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementOperation_Constraints$QuotationClass_6iz4rl_a1a0a0a" />
+  <unitInfo fileName="FieldOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldOperation_Constraints$QuotationClass_t39zya_a1a0a0a" />
+  <unitInfo fileName="FieldsListOperation_Constraints.java" startLine="47" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldsListOperation_Constraints$QuotationClass_t4u4vn_a1a0a0a" />
+  <unitInfo fileName="HighLevelWatchableCreator_Constraints.java" startLine="33" startPosition="36" endLine="58" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.HighLevelWatchableCreator_Constraints$1" />
+  <unitInfo fileName="WatchableCreator_Constraints.java" startLine="33" startPosition="36" endLine="58" endPosition="5" unitName="jetbrains.mps.debug.customViewers.constraints.WatchableCreator_Constraints$1" />
+  <unitInfo fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.GetHighLevelWatchablesBlock_ConceptFunction_Constraints" />
+  <unitInfo fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.CanWrapHighLevelValue_ConceptFunction_Constraints" />
+  <unitInfo fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.GetHighLevelValuePresentation_ConceptFunction_Constraints" />
+  <unitInfo fileName="HighLevelWatchableCreator_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.HighLevelWatchableCreator_Constraints" />
+  <unitInfo fileName="WatchableCreator_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.WatchableCreator_Constraints" />
+  <unitInfo fileName="IsInstanceOfOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.IsInstanceOfOperation_Constraints" />
+  <unitInfo fileName="StringValueOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.StringValueOperation_Constraints" />
+  <unitInfo fileName="JavaValueOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.JavaValueOperation_Constraints" />
+  <unitInfo fileName="CallMethodOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.CallMethodOperation_Constraints" />
+  <unitInfo fileName="ElementsRangeOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementsRangeOperation_Constraints" />
+  <unitInfo fileName="AllElementsOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.AllElementsOperation_Constraints" />
+  <unitInfo fileName="SizeOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.SizeOperation_Constraints" />
+  <unitInfo fileName="ClassFqNameOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ClassFqNameOperation_Constraints" />
+  <unitInfo fileName="ClassNameOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ClassNameOperation_Constraints" />
+  <unitInfo fileName="ElementOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ElementOperation_Constraints" />
+  <unitInfo fileName="FieldOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldOperation_Constraints" />
+  <unitInfo fileName="FieldsListOperation_Constraints.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.FieldsListOperation_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debug.customViewers.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1843851250586694523">
-    <nodeInfo nodeId="1843851250586694526" fileName="ClassNameOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1843851250586694525" fileName="ClassNameOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="331" />
+    <nodeInfo nodeId="1843851250586694526" fileName="ClassNameOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1843851250586694525" fileName="ClassNameOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="331" />
   </root>
   <root nodeId="1843851250586694546">
-    <nodeInfo nodeId="1843851250586694549" fileName="ClassFqNameOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1843851250586694548" fileName="ClassFqNameOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="333" />
+    <nodeInfo nodeId="1843851250586694549" fileName="ClassFqNameOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1843851250586694548" fileName="ClassFqNameOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="333" />
   </root>
   <root nodeId="1843851250586694568">
-    <nodeInfo nodeId="1843851250586694571" fileName="SizeOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1843851250586694570" fileName="SizeOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="326" />
+    <nodeInfo nodeId="1843851250586694571" fileName="SizeOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1843851250586694570" fileName="SizeOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="326" />
   </root>
   <root nodeId="1843851250586697550">
-    <nodeInfo nodeId="1843851250586697553" fileName="AllElementsOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1843851250586697552" fileName="AllElementsOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="333" />
+    <nodeInfo nodeId="1843851250586697553" fileName="AllElementsOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1843851250586697552" fileName="AllElementsOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="333" />
   </root>
   <root nodeId="1843851250586697595">
-    <nodeInfo nodeId="1843851250586697598" fileName="ElementsRangeOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1843851250586697597" fileName="ElementsRangeOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="335" />
+    <nodeInfo nodeId="1843851250586697598" fileName="ElementsRangeOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1843851250586697597" fileName="ElementsRangeOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="335" />
   </root>
   <root nodeId="2488554353950291328">
-    <nodeInfo nodeId="2488554353950312670" fileName="FieldsListOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2488554353950291330" fileName="FieldsListOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="332" />
+    <nodeInfo nodeId="2488554353950312670" fileName="FieldsListOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2488554353950291330" fileName="FieldsListOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="332" />
   </root>
   <root nodeId="2488554353950312711">
-    <nodeInfo nodeId="2488554353950312714" fileName="FieldOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2488554353950312713" fileName="FieldOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="327" />
+    <nodeInfo nodeId="2488554353950312714" fileName="FieldOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2488554353950312713" fileName="FieldOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="327" />
   </root>
   <root nodeId="2488554353950312766">
-    <nodeInfo nodeId="2488554353950312769" fileName="ElementOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2488554353950312768" fileName="ElementOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="329" />
+    <nodeInfo nodeId="2488554353950312769" fileName="ElementOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2488554353950312768" fileName="ElementOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="329" />
   </root>
   <root nodeId="43370322128276340">
-    <nodeInfo nodeId="43370322128276343" fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="43370322128276342" fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="135" />
+    <nodeInfo nodeId="43370322128276343" fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="43370322128276342" fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="135" />
   </root>
   <root nodeId="43370322128276352">
-    <nodeInfo nodeId="43370322128276355" fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="43370322128276354" fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="135" />
+    <nodeInfo nodeId="43370322128276355" fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="43370322128276354" fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="135" />
   </root>
   <root nodeId="43370322128276360">
-    <nodeInfo nodeId="43370322128276363" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="43370322128276362" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="135" />
+    <nodeInfo nodeId="43370322128276363" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="43370322128276362" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="135" />
   </root>
   <root nodeId="43370322128310819">
-    <nodeInfo nodeId="43370322128311168" fileName="HighLevelWatchableCreator_Constraints.java" startLine="38" startPosition="136" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128311176" fileName="HighLevelWatchableCreator_Constraints.java" startLine="40" startPosition="153" endLine="41" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="43370322128311188" fileName="HighLevelWatchableCreator_Constraints.java" startLine="42" startPosition="9" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="39" startPosition="52" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="43370322128311175" fileName="HighLevelWatchableCreator_Constraints.java" startLine="40" startPosition="153" endLine="41" endPosition="133" />
-    <scopeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="39" startPosition="52" endLine="42" endPosition="9">
+    <nodeInfo nodeId="43370322128311168" fileName="HighLevelWatchableCreator_Constraints.java" startLine="44" startPosition="142" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128311176" fileName="HighLevelWatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128311188" fileName="HighLevelWatchableCreator_Constraints.java" startLine="48" startPosition="13" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="45" startPosition="56" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="43370322128311175" fileName="HighLevelWatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="137" />
+    <scopeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="45" startPosition="56" endLine="48" endPosition="13">
       <varInfo nodeId="43370322128311183" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="43370322128311165" fileName="HighLevelWatchableCreator_Constraints.java" startLine="38" startPosition="136" endLine="43" endPosition="22">
+    <scopeInfo nodeId="43370322128311165" fileName="HighLevelWatchableCreator_Constraints.java" startLine="44" startPosition="142" endLine="49" endPosition="26">
       <varInfo nodeId="43370322128311169" varName="result" />
     </scopeInfo>
   </root>
   <root nodeId="5264817233616806016">
-    <nodeInfo nodeId="5264817233616809532" fileName="WatchableCreator_Constraints.java" startLine="38" startPosition="136" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5264817233616809539" fileName="WatchableCreator_Constraints.java" startLine="40" startPosition="153" endLine="41" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5264817233616809554" fileName="WatchableCreator_Constraints.java" startLine="42" startPosition="9" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5264817233616809524" fileName="WatchableCreator_Constraints.java" startLine="39" startPosition="52" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="5264817233616809525" fileName="WatchableCreator_Constraints.java" startLine="40" startPosition="153" endLine="41" endPosition="133" />
-    <scopeInfo nodeId="5264817233616809524" fileName="WatchableCreator_Constraints.java" startLine="39" startPosition="52" endLine="42" endPosition="9">
+    <nodeInfo nodeId="5264817233616809532" fileName="WatchableCreator_Constraints.java" startLine="44" startPosition="142" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5264817233616809539" fileName="WatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5264817233616809554" fileName="WatchableCreator_Constraints.java" startLine="48" startPosition="13" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5264817233616809524" fileName="WatchableCreator_Constraints.java" startLine="45" startPosition="56" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="5264817233616809525" fileName="WatchableCreator_Constraints.java" startLine="46" startPosition="157" endLine="47" endPosition="137" />
+    <scopeInfo nodeId="5264817233616809524" fileName="WatchableCreator_Constraints.java" startLine="45" startPosition="56" endLine="48" endPosition="13">
       <varInfo nodeId="5264817233616809526" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="5264817233616806019" fileName="WatchableCreator_Constraints.java" startLine="38" startPosition="136" endLine="43" endPosition="22">
+    <scopeInfo nodeId="5264817233616806019" fileName="WatchableCreator_Constraints.java" startLine="44" startPosition="142" endLine="49" endPosition="26">
       <varInfo nodeId="5264817233616809533" varName="result" />
     </scopeInfo>
   </root>
   <root nodeId="7471356136626020363">
-    <nodeInfo nodeId="7471356136626020366" fileName="StringValueOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7471356136626020365" fileName="StringValueOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="333" />
+    <nodeInfo nodeId="7471356136626020366" fileName="StringValueOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7471356136626020365" fileName="StringValueOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="333" />
   </root>
   <root nodeId="7744028807303023760">
-    <nodeInfo nodeId="7744028807303023763" fileName="CallMethodOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7744028807303023762" fileName="CallMethodOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="332" />
+    <nodeInfo nodeId="7744028807303023763" fileName="CallMethodOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7744028807303023762" fileName="CallMethodOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="332" />
   </root>
   <root nodeId="7744028807303050614">
-    <nodeInfo nodeId="7744028807303050618" fileName="JavaValueOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7744028807303050616" fileName="JavaValueOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="331" />
+    <nodeInfo nodeId="7744028807303050618" fileName="JavaValueOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7744028807303050616" fileName="JavaValueOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="331" />
   </root>
   <root nodeId="929171734855790876">
-    <nodeInfo nodeId="929171734855790879" fileName="IsInstanceOfOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="929171734855790878" fileName="IsInstanceOfOperation_Constraints.java" startLine="45" startPosition="114" endLine="46" endPosition="334" />
+    <nodeInfo nodeId="929171734855790879" fileName="IsInstanceOfOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="929171734855790878" fileName="IsInstanceOfOperation_Constraints.java" startLine="43" startPosition="121" endLine="44" endPosition="334" />
   </root>
 </debugInfo>
 

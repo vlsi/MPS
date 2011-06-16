@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Module_Constraints.java" startLine="24" startPosition="27" endLine="28" endPosition="5" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints$1" />
-  <unitInfo fileName="ModuleDependency_Constraints.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ModuleDependency_Constraints" />
-  <unitInfo fileName="Module_Constraints.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ModuleDependency_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ModuleDependency_Constraints" />
+  <unitInfo fileName="Module_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints$1" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="Module_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.Module_Constraints" />
   <root nodeId="4198951972171378598">
     <nodeInfo nodeId="4198951972171382456" fileName="ModuleSearchScope.java" startLine="18" startPosition="59" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4198951972171378600" fileName="ModuleSearchScope.java" startLine="13" startPosition="60" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleSearchScope#()V" />
@@ -17,8 +17,8 @@
     <unitInfo nodeId="4198951972171378598" fileName="ModuleSearchScope.java" startLine="13" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ModuleSearchScope" />
   </root>
   <root nodeId="6370754048397725622">
-    <nodeInfo nodeId="6370754048397739875" fileName="Module_Constraints.java" startLine="25" startPosition="84" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6370754048397730470" fileName="Module_Constraints.java" startLine="25" startPosition="84" endLine="26" endPosition="64" />
+    <nodeInfo nodeId="6370754048397739875" fileName="Module_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6370754048397730470" fileName="Module_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="64" />
   </root>
 </debugInfo>
 

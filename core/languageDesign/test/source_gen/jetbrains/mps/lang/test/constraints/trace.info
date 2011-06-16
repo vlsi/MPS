@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TestNodeReference_Constraints.java" startLine="30" startPosition="34" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$1" />
-  <unitInfo fileName="TestNodeReference_Constraints.java" startLine="20" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="TestNodeReference_Constraints.java" startLine="41" startPosition="19" endLine="61" endPosition="9" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$2" />
+  <unitInfo fileName="TestNodeReference_Constraints.java" startLine="32" startPosition="38" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints$1" />
+  <unitInfo fileName="TestNodeReference_Constraints.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_Constraints" />
   <root nodeId="1213104844716">
-    <nodeInfo nodeId="1228735143622" fileName="TestNodeReference_Constraints.java" startLine="38" startPosition="139" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104844720" fileName="TestNodeReference_Constraints.java" startLine="40" startPosition="9" endLine="41" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104844729" fileName="TestNodeReference_Constraints.java" startLine="41" startPosition="226" endLine="42" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104844749" fileName="TestNodeReference_Constraints.java" startLine="44" startPosition="168" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213172407587" fileName="TestNodeReference_Constraints.java" startLine="47" startPosition="9" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228735143620" fileName="TestNodeReference_Constraints.java" startLine="37" startPosition="136" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213104844740" fileName="TestNodeReference_Constraints.java" startLine="43" startPosition="27" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1213104844735" fileName="TestNodeReference_Constraints.java" startLine="42" startPosition="52" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1228735143621" fileName="TestNodeReference_Constraints.java" startLine="38" startPosition="139" endLine="39" endPosition="40" />
-    <scopeInfo nodeId="1213104844748" fileName="TestNodeReference_Constraints.java" startLine="44" startPosition="168" endLine="45" endPosition="59" />
-    <scopeInfo nodeId="1213104844739" fileName="TestNodeReference_Constraints.java" startLine="43" startPosition="27" endLine="46" endPosition="11" />
-    <scopeInfo nodeId="1213104844740" fileName="TestNodeReference_Constraints.java" startLine="43" startPosition="27" endLine="46" endPosition="11" />
-    <scopeInfo nodeId="1213104844719" fileName="TestNodeReference_Constraints.java" startLine="37" startPosition="136" endLine="48" endPosition="22">
+    <nodeInfo nodeId="1228735143622" fileName="TestNodeReference_Constraints.java" startLine="44" startPosition="143" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104844720" fileName="TestNodeReference_Constraints.java" startLine="46" startPosition="13" endLine="47" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104844729" fileName="TestNodeReference_Constraints.java" startLine="47" startPosition="230" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104844749" fileName="TestNodeReference_Constraints.java" startLine="50" startPosition="172" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213172407587" fileName="TestNodeReference_Constraints.java" startLine="53" startPosition="13" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228735143620" fileName="TestNodeReference_Constraints.java" startLine="43" startPosition="142" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213104844740" fileName="TestNodeReference_Constraints.java" startLine="49" startPosition="31" endLine="52" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213104844735" fileName="TestNodeReference_Constraints.java" startLine="48" startPosition="56" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1228735143621" fileName="TestNodeReference_Constraints.java" startLine="44" startPosition="143" endLine="45" endPosition="44" />
+    <scopeInfo nodeId="1213104844748" fileName="TestNodeReference_Constraints.java" startLine="50" startPosition="172" endLine="51" endPosition="63" />
+    <scopeInfo nodeId="1213104844739" fileName="TestNodeReference_Constraints.java" startLine="49" startPosition="31" endLine="52" endPosition="15" />
+    <scopeInfo nodeId="1213104844740" fileName="TestNodeReference_Constraints.java" startLine="49" startPosition="31" endLine="52" endPosition="15" />
+    <scopeInfo nodeId="1213104844719" fileName="TestNodeReference_Constraints.java" startLine="43" startPosition="142" endLine="54" endPosition="26">
       <varInfo nodeId="1213104844730" varName="result" />
       <varInfo nodeId="1213104844721" varName="test" />
     </scopeInfo>
