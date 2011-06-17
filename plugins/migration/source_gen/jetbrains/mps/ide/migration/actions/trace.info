@@ -250,6 +250,41 @@
     <nodeInfo nodeId="2899596005954254978" fileName="PersistenceAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2899596005954254980" fileName="PersistenceAddition_ActionGroup.java" startLine="17" startPosition="131" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
+  <root nodeId="5878289714014885382">
+    <nodeInfo nodeId="5878289714014888722" fileName="ScriptsFinder.java" startLine="24" startPosition="43" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5878289714014954333" fileName="ScriptsFinder.java" startLine="26" startPosition="99" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5878289714014954350" fileName="ScriptsFinder.java" startLine="28" startPosition="24" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5878289714014985151" fileName="ScriptsFinder.java" startLine="30" startPosition="7" endLine="31" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5878289714015005116" fileName="ScriptsFinder.java" startLine="33" startPosition="41" endLine="34" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5878289714015005135" fileName="ScriptsFinder.java" startLine="37" startPosition="46" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5878289714014888717" fileName="ScriptsFinder.java" startLine="41" startPosition="5" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5878289714014885384" fileName="ScriptsFinder.java" startLine="20" startPosition="28" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ScriptsFinder#()V" />
+    <nodeInfo nodeId="5878289714014954341" fileName="ScriptsFinder.java" startLine="27" startPosition="67" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5878289714015005114" fileName="ScriptsFinder.java" startLine="32" startPosition="190" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5878289714015005131" fileName="ScriptsFinder.java" startLine="36" startPosition="68" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="5878289714015005100" fileName="ScriptsFinder.java" startLine="31" startPosition="37" endLine="40" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5878289714014953722" fileName="ScriptsFinder.java" startLine="25" startPosition="83" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5878289714014886740" fileName="ScriptsFinder.java" startLine="23" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="find#()Ljava/util/List;" />
+    <scopeInfo nodeId="5878289714014885387" fileName="ScriptsFinder.java" startLine="21" startPosition="26" endLine="21" endPosition="26" />
+    <scopeInfo nodeId="5878289714014954342" fileName="ScriptsFinder.java" startLine="28" startPosition="24" endLine="29" endPosition="17" />
+    <scopeInfo nodeId="5878289714015005115" fileName="ScriptsFinder.java" startLine="33" startPosition="41" endLine="34" endPosition="86" />
+    <scopeInfo nodeId="5878289714015005132" fileName="ScriptsFinder.java" startLine="37" startPosition="46" endLine="38" endPosition="38" />
+    <scopeInfo nodeId="5878289714014885384" fileName="ScriptsFinder.java" startLine="20" startPosition="28" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="5878289714015005114" fileName="ScriptsFinder.java" startLine="32" startPosition="190" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5878289714015005131" fileName="ScriptsFinder.java" startLine="36" startPosition="68" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="5878289714014953725" fileName="ScriptsFinder.java" startLine="26" startPosition="99" endLine="40" endPosition="10">
+      <varInfo nodeId="5878289714014985152" varName="model" />
+      <varInfo nodeId="5878289714014954334" varName="smd" />
+    </scopeInfo>
+    <scopeInfo nodeId="5878289714014953722" fileName="ScriptsFinder.java" startLine="25" startPosition="83" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="5878289714014886743" fileName="ScriptsFinder.java" startLine="24" startPosition="43" endLine="42" endPosition="16">
+      <varInfo nodeId="5878289714014888723" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="5878289714014886740" fileName="ScriptsFinder.java" startLine="23" startPosition="0" endLine="44" endPosition="0" />
+    <unitInfo nodeId="5878289714015005114" fileName="ScriptsFinder.java" startLine="32" startPosition="167" endLine="36" endPosition="7" unitName="jetbrains.mps.ide.migration.actions.ScriptsFinder$1" />
+    <unitInfo nodeId="5878289714015005131" fileName="ScriptsFinder.java" startLine="36" startPosition="34" endLine="40" endPosition="7" unitName="jetbrains.mps.ide.migration.actions.ScriptsFinder$2" />
+    <unitInfo nodeId="5878289714014885382" fileName="ScriptsFinder.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.ScriptsFinder" />
+  </root>
   <root nodeId="8171674901904390895">
     <nodeInfo nodeId="8171674901904390909" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="47" startPosition="34" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="8171674901904390910" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

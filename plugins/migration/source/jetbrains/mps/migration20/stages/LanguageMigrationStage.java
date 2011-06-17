@@ -22,18 +22,16 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.migration.actions.ScriptsFinder;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.ProjectScope;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class LanguageMigrationStage implements MigrationStage {
@@ -42,16 +40,7 @@ public class LanguageMigrationStage implements MigrationStage {
   }
 
   public void execute(MPSProject p) {
-    List<SNodePointer> scripts = new ArrayList<SNodePointer>();
-    for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
-      EditableSModelDescriptor smd = LanguageAspect.SCRIPTS.get(l);
-      if (smd == null) continue;
-      Iterable<SNode> scriptNodes = new ConditionalIterable<SNode>(smd.getSModel().roots(), new IsInstanceCondition("jetbrains.mps.lang.script.MigrationScript"));
-      for (SNode mn : scriptNodes) {
-        scripts.add(new SNodePointer(mn));
-      }
-    }
-    executeScripts(p.getProject(), scripts);
+    executeScripts(p.getProject(), ScriptsFinder.find());
   }
 
   public boolean needsCommand() {
@@ -63,7 +52,7 @@ public class LanguageMigrationStage implements MigrationStage {
   }
 
   public String messageBefore() {
-    return "Language migration scripts help to change your code accordingly to changes in languages, in which the code is written.\n"+
+    return "Language migration scripts help to change your code accordingly to changes in languages, in which the code is written.\n" +
       "Now we'll execute all migration scripts from all languages in MPS.";
   }
 
