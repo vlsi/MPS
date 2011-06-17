@@ -464,11 +464,6 @@ public class WorkbenchMakeService implements IMakeService {
     public void run(@NotNull ProgressIndicator pi) {
       if (myState.compareAndSet(WorkbenchMakeService.TaskState.NOT_STARTED, WorkbenchMakeService.TaskState.RUNNING)) {
         pi.pushState();
-        try {
-          // The progress indicator appears only after 300ms 
-          Thread.sleep(400);
-        } catch (InterruptedException ignore) {
-        }
         final int clsize = Sequence.fromIterable(this.myClInput).count();
         if (clsize == 0) {
           return;
