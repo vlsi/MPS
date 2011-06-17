@@ -101,7 +101,7 @@ public class StubConversionStage implements MigrationStage {
 
     ModelCheckerSettings mcSettings = ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
     try {
-      mcSettings.setRefsOnlyMode(true);
+      mcSettings.setMigrationMode(true);
       ModelCheckerViewer res = tool.checkProject(ideaProject, ProjectOperationContext.get(ideaProject), true);
       Set<ModelCheckerIssue> problems = res.getSearchResults().getResultObjects();
       if (problems.isEmpty()) return FINISHED + ALL_FIXED;
@@ -111,7 +111,7 @@ public class StubConversionStage implements MigrationStage {
         "You can also use the \"Fix Missing imports\" action from Logical View's context menu to add theese dependencies automatically and Ctrl-R shortcut to add imports one-by-one\n"+
         "To chack for broken references again, select \"Check Project\" from project's context menu in project tree.";
     } finally {
-      mcSettings.setRefsOnlyMode(false);
+      mcSettings.setMigrationMode(false);
     }
   }
 
