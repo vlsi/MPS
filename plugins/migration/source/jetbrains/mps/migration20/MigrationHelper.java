@@ -81,7 +81,6 @@ public class MigrationHelper {
       int res = Messages.showDialog(mb, stage.title(), new String[]{"Proceed", "Stop"}, 0, Messages.getInformationIcon());
       if (res != 0) {
         Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0", "Migration stopped", Messages.getInformationIcon());
-        checkRestart(stage);
         return true;
       }
     }
