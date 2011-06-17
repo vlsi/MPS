@@ -11,6 +11,8 @@
   <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
+  <language namespace="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
+  <language namespace="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
   <import index="oj8w" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" version="-1" />
@@ -27,6 +29,9 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
+  <import index="adh8" modelUID="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" version="-1" implicit="yes" />
+  <import index="tpsk" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" implicit="yes" />
+  <import index="ddum" modelUID="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" version="22" implicit="yes" />
   <roots>
     <node type="f1er.SomeConcept" typeId="f1er.4928971978190304900" id="3347833162492308078">
       <property name="name" nameId="tpck.1169194664001" value="SomeInvalid" />
@@ -49,6 +54,9 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8851756219471015171">
       <property name="name" nameId="tpck.1169194664001" value="Main" />
+    </node>
+    <node type="tpsk.Project" typeId="tpsk.1196851066733" id="8294204555084730648">
+      <property name="name" nameId="tpck.1169194664001" value="project" />
     </node>
   </roots>
   <root id="3347833162492308078" />
@@ -182,11 +190,11 @@
                         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3131153648913085790">
                           <property name="name" nameId="tpck.1169194664001" value="main" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3131153648913085791">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1058143989625184529" resolveInfo="Main" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1058143989625184529" resolveInfo="TemplateConfigurationTest" />
                           </node>
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3131153648913085792">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3131153648913085793">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1058143989625184531" resolveInfo="Main" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1058143989625184531" resolveInfo="TemplateConfigurationTest" />
                             </node>
                           </node>
                         </node>
@@ -1112,11 +1120,11 @@
                         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5502823699574524063">
                           <property name="name" nameId="tpck.1169194664001" value="main" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5502823699574524064">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5502823699574524006" resolveInfo="TemplateConfigurationTest" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5502823699574524006" resolveInfo="SettingsEditorPanelTest" />
                           </node>
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5502823699574524065">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5502823699574524066">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5502823699574524008" resolveInfo="TemplateConfigurationTest" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5502823699574524008" resolveInfo="SettingsEditorPanelTest" />
                             </node>
                           </node>
                         </node>
@@ -1569,7 +1577,7 @@
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2372421611505994111">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" />
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
   </root>
@@ -1822,6 +1830,20 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="8294204555084730648">
+    <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="8294204555084730649">
+      <property name="name" nameId="tpck.1169194664001" value="default" />
+      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="8294204555084730668">
+        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812872" resolveInfo="echo" />
+        <node role="internalText" roleId="tpsk.1197724814674" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8294204555084730669">
+          <property name="value" nameId="tpsk.1196861024475" value="Hello, world!" />
+        </node>
+      </node>
+    </node>
+    <node role="default" roleId="tpsk.1196859969927" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="8294204555084730650">
+      <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="8294204555084730649" resolveInfo="default" />
     </node>
   </root>
 </model>

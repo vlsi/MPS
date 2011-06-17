@@ -84,5 +84,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.sandbox.sandbox.project" file="project.xml" />
 </dependenciesRoot>
 
