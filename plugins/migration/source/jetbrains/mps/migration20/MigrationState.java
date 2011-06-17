@@ -77,7 +77,7 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
         String message = "Migration from 1.5 to 2.0 was started, but hasn't finished yet.\n" +
-          "Current state: " + myState.toString() + "\n" +
+          "Current state: " + myState.getStage().title() + "\n" +
           "Continue migration?";
         int res = Messages.showDialog(myProject,
           message,
