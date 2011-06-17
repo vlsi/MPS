@@ -68,14 +68,19 @@ public class MigrationHelper {
         }
 
         if (stage.needsRestart()) {
-          cleanRestart();
+          FSRecords.invalidateCaches();
+
+          int res = Messages.showDialog(
+            "Refactoring " + stage.title() + " requested IDE restart.\n+" +
+              "Restart now?",
+            "Restart request", new String[]{"Restart", "Later"}, 0, Messages.getQuestionIcon());
+
+          if (res == 0) {
+            ApplicationManager.getApplication().restart();
+          }
         }
       }
     }
   }
 
-  private void cleanRestart() {
-    FSRecords.invalidateCaches();
-    ApplicationManager.getApplication().restart();
-  }
 }
