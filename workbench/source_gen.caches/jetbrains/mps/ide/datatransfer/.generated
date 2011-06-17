@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5lntxva23xyneuzdl666deqx01sceg">
+<dependencies version="2" modelHash="-8hqlgabw0of6rd1k3ftims863y9puo1">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.datatransfer(MPS.Classpath/jetbrains.mps.datatransfer@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(MPS.Classpath/jetbrains.mps.project.structure.modules@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -17,7 +17,7 @@
   <common hash="a99xkhlp8qwjvgw0i19au28v9cjw74u">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
-  <source id="6299533519672638253" name="CopyPasteUtil" hash="4ndezdx3zrzoqj87rvy3r28tk34wfds">
+  <source id="6299533519672638253" name="CopyPasteUtil" hash="-5b8dchalz1p27o5ws2fuw63cknwk0wa">
     <dep root="6299533519672649753" />
     <dep root="6299533519672651952" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.datatransfer(MPS.Classpath/jetbrains.mps.datatransfer@java_stub)" />
