@@ -487,7 +487,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3494136638017197657">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3494136638017197658">
-                  <property name="value" nameId="tpee.1070475926801" value="On each step MPS will tell you what it intends to do, then perform a refactoring, restart and, after some of the steps, ask you to change some code by hand." />
+                  <property name="value" nameId="tpee.1070475926801" value="On each step MPS will tell you what it intends to do, then perform a refactoring and, after some of the steps, ask you to change some code by hand. Sometimes MPS will ask you to restart." />
                 </node>
               </node>
             </node>
@@ -774,7 +774,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3494136638017104929" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3494136638017197613">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3494136638017197614">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3494136638017197622">
