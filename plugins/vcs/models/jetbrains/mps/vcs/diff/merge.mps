@@ -4853,7 +4853,26 @@
               <property name="text" nameId="tpee.6329021646629104958" value="process child" />
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4515621863031789163" />
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4415110399252641234">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4415110399252641235">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4515621863031846308" resolveInfo="invalidateChanges" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="4415110399252641252">
+                <node role="key" roleId="tp2q.1197932525128" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4415110399252641253">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="4415110399252641254">
+                    <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4415110399252641255">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4515621863031787956" resolveInfo="node" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4415110399252641256">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
+                  </node>
+                </node>
+                <node role="map" roleId="tp2q.1197932505799" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4415110399252641257">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4515621863031787991" resolveInfo="myNodeToChanges" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4515621863031787956">
           <property name="name" nameId="tpck.1169194664001" value="node" />

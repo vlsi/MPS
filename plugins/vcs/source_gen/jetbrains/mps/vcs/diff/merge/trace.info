@@ -466,7 +466,7 @@
     <nodeInfo nodeId="4515621863031787975" fileName="MergeContext.java" startLine="332" startPosition="84" endLine="333" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4515621863031789162" fileName="MergeContext.java" startLine="334" startPosition="7" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4515621863031789160" fileName="MergeContext.java" startLine="335" startPosition="0" endLine="336" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4515621863031789163" fileName="MergeContext.java" startLine="336" startPosition="23" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4415110399252641234" fileName="MergeContext.java" startLine="336" startPosition="23" endLine="337" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4515621863031789076" fileName="MergeContext.java" startLine="340" startPosition="64" endLine="341" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4515621863031846381" fileName="MergeContext.java" startLine="343" startPosition="47" endLine="344" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4415110399252640056" fileName="MergeContext.java" startLine="346" startPosition="10" endLine="347" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -690,7 +690,7 @@
     <scopeInfo nodeId="4124845871897265725" fileName="MergeContext.java" startLine="203" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="4124845871897265736" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="4515621863031787955" fileName="MergeContext.java" startLine="331" startPosition="59" endLine="337" endPosition="0" />
+    <scopeInfo nodeId="4515621863031787955" fileName="MergeContext.java" startLine="331" startPosition="59" endLine="337" endPosition="85" />
     <scopeInfo nodeId="4515621863031788814" fileName="MergeContext.java" startLine="349" startPosition="0" endLine="355" endPosition="0">
       <varInfo nodeId="4515621863031788817" varName="event" />
     </scopeInfo>

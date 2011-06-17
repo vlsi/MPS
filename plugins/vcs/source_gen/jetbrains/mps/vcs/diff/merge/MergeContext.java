@@ -334,7 +334,7 @@ public class MergeContext {
       }
 
       // process child 
-
+      invalidateChanges(MapSequence.fromMap(myNodeToChanges).get(node.getSNodeId()));
     }
 
     private void referenceModified(SModelReferenceEvent event) {
