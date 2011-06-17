@@ -7,7 +7,6 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.GlobalScope;
 
 public class AddMissingLanguageImport_Intention extends BaseIntention implements Intention {
   public AddMissingLanguageImport_Intention() {
@@ -41,11 +40,11 @@ public class AddMissingLanguageImport_Intention extends BaseIntention implements
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return node.getLanguage(editorContext.getScope()) == null;
+    return node.getLanguage() == null;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    ModuleReference moduleRef = node.getLanguage(GlobalScope.getInstance()).getModuleReference();
+    ModuleReference moduleRef = node.getLanguage().getModuleReference();
     if (moduleRef == null) {
       return;
     }

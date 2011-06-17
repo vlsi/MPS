@@ -20,9 +20,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import javax.swing.border.TitledBorder;
 import java.util.ArrayList;
@@ -84,7 +85,7 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
           ChangeMethodSignatureDialog.this.myEditor.addLanguageStructureModel((Language) module);
         }
         IModule m = ChangeMethodSignatureDialog.this.myOperationContext.getModule();
-        for (Language language : ListSequence.fromList(m.getDependenciesManager().getAllUsedLanguages())) {
+        for (Language language : SetSequence.fromSet(m.getDependenciesManager().getAllUsedLanguages())) {
           ChangeMethodSignatureDialog.this.myEditor.addLanguage(language);
         }
         SModel model = ChangeMethodSignatureDialog.this.myDeclaration.getModel();
