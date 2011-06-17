@@ -8,12 +8,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class SelectLocalEnd_Action extends GeneratedAction {
@@ -27,7 +27,7 @@ public class SelectLocalEnd_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SelectLocalEnd_Action.this.canCallSelectLocalEnd(_params);
+    return EditorActionUtils.isReadonlyActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) && SelectLocalEnd_Action.this.canCallSelectLocalEnd(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

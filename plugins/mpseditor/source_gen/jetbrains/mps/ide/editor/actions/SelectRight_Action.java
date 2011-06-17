@@ -26,7 +26,7 @@ public class SelectRight_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() instanceof SingularSelection;
+    return EditorActionUtils.isReadonlyActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) && ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() instanceof SingularSelection;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

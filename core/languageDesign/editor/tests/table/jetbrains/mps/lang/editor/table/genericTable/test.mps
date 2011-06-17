@@ -67,6 +67,12 @@
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="458414629082786297">
       <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
     </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7541022036347681895">
+      <property name="name" nameId="tpck.1169194664001" value="SelectLeftInCell" />
+    </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8064689248313190611">
+      <property name="name" nameId="tpck.1169194664001" value="SelectRow" />
+    </node>
   </roots>
   <root id="6170050146384276436">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="2qyu.UltimateContainer" typeId="2qyu.5508804114499095504" id="6170050146384276437">
@@ -1932,5 +1938,291 @@
     </node>
   </root>
   <root id="458414629082786297" />
+  <root id="7541022036347681895">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="2qyu.Table" typeId="2qyu.2882388703616155296" id="7541022036347681897">
+      <property name="name" nameId="tpck.1169194664001" value="selectLeftInCellTable" />
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681898">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681899">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681900">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681901">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681902">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681903">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681904">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681905">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681906">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681907">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681908">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 1$" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8064689248313188126">
+            <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
+            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+          </node>
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681909">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681910">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681911">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681912">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681913">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681914">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681915">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681916">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681917">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 2$" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="2qyu.Table" typeId="2qyu.2882388703616155296" id="7541022036347681918">
+      <property name="name" nameId="tpck.1169194664001" value="selectcolumntTable" />
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681919">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681920">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681921">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681922">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681923">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681924">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681925">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681926">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681927">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681928">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681929">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 1$" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8064689248313188127">
+            <property name="caretPosition" nameId="tp5g.1229194968596" value="1" />
+            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+          </node>
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681930">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681931">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681932">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681933">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681934">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681935">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681936">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681937">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681938">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 2$" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7541022036347703699">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7541022036347703700">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7541022036347703702">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8257980988067921114" resolveInfo="SelectLeft" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="8064689248313190611">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="2qyu.Table" typeId="2qyu.2882388703616155296" id="8064689248313190613">
+      <property name="name" nameId="tpck.1169194664001" value="selectColumnTable" />
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190614">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190615">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190616">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190617">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190618">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190619">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190620">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190621">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190622">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190623">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190624">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 1$" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8064689248313222890">
+            <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
+            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+          </node>
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190625">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190626">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190627">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190628">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190629">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190630">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190631">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190632">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190633">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 2$" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="2qyu.Table" typeId="2qyu.2882388703616155296" id="8064689248313190634">
+      <property name="name" nameId="tpck.1169194664001" value="selectRowTable" />
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190635">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190636">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190637">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190638">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$0 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190639">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190640">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190641">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190642">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$1 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190643">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190644">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190645">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190646">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$2 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190647">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190648">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190649">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190650">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$3 2$" />
+        </node>
+      </node>
+      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190651">
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190652">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 0$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190653">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 1$" />
+        </node>
+        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190654">
+          <property name="value" nameId="2qyu.2882388703616155301" value="$4 2$" />
+        </node>
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8064689248313190655">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Table_3p37vj_c0_row_2" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8064689248313199350">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="8064689248313199351">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="8064689248313199353">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8257980988067921114" resolveInfo="SelectLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="8064689248313199358">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="8064689248313199359">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8257980988067921114" resolveInfo="SelectLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="8064689248313199355">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="8064689248313199356">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8257980988067921114" resolveInfo="SelectLeft" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="8064689248313199354" />
+    </node>
+  </root>
 </model>
 

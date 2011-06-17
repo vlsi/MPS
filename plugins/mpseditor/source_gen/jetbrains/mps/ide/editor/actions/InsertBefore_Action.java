@@ -8,10 +8,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 
@@ -26,10 +24,7 @@ public class InsertBefore_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Component) {
-      return false;
-    }
-    return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
+    return EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -63,7 +58,7 @@ public class InsertBefore_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorActionUtils.callInsertBeforeAction(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
+      EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "InsertBefore", t);

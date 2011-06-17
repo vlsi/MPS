@@ -8,12 +8,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class Insert_Action extends GeneratedAction {
@@ -27,10 +26,7 @@ public class Insert_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Component) {
-      return false;
-    }
-    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isFocusOwner() && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly()) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible());
+    return EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -51,10 +47,6 @@ public class Insert_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("editorCell") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
@@ -64,13 +56,14 @@ public class Insert_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isFirstCaretPosition()) {
-        if (!(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isLastCaretPosition()) || (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isLastPositionAllowed()))) {
-          EditorActionUtils.callInsertBeforeAction(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
+      EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
+      if (editorCell.isFirstCaretPosition()) {
+        if (!(editorCell.isLastCaretPosition()) || (editorCell instanceof EditorCell_Label && !(((EditorCell_Label) editorCell).isLastPositionAllowed()))) {
+          EditorActionUtils.callInsertBeforeAction(editorCell);
           return;
         }
       }
-      EditorActionUtils.callInsertAction(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
+      EditorActionUtils.callInsertAction(editorCell);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Insert", t);

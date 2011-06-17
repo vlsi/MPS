@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.selection;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -106,11 +105,7 @@ public class EditorCellSelection implements SingularSelection {
   @Override
   public SelectionInfo getSelectionInfo() throws SelectionStoreException {
     SelectionInfo selectionInfo = new SelectionInfo(this.getClass().getName());
-    CellInfo cellInfo = myEditorCell.getCellInfo();
-    if (!(cellInfo instanceof DefaultCellInfo)) {
-      throw new SelectionStoreException("EditorCellSelection is referencing Editor cell having CellInfo different from DefaultCellInfo: " + cellInfo);
-    }
-    selectionInfo.setCellInfo((DefaultCellInfo) cellInfo);
+    selectionInfo.setCellInfo(myEditorCell.getCellInfo());
     selectionInfo.getPropertiesMap().put(CARET_X_PROPERTY_NAME, Integer.toString(getCaretX()));
     selectionInfo.getPropertiesMap().put(SIDE_SELECT_DIRECTION_PROPERTY_NAME, mySideSelectDirection.name());
     return selectionInfo;
