@@ -17,16 +17,14 @@ package jetbrains.mps.migration20.stages;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
 
-public class OptimizeImportsStage implements MigrationStage{
+public class OptimizeImportsStage implements MigrationStage {
   public String title() {
     return "Optimize Imports";
   }
@@ -49,10 +47,10 @@ public class OptimizeImportsStage implements MigrationStage{
   }
 
   public String messageBefore() {
-    return null;
+    return "Now imports will be optimized to remove old unused dependencies to stub models and non-existing modules";
   }
 
   public String messageAfter() {
-    return null;
+    return "Imports optimized";
   }
 }
