@@ -19,17 +19,22 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.migration.persistence.PersistenceUpdater;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class PersistenceUpgradeStage implements MigrationStage {
   public String title() {
     return "Persistence Upgrade";
   }
 
-  public void execute(MPSProject p) {
-    for (IModule module : p.getModules()) {
-      if (module.isPackaged()) continue;
-      module.save();
-    }
+  public void execute(final MPSProject p) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        for (IModule module : p.getModules()) {
+          if (module.isPackaged()) continue;
+          module.save();
+        }
+      }
+    });
 
     PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
     persistenceUpdater.upgradePersistenceInProject(p.getProject(), WindowManager.getInstance().getFrame(p.getProject()));
