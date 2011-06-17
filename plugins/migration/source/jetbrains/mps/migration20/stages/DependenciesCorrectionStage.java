@@ -19,7 +19,6 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.library.BootstrapLanguages_DevKit;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.migration20.stages.MigrationStage;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -72,10 +71,10 @@ public class DependenciesCorrectionStage implements MigrationStage {
   }
 
   public String messageBefore() {
-    return null;
+    return "Since there were some problems with module dependencies in MPS 1.5, that are now fixed, module imports should be changed correspondingly";
   }
 
   public String messageAfter() {
-    return null;
+    return "Dependencies problems fixed";
   }
 }
