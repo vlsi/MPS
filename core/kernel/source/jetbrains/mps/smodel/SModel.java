@@ -639,10 +639,6 @@ public class SModel {
 
   // create new implicit import list based on used models, explicit import and old implicit import list
   public void calculateImplicitImports() {
-    if (GlobalScope.getInstance() == null) {
-      return;
-    }
-
     Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
     if (myModelDescriptor != null && !LanguageAspect.STRUCTURE.is(myModelDescriptor))
       usedModels.remove(myReference);   // do not import self if not structure
