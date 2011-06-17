@@ -85,8 +85,8 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
           new String[]{"Continue", "Not now", "Abort"}, 0, Messages.getQuestionIcon()
         );
         if (res > 0) {
-          if (res == 1) {
-            myState = MState.DONE;
+          if (res == 2) {
+            myState = MState.INITIAL;
           }
           return;
         }
