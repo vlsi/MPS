@@ -288,7 +288,6 @@
     <dep model="f:java_stub#fba399db-f591-45dc-a279-e2a2a986e262#org.apache.tools.ant(jetbrains.mps.build.generictasks/org.apache.tools.ant@java_stub)" />
     <dep model="f:java_stub#fba399db-f591-45dc-a279-e2a2a986e262#org.apache.tools.ant.util(jetbrains.mps.build.generictasks/org.apache.tools.ant.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />

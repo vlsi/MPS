@@ -19,7 +19,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-1nd6uy0e8gxev0yzcrmonka8fmr2chr" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-19pllpp1flqcw10ar7lq7ibhgril3uw" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="bs12zx6bureypbcmufkaon2v0z94d94" />
-  <dep model="r:0dff1723-c756-41af-8aa7-4cfea375b0ba(jetbrains.mps.make.facet.generator.template.main@generator)" hash="-dqqgjslbooct9o4q45m9r261w48bmr4" />
+  <dep model="r:0dff1723-c756-41af-8aa7-4cfea375b0ba(jetbrains.mps.make.facet.generator.template.main@generator)" hash="5eozme5l9j5tapxdegjmeyvtkjeqgi3" />
   <dep model="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" hash="9vnhlx5flupkip5j94hltmq4v8vba2q" />
   <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="-8gut7thqrfdizr4ee7r2kw1isfzp4e7" />
   <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="-dckgmtjk0z0j9vtax7glt8i2i1dl7gx" />
@@ -30,7 +30,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-5vrtdtr7vhe0t5fbt2332pkrcn57obc" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
-  <dep model="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" hash="c3w9ivbgdk53k034sfb6mlptcefrple" />
+  <dep model="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" hash="-exf19gg45u524jbznwocvi49jd8l3et" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-c8o7egrhhlddj60rzgg330ecnpq5k8d" />
   <common hash="e3t0wxx5zgqtcuyfef0i75sbr3gglem" dependsOnNodes="true">
     <dep root="2551169102353069011" />

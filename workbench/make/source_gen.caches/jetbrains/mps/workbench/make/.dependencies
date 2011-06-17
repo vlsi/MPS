@@ -130,7 +130,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Iterator" />
@@ -149,6 +148,7 @@
     <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator" />

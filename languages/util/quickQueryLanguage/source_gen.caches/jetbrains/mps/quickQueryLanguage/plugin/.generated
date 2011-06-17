@@ -60,7 +60,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" hash="8uumyxdmxadrxsmz1enbyk7d6mevte9" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="bs12zx6bureypbcmufkaon2v0z94d94" />
   <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="6u4dzjbl1tutv6obbzu51ip5m3mgv6z" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" hash="6cva9i534g9ag1nogt4wgv9ws61e16e" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" hash="-1wds49kiy1h563vo5a6l3av0su3knn8" />
   <dep model="r:00000000-0000-4000-0000-011c8959050f(jetbrains.mps.quickQueryLanguage.plugin)" hash="-evxwhucdkd307m034gh88f8t90la2j5" />
   <dep model="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)" hash="-3vzpexhxp4mzx8xgrqcv3hzlb6bt5n7" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="n57flnwgk5r9dkaaf1oubcs9e184fo" />
