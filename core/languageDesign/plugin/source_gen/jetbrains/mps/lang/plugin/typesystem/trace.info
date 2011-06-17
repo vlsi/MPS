@@ -40,9 +40,9 @@
   <unitInfo fileName="typeof_AskStatement_InferenceRule.java" startLine="112" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_AskStatement_InferenceRule$QuotationClass_f6q3t9_a0a2a0" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="136" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule$QuotationClass_jo2b2o_a0a0a0b0a1a3a0" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="165" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule$QuotationClass_jo2b2o_a0a0a0d0a" />
-  <unitInfo fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_SmartDisposeClosureParameterDeclaration_InferenceRule" />
   <unitInfo fileName="typeof_BaseCreatorTarget_InferenceRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_BaseCreatorTarget_InferenceRule" />
   <unitInfo fileName="typeof_PrepareReturnType_FunctionParameter_InferenceRule.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_PrepareReturnType_FunctionParameter_InferenceRule" />
+  <unitInfo fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_SmartDisposeClosureParameterDeclaration_InferenceRule" />
   <unitInfo fileName="check_RunConfigurationCreatesDebugSession_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.check_RunConfigurationCreatesDebugSession_NonTypesystemRule" />
   <unitInfo fileName="check_CommandClosureLiteral_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.check_CommandClosureLiteral_NonTypesystemRule" />
   <unitInfo fileName="HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule" />
@@ -655,14 +655,17 @@
     <scopeInfo nodeId="441707825122650656" fileName="typeof_NodesCreatorTarget_InferenceRule.java" startLine="21" startPosition="119" endLine="26" endPosition="5" />
   </root>
   <root nodeId="485694842828666112">
-    <nodeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="21" startPosition="7" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="22" startPosition="55" endLine="23" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="23" startPosition="203" endLine="24" endPosition="562" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="20" startPosition="297" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="485694842828666115" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="19" startPosition="124" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="21" startPosition="7" endLine="24" endPosition="562" />
-    <scopeInfo nodeId="485694842828666131" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="20" startPosition="297" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="485694842828666113" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="19" startPosition="124" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="5101130623373192592" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="19" startPosition="124" endLine="20" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="23" startPosition="55" endLine="24" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="24" startPosition="203" endLine="25" endPosition="500" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="21" startPosition="158" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="485694842828666115" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="20" startPosition="126" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="485694842828666182" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="22" startPosition="7" endLine="25" endPosition="500" />
+    <scopeInfo nodeId="485694842828666131" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="21" startPosition="158" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="485694842828666113" fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="19" startPosition="124" endLine="27" endPosition="5">
+      <varInfo nodeId="5101130623373192593" varName="tab" />
+    </scopeInfo>
   </root>
   <root nodeId="4923436771431072775">
     <nodeInfo nodeId="4923436771431072981" fileName="check_CommandClosureLiteral_NonTypesystemRule.java" startLine="24" startPosition="9" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
