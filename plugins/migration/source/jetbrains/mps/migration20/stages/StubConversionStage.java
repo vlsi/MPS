@@ -108,7 +108,8 @@ public class StubConversionStage implements MigrationStage {
       return FINISHED + "There are " + problems.size() + " unresolved references left. \n"+
         "Most probably this means that the module with a reference doesn't import the module with referenced object. "+
         "We recommend to pause the migration now and correct module dependencies by hand. "+
-        "You can also use the \"Fix Missing imports\" action from Logical View's context menu to add theese dependencies automatically and Ctrl-R shortcut to add imports one-by-one";
+        "You can also use the \"Fix Missing imports\" action from Logical View's context menu to add theese dependencies automatically and Ctrl-R shortcut to add imports one-by-one\n"+
+        "To chack for broken references again, select \"Check Project\" from project's context menu in project tree.";
     } finally {
       mcSettings.setRefsOnlyMode(false);
     }
