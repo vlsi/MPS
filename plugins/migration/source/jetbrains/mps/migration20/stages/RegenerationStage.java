@@ -17,7 +17,6 @@ package jetbrains.mps.migration20.stages;
 
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
-import jetbrains.mps.migration20.stages.MigrationStage;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 
@@ -36,14 +35,14 @@ public class RegenerationStage implements MigrationStage {
   }
 
   public boolean needsRestart() {
-    return false;
+    return true;
   }
 
   public String messageBefore() {
-    return null;
+    return "Now all project modules will be regenerated for the generated code to work properly with the MPS 2.0";
   }
 
   public String messageAfter() {
-    return null;
+    return "Migration finished.";
   }
 }
