@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.dataFlow.DFABuilders" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.dataFlow.DFABuilders" />
+  <root nodeId="2228878981387200506">
+    <nodeInfo nodeId="2228878981387200509" fileName="ReportErrorStatement_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2228878981387200518" fileName="ReportErrorStatement_DataFlow.java" startLine="15" startPosition="101" endLine="16" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2228878981387200528" fileName="ReportErrorStatement_DataFlow.java" startLine="16" startPosition="99" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2228878981387200506" fileName="ReportErrorStatement_DataFlow.java" startLine="10" startPosition="68" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReportErrorStatement_DataFlow#()V" />
+    <nodeInfo nodeId="2228878981387200506" fileName="ReportErrorStatement_DataFlow.java" startLine="13" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="2228878981387200506" fileName="ReportErrorStatement_DataFlow.java" startLine="11" startPosition="42" endLine="11" endPosition="42" />
+    <scopeInfo nodeId="2228878981387200506" fileName="ReportErrorStatement_DataFlow.java" startLine="10" startPosition="68" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="2228878981387200508" fileName="ReportErrorStatement_DataFlow.java" startLine="14" startPosition="102" endLine="17" endPosition="36" />
+    <scopeInfo nodeId="2228878981387200506" fileName="ReportErrorStatement_DataFlow.java" startLine="13" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="2228878981387200506" fileName="ReportErrorStatement_DataFlow.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.commands.dataFlow.ReportErrorStatement_DataFlow" />
+  </root>
   <root nodeId="856705193941282484">
     <nodeInfo nodeId="856705193941282493" fileName="CommandBuilderExpression_DataFlow.java" startLine="17" startPosition="111" endLine="18" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="856705193941282484" fileName="CommandBuilderExpression_DataFlow.java" startLine="12" startPosition="72" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommandBuilderExpression_DataFlow#()V" />

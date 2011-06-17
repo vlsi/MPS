@@ -23,6 +23,7 @@
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2401501559171392650">
       <property name="name" nameId="tpck.1169194664001" value="Executor" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="uhxm.2401501559171345993" resolveInfo="RunConfiguration" />
     </node>
     <node type="uhxm.BeforeTask" typeId="uhxm.7037083547576022975" id="247026320694134524">
