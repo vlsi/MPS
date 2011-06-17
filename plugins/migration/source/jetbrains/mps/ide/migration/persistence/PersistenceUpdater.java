@@ -57,7 +57,7 @@ public class PersistenceUpdater {
     });
   }
 
-  public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe) {
+  public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe, boolean silent) {
     final List<EditableSModelDescriptor> modelDescriptors = new ArrayList<EditableSModelDescriptor>();
     final List<SModelDescriptor> scopeModelDescriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -87,7 +87,7 @@ public class PersistenceUpdater {
       }
     }
 
-    if (modelDescriptors.isEmpty()) {
+    if (modelDescriptors.isEmpty() && !silent) {
       JOptionPane.showMessageDialog(mainframe, "No Models To Upgrade Found");
       return;
     }
@@ -105,22 +105,22 @@ public class PersistenceUpdater {
     }
   }
 
-  public void upgradePersistenceInProject(Project project, JFrame mainFrame) {
+  public void upgradePersistenceInProject(Project project, JFrame mainFrame, boolean silent) {
     MPSProject p = project.getComponent(MPSProject.class);
-    upgradePersistenceInUnit(project.getComponent(ProjectScope.class), "Project " + p.getProjectFile().toString(), mainFrame);
+    upgradePersistenceInUnit(project.getComponent(ProjectScope.class), "Project " + p.getProjectFile().toString(), mainFrame, silent);
   }
 
   public void upgradePersistenceInAllVisibleModels(Frame mainFrame) {
-    upgradePersistenceInUnit(GlobalScope.getInstance(), "All Visible Models", mainFrame);
+    upgradePersistenceInUnit(GlobalScope.getInstance(), "All Visible Models", mainFrame, false);
   }
 
   public void upgradePersistenceInModule(IModule module, Frame mainFrame) {
     String typeString = module.getClass().getName();
-    upgradePersistenceInUnit(module.getScope(), typeString + " " + module.getModuleFqName(), mainFrame);
+    upgradePersistenceInUnit(module.getScope(), typeString + " " + module.getModuleFqName(), mainFrame, false);
   }
 
   public void upgradePersistenceInModel(SModelDescriptor modelDescriptor, Frame mainFrame) {
-    upgradePersistenceInUnit(new OnlyModelScope(modelDescriptor), "Model " + modelDescriptor.getSModelReference().getSModelFqName().toString(), mainFrame);
+    upgradePersistenceInUnit(new OnlyModelScope(modelDescriptor), "Model " + modelDescriptor.getSModelReference().getSModelFqName().toString(), mainFrame, false);
   }
 
 

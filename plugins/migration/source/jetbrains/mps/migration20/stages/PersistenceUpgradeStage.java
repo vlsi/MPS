@@ -37,7 +37,7 @@ public class PersistenceUpgradeStage implements MigrationStage {
     });
 
     PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
-    persistenceUpdater.upgradePersistenceInProject(p.getProject(), WindowManager.getInstance().getFrame(p.getProject()));
+    persistenceUpdater.upgradePersistenceInProject(p.getProject(), WindowManager.getInstance().getFrame(p.getProject()), true);
   }
 
   public boolean needsCommand() {
