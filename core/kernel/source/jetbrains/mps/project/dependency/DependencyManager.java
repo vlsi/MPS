@@ -26,20 +26,23 @@ public interface DependencyManager {
   /*
    *  Transitive closure of all used langs + langs exported from used devkits and all langs being extended by those.
    */
-  List<Language> getAllUsedLanguages();
-
+  Set<Language> getAllUsedLanguages();
 
   /*
-   *  All modules required for compilation + languages with runtime stub paths
+   *  Visible modules, respecting re-export dependencies & solutions exported from used devkits (
+   */
+  Set<IModule> getAllVisibleModules();
+
+  /*
+   *  Collects all visible modules (including current).
+   */
+  void collectVisibleModules(/* out */ Set<IModule> dependencies, boolean reexportOnly);
+
+  /*
+   *  Collects all modules required for compilation + languages with runtime stub paths
    */
   void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime);
 
-  /**
-   * Explicitly declared deps + all solutions exported from used devkits.
-   * @return
-   */
-  @Deprecated
-  Set<IModule> getAllDependOnModules();
 
   /**
    * AKA getAllDependOnModules()

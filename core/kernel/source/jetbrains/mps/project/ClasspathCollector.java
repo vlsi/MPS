@@ -25,7 +25,6 @@ import java.util.*;
 
 public class ClasspathCollector {
   private Set<IModule> myStart;
-  private Set<IModule> myVisited = new HashSet<IModule>();
   private Set<IClassPathItem> myResult = new LinkedHashSet<IClassPathItem>();
   private Map<IClassPathItem, List<IModule>> myPaths = new HashMap<IClassPathItem, List<IModule>>();
   private Stack<IModule> myStack = new Stack<IModule>();

@@ -122,9 +122,9 @@ public class ImportProperties {
     if (model.getModule() != null) {
       modules.add(model.getModule());
     }
-    modules.retainAll(mySourceModule.getDependenciesManager().getAllDependOnModules());
+    modules.retainAll(mySourceModule.getDependenciesManager().getAllVisibleModules());
     modules.add(mySourceModule);
-    modules.removeAll(myTargetModule.getDependenciesManager().getAllDependOnModules());
+    modules.removeAll(myTargetModule.getDependenciesManager().getAllVisibleModules());
     modules.remove(myTargetModule);
 
     List<ModuleReference> result = new ArrayList<ModuleReference>();
@@ -160,11 +160,11 @@ public class ImportProperties {
     IModule module = model.getModule();
 
     if (module == myTargetModule) return null;
-    Set<IModule> deps = myTargetModule.getDependenciesManager().getAllDependOnModules();
+    Set<IModule> deps = myTargetModule.getDependenciesManager().getAllVisibleModules();
     if (deps.contains(module)) return null;
     if (module == mySourceModule) return mySourceModule.getModuleReference();
 
-    if (mySourceModule.getDependenciesManager().getAllDependOnModules().contains(module))
+    if (mySourceModule.getDependenciesManager().getAllVisibleModules().contains(module))
       return module.getModuleReference();
 
     return null;
