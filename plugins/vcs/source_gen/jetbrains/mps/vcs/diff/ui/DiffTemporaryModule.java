@@ -32,11 +32,13 @@ import jetbrains.mps.smodel.ModelLoadingState;
 public class DiffTemporaryModule extends AbstractModule {
   private SModel myModel;
   private Project myProject;
+  private boolean myEditable;
 
-  private DiffTemporaryModule(SModel model, String version, Project project) {
+  private DiffTemporaryModule(SModel model, String version, Project project, boolean editable) {
     setModuleReference(ModuleReference.fromString(SModelOperations.getModelName(model) + "@" + version));
     myModel = model;
     myProject = project;
+    myEditable = editable;
   }
 
   public Class getClass(String fqName) {
@@ -102,11 +104,19 @@ public class DiffTemporaryModule extends AbstractModule {
     return null;
   }
 
+  public boolean isEditable() {
+    return myEditable;
+  }
+
   public static void createModuleForModel(SModel model, String version, Project project) {
+    createModuleForModel(model, version, project, false);
+  }
+
+  public static void createModuleForModel(SModel model, String version, Project project, boolean editable) {
     if (model.getModelDescriptor() != null) {
       return;
     }
-    DiffTemporaryModule module = new DiffTemporaryModule(model, version, project);
+    DiffTemporaryModule module = new DiffTemporaryModule(model, version, project, editable);
     model.setModelDescriptor(module.createModelDescriptor());
   }
 
