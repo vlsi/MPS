@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Executor_TabDescriptor extends EditorTabDescriptor {
@@ -59,12 +61,20 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
     });
   }
 
+  public List<SNode> getConcepts(final SNode node) {
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
+      }
+    }));
+  }
+
   public boolean commandOnCreate() {
     return false;
   }
 
   public SNode createNode(final SNode node, final SNode concept) {
-    SNode executor = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", null);
+    SNode executor = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", null);
     SLinkOperations.setTarget(executor, "configuration", node, false);
     SModelOperations.addRootNode(SNodeOperations.getModel(node), executor);
     return executor;
