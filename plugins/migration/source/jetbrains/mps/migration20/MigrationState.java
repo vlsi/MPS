@@ -54,16 +54,16 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
 
   public MyState getState() {
     MyState state = new MyState();
-    state.myState = myState.toInt();
+    state.myState = myState.name();
     return state;
   }
 
   public void loadState(MyState state) {
-    myState = MState.fromInt(state.myState);
+    myState = MState.valueOf(state.myState);
   }
 
   public static class MyState {
-    public int myState;
+    public String myState;
   }
 
   //----------component stuff-------------

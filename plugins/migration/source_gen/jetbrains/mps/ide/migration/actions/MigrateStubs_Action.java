@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.migration20.MigrationHelper;
+import jetbrains.mps.migration20.stages.StubConversionStage;
 import jetbrains.mps.project.MPSProject;
 
 public class MigrateStubs_Action extends GeneratedAction {
@@ -48,7 +48,7 @@ public class MigrateStubs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MigrationHelper.stageStubsMigration(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      new StubConversionStage().execute(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MigrateStubs", t);

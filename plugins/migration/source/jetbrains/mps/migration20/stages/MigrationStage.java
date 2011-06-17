@@ -13,26 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.migration20;
+package jetbrains.mps.migration20.stages;
 
-import jetbrains.mps.migration20.stages.*;
+import jetbrains.mps.project.MPSProject;
 
-public enum MState {
-  INITIAL(null),
-  PERSISTENCE_UPGRADE(new PersistenceUpgradeStage()),
-  LANGUAGES_DEPS_CORRECTION(new DependenciesCorrectionStage()),
-  STUBS_CONVERSION(new StubConversionStage()),
-  LANGUAGES_MIGRATION(new LanguageMigrationStage()),
-  REGENERATION(new RegenerationStage()),
-  DONE(null);
+public interface MigrationStage {
+  String title();
 
-  private MigrationStage myStage;
+  void execute(MPSProject p);
+  boolean needsCommand();
+  boolean needsRestart();
 
-  MState(MigrationStage stage) {
-    myStage = stage;
-  }
-
-  public MigrationStage getStage() {
-    return myStage;
-  }
+  String messageBefore();
+  String messageAfter();
 }
