@@ -39,10 +39,10 @@ public class RegenerationStage implements MigrationStage {
   }
 
   public String messageBefore() {
-    return "Now all project modules will be regenerated for the generated code to work properly with the MPS 2.0";
+    return "Migration is almost finished. Now all project modules will be regenerated for the generated code to work properly with the MPS 2.0";
   }
 
   public String messageAfter() {
-    return "Migration finished.";
+    return null;
   }
 }
