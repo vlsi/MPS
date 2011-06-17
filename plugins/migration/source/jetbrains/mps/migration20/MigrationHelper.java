@@ -31,12 +31,12 @@ public class MigrationHelper {
   }
 
   public void migrate() {
-    MigrationState msComponent = myProject.getComponent(MigrationState.class);
+    final MigrationState msComponent = myProject.getComponent(MigrationState.class);
     final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     for (MState state : MState.values()) {
       if (msComponent.getMigrationState() == state) {
-        MState next = MState.values()[state.ordinal() + 1];
+        final MState next = MState.values()[state.ordinal() + 1];
         final MigrationStage stage = next.getStage();
 
         if (stage == null) continue;
@@ -49,6 +49,7 @@ public class MigrationHelper {
         Runnable stageRunnable = new Runnable() {
           public void run() {
             stage.execute(mpsProject);
+            msComponent.setMigrationState(next);
           }
         };
 
