@@ -40,6 +40,7 @@ public class MigrationHelper {
     final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     for (MState state : MState.values()) {
+      if (state == MState.DONE) break;
       if (msComponent.getMigrationState() == state) {
         final MState next = MState.values()[state.ordinal() + 1];
         final MigrationStage stage = next.getStage();
@@ -51,7 +52,7 @@ public class MigrationHelper {
 
         if (showMessageBefore(stage)) return;
 
-        ProgressManager.getInstance().run(new Modal(myProject,stage.title(),false) {
+        ProgressManager.getInstance().run(new Modal(myProject, stage.title(), false) {
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             final Runnable stageRunnable = new StageExecutor(stage, mpsProject);
