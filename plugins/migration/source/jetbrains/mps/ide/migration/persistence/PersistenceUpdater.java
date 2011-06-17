@@ -87,8 +87,10 @@ public class PersistenceUpdater {
       }
     }
 
-    if (modelDescriptors.isEmpty() && !silent) {
-      JOptionPane.showMessageDialog(mainframe, "No Models To Upgrade Found");
+    if (modelDescriptors.isEmpty()) {
+      if (!silent){
+        JOptionPane.showMessageDialog(mainframe, "No Models To Upgrade Found");
+      }
       return;
     }
 
