@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -32,11 +35,38 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     super(module);
   }
 
+  public static boolean checkCyclicInheritance(Language lang) {
+    List<Language> frontier = lang.getExtendedLanguages();
+    while (!frontier.isEmpty()){
+      List<Language> newFrontier = new ArrayList<Language>();
+      for (Language extendedLang : frontier) {
+        if (extendedLang == lang) {
+          return false;
+        }
+        newFrontier.addAll(extendedLang.getExtendedLanguages());
+      }
+      frontier = newFrontier;
+    }
+    return true;
+  }
+
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
     for (ModuleReference lang : myModule.getExtendedLanguageRefs()) {
       if (MPSModuleRepository.getInstance().getModule(lang) == null) {
         errors.add("Can't find extended language: " + lang.getModuleFqName());
+      }
+    }
+    ArrayList<Language> passed = new ArrayList<Language>();
+   /* if (!checkCyclicInheritance(myModule)) {
+      if (passed.contains(myModule)) {
+        errors.add("Cyclic language hierarchy: " + passed);
+      }
+    }      */
+    List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependOn());
+    for (IModule runtimeModule: runtimeModules) {
+      if (!(runtimeModule instanceof Solution)) {
+        errors.add("Runtime module "+ runtimeModule + " is not a solution");
       }
     }
     for (SModelReference accessory : myModule.getModuleDescriptor().getAccessoryModels()) {
