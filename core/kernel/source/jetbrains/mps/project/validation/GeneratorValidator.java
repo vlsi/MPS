@@ -48,12 +48,12 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     for(Language language : sourceLanguage.getAllExtendedLanguages()){
       extendedLanguages.add(language.getModuleFqName());
     }
+
     for (String lang : usedLanguages) {
-      if (!extendedLanguages.contains(lang)) {
+      if (!extendedLanguages.contains(lang) && !MPSModuleRepository.getInstance().getLanguage(lang).getRuntimeDependOn().isEmpty()) {
         errors.add(sourceLanguage + " should extend " + lang);
       }
     }
-
     return errors;
   }
 }
