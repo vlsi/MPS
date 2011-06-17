@@ -52,34 +52,54 @@ public class MigrationHelper {
 
   public void migrate() {
     MigrationState msComponent = myProject.getComponent(MigrationState.class);
-    MPSProject mpsProject = myProject.getComponent(MPSProject.class);
+    final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     if (msComponent.getMigrationState() == MState.INITIAL) {
-      stageUpgradePersistence(mpsProject);
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          stageUpgradePersistence(mpsProject);
+        }
+      });
       msComponent.setMigrationState(MState.PERSISTENCE_UPGRADED);
       cleanRestart();
     }
 
     if (msComponent.getMigrationState() == MState.PERSISTENCE_UPGRADED) {
-      stageFixDependencies(mpsProject);
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          stageFixDependencies(mpsProject);
+        }
+      });
       msComponent.setMigrationState(MState.LANGUAGES_DEPS_CORRECTED);
       cleanRestart();
     }
 
     if (msComponent.getMigrationState() == MState.LANGUAGES_DEPS_CORRECTED) {
-      stageStubsMigration(mpsProject);
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          stageStubsMigration(mpsProject);
+        }
+      });
       msComponent.setMigrationState(MState.STUBS_CONVERTED);
       cleanRestart();
     }
 
     if (msComponent.getMigrationState() == MState.STUBS_CONVERTED) {
-      stageLanguageMigrations(mpsProject);
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          stageLanguageMigrations(mpsProject);
+        }
+      });
       msComponent.setMigrationState(MState.LANGUAGES_MIGRATION);
       cleanRestart();
     }
 
     if (msComponent.getMigrationState() == MState.LANGUAGES_MIGRATION) {
-      stageRegeneration(mpsProject);
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          stageRegeneration(mpsProject);
+        }
+      });
       msComponent.setMigrationState(MState.REGENERATION);
     }
 

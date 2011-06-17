@@ -30,6 +30,8 @@
   </application-components>
 
   <project-components>
-
+    <component>
+      <implementation-class>jetbrains.mps.migration20.MigrationState</implementation-class>
+    </component>
   </project-components>
 </idea-plugin>
