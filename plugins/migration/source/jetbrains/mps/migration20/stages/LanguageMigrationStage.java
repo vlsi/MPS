@@ -25,12 +25,13 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptFinder;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.migration20.NameCondition;
-import jetbrains.mps.migration20.stages.MigrationStage;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.ProjectScope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -65,11 +66,12 @@ public class LanguageMigrationStage implements MigrationStage {
   }
 
   public String messageBefore() {
-    return null;
+    return "Language migration scripts help to change your code accordingly to changes in languages, in which the code is written.\n"+
+      "Now we'll execute all migration scripts from all languages in MPS.";
   }
 
   public String messageAfter() {
-    return null;
+    return "Language migrations applied";
   }
 
   private static void executeScripts(Project project, List<SNodePointer> scripts) {
@@ -84,6 +86,4 @@ public class LanguageMigrationStage implements MigrationStage {
       MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
     }
   }
-
-
 }
