@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.structure;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -27,6 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DescriptorUtils {
+
+  private static Logger LOG = Logger.getLogger(DescriptorUtils.class);
+
   @Nullable
   public static Object getObjectByClassNameForLanguage(String className, @Nullable Language language, boolean avoidLogErrors) {
     try {
@@ -48,7 +52,7 @@ public class DescriptorUtils {
 
       return clazz.newInstance();
     } catch (Throwable e) {
-      // nothing
+      LOG.debug("error loading class\""+className+"\"", e);
     }
     return null;
   }

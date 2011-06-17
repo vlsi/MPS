@@ -10,6 +10,7 @@
   <language namespace="dc54e1b2-86b3-49d2-9014-a76af17af22a(jetbrains.mps.make.outlook)" />
   <import index="1u06" modelUID="r:aa4df85a-48f0-4531-a9c6-bb42f911e10f(jetbrains.mps.make.facet.plugin)" version="-1" />
   <import index="fn29" modelUID="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" version="-1" />
+  <import index="tpec" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="vvvw" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -205,7 +206,7 @@
       <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="127305800529643681" resolveInfo="GGG" />
     </node>
     <node role="facet" roleId="z5g5.5608160002100058529" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="5608160002100096673">
-      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="1u06.4328738523548357342" resolveInfo="JavaCompile" />
+      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="tpec.6648795410103967073" resolveInfo="JavaCompile" />
     </node>
   </root>
   <root id="6418371274763153153">

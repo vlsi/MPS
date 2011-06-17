@@ -23,7 +23,7 @@ public class GenerateSpecial_Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("GenerateSpecial");
 
   public GenerateSpecial_Facet() {
-    ListSequence.fromList(targets).addElement(new GenerateSpecial_Facet.Target_i03q2a_a());
+    ListSequence.fromList(targets).addElement(new GenerateSpecial_Facet.Target_GenerateSpecialTarget());
   }
 
   public Iterable<ITarget> targets() {
@@ -46,13 +46,13 @@ public class GenerateSpecial_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_i03q2a_a implements ITarget {
+  public static class Target_GenerateSpecialTarget implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("GenerateSpecialTarget");
 
-    public Target_i03q2a_a() {
+    public Target_GenerateSpecialTarget() {
     }
 
     public IJob createJob() {
@@ -61,7 +61,7 @@ public class GenerateSpecial_Facet implements IFacet {
           Iterable<IResource> _output_i03q2a_a0a = null;
           switch (0) {
             case 0:
-              pool.parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).foo("asdasdsd");
+              pool.parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).foo("asdasdsd");
               return new IResult.SUCCESS(_output_i03q2a_a0a);
             default:
               return new IResult.SUCCESS(_output_i03q2a_a0a);
@@ -77,13 +77,13 @@ public class GenerateSpecial_Facet implements IFacet {
             case 0:
               switch (cmonitor.<what_Option>relayQuery(new DOH_Query())) {
                 case ABORT_i03q2a_a0a0a:
-                  pool.parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
+                  pool.parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(false);
                   break;
                 case IGNORE_i03q2a_c0a0a:
-                  pool.parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(false);
+                  pool.parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(false);
                   break;
                 case RETRY_i03q2a_b0a0a:
-                  pool.parameters(Target_i03q2a_a.this.getName(), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).baz(true);
+                  pool.parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(true);
                   break;
                 default:
               }
@@ -137,9 +137,9 @@ public class GenerateSpecial_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) t).foo(((GenerateSpecial_Facet.Target_i03q2a_a.Variables) copyFrom).foo());
-        ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) t).bar((int) ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) copyFrom).bar());
-        ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) t).baz((boolean) ((GenerateSpecial_Facet.Target_i03q2a_a.Variables) copyFrom).baz());
+        ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) t).foo(((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) copyFrom).foo());
+        ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) t).bar((int) ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) copyFrom).bar());
+        ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) t).baz((boolean) ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) copyFrom).baz());
       }
       return t;
     }
@@ -178,8 +178,8 @@ public class GenerateSpecial_Facet implements IFacet {
       }
 
       @SuppressWarnings(value = "unchecked")
-      public GenerateSpecial_Facet.Target_i03q2a_a.Variables assignFrom(Tuples._3<String, Integer, Boolean> from) {
-        return (GenerateSpecial_Facet.Target_i03q2a_a.Variables) super.assign(from);
+      public GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables assignFrom(Tuples._3<String, Integer, Boolean> from) {
+        return (GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) super.assign(from);
       }
     }
   }
