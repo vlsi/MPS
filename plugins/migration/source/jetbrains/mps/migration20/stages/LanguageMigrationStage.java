@@ -28,10 +28,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.ProjectScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -46,7 +43,7 @@ public class LanguageMigrationStage implements MigrationStage {
 
   public void execute(MPSProject p) {
     List<SNodePointer> scripts = new ArrayList<SNodePointer>();
-    for (Language l : p.getProjectModules(Language.class)) {
+    for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
       EditableSModelDescriptor smd = LanguageAspect.SCRIPTS.get(l);
       if (smd == null) continue;
       Iterable<SNode> scriptNodes = new ConditionalIterable<SNode>(smd.getSModel().roots(), new IsInstanceCondition("jetbrains.mps.lang.script.MigrationScript"));
