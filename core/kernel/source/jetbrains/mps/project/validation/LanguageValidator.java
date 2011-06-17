@@ -37,13 +37,17 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
 
   public static boolean checkCyclicInheritance(Language lang) {
     List<Language> frontier = lang.getExtendedLanguages();
+    ArrayList<Language> passed = new ArrayList<Language>();
     while (!frontier.isEmpty()){
       List<Language> newFrontier = new ArrayList<Language>();
       for (Language extendedLang : frontier) {
         if (extendedLang == lang) {
           return false;
         }
-        newFrontier.addAll(extendedLang.getExtendedLanguages());
+        if (!passed.contains(extendedLang)) {
+          newFrontier.addAll(extendedLang.getExtendedLanguages());
+        }
+        passed.add(extendedLang);
       }
       frontier = newFrontier;
     }
@@ -57,12 +61,10 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         errors.add("Can't find extended language: " + lang.getModuleFqName());
       }
     }
-    ArrayList<Language> passed = new ArrayList<Language>();
-   /* if (!checkCyclicInheritance(myModule)) {
-      if (passed.contains(myModule)) {
-        errors.add("Cyclic language hierarchy: " + passed);
-      }
-    }      */
+
+    if (!checkCyclicInheritance(myModule)) {
+      errors.add("Cyclic language hierarchy");
+    }
     List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependOn());
     for (IModule runtimeModule: runtimeModules) {
       if (!(runtimeModule instanceof Solution)) {
