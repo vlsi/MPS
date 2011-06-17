@@ -20,7 +20,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066627">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentPropertyType" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066557" resolveInfo="TemplatePersistentConfigurationType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066641">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
@@ -55,11 +55,11 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066740">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="properties" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066591" resolveInfo="CheckCallOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066591" resolveInfo="CheckProperitesOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066748">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066606" resolveInfo="EditorOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="fb9u.946964771156066606" resolveInfo="EditorOperationCall" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="946964771156066759">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
@@ -501,6 +501,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="946964771156066754">
         <property name="separatorText" nameId="tpc2.1140524450557" value="," />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="fb9u.946964771156066607" />
         <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="946964771156066755" />
         <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="946964771156066756" />
