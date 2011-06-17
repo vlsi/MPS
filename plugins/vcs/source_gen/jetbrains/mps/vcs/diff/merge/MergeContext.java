@@ -20,12 +20,25 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.vcs.diff.changes.NodeChange;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 
 public class MergeContext {
   private ChangeSet myMineChangeSet;
@@ -33,10 +46,12 @@ public class MergeContext {
   private Map<ModelChange, List<ModelChange>> myConflictingChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
   private Map<ModelChange, List<ModelChange>> mySymmetricChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
   private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private Map<SNodeId, List<ModelChange>> myNodeToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
   private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
   private SModel myResultModel;
   private Set<ModelChange> myResolvedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private NodeCopier myNodeCopier;
+  private MergeContext.MyResultModelListener myModelListener = new MergeContext.MyResultModelListener();
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -47,6 +62,7 @@ public class MergeContext {
         myConflictingChanges = conflictsBuilder.myConflictingChanges;
         mySymmetricChanges = conflictsBuilder.mySymmetricChanges;
         fillRootToChangesMap();
+        fillNodeToChangesMap();
 
         myResultModel = CopyUtil.copyModel(base);
         int pv = Math.max(base.getPersistenceVersion(), Math.max(mine.getPersistenceVersion(), repository.getPersistenceVersion()));
@@ -67,6 +83,29 @@ public class MergeContext {
           MapSequence.fromMap(myRootToChanges).put(rootId, ListSequence.fromList(new ArrayList<ModelChange>()));
         }
         ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootId)).addElement(change);
+      }
+    }
+  }
+
+  public void installResultModelListener() {
+    myResultModel.getModelDescriptor().addModelListener(myModelListener);
+  }
+
+  private void fillNodeToChangesMap() {
+    for (ModelChange change : Sequence.fromIterable(getAllChanges())) {
+      SNodeId nodeId = null;
+      if (change instanceof NodeGroupChange) {
+        nodeId = ((NodeGroupChange) change).getParentNodeId();
+      } else if (change instanceof NodeChange) {
+        nodeId = ((NodeChange) change).getAffectedNodeId();
+      } else if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
+        nodeId = change.getRootId();
+      }
+      if (nodeId != null) {
+        if (MapSequence.fromMap(myNodeToChanges).get(nodeId) == null) {
+          MapSequence.fromMap(myNodeToChanges).put(nodeId, ListSequence.fromList(new ArrayList<ModelChange>()));
+        }
+        ListSequence.fromList(MapSequence.fromMap(myNodeToChanges).get(nodeId)).addElement(change);
       }
     }
   }
@@ -231,9 +270,74 @@ public class MergeContext {
   }
 
   public void restoreState(MergeContextState state) {
+    // should be invoked inside command 
     MergeContextState stateCopy = new MergeContextState(state);
-    myResultModel = stateCopy.myResultModel;
+    ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode r) {
+        SNodeOperations.deleteNode(r);
+      }
+    });
+    CopyUtil.clearModelProperties(myResultModel);
+    CopyUtil.copyModelProperties(stateCopy.myResultModel, myResultModel);
+    CopyUtil.copyModelContent(stateCopy.myResultModel, myResultModel);
     myResolvedChanges = stateCopy.myResolvedChanges;
     myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
+  }
+
+  private class MyResultModelListener extends SModelAdapter {
+    private MyResultModelListener() {
+    }
+
+    private void beforeNodeRemovedRecursively(SNode node) {
+      for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+        beforeNodeRemovedRecursively(child);
+      }
+
+      // process child 
+
+    }
+
+    private void referenceModified(SModelReferenceEvent event) {
+      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getSNodeId());
+      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return ch instanceof SetReferenceChange;
+        }
+      }));
+    }
+
+    @Override
+    public void referenceRemoved(SModelReferenceEvent event) {
+      referenceModified(event);
+    }
+
+    @Override
+    public void referenceAdded(SModelReferenceEvent event) {
+      referenceModified(event);
+    }
+
+    @Override
+    public void beforeChildRemoved(SModelChildEvent event) {
+      beforeNodeRemovedRecursively(event.getChild());
+    }
+
+    @Override
+    public void childAdded(SModelChildEvent event) {
+    }
+
+    @Override
+    public void propertyChanged(SModelPropertyEvent event) {
+      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getSNodeId());
+      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return ch instanceof SetPropertyChange;
+        }
+      }));
+    }
+
+    @Override
+    public void beforeRootRemoved(SModelRootEvent event) {
+      beforeNodeRemovedRecursively(event.getRoot());
+    }
   }
 }
