@@ -30,7 +30,7 @@ import org.jetbrains.annotations.NotNull;
   storages = {
     @Storage(
       id = "other",
-      file = "$WORKSPACE_FILE$"
+      file = "$PROJECT_FILE$"
     )
   }
 )
