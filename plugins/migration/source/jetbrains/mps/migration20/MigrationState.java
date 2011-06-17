@@ -59,7 +59,11 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   }
 
   public void loadState(MyState state) {
-    myState = MState.valueOf(state.myState);
+    try {
+      myState = MState.valueOf(state.myState);
+    } catch (IllegalArgumentException e) {
+      myState = MState.INITIAL;
+    }
   }
 
   public static class MyState {
