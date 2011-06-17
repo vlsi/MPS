@@ -22,6 +22,7 @@
     <orderEntry type="module" module-name="mpsmake" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="modelchecker" />
   </component>
 </module>
 

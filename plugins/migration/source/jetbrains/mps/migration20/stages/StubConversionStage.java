@@ -15,8 +15,14 @@
  */
 package jetbrains.mps.migration20.stages;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.migration20.stages.MigrationStage;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue;
+import jetbrains.mps.ide.modelchecker.actions.ModelCheckerSettings;
+import jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.ide.modelchecker.actions.ModelCheckerViewer;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -26,11 +32,17 @@ import java.util.*;
 
 
 public class StubConversionStage implements MigrationStage {
+  private static final String FINISHED = "Automatic stubs correction finished.\n";
+  private static final String ALL_FIXED = "All references were fixed.";
+  private MPSProject myProject;
+  private Res myRes;
+
   public String title() {
     return "Stubs Conversion";
   }
 
   public void execute(MPSProject p) {
+    myProject = p;
     for (Language l : p.getProjectModules(Language.class)) {
       Set<SModelReference> toRemove = new HashSet<SModelReference>();
       Set<SModelReference> toAdd = new HashSet<SModelReference>();
@@ -55,7 +67,7 @@ public class StubConversionStage implements MigrationStage {
       l.save();
     }
 
-    reResolveStubRefs(p);
+    myRes = reResolveStubRefs(p);
     SModelRepository.getInstance().saveAll();
 
     new OptimizeImportsHelper(ProjectOperationContext.get(p.getProject())).optimizeProjectImports(p);
@@ -75,17 +87,37 @@ public class StubConversionStage implements MigrationStage {
   }
 
   public String messageBefore() {
-    return null;
+    return "As the stubs model format was changed, MPS will now try to correct references to stub models.\n" +
+      "Now MPS will find all references to stub models and try to resolve them in the scope of containing module.";
   }
 
   public String messageAfter() {
-    return null;
+    Project ideaProject = myProject.getProject();
+    ModelCheckerTool_Tool tool = ideaProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
+    if (tool == null) {
+      if (myRes.failed == 0) return FINISHED + ALL_FIXED;
+      return FINISHED + myRes.fixed + " references were fixed, " + myRes.failed + " not fixed. We recommend stopping migration and fixing broken references by hand.";
+    }
+
+    ModelCheckerSettings mcSettings = ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
+    try {
+      mcSettings.setRefsOnlyMode(true);
+      ModelCheckerViewer res = tool.checkProject(ideaProject, ProjectOperationContext.get(ideaProject), true);
+      Set<ModelCheckerIssue> problems = res.getSearchResults().getResultObjects();
+      if (problems.isEmpty()) return FINISHED + ALL_FIXED;
+      return FINISHED + "There are " + problems.size() + " unresolved references left. \n"+
+        "Most probably this means that the module with a reference doesn't import the module with referenced object. "+
+        "We recommend to pause the migration now and correct module dependencies by hand. "+
+        "You can also use the \"Fix Missing imports\" action from Logical View's context menu to add theese dependencies automatically and Ctrl-R shortcut to add imports one-by-one";
+    } finally {
+      mcSettings.setRefsOnlyMode(false);
+    }
   }
 
   //------------------------
 
-  public static int reResolveStubRefs(MPSProject p) {
-    int i = 0;
+  private static Res reResolveStubRefs(MPSProject p) {
+    Res res = new Res();
     Map<String, SModelReference> cache = new HashMap<String, SModelReference>();
     for (SModelDescriptor d : p.getProject().getComponent(ProjectScope.class).getModelDescriptors()) {
       if (!(d instanceof EditableSModelDescriptor)) continue;
@@ -131,7 +163,9 @@ public class StubConversionStage implements MigrationStage {
             d.getSModel().addModelImport(mr, false);
             ref.setTargetSModelReference(mr);
 
-            i++;
+            res.fixed++;
+          } else {
+            res.failed++;
           }
         }
       }
@@ -139,7 +173,7 @@ public class StubConversionStage implements MigrationStage {
         d.getSModel().deleteModelImport(ref);
       }
     }
-    return i;
+    return res;
   }
 
   private static boolean matches(String id1, String id2) {
@@ -158,5 +192,9 @@ public class StubConversionStage implements MigrationStage {
     }
 
     return true;
+  }
+
+  private static class Res {
+    int fixed = 0, failed = 0;
   }
 }
