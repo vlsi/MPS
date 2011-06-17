@@ -38,7 +38,7 @@ class Memento {
   Memento(EditorContext context, boolean full) {
     EditorComponent nodeEditor = context.getNodeEditorComponent();
     SNode editedNode = nodeEditor.getEditedNode();
-    if (editedNode == null || (editedNode.getModel() != null && !editedNode.getModel().isDisposed())) {
+    if (editedNode == null || (!editedNode.isDisposed() && editedNode.getModel() != null && !editedNode.getModel().isDisposed())) {
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
 
       for (EditorCell foldedCell : nodeEditor.getFoldedCells()) {

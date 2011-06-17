@@ -1201,6 +1201,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean isInvalid() {
     return getEditorContext() == null ||
       getEditedNode() == null ||
+      getEditedNode().isDisposed() ||
       getEditedNode().getModel() == null ||
       getEditedNode().getModel().isDisposed() ||
       getEditedNode().getModel().getModelDescriptor() == null;
