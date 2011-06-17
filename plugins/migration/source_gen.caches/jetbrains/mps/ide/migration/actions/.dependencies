@@ -235,6 +235,7 @@
     <classNode dependClassName="jetbrains.mps.migration20.MState" />
     <classNode dependClassName="jetbrains.mps.migration20.MigrationHelper" />
     <classNode dependClassName="jetbrains.mps.migration20.MigrationState" />
+    <classNode dependClassName="jetbrains.mps.migration20.stages.MigrationStage" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />

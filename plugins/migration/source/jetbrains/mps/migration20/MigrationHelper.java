@@ -39,7 +39,10 @@ public class MigrationHelper {
         final MState next = MState.values()[state.ordinal() + 1];
         final MigrationStage stage = next.getStage();
 
-        if (stage == null) continue;
+        if (stage == null) {
+          msComponent.setMigrationState(next);
+          continue;
+        }
 
         String mb = stage.messageBefore();
         if (mb != null) {

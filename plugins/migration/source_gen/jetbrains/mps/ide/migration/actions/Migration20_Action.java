@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.migration20.MigrationState;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.migration20.stages.MigrationStage;
 import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
 import jetbrains.mps.migration20.MigrationHelper;
@@ -66,6 +67,8 @@ public class Migration20_Action extends GeneratedAction {
     try {
       MigrationState mComp = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class);
       MState state = mComp.getMigrationState();
+      MState nextState = MState.values()[state.ordinal() + 1];
+      MigrationStage nextStage = nextState.getStage();
 
       String title = "Migration from MPS 1.5 to MPS 2.0";
 
@@ -79,7 +82,10 @@ public class Migration20_Action extends GeneratedAction {
 
       if (state != MState.INITIAL && state != MState.DONE) {
         sb.append("Last migration executed: ").append(state.getStage().title()).append("\n");
-        sb.append("Next migration: ").append(MState.values()[state.ordinal() + 1].getStage().title()).append("\n");
+        sb.append("Next migration: ").append((nextStage != null ?
+          nextStage.title() :
+          "<no stage>"
+        )).append("\n");
       }
       sb.append(NameUtil.capitalize(Migration20_Action.this.getContinuationWord(state, _params)) + " migration?");
 
