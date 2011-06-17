@@ -46,7 +46,11 @@ public class MigrationHelper {
 
         String mb = stage.messageBefore();
         if (mb != null) {
-          Messages.showMessageDialog(mb, stage.title(), Messages.getInformationIcon());
+          int res = Messages.showDialog(mb, stage.title(), new String[]{"Proceed", "Stop"}, 0, Messages.getInformationIcon());
+          if (res!=0){
+            Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0","Migration stopped",Messages.getInformationIcon());
+            return;
+          }
         }
 
         Runnable stageRunnable = new Runnable() {
@@ -64,7 +68,11 @@ public class MigrationHelper {
 
         String ma = stage.messageAfter();
         if (ma != null) {
-          Messages.showMessageDialog(ma, stage.title(), Messages.getInformationIcon());
+          int res = Messages.showDialog(ma, stage.title(), new String[]{"Next", "Stop"}, 0, Messages.getInformationIcon());
+          if (res!=0){
+            Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0","Migration stopped",Messages.getInformationIcon());
+            return;
+          }
         }
 
         if (stage.needsRestart()) {
