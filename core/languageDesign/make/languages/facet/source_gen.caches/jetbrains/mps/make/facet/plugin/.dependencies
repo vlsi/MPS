@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.make.facet.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.make.facet.IFacetManifest" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.FacetManifest" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.FacetDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
-  </dependency>
-  <dependency className="jetbrains.mps.make.facet.plugin.FacetManifest" file="FacetManifest.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.Make_Facet" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
-  </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.MakeGenerationHandler" file="MakeGenerationHandler.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -47,30 +30,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
-  </dependency>
-  <dependency className="jetbrains.mps.make.facet.plugin.Make_Facet" file="Make_Facet.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" />
-    <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
-    <classNode dependClassName="jetbrains.mps.make.delta.IInternalDelta" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
-    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.resources.IDeltaResource" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
 </dependenciesRoot>
 

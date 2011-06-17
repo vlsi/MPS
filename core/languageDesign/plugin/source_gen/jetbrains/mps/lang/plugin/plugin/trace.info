@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="37" startPosition="55" endLine="41" endPosition="5" unitName="jetbrains.mps.lang.plugin.plugin.FacetManifest$1" />
+  <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.lang.plugin.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor" />
-  <unitInfo fileName="FacetManifest.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.FacetManifest" />
+  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.FacetManifest" />
   <unitInfo fileName="Binaries_Facet.java" startLine="43" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.lang.plugin.plugin.Binaries_Facet" />
   <root nodeId="6648795410103988025">
     <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="71" startPosition="62" endLine="72" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
