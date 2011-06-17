@@ -22,6 +22,7 @@ public enum MState {
   PERSISTENCE_UPGRADE(new PersistenceUpgradeStage()),
   LANGUAGES_DEPS_CORRECTION(new DependenciesCorrectionStage()),
   STUBS_CONVERSION(new StubConversionStage()),
+  OPTIMIZE_IMPORTS(new OptimizeImportsStage()),
   LANGUAGES_MIGRATION(new LanguageMigrationStage()),
   REGENERATION(new RegenerationStage()),
   DONE(null);
