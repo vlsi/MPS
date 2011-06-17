@@ -49,10 +49,10 @@ public class PersistenceUpgradeStage implements MigrationStage {
   }
 
   public String messageBefore() {
-    return null;
+    return "Now the persistence format of models and modules will be changed to the newest one";
   }
 
   public String messageAfter() {
-    return null;
+    return "Persistence format changed";
   }
 }
