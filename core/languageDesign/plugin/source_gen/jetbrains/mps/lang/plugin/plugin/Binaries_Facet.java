@@ -45,7 +45,7 @@ public class Binaries_Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.plugin.Binaries");
 
   public Binaries_Facet() {
-    ListSequence.fromList(targets).addElement(new Binaries_Facet.Target_8acy7z_a());
+    ListSequence.fromList(targets).addElement(new Binaries_Facet.Target_copyBinaries());
   }
 
   public Iterable<ITarget> targets() {
@@ -57,7 +57,7 @@ public class Binaries_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.facet.Make"),  new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.facet.Make"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -68,13 +68,13 @@ public class Binaries_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_8acy7z_a implements ITarget {
+  public static class Target_copyBinaries implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("copyBinaries");
 
-    public Target_8acy7z_a() {
+    public Target_copyBinaries() {
     }
 
     public IJob createJob() {
@@ -91,8 +91,8 @@ public class Binaries_Facet implements IFacet {
                     public Iterable<Tuples._2<IFile, IFile>> translate(SModelDescriptor smd) {
                       SModel model = smd.getSModel();
                       String output = module.getOutputFor(smd);
-                      IFile outputRoot = (pool.parameters(Target_8acy7z_a.this.getName(), Binaries_Facet.Target_8acy7z_a.Parameters.class).pathToFile() != null ?
-                        pool.parameters(Target_8acy7z_a.this.getName(), Binaries_Facet.Target_8acy7z_a.Parameters.class).pathToFile().invoke(output) :
+                      IFile outputRoot = (pool.parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile() != null ?
+                        pool.parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile().invoke(output) :
                         FileSystem.getInstance().getFileByPath(output)
                       );
                       final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
@@ -187,7 +187,7 @@ public class Binaries_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Binaries_Facet.Target_8acy7z_a.Parameters) t).pathToFile(((Binaries_Facet.Target_8acy7z_a.Parameters) copyFrom).pathToFile());
+        ((Binaries_Facet.Target_copyBinaries.Parameters) t).pathToFile(((Binaries_Facet.Target_copyBinaries.Parameters) copyFrom).pathToFile());
       }
       return t;
     }
@@ -210,8 +210,8 @@ public class Binaries_Facet implements IFacet {
       }
 
       @SuppressWarnings(value = "unchecked")
-      public Binaries_Facet.Target_8acy7z_a.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
-        return (Binaries_Facet.Target_8acy7z_a.Parameters) super.assign(from);
+      public Binaries_Facet.Target_copyBinaries.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
+        return (Binaries_Facet.Target_copyBinaries.Parameters) super.assign(from);
       }
     }
   }

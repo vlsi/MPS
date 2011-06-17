@@ -28,6 +28,7 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
+import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.resources.IFResource;
 import jetbrains.mps.compiler.JavaCompiler;
@@ -53,9 +54,9 @@ public class JavaCompile_Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile");
 
   public JavaCompile_Facet() {
-    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_a());
-    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_b());
-    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_c());
+    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_compile());
+    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_auxCompile());
+    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_compileToMemory());
   }
 
   public Iterable<ITarget> targets() {
@@ -78,13 +79,13 @@ public class JavaCompile_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_wf1ya0_a implements ITarget {
+  public static class Target_compile implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("compile");
 
-    public Target_wf1ya0_a() {
+    public Target_compile() {
     }
 
     public IJob createJob() {
@@ -93,7 +94,7 @@ public class JavaCompile_Facet implements IFacet {
           Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
-              pool.parameters(Target_wf1ya0_a.this.getName(), JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything(false);
+              pool.parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
               int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + ((((TResource) it).module().isCompileInMPS() ?
@@ -124,7 +125,7 @@ public class JavaCompile_Facet implements IFacet {
                   }
                 });
                 if (cr.value != null) {
-                  pool.parameters(Target_wf1ya0_a.this.getName(), JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything(pool.parameters(Target_wf1ya0_a.this.getName(), JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
+                  pool.parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pool.parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
                   for (IMessage msg : cr.value.getMessages()) {
                     monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                   }
@@ -199,7 +200,7 @@ public class JavaCompile_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((JavaCompile_Facet.Target_wf1ya0_a.Parameters) t).compiledAnything(((JavaCompile_Facet.Target_wf1ya0_a.Parameters) copyFrom).compiledAnything());
+        ((JavaCompile_Facet.Target_compile.Parameters) t).compiledAnything(((JavaCompile_Facet.Target_compile.Parameters) copyFrom).compiledAnything());
       }
       return t;
     }
@@ -222,19 +223,19 @@ public class JavaCompile_Facet implements IFacet {
       }
 
       @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_wf1ya0_a.Parameters assignFrom(Tuples._1<Boolean> from) {
-        return (JavaCompile_Facet.Target_wf1ya0_a.Parameters) super.assign(from);
+      public JavaCompile_Facet.Target_compile.Parameters assignFrom(Tuples._1<Boolean> from) {
+        return (JavaCompile_Facet.Target_compile.Parameters) super.assign(from);
       }
     }
   }
 
-  public static class Target_wf1ya0_b implements ITarget {
+  public static class Target_auxCompile implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("auxCompile");
 
-    public Target_wf1ya0_b() {
+    public Target_auxCompile() {
     }
 
     public IJob createJob() {
@@ -254,11 +255,11 @@ public class JavaCompile_Facet implements IFacet {
               if (work == 0) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
-              if (pool.parameters(Target_wf1ya0_b.this.getName(), JavaCompile_Facet.Target_wf1ya0_b.Parameters.class).skipAuxCompile() != null && pool.parameters(Target_wf1ya0_b.this.getName(), JavaCompile_Facet.Target_wf1ya0_b.Parameters.class).skipAuxCompile()) {
+              if (pool.parameters(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile() != null && pool.parameters(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
 
-              IAuxProjectPeer peer = pool.parameters(new ITarget.Name("checkParameters"), jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IAuxProjectPeer.class);
+              IAuxProjectPeer peer = pool.parameters(new ITarget.Name("checkParameters"), Variables.class).project().getComponent(IAuxProjectPeer.class);
               if (peer == null || !(peer.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
@@ -361,7 +362,7 @@ public class JavaCompile_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((JavaCompile_Facet.Target_wf1ya0_b.Parameters) t).skipAuxCompile(((JavaCompile_Facet.Target_wf1ya0_b.Parameters) copyFrom).skipAuxCompile());
+        ((JavaCompile_Facet.Target_auxCompile.Parameters) t).skipAuxCompile(((JavaCompile_Facet.Target_auxCompile.Parameters) copyFrom).skipAuxCompile());
       }
       return t;
     }
@@ -384,19 +385,19 @@ public class JavaCompile_Facet implements IFacet {
       }
 
       @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_wf1ya0_b.Parameters assignFrom(Tuples._1<Boolean> from) {
-        return (JavaCompile_Facet.Target_wf1ya0_b.Parameters) super.assign(from);
+      public JavaCompile_Facet.Target_auxCompile.Parameters assignFrom(Tuples._1<Boolean> from) {
+        return (JavaCompile_Facet.Target_auxCompile.Parameters) super.assign(from);
       }
     }
   }
 
-  public static class Target_wf1ya0_c implements ITarget {
+  public static class Target_compileToMemory implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IFResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("compileToMemory");
 
-    public Target_wf1ya0_c() {
+    public Target_compileToMemory() {
     }
 
     public IJob createJob() {
@@ -418,11 +419,11 @@ public class JavaCompile_Facet implements IFacet {
                   SetSequence.fromSet(modules).addElement(fres.module());
                 }
               }
-              pool.parameters(Target_wf1ya0_c.this.getName(), JavaCompile_Facet.Target_wf1ya0_c.Parameters.class).errors(false);
+              pool.parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(false);
               jc.addCompilationResultListener(new CompilationResultAdapter() {
                 public void onCompilationResult(CompilationResult cr) {
                   if (cr.hasErrors()) {
-                    pool.parameters(Target_wf1ya0_c.this.getName(), JavaCompile_Facet.Target_wf1ya0_c.Parameters.class).errors(true);
+                    pool.parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(true);
                     CategorizedProblem[] categorizedProblems = cr.getErrors();
                     for (int i = 0; i < 3 && i < categorizedProblems.length; i++) {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.valueOf(categorizedProblems[i]))));
@@ -434,7 +435,7 @@ public class JavaCompile_Facet implements IFacet {
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
                   ccp.value = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(modules, true);
-                  Sequence.fromIterable(pool.parameters(Target_wf1ya0_c.this.getName(), JavaCompile_Facet.Target_wf1ya0_c.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
+                  Sequence.fromIterable(pool.parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
                     public void visit(IClassPathItem cpi) {
                       ccp.value.add(cpi);
                     }
@@ -442,7 +443,7 @@ public class JavaCompile_Facet implements IFacet {
                 }
               });
               jc.compile(ccp.value);
-              if ((boolean) pool.parameters(Target_wf1ya0_c.this.getName(), JavaCompile_Facet.Target_wf1ya0_c.Parameters.class).errors()) {
+              if ((boolean) pool.parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors()) {
                 return new IResult.FAILURE(_output_wf1ya0_a0c);
               }
               _output_wf1ya0_a0c = Sequence.fromIterable(_output_wf1ya0_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(new IClassesData() {
@@ -504,8 +505,8 @@ public class JavaCompile_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((JavaCompile_Facet.Target_wf1ya0_c.Parameters) t).classPath(((JavaCompile_Facet.Target_wf1ya0_c.Parameters) copyFrom).classPath());
-        ((JavaCompile_Facet.Target_wf1ya0_c.Parameters) t).errors((boolean) ((JavaCompile_Facet.Target_wf1ya0_c.Parameters) copyFrom).errors());
+        ((JavaCompile_Facet.Target_compileToMemory.Parameters) t).classPath(((JavaCompile_Facet.Target_compileToMemory.Parameters) copyFrom).classPath());
+        ((JavaCompile_Facet.Target_compileToMemory.Parameters) t).errors((boolean) ((JavaCompile_Facet.Target_compileToMemory.Parameters) copyFrom).errors());
       }
       return t;
     }
@@ -536,8 +537,8 @@ public class JavaCompile_Facet implements IFacet {
       }
 
       @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_wf1ya0_c.Parameters assignFrom(Tuples._2<Iterable<IClassPathItem>, Boolean> from) {
-        return (JavaCompile_Facet.Target_wf1ya0_c.Parameters) super.assign(from);
+      public JavaCompile_Facet.Target_compileToMemory.Parameters assignFrom(Tuples._2<Iterable<IClassPathItem>, Boolean> from) {
+        return (JavaCompile_Facet.Target_compileToMemory.Parameters) super.assign(from);
       }
     }
   }

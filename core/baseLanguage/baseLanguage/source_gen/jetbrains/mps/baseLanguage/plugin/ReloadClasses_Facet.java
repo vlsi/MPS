@@ -14,7 +14,6 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.smodel.ModelAccess;
@@ -27,7 +26,7 @@ public class ReloadClasses_Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.baseLanguage.ReloadClasses");
 
   public ReloadClasses_Facet() {
-    ListSequence.fromList(targets).addElement(new ReloadClasses_Facet.Target_i849au_a());
+    ListSequence.fromList(targets).addElement(new ReloadClasses_Facet.Target_reloadClasses());
   }
 
   public Iterable<ITarget> targets() {
@@ -50,13 +49,13 @@ public class ReloadClasses_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_i849au_a implements ITarget {
+  public static class Target_reloadClasses implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("reloadClasses");
 
-    public Target_i849au_a() {
+    public Target_reloadClasses() {
     }
 
     public IJob createJob() {
@@ -65,9 +64,7 @@ public class ReloadClasses_Facet implements IFacet {
           Iterable<IResource> _output_i849au_a0a = null;
           switch (0) {
             case 0:
-              boolean nonEmptyCompilation =
-                pool.parameters(new ITarget.Name("compile"), jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything() != null &&
-                pool.parameters(new ITarget.Name("compile"), jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything();
+              boolean nonEmptyCompilation = pool.parameters(new ITarget.Name("compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() != null && pool.parameters(new ITarget.Name("compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything();
 
               if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
                 public boolean accept(IResource in) {

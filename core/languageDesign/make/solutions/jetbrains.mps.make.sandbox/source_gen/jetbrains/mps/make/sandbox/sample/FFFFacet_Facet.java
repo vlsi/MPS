@@ -13,7 +13,6 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables;
 import jetbrains.mps.make.script.IConfig;
 
 public class FFFFacet_Facet implements IFacet {
@@ -61,7 +60,7 @@ public class FFFFacet_Facet implements IFacet {
           Iterable<IResource> _output_chixuw_a0a = null;
           switch (0) {
             case 0:
-              pool.parameters(new ITarget.Name("GenerateSpecialTarget"), Variables.class).bar(0);
+              pool.parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
               return new IResult.SUCCESS(_output_chixuw_a0a);

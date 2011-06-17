@@ -27,8 +27,8 @@ public class Make_Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.Make");
 
   public Make_Facet() {
-    ListSequence.fromList(targets).addElement(new Make_Facet.Target_pm9z_a());
-    ListSequence.fromList(targets).addElement(new Make_Facet.Target_pm9z_b());
+    ListSequence.fromList(targets).addElement(new Make_Facet.Target_reconcile());
+    ListSequence.fromList(targets).addElement(new Make_Facet.Target_make());
   }
 
   public Iterable<ITarget> targets() {
@@ -51,13 +51,13 @@ public class Make_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_pm9z_a implements ITarget {
+  public static class Target_reconcile implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IDeltaResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("reconcile");
 
-    public Target_pm9z_a() {
+    public Target_reconcile() {
     }
 
     public IJob createJob() {
@@ -146,13 +146,13 @@ public class Make_Facet implements IFacet {
     }
   }
 
-  public static class Target_pm9z_b implements ITarget {
+  public static class Target_make implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("make");
 
-    public Target_pm9z_b() {
+    public Target_make() {
     }
 
     public IJob createJob() {

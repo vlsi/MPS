@@ -713,6 +713,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer" />
+    <classNode dependClassName="jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables" />
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -946,7 +947,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_wf1ya0_a0a0a0a0a0.Parameters" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
