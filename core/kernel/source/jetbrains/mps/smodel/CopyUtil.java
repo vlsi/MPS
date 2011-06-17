@@ -47,21 +47,22 @@ public final class CopyUtil {
   }
 
   public static void clearModelProperties(SModel model) {
-    for (ImportElement ie : model.getAdditionalModelVersions()) {
+    for (ImportElement ie : new ArrayList<ImportElement>(model.getAdditionalModelVersions())) {
       model.deleteModelImport(ie.getModelReference());
     }
-    for (ImportElement ie : model.importedModels()) {
+    for (ImportElement ie : new ArrayList<ImportElement>(model.importedModels())) {
       model.deleteModelImport(ie.getModelReference());
     }
-    for (ModuleReference mr : model.importedDevkits()) {
+    for (ModuleReference mr :  new ArrayList<ModuleReference>(model.importedDevkits())) {
       model.deleteDevKit(mr);
     }
-    for (ModuleReference mr : model.importedLanguages()) {
+    for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedLanguages())) {
       model.deleteLanguage(mr);
     }
-    for (ModuleReference mr : model.engagedOnGenerationLanguages()) {
+    for (ModuleReference mr : new ArrayList<ModuleReference>(model.engagedOnGenerationLanguages())) {
       model.removeEngagedOnGenerationLanguage(mr);
     }
+    model.calculateImplicitImports();
   }
 
   public static void copyModelProperties(SModel from, SModel to) {
