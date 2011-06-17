@@ -64,7 +64,7 @@ public class MigrationHelper {
   private boolean showMessageAfter(MigrationStage stage) {
     String ma = stage.messageAfter();
     if (ma != null) {
-      int res = Messages.showDialog(ma + " finished", stage.title(), new String[]{"Next", "Stop"}, 0, Messages.getInformationIcon());
+      int res = Messages.showDialog(ma, stage.title() + " finished", new String[]{"Next", "Stop"}, 0, Messages.getInformationIcon());
       if (res != 0) {
         Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0", "Migration stopped", Messages.getInformationIcon());
         checkRestart(stage);
@@ -92,7 +92,7 @@ public class MigrationHelper {
       FSRecords.invalidateCaches();
 
       int res = Messages.showDialog(
-        "Refactoring " + stage.title() + " requested IDE restart.\n+" +
+        "Refactoring " + stage.title() + " requested IDE restart.\n" +
           "Restart now?",
         "Restart request", new String[]{"Restart", "Later"}, 0, Messages.getQuestionIcon());
 
