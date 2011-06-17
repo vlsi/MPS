@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 
 import java.util.ArrayList;
@@ -45,7 +46,25 @@ public final class CopyUtil {
     }
   }
 
-  private static void copyModelProperties(SModel from, SModel to) {
+  public static void clearModelProperties(SModel model) {
+    for (ImportElement ie : model.getAdditionalModelVersions()) {
+      model.deleteModelImport(ie.getModelReference());
+    }
+    for (ImportElement ie : model.importedModels()) {
+      model.deleteModelImport(ie.getModelReference());
+    }
+    for (ModuleReference mr : model.importedDevkits()) {
+      model.deleteDevKit(mr);
+    }
+    for (ModuleReference mr : model.importedLanguages()) {
+      model.deleteLanguage(mr);
+    }
+    for (ModuleReference mr : model.engagedOnGenerationLanguages()) {
+      model.removeEngagedOnGenerationLanguage(mr);
+    }
+  }
+
+  public static void copyModelProperties(SModel from, SModel to) {
     for (ImportElement ie : from.getAdditionalModelVersions()) {
       to.addAdditionalModelVersion(new ImportElement(ie.getModelReference(),
         ie.getReferenceID(), ie.getUsedVersion()));
@@ -53,6 +72,15 @@ public final class CopyUtil {
     for (ImportElement ie : from.importedModels()) {
       to.addModelImport(new ImportElement(ie.getModelReference(),
         ie.getReferenceID(), ie.getUsedVersion()));
+    }
+    for (ModuleReference mr : from.importedDevkits()) {
+      to.addDevKit(mr);
+    }
+    for (ModuleReference mr : from.importedLanguages()) {
+      to.addLanguage(mr);
+    }
+    for (ModuleReference mr : from.engagedOnGenerationLanguages()) {
+      to.addEngagedOnGenerationLanguage(mr);
     }
     to.setPersistenceVersion(from.getPersistenceVersion());
   }
