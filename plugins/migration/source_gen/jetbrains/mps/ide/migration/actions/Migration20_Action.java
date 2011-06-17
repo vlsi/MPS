@@ -13,8 +13,9 @@ import jetbrains.mps.migration20.MState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.migration20.MigrationState;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
-import javax.swing.JOptionPane;
+import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
 import jetbrains.mps.migration20.MigrationHelper;
 
@@ -32,11 +33,8 @@ public class Migration20_Action extends GeneratedAction {
     try {
       {
         MState state = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class).getMigrationState();
-        event.getPresentation().setEnabled(state != MState.DONE);
-        String act = (state == MState.INITIAL ?
-          "Start" :
-          "Continue"
-        );
+
+        String act = NameUtil.capitalize(Migration20_Action.this.getContinuationWord(state, _params));
         event.getPresentation().setText(act + " migration to MPS 2.0");
       }
     } catch (Throwable t) {
@@ -64,12 +62,47 @@ public class Migration20_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "This action helps migrating from MPS 1.5 to MPS 2.0.");
-      new MigrationHelper(((Project) MapSequence.fromMap(_params).get("project"))).migrate();
+      MigrationState mComp = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class);
+      MState state = mComp.getMigrationState();
+
+      String title = "Migration from MPS 1.5 to MPS 2.0";
+
+      StringBuilder sb = new StringBuilder();
+      sb.append("Welcome to migration assistant.").append("\n");
+      sb.append("This will help to migrate code written in MPS 1.5 to MPS 2.0.").append("\n");
+      sb.append("The migration consists of ").append(MState.values().length).append(" steps. ").append("On each step MPS will tell you what it intends to do, then perform a refactoring, restart and, after some of the steps, ask you to change some code by hand.").append("\n");
+      sb.append("After each restart you will have 3 options - to continue, abort or schedule the migration. You can continue the migration at any time just by executing MainMenu->Tools->Continue Migration to MPS 2.0").append("\n");
+      sb.append("You can read more about migration here: http://http://confluence.jetbrains.net/display/MPS/Migration20").append("\n\n");
+      sb.append("WARNING: your files will be changed by the assistant. Please ensure all work is saved and you have a backup copy of your code.").append("\n\n");
+      sb.append(NameUtil.capitalize(Migration20_Action.this.getContinuationWord(state, _params)) + " migration?");
+
+
+      String[] values = new String[]{NameUtil.capitalize(Migration20_Action.this.getContinuationWord(state, _params)), "Abort Migration", "Cancel"};
+
+      int res = Messages.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")), sb.toString(), title, values, 0, Messages.getQuestionIcon());
+
+      if (res == 0) {
+        if (state == MState.DONE) {
+          mComp.setMigrationState(MState.INITIAL);
+        }
+        new MigrationHelper(((Project) MapSequence.fromMap(_params).get("project"))).migrate();
+      } else if (res == 1) {
+        mComp.setMigrationState(MState.INITIAL);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Migration20", t);
       }
     }
+  }
+
+  private String getContinuationWord(MState state, final Map<String, Object> _params) {
+    String act = "continue";
+    if (state == MState.INITIAL) {
+      act = "start";
+    } else if (state == MState.DONE) {
+      act = "restart";
+    }
+    return act;
   }
 }
