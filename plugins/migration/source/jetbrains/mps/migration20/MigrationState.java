@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.migration20.MigrationState.MyState;
+import jetbrains.mps.migration20.stages.MigrationStage;
 import org.jetbrains.annotations.NotNull;
 
 @State(
@@ -76,8 +77,10 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
     if (myState == MState.INITIAL || myState == MState.DONE) return;
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
+        MigrationStage stage = myState.getStage();
         String message = "Migration from 1.5 to 2.0 was started, but hasn't finished yet.\n" +
-          "Last migration executed: " + myState.getStage().title() + "\n" +
+          "Last migration executed: " + stage.title() + "\n" +
+          "Next migration: " + MState.values()[myState.ordinal() + 1].getStage().title() + "\n" +
           "Continue migration?";
         int res = Messages.showDialog(myProject,
           message,
