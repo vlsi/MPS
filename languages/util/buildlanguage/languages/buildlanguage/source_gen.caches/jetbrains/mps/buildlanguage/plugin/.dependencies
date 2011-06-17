@@ -1,74 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.buildlanguage.plugin.AntRunner" file="AntRunner.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildScriptRunner" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildScriptRunnerComponent" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildTableModel" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.workbench.tools.BaseTool" />
-  </dependency>
-  <dependency className="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferencesPage" file="AntRunnerPreferencesPage.java">
-    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
-    <classNode dependClassName="com.intellij.ui.table.JBTable" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.event.TableModelEvent" />
-    <classNode dependClassName="javax.swing.event.TableModelListener" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildTableModel" />
-    <classNode extendsClassName="javax.swing.JPanel" />
-  </dependency>
-  <dependency className="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_AntRunner_PreferencesPage" file="AntRunnerPreferences_AntRunner_PreferencesPage.java">
-    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferencesPage" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.prefs.BasePrefsPage" />
-  </dependency>
-  <dependency className="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent" file="AntRunnerPreferences_PreferencesComponent.java">
-    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
-    <classNode dependClassName="com.intellij.util.xmlb.annotations.Tag" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_AntRunner_PreferencesPage" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildTableModel" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.prefs.BasePrefsPage" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jdom.Element" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
-  </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.AntScriptRunner" file="AntScriptRunner.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessNotCreatedException" />
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
@@ -107,78 +38,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
-  <dependency className="jetbrains.mps.buildlanguage.plugin.BuildScriptRunner" file="BuildScriptRunner.java">
-    <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
-    <classNode dependClassName="com.intellij.openapi.application.PathManager" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Process" />
-    <classNode dependClassName="java.lang.ProcessBuilder" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Scanner" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildScriptRunnerComponent" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode extendsClassName="java.lang.Thread" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner" />
-  </dependency>
-  <dependency className="jetbrains.mps.buildlanguage.plugin.BuildScriptRunnerComponent" file="BuildScriptRunnerComponent.java">
-    <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
-    <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
-    <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
-    <classNode extendsClassName="javax.swing.JPanel" />
-  </dependency>
-  <dependency className="jetbrains.mps.buildlanguage.plugin.BuildTableModel" file="BuildTableModel.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.event.TableModelEvent" />
-    <classNode dependClassName="javax.swing.event.TableModelListener" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode extendsClassName="javax.swing.table.TableModel" />
-  </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ApplicationPlugin" file="Buildlanguage_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -189,12 +48,6 @@
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ProjectPlugin" file="Buildlanguage_ProjectPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration" file="DefaultBuildLanguageApplication_Configuration.java">
