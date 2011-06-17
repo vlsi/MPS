@@ -55,11 +55,7 @@ public class MigrationHelper {
     final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     if (msComponent.getMigrationState() == MState.INITIAL) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          stageUpgradePersistence(mpsProject);
-        }
-      });
+      stageUpgradePersistence(mpsProject);
       msComponent.setMigrationState(MState.PERSISTENCE_UPGRADED);
       cleanRestart();
     }
@@ -277,11 +273,11 @@ public class MigrationHelper {
 
   public static void stageLanguageMigrations(MPSProject p) {
     List<SNodePointer> scripts = new ArrayList<SNodePointer>();
-    for (Language l:p.getProjectModules(Language.class)){
+    for (Language l : p.getProjectModules(Language.class)) {
       EditableSModelDescriptor smd = LanguageAspect.SCRIPTS.get(l);
-      if (smd==null) continue;
-      Iterable<SNode> scriptNodes = new ConditionalIterable<SNode>(smd.getSModel().roots(),new IsInstanceCondition("jetbrains.mps.lang.script.MigrationScript"));
-      for (SNode mn:scriptNodes){
+      if (smd == null) continue;
+      Iterable<SNode> scriptNodes = new ConditionalIterable<SNode>(smd.getSModel().roots(), new IsInstanceCondition("jetbrains.mps.lang.script.MigrationScript"));
+      for (SNode mn : scriptNodes) {
         scripts.add(new SNodePointer(mn));
       }
     }

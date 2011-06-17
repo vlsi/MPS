@@ -21,6 +21,7 @@
   <version>1.5</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>
+  <depends>jetbrains.mps.ide.make</depends>
 
 
   <application-components>
