@@ -16,17 +16,12 @@
 package jetbrains.mps.migration20;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.migration20.stages.MigrationStage;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.annotations.NotNull;
 
 public class MigrationHelper {
   private Project myProject;
@@ -52,21 +47,12 @@ public class MigrationHelper {
 
         if (showMessageBefore(stage)) return;
 
-        ProgressManager.getInstance().run(new Modal(myProject, stage.title(), false) {
-          public void run(@NotNull ProgressIndicator indicator) {
-            indicator.setIndeterminate(true);
-            final Runnable stageRunnable = new StageExecutor(stage, mpsProject);
-            if (stage.needsCommand()) {
-              ThreadUtils.runInUIThreadAndWait(new Runnable() {
-                public void run() {
-                  ModelAccess.instance().runWriteActionInCommand(stageRunnable);
-                }
-              });
-            } else {
-              stageRunnable.run();
-            }
-          }
-        });
+        final Runnable stageRunnable = new StageExecutor(stage, mpsProject);
+        if (stage.needsCommand()) {
+          ModelAccess.instance().runWriteActionInCommand(stageRunnable);
+        } else {
+          stageRunnable.run();
+        }
         msComponent.setMigrationState(next);
 
         if (showMessageAfter(stage)) return;
