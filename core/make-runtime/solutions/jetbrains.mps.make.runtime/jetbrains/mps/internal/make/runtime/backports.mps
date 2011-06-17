@@ -1708,13 +1708,73 @@
               </node>
             </node>
           </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="7425375255954610660">
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7425375255954610663">
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="6931505024711051253">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6931505024711051256">
+              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6931505024711051258">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6931505024711051259">
+                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6931505024711051260">
+                    <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6931505024711051261">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2130030975859798709" resolveInfo="delegate" />
+                    </node>
+                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6931505024711051262">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wtg6.~ProgressWindow" resolveInfo="ProgressWindow" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6931505024711051263">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wtg6.~ProgressWindow%disBackgrounded()%cboolean" resolveInfo="isBackgrounded" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="7425375255954610660">
+              <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7425375255954610663">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wtg6.~ProgressWindow" resolveInfo="ProgressWindow" />
+              </node>
+              <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7425375255954610659">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2130030975859798709" resolveInfo="delegate" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6931505024711044513">
+      <property name="name" nameId="tpck.1169194664001" value="isBackgrounded" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6931505024711044517" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6931505024711044515" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6931505024711044516">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6931505024711044518">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6931505024711044519">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6931505024711044531">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6931505024711044539">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6931505024711044534">
+                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6931505024711044535">
+                    <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6931505024711044536">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2130030975859798709" resolveInfo="delegate" />
+                    </node>
+                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6931505024711044537">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wtg6.~ProgressWindow" resolveInfo="ProgressWindow" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6931505024711044543">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wtg6.~ProgressWindow%disBackgrounded()%cboolean" resolveInfo="isBackgrounded" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="6931505024711044527">
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6931505024711044528">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wtg6.~ProgressWindow" resolveInfo="ProgressWindow" />
             </node>
-            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7425375255954610659">
+            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6931505024711044529">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2130030975859798709" resolveInfo="delegate" />
             </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6931505024711051248">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6931505024711051249">
+            <property name="value" nameId="tpee.1068580123138" value="false" />
           </node>
         </node>
       </node>

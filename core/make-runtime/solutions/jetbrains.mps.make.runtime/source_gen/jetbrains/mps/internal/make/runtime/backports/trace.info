@@ -24,10 +24,13 @@
     <nodeInfo nodeId="2130030975859798849" fileName="ProgressIndicatorDelegate.java" startLine="91" startPosition="30" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2130030975859798856" fileName="ProgressIndicatorDelegate.java" startLine="95" startPosition="22" endLine="96" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2130030975859798863" fileName="ProgressIndicatorDelegate.java" startLine="99" startPosition="23" endLine="100" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7425375255954610664" fileName="ProgressIndicatorDelegate.java" startLine="104" startPosition="45" endLine="105" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2130030975859848052" fileName="ProgressIndicatorDelegate.java" startLine="109" startPosition="45" endLine="110" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7425375255954610664" fileName="ProgressIndicatorDelegate.java" startLine="104" startPosition="96" endLine="105" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6931505024711044531" fileName="ProgressIndicatorDelegate.java" startLine="110" startPosition="45" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6931505024711051248" fileName="ProgressIndicatorDelegate.java" startLine="112" startPosition="5" endLine="113" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2130030975859848052" fileName="ProgressIndicatorDelegate.java" startLine="116" startPosition="45" endLine="117" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2130030975859798588" fileName="ProgressIndicatorDelegate.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgressIndicatorDelegate#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
     <nodeInfo nodeId="7425375255954610656" fileName="ProgressIndicatorDelegate.java" startLine="103" startPosition="28" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6931505024711044518" fileName="ProgressIndicatorDelegate.java" startLine="109" startPosition="35" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2130030975859798595" fileName="ProgressIndicatorDelegate.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkCanceled#()V" />
     <nodeInfo nodeId="2130030975859798600" fileName="ProgressIndicatorDelegate.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIndeterminate#(Z)V" />
     <nodeInfo nodeId="2130030975859798606" fileName="ProgressIndicatorDelegate.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isIndeterminate#()Z" />
@@ -48,9 +51,10 @@
     <nodeInfo nodeId="2130030975859798679" fileName="ProgressIndicatorDelegate.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRunning#()Z" />
     <nodeInfo nodeId="2130030975859798683" fileName="ProgressIndicatorDelegate.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stop#()V" />
     <nodeInfo nodeId="2130030975859798687" fileName="ProgressIndicatorDelegate.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="start#()V" />
-    <nodeInfo nodeId="2130030975859848037" fileName="ProgressIndicatorDelegate.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDelegate#()Lcom/intellij/openapi/progress/ProgressIndicator;" />
+    <nodeInfo nodeId="2130030975859848037" fileName="ProgressIndicatorDelegate.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDelegate#()Lcom/intellij/openapi/progress/ProgressIndicator;" />
     <nodeInfo nodeId="2130030975859798616" fileName="ProgressIndicatorDelegate.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModalityState#()Lcom/intellij/openapi/application/ModalityState;" />
     <nodeInfo nodeId="7425375255954610652" fileName="ProgressIndicatorDelegate.java" startLine="102" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="background#()V" />
+    <nodeInfo nodeId="6931505024711044513" fileName="ProgressIndicatorDelegate.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBackgrounded#()Z" />
     <scopeInfo nodeId="2130030975859798591" fileName="ProgressIndicatorDelegate.java" startLine="14" startPosition="58" endLine="15" endPosition="23" />
     <scopeInfo nodeId="2130030975859798599" fileName="ProgressIndicatorDelegate.java" startLine="18" startPosition="63" endLine="19" endPosition="29" />
     <scopeInfo nodeId="2130030975859798605" fileName="ProgressIndicatorDelegate.java" startLine="22" startPosition="43" endLine="23" endPosition="33" />
@@ -73,8 +77,9 @@
     <scopeInfo nodeId="2130030975859798682" fileName="ProgressIndicatorDelegate.java" startLine="91" startPosition="30" endLine="92" endPosition="32" />
     <scopeInfo nodeId="2130030975859798686" fileName="ProgressIndicatorDelegate.java" startLine="95" startPosition="22" endLine="96" endPosition="20" />
     <scopeInfo nodeId="2130030975859798690" fileName="ProgressIndicatorDelegate.java" startLine="99" startPosition="23" endLine="100" endPosition="21" />
-    <scopeInfo nodeId="7425375255954610658" fileName="ProgressIndicatorDelegate.java" startLine="104" startPosition="45" endLine="105" endPosition="47" />
-    <scopeInfo nodeId="2130030975859848040" fileName="ProgressIndicatorDelegate.java" startLine="109" startPosition="45" endLine="110" endPosition="20" />
+    <scopeInfo nodeId="7425375255954610658" fileName="ProgressIndicatorDelegate.java" startLine="104" startPosition="96" endLine="105" endPosition="47" />
+    <scopeInfo nodeId="6931505024711044519" fileName="ProgressIndicatorDelegate.java" startLine="110" startPosition="45" endLine="111" endPosition="58" />
+    <scopeInfo nodeId="2130030975859848040" fileName="ProgressIndicatorDelegate.java" startLine="116" startPosition="45" endLine="117" endPosition="20" />
     <scopeInfo nodeId="2130030975859798588" fileName="ProgressIndicatorDelegate.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
       <varInfo nodeId="2130030975859798706" varName="pi" />
     </scopeInfo>
@@ -109,10 +114,12 @@
     <scopeInfo nodeId="2130030975859798679" fileName="ProgressIndicatorDelegate.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="2130030975859798683" fileName="ProgressIndicatorDelegate.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="2130030975859798687" fileName="ProgressIndicatorDelegate.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="2130030975859848037" fileName="ProgressIndicatorDelegate.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="6931505024711044516" fileName="ProgressIndicatorDelegate.java" startLine="109" startPosition="35" endLine="113" endPosition="17" />
+    <scopeInfo nodeId="2130030975859848037" fileName="ProgressIndicatorDelegate.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
     <scopeInfo nodeId="2130030975859798616" fileName="ProgressIndicatorDelegate.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="7425375255954610652" fileName="ProgressIndicatorDelegate.java" startLine="102" startPosition="0" endLine="108" endPosition="0" />
-    <unitInfo nodeId="2130030975859798586" fileName="ProgressIndicatorDelegate.java" startLine="11" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate" />
+    <scopeInfo nodeId="6931505024711044513" fileName="ProgressIndicatorDelegate.java" startLine="108" startPosition="0" endLine="115" endPosition="0" />
+    <unitInfo nodeId="2130030975859798586" fileName="ProgressIndicatorDelegate.java" startLine="11" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate" />
   </root>
   <root nodeId="5589305777382258419">
     <nodeInfo nodeId="3449801126986532461" fileName="ProgressIndicatorProgressStrategy.java" startLine="8" startPosition="81" endLine="9" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOTAL" />

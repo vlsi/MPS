@@ -101,9 +101,16 @@ public class ProgressIndicatorDelegate implements ProgressIndicator {
   }
 
   public void background() {
-    if (delegate instanceof ProgressWindow) {
+    if (delegate instanceof ProgressWindow && !(((ProgressWindow) delegate).isBackgrounded())) {
       ((ProgressWindow) delegate).background();
     }
+  }
+
+  public boolean isBackgrounded() {
+    if (delegate instanceof ProgressWindow) {
+      return ((ProgressWindow) delegate).isBackgrounded();
+    }
+    return false;
   }
 
   protected ProgressIndicator getDelegate() {
