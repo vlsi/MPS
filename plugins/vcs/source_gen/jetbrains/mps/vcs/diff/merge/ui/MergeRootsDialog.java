@@ -69,6 +69,11 @@ public class MergeRootsDialog extends BaseDialog {
     };
     myModelsDialog = mergeModelsDialog;
     myMergeContext = mergeContext;
+    myMergeContext.setChangesInvalidateHandler(new MergeContext.ChangesInvalidateHandler() {
+      public void someChangesInvalidated() {
+        rehighlight();
+      }
+    });
     myRootId = rootId;
     myStateToRestore = myMergeContext.getCurrentState();
 

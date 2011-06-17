@@ -52,6 +52,7 @@ public class MergeContext {
   private Set<ModelChange> myResolvedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private NodeCopier myNodeCopier;
   private MergeContext.MyResultModelListener myModelListener = new MergeContext.MyResultModelListener();
+  private MergeContext.ChangesInvalidateHandler myChangesInvalidateHandler;
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -270,7 +271,7 @@ public class MergeContext {
   }
 
   public void restoreState(MergeContextState state) {
-    // should be invoked inside command 
+    myResultModel.setLoading(true);
     MergeContextState stateCopy = new MergeContextState(state);
     ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
@@ -279,9 +280,37 @@ public class MergeContext {
     });
     CopyUtil.clearModelProperties(myResultModel);
     CopyUtil.copyModelProperties(stateCopy.myResultModel, myResultModel);
-    CopyUtil.copyModelContent(stateCopy.myResultModel, myResultModel);
+    ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode r) {
+        SModelOperations.addRootNode(myResultModel, r);
+      }
+    });
+    myResultModel.setLoading(false);
+
     myResolvedChanges = stateCopy.myResolvedChanges;
     myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
+  }
+
+  public void setChangesInvalidateHandler(MergeContext.ChangesInvalidateHandler changesInvalidateHandler) {
+    myChangesInvalidateHandler = changesInvalidateHandler;
+  }
+
+  private void invalidateChanges(Iterable<ModelChange> changes) {
+    if (Sequence.fromIterable(changes).isNotEmpty()) {
+      SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
+      check_358wfv_a1a0a92(myChangesInvalidateHandler);
+    }
+  }
+
+  private static void check_358wfv_a1a0a92(MergeContext.ChangesInvalidateHandler checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.someChangesInvalidated();
+    }
+
+  }
+
+  public static interface ChangesInvalidateHandler {
+    public void someChangesInvalidated();
   }
 
   private class MyResultModelListener extends SModelAdapter {
@@ -299,7 +328,7 @@ public class MergeContext {
 
     private void referenceModified(SModelReferenceEvent event) {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getSNodeId());
-      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+      invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof SetReferenceChange;
         }
@@ -328,7 +357,7 @@ public class MergeContext {
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getSNodeId());
-      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+      invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof SetPropertyChange;
         }
