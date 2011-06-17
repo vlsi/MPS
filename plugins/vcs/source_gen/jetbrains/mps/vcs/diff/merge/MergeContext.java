@@ -33,6 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -317,6 +318,16 @@ public class MergeContext {
     private MyResultModelListener() {
     }
 
+    private void invalidateDeletedRoot(SModelEvent event) {
+      assert event.getAffectedRoot() != null;
+      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getAffectedRoot().getSNodeId());
+      invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return ch instanceof DeleteRootChange;
+        }
+      }));
+    }
+
     private void beforeNodeRemovedRecursively(SNode node) {
       for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
         beforeNodeRemovedRecursively(child);
@@ -333,25 +344,30 @@ public class MergeContext {
           return ch instanceof SetReferenceChange;
         }
       }));
+      invalidateDeletedRoot(event);
     }
 
     @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       referenceModified(event);
+      invalidateDeletedRoot(event);
     }
 
     @Override
     public void referenceAdded(SModelReferenceEvent event) {
       referenceModified(event);
+      invalidateDeletedRoot(event);
     }
 
     @Override
     public void beforeChildRemoved(SModelChildEvent event) {
       beforeNodeRemovedRecursively(event.getChild());
+      invalidateDeletedRoot(event);
     }
 
     @Override
     public void childAdded(SModelChildEvent event) {
+      invalidateDeletedRoot(event);
     }
 
     @Override
@@ -362,11 +378,13 @@ public class MergeContext {
           return ch instanceof SetPropertyChange;
         }
       }));
+      invalidateDeletedRoot(event);
     }
 
     @Override
     public void beforeRootRemoved(SModelRootEvent event) {
       beforeNodeRemovedRecursively(event.getRoot());
+      invalidateDeletedRoot(event);
     }
   }
 }
