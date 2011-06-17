@@ -148,7 +148,7 @@ public final class OldBehaviorManager implements ApplicationComponent {
 
   public void initNode(@NotNull SNode node) {
     SNode concept = node.getConceptDeclarationNode();
-    Language language = node.getLanguage(GlobalScope.getInstance());
+    Language language = node.getLanguage();
 
     String conceptFqName = InternUtil.intern(NameUtil.nodeFQName(concept));
 

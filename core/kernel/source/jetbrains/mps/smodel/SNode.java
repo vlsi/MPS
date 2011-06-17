@@ -107,7 +107,7 @@ public final class SNode {
   }
 
   public boolean isRoot() {
-    return myRegisteredInModelFlag && myModel.isRoot(this);
+    return myRegisteredInModelFlag && myParent == null && myModel.isRoot(this);
   }
 
   public void addNextSibling(SNode newSibling) {
@@ -1409,9 +1409,9 @@ public final class SNode {
     return SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(genuineLinkDeclaration);
   }
 
-  public Language getLanguage(@NotNull IScope scope) {
+  public Language getLanguage() {
     String languageNamespace = getLanguageNamespace();
-    return scope.getLanguage(languageNamespace);
+    return MPSModuleRepository.getInstance().getLanguage(languageNamespace);
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo
