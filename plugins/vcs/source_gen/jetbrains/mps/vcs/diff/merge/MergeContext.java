@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -359,10 +360,57 @@ public class MergeContext {
       invalidateDeletedRoot(event);
     }
 
+    private List<NodeGroupChange> getRelevantNodeGroupChanges(final SModelChildEvent event) {
+      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getParent().getSNodeId());
+      Iterable<NodeGroupChange> allNodeGroupChanges = ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange c) {
+          return c instanceof NodeGroupChange;
+        }
+      }).<NodeGroupChange>select(new ISelector<ModelChange, NodeGroupChange>() {
+        public NodeGroupChange select(ModelChange c) {
+          return (NodeGroupChange) c;
+        }
+      });
+      return Sequence.fromIterable(allNodeGroupChanges).where(new IWhereFilter<NodeGroupChange>() {
+        public boolean accept(NodeGroupChange ngc) {
+          return ngc.getRole().equals(event.getChildRole());
+        }
+      }).toListSequence();
+    }
+
     @Override
     public void beforeChildRemoved(SModelChildEvent event) {
       beforeNodeRemovedRecursively(event.getChild());
       invalidateDeletedRoot(event);
+      SNode baseParent = myMineChangeSet.getOldModel().getNodeById(event.getParent().getSNodeId());
+      if (baseParent == null) {
+        return;
+      }
+      List<SNode> baseChildren = baseParent.getChildren(event.getChildRole());
+      final Map<SNodeId, SNode> baseChildrenMap = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
+      ListSequence.fromList(baseChildren).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode c) {
+          MapSequence.fromMap(baseChildrenMap).put(c.getSNodeId(), c);
+        }
+      });
+      List<NodeGroupChange> relevantChanges = getRelevantNodeGroupChanges(event);
+      if (ListSequence.fromList(relevantChanges).isEmpty()) {
+        return;
+      }
+      SNode baseChild = MapSequence.fromMap(baseChildrenMap).get(event.getChild().getSNodeId());
+      if (baseChild == null) {
+        return;
+      }
+      final int index = SNodeOperations.getIndexInParent(baseChild);
+      invalidateChanges(ListSequence.fromList(relevantChanges).where(new IWhereFilter<NodeGroupChange>() {
+        public boolean accept(NodeGroupChange ch) {
+          return ch.getBegin() <= index + 1 && index <= ch.getEnd();
+        }
+      }).<ModelChange>select(new ISelector<NodeGroupChange, ModelChange>() {
+        public ModelChange select(NodeGroupChange ch) {
+          return (ModelChange) ch;
+        }
+      }));
     }
 
     @Override
