@@ -19,11 +19,13 @@ import com.intellij.openapi.application.PathMacros;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
+@Deprecated
 public class AntScriptRunner extends BaseRunner {
   private static Logger LOG = Logger.getLogger(AntScriptRunner.class);
 
   private ProcessBuilder myBuilder;
 
+  @Deprecated
   public AntScriptRunner(ConfigRunParameters parameters) {
     super(parameters);
   }

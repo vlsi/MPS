@@ -86,11 +86,6 @@
       <property name="name" nameId="tpck.1169194664001" value="AntScriptRunner" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="legacy" />
     </node>
-    <node type="tp4k.UniversalRunConfigCreator" typeId="tp4k.3856910426407528287" id="5842104767987839284">
-      <property name="name" nameId="tpck.1169194664001" value="DefaultBuildLanguageConfigurationFromNode" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="legacy" />
-      <link role="rcType" roleId="tp4k.3856910426407528296" targetNodeId="7234763849538443893" resolveInfo="BuildLanguage" />
-    </node>
     <node type="rzqf.CommandDeclaration" typeId="rzqf.856705193941281768" id="2228878981386973271">
       <property name="name" nameId="tpck.1169194664001" value="ant" />
     </node>
@@ -1071,29 +1066,8 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="823693461259265800" />
     </node>
-  </root>
-  <root id="5842104767987839284">
-    <node role="target" roleId="tp4k.3856910426407529532" type="tp4k.NodeCreatorTarget" typeId="tp4k.3856910426407529501" id="5842104767987843778">
-      <link role="concept" roleId="tp4k.3856910426407529508" targetNodeId="tpsk.1196851066733" resolveInfo="Project" />
-    </node>
-    <node role="createBlock" roleId="tp4k.3856910426407529582" type="tp4k.CreateRunConfigBlock" typeId="tp4k.3856910426407529578" id="5842104767987839286">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5842104767987839287">
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.RunConfigMainNodeStatement" typeId="tp4k.8415911927033048376" id="5842104767988042591">
-          <node role="contextItem" roleId="tp4k.8415911927033050433" type="tp4k.CreateRunConfigBlockParameter" typeId="tp4k.3856910426407529586" id="5842104767988042593" />
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.CreateRunConfigStatement" typeId="tp4k.7066926174333289651" id="5842104767987897097">
-          <link role="runConfig" roleId="tp4k.7066926174333292871" targetNodeId="7234763849538404662" resolveInfo="DefaultBuildLanguageApplication" />
-          <node role="property" roleId="tp4k.7066926174333292874" type="11eb.NodeRunConfigPropertyInstance" typeId="11eb.3361586479360705438" id="5842104767987897099">
-            <node role="propertyValue" roleId="tp4k.7086588812844916869" type="tp4k.CreateRunConfigBlockParameter" typeId="tp4k.3856910426407529586" id="5842104767987897101" />
-          </node>
-          <node role="configName" roleId="tp4k.4418372807722332007" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5842104767987921942">
-            <node role="operand" roleId="tpee.1197027771414" type="tp4k.CreateRunConfigBlockParameter" typeId="tp4k.3856910426407529586" id="5842104767987921941" />
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5842104767987921946">
-              <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-            </node>
-          </node>
-        </node>
-      </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2770398075868642644">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="2228878981386973271">

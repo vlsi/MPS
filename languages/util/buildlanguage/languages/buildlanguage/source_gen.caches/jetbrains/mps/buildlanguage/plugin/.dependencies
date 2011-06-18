@@ -6,6 +6,7 @@
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.ProcessBuilder" />
     <classNode dependClassName="java.lang.String" />
@@ -280,22 +281,6 @@
     <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageConfigurationFromNode" file="DefaultBuildLanguageConfigurationFromNode.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
-    <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
-    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
-  </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" file="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
@@ -304,7 +289,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageConfigurationFromNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>

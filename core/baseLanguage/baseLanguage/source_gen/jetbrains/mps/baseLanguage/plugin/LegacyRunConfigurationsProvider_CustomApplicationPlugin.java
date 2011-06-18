@@ -28,17 +28,6 @@ public class LegacyRunConfigurationsProvider_CustomApplicationPlugin extends Bas
     }
     // register foreign factories 
     // register creators 
-    ExtensionPoint<RuntimeConfigurationProducer> creatorsExtensionPoint = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
-    {
-      DefaultJavaAppFromClass configurationCreator = new DefaultJavaAppFromClass();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      DefaultJavaAppFromMainMethod configurationCreator = new DefaultJavaAppFromMainMethod();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
   }
 
   public void doDispose() {
