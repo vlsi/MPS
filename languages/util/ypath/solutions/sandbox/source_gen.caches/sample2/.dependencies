@@ -11,7 +11,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.ypath.runtime.IFilter" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.ITreeTraversal" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.TreeTraversalFactory" />
     <classNode dependClassName="sample2.File_TreePath" />
