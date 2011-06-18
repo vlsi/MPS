@@ -61,7 +61,7 @@ public class ProjectTree extends MPSTree {
     root.add(myModulesPoolTreeNode);
     if (!IMakeService.INSTANCE.get().isSessionActive()) {
       for(TransientModelsModule module : myProject.getComponent(TransientModelsComponent.class).getModules()) {
-        projectRoot.add(new TransientModelsTreeNode(myProject, module));
+        root.add(new TransientModelsTreeNode(myProject, module));
       }
     }
     myProjectTreeNode = projectRoot;
