@@ -3,6 +3,7 @@
   <unitInfo fileName="PersistentConfigurationAssistent_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfigurationAssistent_BehaviorDescriptor" />
   <unitInfo fileName="IPersistentPropertyHolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.IPersistentPropertyHolder_BehaviorDescriptor" />
   <unitInfo fileName="TemplatePersistentConfigurationType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.TemplatePersistentConfigurationType_BehaviorDescriptor" />
+  <unitInfo fileName="GridBagConstraints_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.GridBagConstraints_BehaviorDescriptor" />
   <unitInfo fileName="Configuration_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Configuration_Parameter_BehaviorDescriptor" />
   <unitInfo fileName="SettingsEditor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.SettingsEditor_BehaviorDescriptor" />
   <unitInfo fileName="SettingsEditorType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.SettingsEditorType_BehaviorDescriptor" />
@@ -28,7 +29,7 @@
   <unitInfo fileName="PersistentPropertyReferenceOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentPropertyReferenceOperation_BehaviorDescriptor" />
   <unitInfo fileName="CheckProperties_Function_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CheckProperties_Function_BehaviorDescriptor" />
   <unitInfo fileName="PersistentConfiguration_BehaviorDescriptor.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2797684467151253534">
     <nodeInfo nodeId="2797684467151253546" fileName="ReportConfigurationErrorStatement_Behavior.java" startLine="21" startPosition="152" endLine="22" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2797684467151253553" fileName="ReportConfigurationErrorStatement_Behavior.java" startLine="22" startPosition="210" endLine="23" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

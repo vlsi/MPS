@@ -7,44 +7,44 @@ import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import java.util.Arrays;
 
 public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescriptor> {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.execution.settings.structure.ApplyTo_Function", "jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.CheckProperties_Function", "jetbrains.mps.execution.settings.structure.Configuration_Parameter", "jetbrains.mps.execution.settings.structure.CreateEditor_Function", "jetbrains.mps.execution.settings.structure.Dispose_Function", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.ResetFrom_Function", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.execution.settings.structure.ApplyTo_Function", "jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.CheckProperties_Function", "jetbrains.mps.execution.settings.structure.Configuration_Parameter", "jetbrains.mps.execution.settings.structure.CreateEditor_Function", "jetbrains.mps.execution.settings.structure.Dispose_Function", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.GridBagConstraints", "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.ResetFrom_Function", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 15:
+      case 16:
         return new PersistentConfigurationMethod_BehaviorDescriptor();
-      case 18:
+      case 19:
         return new PersistentConfigurationType_BehaviorDescriptor();
-      case 13:
+      case 14:
         return new PersistentConfiguration_BehaviorDescriptor();
-      case 27:
+      case 28:
         return new TemplatePersistentConfigurationType_BehaviorDescriptor();
-      case 26:
+      case 27:
         return new TemplateParameterReference_BehaviorDescriptor();
-      case 21:
+      case 22:
         return new ReportConfigurationErrorStatement_BehaviorDescriptor();
       case 4:
         return new CreateEditor_Function_BehaviorDescriptor();
       case 5:
         return new Dispose_Function_BehaviorDescriptor();
-      case 20:
+      case 21:
         return new PersistentPropertyReferenceOperation_BehaviorDescriptor();
-      case 16:
-        return new PersistentConfigurationTemplate_BehaviorDescriptor();
       case 17:
+        return new PersistentConfigurationTemplate_BehaviorDescriptor();
+      case 18:
         return new PersistentConfigurationTemplateInitializer_BehaviorDescriptor();
-      case 19:
+      case 20:
         return new PersistentPropertyDeclaration_BehaviorDescriptor();
-      case 25:
+      case 26:
         return new TemplateParameter_BehaviorDescriptor();
       case 6:
         return new EditorExpression_BehaviorDescriptor();
       case 1:
         return new CheckProperitesOperation_BehaviorDescriptor();
-      case 12:
+      case 13:
         // interface or abstract concept behavior jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder 
         return null;
       case 2:
@@ -60,19 +60,21 @@ public class BehaviorAspectDescriptor extends DescriptorProvider<BehaviorDescrip
         return new EditorPropertyDeclaration_BehaviorDescriptor();
       case 10:
         return new EditorPropertyReference_BehaviorDescriptor();
-      case 22:
-        return new ResetFrom_Function_BehaviorDescriptor();
-      case 24:
-        return new SettingsEditorType_BehaviorDescriptor();
       case 23:
+        return new ResetFrom_Function_BehaviorDescriptor();
+      case 25:
+        return new SettingsEditorType_BehaviorDescriptor();
+      case 24:
         return new SettingsEditor_BehaviorDescriptor();
       case 3:
         return new Configuration_Parameter_BehaviorDescriptor();
-      case 14:
+      case 15:
         // interface or abstract concept behavior jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent 
         return null;
       case 11:
         return new GetEditorOperation_BehaviorDescriptor();
+      case 12:
+        return new GridBagConstraints_BehaviorDescriptor();
       default:
         return null;
     }

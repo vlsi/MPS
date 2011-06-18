@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Settings_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.Settings_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="84" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="86" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor" />
+  <root nodeId="2722628536111969416">
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="11" startPosition="52" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="12" startPosition="103" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONSTRAINTS_KIND" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="13" startPosition="66" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ORDER" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="16" startPosition="41" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="20" startPosition="38" endLine="21" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="24" startPosition="48" endLine="25" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="28" startPosition="32" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="32" startPosition="41" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="36" startPosition="73" endLine="37" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="40" startPosition="59" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GridBagConstraints#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConstraintsKind#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setConstraintsKind#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOrder#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setOrder#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/execution/settings/structure/GridBagConstraints;" />
+    <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/execution/settings/structure/GridBagConstraints;" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="16" startPosition="41" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="20" startPosition="38" endLine="21" endPosition="65" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="24" startPosition="48" endLine="25" endPosition="65" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="28" startPosition="32" endLine="29" endPosition="82" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="32" startPosition="41" endLine="33" endPosition="51" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="36" startPosition="73" endLine="37" endPosition="192" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="40" startPosition="59" endLine="41" endPosition="53" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.GridBagConstraints" />
+  </root>
+  <root nodeId="2722628536111969417">
+    <nodeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="7" startPosition="77" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
+    <scopeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
+    <scopeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="50" />
+    <scopeInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="7" startPosition="77" endLine="17" endPosition="0" />
+    <unitInfo nodeId="2722628536111969417" fileName="GridBagConstraintsKind_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.GridBagConstraintsKind_PropertySupport" />
+  </root>
   <root nodeId="5365453833390705317">
     <nodeInfo nodeId="5365453833390705317" fileName="GetEditorOperation.java" startLine="15" startPosition="75" endLine="16" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5365453833390705317" fileName="GetEditorOperation.java" startLine="16" startPosition="103" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

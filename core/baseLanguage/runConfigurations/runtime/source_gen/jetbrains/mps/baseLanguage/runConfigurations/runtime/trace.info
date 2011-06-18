@@ -1209,14 +1209,14 @@
     <scopeInfo nodeId="747009152929080922" fileName="MultiConceptChooser.java" startLine="41" startPosition="187" endLine="49" endPosition="20" />
     <scopeInfo nodeId="747009152929080790" fileName="MultiConceptChooser.java" startLine="53" startPosition="202" endLine="63" endPosition="0" />
     <scopeInfo nodeId="747009152929081029" fileName="MultiConceptChooser.java" startLine="100" startPosition="118" endLine="110" endPosition="13">
-      <varInfo nodeId="747009152929081033" varName="targetConcept" />
       <varInfo nodeId="747009152929081039" varName="function" />
+      <varInfo nodeId="747009152929081033" varName="targetConcept" />
     </scopeInfo>
     <scopeInfo nodeId="747009152929080921" fileName="MultiConceptChooser.java" startLine="40" startPosition="357" endLine="51" endPosition="0" />
     <scopeInfo nodeId="747009152929080825" fileName="MultiConceptChooser.java" startLine="75" startPosition="125" endLine="87" endPosition="9">
       <varInfo nodeId="747009152929080833" varName="instances" />
-      <varInfo nodeId="747009152929080887" varName="targetConcept" />
       <varInfo nodeId="747009152929080901" varName="function" />
+      <varInfo nodeId="747009152929080887" varName="targetConcept" />
     </scopeInfo>
     <scopeInfo nodeId="747009152929081028" fileName="MultiConceptChooser.java" startLine="99" startPosition="167" endLine="112" endPosition="0" />
     <scopeInfo nodeId="747009152929080967" fileName="MultiConceptChooser.java" startLine="98" startPosition="47" endLine="112" endPosition="19" />

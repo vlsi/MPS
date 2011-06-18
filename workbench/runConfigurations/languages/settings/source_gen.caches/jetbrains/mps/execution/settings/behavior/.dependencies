@@ -31,6 +31,7 @@
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorPropertyDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorPropertyReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.GetEditorOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.settings.behavior.GridBagConstraints_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfigurationMethod_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplateInitializer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_BehaviorDescriptor" />
@@ -157,6 +158,10 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.settings.behavior.GridBagConstraints_BehaviorDescriptor" file="GridBagConstraints_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.IPersistentPropertyHolder_BehaviorDescriptor" file="IPersistentPropertyHolder_BehaviorDescriptor.java">
