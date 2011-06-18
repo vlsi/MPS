@@ -6,8 +6,9 @@ import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.language.LanguageRuntime;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import java.util.Collections;
 
 public class FacetRegistry {
@@ -34,12 +35,17 @@ public class FacetRegistry {
   }
 
   public IFacet lookup(IFacet.Name fn) {
-    LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(fn.getNamespace());
-    if (lr != null) {
-      IFacetManifest fm = lr.getFacetProvider().getDescriptor(null).getManifest();
-      IFacet fct = fm.lookup(fn);
-      if (fct != null) {
-        return fct;
+    if (ApplicationManager.getApplication() != null) {
+      LanguageRegistry langReg = LanguageRegistry.getInstance();
+      if (langReg != null) {
+        LanguageRuntime lr = langReg.getLanguage(fn.getNamespace());
+        if (lr != null) {
+          IFacetManifest fm = lr.getFacetProvider().getDescriptor(null).getManifest();
+          IFacet fct = fm.lookup(fn);
+          if (fct != null) {
+            return fct;
+          }
+        }
       }
     }
     // fallback to the "old" mechanism 

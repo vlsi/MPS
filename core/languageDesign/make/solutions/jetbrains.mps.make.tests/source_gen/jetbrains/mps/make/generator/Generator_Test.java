@@ -5,6 +5,7 @@ package jetbrains.mps.make.generator;
 import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.unittest.MockTestCase;
+import jetbrains.mps.make.facet.IFacetManifest;
 import org.junit.Test;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IProgress;
@@ -30,13 +31,12 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import org.junit.Before;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-import jetbrains.mps.make.facet.FacetRegistry;
 import org.junit.After;
+import jetbrains.mps.make.facet.FacetRegistry;
 
 @RunWith(JMock.class)
 public class Generator_Test extends MockTestCase {
-  private Object manifest;
+  private IFacetManifest manifest;
 
   @Test
   public void test_buildScript() throws Exception {
@@ -306,15 +306,24 @@ public class Generator_Test extends MockTestCase {
     Class<?> mf = Class.forName(Generator_Test.class.getPackage().getName() + ".FacetManifest");
     Constructor<?> ctor = mf.getConstructor();
     Object inst = ctor.newInstance();
-    this.manifest = inst;
-    Method mth = mf.getMethod("registerFacets", FacetRegistry.class);
-    mth.invoke(inst, FacetRegistry.getInstance());
+    this.manifest = (IFacetManifest) inst;
+    registerFacets(manifest);
   }
 
   @After
   public void tearDown() throws Exception {
-    Class<?> mf = Class.forName(Generator_Test.class.getPackage().getName() + ".FacetManifest");
-    Method mth = mf.getMethod("unRegisterFacets", FacetRegistry.class);
-    mth.invoke(manifest, FacetRegistry.getInstance());
+    unregisterFacets(manifest);
+  }
+
+  private void registerFacets(IFacetManifest fm) {
+    for (IFacet fct : fm.facets()) {
+      FacetRegistry.getInstance().register(fct);
+    }
+  }
+
+  private void unregisterFacets(IFacetManifest fm) {
+    for (IFacet fct : fm.facets()) {
+      FacetRegistry.getInstance().unregister(fct);
+    }
   }
 }
