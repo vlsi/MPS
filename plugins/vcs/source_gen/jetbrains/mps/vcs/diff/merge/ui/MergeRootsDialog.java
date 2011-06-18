@@ -21,6 +21,7 @@ import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.ui.NextPreviousTraverser;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -39,7 +40,6 @@ import java.awt.Insets;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -71,7 +71,11 @@ public class MergeRootsDialog extends BaseDialog {
     myMergeContext = mergeContext;
     myMergeContext.setChangesInvalidateHandler(new MergeContext.ChangesInvalidateHandler() {
       public void someChangesInvalidated() {
-        rehighlight();
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            rehighlight();
+          }
+        });
       }
     });
     myRootId = rootId;
