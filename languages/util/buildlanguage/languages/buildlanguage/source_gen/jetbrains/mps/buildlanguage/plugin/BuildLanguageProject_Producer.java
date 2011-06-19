@@ -34,7 +34,7 @@ public class BuildLanguageProject_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.buildlanguage.structure.Project");
     }
 
-    protected BuildLanguageProject_Configuration doCreateConfiguration(SNode source) {
+    protected BuildLanguageProject_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       BuildLanguageProject_Configuration configuration = new BuildLanguageProject_Configuration(getContext().getProject(), (BuildLanguageProject_Configuration_Factory) getConfigurationFactory(), "Build Script " + SPropertyOperations.getString(source, "name"));
       configuration.getNode().setNode(source);
