@@ -39,7 +39,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Comparator;
-import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -877,7 +876,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067771918(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(ModuleCycle_Behavior.getMPSClassPath_1218716245482(ILayoutComponent_Behavior.call_getPath_1213877230696(_context.getNode()), SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true))).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.fromList(ModuleCycle_Behavior.getMPSClassPath_1218716245482(IMacroHolder_Behavior.call_getPath_1234976932856(_context.getNode()), SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true))).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }

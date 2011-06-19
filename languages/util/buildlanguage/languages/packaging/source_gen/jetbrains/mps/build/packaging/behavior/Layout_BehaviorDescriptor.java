@@ -17,10 +17,6 @@ public class Layout_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor im
     return Layout_Behavior.virtual_getPath_1234976932856(thisNode);
   }
 
-  public String virtual_getPath_1213877230696(SNode thisNode) {
-    return Layout_Behavior.virtual_getPath_1213877230696(thisNode);
-  }
-
   public List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {
     return Layout_Behavior.virtual_getAllVariable_1234864693585(thisNode);
   }

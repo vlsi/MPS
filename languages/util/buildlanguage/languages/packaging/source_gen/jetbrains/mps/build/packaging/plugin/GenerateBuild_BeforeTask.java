@@ -23,20 +23,20 @@ public class GenerateBuild_BeforeTask extends BaseMpsBeforeTaskProvider<Generate
   }
 
   public static class GenerateBuild_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask {
-    private SNode layout;
+    private SNode myLayout;
 
     public GenerateBuild_BeforeTask_RunTask() {
     }
 
     public boolean configure(SNode layout) {
-      layout = layout;
+      myLayout = layout;
       return true;
     }
 
     public boolean execute(Project project) {
       // this task would be obsolete, when we larn to generate packaging properly with facets 
       // then we could use Make task instead of this 
-      return GenerateBuildUtil.generate(layout, project, true);
+      return GenerateBuildUtil.generate(myLayout, project, true);
     }
   }
 }

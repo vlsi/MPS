@@ -61,7 +61,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 19:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.packaging.structure.ICondition", new String[]{}, new String[]{}, new String[]{});
       case 20:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.packaging.structure.ILayoutComponent", new String[]{}, new String[]{}, new String[]{});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.packaging.structure.ILayoutComponent", new String[]{"jetbrains.mps.build.packaging.structure.IMacroHolder"}, new String[]{"jetbrains.mps.build.packaging.structure.IMacroHolder"}, new String[]{});
       case 21:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.build.packaging.structure.IMacroHolder", new String[]{}, new String[]{}, new String[]{});
       case 22:

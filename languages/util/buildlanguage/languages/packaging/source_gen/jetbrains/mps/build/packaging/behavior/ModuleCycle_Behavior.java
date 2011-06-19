@@ -27,7 +27,7 @@ public class ModuleCycle_Behavior {
   }
 
   public static String call_getBasedir_1218647622991(SNode thisNode) {
-    return ILayoutComponent_Behavior.call_getPath_1213877230696(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true));
+    return IMacroHolder_Behavior.call_getPath_1234976932856(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true));
   }
 
   public static List<SNode> call_getClassPath_1218646038565(SNode thisNode) {

@@ -29,8 +29,8 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
   public static final String VARIABLE = "variable";
   public static final String BUILT_IN_VARIABLE = "builtInVariable";
   public static final String CYCLE = "cycle";
-  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
   public static final String MACRO = "macro";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public Layout(SNode node) {
     super(node);
@@ -208,26 +208,6 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
     this.insertChild(prev, Layout.CYCLE, node);
   }
 
-  public int getSmodelAttributesCount() {
-    return this.getChildCount(Layout.SMODEL_ATTRIBUTE);
-  }
-
-  public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, Layout.SMODEL_ATTRIBUTE);
-  }
-
-  public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, Layout.SMODEL_ATTRIBUTE);
-  }
-
-  public void addSmodelAttribute(Attribute node) {
-    this.addChild(Layout.SMODEL_ATTRIBUTE, node);
-  }
-
-  public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Layout.SMODEL_ATTRIBUTE, node);
-  }
-
   public int getMacrosCount() {
     return this.getChildCount(Layout.MACRO);
   }
@@ -246,6 +226,26 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
 
   public void insertMacro(Macro prev, Macro node) {
     this.insertChild(prev, Layout.MACRO, node);
+  }
+
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(Layout.SMODEL_ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, Layout.SMODEL_ATTRIBUTE);
+  }
+
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, Layout.SMODEL_ATTRIBUTE);
+  }
+
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(Layout.SMODEL_ATTRIBUTE, node);
+  }
+
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Layout.SMODEL_ATTRIBUTE, node);
   }
 
   public static Layout newInstance(SModel sm, boolean init) {

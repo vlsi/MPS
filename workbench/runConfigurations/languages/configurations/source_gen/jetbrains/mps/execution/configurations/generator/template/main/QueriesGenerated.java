@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.configurations.behavior.AbstractRunConfigurationExecutor_Behavior;
 import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
@@ -24,7 +25,6 @@ import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
-import jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior;
 import jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_Behavior;
@@ -98,7 +98,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6550182048787667298(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_7024026323278183387(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -221,7 +221,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6550182048787659839(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2137130439060046356(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -41,7 +41,7 @@ public class Layout_Behavior {
   }
 
   public static String call_getFolderToGenerate_1229522949966(SNode thisNode) {
-    String path = ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode);
+    String path = IMacroHolder_Behavior.call_getPath_1234976932856(thisNode);
     if (path.endsWith(File.separator)) {
       path = path.substring(0, path.length() - 1);
     }
@@ -51,7 +51,7 @@ public class Layout_Behavior {
     return path + File.separator + SPropertyOperations.getString(thisNode, "scriptsFolder");
   }
 
-  public static String virtual_getPath_1213877230696(SNode thisNode) {
+  public static String virtual_getPath_1234976932856(SNode thisNode) {
     String macro = IMacroHolder_Behavior.call_evaluateMacro_1234975967990(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "baseDirectory", true), "macro", true), "name"));
     String fullPathWithoutMacro = Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "baseDirectory", true));
     if (StringUtils.isEmpty(macro)) {
@@ -116,10 +116,6 @@ public class Layout_Behavior {
 
   public static String call_getDefaultTargetName_1230209625713(SNode thisNode) {
     return "main";
-  }
-
-  public static String virtual_getPath_1234976932856(SNode thisNode) {
-    return ILayoutComponent_Behavior.call_getPath_1213877230696(thisNode);
   }
 
   public static String getMPSHomeName_1226508944077() {

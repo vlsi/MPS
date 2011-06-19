@@ -54,7 +54,14 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     if (!(configure(configuration, task))) {
       return false;
     }
-    return task.execute(PlatformDataKeys.PROJECT.getData(context));
+    try {
+      return task.execute(PlatformDataKeys.PROJECT.getData(context));
+    } catch (Throwable t) {
+      if (log.isErrorEnabled()) {
+        log.error("Error during executing provider " + myName, t);
+      }
+    }
+    return false;
   }
 
   private boolean configure(RunConfiguration runConfiguration, T task) {

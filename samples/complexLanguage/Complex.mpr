@@ -5,19 +5,19 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/jetbrains.mps.complex.runtime/jetbrains.mps.complex.runtime.msd" />
-      <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/languages/complex/complex.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/jetbrains.mps.complex.runtime/jetbrains.mps.complex.runtime.msd" />
+      <modulePath path="${project}/solutions/sandbox/sandbox.msd" />
+      <modulePath path="${project}/languages/complex/complex.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="Generate Complex" moduleRef="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />
       <genConfModule name="Generate Complex Runtime" moduleRef="b8bf2110-d2b5-478f-87dd-306abe7416fe(jetbrains.mps.samples.complex.runtime)" />
       <genConfModule name="Generate Sandbox" moduleRef="95120851-2c04-4def-8c41-2a1112cfdbf6(jetbrains.mps.samples.complex.sandbox)" />
     </genConfs>
+  </component>
+  <component name="MigrationState">
+    <option name="myState" value="INITIAL" />
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="Complex" />
@@ -26,5 +26,8 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
 </project>
 

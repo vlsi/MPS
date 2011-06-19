@@ -73,6 +73,18 @@ public class PersistentPropertyDeclaration_Behavior {
     return name;
   }
 
+  public static String addMyPrefix_6314556899428615272(String name) {
+    String prefix = "my";
+    if (!(name.startsWith(prefix))) {
+      if (name.length() > 1) {
+        name = "my" + name.substring(0, 1).toUpperCase() + name.substring(1);
+      } else {
+        name = "my" + name;
+      }
+    }
+    return name;
+  }
+
   public static class QuotationClass_ex141d_a1a0a0b {
     public QuotationClass_ex141d_a1a0a0b() {
     }
