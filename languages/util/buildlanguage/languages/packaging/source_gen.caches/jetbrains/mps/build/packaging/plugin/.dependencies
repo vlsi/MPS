@@ -341,6 +341,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.plugin.GenerateBuildWizard" file="GenerateBuildWizard.java">
     <classNode dependClassName="com.intellij.ide.wizard.Step" />

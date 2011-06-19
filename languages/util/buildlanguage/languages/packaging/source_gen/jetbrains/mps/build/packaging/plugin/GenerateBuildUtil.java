@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -60,7 +61,7 @@ public class GenerateBuildUtil {
     return layout.value;
   }
 
-  public static boolean generate(final SNode layout, final Project project, final boolean showWindow) {
+  public static boolean generate(@NotNull final SNode layout, @NotNull final Project project, final boolean showWindow) {
     final Wrappers._T<String> baseFolder = new Wrappers._T<String>();
     final Wrappers._T<SModelDescriptor> descriptor = new Wrappers._T<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {

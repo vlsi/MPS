@@ -33,7 +33,7 @@ public class ConfigurationChoosePanel extends JPanel {
   public ConfigurationChoosePanel() {
     super(new GridBagLayout());
 
-    this.add(new JLabel("Configuration"), LayoutUtil.createLabelConstraints(0));
+    this.add(new JLabel("Configuration:"), LayoutUtil.createLabelConstraints(0));
     JComboBox comboBox = new JComboBox(this.myComboBoxModel);
     comboBox.setRenderer(new ReadComboBoxRenderrer());
     comboBox.setEditor(new ReadComboBoxEditor());

@@ -43,15 +43,14 @@ public class CustomMPSApplication_Configuration_Editor extends SettingsEditorEx<
     myChooser = myNode.createEditor();
     panel.add(myChooser, LayoutUtil.createPanelConstraints(1));
 
-    panel.add(new JLabel("Configuration:"), LayoutUtil.createLabelConstraints(2));
-    panel.add(myConfigurationChoosePanel, LayoutUtil.createPanelConstraints(3));
+    panel.add(myConfigurationChoosePanel, LayoutUtil.createPanelConstraints(2));
 
     myUseAlternativeAnt = new JCheckBox("Use alternative Ant location");
-    panel.add(myUseAlternativeAnt, LayoutUtil.createLabelConstraints(2));
+    panel.add(myUseAlternativeAnt, LayoutUtil.createLabelConstraints(3));
     myAlternativeAnt = new FieldWithPathChooseDialog();
-    panel.add(myAlternativeAnt, LayoutUtil.createFieldConstraints(3));
+    panel.add(myAlternativeAnt, LayoutUtil.createFieldConstraints(4));
 
-    myNode.createEditor().addNodeChangeListener(new IJavaNodeChangeListener() {
+    myChooser.addNodeChangeListener(new IJavaNodeChangeListener() {
       public void nodeChanged(SNode node) {
         myConfigurationChoosePanel.nodeChanged(SNodeOperations.cast(node, "jetbrains.mps.build.packaging.structure.Layout"));
       }

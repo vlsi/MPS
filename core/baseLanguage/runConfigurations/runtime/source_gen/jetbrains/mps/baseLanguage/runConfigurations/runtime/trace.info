@@ -536,7 +536,7 @@
     <nodeInfo nodeId="1447676209063499934" fileName="RawLineEditorComponent.java" startLine="17" startPosition="50" endLine="18" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialogCaption" />
     <nodeInfo nodeId="1447676209063499942" fileName="RawLineEditorComponent.java" startLine="20" startPosition="35" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1447676209063499962" fileName="RawLineEditorComponent.java" startLine="23" startPosition="51" endLine="24" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1447676209063499973" fileName="RawLineEditorComponent.java" startLine="24" startPosition="162" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1447676209063499973" fileName="RawLineEditorComponent.java" startLine="24" startPosition="162" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1447676209063499980" fileName="RawLineEditorComponent.java" startLine="27" startPosition="7" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1447676209063499988" fileName="RawLineEditorComponent.java" startLine="28" startPosition="48" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1447676209063499994" fileName="RawLineEditorComponent.java" startLine="30" startPosition="23" endLine="31" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -560,7 +560,7 @@
     <scopeInfo nodeId="1447676209063499903" fileName="RawLineEditorComponent.java" startLine="44" startPosition="36" endLine="45" endPosition="32" />
     <scopeInfo nodeId="1447676209063499911" fileName="RawLineEditorComponent.java" startLine="48" startPosition="63" endLine="49" endPosition="68" />
     <scopeInfo nodeId="1447676209063499925" fileName="RawLineEditorComponent.java" startLine="53" startPosition="46" endLine="54" endPosition="24" />
-    <scopeInfo nodeId="1447676209063499961" fileName="RawLineEditorComponent.java" startLine="23" startPosition="51" endLine="25" endPosition="47" />
+    <scopeInfo nodeId="1447676209063499961" fileName="RawLineEditorComponent.java" startLine="23" startPosition="51" endLine="25" endPosition="54" />
     <scopeInfo nodeId="1447676209063499993" fileName="RawLineEditorComponent.java" startLine="30" startPosition="23" endLine="32" endPosition="31" />
     <scopeInfo nodeId="1447676209063499878" fileName="RawLineEditorComponent.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1447676209063499888" fileName="RawLineEditorComponent.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
@@ -606,96 +606,94 @@
   </root>
   <root nodeId="1447676209063504042">
     <nodeInfo nodeId="7094400837991816788" fileName="BaseFieldWithButtonComponent.java" startLine="18" startPosition="80" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
-    <nodeInfo nodeId="1447676209063504193" fileName="BaseFieldWithButtonComponent.java" startLine="19" startPosition="106" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
-    <nodeInfo nodeId="7094400837991817014" fileName="BaseFieldWithButtonComponent.java" startLine="25" startPosition="61" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7094400837991816839" fileName="BaseFieldWithButtonComponent.java" startLine="29" startPosition="73" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1447676209063504069" fileName="BaseFieldWithButtonComponent.java" startLine="33" startPosition="44" endLine="34" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5102932407711981627" fileName="BaseFieldWithButtonComponent.java" startLine="40" startPosition="46" endLine="41" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5102932407711981633" fileName="BaseFieldWithButtonComponent.java" startLine="41" startPosition="25" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1447676209063504098" fileName="BaseFieldWithButtonComponent.java" startLine="47" startPosition="30" endLine="48" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1447676209063504109" fileName="BaseFieldWithButtonComponent.java" startLine="49" startPosition="5" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7094400837991817222" fileName="BaseFieldWithButtonComponent.java" startLine="55" startPosition="44" endLine="56" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6820300573416479207" fileName="BaseFieldWithButtonComponent.java" startLine="58" startPosition="7" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6820300573416479211" fileName="BaseFieldWithButtonComponent.java" startLine="59" startPosition="0" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6820300573416479209" fileName="BaseFieldWithButtonComponent.java" startLine="60" startPosition="57" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1447676209063504131" fileName="BaseFieldWithButtonComponent.java" startLine="61" startPosition="0" endLine="62" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6820300573416479157" fileName="BaseFieldWithButtonComponent.java" startLine="62" startPosition="52" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6820300573416479166" fileName="BaseFieldWithButtonComponent.java" startLine="63" startPosition="59" endLine="64" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6820300573416479206" fileName="BaseFieldWithButtonComponent.java" startLine="64" startPosition="55" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1447676209063504139" fileName="BaseFieldWithButtonComponent.java" startLine="65" startPosition="0" endLine="66" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1447676209063504148" fileName="BaseFieldWithButtonComponent.java" startLine="66" startPosition="48" endLine="67" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8118615065191452077" fileName="BaseFieldWithButtonComponent.java" startLine="67" startPosition="45" endLine="68" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6820300573416479176" fileName="BaseFieldWithButtonComponent.java" startLine="68" startPosition="75" endLine="69" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6820300573416479193" fileName="BaseFieldWithButtonComponent.java" startLine="69" startPosition="52" endLine="70" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6820300573416479208" fileName="BaseFieldWithButtonComponent.java" startLine="70" startPosition="48" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1447676209063504155" fileName="BaseFieldWithButtonComponent.java" startLine="71" startPosition="0" endLine="72" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1447676209063504165" fileName="BaseFieldWithButtonComponent.java" startLine="75" startPosition="25" endLine="76" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1447676209063504173" fileName="BaseFieldWithButtonComponent.java" startLine="77" startPosition="29" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1447676209063504177" fileName="BaseFieldWithButtonComponent.java" startLine="79" startPosition="5" endLine="80" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1447676209063504184" fileName="BaseFieldWithButtonComponent.java" startLine="83" startPosition="36" endLine="84" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1447676209063504191" fileName="BaseFieldWithButtonComponent.java" startLine="87" startPosition="46" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1447676209063504200" fileName="BaseFieldWithButtonComponent.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseFieldWithButtonComponent#()V" />
-    <nodeInfo nodeId="1447676209063504096" fileName="BaseFieldWithButtonComponent.java" startLine="46" startPosition="27" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1447676209063504171" fileName="BaseFieldWithButtonComponent.java" startLine="76" startPosition="58" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7094400837991816878" fileName="BaseFieldWithButtonComponent.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeActionListener#(Ljava/awt/event/ActionListener;)V" />
-    <nodeInfo nodeId="5102932407711981612" fileName="BaseFieldWithButtonComponent.java" startLine="39" startPosition="36" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="85" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/awt/event/ActionListener;)V" />
-    <nodeInfo nodeId="1447676209063504180" fileName="BaseFieldWithButtonComponent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTextField#()Ljavax/swing/JTextField;" />
-    <nodeInfo nodeId="1447676209063504187" fileName="BaseFieldWithButtonComponent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisposableComponent#()Lcom/intellij/openapi/Disposable;" />
-    <nodeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="91" startPosition="63" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1447676209063504063" fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="57" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
-    <nodeInfo nodeId="7094400837991817169" fileName="BaseFieldWithButtonComponent.java" startLine="53" startPosition="29" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1447676209063504053" fileName="BaseFieldWithButtonComponent.java" startLine="30" startPosition="65" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1447676209063504076" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1447676209063504092" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="90" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_bit6ym_a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1447676209063504161" fileName="BaseFieldWithButtonComponent.java" startLine="74" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="1447676209063504043" fileName="BaseFieldWithButtonComponent.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addActionListener#(Ljava/awt/event/ActionListener;)V" />
-    <nodeInfo nodeId="1447676209063504113" fileName="BaseFieldWithButtonComponent.java" startLine="52" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onChange#()V" />
-    <scopeInfo nodeId="1447676209063504203" fileName="BaseFieldWithButtonComponent.java" startLine="22" startPosition="41" endLine="22" endPosition="41" />
-    <scopeInfo nodeId="7094400837991816881" fileName="BaseFieldWithButtonComponent.java" startLine="25" startPosition="61" endLine="26" endPosition="68" />
-    <scopeInfo nodeId="1447676209063504068" fileName="BaseFieldWithButtonComponent.java" startLine="33" startPosition="44" endLine="34" endPosition="53" />
-    <scopeInfo nodeId="1447676209063504097" fileName="BaseFieldWithButtonComponent.java" startLine="47" startPosition="30" endLine="48" endPosition="43" />
-    <scopeInfo nodeId="7094400837991817203" fileName="BaseFieldWithButtonComponent.java" startLine="55" startPosition="44" endLine="56" endPosition="33" />
-    <scopeInfo nodeId="1447676209063504172" fileName="BaseFieldWithButtonComponent.java" startLine="77" startPosition="29" endLine="78" endPosition="13" />
-    <scopeInfo nodeId="1447676209063504183" fileName="BaseFieldWithButtonComponent.java" startLine="83" startPosition="36" endLine="84" endPosition="28" />
-    <scopeInfo nodeId="1447676209063504190" fileName="BaseFieldWithButtonComponent.java" startLine="87" startPosition="46" endLine="88" endPosition="16" />
-    <scopeInfo nodeId="1447676209063504200" fileName="BaseFieldWithButtonComponent.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="5102932407711981613" fileName="BaseFieldWithButtonComponent.java" startLine="40" startPosition="46" endLine="42" endPosition="22" />
-    <scopeInfo nodeId="7094400837991816878" fileName="BaseFieldWithButtonComponent.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <nodeInfo nodeId="7094400837991817014" fileName="BaseFieldWithButtonComponent.java" startLine="24" startPosition="61" endLine="25" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7094400837991816839" fileName="BaseFieldWithButtonComponent.java" startLine="28" startPosition="73" endLine="29" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1447676209063504069" fileName="BaseFieldWithButtonComponent.java" startLine="32" startPosition="44" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3092223045135912200" fileName="BaseFieldWithButtonComponent.java" startLine="39" startPosition="59" endLine="40" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3092223045135912203" fileName="BaseFieldWithButtonComponent.java" startLine="40" startPosition="28" endLine="41" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3092223045135899607" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="27" endLine="46" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7094400837991817222" fileName="BaseFieldWithButtonComponent.java" startLine="51" startPosition="44" endLine="52" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350039430627925557" fileName="BaseFieldWithButtonComponent.java" startLine="57" startPosition="47" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2350039430627925559" fileName="BaseFieldWithButtonComponent.java" startLine="58" startPosition="57" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2350039430627925560" fileName="BaseFieldWithButtonComponent.java" startLine="59" startPosition="0" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2350039430627925567" fileName="BaseFieldWithButtonComponent.java" startLine="60" startPosition="52" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2350039430627925574" fileName="BaseFieldWithButtonComponent.java" startLine="61" startPosition="59" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2350039430627925581" fileName="BaseFieldWithButtonComponent.java" startLine="62" startPosition="55" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2350039430627925582" fileName="BaseFieldWithButtonComponent.java" startLine="63" startPosition="0" endLine="64" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350039430627925591" fileName="BaseFieldWithButtonComponent.java" startLine="64" startPosition="38" endLine="65" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350039430627925598" fileName="BaseFieldWithButtonComponent.java" startLine="65" startPosition="45" endLine="66" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2350039430627925600" fileName="BaseFieldWithButtonComponent.java" startLine="66" startPosition="75" endLine="67" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350039430627925607" fileName="BaseFieldWithButtonComponent.java" startLine="67" startPosition="52" endLine="68" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1447676209063504165" fileName="BaseFieldWithButtonComponent.java" startLine="71" startPosition="25" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1447676209063504173" fileName="BaseFieldWithButtonComponent.java" startLine="73" startPosition="29" endLine="74" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1447676209063504177" fileName="BaseFieldWithButtonComponent.java" startLine="75" startPosition="5" endLine="76" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1447676209063504184" fileName="BaseFieldWithButtonComponent.java" startLine="79" startPosition="36" endLine="80" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1447676209063504191" fileName="BaseFieldWithButtonComponent.java" startLine="83" startPosition="46" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1447676209063504200" fileName="BaseFieldWithButtonComponent.java" startLine="20" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseFieldWithButtonComponent#()V" />
+    <nodeInfo nodeId="1447676209063504171" fileName="BaseFieldWithButtonComponent.java" startLine="72" startPosition="58" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7094400837991816878" fileName="BaseFieldWithButtonComponent.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeActionListener#(Ljava/awt/event/ActionListener;)V" />
+    <nodeInfo nodeId="3092223045135901596" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="36" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1447676209063504092" fileName="BaseFieldWithButtonComponent.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="50" startPosition="85" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/awt/event/ActionListener;)V" />
+    <nodeInfo nodeId="1447676209063504180" fileName="BaseFieldWithButtonComponent.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTextField#()Ljavax/swing/JTextField;" />
+    <nodeInfo nodeId="1447676209063504187" fileName="BaseFieldWithButtonComponent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisposableComponent#()Lcom/intellij/openapi/Disposable;" />
+    <nodeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="87" startPosition="63" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1447676209063504063" fileName="BaseFieldWithButtonComponent.java" startLine="30" startPosition="57" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
+    <nodeInfo nodeId="7094400837991817169" fileName="BaseFieldWithButtonComponent.java" startLine="49" startPosition="36" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1447676209063504053" fileName="BaseFieldWithButtonComponent.java" startLine="29" startPosition="65" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1447676209063504076" fileName="BaseFieldWithButtonComponent.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="86" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_bit6ym_a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1447676209063504113" fileName="BaseFieldWithButtonComponent.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTextChanged#()V" />
+    <nodeInfo nodeId="1447676209063504161" fileName="BaseFieldWithButtonComponent.java" startLine="70" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="1447676209063504043" fileName="BaseFieldWithButtonComponent.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addActionListener#(Ljava/awt/event/ActionListener;)V" />
+    <nodeInfo nodeId="2350039430627925553" fileName="BaseFieldWithButtonComponent.java" startLine="56" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTextField#(Ljava/lang/String;)V" />
+    <scopeInfo nodeId="1447676209063504203" fileName="BaseFieldWithButtonComponent.java" startLine="21" startPosition="41" endLine="21" endPosition="41" />
+    <scopeInfo nodeId="7094400837991816881" fileName="BaseFieldWithButtonComponent.java" startLine="24" startPosition="61" endLine="25" endPosition="68" />
+    <scopeInfo nodeId="1447676209063504068" fileName="BaseFieldWithButtonComponent.java" startLine="32" startPosition="44" endLine="33" endPosition="60" />
+    <scopeInfo nodeId="1447676209063504095" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="27" endLine="46" endPosition="41" />
+    <scopeInfo nodeId="7094400837991817203" fileName="BaseFieldWithButtonComponent.java" startLine="51" startPosition="44" endLine="52" endPosition="33" />
+    <scopeInfo nodeId="1447676209063504172" fileName="BaseFieldWithButtonComponent.java" startLine="73" startPosition="29" endLine="74" endPosition="13" />
+    <scopeInfo nodeId="1447676209063504183" fileName="BaseFieldWithButtonComponent.java" startLine="79" startPosition="36" endLine="80" endPosition="28" />
+    <scopeInfo nodeId="1447676209063504190" fileName="BaseFieldWithButtonComponent.java" startLine="83" startPosition="46" endLine="84" endPosition="16" />
+    <scopeInfo nodeId="1447676209063504200" fileName="BaseFieldWithButtonComponent.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="3092223045135901597" fileName="BaseFieldWithButtonComponent.java" startLine="39" startPosition="59" endLine="41" endPosition="29" />
+    <scopeInfo nodeId="7094400837991816878" fileName="BaseFieldWithButtonComponent.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="7094400837991816956" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504079" fileName="BaseFieldWithButtonComponent.java" startLine="39" startPosition="36" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="1447676209063504095" fileName="BaseFieldWithButtonComponent.java" startLine="46" startPosition="27" endLine="50" endPosition="23" />
-    <scopeInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="85" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504180" fileName="BaseFieldWithButtonComponent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504187" fileName="BaseFieldWithButtonComponent.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="91" startPosition="63" endLine="95" endPosition="7" />
-    <scopeInfo nodeId="1447676209063504063" fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="57" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1447676209063504079" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="36" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="1447676209063504092" fileName="BaseFieldWithButtonComponent.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="50" startPosition="85" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504180" fileName="BaseFieldWithButtonComponent.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504187" fileName="BaseFieldWithButtonComponent.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="87" startPosition="63" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="1447676209063504063" fileName="BaseFieldWithButtonComponent.java" startLine="30" startPosition="57" endLine="35" endPosition="0">
       <varInfo nodeId="1447676209063504066" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504164" fileName="BaseFieldWithButtonComponent.java" startLine="75" startPosition="25" endLine="80" endPosition="33">
+    <scopeInfo nodeId="1447676209063504116" fileName="BaseFieldWithButtonComponent.java" startLine="49" startPosition="36" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="1447676209063504164" fileName="BaseFieldWithButtonComponent.java" startLine="71" startPosition="25" endLine="76" endPosition="33">
       <varInfo nodeId="1447676209063504166" varName="disposable" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504046" fileName="BaseFieldWithButtonComponent.java" startLine="29" startPosition="73" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="1447676209063504076" fileName="BaseFieldWithButtonComponent.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1447676209063504046" fileName="BaseFieldWithButtonComponent.java" startLine="28" startPosition="73" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="1447676209063504076" fileName="BaseFieldWithButtonComponent.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1447676209063504090" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504092" fileName="BaseFieldWithButtonComponent.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="90" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504161" fileName="BaseFieldWithButtonComponent.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1447676209063504043" fileName="BaseFieldWithButtonComponent.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="86" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504113" fileName="BaseFieldWithButtonComponent.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504161" fileName="BaseFieldWithButtonComponent.java" startLine="70" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1447676209063504043" fileName="BaseFieldWithButtonComponent.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1447676209063504074" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504116" fileName="BaseFieldWithButtonComponent.java" startLine="53" startPosition="29" endLine="72" endPosition="23">
-      <varInfo nodeId="1447676209063504132" varName="cp" />
-      <varInfo nodeId="6820300573416479158" varName="selStart" />
-      <varInfo nodeId="6820300573416479167" varName="selEnd" />
+    <scopeInfo nodeId="2350039430627925556" fileName="BaseFieldWithButtonComponent.java" startLine="57" startPosition="47" endLine="68" endPosition="48">
+      <varInfo nodeId="2350039430627925550" varName="cp" />
+      <varInfo nodeId="2350039430627925551" varName="selStart" />
+      <varInfo nodeId="2350039430627925552" varName="selEnd" />
     </scopeInfo>
-    <scopeInfo nodeId="1447676209063504113" fileName="BaseFieldWithButtonComponent.java" startLine="52" startPosition="0" endLine="74" endPosition="0" />
-    <unitInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="57" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$2" />
-    <unitInfo nodeId="1447676209063504061" fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="43" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$1" />
-    <unitInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="18" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent" />
+    <scopeInfo nodeId="2350039430627925553" fileName="BaseFieldWithButtonComponent.java" startLine="56" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="3092223045135912268" varName="text" />
+    </scopeInfo>
+    <unitInfo nodeId="7094400837991817202" fileName="BaseFieldWithButtonComponent.java" startLine="50" startPosition="57" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$2" />
+    <unitInfo nodeId="1447676209063504061" fileName="BaseFieldWithButtonComponent.java" startLine="30" startPosition="43" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$1" />
+    <unitInfo nodeId="1447676209063504042" fileName="BaseFieldWithButtonComponent.java" startLine="18" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent" />
   </root>
   <root nodeId="2178855608171213717">
     <nodeInfo nodeId="2178855608171213719" fileName="IJavaNodeChangeListener.java" startLine="7" startPosition="42" endLine="8" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeChanged#(Ljetbrains/mps/smodel/SNode;)V" />
