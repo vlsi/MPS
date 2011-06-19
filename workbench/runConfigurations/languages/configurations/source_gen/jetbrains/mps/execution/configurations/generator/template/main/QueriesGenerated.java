@@ -137,6 +137,10 @@ public class QueriesGenerated {
     return CommandDeclaration_Behavior.getGetDebuggerConfidurationMethodName_6226796386650472924();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1051814066736514060(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(_context.getNode(), "configurationKind", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_7460665385311866838(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(_context.getNode());
   }
@@ -170,6 +174,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4042467058397505479(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(_context.getNode(), "configurationKind", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1289308558160070923(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(_context.getNode(), "configurationKind", false));
   }
 
@@ -260,10 +268,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configuration", false), "ConfigurationToClass");
   }
 
-  public static Object referenceMacro_GetReferent_7460665385311866859(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configurationKind", false), "KindToClass");
-  }
-
   public static Object referenceMacro_GetReferent_7460665385311866816(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass"), "constructor", true)).first();
   }
@@ -339,14 +343,14 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_4013739085301446323(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ?
-      SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0sc().createNode(), "concept", false) :
+      SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0tc().createNode(), "concept", false) :
       SLinkOperations.getTarget(_context.getNode(), "concept", false)
     );
   }
 
   public static Object referenceMacro_GetReferent_4013739085301455090(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ?
-      SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0tc().createNode(), "concept", false) :
+      SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0uc().createNode(), "concept", false) :
       SLinkOperations.getTarget(_context.getNode(), "concept", false)
     );
   }
@@ -512,7 +516,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5475888311765497814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> beforeTaskCalls = check_x583g4_a0a0fe(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
+    List<SNode> beforeTaskCalls = check_x583g4_a0a0ge(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
     if (beforeTaskCalls == null) {
       return new ArrayList<SNode>();
     }
@@ -605,15 +609,15 @@ public class QueriesGenerated {
     }
   }
 
-  private static List<SNode> check_x583g4_a0a0fe(SNode checkedDotOperand) {
+  private static List<SNode> check_x583g4_a0a0ge(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTargets(checkedDotOperand, "beforeTask", true);
     }
     return null;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0sc {
-    public QuotationClass_x583g4_a0a0a0sc() {
+  public static class QuotationClass_x583g4_a0a0a0tc {
+    public QuotationClass_x583g4_a0a0a0tc() {
     }
 
     public SNode createNode() {
@@ -630,8 +634,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0tc {
-    public QuotationClass_x583g4_a0a0a0tc() {
+  public static class QuotationClass_x583g4_a0a0a0uc {
+    public QuotationClass_x583g4_a0a0a0uc() {
     }
 
     public SNode createNode() {

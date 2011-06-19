@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import java.awt.GridBagLayout;
 import jetbrains.mps.ide.common.LayoutUtil;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener;
 import javax.swing.JLabel;
 
 public class DefaultPackagingLanguageApplication_Editor extends JPanel {
@@ -55,8 +54,8 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
     this.add(this.myJavaConfigurationOptions, LayoutUtil.createPanelConstraints(2));
     {
       MainNodeChooser chooser = this.myChooseNodeComponent;
-      chooser.addNodeChangeListener(new IJavaNodeChangeListener() {
-        public void nodeChanged(SNode node) {
+      chooser.addNodeChangeListener(new _FunctionTypes._void_P1_E0<SNode>() {
+        public void invoke(SNode node) {
           try {
             DefaultPackagingLanguageApplication_Editor.this.myUsersComponent.nodeChanged(node);
           } catch (Throwable t) {
@@ -64,7 +63,6 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
           }
         }
       });
-
       JPanel panel = new JPanel(new GridBagLayout());
       panel.add(new JLabel("Main node:"), LayoutUtil.createLabelConstraints(0));
       panel.add(chooser, LayoutUtil.createPanelConstraints(1));

@@ -7,18 +7,11 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 
 public class GenerateBuildAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -31,7 +24,7 @@ public class GenerateBuildAction_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return GenerateBuildAction_Action.this.getMPSLayout(_params) != null;
+    return GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))) != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -54,10 +47,6 @@ public class GenerateBuildAction_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
@@ -67,25 +56,9 @@ public class GenerateBuildAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      // calculate output path 
-      final SNode layout = GenerateBuildAction_Action.this.getMPSLayout(_params);
-      final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout, "configuration", true)).first();
-        }
-      });
-      GenerateTextFromBuild.generate(configuration.value, ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((Project) MapSequence.fromMap(_params).get("project")), true);
+      GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.fromMap(_params).get("project")), true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateBuildAction", t);
     }
-  }
-
-  private SNode getMPSLayout(final Map<String, Object> _params) {
-    return ModelAccess.instance().runReadAction(new Computable<SNode>() {
-      public SNode compute() {
-        return GenerateTextFromBuild.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")));
-      }
-    });
   }
 }

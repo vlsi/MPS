@@ -38,7 +38,11 @@ public class Ant_Command {
   }
 
   public ProcessHandler createProcess(SNode project) throws ExecutionException {
-    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter("-Djava.home=" + Java_Command.getJdkHome() + " -Dant.home=" + myAntLocation + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()), " ") + " " + "-f " + Ant_Command.getGeneratedFileName(project)).createProcess("org.apache.tools.ant.launch.Launcher");
+    return new Ant_Command().setAntLocation(myAntLocation).createProcess(Ant_Command.getGeneratedFileName(project));
+  }
+
+  public ProcessHandler createProcess(String antFilePath) throws ExecutionException {
+    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter("-Djava.home=" + Java_Command.getJdkHome() + " -Dant.home=" + myAntLocation + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()), " ") + " " + "-f " + antFilePath).createProcess("org.apache.tools.ant.launch.Launcher");
   }
 
   private static String getDefaultAntHome() {

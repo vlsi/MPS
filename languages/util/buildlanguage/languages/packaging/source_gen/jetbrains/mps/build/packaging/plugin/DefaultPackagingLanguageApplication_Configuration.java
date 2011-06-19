@@ -168,7 +168,7 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
                   });
 
                   AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
-                  Process process = runner.run(FileSystem.getInstance().getFileByPath(GenerateTextFromBuild.getGeneratedFile(configuration, model.value).getAbsolutePath()));
+                  Process process = runner.run(FileSystem.getInstance().getFileByPath(GenerateTextFromBuild.getGeneratedFile(configuration).getAbsolutePath()));
                   return new DefaultProcessHandler(consoleView_22042010, process, runner.getCommandString());
                 } catch (ExecutionException e) {
                   ex.value = e;

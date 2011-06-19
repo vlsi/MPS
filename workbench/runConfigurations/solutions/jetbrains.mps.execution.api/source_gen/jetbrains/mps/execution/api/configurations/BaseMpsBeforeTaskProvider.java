@@ -102,7 +102,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
   }
 
   public static String getCreateMethodName(String name) {
-    return "create" + name + "Task";
+    return "create" + name.replace(" ", "") + "Task";
   }
 
   public static String getConfigureMethodName() {
