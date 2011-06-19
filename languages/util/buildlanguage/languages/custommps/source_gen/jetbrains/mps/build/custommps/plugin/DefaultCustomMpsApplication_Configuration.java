@@ -181,7 +181,7 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
                       model.value = ((EditableSModelDescriptor) SNodeOperations.getModel(node).getModelDescriptor());
                     }
                   });
-                  File file = GenerateTextFromBuild.getGeneratedFile(configuration, model.value);
+                  File file = GenerateTextFromBuild.getGeneratedFile(configuration);
                   // if MPSBuild was included into this configuration we should run different build file 
                   if (isMPSBuildIncluded.value) {
                     String path = file.getAbsolutePath();

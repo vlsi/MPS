@@ -34,6 +34,7 @@ public class Custommps_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new LegacyRunConfigurationsProvider_CustomApplicationPlugin());
+    addCustomPart(res, new RunConfigurationsInitializer_CustomApplicationPlugin());
     return res;
   }
 

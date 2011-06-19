@@ -42,22 +42,6 @@ public class LegacyRunConfigurationsProvider_CustomApplicationPlugin extends Bas
 
     }
     // register creators 
-    ExtensionPoint<RuntimeConfigurationProducer> creatorsExtensionPoint = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
-    {
-      DefaultCustomMpsLanguageConfigurationFromConfiguration configurationCreator = new DefaultCustomMpsLanguageConfigurationFromConfiguration();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      DefaultCustomMpsLanguageConfigurationFromMPSLayout configurationCreator = new DefaultCustomMpsLanguageConfigurationFromMPSLayout();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      DefaultCustomMpsLanguageConfigurationFromMPSBuild configurationCreator = new DefaultCustomMpsLanguageConfigurationFromMPSBuild();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
   }
 
   public void doDispose() {
