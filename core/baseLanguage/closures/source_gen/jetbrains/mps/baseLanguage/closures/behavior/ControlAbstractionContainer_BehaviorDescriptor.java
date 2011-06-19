@@ -17,4 +17,9 @@ public class ControlAbstractionContainer_BehaviorDescriptor extends Classifier_B
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return ControlAbstractionContainer_Behavior.virtual_getMembers_1213877531970(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer";
+  }
 }

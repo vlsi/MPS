@@ -422,6 +422,7 @@
     <copy todir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp">
       <fileset dir="${mps_home}/platform/buildlanguage/ant/classes" includes="**/*.class, **/*.xml, " />
     </copy>
+    <echo file="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <jar destfile="${deploy.dir}/MPS/languages/generate.ant.task.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
     </jar>

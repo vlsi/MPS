@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BaseVariableReference_BehaviorDescrip
 public class RefactoringFieldReference_BehaviorDescriptor extends BaseVariableReference_BehaviorDescriptor implements RefactoringArgumentReference_BehaviorDescriptor {
   public RefactoringFieldReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference";
+  }
 }

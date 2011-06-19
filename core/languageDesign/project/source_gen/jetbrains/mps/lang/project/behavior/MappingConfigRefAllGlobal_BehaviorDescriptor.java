@@ -6,4 +6,9 @@ package jetbrains.mps.lang.project.behavior;
 public class MappingConfigRefAllGlobal_BehaviorDescriptor extends MappingConfigRefBase_BehaviorDescriptor {
   public MappingConfigRefAllGlobal_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal";
+  }
 }

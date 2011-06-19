@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class AConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public AConcept_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bootstrap.helgins.test.structure.AConcept";
+  }
 }

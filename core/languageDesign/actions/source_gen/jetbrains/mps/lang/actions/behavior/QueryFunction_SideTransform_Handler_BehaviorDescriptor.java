@@ -16,4 +16,9 @@ public class QueryFunction_SideTransform_Handler_BehaviorDescriptor extends Conc
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_SideTransform_Handler_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler";
+  }
 }

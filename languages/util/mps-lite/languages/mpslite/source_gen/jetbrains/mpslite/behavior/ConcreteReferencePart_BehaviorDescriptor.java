@@ -18,4 +18,9 @@ public class ConcreteReferencePart_BehaviorDescriptor extends ReferencePart_Beha
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.ConcreteReferencePart";
+  }
 }

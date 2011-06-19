@@ -42,6 +42,7 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
   public static final DescriptorProvider<StructureDescriptor> STRUCTURE_PROVIDER = new InterpretedStructureProvider();
   public static final DescriptorProvider<BehaviorDescriptor> BEHAVIOR_PROVIDER = new InterpretedBehaviorProvider();
   public static final DescriptorProvider<ConstraintsDescriptor> CONSTRAINTS_PROVIDER = MixedDescriptorProvider.of(NEW_INTERPRETED_CONSTRAINTS, OLD_INTERPRETED_CONSTRAINTS);
+  public static final DescriptorProvider<FacetDescriptor> FACET_PROVIDER = new InterpretedFacetProvider();
 
   private final Language myLanguage;
   private final Collection<TemplateModule> myTemplateModules;

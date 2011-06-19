@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class RemExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public RemExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.RemExpression";
+  }
 }

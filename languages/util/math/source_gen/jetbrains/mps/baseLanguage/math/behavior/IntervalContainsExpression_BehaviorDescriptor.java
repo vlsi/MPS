@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor;
 public class IntervalContainsExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public IntervalContainsExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression";
+  }
 }

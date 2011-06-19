@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class OrCombiningConditionalExpression_BehaviorDescriptor extends CombiningConditionalExpression_BehaviorDescriptor {
   public OrCombiningConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.OrCombiningConditionalExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class BuildGroupBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements GroupContents_BehaviorDescriptor {
   public BuildGroupBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.BuildGroupBlock";
+  }
 }

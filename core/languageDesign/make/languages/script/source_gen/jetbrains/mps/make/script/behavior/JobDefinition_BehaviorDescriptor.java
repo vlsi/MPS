@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class JobDefinition_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public JobDefinition_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.JobDefinition";
+  }
 }

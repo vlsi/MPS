@@ -8,4 +8,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 public class Macro_BehaviorDescriptor extends PropertyDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public Macro_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Macro";
+  }
 }

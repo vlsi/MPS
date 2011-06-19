@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class GetRootsBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public GetRootsBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.stubs.structure.GetRootsBlock";
+  }
 }

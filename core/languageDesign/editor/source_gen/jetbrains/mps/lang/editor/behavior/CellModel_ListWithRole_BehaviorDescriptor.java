@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public abstract class CellModel_ListWithRole_BehaviorDescriptor extends CellModel_WithRole_BehaviorDescriptor {
   public CellModel_ListWithRole_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole";
+  }
 }

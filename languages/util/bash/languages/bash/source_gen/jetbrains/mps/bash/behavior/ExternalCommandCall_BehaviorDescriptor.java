@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ExternalCommandCall_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public ExternalCommandCall_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ExternalCommandCall";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.gwt.client.behavior;
 public abstract class PatternFilter_BehaviorDescriptor extends Element_BehaviorDescriptor {
   public PatternFilter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.gwt.client.structure.PatternFilter";
+  }
 }

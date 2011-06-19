@@ -12,4 +12,9 @@ public class ContainerItemIterator_BehaviorDescriptor extends ConceptFunction_Be
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ContainerItemIterator_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.ContainerItemIterator";
+  }
 }

@@ -12,4 +12,9 @@ public class Annotation_BehaviorDescriptor extends Interface_BehaviorDescriptor 
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return Annotation_Behavior.virtual_getMembers_1213877531970(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.Annotation";
+  }
 }

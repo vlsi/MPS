@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public abstract class BinaryArithmeticExpression_BehaviorDescriptor extends ArithmeticExpression_BehaviorDescriptor implements IPriorityExpression_BehaviorDescriptor {
   public BinaryArithmeticExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BinaryArithmeticExpression";
+  }
 }

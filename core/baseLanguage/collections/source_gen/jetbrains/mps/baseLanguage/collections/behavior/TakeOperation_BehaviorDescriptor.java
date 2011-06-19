@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class TakeOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor {
   public TakeOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.TakeOperation";
+  }
 }

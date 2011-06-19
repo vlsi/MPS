@@ -6,4 +6,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class PropertyNameTarget_BehaviorDescriptor extends MessageTarget_BehaviorDescriptor {
   public PropertyNameTarget_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget";
+  }
 }

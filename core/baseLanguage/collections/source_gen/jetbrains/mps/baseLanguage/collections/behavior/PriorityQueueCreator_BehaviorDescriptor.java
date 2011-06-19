@@ -11,4 +11,9 @@ public class PriorityQueueCreator_BehaviorDescriptor extends AbstractContainerCr
   public SNode virtual_createType_1237722437229(SNode thisNode) {
     return PriorityQueueCreator_Behavior.virtual_createType_1237722437229(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator";
+  }
 }

@@ -71,6 +71,7 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
     eTabs.setLayout(new BoxLayout(eTabs, BoxLayout.Y_AXIS));
     eTabs.setBorder(BorderFactory.createTitledBorder("Editor tabs"));
 
+
     myShowCheckbox = new JCheckBox(new AbstractAction("show") {
       public void actionPerformed(ActionEvent e) {
         myPlainCheckbox.setEnabled(myShowCheckbox.isSelected());
@@ -118,8 +119,35 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
   }
 
   public static class MyState {
-    public boolean showPlain = true;
-    public boolean showGrayed = true;
-    public boolean show = true;
+    private boolean showPlain = true;
+    private boolean showGrayed = true;
+    private boolean show = true;
+
+    //setters are for persistence
+    public void setShowPlain(boolean showPlain) {
+      this.showPlain = showPlain;
+    }
+
+    //setters are for persistence
+    public void setShowGrayed(boolean showGrayed) {
+      this.showGrayed = showGrayed;
+    }
+
+    //setters are for persistence
+    public void setShow(boolean show) {
+      this.show = show;
+    }
+
+    public boolean isShowPlain() {
+      return showPlain;
+    }
+
+    public boolean isShowGrayed() {
+      return showGrayed;
+    }
+
+    public boolean isShow() {
+      return show;
+    }
   }
 }

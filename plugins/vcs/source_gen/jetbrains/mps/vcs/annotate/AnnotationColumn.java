@@ -746,7 +746,7 @@ __switch__:
                     public void run() {
                       final Wrappers._T<BaseDialog> dialog = new Wrappers._T<BaseDialog>();
                       if (ModelDiffTool.isNewDiffEnabled()) {
-                        dialog.value = new ModelDifferenceDialog(operationContext.getProject(), operationContext, beforeModel.value, afterModel, new SimpleDiffRequest(operationContext.getProject(), beforeRevNumber, afterRevNumber));
+                        dialog.value = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(operationContext.getProject(), beforeRevNumber, afterRevNumber));
                       } else {
                         dialog.value = new OldModelDifferenceDialog(operationContext, frame, beforeModel.value, afterModel, "Model Difference", false, new String[]{beforeRevNumber, afterRevNumber});
                       }
@@ -766,7 +766,7 @@ __switch__:
                         final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
                         ModelAccess.instance().runReadAction(new Runnable() {
                           public void run() {
-                            modelDialog.value = new ModelDifferenceDialog(project, operationContext, beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber));
+                            modelDialog.value = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber));
                             id.value = node.value.getSNodeId();
                           }
                         });

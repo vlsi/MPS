@@ -19,4 +19,9 @@ public class AssignmentExpression_BehaviorDescriptor extends BaseAssignmentExpre
   public boolean virtual_isReadAsignment_1215696236033(SNode thisNode) {
     return AssignmentExpression_Behavior.virtual_isReadAsignment_1215696236033(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.AssignmentExpression";
+  }
 }

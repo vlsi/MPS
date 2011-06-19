@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class Property_RemoveOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Property_RemoveOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Property_RemoveOperation";
+  }
 }

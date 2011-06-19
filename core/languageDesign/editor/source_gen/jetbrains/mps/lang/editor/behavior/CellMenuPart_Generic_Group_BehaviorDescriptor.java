@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellMenuPart_Generic_Group_BehaviorDescriptor extends CellMenuPart_AbstractGroup_BehaviorDescriptor {
   public CellMenuPart_Generic_Group_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group";
+  }
 }

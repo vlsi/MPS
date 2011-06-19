@@ -23,4 +23,9 @@ public class UnrestrictedFunctionType_BehaviorDescriptor extends FunctionType_Be
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return UnrestrictedFunctionType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType";
+  }
 }

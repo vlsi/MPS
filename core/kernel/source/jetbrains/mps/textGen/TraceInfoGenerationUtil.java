@@ -52,31 +52,43 @@ public class TraceInfoGenerationUtil {
   }
 
   public static void createPositionInfo(SNodeTextGen nodeTextGen, SNode node) {
+    TextGenBuffer buffer = nodeTextGen.getBuffer();
+    if(!buffer.hasPositionsSupport()) return;
+
     TraceablePositionInfo info = new TraceablePositionInfo();
-    info.setStartLine(nodeTextGen.getBuffer().getLineNumber());
-    info.setStartPosition(nodeTextGen.getBuffer().getPosition());
-    putUserObject(nodeTextGen.getBuffer(), POSITION_INFO, node, info);
+    info.setStartLine(buffer.getLineNumber());
+    info.setStartPosition(buffer.getPosition());
+    putUserObject(buffer, POSITION_INFO, node, info);
   }
 
   public static void fillPositionInfo(SNodeTextGen nodeTextGen, SNode node, String propertyString) {
-    TraceablePositionInfo info = getUserObject(nodeTextGen.getBuffer(), POSITION_INFO, node);
-    info.setEndLine(nodeTextGen.getBuffer().getLineNumber());
-    info.setEndPosition(nodeTextGen.getBuffer().getPosition());
+    TextGenBuffer buffer = nodeTextGen.getBuffer();
+    if(!buffer.hasPositionsSupport()) return;
+
+    TraceablePositionInfo info = getUserObject(buffer, POSITION_INFO, node);
+    info.setEndLine(buffer.getLineNumber());
+    info.setEndPosition(buffer.getPosition());
     info.setConceptFqName(node.getConceptFqName());
     info.setPropertyString(propertyString);
   }
 
   public static void createScopeInfo(SNodeTextGen nodeTextGen, SNode node) {
+    TextGenBuffer buffer = nodeTextGen.getBuffer();
+    if(!buffer.hasPositionsSupport()) return;
+
     ScopePositionInfo info = new ScopePositionInfo();
-    info.setStartLine(nodeTextGen.getBuffer().getLineNumber());
-    info.setStartPosition(nodeTextGen.getBuffer().getPosition());
-    putUserObject(nodeTextGen.getBuffer(), SCOPE_INFO, node, info);
+    info.setStartLine(buffer.getLineNumber());
+    info.setStartPosition(buffer.getPosition());
+    putUserObject(buffer, SCOPE_INFO, node, info);
   }
 
   public static void fillScopeInfo(SNodeTextGen nodeTextGen, SNode node, List<SNode> vars) {
-    ScopePositionInfo info = getUserObject(nodeTextGen.getBuffer(), SCOPE_INFO, node);
-    info.setEndLine(nodeTextGen.getBuffer().getLineNumber());
-    info.setEndPosition(nodeTextGen.getBuffer().getPosition());
+    TextGenBuffer buffer = nodeTextGen.getBuffer();
+    if(!buffer.hasPositionsSupport()) return;
+
+    ScopePositionInfo info = getUserObject(buffer, SCOPE_INFO, node);
+    info.setEndLine(buffer.getLineNumber());
+    info.setEndPosition(buffer.getPosition());
     for (SNode var : vars) {
       if (var != null) {
         info.addVarInfo(var);
@@ -85,16 +97,22 @@ public class TraceInfoGenerationUtil {
   }
 
   public static void createUnitInfo(SNodeTextGen nodeTextGen, SNode node) {
+    TextGenBuffer buffer = nodeTextGen.getBuffer();
+    if(!buffer.hasPositionsSupport()) return;
+
     UnitPositionInfo info = new UnitPositionInfo();
-    info.setStartLine(nodeTextGen.getBuffer().getLineNumber());
-    info.setStartPosition(nodeTextGen.getBuffer().getPosition());
-    putUserObject(nodeTextGen.getBuffer(), UNIT_INFO, node, info);
+    info.setStartLine(buffer.getLineNumber());
+    info.setStartPosition(buffer.getPosition());
+    putUserObject(buffer, UNIT_INFO, node, info);
   }
 
   public static void fillUnitInfo(SNodeTextGen nodeTextGen, SNode node, String unitName) {
-    UnitPositionInfo info = getUserObject(nodeTextGen.getBuffer(), UNIT_INFO, node);
-    info.setEndLine(nodeTextGen.getBuffer().getLineNumber());
-    info.setEndPosition(nodeTextGen.getBuffer().getPosition());
+    TextGenBuffer buffer = nodeTextGen.getBuffer();
+    if(!buffer.hasPositionsSupport()) return;
+
+    UnitPositionInfo info = getUserObject(buffer, UNIT_INFO, node);
+    info.setEndLine(buffer.getLineNumber());
+    info.setEndPosition(buffer.getPosition());
     info.setUnitName(unitName);
   }
 }

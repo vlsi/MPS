@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class PaddingRightStyleClassItem_BehaviorDescriptor extends AbstractPaddingStyleClassItem_BehaviorDescriptor {
   public PaddingRightStyleClassItem_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem";
+  }
 }

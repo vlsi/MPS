@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class ConceptProperty_SetOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public ConceptProperty_SetOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation";
+  }
 }

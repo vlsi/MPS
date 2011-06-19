@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class MapRemoveOperation_BehaviorDescriptor extends MapOperation_BehaviorDescriptor {
   public MapRemoveOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation";
+  }
 }

@@ -19,7 +19,7 @@ public class ShowBookmarks_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(ShowBookmarks_Action.class);
 
   public ShowBookmarks_Action() {
-    super("Show Bookmarks", "", ICON);
+    super("Bookmarks...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

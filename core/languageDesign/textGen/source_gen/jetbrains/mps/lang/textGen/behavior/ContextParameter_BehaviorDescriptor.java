@@ -6,4 +6,9 @@ package jetbrains.mps.lang.textGen.behavior;
 public class ContextParameter_BehaviorDescriptor extends AbstractTextGenParameter_BehaviorDescriptor {
   public ContextParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.ContextParameter";
+  }
 }

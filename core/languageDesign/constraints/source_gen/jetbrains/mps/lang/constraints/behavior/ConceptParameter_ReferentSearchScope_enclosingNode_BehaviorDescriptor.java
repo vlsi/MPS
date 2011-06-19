@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode";
+  }
 }

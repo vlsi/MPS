@@ -24,4 +24,9 @@ public abstract class BaseStringOperation_BehaviorDescriptor extends BaseConcept
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BaseStringOperation";
+  }
 }

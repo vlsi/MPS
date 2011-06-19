@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class NodeSetupFunction_SampleNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public NodeSetupFunction_SampleNode_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode";
+  }
 }

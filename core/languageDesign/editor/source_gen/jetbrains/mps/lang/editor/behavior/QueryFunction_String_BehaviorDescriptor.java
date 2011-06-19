@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class QueryFunction_String_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_String_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.QueryFunction_String";
+  }
 }

@@ -216,70 +216,92 @@
     <unitInfo nodeId="740251325273382988" fileName="PathItem.java" startLine="20" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.stubs.util.PathItem" />
   </root>
   <root nodeId="740251325273383510">
-    <nodeInfo nodeId="740251325273383585" fileName="PathItemsReloadableCache.java" startLine="12" startPosition="39" endLine="13" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="Cache" />
-    <nodeInfo nodeId="740251325273394416" fileName="PathItemsReloadableCache.java" startLine="13" startPosition="52" endLine="14" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="Instances" />
-    <nodeInfo nodeId="740251325273389489" fileName="PathItemsReloadableCache.java" startLine="15" startPosition="0" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cache" />
-    <nodeInfo nodeId="740251325273394510" fileName="PathItemsReloadableCache.java" startLine="16" startPosition="45" endLine="17" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="pathItemClass" />
-    <nodeInfo nodeId="740251325273394514" fileName="PathItemsReloadableCache.java" startLine="19" startPosition="67" endLine="20" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394323" fileName="PathItemsReloadableCache.java" startLine="28" startPosition="58" endLine="29" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394327" fileName="PathItemsReloadableCache.java" startLine="29" startPosition="79" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394332" fileName="PathItemsReloadableCache.java" startLine="31" startPosition="13" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394398" fileName="PathItemsReloadableCache.java" startLine="34" startPosition="11" endLine="35" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394349" fileName="PathItemsReloadableCache.java" startLine="36" startPosition="7" endLine="37" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="740251325273394543" fileName="PathItemsReloadableCache.java" startLine="39" startPosition="13" endLine="40" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273403328" fileName="PathItemsReloadableCache.java" startLine="41" startPosition="37" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="740251325273394364" fileName="PathItemsReloadableCache.java" startLine="43" startPosition="9" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394374" fileName="PathItemsReloadableCache.java" startLine="45" startPosition="7" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="740251325273394449" fileName="PathItemsReloadableCache.java" startLine="50" startPosition="85" endLine="51" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="740251325273394472" fileName="PathItemsReloadableCache.java" startLine="53" startPosition="32" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394498" fileName="PathItemsReloadableCache.java" startLine="55" startPosition="27" endLine="56" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394522" fileName="PathItemsReloadableCache.java" startLine="56" startPosition="51" endLine="57" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394533" fileName="PathItemsReloadableCache.java" startLine="60" startPosition="5" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="740251325273383592" fileName="PathItemsReloadableCache.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PathItemsReloadableCache#(Ljava/lang/Class;)V" />
-    <nodeInfo nodeId="740251325273394321" fileName="PathItemsReloadableCache.java" startLine="27" startPosition="34" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="740251325273394483" fileName="PathItemsReloadableCache.java" startLine="54" startPosition="55" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="740251325273394536" fileName="PathItemsReloadableCache.java" startLine="38" startPosition="23" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="740251325273394465" fileName="PathItemsReloadableCache.java" startLine="52" startPosition="23" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="740251325273394317" fileName="PathItemsReloadableCache.java" startLine="26" startPosition="79" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onReload#()V" />
-    <nodeInfo nodeId="740251325273394356" fileName="PathItemsReloadableCache.java" startLine="37" startPosition="57" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="740251325273394309" fileName="PathItemsReloadableCache.java" startLine="25" startPosition="26" endLine="34" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="740251325273394456" fileName="PathItemsReloadableCache.java" startLine="51" startPosition="76" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="740251325273394307" fileName="PathItemsReloadableCache.java" startLine="24" startPosition="25" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="740251325273389482" fileName="PathItemsReloadableCache.java" startLine="49" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Ljava/lang/Class;)Ljetbrains/mps/stubs/util/PathItemsReloadableCache;" />
-    <nodeInfo nodeId="740251325273394302" fileName="PathItemsReloadableCache.java" startLine="23" startPosition="44" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="740251325273389475" fileName="PathItemsReloadableCache.java" startLine="22" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPathItem#(Ljava/lang/String;)Ljetbrains/mps/stubs/util/PathItem;" />
-    <scopeInfo nodeId="740251325273383595" fileName="PathItemsReloadableCache.java" startLine="19" startPosition="67" endLine="20" endPosition="29" />
-    <scopeInfo nodeId="740251325273394537" fileName="PathItemsReloadableCache.java" startLine="39" startPosition="13" endLine="40" endPosition="84" />
-    <scopeInfo nodeId="740251325273394539" fileName="PathItemsReloadableCache.java" startLine="41" startPosition="0" endLine="42" endPosition="63">
+    <nodeInfo nodeId="740251325273394416" fileName="PathItemsReloadableCache.java" startLine="12" startPosition="39" endLine="13" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="Instances" />
+    <nodeInfo nodeId="740251325273389489" fileName="PathItemsReloadableCache.java" startLine="14" startPosition="0" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cache" />
+    <nodeInfo nodeId="740251325273394510" fileName="PathItemsReloadableCache.java" startLine="15" startPosition="45" endLine="16" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="pathItemClass" />
+    <nodeInfo nodeId="740251325273394514" fileName="PathItemsReloadableCache.java" startLine="18" startPosition="67" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394323" fileName="PathItemsReloadableCache.java" startLine="27" startPosition="58" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394327" fileName="PathItemsReloadableCache.java" startLine="28" startPosition="79" endLine="29" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394332" fileName="PathItemsReloadableCache.java" startLine="30" startPosition="13" endLine="31" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394398" fileName="PathItemsReloadableCache.java" startLine="33" startPosition="11" endLine="34" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394349" fileName="PathItemsReloadableCache.java" startLine="35" startPosition="7" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="740251325273394543" fileName="PathItemsReloadableCache.java" startLine="38" startPosition="13" endLine="39" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273403328" fileName="PathItemsReloadableCache.java" startLine="40" startPosition="37" endLine="41" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="740251325273394364" fileName="PathItemsReloadableCache.java" startLine="42" startPosition="9" endLine="43" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394374" fileName="PathItemsReloadableCache.java" startLine="44" startPosition="7" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="740251325273394449" fileName="PathItemsReloadableCache.java" startLine="49" startPosition="85" endLine="50" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="740251325273394472" fileName="PathItemsReloadableCache.java" startLine="52" startPosition="32" endLine="53" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394498" fileName="PathItemsReloadableCache.java" startLine="54" startPosition="27" endLine="55" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394522" fileName="PathItemsReloadableCache.java" startLine="55" startPosition="51" endLine="56" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394533" fileName="PathItemsReloadableCache.java" startLine="59" startPosition="5" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3968143078112534394" fileName="PathItemsReloadableCache.java" startLine="67" startPosition="56" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3968143078112534404" fileName="PathItemsReloadableCache.java" startLine="71" startPosition="77" endLine="72" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3968143078112534418" fileName="PathItemsReloadableCache.java" startLine="75" startPosition="61" endLine="76" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3968143078112534384" fileName="PathItemsReloadableCache.java" startLine="63" startPosition="69" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CantCreatePathItemException#()V" />
+    <nodeInfo nodeId="740251325273383592" fileName="PathItemsReloadableCache.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PathItemsReloadableCache#(Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="3968143078112534389" fileName="PathItemsReloadableCache.java" startLine="66" startPosition="0" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CantCreatePathItemException#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3968143078112534399" fileName="PathItemsReloadableCache.java" startLine="70" startPosition="0" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CantCreatePathItemException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
+    <nodeInfo nodeId="3968143078112534413" fileName="PathItemsReloadableCache.java" startLine="74" startPosition="0" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CantCreatePathItemException#(Ljava/lang/Throwable;)V" />
+    <nodeInfo nodeId="740251325273394321" fileName="PathItemsReloadableCache.java" startLine="26" startPosition="34" endLine="30" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="740251325273394483" fileName="PathItemsReloadableCache.java" startLine="53" startPosition="55" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="740251325273394536" fileName="PathItemsReloadableCache.java" startLine="37" startPosition="23" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="740251325273394465" fileName="PathItemsReloadableCache.java" startLine="51" startPosition="23" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="740251325273394317" fileName="PathItemsReloadableCache.java" startLine="25" startPosition="79" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onReload#()V" />
+    <nodeInfo nodeId="740251325273394356" fileName="PathItemsReloadableCache.java" startLine="36" startPosition="57" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="740251325273394309" fileName="PathItemsReloadableCache.java" startLine="24" startPosition="26" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="740251325273394456" fileName="PathItemsReloadableCache.java" startLine="50" startPosition="76" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="740251325273394307" fileName="PathItemsReloadableCache.java" startLine="23" startPosition="25" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="740251325273389482" fileName="PathItemsReloadableCache.java" startLine="48" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Ljava/lang/Class;)Ljetbrains/mps/stubs/util/PathItemsReloadableCache;" />
+    <nodeInfo nodeId="740251325273394302" fileName="PathItemsReloadableCache.java" startLine="22" startPosition="44" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="740251325273389475" fileName="PathItemsReloadableCache.java" startLine="21" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPathItem#(Ljava/lang/String;)Ljetbrains/mps/stubs/util/PathItem;" />
+    <scopeInfo nodeId="3968143078112534388" fileName="PathItemsReloadableCache.java" startLine="64" startPosition="42" endLine="64" endPosition="42" />
+    <scopeInfo nodeId="740251325273383595" fileName="PathItemsReloadableCache.java" startLine="18" startPosition="67" endLine="19" endPosition="29" />
+    <scopeInfo nodeId="740251325273394537" fileName="PathItemsReloadableCache.java" startLine="38" startPosition="13" endLine="39" endPosition="84" />
+    <scopeInfo nodeId="740251325273394539" fileName="PathItemsReloadableCache.java" startLine="40" startPosition="0" endLine="41" endPosition="181">
       <varInfo nodeId="740251325273394540" varName="checked" />
     </scopeInfo>
-    <scopeInfo nodeId="740251325273394542" fileName="PathItemsReloadableCache.java" startLine="41" startPosition="37" endLine="42" endPosition="63" />
-    <scopeInfo nodeId="740251325273394322" fileName="PathItemsReloadableCache.java" startLine="28" startPosition="58" endLine="30" endPosition="57" />
-    <scopeInfo nodeId="740251325273394484" fileName="PathItemsReloadableCache.java" startLine="55" startPosition="27" endLine="57" endPosition="56" />
-    <scopeInfo nodeId="740251325273383592" fileName="PathItemsReloadableCache.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+    <scopeInfo nodeId="740251325273394542" fileName="PathItemsReloadableCache.java" startLine="40" startPosition="37" endLine="41" endPosition="181" />
+    <scopeInfo nodeId="3968143078112534393" fileName="PathItemsReloadableCache.java" startLine="67" startPosition="56" endLine="68" endPosition="21" />
+    <scopeInfo nodeId="3968143078112534403" fileName="PathItemsReloadableCache.java" startLine="71" startPosition="77" endLine="72" endPosition="32" />
+    <scopeInfo nodeId="3968143078112534417" fileName="PathItemsReloadableCache.java" startLine="75" startPosition="61" endLine="76" endPosition="23" />
+    <scopeInfo nodeId="740251325273394322" fileName="PathItemsReloadableCache.java" startLine="27" startPosition="58" endLine="29" endPosition="57" />
+    <scopeInfo nodeId="740251325273394484" fileName="PathItemsReloadableCache.java" startLine="54" startPosition="27" endLine="56" endPosition="56" />
+    <scopeInfo nodeId="3968143078112534384" fileName="PathItemsReloadableCache.java" startLine="63" startPosition="69" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="740251325273383592" fileName="PathItemsReloadableCache.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
       <varInfo nodeId="740251325273394505" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="740251325273394320" fileName="PathItemsReloadableCache.java" startLine="27" startPosition="34" endLine="32" endPosition="71" />
-    <scopeInfo nodeId="740251325273394467" fileName="PathItemsReloadableCache.java" startLine="53" startPosition="32" endLine="58" endPosition="9" />
-    <scopeInfo nodeId="740251325273394357" fileName="PathItemsReloadableCache.java" startLine="38" startPosition="23" endLine="44" endPosition="49" />
-    <scopeInfo nodeId="740251325273394457" fileName="PathItemsReloadableCache.java" startLine="52" startPosition="23" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="740251325273394317" fileName="PathItemsReloadableCache.java" startLine="26" startPosition="79" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="740251325273394308" fileName="PathItemsReloadableCache.java" startLine="25" startPosition="26" endLine="35" endPosition="74" />
-    <scopeInfo nodeId="740251325273389485" fileName="PathItemsReloadableCache.java" startLine="50" startPosition="85" endLine="61" endPosition="16">
+    <scopeInfo nodeId="3968143078112534389" fileName="PathItemsReloadableCache.java" startLine="66" startPosition="0" endLine="69" endPosition="5">
+      <varInfo nodeId="3968143078112534395" varName="message" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968143078112534399" fileName="PathItemsReloadableCache.java" startLine="70" startPosition="0" endLine="73" endPosition="5">
+      <varInfo nodeId="3968143078112534405" varName="message" />
+      <varInfo nodeId="3968143078112534409" varName="throwable" />
+    </scopeInfo>
+    <scopeInfo nodeId="3968143078112534413" fileName="PathItemsReloadableCache.java" startLine="74" startPosition="0" endLine="77" endPosition="5">
+      <varInfo nodeId="3968143078112534419" varName="throwable" />
+    </scopeInfo>
+    <scopeInfo nodeId="740251325273394320" fileName="PathItemsReloadableCache.java" startLine="26" startPosition="34" endLine="31" endPosition="71" />
+    <scopeInfo nodeId="740251325273394467" fileName="PathItemsReloadableCache.java" startLine="52" startPosition="32" endLine="57" endPosition="9" />
+    <scopeInfo nodeId="740251325273394357" fileName="PathItemsReloadableCache.java" startLine="37" startPosition="23" endLine="43" endPosition="49" />
+    <scopeInfo nodeId="740251325273394457" fileName="PathItemsReloadableCache.java" startLine="51" startPosition="23" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="740251325273394317" fileName="PathItemsReloadableCache.java" startLine="25" startPosition="79" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="740251325273394308" fileName="PathItemsReloadableCache.java" startLine="24" startPosition="26" endLine="34" endPosition="74" />
+    <scopeInfo nodeId="740251325273389485" fileName="PathItemsReloadableCache.java" startLine="49" startPosition="85" endLine="60" endPosition="16">
       <varInfo nodeId="740251325273394450" varName="inst" />
     </scopeInfo>
-    <scopeInfo nodeId="740251325273389482" fileName="PathItemsReloadableCache.java" startLine="49" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="740251325273389482" fileName="PathItemsReloadableCache.java" startLine="48" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="740251325273394492" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="740251325273394304" fileName="PathItemsReloadableCache.java" startLine="24" startPosition="25" endLine="46" endPosition="16">
+    <scopeInfo nodeId="740251325273394304" fileName="PathItemsReloadableCache.java" startLine="23" startPosition="25" endLine="45" endPosition="16">
       <varInfo nodeId="740251325273394350" varName="pi" />
     </scopeInfo>
-    <scopeInfo nodeId="740251325273389478" fileName="PathItemsReloadableCache.java" startLine="23" startPosition="44" endLine="47" endPosition="5" />
-    <scopeInfo nodeId="740251325273389475" fileName="PathItemsReloadableCache.java" startLine="22" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="740251325273389478" fileName="PathItemsReloadableCache.java" startLine="22" startPosition="44" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="740251325273389475" fileName="PathItemsReloadableCache.java" startLine="21" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="740251325273389480" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="740251325273394315" fileName="PathItemsReloadableCache.java" startLine="26" startPosition="62" endLine="34" endPosition="9" unitName="jetbrains.mps.stubs.util.PathItemsReloadableCache$1" />
-    <unitInfo nodeId="740251325273383510" fileName="PathItemsReloadableCache.java" startLine="12" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.stubs.util.PathItemsReloadableCache" />
+    <unitInfo nodeId="740251325273394315" fileName="PathItemsReloadableCache.java" startLine="25" startPosition="62" endLine="33" endPosition="9" unitName="jetbrains.mps.stubs.util.PathItemsReloadableCache$1" />
+    <unitInfo nodeId="3968143078112534377" fileName="PathItemsReloadableCache.java" startLine="63" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.stubs.util.PathItemsReloadableCache$CantCreatePathItemException" />
+    <unitInfo nodeId="740251325273383510" fileName="PathItemsReloadableCache.java" startLine="12" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.stubs.util.PathItemsReloadableCache" />
   </root>
   <root nodeId="740251325273418613">
     <nodeInfo nodeId="740251325273470799" fileName="StubModelDescriptors.java" startLine="21" startPosition="35" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="stubStereotype" />

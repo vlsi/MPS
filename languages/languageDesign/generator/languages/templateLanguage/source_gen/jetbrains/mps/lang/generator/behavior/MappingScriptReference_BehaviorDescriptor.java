@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class MappingScriptReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public MappingScriptReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.MappingScriptReference";
+  }
 }

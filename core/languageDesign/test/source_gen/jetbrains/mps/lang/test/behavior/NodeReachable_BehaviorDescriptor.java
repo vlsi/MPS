@@ -6,4 +6,9 @@ package jetbrains.mps.lang.test.behavior;
 public class NodeReachable_BehaviorDescriptor extends NodeProperty_BehaviorDescriptor {
   public NodeReachable_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.NodeReachable";
+  }
 }

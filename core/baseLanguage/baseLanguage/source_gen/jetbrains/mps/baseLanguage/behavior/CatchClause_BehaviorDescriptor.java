@@ -14,4 +14,9 @@ public class CatchClause_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   public List<SNode> virtual_getScopeVariables_3822000666564591100(SNode thisNode) {
     return CatchClause_Behavior.virtual_getScopeVariables_3822000666564591100(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.CatchClause";
+  }
 }

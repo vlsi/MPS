@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigrationScript {
   public DeleteUndeclaredLinksAndProperties_MigrationScript(IOperationContext operationContext) {
-    super("Delete Undeclared Links And Properties");
+    super("Delete Undeclared Links and Properties");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Undeclared property";

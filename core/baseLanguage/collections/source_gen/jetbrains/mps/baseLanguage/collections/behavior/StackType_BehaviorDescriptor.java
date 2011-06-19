@@ -13,4 +13,9 @@ public class StackType_BehaviorDescriptor extends AbstractContainerType_Behavior
   public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     return StackType_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.StackType";
+  }
 }

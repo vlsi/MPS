@@ -64,6 +64,7 @@ class TypeSystemComponent extends CheckingComponent {
     myNodeTypesComponent = component;
   }
 
+  @Deprecated
   protected boolean loadTypesystemRules(SNode root) {
     SModel model = root.getModel();
     RulesManager rulesManager = myTypeChecker.getRulesManager();
@@ -218,9 +219,9 @@ class TypeSystemComponent extends CheckingComponent {
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
       }
-      if (!loadTypesystemRules(nodeToCheck)) {
-        return;
-      }
+      //if (!loadTypesystemRules(nodeToCheck)) {
+      //  return;
+      //}
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
       solveInequalitiesAndExpandTypes(finalExpansion);
       performActionsAfterChecking();

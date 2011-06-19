@@ -12,4 +12,9 @@ public abstract class AbstractMoveExpression_BehaviorDescriptor extends Expressi
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return AbstractMoveExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression";
+  }
 }

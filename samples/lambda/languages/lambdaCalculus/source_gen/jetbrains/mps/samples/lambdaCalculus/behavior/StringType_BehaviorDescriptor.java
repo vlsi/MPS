@@ -6,4 +6,9 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class StringType_BehaviorDescriptor extends LambdaType_BehaviorDescriptor {
   public StringType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.StringType";
+  }
 }

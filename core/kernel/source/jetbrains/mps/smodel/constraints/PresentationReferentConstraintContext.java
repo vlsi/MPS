@@ -17,8 +17,9 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 
-public class PresentationReferentConstraintContext extends ReferentConstraintContext {
+public class PresentationReferentConstraintContext extends ReferentConstraintContext implements ReferencePresentationContext {
   private SNode myParameterNode;
   private boolean myVisible;
   private boolean mySmartReference;

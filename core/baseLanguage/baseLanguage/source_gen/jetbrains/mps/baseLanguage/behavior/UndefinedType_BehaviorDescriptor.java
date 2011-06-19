@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class UndefinedType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public UndefinedType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.UndefinedType";
+  }
 }

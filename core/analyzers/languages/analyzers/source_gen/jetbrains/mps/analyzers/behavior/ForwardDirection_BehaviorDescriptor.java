@@ -6,4 +6,9 @@ package jetbrains.mps.analyzers.behavior;
 public class ForwardDirection_BehaviorDescriptor extends AnalysisDirection_BehaviorDescriptor {
   public ForwardDirection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.analyzers.structure.ForwardDirection";
+  }
 }

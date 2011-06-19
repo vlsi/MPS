@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class ParamSequenceFeature_BehaviorDescriptor extends SequenceFeature_BehaviorDescriptor implements IFeature_BehaviorDescriptor, IParamFeature_BehaviorDescriptor {
   public ParamSequenceFeature_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.ParamSequenceFeature";
+  }
 }

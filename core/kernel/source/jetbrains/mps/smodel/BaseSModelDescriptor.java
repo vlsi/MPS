@@ -30,8 +30,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
-  protected SModel mySModel = null;
-  private ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
+  protected volatile SModel mySModel = null;
+  private volatile ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
   private final Object myLoadingLock = new Object();
 
   protected SModelReference myModelReference;
@@ -51,6 +51,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public final SModel getSModel() {
     ModelLoadingState oldState;
+
+    SModel model = mySModel;
+    if (myLoadingState != ModelLoadingState.NOT_LOADED && model != null) return model;
 
     synchronized (myLoadingLock) {
       if (myLoadingState != ModelLoadingState.NOT_LOADED) return mySModel;

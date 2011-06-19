@@ -206,48 +206,12 @@ public class CheckProjectStructureHelper {
             continue;
           }
           if (!realHash.equals(genHash)) {
-//            if(!replaceHash(sm, genHash, realHash)) {
-//              errors.add("cannot fix hash: " + sm.getSModelReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
-//            }
             errors.add("model requires generation: " + sm.getSModelReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
           }
         }
       }
     });
     return errors;
-  }
-
-  private static boolean replaceHash(SModelDescriptor sm, String oldHash, String newHash) {
-    IModule module = sm.getModule();
-
-    if (module == null) throw new IllegalArgumentException("no module for " + sm);
-
-    IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
-    IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
-
-    File outPath = new File(sourcesDir.getPath());
-
-    File file = new File(outPath, ModelGenerationStatusManager.HASH_PREFIX + oldHash);
-    if (file.exists() && file.delete()) {
-      file = new File(outPath, ModelGenerationStatusManager.HASH_PREFIX + newHash);
-      String content = sm.getSModelReference().toString();
-      OutputStreamWriter writer = null;
-      try {
-        writer = new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream(file)));
-        writer.write(content);
-        return true;
-      } catch (IOException e) {
-        /* ignore */
-      } finally {
-        if (writer != null) {
-          try {
-            writer.close();
-          } catch (IOException ignored) {}
-        }
-      }
-
-    }
-    return false;
   }
 
   private List<String> checkStructure(final Iterable<SModelDescriptor> models) {

@@ -1068,7 +1068,7 @@ __switch__:
         SetSequence.fromSet(modules).addElement(Module_Behavior.call_getModule_1213877515148(m));
       }
       for (IModule module : SetSequence.fromSet(modules)) {
-        Set<IModule> dependency = module.getDependenciesManager().getAllDependOnModules();
+        Set<IModule> dependency = module.getDependenciesManager().getAllVisibleModules();
         if (module instanceof DevKit) {
           DevKit d = (DevKit) module;
           dependency.addAll(d.getAllExportedLanguages());

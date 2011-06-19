@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 public class GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor extends GenerationContextOp_Base_BehaviorDescriptor {
   public GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput";
+  }
 }

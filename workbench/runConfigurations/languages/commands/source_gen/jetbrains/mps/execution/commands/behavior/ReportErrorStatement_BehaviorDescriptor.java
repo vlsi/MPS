@@ -18,5 +18,10 @@ public abstract class ReportErrorStatement_BehaviorDescriptor extends Statement_
     return ReportErrorStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.ReportErrorStatement";
+  }
+
   public abstract SNode virtual_getException_856705193941282181(SNode thisNode);
 }

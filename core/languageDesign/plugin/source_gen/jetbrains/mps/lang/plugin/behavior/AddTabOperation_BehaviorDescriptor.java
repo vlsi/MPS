@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
 public class AddTabOperation_BehaviorDescriptor extends TabbedToolOperation_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
   public AddTabOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.AddTabOperation";
+  }
 }

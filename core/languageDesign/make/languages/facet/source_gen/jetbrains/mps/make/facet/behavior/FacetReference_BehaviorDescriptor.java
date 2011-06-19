@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class FacetReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public FacetReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.facet.structure.FacetReference";
+  }
 }

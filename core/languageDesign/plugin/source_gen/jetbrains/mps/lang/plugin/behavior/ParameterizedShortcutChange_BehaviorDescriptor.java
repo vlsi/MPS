@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ParameterizedShortcutChange_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements ShortcutChange_BehaviorDescriptor {
   public ParameterizedShortcutChange_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange";
+  }
 }

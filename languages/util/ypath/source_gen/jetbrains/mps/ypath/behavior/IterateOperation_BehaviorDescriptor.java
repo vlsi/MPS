@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class IterateOperation_BehaviorDescriptor extends TreePathOperation_BehaviorDescriptor {
   public IterateOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.IterateOperation";
+  }
 }

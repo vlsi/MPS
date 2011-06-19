@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class NodeTypeFunctionParam_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public NodeTypeFunctionParam_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.NodeTypeFunctionParam";
+  }
 }

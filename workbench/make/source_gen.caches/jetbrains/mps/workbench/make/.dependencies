@@ -122,6 +122,8 @@
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="dependencies.ModulesClusterizer" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -135,6 +137,7 @@
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
     <classNode dependClassName="java.util.concurrent.TimeUnit" />
     <classNode dependClassName="java.util.concurrent.TimeoutException" />
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicMarkableReference" />
     <classNode dependClassName="java.util.concurrent.atomic.AtomicReference" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -150,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FutureValue" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -171,6 +175,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.make.UIFeedbackStrategy" />
     <classNode dependClassName="jetbrains.mps.workbench.make.UIQueryRelayStrategy" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.progress.Backgroundable" />

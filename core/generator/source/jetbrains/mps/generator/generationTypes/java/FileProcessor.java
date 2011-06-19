@@ -23,11 +23,9 @@ import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -108,8 +106,11 @@ class FileProcessor {
       myContent = content;
     }
 
-    @Override
     public void saveToFile(IFile file) {
+      if (file.exists() && isUnchanged(file)) {
+        return;
+      }
+
       OutputStreamWriter writer = null;
       try {
         writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), "utf-8");
@@ -120,7 +121,31 @@ class FileProcessor {
         if (writer != null) {
           try {
             writer.close();
-          } catch (IOException ignored) {}
+          } catch (IOException ignored) {
+          }
+        }
+      }
+    }
+
+    private boolean isUnchanged(IFile file) {
+      BufferedReader reader = null;
+      StringBuilder res = new StringBuilder();
+      try {
+        reader = new BufferedReader(new InputStreamReader(file.openInputStream(), "utf-8"));
+        String line;
+        while ((line = reader.readLine()) != null) {
+          res.append(line).append('\n');
+        }
+        return res.toString().equals(myContent);
+      } catch (IOException ex) {
+        return false;
+      } finally {
+        try {
+          if (reader != null) {
+            reader.close();
+          }
+        } catch (IOException ex) {
+          return false;
         }
       }
     }
@@ -133,8 +158,11 @@ class FileProcessor {
       myContent = content;
     }
 
-    @Override
     public void saveToFile(IFile file) {
+      if (file.exists() && isUnchanged(file)) {
+        return;
+      }
+
       OutputStream stream = null;
       try {
         stream = file.openOutputStream();
@@ -145,7 +173,35 @@ class FileProcessor {
         if (stream != null) {
           try {
             stream.close();
-          } catch (IOException ignored) {}
+          } catch (IOException ignored) {
+          }
+        }
+      }
+    }
+
+    private boolean isUnchanged(IFile file) {
+      long len = file.length();
+      if (len != myContent.length) {
+        return false;
+      }
+
+      byte[] res = new byte[myContent.length];
+      InputStream stream = null;
+      try {
+        stream = file.openInputStream();
+        if (stream.read(res) != len) {
+          return false;
+        }
+        return Arrays.equals(res, myContent);
+      } catch (IOException ex) {
+        return false;
+      } finally {
+        if (stream != null) {
+          try {
+            stream.close();
+          } catch (IOException ex) {
+            return false;
+          }
         }
       }
     }

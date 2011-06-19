@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class HereDocumentRedirection_BehaviorDescriptor extends Redirection_BehaviorDescriptor {
   public HereDocumentRedirection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.HereDocumentRedirection";
+  }
 }

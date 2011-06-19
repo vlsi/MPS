@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class StubStatementList_BehaviorDescriptor extends StatementList_BehaviorDescriptor {
   public StubStatementList_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.StubStatementList";
+  }
 }

@@ -41,4 +41,9 @@ public class ApplicationPluginDeclaration_BehaviorDescriptor extends BaseConcept
   public SNode virtual_createSuperType_1217433657148(SNode thisNode) {
     return IClassifier_Behavior.virtual_createSuperType_1217433657148(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration";
+  }
 }

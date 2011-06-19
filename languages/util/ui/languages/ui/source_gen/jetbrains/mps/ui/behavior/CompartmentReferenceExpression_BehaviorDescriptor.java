@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class CompartmentReferenceExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public CompartmentReferenceExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.CompartmentReferenceExpression";
+  }
 }

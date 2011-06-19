@@ -55,7 +55,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.smodel.structure.ConceptRegistry</implementation-class>
+      <implementation-class>jetbrains.mps.smodel.language.ConceptRegistry</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted</implementation-class>
     </component>
 
     <component>
@@ -93,10 +97,6 @@
     </component>
 
     <!-- generator -->
-
-    <component>
-      <implementation-class>jetbrains.mps.generator.cache.AllCaches</implementation-class>
-    </component>
 
     <component>
       <implementation-class>jetbrains.mps.make.java.BLDependenciesCache</implementation-class>

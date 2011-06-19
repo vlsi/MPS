@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class VisitAllOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public VisitAllOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation";
+  }
 }

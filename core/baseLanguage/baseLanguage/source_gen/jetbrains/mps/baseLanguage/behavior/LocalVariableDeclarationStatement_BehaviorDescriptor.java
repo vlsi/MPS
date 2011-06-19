@@ -12,4 +12,9 @@ public class LocalVariableDeclarationStatement_BehaviorDescriptor extends Statem
   public SNode virtual_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
     return LocalVariableDeclarationStatement_Behavior.virtual_getLocalVariableDeclaration_1238803857389(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
+  }
 }

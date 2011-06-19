@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class BuckCommandSubstitution_BehaviorDescriptor extends BaseCommandSubstitution_BehaviorDescriptor {
   public BuckCommandSubstitution_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BuckCommandSubstitution";
+  }
 }

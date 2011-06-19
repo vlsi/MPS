@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class PunctuationRightStyleClassItem_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
   public PunctuationRightStyleClassItem_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ExpectedInput_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IExpected_BehaviorDescriptor {
   public ExpectedInput_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.ExpectedInput";
+  }
 }

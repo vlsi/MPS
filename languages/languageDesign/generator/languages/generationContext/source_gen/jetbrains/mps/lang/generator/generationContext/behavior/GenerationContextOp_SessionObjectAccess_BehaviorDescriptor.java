@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 public class GenerationContextOp_SessionObjectAccess_BehaviorDescriptor extends GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor {
   public GenerationContextOp_SessionObjectAccess_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess";
+  }
 }

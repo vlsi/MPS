@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class DismissTopMappingRule_BehaviorDescriptor extends RuleConsequence_BehaviorDescriptor {
   public DismissTopMappingRule_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.DismissTopMappingRule";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class StyledTextType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public StyledTextType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.StyledTextType";
+  }
 }

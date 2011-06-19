@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class AssertTrue_BehaviorDescriptor extends Statement_BehaviorDescriptor implements MessageHolder_BehaviorDescriptor {
   public AssertTrue_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue";
+  }
 }

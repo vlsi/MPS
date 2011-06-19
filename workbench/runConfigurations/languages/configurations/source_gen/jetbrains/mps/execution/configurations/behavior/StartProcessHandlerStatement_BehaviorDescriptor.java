@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ReturnStatement_BehaviorDescriptor;
 public class StartProcessHandlerStatement_BehaviorDescriptor extends ReturnStatement_BehaviorDescriptor {
   public StartProcessHandlerStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement";
+  }
 }

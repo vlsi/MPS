@@ -3,13 +3,14 @@
   <dependency className="jetbrains.mps.testbench.suite.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.SolutionRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.TestCaseRef_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior" file="IModuleRef_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
@@ -64,13 +65,14 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_BehaviorDescriptor" file="JUnit3TestCaseRef_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior" file="JUnit4TestCaseRef_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -92,13 +94,14 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_BehaviorDescriptor" file="JUnit4TestCaseRef_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior" file="ModuleSuite_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -115,13 +118,14 @@
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.ModuleSuite_BehaviorDescriptor" file="ModuleSuite_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.SolutionRef_Behavior" file="SolutionRef_Behavior.java">
     <classNode dependClassName="java.lang.String" />
@@ -130,6 +134,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.SolutionRef_BehaviorDescriptor" file="SolutionRef_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
@@ -137,7 +142,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.SolutionRef_Behavior" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.TestCaseRef_Behavior" file="TestCaseRef_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -153,13 +158,14 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.TestCaseRef_BehaviorDescriptor" file="TestCaseRef_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.TestCaseRef_Behavior" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>
 

@@ -12,4 +12,9 @@ public class UnicodeCharacterRegexp_BehaviorDescriptor extends Regexp_BehaviorDe
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return UnicodeCharacterRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp";
+  }
 }

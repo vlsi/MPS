@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class ClearSetOperation_BehaviorDescriptor extends AbstractSetOperation_BehaviorDescriptor {
   public ClearSetOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation";
+  }
 }

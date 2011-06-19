@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class ContextUIObjectParam_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ContextUIObjectParam_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.ContextUIObjectParam";
+  }
 }

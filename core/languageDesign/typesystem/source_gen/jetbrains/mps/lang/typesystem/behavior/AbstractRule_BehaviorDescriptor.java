@@ -33,4 +33,9 @@ public abstract class AbstractRule_BehaviorDescriptor extends BaseConcept_Behavi
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.AbstractRule";
+  }
 }

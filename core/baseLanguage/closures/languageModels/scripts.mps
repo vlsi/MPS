@@ -20,7 +20,9 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="4836112446988543578">
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="1193" />
       <property name="name" nameId="tpck.1169194664001" value="RemoveWildcardsFromUnboundParams" />
-      <property name="title" nameId="tp33.1177457669450" value="remove wildcards from unbound params" />
+      <property name="title" nameId="tp33.1177457669450" value="Remove Wildcards from Unbound Params" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="4836112446988543578">

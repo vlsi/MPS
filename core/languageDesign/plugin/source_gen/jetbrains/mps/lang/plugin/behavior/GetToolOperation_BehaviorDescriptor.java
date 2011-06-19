@@ -6,4 +6,9 @@ package jetbrains.mps.lang.plugin.behavior;
 public class GetToolOperation_BehaviorDescriptor extends ProjectOperation_BehaviorDescriptor {
   public GetToolOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.GetToolOperation";
+  }
 }

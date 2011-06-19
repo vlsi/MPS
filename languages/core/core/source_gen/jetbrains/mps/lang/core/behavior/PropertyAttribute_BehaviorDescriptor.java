@@ -6,4 +6,9 @@ package jetbrains.mps.lang.core.behavior;
 public class PropertyAttribute_BehaviorDescriptor extends Attribute_BehaviorDescriptor {
   public PropertyAttribute_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.core.structure.PropertyAttribute";
+  }
 }

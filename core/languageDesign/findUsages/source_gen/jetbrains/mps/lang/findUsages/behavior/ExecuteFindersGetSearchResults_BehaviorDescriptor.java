@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ExecuteFindersGetSearchResults_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ExecuteFindersGetSearchResults_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults";
+  }
 }

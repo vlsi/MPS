@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class PlaceholderMethodDeclaration_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor {
   public PlaceholderMethodDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration";
+  }
 }

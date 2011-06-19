@@ -6,4 +6,9 @@ package jetbrains.mps.quickQueryLanguage.behavior;
 public class ModelQuery_BehaviorDescriptor extends BaseQuery_BehaviorDescriptor {
   public ModelQuery_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.quickQueryLanguage.structure.ModelQuery";
+  }
 }

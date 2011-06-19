@@ -6,4 +6,9 @@ package jetbrains.mps.build.distrib.behavior;
 public class UniversalConfig_BehaviorDescriptor extends SystemSpecificConfig_BehaviorDescriptor {
   public UniversalConfig_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.UniversalConfig";
+  }
 }

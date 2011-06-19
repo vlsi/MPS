@@ -6,4 +6,9 @@ package jetbrains.mps.lang.plugin.behavior;
 public class IsApplicableBlock_BehaviorDescriptor extends UpdateBlock_BehaviorDescriptor {
   public IsApplicableBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.IsApplicableBlock";
+  }
 }

@@ -26,11 +26,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.structure.CanBeASomethingMethod;
-import jetbrains.mps.smodel.structure.CheckingNodeContext;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
-import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -44,20 +43,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ModelConstraintsManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
 
-  private final static CanBeASomethingMethod<Object> ALWAYS_TRUE_CAN_BE_A_SOMETHING_METHOD = new CanBeASomethingMethod<Object>() {
-    @Override
-    public boolean canBe(IOperationContext operationContext, Object context, @Nullable CheckingNodeContext checkingNodeContext) {
-      return true;
-    }
-  };
-
-  private static final BaseNodeReferenceSearchScopeProvider EMPTY_REFERENT_SEARCH_SCOPE_PROVIDER = new BaseNodeReferenceSearchScopeProvider() {
-    public void registerSelf(ModelConstraintsManager manager) {
-    }
-
-    public void unRegisterSelf(ModelConstraintsManager manager) {
-    }
-  };
+  private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
@@ -269,7 +255,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public static Class getOldConstraintsDescriptor(String languageNamespace) {
     Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-    assert l != null;
+    // assert l != null;
+    if (l == null) {
+      return null;
+    }
     String packageName = languageNamespace + ".constraints";
     SModelDescriptor constraintsModelDescriptor = l.getConstraintsModelDescriptor();
     if (constraintsModelDescriptor == null) {
@@ -300,103 +289,33 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
   // end language watching stuff
 
-  private static boolean isBootstrapProperty(String fqName, String propertyName) {
-    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
-
-    // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.property_INamedConcept_name)
-      && !fqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
-      return true;
-    }
-
-    if (fqName.equals("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
-      // helgins ku-ku!
-      return true;
-    }
-
-    return false;
-  }
-
-  public static INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getNodeReferentSetEventHandler(referentRole);
-  }
-
-  public static INodePropertyGetter getNodePropertyGetter(String conceptFqName, String propertyName) {
-    if (isBootstrapProperty(conceptFqName, propertyName)) {
-      return null;
-    } else {
-      return ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName).getNodePropertyGetter(propertyName);
-    }
-  }
-
-  public static INodePropertySetter getNodePropertySetter(String conceptFqName, String propertyName) {
-    if (isBootstrapProperty(conceptFqName, propertyName)) {
-      return null;
-    } else {
-      return ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName).getNodePropertySetter(propertyName);
-    }
-  }
-
-  public static boolean hasGetter(String conceptFqName, String property) {
-    return getNodePropertyGetter(conceptFqName, property) != null;
-  }
-
-  public static INodePropertyValidator getNodePropertyValidator(final SNode node, @NotNull final String propertyName) {
-    if (node == null) return null;
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getNodePropertyValidator(propertyName);
-  }
-
   @Nullable
-  public static INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
-    INodeReferentSearchScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getNodeNonDefaultSearchScopeProvider(referentRole);
+  public static ReferenceScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
+    ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
     if (result != null) return result;
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
     if (linkDeclaration == null) {
       LOG.error("No reference search scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
-      return EMPTY_REFERENT_SEARCH_SCOPE_PROVIDER;
+      return EMPTY_REFERENCE_SCOPE_PROVIDER;
     }
     SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getNodeDefaultSearchScopeProvider();
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
   }
 
   public static String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
     return ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptFqName();
   }
 
-  public static boolean isAlternativeIcon(SNode conceptDeclaration) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptDeclaration)).isAlternativeIcon();
-  }
-
-  public static String getAlternativeIcon(SNode conceptDeclaration, SNode node) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptDeclaration)).getAlternativeIcon(node);
-  }
-
   // canBeASomething section
-  private static <T> boolean executeCanBeASomethingMethod(@Nullable CanBeASomethingMethod<T> method,
-                                                          IOperationContext operationContext,
-                                                          T context,
-                                                          @Nullable CheckingNodeContext checkingNodeContext) {
-    if (method != null) {
-      try {
-        return method.canBe(operationContext, context, checkingNodeContext);
-      } catch (Exception e) {
-        LOG.error("Exception while constraints canBe* method execution", e);
-        return false;
-      }
-    } else {
-      return true;
-    }
-  }
-
-  public static boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
     SNode currentNode = parentNode;
 
     ConceptRegistry registry = ConceptRegistry.getInstance();
 
     while (currentNode != null) {
-      ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConceptFqName());
+      jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConceptFqName());
 
-      if (!executeCanBeASomethingMethod(descriptor.getCanBeAnAncestorMethod(), context, new CanBeAnAncestorContext(currentNode, childConcept), checkingNodeContext)) {
+      if (!descriptor.canBeAncestor(context, currentNode, childConcept, checkingNodeContext)) {
         return false;
       }
 
@@ -411,25 +330,25 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConceptFqName());
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConceptFqName());
     return canBeParent(descriptor, parentNode, childConcept, link, context, null);
   }
 
-  public static boolean canBeParent(ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
-    return executeCanBeASomethingMethod(descriptor.getCanBeAParentMethod(), context, new CanBeAParentContext(parentNode, childConcept, link), checkingNodeContext);
+  public static boolean canBeParent(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
+    return descriptor.canBeParent(context, parentNode, childConcept, link, checkingNodeContext);
   }
 
   public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
     return canBeChild(descriptor, fqName, context, parentNode, link, null);
   }
 
-  public static boolean canBeChild(ConstraintsDescriptor descriptor, String fqName, IOperationContext context, SNode parentNode, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeChild(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, String fqName, IOperationContext context, SNode parentNode, SNode link, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
     SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
-    return executeCanBeASomethingMethod(descriptor.getCanBeAChildMethod(), context, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
+    return descriptor.canBeChild(context, parentNode, link, concept, checkingNodeContext);
   }
 
-  private static boolean canBeRootByIsRootProperty(final String fqName, @Nullable final CheckingNodeContext checkingNodeContext) {
+  private static boolean canBeRootByIsRootProperty(final String fqName, @Nullable final jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
@@ -437,7 +356,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
         boolean result = SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept);
 
         if (!result && checkingNodeContext != null) {
-          checkingNodeContext.breakingNodePointer = new SNodePointer(concept);
+          checkingNodeContext.setBreakingNode(new SNodePointer(concept));
         }
 
         return result;
@@ -446,11 +365,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public static boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName);
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName);
     return canBeRoot(descriptor, context, conceptFqName, model, null);
   }
 
-  public static boolean canBeRoot(ConstraintsDescriptor descriptor, IOperationContext context, String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeRootByIsRootProperty(conceptFqName, checkingNodeContext) && executeCanBeASomethingMethod(descriptor.getCanBeARootMethod(), context, new CanBeARootContext(model), checkingNodeContext);
+  public static boolean canBeRoot(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, IOperationContext context, String conceptFqName, SModel model, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
+    return canBeRootByIsRootProperty(conceptFqName, checkingNodeContext) && descriptor.canBeRoot(context, model, checkingNodeContext);
   }
 }

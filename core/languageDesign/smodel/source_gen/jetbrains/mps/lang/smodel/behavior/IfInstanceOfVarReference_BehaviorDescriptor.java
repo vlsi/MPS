@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BaseVariableReference_BehaviorDescrip
 public class IfInstanceOfVarReference_BehaviorDescriptor extends BaseVariableReference_BehaviorDescriptor {
   public IfInstanceOfVarReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference";
+  }
 }

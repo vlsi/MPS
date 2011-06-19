@@ -12,4 +12,9 @@ public class RegularConceptReference_BehaviorDescriptor extends AbstractConceptR
   public SNode virtual_getConcept_1238594571574(SNode thisNode, Map<SNode, SNode> conceptsToTargets) {
     return RegularConceptReference_Behavior.virtual_getConcept_1238594571574(thisNode, conceptsToTargets);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.RegularConceptReference";
+  }
 }

@@ -10,5 +10,10 @@ public abstract class AbstractConceptReference_BehaviorDescriptor extends BaseCo
   public AbstractConceptReference_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.AbstractConceptReference";
+  }
+
   public abstract SNode virtual_getConcept_1238594571574(SNode thisNode, Map<SNode, SNode> conceptsToTargets);
 }

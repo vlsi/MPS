@@ -20,7 +20,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
@@ -137,7 +136,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static List<String> getParentsNames(String conceptFqName) {
-    return ConceptRegistry.getInstance().getStructureDescriptor(conceptFqName).getParentsNames();
+    return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames();
   }
 
   public List<String> _getParentsNames(final String conceptFqName) {
@@ -193,7 +192,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
-    return ConceptRegistry.getInstance().getStructureDescriptor(fromConceptFqName).isAssignableTo(toConceptFqName);
+    return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(fromConceptFqName).isAssignableTo(toConceptFqName);
   }
 
   public Set<String> _getAncestorsNames(final String conceptFqName) {
@@ -201,7 +200,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public static Set<String> getAncestorsNames(final String conceptFqName) {
-    return ConceptRegistry.getInstance().getStructureDescriptor(conceptFqName).getAncestorsNames();
+    return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getAncestorsNames();
   }
 
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {

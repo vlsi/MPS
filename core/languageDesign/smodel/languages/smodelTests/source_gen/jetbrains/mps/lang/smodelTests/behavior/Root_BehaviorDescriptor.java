@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodelTests.behavior;
 public class Root_BehaviorDescriptor extends NamedConcept_BehaviorDescriptor {
   public Root_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodelTests.structure.Root";
+  }
 }

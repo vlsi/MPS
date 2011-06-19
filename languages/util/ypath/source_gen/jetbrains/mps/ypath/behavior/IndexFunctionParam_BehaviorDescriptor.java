@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class IndexFunctionParam_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public IndexFunctionParam_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.IndexFunctionParam";
+  }
 }

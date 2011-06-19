@@ -106,31 +106,31 @@ public class GenerationSession {
       myParameters = null;
     }
 
-    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature(), myParameters, null);
-    myDependenciesBuilder = filter.createDependenciesBuilder();
+    IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature(), myParameters, null);
+    myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
-    if (filter.canOptimize()) {
-      int ignored = filter.getIgnoredRoots().size();
-      int total = filter.getRootsCount();
-      myLogger.info((!filter.canIgnoreConditionals() ? "" : "descriptors and ") + ignored + " of " + total + " roots are unchanged");
+    if (incrementalHandler.canOptimize()) {
+      int ignored = incrementalHandler.getIgnoredRoots().size();
+      int total = incrementalHandler.getRootsCount();
+      myLogger.info((!incrementalHandler.canIgnoreConditionals() ? "" : "descriptors and ") + ignored + " of " + total + " roots are unchanged");
 
-      if (total > 0 && ignored == total && filter.canIgnoreConditionals()) {
+      if (total > 0 && ignored == total && incrementalHandler.canIgnoreConditionals()) {
         myLogger.info("generated files are up-to-date");
         ttrace.pop();
         return new GenerationStatus(myOriginalInputModel, null,
           myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
       }
 
-      if (!filter.getRequiredRoots().isEmpty() || filter.requireConditionals()) {
-        myLogger.info((!filter.requireConditionals() ? "" : "descriptors and ") + filter.getRequiredRoots().size() + " roots can be used from cache");
+      if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
+        myLogger.info((!incrementalHandler.requireConditionals() ? "" : "descriptors and ") + incrementalHandler.getRequiredRoots().size() + " roots can be used from cache");
       }
 
       if (myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
         myLogger.info("Processing:");
         for (SNode node : myOriginalInputModel.getSModel().roots()) {
-          if (filter.getRequiredRoots().contains(node)) {
+          if (incrementalHandler.getRequiredRoots().contains(node)) {
             myLogger.info(node.getName() + " (cache)");
-          } else if (!filter.getIgnoredRoots().contains(node)) {
+          } else if (!incrementalHandler.getIgnoredRoots().contains(node)) {
             myLogger.info(node.getName());
           }
         }
@@ -139,7 +139,7 @@ public class GenerationSession {
 
     boolean success = false;
 
-    myNewCache = filter.createNewCache();
+    myNewCache = incrementalHandler.createNewCache();
     ttrace.pop();
     try {
       SModel currInputModel = myOriginalInputModel.getSModel();

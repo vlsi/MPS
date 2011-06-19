@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class Node_GetReferenceOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Node_GetReferenceOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation";
+  }
 }

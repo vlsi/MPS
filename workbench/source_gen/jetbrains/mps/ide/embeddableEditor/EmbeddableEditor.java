@@ -24,12 +24,6 @@ import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
 import com.intellij.openapi.application.ApplicationManager;
-import java.util.concurrent.Future;
-import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.workbench.make.WorkbenchMakeService;
-import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
@@ -37,6 +31,13 @@ import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.IMakeService;
+import java.util.concurrent.Future;
+import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.resources.CResource;
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutionException;
@@ -143,11 +144,12 @@ public class EmbeddableEditor {
   }
 
   public void make(final Set<IClassPathItem> classPath) {
-    final IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("compileToMemory")).toScript();
+    final IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("jetbrains.mps.make.facet.Generate"), new IFacet.Name("jetbrains.mps.make.facet.TextGen"), new IFacet.Name("jetbrains.mps.make.facet.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facet.Make")).withFinalTarget(new ITarget.Name("compileToMemory")).toScript();
+
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        Future<IResult> future = new WorkbenchMakeService(myContext, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, new IScriptController.Stub(new IConfigMonitor.Stub() {
+        IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
           public <T extends IOption> T relayQuery(IQuery<T> query) {
             return query.defaultOption();
           }
@@ -160,19 +162,24 @@ public class EmbeddableEditor {
               params._0(classPath);
             }
           }
-        });
-        try {
-          IResult result = future.get();
-          if (result.isSucessful()) {
-            final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                processClassesData(out.classes());
-              }
-            });
+        };
+
+        MakeSession session = new MakeSession(myContext, null, true);
+        if (IMakeService.INSTANCE.get().startNewSession(session)) {
+          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr, ctl);
+          try {
+            IResult result = future.get();
+            if (result.isSucessful()) {
+              final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
+              SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                  processClassesData(out.classes());
+                }
+              });
+            }
+          } catch (InterruptedException ignore) {
+          } catch (ExecutionException ignore) {
           }
-        } catch (InterruptedException ignore) {
-        } catch (ExecutionException ignore) {
         }
       }
     });

@@ -637,7 +637,7 @@ public class JavaConverterTreeBuilder {
         SNode enumConstantReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
         role = "enumConstantDeclaration";
         sourceNode = enumConstantReference;
-        enumConstantReference.addReference(SReference.create("enumClass", sourceNode, classifierPointer));
+        enumConstantReference.addReference(SReference.create("enumClass", sourceNode, classifierPointer, new String(fieldBinding.name)));
         result = enumConstantReference;
       } else
       if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
@@ -649,7 +649,7 @@ public class JavaConverterTreeBuilder {
         SNode sfr = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
         sourceNode = sfr;
         role = "variableDeclaration";
-        sfr.addReference(SReference.create("classifier", sourceNode, classifierPointer));
+        sfr.addReference(SReference.create("classifier", sourceNode, classifierPointer, new String(fieldBinding.name)));
         result = sfr;
       }
     } else {
@@ -924,11 +924,13 @@ public class JavaConverterTreeBuilder {
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       SNode reference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
       SLinkOperations.setTarget(reference, "variableDeclaration", SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
+      SNodeOperations.getReference(reference, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "localVariableDeclaration")).setResolveInfo(SPropertyOperations.getString(variable, "name"));
       result = reference;
     } else
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
       SNode parameterReference = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ParameterReference", null);
       SLinkOperations.setTarget(parameterReference, "variableDeclaration", SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), false);
+      SNodeOperations.getReference(parameterReference, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", "parameterDeclaration")).setResolveInfo(SPropertyOperations.getString(variable, "name"));
       result = parameterReference;
     } else {
       throw new JavaConverterException("Unknown VariableDeclaration subclass.");

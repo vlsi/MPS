@@ -24,9 +24,11 @@ import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -54,25 +56,38 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
 
+  private RuntimeSupport myRuntimeSupportTracer;
+  private SubtypingManager mySubtypingManagerTracer;
+
   private List<TypesReadListener> myTypesReadListeners = new ArrayList<TypesReadListener>();
 
   private SubtypingCache mySubtypingCache = null;
   private SubtypingCache myGlobalSubtypingCache = null;
+  private SubtypingCache myGenerationSubTypingCache = null;
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
-  private boolean myIsGeneration = false;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 
   private final LanguageRegistry myLanguageRegistry;
 
+  private ThreadLocal<Boolean> myIsGenerationThread = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return Boolean.FALSE;
+    }
+  };
+  private Thread myMainGenerationThread;
+
   public TypeChecker(LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
     myRuntimeSupport = new RuntimeSupportNew(this);
     mySubtypingManager = new SubTypingManagerNew(this);
     myRulesManager = new RulesManager(this);
+    myRuntimeSupportTracer = new RuntimeSupport_Tracer(this);
+    mySubtypingManagerTracer = new SubtypingManager_Tracer(this);
   }
 
   public void initComponent() {
@@ -117,16 +132,31 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     return ApplicationManager.getApplication().getComponent(TypeChecker.class);
   }
 
+  private boolean isMainGenerationThread() {
+    return Thread.currentThread() == myMainGenerationThread;
+  }
+
   public SubtypingManager getSubtypingManager() {
+    if (isMainGenerationThread()) {
+      return mySubtypingManagerTracer;
+    }
     return mySubtypingManager;
   }
 
   public RuntimeSupport getRuntimeSupport() {
+    if (isMainGenerationThread()) {
+      return myRuntimeSupportTracer;
+    }
     return myRuntimeSupport;
   }
 
-  //todo sync
   public SubtypingCache getSubtypingCache() {
+    if (isGenerationMode()) {
+      SubtypingCache generationSubTypingCache = myGenerationSubTypingCache;
+      if (generationSubTypingCache != null) {
+        return generationSubTypingCache;
+      }
+    }
     return mySubtypingCache;
   }
 
@@ -180,34 +210,41 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
     }
   }
 
-  public void setIsGeneration(boolean isGeneration) {
-    setIsGeneration(isGeneration, null);
+  public void generationStarted(IPerformanceTracer performanceTracer) {
+    myGenerationSubTypingCache = createSubtypingCache();
+    initTracing(performanceTracer);
+    myIsGenerationThread.set(Boolean.TRUE);
+    myMainGenerationThread = Thread.currentThread();
   }
 
-  public void setIsGeneration(boolean isGeneration, IPerformanceTracer performanceTracer) {
-    myIsGeneration = isGeneration;
-    if (isGeneration) {
-      mySubtypingCache = createSubtypingCache();
-      initTracing(performanceTracer);
-    } else {
-      disposeTracing();
-      mySubtypingCache = null;
-    }
+  public void generationFinished() {
+    myGenerationSubTypingCache = null;
+    disposeTracing();
+    myIsGenerationThread.set(Boolean.FALSE);
+    myMainGenerationThread = null;
+  }
+
+  public void generationWorkerStarted() {
+    myIsGenerationThread.set(Boolean.TRUE);
+  }
+
+  public void generationWorkerFinished() {
+    myIsGenerationThread.set(Boolean.FALSE);
+  }
+
+  public boolean isGenerationMode() {
+    return myIsGenerationThread.get();
   }
 
   private void initTracing(IPerformanceTracer performanceTracer) {
     if (performanceTracer != null) {
       myPerformanceTracer = performanceTracer;
-      myRuntimeSupport = new RuntimeSupport_Tracer(this);
-      mySubtypingManager = new SubtypingManager_Tracer(this);
     }
   }
 
   private void disposeTracing() {
     if (myPerformanceTracer != null) {
       myPerformanceTracer = null;
-      myRuntimeSupport = new RuntimeSupportNew(this);
-      mySubtypingManager = new SubTypingManagerNew(this);
     }
   }
 
@@ -251,10 +288,6 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
 
   public boolean isGlobalIncrementalMode() {
     return !isGenerationMode();
-  }
-
-  public boolean isGenerationMode() {
-    return myIsGeneration;
   }
 
   private List<TypesReadListener> copyTypesReadListeners() {

@@ -18,8 +18,10 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="6056923343037360228">
-      <property name="name" nameId="tpck.1169194664001" value="Migrate_ExecuteFinders" />
-      <property name="title" nameId="tp33.1177457669450" value="Convert refactoring.ExecuteFindersExpression" />
+      <property name="name" nameId="tpck.1169194664001" value="ConvertExecuteFinders" />
+      <property name="title" nameId="tp33.1177457669450" value="Convert ExecuteFindersExpression" />
+      <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
   </roots>
   <root id="6056923343037360228">
@@ -73,7 +75,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6056923343037361582">
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6056923343037361586">
                     <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="6056923343037361585">
-                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="6056923343037361534" resolveInfo="f" />
+                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="6056923343037361534" resolveInfo="finder" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6056923343037361590">
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="tp1h.1212242603178" />

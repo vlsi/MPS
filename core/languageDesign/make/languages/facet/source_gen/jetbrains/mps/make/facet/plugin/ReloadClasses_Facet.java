@@ -23,7 +23,7 @@ import jetbrains.mps.make.script.IConfig;
 
 public class ReloadClasses_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("ReloadClasses");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.ReloadClasses");
 
   public ReloadClasses_Facet() {
     ListSequence.fromList(targets).addElement(new ReloadClasses_Facet.Target_i849au_a());
@@ -64,7 +64,9 @@ public class ReloadClasses_Facet implements IFacet {
           Iterable<IResource> _output_i849au_a0a = null;
           switch (0) {
             case 0:
-              if (Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
+              boolean nonEmptyCompilation = pool.parameters(new ITarget.Name("compile"), JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything() != null && pool.parameters(new ITarget.Name("compile"), JavaCompile_Facet.Target_wf1ya0_a.Parameters.class).compiledAnything();
+
+              if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
                 public boolean accept(IResource in) {
                   return ((TResource) in).module().reloadClassesAfterGeneration();
                 }

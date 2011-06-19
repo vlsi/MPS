@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class BasedIntegerLiteral_BehaviorDescriptor extends IntegerLiteral_BehaviorDescriptor {
   public BasedIntegerLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BasedIntegerLiteral";
+  }
 }

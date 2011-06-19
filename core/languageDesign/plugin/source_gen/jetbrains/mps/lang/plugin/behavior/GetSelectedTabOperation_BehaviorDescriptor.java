@@ -6,4 +6,9 @@ package jetbrains.mps.lang.plugin.behavior;
 public class GetSelectedTabOperation_BehaviorDescriptor extends TabbedToolOperation_BehaviorDescriptor {
   public GetSelectedTabOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation";
+  }
 }

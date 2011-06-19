@@ -11,4 +11,9 @@ public class PatternCondition_BehaviorDescriptor extends ApplicableNodeCondition
   public SNode virtual_getApplicableConcept_1213877307633(SNode thisNode) {
     return PatternCondition_Behavior.virtual_getApplicableConcept_1213877307633(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.PatternCondition";
+  }
 }

@@ -401,6 +401,7 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssueFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerSettings" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerUtils" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerViewer" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
@@ -622,7 +623,6 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />

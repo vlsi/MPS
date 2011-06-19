@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class BigMaxExpression_BehaviorDescriptor extends ExtrSymbol_BehaviorDescriptor {
   public BigMaxExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression";
+  }
 }

@@ -16,4 +16,9 @@ public class TestCaseRef_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   public Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
     return TestCaseRef_Behavior.virtual_testNames_4089647634160960707(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.testbench.suite.structure.TestCaseRef";
+  }
 }

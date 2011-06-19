@@ -14,8 +14,10 @@ import jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior;
 
 public class ForeachStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    TraceInfoGenerationUtil.createPositionInfo(this, node);
-    TraceInfoGenerationUtil.createScopeInfo(this, node);
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.createPositionInfo(this, node);
+      TraceInfoGenerationUtil.createScopeInfo(this, node);
+    }
     if (SLinkOperations.getTarget(node, "loopLabel", true) != null) {
       this.appendNewLine();
       this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, "loopLabel", true), "name"));
@@ -37,7 +39,9 @@ public class ForeachStatement_TextGen extends SNodeTextGen {
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");
-    TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
-    TraceInfoGenerationUtil.fillScopeInfo(this, node, ScopeConcept_Behavior.call_getScopeVariables_3822000666564591100(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ScopeConcept")));
+    if (getBuffer().hasPositionsSupport()) {
+      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+      TraceInfoGenerationUtil.fillScopeInfo(this, node, ScopeConcept_Behavior.call_getScopeVariables_3822000666564591100(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ScopeConcept")));
+    }
   }
 }

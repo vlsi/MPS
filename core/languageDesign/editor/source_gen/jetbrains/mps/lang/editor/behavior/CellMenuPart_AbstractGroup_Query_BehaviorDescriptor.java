@@ -12,4 +12,9 @@ public class CellMenuPart_AbstractGroup_Query_BehaviorDescriptor extends Concept
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return CellMenuPart_AbstractGroup_Query_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query";
+  }
 }

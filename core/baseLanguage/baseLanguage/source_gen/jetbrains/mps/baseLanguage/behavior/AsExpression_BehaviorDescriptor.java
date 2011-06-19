@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class AsExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public AsExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.AsExpression";
+  }
 }

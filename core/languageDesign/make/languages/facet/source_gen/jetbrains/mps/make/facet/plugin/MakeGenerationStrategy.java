@@ -10,19 +10,24 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.vfs.IFile;
+import java.util.Collections;
 import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.vfs.IFile;
 
 public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
-  private GenerationCacheContainer cache;
+  private final GenerationCacheContainer cache;
+  private final boolean isIncremental;
 
-  public MakeGenerationStrategy(GenerationCacheContainer cache) {
+  public MakeGenerationStrategy(GenerationCacheContainer cache, boolean isIncremental) {
     this.cache = cache;
+    this.isIncremental = isIncremental;
   }
 
   public GenerationDependencies getDependencies(SModelDescriptor descriptor) {
-    return GenerationDependenciesCache.getInstance().get(descriptor);
+    return (isIncremental ?
+      GenerationDependenciesCache.getInstance().get(descriptor) :
+      null
+    );
   }
 
   public GenerationCacheContainer getContainer() {
@@ -30,16 +35,17 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   }
 
   public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext context) {
-    if (!((sm instanceof EditableSModelDescriptor))) {
+    if (!(sm.isGeneratable())) {
       return null;
+    }
+    if (!((sm instanceof EditableSModelDescriptor))) {
+      String hash = sm.getModelHash();
+      return (hash != null ?
+        Collections.singletonMap(ModelDigestHelper.FILE, hash) :
+        null
+      );
     }
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-    if (esm.isPackaged()) {
-      return null;
-    }
-    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
-      return null;
-    }
 
     IFile modelFile = esm.getModelFile();
     if (modelFile == null) {
@@ -47,5 +53,9 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
     }
 
     return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, context);
+  }
+
+  public boolean isIncrementalEnabled() {
+    return isIncremental;
   }
 }

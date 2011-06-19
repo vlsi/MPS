@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class FindMatchExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements RegexpUsingConstruction_BehaviorDescriptor {
   public FindMatchExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression";
+  }
 }

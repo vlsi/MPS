@@ -15,4 +15,9 @@ public class ApplyTo_Function_BehaviorDescriptor extends EditorOperationDeclarat
   public SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
     return ApplyTo_Function_Behavior.virtual_getPublicJavaMethod_203908296139519011(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.ApplyTo_Function";
+  }
 }

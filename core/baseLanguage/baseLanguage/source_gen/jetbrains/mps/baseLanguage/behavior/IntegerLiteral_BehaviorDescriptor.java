@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public abstract class IntegerLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public IntegerLiteral_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.IntegerLiteral";
+  }
 }

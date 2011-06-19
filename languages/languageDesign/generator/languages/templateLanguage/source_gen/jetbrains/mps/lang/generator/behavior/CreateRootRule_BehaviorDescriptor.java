@@ -12,4 +12,9 @@ public class CreateRootRule_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return CreateRootRule_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.CreateRootRule";
+  }
 }

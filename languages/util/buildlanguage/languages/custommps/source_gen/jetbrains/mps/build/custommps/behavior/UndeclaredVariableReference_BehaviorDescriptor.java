@@ -18,4 +18,9 @@ public class UndeclaredVariableReference_BehaviorDescriptor extends BaseConcept_
   public String virtual_getValue_1213877173054(SNode thisNode) {
     return UndeclaredVariableReference_Behavior.virtual_getValue_1213877173054(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference";
+  }
 }

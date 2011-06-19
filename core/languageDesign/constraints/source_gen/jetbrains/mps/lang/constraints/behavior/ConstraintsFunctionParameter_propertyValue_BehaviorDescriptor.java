@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue";
+  }
 }

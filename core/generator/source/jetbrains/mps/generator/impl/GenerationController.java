@@ -173,7 +173,7 @@ public class GenerationController implements ITaskPoolProvider {
       : new NullPerformanceTracer();
 
     boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
-    TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
+    TypeChecker.getInstance().generationStarted(traceTypes ? ttrace : null);
 
     final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this,
       myProgress, myLogger, myTransientModelsComponent.getModule(module), ttrace, myOptions);
@@ -229,7 +229,7 @@ public class GenerationController implements ITaskPoolProvider {
       //We need this in order to clear subtyping cache which might occupy too much memory
       //if we generate a lot of models. For example, Charisma generation wasn't possible
       //with -Xmx1200 before this change
-      TypeChecker.getInstance().setIsGeneration(false);
+      TypeChecker.getInstance().generationFinished();
       progressHelper.setText2("");
     }
 

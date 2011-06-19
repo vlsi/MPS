@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class VerticalConstraint_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public VerticalConstraint_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.VerticalConstraint";
+  }
 }

@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.actions.goTo.index.descriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
@@ -41,6 +42,7 @@ public abstract class BaseSNodeDescriptor {
     return myNodeName;
   }
 
+  @NotNull
   public final SModelReference getModelReference() {
     if (myModelReference == null) {
       myModelReference = calculateModelReference();

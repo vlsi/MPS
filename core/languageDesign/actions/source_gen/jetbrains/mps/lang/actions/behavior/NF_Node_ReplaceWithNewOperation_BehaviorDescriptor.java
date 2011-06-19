@@ -7,4 +7,9 @@ import jetbrains.mps.lang.smodel.behavior.Node_ReplaceWithNewOperation_BehaviorD
 public class NF_Node_ReplaceWithNewOperation_BehaviorDescriptor extends Node_ReplaceWithNewOperation_BehaviorDescriptor {
   public NF_Node_ReplaceWithNewOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation";
+  }
 }

@@ -19,4 +19,9 @@ public class CellModel_NonEmptyProperty_BehaviorDescriptor extends CellModel_Pro
   public String virtual_getCellProviderClassName_1216378357889(SNode thisNode) {
     return CellModel_NonEmptyProperty_Behavior.virtual_getCellProviderClassName_1216378357889(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty";
+  }
 }

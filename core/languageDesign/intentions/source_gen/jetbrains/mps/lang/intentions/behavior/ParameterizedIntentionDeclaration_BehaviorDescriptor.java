@@ -11,4 +11,9 @@ public class ParameterizedIntentionDeclaration_BehaviorDescriptor extends Intent
   public boolean virtual_isParameterized_6263518417926802310(SNode thisNode) {
     return ParameterizedIntentionDeclaration_Behavior.virtual_isParameterized_6263518417926802310(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration";
+  }
 }

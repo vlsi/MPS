@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class MatrixUnit_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MatrixUnit_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.MatrixUnit";
+  }
 }

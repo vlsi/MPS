@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class LogicalOrExpression_BehaviorDescriptor extends BinaryArithmeticExpression_BehaviorDescriptor {
   public LogicalOrExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.LogicalOrExpression";
+  }
 }

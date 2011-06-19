@@ -42,7 +42,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Binaries_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("Binaries");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.Binaries");
 
   public Binaries_Facet() {
     ListSequence.fromList(targets).addElement(new Binaries_Facet.Target_8acy7z_a());

@@ -11,4 +11,9 @@ public class LoopMacro_BehaviorDescriptor extends SourceSubstituteMacro_Behavior
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return LoopMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.LoopMacro";
+  }
 }

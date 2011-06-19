@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 public class GenerationContextOp_TransientObjectAccess_BehaviorDescriptor extends GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor {
   public GenerationContextOp_TransientObjectAccess_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess";
+  }
 }

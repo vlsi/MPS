@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 public class CustomOperator_BehaviorDescriptor extends Operator_BehaviorDescriptor {
   public CustomOperator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator";
+  }
 }

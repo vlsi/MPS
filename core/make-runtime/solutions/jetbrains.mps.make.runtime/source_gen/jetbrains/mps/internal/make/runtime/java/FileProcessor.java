@@ -13,7 +13,11 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import java.io.OutputStreamWriter;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.InputStream;
+import java.util.Arrays;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 
@@ -95,6 +99,10 @@ import org.jdom.Document;
     }
 
     public void saveToFile(IFile file) {
+      if (file.exists() && isUnchanged(file)) {
+        return;
+      }
+
       OutputStreamWriter writer = null;
       try {
         writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), "utf-8");
@@ -110,6 +118,29 @@ import org.jdom.Document;
         }
       }
     }
+
+    private boolean isUnchanged(IFile file) {
+      BufferedReader reader = null;
+      StringBuilder res = new StringBuilder();
+      try {
+        reader = new BufferedReader(new InputStreamReader(file.openInputStream(), "utf-8"));
+        String line;
+        while ((line = reader.readLine()) != null) {
+          res.append(line).append('\n');
+        }
+        return res.toString().equals(myContent);
+      } catch (IOException ex) {
+        return false;
+      } finally {
+        try {
+          if (reader != null) {
+            reader.close();
+          }
+        } catch (IOException ex) {
+          return false;
+        }
+      }
+    }
   }
 
   private static class BinaryFileContent implements FileProcessor.FileContent {
@@ -120,6 +151,10 @@ import org.jdom.Document;
     }
 
     public void saveToFile(IFile file) {
+      if (file.exists() && isUnchanged(file)) {
+        return;
+      }
+
       OutputStream stream = null;
       try {
         stream = file.openOutputStream();
@@ -131,6 +166,33 @@ import org.jdom.Document;
           try {
             stream.close();
           } catch (IOException ignored) {
+          }
+        }
+      }
+    }
+
+    private boolean isUnchanged(IFile file) {
+      long len = file.length();
+      if (len != myContent.length) {
+        return false;
+      }
+
+      byte[] res = new byte[myContent.length];
+      InputStream stream = null;
+      try {
+        stream = file.openInputStream();
+        if (stream.read(res) != len) {
+          return false;
+        }
+        return Arrays.equals(res, myContent);
+      } catch (IOException ex) {
+        return false;
+      } finally {
+        if (stream != null) {
+          try {
+            stream.close();
+          } catch (IOException ex) {
+            return false;
           }
         }
       }

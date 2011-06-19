@@ -16,4 +16,9 @@ public class OrderReference_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   public SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
     return OrderReference_Behavior.virtual_getOrder_3038738109029048953(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.OrderReference";
+  }
 }

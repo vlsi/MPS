@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.*;
 
@@ -30,11 +30,7 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
     myModule = module;
   }
 
-  public final List<IModule> getDependOnModules() {
-    return doGetDependOnModules();
-  }
-
-  public List<Language> getAllUsedLanguages() {
+  public final Set<Language> getAllUsedLanguages() {
     Set<Language> result = new LinkedHashSet<Language>();
     result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
@@ -43,22 +39,105 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
     for (Language l : new HashSet<Language>(result)) {
       result.addAll(l.getAllExtendedLanguages());
     }
-    return new ArrayList<Language>(result);
-  }
-
-  public Set<IModule> getAllDependOnModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));
-    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
-      result.addAll(dk.getAllExportedSolutions());
-    }
     return result;
   }
 
-  public Set<IModule> getDesignTimeDeps() {
-    return getAllDependOnModules();
+  public void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
+    dependencies.add(myModule);
+    for (Dependency dep : myModule.getDependOn()) {
+      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      if (m == null) continue;
+      if (!dependencies.contains(m)) {
+        m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+      }
+    }
+    for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
+      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+      if (dk == null) continue;
+      for (Solution exportedSolution : dk.getAllExportedSolutions()) {
+        if (exportedSolution != null && !dependencies.contains(exportedSolution)) {
+          exportedSolution.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+        }
+      }
+      for (Language language : dk.getAllExportedLanguages()) {
+        collectAllCompileTimeDependenciesInUsedLanguage(language, dependencies, languagesWithRuntime);
+      }
+    }
+    for (ModuleReference ref : myModule.getUsedLanguagesReferences()) {
+      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
+      if (l == null) continue;
+      collectAllCompileTimeDependenciesInUsedLanguage(l, dependencies, languagesWithRuntime);
+    }
   }
 
+  protected void collectAllCompileTimeDependenciesInUsedLanguage(Language l, /* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
+    for (Language language : l.getAllExtendedLanguages()) {
+      if (language == null) continue;
+      for (Dependency dep : language.getRuntimeDependOn()) {
+        IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+        if (m == null) continue;
+        if (!dependencies.contains(m)) {
+          m.getDependenciesManager().collectAllCompileTimeDependencies(dependencies, languagesWithRuntime);
+        }
+      }
+      if (!languagesWithRuntime.contains(language)) {
+        if (!language.getRuntimeStubPaths().isEmpty()) {
+          languagesWithRuntime.add(language);
+        }
+      }
+    }
+  }
+
+  public Set<IModule> getAllVisibleModules() {
+    Set<IModule> result = new LinkedHashSet<IModule>();
+    collectVisibleModules(result, false);
+    result.remove(myModule);
+    return result;
+  }
+
+  public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly) {
+    dependencies.add(myModule);
+
+    for (Dependency dependency : myModule.getDependOn()) {
+      if(reexportOnly && !dependency.isReexport()) continue;
+
+      IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
+      if (m == null) continue;
+
+      if(!dependencies.contains(m)) {
+        m.getDependenciesManager().collectVisibleModules(dependencies, true);
+      }
+    }
+
+    if(reexportOnly) return;
+
+    for (ModuleReference ref : myModule.getUsedDevkitReferences()) {
+      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+      if (dk == null) continue;
+
+      for (Solution solution : dk.getAllExportedSolutions()) {
+        if(!dependencies.contains(solution)) {
+          solution.getDependenciesManager().collectVisibleModules(dependencies, true);
+        }
+      }
+    }
+  }
+
+  /**
+   * ******* deprecated **************
+   */
+
+  @Deprecated
+  public Set<IModule> getDesignTimeDeps() {
+    return getAllVisibleModules();
+  }
+
+  @Deprecated
+  public final List<IModule> getDependOnModules() {
+    return doGetDependOnModules();
+  }
+
+  @Deprecated
   protected List<IModule> doGetDependOnModules() {
     List<IModule> res = new LinkedList<IModule>();
     res.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));

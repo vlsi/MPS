@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class AuxObjectHandler_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public AuxObjectHandler_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.internal.structure.AuxObjectHandler";
+  }
 }

@@ -11,4 +11,9 @@ public class SuperMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorD
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return SuperMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.SuperMethodCall";
+  }
 }

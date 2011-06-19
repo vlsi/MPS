@@ -4,12 +4,8 @@ package jetbrains.mps.ide.migration.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.DevkitActions_ActionGroup;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
-import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
-import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 
 public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide.migration");
@@ -23,25 +19,35 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new FixVirtualPackages_Action());
+    addAction(new BuildAllBehaviors_Action());
+    addAction(new BuildAllConstraints_Action());
+    addAction(new BuildAllGenerators_Action());
+    addAction(new BuildAllLanguageDescriptors_Action());
+    addAction(new BuildAllStructures_Action());
+    addAction(new FindDuplicatedStubs_Action());
+    addAction(new FixModuleDependencies_Action());
+    addAction(new LoadNonStubModels_Action());
+    addAction(new MigrateStubs_Action());
+    addAction(new Migration20_Action());
+    addAction(new OptimizeImportsInGlobalScope_Action());
     addAction(new UpgradeModelPersistenceGlobally_Action());
     addAction(new UpgradeModelPersistenceInModel_Action());
     addAction(new UpgradeModelPersistenceInModule_Action());
-    addAction(new UpgradeModelPersistenceInProject_Action());
     addAction(new UpgradeModulePersistenceGlobally_Action());
+    addAction(new UpgradePersistence_Action());
     // groups 
-    addGroup(new MigrateModel_ActionGroup());
-    addGroup(new MigrateModule_ActionGroup());
-    addGroup(new MigrateProject_ActionGroup());
-    addGroup(new Upgrade_ActionGroup());
+    addGroup(new InternalAddition_ActionGroup());
+    addGroup(new MakeAddition_ActionGroup());
+    addGroup(new Migrations20_ActionGroup());
+    addGroup(new PersistenceAddition_ActionGroup());
+    addGroup(new ToolsAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(Upgrade_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);
-    insertGroupIntoAnother(MigrateModel_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_migration);
-    insertGroupIntoAnother(MigrateModule_ActionGroup.ID, DevkitActions_ActionGroup.ID, DevkitActions_ActionGroup.LABEL_ID_migration);
-    insertGroupIntoAnother(MigrateModule_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_migration);
-    insertGroupIntoAnother(MigrateModule_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_migration);
-    insertGroupIntoAnother(MigrateProject_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_migration);
+    insertGroupIntoAnother(InternalAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(MakeAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(Migrations20_ActionGroup.ID, ToolsAddition_ActionGroup.ID, ToolsAddition_ActionGroup.LABEL_ID_migrationGroup);
+    insertGroupIntoAnother(PersistenceAddition_ActionGroup.ID, Migrations20_ActionGroup.ID, null);
+    insertGroupIntoAnother(ToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration20);
   }
 }

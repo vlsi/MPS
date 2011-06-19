@@ -238,27 +238,24 @@ public class SModelRepository implements ApplicationComponent {
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
+    SModelId id = modelReference.getSModelId();
 
-    synchronized (myModelsLock) {
-      SModelId id = modelReference.getSModelId();
+    //todo remove this code
+    if (id == null) {
+      SModelFqName fqName = modelReference.getSModelFqName();
+      if (fqName == null) return null;
 
-      //todo remove this code
-      if (id == null) {
-        SModelFqName fqName = modelReference.getSModelFqName();
-        if (fqName == null) return null;
-
+      if (InternalFlag.isInternalMode()) {
         if (!myWasError) {
           myWasError = true;
-          if(InternalFlag.isInternalMode()) {
-            LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.");
-          }
+          LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.");
         }
-
-        return getModelDescriptor(fqName);
       }
 
-      return myIdToModelDescriptorMap.get(id);
+      return getModelDescriptor(fqName);
     }
+
+    return myIdToModelDescriptorMap.get(id);
   }
 
   public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
@@ -286,7 +283,7 @@ public class SModelRepository implements ApplicationComponent {
     return sd == modelDescriptor;
   }
 
-  private List<EditableSModelDescriptor> getModelsToSave () {
+  private List<EditableSModelDescriptor> getModelsToSave() {
     List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor md : myModelsWithOwners.keySet()) {
       if (md instanceof EditableSModelDescriptor) {
@@ -465,9 +462,7 @@ public class SModelRepository implements ApplicationComponent {
   @Deprecated
   public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
     if (fqName == null) return null;
-    synchronized (myModelsLock) {
-      return myFqNameToModelDescriptorMap.get(fqName);
-    }
+    return myFqNameToModelDescriptorMap.get(fqName);
   }
 
   private class ModelChangeListener extends SModelAdapter {

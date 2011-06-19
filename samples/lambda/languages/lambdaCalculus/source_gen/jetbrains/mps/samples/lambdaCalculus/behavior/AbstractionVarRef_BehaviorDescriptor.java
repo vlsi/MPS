@@ -6,4 +6,9 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class AbstractionVarRef_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public AbstractionVarRef_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef";
+  }
 }

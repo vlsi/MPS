@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BooleanConstant_BehaviorDescriptor;
 public class SortDirection_BehaviorDescriptor extends BooleanConstant_BehaviorDescriptor {
   public SortDirection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.SortDirection";
+  }
 }

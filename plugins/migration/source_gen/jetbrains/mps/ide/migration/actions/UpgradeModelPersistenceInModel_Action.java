@@ -20,8 +20,8 @@ public class UpgradeModelPersistenceInModel_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(UpgradeModelPersistenceInModel_Action.class);
 
   public UpgradeModelPersistenceInModel_Action() {
-    super("Upgrade Model Persistence", "", ICON);
-    this.setIsAlwaysVisible(false);
+    super("Upgrade Model Persistence in Selected Model", "", ICON);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 

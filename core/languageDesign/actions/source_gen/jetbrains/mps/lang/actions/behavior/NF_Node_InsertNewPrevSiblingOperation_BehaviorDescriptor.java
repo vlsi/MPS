@@ -7,4 +7,9 @@ import jetbrains.mps.lang.smodel.behavior.Node_InsertNewPrevSiblingOperation_Beh
 public class NF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor extends Node_InsertNewPrevSiblingOperation_BehaviorDescriptor {
   public NF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation";
+  }
 }

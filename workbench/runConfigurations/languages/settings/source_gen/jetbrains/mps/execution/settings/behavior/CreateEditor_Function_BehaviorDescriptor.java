@@ -15,4 +15,9 @@ public class CreateEditor_Function_BehaviorDescriptor extends EditorOperationDec
   public SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
     return CreateEditor_Function_Behavior.virtual_getPublicJavaMethod_203908296139519011(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.CreateEditor_Function";
+  }
 }

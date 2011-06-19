@@ -6,4 +6,9 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class ParenthesisExpression_BehaviorDescriptor extends LambdaExpression_BehaviorDescriptor {
   public ParenthesisExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression";
+  }
 }

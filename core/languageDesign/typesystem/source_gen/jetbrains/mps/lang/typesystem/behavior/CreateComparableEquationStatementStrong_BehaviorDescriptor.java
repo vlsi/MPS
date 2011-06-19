@@ -6,4 +6,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class CreateComparableEquationStatementStrong_BehaviorDescriptor extends AbstractComparableStatement_BehaviorDescriptor {
   public CreateComparableEquationStatementStrong_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong";
+  }
 }

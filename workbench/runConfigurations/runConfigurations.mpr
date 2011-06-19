@@ -48,6 +48,9 @@
       <genConfModule name="settings" moduleRef="jetbrains.mps.execution.settings" />
     </genConfs>
   </component>
+  <component name="MigrationState">
+    <option name="myState" value="INITIAL" />
+  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>

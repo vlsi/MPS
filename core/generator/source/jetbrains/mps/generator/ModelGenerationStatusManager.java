@@ -17,32 +17,24 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.generator.cache.BaseModelCache;
-import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class ModelGenerationStatusManager implements ApplicationComponent {
-  public static final String HASH_PREFIX = ".hash.";
-
-  private CacheGenerator myCacheGenerator;
 
   public static ModelGenerationStatusManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
   }
-
-  private Map<SModelDescriptor, String> myGeneratedFilesHashes = new ConcurrentHashMap<SModelDescriptor, String>();
 
   private final List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
@@ -56,14 +48,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   public ModelGenerationStatusManager(GlobalSModelEventsManager globalEventsManager) {
     myGlobalEventsManager = globalEventsManager;
-    myCacheGenerator = new CacheGenerator() {
-      public void generateCache(GenerationStatus status, StreamHandler handler) {
-        String hashName = generateHashFileName(status);
-        if (hashName != null) {
-          handler.saveStream(hashName, status.getInputModel().getSModelReference().toString(), true);
-        }
-      }
-    };
   }
 
   @NotNull
@@ -77,10 +61,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   public void disposeComponent() {
     myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
-  }
-
-  public CacheGenerator getCacheGenerator() {
-    return myCacheGenerator;
   }
 
   public String currentHash(SModelDescriptor sm, IOperationContext operationContext) {
@@ -101,12 +81,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   private String getGenerationHash(@NotNull SModelDescriptor sm) {
-    String hash = myGeneratedFilesHashes.get(sm);
-    if (hash == null) {
-      hash = getLastGenerationHash(sm);
-      myGeneratedFilesHashes.put(sm, hash != null ? hash : "");
-    }
-    return hash != null && hash.length() == 0 ? null : hash;
+    return getLastGenerationHash(sm);
   }
 
   public void invalidateData(List<SModelDescriptor> models) {
@@ -115,7 +90,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
     }
     for (SModelDescriptor model : models) {
-      myGeneratedFilesHashes.remove(model);
+      GenerationDependenciesCache.getInstance().clean(model);
       for (ModelGenerationStatusListener l : copy) {
         l.generatedFilesChanged(model);
       }
@@ -134,42 +109,10 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     }
   }
 
-  private String generateHashFileName(GenerationStatus status) {
-    SModelDescriptor descriptor = status.getOriginalInputModel();
-    String hash = descriptor.getModelHash();
-    if (hash == null) {
-      return null;
-    }
-    return ModelGenerationStatusManager.HASH_PREFIX + hash;
-  }
-
   public static String getLastGenerationHash(SModelDescriptor sm) {
-    IModule module = sm.getModule();
+    GenerationDependencies generationDependencies = GenerationDependenciesCache.getInstance().get(sm);
+    if (generationDependencies == null) return null;
 
-    if (module == null) throw new IllegalArgumentException("no module for " + sm);
-
-    IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
-    if(outputPath == null) {
-      return null;
-    }
-
-    IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
-    IFile hashFile = null;
-
-    for (IFile f : sourcesDir.getChildren()) {
-      if (f.getName().startsWith(HASH_PREFIX)) {
-        if (hashFile == null) {
-          hashFile = f;
-        } else {
-          // More than one hash file
-          return null;
-        }
-      }
-    }
-
-    if (hashFile == null) {
-      return null;
-    }
-    return hashFile.getName().substring(HASH_PREFIX.length());
+    return generationDependencies.getModelHash();
   }
 }

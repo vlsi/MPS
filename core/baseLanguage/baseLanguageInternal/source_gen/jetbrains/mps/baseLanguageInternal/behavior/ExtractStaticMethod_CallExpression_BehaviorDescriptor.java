@@ -13,4 +13,9 @@ public class ExtractStaticMethod_CallExpression_BehaviorDescriptor extends BaseM
   public List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return ExtractStaticMethod_CallExpression_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression";
+  }
 }

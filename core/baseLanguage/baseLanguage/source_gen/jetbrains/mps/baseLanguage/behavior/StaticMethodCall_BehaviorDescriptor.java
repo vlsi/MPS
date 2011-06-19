@@ -17,4 +17,9 @@ public class StaticMethodCall_BehaviorDescriptor extends BaseMethodCall_Behavior
   public Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     return StaticMethodCall_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
+  }
 }

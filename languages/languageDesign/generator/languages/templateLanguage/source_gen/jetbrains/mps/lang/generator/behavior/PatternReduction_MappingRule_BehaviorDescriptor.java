@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class PatternReduction_MappingRule_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ReductionRule_BehaviorDescriptor {
   public PatternReduction_MappingRule_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule";
+  }
 }

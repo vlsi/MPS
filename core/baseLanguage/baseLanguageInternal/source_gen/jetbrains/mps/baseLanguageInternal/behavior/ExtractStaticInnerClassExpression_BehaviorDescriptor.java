@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ExtractStaticInnerClassExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ExtractStaticInnerClassExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression";
+  }
 }

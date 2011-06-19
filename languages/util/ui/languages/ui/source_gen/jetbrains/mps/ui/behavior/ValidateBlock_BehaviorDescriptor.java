@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescr
 public class ValidateBlock_BehaviorDescriptor extends ClosureLiteral_BehaviorDescriptor {
   public ValidateBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.ValidateBlock";
+  }
 }

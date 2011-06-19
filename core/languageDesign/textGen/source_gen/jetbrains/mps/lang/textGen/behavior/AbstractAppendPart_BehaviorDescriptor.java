@@ -12,4 +12,9 @@ public abstract class AbstractAppendPart_BehaviorDescriptor extends BaseConcept_
   public boolean virtual_withIndent_1237466287046(SNode thisNode) {
     return AbstractAppendPart_Behavior.virtual_withIndent_1237466287046(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.AbstractAppendPart";
+  }
 }

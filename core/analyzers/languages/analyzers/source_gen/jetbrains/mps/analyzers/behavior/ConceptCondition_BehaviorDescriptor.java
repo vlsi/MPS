@@ -12,4 +12,9 @@ public class ConceptCondition_BehaviorDescriptor extends ApplicableCondition_Beh
   public SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
     return ConceptCondition_Behavior.virtual_getApplicableConcept_4413230749907681652(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.analyzers.structure.ConceptCondition";
+  }
 }

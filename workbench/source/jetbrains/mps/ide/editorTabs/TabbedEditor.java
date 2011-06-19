@@ -35,6 +35,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -136,7 +137,11 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     }
 
     EditorComponent editor = getCurrentEditorComponent();
-    editor.editNode(containingRoot, new ModuleContext(containingRoot.getModel().getModelDescriptor().getModule(), myContext.getProject()));
+    SModelDescriptor md = containingRoot.getModel().getModelDescriptor();
+    IModule module = md.getModule();
+    assert module != null : md.getSModelReference().toString() + "; node is disposed = " + node.isDisposed();
+
+    editor.editNode(containingRoot, new ModuleContext(module, myContext.getProject()));
 
     if (rootChange) {
       SModelDescriptor model = getCurrentNodeModel();

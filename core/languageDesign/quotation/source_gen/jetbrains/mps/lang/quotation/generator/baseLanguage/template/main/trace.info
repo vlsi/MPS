@@ -1223,8 +1223,8 @@
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="109" startPosition="17" endLine="128" endPosition="15" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="309" startPosition="41" endLine="328" endPosition="39" />
     <scopeInfo nodeId="937236280924642875" fileName="QueriesGenerated.java" startLine="325" startPosition="154" endLine="344" endPosition="18">
-      <varInfo nodeId="937236280924642889" varName="frontier" />
       <varInfo nodeId="937236280924642905" varName="newFrontier" />
+      <varInfo nodeId="937236280924642889" varName="frontier" />
       <varInfo nodeId="937236280924642883" varName="result" />
       <varInfo nodeId="937236280924642877" varName="root" />
     </scopeInfo>
@@ -1233,8 +1233,8 @@
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="714" startPosition="29" endLine="733" endPosition="27" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="768" startPosition="31" endLine="788" endPosition="29" />
     <scopeInfo nodeId="937236280924643069" fileName="QueriesGenerated.java" startLine="357" startPosition="64" endLine="378" endPosition="15">
-      <varInfo nodeId="937236280924643091" varName="hasAntiquotation" />
       <varInfo nodeId="937236280924643122" varName="targetNode" />
+      <varInfo nodeId="937236280924643091" varName="hasAntiquotation" />
     </scopeInfo>
     <scopeInfo nodeId="937236280924643062" fileName="QueriesGenerated.java" startLine="356" startPosition="119" endLine="379" endPosition="13">
       <varInfo nodeId="937236280924643067" varName="reference" />
@@ -1266,8 +1266,8 @@
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="762" startPosition="29" endLine="796" endPosition="27" />
     <scopeInfo nodeId="1196351886669" fileName="TemplateQuotation__to__methodCall.java" startLine="145" startPosition="15" endLine="183" endPosition="39" />
     <scopeInfo nodeId="937236280924643008" fileName="QueriesGenerated.java" startLine="347" startPosition="154" endLine="387" endPosition="18">
-      <varInfo nodeId="937236280924643022" varName="frontier" />
       <varInfo nodeId="937236280924643033" varName="newFrontier" />
+      <varInfo nodeId="937236280924643022" varName="frontier" />
       <varInfo nodeId="937236280924643016" varName="result" />
       <varInfo nodeId="937236280924643010" varName="root" />
     </scopeInfo>

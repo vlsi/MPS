@@ -33,6 +33,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.lookup.LocalTypeBinding;
+import jetbrains.mps.smodel.SReference;
 import org.eclipse.jdt.internal.compiler.lookup.MemberTypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeVariableBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
@@ -280,7 +281,11 @@ public class ReferentsCreator {
           }
           if (superClassBinding != null) {
             SNode superClass = SNodeOperations.cast(createType(superClassBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-            SLinkOperations.setTarget(anonymousClass, "classifier", SLinkOperations.getTarget(superClass, "classifier", false), false);
+            // copy classifier reference 
+            // <node> 
+            SReference classifierRef = SNodeOperations.getReference(superClass, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"));
+            SReference newRef = SReference.create("classifier", anonymousClass, classifierRef.getTargetSModelReference(), classifierRef.getTargetNodeId(), new String(superClassBinding.sourceName));
+            anonymousClass.addReference(newRef);
             for (SNode t : SLinkOperations.getTargets(superClass, "parameter", true)) {
               ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).addElement(SNodeOperations.copyNode(t));
             }

@@ -12,4 +12,9 @@ public class BeforeTaskParameter_BehaviorDescriptor extends VariableDeclaration_
   public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return BeforeTaskParameter_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter";
+  }
 }

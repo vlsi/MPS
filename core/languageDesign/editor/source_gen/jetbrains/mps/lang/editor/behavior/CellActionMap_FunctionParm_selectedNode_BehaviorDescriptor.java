@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class CellActionMap_FunctionParm_selectedNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public CellActionMap_FunctionParm_selectedNode_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode";
+  }
 }

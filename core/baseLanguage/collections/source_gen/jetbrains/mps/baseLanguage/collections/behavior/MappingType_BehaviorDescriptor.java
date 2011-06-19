@@ -12,4 +12,9 @@ public class MappingType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return MappingType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.MappingType";
+  }
 }

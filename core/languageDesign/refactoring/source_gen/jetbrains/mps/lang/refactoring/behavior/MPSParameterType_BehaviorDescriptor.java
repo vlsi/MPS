@@ -9,5 +9,10 @@ public abstract class MPSParameterType_BehaviorDescriptor extends BaseConcept_Be
   public MPSParameterType_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.MPSParameterType";
+  }
+
   public abstract SNode virtual_getCreatorMethod_4413749148913760555(SNode thisNode);
 }

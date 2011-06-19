@@ -6,4 +6,9 @@ package jetbrains.mps.execution.configurations.behavior;
 public class RunConfigurationExecutor_BehaviorDescriptor extends AbstractRunConfigurationExecutor_BehaviorDescriptor {
   public RunConfigurationExecutor_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor";
+  }
 }

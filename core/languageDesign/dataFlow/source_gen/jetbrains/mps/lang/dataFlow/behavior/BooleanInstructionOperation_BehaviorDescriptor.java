@@ -6,4 +6,9 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public abstract class BooleanInstructionOperation_BehaviorDescriptor extends BaseInstructionOperation_BehaviorDescriptor {
   public BooleanInstructionOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation";
+  }
 }

@@ -16,4 +16,9 @@ public class OrRegexp_BehaviorDescriptor extends BinaryRegexp_BehaviorDescriptor
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return OrRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp";
+  }
 }

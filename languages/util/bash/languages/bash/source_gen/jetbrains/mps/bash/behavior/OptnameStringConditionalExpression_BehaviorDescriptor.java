@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class OptnameStringConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public OptnameStringConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.OptnameStringConditionalExpression";
+  }
 }

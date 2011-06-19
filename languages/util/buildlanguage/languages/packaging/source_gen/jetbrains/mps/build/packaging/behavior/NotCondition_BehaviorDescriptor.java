@@ -16,4 +16,9 @@ public class NotCondition_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   public boolean virtual_isTrueWhileGeneration_1233161599461(SNode thisNode) {
     return NotCondition_Behavior.virtual_isTrueWhileGeneration_1233161599461(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.NotCondition";
+  }
 }

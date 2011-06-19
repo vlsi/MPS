@@ -16,4 +16,9 @@ public class VariableReference_BehaviorDescriptor extends BaseConcept_BehaviorDe
   public String virtual_getValue_1213877173054(SNode thisNode) {
     return VariableReference_Behavior.virtual_getValue_1213877173054(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.VariableReference";
+  }
 }

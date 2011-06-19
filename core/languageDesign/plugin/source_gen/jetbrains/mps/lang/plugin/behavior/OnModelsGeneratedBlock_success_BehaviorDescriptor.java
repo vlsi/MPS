@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class OnModelsGeneratedBlock_success_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public OnModelsGeneratedBlock_success_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success";
+  }
 }

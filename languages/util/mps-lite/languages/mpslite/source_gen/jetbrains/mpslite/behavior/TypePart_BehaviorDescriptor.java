@@ -12,4 +12,9 @@ public class TypePart_BehaviorDescriptor extends ChildPart_BehaviorDescriptor {
   public SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     return TypePart_Behavior.virtual_createCellModel_1238614099938(thisNode, partsToLinks);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.TypePart";
+  }
 }

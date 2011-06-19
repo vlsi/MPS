@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ArgumentReference_BehaviorDescriptor extends ExternalOptionReference_BehaviorDescriptor {
   public ArgumentReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ArgumentReference";
+  }
 }

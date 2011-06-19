@@ -8,4 +8,9 @@ import jetbrains.mps.baseLanguage.behavior.IThisExpression_BehaviorDescriptor;
 public class ThisClassifierExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IThisExpression_BehaviorDescriptor {
   public ThisClassifierExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression";
+  }
 }

@@ -34,6 +34,7 @@ import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.traceInfo.*;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -44,8 +45,9 @@ public class TextGenerator {
   private CacheGenerator[] myCacheGenerators;
   private List<String> myTextGenErrors = new ArrayList<String>();
   private boolean myFailIfNoTextgen = false;
+  private boolean myGenerateDebugInfo = true;
 
-  public TextGenerator(StreamHandler streamHandler, CacheGenerator ...generators) {
+  public TextGenerator(StreamHandler streamHandler, CacheGenerator... generators) {
     myStreamHandler = streamHandler;
     myCacheGenerators = generators;
   }
@@ -54,7 +56,11 @@ public class TextGenerator {
     myFailIfNoTextgen = failIfNoTextgen;
   }
 
-  public Collection<String> errors () {
+  public void setGenerateDebugInfo(boolean needDebugInfo) {
+    myGenerateDebugInfo = needDebugInfo;
+  }
+
+  public Collection<String> errors() {
     return Collections.unmodifiableList(myTextGenErrors);
   }
 
@@ -72,25 +78,38 @@ public class TextGenerator {
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, Object> outputNodeContents) {
     boolean hasErrors = false;
     ModelDependencies dependRoot = new ModelDependencies();
-    DebugInfo info = new DebugInfo();
-    status.setDebugInfo(info);
+    DebugInfo info = null;
+    if (myGenerateDebugInfo) {
+      status.setDebugInfo(info = new DebugInfo());
+    }
     status.setBLDependencies(dependRoot);
 
     SModel outputModel = status.getOutputModel();
     if (outputModel == null) return !hasErrors;
 
+    StringBuilder[] buffers = new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768) };
+
     for (SNode outputNode : outputModel.roots()) {
       try {
-        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, myFailIfNoTextgen);
+        buffers[0].setLength(0);
+        buffers[1].setLength(0);
+        if(buffers[0].capacity() > 100000) {
+          buffers[0] = new StringBuilder(8192);
+        }
+        if(buffers[1].capacity() > 200000) {
+          buffers[1] = new StringBuilder(32768);
+        }
+        TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, myFailIfNoTextgen, myGenerateDebugInfo, buffers);
         hasErrors |= result.hasErrors();
         if (result.hasErrors()) {
           myTextGenErrors.addAll(result.errors());
-        }
-        else {
+        } else {
           Object contents = result.getResult();
           if (TextGenerationUtil.NO_TEXTGEN != contents) {
             String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
-            fillDebugInfo(info, fileName, result);
+            if (info != null) {
+              fillDebugInfo(info, fileName, result);
+            }
             fillDependencies(dependRoot, outputNode, fileName, result);
             outputNodeContents.put(outputNode, contents);
           } else {
@@ -104,7 +123,7 @@ public class TextGenerator {
     return !hasErrors;
   }
 
-  private void fillDebugInfo(DebugInfo info, String fileName, TextGenerationResult result) {
+  private void fillDebugInfo(@NotNull DebugInfo info, String fileName, TextGenerationResult result) {
     Map<SNode, TraceablePositionInfo> positions = result.getPositions();
     Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
     Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();
@@ -201,10 +220,10 @@ public class TextGenerator {
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       String name = getFileName(outputRootNode);
       Object contents = outputNodeContents.get(outputRootNode);
-      if(contents instanceof String) {
+      if (contents instanceof String) {
         myStreamHandler.saveStream(name, (String) contents, false);
       } else {
-        myStreamHandler.saveStream(name, (byte []) contents, false);
+        myStreamHandler.saveStream(name, (byte[]) contents, false);
       }
     }
 
@@ -236,7 +255,7 @@ public class TextGenerator {
         }
         if (debugInfoCache != null) {
           DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(rdep.getRootId());
-          if (infoRoot != null) {
+          if (infoRoot != null && status.getDebugInfo() != null) {
             status.getDebugInfo().replaceRoot(infoRoot);
           }
         }
@@ -247,7 +266,9 @@ public class TextGenerator {
   private void generateCaches(GenerationStatus status) {
     for (CacheGenerator g : myCacheGenerators) {
       try {
-        g.generateCache(status, myStreamHandler);
+        if(g != null) {
+          g.generateCache(status, myStreamHandler);
+        }
       } catch (Throwable t) {
         LOG.error(t);
       }

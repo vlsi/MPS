@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class NavigatableNodeStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public NavigatableNodeStyleClassItem_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem";
+  }
 }

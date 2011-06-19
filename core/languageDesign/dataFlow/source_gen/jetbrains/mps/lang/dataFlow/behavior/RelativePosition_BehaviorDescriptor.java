@@ -6,4 +6,9 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public abstract class RelativePosition_BehaviorDescriptor extends Position_BehaviorDescriptor {
   public RelativePosition_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.dataFlow.structure.RelativePosition";
+  }
 }

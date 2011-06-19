@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class KeyAccessOperation_BehaviorDescriptor extends AbstractMappingOperation_BehaviorDescriptor {
   public KeyAccessOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation";
+  }
 }

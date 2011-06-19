@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class ExpressionContainer_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ExpressionContainer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.ExpressionContainer";
+  }
 }

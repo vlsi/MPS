@@ -15,11 +15,26 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 import java.util.Set;
 
 public interface ConceptDescriptor {
   String getConceptFqName();
+
+  @Nullable
+  String getSuperConcept();
+
+  boolean isInterfaceConcept();
+
+  List<String> getPropertyNames();
+
+  boolean hasProperty(String name);
+
+  List<String> getReferenceNames();
+
+  boolean hasReference(String name);
 
   // LanguageHierarchyCache replace
   List<String> getParentsNames();

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class TemplateFragment_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public TemplateFragment_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateFragment";
+  }
 }

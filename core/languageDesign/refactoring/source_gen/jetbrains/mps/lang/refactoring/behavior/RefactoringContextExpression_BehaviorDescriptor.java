@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class RefactoringContextExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public RefactoringContextExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression";
+  }
 }

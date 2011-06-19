@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ReferenceContainer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ReferenceContainer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer";
+  }
 }

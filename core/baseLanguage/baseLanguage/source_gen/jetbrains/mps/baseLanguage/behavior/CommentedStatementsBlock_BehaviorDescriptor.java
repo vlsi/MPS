@@ -22,4 +22,9 @@ public class CommentedStatementsBlock_BehaviorDescriptor extends Statement_Behav
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return CommentedStatementsBlock_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock";
+  }
 }

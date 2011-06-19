@@ -14,4 +14,9 @@ public class StaticInitializer_BehaviorDescriptor extends BaseConcept_BehaviorDe
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     return StaticInitializer_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.StaticInitializer";
+  }
 }

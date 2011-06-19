@@ -4,10 +4,10 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.structure.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
-import jetbrains.mps.smodel.structure.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -18,7 +18,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.constraints.INodePropertyValidator;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 
 public class ConstraintsChecker extends AbstractConstraintsChecker {
@@ -27,9 +27,21 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   public ConstraintsChecker() {
   }
 
+  public SNode getBreakingNodeAndClearContext(CheckingNodeContext checkingNodeContext) {
+    if (checkingNodeContext.getBreakingNode() == null) {
+      return null;
+    }
+
+    SNode node = checkingNodeContext.getBreakingNode().getNode();
+    checkingNodeContext.setBreakingNode(null);
+
+    return node;
+  }
+
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext) {
-    final ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName());
-    final CheckingNodeContext checkingNodeContext = new CheckingNodeContext();
+    final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptorNew(node.getConceptFqName());
+
+    final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.structure.CheckingNodeContext();
 
     if (SNodeOperations.getParent(node) != null) {
       component.addDependency(SNodeOperations.getParent(node));
@@ -43,11 +55,11 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
 
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeChild(descriptor, node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link, checkingNodeContext);
+          return ModelConstraintsManager.canBeChild(newDescriptor, node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link, checkingNodeContext);
         }
       });
       if (!(canBeChild)) {
-        SNode rule = checkingNodeContext.getBreakingNodeAndClearContext();
+        SNode rule = getBreakingNodeAndClearContext(checkingNodeContext);
         component.addError(node, "Node " + node + " cannot be child of node " + SNodeOperations.getParent(node), rule);
       }
     }
@@ -55,11 +67,11 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (node.isRoot()) {
       boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeRoot(descriptor, operationContext, node.getConceptFqName(), SNodeOperations.getModel(node), checkingNodeContext);
+          return ModelConstraintsManager.canBeRoot(newDescriptor, operationContext, node.getConceptFqName(), SNodeOperations.getModel(node), checkingNodeContext);
         }
       });
       if (!(canBeRoot)) {
-        SNode rule = checkingNodeContext.getBreakingNodeAndClearContext();
+        SNode rule = getBreakingNodeAndClearContext(checkingNodeContext);
         component.addError(node, "Not rootable concept added as root", rule);
       }
     }
@@ -73,17 +85,17 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeParent(descriptor, node, childConcept, childLink, operationContext, checkingNodeContext);
+          return ModelConstraintsManager.canBeParent(newDescriptor, node, childConcept, childLink, operationContext, checkingNodeContext);
         }
       });
       if (!(canBeParent)) {
-        SNode rule = checkingNodeContext.getBreakingNodeAndClearContext();
+        SNode rule = getBreakingNodeAndClearContext(checkingNodeContext);
         component.addError(node, "Node " + node + " cannot be parent of node " + child, rule);
       }
 
       // todo: do it right, with runCheckingAction! 
       if (!(ModelConstraintsManager.canBeAncestor(node, childConcept, operationContext, checkingNodeContext))) {
-        SNode rule = SNodeOperations.cast(checkingNodeContext.getBreakingNodeAndClearContext(), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
+        SNode rule = SNodeOperations.cast(getBreakingNodeAndClearContext(checkingNodeContext), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
         component.addError(child, "Concept " + SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rule), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) + " cannot be ancestor of node " + child, rule);
       }
     }
@@ -108,15 +120,15 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         continue;
       }
       final String value = ps.fromInternalValue(node.getProperty(propertyName));
-      final INodePropertyValidator propertyValidator = ps.getValidator(node, propertyName);
+      final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyName);
       boolean canSetValue = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ps.canSetValue(propertyValidator, node, propertyName, value, operationContext.getScope());
+          return ps.canSetValue(propertyDescriptor, node, propertyName, value, operationContext.getScope());
         }
       });
       if (!(canSetValue)) {
         // TODO this is a hack for anonymous classes 
-        if ("name".equals(SPropertyOperations.getString(p, "name")) && "AnonymousClass".equals(SPropertyOperations.getString(concept, "name"))) {
+        if ("name".equals(SPropertyOperations.getString(p, "name")) && ("AnonymousClass".equals(SPropertyOperations.getString(concept, "name")) || "InternalAnonymousClass".equals(SPropertyOperations.getString(concept, "name")))) {
           continue;
         }
         // todo find a rule 

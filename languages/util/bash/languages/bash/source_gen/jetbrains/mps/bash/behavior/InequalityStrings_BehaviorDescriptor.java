@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class InequalityStrings_BehaviorDescriptor extends BinaryConditionalExpression_BehaviorDescriptor {
   public InequalityStrings_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.InequalityStrings";
+  }
 }

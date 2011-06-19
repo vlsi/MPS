@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescripto
 public class WhenConcreteVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor {
   public WhenConcreteVariableDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration";
+  }
 }

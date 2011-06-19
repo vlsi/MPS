@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableReference_BehaviorDescriptor;
 public class BeforeTaskParameterReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public BeforeTaskParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference";
+  }
 }

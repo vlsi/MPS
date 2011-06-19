@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class LinkedHashMapCreator_BehaviorDescriptor extends HashMapCreator_BehaviorDescriptor {
   public LinkedHashMapCreator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator";
+  }
 }

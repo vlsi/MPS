@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public abstract class BinaryBitwiseOperation_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public BinaryBitwiseOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation";
+  }
 }

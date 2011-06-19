@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class NanoClass_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public NanoClass_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.nanoj.structure.NanoClass";
+  }
 }

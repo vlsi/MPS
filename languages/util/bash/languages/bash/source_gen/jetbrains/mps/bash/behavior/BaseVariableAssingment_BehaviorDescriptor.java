@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public abstract class BaseVariableAssingment_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public BaseVariableAssingment_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BaseVariableAssingment";
+  }
 }

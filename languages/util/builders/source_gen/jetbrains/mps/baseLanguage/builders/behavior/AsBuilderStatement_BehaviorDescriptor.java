@@ -22,4 +22,9 @@ public class AsBuilderStatement_BehaviorDescriptor extends Statement_BehaviorDes
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompactable_1237546012856(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement";
+  }
 }

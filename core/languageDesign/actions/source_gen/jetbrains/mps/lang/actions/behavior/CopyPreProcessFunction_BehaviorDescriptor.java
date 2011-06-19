@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class CopyPreProcessFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public CopyPreProcessFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.CopyPreProcessFunction";
+  }
 }

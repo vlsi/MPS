@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class LinkQualifier_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ILinkQualifier_BehaviorDescriptor {
   public LinkQualifier_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.LinkQualifier";
+  }
 }

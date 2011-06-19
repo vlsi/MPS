@@ -12,4 +12,9 @@ public class Create_ConceptFunction_BehaviorDescriptor extends ConceptFunction_B
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return Create_ConceptFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction";
+  }
 }

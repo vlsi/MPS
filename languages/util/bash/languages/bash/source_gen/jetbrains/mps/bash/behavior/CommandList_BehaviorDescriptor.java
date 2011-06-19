@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class CommandList_BehaviorDescriptor extends InputLine_BehaviorDescriptor {
   public CommandList_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.CommandList";
+  }
 }

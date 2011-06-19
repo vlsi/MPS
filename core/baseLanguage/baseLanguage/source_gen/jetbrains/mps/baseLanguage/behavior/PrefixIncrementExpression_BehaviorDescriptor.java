@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class PrefixIncrementExpression_BehaviorDescriptor extends AbstractUnaryNumberOperation_BehaviorDescriptor {
   public PrefixIncrementExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression";
+  }
 }

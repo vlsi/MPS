@@ -6,4 +6,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 public abstract class AbstractSubtypingRule_BehaviorDescriptor extends AbstractRule_BehaviorDescriptor {
   public AbstractSubtypingRule_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule";
+  }
 }

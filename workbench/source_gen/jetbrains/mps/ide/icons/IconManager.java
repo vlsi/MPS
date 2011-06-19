@@ -10,16 +10,14 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.awt.Component;
 import java.awt.Graphics;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -30,7 +28,10 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -69,14 +70,6 @@ public class IconManager {
   public IconManager() {
   }
 
-  public static boolean canUseAlternativeIcon(String conceptFqName) {
-    SNode acd = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    if (acd == null || !((SNodeUtil.isInstanceOfConceptDeclaration(acd)))) {
-      return false;
-    }
-    return ModelConstraintsManager.isAlternativeIcon(acd);
-  }
-
   public static Icon getIconWithoutAdditionalPart(@NotNull final SNode node) {
     return getIconFor(node, true);
   }
@@ -96,14 +89,11 @@ public class IconManager {
         if ((concept != null)) {
           Icon alternativeIcon = null;
           try {
-            if (ModelConstraintsManager.isAlternativeIcon(concept)) {
-              Object iconObject = ModelConstraintsManager.getAlternativeIcon(concept, node);
-              if (iconObject != null) {
-                String alternativeIconPath = (String) iconObject;
-                alternativeIcon = IconManager.getIconForConcept(concept, alternativeIconPath);
-              }
+            String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(concept)).getAlternativeIcon(node);
+            if (alternativeIconPath != null) {
+              alternativeIcon = IconManager.getIconForConcept(concept, alternativeIconPath);
             }
-          } catch (Throwable t) {
+          } catch (Exception ignore) {
           }
           if (alternativeIcon != null) {
             mainIcon = alternativeIcon;

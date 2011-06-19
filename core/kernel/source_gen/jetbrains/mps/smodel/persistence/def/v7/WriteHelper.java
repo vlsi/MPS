@@ -12,11 +12,10 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
@@ -30,10 +29,12 @@ public class WriteHelper {
   protected static Log log = LogFactory.getLog(WriteHelper.class);
 
   private SModelReference myModelRef;
+  private Map<String, SModelReference> myModelFqNameToReference;
   private Map<SModelReference, String> myModelIndex;
   private Set<Integer> myUsedIndexes;
 
   public WriteHelper(SModelReference modelRef) {
+    myModelFqNameToReference = MapSequence.fromMap(new HashMap<String, SModelReference>());
     myModelIndex = MapSequence.fromMap(new HashMap<SModelReference, String>());
     myUsedIndexes = SetSequence.fromSet(new HashSet<Integer>());
     myModelRef = modelRef;
@@ -49,6 +50,7 @@ public class WriteHelper {
     }
     SetSequence.fromSet(myUsedIndexes).addElement(hash);
     MapSequence.fromMap(myModelIndex).put(model, Integer.toString(hash, HASH_BASE));
+    MapSequence.fromMap(myModelFqNameToReference).put(model.getLongName(), model);
   }
 
   public String getImportIndex(@NotNull SModelReference model) {
@@ -71,20 +73,6 @@ public class WriteHelper {
   }
 
   @NotNull
-  private String genConceptReferenceString(@Nullable SNode concept, @NotNull String fqName) {
-    // return fqName prefixed with "." if we can't find model or name of concept 
-    String name = SPropertyOperations.getString(concept, "name");
-    if (name == null) {
-      return MODEL_SEPARATOR_CHAR + fqName;
-    }
-    String index = MapSequence.fromMap(myModelIndex).get(SNodeOperations.getModel(concept).getSModelReference());
-    if (index == null) {
-      return MODEL_SEPARATOR_CHAR + fqName;
-    }
-    return new StringBuilder().append(index).append(MODEL_SEPARATOR_CHAR).append(name).toString();
-  }
-
-  @NotNull
   public String genReferenceId(@NotNull SModelReference ref, @NotNull SNodeId nodeId) {
     return genReferenceString(ref, nodeId.toString());
   }
@@ -95,10 +83,20 @@ public class WriteHelper {
   }
 
   public String genType(@NotNull SNode node) {
-    return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConceptFqName());
+    // return fqName prefixed with "." if we can't find model or name of concept 
+    String fqName = node.getConceptFqName();
+    String index = MapSequence.fromMap(myModelIndex).get(getModelReferenceForConcept(node));
+    if (index == null) {
+      return MODEL_SEPARATOR_CHAR + fqName;
+    }
+    return index + MODEL_SEPARATOR_CHAR + node.getConceptShortName();
   }
 
   public String genTypeId(@NotNull SNode node) {
+    if (RoleIdsComponent.isEnabled()) {
+      SNodeId conceptId = RoleIdsComponent.getConceptId(node);
+      return genReferenceId(getModelReferenceForConcept(node), conceptId);
+    }
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     return ((concept == null) ?
       null :
@@ -115,7 +113,14 @@ public class WriteHelper {
   }
 
   public String genRoleId(@NotNull SNode node) {
-    SNode linkDecl = node.getRoleLink();
+    if (SNodeOperations.getParent(node) == null) {
+      return null;
+    }
+    if (RoleIdsComponent.isEnabled()) {
+      SNodeId roleId = RoleIdsComponent.getNodeRoleId(node);
+      return genReferenceId(getModelReferenceForConcept(SNodeOperations.getParent(node)), roleId);
+    }
+    SNode linkDecl = SNodeOperations.getContainingLinkDeclaration(node);
     return ((linkDecl == null) ?
       null :
       genReferenceId(linkDecl)
@@ -123,7 +128,11 @@ public class WriteHelper {
   }
 
   public String genRoleId(@NotNull SReference ref) {
-    SNode linkDecl = ref.getSourceNode().getLinkDeclaration(ref.getRole());
+    if (RoleIdsComponent.isEnabled()) {
+      SNodeId roleId = RoleIdsComponent.getReferenceRoleId(ref);
+      return genReferenceId(getModelReferenceForConcept(ref.getSourceNode()), roleId);
+    }
+    SNode linkDecl = SLinkOperations.findLinkDeclaration(ref);
     return ((linkDecl == null) ?
       null :
       genReferenceId(linkDecl)
@@ -135,6 +144,10 @@ public class WriteHelper {
   }
 
   public String genNameId(@NotNull SNode node, @NotNull String prop) {
+    if (RoleIdsComponent.isEnabled()) {
+      SNodeId propertyId = RoleIdsComponent.getPropertyNameId(node, prop);
+      return genReferenceId(getModelReferenceForConcept(node), propertyId);
+    }
     SNode propDecl = node.getPropertyDeclaration(prop);
     return ((propDecl == null) ?
       null :
@@ -166,6 +179,11 @@ public class WriteHelper {
       }
     }
     return ref.getResolveInfo();
+  }
+
+  private SModelReference getModelReferenceForConcept(SNode node) {
+    String conceptFqName = node.getConceptFqName();
+    return MapSequence.fromMap(myModelFqNameToReference).get(conceptFqName.substring(0, conceptFqName.lastIndexOf('.')));
   }
 
   public static String encode(String s) {

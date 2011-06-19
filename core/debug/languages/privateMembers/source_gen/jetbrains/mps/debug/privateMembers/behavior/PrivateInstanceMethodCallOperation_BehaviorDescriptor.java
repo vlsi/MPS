@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_BehaviorD
 public class PrivateInstanceMethodCallOperation_BehaviorDescriptor extends InstanceMethodCallOperation_BehaviorDescriptor {
   public PrivateInstanceMethodCallOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation";
+  }
 }

@@ -18,8 +18,8 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.constraints.INodePropertyValidator;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,20 +38,13 @@ public abstract class PropertySupport {
     if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
     if (value == null) value = "";
     if (!canSetValue(value)) return false;
-    INodePropertyValidator propertyValidator = getValidator(node, propertyName);
-    return canSetValue(propertyValidator, node, propertyName, value, scope);
+    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConceptFqName()).getProperty(propertyName);
+    return canSetValue(descriptor, node, propertyName, value, scope);
   }
 
-  public INodePropertyValidator getValidator(SNode node, String propertyName) {
-    return ModelConstraintsManager.getInstance().getNodePropertyValidator(node, propertyName);
-  }
-
-  public boolean canSetValue(INodePropertyValidator validator, SNode node, String propertyName, String value, IScope scope) {
+  public boolean canSetValue(PropertyConstraintsDescriptor descriptor, SNode node, String propertyName, String value, IScope scope) {
     if (value == null) value = "";
-    if (validator != null) {
-      return validator.checkPropertyValue(node, propertyName, value, scope);
-    }
-    return true;
+    return descriptor.validateValue(node, value, scope);
   }
 
   public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {

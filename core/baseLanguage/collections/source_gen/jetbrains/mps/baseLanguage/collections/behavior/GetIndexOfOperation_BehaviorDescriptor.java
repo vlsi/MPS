@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class GetIndexOfOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor {
   public GetIndexOfOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation";
+  }
 }

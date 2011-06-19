@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public abstract class BaseCreateRunConfigFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public BaseCreateRunConfigFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.BaseCreateRunConfigFunction";
+  }
 }

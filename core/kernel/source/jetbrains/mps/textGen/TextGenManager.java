@@ -22,11 +22,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.util.*;
@@ -59,10 +61,10 @@ public class TextGenManager {
 
   private Map<String, Class<SNodeTextGen>> myClassesCache;
 
-  /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node) {
+  /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node, boolean withDebugInfo, StringBuilder[] buffers) {
     myClassesCache = new HashMap<String, Class<SNodeTextGen>>();
 
-    TextGenBuffer buffer = new TextGenBuffer();
+    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     myClassesCache = null;
@@ -70,20 +72,16 @@ public class TextGenManager {
     int topLength = topBufferText.isEmpty() ? 1 : topBufferText.split(buffer.getLineSeparator(), -1).length + 2;
 
     // position info
-    Map<SNode, TraceablePositionInfo> positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
-    Map<SNode, ScopePositionInfo> scopeInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.SCOPE_INFO);
-    Map<SNode, UnitPositionInfo> unitInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.UNIT_INFO);
-    for (TraceablePositionInfo position : positionInfo.values()) {
-      position.setStartLine(position.getStartLine() + topLength);
-      position.setEndLine(position.getEndLine() + topLength);
-    }
-    for (ScopePositionInfo position : scopeInfo.values()) {
-      position.setStartLine(position.getStartLine() + topLength);
-      position.setEndLine(position.getEndLine() + topLength);
-    }
-    for (UnitPositionInfo position : unitInfo.values()) {
-      position.setStartLine(position.getStartLine() + topLength);
-      position.setEndLine(position.getEndLine() + topLength);
+    Map<SNode, TraceablePositionInfo> positionInfo = null;
+    Map<SNode, ScopePositionInfo> scopeInfo = null;
+    Map<SNode, UnitPositionInfo> unitInfo = null;
+    if (withDebugInfo) {
+      positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
+      scopeInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.SCOPE_INFO);
+      unitInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.UNIT_INFO);
+      adjustPositions(topLength, positionInfo);
+      adjustPositions(topLength, scopeInfo);
+      adjustPositions(topLength, unitInfo);
     }
 
     // dependencies
@@ -96,18 +94,25 @@ public class TextGenManager {
 
     Object result = buffer.getText();
     String outputEncoding = (String) buffer.getUserObject(OUTPUT_ENCODING);
-    if(outputEncoding != null) {
-      if(outputEncoding.equals("binary")) {
+    if (outputEncoding != null) {
+      if (outputEncoding.equals("binary")) {
         result = EncodingUtil.decodeBase64((String) result);
       } else {
         try {
           result = EncodingUtil.encode((String) result, outputEncoding);
-        } catch(IOException ex) {
+        } catch (IOException ex) {
           LOG.error("cannot encode the output stream", ex);
         }
       }
     }
     return new TextGenerationResult(result, buffer.hasErrors(), buffer.errors(), positionInfo, scopeInfo, unitInfo, deps);
+  }
+
+  private void adjustPositions(int delta, Map<SNode, ? extends PositionInfo> positionInfo) {
+    for (PositionInfo position : positionInfo.values()) {
+      position.setStartLine(position.getStartLine() + delta);
+      position.setEndLine(position.getEndLine() + delta);
+    }
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -119,7 +124,7 @@ public class TextGenManager {
   }
 
 
-  public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {
+  public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, @Nullable SNode contextNode) {
     if (node == null) {
       buffer.append("???");
 

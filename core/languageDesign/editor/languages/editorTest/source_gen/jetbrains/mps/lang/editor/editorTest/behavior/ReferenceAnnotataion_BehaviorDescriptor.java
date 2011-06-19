@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 public class ReferenceAnnotataion_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor {
   public ReferenceAnnotataion_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion";
+  }
 }

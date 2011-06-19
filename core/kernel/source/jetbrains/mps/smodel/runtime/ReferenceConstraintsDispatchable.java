@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public interface ReferenceConstraintsDispatchable {
-  boolean hasOwnNonDefaultSearchScopeProvider();
+public interface ReferenceConstraintsDispatchable extends ReferenceConstraintsDescriptor {
+  boolean hasOwnScopeProvider();
 
-  boolean hasOwnReferentSetEventHandler();
+  boolean hasOwnOnReferenceSetHandler();
 }

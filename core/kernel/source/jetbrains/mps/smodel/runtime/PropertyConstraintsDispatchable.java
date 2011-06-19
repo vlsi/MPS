@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public interface PropertyConstraintsDispatchable {
+public interface PropertyConstraintsDispatchable extends PropertyConstraintsDescriptor {
   boolean hasOwnGetter();
 
   boolean hasOwnSetter();

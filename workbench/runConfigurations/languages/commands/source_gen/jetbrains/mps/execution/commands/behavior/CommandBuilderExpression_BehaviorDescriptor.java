@@ -16,4 +16,9 @@ public class CommandBuilderExpression_BehaviorDescriptor extends Expression_Beha
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return CommandBuilderExpression_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.CommandBuilderExpression";
+  }
 }

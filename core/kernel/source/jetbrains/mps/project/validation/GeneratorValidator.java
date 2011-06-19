@@ -15,12 +15,17 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GeneratorValidator extends BaseModuleValidator<Generator> {
   public GeneratorValidator(Generator module) {
@@ -32,6 +37,21 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     for (ModuleReference gen : myModule.getModuleDescriptor().getDepGenerators()) {
       if (MPSModuleRepository.getInstance().getModule(gen) == null) {
         errors.add("Can't find generator dependency: " + gen.getModuleFqName());
+      }
+    }
+    Set<String> usedLanguages = new HashSet<String>();
+    for (SModelDescriptor model : myModule.getGeneratorModels()) {
+      usedLanguages.addAll(ModelContentUtil.getUsedLanguageNamespaces(model.getSModel(), true));
+    }
+    Set<String> extendedLanguages = new HashSet<String>();
+    Language sourceLanguage = myModule.getSourceLanguage();
+    for(Language language : sourceLanguage.getAllExtendedLanguages()){
+      extendedLanguages.add(language.getModuleFqName());
+    }
+
+    for (String lang : usedLanguages) {
+      if (!extendedLanguages.contains(lang) && !MPSModuleRepository.getInstance().getLanguage(lang).getRuntimeDependOn().isEmpty()) {
+        errors.add(sourceLanguage + " should extend " + lang);
       }
     }
     return errors;

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class Visibility_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Visibility_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.Visibility";
+  }
 }

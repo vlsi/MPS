@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class PasteWrapper_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PasteWrapper_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.PasteWrapper";
+  }
 }

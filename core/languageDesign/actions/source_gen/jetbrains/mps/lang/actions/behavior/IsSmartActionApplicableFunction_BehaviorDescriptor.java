@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class IsSmartActionApplicableFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public IsSmartActionApplicableFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction";
+  }
 }

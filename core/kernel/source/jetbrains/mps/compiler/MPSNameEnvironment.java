@@ -37,25 +37,33 @@ public abstract class MPSNameEnvironment implements INameEnvironment {
   }
 
   public NameEnvironmentAnswer findType(char[] typeName, char[][] packageName) {
-    StringBuilder fqName = new StringBuilder();
-    for (char[] packName : packageName) {
-      fqName.append(new String(packName)).append(".");
-    }
-    fqName.append(typeName);
-    return findType(fqName.toString());
+    return findType(toQualifiedName(packageName, typeName));
   }
 
   public boolean isPackage(char[][] parentPackageName, char[] packageName) {
-    String pname = "";
-    if (parentPackageName != null) {
-      for (char[] part : parentPackageName) {
-        pname += new String(part) + ".";
-      }
-    }
-    pname += new String(packageName);
-
+    String pname = toQualifiedName(parentPackageName, packageName);
     return getClassPathItem().getAvailableClasses(pname).iterator().hasNext() ||
       getClassPathItem().getSubpackages(pname).iterator().hasNext();
+  }
+
+  private String toQualifiedName(char[][] packageName, char[] name) {
+    int size = name.length;
+    if(packageName != null) {
+      for(char[] part : packageName) {
+        size += part.length + 1;
+      }
+    }
+    char[] result = new char[size];
+    int i = 0;
+    if(packageName != null) {
+      for(char[] part : packageName) {
+        System.arraycopy(part, 0, result, i, part.length);
+        i += part.length;
+        result[i++] = '.';
+      }
+    }
+    System.arraycopy(name, 0, result, i, name.length);
+    return new String(result);
   }
 
   public void cleanup() {
@@ -70,5 +78,4 @@ public abstract class MPSNameEnvironment implements INameEnvironment {
       return null;
     }
   }
-
 }

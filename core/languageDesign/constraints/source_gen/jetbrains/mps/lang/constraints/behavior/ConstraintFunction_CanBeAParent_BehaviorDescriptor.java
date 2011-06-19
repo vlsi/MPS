@@ -12,4 +12,9 @@ public class ConstraintFunction_CanBeAParent_BehaviorDescriptor extends ConceptF
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return ConstraintFunction_CanBeAParent_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent";
+  }
 }

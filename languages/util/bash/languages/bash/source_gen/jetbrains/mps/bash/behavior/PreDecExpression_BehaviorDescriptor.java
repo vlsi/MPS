@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class PreDecExpression_BehaviorDescriptor extends PreVariableExpression_BehaviorDescriptor {
   public PreDecExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.PreDecExpression";
+  }
 }

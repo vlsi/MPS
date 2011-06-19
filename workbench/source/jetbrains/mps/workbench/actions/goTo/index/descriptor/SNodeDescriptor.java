@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.actions.goTo.index.descriptor;
 
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.InternUtil;
 

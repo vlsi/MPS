@@ -24,4 +24,9 @@ public class BaseExtensionMethodContainer_BehaviorDescriptor extends GenericDecl
   public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return IMemberContainer_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer";
+  }
 }

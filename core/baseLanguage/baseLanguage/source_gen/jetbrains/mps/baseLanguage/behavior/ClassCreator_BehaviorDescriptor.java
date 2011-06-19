@@ -33,4 +33,9 @@ public class ClassCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDes
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return ClassCreator_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+  }
 }

@@ -9,4 +9,9 @@ import jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor;
 public class CustomContainerDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IVisible_BehaviorDescriptor {
   public CustomContainerDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration";
+  }
 }

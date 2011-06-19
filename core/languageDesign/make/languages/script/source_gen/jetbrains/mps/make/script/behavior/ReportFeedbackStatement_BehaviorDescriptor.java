@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class ReportFeedbackStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ReportFeedbackStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.ReportFeedbackStatement";
+  }
 }

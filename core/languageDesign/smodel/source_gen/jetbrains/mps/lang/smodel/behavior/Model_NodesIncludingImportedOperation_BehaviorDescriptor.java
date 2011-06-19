@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class Model_NodesIncludingImportedOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Model_NodesIncludingImportedOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation";
+  }
 }

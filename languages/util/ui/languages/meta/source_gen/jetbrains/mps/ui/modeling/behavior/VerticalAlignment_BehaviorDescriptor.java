@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class VerticalAlignment_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public VerticalAlignment_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.VerticalAlignment";
+  }
 }

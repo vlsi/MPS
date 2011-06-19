@@ -6,4 +6,9 @@ package jetbrains.mps.lang.actions.behavior;
 public class RemoveSTByConditionPart_BehaviorDescriptor extends MenuBuilderPart_BehaviorDescriptor {
   public RemoveSTByConditionPart_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart";
+  }
 }

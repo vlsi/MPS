@@ -12,4 +12,9 @@ public class ExtensionStaticFieldDeclaration_BehaviorDescriptor extends Variable
   public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return ExtensionStaticFieldDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration";
+  }
 }

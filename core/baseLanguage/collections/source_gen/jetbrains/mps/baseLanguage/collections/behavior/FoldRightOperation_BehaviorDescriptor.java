@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class FoldRightOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public FoldRightOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation";
+  }
 }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.test;
 
+import jetbrains.mps.generator.impl.IncrementalGenerationHandler;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
@@ -23,8 +24,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
-import jetbrains.mps.generator.impl.GenerationFilter;
-import jetbrains.mps.generator.impl.GenerationFilter.IncrementalReporter;
+import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalReporter;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -137,7 +137,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       GenerationDependencies dep = status.getDependencies();
       if(dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
         final StringBuilder sb = new StringBuilder("Not optimized:\n");
-        new GenerationFilter(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel(), GlobalScope.getInstance()).getSignature(), null, new IncrementalReporter() {
+        new IncrementalGenerationHandler(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel(), GlobalScope.getInstance()).getSignature(), null, new IncrementalReporter() {
           @Override
           public void report(String message) {
             sb.append(message);

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodCall_BehaviorDescriptor;
 public class StaticConceptMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
   public StaticConceptMethodCall_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class QueryFunction_Boolean_BehaviorDescriptor extends QueryFunction_StyleParameter_BehaviorDescriptor {
   public QueryFunction_Boolean_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean";
+  }
 }

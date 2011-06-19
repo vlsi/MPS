@@ -6,4 +6,9 @@ package jetbrains.mps.lang.test.behavior;
 public class CheckNodeForErrors_BehaviorDescriptor extends AbstractNodeAssert_BehaviorDescriptor {
   public CheckNodeForErrors_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.CheckNodeForErrors";
+  }
 }

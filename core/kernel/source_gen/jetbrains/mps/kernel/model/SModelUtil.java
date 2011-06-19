@@ -191,7 +191,7 @@ public class SModelUtil {
     }
     String fromFqName = NameUtil.nodeFQName(from);
     String toFqName = NameUtil.nodeFQName(to);
-    return LanguageHierarchyCache.getInstance().isAssignable(fromFqName, toFqName);
+    return LanguageHierarchyCache.isAssignable(fromFqName, toFqName);
   }
 
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
@@ -205,7 +205,7 @@ public class SModelUtil {
       return true;
     }
 
-    return LanguageHierarchyCache.getInstance().isAssignable(fromFqName, toFqName);
+    return LanguageHierarchyCache.isAssignable(fromFqName, toFqName);
   }
 
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {

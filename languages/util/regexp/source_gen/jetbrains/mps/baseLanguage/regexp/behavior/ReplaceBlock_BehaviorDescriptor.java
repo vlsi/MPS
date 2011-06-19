@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Closure_BehaviorDescriptor;
 public class ReplaceBlock_BehaviorDescriptor extends Closure_BehaviorDescriptor {
   public ReplaceBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock";
+  }
 }

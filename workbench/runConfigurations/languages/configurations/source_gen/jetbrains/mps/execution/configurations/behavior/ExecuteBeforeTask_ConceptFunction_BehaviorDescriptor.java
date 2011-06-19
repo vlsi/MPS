@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ExecuteBeforeTask_ConceptFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction";
+  }
 }

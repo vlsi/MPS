@@ -12,4 +12,9 @@ public class ConceptFunctionParameter_operationContext_BehaviorDescriptor extend
   public boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
     return ConceptFunctionParameter_operationContext_Behavior.virtual_getFromParameterObject_1213877522908(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext";
+  }
 }

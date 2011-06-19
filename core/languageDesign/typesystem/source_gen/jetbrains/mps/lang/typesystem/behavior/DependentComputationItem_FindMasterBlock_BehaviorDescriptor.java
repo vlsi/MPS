@@ -12,4 +12,9 @@ public class DependentComputationItem_FindMasterBlock_BehaviorDescriptor extends
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return DependentComputationItem_FindMasterBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.DependentComputationItem_FindMasterBlock";
+  }
 }

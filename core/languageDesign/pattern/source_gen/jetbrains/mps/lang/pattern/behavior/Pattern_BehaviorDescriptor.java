@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public abstract class Pattern_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public Pattern_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.structure.Pattern";
+  }
 }

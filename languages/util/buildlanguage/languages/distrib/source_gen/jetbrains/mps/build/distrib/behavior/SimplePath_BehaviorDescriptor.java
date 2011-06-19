@@ -11,4 +11,9 @@ public class SimplePath_BehaviorDescriptor extends AbstractPath_BehaviorDescript
   public String virtual_getFullPath_1230059208735(SNode thisNode) {
     return SimplePath_Behavior.virtual_getFullPath_1230059208735(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.SimplePath";
+  }
 }

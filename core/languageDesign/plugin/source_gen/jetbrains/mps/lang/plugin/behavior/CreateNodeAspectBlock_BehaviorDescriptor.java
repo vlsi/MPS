@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class CreateNodeAspectBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public CreateNodeAspectBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock";
+  }
 }

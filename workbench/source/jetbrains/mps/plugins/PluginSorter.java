@@ -46,7 +46,7 @@ public class PluginSorter {
 
   private static int init(Item item, Map<IModule, Item> module2Item, int initIndex) {
     item.myInitIndex = -2;
-    for (IModule dependency : item.myModule.getDependenciesManager().getAllDependOnModules()) {
+    for (IModule dependency : item.myModule.getDependenciesManager().getAllVisibleModules()) {
       Item depItem = module2Item.get(dependency);
       if (depItem != null) {
         if (depItem.myInitIndex == -1) {

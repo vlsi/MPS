@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class NonZeroStringConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public NonZeroStringConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.NonZeroStringConditionalExpression";
+  }
 }

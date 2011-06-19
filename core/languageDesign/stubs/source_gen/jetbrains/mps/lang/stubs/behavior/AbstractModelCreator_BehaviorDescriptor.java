@@ -8,4 +8,9 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescr
 public class AbstractModelCreator_BehaviorDescriptor extends DefaultClassifier_BehaviorDescriptor implements IClassifier_BehaviorDescriptor {
   public AbstractModelCreator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.stubs.structure.AbstractModelCreator";
+  }
 }

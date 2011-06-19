@@ -11,4 +11,9 @@ public class ConceptReference_BehaviorDescriptor extends ApplicableNodeCondition
   public SNode virtual_getApplicableConcept_1213877307633(SNode thisNode) {
     return ConceptReference_Behavior.virtual_getApplicableConcept_1213877307633(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.ConceptReference";
+  }
 }

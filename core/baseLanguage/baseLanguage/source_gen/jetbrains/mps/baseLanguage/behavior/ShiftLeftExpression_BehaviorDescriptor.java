@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ShiftLeftExpression_BehaviorDescriptor extends BinaryBitwiseOperation_BehaviorDescriptor {
   public ShiftLeftExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression";
+  }
 }

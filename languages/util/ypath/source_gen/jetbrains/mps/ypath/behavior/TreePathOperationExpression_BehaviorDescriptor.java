@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor;
 public class TreePathOperationExpression_BehaviorDescriptor extends DotExpression_BehaviorDescriptor implements ITreePathExpression_BehaviorDescriptor {
   public TreePathOperationExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.TreePathOperationExpression";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class IndentLayoutNoWrapClassItem_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
   public IndentLayoutNoWrapClassItem_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem";
+  }
 }

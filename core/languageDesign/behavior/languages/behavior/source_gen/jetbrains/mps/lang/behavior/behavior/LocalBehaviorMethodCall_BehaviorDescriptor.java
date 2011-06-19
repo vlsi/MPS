@@ -37,4 +37,9 @@ public class LocalBehaviorMethodCall_BehaviorDescriptor extends Expression_Behav
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall";
+  }
 }

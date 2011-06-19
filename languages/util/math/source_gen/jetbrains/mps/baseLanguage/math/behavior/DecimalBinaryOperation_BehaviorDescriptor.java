@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor;
 public abstract class DecimalBinaryOperation_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public DecimalBinaryOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation";
+  }
 }

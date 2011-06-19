@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ExpressionWithUnit_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ExpressionWithUnit_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.ExpressionWithUnit";
+  }
 }

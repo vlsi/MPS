@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class GreaterThanOrEqualExpression_BehaviorDescriptor extends BinaryArithmeticExpression_BehaviorDescriptor {
   public GreaterThanOrEqualExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.GreaterThanOrEqualExpression";
+  }
 }

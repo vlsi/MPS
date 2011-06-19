@@ -15,4 +15,9 @@ public class QueryFunction_Color_BehaviorDescriptor extends QueryFunction_StyleP
   public String virtual_getRGBValue_1225468086082(SNode thisNode) {
     return IQueryFunction_Color_Behavior.virtual_getRGBValue_1225468086082(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.QueryFunction_Color";
+  }
 }

@@ -11,4 +11,9 @@ public class CellModel_Constant_BehaviorDescriptor extends CellModel_AbstractLab
   public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return CellModel_Constant_Behavior.virtual_getDefaultFontStyle_1221472292001(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_Constant";
+  }
 }

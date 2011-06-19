@@ -18,4 +18,9 @@ public class Validator_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return Validator_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.Validator";
+  }
 }

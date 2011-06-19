@@ -21,7 +21,8 @@
   <version>1.5</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>
-
+  <depends>jetbrains.mps.ide.make</depends>
+  <depends>jetbrains.mps.ide.modelchecker</depends>
 
   <application-components>
     <component>
@@ -30,6 +31,8 @@
   </application-components>
 
   <project-components>
-
+    <component>
+      <implementation-class>jetbrains.mps.migration20.MigrationState</implementation-class>
+    </component>
   </project-components>
 </idea-plugin>

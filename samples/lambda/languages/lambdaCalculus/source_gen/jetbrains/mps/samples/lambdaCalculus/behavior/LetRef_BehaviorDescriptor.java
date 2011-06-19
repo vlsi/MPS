@@ -6,4 +6,9 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class LetRef_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public LetRef_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.LetRef";
+  }
 }

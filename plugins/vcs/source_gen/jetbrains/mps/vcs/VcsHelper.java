@@ -124,7 +124,7 @@ public class VcsHelper {
         }
         JFrame frame = WindowManager.getInstance().getFrame(project);
         if (ModelDiffTool.isNewDiffEnabled()) {
-          return new ModelDifferenceDialog(project, context, diskModel, memoryModel, new SimpleDiffRequest(project, "Filesystem version (Read-Only)", "Memory Version"));
+          return new ModelDifferenceDialog(diskModel, memoryModel, new SimpleDiffRequest(project, "Filesystem version (Read-Only)", "Memory Version"));
         } else {
           return new OldModelDifferenceDialog(context, frame, diskModel, memoryModel, "Disk Memory Diff", true, new String[]{"Filesystem version (Read-Only)", "Memory Version"});
         }

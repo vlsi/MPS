@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class RedirectedCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public RedirectedCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.RedirectedCommand";
+  }
 }

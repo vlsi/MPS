@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class Weaving_MappingRule_BehaviorDescriptor extends BaseMappingRule_BehaviorDescriptor {
   public Weaving_MappingRule_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
+  }
 }

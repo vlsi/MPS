@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class CommentedText_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IComment_BehaviorDescriptor {
   public CommentedText_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.CommentedText";
+  }
 }

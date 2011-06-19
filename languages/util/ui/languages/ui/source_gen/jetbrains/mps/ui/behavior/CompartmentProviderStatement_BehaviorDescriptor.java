@@ -24,4 +24,9 @@ public class CompartmentProviderStatement_BehaviorDescriptor extends Statement_B
   public SNode virtual_getContainer_8923564134258257521(SNode thisNode) {
     return CompartmentProviderStatement_Behavior.virtual_getContainer_8923564134258257521(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.CompartmentProviderStatement";
+  }
 }

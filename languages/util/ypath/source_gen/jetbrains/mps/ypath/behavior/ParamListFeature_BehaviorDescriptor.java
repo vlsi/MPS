@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class ParamListFeature_BehaviorDescriptor extends ListFeature_BehaviorDescriptor implements IParamFeature_BehaviorDescriptor {
   public ParamListFeature_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.ParamListFeature";
+  }
 }

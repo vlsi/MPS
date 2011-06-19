@@ -14,7 +14,12 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.stubs.StubDescriptor;
+import jetbrains.mps.stubs.IStubRootNodeDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 /*package*/ class JavaStubsUtil {
   public JavaStubsUtil() {
@@ -54,18 +59,47 @@ import jetbrains.mps.stubs.StubDescriptor;
     return ClassPathFactory.getInstance().createFromPath(location.getPath());
   }
 
-  public static Set<StubDescriptor> iterateClassPath(IClassPathItem item) {
-    Set<StubDescriptor> result = new HashSet<StubDescriptor>();
-    iterateClassPath(item, result, "");
+  public static Set<IStubRootNodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {
+    Set<IStubRootNodeDescriptor> result = new HashSet<IStubRootNodeDescriptor>();
+    iterateClassPath(module, item, result, "");
     return result;
   }
 
-  private static void iterateClassPath(IClassPathItem item, Set<StubDescriptor> result, String packageName) {
-    for (String cls : item.getRootClasses(packageName)) {
-      result.add(new StubDescriptor(cls, packageName, item));
+  private static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Set<IStubRootNodeDescriptor> result, final String pName) {
+    final SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
+    for (final String cls : item.getRootClasses(pName)) {
+      result.add(new IStubRootNodeDescriptor() {
+        public String getName() {
+          return cls;
+        }
+
+        public SNode getConcept() {
+          ClassifierKind kind = item.getClassifierKind(("".equals(pName) ?
+            cls :
+            pName + "." + cls
+          ));
+          if (kind == ClassifierKind.CLASS) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+          }
+          if (kind == ClassifierKind.INTERFACE) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface");
+          }
+          if (kind == ClassifierKind.ANNOTATIONS) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation");
+          }
+          if (kind == ClassifierKind.ENUM) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass");
+          }
+          return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+        }
+
+        public SModelReference getModelReference() {
+          return model;
+        }
+      });
     }
-    for (String subpack : item.getSubpackages(packageName)) {
-      iterateClassPath(item, result, subpack);
+    for (String subpack : item.getSubpackages(pName)) {
+      iterateClassPath(module, item, result, subpack);
     }
   }
 }

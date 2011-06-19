@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ListenBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ListenBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ListenBlock";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.smodel.behavior.Link_SetNewChildOperation_BehaviorDesc
 public class NF_Link_SetNewChildOperation_BehaviorDescriptor extends Link_SetNewChildOperation_BehaviorDescriptor {
   public NF_Link_SetNewChildOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class BigSumExpression_BehaviorDescriptor extends ArithmSymbol_BehaviorDescriptor {
   public BigSumExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.BigSumExpression";
+  }
 }

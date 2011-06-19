@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class LiteralI_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public LiteralI_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.LiteralI";
+  }
 }

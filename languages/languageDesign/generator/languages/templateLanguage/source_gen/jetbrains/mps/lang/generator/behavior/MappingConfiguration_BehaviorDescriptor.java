@@ -47,4 +47,9 @@ public class MappingConfiguration_BehaviorDescriptor extends BaseConcept_Behavio
   public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return IMemberContainer_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.MappingConfiguration";
+  }
 }

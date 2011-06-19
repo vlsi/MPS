@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CustomOperatorUsage_Constraints.java" startLine="26" startPosition="31" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints$1" />
-  <unitInfo fileName="CustomOperator_Constraints.java" startLine="26" startPosition="34" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints$1" />
-  <unitInfo fileName="BinaryOperationReference_Constraints.java" startLine="37" startPosition="38" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints$1" />
-  <unitInfo fileName="CustomOperatorUsage_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints" />
-  <unitInfo fileName="CustomOperator_Constraints.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="BinaryOperationReference_Constraints.java" startLine="27" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints" />
+  <unitInfo fileName="CustomOperatorUsage_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints$2" />
+  <unitInfo fileName="CustomOperator_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints$2" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="CustomOperatorUsage_Constraints.java" startLine="28" startPosition="35" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints$1" />
+  <unitInfo fileName="CustomOperator_Constraints.java" startLine="28" startPosition="38" endLine="49" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints$1" />
+  <unitInfo fileName="BinaryOperationReference_Constraints.java" startLine="48" startPosition="19" endLine="69" endPosition="9" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints$2" />
+  <unitInfo fileName="BinaryOperationReference_Constraints.java" startLine="39" startPosition="42" endLine="71" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints$1" />
+  <unitInfo fileName="CustomOperatorUsage_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints" />
+  <unitInfo fileName="CustomOperator_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperator_Constraints" />
+  <unitInfo fileName="BinaryOperationReference_Constraints.java" startLine="29" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints" />
   <root nodeId="1569627462441400262">
-    <nodeInfo nodeId="1141736782993481444" fileName="CustomOperatorUsage_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1569627462441400276" fileName="CustomOperatorUsage_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="111" />
+    <nodeInfo nodeId="1141736782993481444" fileName="CustomOperatorUsage_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1569627462441400276" fileName="CustomOperatorUsage_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="115" />
   </root>
   <root nodeId="2838654975957288939">
-    <nodeInfo nodeId="2838654975957288978" fileName="BinaryOperationReference_Constraints.java" startLine="44" startPosition="136" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2838654975957288984" fileName="BinaryOperationReference_Constraints.java" startLine="45" startPosition="52" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5759597392385038476" fileName="BinaryOperationReference_Constraints.java" startLine="47" startPosition="85" endLine="48" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5759597392385038483" fileName="BinaryOperationReference_Constraints.java" startLine="48" startPosition="89" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5759597392385038500" fileName="BinaryOperationReference_Constraints.java" startLine="51" startPosition="45" endLine="52" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2838654975957289027" fileName="BinaryOperationReference_Constraints.java" startLine="55" startPosition="9" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5759597392385038498" fileName="BinaryOperationReference_Constraints.java" startLine="50" startPosition="207" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="5759597392385038489" fileName="BinaryOperationReference_Constraints.java" startLine="49" startPosition="63" endLine="54" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5759597392385038464" fileName="BinaryOperationReference_Constraints.java" startLine="46" startPosition="0" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="5759597392385038499" fileName="BinaryOperationReference_Constraints.java" startLine="51" startPosition="45" endLine="52" endPosition="175" />
-    <scopeInfo nodeId="5759597392385038498" fileName="BinaryOperationReference_Constraints.java" startLine="50" startPosition="207" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="5759597392385038466" fileName="BinaryOperationReference_Constraints.java" startLine="47" startPosition="85" endLine="54" endPosition="14">
+    <nodeInfo nodeId="2838654975957288978" fileName="BinaryOperationReference_Constraints.java" startLine="50" startPosition="142" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2838654975957288984" fileName="BinaryOperationReference_Constraints.java" startLine="51" startPosition="56" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5759597392385038476" fileName="BinaryOperationReference_Constraints.java" startLine="53" startPosition="89" endLine="54" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5759597392385038483" fileName="BinaryOperationReference_Constraints.java" startLine="54" startPosition="93" endLine="55" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5759597392385038500" fileName="BinaryOperationReference_Constraints.java" startLine="57" startPosition="49" endLine="58" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2838654975957289027" fileName="BinaryOperationReference_Constraints.java" startLine="61" startPosition="13" endLine="62" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5759597392385038498" fileName="BinaryOperationReference_Constraints.java" startLine="56" startPosition="211" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5759597392385038489" fileName="BinaryOperationReference_Constraints.java" startLine="55" startPosition="67" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5759597392385038464" fileName="BinaryOperationReference_Constraints.java" startLine="52" startPosition="0" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="5759597392385038499" fileName="BinaryOperationReference_Constraints.java" startLine="57" startPosition="49" endLine="58" endPosition="179" />
+    <scopeInfo nodeId="5759597392385038498" fileName="BinaryOperationReference_Constraints.java" startLine="56" startPosition="211" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5759597392385038466" fileName="BinaryOperationReference_Constraints.java" startLine="53" startPosition="89" endLine="60" endPosition="18">
       <varInfo nodeId="5759597392385038484" varName="strucModel" />
       <varInfo nodeId="5759597392385038477" varName="strucModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5759597392385038464" fileName="BinaryOperationReference_Constraints.java" startLine="46" startPosition="0" endLine="55" endPosition="9">
+    <scopeInfo nodeId="5759597392385038464" fileName="BinaryOperationReference_Constraints.java" startLine="52" startPosition="0" endLine="61" endPosition="13">
       <varInfo nodeId="5759597392385038465" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="2838654975957288977" fileName="BinaryOperationReference_Constraints.java" startLine="44" startPosition="136" endLine="56" endPosition="22">
+    <scopeInfo nodeId="2838654975957288977" fileName="BinaryOperationReference_Constraints.java" startLine="50" startPosition="142" endLine="62" endPosition="26">
       <varInfo nodeId="2838654975957288979" varName="result" />
     </scopeInfo>
-    <unitInfo nodeId="5759597392385038498" fileName="BinaryOperationReference_Constraints.java" startLine="50" startPosition="184" endLine="54" endPosition="11" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints$2" />
+    <unitInfo nodeId="5759597392385038498" fileName="BinaryOperationReference_Constraints.java" startLine="56" startPosition="188" endLine="60" endPosition="15" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints$3" />
   </root>
   <root nodeId="2838654975957402179">
-    <nodeInfo nodeId="1141736782993481456" fileName="CustomOperator_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2838654975957402204" fileName="CustomOperator_Constraints.java" startLine="33" startPosition="136" endLine="34" endPosition="111" />
+    <nodeInfo nodeId="1141736782993481456" fileName="CustomOperator_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2838654975957402204" fileName="CustomOperator_Constraints.java" startLine="39" startPosition="142" endLine="40" endPosition="115" />
   </root>
 </debugInfo>
 

@@ -17,9 +17,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -61,15 +62,18 @@ public class RunUtil {
       return true;
     }
 
-    Future<IResult> future = new WorkbenchMakeService(ProjectOperationContext.get(project), true).make(new ModelsToResources(ProjectOperationContext.get(project), models).resources(false));
-
-    IResult result = null;
-    try {
-      result = future.get();
-    } catch (CancellationException ignore) {
-    } catch (InterruptedException ignore) {
-    } catch (ExecutionException ignore) {
+    MakeSession session = new MakeSession(ProjectOperationContext.get(project), null, true);
+    if (IMakeService.INSTANCE.get().startNewSession(session)) {
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(ProjectOperationContext.get(project), models).resources(false));
+      IResult result = null;
+      try {
+        result = future.get();
+      } catch (CancellationException ignore) {
+      } catch (InterruptedException ignore) {
+      } catch (ExecutionException ignore) {
+      }
+      return result != null && result.isSucessful();
     }
-    return result != null && result.isSucessful();
+    return true;
   }
 }

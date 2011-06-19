@@ -79,7 +79,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, myProcessor);
       try {
         result = new TextGenerator(javaStreamHandler,
-          ModelGenerationStatusManager.getInstance().getCacheGenerator(),
           BLDependenciesCache.getInstance().getGenerator(),
           TraceInfoCache.getInstance().getGenerator(),
           GenerationDependenciesCache.getInstance().getGenerator()

@@ -43,7 +43,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6wnsz8_a");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, true);
     }
     editorCell.addEditorCell(this.createCollection_6wnsz8_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6wnsz8_b0(editorContext, node));

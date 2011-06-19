@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class ParamFeatureSizeFun_BehaviorDescriptor extends FeatureSizeFun_BehaviorDescriptor implements IParamFeatureFun_BehaviorDescriptor {
   public ParamFeatureSizeFun_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.ParamFeatureSizeFun";
+  }
 }

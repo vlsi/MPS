@@ -12,4 +12,9 @@ public class EvaluatorsSuperMethodCall_BehaviorDescriptor extends BaseMethodCall
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return EvaluatorsSuperMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall";
+  }
 }

@@ -23,4 +23,9 @@ public class MPSBuild_BehaviorDescriptor extends AbstractProjectComponent_Behavi
   public String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     return MPSBuild_Behavior.virtual_getChildrenTargetDir_1237389224202(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.custommps.structure.MPSBuild";
+  }
 }

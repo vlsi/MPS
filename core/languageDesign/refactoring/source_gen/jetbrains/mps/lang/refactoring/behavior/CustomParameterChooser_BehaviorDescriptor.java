@@ -6,4 +6,9 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class CustomParameterChooser_BehaviorDescriptor extends RefactoringParameterChooser_BehaviorDescriptor {
   public CustomParameterChooser_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser";
+  }
 }

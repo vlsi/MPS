@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class Geometry_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Geometry_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.Geometry";
+  }
 }

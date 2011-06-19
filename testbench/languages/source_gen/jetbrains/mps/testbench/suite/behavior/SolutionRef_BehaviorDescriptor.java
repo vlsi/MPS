@@ -17,4 +17,9 @@ public class SolutionRef_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   public ModuleReference virtual_moduleReference_1280144168199513544(SNode thisNode) {
     return SolutionRef_Behavior.virtual_moduleReference_1280144168199513544(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.testbench.suite.structure.SolutionRef";
+  }
 }

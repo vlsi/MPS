@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class MappingScript_CodeBlock_BehaviorDescriptor extends TemplateQueryBase_BehaviorDescriptor {
   public MappingScript_CodeBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock";
+  }
 }

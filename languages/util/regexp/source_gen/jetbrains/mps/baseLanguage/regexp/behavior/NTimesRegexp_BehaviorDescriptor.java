@@ -12,4 +12,9 @@ public class NTimesRegexp_BehaviorDescriptor extends UnaryRegexp_BehaviorDescrip
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return NTimesRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp";
+  }
 }

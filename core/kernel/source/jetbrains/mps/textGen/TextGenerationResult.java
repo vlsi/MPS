@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -40,9 +41,9 @@ public class TextGenerationResult {
   public TextGenerationResult(Object contents,
                               boolean containErrors,
                               Collection<String> errors,
-                              Map<SNode, TraceablePositionInfo> positions,
-                              Map<SNode, ScopePositionInfo> scopePositions,
-                              Map<SNode, UnitPositionInfo> unitPositions,
+                              @Nullable Map<SNode, TraceablePositionInfo> positions,
+                              @Nullable Map<SNode, ScopePositionInfo> scopePositions,
+                              @Nullable Map<SNode, UnitPositionInfo> unitPositions,
                               Map<String, List<String>> dependencies) {
     myResult = contents;
     myContainErrors = containErrors;
@@ -65,14 +66,17 @@ public class TextGenerationResult {
     return Collections.unmodifiableCollection(myErrors);
   }
 
+  @Nullable
   public Map<SNode, TraceablePositionInfo> getPositions() {
     return myPositions;
   }
 
+  @Nullable
   public Map<SNode, ScopePositionInfo> getScopePositions() {
     return myScopePositions;
   }
 
+  @Nullable
   public Map<SNode, UnitPositionInfo> getUnitPositions() {
     return myUnitPositions;
   }

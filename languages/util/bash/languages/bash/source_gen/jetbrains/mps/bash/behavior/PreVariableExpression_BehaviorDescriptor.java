@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public abstract class PreVariableExpression_BehaviorDescriptor extends WordExpression_BehaviorDescriptor {
   public PreVariableExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.PreVariableExpression";
+  }
 }

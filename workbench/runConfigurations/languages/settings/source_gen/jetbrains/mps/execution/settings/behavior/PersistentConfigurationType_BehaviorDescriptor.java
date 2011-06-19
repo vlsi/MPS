@@ -13,4 +13,9 @@ public class PersistentConfigurationType_BehaviorDescriptor extends BaseClassifi
   public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return PersistentConfigurationType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.PersistentConfigurationType";
+  }
 }

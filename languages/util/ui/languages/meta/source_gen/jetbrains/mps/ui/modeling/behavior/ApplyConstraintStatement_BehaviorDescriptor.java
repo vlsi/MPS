@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class ApplyConstraintStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ApplyConstraintStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.ApplyConstraintStatement";
+  }
 }

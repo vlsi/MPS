@@ -11,4 +11,9 @@ public class IntersectionSymbolClassPart_BehaviorDescriptor extends SymbolClassP
   public String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return IntersectionSymbolClassPart_Behavior.virtual_getRepresentation_8173814113624650482(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart";
+  }
 }

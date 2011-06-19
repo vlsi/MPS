@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class Model_RootsOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Model_RootsOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Model_RootsOperation";
+  }
 }

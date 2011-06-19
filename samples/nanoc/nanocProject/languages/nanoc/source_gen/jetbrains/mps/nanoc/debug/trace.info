@@ -129,8 +129,8 @@
       <varInfo nodeId="3990508698139426704" varName="answer" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139426643" fileName="CppGDBCreator.java" startLine="109" startPosition="36" endLine="127" endPosition="13">
-      <varInfo nodeId="3990508698139426649" varName="gdbProcess" />
       <varInfo nodeId="3990508698139426657" varName="dir" />
+      <varInfo nodeId="3990508698139426649" varName="gdbProcess" />
       <varInfo nodeId="3990508698139426663" varName="workingDir" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139426631" fileName="CppGDBCreator.java" startLine="107" startPosition="31" endLine="128" endPosition="9">
@@ -145,8 +145,8 @@
       <varInfo nodeId="3990508698139426528" varName="process" />
       <varInfo nodeId="3990508698139426507" varName="processBuilder" />
       <varInfo nodeId="3990508698139426534" varName="consoleView" />
-      <varInfo nodeId="3990508698139426501" varName="gdbFile" />
       <varInfo nodeId="3990508698139426539" varName="processHandler" />
+      <varInfo nodeId="3990508698139426501" varName="gdbFile" />
       <varInfo nodeId="3990508698139426489" varName="sourceGen" />
       <varInfo nodeId="3990508698139426555" varName="executionConsole" />
     </scopeInfo>
@@ -372,8 +372,8 @@
     <scopeInfo nodeId="3990508698139428623" fileName="CppDebugSession.java" startLine="113" startPosition="51" endLine="120" endPosition="6" />
     <scopeInfo nodeId="3990508698139428638" fileName="CppDebugSession.java" startLine="122" startPosition="0" endLine="129" endPosition="0" />
     <scopeInfo nodeId="3990508698139428676" fileName="CppDebugSession.java" startLine="138" startPosition="101" endLine="145" endPosition="5">
-      <varInfo nodeId="3990508698139428678" varName="debugSessionManager" />
       <varInfo nodeId="3990508698139428683" varName="debugSessions" />
+      <varInfo nodeId="3990508698139428678" varName="debugSessionManager" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428509" fileName="CppDebugSession.java" startLine="63" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="3990508698139428462" fileName="CppDebugSession.java" startLine="44" startPosition="0" endLine="53" endPosition="0" />

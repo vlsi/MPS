@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="InternalAnonymousClass_Editor.java" startLine="627" startPosition="0" endLine="639" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor$InternalAnonymousClass_generic_cellMenu_a0a6b0" />
+  <unitInfo fileName="InternalAnonymousClass_Editor.java" startLine="640" startPosition="0" endLine="652" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor$InternalAnonymousClass_generic_cellMenu_b0a6b0" />
+  <unitInfo fileName="InternalAnonymousClass_Editor.java" startLine="653" startPosition="0" endLine="665" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor$InternalAnonymousClass_generic_cellMenu_c0a6b0" />
   <unitInfo fileName="InternalThisExpression_Editor.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalThisExpression_Editor" />
   <unitInfo fileName="InternalVariableReference_Editor.java" startLine="102" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalVariableReference_Editor$InternalVariableReference_name_postfixCellMenu_a0d0" />
   <unitInfo fileName="StyleSheet_StyleSheet.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet" />
   <unitInfo fileName="ExtractStatementListInnerExpression_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStatementListInnerExpression_Editor" />
+  <unitInfo fileName="InternalAnonymousClassCreator_Editor.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClassCreator_Editor" />
   <unitInfo fileName="ExtractToConstantRefExpression_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantRefExpression_Editor$_Inline_4woyb4_a0a" />
   <unitInfo fileName="WeakClassReference_Editor.java" startLine="88" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.WeakClassReference_Editor$_Inline_j4ha0g_a2a" />
   <unitInfo fileName="InternalClassifierType_Editor.java" startLine="222" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor$_Inline_7zoim2_a3a0" />
   <unitInfo fileName="InternalClassifierType_Editor.java" startLine="255" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor$_Inline_7zoim2_a3a0_0" />
-  <unitInfo fileName="InternalNewExpression_Editor.java" startLine="260" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor$parameterListHandler_svbh7s_g0" />
+  <unitInfo fileName="InternalNewExpression_Editor.java" startLine="307" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor$parameterListHandler_svbh7s_g0" />
+  <unitInfo fileName="InternalAnonymousClass_Editor.java" startLine="424" startPosition="0" endLine="459" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor$typeParameterListHandler_lqrwoi_g0a" />
   <unitInfo fileName="ExtractStaticMethod_CallExpression_Editor.java" startLine="64" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethod_CallExpression_Editor$_Inline_vnpzmb_a0a" />
   <unitInfo fileName="InternalClassifierType_Editor.java" startLine="288" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor$parameterListHandler_7zoim2_g0a" />
   <unitInfo fileName="InternalClassExpression_Editor.java" startLine="21" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassExpression_Editor" />
+  <unitInfo fileName="InternalAnonymousClass_Editor.java" startLine="523" startPosition="0" endLine="574" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor$fieldListHandler_lqrwoi_a3b0" />
+  <unitInfo fileName="InternalAnonymousClass_Editor.java" startLine="575" startPosition="0" endLine="626" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor$methodListHandler_lqrwoi_a5b0" />
   <unitInfo fileName="InternalPartialInstanceMethodCall_Editor.java" startLine="164" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalPartialInstanceMethodCall_Editor$actualArgumentListHandler_uv9f3e_h0" />
-  <unitInfo fileName="InternalStaticMethodCall_Editor.java" startLine="179" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_Editor$typeParameterListHandler_z2b22p_g0" />
+  <unitInfo fileName="InternalStaticMethodCall_Editor.java" startLine="222" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_Editor$typeParameterListHandler_z2b22p_g0" />
   <unitInfo fileName="InternalStaticFieldReference_Editor.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticFieldReference_Editor" />
+  <unitInfo fileName="InternalStaticMethodCall_Editor.java" startLine="279" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_Editor$actualArgumentListHandler_z2b22p_b9a" />
+  <unitInfo fileName="InternalNewExpression_Editor.java" startLine="343" startPosition="0" endLine="405" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor$actualArgumentListHandler_svbh7s_b8a" />
+  <unitInfo fileName="InternalAnonymousClass_Editor.java" startLine="460" startPosition="0" endLine="522" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor$constructorArgumentListHandler_lqrwoi_b8a0" />
   <unitInfo fileName="ExtractToConstantRefExpression_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantRefExpression_Editor" />
   <unitInfo fileName="TypeHintExpression_Editor.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.TypeHintExpression_Editor" />
   <unitInfo fileName="ExtractStaticMethod_CallExpression_Editor.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethod_CallExpression_Editor" />
@@ -26,9 +36,10 @@
   <unitInfo fileName="InternalPartialFieldReference_Editor.java" startLine="24" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalPartialFieldReference_Editor" />
   <unitInfo fileName="ExtractStaticInnerClassExpression_Editor.java" startLine="22" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticInnerClassExpression_Editor" />
   <unitInfo fileName="InternalPartialInstanceMethodCall_Editor.java" startLine="31" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalPartialInstanceMethodCall_Editor" />
-  <unitInfo fileName="InternalStaticMethodCall_Editor.java" startLine="32" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_Editor" />
-  <unitInfo fileName="InternalNewExpression_Editor.java" startLine="28" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor" />
   <unitInfo fileName="InternalClassifierType_Editor.java" startLine="32" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor" />
+  <unitInfo fileName="InternalStaticMethodCall_Editor.java" startLine="31" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_Editor" />
+  <unitInfo fileName="InternalNewExpression_Editor.java" startLine="31" startPosition="0" endLine="406" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor" />
+  <unitInfo fileName="InternalAnonymousClass_Editor.java" startLine="44" startPosition="0" endLine="666" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalAnonymousClass_Editor" />
   <root nodeId="1174914167958">
     <nodeInfo nodeId="1202148790550" fileName="InternalClassifierType_Editor.java" startLine="218" startPosition="110" endLine="219" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1202148781769" fileName="InternalClassifierType_Editor.java" startLine="218" startPosition="110" endLine="219" endPosition="98" />
@@ -56,6 +67,26 @@
   <root nodeId="1177590124002">
     <nodeInfo nodeId="1209817335692" fileName="InternalPartialFieldReference_Editor.java" startLine="193" startPosition="111" endLine="194" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1209817320377" fileName="InternalPartialFieldReference_Editor.java" startLine="193" startPosition="111" endLine="194" endPosition="69" />
+  </root>
+  <root nodeId="3421461530438559761">
+    <nodeInfo nodeId="3421461530438559829" fileName="InternalAnonymousClass_Editor.java" startLine="400" startPosition="112" endLine="401" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438559842" fileName="InternalAnonymousClass_Editor.java" startLine="404" startPosition="112" endLine="405" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438559864" fileName="InternalAnonymousClass_Editor.java" startLine="408" startPosition="112" endLine="409" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438559877" fileName="InternalAnonymousClass_Editor.java" startLine="412" startPosition="112" endLine="413" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438559899" fileName="InternalAnonymousClass_Editor.java" startLine="416" startPosition="112" endLine="417" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438559941" fileName="InternalAnonymousClass_Editor.java" startLine="420" startPosition="112" endLine="421" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438559915" fileName="InternalAnonymousClass_Editor.java" startLine="631" startPosition="106" endLine="632" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3421461530438559924" fileName="InternalAnonymousClass_Editor.java" startLine="644" startPosition="106" endLine="645" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3421461530438559933" fileName="InternalAnonymousClass_Editor.java" startLine="657" startPosition="106" endLine="658" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="3421461530438559828" fileName="InternalAnonymousClass_Editor.java" startLine="400" startPosition="112" endLine="401" endPosition="80" />
+    <scopeInfo nodeId="3421461530438559841" fileName="InternalAnonymousClass_Editor.java" startLine="404" startPosition="112" endLine="405" endPosition="167" />
+    <scopeInfo nodeId="3421461530438559863" fileName="InternalAnonymousClass_Editor.java" startLine="408" startPosition="112" endLine="409" endPosition="95" />
+    <scopeInfo nodeId="3421461530438559876" fileName="InternalAnonymousClass_Editor.java" startLine="412" startPosition="112" endLine="413" endPosition="183" />
+    <scopeInfo nodeId="3421461530438559898" fileName="InternalAnonymousClass_Editor.java" startLine="416" startPosition="112" endLine="417" endPosition="96" />
+    <scopeInfo nodeId="3421461530438559940" fileName="InternalAnonymousClass_Editor.java" startLine="420" startPosition="112" endLine="421" endPosition="258" />
+    <scopeInfo nodeId="3421461530438559914" fileName="InternalAnonymousClass_Editor.java" startLine="631" startPosition="106" endLine="632" endPosition="113" />
+    <scopeInfo nodeId="3421461530438559923" fileName="InternalAnonymousClass_Editor.java" startLine="644" startPosition="106" endLine="645" endPosition="123" />
+    <scopeInfo nodeId="3421461530438559932" fileName="InternalAnonymousClass_Editor.java" startLine="657" startPosition="106" endLine="658" endPosition="130" />
   </root>
 </debugInfo>
 

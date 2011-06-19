@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class MappingsSetOperation_BehaviorDescriptor extends MapOperation_BehaviorDescriptor {
   public MappingsSetOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation";
+  }
 }

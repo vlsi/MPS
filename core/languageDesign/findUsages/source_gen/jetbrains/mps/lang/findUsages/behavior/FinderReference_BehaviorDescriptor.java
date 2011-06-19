@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class FinderReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public FinderReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.findUsages.structure.FinderReference";
+  }
 }

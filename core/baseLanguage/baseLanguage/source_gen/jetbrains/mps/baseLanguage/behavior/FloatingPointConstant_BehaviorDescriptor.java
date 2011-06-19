@@ -12,4 +12,9 @@ public class FloatingPointConstant_BehaviorDescriptor extends Expression_Behavio
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     return FloatingPointConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.FloatingPointConstant";
+  }
 }

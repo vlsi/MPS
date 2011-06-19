@@ -6,7 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.workbench.make.WorkbenchMakeService;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -34,12 +35,16 @@ public class MakeActionImpl {
       }
     });
 
-    new WorkbenchMakeService(context, cleanMake) {
+    MakeSession session = new MakeSession(context, null, cleanMake) {
       @Override
-      protected void doExecute(Runnable scriptRunnable) {
+      public void doExecute(Runnable scriptRunnable) {
         dodoExecute(inputRes, scriptRunnable);
       }
-    }.make(inputRes);
+    };
+
+    if (IMakeService.INSTANCE.get().startNewSession(session)) {
+      IMakeService.INSTANCE.get().make(session, inputRes);
+    }
   }
 
   private void dodoExecute(Iterable<? extends IResource> inputRes, Runnable exec) {

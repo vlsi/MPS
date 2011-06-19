@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.diff.merge.ui;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.vcs.diff.ui.ChangeEditorMessage;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodeId;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -29,10 +28,11 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.vcs.diff.ui.DiffTemporaryModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -47,7 +47,6 @@ public class MergeRootsDialog extends BaseDialog {
   private MergeContext myMergeContext;
   private ChangeEditorMessage.ConflictChecker myConflictChecker;
   private MergeModelsDialog myModelsDialog;
-  private IOperationContext myOperationContext;
   private SNodeId myRootId;
   private JPanel myContainer = new JPanel(new BorderLayout());
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
@@ -69,7 +68,6 @@ public class MergeRootsDialog extends BaseDialog {
       }
     };
     myModelsDialog = mergeModelsDialog;
-    myOperationContext = mergeModelsDialog.getOperationContext();
     myMergeContext = mergeContext;
     myRootId = rootId;
     myStateToRestore = myMergeContext.getCurrentState();
@@ -116,9 +114,10 @@ public class MergeRootsDialog extends BaseDialog {
     myRepositoryEditor.unhighlightAllChanges();
 
     if (myResultEditor.getMainEditor().getEditedNode() == null) {
-      SNode node = getRootNode(myMergeContext.getResultModel());
+      SModel resultModel = myMergeContext.getResultModel();
+      SNode node = getRootNode(resultModel);
       if (node != null) {
-        myResultEditor.getMainEditor().editNode(node, myOperationContext);
+        myResultEditor.getMainEditor().editNode(node, DiffTemporaryModule.getOperationContext(myModelsDialog.getProject(), resultModel));
       }
     }
 
@@ -198,7 +197,7 @@ public class MergeRootsDialog extends BaseDialog {
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(myOperationContext, getRootNode(model), myModelsDialog.getContentTitles()[index], index == 0);
+    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myModelsDialog.getProject(), model), getRootNode(model), myModelsDialog.getContentTitles()[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
@@ -261,7 +260,7 @@ public class MergeRootsDialog extends BaseDialog {
   public void resetState() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myMergeContext.restoreState(myStateToRestore);
+        myModelsDialog.restoreState(myStateToRestore);
       }
     });
   }

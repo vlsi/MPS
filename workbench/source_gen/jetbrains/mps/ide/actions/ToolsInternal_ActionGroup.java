@@ -4,27 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.LabelledAnchor;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.extensions.PluginId;
 
 public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ToolsInternal_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ToolsInternal_ActionGroup";
-  public static final String LABEL_ID_internal = ID + "internal";
 
   public ToolsInternal_ActionGroup() {
     super("Internal", ID);
-    this.setIsInternal(false);
+    this.setIsInternal(true);
     this.setPopup(true);
     try {
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveTransientModels_Action");
-      {
-        LabelledAnchor action = new LabelledAnchor(ToolsInternal_ActionGroup.LABEL_ID_internal);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        ToolsInternal_ActionGroup.this.addAction(action);
-      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

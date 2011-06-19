@@ -11,4 +11,9 @@ public class ContinueStatement_BehaviorDescriptor extends Statement_BehaviorDesc
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return ContinueStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ContinueStatement";
+  }
 }

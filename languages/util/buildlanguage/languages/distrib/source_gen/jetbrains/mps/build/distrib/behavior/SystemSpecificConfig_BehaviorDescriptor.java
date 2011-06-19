@@ -17,4 +17,9 @@ public abstract class SystemSpecificConfig_BehaviorDescriptor extends BaseConcep
   public List<SNode> virtual_getAllUsedVariable_1234793567442(SNode thisNode) {
     return SystemSpecificConfig_Behavior.virtual_getAllUsedVariable_1234793567442(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.SystemSpecificConfig";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class UIPropertySetter_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public UIPropertySetter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.UIPropertySetter";
+  }
 }

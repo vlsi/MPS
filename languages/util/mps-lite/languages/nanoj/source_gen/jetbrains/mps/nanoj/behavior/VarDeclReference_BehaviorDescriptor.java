@@ -6,4 +6,9 @@ package jetbrains.mps.nanoj.behavior;
 public class VarDeclReference_BehaviorDescriptor extends NanoExpression_BehaviorDescriptor {
   public VarDeclReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.nanoj.structure.VarDeclReference";
+  }
 }

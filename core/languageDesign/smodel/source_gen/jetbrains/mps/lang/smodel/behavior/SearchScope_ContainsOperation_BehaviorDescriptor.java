@@ -26,4 +26,9 @@ public class SearchScope_ContainsOperation_BehaviorDescriptor extends BaseConcep
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation";
+  }
 }

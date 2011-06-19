@@ -6,4 +6,9 @@ package jetbrains.mps.transformation.test.inputLang.behavior;
 public class InputNode_C_BehaviorDescriptor extends InputNode_B_BehaviorDescriptor {
   public InputNode_C_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C";
+  }
 }

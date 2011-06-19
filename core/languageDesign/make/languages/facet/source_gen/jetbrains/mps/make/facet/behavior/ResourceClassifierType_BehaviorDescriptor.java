@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ClassifierType_BehaviorDescriptor;
 public class ResourceClassifierType_BehaviorDescriptor extends ClassifierType_BehaviorDescriptor {
   public ResourceClassifierType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.facet.structure.ResourceClassifierType";
+  }
 }

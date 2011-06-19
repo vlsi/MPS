@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class BeforeTaskCall_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BeforeTaskCall_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.BeforeTaskCall";
+  }
 }

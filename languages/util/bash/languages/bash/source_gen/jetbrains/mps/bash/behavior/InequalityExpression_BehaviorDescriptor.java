@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class InequalityExpression_BehaviorDescriptor extends BinaryArithmeticExpression_BehaviorDescriptor {
   public InequalityExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.InequalityExpression";
+  }
 }

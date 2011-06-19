@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor;
 public class InIntervalExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public InIntervalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression";
+  }
 }

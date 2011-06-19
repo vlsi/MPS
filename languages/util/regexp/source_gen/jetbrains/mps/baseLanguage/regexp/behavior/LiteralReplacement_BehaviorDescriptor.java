@@ -11,4 +11,9 @@ public class LiteralReplacement_BehaviorDescriptor extends Replacement_BehaviorD
   public String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
     return LiteralReplacement_Behavior.virtual_toString_3796137614137538905(thisNode, search);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement";
+  }
 }

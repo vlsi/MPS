@@ -101,7 +101,9 @@
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
@@ -113,8 +115,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
@@ -132,6 +134,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.MergeRootsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.ui.ResetState" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeColors" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffTemporaryModule" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.InvokeTextDiffAction" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -178,7 +181,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -195,6 +197,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorsGroup" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffTemporaryModule" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.NextPreviousTraverser" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

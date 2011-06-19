@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
 public class BracesBlock_BehaviorDescriptor extends TestBlockList_BehaviorDescriptor implements IBaseTestBlock_BehaviorDescriptor {
   public BracesBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock";
+  }
 }

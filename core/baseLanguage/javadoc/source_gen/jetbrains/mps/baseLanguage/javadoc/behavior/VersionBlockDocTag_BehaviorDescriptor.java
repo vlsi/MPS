@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class VersionBlockDocTag_BehaviorDescriptor extends BaseBlockDocTag_BehaviorDescriptor {
   public VersionBlockDocTag_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag";
+  }
 }

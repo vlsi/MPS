@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class FindSourceBlockParameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public FindSourceBlockParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.FindSourceBlockParameter";
+  }
 }

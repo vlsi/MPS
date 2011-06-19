@@ -322,7 +322,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public void setVersion(int newVersion) {
-    ModelAccess.assertLegalWrite();
+//    ModelAccess.assertLegalWrite();
 
     getSModelHeader().setVersion(newVersion);
   }

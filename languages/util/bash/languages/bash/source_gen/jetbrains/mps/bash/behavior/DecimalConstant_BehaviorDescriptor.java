@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class DecimalConstant_BehaviorDescriptor extends IntegerLiteral_BehaviorDescriptor {
   public DecimalConstant_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.DecimalConstant";
+  }
 }

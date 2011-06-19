@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class VisitChildrenExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public VisitChildrenExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.VisitChildrenExpression";
+  }
 }

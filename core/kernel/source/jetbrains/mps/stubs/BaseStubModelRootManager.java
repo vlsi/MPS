@@ -151,7 +151,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  public Set<StubDescriptor> getRootNodeDescriptors(StubLocation location) {
+  public Set<IStubRootNodeDescriptor> getRootNodeDescriptors(StubLocation location) {
     return Collections.emptySet();
   }
 

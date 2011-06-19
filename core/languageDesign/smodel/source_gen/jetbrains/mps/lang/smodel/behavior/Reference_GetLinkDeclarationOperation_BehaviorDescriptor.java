@@ -25,4 +25,9 @@ public class Reference_GetLinkDeclarationOperation_BehaviorDescriptor extends Ba
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation";
+  }
 }

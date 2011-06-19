@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.List;
 
-public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor, UnitConcept_BehaviorDescriptor {
+public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IAnonymousClass_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor, UnitConcept_BehaviorDescriptor {
   public AnonymousClass_BehaviorDescriptor() {
   }
 
@@ -49,5 +49,10 @@ public class AnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDesc
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return AnonymousClass_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.AnonymousClass";
   }
 }

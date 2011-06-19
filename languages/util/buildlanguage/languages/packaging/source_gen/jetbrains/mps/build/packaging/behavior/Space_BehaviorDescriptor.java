@@ -16,4 +16,9 @@ public class Space_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor imp
   public String virtual_getValue_1213877173054(SNode thisNode) {
     return Space_Behavior.virtual_getValue_1213877173054(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Space";
+  }
 }

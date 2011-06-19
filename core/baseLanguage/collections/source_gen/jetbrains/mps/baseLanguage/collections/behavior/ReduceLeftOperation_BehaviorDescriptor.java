@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class ReduceLeftOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public ReduceLeftOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ReduceLeftOperation";
+  }
 }

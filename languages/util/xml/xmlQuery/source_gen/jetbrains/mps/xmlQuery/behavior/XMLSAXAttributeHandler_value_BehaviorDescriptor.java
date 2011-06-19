@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class XMLSAXAttributeHandler_value_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public XMLSAXAttributeHandler_value_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler_value";
+  }
 }

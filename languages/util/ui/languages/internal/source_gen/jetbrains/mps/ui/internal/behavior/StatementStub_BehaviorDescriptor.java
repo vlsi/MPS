@@ -8,4 +8,9 @@ import jetbrains.mps.ui.modeling.behavior.IPartiallyDefinedStub_BehaviorDescript
 public class StatementStub_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IPartiallyDefinedStub_BehaviorDescriptor {
   public StatementStub_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.internal.structure.StatementStub";
+  }
 }

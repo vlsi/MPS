@@ -15,4 +15,9 @@ public abstract class CellModel_WithRole_BehaviorDescriptor extends CellModel_Ab
   public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return CellModel_WithRole_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_WithRole";
+  }
 }

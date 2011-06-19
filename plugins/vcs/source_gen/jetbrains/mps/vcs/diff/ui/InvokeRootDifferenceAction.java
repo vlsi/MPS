@@ -6,6 +6,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.smodel.SNodeId;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.ActionManager;
 
 public class InvokeRootDifferenceAction extends BaseAction {
   private ModelDifferenceDialog myModelDifferenceDialog;
@@ -15,13 +17,18 @@ public class InvokeRootDifferenceAction extends BaseAction {
     super((rootId == null ?
       "Show Changes" :
       "Show Difference"
-    ));
+    ), null, getDefaultDiffAction().getTemplatePresentation().getIcon());
     setExecuteOutsideCommand(true);
     myModelDifferenceDialog = modelDifferenceDialog;
     myRootId = rootId;
+    copyShortcutFrom(getDefaultDiffAction());
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     myModelDifferenceDialog.invokeRootDifference(myRootId);
+  }
+
+  private static AnAction getDefaultDiffAction() {
+    return ActionManager.getInstance().getAction("ChangesView.Diff");
   }
 }

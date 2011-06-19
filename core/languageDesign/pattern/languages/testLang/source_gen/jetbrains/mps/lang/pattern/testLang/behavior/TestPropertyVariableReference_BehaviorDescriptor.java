@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class TestPropertyVariableReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public TestPropertyVariableReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference";
+  }
 }

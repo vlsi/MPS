@@ -22,6 +22,7 @@ import jetbrains.mps.newTypesystem.TypeSystemException;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.ERROR;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -144,7 +145,42 @@ public class ModelConstraintsUtil {
   }
 
   public static INodeReferentSearchScopeProvider getSearchScopeProvider(SNode referenceNodeConcept, String linkRole) {
-    return ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
+    // todo: rewrite it
+    final ReferenceScopeProvider provider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
+
+    if (provider == null) {
+      return null;
+    }
+
+    return new INodeReferentSearchScopeProvider() {
+      @Override
+      public ISearchScope createNodeReferentSearchScope(IOperationContext operationContext, ReferentConstraintContext _context) {
+        return provider.createSearchScope(operationContext, _context);
+      }
+
+      @Override
+      public boolean hasPresentation() {
+        return provider.hasPresentation();
+      }
+
+      @Override
+      public String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context) {
+        return provider.getPresentation(operationContext, _context);
+      }
+
+      @Override
+      public SNodePointer getSearchScopeValidatorNodePointer() {
+        return provider.getSearchScopeValidatorNode();
+      }
+
+      @Override
+      public void registerSelf(ModelConstraintsManager manager) {
+      }
+
+      @Override
+      public void unRegisterSelf(ModelConstraintsManager manager) {
+      }
+    };
   }
 
   public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, IOperationContext context) {

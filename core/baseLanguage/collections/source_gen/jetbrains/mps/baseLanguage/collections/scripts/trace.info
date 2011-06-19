@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="76" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a1a4a0a0a1a0" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="94" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a2a4a0a0a1a0" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="112" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a3a4a0a0a1a0" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="130" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a4a4a0a0a1a0" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="148" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a5a4a0a0a1a0" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="166" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a6a4a0a0a1a0" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="184" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a7a4a0a0a1a0" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="202" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a8a4a0a0a1a0" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="220" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$QuotationClass_3k0ck2_a0a0a9a4a0a0a1a0" />
   <unitInfo fileName="MigrationToCollections_MigrationScript.java" startLine="46" startPosition="28" endLine="70" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$2" />
   <unitInfo fileName="MigrationToCollections_MigrationScript.java" startLine="99" startPosition="28" endLine="123" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$4" />
   <unitInfo fileName="MigrationToCollections_MigrationScript.java" startLine="179" startPosition="28" endLine="203" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$7" />
@@ -46,9 +37,7 @@
   <unitInfo fileName="MigrationToCollections_MigrationScript.java" startLine="665" startPosition="28" endLine="694" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$25" />
   <unitInfo fileName="MigrationToCollections_MigrationScript.java" startLine="695" startPosition="28" endLine="724" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript$26" />
   <unitInfo fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="75" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript$3" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="25" startPosition="28" endLine="73" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript$1" />
   <unitInfo fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="16" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationFromMapsToCollections_MigrationScript" />
-  <unitInfo fileName="ISequence_methods_resolve_MigrationScript.java" startLine="22" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ISequence_methods_resolve_MigrationScript" />
   <unitInfo fileName="MigrationToCollections_MigrationScript.java" startLine="16" startPosition="0" endLine="860" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.MigrationToCollections_MigrationScript" />
   <root nodeId="1236765926225">
     <nodeInfo nodeId="1237031232734" fileName="MigrationToCollections_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="491" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -528,46 +517,6 @@
     <scopeInfo nodeId="1238584067089" fileName="MigrationFromMapsToCollections_MigrationScript.java" startLine="92" startPosition="52" endLine="99" endPosition="88">
       <varInfo nodeId="1238584067091" varName="operation" />
       <varInfo nodeId="1238584151460" varName="assignment" />
-    </scopeInfo>
-  </root>
-  <root nodeId="2521829804648627629">
-    <nodeInfo nodeId="2521829804648637094" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="38" startPosition="59" endLine="39" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2521829804648670199" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="42" startPosition="52" endLine="43" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2521829804648670207" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="43" startPosition="52" endLine="44" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2521829804648670220" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="44" startPosition="198" endLine="45" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2521829804648670230" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="45" startPosition="198" endLine="46" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2521829804648670240" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="46" startPosition="198" endLine="47" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8039910219375446547" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="47" startPosition="198" endLine="48" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2521829804648670250" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="48" startPosition="198" endLine="49" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4934883045047952206" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="49" startPosition="198" endLine="50" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2521829804648670260" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="50" startPosition="198" endLine="51" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4934883045047952887" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="51" startPosition="198" endLine="52" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2521829804648638155" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="52" startPosition="198" endLine="53" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2521829804648638145" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="54" startPosition="30" endLine="55" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2521829804648638235" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="60" startPosition="94" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2521829804648638252" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="61" startPosition="87" endLine="62" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2521829804648638208" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="59" startPosition="82" endLine="63" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2521829804648638201" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2521829804648670272" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2521829804648638180" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="55" startPosition="39" endLine="66" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2521829804648638165" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="53" startPosition="53" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="2521829804648637093" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="38" startPosition="59" endLine="39" endPosition="89" />
-    <scopeInfo nodeId="2521829804648638210" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="60" startPosition="94" endLine="62" endPosition="33" />
-    <scopeInfo nodeId="2521829804648638202" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="59" startPosition="82" endLine="63" endPosition="17" />
-    <scopeInfo nodeId="2521829804648638201" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15">
-      <varInfo nodeId="2521829804648638203" varName="imd" />
-    </scopeInfo>
-    <scopeInfo nodeId="2521829804648670273" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15" />
-    <scopeInfo nodeId="2521829804648638181" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13" />
-    <scopeInfo nodeId="2521829804648670272" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13">
-      <varInfo nodeId="2521829804648670274" varName="iseq" />
-    </scopeInfo>
-    <scopeInfo nodeId="2521829804648638166" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="54" startPosition="30" endLine="66" endPosition="11">
-      <varInfo nodeId="2521829804648638146" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="2521829804648627632" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="42" startPosition="52" endLine="67" endPosition="9">
-      <varInfo nodeId="2521829804648638156" varName="refs" />
-      <varInfo nodeId="2521829804648670200" varName="seqCls" />
     </scopeInfo>
   </root>
 </debugInfo>

@@ -9,5 +9,10 @@ public abstract class ActionReference_BehaviorDescriptor extends BaseConcept_Beh
   public ActionReference_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.ActionReference";
+  }
+
   public abstract String virtual_getActionId_1101347953350122762(SNode thisNode);
 }

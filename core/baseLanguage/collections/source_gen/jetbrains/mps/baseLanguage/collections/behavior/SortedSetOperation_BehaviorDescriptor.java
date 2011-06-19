@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public abstract class SortedSetOperation_BehaviorDescriptor extends AbstractSetOperation_BehaviorDescriptor {
   public SortedSetOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation";
+  }
 }

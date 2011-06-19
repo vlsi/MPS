@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class DoRefactorClause_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public DoRefactorClause_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.DoRefactorClause";
+  }
 }

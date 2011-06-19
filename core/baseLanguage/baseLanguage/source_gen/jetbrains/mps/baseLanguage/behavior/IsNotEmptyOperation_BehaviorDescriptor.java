@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class IsNotEmptyOperation_BehaviorDescriptor extends StringBooleanOperation_BehaviorDescriptor {
   public IsNotEmptyOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation";
+  }
 }

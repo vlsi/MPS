@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class Expected_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Expected_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.Expected";
+  }
 }

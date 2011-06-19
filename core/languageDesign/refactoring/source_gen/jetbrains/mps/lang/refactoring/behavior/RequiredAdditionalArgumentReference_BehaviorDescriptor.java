@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class RequiredAdditionalArgumentReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public RequiredAdditionalArgumentReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference";
+  }
 }

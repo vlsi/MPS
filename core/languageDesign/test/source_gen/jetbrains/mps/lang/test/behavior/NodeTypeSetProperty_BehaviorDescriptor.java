@@ -6,4 +6,9 @@ package jetbrains.mps.lang.test.behavior;
 public class NodeTypeSetProperty_BehaviorDescriptor extends NodeProperty_BehaviorDescriptor {
   public NodeTypeSetProperty_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.NodeTypeSetProperty";
+  }
 }

@@ -20,4 +20,9 @@ public class LinkDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
+  }
 }

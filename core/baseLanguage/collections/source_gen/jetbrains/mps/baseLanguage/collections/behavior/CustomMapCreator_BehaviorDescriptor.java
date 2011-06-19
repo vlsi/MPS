@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class CustomMapCreator_BehaviorDescriptor extends HashMapCreator_BehaviorDescriptor {
   public CustomMapCreator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator";
+  }
 }

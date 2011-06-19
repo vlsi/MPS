@@ -34,4 +34,9 @@ public class ConceptTextGenDeclaration_BehaviorDescriptor extends AbstractTextGe
   public void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     ConceptTextGenDeclaration_Behavior.virtual_setBaseConcept_6261424444345963020(thisNode, baseConcept);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration";
+  }
 }

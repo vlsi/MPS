@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public CastExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.CastExpression";
+  }
 }

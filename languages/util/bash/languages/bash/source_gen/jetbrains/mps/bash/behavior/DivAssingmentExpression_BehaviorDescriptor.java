@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class DivAssingmentExpression_BehaviorDescriptor extends BaseAssingmentExpression_BehaviorDescriptor {
   public DivAssingmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.DivAssingmentExpression";
+  }
 }

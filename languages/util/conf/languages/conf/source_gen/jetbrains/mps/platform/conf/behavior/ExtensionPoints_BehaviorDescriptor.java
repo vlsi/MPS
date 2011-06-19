@@ -6,4 +6,9 @@ package jetbrains.mps.platform.conf.behavior;
 public class ExtensionPoints_BehaviorDescriptor extends ConfigurationXmlNode_BehaviorDescriptor implements IConfiguration_BehaviorDescriptor {
   public ExtensionPoints_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.ExtensionPoints";
+  }
 }

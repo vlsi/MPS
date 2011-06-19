@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public abstract class InternalSequenceOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor {
   public InternalSequenceOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation";
+  }
 }

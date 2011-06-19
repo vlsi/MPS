@@ -12,4 +12,9 @@ public abstract class LookRegexp_BehaviorDescriptor extends Regexp_BehaviorDescr
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return LookRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class OtherSymlinkConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public OtherSymlinkConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.OtherSymlinkConditionalExpression";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_BehaviorDesc
 public class MatrixIndexVariableDeclaration_BehaviorDescriptor extends LocalVariableDeclaration_BehaviorDescriptor {
   public MatrixIndexVariableDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration";
+  }
 }

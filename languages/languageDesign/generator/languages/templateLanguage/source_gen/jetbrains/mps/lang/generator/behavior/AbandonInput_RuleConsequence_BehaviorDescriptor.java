@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class AbandonInput_RuleConsequence_BehaviorDescriptor extends RuleConsequence_BehaviorDescriptor {
   public AbandonInput_RuleConsequence_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence";
+  }
 }

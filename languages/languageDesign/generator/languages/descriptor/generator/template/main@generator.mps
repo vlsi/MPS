@@ -1668,7 +1668,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6236774123822284763" />
+                <node role="actualArgument" roleId="tp68.319021450862590135" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="6236774123822284763" />
               </node>
               <node role="typeArgument" roleId="tpee.4972241301747169160" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5494415397519742449">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1j4c.~TemplateModel" resolveInfo="TemplateModel" />

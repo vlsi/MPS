@@ -13,4 +13,9 @@ public class ReportConfigurationErrorStatement_BehaviorDescriptor extends Statem
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     ReportConfigurationErrorStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement";
+  }
 }

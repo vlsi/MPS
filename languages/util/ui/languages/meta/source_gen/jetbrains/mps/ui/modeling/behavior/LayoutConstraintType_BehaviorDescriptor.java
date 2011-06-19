@@ -12,4 +12,9 @@ public class LayoutConstraintType_BehaviorDescriptor extends Type_BehaviorDescri
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return LayoutConstraintType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.LayoutConstraintType";
+  }
 }

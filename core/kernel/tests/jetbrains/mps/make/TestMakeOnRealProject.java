@@ -154,7 +154,7 @@ public class TestMakeOnRealProject {
     }, ModalityState.NON_MODAL);
 
     ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.EMPTY_SET));
-    Set<JavaFile> filesToCompile = sources.getFilesToCompile();
+    Collection<JavaFile> filesToCompile = sources.getFilesToCompile();
     Assert.assertEquals(1, filesToCompile.size());
   }
 
@@ -177,7 +177,7 @@ public class TestMakeOnRealProject {
     }, ModalityState.NON_MODAL);
 
     ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Arrays.asList((IModule) myCreatedSolution)));
-    Set<File> filesToDelete = sources.getFilesToDelete();
+    Collection<File> filesToDelete = sources.getFilesToDelete();
     Assert.assertEquals(1, filesToDelete.size());
   }
 

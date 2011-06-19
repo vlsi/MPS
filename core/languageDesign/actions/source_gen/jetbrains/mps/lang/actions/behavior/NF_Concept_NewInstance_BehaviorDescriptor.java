@@ -7,4 +7,9 @@ import jetbrains.mps.lang.smodel.behavior.Concept_NewInstance_BehaviorDescriptor
 public class NF_Concept_NewInstance_BehaviorDescriptor extends Concept_NewInstance_BehaviorDescriptor {
   public NF_Concept_NewInstance_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance";
+  }
 }

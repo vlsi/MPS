@@ -12,4 +12,9 @@ public class FunctionType_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return FunctionType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType";
+  }
 }

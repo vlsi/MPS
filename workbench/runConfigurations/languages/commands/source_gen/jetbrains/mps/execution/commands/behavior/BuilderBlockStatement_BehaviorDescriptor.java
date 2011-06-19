@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class BuilderBlockStatement_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public BuilderBlockStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.BuilderBlockStatement";
+  }
 }

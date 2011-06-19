@@ -75,7 +75,7 @@ public class EditorsFinderManager implements ApplicationComponent {
   public synchronized INodeEditor loadEditor(EditorContext context, SNode node) {
     assert context.getOperationContext().getModule() != null || context.getOperationContext().isTestMode() : "Illegal state, node: " + node.getId() + ", model: " + SNodeOperations.getModel(node) + ", operationContext: " + context.getOperationContext();
 
-    if (node.getLanguage(context.getScope()) == null) {
+    if (node.getLanguage() == null) {
       return new ErrorNodeEditor();
     }
     String key = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));

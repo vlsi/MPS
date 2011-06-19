@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class GeneratorFunctionParam_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IFunctionParam_BehaviorDescriptor {
   public GeneratorFunctionParam_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.GeneratorFunctionParam";
+  }
 }

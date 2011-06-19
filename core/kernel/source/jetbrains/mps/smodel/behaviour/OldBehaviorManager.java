@@ -33,6 +33,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -51,8 +52,8 @@ public final class OldBehaviorManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(OldBehaviorManager.class);
   }
 
-  private ConcurrentHashMap<MethodInfo, Object> myMethods = new ConcurrentHashMap<MethodInfo, Object>();
-  private final Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
+  private final ConcurrentMap<MethodInfo, Object> myMethods = new ConcurrentHashMap<MethodInfo, Object>();
+  private final ConcurrentMap<String, List<Method>> myConstructors = new ConcurrentHashMap<String, List<Method>>();
 
   private ClassLoaderManager myClassLoaderManager;
 
@@ -76,9 +77,7 @@ public final class OldBehaviorManager implements ApplicationComponent {
 
   public void clear() {
     myMethods.clear();
-    synchronized (myConstructors) {
-      myConstructors.clear();
-    }
+    myConstructors.clear();
   }
 
   private static List<Method> calculateConstructors(SNode concept, Language language) {
@@ -149,18 +148,16 @@ public final class OldBehaviorManager implements ApplicationComponent {
 
   public void initNode(@NotNull SNode node) {
     SNode concept = node.getConceptDeclarationNode();
-    Language language = node.getLanguage(GlobalScope.getInstance());
+    Language language = node.getLanguage();
 
     String conceptFqName = InternUtil.intern(NameUtil.nodeFQName(concept));
 
     List<Method> methodsToCall;
 
-    synchronized (myConstructors) {
-      methodsToCall = myConstructors.get(conceptFqName);
-      if (methodsToCall == null) {
-        methodsToCall = calculateConstructors(concept, language);
-        myConstructors.put(conceptFqName, methodsToCall);
-      }
+    methodsToCall = myConstructors.get(conceptFqName);
+    if (methodsToCall == null) {
+      methodsToCall = calculateConstructors(concept, language);
+      myConstructors.putIfAbsent(conceptFqName, methodsToCall);
     }
 
     for (int i = methodsToCall.size() - 1; i >= 0; i--) {

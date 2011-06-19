@@ -16,4 +16,9 @@ public class QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor ex
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_ParameterizedSubstitute_Handler_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler";
+  }
 }

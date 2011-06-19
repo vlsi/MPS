@@ -6,4 +6,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class NormalTypeClause_BehaviorDescriptor extends TypeClause_BehaviorDescriptor {
   public NormalTypeClause_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.NormalTypeClause";
+  }
 }

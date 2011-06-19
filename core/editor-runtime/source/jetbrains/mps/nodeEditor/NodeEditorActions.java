@@ -17,9 +17,9 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.selection.*;
+import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.Condition;
 
 import java.awt.*;
 
@@ -415,84 +415,45 @@ public class NodeEditorActions {
     }
 
     public boolean canExecute(EditorContext context) {
-      EditorCell deepestSelected = context.getNodeEditorComponent().getDeepestSelectedCell();
-      EditorCell selected = context.getSelectedCell();
-      if (selected == null) return false;
-      EditorCell nextLeaf = getNextLeaf(deepestSelected);
-      return nextLeaf != null && getCommonSelectableAncestor(deepestSelected, selected, nextLeaf) != null;
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      Selection selection = selectionManager.getSelection();
+      if (selection instanceof SingularSelection) {
+        SingularSelection singularSelection = (SingularSelection) selection;
+        if (!expandSelection(singularSelection) && selectionManager.getSelectionStackSize() > 1) {
+          return true;
+        }
+        EditorCell selected = singularSelection.getEditorCell();
+        EditorCell nextLeaf = getNextLeaf(selected);
+        return nextLeaf != null && getCommonSelectableAncestor(selected, nextLeaf) != null;
+      }
+      return false;
     }
 
     public void execute(EditorContext context) {
-      EditorComponent editor = context.getNodeEditorComponent();
-      final EditorCell deepestSelected = editor.getDeepestSelectedCell();
-      EditorCell selected = context.getSelectedCell();
-      EditorCell nextLeaf = getNextLeaf(deepestSelected);
-
-      editor.clearSelectionStack();
-
-      EditorCell newSelection = getCommonSelectableAncestor(deepestSelected, selected, nextLeaf);
-
-      EditorCell deepestSelection;
-      if (newSelection != selected) {
-        if (mySide == CellSide.LEFT) {
-          deepestSelection = newSelection.getFirstLeaf(CellConditions.SELECTABLE);
-        } else {
-          deepestSelection = newSelection.getLastLeaf(CellConditions.SELECTABLE);
-        }
-
-        if (deepestSelection instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) deepestSelection;
-          if (mySide == CellSide.LEFT) {
-            label.home();
-          } else {
-            label.end();
-          }
-        }
-      } else {
-        if (mySide == CellSide.LEFT) {
-          newSelection = newSelection.getLastDescendant(new Condition<EditorCell>() {
-            public boolean met(EditorCell object) {
-              return object.isSelectable() && !deepestSelected.isAncestorOf(object) && deepestSelected != object;
-            }
-          });
-        } else {
-          newSelection = newSelection.getFirstDescendant(new Condition<EditorCell>() {
-            public boolean met(EditorCell object) {
-              return object.isSelectable() && !deepestSelected.isAncestorOf(object) && deepestSelected != object;
-            }
-          });
-        }
-
-        if (mySide == CellSide.LEFT) {
-          deepestSelection = newSelection.getLastLeaf(CellConditions.SELECTABLE);
-        } else {
-          deepestSelection = newSelection.getFirstLeaf(CellConditions.SELECTABLE);
-        }
-
-        if (deepestSelection instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) deepestSelection;
-          if (mySide == CellSide.LEFT) {
-            label.end();
-          } else {
-            label.home();
-          }
-        }
-
-        if (newSelection instanceof EditorCell_Label) {
-          ((EditorCell_Label) newSelection).selectAll();
-        }
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      SingularSelection selection = (SingularSelection) selectionManager.getSelection();
+      if (!expandSelection(selection) && selectionManager.getSelectionStackSize() > 1) {
+        selectionManager.popSelection();
+        return;
       }
-
-
-      EditorCell current = deepestSelection;
-      while (current != newSelection) {
-        if (current.isSelectable()) {
-          editor.pushSelection(current);
-        }
-        current = current.getParent();
+      EditorCell selected = selection.getEditorCell();
+      EditorCell nextLeaf = getNextLeaf(selected);
+      EditorCell cellToSelect = getCommonSelectableAncestor(selected, nextLeaf);
+      Selection newSelection = selectionManager.createSelection(cellToSelect);
+      if (newSelection instanceof SingularSelection) {
+        ((SingularSelection) newSelection).setSideSelectDirection(mySide == CellSide.LEFT ? SideSelectDirection.LEFT : SideSelectDirection.RIGHT);
       }
+      selectionManager.pushSelection(newSelection);
+    }
 
-      editor.setSelectionDontClearStack(newSelection, true);
+    private boolean expandSelection(SingularSelection selection) {
+      switch (selection.getSideSelectDirection()) {
+        case LEFT:
+          return mySide == CellSide.LEFT;
+        case RIGHT:
+          return mySide == CellSide.RIGHT;
+      }
+      return true;
     }
 
     private EditorCell getCommonSelectableAncestor(EditorCell first, EditorCell... cells) {

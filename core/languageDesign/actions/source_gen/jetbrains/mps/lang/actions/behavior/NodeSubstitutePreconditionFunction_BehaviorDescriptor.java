@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class NodeSubstitutePreconditionFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public NodeSubstitutePreconditionFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction";
+  }
 }

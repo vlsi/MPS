@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TestListReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestListReference_BehaviorDescriptor" />
-  <unitInfo fileName="ListValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.ListValue_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PropertyValue_BehaviorDescriptor" />
-  <unitInfo fileName="TestPropertyVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="TestVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="VariableValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
+  <unitInfo fileName="TestListReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestListReference_BehaviorDescriptor" />
+  <unitInfo fileName="ListValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.ListValue_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PropertyValue_BehaviorDescriptor" />
+  <unitInfo fileName="TestPropertyVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
+  <unitInfo fileName="TestVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
+  <unitInfo fileName="VariableValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="PatternTest_Behavior.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
-  <unitInfo fileName="PatternTest_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
+  <unitInfo fileName="PatternTest_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
   <root nodeId="394224946578869061">
     <nodeInfo nodeId="394224946578905096" fileName="PatternTest_Behavior.java" startLine="14" startPosition="83" endLine="15" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7885114646737405087" fileName="PatternTest_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

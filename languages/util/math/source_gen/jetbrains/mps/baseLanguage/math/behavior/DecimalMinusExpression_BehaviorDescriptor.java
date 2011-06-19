@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class DecimalMinusExpression_BehaviorDescriptor extends DecimalBinaryOperation_BehaviorDescriptor {
   public DecimalMinusExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression";
+  }
 }

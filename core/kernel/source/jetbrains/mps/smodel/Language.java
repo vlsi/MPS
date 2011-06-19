@@ -192,18 +192,18 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public List<Language> getAllExtendedLanguages() {
     if (myAllExtendedLanguages == null) {
       Set<Language> set = new LinkedHashSet<Language>();
-      collectExtendedLanguages(set);
-      myAllExtendedLanguages = new ArrayList<Language>(set);
+      collectAllExtendedLanguages(set);
+      myAllExtendedLanguages = Collections.unmodifiableList(new ArrayList<Language>(set));
     }
-    return Collections.unmodifiableList(myAllExtendedLanguages);
+    return myAllExtendedLanguages;
   }
 
-  private void collectExtendedLanguages(Set<Language> result) {
+  private void collectAllExtendedLanguages(Set<Language> result) {
     if (result.contains(this)) return;
 
     result.add(this);
     for (Language l : getExtendedLanguages()) {
-      l.collectExtendedLanguages(result);
+      l.collectAllExtendedLanguages(result);
     }
   }
 

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.money.behavior;
 public class MoneyIsZeroMethodCall_BehaviorDescriptor extends MoneyMethodCall_BehaviorDescriptor {
   public MoneyIsZeroMethodCall_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall";
+  }
 }

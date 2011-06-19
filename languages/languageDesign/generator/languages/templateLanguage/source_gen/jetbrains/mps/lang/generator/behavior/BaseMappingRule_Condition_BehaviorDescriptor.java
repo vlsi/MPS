@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class BaseMappingRule_Condition_BehaviorDescriptor extends TemplateQueryBase_BehaviorDescriptor {
   public BaseMappingRule_Condition_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition";
+  }
 }

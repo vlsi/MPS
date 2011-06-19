@@ -12,4 +12,9 @@ public class EnumerationMemberDeclaration_BehaviorDescriptor extends BaseConcept
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return EnumerationMemberDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration";
+  }
 }

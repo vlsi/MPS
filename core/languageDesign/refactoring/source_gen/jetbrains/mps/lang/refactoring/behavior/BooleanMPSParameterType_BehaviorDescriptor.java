@@ -11,4 +11,9 @@ public class BooleanMPSParameterType_BehaviorDescriptor extends MPSParameterType
   public SNode virtual_getCreatorMethod_4413749148913760555(SNode thisNode) {
     return BooleanMPSParameterType_Behavior.virtual_getCreatorMethod_4413749148913760555(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType";
+  }
 }

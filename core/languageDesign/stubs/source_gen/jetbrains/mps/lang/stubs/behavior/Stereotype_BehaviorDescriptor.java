@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class Stereotype_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public Stereotype_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.stubs.structure.Stereotype";
+  }
 }

@@ -12,4 +12,9 @@ public class IconResource_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   public void virtual_generate_9219036563477424614(SNode thisNode) {
     IconResource_Behavior.virtual_generate_9219036563477424614(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.IconResource";
+  }
 }

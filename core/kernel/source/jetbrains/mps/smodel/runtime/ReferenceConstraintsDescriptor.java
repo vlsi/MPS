@@ -15,12 +15,19 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
+
 public interface ReferenceConstraintsDescriptor {
   String getRole();
 
   ConstraintsDescriptor getContainer();
 
-  ReferenceScopeProvider getSearchScopeProvider();
+  @Nullable
+  ReferenceScopeProvider getScopeProvider();
 
-  ReferenceHandler getReferentSetEventHandler();
+  boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope);
+
+  void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope);
 }

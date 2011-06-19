@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class CellMenuPart_ReplaceNode_Group_Create_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public CellMenuPart_ReplaceNode_Group_Create_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create";
+  }
 }

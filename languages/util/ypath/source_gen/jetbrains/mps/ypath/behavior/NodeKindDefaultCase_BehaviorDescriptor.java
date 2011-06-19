@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class NodeKindDefaultCase_BehaviorDescriptor extends NodeKindCase_BehaviorDescriptor {
   public NodeKindDefaultCase_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.NodeKindDefaultCase";
+  }
 }

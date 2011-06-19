@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.runtime;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public interface ConstraintsDescriptor {
@@ -31,14 +32,19 @@ public interface ConstraintsDescriptor {
 
   boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext);
 
+  @NotNull
   PropertyConstraintsDescriptor getProperty(String name);
 
+  @NotNull
   ReferenceConstraintsDescriptor getReference(String refName);
 
+  @Nullable
   ReferenceScopeProvider getDefaultScopeProvider();
 
   // todo: remove/move this methods
   // by convention inheritance for this methods not works
+  // null if icon not alternative
+  @Nullable
   String getAlternativeIcon(SNode node);
 
   String getDefaultConcreteConceptFqName();

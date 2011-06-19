@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.behavior;
 public class MapSrcMacro_PostMapperFunction_BehaviorDescriptor extends TemplateQueryBase_BehaviorDescriptor {
   public MapSrcMacro_PostMapperFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction";
+  }
 }

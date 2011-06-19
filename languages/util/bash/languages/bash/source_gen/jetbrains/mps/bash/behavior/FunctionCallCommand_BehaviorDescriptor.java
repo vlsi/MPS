@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class FunctionCallCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public FunctionCallCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.FunctionCallCommand";
+  }
 }

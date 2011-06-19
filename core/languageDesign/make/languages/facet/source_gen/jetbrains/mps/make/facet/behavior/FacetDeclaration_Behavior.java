@@ -15,9 +15,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class FacetDeclaration_Behavior {
@@ -67,6 +68,14 @@ public class FacetDeclaration_Behavior {
 
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SConceptPropertyOperations.getString(thisNode, "alias");
+  }
+
+  public static String call_getFqName_1919086248986828221(SNode thisNode) {
+    SNode mod = SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode));
+    return (SNodeOperations.isInstanceOf(mod, "jetbrains.mps.lang.project.structure.Language") ?
+      SPropertyOperations.getString(SNodeOperations.cast(mod, "jetbrains.mps.lang.project.structure.Language"), "namespace") + "." + SPropertyOperations.getString(thisNode, "name") :
+      SPropertyOperations.getString(thisNode, "name")
+    );
   }
 
   public static String call_classifierName_8853708281362019178(SNode thisNode) {

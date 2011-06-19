@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class PlusAssignmentExpression_BehaviorDescriptor extends OperationAssignmentExpression_BehaviorDescriptor {
   public PlusAssignmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression";
+  }
 }

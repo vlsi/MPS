@@ -8,16 +8,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class SelectLocalEnd_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -30,10 +27,7 @@ public class SelectLocalEnd_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isLastCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isLastPositionAllowed()) {
-      return true;
-    }
-    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() instanceof SingularSelection;
+    return SelectLocalEnd_Action.this.canCallSelectLocalEnd(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -71,18 +65,16 @@ public class SelectLocalEnd_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isLastCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isLastPositionAllowed()) {
-        ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).executeAction(CellActionType.SELECT_LOCAL_END);
-      } else {
-        SelectionManager selectionManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager();
-        SNode node = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNode();
-        selectionManager.pushSelection(selectionManager.createRangeSelection(node, node));
-      }
+      ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).executeAction(CellActionType.SELECT_LOCAL_END);
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).scrollToCell(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SelectLocalEnd", t);
       }
     }
+  }
+
+  private boolean canCallSelectLocalEnd(final Map<String, Object> _params) {
+    return ((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isLastCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isLastPositionAllowed();
   }
 }

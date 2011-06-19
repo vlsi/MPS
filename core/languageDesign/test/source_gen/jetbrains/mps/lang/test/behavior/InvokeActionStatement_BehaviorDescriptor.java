@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class InvokeActionStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public InvokeActionStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.InvokeActionStatement";
+  }
 }

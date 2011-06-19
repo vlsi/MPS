@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class PropertiesImport_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PropertiesImport_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.PropertiesImport";
+  }
 }

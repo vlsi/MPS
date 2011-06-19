@@ -33,4 +33,9 @@ public class SNodeType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return SNodeType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.SNodeType";
+  }
 }

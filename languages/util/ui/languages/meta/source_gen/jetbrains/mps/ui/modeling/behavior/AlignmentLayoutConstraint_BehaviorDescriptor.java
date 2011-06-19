@@ -6,4 +6,9 @@ package jetbrains.mps.ui.modeling.behavior;
 public class AlignmentLayoutConstraint_BehaviorDescriptor extends LayoutConstraint_BehaviorDescriptor {
   public AlignmentLayoutConstraint_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint";
+  }
 }

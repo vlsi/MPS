@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public abstract class MatrixExponentialOperation_BehaviorDescriptor extends ExponentialOperation_BehaviorDescriptor {
   public MatrixExponentialOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation";
+  }
 }

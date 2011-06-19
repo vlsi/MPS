@@ -9,5 +9,10 @@ public abstract class TemplateArgumentPatternRef_BehaviorDescriptor extends Expr
   public TemplateArgumentPatternRef_BehaviorDescriptor() {
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef";
+  }
+
   public abstract String virtual_getVariableName_2902001550281937661(SNode thisNode);
 }

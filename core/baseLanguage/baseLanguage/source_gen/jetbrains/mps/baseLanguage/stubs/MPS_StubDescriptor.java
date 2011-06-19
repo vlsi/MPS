@@ -24,11 +24,6 @@ public class MPS_StubDescriptor extends BaseLibStubDescriptor {
     dep.setReexport(true);
     solution.getDependencies().add(dep);
 
-    Dependency dep2 = new Dependency();
-    dep2.setModuleRef(new ModuleReference("jetbrains.mps.lang.editor", "18bc6592-03a6-4e29-a83a-7ff23bde13ba"));
-    dep2.setReexport(true);
-    solution.getDependencies().add(dep2);
-
     solution.getUsedLanguages().add(BaseLanguage_Language.MODULE_REFERENCE);
   }
 

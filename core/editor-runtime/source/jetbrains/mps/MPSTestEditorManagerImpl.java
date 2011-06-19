@@ -48,10 +48,12 @@ public class MPSTestEditorManagerImpl extends TestEditorManagerImpl {
   @NotNull
   public void closeFile(@NotNull VirtualFile file) {
     super.closeFile(file);
-    for (FileEditor fileEditor : myVirtualFile2FileEditor.get(file)) {
-      fileEditor.dispose();
+    if (myVirtualFile2FileEditor.containsKey(file)) {
+      for (FileEditor fileEditor : myVirtualFile2FileEditor.get(file)) {
+        fileEditor.dispose();
+      }
+      myVirtualFile2FileEditor.remove(file);
     }
-    myVirtualFile2FileEditor.remove(file);
   }
 
   @NotNull

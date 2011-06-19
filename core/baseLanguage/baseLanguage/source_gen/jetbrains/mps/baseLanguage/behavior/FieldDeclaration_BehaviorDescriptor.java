@@ -50,4 +50,9 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
   public String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     return FieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
+  }
 }

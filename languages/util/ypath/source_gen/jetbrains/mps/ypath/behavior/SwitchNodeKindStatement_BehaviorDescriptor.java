@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class SwitchNodeKindStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public SwitchNodeKindStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.SwitchNodeKindStatement";
+  }
 }

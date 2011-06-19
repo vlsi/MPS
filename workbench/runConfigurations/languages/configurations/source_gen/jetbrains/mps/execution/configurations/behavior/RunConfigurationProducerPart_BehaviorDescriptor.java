@@ -33,4 +33,9 @@ public class RunConfigurationProducerPart_BehaviorDescriptor extends BaseConcept
   public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart";
+  }
 }

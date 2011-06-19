@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class StringValueType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public StringValueType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.customViewers.structure.StringValueType";
+  }
 }

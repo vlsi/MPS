@@ -6,4 +6,9 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 public class GenerationContextOp_GenParameterRef_BehaviorDescriptor extends GenerationContextOp_Base_BehaviorDescriptor {
   public GenerationContextOp_GenParameterRef_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef";
+  }
 }

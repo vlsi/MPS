@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.actions.imports;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.ide.util.gotoByName.ChooseByNamePopupMPS;
+import jetbrains.mps.workbench.actions.goTo.ChooseByNamePopupMPS;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;

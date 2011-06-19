@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class CompactInvokeFunctionExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public CompactInvokeFunctionExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression";
+  }
 }

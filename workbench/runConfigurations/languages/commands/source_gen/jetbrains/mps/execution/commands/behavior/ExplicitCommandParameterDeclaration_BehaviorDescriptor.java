@@ -15,4 +15,9 @@ public class ExplicitCommandParameterDeclaration_BehaviorDescriptor extends Comm
   public boolean virtual_generateField_8478830098674441876(SNode thisNode) {
     return ExplicitCommandParameterDeclaration_Behavior.virtual_generateField_8478830098674441876(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration";
+  }
 }

@@ -183,11 +183,11 @@
     <nodeInfo nodeId="8536718853245024244" fileName="CustomContainersRegistry.java" startLine="37" startPosition="8" endLine="38" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7602110602933086187" fileName="CustomContainersRegistry.java" startLine="41" startPosition="78" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7602110602933086885" fileName="CustomContainersRegistry.java" startLine="42" startPosition="45" endLine="43" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7602110602933086905" fileName="CustomContainersRegistry.java" startLine="44" startPosition="21" endLine="45" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7602110602933787602" fileName="CustomContainersRegistry.java" startLine="45" startPosition="98" endLine="46" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7602110602933086180" fileName="CustomContainersRegistry.java" startLine="46" startPosition="96" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7602110602933086905" fileName="CustomContainersRegistry.java" startLine="44" startPosition="21" endLine="45" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7602110602933787602" fileName="CustomContainersRegistry.java" startLine="45" startPosition="97" endLine="46" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7602110602933086180" fileName="CustomContainersRegistry.java" startLine="46" startPosition="95" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7602110602933791047" fileName="CustomContainersRegistry.java" startLine="49" startPosition="41" endLine="50" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7602110602933086915" fileName="CustomContainersRegistry.java" startLine="50" startPosition="102" endLine="51" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7602110602933086915" fileName="CustomContainersRegistry.java" startLine="50" startPosition="102" endLine="51" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7602110602933086202" fileName="CustomContainersRegistry.java" startLine="54" startPosition="52" endLine="55" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7602110602933086208" fileName="CustomContainersRegistry.java" startLine="58" startPosition="5" endLine="59" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8536718853245008459" fileName="CustomContainersRegistry.java" startLine="63" startPosition="25" endLine="64" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -223,7 +223,7 @@
     <scopeInfo nodeId="7602110602933086018" fileName="CustomContainersRegistry.java" startLine="84" startPosition="25" endLine="85" endPosition="140" />
     <scopeInfo nodeId="7602110602933086037" fileName="CustomContainersRegistry.java" startLine="88" startPosition="98" endLine="89" endPosition="29" />
     <scopeInfo nodeId="8536718853245008411" fileName="CustomContainersRegistry.java" startLine="26" startPosition="0" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="7602110602933086296" fileName="CustomContainersRegistry.java" startLine="49" startPosition="41" endLine="51" endPosition="132">
+    <scopeInfo nodeId="7602110602933086296" fileName="CustomContainersRegistry.java" startLine="49" startPosition="41" endLine="51" endPosition="130">
       <varInfo nodeId="7602110602933791048" varName="owner" />
     </scopeInfo>
     <scopeInfo nodeId="8536718853245008443" fileName="CustomContainersRegistry.java" startLine="62" startPosition="90" endLine="65" endPosition="5" />

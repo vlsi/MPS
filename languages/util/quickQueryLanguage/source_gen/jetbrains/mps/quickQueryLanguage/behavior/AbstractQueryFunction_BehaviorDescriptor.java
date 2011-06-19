@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public abstract class AbstractQueryFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public AbstractQueryFunction_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction";
+  }
 }

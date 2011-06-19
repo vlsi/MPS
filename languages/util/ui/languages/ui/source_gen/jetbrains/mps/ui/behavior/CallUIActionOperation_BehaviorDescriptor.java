@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.AbstractOperation_BehaviorDescriptor;
 public class CallUIActionOperation_BehaviorDescriptor extends AbstractOperation_BehaviorDescriptor {
   public CallUIActionOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.CallUIActionOperation";
+  }
 }

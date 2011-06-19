@@ -11,4 +11,9 @@ public abstract class VariableReference_BehaviorDescriptor extends Expression_Be
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return VariableReference_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.VariableReference";
+  }
 }

@@ -26,4 +26,9 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration";
+  }
 }

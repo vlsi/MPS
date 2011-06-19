@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ForceLayoutCode_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ForceLayoutCode_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.ForceLayoutCode";
+  }
 }

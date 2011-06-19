@@ -13,4 +13,9 @@ public class BaseCreatorType_BehaviorDescriptor extends BaseClassifierType_Behav
   public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return BaseCreatorType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.stubs.structure.BaseCreatorType";
+  }
 }

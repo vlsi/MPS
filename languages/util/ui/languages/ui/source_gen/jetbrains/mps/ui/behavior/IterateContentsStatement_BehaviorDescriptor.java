@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescrip
 public class IterateContentsStatement_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor {
   public IterateContentsStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.IterateContentsStatement";
+  }
 }

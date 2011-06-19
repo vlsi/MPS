@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ConceptClauseLinkInfo_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ConceptClauseLinkInfo_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class ExcludeOperation_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public ExcludeOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation";
+  }
 }

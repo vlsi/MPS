@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ContractThisExpression_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ContractThisExpression_Constraints$1" />
-  <unitInfo fileName="ResultExpression_Constraints.java" startLine="25" startPosition="15" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ResultExpression_Constraints$1" />
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="ContractThisExpression_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ContractThisExpression_Constraints" />
-  <unitInfo fileName="ResultExpression_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ResultExpression_Constraints" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ContractThisExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ContractThisExpression_Constraints" />
+  <unitInfo fileName="ResultExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.constraints.ResultExpression_Constraints" />
   <root nodeId="2203155934614761062">
-    <nodeInfo nodeId="2203155934614780744" fileName="ResultExpression_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2203155934614780743" fileName="ResultExpression_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="152" />
+    <nodeInfo nodeId="2203155934614780744" fileName="ResultExpression_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2203155934614780743" fileName="ResultExpression_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="152" />
   </root>
   <root nodeId="2329648364425265321">
-    <nodeInfo nodeId="2329648364425265324" fileName="ContractThisExpression_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2329648364425265323" fileName="ContractThisExpression_Constraints.java" startLine="38" startPosition="114" endLine="39" endPosition="148" />
+    <nodeInfo nodeId="2329648364425265324" fileName="ContractThisExpression_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2329648364425265323" fileName="ContractThisExpression_Constraints.java" startLine="37" startPosition="121" endLine="38" endPosition="148" />
   </root>
 </debugInfo>
 

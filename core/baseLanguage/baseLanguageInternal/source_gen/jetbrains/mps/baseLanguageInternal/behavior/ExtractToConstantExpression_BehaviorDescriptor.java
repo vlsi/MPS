@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ExtractToConstantExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ExtractToConstantExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression";
+  }
 }

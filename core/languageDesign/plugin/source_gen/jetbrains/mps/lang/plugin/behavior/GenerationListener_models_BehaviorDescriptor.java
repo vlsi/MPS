@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class GenerationListener_models_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public GenerationListener_models_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.GenerationListener_models";
+  }
 }

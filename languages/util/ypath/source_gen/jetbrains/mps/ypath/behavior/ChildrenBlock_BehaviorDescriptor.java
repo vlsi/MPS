@@ -11,4 +11,9 @@ public class ChildrenBlock_BehaviorDescriptor extends LambdaMethod_BehaviorDescr
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ChildrenBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.ChildrenBlock";
+  }
 }

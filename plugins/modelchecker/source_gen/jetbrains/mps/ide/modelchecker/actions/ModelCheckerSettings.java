@@ -24,6 +24,7 @@ import com.intellij.openapi.application.ApplicationManager;
 public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent, SearchableConfigurable {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
   private ModelCheckerPreferencesPage myPreferences;
+  private boolean myMigrationMode = false;
 
   public ModelCheckerSettings() {
   }
@@ -100,15 +101,20 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public List<SpecificChecker> getSpecificCheckers() {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
 
-    ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
-    ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
-    if (isCheckUnresolvedReferences()) {
+    if (myMigrationMode) {
+      // todo this is a hack ti use model chacker in migration tool 
       ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
+    } else {
+      ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
+      ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
+      if (isCheckUnresolvedReferences()) {
+        ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
+      }
+      if (isCheckTypesystem()) {
+        ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
+      }
+      ListSequence.fromList(specificCheckers).addElement(new LangSpecificChecker());
     }
-    if (isCheckTypesystem()) {
-      ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
-    }
-    ListSequence.fromList(specificCheckers).addElement(new LangSpecificChecker());
     return specificCheckers;
   }
 
@@ -154,6 +160,14 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
 
   public void setCheckBeforeCommit(boolean checkBeforeCommit) {
     myState.myCheckBeforeCommit = checkBeforeCommit;
+  }
+
+  public void setMigrationMode(boolean migrationMode) {
+    myMigrationMode = migrationMode;
+  }
+
+  public boolean getMigrationMode() {
+    return myMigrationMode;
   }
 
   public static ModelCheckerSettings getInstance() {

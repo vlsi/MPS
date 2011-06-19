@@ -12,4 +12,9 @@ public class HTMLElement_BehaviorDescriptor extends CommentLinePart_BehaviorDesc
   public NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
     return HTMLElement_Behavior.virtual_smartDelete_9042833497008205283(thisNode, isBeginning);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement";
+  }
 }

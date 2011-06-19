@@ -24,4 +24,9 @@ public class CellModel_Property_BehaviorDescriptor extends CellModel_WithRole_Be
   public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return CellModel_Property_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_Property";
+  }
 }

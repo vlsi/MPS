@@ -22,6 +22,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_EditorForNonAbstractConcept_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -50,6 +51,11 @@ public class check_EditorForNonAbstractConcept_NonTypesystemRule extends Abstrac
       MessageTarget errorTarget = new NodeMessageTarget();
       errorTarget = new PropertyMessageTarget("name");
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptDeclaration, "Non-abstract concept should have editor declaration", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "6519915829969195430", null, errorTarget);
+      {
+        BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.CreateDefaultEditor_QuickFix", false);
+        intentionProvider.putArgument("node", conceptDeclaration);
+        _reporter_2309309498.addIntentionProvider(intentionProvider);
+      }
     }
   }
 

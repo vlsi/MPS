@@ -17,7 +17,7 @@ import java.util.Set;
 public class RootDependenciesBuilder implements DependenciesReadListener {
 
   private final SNode myOriginalRoot;
-  private final DefaultDependenciesBuilder myBuilder;
+  private final IncrementalDependenciesBuilder myBuilder;
   private final String myHash;
   private boolean isUnchanged;
 
@@ -27,7 +27,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   private Set<SModelDescriptor> dependsOnModels = new HashSet<SModelDescriptor>();
   private GenerationRootDependencies mySavedDependencies;
 
-  public RootDependenciesBuilder(@Nullable SNode originalRoot, @NotNull DefaultDependenciesBuilder builder, @Nullable String hash) {
+  public RootDependenciesBuilder(@Nullable SNode originalRoot, @NotNull IncrementalDependenciesBuilder builder, @Nullable String hash) {
     myOriginalRoot = originalRoot;
     myBuilder = builder;
     myHash = hash;

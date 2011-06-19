@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class DeterminantExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public DeterminantExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression";
+  }
 }

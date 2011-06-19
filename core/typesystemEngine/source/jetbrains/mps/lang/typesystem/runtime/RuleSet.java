@@ -15,24 +15,25 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeUtil;
 
-import java.util.Map;
+import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
+/*
+ *  Synchronized.
+ */
 public class RuleSet<T extends IApplicableToConcept> {
-  Map<SNode, Set<T>> myRules = new THashMap<SNode, Set<T>>();
-  Map<SNode, Set<T>> myRulesCache = new ConcurrentHashMap<SNode, Set<T>>();
+  ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
+  ConcurrentMap<String, Set<T>> myRulesCache = new ConcurrentHashMap<String, /* unmodifiable */ Set<T>>();
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      addRule(rule);
+      addRule_internal(rule);
     }
     myRulesCache.clear();
   }
@@ -43,45 +44,47 @@ public class RuleSet<T extends IApplicableToConcept> {
   }
 
   private void addRule_internal(T rule) {
-    SNode concept = SModelUtil.findConceptDeclaration(rule.getApplicableConceptFQName(), GlobalScope.getInstance());
+    String concept = rule.getApplicableConceptFQName();
     Set<T> existingRules = myRules.get(concept);
-    if (existingRules == null) {
-      existingRules = new THashSet<T>(2);
-      myRules.put(concept, existingRules);
+    while (existingRules == null) {
+      myRules.putIfAbsent(concept, Collections.synchronizedSet(new THashSet<T>(2)));
+      existingRules = myRules.get(concept);
     }
     existingRules.add(rule);
   }
 
   public Set<T> getRules(SNode node) {
-    SNode conceptDeclaration = node.getConceptDeclarationNode();
-    return get(conceptDeclaration);
+    return get(node.getConceptFqName());
   }
 
-  protected Set<T> get(SNode key) {
+  protected Set<T> get(String key) {
     Set<T> cachedResult = myRulesCache.get(key);
     if (cachedResult != null) {
-      return new THashSet<T>(cachedResult);
+      return cachedResult;
     }
 
-    Set<T> result = computeRuleSet(key);
-    myRulesCache.put(key, new THashSet<T>(result));
+    Set<T> result = Collections.unmodifiableSet(computeRuleSet(key));
+    myRulesCache.put(key, result);
     return result;
   }
 
-  private Set<T> computeRuleSet(SNode concept) {
+  private Set<T> computeRuleSet(String concept) {
     Set<T> result = new THashSet<T>();
-    Set<SNode> frontier = new THashSet<SNode>();
-    Set<SNode> newFrontier = new THashSet<SNode>();
+    Set<String> frontier = new THashSet<String>();
+    Set<String> newFrontier = new THashSet<String>();
     frontier.add(concept);
+
     while (!frontier.isEmpty()) {
-      for (SNode abstractConcept : frontier) {
+      for (String abstractConcept : frontier) {
         Set<T> rules = myRules.get(abstractConcept);
         boolean overrides = false;
         if (rules != null) {
-          result.addAll(rules);
-          for (T rule : rules) {
-            if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides()) {
-              overrides = true;
+          synchronized (rules) {
+            result.addAll(rules);
+            for (T rule : rules) {
+              if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides()) {
+                overrides = true;
+              }
             }
           }
         }
@@ -89,22 +92,13 @@ public class RuleSet<T extends IApplicableToConcept> {
         if (overrides) {
           continue;
         }
-        if (SNodeUtil.isInstanceOfConceptDeclaration(abstractConcept)) {
-          newFrontier.add(SNodeUtil.getConceptDeclaration_Extends(abstractConcept));
-          for (SNode interfaceConceptReference : SNodeUtil.getConceptDeclaration_Implements(abstractConcept)) {
-            newFrontier.add(interfaceConceptReference);
-          }
-        }
-        if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(abstractConcept)) {
-          for (SNode interfaceConceptReference : SNodeUtil.getInterfaceConceptDeclaration_Extends(abstractConcept)) {
-            newFrontier.add(interfaceConceptReference);
-          }
-        }
+
+        newFrontier.addAll(LanguageHierarchyCache.getParentsNames(abstractConcept));
         //}
 
       }
       frontier = newFrontier;
-      newFrontier = new THashSet<SNode>();
+      newFrontier = new THashSet<String>();
     }
     return result;
   }

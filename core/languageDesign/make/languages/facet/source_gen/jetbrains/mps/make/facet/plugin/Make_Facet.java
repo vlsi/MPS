@@ -24,7 +24,7 @@ import jetbrains.mps.make.script.IConfig;
 
 public class Make_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("Make");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.Make");
 
   public Make_Facet() {
     ListSequence.fromList(targets).addElement(new Make_Facet.Target_pm9z_a());

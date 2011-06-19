@@ -6,4 +6,9 @@ package jetbrains.mps.lang.plugin.behavior;
 public class CreateModuleRunConfigBlock_BehaviorDescriptor extends BaseCreateRunConfigFunction_BehaviorDescriptor {
   public CreateModuleRunConfigBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.CreateModuleRunConfigBlock";
+  }
 }

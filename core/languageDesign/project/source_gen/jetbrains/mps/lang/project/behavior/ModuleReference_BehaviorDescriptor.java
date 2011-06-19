@@ -12,4 +12,9 @@ public class ModuleReference_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public String virtual_getModuleReference_1250389701475344624(SNode thisNode) {
     return ModuleReference_Behavior.virtual_getModuleReference_1250389701475344624(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.project.structure.ModuleReference";
+  }
 }

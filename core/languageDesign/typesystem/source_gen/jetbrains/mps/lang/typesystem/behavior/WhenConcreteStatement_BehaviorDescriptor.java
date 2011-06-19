@@ -8,4 +8,9 @@ import jetbrains.mps.baseLanguage.behavior.Closureoid_BehaviorDescriptor;
 public class WhenConcreteStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements Closureoid_BehaviorDescriptor {
   public WhenConcreteStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class PipelineOperatorErrorConnection_BehaviorDescriptor extends FollowingPipeline_BehaviorDescriptor {
   public PipelineOperatorErrorConnection_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.PipelineOperatorErrorConnection";
+  }
 }

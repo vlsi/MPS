@@ -3,6 +3,7 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -50,6 +51,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 
     private void runInternal() {
       try {
+        TypeChecker.getInstance().generationWorkerStarted();
         myTask.run();
       } catch (GenerationCanceledException e) {
         reportException(e);
@@ -57,18 +59,21 @@ public class GenerationTaskPool implements IGenerationTaskPool {
         reportException(e);
       } catch (Throwable th) {
         reportException(th);
+      } finally {
+        TypeChecker.getInstance().generationWorkerFinished();
       }
     }
 
     @Override
     public void run() {
       if (myTask.requiresReadAccess()) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            runInternal();
-          }
-        });
+        boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
+        try {
+          runInternal();
+        }
+        finally {
+          ModelAccess.instance().setReadEnabledFlag(oldFlag);
+        }
       } else {
         runInternal();
       }

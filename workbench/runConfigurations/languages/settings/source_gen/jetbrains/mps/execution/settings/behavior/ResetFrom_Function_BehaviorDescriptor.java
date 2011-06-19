@@ -15,4 +15,9 @@ public class ResetFrom_Function_BehaviorDescriptor extends EditorOperationDeclar
   public SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
     return ResetFrom_Function_Behavior.virtual_getPublicJavaMethod_203908296139519011(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.ResetFrom_Function";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class CaseClause_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public CaseClause_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.CaseClause";
+  }
 }

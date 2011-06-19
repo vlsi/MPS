@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class BigMinExpression_BehaviorDescriptor extends ExtrSymbol_BehaviorDescriptor {
   public BigMinExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.BigMinExpression";
+  }
 }

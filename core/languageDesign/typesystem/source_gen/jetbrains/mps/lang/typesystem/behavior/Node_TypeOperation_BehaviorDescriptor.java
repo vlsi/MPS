@@ -7,4 +7,9 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor;
 public class Node_TypeOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Node_TypeOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation";
+  }
 }

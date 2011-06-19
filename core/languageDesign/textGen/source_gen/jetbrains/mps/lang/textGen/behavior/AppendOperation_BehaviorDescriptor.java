@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class AppendOperation_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public AppendOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.AppendOperation";
+  }
 }

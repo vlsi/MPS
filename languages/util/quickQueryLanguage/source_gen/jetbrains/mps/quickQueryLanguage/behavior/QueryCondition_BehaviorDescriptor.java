@@ -6,4 +6,9 @@ package jetbrains.mps.quickQueryLanguage.behavior;
 public class QueryCondition_BehaviorDescriptor extends AbstractQueryFunction_BehaviorDescriptor {
   public QueryCondition_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.quickQueryLanguage.structure.QueryCondition";
+  }
 }

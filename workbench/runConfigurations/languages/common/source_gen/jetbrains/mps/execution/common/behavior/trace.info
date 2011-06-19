@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IGeneratedToClass_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.execution.common.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.common.behavior.BehaviorAspectDescriptor" />
   <root nodeId="946964771156905389">
     <nodeInfo nodeId="2572811016744662297" fileName="_Replacer_tq53pp_a0a0a0d.java" startLine="8" startPosition="59" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
     <nodeInfo nodeId="2572811016744662315" fileName="_Replacer_tq53pp_a0a0b0d.java" startLine="8" startPosition="59" endLine="9" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />

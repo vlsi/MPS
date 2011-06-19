@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public abstract class UnitType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public UnitType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.UnitType";
+  }
 }

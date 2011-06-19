@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class DoubleQuote_BehaviorDescriptor extends QuotedWord_BehaviorDescriptor {
   public DoubleQuote_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.DoubleQuote";
+  }
 }

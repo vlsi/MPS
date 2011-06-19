@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ExistConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public ExistConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ExistConditionalExpression";
+  }
 }

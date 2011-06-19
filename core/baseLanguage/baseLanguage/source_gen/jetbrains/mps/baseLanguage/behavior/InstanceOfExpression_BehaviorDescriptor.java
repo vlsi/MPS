@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class InstanceOfExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public InstanceOfExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.InstanceOfExpression";
+  }
 }

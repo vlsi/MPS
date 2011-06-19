@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class WriteTestConditionalExpression_BehaviorDescriptor extends UnaryConditionalExpression_BehaviorDescriptor {
   public WriteTestConditionalExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.WriteTestConditionalExpression";
+  }
 }

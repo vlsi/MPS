@@ -35,4 +35,9 @@ public class CheckProperties_Function_BehaviorDescriptor extends ConceptFunction
   public SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
     return IMember_Behavior.virtual_getOperationConcept_1213877352972(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.CheckProperties_Function";
+  }
 }

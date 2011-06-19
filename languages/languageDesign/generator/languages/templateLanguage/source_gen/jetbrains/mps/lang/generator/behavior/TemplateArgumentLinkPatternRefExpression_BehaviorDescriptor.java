@@ -11,4 +11,9 @@ public class TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor extends
   public String virtual_getVariableName_2902001550281937661(SNode thisNode) {
     return TemplateArgumentLinkPatternRefExpression_Behavior.virtual_getVariableName_2902001550281937661(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression";
+  }
 }

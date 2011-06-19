@@ -11,4 +11,9 @@ public class ExportScopePublic_BehaviorDescriptor extends ExportScope_BehaviorDe
   public boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
     return ExportScopePublic_Behavior.virtual_checkExport_2565736246230026584(thisNode, sourceNamespace, targetNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.core.structure.ExportScopePublic";
+  }
 }

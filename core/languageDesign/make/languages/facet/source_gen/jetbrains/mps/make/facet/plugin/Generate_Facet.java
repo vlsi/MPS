@@ -57,7 +57,7 @@ import jetbrains.mps.generator.TransientModelsComponent;
 
 public class Generate_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("Generate");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facet.Generate");
 
   public Generate_Facet() {
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_a());
@@ -320,12 +320,10 @@ public class Generate_Facet implements IFacet {
                 pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions() :
                 GenerationOptions.fromSettings(settings)
               ));
-              if (settings.isIncremental()) {
-                pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions(pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncrementalUseCache() ?
-                  GeneratorCacheComponent.getInstance().getCache() :
-                  null
-                ))));
-              }
+              pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ?
+                GeneratorCacheComponent.getInstance().getCache() :
+                null
+              ), settings.isIncremental()));
               IGenerationTracer tracer = (pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient() ?
                 pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(IGenerationTracer.class) :
                 new NullGenerationTracer()
@@ -477,10 +475,10 @@ public class Generate_Facet implements IFacet {
               Sequence.fromIterable(input).visitAll(new IVisitor<IResource>() {
                 public void visit(IResource mod) {
                   MResource mres = ((MResource) mod);
+                  monitor.currentProgress().advanceWork("Pre-loading models", 100);
                   Sequence.fromIterable(mres.models()).visitAll(new IVisitor<SModelDescriptor>() {
                     public void visit(final SModelDescriptor smd) {
                       if (smd instanceof DefaultSModelDescriptor) {
-                        monitor.currentProgress().advanceWork("Pre-loading models", 100, smd.getSModelReference().getCompactPresentation());
                         ModelAccess.instance().runReadAction(new Runnable() {
                           public void run() {
                             smd.getSModel();
@@ -642,7 +640,7 @@ public class Generate_Facet implements IFacet {
                   return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
                 }
               }) + 1000, monitor.currentProgress().workLeft());
-              monitor.currentProgress().advanceWork("Generating", 1000, "cleaning up");
+              monitor.currentProgress().advanceWork("Generating", 1000);
               List<SModelDescriptor> models = Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();

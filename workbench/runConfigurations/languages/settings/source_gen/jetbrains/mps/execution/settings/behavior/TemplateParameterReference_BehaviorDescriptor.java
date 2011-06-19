@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableReference_BehaviorDescriptor;
 public class TemplateParameterReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public TemplateParameterReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.TemplateParameterReference";
+  }
 }

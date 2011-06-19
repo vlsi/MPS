@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="WeakClassReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.WeakClassReference_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractToConstantRefExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractToConstantRefExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractStaticInnerClassConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassConcept_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractStaticInnerClassCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassCreator_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractStaticInnerClassExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractStaticMethodExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethodExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractToConstantExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractToConstantExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InternalThisExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalThisExpression_BehaviorDescriptor" />
-  <unitInfo fileName="TypeHintExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.TypeHintExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InternalVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="InternalClassifierType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalClassifierType_BehaviorDescriptor" />
-  <unitInfo fileName="InternalClassExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalClassExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InternalNewExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalNewExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InternalStaticFieldReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticFieldReference_BehaviorDescriptor" />
-  <unitInfo fileName="InternalStaticMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="InternalNewExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalNewExpression_Behavior" />
-  <unitInfo fileName="ExtractStaticMethod_CallExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractStatementListInnerExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListInnerExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractStatementListExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InternalPartialFieldReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialFieldReference_BehaviorDescriptor" />
-  <unitInfo fileName="InternalPartialInstanceMethodCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialInstanceMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="InternalAnonymousClassCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClassCreator_BehaviorDescriptor" />
+  <unitInfo fileName="WeakClassReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.WeakClassReference_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractToConstantRefExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractToConstantRefExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractStaticInnerClassConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassConcept_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractStaticInnerClassCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassCreator_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractStaticInnerClassExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractStaticMethodExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethodExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractToConstantExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractToConstantExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InternalThisExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalThisExpression_BehaviorDescriptor" />
+  <unitInfo fileName="TypeHintExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.TypeHintExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InternalVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_BehaviorDescriptor" />
+  <unitInfo fileName="InternalClassifierType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalClassifierType_BehaviorDescriptor" />
+  <unitInfo fileName="InternalClassExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalClassExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InternalNewExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalNewExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InternalStaticFieldReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticFieldReference_BehaviorDescriptor" />
+  <unitInfo fileName="InternalStaticMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractStaticMethod_CallExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractStatementListInnerExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListInnerExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ExtractStatementListExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListExpression_BehaviorDescriptor" />
+  <unitInfo fileName="InternalAnonymousClass_Behavior.java" startLine="110" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_Behavior$QuotationClass_bwi1fo_a0a0e" />
   <unitInfo fileName="ExtractStatementListExpression_Behavior.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListExpression_Behavior" />
+  <unitInfo fileName="InternalAnonymousClass_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_BehaviorDescriptor" />
+  <unitInfo fileName="InternalPartialFieldReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialFieldReference_BehaviorDescriptor" />
+  <unitInfo fileName="InternalPartialInstanceMethodCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialInstanceMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="InternalAnonymousClass_Behavior.java" startLine="23" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_Behavior" />
   <root nodeId="1230552150899">
     <scopeInfo nodeId="1230552150901" fileName="InternalNewExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
@@ -36,6 +40,54 @@
     <scopeInfo nodeId="3196918548952834934" fileName="ExtractStatementListExpression_Behavior.java" startLine="21" startPosition="92" endLine="25" endPosition="17">
       <varInfo nodeId="3196918548952839512" varName="elems" />
     </scopeInfo>
+  </root>
+  <root nodeId="3421461530438560191">
+    <nodeInfo nodeId="3769619919556111244" fileName="InternalAnonymousClass_Behavior.java" startLine="28" startPosition="43" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3421461530438560392" fileName="InternalAnonymousClass_Behavior.java" startLine="32" startPosition="80" endLine="33" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560401" fileName="InternalAnonymousClass_Behavior.java" startLine="36" startPosition="77" endLine="37" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3421461530438560412" fileName="InternalAnonymousClass_Behavior.java" startLine="38" startPosition="29" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560419" fileName="InternalAnonymousClass_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560438" fileName="InternalAnonymousClass_Behavior.java" startLine="44" startPosition="88" endLine="45" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3421461530438560512" fileName="InternalAnonymousClass_Behavior.java" startLine="47" startPosition="39" endLine="48" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560493" fileName="InternalAnonymousClass_Behavior.java" startLine="50" startPosition="29" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560198" fileName="InternalAnonymousClass_Behavior.java" startLine="54" startPosition="75" endLine="55" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560278" fileName="InternalAnonymousClass_Behavior.java" startLine="58" startPosition="82" endLine="59" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3421461530438560306" fileName="InternalAnonymousClass_Behavior.java" startLine="66" startPosition="72" endLine="67" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3421461530438560338" fileName="InternalAnonymousClass_Behavior.java" startLine="74" startPosition="123" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3421461530438560342" fileName="InternalAnonymousClass_Behavior.java" startLine="75" startPosition="36" endLine="76" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3421461530438560352" fileName="InternalAnonymousClass_Behavior.java" startLine="77" startPosition="106" endLine="78" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3421461530438560369" fileName="InternalAnonymousClass_Behavior.java" startLine="79" startPosition="5" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560410" fileName="InternalAnonymousClass_Behavior.java" startLine="37" startPosition="123" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3421461530438560350" fileName="InternalAnonymousClass_Behavior.java" startLine="76" startPosition="143" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3421461530438560510" fileName="InternalAnonymousClass_Behavior.java" startLine="46" startPosition="294" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3421461530438560286" fileName="InternalAnonymousClass_Behavior.java" startLine="59" startPosition="136" endLine="63" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560314" fileName="InternalAnonymousClass_Behavior.java" startLine="67" startPosition="136" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560446" fileName="InternalAnonymousClass_Behavior.java" startLine="45" startPosition="130" endLine="50" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <scopeInfo nodeId="3421461530438560193" fileName="InternalAnonymousClass_Behavior.java" startLine="28" startPosition="43" endLine="29" endPosition="62" />
+    <scopeInfo nodeId="3421461530438560391" fileName="InternalAnonymousClass_Behavior.java" startLine="32" startPosition="80" endLine="33" endPosition="90" />
+    <scopeInfo nodeId="3421461530438560411" fileName="InternalAnonymousClass_Behavior.java" startLine="38" startPosition="29" endLine="39" endPosition="75" />
+    <scopeInfo nodeId="3421461530438560511" fileName="InternalAnonymousClass_Behavior.java" startLine="47" startPosition="39" endLine="48" endPosition="124" />
+    <scopeInfo nodeId="3421461530438560196" fileName="InternalAnonymousClass_Behavior.java" startLine="54" startPosition="75" endLine="55" endPosition="90" />
+    <scopeInfo nodeId="3421461530438560351" fileName="InternalAnonymousClass_Behavior.java" startLine="77" startPosition="106" endLine="78" endPosition="83" />
+    <scopeInfo nodeId="3421461530438560510" fileName="InternalAnonymousClass_Behavior.java" startLine="46" startPosition="294" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="3421461530438560400" fileName="InternalAnonymousClass_Behavior.java" startLine="36" startPosition="77" endLine="41" endPosition="174">
+      <varInfo nodeId="3421461530438560402" varName="ancestor" />
+    </scopeInfo>
+    <scopeInfo nodeId="3421461530438560277" fileName="InternalAnonymousClass_Behavior.java" startLine="58" startPosition="82" endLine="63" endPosition="6">
+      <varInfo nodeId="3421461530438560279" varName="containingClassifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="3421461530438560305" fileName="InternalAnonymousClass_Behavior.java" startLine="66" startPosition="72" endLine="71" endPosition="6">
+      <varInfo nodeId="3421461530438560307" varName="containingClassifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="3421461530438560337" fileName="InternalAnonymousClass_Behavior.java" startLine="74" startPosition="123" endLine="80" endPosition="18">
+      <varInfo nodeId="3421461530438560339" varName="result" />
+      <varInfo nodeId="3421461530438560343" varName="containingMethod" />
+    </scopeInfo>
+    <scopeInfo nodeId="3421461530438560437" fileName="InternalAnonymousClass_Behavior.java" startLine="44" startPosition="88" endLine="51" endPosition="17">
+      <varInfo nodeId="3421461530438560447" varName="index" />
+      <varInfo nodeId="3421461530438560439" varName="ancestor" />
+    </scopeInfo>
+    <unitInfo nodeId="3421461530438560510" fileName="InternalAnonymousClass_Behavior.java" startLine="46" startPosition="271" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_Behavior$1" />
   </root>
   <root nodeId="3585982959253821896">
     <nodeInfo nodeId="3585982959253822028" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="22" startPosition="123" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.KeyStroke;
@@ -44,7 +45,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     this(text, null, null);
   }
 
-  public BaseAction(String text, String description, Icon icon) {
+  public BaseAction(@Nullable String text, @Nullable String description, @Nullable Icon icon) {
     super(text, description, icon);
     setEnabledInModalContext(true);
   }

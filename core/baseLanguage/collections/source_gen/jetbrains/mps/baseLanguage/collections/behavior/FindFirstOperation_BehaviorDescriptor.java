@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class FindFirstOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public FindFirstOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation";
+  }
 }

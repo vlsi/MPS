@@ -6,4 +6,9 @@ package jetbrains.mps.lang.test.behavior;
 public class NodeOperationsContainer_BehaviorDescriptor extends INodeAnnotattion_BehaviorDescriptor {
   public NodeOperationsContainer_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.NodeOperationsContainer";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.plugin.behavior;
 public class ExecuteEDTCommandStatement_BehaviorDescriptor extends BaseExecuteCommandStatement_BehaviorDescriptor {
   public ExecuteEDTCommandStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement";
+  }
 }

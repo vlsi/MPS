@@ -12,4 +12,9 @@ public class ReferenceAntiquotation_BehaviorDescriptor extends LinkAttribute_Beh
   public int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return AbstractAntiquotation_Behavior.virtual_getMetaLevelChange_201537367881074474(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation";
+  }
 }

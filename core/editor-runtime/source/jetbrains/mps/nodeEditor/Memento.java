@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.selection.SelectionInfo;
+import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 
@@ -34,13 +35,16 @@ class Memento {
 
   Memento(EditorContext context, boolean full) {
     EditorComponent nodeEditor = context.getNodeEditorComponent();
-    mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
+    SNode editedNode = nodeEditor.getEditedNode();
+    if (editedNode == null || (editedNode.getModel() != null && !editedNode.getModel().isDisposed())) {
+      mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
 
-    for (EditorCell foldedCell : nodeEditor.getFoldedCells()) {
-      myFolded.add(foldedCell.getCellInfo());
-    }
-    for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
-      myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
+      for (EditorCell foldedCell : nodeEditor.getFoldedCells()) {
+        myFolded.add(foldedCell.getCellInfo());
+      }
+      for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
+        myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
+      }
     }
 
     if (full) {

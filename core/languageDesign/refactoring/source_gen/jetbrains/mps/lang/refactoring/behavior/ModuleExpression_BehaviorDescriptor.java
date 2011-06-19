@@ -6,4 +6,9 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class ModuleExpression_BehaviorDescriptor extends AbstractUIArgumentExpression_BehaviorDescriptor {
   public ModuleExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.ModuleExpression";
+  }
 }

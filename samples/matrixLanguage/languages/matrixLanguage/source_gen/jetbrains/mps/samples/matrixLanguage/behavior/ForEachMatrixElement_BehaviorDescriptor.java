@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescrip
 public class ForEachMatrixElement_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor {
   public ForEachMatrixElement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement";
+  }
 }

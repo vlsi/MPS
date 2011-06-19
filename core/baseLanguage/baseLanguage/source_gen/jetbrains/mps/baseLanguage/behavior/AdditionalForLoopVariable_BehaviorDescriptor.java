@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class AdditionalForLoopVariable_BehaviorDescriptor extends LocalVariableDeclaration_BehaviorDescriptor {
   public AdditionalForLoopVariable_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable";
+  }
 }

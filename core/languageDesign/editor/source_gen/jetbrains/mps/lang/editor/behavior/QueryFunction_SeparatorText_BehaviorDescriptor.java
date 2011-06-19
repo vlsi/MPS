@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class QueryFunction_SeparatorText_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_SeparatorText_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText";
+  }
 }

@@ -23,4 +23,9 @@ public abstract class NodesTestMethod_BehaviorDescriptor extends BaseMethodDecla
   public String virtual_getTestName_1216136419751(SNode thisNode) {
     return NodesTestMethod_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.test.structure.NodesTestMethod";
+  }
 }

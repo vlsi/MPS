@@ -40,4 +40,9 @@ public class Node_ConceptMethodCall_BehaviorDescriptor extends SNodeOperation_Be
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall";
+  }
 }

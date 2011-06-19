@@ -12,4 +12,9 @@ public class IndexedTupleLiteral_BehaviorDescriptor extends Expression_BehaviorD
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return IndexedTupleLiteral_Behavior.virtual_isLValue_1213877519786(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral";
+  }
 }

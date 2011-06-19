@@ -20,7 +20,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.constraints.*;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -104,7 +107,7 @@ public final class SNode {
   }
 
   public boolean isRoot() {
-    return myRegisteredInModelFlag && myModel.isRoot(this);
+    return myRegisteredInModelFlag && myParent == null && myModel.isRoot(this);
   }
 
   public void addNextSibling(SNode newSibling) {
@@ -371,10 +374,8 @@ public final class SNode {
 
     getters.add(current);
     try {
-      INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this.getConceptFqName(), propertyName);
-      if (getter == null) return getPersistentProperty(propertyName);
-
-      Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
+      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
+      Object getterValue = descriptor.getValue(this, GlobalScope.getInstance());
       return getterValue == null ? null : String.valueOf(getterValue);
     } finally {
       getters.remove(current);
@@ -423,17 +424,15 @@ public final class SNode {
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
       if (!threadSet.contains(pair) && !myModel.isLoading()) {
-        INodePropertySetter setter = ModelConstraintsManager.getNodePropertySetter(this.getConceptFqName(), propertyName);
-        if (setter != null) {
-          threadSet.add(pair);
-          try {
-            setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
-            return;
-          } catch (Exception t) {
-            LOG.error(t);
-          } finally {
-            threadSet.remove(pair);
-          }
+        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
+        threadSet.add(pair);
+        try {
+          descriptor.setValue(this, propertyValue, GlobalScope.getInstance());
+          return;
+        } catch (Exception t) {
+          LOG.error(t);
+        } finally {
+          threadSet.remove(pair);
         }
       }
     }
@@ -906,28 +905,23 @@ public final class SNode {
     }
     SReference resultReference = null;
     boolean handlerFound = false;
+
     if (useHandler && !getModel().isLoading()) {
       // invoke custom referent set event handler
       Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
       if (!threadSet.contains(pair)) {
-        INodeReferentSetEventHandler handler = ModelConstraintsManager.getNodeReferentSetEventHandler(this, role);
-        if (handler != null) {
-          boolean referenceKept = true;
+        ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getReference(role);
+
+        if (!(descriptor instanceof IllegalReferenceConstraintsDescriptor)) {
           handlerFound = true;
           threadSet.add(pair);
+
           try {
-            if (handler instanceof INodeReferenceFullSetHandler) {
-              if (((INodeReferenceFullSetHandler) handler).keepsOriginalReference(this, oldReferent, newReferent, GlobalScope.getInstance())) {
-                resultReference = doSetReference(role, newReferent, toDelete);
-              } else {
-                referenceKept = false;
-              }
-            } else {
+            if (descriptor.validate(this, oldReferent, newReferent, GlobalScope.getInstance())) {
               resultReference = doSetReference(role, newReferent, toDelete);
-            }
-            handler.processReferentSetEvent(this, oldReferent, newReferent, GlobalScope.getInstance());
-            if (!referenceKept) {
+              descriptor.onReferenceSet(this, oldReferent, newReferent, GlobalScope.getInstance());
+            } else {
               if (myReferences != null) {
                 for (SReference reference : myReferences) {
                   if (reference.getRole().equals(role)) {
@@ -940,9 +934,12 @@ public final class SNode {
           } finally {
             threadSet.remove(pair);
           }
+        } else {
+          // todo: ?
         }
       }
     }
+
     if (!handlerFound) {
       resultReference = doSetReference(role, newReferent, toDelete);
     }
@@ -1412,9 +1409,9 @@ public final class SNode {
     return SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(genuineLinkDeclaration);
   }
 
-  public Language getLanguage(@NotNull IScope scope) {
+  public Language getLanguage() {
     String languageNamespace = getLanguageNamespace();
-    return scope.getLanguage(languageNamespace);
+    return MPSModuleRepository.getInstance().getLanguage(languageNamespace);
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo

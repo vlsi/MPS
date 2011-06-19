@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class PluginDependency_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PluginDependency_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.platform.conf.structure.PluginDependency";
+  }
 }

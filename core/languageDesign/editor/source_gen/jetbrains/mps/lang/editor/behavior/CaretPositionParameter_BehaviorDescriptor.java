@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class CaretPositionParameter_BehaviorDescriptor extends SelectParameter_BehaviorDescriptor {
   public CaretPositionParameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CaretPositionParameter";
+  }
 }

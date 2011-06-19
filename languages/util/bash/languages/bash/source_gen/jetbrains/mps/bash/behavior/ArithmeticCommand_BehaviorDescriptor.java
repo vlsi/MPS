@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ArithmeticCommand_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor implements ICompoundCommand_BehaviorDescriptor, IArithmeticHolder_BehaviorDescriptor {
   public ArithmeticCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ArithmeticCommand";
+  }
 }

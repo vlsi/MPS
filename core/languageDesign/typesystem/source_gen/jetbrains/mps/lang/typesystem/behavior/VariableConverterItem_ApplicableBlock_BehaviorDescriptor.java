@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class VariableConverterItem_ApplicableBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public VariableConverterItem_ApplicableBlock_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock";
+  }
 }

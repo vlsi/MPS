@@ -19,12 +19,13 @@ import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class MergeContext {
   private ChangeSet myMineChangeSet;
@@ -34,8 +35,7 @@ public class MergeContext {
   private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
   private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
   private SModel myResultModel;
-  private Set<ModelChange> myAppliedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
-  private Set<ModelChange> myExcludedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
+  private Set<ModelChange> myResolvedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private NodeCopier myNodeCopier;
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
@@ -49,15 +49,7 @@ public class MergeContext {
         fillRootToChangesMap();
 
         myResultModel = CopyUtil.copyModel(base);
-        int pv = Sequence.fromIterable(Sequence.fromArray(new SModel[]{base, mine, repository})).<Integer>select(new ISelector<SModel, Integer>() {
-          public Integer select(SModel m) {
-            return m.getPersistenceVersion();
-          }
-        }).sort(new ISelector<Integer, Comparable<?>>() {
-          public Comparable<?> select(Integer v) {
-            return v;
-          }
-        }, false).first();
+        int pv = Math.max(base.getPersistenceVersion(), Math.max(mine.getPersistenceVersion(), repository.getPersistenceVersion()));
         myResultModel.setPersistenceVersion(pv);
         myNodeCopier = new NodeCopier(myResultModel);
       }
@@ -134,17 +126,13 @@ public class MergeContext {
   public Iterable<ModelChange> getConflictedWith(ModelChange change) {
     return ListSequence.fromList(MapSequence.fromMap(myConflictingChanges).get(change)).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange other) {
-        return !(SetSequence.fromSet(myExcludedChanges).contains(other));
+        return !(SetSequence.fromSet(myResolvedChanges).contains(other));
       }
     });
   }
 
-  public boolean isChangeApplied(ModelChange change) {
-    return SetSequence.fromSet(myAppliedChanges).contains(change);
-  }
-
   public boolean isChangeResolved(ModelChange change) {
-    return SetSequence.fromSet(myExcludedChanges).contains(change) || SetSequence.fromSet(myAppliedChanges).contains(change);
+    return SetSequence.fromSet(myResolvedChanges).contains(change);
   }
 
   public void applyChanges(Iterable<ModelChange> changes) {
@@ -158,6 +146,15 @@ public class MergeContext {
   }
 
   private void applyChangesNoRestoreIds(Iterable<ModelChange> changes) {
+    Sequence.fromIterable(changes).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return ch instanceof NodeGroupChange;
+      }
+    }).visitAll(new IVisitor<ModelChange>() {
+      public void visit(ModelChange ch) {
+        ((NodeGroupChange) ch).prepare();
+      }
+    });
     for (ModelChange c : Sequence.fromIterable(changes)) {
       applyChange(c);
     }
@@ -173,10 +170,10 @@ public class MergeContext {
     if (isChangeResolved(change)) {
     } else {
       change.apply(myResultModel, myNodeCopier);
-      SetSequence.fromSet(myAppliedChanges).addElement(change);
+      SetSequence.fromSet(myResolvedChanges).addElement(change);
       for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
-        assert !(SetSequence.fromSet(myAppliedChanges).contains(symmetric));
-        SetSequence.fromSet(myExcludedChanges).addElement(symmetric);
+        assert !(SetSequence.fromSet(myResolvedChanges).contains(symmetric));
+        SetSequence.fromSet(myResolvedChanges).addElement(symmetric);
       }
       excludeChangesNoRestoreIds(getConflictedWith(change));
     }
@@ -185,16 +182,11 @@ public class MergeContext {
   private void excludeChange(ModelChange change) {
     if (isChangeResolved(change)) {
     } else {
-      SetSequence.fromSet(myExcludedChanges).addElement(change);
+      SetSequence.fromSet(myResolvedChanges).addElement(change);
       for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
-        assert !(SetSequence.fromSet(myAppliedChanges).contains(symmetric));
-        SetSequence.fromSet(myExcludedChanges).addElement(symmetric);
+        assert !(SetSequence.fromSet(myResolvedChanges).contains(symmetric));
+        SetSequence.fromSet(myResolvedChanges).addElement(symmetric);
       }
-      applyChangesNoRestoreIds(Sequence.fromIterable(getConflictedWith(change)).where(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange c) {
-          return Sequence.fromIterable(getConflictedWith(c)).isEmpty();
-        }
-      }));
     }
   }
 
@@ -235,14 +227,13 @@ public class MergeContext {
   }
 
   public MergeContextState getCurrentState() {
-    return new MergeContextState(myResultModel, myAppliedChanges, myExcludedChanges, myNodeCopier.getState());
+    return new MergeContextState(myResultModel, myResolvedChanges, myNodeCopier.getState());
   }
 
   public void restoreState(MergeContextState state) {
     MergeContextState stateCopy = new MergeContextState(state);
     myResultModel = stateCopy.myResultModel;
-    myAppliedChanges = stateCopy.myAppliedChanges;
-    myExcludedChanges = stateCopy.myExcludedChanges;
+    myResolvedChanges = stateCopy.myResolvedChanges;
     myNodeCopier.setState(stateCopy.myIdReplacementCache, myResultModel);
   }
 }

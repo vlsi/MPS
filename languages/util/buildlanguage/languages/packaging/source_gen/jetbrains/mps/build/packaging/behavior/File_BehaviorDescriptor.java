@@ -6,4 +6,9 @@ package jetbrains.mps.build.packaging.behavior;
 public class File_BehaviorDescriptor extends AbstractProjectComponent_BehaviorDescriptor {
   public File_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.File";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class DuplicateOutputFileDiscriptor_BehaviorDescriptor extends IORedirection_BehaviorDescriptor {
   public DuplicateOutputFileDiscriptor_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor";
+  }
 }

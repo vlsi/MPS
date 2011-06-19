@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class OrExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public OrExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.OrExpression";
+  }
 }

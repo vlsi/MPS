@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class ContextWrapper_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContextWrapper_BehaviorDescriptor {
   public ContextWrapper_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.internal.structure.ContextWrapper";
+  }
 }

@@ -45,8 +45,8 @@
       <varInfo nodeId="226334238991980354" varName="breakpoint" />
     </scopeInfo>
     <scopeInfo nodeId="226334238991980359" fileName="GDBBreakpointsProvider.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="226334238991980362" varName="element" />
       <varInfo nodeId="226334238991980366" varName="project" />
+      <varInfo nodeId="226334238991980362" varName="element" />
       <varInfo nodeId="226334238991980364" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="226334238991980370" fileName="GDBBreakpointsProvider.java" startLine="37" startPosition="0" endLine="42" endPosition="0">

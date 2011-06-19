@@ -6,4 +6,9 @@ package jetbrains.mps.execution.configurations.behavior;
 public class ProjectSource_BehaviorDescriptor extends RunConfigurationSource_BehaviorDescriptor {
   public ProjectSource_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.configurations.structure.ProjectSource";
+  }
 }

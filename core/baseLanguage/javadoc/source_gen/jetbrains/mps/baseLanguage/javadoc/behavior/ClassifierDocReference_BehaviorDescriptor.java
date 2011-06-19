@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class ClassifierDocReference_BehaviorDescriptor extends BaseDocReference_BehaviorDescriptor {
   public ClassifierDocReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference";
+  }
 }

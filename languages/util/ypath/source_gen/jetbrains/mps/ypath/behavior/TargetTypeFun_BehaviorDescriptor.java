@@ -12,4 +12,9 @@ public class TargetTypeFun_BehaviorDescriptor extends ConceptFunction_BehaviorDe
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return TargetTypeFun_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.TargetTypeFun";
+  }
 }

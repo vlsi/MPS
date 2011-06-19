@@ -22,4 +22,9 @@ public class Order_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor imp
   public SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
     return Order_Behavior.virtual_getOrder_3038738109029048953(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.Order";
+  }
 }

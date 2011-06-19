@@ -6,4 +6,9 @@ package jetbrains.mps.execution.commands.behavior;
 public class CommandProcessType_BehaviorDescriptor extends ProcessType_BehaviorDescriptor {
   public CommandProcessType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.CommandProcessType";
+  }
 }

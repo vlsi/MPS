@@ -26,4 +26,9 @@ public class TestMethod_BehaviorDescriptor extends InstanceMethodDeclaration_Beh
   public String virtual_getTestName_1216136419751(SNode thisNode) {
     return TestMethod_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod";
+  }
 }

@@ -26,4 +26,9 @@ public class ActionParameterReferenceOperation_BehaviorDescriptor extends BaseCo
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation";
+  }
 }

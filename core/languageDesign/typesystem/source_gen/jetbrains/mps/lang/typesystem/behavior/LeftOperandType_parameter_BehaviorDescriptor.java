@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class LeftOperandType_parameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public LeftOperandType_parameter_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter";
+  }
 }

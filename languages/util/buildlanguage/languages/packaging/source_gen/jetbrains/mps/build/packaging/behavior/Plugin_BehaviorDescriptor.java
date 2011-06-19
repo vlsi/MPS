@@ -6,4 +6,9 @@ package jetbrains.mps.build.packaging.behavior;
 public class Plugin_BehaviorDescriptor extends AbstractProjectComponent_BehaviorDescriptor {
   public Plugin_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Plugin";
+  }
 }

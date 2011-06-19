@@ -11,4 +11,9 @@ public class TemplateArgumentQuery_BehaviorDescriptor extends TemplateQueryBase_
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return TemplateArgumentQuery_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery";
+  }
 }

@@ -16,4 +16,9 @@ public abstract class SymbolClassRegexp_BehaviorDescriptor extends Regexp_Behavi
   public String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return SymbolClassRegexp_Behavior.virtual_getRepresentation_8173814113624650482(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp";
+  }
 }

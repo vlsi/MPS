@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 public class LetVariable_BehaviorDescriptor extends Variable_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public LetVariable_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.LetVariable";
+  }
 }

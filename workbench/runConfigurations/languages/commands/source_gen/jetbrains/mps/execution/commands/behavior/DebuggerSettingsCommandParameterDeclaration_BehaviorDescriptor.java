@@ -6,4 +6,9 @@ package jetbrains.mps.execution.commands.behavior;
 public class DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor extends CommandParameterDeclaration_BehaviorDescriptor {
   public DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.pattern.behavior;
 public class WildcardPattern_BehaviorDescriptor extends Pattern_BehaviorDescriptor {
   public WildcardPattern_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.pattern.structure.WildcardPattern";
+  }
 }

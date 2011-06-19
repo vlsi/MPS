@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public class PositiveSymbolClassRegexp_BehaviorDescriptor extends SymbolClassRegexp_BehaviorDescriptor {
   public PositiveSymbolClassRegexp_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp";
+  }
 }

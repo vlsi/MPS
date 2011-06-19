@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class MatchPropertyOperation_BehaviorDescriptor extends MatchKindOperation_BehaviorDescriptor {
   public MatchPropertyOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.MatchPropertyOperation";
+  }
 }

@@ -42,14 +42,18 @@ public class SModelOperations {
 
     GlobalScope scope = GlobalScope.getInstance();
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
+    final IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
+    final Set<IModule> declaredDependencies = module != null ? module.getDependenciesManager().getAllVisibleModules() : null;
+    final Set<Language> declaredUsedLanguages = module != null ? module.getDependenciesManager().getAllUsedLanguages() : null;
     Set<ModuleReference> usedLanguages = getAllImportedLanguages(model);
+
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModelDescriptor sm : allImportedModels(model, scope)) {
       importedModels.add(sm.getSModelReference());
     }
+
     for (SNode node : model.nodes()) {
-      Language lang = node.getLanguage(scope);
+      Language lang = node.getLanguage();
       if (lang == null) {
         LOG.error("Can't find language " + node.getLanguageNamespace());
         continue;
@@ -57,7 +61,7 @@ public class SModelOperations {
       ModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
         if (module != null) {
-          if (respectModulesScopes && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
+          if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
             module.addUsedLanguage(ref);
           }
         }
@@ -73,7 +77,7 @@ public class SModelOperations {
             if (respectModulesScopes && module != null) {
               SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
               IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-              if (targetModule != null && !module.getDependenciesManager().getAllDependOnModules().contains(targetModule)) {
+              if (targetModule != null && !declaredDependencies.contains(targetModule)) {
                 module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
               }
             }
@@ -145,7 +149,7 @@ public class SModelOperations {
   public static Set<ModuleReference> getUsedLanguages(@NotNull SModel model) {
     Set<ModuleReference> result = new HashSet<ModuleReference>();
     for (SNode node : model.nodes()) {
-      Language lang = node.getLanguage(GlobalScope.getInstance());
+      Language lang = node.getLanguage();
       if (lang == null) continue;
       result.add(lang.getModuleReference());
     }
@@ -303,6 +307,9 @@ public class SModelOperations {
   }
 
   static void validateLanguages(SModel sModel, SNode node) {
+    if (GlobalScope.getInstance() == null) {
+      return;
+    }
     Collection<ModuleReference> allrefs = getAllImportedLanguages(sModel);
     Set<String> available = new HashSet<String>(allrefs.size());
     for (ModuleReference ref : allrefs) {

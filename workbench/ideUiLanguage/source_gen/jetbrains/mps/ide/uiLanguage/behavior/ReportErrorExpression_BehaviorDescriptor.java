@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ReportErrorExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ReportErrorExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression";
+  }
 }

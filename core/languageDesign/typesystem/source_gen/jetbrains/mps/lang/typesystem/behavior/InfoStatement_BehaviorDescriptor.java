@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class InfoStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements MessageStatement_BehaviorDescriptor {
   public InfoStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.InfoStatement";
+  }
 }

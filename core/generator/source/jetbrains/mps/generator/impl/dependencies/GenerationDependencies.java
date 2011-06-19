@@ -26,6 +26,8 @@ public class GenerationDependencies {
   private static final String ATTR_MODEL_ID = "model";
   private static final String ATTR_HASH = "hash";
 
+  private final boolean containsIncrementalInfo;
+
   private final List<GenerationRootDependencies> myRootDependencies;
   private final Map<String, GenerationRootDependencies> myRootDependenciesMap;
   private final String myModelHash;
@@ -37,7 +39,21 @@ public class GenerationDependencies {
   private /* transient */ final int mySkippedCount;
   private /* transient */ final int myFromCacheCount;
 
+  private GenerationDependencies(String modelHash, String parametersHash) {
+    this.containsIncrementalInfo = false;
+    this.myModelHash = modelHash;
+    this.myParametersHash = parametersHash;
+
+    this.myRootDependencies = Collections.emptyList();
+    this.myRootDependenciesMap = Collections.emptyMap();
+    this.myUsedModelsHashes = Collections.emptyMap();
+    this.myUnchanged = Collections.emptyList();
+    this.mySkippedCount = 0;
+    this.myFromCacheCount = 0;
+  }
+
   private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, String parametersHash, Map<String, String> externalHashes, List<GenerationRootDependencies> unchanged, int skippedCount, int fromCacheCount) {
+    this.containsIncrementalInfo = true;
     this.myRootDependencies = data;
     this.mySkippedCount = skippedCount;
     this.myFromCacheCount = fromCacheCount;
@@ -66,6 +82,10 @@ public class GenerationDependencies {
 
   public int getFromCacheCount() {
     return myFromCacheCount;
+  }
+
+  public boolean isContainsIncrementalInfo() {
+    return containsIncrementalInfo;
   }
 
   public GenerationRootDependencies getDependenciesFor(String rootId) {
@@ -137,6 +157,9 @@ public class GenerationDependencies {
     }
     String modelHash = GenerationRootDependencies.getValue(root, ATTR_MODEL_HASH);
     String paramsHash = GenerationRootDependencies.getValue(root, ATTR_PARAMS_HASH);
+    if(externalHashes.isEmpty() && data.isEmpty()) {
+      return new GenerationDependencies(modelHash, paramsHash);
+    }
     return new GenerationDependencies(data, modelHash, paramsHash, externalHashes, Collections.<GenerationRootDependencies>emptyList(), 0, 0);
   }
 
@@ -146,26 +169,12 @@ public class GenerationDependencies {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, String parametersHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount) {
-    Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
-    Map<String, String> externalHashes = new HashMap<String, String>();
+  public static GenerationDependencies fromIncremental(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, String parametersHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount) {
+    Map<String, List<String>> generatedFiles = getGeneratedFiles(currentToOriginalMap);
 
-    for (Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
-      String inputRootId = entry.getValue() != null ? entry.getValue().getId() : "";
-      SNode outputRoot = entry.getKey();
-
-      List<String> filesList = generatedFiles.get(inputRootId);
-      if (filesList == null) {
-        filesList = new ArrayList<String>();
-        generatedFiles.put(inputRootId, filesList);
-      }
-      String fileName = getFileName(outputRoot);
-      if(fileName != null) {
-        filesList.add(fileName);
-      }
-    }
     List<GenerationRootDependencies> unchanged = null;
     List<GenerationRootDependencies> rootDependencies = new ArrayList<GenerationRootDependencies>(roots.length);
+    Map<String, String> externalHashes = new HashMap<String, String>();
     for (RootDependenciesBuilder l : roots) {
       SNode originalRoot = l.getOriginalRoot();
       List<String> files = generatedFiles.get(originalRoot != null ? originalRoot.getId() : "");
@@ -195,4 +204,27 @@ public class GenerationDependencies {
     return new GenerationDependencies(rootDependencies, modelHash, parametersHash, externalHashes, unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged, skippedCount, fromCacheCount);
   }
 
+  public static GenerationDependencies fromNonIncremental(String modelHash, String parametersHash) {
+    return new GenerationDependencies(modelHash, parametersHash);
+  }
+
+  private static Map<String, List<String>> getGeneratedFiles(Map<SNode, SNode> currentToOriginalMap) {
+    Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
+
+    for (Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
+      String inputRootId = entry.getValue() != null ? entry.getValue().getId() : "";
+      SNode outputRoot = entry.getKey();
+
+      List<String> filesList = generatedFiles.get(inputRootId);
+      if (filesList == null) {
+        filesList = new ArrayList<String>();
+        generatedFiles.put(inputRootId, filesList);
+      }
+      String fileName = getFileName(outputRoot);
+      if(fileName != null) {
+        filesList.add(fileName);
+      }
+    }
+    return generatedFiles;
+  }
 }

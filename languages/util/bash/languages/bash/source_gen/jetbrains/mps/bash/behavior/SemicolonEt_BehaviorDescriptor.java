@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class SemicolonEt_BehaviorDescriptor extends CaseTerminator_BehaviorDescriptor {
   public SemicolonEt_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.SemicolonEt";
+  }
 }

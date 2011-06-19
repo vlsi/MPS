@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class MatrixNorm_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MatrixNorm_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.math.structure.MatrixNorm";
+  }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.diff.changes.ChangeSet;
 import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
@@ -43,7 +42,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class ModelDifferenceDialog extends BaseDialog {
   private Project myProject;
-  private IOperationContext myOperationContext;
   private ChangeSet myChangeSet;
   private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
   private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
@@ -53,12 +51,13 @@ public class ModelDifferenceDialog extends BaseDialog {
   private boolean myGoingToNeighbour = false;
   private String[] myContentTitles;
 
-  public ModelDifferenceDialog(Project project, IOperationContext operationContext, final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
-    super(WindowManager.getInstance().getFrame(project), "Difference for model: " + SModelOperations.getModelName(newModel));
+  public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
+    super(WindowManager.getInstance().getFrame(diffRequest.getProject()), "Difference for model: " + SModelOperations.getModelName(newModel));
+    myProject = diffRequest.getProject();
+    DiffTemporaryModule.createModuleForModel(oldModel, "old", myProject);
+    DiffTemporaryModule.createModuleForModel(newModel, "new", myProject);
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
-    myProject = project;
-    myOperationContext = operationContext;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
@@ -107,8 +106,8 @@ public class ModelDifferenceDialog extends BaseDialog {
     return myContentTitles;
   }
 
-  /*package*/ IOperationContext getOperationContext() {
-    return myOperationContext;
+  /*package*/ Project getProject() {
+    return myProject;
   }
 
   @Nullable
@@ -169,7 +168,7 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   private class ModelDifferenceTree extends DiffModelTree {
     private ModelDifferenceTree() {
-      super(myOperationContext);
+      super(DiffTemporaryModule.getOperationContext(myProject, myChangeSet.getNewModel()));
     }
 
     protected Iterable<BaseAction> getRootActions(@Nullable SNodeId rootId) {

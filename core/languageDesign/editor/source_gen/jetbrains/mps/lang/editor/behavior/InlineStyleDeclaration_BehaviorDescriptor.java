@@ -12,4 +12,9 @@ public class InlineStyleDeclaration_BehaviorDescriptor extends BaseConcept_Behav
   public SNode virtual_getParent_1219419981626(SNode thisNode) {
     return IStyleContainer_Behavior.virtual_getParent_1219419981626(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration";
+  }
 }

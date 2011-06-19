@@ -4,7 +4,6 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -16,11 +15,11 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class ShowModelChecker_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ShowModelChecker_Action.class.getResource("modelChecker.png"));
+  private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowModelChecker_Action.class);
 
   public ShowModelChecker_Action() {
-    super("Show Model Checker", "", ICON);
+    super("Model Checker...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }

@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class ForCommand_BehaviorDescriptor extends AbstractLoopCommand_BehaviorDescriptor {
   public ForCommand_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.ForCommand";
+  }
 }

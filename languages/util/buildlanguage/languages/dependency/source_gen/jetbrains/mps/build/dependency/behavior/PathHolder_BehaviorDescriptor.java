@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class PathHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PathHolder_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.dependency.structure.PathHolder";
+  }
 }

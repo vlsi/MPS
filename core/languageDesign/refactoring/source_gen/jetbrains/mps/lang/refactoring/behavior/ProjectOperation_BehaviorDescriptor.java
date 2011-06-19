@@ -11,4 +11,9 @@ public class ProjectOperation_BehaviorDescriptor extends ContextMemberOperation_
   public SNode virtual_createType_7012097027058652452(SNode thisNode) {
     return ProjectOperation_Behavior.virtual_createType_7012097027058652452(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.ProjectOperation";
+  }
 }

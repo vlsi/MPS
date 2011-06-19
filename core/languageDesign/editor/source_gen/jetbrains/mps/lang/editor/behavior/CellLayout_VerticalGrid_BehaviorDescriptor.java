@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellLayout_VerticalGrid_BehaviorDescriptor extends CellLayout_Vertical_BehaviorDescriptor {
   public CellLayout_VerticalGrid_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid";
+  }
 }

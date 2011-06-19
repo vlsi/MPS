@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ImplicitAnnotationInstanceValue_BehaviorDescriptor extends AnnotationInstanceValue_BehaviorDescriptor {
   public ImplicitAnnotationInstanceValue_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue";
+  }
 }

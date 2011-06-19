@@ -15,4 +15,9 @@ public class RunModuleConfigCreator_BehaviorDescriptor extends RunConfigCreator_
   public SNode virtual_getCreatorTypeParameter_5528847031674330314(SNode thisNode) {
     return RunModuleConfigCreator_Behavior.virtual_getCreatorTypeParameter_5528847031674330314(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.plugin.structure.RunModuleConfigCreator";
+  }
 }

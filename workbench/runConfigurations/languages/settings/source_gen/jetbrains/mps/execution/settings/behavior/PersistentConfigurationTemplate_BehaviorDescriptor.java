@@ -11,4 +11,9 @@ public class PersistentConfigurationTemplate_BehaviorDescriptor extends Persiste
   public SNode virtual_createType_1213877527970(SNode thisNode) {
     return PersistentConfigurationTemplate_Behavior.virtual_createType_1213877527970(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate";
+  }
 }

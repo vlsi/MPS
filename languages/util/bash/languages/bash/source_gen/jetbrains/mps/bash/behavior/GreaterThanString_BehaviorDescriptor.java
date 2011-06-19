@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class GreaterThanString_BehaviorDescriptor extends BinaryConditionalExpression_BehaviorDescriptor {
   public GreaterThanString_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.GreaterThanString";
+  }
 }

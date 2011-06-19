@@ -21,4 +21,9 @@ public abstract class Module_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return Module_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.project.structure.Module";
+  }
 }

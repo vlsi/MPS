@@ -6,4 +6,9 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class ReferenceMessageTarget_BehaviorDescriptor extends MessageTarget_BehaviorDescriptor {
   public ReferenceMessageTarget_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget";
+  }
 }

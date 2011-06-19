@@ -12,4 +12,9 @@ public class QueryFunction_STVariableInitializer_BehaviorDescriptor extends Conc
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_STVariableInitializer_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer";
+  }
 }

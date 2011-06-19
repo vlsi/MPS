@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellModel_Image_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor {
   public CellModel_Image_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_Image";
+  }
 }

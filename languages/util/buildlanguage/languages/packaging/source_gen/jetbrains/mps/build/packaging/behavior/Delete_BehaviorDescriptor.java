@@ -6,4 +6,9 @@ package jetbrains.mps.build.packaging.behavior;
 public class Delete_BehaviorDescriptor extends PostProcessingTask_BehaviorDescriptor {
   public Delete_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Delete";
+  }
 }

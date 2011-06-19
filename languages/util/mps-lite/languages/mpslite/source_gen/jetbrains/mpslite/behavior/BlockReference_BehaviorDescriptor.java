@@ -6,4 +6,9 @@ package jetbrains.mpslite.behavior;
 public class BlockReference_BehaviorDescriptor extends MPSLiteConceptReference_BehaviorDescriptor {
   public BlockReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mpslite.structure.BlockReference";
+  }
 }

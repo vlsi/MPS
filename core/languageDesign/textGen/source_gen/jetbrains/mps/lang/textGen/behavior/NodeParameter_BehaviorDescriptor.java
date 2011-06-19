@@ -11,4 +11,9 @@ public class NodeParameter_BehaviorDescriptor extends AbstractTextGenParameter_B
   public String virtual_getGetterName_1234885318469(SNode thisNode) {
     return NodeParameter_Behavior.virtual_getGetterName_1234885318469(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.textGen.structure.NodeParameter";
+  }
 }

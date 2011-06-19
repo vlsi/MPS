@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class ClearCompartmentStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ClearCompartmentStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.ClearCompartmentStatement";
+  }
 }

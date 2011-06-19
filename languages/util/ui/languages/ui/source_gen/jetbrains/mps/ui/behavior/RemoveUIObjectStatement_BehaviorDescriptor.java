@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class RemoveUIObjectStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public RemoveUIObjectStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.structure.RemoveUIObjectStatement";
+  }
 }

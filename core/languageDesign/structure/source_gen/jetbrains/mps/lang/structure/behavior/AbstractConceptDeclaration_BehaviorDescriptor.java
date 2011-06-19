@@ -24,5 +24,10 @@ public abstract class AbstractConceptDeclaration_BehaviorDescriptor extends Base
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+  }
+
   public abstract List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode);
 }

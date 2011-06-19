@@ -11,4 +11,9 @@ public class StringCommandLinePart_BehaviorDescriptor extends AbstractCommandLin
   public String virtual_getText_1231864533228(SNode thisNode) {
     return StringCommandLinePart_Behavior.virtual_getText_1231864533228(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.distrib.structure.StringCommandLinePart";
+  }
 }

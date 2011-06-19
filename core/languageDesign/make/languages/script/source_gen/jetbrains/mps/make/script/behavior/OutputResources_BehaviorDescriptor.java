@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class OutputResources_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public OutputResources_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.make.script.structure.OutputResources";
+  }
 }

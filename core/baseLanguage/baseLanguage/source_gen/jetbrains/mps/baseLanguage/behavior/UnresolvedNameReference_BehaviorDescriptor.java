@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class UnresolvedNameReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public UnresolvedNameReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference";
+  }
 }

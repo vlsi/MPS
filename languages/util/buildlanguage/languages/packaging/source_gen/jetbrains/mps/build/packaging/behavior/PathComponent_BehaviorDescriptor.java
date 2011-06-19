@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class PathComponent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PathComponent_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.PathComponent";
+  }
 }

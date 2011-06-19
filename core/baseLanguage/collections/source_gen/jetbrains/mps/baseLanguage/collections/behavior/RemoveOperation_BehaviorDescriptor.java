@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class RemoveOperation_BehaviorDescriptor extends AbstractIteratorOperation_BehaviorDescriptor {
   public RemoveOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.RemoveOperation";
+  }
 }

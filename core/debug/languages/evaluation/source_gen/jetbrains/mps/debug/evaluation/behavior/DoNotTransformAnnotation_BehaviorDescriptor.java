@@ -6,4 +6,9 @@ package jetbrains.mps.debug.evaluation.behavior;
 public class DoNotTransformAnnotation_BehaviorDescriptor extends GenerationHelperAnnotation_BehaviorDescriptor {
   public DoNotTransformAnnotation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation";
+  }
 }

@@ -6,4 +6,9 @@ package jetbrains.mps.lang.smodel.behavior;
 public class Link_SetNewChildOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Link_SetNewChildOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation";
+  }
 }

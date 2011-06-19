@@ -6,4 +6,9 @@ package jetbrains.mps.build.packaging.behavior;
 public class Jar_BehaviorDescriptor extends Zip_BehaviorDescriptor {
   public Jar_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.Jar";
+  }
 }

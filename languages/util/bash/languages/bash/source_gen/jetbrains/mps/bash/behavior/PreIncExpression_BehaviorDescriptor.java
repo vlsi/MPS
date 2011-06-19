@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public class PreIncExpression_BehaviorDescriptor extends PreVariableExpression_BehaviorDescriptor {
   public PreIncExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.PreIncExpression";
+  }
 }

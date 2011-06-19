@@ -6,4 +6,9 @@ package jetbrains.mps.bash.behavior;
 public abstract class BaseAssingmentExpression_BehaviorDescriptor extends ArithmeticExpression_BehaviorDescriptor {
   public BaseAssingmentExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.bash.structure.BaseAssingmentExpression";
+  }
 }

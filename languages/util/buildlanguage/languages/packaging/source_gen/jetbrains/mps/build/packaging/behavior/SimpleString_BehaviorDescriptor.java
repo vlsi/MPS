@@ -16,4 +16,9 @@ public class SimpleString_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   public String virtual_getValue_1213877173054(SNode thisNode) {
     return SimpleString_Behavior.virtual_getValue_1213877173054(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.build.packaging.structure.SimpleString";
+  }
 }

@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class CellMenuPart_AbstractGroup_parameterObject_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public CellMenuPart_AbstractGroup_parameterObject_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject";
+  }
 }

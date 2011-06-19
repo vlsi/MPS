@@ -12,4 +12,9 @@ public class UIPropertyGetter_BehaviorDescriptor extends ConceptFunction_Behavio
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return UIPropertyGetter_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.UIPropertyGetter";
+  }
 }

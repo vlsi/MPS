@@ -7,4 +7,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class TypesystemIntention_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public TypesystemIntention_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.typesystem.structure.TypesystemIntention";
+  }
 }

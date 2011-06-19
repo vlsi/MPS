@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public interface ConstraintsDispatchable {
+public interface ConstraintsDispatchable extends ConstraintsDescriptor {
   boolean hasOwnCanBeChildMethod();
 
   boolean hasOwnCanBeRootMethod();
@@ -24,5 +24,5 @@ public interface ConstraintsDispatchable {
 
   boolean hasOwnCanBeAncestorMethod();
 
-  boolean hasOwnNodeDefaultSearchScopeProvider();
+  boolean hasOwnDefaultScopeProvider();
 }

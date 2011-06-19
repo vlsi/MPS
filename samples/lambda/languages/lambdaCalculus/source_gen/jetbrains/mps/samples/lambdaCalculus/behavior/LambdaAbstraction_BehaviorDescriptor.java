@@ -12,4 +12,9 @@ public class LambdaAbstraction_BehaviorDescriptor extends LambdaExpression_Behav
   public List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
     return LambdaAbstraction_Behavior.virtual_getVariables_8981808925914841576(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction";
+  }
 }

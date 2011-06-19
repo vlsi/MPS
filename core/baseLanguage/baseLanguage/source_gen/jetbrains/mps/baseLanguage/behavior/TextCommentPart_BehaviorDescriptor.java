@@ -11,4 +11,9 @@ public class TextCommentPart_BehaviorDescriptor extends CommentPart_BehaviorDesc
   public boolean virtual_isToDo_7236590470026152831(SNode thisNode) {
     return TextCommentPart_Behavior.virtual_isToDo_7236590470026152831(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.TextCommentPart";
+  }
 }

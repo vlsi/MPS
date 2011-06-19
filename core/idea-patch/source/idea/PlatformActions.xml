@@ -222,6 +222,7 @@
 
       <!-- Tools -->
       <group id="ToolsMenu" configurable="true" popup="true">
+<!--
         <group id="Macros" popup="false">
           <group id="StanardMacroActions">
             <action id="PlaybackLastMacro" class="com.intellij.ide.actionMacro.actions.PlaybackLastMacroAction"/>
@@ -232,6 +233,7 @@
           <group id="PlaySavedMacroActions" class="com.intellij.ide.actionMacro.actions.MacrosGroup"/>
         </group>
         <action id="PsiViewer" class="com.intellij.internal.psiView.PsiViewerAction"/>
+-->
       </group>
 
       <group id="WindowMenu" popup="true">

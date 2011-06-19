@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.VariableReference_BehaviorDescriptor;
 public class SideTransformVariableReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public SideTransformVariableReference_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.actions.structure.SideTransformVariableReference";
+  }
 }

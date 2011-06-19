@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MigrationToCollections_MigrationScript extends BaseMigrationScript {
   public MigrationToCollections_MigrationScript(IOperationContext operationContext) {
-    super("Migration from List to collections");
+    super("Migration from List to Collections");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "ListMigration";

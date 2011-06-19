@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 public class HashMapCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public HashMapCreator_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
+  }
 }

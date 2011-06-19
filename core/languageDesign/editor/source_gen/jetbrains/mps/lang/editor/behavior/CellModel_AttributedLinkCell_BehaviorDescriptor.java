@@ -11,4 +11,9 @@ public class CellModel_AttributedLinkCell_BehaviorDescriptor extends EditorCellM
   public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return CellModel_AttributedLinkCell_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell";
+  }
 }

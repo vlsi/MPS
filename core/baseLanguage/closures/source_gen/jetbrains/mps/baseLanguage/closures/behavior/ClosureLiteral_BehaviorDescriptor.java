@@ -61,4 +61,9 @@ public class ClosureLiteral_BehaviorDescriptor extends Expression_BehaviorDescri
   public SNode virtual_getBody_1239354440022(SNode thisNode) {
     return ClosureLiteral_Behavior.virtual_getBody_1239354440022(thisNode);
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
+  }
 }

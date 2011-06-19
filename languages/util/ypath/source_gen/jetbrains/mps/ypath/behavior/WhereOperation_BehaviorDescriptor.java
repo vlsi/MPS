@@ -6,4 +6,9 @@ package jetbrains.mps.ypath.behavior;
 public class WhereOperation_BehaviorDescriptor extends TreePathOperation_BehaviorDescriptor {
   public WhereOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ypath.structure.WhereOperation";
+  }
 }

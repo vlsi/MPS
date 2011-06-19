@@ -6,4 +6,9 @@ package jetbrains.mps.lang.editor.behavior;
 public class AppendTextOperation_BehaviorDescriptor extends AbstractStyledTextOperation_BehaviorDescriptor {
   public AppendTextOperation_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.editor.structure.AppendTextOperation";
+  }
 }

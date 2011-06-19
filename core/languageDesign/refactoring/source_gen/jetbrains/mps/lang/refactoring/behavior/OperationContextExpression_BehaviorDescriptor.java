@@ -6,4 +6,9 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class OperationContextExpression_BehaviorDescriptor extends AbstractUIArgumentExpression_BehaviorDescriptor {
   public OperationContextExpression_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.lang.refactoring.structure.OperationContextExpression";
+  }
 }

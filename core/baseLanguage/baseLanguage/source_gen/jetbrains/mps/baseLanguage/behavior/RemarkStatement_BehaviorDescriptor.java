@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class RemarkStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public RemarkStatement_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.RemarkStatement";
+  }
 }

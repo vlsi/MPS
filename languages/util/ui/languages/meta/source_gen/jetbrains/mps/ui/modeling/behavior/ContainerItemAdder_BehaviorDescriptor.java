@@ -7,4 +7,9 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public class ContainerItemAdder_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements IAspectParameterHolder_BehaviorDescriptor {
   public ContainerItemAdder_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.ContainerItemAdder";
+  }
 }

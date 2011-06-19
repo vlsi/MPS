@@ -6,4 +6,9 @@ package jetbrains.mps.baseLanguage.behavior;
 public class BLBottomType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public BLBottomType_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.baseLanguage.structure.BLBottomType";
+  }
 }

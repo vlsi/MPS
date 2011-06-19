@@ -6,4 +6,9 @@ package jetbrains.mps.ui.modeling.behavior;
 public class BoxLayoutConstraint_BehaviorDescriptor extends LayoutConstraint_BehaviorDescriptor {
   public BoxLayoutConstraint_BehaviorDescriptor() {
   }
+
+  @Override
+  public String getConceptFqName() {
+    return "jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint";
+  }
 }
