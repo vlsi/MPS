@@ -18,12 +18,12 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * evgeny, 4/28/11
@@ -32,30 +32,9 @@ public class ModelContentUtil {
 
   private static final Logger LOG = Logger.getLogger(ModelContentUtil.class);
 
-  @Deprecated
-  public static List<Language> getUsedLanguages(SModel model, boolean isTemplateModel, IScope scope) {
-    Set<String> namespaces = new HashSet<String>();
-    for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.engagedOnGenerationLanguages()) {
-      namespaces.add(ref.getModuleFqName());
-    }
-    for (SNode root : model.roots()) {
-      collectLanguageNamespaces(root, namespaces, isTemplateModel);
-    }
-    List<Language> result = new ArrayList<Language>();
-    for (String namespace : namespaces) {
-      Language language = scope.getLanguage(new ModuleReference(namespace));
-      if (language != null) {
-        result.add(language);
-      } else {
-        LOG.error("couldn't find language for namespace '" + namespace + "' in scope: " + scope);
-      }
-    }
-    return result;
-  }
-
   public static Collection<String> getUsedLanguageNamespaces(SModel model, boolean isTemplateModel) {
     Set<String> namespaces = new HashSet<String>();
-    for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.engagedOnGenerationLanguages()) {
+    for (ModuleReference ref : model.engagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleFqName());
     }
     for (SNode root : model.roots()) {
