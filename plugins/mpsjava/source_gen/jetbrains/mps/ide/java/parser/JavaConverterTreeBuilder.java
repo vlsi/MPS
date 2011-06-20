@@ -90,7 +90,6 @@ import org.eclipse.jdt.internal.compiler.lookup.Binding;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
 import org.eclipse.jdt.internal.compiler.ast.AssertStatement;
 import org.eclipse.jdt.internal.compiler.ast.Block;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.eclipse.jdt.internal.compiler.ast.BreakStatement;
 import org.eclipse.jdt.internal.compiler.ast.CaseStatement;
 import org.eclipse.jdt.internal.compiler.ast.ContinueStatement;
@@ -118,6 +117,7 @@ import org.eclipse.jdt.internal.compiler.ast.Javadoc;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class JavaConverterTreeBuilder {
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
@@ -169,8 +169,8 @@ public class JavaConverterTreeBuilder {
       statement = expressionStatement;
     } else {
       statement = SNodeOperations.cast(dispatchRefl("processStatement", x), "jetbrains.mps.baseLanguage.structure.Statement");
-      MapSequence.fromMap(myPositions).put(statement, x.sourceEnd());
     }
+    MapSequence.fromMap(myPositions).put(statement, x.sourceEnd());
     return statement;
   }
 
@@ -1012,7 +1012,7 @@ public class JavaConverterTreeBuilder {
     }
     SNode blockStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BlockStatement", null);
     SNode statementList = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
-    ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(statementList, getCUD(), x.sourceStart(), x.sourceEnd()));
+    addBlock(statementList, x.sourceStart(), x.sourceEnd());
     SLinkOperations.setTarget(blockStatement, "statements", statementList, true);
     for (SNode statement : processStatements(x.statements)) {
       ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(statement);
@@ -1033,7 +1033,7 @@ public class JavaConverterTreeBuilder {
     SNode switchCase = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SwitchCase", null);
     SLinkOperations.setTarget(switchCase, "expression", expression, true);
     SLinkOperations.setTarget(switchCase, "body", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-    ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(SLinkOperations.getTarget(switchCase, "body", true), getCUD(), x.sourceStart(), x.sourceEnd()));
+    addBlock(SLinkOperations.getTarget(switchCase, "body", true), x.sourceStart(), x.sourceEnd());
     return switchCase;
   }
 
@@ -1174,7 +1174,7 @@ public class JavaConverterTreeBuilder {
     SLinkOperations.setTarget(result, "expression", expression, true);
     SLinkOperations.setTarget(result, "defaultBlock", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
     if (x.defaultCase != null) {
-      ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(SLinkOperations.getTarget(result, "defaultBlock", true), getCUD(), x.defaultCase.sourceStart(), x.defaultCase.sourceEnd()));
+      addBlock(SLinkOperations.getTarget(result, "defaultBlock", true), x.defaultCase.sourceStart(), x.defaultCase.sourceEnd());
     }
     if (x.statements != null) {
       SNode currentSwitchCase = null;
@@ -1373,7 +1373,7 @@ public class JavaConverterTreeBuilder {
       SNode methodBody = SLinkOperations.getTarget(method, "body", true);
       if ((methodBody == null)) {
         methodBody = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
-        ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(methodBody, getCUD(), x.declarationSourceStart, x.declarationSourceEnd));
+        addBlock(methodBody, x.declarationSourceStart, x.declarationSourceEnd);
         SLinkOperations.setTarget(method, "body", methodBody, true);
       }
       for (SNode statement : processStatements(x.statements)) {
@@ -1400,7 +1400,7 @@ public class JavaConverterTreeBuilder {
       SNode body = SLinkOperations.getTarget(ctor, "body", true);
       if ((body == null)) {
         body = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
-        ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(body, getCUD(), x.sourceStart(), x.sourceEnd()));
+        addBlock(body, x.declarationSourceStart, x.declarationSourceEnd);
         SLinkOperations.setTarget(ctor, "body", body, true);
       }
       if ((superOrThisCall != null)) {
@@ -1424,13 +1424,13 @@ public class JavaConverterTreeBuilder {
       SNode staticInitializer = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticInitializer", null);
       SLinkOperations.setTarget(classConcept, "classInitializer", staticInitializer, true);
       SLinkOperations.setTarget(staticInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(SLinkOperations.getTarget(staticInitializer, "statementList", true), getCUD(), initializer.sourceStart(), initializer.sourceEnd()));
+      addBlock(SLinkOperations.getTarget(staticInitializer, "statementList", true), initializer.declarationSourceStart, initializer.declarationSourceEnd);
       body = SLinkOperations.getTarget(staticInitializer, "statementList", true);
     } else {
       SNode instanceInitializer = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
       SLinkOperations.setTarget(classConcept, "instanceInitializer", instanceInitializer, true);
       SLinkOperations.setTarget(instanceInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(SLinkOperations.getTarget(instanceInitializer, "statementList", true), getCUD(), initializer.sourceStart(), initializer.sourceEnd()));
+      addBlock(SLinkOperations.getTarget(instanceInitializer, "statementList", true), initializer.declarationSourceStart, initializer.declarationSourceEnd);
       body = SLinkOperations.getTarget(instanceInitializer, "statementList", true);
     }
     if (initializer.block != null && initializer.block.statements != null) {
@@ -1615,6 +1615,10 @@ public class JavaConverterTreeBuilder {
     return myCurrentTypeDeclaration.scope.referenceCompilationUnit();
   }
 
+  private void addBlock(SNode node, int start, int end) {
+    ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(node, getCUD(), Math.abs(start), Math.abs(end)));
+  }
+
   public SModel getModelByTypeDeclaration(SourceTypeBinding typeBinding) {
     if (typeBinding instanceof NestedTypeBinding) {
       return getModelByTypeDeclaration(((NestedTypeBinding) typeBinding).enclosingType);
@@ -1637,7 +1641,7 @@ public class JavaConverterTreeBuilder {
       SNodeOperations.detachNode(result);
     } else {
       result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
-      ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(result, getCUD(), x.sourceStart(), x.sourceEnd()));
+      addBlock(result, x.sourceStart(), x.sourceEnd());
       if ((possibleBlock != null)) {
         ListSequence.fromList(SLinkOperations.getTargets(result, "statement", true)).addElement(possibleBlock);
       }

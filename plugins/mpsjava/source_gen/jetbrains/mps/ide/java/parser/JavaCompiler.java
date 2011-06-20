@@ -50,6 +50,7 @@ import jetbrains.mps.project.structure.model.ModelRootUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -376,6 +377,15 @@ public class JavaCompiler {
       int[][] comments = cud.comments;
       int[] lineends = cud.compilationResult().lineSeparatorPositions;
       final Map<SNode, Integer> positions = treeBuilder.myPositions;
+      Iterable<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>> blocks = ListSequence.fromList(treeBuilder.myBlocks).where(new IWhereFilter<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
+        public boolean accept(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> it) {
+          return it._1() == cud;
+        }
+      }).sort(new Comparator<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
+        public int compare(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> a, Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> b) {
+          return (int) a._3() - (int) b._3();
+        }
+      }, true);
       for (int[] comment : comments) {
         // skip javadoc 
         if (comment[1] > 0) {
@@ -384,15 +394,7 @@ public class JavaCompiler {
         final int linestart = Math.abs(comment[0]);
         // find appropriate block 
         SNode block = null;
-        for (Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> blk : ListSequence.fromList(treeBuilder.myBlocks).where(new IWhereFilter<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
-          public boolean accept(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> it) {
-            return it._1() == cud;
-          }
-        }).sort(new Comparator<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
-          public int compare(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> a, Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> b) {
-            return (int) a._3() - (int) b._3();
-          }
-        }, true)) {
+        for (Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> blk : Sequence.fromIterable(blocks)) {
           if ((int) blk._2() <= linestart && linestart <= (int) blk._3()) {
             block = blk._0();
             break;
