@@ -17,6 +17,8 @@ public interface IMakeService extends ApplicationComponent {
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources);
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script);
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller);
+  public void addListener(IMakeNotificationListener listener);
+  public void removeListener(IMakeNotificationListener listener);
   @Deprecated
   public Future<IResult> make(Iterable<? extends IResource> resources);
   @Deprecated

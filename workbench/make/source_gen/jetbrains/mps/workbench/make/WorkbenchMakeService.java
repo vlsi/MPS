@@ -9,12 +9,18 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 import jetbrains.mps.make.MakeSession;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
+import java.util.List;
+import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -24,7 +30,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.make.facet.IFacet;
@@ -73,6 +78,7 @@ public class WorkbenchMakeService implements IMakeService {
   private ProgressIndicatorDelegate progInd;
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile Future<IResult> currentProcess;
+  private List<IMakeNotificationListener> listeners = ListSequence.fromList(new ArrayList<IMakeNotificationListener>());
 
   public WorkbenchMakeService() {
   }
@@ -160,6 +166,24 @@ public class WorkbenchMakeService implements IMakeService {
 
   private MakeSession getSession() {
     return currentSessionStickyMark.getReference();
+  }
+
+  public void addListener(IMakeNotificationListener listener) {
+    checkValidUsage();
+    ListSequence.fromList(listeners).addElement(listener);
+  }
+
+  public void removeListener(IMakeNotificationListener listener) {
+    checkValidUsage();
+    ListSequence.fromList(listeners).addElement(listener);
+  }
+
+  private void notifyListeners(final MakeNotification notification) {
+    ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<IMakeNotificationListener>(), listeners)).visitAll(new IVisitor<IMakeNotificationListener>() {
+      public void visit(IMakeNotificationListener li) {
+        li.handleNotification(notification);
+      }
+    });
   }
 
   private Future<IResult> doMake(Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
@@ -463,6 +487,7 @@ public class WorkbenchMakeService implements IMakeService {
 
     public void run(@NotNull ProgressIndicator pi) {
       if (myState.compareAndSet(WorkbenchMakeService.TaskState.NOT_STARTED, WorkbenchMakeService.TaskState.RUNNING)) {
+        notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.ABOUT_TO_START));
         pi.pushState();
         final int clsize = Sequence.fromIterable(this.myClInput).count();
         if (clsize == 0) {
@@ -560,6 +585,7 @@ public class WorkbenchMakeService implements IMakeService {
       }
       done();
       myLatch.countDown();
+      notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.FINISHED));
     }
   }
 
