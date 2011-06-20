@@ -277,6 +277,7 @@ public class JavaCompiler {
     for (SNode node : sNodeList) {
       if ((SNodeOperations.getParent(node) != null)) {
         SNodeOperations.detachNode(node);
+        SNodeOperations.getParent(node).removeChild(node);
       }
     }
     return sNodeList;
