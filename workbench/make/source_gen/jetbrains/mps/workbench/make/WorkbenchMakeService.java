@@ -306,6 +306,9 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private void checkValidUsage() {
+    if (INSTANCE == null) {
+      throw new IllegalStateException("already disposed");
+    }
     if (!(isInstance())) {
       throw new IllegalStateException("invalid usage of service");
     }

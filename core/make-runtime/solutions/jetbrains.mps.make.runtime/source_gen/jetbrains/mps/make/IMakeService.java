@@ -26,11 +26,19 @@ public interface IMakeService extends ApplicationComponent {
   @Deprecated
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller);
   public static class INSTANCE {
+    private static IMakeService Component;
+
     private INSTANCE() {
     }
 
     public static IMakeService get() {
-      return ApplicationManager.getApplication().getComponent(IMakeService.class);
+      if (Component == null) {
+        Component = ApplicationManager.getApplication().getComponent(IMakeService.class);
+        if (Component == null) {
+          throw new IllegalStateException("no make service component");
+        }
+      }
+      return Component;
     }
   }
 
