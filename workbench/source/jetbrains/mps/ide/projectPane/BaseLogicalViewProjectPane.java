@@ -141,7 +141,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public void dispose() {
-    removeListeners();
+    if (isComponentCreated()) {
+      removeListeners();
+    }
     myDisposed = true;
     super.dispose();
   }
@@ -411,6 +413,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   private AnActionEvent createEvent(DataContext context) {
     return ActionUtils.createEvent(ActionPlaces.PROJECT_VIEW_POPUP, context);
   }
+
+  protected abstract boolean isComponentCreated();
 
   private class MyCopyProvider implements CopyProvider {
     private CopyNode_Action myAction = new CopyNode_Action();
