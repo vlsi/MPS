@@ -49,6 +49,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   private SModelListener myModelListener = new MyModelListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryListener();
   private Map<SNodePointer, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodePointer, MPSNodeVirtualFile>();
+  private boolean myDisposed = false;
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
@@ -85,6 +86,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
+    myDisposed = true;
   }
 
   @NotNull
@@ -280,6 +282,9 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
     @Override
     public void run() {
+      if (myDisposed) {
+        return;
+      }
       for (MPSNodeVirtualFile deletedFile : myDeleterFiles) {
         fireBeforeFileDeletion(this, deletedFile);
         deletedFile.invalidate();
