@@ -42,40 +42,38 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     SModelDescriptor md = modelNode.getSModelDescriptor();
     if (!(md instanceof EditableSModelDescriptor) && !(md.isGeneratable())) return;
 
-    boolean wasChanged = md instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) md).isChanged();
-
-    if (wasChanged) {
-      updateNodeLater(modelNode, GenerationStatus.REQUIRED.getMessage());
-    } else {
-      GenerationStatus generationStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
-        public GenerationStatus compute() {
-          return getGenerationStatus(modelNode);
-        }
-      });
-      String message = generationStatus.getMessage();
-      wasChanged = generationStatus== GenerationStatus.REQUIRED;
-      updateNodeLater(modelNode, message);
-    }
-
     TreeNode node = modelNode;
     do {
       node = node.getParent();
     } while (!(node instanceof ProjectModuleTreeNode));
-    final ProjectModuleTreeNode finalNode = ((ProjectModuleTreeNode) node);
+    final ProjectModuleTreeNode moduleNode = ((ProjectModuleTreeNode) node);
 
-    String text;
-    if (finalNode.getModule().isPackaged()) {
-      text = "packaged";
-    } else if (wasChanged) {
-      text = GenerationStatus.REQUIRED.getMessage();
-    } else {
-      text = ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          return generationRequired(finalNode).getMessage();
-        }
-      });
+    boolean wasChanged = md instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) md).isChanged();
+
+    if (moduleNode.getModule().isPackaged()) {
+      updateNodeLater(modelNode, GenerationStatus.PACKAGED.getMessage());
+      updateNodeLater(moduleNode, GenerationStatus.PACKAGED.getMessage());
+      return;
     }
-    updateNodeLater(finalNode, text);
+
+    if (wasChanged) {
+      updateNodeLater(modelNode, GenerationStatus.REQUIRED.getMessage());
+      updateNodeLater(moduleNode, GenerationStatus.REQUIRED.getMessage());
+      return;
+    }
+
+    GenerationStatus modelStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
+      public GenerationStatus compute() {
+        return getGenerationStatus(modelNode);
+      }
+    });
+    GenerationStatus moduleStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
+      public GenerationStatus compute() {
+        return generationRequired(moduleNode);
+      }
+    });
+    updateNodeLater(modelNode, modelStatus.getMessage());
+    updateNodeLater(moduleNode, moduleStatus.getMessage());
   }
 
   protected void visitModuleNode(final ProjectModuleTreeNode node) {
