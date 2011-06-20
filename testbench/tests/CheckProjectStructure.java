@@ -142,4 +142,11 @@ public class CheckProjectStructure {
     List<String> errors = HELPER.checkGenerationStatus(TOKEN, Collections.singletonList(file));
     Assert.assertTrue("Try to regenerate models:\n"+HELPER.formatErrors(errors),errors.isEmpty());
   }
+             /*
+  @Test
+  @Order(4)
+  public void checkModuleProperties() {
+    List<String> errors = HELPER.checkModule(TOKEN, Collections.singletonList(file));
+    Assert.assertTrue("Module property or dependency errors:\n"+HELPER.formatErrors(errors),errors.isEmpty());
+  }            */
 }

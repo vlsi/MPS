@@ -28,11 +28,16 @@ public class ModelsExtractor {
     return models;
   }
 
+  public Iterable<IModule> getModules(Iterable<File> files) {
+    return collectFromModuleFiles(files);
+  }
+
   public void loadModels (Iterable<File> files) {
     if (modelLoaded) throw new IllegalStateException("Models already loaded");
     doLoadModels(files, models);
     this.modelLoaded = true;
   }
+
 
   public void clear () {
     this.models.clear();
