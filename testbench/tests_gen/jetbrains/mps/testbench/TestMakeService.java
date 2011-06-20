@@ -15,7 +15,7 @@ import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import dependencies.ModulesClusterizer;
+import jetbrains.mps.make.dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
