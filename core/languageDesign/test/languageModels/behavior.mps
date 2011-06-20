@@ -43,7 +43,7 @@
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1215607133327">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp5g.1215607067978" resolveInfo="NodeTypesCheckOperation" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp5g.1215607067978" resolveInfo="TypesCheckOperation" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1215611890874">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
@@ -72,7 +72,7 @@
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1101347953350127911">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp5g.1101347953350122758" resolveInfo="PredefinedActionReference" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp5g.1101347953350122758" resolveInfo="BootstrapActionReference" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4239542196496960972">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
@@ -526,7 +526,7 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="1217512074099">
                   <node role="argument" roleId="tp2q.1160612519549" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1217512074100">
-                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1217512074091" resolveInfo="method" />
+                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1217512074091" resolveInfo="operation" />
                   </node>
                 </node>
               </node>
@@ -834,7 +834,7 @@
           </node>
           <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7149605750504389883">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7149605750504389884">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6577506630067933940" resolveInfo="testsRuntime" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6577506630067933940" resolveInfo="testsLanguage" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7149605750504389885">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~Language%dgetRuntimeStubPaths()%cjava%dutil%dList" resolveInfo="getRuntimeStubPaths" />
@@ -850,7 +850,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6577506630067933940" resolveInfo="testsLanguage" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7292080432684961203">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~Language%dgetRuntimeDependOn()%cjava%dutil%dList" resolveInfo="getRuntimeDependOn" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~Language%dgetRuntimeDependencies()%cjava%dutil%dList" resolveInfo="getRuntimeDependencies" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="7292080432684956722">
@@ -1153,7 +1153,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2379153299285187457">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkw3.~PathMacros%dgetValue(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2379153299285187458">
-                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="2379153299285187432" resolveInfo="macroName" />
+                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="2379153299285187432" resolveInfo="key" />
                     </node>
                   </node>
                 </node>

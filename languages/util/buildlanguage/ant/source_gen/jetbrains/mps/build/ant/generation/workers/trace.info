@@ -105,7 +105,7 @@
     <nodeInfo nodeId="7795897115019498717" fileName="GeneratorWorker.java" startLine="55" startPosition="0" endLine="58" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorWorker#(Ljetbrains/mps/build/ant/WhatToDo;Lorg/apache/tools/ant/ProjectComponent;)V" />
     <nodeInfo nodeId="7795897115019498728" fileName="GeneratorWorker.java" startLine="59" startPosition="0" endLine="62" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorWorker#(Ljetbrains/mps/build/ant/WhatToDo;Ljetbrains/mps/build/ant/MpsWorker/AntLogger;)V" />
     <nodeInfo nodeId="7795897115019498749" fileName="GeneratorWorker.java" startLine="65" startPosition="30" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7655616008808086551" fileName="GeneratorWorker.java" startLine="125" startPosition="92" endLine="128" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7655616008808086551" fileName="GeneratorWorker.java" startLine="125" startPosition="95" endLine="128" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3129367036791946058" fileName="GeneratorWorker.java" startLine="171" startPosition="72" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8486843261567504175" fileName="GeneratorWorker.java" startLine="208" startPosition="9" endLine="211" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8486843261567504198" fileName="GeneratorWorker.java" startLine="211" startPosition="9" endLine="214" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -229,7 +229,7 @@
       <varInfo nodeId="7795897115019498731" varName="whatToDo" />
       <varInfo nodeId="7795897115019498733" varName="logger" />
     </scopeInfo>
-    <scopeInfo nodeId="7655616008808086425" fileName="GeneratorWorker.java" startLine="125" startPosition="92" endLine="128" endPosition="13" />
+    <scopeInfo nodeId="7655616008808086425" fileName="GeneratorWorker.java" startLine="125" startPosition="95" endLine="128" endPosition="13" />
     <scopeInfo nodeId="3129367036791946058" fileName="GeneratorWorker.java" startLine="171" startPosition="72" endLine="174" endPosition="0" />
     <scopeInfo nodeId="8486843261567504175" fileName="GeneratorWorker.java" startLine="208" startPosition="9" endLine="211" endPosition="9">
       <varInfo nodeId="8486843261567504177" varName="mod" />

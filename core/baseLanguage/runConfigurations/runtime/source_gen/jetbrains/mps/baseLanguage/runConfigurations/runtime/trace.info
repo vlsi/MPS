@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IJavaNodeChangeListener.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener" />
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IconContainer" />
+  <unitInfo fileName="BaseFieldWithButtonComponent.java" startLine="54" startPosition="57" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$2" />
   <unitInfo fileName="JavaConfigOptions.java" startLine="151" startPosition="36" endLine="155" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$2" />
   <unitInfo fileName="JavaConfigOptions.java" startLine="170" startPosition="36" endLine="174" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$3" />
   <unitInfo fileName="JavaConfigOptions.java" startLine="189" startPosition="36" endLine="193" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$4" />
   <unitInfo fileName="JavaConfigOptions.java" startLine="201" startPosition="36" endLine="205" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$5" />
   <unitInfo fileName="JavaConfigOptions.java" startLine="213" startPosition="36" endLine="217" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$6" />
+  <unitInfo fileName="BaseFieldWithButtonComponent.java" startLine="31" startPosition="43" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent$1" />
   <unitInfo fileName="ParameterBrowser.java" startLine="17" startPosition="32" endLine="23" endPosition="3" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.ParameterBrowser$1" />
   <unitInfo fileName="FieldWithBrowseButton.java" startLine="18" startPosition="32" endLine="24" endPosition="3" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithBrowseButton$1" />
   <unitInfo fileName="JavaConfigOptions.java" startLine="38" startPosition="32" endLine="44" endPosition="3" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$1" />
+  <unitInfo fileName="FieldWithPathChooseDialog.java" startLine="23" startPosition="70" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog$1" />
+  <unitInfo fileName="BaseChooserComponent.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseChooserComponent" />
+  <unitInfo fileName="FieldWithPathChooseDialog.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog" />
   <unitInfo fileName="ParameterBrowser.java" startLine="12" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.ParameterBrowser" />
   <unitInfo fileName="FieldWithBrowseButton.java" startLine="12" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithBrowseButton" />
+  <unitInfo fileName="BaseFieldWithButtonComponent.java" startLine="18" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent" />
   <unitInfo fileName="JavaConfigOptions.java" startLine="22" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions" />
   <root nodeId="1447676209063346076">
     <nodeInfo nodeId="1447676209063346084" fileName="JavaConfigOptions.java" startLine="272" startPosition="25" endLine="273" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

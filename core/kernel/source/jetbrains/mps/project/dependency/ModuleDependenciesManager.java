@@ -42,6 +42,15 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
     return result;
   }
 
+  public final Set<IModule> getAllRequiredModules() {
+    Set<IModule> modules = new LinkedHashSet<IModule>();
+    Set<Language> usedLanguages = new LinkedHashSet<Language>();
+    collectAllCompileTimeDependencies(modules, usedLanguages);
+    modules.addAll(usedLanguages);
+    modules.remove(myModule);
+    return modules;
+  }
+
   public void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
     dependencies.add(myModule);
     for (Dependency dep : myModule.getDependencies()) {
@@ -121,28 +130,5 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
         }
       }
     }
-  }
-
-  /**
-   * ******* deprecated **************
-   */
-
-  @Deprecated
-  public Set<IModule> getDesignTimeDeps() {
-    return getAllVisibleModules();
-  }
-
-  @Deprecated
-  public final List<IModule> getDependOnModules() {
-    return doGetDependOnModules();
-  }
-
-  @Deprecated
-  protected List<IModule> doGetDependOnModules() {
-    List<IModule> res = new LinkedList<IModule>();
-    res.addAll(ModuleUtil.depsToModules(myModule.getDependencies()));
-    res.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
-    res.addAll(ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences()));
-    return res;
   }
 }

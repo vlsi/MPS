@@ -65,7 +65,7 @@ public class NodesTestCase_Behavior {
     for (StubPath path : ListSequence.fromList(testsLanguage.getRuntimeStubPaths())) {
       ListSequence.fromList(result).addElement(path.getPath());
     }
-    for (Dependency dep : ListSequence.fromList(testsLanguage.getRuntimeDependOn())) {
+    for (Dependency dep : ListSequence.fromList(testsLanguage.getRuntimeDependencies())) {
       AbstractModule module = (AbstractModule) MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
       for (StubPath path : ListSequence.fromList(module.getStubPaths())) {
         ListSequence.fromList(result).addElement(path.getPath());

@@ -203,7 +203,7 @@ __switch__:
   }
 
   private Iterable<ModuleReference> required(IModule mod) {
-    Iterable<ModuleReference> reqs = Sequence.fromIterable(((Iterable<IModule>) mod.getDependenciesManager().getDependOnModules())).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+    Iterable<ModuleReference> reqs = Sequence.fromIterable(((Iterable<IModule>) mod.getDependenciesManager().getAllRequiredModules())).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
       public ModuleReference select(IModule m) {
         return m.getModuleReference();
       }

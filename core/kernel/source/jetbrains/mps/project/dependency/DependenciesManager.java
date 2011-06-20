@@ -18,7 +18,6 @@ package jetbrains.mps.project.dependency;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 
-import java.util.List;
 import java.util.Set;
 
 public interface DependenciesManager {
@@ -34,6 +33,11 @@ public interface DependenciesManager {
   Set<IModule> getAllVisibleModules();
 
   /*
+   *  All modules required for compilation (including languages with runtime stub paths)
+   */
+  Set<IModule> getAllRequiredModules();
+
+  /*
    *  Collects all visible modules (including current).
    */
   void collectVisibleModules(/* out */ Set<IModule> dependencies, boolean reexportOnly);
@@ -42,21 +46,4 @@ public interface DependenciesManager {
    *  Collects all modules required for compilation + languages with runtime stub paths
    */
   void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime);
-
-
-  /**
-   * AKA getAllDependOnModules()
-   * @return
-   */
-  @Deprecated
-  Set<IModule> getDesignTimeDeps();
-
-  /**
-   * Explicitly declared deps + used languages + used devkits +
-   * <p>all extended langs + all runtime modules (for a lang)
-   * <p>all extended devkits + all exported langs + all exported solutions (for a devkit)
-   * @return
-   */
-  @Deprecated
-  List<IModule> getDependOnModules();
 }
