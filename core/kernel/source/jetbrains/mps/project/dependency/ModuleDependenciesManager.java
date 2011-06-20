@@ -131,4 +131,22 @@ public class ModuleDependenciesManager<T extends AbstractModule> implements Depe
       }
     }
   }
+
+  /**
+   * ******* deprecated **************
+   */
+
+  @Deprecated
+  public final List<IModule> getDependOnModules() {
+    return doGetDependOnModules();
+  }
+
+  @Deprecated
+  protected List<IModule> doGetDependOnModules() {
+    List<IModule> res = new LinkedList<IModule>();
+    res.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));
+    res.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
+    res.addAll(ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences()));
+    return res;
+  }
 }

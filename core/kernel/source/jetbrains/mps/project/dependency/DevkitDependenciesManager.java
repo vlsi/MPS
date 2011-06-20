@@ -16,9 +16,20 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+
+import java.util.List;
 
 public class DevkitDependenciesManager extends ModuleDependenciesManager<DevKit> {
   public DevkitDependenciesManager(DevKit dk) {
     super(dk);
+  }
+
+  protected List<IModule> doGetDependOnModules() {
+    List<IModule> res = super.doGetDependOnModules();
+    res.addAll(myModule.getExtendedDevKits());
+    res.addAll(myModule.getExportedLanguages());
+    res.addAll(myModule.getExportedSolutions());
+    return res;
   }
 }

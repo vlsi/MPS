@@ -122,7 +122,7 @@ public class GeneratorWorker extends MpsWorker {
       public void run() {
         for (IMResource res : (Iterable<IMResource>) resources) {
           graph.addEdges(res);
-          for (IModule depOn : res.module().getDependenciesManager().getAllRequiredModules()) {
+          for (IModule depOn : res.module().getDependenciesManager().getDependOnModules()) {
             if (MapSequence.fromMap(cache).containsKey(depOn)) {
               graph.addEdges(MapSequence.fromMap(cache).get(depOn), res);
             }
