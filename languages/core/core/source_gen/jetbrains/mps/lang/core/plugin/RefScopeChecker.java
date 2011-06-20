@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -15,10 +16,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.project.IModule;
-import java.util.HashSet;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
@@ -31,7 +28,9 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept")) != 0) {
       return;
     }
-    Set<String> allVisibleModuleNames = getAllVisibleModuleNames(SNodeOperations.getModel(node).getModelDescriptor().getModule());
+    IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+    Set<IModule> allVisibleModules = module.getDependenciesManager().getAllVisibleModules();
+    allVisibleModules.add(module);
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     for (SReference ref : SNodeOperations.getReferences(node)) {
       SNode target = SLinkOperations.getTargetNode(ref);
@@ -59,20 +58,10 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
           " " + name
         )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", searchScopeStatus.getReferenceValidatorNode(), new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       }
-      String refModuleName = INamedConcept_Behavior.call_getFqName_1213877404258(SModelOperations.getModuleStub(SNodeOperations.getModel(target)));
-      if (refModuleName != null && !(allVisibleModuleNames.contains(refModuleName))) {
-        component.addError(node, "Target module " + refModuleName + " should be imported", null);
+      IModule refModule = SNodeOperations.getModel(target).getModelDescriptor().getModule();
+      if (refModule != null && !(allVisibleModules.contains(refModule))) {
+        component.addError(node, "Target module " + refModule + " should be imported", null);
       }
     }
-  }
-
-  public Set<String> getAllVisibleModuleNames(IModule module) {
-    Set<IModule> allVisibleModules = module.getDependenciesManager().getAllVisibleModules();
-    Set<String> result = new HashSet<String>();
-    for (IModule m : allVisibleModules) {
-      result.add(m.getModuleFqName());
-    }
-    result.add(module.getModuleFqName());
-    return result;
   }
 }
