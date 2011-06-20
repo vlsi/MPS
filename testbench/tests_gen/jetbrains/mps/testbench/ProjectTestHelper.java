@@ -119,7 +119,7 @@ public class ProjectTestHelper {
   }
 
   private ScriptBuilder defaultScriptBuilder() {
-    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.plugin.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("make"));
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.plugin.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("make"));
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
@@ -207,9 +207,6 @@ public class ProjectTestHelper {
 
           Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.parameters(new ITarget.Name("configure"), Object.class);
           params._1(optBuilder);
-
-          Tuples._1<Boolean> cparams = (Tuples._1<Boolean>) ppool.parameters(new ITarget.Name("auxCompile"), Object.class);
-          cparams._0(true);
         }
       };
 

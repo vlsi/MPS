@@ -68,7 +68,7 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.core.Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.plugin.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -162,7 +162,7 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("textGen")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("textGen"), new ITarget.Name("copyBinaries")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

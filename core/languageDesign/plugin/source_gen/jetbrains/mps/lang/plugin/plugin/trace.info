@@ -32,7 +32,7 @@
     <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="147" startPosition="46" endLine="148" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="151" startPosition="43" endLine="152" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="155" startPosition="47" endLine="156" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="159" startPosition="44" endLine="160" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="159" startPosition="44" endLine="160" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="163" startPosition="35" endLine="164" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="167" startPosition="36" endLine="168" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="171" startPosition="37" endLine="172" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -94,7 +94,7 @@
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="147" startPosition="46" endLine="148" endPosition="18" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="151" startPosition="43" endLine="152" endPosition="83" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="155" startPosition="47" endLine="156" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="159" startPosition="44" endLine="160" endPosition="138" />
+    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="159" startPosition="44" endLine="160" endPosition="109" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="163" startPosition="35" endLine="164" endPosition="18" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="167" startPosition="36" endLine="168" endPosition="18" />
     <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="171" startPosition="37" endLine="172" endPosition="18" />

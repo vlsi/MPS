@@ -57,7 +57,7 @@ public class Binaries_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Make"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Make"), new IFacet.Name("jetbrains.mps.lang.core.Generate")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -157,7 +157,7 @@ public class Binaries_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make"), new ITarget.Name("reconcile"), new ITarget.Name("compile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make"), new ITarget.Name("reconcile")});
     }
 
     public ITarget.Name getName() {
