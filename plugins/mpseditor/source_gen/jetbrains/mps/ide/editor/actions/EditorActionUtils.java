@@ -33,9 +33,6 @@ public class EditorActionUtils {
   }
 
   /*package*/ static EditorCell getEditorCellToInsert(EditorComponent editorComponent) {
-    if (!(isWriteActionEnabled(editorComponent))) {
-      return null;
-    }
     Selection selection = editorComponent.getSelectionManager().getSelection();
     // TODO: remove this limitation 
     if (!(selection instanceof SingularSelection)) {
