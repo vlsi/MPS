@@ -275,6 +275,12 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
+
+  /**
+   * We already have graphs in MPS, why we need this class here?
+   * 
+   * @param V vertex type
+   */
   public static class Graph<V> {
     private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());
     private Map<V, List<V>> fwEdges = MapSequence.fromMap(new HashMap<V, List<V>>());

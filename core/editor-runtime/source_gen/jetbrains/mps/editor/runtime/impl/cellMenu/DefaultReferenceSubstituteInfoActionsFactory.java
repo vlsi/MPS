@@ -19,6 +19,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 
+
+/**
+ * TODO: merge with DefaultReferenceSubstituteInfo
+ */
 public class DefaultReferenceSubstituteInfoActionsFactory {
   private static final Logger LOG = Logger.getLogger(DefaultReferenceSubstituteInfoActionsFactory.class);
 

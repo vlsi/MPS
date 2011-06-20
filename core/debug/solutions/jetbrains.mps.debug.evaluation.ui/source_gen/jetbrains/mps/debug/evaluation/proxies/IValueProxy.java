@@ -5,7 +5,11 @@ package jetbrains.mps.debug.evaluation.proxies;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 
-public interface IValueProxy {
+public 
+/**
+ * This solution was introduced as the easiest of the two adequate solutions of MPS-9041
+ */
+interface IValueProxy {
   @Nullable
   public Value getJDIValue();
   @Nullable
