@@ -2005,7 +2005,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="2qyu.Table" typeId="2qyu.2882388703616155296" id="7541022036347681918">
-      <property name="name" nameId="tpck.1169194664001" value="selectcolumntTable" />
+      <property name="name" nameId="tpck.1169194664001" value="selectLeftInCellTable" />
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="7541022036347681919">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="7541022036347681920">
           <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
@@ -2079,7 +2079,7 @@
   </root>
   <root id="8064689248313190611">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="2qyu.Table" typeId="2qyu.2882388703616155296" id="8064689248313190613">
-      <property name="name" nameId="tpck.1169194664001" value="selectColumnTable" />
+      <property name="name" nameId="tpck.1169194664001" value="selectRowTable" />
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8064689248313190614">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8064689248313190615">
           <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
