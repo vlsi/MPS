@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.Language;
 import java.util.List;
 import java.util.Set;
 
-public interface DependencyManager {
+public interface DependenciesManager {
 
   /*
    *  Transitive closure of all used langs + langs exported from used devkits and all langs being extended by those.

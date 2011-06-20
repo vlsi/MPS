@@ -23,8 +23,8 @@ import jetbrains.mps.smodel.Language;
 import java.util.List;
 import java.util.Set;
 
-public class LanguageDepsManager extends ModuleDepsManager<Language> {
-  public LanguageDepsManager(Language language) {
+public class LanguageDependenciesManager extends ModuleDependenciesManager<Language> {
+  public LanguageDependenciesManager(Language language) {
     super(language);
   }
 
@@ -41,7 +41,7 @@ public class LanguageDepsManager extends ModuleDepsManager<Language> {
   protected List<IModule> doGetDependOnModules() {
     List<IModule> res = super.doGetDependOnModules();
     res.addAll(myModule.getExtendedLanguages());
-    res.addAll(((LanguageDepsManager) myModule.getDependenciesManager()).getRuntimeDependOnModules());
+    res.addAll(((LanguageDependenciesManager) myModule.getDependenciesManager()).getRuntimeDependOnModules());
     return res;
   }
 
@@ -52,6 +52,6 @@ public class LanguageDepsManager extends ModuleDepsManager<Language> {
   }
 
   public List<IModule> getRuntimeDependOnModules() {
-    return ModuleUtil.depsToModules(myModule.getRuntimeDependOn());
+    return ModuleUtil.depsToModules(myModule.getRuntimeDependencies());
   }
 }

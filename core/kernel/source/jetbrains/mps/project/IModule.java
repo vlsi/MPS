@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.dependency.DependencyManager;
+import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -40,7 +40,7 @@ public interface IModule extends ModelOwner {
 
   //----deps
 
-  DependencyManager getDependenciesManager();
+  DependenciesManager getDependenciesManager();
 
   /**
    * Explicitly declared deps +
@@ -48,7 +48,7 @@ public interface IModule extends ModelOwner {
    * <p>explicitly ref'd generators + source lang + runtime modules of the source lang (for a generator)
    * @return
    */
-  List<Dependency> getDependOn();
+  List<Dependency> getDependencies();
 
   /**
    * Explicitly used langs +
@@ -138,4 +138,7 @@ public interface IModule extends ModelOwner {
 
   //todo used only in solution
   String getTestsGeneratorOutputPath();
+
+  @Deprecated
+  List<Dependency> getDependOn();
 }

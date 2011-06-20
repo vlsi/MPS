@@ -50,7 +50,7 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     }
 
     for (String lang : usedLanguages) {
-      if (!extendedLanguages.contains(lang) && !MPSModuleRepository.getInstance().getLanguage(lang).getRuntimeDependOn().isEmpty()) {
+      if (!extendedLanguages.contains(lang) && !MPSModuleRepository.getInstance().getLanguage(lang).getRuntimeDependencies().isEmpty()) {
         errors.add(sourceLanguage + " should extend " + lang);
       }
     }

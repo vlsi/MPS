@@ -23,10 +23,10 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.*;
 
-public class ModuleDepsManager<T extends AbstractModule> implements DependencyManager {
+public class ModuleDependenciesManager<T extends AbstractModule> implements DependenciesManager {
   protected T myModule;
 
-  public ModuleDepsManager(T module) {
+  public ModuleDependenciesManager(T module) {
     myModule = module;
   }
 
@@ -44,7 +44,7 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
 
   public void collectAllCompileTimeDependencies(/* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
     dependencies.add(myModule);
-    for (Dependency dep : myModule.getDependOn()) {
+    for (Dependency dep : myModule.getDependencies()) {
       IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
       if (m == null) continue;
       if (!dependencies.contains(m)) {
@@ -73,7 +73,7 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
   protected void collectAllCompileTimeDependenciesInUsedLanguage(Language l, /* out */ Set<IModule> dependencies, /* out */ Set<Language> languagesWithRuntime) {
     for (Language language : l.getAllExtendedLanguages()) {
       if (language == null) continue;
-      for (Dependency dep : language.getRuntimeDependOn()) {
+      for (Dependency dep : language.getRuntimeDependencies()) {
         IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
         if (m == null) continue;
         if (!dependencies.contains(m)) {
@@ -98,7 +98,7 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
   public void collectVisibleModules(Set<IModule> dependencies, boolean reexportOnly) {
     dependencies.add(myModule);
 
-    for (Dependency dependency : myModule.getDependOn()) {
+    for (Dependency dependency : myModule.getDependencies()) {
       if(reexportOnly && !dependency.isReexport()) continue;
 
       IModule m = MPSModuleRepository.getInstance().getModule(dependency.getModuleRef());
@@ -140,7 +140,7 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
   @Deprecated
   protected List<IModule> doGetDependOnModules() {
     List<IModule> res = new LinkedList<IModule>();
-    res.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));
+    res.addAll(ModuleUtil.depsToModules(myModule.getDependencies()));
     res.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     res.addAll(ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences()));
     return res;

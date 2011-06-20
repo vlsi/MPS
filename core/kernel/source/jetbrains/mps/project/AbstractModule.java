@@ -18,8 +18,8 @@ package jetbrains.mps.project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.dependency.DependencyManager;
-import jetbrains.mps.project.dependency.ModuleDepsManager;
+import jetbrains.mps.project.dependency.DependenciesManager;
+import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -62,7 +62,7 @@ public abstract class AbstractModule implements IModule {
   private ModuleScope myScope = createScope();
 
   private CompositeClassPathItem myCachedClassPathItem;
-  private DependencyManager myDepsManager;
+  private DependenciesManager myDependenciesManager;
 
   private Map<Pair<String, String>, ModuleReference> myStubModulesCache = new HashMap<Pair<String, String>, ModuleReference>();
 
@@ -154,18 +154,18 @@ public abstract class AbstractModule implements IModule {
 
   //----get deps
 
-  public final DependencyManager getDependenciesManager() {
-    if (myDepsManager == null) {
-      myDepsManager = createDepsManager();
+  public final DependenciesManager getDependenciesManager() {
+    if (myDependenciesManager == null) {
+      myDependenciesManager = createDependenciesManager();
     }
-    return myDepsManager;
+    return myDependenciesManager;
   }
 
-  protected ModuleDepsManager createDepsManager() {
-    return new ModuleDepsManager(this);
+  protected ModuleDependenciesManager createDependenciesManager() {
+    return new ModuleDependenciesManager(this);
   }
 
-  public List<Dependency> getDependOn() {
+  public List<Dependency> getDependencies() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return new ArrayList<Dependency>();
     return new ArrayList<Dependency>(descriptor.getDependencies());
@@ -555,7 +555,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void invalidateDependencies() {
-    myDepsManager = null;
+    myDependenciesManager = null;
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -617,5 +617,10 @@ public abstract class AbstractModule implements IModule {
     public URL findResource(String name) {
       return getClassPathItem().getResource(name);
     }
+  }
+
+  @Override
+  public List<Dependency> getDependOn() {
+    return getDependencies();
   }
 }

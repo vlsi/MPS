@@ -37,7 +37,7 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
 
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>();
-    for (Dependency dep : myModule.getDependOn()) {
+    for (Dependency dep : myModule.getDependencies()) {
       ModuleReference moduleRef = dep.getModuleRef();
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
         errors.add("Can't find dependency: " + moduleRef.getModuleFqName());

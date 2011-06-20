@@ -20,8 +20,8 @@ import jetbrains.mps.project.IModule;
 
 import java.util.List;
 
-public class DevkitDepsManager extends ModuleDepsManager<DevKit> {
-  public DevkitDepsManager(DevKit dk) {
+public class DevkitDependenciesManager extends ModuleDependenciesManager<DevKit> {
+  public DevkitDependenciesManager(DevKit dk) {
     super(dk);
   }
 

@@ -65,7 +65,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     if (!checkCyclicInheritance(myModule)) {
       errors.add("Cyclic language hierarchy");
     }
-    List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependOn());
+    List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependencies());
     for (IModule runtimeModule: runtimeModules) {
       if (!(runtimeModule instanceof Solution)) {
         errors.add("Runtime module "+ runtimeModule + " is not a solution");

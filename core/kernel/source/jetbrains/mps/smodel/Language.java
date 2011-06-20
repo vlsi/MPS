@@ -20,8 +20,8 @@ import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.dependency.LanguageDepsManager;
-import jetbrains.mps.project.dependency.ModuleDepsManager;
+import jetbrains.mps.project.dependency.LanguageDependenciesManager;
+import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.*;
 import jetbrains.mps.project.structure.modules.*;
@@ -138,8 +138,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  protected ModuleDepsManager createDepsManager() {
-    return new LanguageDepsManager(this);
+  protected ModuleDependenciesManager createDependenciesManager() {
+    return new LanguageDependenciesManager(this);
   }
 
   protected void reloadAfterDescriptorChange() {
@@ -207,8 +207,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
-  public List<Dependency> getDependOn() {
-    List<Dependency> result = super.getDependOn();
+  public List<Dependency> getDependencies() {
+    List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getExtendedLanguageRefs()) {
       Dependency dep = new Dependency();
       dep.setModuleRef(ref);
@@ -217,13 +217,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     for (Generator g : getGenerators()) {
-      result.addAll(g.getDependOn());
+      result.addAll(g.getDependencies());
     }
 
     return result;
   }
 
-  public List<Dependency> getRuntimeDependOn() {
+  public List<Dependency> getRuntimeDependencies() {
     LanguageDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return new ArrayList<Dependency>();
     return Collections.unmodifiableList(descriptor.getRuntimeModules());
@@ -786,5 +786,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
     }
+  }
+
+  @Deprecated
+  public List<Dependency> getRuntimeDependOn() {
+    return getRuntimeDependencies();
   }
 }
