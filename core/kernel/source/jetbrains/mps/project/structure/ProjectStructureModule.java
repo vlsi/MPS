@@ -102,6 +102,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   public SModel getModelByModule(IModule module) {
     ModelAccess.assertLegalRead();
 
+    if(module == null) return null;
     SModelFqName fq = getModelFqName(module);
 
     ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
