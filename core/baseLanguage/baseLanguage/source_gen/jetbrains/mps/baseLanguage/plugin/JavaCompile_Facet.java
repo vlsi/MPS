@@ -64,11 +64,11 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> optional() {
-    return null;
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.plugin.Binaries")});
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.plugin.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.core.Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
