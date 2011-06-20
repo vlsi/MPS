@@ -31,11 +31,21 @@
     <classNode extendsClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.NodeData" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.java.parser.CommentHelper" file="CommentHelper.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.CommentRecorderParser" file="CommentRecorderParser.java">
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.CommentRecorderScanner" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
-    <classNode dependClassName="org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.impl.CompilerOptions" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.problem.ProblemReporter" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.problem.ProblemSeverities" />
@@ -78,12 +88,15 @@
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedHashSet" />
@@ -92,6 +105,8 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.Vector" />
     <classNode dependClassName="javax.swing.JOptionPane" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.CommentHelper" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.CommentRecorderParser" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaConverterTreeBuilder" />
@@ -99,9 +114,14 @@
     <classNode dependClassName="jetbrains.mps.ide.java.parser.SourceWrapper" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.UIComponents" />
     <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
@@ -144,19 +164,28 @@
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.JavaConverterTreeBuilder" file="JavaConverterTreeBuilder.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.CommentHelper" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaCompiler" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaConverterException" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.ReferentsCreator" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.TypesProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -187,6 +216,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CastExpression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ClassLiteralAccess" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CombinedBinaryExpression" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompoundAssignment" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConditionalExpression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration" />
@@ -203,6 +233,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.IfStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Initializer" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.InstanceOfExpression" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Javadoc" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.LabeledStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Literal" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.LocalDeclaration" />

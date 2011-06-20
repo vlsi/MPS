@@ -47,6 +47,13 @@ import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.project.structure.model.ModelRootUtil;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Comparator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.IErrorHandlingPolicy;
@@ -360,7 +367,53 @@ public class JavaCompiler {
   private List<SNode> buildAST(boolean isolated) {
     ReferentsCreator referentsCreator = new ReferentsCreator(new HashMap<String, SModel>(myPackageFQNamesToModels));
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
-    return new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels, isolated);
+    JavaConverterTreeBuilder treeBuilder = new JavaConverterTreeBuilder();
+    List<SNode> result = treeBuilder.exec(referentsCreator, myPackageFQNamesToModels, isolated);
+    // insert comments from each compilation unit 
+    for (final CompilationUnitDeclaration cud : ListSequence.fromList(myCompilationUnitDeclarations)) {
+      char[] content = cud.compilationResult().getCompilationUnit().getContents();
+      int[][] comments = cud.comments;
+      int[] lineends = cud.compilationResult().lineSeparatorPositions;
+      final Map<SNode, Integer> positions = treeBuilder.myPositions;
+      for (int[] comment : comments) {
+        // skip javadoc 
+        if (comment[1] > 0) {
+          continue;
+        }
+        final int linestart = Math.abs(comment[0]);
+        // find appropriate block 
+        SNode block = null;
+        for (Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> blk : ListSequence.fromList(treeBuilder.myBlocks).where(new IWhereFilter<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
+          public boolean accept(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> it) {
+            return it._1() == cud;
+          }
+        }).sort(new Comparator<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
+          public int compare(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> a, Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> b) {
+            return (int) a._3() - (int) b._3();
+          }
+        }, true)) {
+          if ((int) blk._2() <= linestart && linestart <= (int) blk._3()) {
+            block = blk._0();
+            break;
+          }
+        }
+        if ((block != null)) {
+          int pos = ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return MapSequence.fromMap(positions).get(it) == null || Math.abs(MapSequence.fromMap(positions).get(it)) <= linestart;
+            }
+          }).count();
+          for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]) + 1)))) {
+            SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
+            SPropertyOperations.set(commentText, "text", line);
+            SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
+            ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
+            ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
+          }
+        }
+      }
+    }
+    return result;
   }
 
   public List<CompilationResult> getCompilationResults() {
@@ -467,7 +520,6 @@ public class JavaCompiler {
 
     @Override
     public void initializeParser() {
-      // <node> 
       this.parser = new CommentRecorderParser(this.problemReporter, this.options.parseLiteralExpressionsAsConstants);
     }
   }

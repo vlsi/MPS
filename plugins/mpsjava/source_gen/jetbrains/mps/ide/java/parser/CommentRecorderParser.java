@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.parser;
 
 import org.eclipse.jdt.internal.compiler.parser.Parser;
 import org.eclipse.jdt.internal.compiler.problem.ProblemReporter;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.ProblemSeverities;
@@ -18,37 +17,6 @@ public class CommentRecorderParser extends Parser {
 
   public CommentRecorderParser(ProblemReporter problemReporter, boolean optimizeStringLiterals) {
     super(problemReporter, optimizeStringLiterals);
-  }
-
-  public void checkComment() {
-    if (!((this.diet && this.dietInt == 0)) && this.scanner.commentPtr >= 0) {
-      flushCommentsDefinedPriorTo(this.endStatementPosition);
-    }
-    boolean deprecated = false;
-    boolean checkDeprecated = false;
-    int lastCommentIndex = -1;
-nextComment:
-    for (; lastCommentIndex >= 0; lastCommentIndex--) {
-      int commentSourceStart = this.scanner.commentStarts[lastCommentIndex];
-      if ((commentSourceStart < 0) || (this.modifiersSourceStart != -1 && this.modifiersSourceStart < commentSourceStart) || (this.scanner.commentStops[lastCommentIndex] < 0)) {
-        continue nextComment;
-      }
-      checkDeprecated = true;
-      int commentSourceEnd = this.scanner.commentStops[lastCommentIndex] - 1;
-      this.javadocParser.reportProblems = this.currentElement == null || commentSourceEnd > this.lastJavadocEnd;
-      deprecated = this.javadocParser.checkDeprecation(lastCommentIndex);
-      this.javadoc = this.javadocParser.docComment;
-      break nextComment;
-    }
-    if (deprecated) {
-      checkAndSetModifiers(ClassFileConstants.AccDeprecated);
-    }
-    if (lastCommentIndex >= 0 && checkDeprecated) {
-      this.modifiersSourceStart = this.scanner.commentStarts[lastCommentIndex];
-      if (this.modifiersSourceStart < 0) {
-        this.modifiersSourceStart = -this.modifiersSourceStart;
-      }
-    }
   }
 
   protected void consumeClassHeader() {

@@ -7,6 +7,13 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
+import java.util.List;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.Literal;
 import org.eclipse.jdt.internal.compiler.impl.Constant;
@@ -17,9 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
@@ -86,6 +90,7 @@ import org.eclipse.jdt.internal.compiler.lookup.Binding;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
 import org.eclipse.jdt.internal.compiler.ast.AssertStatement;
 import org.eclipse.jdt.internal.compiler.ast.Block;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.eclipse.jdt.internal.compiler.ast.BreakStatement;
 import org.eclipse.jdt.internal.compiler.ast.CaseStatement;
 import org.eclipse.jdt.internal.compiler.ast.ContinueStatement;
@@ -109,6 +114,10 @@ import org.eclipse.jdt.internal.compiler.ast.Initializer;
 import org.eclipse.jdt.internal.compiler.lookup.LocalTypeBinding;
 import org.eclipse.jdt.internal.compiler.ast.Argument;
 import org.eclipse.jdt.internal.compiler.ast.AbstractVariableDeclaration;
+import org.eclipse.jdt.internal.compiler.ast.Javadoc;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class JavaConverterTreeBuilder {
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
@@ -120,6 +129,8 @@ public class JavaConverterTreeBuilder {
   private TypeDeclaration myCurrentTypeDeclaration;
   private SNode myCurrentMethod;
   private TypesProvider myTypesProvider;
+  public List<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>> myBlocks = ListSequence.fromList(new ArrayList<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>());
+  public Map<SNode, Integer> myPositions = MapSequence.fromMap(new HashMap<SNode, Integer>());
 
   public JavaConverterTreeBuilder() {
   }
@@ -144,6 +155,9 @@ public class JavaConverterTreeBuilder {
   }
 
   public SNode processStatementRefl(Statement x) {
+    if (x == null) {
+      return null;
+    }
     SNode statement;
     if (x instanceof Expression) {
       SNode expr = processExpressionRefl((Expression) x);
@@ -155,6 +169,7 @@ public class JavaConverterTreeBuilder {
       statement = expressionStatement;
     } else {
       statement = SNodeOperations.cast(dispatchRefl("processStatement", x), "jetbrains.mps.baseLanguage.structure.Statement");
+      MapSequence.fromMap(myPositions).put(statement, x.sourceEnd());
     }
     return statement;
   }
@@ -997,6 +1012,7 @@ public class JavaConverterTreeBuilder {
     }
     SNode blockStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BlockStatement", null);
     SNode statementList = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
+    ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(statementList, getCUD(), x.sourceStart(), x.sourceEnd()));
     SLinkOperations.setTarget(blockStatement, "statements", statementList, true);
     for (SNode statement : processStatements(x.statements)) {
       ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(statement);
@@ -1017,6 +1033,7 @@ public class JavaConverterTreeBuilder {
     SNode switchCase = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SwitchCase", null);
     SLinkOperations.setTarget(switchCase, "expression", expression, true);
     SLinkOperations.setTarget(switchCase, "body", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+    ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(SLinkOperations.getTarget(switchCase, "body", true), getCUD(), x.sourceStart(), x.sourceEnd()));
     return switchCase;
   }
 
@@ -1033,7 +1050,7 @@ public class JavaConverterTreeBuilder {
     SNode loopBody = processStatementRefl(x.action);
     SNode doWhileStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.DoWhileStatement", null);
     SLinkOperations.setTarget(doWhileStatement, "condition", loopTest, true);
-    SNode body = getStatementListFromStatement(loopBody);
+    SNode body = getStatementListFromStatement(loopBody, x.action);
     SLinkOperations.setTarget(doWhileStatement, "body", body, true);
     return doWhileStatement;
   }
@@ -1069,7 +1086,7 @@ public class JavaConverterTreeBuilder {
   /*package*/ SNode processStatement(ForeachStatement x) {
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
     SNode action = processStatementRefl(x.action);
-    SNode body = getStatementListFromStatement(action);
+    SNode body = getStatementListFromStatement(action, x.action);
     SNode elementVar = SNodeOperations.cast(myTypesProvider.getRaw(x.elementVariable.binding), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SNode iterable = processExpressionRefl(x.collection);
     SLinkOperations.setTarget(result, "iterable", iterable, true);
@@ -1116,7 +1133,7 @@ public class JavaConverterTreeBuilder {
       }
     }
     SNode loopBody = processStatementRefl(x.action);
-    SNode body = getStatementListFromStatement(loopBody);
+    SNode body = getStatementListFromStatement(loopBody, x.action);
     SLinkOperations.setTarget(forStatement, "body", body, true);
     return forStatement;
   }
@@ -1130,7 +1147,7 @@ public class JavaConverterTreeBuilder {
     if ((elseStmt != null)) {
       SLinkOperations.setTarget(result, "ifFalseStatement", elseStmt, true);
     }
-    SNode ifTrue = getStatementListFromStatement(thenStmt);
+    SNode ifTrue = getStatementListFromStatement(thenStmt, x.thenStatement);
     SLinkOperations.setTarget(result, "ifTrue", ifTrue, true);
     return result;
   }
@@ -1156,6 +1173,9 @@ public class JavaConverterTreeBuilder {
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.SwitchStatement", null);
     SLinkOperations.setTarget(result, "expression", expression, true);
     SLinkOperations.setTarget(result, "defaultBlock", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+    if (x.defaultCase != null) {
+      ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(SLinkOperations.getTarget(result, "defaultBlock", true), getCUD(), x.defaultCase.sourceStart(), x.defaultCase.sourceEnd()));
+    }
     if (x.statements != null) {
       SNode currentSwitchCase = null;
       for (Statement stmt : x.statements) {
@@ -1187,7 +1207,7 @@ public class JavaConverterTreeBuilder {
     SNode block = processStatementRefl(x.block);
     SNode expr = processExpressionRefl(x.expression);
     SLinkOperations.setTarget(result, "expression", expr, true);
-    SLinkOperations.setTarget(result, "block", getStatementListFromStatement(block), true);
+    SLinkOperations.setTarget(result, "block", getStatementListFromStatement(block, x.block), true);
     return result;
   }
 
@@ -1219,11 +1239,11 @@ public class JavaConverterTreeBuilder {
         SNode lvd = ListSequence.fromList(catchArgs).getElement(i);
         SNode catchClause = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CatchClause", null);
         ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
-        SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock), true);
+        SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock, x.catchBlocks[i]), true);
         SLinkOperations.setTarget(catchClause, "throwable", lvd, true);
       }
-      SLinkOperations.setTarget(tryStatement, "finallyBody", getStatementListFromStatement(finallyBlock), true);
-      SLinkOperations.setTarget(tryStatement, "body", getStatementListFromStatement(tryBlock), true);
+      SLinkOperations.setTarget(tryStatement, "finallyBody", getStatementListFromStatement(finallyBlock, x.finallyBlock), true);
+      SLinkOperations.setTarget(tryStatement, "body", getStatementListFromStatement(tryBlock, x.tryBlock), true);
       return tryStatement;
     } else {
       SNode tryCatchStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.TryCatchStatement", null);
@@ -1232,10 +1252,10 @@ public class JavaConverterTreeBuilder {
         SNode lvd = ListSequence.fromList(catchArgs).getElement(i);
         SNode catchClause = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.CatchClause", null);
         ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addElement(catchClause);
-        SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock), true);
+        SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock, x.catchBlocks[i]), true);
         SLinkOperations.setTarget(catchClause, "throwable", lvd, true);
       }
-      SLinkOperations.setTarget(tryCatchStatement, "body", getStatementListFromStatement(tryBlock), true);
+      SLinkOperations.setTarget(tryCatchStatement, "body", getStatementListFromStatement(tryBlock, x.tryBlock), true);
       return tryCatchStatement;
     }
   }
@@ -1245,7 +1265,7 @@ public class JavaConverterTreeBuilder {
     SNode loopBody = processStatementRefl(x.action);
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.WhileStatement", null);
     SLinkOperations.setTarget(result, "condition", loopTest, true);
-    SLinkOperations.setTarget(result, "body", getStatementListFromStatement(loopBody), true);
+    SLinkOperations.setTarget(result, "body", getStatementListFromStatement(loopBody, x.action), true);
     return result;
   }
 
@@ -1257,6 +1277,9 @@ public class JavaConverterTreeBuilder {
           processAnnotationMethod((AnnotationMethodDeclaration) method);
         }
       }
+      myCurrentTypeDeclaration = x;
+      addClassifierJavadoc(classifier, x.javadoc);
+      myCurrentTypeDeclaration = null;
       return classifier;
     }
     myCurrentTypeDeclaration = x;
@@ -1289,9 +1312,10 @@ public class JavaConverterTreeBuilder {
           addExceptionsToMethod(method);
         }
       }
+      addClassifierAnnotations(classifier, x);
+      addClassifierJavadoc(classifier, x.javadoc);
       myCurrentClass = null;
       myCurrentTypeDeclaration = null;
-      addClassifierAnnotations(classifier, x);
     } catch (Throwable e) {
       throw new JavaConverterException(e);
     }
@@ -1328,6 +1352,7 @@ public class JavaConverterTreeBuilder {
         SLinkOperations.setTarget(method, "defaultValue", processExpressionRefl(x.defaultValue), true);
       }
       addMethodAnnotations(method, x);
+      addMethodJavadoc(method, x.javadoc);
       myCurrentMethod = null;
     } catch (Throwable t) {
       throw new JavaConverterException(t);
@@ -1348,6 +1373,7 @@ public class JavaConverterTreeBuilder {
       SNode methodBody = SLinkOperations.getTarget(method, "body", true);
       if ((methodBody == null)) {
         methodBody = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
+        ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(methodBody, getCUD(), x.declarationSourceStart, x.declarationSourceEnd));
         SLinkOperations.setTarget(method, "body", methodBody, true);
       }
       for (SNode statement : processStatements(x.statements)) {
@@ -1355,6 +1381,7 @@ public class JavaConverterTreeBuilder {
       }
       addMethodParametersAnnotations(x);
       addMethodAnnotations(method, x);
+      addMethodJavadoc(method, x.javadoc);
       myCurrentMethod = null;
     } catch (Throwable e) {
       throw new JavaConverterException(e);
@@ -1373,6 +1400,7 @@ public class JavaConverterTreeBuilder {
       SNode body = SLinkOperations.getTarget(ctor, "body", true);
       if ((body == null)) {
         body = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
+        ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(body, getCUD(), x.sourceStart(), x.sourceEnd()));
         SLinkOperations.setTarget(ctor, "body", body, true);
       }
       if ((superOrThisCall != null)) {
@@ -1383,6 +1411,7 @@ public class JavaConverterTreeBuilder {
       }
       addMethodParametersAnnotations(x);
       addMethodAnnotations(ctor, x);
+      addMethodJavadoc(ctor, x.javadoc);
       myCurrentMethod = null;
     } catch (Throwable e) {
       throw new JavaConverterException(e);
@@ -1395,11 +1424,13 @@ public class JavaConverterTreeBuilder {
       SNode staticInitializer = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StaticInitializer", null);
       SLinkOperations.setTarget(classConcept, "classInitializer", staticInitializer, true);
       SLinkOperations.setTarget(staticInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+      ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(SLinkOperations.getTarget(staticInitializer, "statementList", true), getCUD(), initializer.sourceStart(), initializer.sourceEnd()));
       body = SLinkOperations.getTarget(staticInitializer, "statementList", true);
     } else {
       SNode instanceInitializer = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
       SLinkOperations.setTarget(classConcept, "instanceInitializer", instanceInitializer, true);
       SLinkOperations.setTarget(instanceInitializer, "statementList", SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+      ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(SLinkOperations.getTarget(instanceInitializer, "statementList", true), getCUD(), initializer.sourceStart(), initializer.sourceEnd()));
       body = SLinkOperations.getTarget(instanceInitializer, "statementList", true);
     }
     if (initializer.block != null && initializer.block.statements != null) {
@@ -1426,6 +1457,7 @@ public class JavaConverterTreeBuilder {
           SLinkOperations.setTarget(field, "initializer", initializer, true);
         }
         addVariableAnnotations(field, declaration);
+        addFieldJavadoc(field, declaration.javadoc);
       } catch (Throwable e) {
         throw new JavaConverterException(e);
       }
@@ -1463,6 +1495,7 @@ public class JavaConverterTreeBuilder {
           }
         }
         addEnumConstAnnotations(enumConstant, declaration);
+        addFieldJavadoc(enumConstant, declaration.javadoc);
       } catch (Throwable t) {
         throw new JavaConverterException(t);
       }
@@ -1506,6 +1539,54 @@ public class JavaConverterTreeBuilder {
     ListSequence.fromList(SLinkOperations.getTargets(hasAnnotation, "annotation", true)).addElement(annotationInstance);
   }
 
+  private void addClassifierJavadoc(SNode node, Javadoc javadoc) {
+    if (javadoc == null) {
+      return;
+    }
+    AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
+    constructJavadoc(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), javadoc);
+  }
+
+  private void addFieldJavadoc(SNode node, Javadoc javadoc) {
+    if (javadoc == null) {
+      return;
+    }
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+      AttributeOperations.createAndSetAttrbiute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+      constructJavadoc(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), javadoc);
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+      AttributeOperations.createAndSetAttrbiute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+      constructJavadoc(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), javadoc);
+    }
+  }
+
+  private void addMethodJavadoc(SNode node, Javadoc javadoc) {
+    if (javadoc == null) {
+      return;
+    }
+    AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
+    constructJavadoc(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))), javadoc);
+  }
+
+  public void constructJavadoc(SNode doc, Javadoc javadoc) {
+    CompilationUnitDeclaration cud = getCUD();
+    char[] content = cud.compilationResult().getCompilationUnit().getContents();
+    int[][] comments = cud.comments;
+    int[] lineends = cud.compilationResult().lineSeparatorPositions;
+    // find javadoc in comments 
+    for (int[] comment : comments) {
+      if (comment[0] == javadoc.sourceStart) {
+        List<String> lines = CommentHelper.processJavadoc(CommentHelper.splitString(content, lineends, comment[0], comment[1] + 1));
+        for (String text : ListSequence.fromList(lines)) {
+          SNode commentLine = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
+          SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", text);
+          ListSequence.fromList(SLinkOperations.getTargets(doc, "body", true)).addElement(commentLine);
+        }
+        break;
+      }
+    }
+  }
+
   public List<SNode> exec(ReferentsCreator referentsCreator, Map<String, SModel> modelMap, boolean isolated) {
     List<SNode> result = new ArrayList<SNode>();
     myTypesProvider = referentsCreator.getTypesProvider();
@@ -1530,6 +1611,10 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
+  private CompilationUnitDeclaration getCUD() {
+    return myCurrentTypeDeclaration.scope.referenceCompilationUnit();
+  }
+
   public SModel getModelByTypeDeclaration(SourceTypeBinding typeBinding) {
     if (typeBinding instanceof NestedTypeBinding) {
       return getModelByTypeDeclaration(((NestedTypeBinding) typeBinding).enclosingType);
@@ -1545,13 +1630,14 @@ public class JavaConverterTreeBuilder {
     return sModel;
   }
 
-  private SNode getStatementListFromStatement(SNode possibleBlock) {
+  private SNode getStatementListFromStatement(SNode possibleBlock, Statement x) {
     SNode result;
     if (SNodeOperations.isInstanceOf(possibleBlock, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       result = SLinkOperations.getTarget(SNodeOperations.cast(possibleBlock, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
       SNodeOperations.detachNode(result);
     } else {
       result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.StatementList", null);
+      ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(result, getCUD(), x.sourceStart(), x.sourceEnd()));
       if ((possibleBlock != null)) {
         ListSequence.fromList(SLinkOperations.getTargets(result, "statement", true)).addElement(possibleBlock);
       }
