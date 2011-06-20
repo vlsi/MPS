@@ -49,6 +49,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     setNodeIdentifier(myLanguage.getModuleReference().toString());
     setIcon(Icons.PROJECT_LANGUAGE_ICON);
+    init();
   }
 
   public boolean isInitialized() {
