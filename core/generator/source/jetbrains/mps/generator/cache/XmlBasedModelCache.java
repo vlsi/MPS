@@ -72,7 +72,14 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
 
   @Override
   protected void saveCache(@NotNull T cache, SModelDescriptor model, StreamHandler handler) {
-    handler.saveStream(getCacheFileName(), toXml(cache), true);
+    handler.saveStream(getCacheFileName(), toXml(cache), isCache());
+  }
+
+  /**
+   * Returns true iff this cache should be stored in source_gen.caches
+   */
+  protected boolean isCache() {
+    return true;
   }
 
   protected T load(InputStream is) throws IOException {
