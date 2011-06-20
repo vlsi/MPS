@@ -34,7 +34,7 @@ public class DemoApplication_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.execution.demo.structure.SomeConcept");
     }
 
-    protected DemoApplication_Configuration doCreateConfiguration(SNode source) {
+    protected DemoApplication_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       if (!(SPropertyOperations.getBoolean(source, "valid"))) {
         return null;
