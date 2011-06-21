@@ -1506,7 +1506,7 @@
     <nodeInfo nodeId="7731963821318721658" fileName="JavaCompiler.java" startLine="398" startPosition="75" endLine="399" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7731963821318721669" fileName="JavaCompiler.java" startLine="399" startPosition="29" endLine="400" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3671703302989071334" fileName="JavaCompiler.java" startLine="405" startPosition="45" endLine="406" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7054300446842357374" fileName="JavaCompiler.java" startLine="409" startPosition="166" endLine="410" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7054300446842357374" fileName="JavaCompiler.java" startLine="409" startPosition="162" endLine="410" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7054300446842357322" fileName="JavaCompiler.java" startLine="410" startPosition="127" endLine="411" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7054300446842357339" fileName="JavaCompiler.java" startLine="411" startPosition="63" endLine="412" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7054300446842357345" fileName="JavaCompiler.java" startLine="412" startPosition="129" endLine="413" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1794,7 +1794,7 @@
     <scopeInfo nodeId="5646944109420332500" fileName="JavaCompiler.java" startLine="256" startPosition="0" endLine="261" endPosition="0" />
     <scopeInfo nodeId="5646944109420332563" fileName="JavaCompiler.java" startLine="268" startPosition="102" endLine="273" endPosition="0" />
     <scopeInfo nodeId="5646944109420332890" fileName="JavaCompiler.java" startLine="363" startPosition="0" endLine="368" endPosition="0" />
-    <scopeInfo nodeId="7054300446842357321" fileName="JavaCompiler.java" startLine="409" startPosition="166" endLine="414" endPosition="122">
+    <scopeInfo nodeId="7054300446842357321" fileName="JavaCompiler.java" startLine="409" startPosition="162" endLine="414" endPosition="122">
       <varInfo nodeId="7054300446842357375" varName="commentText" />
       <varInfo nodeId="7054300446842357340" varName="commentLine" />
     </scopeInfo>

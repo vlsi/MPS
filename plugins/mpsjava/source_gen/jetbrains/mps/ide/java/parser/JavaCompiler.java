@@ -406,7 +406,7 @@ public class JavaCompiler {
               return MapSequence.fromMap(positions).get(it) == null || Math.abs(MapSequence.fromMap(positions).get(it)) <= linestart;
             }
           }).count();
-          for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]) + 1)))) {
+          for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
             SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
             SPropertyOperations.set(commentText, "text", line);
             SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
