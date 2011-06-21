@@ -117,7 +117,7 @@ public class MergeContext {
   public Iterable<ModelChange> getApplicableChangesForRoot(SNodeId rootId) {
     return ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootId)).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return !(isChangeResolved(ch)) && Sequence.fromIterable(getConflictedWith(ch)).isEmpty();
+        return !(SetSequence.fromSet(myResolvedChanges).contains(ch)) && Sequence.fromIterable(getConflictedWith(ch)).isEmpty();
       }
     });
   }
@@ -127,7 +127,7 @@ public class MergeContext {
       public Iterable<ModelChange> translate(SNodeId root) {
         Iterable<ModelChange> unresolvedForRoot = ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(root)).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
-            return !(isChangeResolved(ch));
+            return !(SetSequence.fromSet(myResolvedChanges).contains(ch));
           }
         });
         if (Sequence.fromIterable(unresolvedForRoot).all(new IWhereFilter<ModelChange>() {
@@ -142,7 +142,7 @@ public class MergeContext {
       }
     }).concat(ListSequence.fromList(myMetadataChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return !(isChangeResolved(ch));
+        return !(SetSequence.fromSet(myResolvedChanges).contains(ch));
       }
     }));
   }
@@ -210,7 +210,7 @@ public class MergeContext {
   }
 
   private void applyChange(ModelChange change) {
-    if (isChangeResolved(change)) {
+    if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
     } else {
       change.apply(myResultModel, myNodeCopier);
       SetSequence.fromSet(myResolvedChanges).addElement(change);
@@ -223,7 +223,7 @@ public class MergeContext {
   }
 
   private void excludeChange(ModelChange change) {
-    if (isChangeResolved(change)) {
+    if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
     } else {
       SetSequence.fromSet(myResolvedChanges).addElement(change);
       for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
