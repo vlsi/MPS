@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dukqjorwjeuq1oc2dzzj7xp14h617xs">
+<dependencies version="2" modelHash="4m6f2fi3xg0fmm97lrh4ztrmdgm6v4b">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi(MPS.Classpath/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.ui(MPS.Classpath/com.intellij.openapi.ui@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(MPS.Classpath/com.intellij.openapi.util@java_stub)" />
@@ -447,7 +447,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SourceWrapper.java" />
   </source>
-  <source id="5646944109420333793" name="TypesProvider" hash="4wygsqmw5p4zs9390dkchud4c4gd2ev" dependsOnNodes="true">
+  <source id="5646944109420333793" name="TypesProvider" hash="9vjjf78o0ybachy9u4vmrsyekjubyqb" dependsOnNodes="true">
     <dep root="5646944109420299014" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(MPS.Classpath/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui(MPS.Classpath/com.intellij.ui@java_stub)" />

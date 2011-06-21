@@ -5094,87 +5094,85 @@
     <nodeInfo nodeId="5646944109420334517" fileName="TypesProvider.java" startLine="212" startPosition="87" endLine="213" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646944109420334523" fileName="TypesProvider.java" startLine="213" startPosition="66" endLine="214" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646944109420334528" fileName="TypesProvider.java" startLine="214" startPosition="95" endLine="215" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334535" fileName="TypesProvider.java" startLine="215" startPosition="111" endLine="216" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334547" fileName="TypesProvider.java" startLine="218" startPosition="69" endLine="219" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334562" fileName="TypesProvider.java" startLine="220" startPosition="80" endLine="221" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334570" fileName="TypesProvider.java" startLine="221" startPosition="105" endLine="222" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334576" fileName="TypesProvider.java" startLine="222" startPosition="68" endLine="223" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334581" fileName="TypesProvider.java" startLine="223" startPosition="97" endLine="224" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334588" fileName="TypesProvider.java" startLine="224" startPosition="113" endLine="225" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334593" fileName="TypesProvider.java" startLine="227" startPosition="5" endLine="228" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334604" fileName="TypesProvider.java" startLine="228" startPosition="110" endLine="229" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334612" fileName="TypesProvider.java" startLine="232" startPosition="101" endLine="233" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334617" fileName="TypesProvider.java" startLine="233" startPosition="80" endLine="234" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334622" fileName="TypesProvider.java" startLine="234" startPosition="64" endLine="235" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334627" fileName="TypesProvider.java" startLine="235" startPosition="111" endLine="236" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334639" fileName="TypesProvider.java" startLine="239" startPosition="134" endLine="240" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334652" fileName="TypesProvider.java" startLine="243" startPosition="88" endLine="244" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334657" fileName="TypesProvider.java" startLine="244" startPosition="43" endLine="245" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334664" fileName="TypesProvider.java" startLine="245" startPosition="97" endLine="246" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334683" fileName="TypesProvider.java" startLine="247" startPosition="33" endLine="248" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334675" fileName="TypesProvider.java" startLine="249" startPosition="12" endLine="250" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334688" fileName="TypesProvider.java" startLine="251" startPosition="5" endLine="252" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334693" fileName="TypesProvider.java" startLine="252" startPosition="19" endLine="253" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334700" fileName="TypesProvider.java" startLine="253" startPosition="60" endLine="254" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334716" fileName="TypesProvider.java" startLine="255" startPosition="74" endLine="256" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334721" fileName="TypesProvider.java" startLine="256" startPosition="21" endLine="257" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334729" fileName="TypesProvider.java" startLine="258" startPosition="5" endLine="259" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334745" fileName="TypesProvider.java" startLine="262" startPosition="85" endLine="263" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335059" fileName="TypesProvider.java" startLine="266" startPosition="103" endLine="267" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335064" fileName="TypesProvider.java" startLine="267" startPosition="69" endLine="268" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335080" fileName="TypesProvider.java" startLine="272" startPosition="46" endLine="273" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335087" fileName="TypesProvider.java" startLine="273" startPosition="104" endLine="274" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335094" fileName="TypesProvider.java" startLine="274" startPosition="71" endLine="275" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335104" fileName="TypesProvider.java" startLine="277" startPosition="46" endLine="278" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335118" fileName="TypesProvider.java" startLine="279" startPosition="30" endLine="280" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335129" fileName="TypesProvider.java" startLine="283" startPosition="53" endLine="284" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335135" fileName="TypesProvider.java" startLine="284" startPosition="92" endLine="285" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335140" fileName="TypesProvider.java" startLine="286" startPosition="5" endLine="287" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5646944109420335165" fileName="TypesProvider.java" startLine="291" startPosition="55" endLine="292" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335171" fileName="TypesProvider.java" startLine="292" startPosition="96" endLine="293" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335178" fileName="TypesProvider.java" startLine="294" startPosition="5" endLine="295" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335192" fileName="TypesProvider.java" startLine="296" startPosition="27" endLine="297" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335206" fileName="TypesProvider.java" startLine="299" startPosition="62" endLine="300" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335214" fileName="TypesProvider.java" startLine="300" startPosition="87" endLine="301" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335220" fileName="TypesProvider.java" startLine="301" startPosition="65" endLine="302" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335225" fileName="TypesProvider.java" startLine="302" startPosition="95" endLine="303" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335232" fileName="TypesProvider.java" startLine="303" startPosition="110" endLine="304" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335237" fileName="TypesProvider.java" startLine="305" startPosition="5" endLine="306" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335245" fileName="TypesProvider.java" startLine="309" startPosition="40" endLine="310" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335265" fileName="TypesProvider.java" startLine="314" startPosition="31" endLine="315" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420335266" fileName="TypesProvider.java" startLine="316" startPosition="5" endLine="317" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335284" fileName="TypesProvider.java" startLine="318" startPosition="64" endLine="319" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335304" fileName="TypesProvider.java" startLine="320" startPosition="53" endLine="321" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420333820" fileName="TypesProvider.java" startLine="326" startPosition="75" endLine="327" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420333837" fileName="TypesProvider.java" startLine="328" startPosition="51" endLine="329" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420333844" fileName="TypesProvider.java" startLine="329" startPosition="40" endLine="330" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420333858" fileName="TypesProvider.java" startLine="331" startPosition="40" endLine="332" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420333863" fileName="TypesProvider.java" startLine="334" startPosition="5" endLine="335" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334372" fileName="TypesProvider.java" startLine="338" startPosition="84" endLine="339" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334767" fileName="TypesProvider.java" startLine="342" startPosition="52" endLine="343" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334784" fileName="TypesProvider.java" startLine="347" startPosition="51" endLine="348" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334789" fileName="TypesProvider.java" startLine="348" startPosition="45" endLine="349" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420334800" fileName="TypesProvider.java" startLine="349" startPosition="89" endLine="350" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334809" fileName="TypesProvider.java" startLine="352" startPosition="44" endLine="353" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334820" fileName="TypesProvider.java" startLine="355" startPosition="44" endLine="356" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334868" fileName="TypesProvider.java" startLine="359" startPosition="112" endLine="360" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334857" fileName="TypesProvider.java" startLine="361" startPosition="14" endLine="362" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334883" fileName="TypesProvider.java" startLine="365" startPosition="42" endLine="366" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334897" fileName="TypesProvider.java" startLine="368" startPosition="46" endLine="369" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334903" fileName="TypesProvider.java" startLine="369" startPosition="75" endLine="370" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420334932" fileName="TypesProvider.java" startLine="371" startPosition="200" endLine="372" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334939" fileName="TypesProvider.java" startLine="373" startPosition="7" endLine="374" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334956" fileName="TypesProvider.java" startLine="376" startPosition="100" endLine="377" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334978" fileName="TypesProvider.java" startLine="379" startPosition="98" endLine="380" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334991" fileName="TypesProvider.java" startLine="382" startPosition="35" endLine="383" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420334993" fileName="TypesProvider.java" startLine="384" startPosition="5" endLine="385" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5646944109420335022" fileName="TypesProvider.java" startLine="389" startPosition="44" endLine="390" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420335028" fileName="TypesProvider.java" startLine="390" startPosition="41" endLine="391" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420335044" fileName="TypesProvider.java" startLine="392" startPosition="33" endLine="393" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334547" fileName="TypesProvider.java" startLine="221" startPosition="69" endLine="222" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334562" fileName="TypesProvider.java" startLine="223" startPosition="80" endLine="224" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334570" fileName="TypesProvider.java" startLine="224" startPosition="105" endLine="225" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334576" fileName="TypesProvider.java" startLine="225" startPosition="68" endLine="226" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334581" fileName="TypesProvider.java" startLine="226" startPosition="97" endLine="227" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334593" fileName="TypesProvider.java" startLine="233" startPosition="5" endLine="234" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334604" fileName="TypesProvider.java" startLine="234" startPosition="110" endLine="235" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334612" fileName="TypesProvider.java" startLine="238" startPosition="101" endLine="239" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334617" fileName="TypesProvider.java" startLine="239" startPosition="80" endLine="240" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334622" fileName="TypesProvider.java" startLine="240" startPosition="64" endLine="241" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334627" fileName="TypesProvider.java" startLine="241" startPosition="111" endLine="242" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334639" fileName="TypesProvider.java" startLine="245" startPosition="134" endLine="246" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334652" fileName="TypesProvider.java" startLine="249" startPosition="88" endLine="250" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334657" fileName="TypesProvider.java" startLine="250" startPosition="43" endLine="251" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334664" fileName="TypesProvider.java" startLine="251" startPosition="97" endLine="252" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334683" fileName="TypesProvider.java" startLine="253" startPosition="33" endLine="254" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334675" fileName="TypesProvider.java" startLine="255" startPosition="12" endLine="256" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334688" fileName="TypesProvider.java" startLine="257" startPosition="5" endLine="258" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334693" fileName="TypesProvider.java" startLine="258" startPosition="19" endLine="259" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334700" fileName="TypesProvider.java" startLine="259" startPosition="60" endLine="260" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334716" fileName="TypesProvider.java" startLine="261" startPosition="74" endLine="262" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334721" fileName="TypesProvider.java" startLine="262" startPosition="21" endLine="263" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334729" fileName="TypesProvider.java" startLine="264" startPosition="5" endLine="265" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334745" fileName="TypesProvider.java" startLine="268" startPosition="85" endLine="269" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335059" fileName="TypesProvider.java" startLine="272" startPosition="103" endLine="273" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335064" fileName="TypesProvider.java" startLine="273" startPosition="69" endLine="274" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335080" fileName="TypesProvider.java" startLine="278" startPosition="46" endLine="279" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335087" fileName="TypesProvider.java" startLine="279" startPosition="104" endLine="280" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335094" fileName="TypesProvider.java" startLine="280" startPosition="71" endLine="281" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335104" fileName="TypesProvider.java" startLine="283" startPosition="46" endLine="284" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335118" fileName="TypesProvider.java" startLine="285" startPosition="30" endLine="286" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335129" fileName="TypesProvider.java" startLine="289" startPosition="53" endLine="290" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335135" fileName="TypesProvider.java" startLine="290" startPosition="92" endLine="291" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335140" fileName="TypesProvider.java" startLine="292" startPosition="5" endLine="293" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5646944109420335165" fileName="TypesProvider.java" startLine="297" startPosition="55" endLine="298" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335171" fileName="TypesProvider.java" startLine="298" startPosition="96" endLine="299" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335178" fileName="TypesProvider.java" startLine="300" startPosition="5" endLine="301" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335192" fileName="TypesProvider.java" startLine="302" startPosition="27" endLine="303" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335206" fileName="TypesProvider.java" startLine="305" startPosition="62" endLine="306" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335214" fileName="TypesProvider.java" startLine="306" startPosition="87" endLine="307" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335220" fileName="TypesProvider.java" startLine="307" startPosition="65" endLine="308" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335225" fileName="TypesProvider.java" startLine="308" startPosition="95" endLine="309" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335232" fileName="TypesProvider.java" startLine="309" startPosition="110" endLine="310" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335237" fileName="TypesProvider.java" startLine="311" startPosition="5" endLine="312" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335245" fileName="TypesProvider.java" startLine="315" startPosition="40" endLine="316" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335265" fileName="TypesProvider.java" startLine="320" startPosition="31" endLine="321" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420335266" fileName="TypesProvider.java" startLine="322" startPosition="5" endLine="323" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335284" fileName="TypesProvider.java" startLine="324" startPosition="64" endLine="325" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335304" fileName="TypesProvider.java" startLine="326" startPosition="53" endLine="327" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420333820" fileName="TypesProvider.java" startLine="332" startPosition="75" endLine="333" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420333837" fileName="TypesProvider.java" startLine="334" startPosition="51" endLine="335" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420333844" fileName="TypesProvider.java" startLine="335" startPosition="40" endLine="336" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420333858" fileName="TypesProvider.java" startLine="337" startPosition="40" endLine="338" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420333863" fileName="TypesProvider.java" startLine="340" startPosition="5" endLine="341" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334372" fileName="TypesProvider.java" startLine="344" startPosition="84" endLine="345" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334767" fileName="TypesProvider.java" startLine="348" startPosition="52" endLine="349" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334784" fileName="TypesProvider.java" startLine="353" startPosition="51" endLine="354" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334789" fileName="TypesProvider.java" startLine="354" startPosition="45" endLine="355" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420334800" fileName="TypesProvider.java" startLine="355" startPosition="89" endLine="356" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334809" fileName="TypesProvider.java" startLine="358" startPosition="44" endLine="359" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334820" fileName="TypesProvider.java" startLine="361" startPosition="44" endLine="362" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334868" fileName="TypesProvider.java" startLine="365" startPosition="112" endLine="366" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334857" fileName="TypesProvider.java" startLine="367" startPosition="14" endLine="368" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334883" fileName="TypesProvider.java" startLine="371" startPosition="42" endLine="372" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334897" fileName="TypesProvider.java" startLine="374" startPosition="46" endLine="375" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334903" fileName="TypesProvider.java" startLine="375" startPosition="75" endLine="376" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420334932" fileName="TypesProvider.java" startLine="377" startPosition="200" endLine="378" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334939" fileName="TypesProvider.java" startLine="379" startPosition="7" endLine="380" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334956" fileName="TypesProvider.java" startLine="382" startPosition="100" endLine="383" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334978" fileName="TypesProvider.java" startLine="385" startPosition="98" endLine="386" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334991" fileName="TypesProvider.java" startLine="388" startPosition="35" endLine="389" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334993" fileName="TypesProvider.java" startLine="390" startPosition="5" endLine="391" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5646944109420335022" fileName="TypesProvider.java" startLine="395" startPosition="44" endLine="396" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420335028" fileName="TypesProvider.java" startLine="396" startPosition="41" endLine="397" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420335044" fileName="TypesProvider.java" startLine="398" startPosition="33" endLine="399" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646944109420334326" fileName="TypesProvider.java" startLine="173" startPosition="12" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5646944109420334413" fileName="TypesProvider.java" startLine="195" startPosition="10" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5646944109420334673" fileName="TypesProvider.java" startLine="249" startPosition="10" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5646944109420334855" fileName="TypesProvider.java" startLine="361" startPosition="12" endLine="363" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5646944109420334673" fileName="TypesProvider.java" startLine="255" startPosition="10" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5646944109420334855" fileName="TypesProvider.java" startLine="367" startPosition="12" endLine="369" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5646944109420333802" fileName="TypesProvider.java" startLine="46" startPosition="0" endLine="49" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypesProvider#(Ljetbrains/mps/ide/java/parser/ReferentsCreator;)V" />
     <nodeInfo nodeId="5646944109420333885" fileName="TypesProvider.java" startLine="55" startPosition="64" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420333898" fileName="TypesProvider.java" startLine="58" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -5191,74 +5189,76 @@
     <nodeInfo nodeId="5646944109420334460" fileName="TypesProvider.java" startLine="200" startPosition="97" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334467" fileName="TypesProvider.java" startLine="203" startPosition="5" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334490" fileName="TypesProvider.java" startLine="207" startPosition="64" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335113" fileName="TypesProvider.java" startLine="278" startPosition="66" endLine="281" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335187" fileName="TypesProvider.java" startLine="295" startPosition="64" endLine="298" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335260" fileName="TypesProvider.java" startLine="313" startPosition="65" endLine="316" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335291" fileName="TypesProvider.java" startLine="319" startPosition="38" endLine="322" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420333849" fileName="TypesProvider.java" startLine="330" startPosition="31" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334804" fileName="TypesProvider.java" startLine="351" startPosition="5" endLine="354" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334815" fileName="TypesProvider.java" startLine="354" startPosition="5" endLine="357" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334878" fileName="TypesProvider.java" startLine="364" startPosition="5" endLine="367" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334909" fileName="TypesProvider.java" startLine="370" startPosition="67" endLine="373" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334942" fileName="TypesProvider.java" startLine="375" startPosition="5" endLine="378" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334964" fileName="TypesProvider.java" startLine="378" startPosition="5" endLine="381" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334986" fileName="TypesProvider.java" startLine="381" startPosition="5" endLine="384" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335035" fileName="TypesProvider.java" startLine="391" startPosition="62" endLine="394" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335113" fileName="TypesProvider.java" startLine="284" startPosition="66" endLine="287" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335187" fileName="TypesProvider.java" startLine="301" startPosition="64" endLine="304" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335260" fileName="TypesProvider.java" startLine="319" startPosition="65" endLine="322" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335291" fileName="TypesProvider.java" startLine="325" startPosition="38" endLine="328" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420333849" fileName="TypesProvider.java" startLine="336" startPosition="31" endLine="339" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334804" fileName="TypesProvider.java" startLine="357" startPosition="5" endLine="360" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334815" fileName="TypesProvider.java" startLine="360" startPosition="5" endLine="363" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334878" fileName="TypesProvider.java" startLine="370" startPosition="5" endLine="373" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334909" fileName="TypesProvider.java" startLine="376" startPosition="67" endLine="379" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334942" fileName="TypesProvider.java" startLine="381" startPosition="5" endLine="384" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334964" fileName="TypesProvider.java" startLine="384" startPosition="5" endLine="387" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334986" fileName="TypesProvider.java" startLine="387" startPosition="5" endLine="390" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335035" fileName="TypesProvider.java" startLine="397" startPosition="62" endLine="400" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420333867" fileName="TypesProvider.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createType#(Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5646944109420334031" fileName="TypesProvider.java" startLine="99" startPosition="47" endLine="103" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646944109420334100" fileName="TypesProvider.java" startLine="124" startPosition="16" endLine="128" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5646944109420334352" fileName="TypesProvider.java" startLine="180" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifierNodeId#(Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljetbrains/mps/smodel/SNodeId/Foreign;" />
     <nodeInfo nodeId="5646944109420334377" fileName="TypesProvider.java" startLine="184" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorReference#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SReference;" />
-    <nodeInfo nodeId="5646944109420334629" fileName="TypesProvider.java" startLine="238" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRegularMPSNodePointerFromForeignId#(Ljetbrains/mps/smodel/SModelReference;Ljetbrains/mps/smodel/SNodeId;Ljetbrains/mps/ide/java/parser/FeatureKind;)Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="5646944109420334705" fileName="TypesProvider.java" startLine="254" startPosition="19" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334737" fileName="TypesProvider.java" startLine="261" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldId#(Lorg/eclipse/jdt/internal/compiler/lookup/FieldBinding;Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="5646944109420335124" fileName="TypesProvider.java" startLine="282" startPosition="5" endLine="286" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335160" fileName="TypesProvider.java" startLine="290" startPosition="95" endLine="294" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335239" fileName="TypesProvider.java" startLine="308" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRaw#(Lorg/eclipse/jdt/internal/compiler/lookup/Binding;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5646944109420334366" fileName="TypesProvider.java" startLine="337" startPosition="0" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClassifierIdPrefix#(Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5646944109420334761" fileName="TypesProvider.java" startLine="341" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="asString#(Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5646944109420334535" fileName="TypesProvider.java" startLine="215" startPosition="111" endLine="219" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334588" fileName="TypesProvider.java" startLine="227" startPosition="113" endLine="231" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420334629" fileName="TypesProvider.java" startLine="244" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRegularMPSNodePointerFromForeignId#(Ljetbrains/mps/smodel/SModelReference;Ljetbrains/mps/smodel/SNodeId;Ljetbrains/mps/ide/java/parser/FeatureKind;)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="5646944109420334705" fileName="TypesProvider.java" startLine="260" startPosition="19" endLine="264" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334737" fileName="TypesProvider.java" startLine="267" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldId#(Lorg/eclipse/jdt/internal/compiler/lookup/FieldBinding;Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="5646944109420335124" fileName="TypesProvider.java" startLine="288" startPosition="5" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335160" fileName="TypesProvider.java" startLine="296" startPosition="95" endLine="300" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335239" fileName="TypesProvider.java" startLine="314" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRaw#(Lorg/eclipse/jdt/internal/compiler/lookup/Binding;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5646944109420334366" fileName="TypesProvider.java" startLine="343" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClassifierIdPrefix#(Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5646944109420334761" fileName="TypesProvider.java" startLine="347" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="asString#(Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;)Ljava/lang/String;" />
     <nodeInfo nodeId="5646944109420334185" fileName="TypesProvider.java" startLine="137" startPosition="74" endLine="142" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334669" fileName="TypesProvider.java" startLine="246" startPosition="19" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335049" fileName="TypesProvider.java" startLine="265" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassifierReference#(Lorg/eclipse/jdt/internal/compiler/lookup/ReferenceBinding;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SReference;" />
-    <nodeInfo nodeId="5646944109420335075" fileName="TypesProvider.java" startLine="271" startPosition="72" endLine="276" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334779" fileName="TypesProvider.java" startLine="346" startPosition="75" endLine="351" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334833" fileName="TypesProvider.java" startLine="358" startPosition="39" endLine="363" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334669" fileName="TypesProvider.java" startLine="252" startPosition="19" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335049" fileName="TypesProvider.java" startLine="271" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassifierReference#(Lorg/eclipse/jdt/internal/compiler/lookup/ReferenceBinding;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SReference;" />
+    <nodeInfo nodeId="5646944109420335075" fileName="TypesProvider.java" startLine="277" startPosition="72" endLine="282" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334779" fileName="TypesProvider.java" startLine="352" startPosition="75" endLine="357" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334833" fileName="TypesProvider.java" startLine="364" startPosition="39" endLine="369" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334044" fileName="TypesProvider.java" startLine="104" startPosition="43" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="5646944109420334203" fileName="TypesProvider.java" startLine="145" startPosition="7" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334227" fileName="TypesProvider.java" startLine="151" startPosition="7" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334322" fileName="TypesProvider.java" startLine="169" startPosition="105" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335099" fileName="TypesProvider.java" startLine="276" startPosition="5" endLine="282" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335274" fileName="TypesProvider.java" startLine="317" startPosition="62" endLine="323" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5646944109420335099" fileName="TypesProvider.java" startLine="282" startPosition="5" endLine="288" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335274" fileName="TypesProvider.java" startLine="323" startPosition="62" endLine="329" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5646944109420334261" fileName="TypesProvider.java" startLine="157" startPosition="7" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334502" fileName="TypesProvider.java" startLine="210" startPosition="5" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334555" fileName="TypesProvider.java" startLine="219" startPosition="108" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334606" fileName="TypesProvider.java" startLine="231" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelReferenceFromBinaryClassBinding#(Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="5646944109420335199" fileName="TypesProvider.java" startLine="298" startPosition="5" endLine="305" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420333825" fileName="TypesProvider.java" startLine="327" startPosition="48" endLine="334" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5646944109420334828" fileName="TypesProvider.java" startLine="357" startPosition="5" endLine="364" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335010" fileName="TypesProvider.java" startLine="388" startPosition="96" endLine="395" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5646944109420334606" fileName="TypesProvider.java" startLine="237" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelReferenceFromBinaryClassBinding#(Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="5646944109420335199" fileName="TypesProvider.java" startLine="304" startPosition="5" endLine="311" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420333825" fileName="TypesProvider.java" startLine="333" startPosition="48" endLine="340" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5646944109420334828" fileName="TypesProvider.java" startLine="363" startPosition="5" endLine="370" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335010" fileName="TypesProvider.java" startLine="394" startPosition="96" endLine="401" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="5646944109420334171" fileName="TypesProvider.java" startLine="135" startPosition="91" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334409" fileName="TypesProvider.java" startLine="189" startPosition="104" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334892" fileName="TypesProvider.java" startLine="367" startPosition="5" endLine="375" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334892" fileName="TypesProvider.java" startLine="373" startPosition="5" endLine="381" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420333877" fileName="TypesProvider.java" startLine="54" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setComponentType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5646944109420334094" fileName="TypesProvider.java" startLine="119" startPosition="16" endLine="128" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334092" fileName="TypesProvider.java" startLine="119" startPosition="14" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5646944109420334540" fileName="TypesProvider.java" startLine="217" startPosition="5" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334999" fileName="TypesProvider.java" startLine="387" startPosition="0" endLine="397" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="appendList#(Ljava/lang/StringBuilder;[Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;)V" />
+    <nodeInfo nodeId="5646944109420334502" fileName="TypesProvider.java" startLine="210" startPosition="5" endLine="220" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334555" fileName="TypesProvider.java" startLine="222" startPosition="108" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420334999" fileName="TypesProvider.java" startLine="393" startPosition="0" endLine="403" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="appendList#(Ljava/lang/StringBuilder;[Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;)V" />
     <nodeInfo nodeId="5646944109420334399" fileName="TypesProvider.java" startLine="188" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createErrorClassifierReference#(Ljava/lang/String;Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SReference;" />
     <nodeInfo nodeId="5646944109420334295" fileName="TypesProvider.java" startLine="165" startPosition="5" endLine="177" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420333812" fileName="TypesProvider.java" startLine="325" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="classFqNameFromCompoundName#([[C)Ljava/lang/String;" />
+    <nodeInfo nodeId="5646944109420333812" fileName="TypesProvider.java" startLine="331" startPosition="0" endLine="343" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="classFqNameFromCompoundName#([[C)Ljava/lang/String;" />
     <nodeInfo nodeId="5646944109420334088" fileName="TypesProvider.java" startLine="116" startPosition="68" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420335252" fileName="TypesProvider.java" startLine="312" startPosition="0" endLine="325" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceUnsafe#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5646944109420334540" fileName="TypesProvider.java" startLine="220" startPosition="5" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420335252" fileName="TypesProvider.java" startLine="318" startPosition="0" endLine="331" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceUnsafe#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5646944109420334137" fileName="TypesProvider.java" startLine="130" startPosition="7" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334077" fileName="TypesProvider.java" startLine="114" startPosition="46" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420334008" fileName="TypesProvider.java" startLine="95" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334644" fileName="TypesProvider.java" startLine="242" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodId#(Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="5646944109420335069" fileName="TypesProvider.java" startLine="270" startPosition="0" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassifierPointer#(Lorg/eclipse/jdt/internal/compiler/lookup/ReferenceBinding;)Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="5646944109420335150" fileName="TypesProvider.java" startLine="289" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldReference#(Lorg/eclipse/jdt/internal/compiler/lookup/FieldBinding;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SReference;" />
+    <nodeInfo nodeId="5646944109420334644" fileName="TypesProvider.java" startLine="248" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodId#(Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;Lorg/eclipse/jdt/internal/compiler/lookup/BinaryTypeBinding;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="5646944109420335069" fileName="TypesProvider.java" startLine="276" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassifierPointer#(Lorg/eclipse/jdt/internal/compiler/lookup/ReferenceBinding;)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="5646944109420335150" fileName="TypesProvider.java" startLine="295" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldReference#(Lorg/eclipse/jdt/internal/compiler/lookup/FieldBinding;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SReference;" />
     <nodeInfo nodeId="5646944109420333925" fileName="TypesProvider.java" startLine="65" startPosition="53" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420334450" fileName="TypesProvider.java" startLine="199" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodReference#(Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SReference;" />
-    <nodeInfo nodeId="5646944109420334771" fileName="TypesProvider.java" startLine="345" startPosition="0" endLine="387" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="asString#(Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5646944109420334450" fileName="TypesProvider.java" startLine="199" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodReference#(Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SReference;" />
+    <nodeInfo nodeId="5646944109420334771" fileName="TypesProvider.java" startLine="351" startPosition="0" endLine="393" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="asString#(Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;Lorg/eclipse/jdt/internal/compiler/lookup/MethodBinding;)Ljava/lang/String;" />
     <nodeInfo nodeId="5646944109420334072" fileName="TypesProvider.java" startLine="113" startPosition="5" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420333911" fileName="TypesProvider.java" startLine="63" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createType#(Lorg/eclipse/jdt/internal/compiler/lookup/TypeBinding;Z)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="5646944109420333807" fileName="TypesProvider.java" startLine="47" startPosition="59" endLine="48" endPosition="42" />
@@ -5283,37 +5283,37 @@
     <scopeInfo nodeId="5646944109420334464" fileName="TypesProvider.java" startLine="201" startPosition="26" endLine="202" endPosition="18" />
     <scopeInfo nodeId="5646944109420334471" fileName="TypesProvider.java" startLine="204" startPosition="56" endLine="205" endPosition="66" />
     <scopeInfo nodeId="5646944109420334494" fileName="TypesProvider.java" startLine="208" startPosition="27" endLine="209" endPosition="87" />
-    <scopeInfo nodeId="5646944109420334638" fileName="TypesProvider.java" startLine="239" startPosition="134" endLine="240" endPosition="52" />
-    <scopeInfo nodeId="5646944109420334682" fileName="TypesProvider.java" startLine="247" startPosition="33" endLine="248" endPosition="26" />
-    <scopeInfo nodeId="5646944109420334674" fileName="TypesProvider.java" startLine="249" startPosition="12" endLine="250" endPosition="33" />
-    <scopeInfo nodeId="5646944109420334744" fileName="TypesProvider.java" startLine="262" startPosition="85" endLine="263" endPosition="173" />
-    <scopeInfo nodeId="5646944109420335117" fileName="TypesProvider.java" startLine="279" startPosition="30" endLine="280" endPosition="41" />
-    <scopeInfo nodeId="5646944109420335191" fileName="TypesProvider.java" startLine="296" startPosition="27" endLine="297" endPosition="83" />
-    <scopeInfo nodeId="5646944109420335244" fileName="TypesProvider.java" startLine="309" startPosition="40" endLine="310" endPosition="56" />
-    <scopeInfo nodeId="5646944109420335264" fileName="TypesProvider.java" startLine="314" startPosition="31" endLine="315" endPosition="13" />
-    <scopeInfo nodeId="5646944109420335303" fileName="TypesProvider.java" startLine="320" startPosition="53" endLine="321" endPosition="37" />
-    <scopeInfo nodeId="5646944109420333857" fileName="TypesProvider.java" startLine="331" startPosition="40" endLine="332" endPosition="28" />
-    <scopeInfo nodeId="5646944109420334371" fileName="TypesProvider.java" startLine="338" startPosition="84" endLine="339" endPosition="85" />
-    <scopeInfo nodeId="5646944109420334766" fileName="TypesProvider.java" startLine="342" startPosition="52" endLine="343" endPosition="46" />
-    <scopeInfo nodeId="5646944109420334808" fileName="TypesProvider.java" startLine="352" startPosition="44" endLine="353" endPosition="77" />
-    <scopeInfo nodeId="5646944109420334819" fileName="TypesProvider.java" startLine="355" startPosition="44" endLine="356" endPosition="96" />
-    <scopeInfo nodeId="5646944109420334867" fileName="TypesProvider.java" startLine="359" startPosition="112" endLine="360" endPosition="84" />
-    <scopeInfo nodeId="5646944109420334856" fileName="TypesProvider.java" startLine="361" startPosition="14" endLine="362" endPosition="83" />
-    <scopeInfo nodeId="5646944109420334882" fileName="TypesProvider.java" startLine="365" startPosition="42" endLine="366" endPosition="61" />
-    <scopeInfo nodeId="5646944109420334931" fileName="TypesProvider.java" startLine="371" startPosition="200" endLine="372" endPosition="78" />
-    <scopeInfo nodeId="5646944109420334955" fileName="TypesProvider.java" startLine="376" startPosition="100" endLine="377" endPosition="68" />
-    <scopeInfo nodeId="5646944109420334977" fileName="TypesProvider.java" startLine="379" startPosition="98" endLine="380" endPosition="68" />
-    <scopeInfo nodeId="5646944109420334990" fileName="TypesProvider.java" startLine="382" startPosition="35" endLine="383" endPosition="32" />
-    <scopeInfo nodeId="5646944109420335043" fileName="TypesProvider.java" startLine="392" startPosition="33" endLine="393" endPosition="23" />
+    <scopeInfo nodeId="5646944109420334638" fileName="TypesProvider.java" startLine="245" startPosition="134" endLine="246" endPosition="52" />
+    <scopeInfo nodeId="5646944109420334682" fileName="TypesProvider.java" startLine="253" startPosition="33" endLine="254" endPosition="26" />
+    <scopeInfo nodeId="5646944109420334674" fileName="TypesProvider.java" startLine="255" startPosition="12" endLine="256" endPosition="33" />
+    <scopeInfo nodeId="5646944109420334744" fileName="TypesProvider.java" startLine="268" startPosition="85" endLine="269" endPosition="173" />
+    <scopeInfo nodeId="5646944109420335117" fileName="TypesProvider.java" startLine="285" startPosition="30" endLine="286" endPosition="41" />
+    <scopeInfo nodeId="5646944109420335191" fileName="TypesProvider.java" startLine="302" startPosition="27" endLine="303" endPosition="83" />
+    <scopeInfo nodeId="5646944109420335244" fileName="TypesProvider.java" startLine="315" startPosition="40" endLine="316" endPosition="56" />
+    <scopeInfo nodeId="5646944109420335264" fileName="TypesProvider.java" startLine="320" startPosition="31" endLine="321" endPosition="13" />
+    <scopeInfo nodeId="5646944109420335303" fileName="TypesProvider.java" startLine="326" startPosition="53" endLine="327" endPosition="37" />
+    <scopeInfo nodeId="5646944109420333857" fileName="TypesProvider.java" startLine="337" startPosition="40" endLine="338" endPosition="28" />
+    <scopeInfo nodeId="5646944109420334371" fileName="TypesProvider.java" startLine="344" startPosition="84" endLine="345" endPosition="85" />
+    <scopeInfo nodeId="5646944109420334766" fileName="TypesProvider.java" startLine="348" startPosition="52" endLine="349" endPosition="46" />
+    <scopeInfo nodeId="5646944109420334808" fileName="TypesProvider.java" startLine="358" startPosition="44" endLine="359" endPosition="77" />
+    <scopeInfo nodeId="5646944109420334819" fileName="TypesProvider.java" startLine="361" startPosition="44" endLine="362" endPosition="96" />
+    <scopeInfo nodeId="5646944109420334867" fileName="TypesProvider.java" startLine="365" startPosition="112" endLine="366" endPosition="84" />
+    <scopeInfo nodeId="5646944109420334856" fileName="TypesProvider.java" startLine="367" startPosition="14" endLine="368" endPosition="83" />
+    <scopeInfo nodeId="5646944109420334882" fileName="TypesProvider.java" startLine="371" startPosition="42" endLine="372" endPosition="61" />
+    <scopeInfo nodeId="5646944109420334931" fileName="TypesProvider.java" startLine="377" startPosition="200" endLine="378" endPosition="78" />
+    <scopeInfo nodeId="5646944109420334955" fileName="TypesProvider.java" startLine="382" startPosition="100" endLine="383" endPosition="68" />
+    <scopeInfo nodeId="5646944109420334977" fileName="TypesProvider.java" startLine="385" startPosition="98" endLine="386" endPosition="68" />
+    <scopeInfo nodeId="5646944109420334990" fileName="TypesProvider.java" startLine="388" startPosition="35" endLine="389" endPosition="32" />
+    <scopeInfo nodeId="5646944109420335043" fileName="TypesProvider.java" startLine="398" startPosition="33" endLine="399" endPosition="23" />
     <scopeInfo nodeId="5646944109420334332" fileName="TypesProvider.java" startLine="170" startPosition="118" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="5646944109420334715" fileName="TypesProvider.java" startLine="255" startPosition="74" endLine="257" endPosition="59" />
-    <scopeInfo nodeId="5646944109420335058" fileName="TypesProvider.java" startLine="266" startPosition="103" endLine="268" endPosition="99">
+    <scopeInfo nodeId="5646944109420334715" fileName="TypesProvider.java" startLine="261" startPosition="74" endLine="263" endPosition="59" />
+    <scopeInfo nodeId="5646944109420335058" fileName="TypesProvider.java" startLine="272" startPosition="103" endLine="274" endPosition="99">
       <varInfo nodeId="5646944109420335060" varName="classifierPointer" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335128" fileName="TypesProvider.java" startLine="283" startPosition="53" endLine="285" endPosition="77">
+    <scopeInfo nodeId="5646944109420335128" fileName="TypesProvider.java" startLine="289" startPosition="53" endLine="291" endPosition="77">
       <varInfo nodeId="5646944109420335130" varName="parameterizedTypeBinding" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335164" fileName="TypesProvider.java" startLine="291" startPosition="55" endLine="293" endPosition="93">
+    <scopeInfo nodeId="5646944109420335164" fileName="TypesProvider.java" startLine="297" startPosition="55" endLine="299" endPosition="93">
       <varInfo nodeId="5646944109420335166" varName="parameterizedFieldBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333802" fileName="TypesProvider.java" startLine="46" startPosition="0" endLine="49" endPosition="3">
@@ -5329,11 +5329,11 @@
     <scopeInfo nodeId="5646944109420334190" fileName="TypesProvider.java" startLine="138" startPosition="37" endLine="141" endPosition="13">
       <varInfo nodeId="5646944109420334192" varName="typeBinding" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335079" fileName="TypesProvider.java" startLine="272" startPosition="46" endLine="275" endPosition="94">
+    <scopeInfo nodeId="5646944109420335079" fileName="TypesProvider.java" startLine="278" startPosition="46" endLine="281" endPosition="94">
       <varInfo nodeId="5646944109420335088" varName="nodeId" />
       <varInfo nodeId="5646944109420335081" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334783" fileName="TypesProvider.java" startLine="347" startPosition="51" endLine="350" endPosition="27">
+    <scopeInfo nodeId="5646944109420334783" fileName="TypesProvider.java" startLine="353" startPosition="51" endLine="356" endPosition="27">
       <varInfo nodeId="5646944109420334785" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333867" fileName="TypesProvider.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
@@ -5362,33 +5362,33 @@
       <varInfo nodeId="5646944109420334433" varName="name" />
       <varInfo nodeId="5646944109420334425" varName="chars" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334611" fileName="TypesProvider.java" startLine="232" startPosition="101" endLine="236" endPosition="26">
+    <scopeInfo nodeId="5646944109420334611" fileName="TypesProvider.java" startLine="238" startPosition="101" endLine="242" endPosition="26">
       <varInfo nodeId="5646944109420334618" varName="packageName" />
       <varInfo nodeId="5646944109420334623" varName="modelReference" />
       <varInfo nodeId="5646944109420334613" varName="classFQName" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334629" fileName="TypesProvider.java" startLine="238" startPosition="0" endLine="242" endPosition="0">
+    <scopeInfo nodeId="5646944109420334629" fileName="TypesProvider.java" startLine="244" startPosition="0" endLine="248" endPosition="0">
       <varInfo nodeId="5646944109420334634" varName="nodeId" />
       <varInfo nodeId="5646944109420334636" varName="targetKind" />
       <varInfo nodeId="5646944109420334632" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334737" fileName="TypesProvider.java" startLine="261" startPosition="0" endLine="265" endPosition="0">
+    <scopeInfo nodeId="5646944109420334737" fileName="TypesProvider.java" startLine="267" startPosition="0" endLine="271" endPosition="0">
       <varInfo nodeId="5646944109420334740" varName="field" />
       <varInfo nodeId="5646944109420334742" varName="classBinding" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335103" fileName="TypesProvider.java" startLine="277" startPosition="46" endLine="281" endPosition="7">
+    <scopeInfo nodeId="5646944109420335103" fileName="TypesProvider.java" startLine="283" startPosition="46" endLine="287" endPosition="7">
       <varInfo nodeId="5646944109420335105" varName="adapter" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335239" fileName="TypesProvider.java" startLine="308" startPosition="0" endLine="312" endPosition="0">
+    <scopeInfo nodeId="5646944109420335239" fileName="TypesProvider.java" startLine="314" startPosition="0" endLine="318" endPosition="0">
       <varInfo nodeId="5646944109420335242" varName="binding" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335283" fileName="TypesProvider.java" startLine="318" startPosition="64" endLine="322" endPosition="7">
+    <scopeInfo nodeId="5646944109420335283" fileName="TypesProvider.java" startLine="324" startPosition="64" endLine="328" endPosition="7">
       <varInfo nodeId="5646944109420335285" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334366" fileName="TypesProvider.java" startLine="337" startPosition="0" endLine="341" endPosition="0">
+    <scopeInfo nodeId="5646944109420334366" fileName="TypesProvider.java" startLine="343" startPosition="0" endLine="347" endPosition="0">
       <varInfo nodeId="5646944109420334369" varName="binaryTypeBinding" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334761" fileName="TypesProvider.java" startLine="341" startPosition="0" endLine="345" endPosition="0">
+    <scopeInfo nodeId="5646944109420334761" fileName="TypesProvider.java" startLine="347" startPosition="0" endLine="351" endPosition="0">
       <varInfo nodeId="5646944109420334764" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334265" fileName="TypesProvider.java" startLine="158" startPosition="49" endLine="163" endPosition="30">
@@ -5396,67 +5396,64 @@
       <varInfo nodeId="5646944109420334272" varName="binaryTypeBinding" />
       <varInfo nodeId="5646944109420334278" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334508" fileName="TypesProvider.java" startLine="211" startPosition="62" endLine="216" endPosition="88">
-      <varInfo nodeId="5646944109420334518" varName="nodeId" />
-      <varInfo nodeId="5646944109420334529" varName="pointer" />
-      <varInfo nodeId="5646944109420334510" varName="binaryTypeBinding" />
-      <varInfo nodeId="5646944109420334524" varName="modelReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="5646944109420334561" fileName="TypesProvider.java" startLine="220" startPosition="80" endLine="225" endPosition="90">
-      <varInfo nodeId="5646944109420334571" varName="nodeId" />
-      <varInfo nodeId="5646944109420334582" varName="pointer" />
-      <varInfo nodeId="5646944109420334563" varName="binaryTypeBinding" />
-      <varInfo nodeId="5646944109420334577" varName="modelReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="5646944109420335049" fileName="TypesProvider.java" startLine="265" startPosition="0" endLine="270" endPosition="0">
+    <scopeInfo nodeId="5646944109420335049" fileName="TypesProvider.java" startLine="271" startPosition="0" endLine="276" endPosition="0">
       <varInfo nodeId="5646944109420335052" varName="aClass" />
       <varInfo nodeId="5646944109420335056" varName="sourceNode" />
       <varInfo nodeId="5646944109420335054" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335205" fileName="TypesProvider.java" startLine="299" startPosition="62" endLine="304" endPosition="84">
+    <scopeInfo nodeId="5646944109420335205" fileName="TypesProvider.java" startLine="305" startPosition="62" endLine="310" endPosition="84">
       <varInfo nodeId="5646944109420335215" varName="nodeId" />
       <varInfo nodeId="5646944109420335226" varName="pointer" />
       <varInfo nodeId="5646944109420335207" varName="binaryTypeBinding" />
       <varInfo nodeId="5646944109420335221" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420333836" fileName="TypesProvider.java" startLine="328" startPosition="51" endLine="333" endPosition="7">
+    <scopeInfo nodeId="5646944109420333836" fileName="TypesProvider.java" startLine="334" startPosition="51" endLine="339" endPosition="7">
       <varInfo nodeId="5646944109420333838" varName="namePart" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334832" fileName="TypesProvider.java" startLine="358" startPosition="39" endLine="363" endPosition="7" />
-    <scopeInfo nodeId="5646944109420335021" fileName="TypesProvider.java" startLine="389" startPosition="44" endLine="394" endPosition="7">
+    <scopeInfo nodeId="5646944109420334832" fileName="TypesProvider.java" startLine="364" startPosition="39" endLine="369" endPosition="7" />
+    <scopeInfo nodeId="5646944109420335021" fileName="TypesProvider.java" startLine="395" startPosition="44" endLine="400" endPosition="7">
       <varInfo nodeId="5646944109420335023" varName="typeBinding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333884" fileName="TypesProvider.java" startLine="55" startPosition="64" endLine="61" endPosition="5" />
     <scopeInfo nodeId="5646944109420334177" fileName="TypesProvider.java" startLine="136" startPosition="70" endLine="142" endPosition="11">
       <varInfo nodeId="5646944109420334179" varName="typeBindings" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335274" fileName="TypesProvider.java" startLine="317" startPosition="62" endLine="323" endPosition="5">
+    <scopeInfo nodeId="5646944109420335274" fileName="TypesProvider.java" startLine="323" startPosition="62" endLine="329" endPosition="5">
       <varInfo nodeId="5646944109420335281" varName="binding" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334896" fileName="TypesProvider.java" startLine="368" startPosition="46" endLine="374" endPosition="48">
+    <scopeInfo nodeId="5646944109420334896" fileName="TypesProvider.java" startLine="374" startPosition="46" endLine="380" endPosition="48">
       <varInfo nodeId="5646944109420334898" varName="typeVariableBinding" />
       <varInfo nodeId="5646944109420334904" varName="superclass" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334606" fileName="TypesProvider.java" startLine="231" startPosition="0" endLine="238" endPosition="0">
+    <scopeInfo nodeId="5646944109420334606" fileName="TypesProvider.java" startLine="237" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="5646944109420334609" varName="binaryTypeBinding" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420333825" fileName="TypesProvider.java" startLine="327" startPosition="48" endLine="334" endPosition="5">
+    <scopeInfo nodeId="5646944109420333825" fileName="TypesProvider.java" startLine="333" startPosition="48" endLine="340" endPosition="5">
       <varInfo nodeId="5646944109420333831" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335009" fileName="TypesProvider.java" startLine="388" startPosition="96" endLine="395" endPosition="5" />
-    <scopeInfo nodeId="5646944109420335010" fileName="TypesProvider.java" startLine="388" startPosition="96" endLine="395" endPosition="5">
+    <scopeInfo nodeId="5646944109420335009" fileName="TypesProvider.java" startLine="394" startPosition="96" endLine="401" endPosition="5" />
+    <scopeInfo nodeId="5646944109420335010" fileName="TypesProvider.java" startLine="394" startPosition="96" endLine="401" endPosition="5">
       <varInfo nodeId="5646944109420335016" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334408" fileName="TypesProvider.java" startLine="189" startPosition="104" endLine="197" endPosition="5" />
-    <scopeInfo nodeId="5646944109420334546" fileName="TypesProvider.java" startLine="218" startPosition="69" endLine="226" endPosition="7">
-      <varInfo nodeId="5646944109420334548" varName="parameterizedTypeBinding" />
+    <scopeInfo nodeId="5646944109420334508" fileName="TypesProvider.java" startLine="211" startPosition="62" endLine="219" endPosition="10">
+      <varInfo nodeId="5646944109420334518" varName="nodeId" />
+      <varInfo nodeId="5646944109420334529" varName="pointer" />
+      <varInfo nodeId="5646944109420334510" varName="binaryTypeBinding" />
+      <varInfo nodeId="5646944109420334524" varName="modelReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="5646944109420334561" fileName="TypesProvider.java" startLine="223" startPosition="80" endLine="231" endPosition="12">
+      <varInfo nodeId="5646944109420334571" varName="nodeId" />
+      <varInfo nodeId="5646944109420334582" varName="pointer" />
+      <varInfo nodeId="5646944109420334563" varName="binaryTypeBinding" />
+      <varInfo nodeId="5646944109420334577" varName="modelReference" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333877" fileName="TypesProvider.java" startLine="54" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="5646944109420333882" varName="component" />
       <varInfo nodeId="5646944109420333880" varName="vector" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334093" fileName="TypesProvider.java" startLine="119" startPosition="16" endLine="128" endPosition="11" />
-    <scopeInfo nodeId="5646944109420333819" fileName="TypesProvider.java" startLine="326" startPosition="75" endLine="335" endPosition="30">
+    <scopeInfo nodeId="5646944109420333819" fileName="TypesProvider.java" startLine="332" startPosition="75" endLine="341" endPosition="30">
       <varInfo nodeId="5646944109420333821" varName="builder" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334299" fileName="TypesProvider.java" startLine="166" startPosition="49" endLine="176" endPosition="17">
@@ -5464,10 +5461,10 @@
       <varInfo nodeId="5646944109420334312" varName="declaringGeneric" />
       <varInfo nodeId="5646944109420334307" varName="tvr" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335259" fileName="TypesProvider.java" startLine="313" startPosition="65" endLine="323" endPosition="5">
+    <scopeInfo nodeId="5646944109420335259" fileName="TypesProvider.java" startLine="319" startPosition="65" endLine="329" endPosition="5">
       <varInfo nodeId="5646944109420335267" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334999" fileName="TypesProvider.java" startLine="387" startPosition="0" endLine="397" endPosition="0">
+    <scopeInfo nodeId="5646944109420334999" fileName="TypesProvider.java" startLine="393" startPosition="0" endLine="403" endPosition="0">
       <varInfo nodeId="5646944109420335002" varName="sb" />
       <varInfo nodeId="5646944109420335007" varName="context" />
       <varInfo nodeId="5646944109420335004" varName="types" />
@@ -5477,7 +5474,10 @@
       <varInfo nodeId="5646944109420334404" varName="binding" />
       <varInfo nodeId="5646944109420334402" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420333812" fileName="TypesProvider.java" startLine="325" startPosition="0" endLine="337" endPosition="0">
+    <scopeInfo nodeId="5646944109420334546" fileName="TypesProvider.java" startLine="221" startPosition="69" endLine="232" endPosition="7">
+      <varInfo nodeId="5646944109420334548" varName="parameterizedTypeBinding" />
+    </scopeInfo>
+    <scopeInfo nodeId="5646944109420333812" fileName="TypesProvider.java" startLine="331" startPosition="0" endLine="343" endPosition="0">
       <varInfo nodeId="5646944109420333815" varName="compoundName" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420334141" fileName="TypesProvider.java" startLine="131" startPosition="56" endLine="144" endPosition="22">
@@ -5485,7 +5485,7 @@
       <varInfo nodeId="5646944109420334143" varName="parameterizedTypeBinding" />
       <varInfo nodeId="5646944109420334149" varName="originalType" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335252" fileName="TypesProvider.java" startLine="312" startPosition="0" endLine="325" endPosition="0">
+    <scopeInfo nodeId="5646944109420335252" fileName="TypesProvider.java" startLine="318" startPosition="0" endLine="331" endPosition="0">
       <varInfo nodeId="5646944109420335255" varName="oldAdapter" />
       <varInfo nodeId="5646944109420335257" varName="newAdapter" />
     </scopeInfo>
@@ -5499,36 +5499,36 @@
       <varInfo nodeId="5646944109420334026" varName="dimensions" />
       <varInfo nodeId="5646944109420334041" varName="smallestVectorType" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334651" fileName="TypesProvider.java" startLine="243" startPosition="88" endLine="259" endPosition="74">
+    <scopeInfo nodeId="5646944109420334651" fileName="TypesProvider.java" startLine="249" startPosition="88" endLine="265" endPosition="74">
       <varInfo nodeId="5646944109420334653" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335074" fileName="TypesProvider.java" startLine="271" startPosition="72" endLine="287" endPosition="97" />
-    <scopeInfo nodeId="5646944109420335159" fileName="TypesProvider.java" startLine="290" startPosition="95" endLine="306" endPosition="76">
+    <scopeInfo nodeId="5646944109420335074" fileName="TypesProvider.java" startLine="277" startPosition="72" endLine="293" endPosition="97" />
+    <scopeInfo nodeId="5646944109420335159" fileName="TypesProvider.java" startLine="296" startPosition="95" endLine="312" endPosition="76">
       <varInfo nodeId="5646944109420335179" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334644" fileName="TypesProvider.java" startLine="242" startPosition="0" endLine="261" endPosition="0">
+    <scopeInfo nodeId="5646944109420334644" fileName="TypesProvider.java" startLine="248" startPosition="0" endLine="267" endPosition="0">
       <varInfo nodeId="5646944109420334649" varName="classBinding" />
       <varInfo nodeId="5646944109420334647" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335069" fileName="TypesProvider.java" startLine="270" startPosition="0" endLine="289" endPosition="0">
+    <scopeInfo nodeId="5646944109420335069" fileName="TypesProvider.java" startLine="276" startPosition="0" endLine="295" endPosition="0">
       <varInfo nodeId="5646944109420335072" varName="aClass" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420335150" fileName="TypesProvider.java" startLine="289" startPosition="0" endLine="308" endPosition="0">
+    <scopeInfo nodeId="5646944109420335150" fileName="TypesProvider.java" startLine="295" startPosition="0" endLine="314" endPosition="0">
       <varInfo nodeId="5646944109420335157" varName="sourceNode" />
       <varInfo nodeId="5646944109420335155" varName="role" />
       <varInfo nodeId="5646944109420335153" varName="binding" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420333929" fileName="TypesProvider.java" startLine="66" startPosition="45" endLine="94" endPosition="73" />
-    <scopeInfo nodeId="5646944109420334459" fileName="TypesProvider.java" startLine="200" startPosition="97" endLine="229" endPosition="16">
+    <scopeInfo nodeId="5646944109420334459" fileName="TypesProvider.java" startLine="200" startPosition="97" endLine="235" endPosition="16">
       <varInfo nodeId="5646944109420334482" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334450" fileName="TypesProvider.java" startLine="199" startPosition="0" endLine="231" endPosition="0">
+    <scopeInfo nodeId="5646944109420334450" fileName="TypesProvider.java" startLine="199" startPosition="0" endLine="237" endPosition="0">
       <varInfo nodeId="5646944109420334457" varName="sourceNode" />
       <varInfo nodeId="5646944109420334455" varName="role" />
       <varInfo nodeId="5646944109420334453" varName="binding" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420334778" fileName="TypesProvider.java" startLine="346" startPosition="75" endLine="385" endPosition="59" />
-    <scopeInfo nodeId="5646944109420334771" fileName="TypesProvider.java" startLine="345" startPosition="0" endLine="387" endPosition="0">
+    <scopeInfo nodeId="5646944109420334778" fileName="TypesProvider.java" startLine="352" startPosition="75" endLine="391" endPosition="59" />
+    <scopeInfo nodeId="5646944109420334771" fileName="TypesProvider.java" startLine="351" startPosition="0" endLine="393" endPosition="0">
       <varInfo nodeId="5646944109420334776" varName="context" />
       <varInfo nodeId="5646944109420334774" varName="type" />
     </scopeInfo>
@@ -5540,7 +5540,7 @@
       <varInfo nodeId="5646944109420333916" varName="varArg" />
       <varInfo nodeId="5646944109420333914" varName="binding" />
     </scopeInfo>
-    <unitInfo nodeId="5646944109420333793" fileName="TypesProvider.java" startLine="42" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.ide.java.parser.TypesProvider" />
+    <unitInfo nodeId="5646944109420333793" fileName="TypesProvider.java" startLine="42" startPosition="0" endLine="404" endPosition="0" unitName="jetbrains.mps.ide.java.parser.TypesProvider" />
   </root>
 </debugInfo>
 

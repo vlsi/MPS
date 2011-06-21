@@ -213,7 +213,10 @@ public class TypesProvider {
       SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
       SNodePointer pointer = getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.METHOD);
-      return SReference.create(role, sourceNode, pointer, new String(binding.selector));
+      return SReference.create(role, sourceNode, pointer, new String((binding.isConstructor() ?
+        binaryTypeBinding.sourceName :
+        binding.selector
+      )));
     }
     if (binding.declaringClass instanceof ParameterizedTypeBinding) {
       ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding.declaringClass;
@@ -222,7 +225,10 @@ public class TypesProvider {
         SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
         SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
         SNodePointer pointer = getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.METHOD);
-        return SReference.create(role, sourceNode, pointer, new String(binding.selector));
+        return SReference.create(role, sourceNode, pointer, new String((binding.isConstructor() ?
+          binaryTypeBinding.sourceName :
+          binding.selector
+        )));
       }
     }
     LOG.error("can't create a reference to a method in a class of type " + binding.declaringClass.getClass());

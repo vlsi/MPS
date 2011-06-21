@@ -34030,12 +34030,30 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4207698218337263712">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4207698218337263714">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%d&lt;init&gt;(char[])" resolveInfo="String" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4207698218337263715">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4207698218337263716">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420334453" resolveInfo="binding" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7911246875620912186">
+                      <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7911246875620912187">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7911246875620912199">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420334510" resolveInfo="binaryTypeBinding" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7911246875620912191">
+                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="22m0.~ReferenceBinding%dsourceName" resolveInfo="sourceName" />
+                        </node>
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="4207698218337263717">
-                        <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="22m0.~MethodBinding%dselector" resolveInfo="selector" />
+                      <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7911246875620912192">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7911246875620912193">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420334453" resolveInfo="binding" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7911246875620912194">
+                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="22m0.~MethodBinding%dselector" resolveInfo="selector" />
+                        </node>
+                      </node>
+                      <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7911246875620912195">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7911246875620912196">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420334453" resolveInfo="binding" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7911246875620912197">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22m0.~MethodBinding%disConstructor()%cboolean" resolveInfo="isConstructor" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -34184,12 +34202,30 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4207698218337265220">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4207698218337265222">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%d&lt;init&gt;(char[])" resolveInfo="String" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4207698218337265223">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4207698218337265224">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420334453" resolveInfo="binding" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7911246875620912200">
+                          <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7911246875620912201">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7911246875620912202">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420334563" resolveInfo="binaryTypeBinding" />
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7911246875620912203">
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="22m0.~ReferenceBinding%dsourceName" resolveInfo="sourceName" />
+                            </node>
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="4207698218337265225">
-                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="22m0.~MethodBinding%dselector" resolveInfo="selector" />
+                          <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7911246875620912204">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7911246875620912205">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420334453" resolveInfo="binding" />
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7911246875620912206">
+                              <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="22m0.~MethodBinding%dselector" resolveInfo="selector" />
+                            </node>
+                          </node>
+                          <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7911246875620912207">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7911246875620912208">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420334453" resolveInfo="binding" />
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7911246875620912209">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22m0.~MethodBinding%disConstructor()%cboolean" resolveInfo="isConstructor" />
+                            </node>
                           </node>
                         </node>
                       </node>
