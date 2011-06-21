@@ -40,7 +40,11 @@ public class SNodeUtil {
   }
 
   public static String getPresentation(SNode node) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
+    try {
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
+    } catch (Throwable t) {
+      return node.getPersistentProperty("name");
+    }
   }
 
   public static String getDetailedPresentation(SNode node) {
