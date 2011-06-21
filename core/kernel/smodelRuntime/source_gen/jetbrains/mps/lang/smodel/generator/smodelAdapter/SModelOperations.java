@@ -64,9 +64,13 @@ public class SModelOperations {
     if (conceptFqName == null) {
       return allRootsIncludingImported(model, scope);
     }
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+    if (concept == null) {
+      return Collections.emptyList();
+    }
     List<SNode> list = new ArrayList<SNode>();
     for (SNode node : allRootsIncludingImported(model, scope)) {
-      if (node.isInstanceOfConcept(conceptFqName)) {
+      if (node.isInstanceOfConcept(concept)) {
         list.add(node);
       }
     }
