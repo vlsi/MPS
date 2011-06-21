@@ -610,6 +610,23 @@ public class Generate_Facet implements IFacet {
                         }
                       }));
                     }
+                    for (final Generator gen : slang.getGenerators()) {
+                      if (gen == module) {
+                        continue;
+                      }
+                      if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
+                        MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+                          public boolean accept(SModelDescriptor it2) {
+                            return it2.isGeneratable();
+                          }
+                        }));
+                      }
+                      modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+                        public Iterable<SModelDescriptor> iterable() {
+                          return MapSequence.fromMap(retainedModels).get(gen);
+                        }
+                      })));
+                    }
                     modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
                       public Iterable<SModelDescriptor> iterable() {
                         return MapSequence.fromMap(retainedModels).get(slang);
