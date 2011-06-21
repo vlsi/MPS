@@ -11,6 +11,9 @@
     </projectModules>
     <genConfs />
   </component>
+  <component name="MigrationState">
+    <option name="myState" value="INITIAL" />
+  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>

@@ -34,7 +34,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpck.1196978630214" resolveInfo="IResolveInfo" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1224608888226">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpck.1224608834445" resolveInfo="IDeprecatableCore" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpck.1224608834445" resolveInfo="IDeprecatable" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="201537367881074471">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpck.201537367881071930" resolveInfo="IMetaLevelChanger" />
@@ -114,14 +114,23 @@
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7941158526576616752">
       <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="isRunnable" />
+      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7941158526576616753" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7941158526576616758" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7941158526576616755">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7798828310133117189">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7798828310133117190">
+            <property name="text" nameId="tpee.6329021646629104958" value="TODO this method should not be here, only a method of ClassConcept will be left" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7941158526576616759">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7941158526576616760">
             <property name="value" nameId="tpee.1068580123138" value="false" />
           </node>
         </node>
+      </node>
+      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7798828310133117311">
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
       </node>
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1213877396640">
@@ -881,7 +890,7 @@
               <node role="expression" roleId="tpee.1079359253376" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="8259195909097980894">
                 <node role="ifTrue" roleId="tpee.1163668922816" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="8259195909097980983">
                   <link role="concept" roleId="tp25.1206019820684" targetNodeId="tpck.5425021671150136555" resolveInfo="ExportScope" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8259195909097980935" resolveInfo="checkDefault" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8259195909097980935" resolveInfo="checkExportDefault" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8259195909097980985">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="402007580867615938" resolveInfo="isConcept" />
                   </node>

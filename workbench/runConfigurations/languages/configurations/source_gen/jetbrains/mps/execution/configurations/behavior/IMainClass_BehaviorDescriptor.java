@@ -6,4 +6,5 @@ import jetbrains.mps.smodel.SNode;
 
 public interface IMainClass_BehaviorDescriptor {
   public String virtual_getUnitName_747009152928925147(SNode thisNode);
+  public boolean virtual_isNodeRunnable_1906992812162479271(SNode thisNode);
 }

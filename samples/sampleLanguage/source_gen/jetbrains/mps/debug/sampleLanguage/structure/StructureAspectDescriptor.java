@@ -21,7 +21,7 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   public StructureDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.sampleLanguage.structure.WannabeClass", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.sampleLanguage.structure.WannabeClass", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.configurations.structure.IMainClass"}, new String[]{}, new String[]{"jetbrains.mps.execution.configurations.structure.IMainClass", "jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.debug.sampleLanguage.structure.WannabeMethod", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 2:

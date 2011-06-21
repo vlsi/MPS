@@ -15,13 +15,15 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.execution.configurations.behavior.IMainClass_Behavior;
 import jetbrains.mps.execution.lib.Java_Command;
 import jetbrains.mps.execution.lib.JavaRunParameters_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -50,7 +52,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return (ClassConcept_Behavior.call_getMainMethod_1213877355884(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) != null);
+      return BaseConcept_Behavior.call_isRunnable_7941158526576616752(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
   }), MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
     public SNode compute() {
@@ -58,7 +60,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return Java_Command.isUnitNode(node);
+      return IMainClass_Behavior.call_isNodeRunnable_1906992812162479271(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.IMainClass")) && Java_Command.isUnitNode(node);
     }
   })))).toListSequence());
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();

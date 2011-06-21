@@ -12,6 +12,9 @@
     </projectModules>
     <genConfs />
   </component>
+  <component name="MigrationState">
+    <option name="myState" value="INITIAL" />
+  </component>
   <component name="ProjectDetails">
     <option name="projectName" value="lambdaCalculus" />
   </component>
@@ -19,5 +22,8 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
 </project>
 

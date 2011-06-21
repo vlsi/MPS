@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMainClass_Behavior {
   private static Class[] PARAMETERS_747009152928925147 = {SNode.class};
+  private static Class[] PARAMETERS_1906992812162479271 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -27,12 +28,25 @@ public class IMainClass_Behavior {
     return unitName.value;
   }
 
+  public static boolean virtual_isNodeRunnable_1906992812162479271(SNode thisNode) {
+    return true;
+  }
+
   public static String call_getUnitName_747009152928925147(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.IMainClass"), "virtual_getUnitName_747009152928925147", PARAMETERS_747009152928925147);
   }
 
+  public static boolean call_isNodeRunnable_1906992812162479271(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.IMainClass"), "virtual_isNodeRunnable_1906992812162479271", PARAMETERS_1906992812162479271);
+  }
+
   public static String callSuper_getUnitName_747009152928925147(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.IMainClass"), callerConceptFqName, "virtual_getUnitName_747009152928925147", PARAMETERS_747009152928925147);
+  }
+
+  public static boolean callSuper_isNodeRunnable_1906992812162479271(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.IMainClass"), callerConceptFqName, "virtual_isNodeRunnable_1906992812162479271", PARAMETERS_1906992812162479271);
   }
 }

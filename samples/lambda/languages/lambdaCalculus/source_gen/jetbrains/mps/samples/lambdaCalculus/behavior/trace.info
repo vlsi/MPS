@@ -27,7 +27,7 @@
   <unitInfo fileName="FunctionType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.FunctionType_BehaviorDescriptor" />
   <unitInfo fileName="LambdaAbstraction_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_BehaviorDescriptor" />
   <unitInfo fileName="Variable_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.Variable_BehaviorDescriptor" />
-  <unitInfo fileName="Program_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.Program_BehaviorDescriptor" />
+  <unitInfo fileName="Program_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.Program_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1308935328408190990">
     <nodeInfo nodeId="1308935328408191011" fileName="LambdaExpression_Behavior.java" startLine="15" startPosition="443" endLine="16" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

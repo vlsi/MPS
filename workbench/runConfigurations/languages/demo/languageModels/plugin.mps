@@ -41,9 +41,6 @@
       <property name="name" nameId="tpck.1169194664001" value="Demo Application" />
       <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="8750596094204760415" resolveInfo="Demo" />
     </node>
-    <node type="fb9u.PersistentConfigurationTemplate" typeId="fb9u.946964771156066579" id="7684700299064222828">
-      <property name="name" nameId="tpck.1169194664001" value="Make" />
-    </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="7806358006983646762">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
       <property name="configurationName" nameId="uhxm.1931462339887551644" value="myConfiguration" />
@@ -250,89 +247,6 @@
     </node>
     <node role="icon" roleId="uhxm.4763274727405873310" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4763274727405913092">
       <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/resources/run.png" />
-    </node>
-  </root>
-  <root id="7684700299064222828">
-    <node role="editor" roleId="fb9u.946964771156066337" type="fb9u.SettingsEditor" typeId="fb9u.946964771156066621" id="7684700299064222829">
-      <node role="propertyDeclaration" roleId="fb9u.946964771156066626" type="fb9u.EditorPropertyDeclaration" typeId="fb9u.946964771156066610" id="7684700299064309934">
-        <property name="name" nameId="tpck.1169194664001" value="myCheckBox" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7684700299064309936">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JCheckBox" resolveInfo="JCheckBox" />
-        </node>
-      </node>
-      <node role="createEditor" roleId="fb9u.946964771156066622" type="fb9u.CreateEditor_Function" typeId="fb9u.946964771156066566" id="7684700299064222830">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064222831">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064309937">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7684700299064309939">
-              <node role="lValue" roleId="tpee.1068498886295" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="7684700299064309938">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
-              </node>
-              <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7684700299064309944">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7684700299064309946">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JCheckBox%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JCheckBox" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7684700299064309947">
-                    <property name="value" nameId="tpee.1070475926801" value="Make Before Run" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7684700299064309949">
-            <node role="expression" roleId="tpee.1068581517676" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="7684700299064309951">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="resetFrom" roleId="fb9u.946964771156066624" type="fb9u.ResetFrom_Function" typeId="fb9u.946964771156066614" id="7684700299064309952">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064309953">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064309954">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064309956">
-              <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="7684700299064309955">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7684700299064312759">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~AbstractButton%dsetSelected(boolean)%cvoid" resolveInfo="setSelected" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312761">
-                  <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="7684700299064312760" />
-                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="7684700299064312765">
-                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7684700299064222832" resolveInfo="myMake" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="applyTo" roleId="fb9u.946964771156066623" type="fb9u.ApplyTo_Function" typeId="fb9u.946964771156066601" id="7684700299064312766">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064312767">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064312768">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7684700299064312779">
-              <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312783">
-                <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="7684700299064312782">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7684700299064312787">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~AbstractButton%disSelected()%cboolean" resolveInfo="isSelected" />
-                </node>
-              </node>
-              <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312770">
-                <node role="operand" roleId="tpee.1197027771414" type="fb9u.Configuration_Parameter" typeId="fb9u.946964771156067216" id="7684700299064312769" />
-                <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="7684700299064312774">
-                  <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="7684700299064222832" resolveInfo="myMake" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="persistentProperty" roleId="fb9u.946964771156066595" type="fb9u.PersistentPropertyDeclaration" typeId="fb9u.946964771156066585" id="7684700299064222832">
-      <property name="name" nameId="tpck.1169194664001" value="myMake" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7684700299064222834" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8265043642382216719">
-        <property name="value" nameId="tpee.1068580123138" value="true" />
-      </node>
     </node>
   </root>
   <root id="7806358006983646762">

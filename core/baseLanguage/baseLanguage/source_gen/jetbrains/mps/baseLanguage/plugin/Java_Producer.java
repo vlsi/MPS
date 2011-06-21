@@ -14,8 +14,8 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior;
-import jetbrains.mps.execution.lib.Java_Command;
 import jetbrains.mps.execution.configurations.behavior.IMainClass_Behavior;
+import jetbrains.mps.execution.lib.Java_Command;
 
 public class Java_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.baseLanguage.plugin.Java_Configuration_Factory";
@@ -96,7 +96,7 @@ public class Java_Producer {
 
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      if (!(Java_Command.isUnitNode(source))) {
+      if (!((IMainClass_Behavior.call_isNodeRunnable_1906992812162479271(source) && Java_Command.isUnitNode(source)))) {
         return null;
       }
       String name = (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.core.structure.INamedConcept") ?
