@@ -28,7 +28,7 @@ public class LoggingProgressStrategy extends AbstractProgressStrategy {
   }
 
   /**
-   * For testing only.???
+   * For testing only.
    */
   public LoggingProgressStrategy(LoggingProgressStrategy.Log log) {
     this();
