@@ -194,7 +194,7 @@ public final class CopyUtil {
       SNode outputNode = mapping.get(inputNode);
 
       for (SReference ref : inputNode.getReferencesArray()) {
-        SNode inputTargetNode = cloneRefs ? null : ref.getTargetNode();
+        SNode inputTargetNode = (cloneRefs || SModelRepository.getInstance() == null) ? null : ref.getTargetNode();
         if (inputTargetNode == null) {//broken reference or need to clone
           if (ref instanceof StaticReference) {
             StaticReference staticReference = (StaticReference) ref;
