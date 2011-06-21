@@ -768,16 +768,11 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   void waitLock(boolean write) {
     if(write) {
-      boolean wasLocked = false;
       try {
         while (!getWriteLock().tryLock(100, TimeUnit.MILLISECONDS)) {
         }
-        wasLocked = true;
+        getWriteLock().unlock();
       } catch (InterruptedException e) {
-      } finally {
-        if (wasLocked) {
-          getWriteLock().unlock();
-        }
       }
     } else {
       getReadLock().lock();
