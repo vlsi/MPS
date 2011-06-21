@@ -18,7 +18,7 @@ package jetbrains.mps.newTypesystem.operation;
 import jetbrains.mps.newTypesystem.state.State;
 
 public class AddRemarkOperation extends AbstractOperation {
-  private final String myString;
+  protected final String myString;
   private Runnable myAction = null;
 
   public AddRemarkOperation(String string) {

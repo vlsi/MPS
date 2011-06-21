@@ -27,6 +27,7 @@
   <unitInfo fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_WasSelectedNodeOperation_InferenceRule$QuotationClass_f7z9w2_a0a0a0" />
   <unitInfo fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_ChildTypeRestrictionReference_InferenceRule$QuotationClass_ge5o72_a0a0a0" />
   <unitInfo fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeOf_TypeVarDeclaration_InferenceRule$QuotationClass_ld55fc_a0a0a0" />
+  <unitInfo fileName="typeof_PrintToTrace_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_PrintToTrace_InferenceRule$QuotationClass_o0btxc_a0a0a0" />
   <unitInfo fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule$QuotationClass_qwtsrn_a0a0a0" />
   <unitInfo fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_NormalTypeClause_InferenceRule$QuotationClass_4v0lay_a0a0a0" />
   <unitInfo fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="44" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_ReferenceRoleTarget_InferenceRule$QuotationClass_wtshzh_a0a0a0" />
@@ -84,6 +85,7 @@
   <unitInfo fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_WasSelectedNodeOperation_InferenceRule" />
   <unitInfo fileName="typeof_ChildTypeRestrictionReference_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_ChildTypeRestrictionReference_InferenceRule" />
   <unitInfo fileName="typeOf_TypeVarDeclaration_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeOf_TypeVarDeclaration_InferenceRule" />
+  <unitInfo fileName="typeof_PrintToTrace_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_PrintToTrace_InferenceRule" />
   <unitInfo fileName="typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule" />
   <unitInfo fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_NormalTypeClause_InferenceRule" />
   <unitInfo fileName="typeof_ReferenceRoleTarget_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_ReferenceRoleTarget_InferenceRule" />
@@ -118,7 +120,7 @@
   <unitInfo fileName="typeOf_IsSubtypeExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeOf_IsSubtypeExpression_InferenceRule" />
   <unitInfo fileName="typeof_MultipleForeachLoopVariable_InferenceRule.java" startLine="18" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_MultipleForeachLoopVariable_InferenceRule" />
   <unitInfo fileName="typeof_GetOperationType_InferenceRule.java" startLine="17" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_GetOperationType_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.TypesystemDescriptor" />
   <root nodeId="1035511193819763968">
     <nodeInfo nodeId="1035511193819771010" fileName="check_TypesystemIntentionWithoutDescription_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1035511193819771010" fileName="check_TypesystemIntentionWithoutDescription_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -844,6 +846,14 @@
     <nodeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="21" startPosition="119" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1240580138294" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="395" />
     <scopeInfo nodeId="1240580117890" fileName="typeof_NormalTypeClause_InferenceRule.java" startLine="21" startPosition="119" endLine="26" endPosition="5" />
+  </root>
+  <root nodeId="4251858506886757239">
+    <nodeInfo nodeId="4251858506886757259" fileName="typeof_PrintToTrace_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4251858506886757259" fileName="typeof_PrintToTrace_InferenceRule.java" startLine="23" startPosition="98" endLine="24" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4251858506886757259" fileName="typeof_PrintToTrace_InferenceRule.java" startLine="24" startPosition="206" endLine="25" endPosition="369" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4251858506886757259" fileName="typeof_PrintToTrace_InferenceRule.java" startLine="21" startPosition="125" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="4251858506886757259" fileName="typeof_PrintToTrace_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="369" />
+    <scopeInfo nodeId="4251858506886757240" fileName="typeof_PrintToTrace_InferenceRule.java" startLine="21" startPosition="125" endLine="26" endPosition="5" />
   </root>
   <root nodeId="4258793651770337950">
     <nodeInfo nodeId="4258793651770370808" fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="23" startPosition="138" endLine="24" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

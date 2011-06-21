@@ -582,6 +582,10 @@
       <property name="name" nameId="tpck.1169194664001" value="InequalityProperty" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="534601184072080872">
+      <property name="name" nameId="tpck.1169194664001" value="PrintToTrace" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
+    </node>
   </roots>
   <root id="1174642743670">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1174642755718">
@@ -2411,6 +2415,18 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7739208407757103783">
       <property name="internalValue" nameId="tpce.1083923523171" value="2" />
       <property name="externalValue" nameId="tpce.1083923523172" value="opposite to inequality" />
+    </node>
+  </root>
+  <root id="534601184072080872">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4251858506886491408">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="message" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4251858506886277878">
+      <property name="value" nameId="tpce.1105725733873" value="print to trace" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

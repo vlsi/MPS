@@ -42,6 +42,7 @@
   <unitInfo fileName="CreateGreaterThanInequationStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CreateGreaterThanInequationStatement_BehaviorDescriptor" />
   <unitInfo fileName="CreateLessThanInequationStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CreateLessThanInequationStatement_BehaviorDescriptor" />
   <unitInfo fileName="CreateEquationStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.CreateEquationStatement_BehaviorDescriptor" />
+  <unitInfo fileName="PrintToTrace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PrintToTrace_BehaviorDescriptor" />
   <unitInfo fileName="OrStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OrStatement_BehaviorDescriptor" />
   <unitInfo fileName="ReplacementRuleReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ReplacementRuleReference_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunctionParameter_Selection_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_Selection_BehaviorDescriptor" />
@@ -161,7 +162,7 @@
   <unitInfo fileName="FindSourceBlock_Behavior.java" startLine="47" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior$QuotationClass_1go9bg_a0a0b" />
   <unitInfo fileName="AbstractRule_Behavior.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AbstractRule_Behavior" />
   <unitInfo fileName="FindSourceBlock_Behavior.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877218089">
     <scopeInfo nodeId="1213877218091" fileName="LinkPatternVariableReference_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1225210740877" fileName="LinkPatternVariableReference_Behavior.java" startLine="17" startPosition="90" endLine="17" endPosition="90" />
