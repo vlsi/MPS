@@ -159,29 +159,10 @@
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel" file="ConfigurationChoosePanel.java">
-    <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JComboBox" />
-    <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.plugin.run.ui.ReadComboBoxEditor" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.plugin.run.ui.ReadComboBoxRenderrer" />
-    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="javax.swing.AbstractListModel" />
-    <classNode extendsClassName="javax.swing.ComboBoxModel" />
-    <classNode extendsClassName="javax.swing.JPanel" />
+    <classNode extendsClassName="jetbrains.mps.buildlanguage.plugin.ChildChoosePanel" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.plugin.GenerateBuildAction_Action" file="GenerateBuildAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

@@ -17,6 +17,8 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -85,6 +87,24 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
     return mySettings;
   }
 
+  public String getTargetId() {
+    return myState.myTargetId;
+  }
+
+  public void setTargetId(String value) {
+    myState.myTargetId = value;
+  }
+
+  public SNode getTarget() {
+    final Wrappers._T<SNode> target = new Wrappers._T<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        target.value = SNodeOperations.cast(SNodeOperations.getModel(BuildLanguageProject_Configuration.this.getNode().getNode()).getNodeById(BuildLanguageProject_Configuration.this.getTargetId()), "jetbrains.mps.buildlanguage.structure.TargetDeclaration");
+      }
+    });
+    return target.value;
+  }
+
   @Override
   public BuildLanguageProject_Configuration clone() {
     BuildLanguageProject_Configuration clone = null;
@@ -136,12 +156,15 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
   }
 
   public class MyState {
+    public String myTargetId;
+
     public MyState() {
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
       BuildLanguageProject_Configuration.MyState state = new BuildLanguageProject_Configuration.MyState();
+      state.myTargetId = myTargetId;
       return state;
     }
   }

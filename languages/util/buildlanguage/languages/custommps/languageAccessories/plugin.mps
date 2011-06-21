@@ -1970,7 +1970,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1289308558160174657" resolveInfo="myConfigurationChoosePanel" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1289308558160174754">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsb.2178855608171202011" resolveInfo="nodeChanged" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsr.4251154893541676595" resolveInfo="nodeChanged" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1289308558160174755">
                             <link role="concept" roleId="tp25.1140138128738" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
                             <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1289308558160174756">
@@ -2040,7 +2040,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1289308558160174657" resolveInfo="myConfigurationChoosePanel" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1289308558160174774">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsb.7584047889594944509" resolveInfo="reset" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsr.4251154893541676646" resolveInfo="reset" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1289308558160174775">
                   <link role="concept" roleId="tp25.1140138128738" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1289308558160174776">
@@ -2113,7 +2113,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1289308558160174657" resolveInfo="myConfigurationChoosePanel" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1289308558160174814">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsb.7584047889594941514" resolveInfo="getConfigurationId" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsr.4251154893541676716" resolveInfo="getChildId" />
                 </node>
               </node>
             </node>

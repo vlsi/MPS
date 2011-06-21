@@ -63,7 +63,7 @@ public class CustomMPSApplication_Configuration_Editor extends SettingsEditorEx<
   public void applyEditorTo(final CustomMPSApplication_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
     mySettings.applyEditorTo(configuration.getSettings());
-    configuration.setConfigurationId(myConfigurationChoosePanel.getConfigurationId());
+    configuration.setConfigurationId(myConfigurationChoosePanel.getChildId());
   }
 
   public void resetEditorFrom(final CustomMPSApplication_Configuration configuration) {

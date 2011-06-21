@@ -57,7 +57,7 @@ public class PackagingBuildScript_Configuration_Editor extends SettingsEditorEx<
   public void applyEditorTo(final PackagingBuildScript_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
     mySettings.applyEditorTo(configuration.getSettings());
-    configuration.setConfigurationId(myConfigurationChoosePanel.getConfigurationId());
+    configuration.setConfigurationId(myConfigurationChoosePanel.getChildId());
   }
 
   public void resetEditorFrom(final PackagingBuildScript_Configuration configuration) {

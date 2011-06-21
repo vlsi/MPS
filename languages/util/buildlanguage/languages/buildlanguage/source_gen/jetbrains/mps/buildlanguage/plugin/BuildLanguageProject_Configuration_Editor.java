@@ -11,10 +11,13 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class BuildLanguageProject_Configuration_Editor extends SettingsEditorEx<BuildLanguageProject_Configuration> {
   private MainNodeChooser myChooser;
+  private TargetChoosePanel myTargetChooser;
   private Node_Configuration_Editor myNode;
   private AntSettings_Configuration_Editor mySettings;
 
@@ -36,7 +39,14 @@ public class BuildLanguageProject_Configuration_Editor extends SettingsEditorEx<
     myChooser = myNode.createEditor();
     panel.add(new JLabel("Project:"), LayoutUtil.createLabelConstraints(0));
     panel.add(myChooser, LayoutUtil.createFieldConstraints(1));
-    panel.add(mySettings.createEditor(), LayoutUtil.createPanelConstraints(2));
+    myTargetChooser = new TargetChoosePanel();
+    myChooser.addNodeChangeListener(new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode project) {
+        myTargetChooser.nodeChanged(project);
+      }
+    });
+    panel.add(myTargetChooser, LayoutUtil.createPanelConstraints(2));
+    panel.add(mySettings.createEditor(), LayoutUtil.createPanelConstraints(3));
 
     return panel;
   }
@@ -44,11 +54,13 @@ public class BuildLanguageProject_Configuration_Editor extends SettingsEditorEx<
   public void applyEditorTo(final BuildLanguageProject_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
     mySettings.applyEditorTo(configuration.getSettings());
+    configuration.setTargetId(myTargetChooser.getChildId());
   }
 
   public void resetEditorFrom(final BuildLanguageProject_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     mySettings.resetEditorFrom(configuration.getSettings());
     mySettings.resetEditorFrom(configuration.getSettings());
+    myTargetChooser.reset(configuration.getNode().getNode(), configuration.getTargetId());
   }
 }

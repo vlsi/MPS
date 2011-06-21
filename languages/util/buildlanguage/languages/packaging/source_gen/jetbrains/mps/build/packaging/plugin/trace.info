@@ -2249,7 +2249,7 @@
     <nodeInfo nodeId="1051814066736340630" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="58" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="491766638414209297" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="58" startPosition="50" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="58" startPosition="127" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1051814066736340781" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="59" startPosition="58" endLine="60" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1051814066736340781" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="59" startPosition="58" endLine="60" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4869723224670771268" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="63" startPosition="87" endLine="64" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="491766638414209277" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="64" startPosition="52" endLine="65" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4869723224670771400" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="65" startPosition="60" endLine="66" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2296,7 +2296,7 @@
     <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="171" startPosition="0" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyState#()V" />
     <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Factory.java" startLine="10" startPosition="86" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PackagingBuildScript_Configuration_Factory#(Lcom/intellij/execution/configurations/ConfigurationType;)V" />
     <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="57" startPosition="0" endLine="60" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PackagingBuildScript_Configuration#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/build/packaging/plugin/PackagingBuildScript_Configuration_Factory;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="60" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="60" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConfiguration#()V" />
     <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="63" startPosition="87" endLine="66" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Factory.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTemplateConfiguration#(Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/configurations/RunConfiguration;" />
@@ -2369,8 +2369,8 @@
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Factory.java" startLine="10" startPosition="86" endLine="13" endPosition="3" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="31" startPosition="31" endLine="34" endPosition="33" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="57" startPosition="0" endLine="60" endPosition="3" />
-    <scopeInfo nodeId="1051814066736325083" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="60" endPosition="86" />
-    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="60" endPosition="86" />
+    <scopeInfo nodeId="1051814066736325083" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="60" endPosition="78" />
+    <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="57" startPosition="115" endLine="60" endPosition="78" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="4869723224670741878" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="63" startPosition="87" endLine="66" endPosition="180" />
     <scopeInfo nodeId="4869723224670771267" fileName="PackagingBuildScript_Configuration_Editor.java" startLine="63" startPosition="87" endLine="66" endPosition="180" />
@@ -2470,130 +2470,17 @@
     <unitInfo nodeId="4869723224670741883" fileName="PackagingBuildScript_Configuration_RunProfileState.java" startLine="25" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration_RunProfileState" />
   </root>
   <root nodeId="5842104767988515740">
-    <nodeInfo nodeId="5842104767988518295" fileName="ConfigurationChoosePanel.java" startLine="30" startPosition="32" endLine="31" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComboBoxModel" />
-    <nodeInfo nodeId="5842104767988515750" fileName="ConfigurationChoosePanel.java" startLine="33" startPosition="37" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5842104767988515754" fileName="ConfigurationChoosePanel.java" startLine="34" startPosition="31" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5842104767988515756" fileName="ConfigurationChoosePanel.java" startLine="35" startPosition="0" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7584047889594946823" fileName="ConfigurationChoosePanel.java" startLine="36" startPosition="81" endLine="37" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7584047889594946839" fileName="ConfigurationChoosePanel.java" startLine="37" startPosition="61" endLine="38" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3494725401345111543" fileName="ConfigurationChoosePanel.java" startLine="38" startPosition="54" endLine="39" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5842104767988515877" fileName="ConfigurationChoosePanel.java" startLine="39" startPosition="49" endLine="40" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2178855608171202059" fileName="ConfigurationChoosePanel.java" startLine="44" startPosition="23" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2178855608171202093" fileName="ConfigurationChoosePanel.java" startLine="46" startPosition="12" endLine="47" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2178855608171203679" fileName="ConfigurationChoosePanel.java" startLine="50" startPosition="108" endLine="51" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5034000232919175460" fileName="ConfigurationChoosePanel.java" startLine="54" startPosition="9" endLine="55" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7584047889594944576" fileName="ConfigurationChoosePanel.java" startLine="59" startPosition="87" endLine="60" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5034000232919200769" fileName="ConfigurationChoosePanel.java" startLine="62" startPosition="25" endLine="63" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7584047889594946814" fileName="ConfigurationChoosePanel.java" startLine="65" startPosition="7" endLine="66" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7584047889594944487" fileName="ConfigurationChoosePanel.java" startLine="70" startPosition="76" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7641449617063654872" fileName="ConfigurationChoosePanel.java" startLine="71" startPosition="34" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7584047889594944329" fileName="ConfigurationChoosePanel.java" startLine="73" startPosition="5" endLine="74" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7584047889594944411" fileName="ConfigurationChoosePanel.java" startLine="79" startPosition="41" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5034000232919200778" fileName="ConfigurationChoosePanel.java" startLine="81" startPosition="5" endLine="82" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5034000232919200819" fileName="ConfigurationChoosePanel.java" startLine="84" startPosition="25" endLine="85" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5034000232919200837" fileName="ConfigurationChoosePanel.java" startLine="87" startPosition="7" endLine="88" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5842104767988518180" fileName="ConfigurationChoosePanel.java" startLine="95" startPosition="48" endLine="96" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5842104767988518052" fileName="ConfigurationChoosePanel.java" startLine="99" startPosition="26" endLine="100" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5842104767988518202" fileName="ConfigurationChoosePanel.java" startLine="103" startPosition="37" endLine="104" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5842104767988518210" fileName="ConfigurationChoosePanel.java" startLine="107" startPosition="39" endLine="108" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5842104767988515972" fileName="ConfigurationChoosePanel.java" startLine="112" startPosition="44" endLine="113" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5842104767988515990" fileName="ConfigurationChoosePanel.java" startLine="116" startPosition="63" endLine="117" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5842104767988516005" fileName="ConfigurationChoosePanel.java" startLine="118" startPosition="18" endLine="119" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5842104767988516014" fileName="ConfigurationChoosePanel.java" startLine="122" startPosition="9" endLine="123" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5842104767988518365" fileName="ConfigurationChoosePanel.java" startLine="126" startPosition="31" endLine="127" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5842104767988515746" fileName="ConfigurationChoosePanel.java" startLine="26" startPosition="54" endLine="28" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="5842104767988518168" fileName="ConfigurationChoosePanel.java" startLine="28" startPosition="23" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConfiguration" />
-    <nodeInfo nodeId="5842104767988515891" fileName="ConfigurationChoosePanel.java" startLine="91" startPosition="83" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyComboBoxModel#()V" />
-    <nodeInfo nodeId="5842104767988516003" fileName="ConfigurationChoosePanel.java" startLine="118" startPosition="16" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2178855608171203641" fileName="ConfigurationChoosePanel.java" startLine="49" startPosition="27" endLine="52" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7584047889594944372" fileName="ConfigurationChoosePanel.java" startLine="78" startPosition="38" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5034000232919200759" fileName="ConfigurationChoosePanel.java" startLine="61" startPosition="57" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7584047889594944455" fileName="ConfigurationChoosePanel.java" startLine="69" startPosition="74" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5034000232919200809" fileName="ConfigurationChoosePanel.java" startLine="83" startPosition="57" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5842104767988515904" fileName="ConfigurationChoosePanel.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelectedItem#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="5842104767988515910" fileName="ConfigurationChoosePanel.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSize#()I" />
-    <nodeInfo nodeId="5842104767988515914" fileName="ConfigurationChoosePanel.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedItem#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="5842104767988515918" fileName="ConfigurationChoosePanel.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementAt#(I)Ljava/lang/Object;" />
-    <nodeInfo nodeId="5842104767988518346" fileName="ConfigurationChoosePanel.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeChanged#()V" />
-    <nodeInfo nodeId="5034000232919200758" fileName="ConfigurationChoosePanel.java" startLine="60" startPosition="23" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5034000232919200808" fileName="ConfigurationChoosePanel.java" startLine="82" startPosition="61" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5842104767988515979" fileName="ConfigurationChoosePanel.java" startLine="115" startPosition="27" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2178855608171202084" fileName="ConfigurationChoosePanel.java" startLine="48" startPosition="59" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2178855608171202083" fileName="ConfigurationChoosePanel.java" startLine="47" startPosition="71" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7584047889594941454" fileName="ConfigurationChoosePanel.java" startLine="68" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectConfiguration#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5842104767988515977" fileName="ConfigurationChoosePanel.java" startLine="114" startPosition="59" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5842104767988515742" fileName="ConfigurationChoosePanel.java" startLine="32" startPosition="0" endLine="41" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfigurationChoosePanel#()V" />
-    <nodeInfo nodeId="5842104767988515976" fileName="ConfigurationChoosePanel.java" startLine="113" startPosition="78" endLine="122" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2178855608171202078" fileName="ConfigurationChoosePanel.java" startLine="46" startPosition="10" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7584047889594944509" fileName="ConfigurationChoosePanel.java" startLine="58" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reset#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2178855608171202042" fileName="ConfigurationChoosePanel.java" startLine="43" startPosition="55" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7584047889594941514" fileName="ConfigurationChoosePanel.java" startLine="76" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5842104767988515967" fileName="ConfigurationChoosePanel.java" startLine="110" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurations#()Ljava/util/List;" />
-    <nodeInfo nodeId="2178855608171202011" fileName="ConfigurationChoosePanel.java" startLine="42" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeChanged#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="5842104767988515894" fileName="ConfigurationChoosePanel.java" startLine="92" startPosition="30" endLine="92" endPosition="30" />
-    <scopeInfo nodeId="2178855608171202044" fileName="ConfigurationChoosePanel.java" startLine="44" startPosition="23" endLine="45" endPosition="29" />
-    <scopeInfo nodeId="2178855608171203642" fileName="ConfigurationChoosePanel.java" startLine="50" startPosition="108" endLine="51" endPosition="122" />
-    <scopeInfo nodeId="5034000232919200760" fileName="ConfigurationChoosePanel.java" startLine="62" startPosition="25" endLine="63" endPosition="79" />
-    <scopeInfo nodeId="7584047889594944373" fileName="ConfigurationChoosePanel.java" startLine="79" startPosition="41" endLine="80" endPosition="18" />
-    <scopeInfo nodeId="5034000232919200810" fileName="ConfigurationChoosePanel.java" startLine="84" startPosition="25" endLine="85" endPosition="73" />
-    <scopeInfo nodeId="5842104767988515909" fileName="ConfigurationChoosePanel.java" startLine="95" startPosition="48" endLine="96" endPosition="69" />
-    <scopeInfo nodeId="5842104767988515913" fileName="ConfigurationChoosePanel.java" startLine="99" startPosition="26" endLine="100" endPosition="69" />
-    <scopeInfo nodeId="5842104767988515917" fileName="ConfigurationChoosePanel.java" startLine="103" startPosition="37" endLine="104" endPosition="59" />
-    <scopeInfo nodeId="5842104767988515923" fileName="ConfigurationChoosePanel.java" startLine="107" startPosition="39" endLine="108" endPosition="75" />
-    <scopeInfo nodeId="5842104767988515981" fileName="ConfigurationChoosePanel.java" startLine="116" startPosition="63" endLine="117" endPosition="116" />
-    <scopeInfo nodeId="5842104767988516004" fileName="ConfigurationChoosePanel.java" startLine="118" startPosition="18" endLine="119" endPosition="51" />
-    <scopeInfo nodeId="5842104767988518349" fileName="ConfigurationChoosePanel.java" startLine="126" startPosition="31" endLine="127" endPosition="57" />
-    <scopeInfo nodeId="7584047889594944456" fileName="ConfigurationChoosePanel.java" startLine="70" startPosition="76" endLine="72" endPosition="13" />
-    <scopeInfo nodeId="5842104767988515891" fileName="ConfigurationChoosePanel.java" startLine="91" startPosition="83" endLine="93" endPosition="5" />
-    <scopeInfo nodeId="2178855608171202085" fileName="ConfigurationChoosePanel.java" startLine="49" startPosition="27" endLine="52" endPosition="11" />
-    <scopeInfo nodeId="5034000232919200759" fileName="ConfigurationChoosePanel.java" startLine="61" startPosition="57" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="5034000232919200809" fileName="ConfigurationChoosePanel.java" startLine="83" startPosition="57" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="5842104767988515904" fileName="ConfigurationChoosePanel.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="5842104767988515907" varName="object" />
+    <nodeInfo nodeId="5842104767988515750" fileName="ConfigurationChoosePanel.java" startLine="11" startPosition="37" endLine="12" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4666195181810946949" fileName="ConfigurationChoosePanel.java" startLine="15" startPosition="51" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5842104767988515742" fileName="ConfigurationChoosePanel.java" startLine="10" startPosition="78" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfigurationChoosePanel#()V" />
+    <nodeInfo nodeId="4666195181810946942" fileName="ConfigurationChoosePanel.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildrenNodes#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="5842104767988515745" fileName="ConfigurationChoosePanel.java" startLine="11" startPosition="37" endLine="12" endPosition="28" />
+    <scopeInfo nodeId="4666195181810946948" fileName="ConfigurationChoosePanel.java" startLine="15" startPosition="51" endLine="16" endPosition="67" />
+    <scopeInfo nodeId="5842104767988515742" fileName="ConfigurationChoosePanel.java" startLine="10" startPosition="78" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="4666195181810946942" fileName="ConfigurationChoosePanel.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="4666195181810946943" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5842104767988515910" fileName="ConfigurationChoosePanel.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="5842104767988515914" fileName="ConfigurationChoosePanel.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="5842104767988515918" fileName="ConfigurationChoosePanel.java" startLine="106" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="5842104767988515921" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="5842104767988518346" fileName="ConfigurationChoosePanel.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="7584047889594941457" fileName="ConfigurationChoosePanel.java" startLine="69" startPosition="74" endLine="74" endPosition="177" />
-    <scopeInfo nodeId="5842104767988515978" fileName="ConfigurationChoosePanel.java" startLine="115" startPosition="27" endLine="120" endPosition="11" />
-    <scopeInfo nodeId="2178855608171202084" fileName="ConfigurationChoosePanel.java" startLine="48" startPosition="59" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="5842104767988515745" fileName="ConfigurationChoosePanel.java" startLine="33" startPosition="37" endLine="40" endPosition="61">
-      <varInfo nodeId="7584047889594946824" varName="comboBox" />
-    </scopeInfo>
-    <scopeInfo nodeId="7584047889594944512" fileName="ConfigurationChoosePanel.java" startLine="59" startPosition="87" endLine="66" endPosition="39" />
-    <scopeInfo nodeId="7584047889594941454" fileName="ConfigurationChoosePanel.java" startLine="68" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="7584047889594941491" varName="configurationNodeId" />
-    </scopeInfo>
-    <scopeInfo nodeId="5842104767988515977" fileName="ConfigurationChoosePanel.java" startLine="114" startPosition="59" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="5842104767988515742" fileName="ConfigurationChoosePanel.java" startLine="32" startPosition="0" endLine="41" endPosition="3" />
-    <scopeInfo nodeId="2178855608171202079" fileName="ConfigurationChoosePanel.java" startLine="46" startPosition="12" endLine="55" endPosition="37">
-      <varInfo nodeId="2178855608171202094" varName="config" />
-    </scopeInfo>
-    <scopeInfo nodeId="7584047889594944509" fileName="ConfigurationChoosePanel.java" startLine="58" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="7584047889594944534" varName="node" />
-      <varInfo nodeId="7584047889594944539" varName="configurationNodeId" />
-    </scopeInfo>
-    <scopeInfo nodeId="7584047889594941517" fileName="ConfigurationChoosePanel.java" startLine="78" startPosition="38" endLine="88" endPosition="20">
-      <varInfo nodeId="5034000232919200779" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="5842104767988515970" fileName="ConfigurationChoosePanel.java" startLine="112" startPosition="44" endLine="123" endPosition="27">
-      <varInfo nodeId="5842104767988515973" varName="configs" />
-    </scopeInfo>
-    <scopeInfo nodeId="2178855608171202014" fileName="ConfigurationChoosePanel.java" startLine="43" startPosition="55" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="7584047889594941514" fileName="ConfigurationChoosePanel.java" startLine="76" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="5842104767988515967" fileName="ConfigurationChoosePanel.java" startLine="110" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="2178855608171202011" fileName="ConfigurationChoosePanel.java" startLine="42" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="2178855608171202036" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="5034000232919200759" fileName="ConfigurationChoosePanel.java" startLine="61" startPosition="45" endLine="65" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel$2" />
-    <unitInfo nodeId="5034000232919200809" fileName="ConfigurationChoosePanel.java" startLine="83" startPosition="45" endLine="87" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel$3" />
-    <unitInfo nodeId="2178855608171202084" fileName="ConfigurationChoosePanel.java" startLine="48" startPosition="47" endLine="54" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel$1" />
-    <unitInfo nodeId="5842104767988515977" fileName="ConfigurationChoosePanel.java" startLine="114" startPosition="47" endLine="122" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel$1" />
-    <unitInfo nodeId="5842104767988515889" fileName="ConfigurationChoosePanel.java" startLine="91" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel$MyComboBoxModel" />
-    <unitInfo nodeId="5842104767988515740" fileName="ConfigurationChoosePanel.java" startLine="26" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel" />
+    <unitInfo nodeId="5842104767988515740" fileName="ConfigurationChoosePanel.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel" />
   </root>
 </debugInfo>
 

@@ -39,5 +39,21 @@
     <classNode dependClassName="org.jdesktop.beansbinding.Property" />
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.common.ReadComboBoxEditor" file="ReadComboBoxEditor.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode extendsClassName="javax.swing.plaf.basic.BasicComboBoxEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.common.ReadComboBoxRenderrer" file="ReadComboBoxRenderrer.java">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="javax.swing.JList" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode extendsClassName="javax.swing.DefaultListCellRenderer" />
+  </dependency>
 </dependenciesRoot>
 

@@ -1835,7 +1835,7 @@
       <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="491766638414294292" />
     </node>
     <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="8294204555084730649">
-      <property name="name" nameId="tpck.1169194664001" value="default" />
+      <property name="name" nameId="tpck.1169194664001" value="notdefault1" />
       <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="8294204555084730668">
         <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812872" resolveInfo="echo" />
         <node role="internalText" roleId="tpsk.1197724814674" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="491766638414294279">
@@ -1853,8 +1853,46 @@
         </node>
       </node>
     </node>
-    <node role="default" roleId="tpsk.1196859969927" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="8294204555084730650">
-      <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="8294204555084730649" resolveInfo="default" />
+    <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="4666195181811014033">
+      <property name="name" nameId="tpck.1169194664001" value="default" />
+      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="4666195181811014034">
+        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812872" resolveInfo="echo" />
+        <node role="internalText" roleId="tpsk.1197724814674" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4666195181811014035">
+          <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4666195181811014036">
+            <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4666195181811014037">
+              <property name="value" nameId="tpsk.1196861024475" value="!" />
+            </node>
+            <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="4666195181811014038">
+              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="491766638414294290" resolveInfo="name" />
+            </node>
+          </node>
+          <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4666195181811014039">
+            <property name="value" nameId="tpsk.1196861024475" value="Hello, " />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="4666195181811014040">
+      <property name="name" nameId="tpck.1169194664001" value="notdefault2" />
+      <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="4666195181811014041">
+        <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812872" resolveInfo="echo" />
+        <node role="internalText" roleId="tpsk.1197724814674" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4666195181811014042">
+          <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4666195181811014043">
+            <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4666195181811014044">
+              <property name="value" nameId="tpsk.1196861024475" value="!" />
+            </node>
+            <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="4666195181811014045">
+              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="491766638414294290" resolveInfo="name" />
+            </node>
+          </node>
+          <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4666195181811014046">
+            <property name="value" nameId="tpsk.1196861024475" value="Hello, " />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="default" roleId="tpsk.1196859969927" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="4666195181811014047">
+      <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="4666195181811014033" resolveInfo="default" />
     </node>
   </root>
 </model>
