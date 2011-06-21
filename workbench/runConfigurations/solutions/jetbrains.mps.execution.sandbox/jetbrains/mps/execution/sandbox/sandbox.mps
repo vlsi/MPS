@@ -1830,12 +1830,26 @@
     </node>
   </root>
   <root id="8294204555084730648">
+    <node role="property" roleId="tpsk.1200425668297" type="tpsk.ExternalPropertyDeclaration" typeId="tpsk.1219147669362" id="491766638414294290">
+      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="491766638414294292" />
+    </node>
     <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="8294204555084730649">
       <property name="name" nameId="tpck.1169194664001" value="default" />
       <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="8294204555084730668">
         <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802812872" resolveInfo="echo" />
-        <node role="internalText" roleId="tpsk.1197724814674" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8294204555084730669">
-          <property name="value" nameId="tpsk.1196861024475" value="Hello, world!" />
+        <node role="internalText" roleId="tpsk.1197724814674" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="491766638414294279">
+          <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="491766638414294297">
+            <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="491766638414294300">
+              <property name="value" nameId="tpsk.1196861024475" value="!" />
+            </node>
+            <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="491766638414294293">
+              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="491766638414294290" resolveInfo="name" />
+            </node>
+          </node>
+          <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8294204555084730669">
+            <property name="value" nameId="tpsk.1196861024475" value="Hello, " />
+          </node>
         </node>
       </node>
     </node>

@@ -8,6 +8,7 @@ import com.intellij.execution.ExecutionException;
 import jetbrains.mps.execution.lib.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.application.PathManager;
 import java.io.File;
 import java.util.List;
@@ -26,6 +27,7 @@ import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
 
 public class Ant_Command {
   private String myAntLocation = Ant_Command.getDefaultAntHome();
+  private String myOptions;
 
   public Ant_Command() {
   }
@@ -37,12 +39,22 @@ public class Ant_Command {
     return this;
   }
 
+  public Ant_Command setOptions(String options) {
+    if (options != null) {
+      myOptions = options;
+    }
+    return this;
+  }
+
   public ProcessHandler createProcess(SNode project) throws ExecutionException {
-    return new Ant_Command().setAntLocation(myAntLocation).createProcess(Ant_Command.getGeneratedFileName(project));
+    return new Ant_Command().setAntLocation(myAntLocation).setOptions(myOptions).createProcess(Ant_Command.getGeneratedFileName(project));
   }
 
   public ProcessHandler createProcess(String antFilePath) throws ExecutionException {
-    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter("-Djava.home=" + Java_Command.getJdkHome() + " -Dant.home=" + myAntLocation + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()), " ") + " " + "-f " + antFilePath).createProcess("org.apache.tools.ant.launch.Launcher");
+    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter("-Djava.home=" + Java_Command.getJdkHome() + " -Dant.home=" + myAntLocation + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()), " ") + " " + ((StringUtils.isNotEmpty(myOptions) ?
+      myOptions + " " :
+      ""
+    )) + "-f " + antFilePath).createProcess("org.apache.tools.ant.launch.Launcher");
   }
 
   private static String getDefaultAntHome() {

@@ -1,5 +1,6 @@
 <project name="project" default="default">
   <target name="default">
-    <echo>Hello, world!</echo>
+    <fail unless="name" message="Property name unspecified." />
+    <echo>Hello, ${name}!</echo>
   </target>
 </project>

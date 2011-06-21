@@ -44,12 +44,20 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
     return myState.myOtherAntLocation;
   }
 
+  public String getAntOptions() {
+    return myState.myAntOptions;
+  }
+
   public void setUseOtherAntLocation(boolean value) {
     myState.myUseOtherAntLocation = value;
   }
 
   public void setOtherAntLocation(String value) {
     myState.myOtherAntLocation = value;
+  }
+
+  public void setAntOptions(String value) {
+    myState.myAntOptions = value;
   }
 
   @Override
@@ -83,6 +91,7 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
   public class MyState {
     public boolean myUseOtherAntLocation;
     public String myOtherAntLocation;
+    public String myAntOptions;
 
     public MyState() {
     }
@@ -92,6 +101,7 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
       AntSettings_Configuration.MyState state = new AntSettings_Configuration.MyState();
       state.myUseOtherAntLocation = myUseOtherAntLocation;
       state.myOtherAntLocation = myOtherAntLocation;
+      state.myAntOptions = myAntOptions;
       return state;
     }
   }

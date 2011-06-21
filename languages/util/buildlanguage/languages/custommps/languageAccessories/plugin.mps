@@ -2482,6 +2482,20 @@
                 </node>
               </node>
             </node>
+            <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="4251154893541635583">
+              <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="tpsr.491766638414284740" resolveInfo="options" />
+              <node role="value" roleId="rzqf.856705193941281766" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4251154893541635591">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4251154893541635586">
+                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="4251154893541635585" />
+                  <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="4251154893541635590">
+                    <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="491766638414209610" resolveInfo="mySettings" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="fb9u.PersistentPropertyReferenceOperation" typeId="fb9u.946964771156066574" id="4251154893541635595">
+                  <link role="variableDeclaration" roleId="fb9u.946964771156066575" targetNodeId="tpsr.491766638414264781" resolveInfo="myAntOptions" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
