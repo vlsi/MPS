@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
@@ -31,6 +32,12 @@ import java.util.Set;
 public class ModelContentUtil {
 
   private static final Logger LOG = Logger.getLogger(ModelContentUtil.class);
+
+  public static Collection<String> getUsedLanguageNamespacesInTemplateModel(SModel model) {
+    TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
+    templateModelScanner.scan();
+    return templateModelScanner.getTargetLanguages();
+  }
 
   public static Collection<String> getUsedLanguageNamespaces(SModel model, boolean isTemplateModel) {
     Set<String> namespaces = new HashSet<String>();

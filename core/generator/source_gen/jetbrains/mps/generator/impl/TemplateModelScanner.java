@@ -54,7 +54,7 @@ public class TemplateModelScanner {
       if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.NodeMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.PropertyMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.ReferenceMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.TemplateFragment")) {
         scanQueryNode(n);
       } else {
-        scanTemplateNode(node);
+        scanTemplateNode(n);
       }
     }
   }
@@ -65,7 +65,7 @@ public class TemplateModelScanner {
       return;
     }
     for (SNode n : node.getChildrenIterable()) {
-      scanTemplateContextNode(node);
+      scanTemplateContextNode(n);
     }
   }
 
@@ -94,7 +94,7 @@ public class TemplateModelScanner {
       return;
     }
     for (SNode n : node.getDescendantsIterable(null, true)) {
-      SetSequence.fromSet(myQueryLanguages).addElement(node.getLanguageNamespace());
+      SetSequence.fromSet(myQueryLanguages).addElement(n.getLanguageNamespace());
     }
   }
 

@@ -171,11 +171,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public List<ModuleReference> getExtendedLanguageRefs() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
-    for (ModuleReference ref : myLanguageDescriptor.getExtendedLanguages()) {
-      result.add(ref);
-    }
-    return result;
+    return new ArrayList<ModuleReference>(myLanguageDescriptor.getExtendedLanguages());
   }
 
   public List<Language> getExtendedLanguages() {
@@ -215,6 +211,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       dep.setReexport(true);
       result.add(dep);
     }
+    Dependency dep = new Dependency();
+    dep.setModuleRef(BootstrapLanguages.CORE);
+    dep.setReexport(true);
+    result.add(dep);
 
     for (Generator g : getGenerators()) {
       result.addAll(g.getDependencies());
