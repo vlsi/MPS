@@ -105,7 +105,7 @@ public class StubConversionStage implements MigrationStage {
         "Most probably this means that the module with a reference doesn't import the module with referenced object. "+
         "We recommend to pause the migration now and correct module dependencies by hand. "+
         "You can also use the \"Fix Missing imports\" action from Logical View's context menu to add these dependencies automatically and Ctrl-R shortcut to add imports one-by-one\n"+
-        "After fixing module dependency, you can use Tools->Migrations 2.0->Convert Stubs action to search and re-resolve old stub references again."+
+        "After fixing module dependency, you can use Tools->Migrations 2.0->Migrate Stub Models action to search and re-resolve old stub references again."+
         "To check for broken references again, select \"Check Project\" from project's context menu in project tree.";
     } finally {
       mcSettings.setMigrationMode(false);
