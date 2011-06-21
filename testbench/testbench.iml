@@ -31,7 +31,6 @@
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="distrib" />
     <orderEntry type="module" module-name="MPSSupport" />
-    <orderEntry type="module" module-name="packaging" />
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="test" />
     <orderEntry type="module" module-name="Tuples-runtime" />
