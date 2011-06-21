@@ -23,10 +23,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-public class ModelsScope extends BaseScope {
+public class ModelsOnlyScope extends BaseScope {
   private List<SModelDescriptor> myModelDescriptors;
 
-  public ModelsScope(SModelDescriptor... modelDescriptors) {
+  public ModelsOnlyScope(SModelDescriptor... modelDescriptors) {
     myModelDescriptors = Arrays.asList(modelDescriptors);
   }
 
