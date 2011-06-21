@@ -14,12 +14,12 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
-public class JUnit_Kind implements ConfigurationType {
-  private static final Icon ICON = new ImageIcon(JUnit_Kind.class.getResource("junit.png"));
+public class JUnitTests_Kind implements ConfigurationType {
+  private static final Icon ICON = new ImageIcon(JUnitTests_Kind.class.getResource("junit.png"));
 
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
-  public JUnit_Kind() {
+  public JUnitTests_Kind() {
   }
 
   public ConfigurationFactory[] getConfigurationFactories() {
@@ -32,7 +32,7 @@ public class JUnit_Kind implements ConfigurationType {
   @NonNls
   @NotNull
   public String getId() {
-    return "JUnit";
+    return "JUnit Tests";
   }
 
   public Icon getIcon() {
@@ -44,14 +44,14 @@ public class JUnit_Kind implements ConfigurationType {
   }
 
   public String getDisplayName() {
-    return "JUnit";
+    return "JUnit Tests";
   }
 
   public void addForeignFactory(ConfigurationFactory factory) {
     ListSequence.fromList(myForeignFactories).addElement(factory);
   }
 
-  public static JUnit_Kind getInstance() {
-    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), JUnit_Kind.class);
+  public static JUnitTests_Kind getInstance() {
+    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), JUnitTests_Kind.class);
   }
 }
