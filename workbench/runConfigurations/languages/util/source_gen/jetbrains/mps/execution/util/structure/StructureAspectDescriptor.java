@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.execution.util.structure.CloneableListType", "jetbrains.mps.execution.util.structure.IMainClass"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.execution.util.structure.IMainClass"};
 
   public StructureAspectDescriptor() {
   }
@@ -21,8 +21,6 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
   public StructureDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.util.structure.CloneableListType", new String[]{"jetbrains.mps.baseLanguage.collections.structure.ListType"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.collections.structure.ListType"});
-      case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.execution.util.structure.IMainClass", new String[]{}, new String[]{}, new String[]{});
       default:
         return null;

@@ -9,11 +9,11 @@ public class SettingsEditorDialogTest {
   public static void main(String[] args) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        TwoFieldsEditor_Configuration twoFieldsConfiguration = new TwoFieldsEditor_Configuration();
-        SettingsEditorDialog dialog = new SettingsEditorDialog(twoFieldsConfiguration);
+        PersonEditor_Configuration personEditor = new PersonEditor_Configuration();
+        SettingsEditorDialog dialog = new SettingsEditorDialog(personEditor);
         dialog.setVisible(true);
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + personEditor.getName());
+        System.out.println("email = " + personEditor.getEmail());
       }
     });
   }

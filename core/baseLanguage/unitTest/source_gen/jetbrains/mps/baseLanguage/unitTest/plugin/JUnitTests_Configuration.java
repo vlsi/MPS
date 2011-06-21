@@ -9,11 +9,23 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.lib.JavaRunParameters_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import java.util.List;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.ArrayList;
+import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -24,9 +36,6 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(JUnitTests_Configuration.class);
@@ -40,6 +49,14 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
+    if (this.getRunType() != null) {
+      // We do not validate, only check if there is something to test, since validating everything be very slow 
+      // see MPS-8781 JUnit run configuration check method performance. 
+      MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+      if (ListSequence.fromList(getTests(mpsProject)).isEmpty()) {
+        throw new RuntimeConfigurationException("Could not find tests to run.");
+      }
+    }
   }
 
   @Override
@@ -77,7 +94,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return myState.myTestMethods;
   }
 
-  public JUnitRunTypes getRunType() {
+  public JUnitRunTypes2 getRunType() {
     return myState.myRunType;
   }
 
@@ -101,12 +118,59 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     myState.myTestMethods = value;
   }
 
-  public void setRunType(JUnitRunTypes value) {
+  public void setRunType(JUnitRunTypes2 value) {
     myState.myRunType = value;
   }
 
-  public List<ITestNodeWrapper> getTests() {
-    return null;
+  public List<ITestNodeWrapper> getTests(final MPSProject mpsProject) {
+    final List<ITestNodeWrapper>[] all = (List<ITestNodeWrapper>[]) new List[1];
+    if (this.getRunType() != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          all[0] = Sequence.fromIterable(JUnitTests_Configuration.this.getRunType().collect(JUnitTests_Configuration.this, mpsProject)).toListSequence();
+        }
+      });
+    }
+    return all[0];
+  }
+
+  public List<ITestNodeWrapper> getTestsUnderProgress(final MPSProject mpsProject) {
+    final List<ITestNodeWrapper> stuffToTest = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
+    final JUnitRunTypes2 runTypes2 = this.getRunType();
+    final JUnitTests_Configuration configuration = this;
+    Runnable collect = new Runnable() {
+      public void run() {
+        if (runTypes2 != null) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              ListSequence.fromList(stuffToTest).addSequence(Sequence.fromIterable(runTypes2.collect(configuration, mpsProject)));
+            }
+          });
+        }
+      }
+    };
+    if (eq_p90f5h_a0a4a51_0(this.getRunType(), JUnitRunTypes2.PROJECT) || eq_p90f5h_a0a4a51(this.getRunType(), JUnitRunTypes2.MODULE)) {
+      // collecting for module/project is slow, so execute under progress 
+      ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, mpsProject.getProject());
+    } else {
+      collect.run();
+    }
+    return stuffToTest;
+  }
+
+  public List<SNode> getTestsToMake() {
+    final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+        // TODO project??? 
+        stuffToTest[0] = getTestsUnderProgress(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
+      }
+    }, ModalityState.NON_MODAL);
+    return ListSequence.fromList(stuffToTest[0]).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
+      public SNode select(ITestNodeWrapper it) {
+        return it.getNode();
+      }
+    }).toListSequence();
   }
 
   @Override
@@ -155,11 +219,21 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public Object[] createMakeTask() {
-    return new Object[]{ListSequence.fromList(this.getTests()).<SNode>select(new ISelector<ITestNodeWrapper, SNode>() {
-      public SNode select(ITestNodeWrapper it) {
-        return it.getNode();
-      }
-    }).toListSequence()};
+    return new Object[]{this.getTestsToMake()};
+  }
+
+  private static boolean eq_p90f5h_a0a4a51(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_p90f5h_a0a4a51_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public class MyState {
@@ -167,7 +241,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     public String myModule;
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
-    public JUnitRunTypes myRunType;
+    public JUnitRunTypes2 myRunType;
 
     public MyState() {
     }

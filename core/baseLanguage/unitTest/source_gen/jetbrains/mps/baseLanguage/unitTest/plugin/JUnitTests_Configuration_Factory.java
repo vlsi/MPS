@@ -7,7 +7,7 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
 
 public class JUnitTests_Configuration_Factory extends ConfigurationFactory {
-  public JUnitTests_Configuration_Factory(JUnit_Kind type) {
+  public JUnitTests_Configuration_Factory(JUnitTests_Kind type) {
     super(type);
   }
 

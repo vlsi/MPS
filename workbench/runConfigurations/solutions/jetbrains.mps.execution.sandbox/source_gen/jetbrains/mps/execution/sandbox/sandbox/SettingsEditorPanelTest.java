@@ -17,38 +17,38 @@ public class SettingsEditorPanelTest extends JFrame {
   private final SettingsEditorPanel mySettingsPanel;
 
   public SettingsEditorPanelTest() {
-    final TwoFieldsEditor_Configuration twoFieldsConfiguration = new TwoFieldsEditor_Configuration();
+    final PersonEditor_Configuration twoFieldsConfiguration = new PersonEditor_Configuration();
     mySettingsPanel = new SettingsEditorPanel(twoFieldsConfiguration);
     add(mySettingsPanel.getComponent(), BorderLayout.CENTER);
     add(this.createButtons(twoFieldsConfiguration, mySettingsPanel), BorderLayout.SOUTH);
     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
   }
 
-  private JPanel createButtons(final TwoFieldsEditor_Configuration twoFieldsConfiguration, SettingsEditorPanel editor) {
+  private JPanel createButtons(final PersonEditor_Configuration twoFieldsConfiguration, SettingsEditorPanel editor) {
     JPanel buttonsPanel = new JPanel(new FlowLayout());
     buttonsPanel.add(new JButton(new ActionWrapper(editor.getOkAction(), new _FunctionTypes._void_P1_E0<ActionEvent>() {
       public void invoke(ActionEvent e) {
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + twoFieldsConfiguration.getName());
+        System.out.println("email = " + twoFieldsConfiguration.getEmail());
         dispose();
       }
     })));
     buttonsPanel.add(new JButton(new ActionWrapper(editor.getApplyAction(), new _FunctionTypes._void_P1_E0<ActionEvent>() {
       public void invoke(ActionEvent e) {
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + twoFieldsConfiguration.getName());
+        System.out.println("email = " + twoFieldsConfiguration.getEmail());
       }
     })));
     buttonsPanel.add(new JButton(new ActionWrapper(editor.getResetAction(), new _FunctionTypes._void_P1_E0<ActionEvent>() {
       public void invoke(ActionEvent e) {
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + twoFieldsConfiguration.getName());
+        System.out.println("email = " + twoFieldsConfiguration.getEmail());
       }
     })));
     buttonsPanel.add(new JButton(new ActionWrapper(editor.getCancelAction(), new _FunctionTypes._void_P1_E0<ActionEvent>() {
       public void invoke(ActionEvent e) {
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + twoFieldsConfiguration.getName());
+        System.out.println("email = " + twoFieldsConfiguration.getEmail());
         dispose();
       }
     })));

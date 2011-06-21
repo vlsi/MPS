@@ -15,6 +15,8 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
@@ -47,7 +49,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     {
-      ProcessHandler _processHandler = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getTests(), myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
+      ProcessHandler _processHandler = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(ListSequence.fromList(myRunConfiguration.getTests(project.getComponent(MPSProject.class))).toListSequence(), myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

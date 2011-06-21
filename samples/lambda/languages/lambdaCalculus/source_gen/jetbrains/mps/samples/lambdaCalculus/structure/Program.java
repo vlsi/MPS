@@ -4,7 +4,7 @@ package jetbrains.mps.samples.lambdaCalculus.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.execution.configurations.structure.IMainClass;
+import jetbrains.mps.execution.util.structure.IMainClass;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;

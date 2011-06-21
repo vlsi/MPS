@@ -22,7 +22,7 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     // register kinds 
     ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
     {
-      JUnit_Kind runConfigurationKind = new JUnit_Kind();
+      JUnitTests_Kind runConfigurationKind = new JUnitTests_Kind();
       ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).addElement(runConfigurationKind);
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }

@@ -70,10 +70,10 @@ public class Junit_Command {
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests, JavaRunParameters javaRunParameters) throws ExecutionException {
-    return new Junit_Command().setVirtualMachineParameter(javaRunParameters.vmOptions()).setJrePath(((boolean) javaRunParameters.useAlternativeJre() ?
+    return new Junit_Command().setVirtualMachineParameter(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath((check_u7m9j_a0c0a0a0(javaRunParameters) ?
       javaRunParameters.jrePath() :
       null
-    )).setWorkingDirectory((StringUtils.isEmpty(javaRunParameters.workingDirectory()) ?
+    )).setWorkingDirectory((StringUtils.isEmpty(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
       null :
       new File(javaRunParameters.workingDirectory())
     )).createProcess(tests);
@@ -160,6 +160,27 @@ public class Junit_Command {
         return Debuggers.getInstance().getDebuggerByName("Java");
       }
     };
+  }
+
+  private static String check_u7m9j_a1a0a0a(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.vmOptions();
+    }
+    return null;
+  }
+
+  private static boolean check_u7m9j_a0c0a0a0(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return (boolean) checkedDotOperand.useAlternativeJre();
+    }
+    return false;
+  }
+
+  private static String check_u7m9j_a0a3a0a0a(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.workingDirectory();
+    }
+    return null;
   }
 
   private static TestRunParameters check_u7m9j_a0a0a0a0a1a0d0b(ITestNodeWrapper checkedDotOperand) {
