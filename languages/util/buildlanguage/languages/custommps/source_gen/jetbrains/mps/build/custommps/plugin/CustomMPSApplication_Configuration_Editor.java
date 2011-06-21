@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
 import javax.swing.JCheckBox;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog;
 import jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor;
+import jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
@@ -25,14 +26,17 @@ public class CustomMPSApplication_Configuration_Editor extends SettingsEditorEx<
   private JCheckBox myUseAlternativeAnt;
   private FieldWithPathChooseDialog myAlternativeAnt;
   private Node_Configuration_Editor myNode;
+  private AntSettings_Configuration_Editor mySettings;
 
-  public CustomMPSApplication_Configuration_Editor(Node_Configuration_Editor node) {
+  public CustomMPSApplication_Configuration_Editor(Node_Configuration_Editor node, AntSettings_Configuration_Editor settings) {
     myNode = node;
+    mySettings = settings;
   }
 
   public void disposeEditor() {
     myChooser.dispose();
     Disposer.dispose(myNode);
+    Disposer.dispose(mySettings);
   }
 
   @NotNull
@@ -45,10 +49,7 @@ public class CustomMPSApplication_Configuration_Editor extends SettingsEditorEx<
 
     panel.add(myConfigurationChoosePanel, LayoutUtil.createPanelConstraints(2));
 
-    myUseAlternativeAnt = new JCheckBox("Use alternative Ant location");
-    panel.add(myUseAlternativeAnt, LayoutUtil.createLabelConstraints(3));
-    myAlternativeAnt = new FieldWithPathChooseDialog();
-    panel.add(myAlternativeAnt, LayoutUtil.createFieldConstraints(4));
+    panel.add(mySettings.createEditor(), LayoutUtil.createPanelConstraints(3));
 
     myChooser.addNodeChangeListener(new IJavaNodeChangeListener() {
       public void nodeChanged(SNode node) {
@@ -61,15 +62,13 @@ public class CustomMPSApplication_Configuration_Editor extends SettingsEditorEx<
 
   public void applyEditorTo(final CustomMPSApplication_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
+    mySettings.applyEditorTo(configuration.getSettings());
     configuration.setConfigurationId(myConfigurationChoosePanel.getConfigurationId());
-    configuration.setUseOtherAntLocation(myUseAlternativeAnt.isSelected());
-    configuration.setOtherAntLocation(myAlternativeAnt.getText());
   }
 
   public void resetEditorFrom(final CustomMPSApplication_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
+    mySettings.resetEditorFrom(configuration.getSettings());
     myConfigurationChoosePanel.reset(SNodeOperations.cast(configuration.getNode().getNode(), "jetbrains.mps.build.packaging.structure.Layout"), configuration.getConfigurationId());
-    myUseAlternativeAnt.setSelected(configuration.getUseOtherAntLocation());
-    myAlternativeAnt.setText(configuration.getOtherAntLocation());
   }
 }

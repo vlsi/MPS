@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration" file="AntSettings_Configuration.java">
+    <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
+    <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
+    <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
+    <classNode dependClassName="java.lang.CloneNotSupportedException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
+    <classNode extendsClassName="jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration_Editor" file="AntSettings_Configuration_Editor.java">
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.util.Factory" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="javax.swing.JCheckBox" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
+  </dependency>
   <dependency className="jetbrains.mps.buildlanguage.plugin.Ant_Command" file="Ant_Command.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
@@ -61,6 +90,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguageProject_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguageProject_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguageProject_Configuration_RunProfileState" />
@@ -81,11 +111,10 @@
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.BuildLanguageProject_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />

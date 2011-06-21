@@ -35,6 +35,9 @@
       <genConfModule name="ui" moduleRef="jetbrains.mps.debug.evaluation.ui" />
     </genConfs>
   </component>
+  <component name="MigrationState">
+    <option name="myState" value="INITIAL" />
+  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>

@@ -43,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Configuration_RunProfileState" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -70,6 +71,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.CustomMPSApplication_Configuration" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

@@ -45,8 +45,8 @@ public class PackagingBuildScript_Configuration_RunProfileState implements RunPr
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     {
-      ProcessHandler _processHandler = new Ant_Command().setAntLocation((myRunConfiguration.getUseOtherAntLocation() ?
-        myRunConfiguration.getOtherAntLocation() :
+      ProcessHandler _processHandler = new Ant_Command().setAntLocation((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
+        myRunConfiguration.getSettings().getOtherAntLocation() :
         null
       )).createProcess(GenerateBuildUtil.getGeneratedFilePath(myRunConfiguration.getConfiguration()));
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);

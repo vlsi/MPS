@@ -40,6 +40,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project");
     }
   }), null);
+  private AntSettings_Configuration mySettings = new AntSettings_Configuration();
 
   public BuildLanguageProject_Configuration(Project project, BuildLanguageProject_Configuration_Factory factory, String name) {
     super(project, factory, name);
@@ -56,6 +57,11 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       myNode.writeExternal(fieldElement);
       element.addContent(fieldElement);
     }
+    {
+      Element fieldElement = new Element("mySettings");
+      mySettings.writeExternal(fieldElement);
+      element.addContent(fieldElement);
+    }
   }
 
   @Override
@@ -65,26 +71,18 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       Element fieldElement = element.getChild("myNode");
       myNode.readExternal(fieldElement);
     }
+    {
+      Element fieldElement = element.getChild("mySettings");
+      mySettings.readExternal(fieldElement);
+    }
   }
 
   public Node_Configuration getNode() {
     return myNode;
   }
 
-  public boolean getUseOtherAntLocation() {
-    return myState.myUseOtherAntLocation;
-  }
-
-  public String getOtherAntLocation() {
-    return myState.myOtherAntLocation;
-  }
-
-  public void setUseOtherAntLocation(boolean value) {
-    myState.myUseOtherAntLocation = value;
-  }
-
-  public void setOtherAntLocation(String value) {
-    myState.myOtherAntLocation = value;
+  public AntSettings_Configuration getSettings() {
+    return mySettings;
   }
 
   @Override
@@ -94,6 +92,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       clone = createCloneTemplate();
       clone.myState = (BuildLanguageProject_Configuration.MyState) myState.clone();
       clone.myNode = (Node_Configuration) myNode.clone();
+      clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       BuildLanguageProject_Configuration.LOG.error(ex);
@@ -124,7 +123,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
   }
 
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
-    return new BuildLanguageProject_Configuration_Editor(myNode.getEditor());
+    return new BuildLanguageProject_Configuration_Editor(myNode.getEditor(), mySettings.getEditor());
   }
 
   @Override
@@ -137,17 +136,12 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
   }
 
   public class MyState {
-    public boolean myUseOtherAntLocation;
-    public String myOtherAntLocation;
-
     public MyState() {
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
       BuildLanguageProject_Configuration.MyState state = new BuildLanguageProject_Configuration.MyState();
-      state.myUseOtherAntLocation = myUseOtherAntLocation;
-      state.myOtherAntLocation = myOtherAntLocation;
       return state;
     }
   }

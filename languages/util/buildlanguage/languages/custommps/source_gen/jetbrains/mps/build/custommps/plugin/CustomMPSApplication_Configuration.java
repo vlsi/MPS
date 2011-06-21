@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.apache.commons.lang.StringUtils;
@@ -53,6 +54,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
       return isApplicable.value;
     }
   });
+  private AntSettings_Configuration mySettings = new AntSettings_Configuration();
 
   public CustomMPSApplication_Configuration(Project project, CustomMPSApplication_Configuration_Factory factory, String name) {
     super(project, factory, name);
@@ -74,6 +76,11 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
       myNode.writeExternal(fieldElement);
       element.addContent(fieldElement);
     }
+    {
+      Element fieldElement = new Element("mySettings");
+      mySettings.writeExternal(fieldElement);
+      element.addContent(fieldElement);
+    }
   }
 
   @Override
@@ -82,6 +89,10 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
     {
       Element fieldElement = element.getChild("myNode");
       myNode.readExternal(fieldElement);
+    }
+    {
+      Element fieldElement = element.getChild("mySettings");
+      mySettings.readExternal(fieldElement);
     }
   }
 
@@ -93,24 +104,12 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
     return myState.myConfigurationId;
   }
 
-  public boolean getUseOtherAntLocation() {
-    return myState.myUseOtherAntLocation;
-  }
-
-  public String getOtherAntLocation() {
-    return myState.myOtherAntLocation;
+  public AntSettings_Configuration getSettings() {
+    return mySettings;
   }
 
   public void setConfigurationId(String value) {
     myState.myConfigurationId = value;
-  }
-
-  public void setUseOtherAntLocation(boolean value) {
-    myState.myUseOtherAntLocation = value;
-  }
-
-  public void setOtherAntLocation(String value) {
-    myState.myOtherAntLocation = value;
   }
 
   public SNode getConfiguration() {
@@ -130,6 +129,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
       clone = createCloneTemplate();
       clone.myState = (CustomMPSApplication_Configuration.MyState) myState.clone();
       clone.myNode = (Node_Configuration) myNode.clone();
+      clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       CustomMPSApplication_Configuration.LOG.error(ex);
@@ -160,7 +160,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
   }
 
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
-    return new CustomMPSApplication_Configuration_Editor(myNode.getEditor());
+    return new CustomMPSApplication_Configuration_Editor(myNode.getEditor(), mySettings.getEditor());
   }
 
   @Override
@@ -174,8 +174,6 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
 
   public class MyState {
     public String myConfigurationId;
-    public boolean myUseOtherAntLocation;
-    public String myOtherAntLocation;
 
     public MyState() {
     }
@@ -184,8 +182,6 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
     public Object clone() throws CloneNotSupportedException {
       CustomMPSApplication_Configuration.MyState state = new CustomMPSApplication_Configuration.MyState();
       state.myConfigurationId = myConfigurationId;
-      state.myUseOtherAntLocation = myUseOtherAntLocation;
-      state.myOtherAntLocation = myOtherAntLocation;
       return state;
     }
   }

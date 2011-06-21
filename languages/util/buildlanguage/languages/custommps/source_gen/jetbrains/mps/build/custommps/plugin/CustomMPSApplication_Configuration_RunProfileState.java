@@ -80,8 +80,8 @@ public class CustomMPSApplication_Configuration_RunProfileState implements RunPr
     }
 
     {
-      ProcessHandler _processHandler = new Ant_Command().setAntLocation((myRunConfiguration.getUseOtherAntLocation() ?
-        myRunConfiguration.getOtherAntLocation() :
+      ProcessHandler _processHandler = new Ant_Command().setAntLocation((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
+        myRunConfiguration.getSettings().getOtherAntLocation() :
         null
       )).createProcess(file.getAbsolutePath());
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);

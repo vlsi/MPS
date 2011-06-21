@@ -389,6 +389,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration_RunProfileState" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -407,14 +408,13 @@
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithPathChooseDialog" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.ConfigurationChoosePanel" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.PackagingBuildScript_Configuration" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.lib.Node_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
