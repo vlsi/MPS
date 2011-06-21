@@ -176,5 +176,4 @@ public interface ModelCommandExecutor {
 
   <T> T tryWriteInCommand(Computable<T> r, Project p);
 
-  void runWriteInEDTAndWait(Runnable r);
 }

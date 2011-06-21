@@ -34,6 +34,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.resources.DResource;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFileUtils;
@@ -124,11 +125,16 @@ public class Binaries_Facet implements IFacet {
               });
               _output_8acy7z_a0a = Sequence.fromIterable(_output_8acy7z_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
 
-              ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
+              ThreadUtils.runInUIThreadAndWait(new Runnable() {
                 public void run() {
-                  Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
-                    public void visit(Tuples._2<IFile, IFile> ftc) {
-                      IFileUtils.copyFileContent(ftc._0(), ftc._1());
+                  ModelAccess.instance().requireWrite(new Runnable() {
+                    public void run() {
+                      Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
+                        public void visit(Tuples._2<IFile, IFile> ftc) {
+                          IFileUtils.copyFileContent(ftc._0(), ftc._1());
+                        }
+                      });
+                      // void 
                     }
                   });
                 }

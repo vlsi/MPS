@@ -13,6 +13,7 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -66,26 +67,31 @@ public class Make_Facet implements IFacet {
           Iterable<IResource> _output_pm9z_a0a = null;
           switch (0) {
             case 0:
-              ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
+              ThreadUtils.runInUIThreadAndWait(new Runnable() {
                 public void run() {
-                  new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
-                    public Iterable<IDelta> translate(IResource res) {
-                      return ((IDeltaResource) res).delta();
+                  ModelAccess.instance().requireWrite(new Runnable() {
+                    public void run() {
+                      new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                        public Iterable<IDelta> translate(IResource res) {
+                          return ((IDeltaResource) res).delta();
+                        }
+                      }).where(new IWhereFilter<IDelta>() {
+                        public boolean accept(IDelta d) {
+                          return !(d instanceof IInternalDelta);
+                        }
+                      })).reconcileAll();
+                      new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
+                        public Iterable<IDelta> translate(IResource res) {
+                          return ((IDeltaResource) res).delta();
+                        }
+                      }).where(new IWhereFilter<IDelta>() {
+                        public boolean accept(IDelta d) {
+                          return d instanceof IInternalDelta;
+                        }
+                      })).reconcileAll();
+                      // void 
                     }
-                  }).where(new IWhereFilter<IDelta>() {
-                    public boolean accept(IDelta d) {
-                      return !(d instanceof IInternalDelta);
-                    }
-                  })).reconcileAll();
-                  new DeltaReconciler(Sequence.fromIterable(input).<IDelta>translate(new ITranslator2<IResource, IDelta>() {
-                    public Iterable<IDelta> translate(IResource res) {
-                      return ((IDeltaResource) res).delta();
-                    }
-                  }).where(new IWhereFilter<IDelta>() {
-                    public boolean accept(IDelta d) {
-                      return d instanceof IInternalDelta;
-                    }
-                  })).reconcileAll();
+                  });
                 }
               });
               _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));

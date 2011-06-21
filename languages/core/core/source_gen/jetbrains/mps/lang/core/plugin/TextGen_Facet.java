@@ -32,6 +32,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.resources.TResource;
@@ -151,11 +152,16 @@ public class TextGen_Facet implements IFacet {
 
                 final SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
                 if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
-                  ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
+                  ThreadUtils.runInUIThreadAndWait(new Runnable() {
                     public void run() {
-                      TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
-                      ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
-                      CleanupManager.getInstance().cleanup();
+                      ModelAccess.instance().requireWrite(new Runnable() {
+                        public void run() {
+                          TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
+                          ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
+                          CleanupManager.getInstance().cleanup();
+                          // void 
+                        }
+                      });
                     }
                   });
                 }
@@ -167,9 +173,14 @@ public class TextGen_Facet implements IFacet {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
+                ThreadUtils.runInUIThreadAndWait(new Runnable() {
                   public void run() {
-                    javaStreamHandler.flush();
+                    ModelAccess.instance().requireWrite(new Runnable() {
+                      public void run() {
+                        javaStreamHandler.flush();
+                        // void 
+                      }
+                    });
                   }
                 });
                 monitor.currentProgress().advanceWork("Writing", 50);

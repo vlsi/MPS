@@ -16,6 +16,7 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -72,9 +73,14 @@ public class ReloadClasses_Facet implements IFacet {
                 }
               })) {
                 monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
-                ModelAccess.instance().runWriteInEDTAndWait(new Runnable() {
+                ThreadUtils.runInUIThreadAndWait(new Runnable() {
                   public void run() {
-                    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+                    ModelAccess.instance().requireWrite(new Runnable() {
+                      public void run() {
+                        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+                      }
+                    });
+                    // void 
                   }
                 });
                 monitor.currentProgress().advanceWork("Reloading classes", 1);

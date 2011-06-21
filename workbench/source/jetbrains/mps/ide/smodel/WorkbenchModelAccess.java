@@ -247,36 +247,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runWriteInEDTAndWait(final Runnable r) {
-    if (isInEDT()) {
-      runWriteAction(r);
-      return;
-    }
-
-    final CountDownLatch latch = new CountDownLatch(1);
-    final boolean ownRead = ownReadLock();
-    try {
-      if (ownRead) getReadLock().unlock();
-      myEDTExecutor.scheduleWrite(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            r.run();
-          }
-          finally {
-            latch.countDown();
-          }
-        }
-      });
-      latch.await();
-    }
-    catch (InterruptedException ignore) {}
-    finally {
-      if (ownRead) getReadLock().lock();
-    }
-  }
-
-  @Override
   public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
     myEDTExecutor.scheduleCommand(r, p);
   }
