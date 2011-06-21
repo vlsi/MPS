@@ -44,10 +44,6 @@ public class PersistenceUpgradeStage implements MigrationStage {
     return false;
   }
 
-  public boolean needsRestart() {
-    return true;
-  }
-
   public String messageBefore() {
     return "Now the persistence format of models and modules will be changed to the newest one";
   }

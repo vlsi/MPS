@@ -56,8 +56,6 @@ public class MigrationHelper {
         msComponent.setMigrationState(next);
 
         if (showMessageAfter(stage)) return;
-
-        checkRestart(stage);
       }
     }
   }
@@ -68,7 +66,6 @@ public class MigrationHelper {
       int res = Messages.showDialog(ma, stage.title() + " finished", new String[]{"Next", "Stop"}, 0, Messages.getInformationIcon());
       if (res != 0) {
         Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0", "Migration stopped", Messages.getInformationIcon());
-        checkRestart(stage);
         return true;
       }
     }
@@ -85,21 +82,6 @@ public class MigrationHelper {
       }
     }
     return false;
-  }
-
-  private void checkRestart(MigrationStage stage) {
-    if (stage.needsRestart()) {
-      FSRecords.invalidateCaches();
-
-      int res = Messages.showDialog(
-        "Refactoring " + stage.title() + " requested IDE restart.\n" +
-          "Restart now?",
-        "Restart request", new String[]{"Restart", "Later"}, 0, Messages.getQuestionIcon());
-
-      if (res == 0) {
-        ApplicationManager.getApplication().restart();
-      }
-    }
   }
 
   private static class StageExecutor implements Runnable {

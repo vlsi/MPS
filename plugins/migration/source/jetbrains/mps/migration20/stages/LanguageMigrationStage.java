@@ -47,10 +47,6 @@ public class LanguageMigrationStage implements MigrationStage {
     return true;
   }
 
-  public boolean needsRestart() {
-    return true;
-  }
-
   public String messageBefore() {
     return "Language migration scripts help to change your code accordingly to changes in languages, in which the code is written.\n" +
       "Now we'll execute all migration scripts from all languages in MPS.";

@@ -22,7 +22,6 @@ public interface MigrationStage {
 
   void execute(MPSProject p);
   boolean needsCommand();
-  boolean needsRestart();
 
   String messageBefore();
   String messageAfter();

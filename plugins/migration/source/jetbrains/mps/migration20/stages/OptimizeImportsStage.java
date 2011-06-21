@@ -42,10 +42,6 @@ public class OptimizeImportsStage implements MigrationStage {
     return true;
   }
 
-  public boolean needsRestart() {
-    return false;
-  }
-
   public String messageBefore() {
     return "Now imports will be optimized to remove old unused dependencies to stub models and non-existing modules";
   }

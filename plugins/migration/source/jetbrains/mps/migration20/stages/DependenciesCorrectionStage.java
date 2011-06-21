@@ -66,10 +66,6 @@ public class DependenciesCorrectionStage implements MigrationStage {
     return true;
   }
 
-  public boolean needsRestart() {
-    return true;
-  }
-
   public String messageBefore() {
     return "Since there were some problems with module dependencies in MPS 1.5, that are now fixed, module imports should be changed correspondingly";
   }
