@@ -45,6 +45,7 @@
   <property name="jetbrains.mps.execution.common.classes" value="workbench/runConfigurations/languages/common/classes_gen" />
   <property name="jetbrains.mps.execution.configurations.classes" value="workbench/runConfigurations/languages/configurations/classes_gen" />
   <property name="jetbrains.mps.execution.settings.classes" value="workbench/runConfigurations/languages/settings/classes_gen" />
+  <property name="jetbrains.mps.execution.util.classes" value="workbench/runConfigurations/languages/util/classes_gen" />
   <property name="jetbrains.mps.gtext.classes" value="languages/util/gtext/classes_gen" />
   <property name="jetbrains.mps.gtext.runtime.classes" value="languages/util/gtext/runtime/classes_gen" />
   <property name="jetbrains.mps.gwt.client.classes" value="languages/util/gwtsupport/languages/client/classes_gen" />
@@ -168,6 +169,7 @@
     <path path="workbench/runConfigurations/languages/common/source_gen" />
     <path path="workbench/runConfigurations/languages/configurations/source_gen" />
     <path path="workbench/runConfigurations/languages/settings/source_gen" />
+    <path path="workbench/runConfigurations/languages/util/source_gen" />
     <path path="languages/util/gtext/source_gen" />
     <path path="languages/util/gtext/runtime/source_gen" />
     <path path="languages/util/gtext/runtime/test_gen" />
@@ -381,6 +383,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path path="languages/util/gtext/classes_gen" />
     <path path="languages/util/gtext/runtime/classes_gen" />
     <path path="languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
@@ -518,6 +521,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths">
@@ -618,6 +622,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths">
@@ -718,6 +723,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths">
@@ -822,6 +828,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths">
@@ -922,6 +929,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.jdk7_tjc.classpaths">
@@ -1022,6 +1030,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths">
@@ -1122,6 +1131,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math.runtime_tjc.classpaths">
@@ -1247,6 +1257,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.money.runtime_tjc.classpaths">
@@ -1354,6 +1365,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths">
@@ -1479,6 +1491,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.bash_tjc.classpaths">
@@ -1579,6 +1592,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
@@ -1688,6 +1702,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.dependency_tjc.classpaths">
@@ -1797,6 +1812,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.distrib_tjc.classpaths">
@@ -1905,6 +1921,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.generictasks_tjc.classpaths">
@@ -2012,6 +2029,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.gwt.client_tjc.classpaths">
@@ -2113,6 +2131,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths">
@@ -2213,6 +2232,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths">
@@ -2313,6 +2333,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths">
@@ -2413,6 +2434,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths">
@@ -2513,6 +2535,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table.runtime_tjc.classpaths">
@@ -2612,6 +2635,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths">
@@ -2712,6 +2736,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.stubs_tjc.classpaths">
@@ -2811,6 +2836,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.make.facet_tjc.classpaths">
@@ -2910,6 +2936,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.make.script_tjc.classpaths">
@@ -3009,6 +3036,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.nanoj_tjc.classpaths">
@@ -3109,6 +3137,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.platform.conf_tjc.classpaths">
@@ -3209,6 +3238,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.quickQuery.runtime_tjc.classpaths">
@@ -3316,6 +3346,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui_tjc.classpaths">
@@ -3419,6 +3450,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.gwt_tjc.classpaths">
@@ -3522,6 +3554,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.modeling_tjc.classpaths">
@@ -3622,6 +3655,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swing_tjc.classpaths">
@@ -3727,6 +3761,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths">
@@ -3841,6 +3876,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths">
@@ -3950,6 +3986,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xmlUnitTest_tjc.classpaths">
@@ -4050,6 +4087,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mpslite_tjc.classpaths">
@@ -4150,6 +4188,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.ypath.main_tjc.classpaths">
@@ -4250,6 +4289,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.ypath.test_tjc.classpaths">
@@ -4351,6 +4391,7 @@
     <path path="workbench/runConfigurations/languages/common/classes_gen" />
     <path path="workbench/runConfigurations/languages/configurations/classes_gen" />
     <path path="workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.math.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.money.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.gwt.client_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.editor.table.runtime_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.make.facet_tjc,compile.cycle.jetbrains.mps.make.script_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQuery.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.modeling_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
@@ -4381,6 +4422,7 @@
     <mkdir dir="workbench/runConfigurations/languages/common/source_gen" />
     <mkdir dir="workbench/runConfigurations/languages/configurations/source_gen" />
     <mkdir dir="workbench/runConfigurations/languages/settings/source_gen" />
+    <mkdir dir="workbench/runConfigurations/languages/util/source_gen" />
     <mkdir dir="languages/util/gtext/source_gen" />
     <mkdir dir="languages/util/gtext/runtime/source_gen" />
     <mkdir dir="languages/util/gtext/runtime/test_gen" />
@@ -4443,6 +4485,7 @@
     <mkdir dir="${jetbrains.mps.execution.common.classes}" />
     <mkdir dir="${jetbrains.mps.execution.configurations.classes}" />
     <mkdir dir="${jetbrains.mps.execution.settings.classes}" />
+    <mkdir dir="${jetbrains.mps.execution.util.classes}" />
     <mkdir dir="${jetbrains.mps.gtext.classes}" />
     <mkdir dir="${jetbrains.mps.gtext.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.ide.uiLanguage.runtime.classes}" />
@@ -4552,6 +4595,9 @@
     </copy>
     <copy todir="${jetbrains.mps.execution.settings.classes}">
       <fileset includes="**/*.png" dir="workbench/runConfigurations/languages/settings/source_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.execution.util.classes}">
+      <fileset includes="**/*.png" dir="workbench/runConfigurations/languages/util/source_gen" />
     </copy>
     <copy todir="${jetbrains.mps.gtext.classes}">
       <fileset includes="**/*.png" dir="languages/util/gtext/source_gen" />
@@ -4777,6 +4823,11 @@
     <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.settings.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src>
         <path path="workbench/runConfigurations/languages/settings/source_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.util.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src>
+        <path path="workbench/runConfigurations/languages/util/source_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.analyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
@@ -5843,6 +5894,7 @@
     <delete dir="${jetbrains.mps.execution.common.classes}" />
     <delete dir="${jetbrains.mps.execution.configurations.classes}" />
     <delete dir="${jetbrains.mps.execution.settings.classes}" />
+    <delete dir="${jetbrains.mps.execution.util.classes}" />
     <delete dir="${jetbrains.mps.gtext.classes}" />
     <delete dir="${jetbrains.mps.gtext.runtime.classes}" />
     <delete dir="${jetbrains.mps.ide.uiLanguage.runtime.classes}" />

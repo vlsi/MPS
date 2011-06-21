@@ -151,9 +151,6 @@
       <property name="name" nameId="tpck.1169194664001" value="StartedProcessType" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
-    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="747009152928925145">
-      <property name="name" nameId="tpck.1169194664001" value="IMainClass" />
-    </node>
   </roots>
   <root id="2401501559171345993">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3754890006475816675">
@@ -527,6 +524,5 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="rzqf.856705193941281810" resolveInfo="ProcessType" />
     </node>
   </root>
-  <root id="747009152928925145" />
 </model>
 

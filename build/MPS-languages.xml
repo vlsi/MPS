@@ -1405,6 +1405,23 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.settings.mpsarch.jar.jtmp" />
   </target>
+  <target name="pack.jetbrains.mps.execution.util">
+    <mkdir dir="workbench/runConfigurations/languages/util/classes_gen" />
+    <mkdir dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.mpsarch.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.mpsarch.jar.jtmp/module.xml">
+      <module namespace="jetbrains.mps.execution.util">
+        <dependencies />
+      </module>
+    </echoxml>
+    <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="workbench/runConfigurations/languages/util/util.mpl" prefix="module" />
+      <zipfileset file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.mpsarch.jar.jtmp/module.xml" prefix="module" />
+      <zipfileset dir="workbench/runConfigurations/languages/util" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="workbench/runConfigurations/languages/util/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="workbench/runConfigurations/languages/util/classes_gen" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.mpsarch.jar.jtmp" />
+  </target>
   <target name="pack.jetbrains.mps.xml.deprecated">
     <mkdir dir="languages/util/xmlDeprecated/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.xml.deprecated.mpsarch.jar.jtmp" />

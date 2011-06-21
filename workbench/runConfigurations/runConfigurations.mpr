@@ -33,6 +33,7 @@
       <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="usages" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="library" />
+      <modulePath path="${project}/languages/util/util.mpl" folder="" />
     </projectModules>
     <genConfs>
       <genConfModule name="api" moduleRef="jetbrains.mps.execution.api" />

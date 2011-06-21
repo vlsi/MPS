@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Configurations_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.Configurations_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="82" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="80" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.StructureAspectDescriptor" />
   <root nodeId="1810236057992810377">
     <nodeInfo nodeId="1810236057992810377" fileName="StartedProcessType.java" startLine="12" startPosition="46" endLine="13" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1810236057992810377" fileName="StartedProcessType.java" startLine="13" startPosition="109" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROCESS" />
@@ -941,10 +941,6 @@
     <scopeInfo nodeId="7301162575811126385" fileName="NodeSource.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="7301162575811126385" fileName="NodeSource.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="7301162575811126385" fileName="NodeSource.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.NodeSource" />
-  </root>
-  <root nodeId="747009152928925145">
-    <nodeInfo nodeId="747009152928925145" fileName="IMainClass.java" startLine="7" startPosition="50" endLine="8" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <unitInfo nodeId="747009152928925145" fileName="IMainClass.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.execution.configurations.structure.IMainClass" />
   </root>
   <root nodeId="7684700299064179245">
     <nodeInfo nodeId="7684700299064179245" fileName="Project_Parameter.java" startLine="11" startPosition="65" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
