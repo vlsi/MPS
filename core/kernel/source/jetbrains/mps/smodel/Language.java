@@ -347,7 +347,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public String getTestsGeneratorOutputPath() {
-    return null;
+    IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(getDescriptorFile(), getModuleDescriptor());
+    return result != null ? result.getPath() : null;
   }
 
   public List<SNode> getConceptDeclarations() {
