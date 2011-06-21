@@ -118,25 +118,31 @@ public class ConceptRegistry implements ApplicationComponent {
   public BehaviorDescriptor getBehaviorDescriptor(@Nullable String fqName) {
     BehaviorDescriptor descriptor = behaviorDescriptors.get(fqName);
 
-    if (descriptor != null || !startLoad(fqName, LanguageAspect.BEHAVIOR)) {
-      return descriptor != null ? descriptor : new IllegalBehaviorDescriptor(fqName);
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (!startLoad(fqName, LanguageAspect.BEHAVIOR)) {
+      return new IllegalBehaviorDescriptor(fqName);
     }
 
     try {
-      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-      descriptor = languageRuntime.getBehaviorAspectDescriptor().getDescriptor(fqName);
-    } catch (Exception ignored) {
+      try {
+        LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+        descriptor = languageRuntime.getBehaviorAspectDescriptor().getDescriptor(fqName);
+      } catch (Exception ignored) {
+      }
+
+      if (descriptor == null) {
+        descriptor = new IllegalBehaviorDescriptor(fqName);
+      }
+
+      behaviorDescriptors.put(fqName, descriptor);
+
+      return descriptor;
+    } finally {
+      finishLoad(fqName, LanguageAspect.BEHAVIOR);
     }
-
-    if (descriptor == null) {
-      descriptor = new IllegalBehaviorDescriptor(fqName);
-    }
-
-    behaviorDescriptors.put(fqName, descriptor);
-
-    finishLoad(fqName, LanguageAspect.BEHAVIOR);
-
-    return descriptor;
   }
 
   public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
