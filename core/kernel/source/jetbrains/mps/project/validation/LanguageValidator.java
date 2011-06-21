@@ -21,6 +21,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
@@ -41,7 +42,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     while (!frontier.isEmpty()){
       List<Language> newFrontier = new ArrayList<Language>();
       for (Language extendedLang : frontier) {
-        if (extendedLang == lang) {
+        if (extendedLang == lang && lang != BootstrapLanguages.coreLanguage()) {
           return false;
         }
         if (!passed.contains(extendedLang)) {
