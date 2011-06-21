@@ -21,6 +21,7 @@ import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.UnzipUtil;
 import java.io.FilenameFilter;
+import jetbrains.mps.project.MPSExtentions;
 import java.io.FileInputStream;
 import org.xml.sax.InputSource;
 import java.io.ByteArrayInputStream;
@@ -98,34 +99,23 @@ public class ModelUtils {
   }
 
   public static SModel[] loadZippedModels(File zipfile, Version[] versions) throws IOException {
-    return ModelUtils.loadZippedModels(zipfile, versions, true);
-  }
-
-  public static SModel[] loadZippedModels(File zipfile, Version[] versions, boolean useZipName) throws IOException {
     File tmpdir = FileUtil.createTmpDir();
     UnzipUtil.unzip(zipfile, tmpdir);
-    String zipfilename = zipfile.getName();
-    String name = zipfilename.substring(0, zipfilename.length() - "zip".length());
-    String prefix = tmpdir + File.separator + name;
     SModel[] models = new SModel[versions.length];
     int index = 0;
     for (final Version v : versions) {
       File file;
-      if (useZipName) {
-        file = new File(prefix + v.getSuffix());
-      } else {
-        File[] files = tmpdir.listFiles(new FilenameFilter() {
-          public boolean accept(File dir, String name) {
-            return name.endsWith(v.getSuffix());
-          }
-        });
-        if (files == null || files.length == 1) {
-          if (log.isErrorEnabled()) {
-            log.error("Wrong zip contents");
-          }
+      File[] files = tmpdir.listFiles(new FilenameFilter() {
+        public boolean accept(File dir, String name) {
+          return name.endsWith(MPSExtentions.DOT_MODEL + "." + v.getSuffix());
         }
-        file = files[0];
+      });
+      if (files == null || files.length == 1) {
+        if (log.isErrorEnabled()) {
+          log.error("Wrong zip contents");
+        }
       }
+      file = files[0];
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       FileInputStream fis = new FileInputStream(file);
       while (true) {
