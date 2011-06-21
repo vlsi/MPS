@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -797,8 +798,17 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   void waitLock(boolean write) {
     if(write) {
-      getWriteLock().lock();
-      getWriteLock().unlock();
+      boolean wasLocked = false;
+      try {
+        while (!getWriteLock().tryLock(100, TimeUnit.MILLISECONDS)) {
+        }
+        wasLocked = true;
+      } catch (InterruptedException e) {
+      } finally {
+        if (wasLocked) {
+          getWriteLock().unlock();
+        }
+      }
     } else {
       getReadLock().lock();
       getReadLock().unlock();
