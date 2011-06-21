@@ -27945,13 +27945,32 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7088622708994435115" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7088622708994435116" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7088622708994435117">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7088622708994435122">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7088622708994435124">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7088622708994435123">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7088622708994282560" resolveInfo="myModelDialog" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1558573332373559499">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1558573332373559500">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7088622708994435122">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7088622708994435124">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7088622708994435123">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7088622708994282560" resolveInfo="myModelDialog" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7088622708994435128">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7088622708994435096" resolveInfo="rootDialogClosed" />
+                </node>
+              </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7088622708994435128">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7088622708994435096" resolveInfo="rootDialogClosed" />
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1558573332373559503">
+            <node role="expression" roleId="tpee.1081516765348" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1558573332373559505">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1558573332373557509" resolveInfo="myClosed" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1558573332373559487">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1558573332373559489">
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1558573332373559492">
+              <property name="value" nameId="tpee.1068580123138" value="true" />
+            </node>
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1558573332373559488">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1558573332373557509" resolveInfo="myClosed" />
             </node>
           </node>
         </node>
@@ -28191,6 +28210,11 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="1558573332373557509">
+      <property name="name" nameId="tpck.1169194664001" value="myClosed" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1558573332373557510" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1558573332373559485" />
     </node>
   </root>
   <root id="742766381634604040">
