@@ -6,10 +6,20 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.NameUtil;
+import org.jdom.Document;
 import org.jdom.Element;
+import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+
+import javax.management.Descriptor;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
@@ -45,6 +55,23 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   protected DebugInfo generateCache(GenerationStatus status) {
     return status.getDebugInfo();
+  }
+
+  @Override
+  protected DebugInfo readCache(SModelDescriptor sm) {
+    ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoaderFor(sm.getModule(), false);
+    if (classLoader == null) {
+      return null;
+    }
+    InputStream stream = classLoader.getResourceAsStream(sm.getLongName().replace(".", "/") + "/" + TRACE_FILE_NAME);
+    if (stream == null) {
+      return null;
+    }
+    try {
+      return load(stream);
+    } catch (IOException e) {
+      return null;
+    }
   }
 
   @Override
