@@ -444,6 +444,90 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration" file="JUnitTests_Configuration.java">
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
+    <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
+    <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
+    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
+    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
+    <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
+    <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
+    <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
+    <classNode dependClassName="java.lang.CloneNotSupportedException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ClonableList" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration_RunProfileState" />
+    <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.JavaRunParameters_Configuration" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
+    <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration_Editor" file="JUnitTests_Configuration_Editor.java">
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitConfigEditor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.JavaRunParameters_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration_Factory" file="JUnitTests_Configuration_Factory.java">
+    <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_Kind" />
+    <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration_RunProfileState" file="JUnitTests_Configuration_RunProfileState.java">
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="com.intellij.execution.ExecutionResult" />
+    <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
+    <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
+    <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
+    <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
+    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.Junit_Command" />
+    <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_ConfigurationType" file="JUnit_ConfigurationType.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
@@ -456,6 +540,21 @@
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_Kind" file="JUnit_Kind.java">
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
@@ -474,6 +573,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
@@ -492,6 +592,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.LanguageTestWrapper" file="LanguageTestWrapper.java">
@@ -635,6 +736,17 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunState" />
     <classNode extendsClassName="javax.swing.JPanel" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestView" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
+    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_Kind" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.StatisticsRowRenderer" file="StatisticsRowRenderer.java">
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -1119,6 +1231,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
