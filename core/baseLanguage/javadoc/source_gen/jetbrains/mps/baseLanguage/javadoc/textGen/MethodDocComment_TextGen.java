@@ -22,7 +22,9 @@ public class MethodDocComment_TextGen extends SNodeTextGen {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }
     }
-    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "return", true), this.getSNode());
+    if ((SLinkOperations.getTarget(node, "return", true) != null)) {
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "return", true), this.getSNode());
+    }
 
     DocCommentTextGen.docCommentEnd(node, this);
   }

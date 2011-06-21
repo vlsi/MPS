@@ -8,10 +8,10 @@
   <unitInfo fileName="ThrowsBlockDocTag_TextGen.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.ThrowsBlockDocTag_TextGen" />
   <unitInfo fileName="ParameterBlockDocTag_TextGen.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.ParameterBlockDocTag_TextGen" />
   <unitInfo fileName="SeeBlockDocTag_TextGen.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.SeeBlockDocTag_TextGen" />
-  <unitInfo fileName="ClassifierDocComment_TextGen.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" />
   <unitInfo fileName="CommentLine_TextGen.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.CommentLine_TextGen" />
-  <unitInfo fileName="MethodDocComment_TextGen.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen" />
+  <unitInfo fileName="ClassifierDocComment_TextGen.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" />
   <unitInfo fileName="CodeSnippet_TextGen.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.CodeSnippet_TextGen" />
+  <unitInfo fileName="MethodDocComment_TextGen.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen" />
   <unitInfo fileName="DocCommentTextGen.java" startLine="12" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.textGen.DocCommentTextGen" />
   <root nodeId="4021391592914129117">
     <nodeInfo nodeId="2004985048484856452" fileName="MethodDocComment_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -19,14 +19,15 @@
     <nodeInfo nodeId="2004985048484856451" fileName="MethodDocComment_TextGen.java" startLine="13" startPosition="50" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="16" startPosition="74" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="21" startPosition="78" endLine="22" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3926476116131896611" fileName="MethodDocComment_TextGen.java" startLine="24" startPosition="5" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3926476116131896611" fileName="MethodDocComment_TextGen.java" startLine="24" startPosition="5" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3926476116131896611" fileName="MethodDocComment_TextGen.java" startLine="24" startPosition="5" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2004985048484774442" fileName="MethodDocComment_TextGen.java" startLine="25" startPosition="148" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2004985048484856481" fileName="MethodDocComment_TextGen.java" startLine="26" startPosition="0" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2004985048484856481" fileName="MethodDocComment_TextGen.java" startLine="26" startPosition="0" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3926476116131896611" fileName="MethodDocComment_TextGen.java" startLine="25" startPosition="68" endLine="26" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3926476116131896611" fileName="MethodDocComment_TextGen.java" startLine="25" startPosition="68" endLine="26" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3926476116131896611" fileName="MethodDocComment_TextGen.java" startLine="25" startPosition="68" endLine="26" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2004985048484774442" fileName="MethodDocComment_TextGen.java" startLine="27" startPosition="5" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2004985048484856481" fileName="MethodDocComment_TextGen.java" startLine="28" startPosition="0" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2004985048484856481" fileName="MethodDocComment_TextGen.java" startLine="28" startPosition="0" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="15" startPosition="94" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="20" startPosition="98" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9054439867185875454" fileName="MethodDocComment_TextGen.java" startLine="24" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="14" startPosition="0" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="14" startPosition="0" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="19" startPosition="5" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -34,8 +35,9 @@
     <scopeInfo nodeId="2004985048484856452" fileName="MethodDocComment_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="50" />
     <scopeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="16" startPosition="74" endLine="17" endPosition="109" />
     <scopeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="21" startPosition="78" endLine="22" endPosition="109" />
-    <scopeInfo nodeId="3926476116131896611" fileName="MethodDocComment_TextGen.java" startLine="24" startPosition="5" endLine="25" endPosition="148" />
-    <scopeInfo nodeId="2004985048484856481" fileName="MethodDocComment_TextGen.java" startLine="26" startPosition="0" endLine="27" endPosition="48" />
+    <scopeInfo nodeId="3926476116131896611" fileName="MethodDocComment_TextGen.java" startLine="25" startPosition="68" endLine="26" endPosition="150" />
+    <scopeInfo nodeId="9054439867185875455" fileName="MethodDocComment_TextGen.java" startLine="25" startPosition="68" endLine="26" endPosition="150" />
+    <scopeInfo nodeId="2004985048484856481" fileName="MethodDocComment_TextGen.java" startLine="28" startPosition="0" endLine="29" endPosition="48" />
     <scopeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="15" startPosition="94" endLine="18" endPosition="7" />
     <scopeInfo nodeId="2004985048484774486" fileName="MethodDocComment_TextGen.java" startLine="20" startPosition="98" endLine="23" endPosition="7" />
     <scopeInfo nodeId="2004985048484774481" fileName="MethodDocComment_TextGen.java" startLine="14" startPosition="0" endLine="19" endPosition="5" />
