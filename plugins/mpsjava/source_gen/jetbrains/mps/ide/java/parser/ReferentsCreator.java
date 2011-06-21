@@ -163,14 +163,20 @@ public class ReferentsCreator {
     public boolean visit(TypeDeclaration typeDeclaration, CompilationUnitScope scope) {
       String fqName = JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName);
       myReferentsCreator.myCurrentModel = myReferentsCreator.myPackageNamesToModels.get(fqName);
-      boolean result = process(typeDeclaration);
+      return process(typeDeclaration);
+    }
+
+    @Override
+    public void endVisit(TypeDeclaration typeDeclaration, CompilationUnitScope scope) {
       myReferentsCreator.myCurrentModel = null;
-      return result;
     }
 
     private boolean process(TypeDeclaration typeDeclaration) {
-      char[][] name = typeDeclaration.binding.compoundName;
       SourceTypeBinding binding = typeDeclaration.binding;
+      if (binding == null) {
+        return false;
+      }
+      char[][] name = binding.compoundName;
       SModel model = myReferentsCreator.myCurrentModel;
       SNode classifier;
       SNode visibility = getClassVisibility(binding);
@@ -256,13 +262,18 @@ public class ReferentsCreator {
     public boolean visit(TypeDeclaration typeDeclaration, CompilationUnitScope scope) {
       String fqName = JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName);
       myReferentsCreator.myCurrentModel = myReferentsCreator.myPackageNamesToModels.get(fqName);
-      boolean result = process(typeDeclaration);
+      return process(typeDeclaration);
+    }
+
+    public void endVisit(TypeDeclaration typeDeclaration, CompilationUnitScope scope) {
       myReferentsCreator.myCurrentModel = null;
-      return result;
     }
 
     private boolean process(TypeDeclaration typeDeclaration) {
       SourceTypeBinding binding = typeDeclaration.binding;
+      if (binding == null) {
+        return false;
+      }
       SNode classifier = SNodeOperations.cast(myReferentsCreator.myBindingMap.get(binding), "jetbrains.mps.baseLanguage.structure.Classifier");
       try {
         boolean isTopLevel = true;
@@ -293,7 +304,7 @@ public class ReferentsCreator {
         } else {
           ReferenceBinding superClassBinding = binding.superclass();
           if (superClassBinding != null) {
-            assert (binding.superclass().isClass() || binding.superclass().isEnum());
+            // <node> 
             if ("java.lang.Object".equals(new String(superClassBinding.readableName()))) {
             } else
             if (binding.isEnum()) {
@@ -307,7 +318,7 @@ public class ReferentsCreator {
           }
           ReferenceBinding[] superInterfaces = binding.superInterfaces();
           for (ReferenceBinding superInterfaceBinding : superInterfaces) {
-            assert (superInterfaceBinding.isInterface());
+            // <node> 
             SNode superInterface = SNodeOperations.cast(createType(superInterfaceBinding), "jetbrains.mps.baseLanguage.structure.ClassifierType");
             if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
               SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
