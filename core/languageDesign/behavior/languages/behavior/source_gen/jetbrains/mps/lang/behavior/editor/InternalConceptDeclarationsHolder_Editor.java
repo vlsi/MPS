@@ -23,40 +23,40 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class ConceptDeclarationsHolder_Editor extends DefaultNodeEditor {
+public class InternalConceptDeclarationsHolder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_a8oizz_a(editorContext, node);
+    return this.createCollection_jxypb2_a(editorContext, node);
   }
 
-  private EditorCell createCollection_a8oizz_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jxypb2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_a8oizz_a");
-    editorCell.addEditorCell(this.createCollection_a8oizz_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_a8oizz_b0(editorContext, node));
+    editorCell.setCellId("Collection_jxypb2_a");
+    editorCell.addEditorCell(this.createCollection_jxypb2_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_jxypb2_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_a8oizz_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jxypb2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_a8oizz_a0");
+    editorCell.setCellId("Collection_jxypb2_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_a8oizz_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_a8oizz_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jxypb2_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_jxypb2_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_a8oizz_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jxypb2_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
-    editorCell.setCellId("Constant_a8oizz_a0a");
+    editorCell.setCellId("Constant_jxypb2_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_a8oizz_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ConceptDeclarationsHolder_Editor.conceptListHandler_a8oizz_b0(node, "concept", editorContext);
+  private EditorCell createRefNodeList_jxypb2_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new InternalConceptDeclarationsHolder_Editor.conceptListHandler_jxypb2_b0(node, "concept", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_concept");
     {
@@ -67,7 +67,7 @@ public class ConceptDeclarationsHolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_a8oizz_b0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_jxypb2_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -85,8 +85,8 @@ public class ConceptDeclarationsHolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class conceptListHandler_a8oizz_b0 extends RefNodeListHandler {
-    public conceptListHandler_a8oizz_b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class conceptListHandler_jxypb2_b0 extends RefNodeListHandler {
+    public conceptListHandler_jxypb2_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

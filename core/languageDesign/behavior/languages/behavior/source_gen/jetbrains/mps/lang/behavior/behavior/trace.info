@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConceptDeclarationReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptDeclarationReference_BehaviorDescriptor" />
+  <unitInfo fileName="InternalConceptDeclarationReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationReference_BehaviorDescriptor" />
   <unitInfo fileName="SuperNodeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor" />
   <unitInfo fileName="ConceptConstructorDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptConstructorDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ThisNodeExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ThisNodeExpression_BehaviorDescriptor" />
   <unitInfo fileName="StaticConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptDeclarationsHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptDeclarationsHolder_BehaviorDescriptor" />
+  <unitInfo fileName="InternalConceptDeclarationsHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationsHolder_BehaviorDescriptor" />
   <unitInfo fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior" />
   <unitInfo fileName="LocalBehaviorMethodCall_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_Behavior" />
   <unitInfo fileName="ConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor" />

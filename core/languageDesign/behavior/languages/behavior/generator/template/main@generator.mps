@@ -65,7 +65,7 @@
       <property name="name" nameId="tpck.1169194664001" value="BehaviorDescriptor" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
-    <node type="1i04.ConceptDeclarationsHolder" typeId="1i04.646895014681116171" id="7923290658387314669">
+    <node type="1i04.InternalConceptDeclarationsHolder" typeId="1i04.646895014681116171" id="7923290658387314669">
       <property name="name" nameId="tpck.1169194664001" value="CurrentConceptDeclarations" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="7923290658387314698">
@@ -2294,7 +2294,7 @@
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7923290658387314303" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="7923290658387314308">
-      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="1i04.646895014681116169" resolveInfo="ConceptDeclarationReference" />
+      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="1i04.646895014681116169" resolveInfo="InternalConceptDeclarationReference" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="7923290658387314309">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -3575,7 +3575,7 @@
     </node>
   </root>
   <root id="7923290658387314669">
-    <node role="concept" roleId="1i04.646895014681116172" type="1i04.ConceptDeclarationReference" typeId="1i04.646895014681116169" id="7923290658387314670">
+    <node role="concept" roleId="1i04.646895014681116172" type="1i04.InternalConceptDeclarationReference" typeId="1i04.646895014681116169" id="7923290658387314670">
       <link role="concept" roleId="1i04.646895014681116170" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="7923290658387314671">
         <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7923290658387314672">
@@ -3699,11 +3699,11 @@
   </root>
   <root id="7923290658387314698">
     <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="7923290658387314699">
-      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="1i04.646895014681116171" resolveInfo="ConceptDeclarationsHolder" />
+      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="1i04.646895014681116171" resolveInfo="InternalConceptDeclarationsHolder" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="7923290658387314700">
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="7923290658387314297" resolveInfo="BehaviorDescriptor" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="1i04.646895014681116169" resolveInfo="ConceptDeclarationReference" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="1i04.646895014681116169" resolveInfo="InternalConceptDeclarationReference" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1144956008583649232">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1144956008583649233">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1144956008583649234">
@@ -3725,7 +3725,7 @@
       </node>
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1144956008583716328">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="1i04.646895014681116169" resolveInfo="ConceptDeclarationReference" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="1i04.646895014681116169" resolveInfo="InternalConceptDeclarationReference" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1144956008583654942" resolveInfo="InterfaceBehaviorDescriptor" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1144956008583716329">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1144956008583716330">
@@ -4264,7 +4264,7 @@
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1144956008583654943" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1144956008583654944">
-      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="1i04.646895014681116169" resolveInfo="ConceptDeclarationReference" />
+      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="1i04.646895014681116169" resolveInfo="InternalConceptDeclarationReference" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1144956008583654963">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />

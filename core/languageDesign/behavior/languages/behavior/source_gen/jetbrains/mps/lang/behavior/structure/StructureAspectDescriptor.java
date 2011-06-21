@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import java.util.Collections;
 
 public class StructureAspectDescriptor extends DescriptorProvider<StructureDescriptor> {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
 
   public StructureAspectDescriptor() {
   }
@@ -25,11 +25,11 @@ public class StructureAspectDescriptor extends DescriptorProvider<StructureDescr
       case 1:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"});
       case 2:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.behavior.structure.ConceptDeclarationReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
-      case 3:
-        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
-      case 4:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible"});
+      case 3:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"});
+      case 4:
+        return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"});
       case 5:
         return new StructureAspectDescriptor.DataBasedStructureDescriptor("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IMethodCall"}, new String[]{}, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IMethodCall"});
       case 6:

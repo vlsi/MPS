@@ -7,8 +7,8 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class ConceptDeclarationsHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
-  public ConceptDeclarationsHolder_BehaviorDescriptor() {
+public class InternalConceptDeclarationsHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+  public InternalConceptDeclarationsHolder_BehaviorDescriptor() {
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -17,6 +17,6 @@ public class ConceptDeclarationsHolder_BehaviorDescriptor extends BaseConcept_Be
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder";
+    return "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder";
   }
 }
