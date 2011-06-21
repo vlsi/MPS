@@ -38,13 +38,6 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     }
   }
 
-  protected List<IModule> doGetDependOnModules() {
-    List<IModule> res = super.doGetDependOnModules();
-    res.addAll(myModule.getExtendedLanguages());
-    res.addAll(((LanguageDependenciesManager) myModule.getDependenciesManager()).getRuntimeDependOnModules());
-    return res;
-  }
-
   @Deprecated
   public List<IModule> getRuntimeDependOnModules() {
     return ModuleUtil.depsToModules(myModule.getRuntimeDependencies());
