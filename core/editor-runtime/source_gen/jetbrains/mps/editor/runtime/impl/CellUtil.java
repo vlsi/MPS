@@ -45,7 +45,7 @@ public class CellUtil {
   }
 
   /**
-   * TODO: think of moving jetbrains.mps.lang.editor.generator.internal into MPS???
+   * TODO: think of moving jetbrains.mps.lang.editor.generator.internal into MPS
    */
   public static SNode getLinkDeclarationTarget(SNode linkDeclaration) {
     return SLinkOperations.getTarget(linkDeclaration, "target", false);

@@ -26,7 +26,7 @@ public class ABC<TT> {
   /**
    * 
    * 
-   * @author Ludwig Zoo???
+   * @author Ludwig Zoo
    */
   public ABC() {
   }
@@ -76,7 +76,7 @@ public class ABC<TT> {
    * line4bar
    * asdf
    * 
-   * @param s ???
+   * @param s 
    */
   public void foo(String... s) {
   }
@@ -84,7 +84,7 @@ public class ABC<TT> {
   /**
    * fasdfasdfasdfasdfasdf
    * 
-   * @version asdfasdf???
+   * @version asdfasdf
    */
   public static void foo() {
   }
