@@ -214,10 +214,7 @@ public class MergeContext {
     } else {
       change.apply(myResultModel, myNodeCopier);
       SetSequence.fromSet(myResolvedChanges).addElement(change);
-      for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
-        assert !(SetSequence.fromSet(myResolvedChanges).contains(symmetric));
-        SetSequence.fromSet(myResolvedChanges).addElement(symmetric);
-      }
+      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
       excludeChangesNoRestoreIds(getConflictedWith(change));
     }
   }
@@ -226,10 +223,7 @@ public class MergeContext {
     if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
     } else {
       SetSequence.fromSet(myResolvedChanges).addElement(change);
-      for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
-        assert !(SetSequence.fromSet(myResolvedChanges).contains(symmetric));
-        SetSequence.fromSet(myResolvedChanges).addElement(symmetric);
-      }
+      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
     }
   }
 
