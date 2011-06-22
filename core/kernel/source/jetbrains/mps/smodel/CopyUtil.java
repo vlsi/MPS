@@ -207,7 +207,7 @@ public final class CopyUtil {
               statRef.getResolveInfo()));
           } else if (ref instanceof DynamicReference) {
             DynamicReference dynRef = (DynamicReference) ref;
-            outputNode.addReference(new DynamicReference(dynRef.getRole(), dynRef.getSourceNode(), dynRef.getTargetSModelReference(), dynRef.getResolveInfo()));
+            outputNode.addReference(new DynamicReference(dynRef.getRole(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo()));
           }
         } else if (mapping.containsKey(inputTargetNode)) {
           outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
