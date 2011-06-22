@@ -348,7 +348,7 @@ public class ModuleMaker {
             }
             if (myOutputtedErrors < MAX_ERRORS) {
               myOutputtedErrors++;
-              myMessages.add(new MyMessage(MessageKind.WARNING, errMsg, hintObject));
+              myMessages.add(new MyMessage(MessageKind.ERROR, errMsg, hintObject));
               LOG.debug(errMsg, hintObject);
             }
           }
