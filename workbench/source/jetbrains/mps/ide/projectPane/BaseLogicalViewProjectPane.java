@@ -63,23 +63,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onAfterReload() {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          rebuild();
-        }
-      });
+      rebuild();
     }
   };
 
   private IMakeNotificationListener myMakeNotificationListener = new Stub() {
-    @Override
     public void finished(MakeNotification notification) {
       // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          rebuild();
-        }
-      });
+      rebuild();
     }
   };
 
@@ -204,7 +195,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
     ModelAccess.instance().addCommandListener(myModelAccessListener);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
-    IMakeService.INSTANCE.get().addListener(myMakeNotificationListener) ;
+    IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
@@ -544,11 +535,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         if (getProjectView() instanceof ProjectViewImpl) {
           ((ProjectViewImpl) getProjectView()).setShowMembers(state, getId());
         }
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            rebuild();
-          }
-        });
+        rebuild();
       }
     }
   }
