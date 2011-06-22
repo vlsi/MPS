@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.migration20;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.migration20.stages.MigrationStage;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -53,23 +51,21 @@ public class MigrationHelper {
         } else {
           stageRunnable.run();
         }
-        msComponent.setMigrationState(next);
 
-        if (showMessageAfter(stage)) return;
+        if (showMessageAfter(stage)){
+          msComponent.setMigrationState(next);
+        }
       }
     }
   }
 
   private boolean showMessageAfter(MigrationStage stage) {
     String ma = stage.messageAfter();
-    if (ma != null) {
-      int res = Messages.showDialog(ma, stage.title() + " finished", new String[]{"Next", "Stop"}, 0, Messages.getInformationIcon());
-      if (res != 0) {
-        Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0", "Migration stopped", Messages.getInformationIcon());
-        return true;
-      }
-    }
-    return false;
+    if (ma == null) return false;
+
+    ma += "\n\n" + "You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0";
+    Messages.showMessageDialog(ma, stage.title() + " finished", Messages.getInformationIcon());
+    return true;
   }
 
   private boolean showMessageBefore(MigrationStage stage) {

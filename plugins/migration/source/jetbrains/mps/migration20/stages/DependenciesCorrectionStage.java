@@ -71,6 +71,6 @@ public class DependenciesCorrectionStage implements MigrationStage {
   }
 
   public String messageAfter() {
-    return "Dependencies problems fixed";
+    return null;
   }
 }

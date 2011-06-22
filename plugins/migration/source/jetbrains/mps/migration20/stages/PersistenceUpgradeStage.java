@@ -49,6 +49,6 @@ public class PersistenceUpgradeStage implements MigrationStage {
   }
 
   public String messageAfter() {
-    return "Persistence format changed";
+    return null;
   }
 }

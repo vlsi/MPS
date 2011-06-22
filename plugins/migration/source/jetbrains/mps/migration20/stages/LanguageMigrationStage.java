@@ -53,7 +53,7 @@ public class LanguageMigrationStage implements MigrationStage {
   }
 
   public String messageAfter() {
-    return "Language migrations applied";
+    return null;
   }
 
   private static void executeScripts(Project project, List<SNodePointer> scripts) {

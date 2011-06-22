@@ -47,6 +47,6 @@ public class OptimizeImportsStage implements MigrationStage {
   }
 
   public String messageAfter() {
-    return "Imports optimized";
+    return null;
   }
 }
