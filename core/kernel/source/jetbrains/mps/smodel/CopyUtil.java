@@ -119,7 +119,7 @@ public final class CopyUtil {
   }
 
   public static SNode copyAndPreserveId(SNode node) {
-    return copyAndPreserveId(node, true);
+    return copyAndPreserveId (node, false);
   }
   
   public static SNode copyAndPreserveId(SNode node, boolean cloneRefs) {
@@ -205,9 +205,6 @@ public final class CopyUtil {
               statRef.getTargetSModelReference(),
               statRef.getTargetNodeId(),
               statRef.getResolveInfo()));
-          } else if (ref instanceof DynamicReference && cloneRefs) {
-            DynamicReference dynRef = (DynamicReference) ref;
-            outputNode.addReference(new DynamicReference(dynRef.getRole(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo()));
           }
         } else if (mapping.containsKey(inputTargetNode)) {
           outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
