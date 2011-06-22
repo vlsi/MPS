@@ -194,7 +194,7 @@ public final class CopyUtil {
       SNode outputNode = mapping.get(inputNode);
 
       for (SReference ref : inputNode.getReferencesArray()) {
-        boolean cloneRefs = forceCloneRefs || SModelRepository.getInstance() == null || ref instanceof DynamicReference;
+        boolean cloneRefs = forceCloneRefs || SModelRepository.getInstance() == null;
         SNode inputTargetNode = cloneRefs ? null : ref.getTargetNode();
         if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {
@@ -205,9 +205,6 @@ public final class CopyUtil {
               statRef.getTargetSModelReference(),
               statRef.getTargetNodeId(),
               statRef.getResolveInfo()));
-          } else if (ref instanceof DynamicReference) {
-            DynamicReference dynRef = (DynamicReference) ref;
-            outputNode.addReference(new DynamicReference(dynRef.getRole(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo()));
           }
         } else if (mapping.containsKey(inputTargetNode)) {
           outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
