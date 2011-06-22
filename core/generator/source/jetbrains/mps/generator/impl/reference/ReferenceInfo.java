@@ -59,7 +59,7 @@ public abstract class ReferenceInfo {
 
   public abstract SNode getInputTargetNode();
 
-  /**
+  /*
    * test postponed references
    */
   public abstract SNode doResolve_Straightforward(TemplateGenerator generator);
