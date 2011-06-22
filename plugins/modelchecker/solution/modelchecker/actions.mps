@@ -5435,7 +5435,7 @@
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1453248744423274261">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JCheckBox%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JCheckBox" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1453248744423274262">
-            <property name="value" nameId="tpee.1070475926801" value="Check for cardinalities and properties constraints" />
+            <property name="value" nameId="tpee.1070475926801" value="Check constraints" />
           </node>
         </node>
       </node>

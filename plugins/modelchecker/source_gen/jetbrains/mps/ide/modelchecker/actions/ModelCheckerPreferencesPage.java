@@ -13,7 +13,7 @@ import javax.swing.JComponent;
 public class ModelCheckerPreferencesPage {
   private JPanel myPage;
   private JCheckBox myCheckUnresolvedReferencesCheckBox = new JCheckBox("Check for unresolved references");
-  private JCheckBox myCheckConstraintsCheckBox = new JCheckBox("Check for cardinalities and properties constraints");
+  private JCheckBox myCheckConstraintsCheckBox = new JCheckBox("Check constraints");
   private JCheckBox myCheckScopesCheckBox = new JCheckBox("Check references for valid search scopes");
   private JCheckBox myCheckTypesystemCheckBox = new JCheckBox("Perform typesystem checks");
   private ModelCheckerSettings myModelCheckerSettings;
