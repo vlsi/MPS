@@ -21,16 +21,17 @@ public class ModelCheckerPreferencesPage {
   public ModelCheckerPreferencesPage(ModelCheckerSettings settings) {
     myModelCheckerSettings = settings;
     myCheckUnresolvedReferencesCheckBox.setSelected(myModelCheckerSettings.isCheckUnresolvedReferences());
+    myCheckConstraintsCheckBox.setSelected(myModelCheckerSettings.isCheckConstraints());
     /*
-      myCheckConstraintsCheckBox.setSelected(myModelCheckerSettings.isCheckConstraints());
       myCheckScopesCheckBox.setSelected(myModelCheckerSettings.isCheckScopes());
     */
     myCheckTypesystemCheckBox.setSelected(myModelCheckerSettings.isCheckTypesystem());
 
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(myCheckUnresolvedReferencesCheckBox);
+    optionsPanel.add(myCheckConstraintsCheckBox);
+
     /*
-      optionsPanel.add(myCheckConstraintsCheckBox);
       optionsPanel.add(myCheckScopesCheckBox);
     */
     optionsPanel.add(myCheckTypesystemCheckBox);
