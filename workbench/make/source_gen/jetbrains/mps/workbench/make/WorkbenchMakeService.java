@@ -109,7 +109,7 @@ public class WorkbenchMakeService implements IMakeService {
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
     this.checkValidUsage();
     this.checkValidSession(session);
-    return doMake(resources, defaultMakeScript(), null);
+    return doMake(resources, null, null);
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
@@ -147,7 +147,7 @@ public class WorkbenchMakeService implements IMakeService {
     if (isInstance()) {
       throw new IllegalStateException("deprecated API called on a service");
     }
-    return _doMake(resources, WorkbenchMakeService.defaultMakeScript(), null);
+    return _doMake(resources, null, null);
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
@@ -256,19 +256,26 @@ public class WorkbenchMakeService implements IMakeService {
       }
     });
     IScriptController ctl = this.completeController(mh, controller);
-    Iterable<IScript> scripts = Sequence.fromIterable(usedLangs.value).<IScript>select(new ISelector<Iterable<String>, IScript>() {
-      public IScript select(Iterable<String> langs) {
-        final ScriptBuilder scb = new ScriptBuilder();
-        Sequence.fromIterable(langs).visitAll(new IVisitor<String>() {
-          public void visit(String ns) {
-            LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
-            Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
-            scb.withFacets(fcts);
-          }
-        });
-        return scb.withFinalTarget(new ITarget.Name("make")).toScript();
-      }
-    }).toListSequence();
+    Iterable<IScript> scripts = Sequence.fromIterable(((script != null ?
+      Sequence.fromIterable(usedLangs.value).<IScript>select(new ISelector<Iterable<String>, IScript>() {
+        public IScript select(Iterable<String> it) {
+          return script;
+        }
+      }) :
+      Sequence.fromIterable(usedLangs.value).<IScript>select(new ISelector<Iterable<String>, IScript>() {
+        public IScript select(Iterable<String> langs) {
+          final ScriptBuilder scb = new ScriptBuilder();
+          Sequence.fromIterable(langs).visitAll(new IVisitor<String>() {
+            public void visit(String ns) {
+              LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
+              Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
+              scb.withFacets(fcts);
+            }
+          });
+          return scb.withFinalTarget(new ITarget.Name("make")).toScript();
+        }
+      })
+    ))).toListSequence();
 
     if (!(Sequence.fromIterable(scripts).all(new IWhereFilter<IScript>() {
       public boolean accept(IScript sc) {
