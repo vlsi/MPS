@@ -196,53 +196,77 @@
     <unitInfo nodeId="1036071220598694533" fileName="ModuleSymbolicSuite.java" startLine="21" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
   </root>
   <root nodeId="8816956192715451485">
-    <nodeInfo nodeId="8816956192715460199" fileName="WatchingParametrizedWithMake.java" startLine="19" startPosition="73" endLine="20" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
-    <nodeInfo nodeId="8816956192715453275" fileName="WatchingParametrizedWithMake.java" startLine="22" startPosition="72" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8816956192715460216" fileName="WatchingParametrizedWithMake.java" startLine="28" startPosition="28" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8816956192715466268" fileName="WatchingParametrizedWithMake.java" startLine="29" startPosition="42" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8816956192715460238" fileName="WatchingParametrizedWithMake.java" startLine="30" startPosition="67" endLine="31" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8816956192715460253" fileName="WatchingParametrizedWithMake.java" startLine="32" startPosition="5" endLine="33" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8816956192715469190" fileName="WatchingParametrizedWithMake.java" startLine="36" startPosition="42" endLine="37" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescription" />
-    <nodeInfo nodeId="8816956192715469200" fileName="WatchingParametrizedWithMake.java" startLine="39" startPosition="25" endLine="40" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8816956192715469219" fileName="WatchingParametrizedWithMake.java" startLine="43" startPosition="49" endLine="44" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8816956192715470518" fileName="WatchingParametrizedWithMake.java" startLine="46" startPosition="27" endLine="47" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8816956192715472442" fileName="WatchingParametrizedWithMake.java" startLine="47" startPosition="48" endLine="48" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8816956192715472480" fileName="WatchingParametrizedWithMake.java" startLine="49" startPosition="79" endLine="50" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8816956192715469228" fileName="WatchingParametrizedWithMake.java" startLine="53" startPosition="9" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8816956192715469211" fileName="WatchingParametrizedWithMake.java" startLine="57" startPosition="41" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8816956192715451487" fileName="WatchingParametrizedWithMake.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchingParametrizedWithMake#(Ljava/lang/Class;)V" />
-    <nodeInfo nodeId="8816956192715460261" fileName="WatchingParametrizedWithMake.java" startLine="38" startPosition="0" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeRunner#()V" />
-    <nodeInfo nodeId="8816956192715472458" fileName="WatchingParametrizedWithMake.java" startLine="48" startPosition="171" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8816956192715466261" fileName="WatchingParametrizedWithMake.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Lorg/junit/runner/Description;" />
-    <nodeInfo nodeId="8816956192715460207" fileName="WatchingParametrizedWithMake.java" startLine="27" startPosition="40" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8816956192715478241" fileName="WatchingParametrizedWithMake.java" startLine="45" startPosition="59" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8816956192715472526" fileName="WatchingParametrizedWithMake.java" startLine="44" startPosition="46" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8816956192715453278" fileName="WatchingParametrizedWithMake.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
-    <nodeInfo nodeId="8816956192715466255" fileName="WatchingParametrizedWithMake.java" startLine="42" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lorg/junit/runner/notification/RunNotifier;)V" />
-    <scopeInfo nodeId="8816956192715451490" fileName="WatchingParametrizedWithMake.java" startLine="22" startPosition="72" endLine="23" endPosition="17" />
-    <scopeInfo nodeId="8816956192715460264" fileName="WatchingParametrizedWithMake.java" startLine="39" startPosition="25" endLine="40" endPosition="98" />
-    <scopeInfo nodeId="8816956192715472459" fileName="WatchingParametrizedWithMake.java" startLine="49" startPosition="79" endLine="50" endPosition="123" />
-    <scopeInfo nodeId="8816956192715466264" fileName="WatchingParametrizedWithMake.java" startLine="57" startPosition="41" endLine="58" endPosition="27" />
-    <scopeInfo nodeId="8816956192715451487" fileName="WatchingParametrizedWithMake.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+    <nodeInfo nodeId="8816956192715460199" fileName="WatchingParametrizedWithMake.java" startLine="22" startPosition="73" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />
+    <nodeInfo nodeId="8816956192715453275" fileName="WatchingParametrizedWithMake.java" startLine="25" startPosition="72" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8816956192715460216" fileName="WatchingParametrizedWithMake.java" startLine="31" startPosition="28" endLine="32" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715466268" fileName="WatchingParametrizedWithMake.java" startLine="32" startPosition="42" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715460238" fileName="WatchingParametrizedWithMake.java" startLine="33" startPosition="67" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715460253" fileName="WatchingParametrizedWithMake.java" startLine="35" startPosition="5" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8816956192715469190" fileName="WatchingParametrizedWithMake.java" startLine="39" startPosition="42" endLine="40" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescription" />
+    <nodeInfo nodeId="8816956192715469200" fileName="WatchingParametrizedWithMake.java" startLine="42" startPosition="25" endLine="43" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715469219" fileName="WatchingParametrizedWithMake.java" startLine="46" startPosition="49" endLine="47" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715470518" fileName="WatchingParametrizedWithMake.java" startLine="49" startPosition="27" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8816956192715472442" fileName="WatchingParametrizedWithMake.java" startLine="50" startPosition="48" endLine="51" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8816956192715472480" fileName="WatchingParametrizedWithMake.java" startLine="52" startPosition="79" endLine="53" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227223820064711928" fileName="WatchingParametrizedWithMake.java" startLine="56" startPosition="9" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1227223820064773667" fileName="WatchingParametrizedWithMake.java" startLine="62" startPosition="33" endLine="63" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227223820064712101" fileName="WatchingParametrizedWithMake.java" startLine="68" startPosition="40" endLine="69" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227223820064773893" fileName="WatchingParametrizedWithMake.java" startLine="70" startPosition="45" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715469228" fileName="WatchingParametrizedWithMake.java" startLine="72" startPosition="7" endLine="73" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715469211" fileName="WatchingParametrizedWithMake.java" startLine="76" startPosition="41" endLine="77" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8816956192715451487" fileName="WatchingParametrizedWithMake.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchingParametrizedWithMake#(Ljava/lang/Class;)V" />
+    <nodeInfo nodeId="8816956192715460261" fileName="WatchingParametrizedWithMake.java" startLine="41" startPosition="0" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeRunner#()V" />
+    <nodeInfo nodeId="8816956192715472458" fileName="WatchingParametrizedWithMake.java" startLine="51" startPosition="171" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1227223820064770528" fileName="WatchingParametrizedWithMake.java" startLine="61" startPosition="66" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8816956192715466261" fileName="WatchingParametrizedWithMake.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Lorg/junit/runner/Description;" />
+    <nodeInfo nodeId="8816956192715460207" fileName="WatchingParametrizedWithMake.java" startLine="30" startPosition="40" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1227223820064769154" fileName="WatchingParametrizedWithMake.java" startLine="60" startPosition="29" endLine="65" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715478241" fileName="WatchingParametrizedWithMake.java" startLine="48" startPosition="59" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1227223820064769150" fileName="WatchingParametrizedWithMake.java" startLine="59" startPosition="53" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8816956192715472526" fileName="WatchingParametrizedWithMake.java" startLine="47" startPosition="46" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1227223820064744752" fileName="WatchingParametrizedWithMake.java" startLine="58" startPosition="11" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8816956192715453278" fileName="WatchingParametrizedWithMake.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
+    <nodeInfo nodeId="1227223820064711930" fileName="WatchingParametrizedWithMake.java" startLine="57" startPosition="0" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8816956192715466255" fileName="WatchingParametrizedWithMake.java" startLine="45" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lorg/junit/runner/notification/RunNotifier;)V" />
+    <scopeInfo nodeId="8816956192715451490" fileName="WatchingParametrizedWithMake.java" startLine="25" startPosition="72" endLine="26" endPosition="17" />
+    <scopeInfo nodeId="8816956192715460264" fileName="WatchingParametrizedWithMake.java" startLine="42" startPosition="25" endLine="43" endPosition="97" />
+    <scopeInfo nodeId="8816956192715472459" fileName="WatchingParametrizedWithMake.java" startLine="52" startPosition="79" endLine="53" endPosition="124" />
+    <scopeInfo nodeId="1227223820064770531" fileName="WatchingParametrizedWithMake.java" startLine="62" startPosition="33" endLine="63" endPosition="61" />
+    <scopeInfo nodeId="1227223820064711933" fileName="WatchingParametrizedWithMake.java" startLine="68" startPosition="0" endLine="69" endPosition="64">
+      <varInfo nodeId="1227223820064711934" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227223820064711936" fileName="WatchingParametrizedWithMake.java" startLine="68" startPosition="40" endLine="69" endPosition="64" />
+    <scopeInfo nodeId="1227223820064712096" fileName="WatchingParametrizedWithMake.java" startLine="70" startPosition="0" endLine="71" endPosition="64">
+      <varInfo nodeId="1227223820064712097" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="1227223820064712099" fileName="WatchingParametrizedWithMake.java" startLine="70" startPosition="45" endLine="71" endPosition="64" />
+    <scopeInfo nodeId="8816956192715466264" fileName="WatchingParametrizedWithMake.java" startLine="76" startPosition="41" endLine="77" endPosition="27" />
+    <scopeInfo nodeId="8816956192715451487" fileName="WatchingParametrizedWithMake.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
       <varInfo nodeId="8816956192715453272" varName="clazz" />
     </scopeInfo>
-    <scopeInfo nodeId="8816956192715460208" fileName="WatchingParametrizedWithMake.java" startLine="28" startPosition="28" endLine="31" endPosition="44" />
-    <scopeInfo nodeId="8816956192715460261" fileName="WatchingParametrizedWithMake.java" startLine="38" startPosition="0" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="8816956192715466261" fileName="WatchingParametrizedWithMake.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="8816956192715478244" fileName="WatchingParametrizedWithMake.java" startLine="46" startPosition="27" endLine="51" endPosition="11">
+    <scopeInfo nodeId="8816956192715460208" fileName="WatchingParametrizedWithMake.java" startLine="31" startPosition="28" endLine="34" endPosition="44" />
+    <scopeInfo nodeId="8816956192715460261" fileName="WatchingParametrizedWithMake.java" startLine="41" startPosition="0" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="1227223820064770528" fileName="WatchingParametrizedWithMake.java" startLine="61" startPosition="66" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="8816956192715466261" fileName="WatchingParametrizedWithMake.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="8816956192715478244" fileName="WatchingParametrizedWithMake.java" startLine="49" startPosition="27" endLine="54" endPosition="11">
       <varInfo nodeId="8816956192715472443" varName="compilationResult" />
       <varInfo nodeId="8816956192715470519" varName="maker" />
     </scopeInfo>
-    <scopeInfo nodeId="8816956192715453283" fileName="WatchingParametrizedWithMake.java" startLine="27" startPosition="40" endLine="33" endPosition="21" />
-    <scopeInfo nodeId="8816956192715478241" fileName="WatchingParametrizedWithMake.java" startLine="45" startPosition="59" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8816956192715453278" fileName="WatchingParametrizedWithMake.java" startLine="25" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8816956192715466260" fileName="WatchingParametrizedWithMake.java" startLine="43" startPosition="49" endLine="54" endPosition="47" />
-    <scopeInfo nodeId="8816956192715466255" fileName="WatchingParametrizedWithMake.java" startLine="42" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1227223820064769153" fileName="WatchingParametrizedWithMake.java" startLine="60" startPosition="29" endLine="65" endPosition="15" />
+    <scopeInfo nodeId="8816956192715453283" fileName="WatchingParametrizedWithMake.java" startLine="30" startPosition="40" endLine="36" endPosition="21" />
+    <scopeInfo nodeId="8816956192715478241" fileName="WatchingParametrizedWithMake.java" startLine="48" startPosition="59" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1227223820064769150" fileName="WatchingParametrizedWithMake.java" startLine="59" startPosition="53" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1227223820064711931" fileName="WatchingParametrizedWithMake.java" startLine="58" startPosition="11" endLine="67" endPosition="11" />
+    <scopeInfo nodeId="8816956192715453278" fileName="WatchingParametrizedWithMake.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="8816956192715466260" fileName="WatchingParametrizedWithMake.java" startLine="46" startPosition="49" endLine="73" endPosition="47" />
+    <scopeInfo nodeId="8816956192715466255" fileName="WatchingParametrizedWithMake.java" startLine="45" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="8816956192715466258" varName="notifier" />
     </scopeInfo>
-    <unitInfo nodeId="8816956192715478239" fileName="WatchingParametrizedWithMake.java" startLine="45" startPosition="47" endLine="53" endPosition="7" unitName="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake$1" />
-    <unitInfo nodeId="8816956192715460259" fileName="WatchingParametrizedWithMake.java" startLine="36" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake$MakeRunner" />
-    <unitInfo nodeId="8816956192715451485" fileName="WatchingParametrizedWithMake.java" startLine="19" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake" />
+    <unitInfo nodeId="1227223820064770526" fileName="WatchingParametrizedWithMake.java" startLine="61" startPosition="54" endLine="65" endPosition="13" unitName="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake$3" />
+    <unitInfo nodeId="8816956192715478239" fileName="WatchingParametrizedWithMake.java" startLine="48" startPosition="47" endLine="56" endPosition="7" unitName="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake$1" />
+    <unitInfo nodeId="1227223820064769148" fileName="WatchingParametrizedWithMake.java" startLine="59" startPosition="41" endLine="67" endPosition="9" unitName="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake$2" />
+    <unitInfo nodeId="8816956192715460259" fileName="WatchingParametrizedWithMake.java" startLine="39" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake$MakeRunner" />
+    <unitInfo nodeId="8816956192715451485" fileName="WatchingParametrizedWithMake.java" startLine="22" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake" />
   </root>
   <root nodeId="935017990628671485">
     <nodeInfo nodeId="935017990628671497" fileName="WatchingSuite.java" startLine="13" startPosition="90" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

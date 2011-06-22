@@ -15,6 +15,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import org.junit.runner.notification.Failure;
+import javax.swing.SwingUtilities;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import java.lang.reflect.InvocationTargetException;
 
 public class WatchingParametrizedWithMake extends WatchingParameterized {
   private ArrayList<Runner> myRunners;
@@ -37,7 +40,7 @@ public class WatchingParametrizedWithMake extends WatchingParameterized {
     private Description myDescription;
 
     public MakeRunner() {
-      myDescription = Description.createTestDescription(getTestClass().getJavaClass(), "Making ");
+      myDescription = Description.createTestDescription(getTestClass().getJavaClass(), "Making");
     }
 
     public void run(final RunNotifier notifier) {
@@ -47,10 +50,26 @@ public class WatchingParametrizedWithMake extends WatchingParameterized {
           ModuleMaker maker = new ModuleMaker();
           MPSCompilationResult compilationResult = maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressIndicator());
           if (compilationResult != null && compilationResult.getErrors() > 0) {
-            notifier.fireTestFailure(new Failure(myDescription, new Exception("Comilation errors: " + compilationResult)));
+            notifier.fireTestFailure(new Failure(myDescription, new Exception("Compilation errors: " + compilationResult)));
           }
         }
       });
+
+      try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+          public void run() {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                LocalFileSystem.getInstance().refresh(false);
+              }
+            });
+          }
+        });
+      } catch (InterruptedException e) {
+        notifier.fireTestFailure(new Failure(myDescription, e));
+      } catch (InvocationTargetException e) {
+        notifier.fireTestFailure(new Failure(myDescription, e));
+      }
       notifier.fireTestFinished(myDescription);
     }
 

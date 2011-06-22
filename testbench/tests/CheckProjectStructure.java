@@ -1,8 +1,7 @@
 import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.CheckProjectStructureHelper.Token;
-import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.Order;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
+import jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake;
 import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern.Type;
@@ -30,10 +29,10 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 
-@RunWith(WatchingParameterized.class)
+@RunWith(WatchingParametrizedWithMake.class)
 public class CheckProjectStructure {
 
-  private static Object [][] patterns = new Object [][] {
+  private static Object[][] patterns = new Object[][]{
     {Type.EXCLUDE, "**/classes/**"},
     {Type.EXCLUDE, "**/classes_gen/**"},
     {Type.EXCLUDE, "**/lib/**"},
@@ -45,7 +44,7 @@ public class CheckProjectStructure {
     {Type.INCLUDE, "**/**.mpl"},
     {Type.INCLUDE, "**/**.msd"},
     {Type.EXCLUDE, "**/resolve.msd"},
-  } ;
+  };
 
   private static CheckProjectStructureHelper HELPER;
   private static Token TOKEN;
@@ -54,17 +53,17 @@ public class CheckProjectStructure {
   private static final Pattern LANGUAGE_NAME = Pattern.compile("language namespace=\"(.*?)\"");
 
   private static String getDescription(File file) {
-    if(file.getName().endsWith(".mpl")) {
+    if (file.getName().endsWith(".mpl")) {
       String content = FileUtil.read(file);
       Matcher matcher = LANGUAGE_NAME.matcher(content);
-      if(matcher.find()) {
+      if (matcher.find()) {
         String name = matcher.group(1);
         return name + " [lang]";
       }
-    } else if(file.getName().endsWith(".msd")) {
+    } else if (file.getName().endsWith(".msd")) {
       String content = FileUtil.read(file);
       Matcher matcher = SOLUTION_NAME.matcher(content);
-      if(matcher.find()) {
+      if (matcher.find()) {
         String name = matcher.group(1);
         return name + " [solution]";
       }
@@ -77,25 +76,20 @@ public class CheckProjectStructure {
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : patterns) {
-      filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
+      filePtns.add(FilesCollector.FilePattern.fromTypeAndPattern(ptns));
     }
     ArrayList<Object[]> res = new ArrayList<Object[]>();
-    for (File f: FilesCollector.fastCollectFiles(filePtns, path)) {
+    for (File f : FilesCollector.fastCollectFiles(filePtns, path)) {
       String testName = getDescription(f);
       res.add(new Object[]{testName, f});
     }
     Collections.sort(res, new Comparator<Object[]>() {
       @Override
       public int compare(Object[] o1, Object[] o2) {
-        return ((String)o1[0]).compareTo((String) o2[0]);
+        return ((String) o1[0]).compareTo((String) o2[0]);
       }
     });
     return res;
-  }
-
-  @BeforeClass
-  public static void make () throws Exception {
-    new MpsMakeHelper().make();
   }
 
   @BeforeClass
@@ -105,13 +99,13 @@ public class CheckProjectStructure {
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : patterns) {
-      filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
+      filePtns.add(FilesCollector.FilePattern.fromTypeAndPattern(ptns));
     }
     HELPER.load(FilesCollector.fastCollectFiles(filePtns, path));
   }
 
   @AfterClass
-  public static void cleanUp () {
+  public static void cleanUp() {
     HELPER.cleanUp(TOKEN);
     HELPER.dispose();
   }
@@ -126,27 +120,27 @@ public class CheckProjectStructure {
   @Order(1)
   public void checkReferences() {
     List<String> errors = HELPER.check(TOKEN, Collections.singletonList(file));
-    Assert.assertTrue("Reference errors:\n"+HELPER.formatErrors(errors),errors.isEmpty());
+    Assert.assertTrue("Reference errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(2)
   public void checkStructure() {
     List<String> errors = HELPER.checkStructure(TOKEN, Collections.singletonList(file));
-    Assert.assertTrue("Structure errors:\n"+HELPER.formatErrors(errors),errors.isEmpty());
+    Assert.assertTrue("Structure errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(3)
   public void checkGenerationStatus() {
     List<String> errors = HELPER.checkGenerationStatus(TOKEN, Collections.singletonList(file));
-    Assert.assertTrue("Try to regenerate models:\n"+HELPER.formatErrors(errors),errors.isEmpty());
+    Assert.assertTrue("Try to regenerate models:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
-             /*
-  @Test
-  @Order(4)
-  public void checkModuleProperties() {
-    List<String> errors = HELPER.checkModule(TOKEN, Collections.singletonList(file));
-    Assert.assertTrue("Module property or dependency errors:\n"+HELPER.formatErrors(errors),errors.isEmpty());
-  }            */
+  /*
+@Test
+@Order(4)
+public void checkModuleProperties() {
+List<String> errors = HELPER.checkModule(TOKEN, Collections.singletonList(file));
+Assert.assertTrue("Module property or dependency errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+}            */
 }
