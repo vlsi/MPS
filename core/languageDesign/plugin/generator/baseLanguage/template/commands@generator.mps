@@ -68,20 +68,6 @@
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1225441503896" resolveInfo="reduce_ExecuteCommandInEDTStatement" />
       </node>
     </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="3062002558005338729">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool.Methods" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.5896642449625987000" resolveInfo="AddTabOperation" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="3062002558005338731">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tp4l.3062002558005753444" resolveInfo="reduce_AddTabOperation" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="3062002558005860135">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool.Methods" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.5896642449625987000" resolveInfo="AddTabOperation" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="3062002558005860137">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tp4l.3062002558005753444" resolveInfo="reduce_AddTabOperation" />
-      </node>
-    </node>
   </root>
   <root id="1225441503876">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1225441503877">
