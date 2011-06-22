@@ -43,9 +43,11 @@ public class ConvertAnonymousRefactoring {
   }
 
   public void doRefactor() {
-    this.collectInformation();
-    SNode innerClass = this.makeInnerClass();
-    SNodeOperations.replaceWithAnother(this.myClassToRefactor, this.makeInnerConstructorInvocation(ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).getElement(0)));
+    collectInformation();
+    SNode creator = SNodeOperations.as(SNodeOperations.getParent(myClassToRefactor), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
+    if ((creator != null)) {
+      SNodeOperations.replaceWithAnother(creator, makeInnerConstructorInvocation(ListSequence.fromList(SLinkOperations.getTargets(makeInnerClass(), "constructor", true)).getElement(0)));
+    }
   }
 
   private void collectInformation() {
