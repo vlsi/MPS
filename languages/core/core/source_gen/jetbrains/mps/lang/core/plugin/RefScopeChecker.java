@@ -58,10 +58,13 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
           " " + name
         )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", searchScopeStatus.getReferenceValidatorNode(), new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       }
-      IModule refModule = SNodeOperations.getModel(target).getModelDescriptor().getModule();
-      if (refModule != null && !(allVisibleModules.contains(refModule))) {
-        component.addError(node, "Target module " + refModule + " should be imported", null);
-      }
+      /*
+        IModule refModule = SNodeOperations.getModel(target).getModelDescriptor().getModule();
+        if (refModule != null && !(allVisibleModules.contains(refModule))) {
+          component.addError(node, "Target module " + refModule + " should be imported", null);
+        }
+      */
+
     }
   }
 }
