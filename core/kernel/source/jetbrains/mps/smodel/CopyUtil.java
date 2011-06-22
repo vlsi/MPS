@@ -186,7 +186,7 @@ public final class CopyUtil {
     return results;
   }
 
-  private static void addReferences(List<? extends SNode> inputNodes, Map<SNode, SNode> mapping, boolean copyAttributes, boolean cloneRefs) {
+  private static void addReferences(List<? extends SNode> inputNodes, Map<SNode, SNode> mapping, boolean copyAttributes, boolean forceCloneRefs) {
     for (SNode inputNode : inputNodes) {
       if (inputNode == null) {
         continue;
@@ -194,16 +194,20 @@ public final class CopyUtil {
       SNode outputNode = mapping.get(inputNode);
 
       for (SReference ref : inputNode.getReferencesArray()) {
-        SNode inputTargetNode = (cloneRefs || SModelRepository.getInstance() == null) ? null : ref.getTargetNode();
-        if (inputTargetNode == null) {//broken reference or need to clone
+        boolean cloneRefs = forceCloneRefs || SModelRepository.getInstance() == null || ref instanceof DynamicReference;
+        SNode inputTargetNode = cloneRefs ? null : ref.getTargetNode();
+        if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {
-            StaticReference staticReference = (StaticReference) ref;
+            StaticReference statRef = (StaticReference) ref;
             outputNode.addReference(new StaticReference(
-              staticReference.getRole(),
+              statRef.getRole(),
               outputNode,
-              staticReference.getTargetSModelReference(),
-              staticReference.getTargetNodeId(),
-              staticReference.getResolveInfo()));
+              statRef.getTargetSModelReference(),
+              statRef.getTargetNodeId(),
+              statRef.getResolveInfo()));
+          } else if (ref instanceof DynamicReference) {
+            DynamicReference dynRef = (DynamicReference) ref;
+            outputNode.addReference(new DynamicReference(dynRef.getRole(), dynRef.getSourceNode(), dynRef.getTargetSModelReference(), dynRef.getResolveInfo()));
           }
         } else if (mapping.containsKey(inputTargetNode)) {
           outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
@@ -212,7 +216,7 @@ public final class CopyUtil {
         }
       }
 
-      addReferences(inputNode.getChildren(copyAttributes), mapping, copyAttributes, cloneRefs);
+      addReferences(inputNode.getChildren(copyAttributes), mapping, copyAttributes, forceCloneRefs);
     }
   }
 }
