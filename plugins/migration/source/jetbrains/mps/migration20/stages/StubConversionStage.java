@@ -138,35 +138,19 @@ public class StubConversionStage implements MigrationStage {
             if (ref.getTargetNode() != null) continue;
 
             String oldId = ((SModelId.ForeignSModelId) modelId).getId();
-
-            SModelReference mRep = moduleCache.get(oldId);
-            SModelReference gRep = globalCache.get(oldId);
-
-            SModelReference replacement = null;
-            if (mRep != null) {
-              replacement = mRep;
-            } else if (gRep != null && module.getScope().getModelDescriptor(gRep) != null) {
-              moduleCache.put(oldId, gRep);
-              replacement = gRep;
-            } else {
-              replacement = resolveModelInModule(module, oldId, nodeId);
-              moduleCache.put(oldId, replacement);
-              if (replacement == null) {
-                replacement = resolveModelAnywhere(p, oldId, nodeId);
-                if (replacement != null) {
-                  ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(replacement).getModule().getModuleReference();
-                  module.addDependency(moduleRef, false);
-                  reloadNeeded = true;
-                }
-              }
-              globalCache.put(oldId, replacement);
+            ModelResolveRes replacement = getModelRefReplacement(module, oldId, nodeId, moduleCache, globalCache);
+            if (replacement.needReload) {
+              SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(replacement.replacement);
+              ModuleReference moduleRef = model.getModule().getModuleReference();
+              module.addDependency(moduleRef, false);
+              reloadNeeded = true;
             }
 
-            if (replacement != null) {
+            if (replacement.replacement != null) {
               toRemove.add(targetModel);
 
-              d.getSModel().addModelImport(replacement, false);
-              ref.setTargetSModelReference(replacement);
+              d.getSModel().addModelImport(replacement.replacement, false);
+              ref.setTargetSModelReference(replacement.replacement);
 
               res.fixed++;
             } else {
@@ -185,8 +169,51 @@ public class StubConversionStage implements MigrationStage {
     return res;
   }
 
-  private static SModelReference resolveModelAnywhere(MPSProject p, String oldId, SNodeId nodeId) {
-    for (SModelDescriptor md : p.getProject().getComponent(ProjectScope.class).getModelDescriptors()) {
+  private static ModelResolveRes getModelRefReplacement(IModule module, String oldId, SNodeId nodeId, Map<String, SModelReference> moduleCache, Map<String, SModelReference> globalCache) {
+    ModelResolveRes result = new ModelResolveRes();
+
+    SModelReference mRep = moduleCache.get(oldId);
+    SModelReference gRep = globalCache.get(oldId);
+
+    //already resolved in module
+    if (mRep != null) {
+      result.replacement = mRep;
+      return result;
+    }
+
+    //try resolving in module: already resolved in global
+    if (gRep != null && module.getScope().getModelDescriptor(gRep) != null) {
+      moduleCache.put(oldId, gRep);
+      result.replacement = gRep;
+      return result;
+    }
+
+    //try resolving in module: not in global
+    mRep = resolveModelInModule(module, oldId, nodeId);
+    if (mRep != null) {
+      moduleCache.put(oldId, mRep);
+      globalCache.put(oldId, mRep);
+      result.replacement = mRep;
+      return result;
+    }
+
+    //try resolving in global
+    if (globalCache.containsKey(oldId)) {
+      gRep = globalCache.get(oldId);
+    } else {
+      gRep = resolveModelAnywhere(oldId, nodeId);
+    }
+    if (gRep != null) {
+      result.replacement = gRep;
+      result.needReload = true;
+    }
+    globalCache.put(oldId, gRep);
+
+    return result;
+  }
+
+  private static SModelReference resolveModelAnywhere(String oldId, SNodeId nodeId) {
+    for (SModelDescriptor md : SModelRepository.getInstance().getModelDescriptors()) {
       SModelReference mdRef = md.getSModelReference();
       SModelId mdId = mdRef.getSModelId();
       if (mdId instanceof SModelId.RegularSModelId) continue;
@@ -230,6 +257,12 @@ public class StubConversionStage implements MigrationStage {
   }
 
   private static class Res {
-    int fixed = 0, failed = 0;
+    int fixed = 0;
+    int failed = 0;
+  }
+
+  private static class ModelResolveRes {
+    SModelReference replacement = null;
+    boolean needReload = false;
   }
 }
