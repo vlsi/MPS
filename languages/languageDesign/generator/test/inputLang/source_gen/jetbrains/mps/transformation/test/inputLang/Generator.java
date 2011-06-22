@@ -21,7 +21,7 @@ public class Generator implements TemplateModule {
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     models = TemplateUtil.<TemplateModel>asCollection(new TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl(this), new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl(this));
-    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections", "jetbrains.mps.lang.generator.generationParameters", "jetbrains.mps.lang.smodel", "jetbrains.mps.transformation.test.outputLang");
+    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.transformation.test.outputLang");
   }
 
   public String getAlias() {
