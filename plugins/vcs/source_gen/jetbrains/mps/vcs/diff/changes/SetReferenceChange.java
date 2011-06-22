@@ -75,13 +75,34 @@ public class SetReferenceChange extends NodeChange {
     SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
     assert node != null;
     SReference ref = node.getReference(getRole());
-    SModelReference targetModel = ref.getTargetSModelReference();
+    SModelReference targetModel = check_mgdhcs_a0d0g(ref);
     if (eq_mgdhcs_a0e0g(getChangeSet().getOldModel().getSModelReference(), targetModel)) {
       // This is internal reference 
       targetModel = null;
     }
 
-    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, ref.getTargetNodeId(), ref.getResolveInfo());
+    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, check_mgdhcs_e0a6a6(ref), check_mgdhcs_f0a6a6(ref));
+  }
+
+  private static SModelReference check_mgdhcs_a0d0g(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTargetSModelReference();
+    }
+    return null;
+  }
+
+  private static SNodeId check_mgdhcs_e0a6a6(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTargetNodeId();
+    }
+    return null;
+  }
+
+  private static String check_mgdhcs_f0a6a6(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getResolveInfo();
+    }
+    return null;
   }
 
   private static boolean eq_mgdhcs_a0e0g(Object a, Object b) {
