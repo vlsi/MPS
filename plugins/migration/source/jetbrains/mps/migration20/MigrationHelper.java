@@ -43,7 +43,7 @@ public class MigrationHelper {
           continue;
         }
 
-        if (showMessageBefore(stage)) return;
+        if (!showMessageBefore(stage)) return;
 
         final Runnable stageRunnable = new StageExecutor(stage, mpsProject);
         if (stage.needsCommand()) {
@@ -52,9 +52,9 @@ public class MigrationHelper {
           stageRunnable.run();
         }
 
-        if (showMessageAfter(stage)){
-          msComponent.setMigrationState(next);
-        }
+        if (!showMessageAfter(stage)) return;
+
+        msComponent.setMigrationState(next);
       }
     }
   }
@@ -63,23 +63,16 @@ public class MigrationHelper {
     String ma = stage.messageAfter();
     if (ma == null) return true;
 
-    ma += "\n\n" + "You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0";
-    int res = Messages.showDialog(ma, stage.title()+ " finished", new String[]{"Force next step", "Stop"}, 0, Messages.getInformationIcon());
-    if (res == 0) return true;
-
-    Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0", "Migration stopped", Messages.getInformationIcon());
-    return false;
+    int res = Messages.showDialog(ma, stage.title() + " finished", new String[]{"Force next step", "Stop"}, 0, Messages.getInformationIcon());
+    return res == 0;
   }
 
   private boolean showMessageBefore(MigrationStage stage) {
     String mb = stage.messageBefore();
-    if (mb == null) return false;
+    if (mb == null) return true;
+
     int res = Messages.showDialog(mb, stage.title(), new String[]{"Proceed", "Stop"}, 0, Messages.getInformationIcon());
-    if (res != 0) {
-      Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0", "Migration stopped", Messages.getInformationIcon());
-      return true;
-    }
-    return false;
+    return res == 0;
   }
 
   private static class StageExecutor implements Runnable {

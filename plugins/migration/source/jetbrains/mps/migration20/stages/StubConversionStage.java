@@ -152,7 +152,7 @@ public class StubConversionStage implements MigrationStage {
               replacement = resolveModelInModule(module, oldId, nodeId);
               moduleCache.put(oldId, replacement);
               if (replacement == null) {
-                replacement = resolveModelAnywhere(oldId, nodeId);
+                replacement = resolveModelAnywhere(p, oldId, nodeId);
                 if (replacement != null) {
                   ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(replacement).getModule().getModuleReference();
                   module.addDependency(moduleRef, false);
@@ -179,13 +179,13 @@ public class StubConversionStage implements MigrationStage {
         }
       }
     }
-    if (reloadNeeded){
+    if (reloadNeeded) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
     return res;
   }
 
-  private static SModelReference resolveModelAnywhere(MPSProject p,String oldId, SNodeId nodeId) {
+  private static SModelReference resolveModelAnywhere(MPSProject p, String oldId, SNodeId nodeId) {
     for (SModelDescriptor md : p.getProject().getComponent(ProjectScope.class).getModelDescriptors()) {
       SModelReference mdRef = md.getSModelReference();
       SModelId mdId = mdRef.getSModelId();
