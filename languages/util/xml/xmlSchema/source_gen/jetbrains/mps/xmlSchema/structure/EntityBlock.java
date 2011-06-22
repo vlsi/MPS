@@ -4,7 +4,6 @@ package jetbrains.mps.xmlSchema.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.xmlInternal.structure.Comment;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -13,19 +12,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EntityBlock extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.EntityBlock";
-  public static final String COMMENT = "comment";
   public static final String ENTITY_LINE = "entityLine";
 
   public EntityBlock(SNode node) {
     super(node);
-  }
-
-  public Comment getComment() {
-    return (Comment) this.getChild(Comment.class, EntityBlock.COMMENT);
-  }
-
-  public void setComment(Comment node) {
-    super.setChild(EntityBlock.COMMENT, node);
   }
 
   public int getEntityLinesCount() {
