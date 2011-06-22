@@ -33,7 +33,6 @@ import java.util.*;
 
 public class StubConversionStage implements MigrationStage {
   private static final String FINISHED = "Automatic stubs correction finished.\n";
-  private static final String ALL_FIXED = "All references were fixed.";
   private MPSProject myProject;
   private Res myRes;
 
@@ -91,7 +90,7 @@ public class StubConversionStage implements MigrationStage {
     Project ideaProject = myProject.getProject();
     ModelCheckerTool_Tool tool = ideaProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
     if (tool == null) {
-      if (myRes.failed == 0) return FINISHED + ALL_FIXED;
+      if (myRes.failed == 0) return null;
       return FINISHED + myRes.fixed + " references were fixed, " + myRes.failed + " not fixed. We recommend stopping migration and fixing broken references by hand.";
     }
 
@@ -100,7 +99,7 @@ public class StubConversionStage implements MigrationStage {
       mcSettings.setMigrationMode(true);
       ModelCheckerViewer res = tool.checkProject(ideaProject, ProjectOperationContext.get(ideaProject), true);
       Set<ModelCheckerIssue> problems = res.getSearchResults().getResultObjects();
-      if (problems.isEmpty()) return FINISHED + ALL_FIXED;
+      if (problems.isEmpty()) return null;
       return FINISHED + "There are " + problems.size() + " unresolved references left. \n"+
         "Most probably this means that the module with a reference doesn't import the module with referenced object. "+
         "We recommend to pause the migration now and correct module dependencies by hand. "+
