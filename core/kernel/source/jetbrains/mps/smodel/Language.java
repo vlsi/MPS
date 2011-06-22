@@ -61,7 +61,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private CachesInvalidator myCachesInvalidator;
 
-  private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
+  private List<Language> myAllExtendedLanguages;
 
   public static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Language language = new Language();
