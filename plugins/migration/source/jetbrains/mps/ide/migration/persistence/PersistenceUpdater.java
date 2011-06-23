@@ -88,17 +88,22 @@ public class PersistenceUpdater {
     }
 
     if (modelDescriptors.isEmpty()) {
-      if (!silent){
+      if (!silent) {
         JOptionPane.showMessageDialog(mainframe, "No Models To Upgrade Found");
       }
       return;
     }
 
-    UpdatePersistenceDialog updatePersistenceDialog =
-      new UpdatePersistenceDialog(modelDescriptors, mainframe, unitDescription, false);
-    updatePersistenceDialog.showDialog();
+    boolean dialogOk = false;
 
-    if (updatePersistenceDialog.getAnswer()) {
+    if (!silent) {
+      UpdatePersistenceDialog updatePersistenceDialog =
+        new UpdatePersistenceDialog(modelDescriptors, mainframe, unitDescription, false);
+      updatePersistenceDialog.showDialog();
+      dialogOk = updatePersistenceDialog.getAnswer();
+    }
+
+    if (silent || dialogOk) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           upgradePersistence(modelDescriptors, PersistenceSettings.MAX_VERSION);
