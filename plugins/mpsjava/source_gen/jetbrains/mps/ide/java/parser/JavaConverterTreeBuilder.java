@@ -118,6 +118,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class JavaConverterTreeBuilder {
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
@@ -1275,6 +1279,16 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
+  /*package*/ SNode processStatement(TypeDeclaration x) {
+    String text = new String(x.binding.sourceName) + " local types are not supported";
+    LOG.error(text);
+    return createCommentStatement(text);
+  }
+
+  private SNode createCommentStatement(String text) {
+    return new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a0bd().createNode(text);
+  }
+
   public SNode processType(TypeDeclaration x) {
     SNode classifier = SNodeOperations.cast(myTypesProvider.getRaw(x.binding), "jetbrains.mps.baseLanguage.structure.Classifier");
     if (x.binding.isAnnotationType()) {
@@ -1653,5 +1667,29 @@ public class JavaConverterTreeBuilder {
       }
     }
     return result;
+  }
+
+  public static class QuotationClass_m30mvz_a0a0bd {
+    public QuotationClass_m30mvz_a0a0bd() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.setProperty("text", (String) parameter_5);
+          quotedNode_1.addChild("commentPart", quotedNode1_4);
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }
