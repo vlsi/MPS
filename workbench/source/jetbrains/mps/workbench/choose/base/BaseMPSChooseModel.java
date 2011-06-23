@@ -26,9 +26,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelsOnlyScope;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -145,8 +144,22 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   public T[] find(boolean checkboxState) {
     if (checkboxState) return find(GlobalScope.getInstance());
-    return find(new ModulesOnlyScope(myProject.getComponent(MPSProject.class).getModules()));
+    MPSProject project = myProject.getComponent(MPSProject.class);
+    return find(new ModulesOnlyScope(collectModulesWithGenerators(project)));
   }
+
+  private static List<IModule> collectModulesWithGenerators(MPSProject p) {
+    List<IModule> modules = p.getModules();
+    List<IModule> generators = new ArrayList<IModule>();
+    for (IModule m : modules) {
+      if (m instanceof Language) {
+        generators.addAll(((Language) m).getGenerators());
+      }
+    }
+    modules.addAll(generators);
+    return modules;
+  }
+
 
   public abstract String doGetFullName(Object element);
 
