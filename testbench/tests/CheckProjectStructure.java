@@ -94,9 +94,14 @@ public class CheckProjectStructure {
 
   @BeforeClass
   public static void init() {
+    String property = System.getProperty("unzipped.mps.home");
+    if (property == null || property.isEmpty()) {
+      property = System.getProperty("user.dir");
+    }
+    System.out.println("Property: "+ property);
     HELPER = new CheckProjectStructureHelper();
-    TOKEN = HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
-    List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
+    TOKEN = HELPER.init(new String[][]{{"samples_home", property + "/samples"}});
+    List<File> path = Collections.singletonList(new File(property));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : patterns) {
       filePtns.add(FilesCollector.FilePattern.fromTypeAndPattern(ptns));

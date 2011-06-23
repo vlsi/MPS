@@ -1270,9 +1270,6 @@
       <zipfileset dir="core/debug/languages/customViewers/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers.mpsarch.jar.jtmp" />
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset file="lib/tools.jar" />
-    </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.privateMembers">
     <mkdir dir="core/debug/languages/privateMembers/classes_gen" />

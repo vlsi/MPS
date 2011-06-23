@@ -1,0 +1,16 @@
+<project name="test" default="default">
+  <property name="mps.zip" value="MPS-${build.number}.zip" />
+  <target name="default">
+    <property name="dest" value="${java.io.tmpdir}/temp.dst" />
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
+    <unzip src="${deploy.dir}/${mps.zip}" dest="${dest}" />
+    <junit fork="true">
+      <classpath>
+        <pathelement location="${ant.file}/../../testbench/testclasses" />
+        <pathelement path="lib/junit-4.8.2.jar" />
+      </classpath>
+      <test name="CheckProjectStructure" />
+      <sysproperty key="unzipped.mps.home" value="${dest}/MPS" />
+    </junit>
+  </target>
+</project>
