@@ -602,7 +602,7 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7889360268649425705">
       <property name="name" nameId="tpck.1169194664001" value="SetNodePackage" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Set Virtual Folder" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Set Virtual Package" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node.Actions" />
     </node>
