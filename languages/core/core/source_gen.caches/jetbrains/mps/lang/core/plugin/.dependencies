@@ -470,7 +470,6 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.Generate_Facet" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />

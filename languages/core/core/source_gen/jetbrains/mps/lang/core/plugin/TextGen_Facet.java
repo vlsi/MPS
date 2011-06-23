@@ -15,7 +15,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.smodel.resources.GResource;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.script.IConfig;
@@ -101,10 +100,14 @@ public class TextGen_Facet implements IFacet {
                 final GResource gres = (GResource) resource;
                 monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
-                  Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Generation was not OK")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
                 String output = gres.module().getOutputFor(gres.model());
+                if (output == null) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + gres.model().getLongName())));
+                  return new IResult.FAILURE(_output_21gswx_a0a);
+                }
                 final IFile targetDir = (pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile() != null ?
                   pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile().invoke(output) :
                   FileSystem.getInstance().getFileByPath(output)
@@ -159,7 +162,6 @@ public class TextGen_Facet implements IFacet {
                           TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
                           ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
                           CleanupManager.getInstance().cleanup();
-                          // void 
                         }
                       });
                     }
@@ -178,7 +180,6 @@ public class TextGen_Facet implements IFacet {
                     ModelAccess.instance().requireWrite(new Runnable() {
                       public void run() {
                         javaStreamHandler.flush();
-                        // void 
                       }
                     });
                   }
