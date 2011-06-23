@@ -23,7 +23,10 @@ import jetbrains.mps.ide.modelchecker.actions.ModelCheckerSettings;
 import jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.ide.modelchecker.actions.ModelCheckerViewer;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.OptimizeImportsHelper;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -116,62 +119,113 @@ public class StubConversionStage implements MigrationStage {
 
   private static Res reResolveStubRefs(MPSProject p) {
     Res res = new Res();
-    Map<String, SModelReference> cache = new HashMap<String, SModelReference>();
-    for (SModelDescriptor d : p.getProject().getComponent(ProjectScope.class).getModelDescriptors()) {
-      if (!(d instanceof EditableSModelDescriptor)) continue;
-      if (!(SModelStereotype.isUserModel(d))) continue;
-      if (d == null) continue;
+    boolean reloadNeeded = false;
+    Map<String, SModelReference> globalCache = new HashMap<String, SModelReference>();
 
-      IModule module = d.getModule();
-      if (module == null) continue;
+    for (IModule module : collectModulesWithGenerators(p)) {
+      Map<String, SModelReference> moduleCache = new HashMap<String, SModelReference>();
 
-      Set<SModelReference> toRemove = new HashSet<SModelReference>();
-      for (SNode node : d.getSModel().nodes()) {
-        for (SReference ref : node.getReferences()) {
-          SModelId modelId = ref.getTargetSModelReference().getSModelId();
-          SNodeId nodeId = ref.getTargetNodeId();
+      for (SModelDescriptor d : module.getOwnModelDescriptors()) {
+        if (!(d instanceof EditableSModelDescriptor)) continue;
+        if (!(SModelStereotype.isUserModel(d))) continue;
 
-          if (modelId instanceof SModelId.RegularSModelId) continue;
-          if (ref.getTargetNode() != null) continue;
+        Set<SModelReference> toRemove = new HashSet<SModelReference>();
+        for (SNode node : d.getSModel().nodes()) {
+          for (SReference ref : node.getReferences()) {
+            SModelReference targetModel = ref.getTargetSModelReference();
+            if (targetModel == null) continue;
 
-          String oldId = ((SModelId.ForeignSModelId) modelId).getId();
-          SModelReference replacement = null;
+            SModelId modelId = targetModel.getSModelId();
+            SNodeId nodeId = ref.getTargetNodeId();
 
-          SModelReference cachedReplacement = cache.get(oldId);
-          if (cachedReplacement != null && module.getScope().getModelDescriptor(cachedReplacement) != null) {
-            replacement = cachedReplacement;
-          } else {
-            for (SModelDescriptor md : module.getScope().getModelDescriptors()) {
-              SModelReference mdRef = md.getSModelReference();
-              SModelId mdId = mdRef.getSModelId();
-              if (mdId instanceof SModelId.RegularSModelId) continue;
-              if (!(matches(oldId, ((SModelId.ForeignSModelId) mdId).getId()))) continue;
-              if (md.getSModel().getNodeById(nodeId) == null) continue;
+            if (modelId instanceof SModelId.RegularSModelId) continue;
+            if (ref.getTargetNode() != null) continue;
 
-              replacement = md.getSModelReference();
-              cache.put(oldId, replacement);
-              break;
+            String oldId = ((SModelId.ForeignSModelId) modelId).getId();
+            ModelResolveRes replacement = getModelRefReplacement(module, oldId, nodeId, moduleCache, globalCache);
+            if (replacement.needReload) {
+              SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(replacement.replacement);
+              ModuleReference moduleRef = model.getModule().getModuleReference();
+              module.addDependency(moduleRef, false);
+              reloadNeeded = true;
+            }
+
+            if (replacement.replacement != null) {
+              toRemove.add(targetModel);
+
+              d.getSModel().addModelImport(replacement.replacement, false);
+              ref.setTargetSModelReference(replacement.replacement);
+
+              res.fixed++;
+            } else {
+              res.failed++;
             }
           }
-
-          if (replacement != null) {
-            toRemove.add(ref.getTargetSModelReference());
-
-            SModelReference mr = replacement;
-            d.getSModel().addModelImport(mr, false);
-            ref.setTargetSModelReference(mr);
-
-            res.fixed++;
-          } else {
-            res.failed++;
-          }
+        }
+        for (SModelReference ref : toRemove) {
+          d.getSModel().deleteModelImport(ref);
         }
       }
-      for (SModelReference ref : toRemove) {
-        d.getSModel().deleteModelImport(ref);
-      }
+    }
+    if (reloadNeeded) {
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
     return res;
+  }
+
+  private static List<IModule> collectModulesWithGenerators(MPSProject p) {
+    List<IModule> modules = p.getModules();
+    List<IModule> generators = new ArrayList<IModule>();
+    for (IModule m:modules){
+      if (m instanceof Language){
+        generators.addAll(((Language) m).getGenerators());
+      }
+    }
+    modules.addAll(generators);
+    return modules;
+  }
+
+  private static ModelResolveRes getModelRefReplacement(IModule module, String oldId, SNodeId nodeId, Map<String, SModelReference> moduleCache, Map<String, SModelReference> globalCache) {
+    ModelResolveRes result = new ModelResolveRes();
+
+    SModelReference mRep = moduleCache.get(oldId);
+    SModelReference gRep = globalCache.get(oldId);
+
+    //already resolved in module
+    if (mRep != null) {
+      result.replacement = mRep;
+      return result;
+    }
+
+    //try resolving in module: already resolved in global
+    if (gRep != null && module.getScope().getModelDescriptor(gRep) != null) {
+      moduleCache.put(oldId, gRep);
+      result.replacement = gRep;
+      return result;
+    }
+
+    //try resolving in module: not in global
+    mRep = resolveModelInModule(module, oldId, nodeId);
+    if (mRep != null) {
+      moduleCache.put(oldId, mRep);
+      globalCache.put(oldId, mRep);
+      result.replacement = mRep;
+      return result;
+    }
+
+    //try resolving in global
+    if (globalCache.containsKey(oldId)) {
+      gRep = globalCache.get(oldId);
+    } else {
+      gRep = resolveModelAnywhere(oldId, nodeId);
+    }
+    if (gRep != null) {
+      result.replacement = gRep;
+      result.needReload = true;
+    }
+    globalCache.put(oldId, gRep);
+
+    return result;
   }
 
   private static SModelReference resolveModelAnywhere(String oldId, SNodeId nodeId) {
@@ -221,5 +275,10 @@ public class StubConversionStage implements MigrationStage {
   private static class Res {
     int fixed = 0;
     int failed = 0;
+  }
+
+  private static class ModelResolveRes {
+    SModelReference replacement = null;
+    boolean needReload = false;
   }
 }
