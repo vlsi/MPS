@@ -36,6 +36,9 @@ import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.ArrayList;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Comparator;
@@ -47,16 +50,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.DevKit;
-import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Generator;
 
@@ -193,6 +193,14 @@ public class QueriesGenerated {
     return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
   }
 
+  public static Object propertyMacro_GetPropertyValue_5640794902512565315(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleReference().getModuleId().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5640794902512695297(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getNode().getProperty("mref");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1210098113087(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Util.SEPARATOR + Module_Behavior.call_getModuleJarPath_1213877515137(_context.getNode());
   }
@@ -206,7 +214,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3749843785778432725(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractModule.MODULE_DIR;
+    return "META-INF";
   }
 
   public static Object propertyMacro_GetPropertyValue_1175062284955467608(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -812,6 +820,16 @@ public class QueriesGenerated {
     return Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode());
   }
 
+  public static Iterable sourceNodesQuery_5640794902512565310(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> res = new ArrayList<SNode>();
+    for (IModule m : Module_Behavior.call_getModule_1213877515148(_context.getNode()).getDependenciesManager().getAllRequiredModules()) {
+      SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
+      propertyNode.setProperty("mref", m.getModuleReference().toString());
+      ListSequence.fromList(res).addElement(propertyNode);
+    }
+    return res;
+  }
+
   public static Iterable sourceNodesQuery_2739262311775160744(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Module_Behavior.call_getModelRootPaths_2739262311775052381(_context.getNode());
   }
@@ -895,8 +913,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0zg;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0zg_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0ch;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0ch_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -919,13 +937,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0zg_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0ch_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0zg_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0ch_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0zg = this._7__yield_x583g4_a0a0a0a0a0zg_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0ch = this._7__yield_x583g4_a0a0a0a0a0ch_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -937,7 +955,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0zg);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0ch);
                       return true;
                     case 12:
                       this.__CP__ = 3;
