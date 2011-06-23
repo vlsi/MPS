@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
-import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
+import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
@@ -60,7 +60,7 @@ public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorD
     return IMethodLike_Behavior.virtual_getLastStatement_1239354409446(thisNode);
   }
 
-  public AbstractExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
+  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
     return IClassifier_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToRefactor);
   }
 

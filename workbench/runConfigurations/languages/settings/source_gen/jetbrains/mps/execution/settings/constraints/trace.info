@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorOperationDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.EditorOperationDeclaration_Constraints" />
   <unitInfo fileName="TemplateParameterReference_Constraints.java" startLine="60" startPosition="19" endLine="74" endPosition="9" unitName="jetbrains.mps.execution.settings.constraints.TemplateParameterReference_Constraints$2" />
   <unitInfo fileName="EditorExpression_Constraints.java" startLine="66" startPosition="19" endLine="80" endPosition="9" unitName="jetbrains.mps.execution.settings.constraints.EditorExpression_Constraints$2" />
   <unitInfo fileName="PersistentPropertyReferenceOperation_Constraints.java" startLine="43" startPosition="19" endLine="58" endPosition="9" unitName="jetbrains.mps.execution.settings.constraints.PersistentPropertyReferenceOperation_Constraints$2" />
