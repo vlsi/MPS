@@ -34,17 +34,44 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveLeft extends NavigationAction {
+  public static class MoveLocal extends NavigationAction {
     private boolean myHome;
 
-    public MoveLeft() {
-      this(false);
-    }
-
-    public MoveLeft(boolean home) {
+    public MoveLocal(boolean home) {
       myHome = home;
     }
 
+    public boolean canExecute(EditorContext context) {
+      return findTarget(context.getNodeEditorComponent().getSelectionManager()) != null;
+    }
+
+    public void execute(EditorContext context) {
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      EditorCell cell = findTarget(selectionManager);
+      selectionManager.setSelection(cell);
+      if (cell.isPunctuationLayout() && (cell instanceof EditorCell_Label) && ((EditorCell_Label) cell).isCaretPositionAllowed(1)) {
+        ((EditorCell_Label) cell).setCaretPosition(1);
+      } else {
+        cell.home();
+      }
+    }
+
+    private EditorCell findTarget(SelectionManager selectionManager) {
+      Selection selection = selectionManager.getSelection();
+      if (selection == null) {
+        return null;
+      }
+      List<EditorCell> selectedCells = selection.getSelectedCells();
+      EditorCell cell = myHome ? selectedCells.get(0) : selectedCells.get(selectedCells.size() - 1);
+      EditorCell leaf = myHome ? cell.getLeafToLeft(CellConditions.SELECTABLE) : cell.getLeafToRight(CellConditions.SELECTABLE);
+      if (leaf != null) {
+        return leaf;
+      }
+      return myHome ? cell.getPrevLeaf(CellConditions.SELECTABLE) : cell.getNextLeaf(CellConditions.SELECTABLE);
+    }
+  }
+
+  public static class MoveLeft extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
       return selection != null && findTarget(selection) != null;
@@ -56,11 +83,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().changeSelection(target);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
-        if (myHome) {
-          label.home();
-        } else {
-          label.end();
-        }
+        label.end();
       }
     }
 
@@ -82,7 +105,6 @@ public class NodeEditorActions {
       return cell.getPrevLeaf(CellConditions.SELECTABLE);
     }
   }
-
 
   public static class MoveToRootHome extends NavigationAction {
 

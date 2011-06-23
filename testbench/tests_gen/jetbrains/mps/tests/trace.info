@@ -1,28 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TestModule_jetbrains_mps_makeTest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_makeTest" />
-  <unitInfo fileName="TestModule_jetbrains_mps_graphLayout_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_graphLayout_test" />
-  <unitInfo fileName="TestModule_jetbrains_mps_baseLanguage_tuples_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test" />
-  <unitInfo fileName="TestModule_ypath_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_ypath_test" />
-  <unitInfo fileName="TestModule_jetbrains_mps_xml_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests" />
-  <unitInfo fileName="TestModule_jetbrains_mps_ui_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_ui_unittest" />
-  <unitInfo fileName="TestModule_jetbrains_mps_baseLanguage_regexp_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_regexp_unittest" />
-  <unitInfo fileName="TestModule_jetbrains_mps_baseLanguage_math_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_math_tests" />
-  <unitInfo fileName="TestModule_dates_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_dates_unittest" />
-  <unitInfo fileName="TestModule_jetbrains_mps_lang_smodel_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_smodel_unittest" />
-  <unitInfo fileName="TestModule_jetbrains_mps_smodel_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_smodel_test" />
-  <unitInfo fileName="TestModule_jetbrains_mps_lang_pattern_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_pattern_test" />
-  <unitInfo fileName="TestModule_jetbrains_mps_make_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_make_tests" />
   <unitInfo fileName="TestModule_jetbrains_mps_lang_editor_table_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_table_tests" />
-  <unitInfo fileName="TestModule_jetbrains_mps_lang_editor_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests" />
-  <unitInfo fileName="TestModule_jetbrains_mps_traceInfo_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test" />
-  <unitInfo fileName="TestModule_jetbrains_mps_debug_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_debug_tests" />
-  <unitInfo fileName="TestModule_internalCollections_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_internalCollections_test" />
-  <unitInfo fileName="TestModule_collections_trove_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_collections_trove_test" />
-  <unitInfo fileName="TestModule_collections_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_collections_unittest" />
-  <unitInfo fileName="TestModule_jetbrains_mps_baseLanguage_closures_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_closures_unittest" />
-  <unitInfo fileName="TestModule_closures_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_closures_test" />
-  <unitInfo fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_unittest" />
-  <unitInfo fileName="TestModule_jetbrains_mps_baseLanguage_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_test" />
 </debugInfo>
 
