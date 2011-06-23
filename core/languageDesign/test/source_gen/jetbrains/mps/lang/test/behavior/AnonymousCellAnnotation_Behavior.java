@@ -85,6 +85,12 @@ public class AnonymousCellAnnotation_Behavior {
       Assert.assertNotNull(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false));
       Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false)), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
       Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false)), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
+    } else {
+      if (selection != null) {
+        Assert.fail("Selection of unsupported type: " + selection.getClass());
+      } else {
+        Assert.fail("Selection was not set in resulting editor");
+      }
     }
   }
 
