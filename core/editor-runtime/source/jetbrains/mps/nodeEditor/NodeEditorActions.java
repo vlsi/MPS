@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 
 public class NodeEditorActions {
@@ -127,22 +129,27 @@ public class NodeEditorActions {
 
   public static class MoveHome extends NavigationAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && findTarget(selection) != null;
+      return findTarget(context.getNodeEditorComponent()) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      EditorCell target = findTarget(selection);
+      EditorComponent editorComponent = context.getNodeEditorComponent();
+      EditorCell target = findTarget(editorComponent);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         label.home();
-        context.getNodeEditorComponent().resetLastCaretX();
+        editorComponent.resetLastCaretX();
       }
-      context.getNodeEditorComponent().changeSelection(target);
+      editorComponent.changeSelection(target);
     }
 
-    private EditorCell findTarget(EditorCell cell) {
+    private EditorCell findTarget(EditorComponent editorComponent) {
+      Selection selection = editorComponent.getSelectionManager().getSelection();
+      if (selection == null) {
+        return null;
+      }
+      List<EditorCell> selectedCells = selection.getSelectedCells();
+      EditorCell cell = selectedCells.get(0);
       return cell.getHomeCell(CellConditions.SELECTABLE);
     }
 
@@ -151,22 +158,27 @@ public class NodeEditorActions {
   public static class MoveEnd extends NavigationAction {
 
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && findTarget(selection) != null;
+      return findTarget(context.getNodeEditorComponent()) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      EditorCell target = findTarget(selection);
+      EditorComponent editorComponent = context.getNodeEditorComponent();
+      EditorCell target = findTarget(editorComponent);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         label.end();
-        context.getNodeEditorComponent().resetLastCaretX();
+        editorComponent.resetLastCaretX();
       }
-      context.getNodeEditorComponent().changeSelection(target);
+      editorComponent.changeSelection(target);
     }
 
-    private EditorCell findTarget(EditorCell cell) {
+    private EditorCell findTarget(EditorComponent editorComponent) {
+      Selection selection = editorComponent.getSelectionManager().getSelection();
+      if (selection == null) {
+        return null;
+      }
+      List<EditorCell> selectedCells = selection.getSelectedCells();
+      EditorCell cell = selectedCells.get(selectedCells.size() - 1);
       return cell.getEndCell(CellConditions.SELECTABLE);
     }
   }

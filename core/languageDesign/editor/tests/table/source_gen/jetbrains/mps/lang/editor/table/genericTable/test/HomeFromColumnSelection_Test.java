@@ -10,22 +10,21 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class SelectRow_Test extends BaseTransformationTest {
+public class HomeFromColumnSelection_Test extends BaseTransformationTest {
   @Test
-  public void test_SelectRow() throws Throwable {
+  public void test_HomeFromColumnSelection() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
-    this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.SelectRow_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.HomeFromColumnSelection_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("8064689248313190613", "8064689248313190634");
+      final IEditor editor = TestBody.this.initEditor("9080919888312484969", "9080919888312484990");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectLeft_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectLeft_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectLeft_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Home_Action");
     }
   }
 }

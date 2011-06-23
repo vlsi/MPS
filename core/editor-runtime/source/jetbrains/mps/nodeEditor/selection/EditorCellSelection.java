@@ -152,11 +152,13 @@ public class EditorCellSelection implements SingularSelection {
     return !myEditorCell.isBigCell() && myEditorCell.getAction(CellActionType.DELETE) == null;
   }
 
+  @NotNull
   @Override
   public List<EditorCell> getSelectedCells() {
     return Collections.singletonList(getEditorCell());
   }
 
+  @NotNull
   @Override
   public List<SNode> getSelectedNodes() {
     SNode sNode = getEditorCell().getSNode();

@@ -44,6 +44,28 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.table.genericTable.test.EndFromColumnSelection_Test" file="EndFromColumnSelection_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.table.genericTable.test.HomeFromColumnSelection_Test" file="HomeFromColumnSelection_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnAfter_Test" file="InsertColumnAfter_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />

@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.selection;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Graphics2D;
 import java.util.List;
@@ -41,8 +42,16 @@ public interface Selection {
   // TODO: add canExecuteAction() method
   void executeAction(CellActionType type);
 
+  /**
+   * @return non-empty list of selected cells
+   */
+  @NotNull
   List<EditorCell> getSelectedCells();
 
+  /**
+   * @return non-empty list of selected nodes
+   */
+  @NotNull
   List<SNode> getSelectedNodes();
 
   //void ensureSelectionVisible();
