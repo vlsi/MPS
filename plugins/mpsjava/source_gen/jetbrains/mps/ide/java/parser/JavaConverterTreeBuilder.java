@@ -360,6 +360,9 @@ public class JavaConverterTreeBuilder {
       case OperatorIds.RIGHT_SHIFT:
         op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ShiftRightExpression", null);
         break;
+      case OperatorIds.UNSIGNED_RIGHT_SHIFT:
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ShiftRightUnsignedExpression", null);
+        break;
       case OperatorIds.PLUS:
         op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.PlusExpression", null);
         break;
@@ -438,6 +441,9 @@ public class JavaConverterTreeBuilder {
         break;
       case OperatorIds.RIGHT_SHIFT:
         op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression", null);
+        break;
+      case OperatorIds.UNSIGNED_RIGHT_SHIFT:
+        op = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.UnsignedRightShiftAssignmentExpression", null);
         break;
       default:
         throw new JavaConverterException("Unsupported operator for CompoundAssignment");
