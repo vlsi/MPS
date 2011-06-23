@@ -427,11 +427,7 @@ public class WorkbenchMakeService implements IMakeService {
           }
           return (opt != null ?
             opt :
-            new UIQueryRelayStrategy(new UIQueryRelayStrategy.DialogListener() {
-              public void beforeDialogShown() {
-                progInd.background();
-              }
-            }).relayQuery(query, getSession().getContext())
+            new UIQueryRelayStrategy().relayQuery(query, getSession().getContext())
           );
         }
       };
