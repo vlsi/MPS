@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
@@ -256,37 +255,37 @@ public class WorkbenchMakeService implements IMakeService {
       }
     });
     IScriptController ctl = this.completeController(mh, controller);
-    Iterable<IScript> scripts = Sequence.fromIterable(((script != null ?
-      Sequence.fromIterable(usedLangs.value).<IScript>select(new ISelector<Iterable<String>, IScript>() {
-        public IScript select(Iterable<String> it) {
+
+    Iterable<ScriptBuilder> scriptBuilders = Sequence.fromIterable(usedLangs.value).<ScriptBuilder>select(new ISelector<Iterable<String>, ScriptBuilder>() {
+      public ScriptBuilder select(Iterable<String> langs) {
+        final ScriptBuilder scb = new ScriptBuilder();
+        Sequence.fromIterable(langs).visitAll(new IVisitor<String>() {
+          public void visit(String ns) {
+            LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
+            Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
+            scb.withFacetNames(Sequence.fromIterable(fcts).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+              public IFacet.Name select(IFacet fct) {
+                return fct.getName();
+              }
+            }));
+          }
+        });
+        return scb.withFinalTarget(new ITarget.Name("make"));
+      }
+    }).toListSequence();
+
+    Iterable<IScript> scripts = ((script != null ?
+      Sequence.fromIterable(scriptBuilders).<IScript>select(new ISelector<ScriptBuilder, IScript>() {
+        public IScript select(ScriptBuilder it) {
           return script;
         }
       }) :
-      Sequence.fromIterable(usedLangs.value).<IScript>select(new ISelector<Iterable<String>, IScript>() {
-        public IScript select(Iterable<String> langs) {
-          final ScriptBuilder scb = new ScriptBuilder();
-          Sequence.fromIterable(langs).visitAll(new IVisitor<String>() {
-            public void visit(String ns) {
-              LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
-              Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
-              scb.withFacets(fcts);
-            }
-          });
-          return scb.withFinalTarget(new ITarget.Name("make")).toScript();
+      Sequence.fromIterable(scriptBuilders).<IScript>select(new ISelector<ScriptBuilder, IScript>() {
+        public IScript select(ScriptBuilder scb) {
+          return scb.toScript();
         }
       })
-    ))).toListSequence();
-
-    if (!(Sequence.fromIterable(scripts).all(new IWhereFilter<IScript>() {
-      public boolean accept(IScript sc) {
-        return sc.isValid();
-      }
-    }))) {
-      String msg = scrName + " failed";
-      showError(mh, msg + ". Invalid script.");
-      this.displayInfo(msg);
-      return new FutureValue(new IResult.FAILURE(null));
-    }
+    ));
 
     final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(this.getSession().getContext().getProject(), scrName, scripts, scrName, clInput.value, ctl, mh, PerformInBackgroundOption.DEAF) {
       @Override
@@ -521,6 +520,15 @@ public class WorkbenchMakeService implements IMakeService {
         while (scit.hasNext() && clit.hasNext()) {
           Iterable<IResource> cl = clit.next();
           IScript scr = scit.next();
+
+          if (!(scr.isValid())) {
+            String msg = myScrName + " failed";
+            showError(myMessageHandler, msg + ". Invalid script.");
+            WorkbenchMakeService.this.displayInfo(msg);
+            this.myResult = new IResult.FAILURE(null);
+            break;
+          }
+
           pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
             public String select(IResource r) {
               return ((IResource) r).describe();
