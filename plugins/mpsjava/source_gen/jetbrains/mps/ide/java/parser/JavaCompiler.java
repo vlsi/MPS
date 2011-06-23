@@ -403,7 +403,7 @@ public class JavaCompiler {
         if ((block != null)) {
           int pos = ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return MapSequence.fromMap(positions).get(it) == null || Math.abs(MapSequence.fromMap(positions).get(it)) <= linestart;
+              return !(MapSequence.fromMap(positions).containsKey(it)) || Math.abs(MapSequence.fromMap(positions).get(it)) <= linestart;
             }
           }).count();
           for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
