@@ -91,28 +91,7 @@ public class StubConversionStage implements MigrationStage {
   }
 
   public String messageAfter() {
-    Project ideaProject = myProject.getProject();
-    ModelCheckerTool_Tool tool = ideaProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
-    if (tool == null) {
-      if (myRes.failed == 0) return null;
-      return FINISHED + myRes.fixed + " references were fixed, " + myRes.failed + " not fixed. We recommend stopping migration and fixing broken references by hand.";
-    }
-
-    ModelCheckerSettings mcSettings = ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
-    try {
-      mcSettings.setMigrationMode(true);
-      ModelCheckerViewer res = tool.checkProject(ideaProject, ProjectOperationContext.get(ideaProject), true);
-      Set<ModelCheckerIssue> problems = res.getSearchResults().getResultObjects();
-      if (problems.isEmpty()) return null;
-      return FINISHED + "There are " + problems.size() + " unresolved references left. \n" +
-        "Most probably this means that the module with a reference doesn't import the module with referenced object. " +
-        "We recommend to pause the migration now and correct module dependencies by hand. " +
-        "You can also use the \"Fix Missing imports\" action from Logical View's context menu to add these dependencies automatically and Ctrl-R shortcut to add imports one-by-one\n" +
-        "After fixing module dependency, you can use Tools->Migrations 2.0->Migrate Stub Models action to search and re-resolve old stub references again." +
-        "To check for broken references again, select \"Check Project\" from project's context menu in project tree.";
-    } finally {
-      mcSettings.setMigrationMode(false);
-    }
+    return null;
   }
 
   //------------------------
