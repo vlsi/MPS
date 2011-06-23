@@ -56,6 +56,7 @@ import java.net.MalformedURLException;
 import java.net.URLClassLoader;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.ConditionalIterable;
 import java.lang.reflect.Modifier;
@@ -392,8 +393,14 @@ public class TestGenerationWorker extends MpsWorker {
   private List<String> getTestClassesNames(DiffGenerationHandler generationHandler, List<SModel> outputModels, ClassLoader baseClassLoader) {
     List<String> testClasses = new ArrayList<String>();
     Condition<SNode> nodeCond = new Condition<SNode>() {
-      public boolean met(SNode node) {
-        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      public boolean met(final SNode node) {
+        final Wrappers._boolean result = new Wrappers._boolean();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            result.value = SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+          }
+        });
+        return result.value;
       }
     };
     for (final SModel model : outputModels) {

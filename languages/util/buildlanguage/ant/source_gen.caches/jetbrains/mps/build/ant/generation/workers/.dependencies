@@ -134,6 +134,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.build.ant.IBuildServerMessageFormat" />
     <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
