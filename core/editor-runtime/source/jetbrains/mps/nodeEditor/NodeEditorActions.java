@@ -106,47 +106,36 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveToRootHome extends NavigationAction {
+  public static class MoveToRoot extends NavigationAction {
+    private boolean myHome;
+
+    public MoveToRoot(boolean home) {
+      myHome = home;
+    }
 
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && findTarget(selection) != null;
+      return findTarget(context.getNodeEditorComponent().getSelectionManager()) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(findTarget(selection));
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      selectionManager.setSelection(findTarget(selectionManager));
     }
 
-    private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ? (EditorCell_Collection) cell : cell.getParent();
-      while (rootCell != null && rootCell.getParent() != null) {
-        rootCell = rootCell.getParent();
+    private EditorCell findTarget(SelectionManager selectionManager) {
+      Selection selection = selectionManager.getSelection();
+      if (selection == null) {
+        return null;
       }
-      return rootCell == null ? null : rootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
-    }
-  }
-
-  public static class MoveToRootEnd extends NavigationAction {
-
-    public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && findTarget(selection) != null;
-    }
-
-    public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(findTarget(selection));
-    }
-
-    private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ? (EditorCell_Collection) cell : cell.getParent();
-      while (rootCell != null && rootCell.getParent() != null) {
-        rootCell = rootCell.getParent();
+      EditorCell cell = selection.getSelectedCells().get(0);
+      while (cell.getParent() != null) {
+        cell = cell.getParent();
       }
-      return rootCell == null ? null : rootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF);
+      if (cell instanceof  EditorCell_Collection) {
+        return cell.findChild(myHome ? CellFinders.FIRST_SELECTABLE_LEAF : CellFinders.LAST_SELECTABLE_LEAF);
+      }
+      return cell;
     }
-
   }
 
   public static class MoveHome extends NavigationAction {
