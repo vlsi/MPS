@@ -16625,6 +16625,18 @@
         </node>
         <node role="ifFalseStatement" roleId="tpee.1082485599094" type="nupp.BlockStatement" typeId="tpee.1082485599095" id="7970711249077251962">
           <node role="statements" roleId="tpee.1082485599096" type="nupp.StatementList" typeId="tpee.1068580123136" id="7970711249077251963">
+            <node role="statement" roleId="tpee.1068581517665" type="nupp.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="469835530123105228">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="nupp.LocalVariableDeclaration" typeId="tpee.1068581242863" id="469835530123105229">
+                <property name="name" nameId="tpck.1169194664001" value="root" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="469835530123105230" />
+                <node role="initializer" roleId="tpee.1068431790190" type="nupp.DotExpression" typeId="tpee.1197027756228" id="469835530123105231">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="469835530123105232">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239631740456" resolveInfo="field" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingRootOperation" typeId="tp25.1171310072040" id="469835530123105233" />
+                </node>
+              </node>
+            </node>
             <node role="statement" roleId="tpee.1068581517665" type="nupp.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7970711249077251964">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="nupp.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7970711249077251965">
                 <property name="name" nameId="tpck.1169194664001" value="localFieldRefs" />
@@ -16632,11 +16644,8 @@
                   <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.7785501532031639928" resolveInfo="LocalInstanceFieldReference" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="nupp.DotExpression" typeId="tpee.1197027756228" id="7970711249077251967">
-                  <node role="operand" roleId="tpee.1197027771414" type="nupp.DotExpression" typeId="tpee.1197027756228" id="7970711249077251968">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7970711249077251969">
-                      <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239631740456" resolveInfo="field" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="7970711249077251970" />
+                  <node role="operand" roleId="tpee.1197027771414" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="469835530123105235">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="469835530123105229" resolveInfo="root" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetDescendantsOperation" typeId="tp25.1171305280644" id="7970711249077251971">
                     <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7970711249077251972">
@@ -16655,11 +16664,8 @@
                   <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1197029447546" resolveInfo="FieldReferenceOperation" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="nupp.DotExpression" typeId="tpee.1197027756228" id="7970711249077251994">
-                  <node role="operand" roleId="tpee.1197027771414" type="nupp.DotExpression" typeId="tpee.1197027756228" id="7970711249077251995">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7970711249077251996">
-                      <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239631740456" resolveInfo="field" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="7970711249077251997" />
+                  <node role="operand" roleId="tpee.1197027771414" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="469835530123105234">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="469835530123105229" resolveInfo="root" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetDescendantsOperation" typeId="tp25.1171305280644" id="7970711249077251998">
                     <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7970711249077251999">
@@ -23720,6 +23726,9 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsNotEmptyOperation" typeId="tp2q.1176501494711" id="8974945326827961348" />
+            </node>
+            <node role="messageTarget" roleId="tpd4.1227096836496" type="tpd4.PropertyMessageTarget" typeId="tpd4.1227096498176" id="4061308786398736374">
+              <link role="propertyDeclaration" roleId="tpd4.1227096521710" targetNodeId="tpck.1169194664001" resolveInfo="name" />
             </node>
           </node>
         </node>

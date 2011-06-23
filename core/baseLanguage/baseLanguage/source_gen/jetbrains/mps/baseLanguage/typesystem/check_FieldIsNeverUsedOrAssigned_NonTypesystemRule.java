@@ -33,8 +33,9 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
       });
       VariableReferenceUtil.checkField(typeCheckingContext, field, references);
     } else {
-      List<SNode> localFieldRefs = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{});
-      List<SNode> fieldRefOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
+      SNode root = SNodeOperations.getContainingRoot(field);
+      List<SNode> localFieldRefs = SNodeOperations.getDescendants(root, "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{});
+      List<SNode> fieldRefOperations = SNodeOperations.getDescendants(root, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
       Iterable<SNode> localFieldReferences = ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, "variableDeclaration", false) == field;
