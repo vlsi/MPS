@@ -37,17 +37,9 @@ public class DependenciesCorrectionStage implements MigrationStage {
     }
     for (Language l : p.getProjectModules(Language.class)) {
       for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
-        aspect.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-      }
-    }
-    for (Language l : p.getProjectModules(Language.class)) {
-      for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
-        aspect.getSModel().deleteDevKit(LanguageDesign_DevKit.MODULE_REFERENCE);
-      }
-    }
-    for (Language l : p.getProjectModules(Language.class)) {
-      for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
         SModel sModel = aspect.getSModel();
+        sModel.addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+        sModel.deleteDevKit(LanguageDesign_DevKit.MODULE_REFERENCE);
         if (sModel.importedDevkits().contains(BootstrapLanguages_DevKit.MODULE_REFERENCE)) {
           sModel.deleteDevKit(BootstrapLanguages_DevKit.MODULE_REFERENCE);
         }
@@ -71,6 +63,6 @@ public class DependenciesCorrectionStage implements MigrationStage {
   }
 
   public String messageAfter() {
-    return "Dependencies problems fixed";
+    return null;
   }
 }
