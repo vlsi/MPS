@@ -110,11 +110,15 @@ public class PersistenceTest extends BaseMPSTest {
                 }
               });
 
-              List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
+              final List<EditableSModelDescriptor> list = new ArrayList<EditableSModelDescriptor>(1);
               list.add(testModel);
 
               if (version[0] > START_PERSISTENCE_TEST_VERSION) {
-                new PersistenceUpdater().upgradePersistence(list, version[0]);
+                ModelAccess.instance().runWriteInEDT(new Runnable() {
+                  public void run() {
+                    new PersistenceUpdater().upgradePersistence(list, version[0]);
+                  }
+                });
               }
               ModelAccess.instance().flushEventQueue();
               assertTrue(testModel.getModelFile() != null);
@@ -128,7 +132,11 @@ public class PersistenceTest extends BaseMPSTest {
                 }
               });
 
-              new PersistenceUpdater().upgradePersistence(list, version[1]);
+              ModelAccess.instance().runWriteInEDT(new Runnable() {
+                public void run() {
+                  new PersistenceUpdater().upgradePersistence(list, version[1]);
+                }
+              });
               ModelAccess.instance().flushEventQueue();
               assertTrue(testModel.getModelFile() != null);
               assertTrue(testModel.getPersistenceVersion() == version[1]);
