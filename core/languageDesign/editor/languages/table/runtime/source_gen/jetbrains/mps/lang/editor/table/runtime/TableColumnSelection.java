@@ -13,6 +13,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selection.SelectionInfo;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 public class TableColumnSelection extends AbstractMultipleSelection {
   private static final String COLUMN_NUMBER_PROPERTY = "columnNumber";
@@ -73,5 +76,35 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     selectionInto.setCellInfo(myTableCell.getCellInfo());
     selectionInto.getPropertiesMap().put(COLUMN_NUMBER_PROPERTY, Integer.toString(myColumnNumber));
     return selectionInto;
+  }
+
+  @Override
+  public void executeAction(CellActionType type) {
+    if (CellActionType.SELECT_UP == type) {
+      selectUp();
+      return;
+    }
+    super.executeAction(type);
+  }
+
+  private void selectUp() {
+    EditorCell cell = getCellToSelectUp();
+    if (cell == null) {
+      return;
+    }
+    SelectionManager selectionManager = getEditorComponent().getSelectionManager();
+    selectionManager.pushSelection(selectionManager.createSelection(cell));
+  }
+
+  public EditorCell getCellToSelectUp() {
+    for (EditorCell_Collection cell = myTableCell; cell != null; cell = cell.getParent()) {
+      if (cell.isSelectable()) {
+        while (cell.getParent() != null && cell.getParent().isTransparentCollection() && cell.getParent().isSelectable()) {
+          cell = cell.getParent();
+        }
+        return cell;
+      }
+    }
+    return null;
   }
 }

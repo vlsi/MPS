@@ -1187,6 +1187,12 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5097407566121948483">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tzu1.5097407566121771937" resolveInfo="RootHomeWithLineSelectionFromLastCell" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5476958923832871779">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tzu1.5476958923832863137" resolveInfo="SelectDownWithNodeTangeSelection" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5476958923832871781">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tzu1.5476958923832861246" resolveInfo="SelectUpWithNodeRangeSelection" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707847783">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tzu1.789834969242091856" resolveInfo="Up" />
     </node>
@@ -1370,11 +1376,17 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5097407566121986842">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.5097407566121950102" resolveInfo="RootHomeFromColumnSelection" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5476958923832890721">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.5476958923832881572" resolveInfo="SelectDownFromColumnSelection" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8064689248313220664">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.7541022036347681895" resolveInfo="SelectLeftInCell" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8064689248313220666">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.8064689248313190611" resolveInfo="SelectRow" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5476958923832890723">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.5476958923832872824" resolveInfo="SelectUpFromColumnSelection" />
     </node>
   </root>
   <root id="2712670354707847839">

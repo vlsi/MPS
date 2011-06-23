@@ -362,29 +362,33 @@ public class NodeEditorActions {
 
   public static class SelectUp extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
-      EditorCell anchorCell = getAnchorCell(selectionManager.getSelection());
-
-      if (anchorCell instanceof EditorCell_Label && !((EditorCell_Label) anchorCell).isEverythingSelected()) {
-        return true;
-      }
-      return anchorCell != null && anchorCell.getParent() != null && findTarget(anchorCell) != null;
+      return findTarget(context.getNodeEditorComponent().getSelectionManager()) != null;
     }
 
     public void execute(EditorContext context) {
       SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
-      EditorCell anchorCell = getAnchorCell(selectionManager.getSelection());
-
-      if (anchorCell instanceof EditorCell_Label && !((EditorCell_Label) anchorCell).isEverythingSelected()) {
-        EditorCell_Label label = (EditorCell_Label) anchorCell;
-        selectionManager.pushSelection(selectionManager.createSelection(label));
-        label.selectAll();
-      } else {
-        selectionManager.pushSelection(selectionManager.createSelection(findTarget(anchorCell)));
+      EditorCell cell = findTarget(selectionManager);
+      selectionManager.pushSelection(selectionManager.createSelection(cell));
+      if (cell instanceof EditorCell_Label) {
+        ((EditorCell_Label) cell).selectAll();
       }
     }
 
-    private EditorCell findTarget(EditorCell cell) {
+    private EditorCell findTarget(SelectionManager selectionManager) {
+      Selection selection = selectionManager.getSelection();
+      if (selection == null) {
+        return null;
+      }
+
+      EditorCell cell = selection.getSelectedCells().get(0);
+      if (cell instanceof EditorCell_Label && !((EditorCell_Label) cell).isEverythingSelected()) {
+        return cell;
+      }
+
+      if (cell.getParent() == null) {
+        return null;
+      }
+
       while (cell.getParent() != null && cell.getParent().isTransparentCollection()) {
         cell = cell.getParent();
       }
@@ -397,16 +401,6 @@ public class NodeEditorActions {
           return parent;
         }
         parent = parent.getParent();
-      }
-      return null;
-    }
-
-    private EditorCell getAnchorCell(Selection selection) {
-      if (selection instanceof SingularSelection) {
-        return ((SingularSelection) selection).getEditorCell();
-      } else if (selection instanceof MultipleSelection) {
-        // TODO: process MultipleSelection here
-        return null;
       }
       return null;
     }
