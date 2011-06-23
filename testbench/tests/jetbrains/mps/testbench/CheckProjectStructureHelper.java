@@ -96,7 +96,7 @@ public class CheckProjectStructureHelper {
     Testbench.initLogging();
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
+    TestMain.configureMPS(new String[0]);
 
     for (String[] macro : macros) {
       Testbench.setMacro(macro[0], macro[1]);
