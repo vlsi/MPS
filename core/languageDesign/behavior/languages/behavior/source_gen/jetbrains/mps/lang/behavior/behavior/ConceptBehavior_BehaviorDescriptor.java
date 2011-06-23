@@ -13,7 +13,7 @@ import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import java.util.List;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.baseLanguage.behavior.AbstractStaticContainerProcessor;
+import jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor;
 
 public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IExtractMethodAvailable_BehaviorDescriptor, IStaticContainerForMethods_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
   public ConceptBehavior_BehaviorDescriptor() {
@@ -51,7 +51,7 @@ public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDesc
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
-  public AbstractStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
+  public IStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
     return ConceptBehavior_Behavior.virtual_getStaticContainerProcessor_1222174378300(thisNode, node);
   }
 
