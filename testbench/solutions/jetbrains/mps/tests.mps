@@ -1346,6 +1346,12 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2025581204008522482">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.2025581204008440327" resolveInfo="LocalHomeFromColumnSelection" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2025581204008535224">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.2025581204008533796" resolveInfo="MoveElementsDownFromCoumnSelection" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2025581204008535226">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.2025581204008533737" resolveInfo="MoveElementsUpFromCoumnSelection" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8064689248313220664">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="9wu2.7541022036347681895" resolveInfo="SelectLeftInCell" />
     </node>

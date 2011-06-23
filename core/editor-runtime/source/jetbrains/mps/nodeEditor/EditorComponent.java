@@ -58,10 +58,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.folding.*;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SelectionListener;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -624,17 +621,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void moveCurrentUp() {
-    if (getSelectionManager().getSelection() == null) {
-      return;
+    Selection selection = getSelectionManager().getSelection();
+    if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
+      new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
     }
-    new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
   }
 
   public void moveCurrentDown() {
-    if (getSelectionManager().getSelection() == null) {
-      return;
+    Selection selection = getSelectionManager().getSelection();
+    if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
+      new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
     }
-    new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
   }
 
   private void goToNextErrorCell(boolean backwards) {
