@@ -118,6 +118,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -1158,6 +1159,8 @@ public class JavaConverterTreeBuilder {
       SLinkOperations.setTarget(result, "ifFalseStatement", elseStmt, true);
     }
     SNode ifTrue = getStatementListFromStatement(thenStmt, x.thenStatement);
+    // adjust start of the "if" statement list block to get comments from "if (...)" there 
+    getBlock(ifTrue)._2(x.sourceStart);
     SLinkOperations.setTarget(result, "ifTrue", ifTrue, true);
     return result;
   }
@@ -1280,7 +1283,7 @@ public class JavaConverterTreeBuilder {
   }
 
   /*package*/ SNode processStatement(TypeDeclaration x) {
-    String text = new String(x.binding.sourceName) + " local types are not supported";
+    String text = "Conversion error: " + new String(x.binding.sourceName) + " - local types are not supported";
     LOG.error(text);
     return createCommentStatement(text);
   }
@@ -1637,6 +1640,14 @@ public class JavaConverterTreeBuilder {
 
   private void addBlock(SNode node, int start, int end) {
     ListSequence.fromList(myBlocks).addElement(MultiTuple.<SNode,CompilationUnitDeclaration,Integer,Integer>from(node, getCUD(), Math.abs(start), Math.abs(end)));
+  }
+
+  private Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> getBlock(final SNode node) {
+    return ListSequence.fromList(myBlocks).findFirst(new IWhereFilter<Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer>>() {
+      public boolean accept(Tuples._4<SNode, CompilationUnitDeclaration, Integer, Integer> it) {
+        return it._0() == node;
+      }
+    });
   }
 
   public SModel getModelByTypeDeclaration(SourceTypeBinding typeBinding) {

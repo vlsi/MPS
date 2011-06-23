@@ -186,6 +186,7 @@
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaConverterException" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.ReferentsCreator" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.TypesProvider" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
