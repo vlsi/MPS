@@ -25,8 +25,8 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables;
 import jetbrains.mps.MPSCore;
@@ -200,7 +200,7 @@ public class JavaCompile_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((JavaCompile_Facet.Target_compile.Parameters) t).compiledAnything(((JavaCompile_Facet.Target_compile.Parameters) copyFrom).compiledAnything());
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
     }
@@ -362,7 +362,7 @@ public class JavaCompile_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((JavaCompile_Facet.Target_auxCompile.Parameters) t).skipAuxCompile(((JavaCompile_Facet.Target_auxCompile.Parameters) copyFrom).skipAuxCompile());
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
     }
@@ -505,8 +505,7 @@ public class JavaCompile_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((JavaCompile_Facet.Target_compileToMemory.Parameters) t).classPath(((JavaCompile_Facet.Target_compileToMemory.Parameters) copyFrom).classPath());
-        ((JavaCompile_Facet.Target_compileToMemory.Parameters) t).errors((boolean) ((JavaCompile_Facet.Target_compileToMemory.Parameters) copyFrom).errors());
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }

@@ -15,8 +15,8 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class GenerateSpecial_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -137,9 +137,7 @@ public class GenerateSpecial_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) t).foo(((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) copyFrom).foo());
-        ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) t).bar((int) ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) copyFrom).bar());
-        ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) t).baz((boolean) ((GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) copyFrom).baz());
+        ((Tuples._3) t).assign((Tuples._3) copyFrom);
       }
       return t;
     }

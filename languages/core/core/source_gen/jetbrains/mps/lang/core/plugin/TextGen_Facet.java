@@ -38,9 +38,9 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -241,9 +241,7 @@ public class TextGen_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((TextGen_Facet.Target_textGen.Parameters) t).pathToFile(((TextGen_Facet.Target_textGen.Parameters) copyFrom).pathToFile());
-        ((TextGen_Facet.Target_textGen.Parameters) t).failIfNoTextgen(((TextGen_Facet.Target_textGen.Parameters) copyFrom).failIfNoTextgen());
-        ((TextGen_Facet.Target_textGen.Parameters) t).generateDebugInfo(((TextGen_Facet.Target_textGen.Parameters) copyFrom).generateDebugInfo());
+        ((Tuples._3) t).assign((Tuples._3) copyFrom);
       }
       return t;
     }

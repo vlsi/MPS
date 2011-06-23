@@ -193,7 +193,7 @@ public class Binaries_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Binaries_Facet.Target_copyBinaries.Parameters) t).pathToFile(((Binaries_Facet.Target_copyBinaries.Parameters) copyFrom).pathToFile());
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
     }

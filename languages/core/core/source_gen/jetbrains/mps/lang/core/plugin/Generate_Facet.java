@@ -15,12 +15,12 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.generator.GenerationOptions;
@@ -170,10 +170,7 @@ public class Generate_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Generate_Facet.Target_checkParameters.Variables) t).project(((Generate_Facet.Target_checkParameters.Variables) copyFrom).project());
-        ((Generate_Facet.Target_checkParameters.Variables) t).operationContext(((Generate_Facet.Target_checkParameters.Variables) copyFrom).operationContext());
-        ((Generate_Facet.Target_checkParameters.Variables) t).cleanMake(((Generate_Facet.Target_checkParameters.Variables) copyFrom).cleanMake());
-        ((Generate_Facet.Target_checkParameters.Variables) t).pindGet(((Generate_Facet.Target_checkParameters.Variables) copyFrom).pindGet());
+        ((Tuples._4) t).assign((Tuples._4) copyFrom);
       }
       return t;
     }
@@ -416,8 +413,7 @@ public class Generate_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Generate_Facet.Target_configure.Variables) t).saveTransient(((Generate_Facet.Target_configure.Variables) copyFrom).saveTransient());
-        ((Generate_Facet.Target_configure.Variables) t).generationOptions(((Generate_Facet.Target_configure.Variables) copyFrom).generationOptions());
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }

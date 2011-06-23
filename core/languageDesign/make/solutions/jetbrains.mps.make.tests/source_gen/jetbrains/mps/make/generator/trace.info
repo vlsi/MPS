@@ -186,7 +186,7 @@
     <nodeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="109" startPosition="66" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="113" startPosition="49" endLine="114" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="117" startPosition="61" endLine="118" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="119" startPosition="22" endLine="120" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="119" startPosition="22" endLine="120" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="121" startPosition="7" endLine="122" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2340850238541116086" fileName="Generator__Facet.java" startLine="126" startPosition="26" endLine="127" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2340850238541116086" fileName="Generator__Facet.java" startLine="130" startPosition="38" endLine="131" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -275,7 +275,7 @@
     <scopeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="105" startPosition="65" endLine="106" endPosition="48" />
     <scopeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="109" startPosition="66" endLine="110" endPosition="18" />
     <scopeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="113" startPosition="49" endLine="114" endPosition="39" />
-    <scopeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="119" startPosition="22" endLine="120" endPosition="130" />
+    <scopeInfo nodeId="2340850238541116081" fileName="Generator__Facet.java" startLine="119" startPosition="22" endLine="120" endPosition="53" />
     <scopeInfo nodeId="2340850238541116086" fileName="Generator__Facet.java" startLine="126" startPosition="26" endLine="127" endPosition="16" />
     <scopeInfo nodeId="2340850238541116086" fileName="Generator__Facet.java" startLine="130" startPosition="38" endLine="131" endPosition="21" />
     <scopeInfo nodeId="2340850238541116086" fileName="Generator__Facet.java" startLine="134" startPosition="41" endLine="135" endPosition="31" />

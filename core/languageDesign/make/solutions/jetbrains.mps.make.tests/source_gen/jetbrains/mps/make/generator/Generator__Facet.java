@@ -14,8 +14,8 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import junit.framework.Assert;
 
 public class Generator__Facet implements IFacet {
@@ -117,7 +117,7 @@ public class Generator__Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Generator__Facet.Target_Configure.Variables) t).value(((Generator__Facet.Target_Configure.Variables) copyFrom).value());
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
     }
