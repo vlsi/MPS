@@ -3,7 +3,7 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.CheckProjectStructureHelper.Token;
 import jetbrains.mps.testbench.junit.Order;
-import jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.junit.AfterClass;
@@ -23,7 +23,7 @@ import java.util.List;
  * Date: Aug 27, 2010
  */
 
-@RunWith(WatchingParametrizedWithMake.class)
+@RunWith(WatchingParameterizedWithMake.class)
 public class CheckProjectStructure {
 
   private static CheckProjectStructureHelper HELPER;

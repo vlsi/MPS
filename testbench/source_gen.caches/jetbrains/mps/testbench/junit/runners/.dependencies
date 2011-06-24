@@ -23,6 +23,26 @@
     <classNode extendsClassName="org.junit.runners.BlockJUnit4ClassRunner" />
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.MakeRunner" file="MakeRunner.java">
+    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
+    <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runner.notification.Failure" />
+    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
+    <classNode extendsClassName="org.junit.runner.Runner" />
+  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" file="ModuleSymbolicSuite.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
@@ -79,30 +99,15 @@
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.FilepathParameterized" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake" file="WatchingParametrizedWithMake.java">
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
+  <dependency className="jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake" file="WatchingParameterizedWithMake.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
-    <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="org.junit.runner.Description" />
-    <classNode dependClassName="org.junit.runner.notification.Failure" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
+    <classNode dependClassName="org.junit.runner.Runner" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.WatchingParameterized" />
-    <classNode extendsClassName="org.junit.runner.Runner" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.WatchingSuite" file="WatchingSuite.java">
     <classNode dependClassName="java.lang.Class" />
@@ -114,6 +119,17 @@
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.SymbolicSuite" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.WatchingSuiteWithMake" file="WatchingSuiteWithMake.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
+    <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
+    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.WatchingSuite" />
   </dependency>
 </dependenciesRoot>
 
