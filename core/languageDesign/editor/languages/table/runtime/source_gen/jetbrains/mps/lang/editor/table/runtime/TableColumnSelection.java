@@ -14,6 +14,11 @@ import jetbrains.mps.nodeEditor.selection.SelectionInfo;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.nodeEditor.CellActionType;
+import com.intellij.ide.CopyPasteManagerEx;
+import jetbrains.mps.ide.datatransfer.SNodeTransferable;
+import java.util.Collections;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
@@ -80,11 +85,32 @@ public class TableColumnSelection extends AbstractMultipleSelection {
 
   @Override
   public void executeAction(CellActionType type) {
-    if (CellActionType.SELECT_UP == type) {
-      selectUp();
-      return;
+    switch (type) {
+      case SELECT_UP:
+        selectUp();
+        return;
+      case CUT:
+        return;
+      case COPY:
+        copyNodes();
+        return;
+      case PASTE:
+        return;
+      default:
     }
     super.executeAction(type);
+  }
+
+  private void copyNodes() {
+    CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(Collections.<SNode>emptyList(), renderText().getText()));
+  }
+
+  private TextBuilder renderText() {
+    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    for (EditorCell cell : getSelectedCells()) {
+      result = result.appendToTheBottom(cell.renderText());
+    }
+    return result;
   }
 
   private void selectUp() {
@@ -96,7 +122,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     selectionManager.pushSelection(selectionManager.createSelection(cell));
   }
 
-  public EditorCell getCellToSelectUp() {
+  private EditorCell getCellToSelectUp() {
     for (EditorCell_Collection cell = myTableCell; cell != null; cell = cell.getParent()) {
       if (cell.isSelectable()) {
         while (cell.getParent() != null && cell.getParent().isTransparentCollection() && cell.getParent().isSelectable()) {

@@ -3019,7 +3019,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (selectedCell != null) {
             selectedCell.executeAction(CellActionType.CUT);
           } else {
-            executeComponentAction(CellActionType.CUT);
+            getSelectionManager().getSelection().executeAction(CellActionType.CUT);
           }
         }
       }, getCurrentProject());
@@ -3050,7 +3050,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (selectedCell != null) {
             selectedCell.executeAction(CellActionType.COPY);
           } else {
-            executeComponentAction(CellActionType.COPY);
+            getSelectionManager().getSelection().executeAction(CellActionType.COPY);
           }
         }
       }, getCurrentProject());
@@ -3081,7 +3081,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (selectedCell != null) {
             selectedCell.executeAction(CellActionType.PASTE);
           } else {
-            executeComponentAction(CellActionType.PASTE);
+            getSelectionManager().getSelection().executeAction(CellActionType.PASTE);
           }
         }
       }, getCurrentProject());
