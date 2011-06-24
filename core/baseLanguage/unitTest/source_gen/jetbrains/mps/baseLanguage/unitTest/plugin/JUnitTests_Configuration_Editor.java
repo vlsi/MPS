@@ -25,21 +25,23 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
   }
 
   @NotNull
-  public JUnitConfigEditor createEditor() {
+  public JPanel createEditor() {
     JPanel panel = new JPanel(new GridBagLayout());
     myEditor = new JUnitConfigEditor();
 
     panel.add(myEditor, LayoutUtil.createPanelConstraints(0));
     panel.add(myJavaRunParameters.createEditor(), LayoutUtil.createPanelConstraints(1));
 
-    return myEditor;
+    return panel;
   }
 
   public void applyEditorTo(final JUnitTests_Configuration configuration) throws ConfigurationException {
     myJavaRunParameters.applyEditorTo(configuration.getJavaRunParameters());
+    myEditor.apply(configuration);
   }
 
   public void resetEditorFrom(final JUnitTests_Configuration configuration) {
     myJavaRunParameters.resetEditorFrom(configuration.getJavaRunParameters());
+    myEditor.reset(configuration);
   }
 }

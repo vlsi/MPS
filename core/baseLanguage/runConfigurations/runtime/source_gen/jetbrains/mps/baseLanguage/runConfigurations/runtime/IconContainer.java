@@ -6,5 +6,5 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class IconContainer {
-  protected static Icon ICON_a0d0a = new ImageIcon(IconContainer.class.getResource("showViewer.png"));
+  protected static Icon ICON_a0c0a = new ImageIcon(IconContainer.class.getResource("showViewer.png"));
 }

@@ -227,6 +227,8 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -238,10 +240,13 @@
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="javax.swing.border.TitledBorder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ClonableList" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes2" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTests_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ListPanel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ModelChooserComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ModuleChooserComponent" />

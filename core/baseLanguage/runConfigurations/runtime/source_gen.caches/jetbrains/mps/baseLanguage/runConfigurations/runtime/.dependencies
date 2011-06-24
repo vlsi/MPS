@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseChooserComponent" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseChooserComponent" file="BaseChooserComponent.java">
@@ -50,12 +51,19 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="javax.swing.event.ChangeEvent" />
+    <classNode dependClassName="javax.swing.event.ChangeListener" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
+    <classNode extendsClassName="com.intellij.ui.UserActivityProviderComponent" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithBrowseButton" file="FieldWithBrowseButton.java">

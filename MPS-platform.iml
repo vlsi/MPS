@@ -7,6 +7,7 @@
     <orderEntry type="module" module-name="idea-patch" exported="" scope="RUNTIME" />
     <orderEntry type="library" exported="" name="IDEA-plaform" level="project" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="runConfigurations" />
   </component>
 </module>
 

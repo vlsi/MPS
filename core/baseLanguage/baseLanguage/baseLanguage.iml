@@ -19,6 +19,7 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="module" module-name="runConfigurations" />
   </component>
 </module>
 

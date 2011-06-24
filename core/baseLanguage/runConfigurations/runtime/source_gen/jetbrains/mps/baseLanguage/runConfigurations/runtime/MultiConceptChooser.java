@@ -73,7 +73,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
   protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final FindUsagesManager.ProgressAdapter progressAdapter) {
     return ListSequence.fromList(myTargetConcepts).<SNode>translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
-        SNode targetConcept = it._0();
+        final SNode targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
         Set<SNode> instances = manager.findInstances(targetConcept, myScope, progressAdapter, false);
         if (function == null) {
@@ -81,6 +81,10 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
         } else {
           return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
+              if (!(it.isInstanceOfConcept(targetConcept))) {
+                // it happend:( 
+                return false;
+              }
               return function.invoke(it);
             }
           }).toListSequence();

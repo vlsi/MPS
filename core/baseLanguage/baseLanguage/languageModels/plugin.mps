@@ -15468,8 +15468,8 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4293471770554508831">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4293471770554508832">
               <property name="name" nameId="tpck.1169194664001" value="nodeChooser" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1375871677230199333">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wwn2.~MultiConceptChooser" resolveInfo="MultiConceptChooser" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6658892377757364452">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fmpm.747009152929080490" resolveInfo="MultiConceptChooser" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4293471770554508834">
                 <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorExpression" typeId="fb9u.946964771156066588" id="4293471770554508835">

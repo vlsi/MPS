@@ -49,6 +49,9 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
+    if (this.getRunType() == null) {
+      throw new RuntimeConfigurationException("Type of test not selected.");
+    }
     if (this.getRunType() != null) {
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 

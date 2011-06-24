@@ -21,6 +21,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +33,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
   public AbstractMainNodeChooser() {
-    this.init(new ActionListener() {
+    myBrowseListener = new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
 
         final FindUsagesManager findUsegesManager = FindUsagesManager.getInstance();
@@ -48,10 +49,10 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
         SNode selectedNode = CommonChoosers.showDialogNodeChooser(AbstractMainNodeChooser.this, toChooseFrom.value);
         setNode(selectedNode);
       }
-    });
+    };
 
-    addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
+    addListener(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
         final String text = getText();
         if (StringUtils.isEmpty(text)) {
           setNode(null);
@@ -80,6 +81,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
         });
       }
     });
+    createUi();
   }
 
   protected abstract Iterable<SNode> findNodes(SModel model, String fqName);
@@ -92,7 +94,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     return this.myNode;
   }
 
-  public void setNode(final SNode node) {
+  public void setNode(@Nullable final SNode node) {
     if (this.myNode == node) {
       return;
     }
@@ -112,6 +114,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
       });
     }
     this.fireNodeChanged();
+    fireTextChanged();
   }
 
   public String getFqName(SNode node) {

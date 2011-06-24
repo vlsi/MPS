@@ -4,52 +4,57 @@ package jetbrains.mps.baseLanguage.runConfigurations.runtime;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.Disposable;
+import com.intellij.ui.UserActivityProviderComponent;
 import java.util.List;
-import java.awt.event.ActionListener;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.annotations.NotNull;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import javax.swing.JTextField;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.util.Disposer;
-import javax.swing.JTextField;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+import org.jetbrains.annotations.NotNull;
+import java.awt.event.ActionListener;
 
-public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
-  private final List<ActionListener> myListeners = ListSequence.fromList(new ArrayList<ActionListener>());
+public class BaseFieldWithButtonComponent extends JPanel implements Disposable, UserActivityProviderComponent {
+  private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
+  private final Map<Object, _FunctionTypes._void_P0_E0> myListenersMap = MapSequence.fromMap(new HashMap<Object, _FunctionTypes._void_P0_E0>());
+  private JTextField myTextField;
 
   public BaseFieldWithButtonComponent() {
   }
 
-  public void removeActionListener(ActionListener listener) {
-    ListSequence.fromList(this.myListeners).removeElement(listener);
-  }
-
-  public void addActionListener(@NotNull final ActionListener listener) {
-    ListSequence.fromList(this.myListeners).addElement(listener);
-    this.getTextField().addKeyListener(new KeyAdapter() {
+  protected final void createUi() {
+    myTextField = createTextField();
+    myTextField.addKeyListener(new KeyAdapter() {
       @Override
-      public void keyReleased(KeyEvent p0) {
+      public void keyPressed(KeyEvent event) {
         BaseFieldWithButtonComponent.this.fireTextChanged();
       }
     });
   }
 
   public void setText(String text) {
-    if (neq_bit6ym_a0a0c(getTextField().getText(), text)) {
+    if (neq_bit6ym_a0a0b(myTextField.getText(), text)) {
       updateTextField(text);
       this.fireTextChanged();
     }
   }
 
   public String getText() {
-    return this.getTextField().getText();
+    return myTextField.getText();
   }
 
   protected void fireTextChanged() {
-    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<ActionListener>() {
-      public void visit(ActionListener it) {
-        it.actionPerformed(null);
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<_FunctionTypes._void_P0_E0>() {
+      public void visit(_FunctionTypes._void_P0_E0 it) {
+        it.invoke();
       }
     });
   }
@@ -76,15 +81,57 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
     Disposer.dispose(disposable);
   }
 
-  public JTextField getTextField() {
+  protected JTextField createTextField() {
     return new JTextField();
+  }
+
+  public JTextField getTextField() {
+    return myTextField;
   }
 
   public Disposable getDisposableComponent() {
     return null;
   }
 
-  private static boolean neq_bit6ym_a0a0c(Object a, Object b) {
+  public void addChangeListener(final ChangeListener listener) {
+    // change listeners are for idea -- this component is watched by UserActivityWatcher 
+    MapSequence.fromMap(myListenersMap).put(listener, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        listener.stateChanged(new ChangeEvent(BaseFieldWithButtonComponent.this));
+      }
+    });
+    addListener(MapSequence.fromMap(myListenersMap).get(listener));
+  }
+
+  public void removeChangeListener(ChangeListener listener) {
+    removeListener(MapSequence.fromMap(myListenersMap).get(listener));
+    MapSequence.fromMap(myListenersMap).removeKey(listener);
+  }
+
+  public void removeListener(_FunctionTypes._void_P0_E0 listener) {
+    ListSequence.fromList(this.myListeners).removeElement(listener);
+  }
+
+  public void addListener(@NotNull final _FunctionTypes._void_P0_E0 listener) {
+    ListSequence.fromList(this.myListeners).addElement(listener);
+  }
+
+  public void removeActionListener(ActionListener listener) {
+    ListSequence.fromList(this.myListeners).removeElement(MapSequence.fromMap(myListenersMap).get(listener));
+    MapSequence.fromMap(myListenersMap).removeKey(listener);
+  }
+
+  public void addActionListener(@NotNull final ActionListener listener) {
+    // action listeners are for uiLanguage -- it wants them 
+    MapSequence.fromMap(myListenersMap).put(listener, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        listener.actionPerformed(null);
+      }
+    });
+    ListSequence.fromList(this.myListeners).addElement(MapSequence.fromMap(myListenersMap).get(listener));
+  }
+
+  private static boolean neq_bit6ym_a0a0b(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

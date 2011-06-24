@@ -1472,8 +1472,8 @@
     </scopeInfo>
     <scopeInfo nodeId="155142699038773183" fileName="ParenthesisUtil.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="155142699038773199" varName="expression" />
-      <varInfo nodeId="155142699038773202" varName="opening" />
       <varInfo nodeId="155142699038773204" varName="context" />
+      <varInfo nodeId="155142699038773202" varName="opening" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773227" fileName="ParenthesisUtil.java" startLine="28" startPosition="129" endLine="33" endPosition="124" />
     <scopeInfo nodeId="155142699038773748" fileName="ParenthesisUtil.java" startLine="164" startPosition="105" endLine="169" endPosition="7">
@@ -1489,8 +1489,8 @@
       <varInfo nodeId="155142699038773310" varName="parExpr" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773941" fileName="ParenthesisUtil.java" startLine="223" startPosition="93" endLine="233" endPosition="5">
-      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773953" varName="nodeCell" />
+      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773960" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773529" fileName="ParenthesisUtil.java" startLine="106" startPosition="30" endLine="117" endPosition="7">
@@ -1551,8 +1551,8 @@
       <varInfo nodeId="155142699038773836" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773208" fileName="ParenthesisUtil.java" startLine="25" startPosition="85" endLine="68" endPosition="19">
-      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773367" varName="parExpr" />
+      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773356" varName="subtree" />
       <varInfo nodeId="155142699038773210" varName="current" />
       <varInfo nodeId="155142699038773287" varName="left" />
@@ -1566,8 +1566,8 @@
     <scopeInfo nodeId="155142699038773405" fileName="ParenthesisUtil.java" startLine="71" startPosition="106" endLine="124" endPosition="39">
       <varInfo nodeId="155142699038773417" varName="binOp" />
       <varInfo nodeId="155142699038773451" varName="backsideSubtree" />
-      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773575" varName="binOpCheck" />
+      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773437" varName="leaf" />
       <varInfo nodeId="155142699038773429" varName="sidemost" />
     </scopeInfo>
@@ -1655,7 +1655,7 @@
     <nodeInfo nodeId="5376072103465061552" fileName="Java_Producer.java" startLine="78" startPosition="50" endLine="79" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="83" startPosition="84" endLine="84" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="89" startPosition="106" endLine="90" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="93" startPosition="51" endLine="94" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="93" startPosition="51" endLine="94" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="97" startPosition="76" endLine="98" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1375871677230255788" fileName="Java_Producer.java" startLine="99" startPosition="120" endLine="100" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1375871677230255792" fileName="Java_Producer.java" startLine="105" startPosition="8" endLine="106" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1692,7 +1692,7 @@
     <scopeInfo nodeId="5376072103465061485" fileName="Java_Producer.java" startLine="74" startPosition="33" endLine="75" endPosition="20" />
     <scopeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="83" startPosition="84" endLine="84" endPosition="93" />
     <scopeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="89" startPosition="106" endLine="90" endPosition="44" />
-    <scopeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="93" startPosition="51" endLine="94" endPosition="150" />
+    <scopeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="93" startPosition="51" endLine="94" endPosition="140" />
     <scopeInfo nodeId="1375871677230255778" fileName="Java_Producer.java" startLine="99" startPosition="120" endLine="100" endPosition="20" />
     <scopeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="112" startPosition="71" endLine="113" endPosition="80" />
     <scopeInfo nodeId="2797684467151041386" fileName="Java_Producer.java" startLine="22" startPosition="0" endLine="24" endPosition="3" />
@@ -2792,8 +2792,8 @@
     <nodeInfo nodeId="1375871677230182965" fileName="Java_Configuration.java" startLine="54" startPosition="39" endLine="55" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4293471770554508896" fileName="Java_Configuration_Editor.java" startLine="54" startPosition="71" endLine="55" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8852113381329402876" fileName="Java_Configuration_Editor.java" startLine="55" startPosition="52" endLine="56" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1375871677230182977" fileName="Java_Configuration.java" startLine="58" startPosition="28" endLine="59" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1375871677230182983" fileName="Java_Configuration.java" startLine="62" startPosition="39" endLine="63" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1375871677230182977" fileName="Java_Configuration.java" startLine="58" startPosition="28" endLine="59" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1375871677230182983" fileName="Java_Configuration.java" startLine="62" startPosition="39" endLine="63" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8852113381329333253" fileName="Java_Configuration.java" startLine="65" startPosition="26" endLine="66" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunParameters" />
     <nodeInfo nodeId="4293471770554391967" fileName="Java_Configuration.java" startLine="68" startPosition="95" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2797684467151055953" fileName="Java_Configuration.java" startLine="72" startPosition="73" endLine="73" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2882,8 +2882,8 @@
     <scopeInfo nodeId="8852113381329402977" fileName="Java_Configuration_Editor.java" startLine="27" startPosition="31" endLine="28" endPosition="30" />
     <scopeInfo nodeId="1375871677230182960" fileName="Java_Configuration.java" startLine="50" startPosition="28" endLine="51" endPosition="108" />
     <scopeInfo nodeId="1375871677230182964" fileName="Java_Configuration.java" startLine="54" startPosition="39" endLine="55" endPosition="147" />
-    <scopeInfo nodeId="1375871677230182977" fileName="Java_Configuration.java" startLine="58" startPosition="28" endLine="59" endPosition="118" />
-    <scopeInfo nodeId="1375871677230182980" fileName="Java_Configuration.java" startLine="62" startPosition="39" endLine="63" endPosition="197" />
+    <scopeInfo nodeId="1375871677230182977" fileName="Java_Configuration.java" startLine="58" startPosition="28" endLine="59" endPosition="108" />
+    <scopeInfo nodeId="1375871677230182980" fileName="Java_Configuration.java" startLine="62" startPosition="39" endLine="63" endPosition="187" />
     <scopeInfo nodeId="4293471770554391967" fileName="Java_Configuration.java" startLine="68" startPosition="95" endLine="69" endPosition="34" />
     <scopeInfo nodeId="1375871677230327377" fileName="Java_Configuration.java" startLine="77" startPosition="27" endLine="78" endPosition="217" />
     <scopeInfo nodeId="1375871677230327392" fileName="Java_Configuration.java" startLine="81" startPosition="32" endLine="82" endPosition="93" />
