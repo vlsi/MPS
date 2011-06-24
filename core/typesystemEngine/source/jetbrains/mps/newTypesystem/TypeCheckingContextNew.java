@@ -35,7 +35,6 @@ import jetbrains.mps.util.Pair;
 import java.util.*;
 
 public class TypeCheckingContextNew extends TypeCheckingContext {
-  public static final String USE_OLD_TYPESYSTEM = "useOldTypeSystem";
 
   public final Object TYPECHECKING_LOCK = new Object();
   private State myState;

@@ -67,7 +67,6 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
-  @Deprecated private boolean myIsGeneration = false;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);

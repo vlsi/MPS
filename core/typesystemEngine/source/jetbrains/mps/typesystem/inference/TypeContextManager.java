@@ -26,6 +26,8 @@ public class TypeContextManager implements ApplicationComponent {
     new THashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
   private boolean myComputeInNormalMode = false;
   private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
+  private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.getLogger(TypeContextManager.class);
+
 
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
@@ -219,7 +221,8 @@ public class TypeContextManager implements ApplicationComponent {
       resolve = new Stack<Object>();
       myResolveStack.set(resolve);
     }
-    if (resolve.size() > 8) {
+    if (resolve.size() > 10) {
+      LOG.warning("Type checking failed. Resolve stack:\n " + myResolveStack);
       return null;
     }
 
