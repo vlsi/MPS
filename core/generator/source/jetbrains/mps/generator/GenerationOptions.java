@@ -1,6 +1,12 @@
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Collections;
+import java.util.Map;
 
 /**
  * Evgeny Gryaznov, Apr 26, 2010
@@ -139,7 +145,27 @@ public class GenerationOptions {
     private boolean mySaveTransientModels = false;
     private boolean myStrictMode = false;
     private boolean myRebuildAll = true;
-    private IncrementalGenerationStrategy myIncrementalStrategy = null;
+    private IncrementalGenerationStrategy myIncrementalStrategy = new IncrementalGenerationStrategy() {
+      @Override
+      public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+        return Collections.EMPTY_MAP;
+      }
+
+      @Override
+      public GenerationCacheContainer getContainer() {
+        return null;
+      }
+
+      @Override
+      public GenerationDependencies getDependencies(SModelDescriptor sm) {
+        return null;
+      }
+
+      @Override
+      public boolean isIncrementalEnabled() {
+        return false;
+      }
+    };
     private boolean myGenerateInParallel = false;
     private int myNumberOfThreads = 4;
     private int myTracingMode = TRACE_OFF;
