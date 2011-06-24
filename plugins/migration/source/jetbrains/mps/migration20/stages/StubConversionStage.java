@@ -15,14 +15,7 @@
  */
 package jetbrains.mps.migration20.stages;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue;
-import jetbrains.mps.ide.modelchecker.actions.ModelCheckerSettings;
-import jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool;
-import jetbrains.mps.ide.modelchecker.actions.ModelCheckerViewer;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.OptimizeImportsHelper;
@@ -36,16 +29,11 @@ import java.util.*;
 
 
 public class StubConversionStage implements MigrationStage {
-  private static final String FINISHED = "Automatic stubs correction finished.\n";
-  private MPSProject myProject;
-  private Res myRes;
-
   public String title() {
     return "Stubs Conversion";
   }
 
   public void execute(MPSProject p) {
-    myProject = p;
     for (Language l : p.getProjectModules(Language.class)) {
       Set<SModelReference> toRemove = new HashSet<SModelReference>();
       Set<SModelReference> toAdd = new HashSet<SModelReference>();
@@ -70,7 +58,7 @@ public class StubConversionStage implements MigrationStage {
       l.save();
     }
 
-    myRes = reResolveStubRefs(p);
+    reResolveStubRefs(p);
     SModelRepository.getInstance().saveAll();
 
     new OptimizeImportsHelper(ProjectOperationContext.get(p.getProject())).optimizeProjectImports(p);
@@ -155,8 +143,8 @@ public class StubConversionStage implements MigrationStage {
   private static List<IModule> collectModulesWithGenerators(MPSProject p) {
     List<IModule> modules = p.getModules();
     List<IModule> generators = new ArrayList<IModule>();
-    for (IModule m:modules){
-      if (m instanceof Language){
+    for (IModule m : modules) {
+      if (m instanceof Language) {
         generators.addAll(((Language) m).getGenerators());
       }
     }
