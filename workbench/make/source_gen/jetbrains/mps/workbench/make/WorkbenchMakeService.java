@@ -384,7 +384,7 @@ public class WorkbenchMakeService implements IMakeService {
         code.invoke(jobMon);
       } catch (Throwable e) {
         WorkbenchMakeService.LOG.debug("Error running job", e);
-        jobMon.reportFeedback(new IFeedback.ERROR(e.getMessage()));
+        jobMon.reportFeedback(new IFeedback.ERROR("Error running job", e));
       } finally {
         ApplicationImpl.setExceptionalThreadWithReadAccessFlag(oldFlag);
       }
