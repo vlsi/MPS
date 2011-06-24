@@ -706,7 +706,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return null;
         }
         if (getMessageTextFor(cell) != null) {
-          return new Point(cell.getX(), cell.getY() + cell.getHeight());
+          return new Point(event.getX(), event.getY());
         } else {
           return null;
         }
