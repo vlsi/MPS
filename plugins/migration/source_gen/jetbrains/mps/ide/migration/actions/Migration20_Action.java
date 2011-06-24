@@ -75,9 +75,9 @@ public class Migration20_Action extends GeneratedAction {
       StringBuilder sb = new StringBuilder();
       sb.append("Welcome to migration assistant.").append("\n");
       sb.append("This will help to migrate code written in MPS 1.5 to MPS 2.0.").append("\n");
-      sb.append("The migration consists of ").append(MState.values().length - 2).append(" steps. ").append("On each step MPS will tell you what it intends to do, then perform a refactoring and, after some of the steps, ask you to change some code by hand. Sometimes MPS will ask you to restart.").append("\n");
-      sb.append("After each restart you will have 3 options - to continue, abort or schedule the migration. You can continue the migration at any time just by executing MainMenu->Tools->Continue Migration to MPS 2.0").append("\n");
-      sb.append("You can read more about migration here: http://http://confluence.jetbrains.net/display/MPS/Migration20").append("\n\n");
+      sb.append("The migration consists of ").append(MState.values().length - 2).append(" steps. ").append("On each step MPS will tell you what it intends to do, then perform a refactoring and, after some of the steps, ask you to change some code by hand. ").append("\n");
+      sb.append("You can pause the migration on any step and continue performing it at any time just by executing MainMenu->Tools->Continue Migration to MPS 2.0").append("\n");
+      sb.append("Read more about migration here: http://confluence.jetbrains.net/display/MPS/Migration20").append("\n\n");
       sb.append("WARNING: your files will be changed by the assistant. Please ensure all work is saved and you have a backup copy of your code.").append("\n\n");
 
       if (state != MState.INITIAL && state != MState.DONE) {
