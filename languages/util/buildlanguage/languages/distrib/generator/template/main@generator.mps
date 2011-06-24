@@ -7344,7 +7344,7 @@
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="1234788827369">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="1234788827370">
-        <property name="text" nameId="tpih.1164413036326" value="OutFile &quot;${PRODUCT_NAME}-" />
+        <property name="text" nameId="tpih.1164413036326" value="OutFile &quot;" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="1234789075836">
         <property name="text" nameId="tpih.1164413036326" value="${PRODUCT_VERSION}-" />
