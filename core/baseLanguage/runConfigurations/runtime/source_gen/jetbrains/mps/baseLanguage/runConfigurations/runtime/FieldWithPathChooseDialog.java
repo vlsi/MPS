@@ -5,21 +5,31 @@ package jetbrains.mps.baseLanguage.runConfigurations.runtime;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import java.awt.BorderLayout;
-import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.vfs.VirtualFile;
+import javax.swing.JTextField;
 import com.intellij.openapi.Disposable;
 
 public class FieldWithPathChooseDialog extends BaseFieldWithButtonComponent {
-  private TextFieldWithBrowseButton.NoPathCompletion myField;
-  private FileChooserDescriptor myChooser;
+  private final TextFieldWithBrowseButton.NoPathCompletion myField;
+  private final FileChooserDescriptor myChooser;
 
   public FieldWithPathChooseDialog() {
     this.setLayout(new BorderLayout());
-    createUi();
+    this.myChooser = new FileChooserDescriptor(false, true, false, false, false, false);
+    this.myField = new TextFieldWithBrowseButton.NoPathCompletion(new ActionListener() {
+      public void actionPerformed(ActionEvent p0) {
+        FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(FieldWithPathChooseDialog.this.myChooser, FieldWithPathChooseDialog.this);
+        VirtualFile[] selectedFiles = dialog.choose(null, null);
+        if (selectedFiles.length > 0 && selectedFiles[0] != null) {
+          FieldWithPathChooseDialog.this.setText(selectedFiles[0].getPath());
+        }
+      }
+    });
+    this.add(this.myField, BorderLayout.CENTER);
   }
 
   public void setEditable(boolean editable) {
@@ -39,18 +49,7 @@ public class FieldWithPathChooseDialog extends BaseFieldWithButtonComponent {
     return this.myChooser.getTitle();
   }
 
-  public JTextField createTextField() {
-    this.myChooser = new FileChooserDescriptor(false, true, false, false, false, false);
-    this.myField = new TextFieldWithBrowseButton.NoPathCompletion(new ActionListener() {
-      public void actionPerformed(ActionEvent p0) {
-        FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(FieldWithPathChooseDialog.this.myChooser, FieldWithPathChooseDialog.this);
-        VirtualFile[] selectedFiles = dialog.choose(null, null);
-        if (selectedFiles.length > 0 && selectedFiles[0] != null) {
-          FieldWithPathChooseDialog.this.setText(selectedFiles[0].getPath());
-        }
-      }
-    });
-    this.add(this.myField, BorderLayout.CENTER);
+  public JTextField getTextField() {
     return this.myField.getTextField();
   }
 

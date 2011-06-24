@@ -4,73 +4,72 @@ package jetbrains.mps.baseLanguage.runConfigurations.runtime;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.Disposable;
-import com.intellij.ui.UserActivityProviderComponent;
 import java.util.List;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.awt.event.ActionListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import javax.swing.JTextField;
+import org.jetbrains.annotations.NotNull;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.util.Disposer;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
-import org.jetbrains.annotations.NotNull;
-import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 
-public class BaseFieldWithButtonComponent extends JPanel implements Disposable, UserActivityProviderComponent {
-  private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
-  private final Map<Object, _FunctionTypes._void_P0_E0> myListenersMap = MapSequence.fromMap(new HashMap<Object, _FunctionTypes._void_P0_E0>());
-  private JTextField myTextField;
+public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
+  private final List<ActionListener> myListeners = ListSequence.fromList(new ArrayList<ActionListener>());
+  private String myText;
 
   public BaseFieldWithButtonComponent() {
   }
 
-  protected final void createUi() {
-    myTextField = createTextField();
-    myTextField.addKeyListener(new KeyAdapter() {
+  public void removeActionListener(ActionListener listener) {
+    ListSequence.fromList(this.myListeners).removeElement(listener);
+  }
+
+  public void addActionListener(@NotNull final ActionListener listener) {
+    ListSequence.fromList(this.myListeners).addElement(listener);
+    this.getTextField().addKeyListener(new KeyAdapter() {
       @Override
-      public void keyPressed(KeyEvent event) {
-        BaseFieldWithButtonComponent.this.fireTextChanged();
+      public void keyReleased(KeyEvent p0) {
+        BaseFieldWithButtonComponent.this.onChange();
       }
     });
   }
 
   public void setText(String text) {
-    if (neq_bit6ym_a0a0b(myTextField.getText(), text)) {
-      updateTextField(text);
-      this.fireTextChanged();
+    if (neq_bit6ym_a0a0c(this.myText, text)) {
+      this.myText = text;
+      this.onChange();
     }
   }
 
   public String getText() {
-    return myTextField.getText();
+    if (this.myText == null) {
+      return this.getTextField().getText();
+    }
+    return this.myText;
   }
 
-  protected void fireTextChanged() {
-    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<_FunctionTypes._void_P0_E0>() {
-      public void visit(_FunctionTypes._void_P0_E0 it) {
-        it.invoke();
+  protected void onChange() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<ActionListener>() {
+      public void visit(ActionListener it) {
+        it.actionPerformed(null);
       }
     });
-  }
 
-  protected void updateTextField(String text) {
     // I have no clue, which purpose do next lines serve 
 
     int cp = this.getTextField().getCaretPosition();
     int selStart = this.getTextField().getSelectionStart();
     int selEnd = this.getTextField().getSelectionEnd();
 
-    this.getTextField().setText(text);
+    this.getTextField().setText(this.getText());
     this.getTextField().setCaretPosition(cp);
     // except for those lines: they fix selection, broken by previous line 
     this.getTextField().setSelectionStart(selStart);
     this.getTextField().setSelectionEnd(selEnd);
+
+    this.myText = null;
   }
 
   public void dispose() {
@@ -81,57 +80,15 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable, 
     Disposer.dispose(disposable);
   }
 
-  protected JTextField createTextField() {
-    return new JTextField();
-  }
-
   public JTextField getTextField() {
-    return myTextField;
+    return new JTextField();
   }
 
   public Disposable getDisposableComponent() {
     return null;
   }
 
-  public void addChangeListener(final ChangeListener listener) {
-    // change listeners are for idea -- this component is watched by UserActivityWatcher 
-    MapSequence.fromMap(myListenersMap).put(listener, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        listener.stateChanged(new ChangeEvent(BaseFieldWithButtonComponent.this));
-      }
-    });
-    addListener(MapSequence.fromMap(myListenersMap).get(listener));
-  }
-
-  public void removeChangeListener(ChangeListener listener) {
-    removeListener(MapSequence.fromMap(myListenersMap).get(listener));
-    MapSequence.fromMap(myListenersMap).removeKey(listener);
-  }
-
-  public void removeListener(_FunctionTypes._void_P0_E0 listener) {
-    ListSequence.fromList(this.myListeners).removeElement(listener);
-  }
-
-  public void addListener(@NotNull final _FunctionTypes._void_P0_E0 listener) {
-    ListSequence.fromList(this.myListeners).addElement(listener);
-  }
-
-  public void removeActionListener(ActionListener listener) {
-    ListSequence.fromList(this.myListeners).removeElement(MapSequence.fromMap(myListenersMap).get(listener));
-    MapSequence.fromMap(myListenersMap).removeKey(listener);
-  }
-
-  public void addActionListener(@NotNull final ActionListener listener) {
-    // action listeners are for uiLanguage -- it wants them 
-    MapSequence.fromMap(myListenersMap).put(listener, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        listener.actionPerformed(null);
-      }
-    });
-    ListSequence.fromList(this.myListeners).addElement(MapSequence.fromMap(myListenersMap).get(listener));
-  }
-
-  private static boolean neq_bit6ym_a0a0b(Object a, Object b) {
+  private static boolean neq_bit6ym_a0a0c(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
