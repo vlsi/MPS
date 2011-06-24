@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TestLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.TestLang_Language" />
+  <unitInfo fileName="TestVariableReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference" />
   <unitInfo fileName="TestListReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.TestListReference" />
   <unitInfo fileName="TestPropertyVariableReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference" />
-  <unitInfo fileName="TestVariableReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.StructureAspectDescriptor" />
   <unitInfo fileName="VariableValue.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.VariableValue" />
   <unitInfo fileName="PropertyValue.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.PropertyValue" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="42" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="ListValue.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.ListValue" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.StructureAspectDescriptor" />
   <unitInfo fileName="PatternTest.java" startLine="19" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.structure.PatternTest" />
 </debugInfo>
 

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Nanoc_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.nanoc.structure.Nanoc_Language" />
-  <unitInfo fileName="c_id_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_id_PropertySupport" />
   <unitInfo fileName="c_float_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_float_PropertySupport" />
   <unitInfo fileName="c_int_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_int_PropertySupport" />
-  <unitInfo fileName="GreaterEqOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.GreaterEqOp" />
-  <unitInfo fileName="LessEqOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.LessEqOp" />
-  <unitInfo fileName="GreaterOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.GreaterOp" />
-  <unitInfo fileName="LessOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.LessOp" />
-  <unitInfo fileName="EqualOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.EqualOp" />
+  <unitInfo fileName="c_id_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_id_PropertySupport" />
   <unitInfo fileName="MinusOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.MinusOp" />
   <unitInfo fileName="MultOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.MultOp" />
   <unitInfo fileName="PlusOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.PlusOp" />
@@ -19,22 +14,26 @@
   <unitInfo fileName="CFloat.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CFloat" />
   <unitInfo fileName="CChar.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CChar" />
   <unitInfo fileName="CInt.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CInt" />
+  <unitInfo fileName="GreaterEqOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.GreaterEqOp" />
+  <unitInfo fileName="LessEqOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.LessEqOp" />
+  <unitInfo fileName="GreaterOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.GreaterOp" />
+  <unitInfo fileName="LessOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.LessOp" />
+  <unitInfo fileName="EqualOp.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.structure.EqualOp" />
   <unitInfo fileName="CExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CExpression" />
   <unitInfo fileName="CType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CType" />
-  <unitInfo fileName="VarRef.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.structure.VarRef" />
-  <unitInfo fileName="CExpressionStatement.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CExpressionStatement" />
   <unitInfo fileName="IntConst.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.structure.IntConst" />
   <unitInfo fileName="CParenthesis.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CParenthesis" />
-  <unitInfo fileName="CAssignmentExpression.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CAssignmentExpression" />
+  <unitInfo fileName="VarRef.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.structure.VarRef" />
+  <unitInfo fileName="CExpressionStatement.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CExpressionStatement" />
   <unitInfo fileName="CBinaryOp.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CBinaryOp" />
   <unitInfo fileName="CWhile.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CWhile" />
+  <unitInfo fileName="CAssignmentExpression.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CAssignmentExpression" />
   <unitInfo fileName="CBody.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CBody" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="88" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.nanoc.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="VarDeclStatement.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.structure.VarDeclStatement" />
   <unitInfo fileName="CFor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CFor" />
   <unitInfo fileName="CStatement.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.nanoc.structure.CStatement" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.nanoc.structure.StructureAspectDescriptor" />
   <unitInfo fileName="VarDecl.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.nanoc.structure.VarDecl" />
   <unitInfo fileName="File.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.nanoc.structure.File" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.nanoc.structure.StructureAspectDescriptor" />
 </debugInfo>
 

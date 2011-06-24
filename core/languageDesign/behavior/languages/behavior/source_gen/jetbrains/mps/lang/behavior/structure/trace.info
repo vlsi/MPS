@@ -4,9 +4,8 @@
   <unitInfo fileName="ConceptConstructorDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" />
   <unitInfo fileName="InternalConceptDeclarationReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference" />
   <unitInfo fileName="SuperNodeExpression.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="46" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.StructureAspectDescriptor" />
   <unitInfo fileName="ThisNodeExpression.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.StructureAspectDescriptor" />
   <unitInfo fileName="StaticConceptMethodDeclaration.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" />
   <unitInfo fileName="InternalConceptDeclarationsHolder.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder" />
   <unitInfo fileName="LocalBehaviorMethodCall.java" startLine="16" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" />

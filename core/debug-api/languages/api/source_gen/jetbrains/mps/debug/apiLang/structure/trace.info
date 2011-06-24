@@ -7,10 +7,9 @@
   <unitInfo fileName="DebuggerReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.DebuggerReference" />
   <unitInfo fileName="DebuggerType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.DebuggerType" />
   <unitInfo fileName="ConceptDeclarationReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.StructureAspectDescriptor" />
   <unitInfo fileName="BreakpointCreator.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.BreakpointCreator" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="46" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="BreakpointableNodeItem.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.StructureAspectDescriptor" />
   <unitInfo fileName="CreateBreakpointOperation.java" startLine="16" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation" />
 </debugInfo>
 

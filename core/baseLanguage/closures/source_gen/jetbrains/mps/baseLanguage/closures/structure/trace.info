@@ -12,13 +12,12 @@
   <unitInfo fileName="PairOfInts.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.PairOfInts" />
   <unitInfo fileName="ControlAbstractionContainer.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer" />
   <unitInfo fileName="InvokeExpression.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.InvokeExpression" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="66" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="AbstractFunctionType.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType" />
   <unitInfo fileName="CompactInvokeFunctionExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.StructureAspectDescriptor" />
   <unitInfo fileName="ClosureControlStatement.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement" />
   <unitInfo fileName="FunctionType.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.FunctionType" />
   <unitInfo fileName="InvokeFunctionOperation.java" startLine="16" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.StructureAspectDescriptor" />
   <unitInfo fileName="InvokeFunctionExpression.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression" />
   <unitInfo fileName="ClosureLiteral.java" startLine="21" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
   <unitInfo fileName="ControlAbstractionDeclaration.java" startLine="21" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration" />

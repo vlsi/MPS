@@ -13,9 +13,9 @@
   <unitInfo fileName="NodeWarningProperty.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodeWarningProperty" />
   <unitInfo fileName="NodeErrorPropety.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodeErrorPropety" />
   <unitInfo fileName="CheckNodeForErrors.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.structure.CheckNodeForErrors" />
-  <unitInfo fileName="ActionReference.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.ActionReference" />
   <unitInfo fileName="EditorComponentExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.EditorComponentExpression" />
   <unitInfo fileName="SwitchToInspector.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.SwitchToInspector" />
+  <unitInfo fileName="ActionReference.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.ActionReference" />
   <unitInfo fileName="MockAnnotation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.MockAnnotation" />
   <unitInfo fileName="INodeAnnotattion.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.INodeAnnotattion" />
   <unitInfo fileName="EditorExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.EditorExpression" />
@@ -23,9 +23,9 @@
   <unitInfo fileName="ProjectExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.ProjectExpression" />
   <unitInfo fileName="NodeProperty.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodeProperty" />
   <unitInfo fileName="BootstrapActionReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.test.structure.BootstrapActionReference" />
-  <unitInfo fileName="MPSActionReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.MPSActionReference" />
   <unitInfo fileName="InvokeActionStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.InvokeActionStatement" />
   <unitInfo fileName="TestInfo.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TestInfo" />
+  <unitInfo fileName="MPSActionReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.MPSActionReference" />
   <unitInfo fileName="TypeKeyStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TypeKeyStatement" />
   <unitInfo fileName="TestNode.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TestNode" />
   <unitInfo fileName="VariableLive.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.VariableLive" />
@@ -39,16 +39,15 @@
   <unitInfo fileName="NodeTypeSetProperty.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodeTypeSetProperty" />
   <unitInfo fileName="NodePropertiesContainer.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodePropertiesContainer" />
   <unitInfo fileName="PressKeyStatement.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.test.structure.PressKeyStatement" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="114" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.test.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="TypesCheckOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TypesCheckOperation" />
   <unitInfo fileName="AssertMatch.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.test.structure.AssertMatch" />
   <unitInfo fileName="EditorOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.test.structure.EditorOperation" />
   <unitInfo fileName="NodeOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodeOperation" />
   <unitInfo fileName="TestNodeAnnotation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TestNodeAnnotation" />
   <unitInfo fileName="NodesTestMethod.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodesTestMethod" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.test.structure.StructureAspectDescriptor" />
   <unitInfo fileName="EditorTestCase.java" startLine="18" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.test.structure.EditorTestCase" />
   <unitInfo fileName="NodesTestCase.java" startLine="18" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodesTestCase" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.test.structure.StructureAspectDescriptor" />
   <unitInfo fileName="AnonymousCellAnnotation.java" startLine="15" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" />
 </debugInfo>
 

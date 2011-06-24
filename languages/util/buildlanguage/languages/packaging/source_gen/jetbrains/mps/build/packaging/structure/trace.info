@@ -16,8 +16,8 @@
   <unitInfo fileName="PropertiesImport.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.PropertiesImport" />
   <unitInfo fileName="ICompositeComponent.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.ICompositeComponent" />
   <unitInfo fileName="Plugin.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Plugin" />
-  <unitInfo fileName="BlockReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.BlockReference" />
   <unitInfo fileName="PropertyFileImport.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.PropertyFileImport" />
+  <unitInfo fileName="BlockReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.BlockReference" />
   <unitInfo fileName="Delete.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Delete" />
   <unitInfo fileName="Jar.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Jar" />
   <unitInfo fileName="File.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.File" />
@@ -34,7 +34,6 @@
   <unitInfo fileName="Replace.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Replace" />
   <unitInfo fileName="Manifest.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Manifest" />
   <unitInfo fileName="CompositePathComponent.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.CompositePathComponent" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="138" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="Copy.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Copy" />
   <unitInfo fileName="Module.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Module" />
   <unitInfo fileName="PathHolder.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.PathHolder" />
@@ -54,10 +53,10 @@
   <unitInfo fileName="AbstractProjectComponent.java" startLine="15" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.AbstractProjectComponent" />
   <unitInfo fileName="ModuleCycle.java" startLine="15" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.ModuleCycle" />
   <unitInfo fileName="Folder.java" startLine="13" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Folder" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Block.java" startLine="15" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Block" />
   <unitInfo fileName="Zip.java" startLine="13" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Zip" />
   <unitInfo fileName="Antcall.java" startLine="15" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Antcall" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Layout.java" startLine="16" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Layout" />
 </debugInfo>
 

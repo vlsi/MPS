@@ -120,7 +120,6 @@
   <unitInfo fileName="LinkRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkRefExpression" />
   <unitInfo fileName="OperationParm_StopConceptList.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" />
   <unitInfo fileName="OperationParm_ConceptList.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="330" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="SNodeTypeCastExpression.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" />
   <unitInfo fileName="IfInstanceOfStatement.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement" />
   <unitInfo fileName="Reference_GetResolveInfo.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo" />
@@ -153,6 +152,6 @@
   <unitInfo fileName="_LinkAccessT.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure._LinkAccessT" />
   <unitInfo fileName="SNodeOperation.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SNodeOperation" />
   <unitInfo fileName="Node_ConceptMethodCall.java" startLine="17" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.StructureAspectDescriptor" />
 </debugInfo>
 
