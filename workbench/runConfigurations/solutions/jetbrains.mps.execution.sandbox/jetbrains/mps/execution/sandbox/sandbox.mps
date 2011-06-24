@@ -164,7 +164,6 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1058143989625200787">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~SwingUtilities%dinvokeLater(java%dlang%dRunnable)%cvoid" resolveInfo="invokeLater" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dbrf.~SwingUtilities" resolveInfo="SwingUtilities" />
-            <node role="&lt;no role&gt;" type="tpck.ExportScopePublic" typeId="tpck.2565736246230036150" id="1058143989625200788" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1058143989625200789">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="1058143989625204508">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="1058143989625204509">
@@ -182,11 +181,11 @@
                         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3131153648913085790">
                           <property name="name" nameId="tpck.1169194664001" value="main" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3131153648913085791">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1058143989625184529" resolveInfo="Main" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1058143989625184529" resolveInfo="TemplateConfigurationTest" />
                           </node>
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3131153648913085792">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3131153648913085793">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1058143989625184531" resolveInfo="Main" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1058143989625184531" resolveInfo="TemplateConfigurationTest" />
                             </node>
                           </node>
                         </node>
@@ -1112,11 +1111,11 @@
                         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5502823699574524063">
                           <property name="name" nameId="tpck.1169194664001" value="main" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5502823699574524064">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5502823699574524006" resolveInfo="TemplateConfigurationTest" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5502823699574524006" resolveInfo="SettingsEditorPanelTest" />
                           </node>
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5502823699574524065">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5502823699574524066">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5502823699574524008" resolveInfo="TemplateConfigurationTest" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5502823699574524008" resolveInfo="SettingsEditorPanelTest" />
                             </node>
                           </node>
                         </node>
@@ -1569,7 +1568,7 @@
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2372421611505994111">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" />
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
     </node>
   </root>
