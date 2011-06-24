@@ -5,6 +5,7 @@ import jetbrains.mps.testbench.CheckProjectStructureHelper.Token;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParametrizedWithMake;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -12,18 +13,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
  * User: fyodor
  * Date: Aug 27, 2010
- * Time: 3:29:33 PM
- * To change this template use File | Settings | File Templates.
  */
 
 @RunWith(WatchingParametrizedWithMake.class)
@@ -50,8 +47,7 @@ public class CheckProjectStructure {
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (ModuleHandle moduleHandle : moduleHandles) {
-      File ioFile = new File(moduleHandle.getFile().getPath());
-      res.add(new Object[]{getDescription(moduleHandle), ioFile});
+      res.add(new Object[]{getDescription(moduleHandle), moduleHandle.getFile()});
     }
 
     Collections.sort(res, new Comparator<Object[]>() {
@@ -66,9 +62,9 @@ public class CheckProjectStructure {
   @BeforeClass
   public static void init() {
     List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), false);
-    List<File> files = new ArrayList<File>();
+    List<IFile> files = new ArrayList<IFile>();
     for (ModuleHandle moduleHandle : moduleHandles) {
-      files.add(new File(moduleHandle.getFile().getPath()));
+      files.add(moduleHandle.getFile());
     }
 
     HELPER.load(files);
@@ -80,9 +76,9 @@ public class CheckProjectStructure {
     HELPER.dispose();
   }
 
-  private File file;
+  private IFile file;
 
-  public CheckProjectStructure(String testName, File file) {
+  public CheckProjectStructure(String testName, IFile file) {
     this.file = file;
   }
 

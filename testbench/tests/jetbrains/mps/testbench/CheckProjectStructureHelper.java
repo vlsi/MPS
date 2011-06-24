@@ -17,6 +17,7 @@ import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -40,7 +41,7 @@ public class CheckProjectStructureHelper {
   public CheckProjectStructureHelper() {
   }
 
-  public void load(final Iterable<File> files) {
+  public void load(final Iterable<IFile> files) {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
@@ -60,19 +61,19 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  public List<String> check(Token token, List<File> files) {
+  public List<String> check(Token token, List<IFile> files) {
     return ((PrivToken) token).check(files);
   }
 
-  public List<String> checkStructure(Token token, List<File> files) {
+  public List<String> checkStructure(Token token, List<IFile> files) {
     return ((PrivToken) token).checkStructure(files);
   }
 
-  public List<String> checkGenerationStatus(Token token, List<File> files) {
+  public List<String> checkGenerationStatus(Token token, List<IFile> files) {
     return ((PrivToken) token).checkGenerationStatus(files);
   }
 
-  public List<String> checkModule(Token token, List<File> files) {
+  public List<String> checkModule(Token token, List<IFile> files) {
     return ((PrivToken) token).checkModule(files);
   }
 
@@ -81,7 +82,7 @@ public class CheckProjectStructureHelper {
   }
 
   public String formatErrors(List<String> errors) {
-    StringBuffer sb = new StringBuffer();
+    StringBuilder sb = new StringBuilder();
     String sep = "";
     for (String er : errors) {
       sb.append(sep).append(er);
@@ -125,19 +126,19 @@ public class CheckProjectStructureHelper {
       this.project = project;
     }
 
-    public List<String> check(Iterable<File> files) {
+    public List<String> check(Iterable<IFile> files) {
       return CheckProjectStructureHelper.this.doCheck(files, project);
     }
 
-    public List<String> checkStructure(List<File> files) {
+    public List<String> checkStructure(List<IFile> files) {
       return CheckProjectStructureHelper.this.doCheckStructure(files, project);
     }
 
-    public List<String> checkGenerationStatus(List<File> files) {
+    public List<String> checkGenerationStatus(List<IFile> files) {
       return CheckProjectStructureHelper.this.doCheckGenerationStatus(files, project);
     }
 
-    public List<String> checkModule(List<File> files) {
+    public List<String> checkModule(List<IFile> files) {
       return CheckProjectStructureHelper.this.doCheckModule(files, project);
     }
 
@@ -146,7 +147,7 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  private List<String> doCheck(Iterable<File> files, MPSProject project) {
+  private List<String> doCheck(Iterable<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
 
@@ -156,7 +157,7 @@ public class CheckProjectStructureHelper {
     return checkModels(me.getModels());
   }
 
-  private List<String> doCheckStructure(List<File> files, MPSProject project) {
+  private List<String> doCheckStructure(List<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(true);
     me.loadModels(files);
 
@@ -166,7 +167,7 @@ public class CheckProjectStructureHelper {
     return checkStructure(me.getModels());
   }
 
-  private List<String> doCheckGenerationStatus(List<File> files, MPSProject project) {
+  private List<String> doCheckGenerationStatus(List<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
 
@@ -176,7 +177,7 @@ public class CheckProjectStructureHelper {
     return checkModelsGenerationStatus(me.getModels());
   }
 
-   private List<String> doCheckModule(List<File> files, MPSProject project) {
+   private List<String> doCheckModule(List<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
 

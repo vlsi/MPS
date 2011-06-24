@@ -28,11 +28,11 @@ public class ModelsExtractor {
     return models;
   }
 
-  public Iterable<IModule> getModules(Iterable<File> files) {
+  public Iterable<IModule> getModules(Iterable<IFile> files) {
     return collectFromModuleFiles(files);
   }
 
-  public void loadModels (Iterable<File> files) {
+  public void loadModels (Iterable<IFile> files) {
     if (modelLoaded) throw new IllegalStateException("Models already loaded");
     doLoadModels(files, models);
     this.modelLoaded = true;
@@ -44,7 +44,7 @@ public class ModelsExtractor {
     this.modelLoaded = false;
   }
 
-  private Iterable<SModelDescriptor> doLoadModels(Iterable<File> files, Collection<SModelDescriptor> models) {
+  private Iterable<SModelDescriptor> doLoadModels(Iterable<IFile> files, Collection<SModelDescriptor> models) {
     for (MPSProject prj : collectFromProjects(files)) {
       extractModels(models, prj);
     }
@@ -54,28 +54,29 @@ public class ModelsExtractor {
     return models;
   }
 
-  private Iterable<MPSProject> collectFromProjects(Iterable<File> files) {
+  private Iterable<MPSProject> collectFromProjects(Iterable<IFile> files) {
     Set<MPSProject> projects = new HashSet<MPSProject>();
-    for (File projectFile : files) {
-      if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
-        final MPSProject project = TestMain.loadProject(projectFile);
+    for (IFile projectFile : files) {
+      if (projectFile.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
+        assert !FileSystem.getInstance().isPackaged(projectFile);
+        final MPSProject project = TestMain.loadProject(new File(projectFile.getPath()));
         projects.add(project);
       }
     }
     return projects;
   }
 
-  private Iterable<IModule> collectFromModuleFiles(Iterable<File> files) {
+  private Iterable<IModule> collectFromModuleFiles(Iterable<IFile> files) {
     Set<IModule> modules = new HashSet<IModule>();
-    for (File moduleFile : files) {
+    for (IFile moduleFile : files) {
       processModuleFile(moduleFile, modules);
     }
     return modules;
   }
 
-  private void processModuleFile(final File moduleFile, final Set<IModule> modules) {
-    String path = moduleFile.getAbsolutePath();
-    if (!path.endsWith(MPSExtentions.DOT_LANGUAGE) && !path.endsWith(MPSExtentions.DOT_SOLUTION) && !path.endsWith(MPSExtentions.DOT_DEVKIT))
+  private void processModuleFile(final IFile moduleFile, final Set<IModule> modules) {
+    String name = moduleFile.getName();
+    if (!name.endsWith(MPSExtentions.DOT_LANGUAGE) && !name.endsWith(MPSExtentions.DOT_SOLUTION) && !name.endsWith(MPSExtentions.DOT_DEVKIT))
       return;
     List<IModule> tmpmodules;
     IModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
@@ -88,8 +89,7 @@ public class ModelsExtractor {
     } else {
       tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
-          IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
-          return ModulesMiner.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
+          return ModulesMiner.getInstance().readModuleDescriptors(moduleFile.isDirectory() ? moduleFile : moduleFile.getParent(), new MPSModuleOwner() {
           });
         }
       });
