@@ -7,7 +7,6 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.newTypesystem.TypeSystemException;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
@@ -220,7 +219,9 @@ public class TypeContextManager implements ApplicationComponent {
       resolve = new Stack<Object>();
       myResolveStack.set(resolve);
     }
-    if (resolve.size() > 20) throw new TypeSystemException("typechecking failed");
+    if (resolve.size() > 8) {
+      return null;
+    }
 
     if (generationMode) {
       TypeCheckingContext context = tracer == null ? createTypeCheckingContext(node) : createTracingTypeCheckingContext(node);
