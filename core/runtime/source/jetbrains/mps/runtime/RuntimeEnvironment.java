@@ -19,14 +19,16 @@ import jetbrains.mps.util.InternAwareStringSet;
 import jetbrains.mps.util.InternUtil;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class RuntimeEnvironment<T> {
+  private static final ClassHolder NULL_CLASS_HOLDER = new ClassHolder(null);
   private final Object myLock = new Object();
 
   private Map<T, RBundle<T>> myBundles = new HashMap<T, RBundle<T>>();
   private Set<String> myLoadFromParentPrefixes = new InternAwareStringSet();
 
-  private Map<String, Class> myClassesFromParent = new HashMap<String, Class>();
+  private Map<String, ClassHolder> myClassesFromParent = new ConcurrentHashMap<String, ClassHolder>();
   private Map<String, T> myLoadedClasses = new HashMap<String, T>();
 
   public RuntimeEnvironment() {
@@ -49,7 +51,7 @@ public class RuntimeEnvironment<T> {
 
   protected Class getFromParent(String name) {
     if (myClassesFromParent.containsKey(name)) {
-      return myClassesFromParent.get(name);
+      return myClassesFromParent.get(name).myClass;
     }
 
     Class result = null;
@@ -59,7 +61,7 @@ public class RuntimeEnvironment<T> {
       //it's ok
     }
 
-    myClassesFromParent.put(InternUtil.intern(name), result);
+    myClassesFromParent.put(InternUtil.intern(name), result != null ? new ClassHolder(result) : NULL_CLASS_HOLDER);
     return result;
   }
 
@@ -251,5 +253,13 @@ public class RuntimeEnvironment<T> {
     if (o1 == o2) return true;
     if (o1 == null || o2 == null) return false;
     return o1.equals(o2);
+  }
+
+  private static class ClassHolder<T> {
+    private Class<T> myClass;
+
+    public ClassHolder(Class<T> cls) {
+      this.myClass = cls;
+    }
   }
 }

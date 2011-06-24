@@ -16,6 +16,7 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.MessageKind;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -73,9 +74,20 @@ public class MPSCompilationResult implements Serializable {
     return myMessages != null ? Collections.unmodifiableList(myMessages) : Collections.<IMessage>emptyList();
   }
 
+  public String getErrorsText() {
+    StringBuilder sb = new StringBuilder();
+    for (IMessage m : myMessages) {
+      if (m.getKind() == MessageKind.ERROR) {
+        sb.append(m.getText()).append('\n');
+      }
+    }
+    return sb.toString();
+  }
+
   public String toString() {
     if (!isAborted()) {
-      return "compilation finished : errors: " + getErrors() + " warnings: " + getWarnings();
+      return "compilation finished : errors: " + getErrors() + " warnings: " + getWarnings()
+          + (getErrors() > 0 ? "\n" + getErrorsText() : "");
     } else {
       return "compilation aborted";
     }

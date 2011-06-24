@@ -140,6 +140,8 @@ public abstract class SourceWrapper {
   }
 
   public static class ClassWrapper extends SourceWrapper {
+    private static final String PACKAGE_ = "package ";
+
     public ClassWrapper(String source, SModel model) {
       super(source, model);
       int index = source.indexOf("class");
@@ -151,18 +153,26 @@ public abstract class SourceWrapper {
           i++;
         }
         StringBuilder sb = new StringBuilder();
-        while (!((Character.isWhitespace(source.charAt(i)))) && !((source.charAt(i) == '{'))) {
+        while (!(Character.isWhitespace(source.charAt(i)) || source.charAt(i) == '{')) {
           char c = source.charAt(i);
           sb.append(c);
           i++;
         }
         myClassName = sb.toString();
+        // replace package x.y.z; with import x.y.z.*; if necessary 
+        int iPackage = source.indexOf(PACKAGE_);
+        if (0 <= iPackage && iPackage < i && StringUtils.isNotEmpty(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model))) {
+          int iPackageEnd = iPackage + PACKAGE_.length();
+          while (!(Character.isWhitespace(source.charAt(iPackageEnd)) || source.charAt(iPackageEnd) == ';')) {
+            iPackageEnd++;
+          }
+          source = source.substring(0, iPackage) + "import " + source.substring(iPackage + PACKAGE_.length(), iPackageEnd) + ".*" + source.substring(iPackageEnd);
+        }
         // add package if necessary 
-        int iPackage = source.indexOf("package ");
-        if (0 <= iPackage && iPackage < i || StringUtils.isEmpty(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model))) {
+        if (StringUtils.isEmpty(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model))) {
           myWrappedSource = source;
         } else {
-          myWrappedSource = "package " + jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model) + ";\n" + source;
+          myWrappedSource = PACKAGE_ + jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(model) + ";\n" + source;
         }
       }
     }

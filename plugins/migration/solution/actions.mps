@@ -493,7 +493,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3494136638017197657">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3494136638017197658">
-                  <property name="value" nameId="tpee.1070475926801" value="On each step MPS will tell you what it intends to do, then perform a refactoring and, after some of the steps, ask you to change some code by hand. Sometimes MPS will ask you to restart." />
+                  <property name="value" nameId="tpee.1070475926801" value="On each step MPS will tell you what it intends to do, then perform a refactoring and, after some of the steps, ask you to change some code by hand. " />
                 </node>
               </node>
             </node>
@@ -514,7 +514,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3494136638017197699">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3494136638017197700">
-                  <property name="value" nameId="tpee.1070475926801" value="After each restart you will have 3 options - to continue, abort or schedule the migration. You can continue the migration at any time just by executing MainMenu-&gt;Tools-&gt;Continue Migration to MPS 2.0" />
+                  <property name="value" nameId="tpee.1070475926801" value="You can pause the migration on any step and continue performing it at any time just by executing MainMenu-&gt;Tools-&gt;Continue Migration to MPS 2.0" />
                 </node>
               </node>
             </node>
@@ -535,7 +535,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3494136638017197716">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3494136638017197717">
-                  <property name="value" nameId="tpee.1070475926801" value="You can read more about migration here: http://http://confluence.jetbrains.net/display/MPS/Migration20" />
+                  <property name="value" nameId="tpee.1070475926801" value="Read more about migration here: http://confluence.jetbrains.net/display/MPS/Migration20" />
                 </node>
               </node>
             </node>

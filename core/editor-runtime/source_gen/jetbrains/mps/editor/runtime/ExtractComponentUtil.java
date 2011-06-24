@@ -14,6 +14,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
+
+/**
+ * TODO: most probably move out to mps.ide.editor (plugin)
+ * currently canot do that due to the compilation problems of editor.intentions model
+ */
 public class ExtractComponentUtil {
   public ExtractComponentUtil() {
   }

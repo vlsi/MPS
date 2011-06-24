@@ -30,6 +30,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -53,6 +54,7 @@ public class TestMakeOnRealProject {
   private static final String TEST_JAVA_FILE = "Test.java";
 
   private IFile myTmpDir;
+  private Solution myCreatedRuntimeSolution;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
   private MPSModuleOwner myModuleOwner = new MPSModuleOwner() {
@@ -114,7 +116,7 @@ public class TestMakeOnRealProject {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         checkModuleCompiled(myCreatedSolution);
-        checkModuleCompiled(myCreatedLanguage);
+        checkModuleCompiled(myCreatedRuntimeSolution);
       }
     });
 
@@ -218,6 +220,9 @@ public class TestMakeOnRealProject {
           public void run() {
             myTmpDir = IFileUtils.createTmpDir();
 
+            myCreatedRuntimeSolution = createNewRuntimeSolution();
+            createJavaFiles(myCreatedRuntimeSolution);
+
             myCreatedLanguage = createNewLanguage();
             createJavaFiles(myCreatedLanguage);
 
@@ -263,10 +268,30 @@ public class TestMakeOnRealProject {
     }
   }
 
+  private Solution createNewRuntimeSolution() {
+    IFile runtimeSolutionDescriptorFile = myTmpDir.getDescendant("TestLanguageRuntime" + File.separator + "TestLanguageRuntime" + MPSExtentions.DOT_SOLUTION);
+    String fileName = runtimeSolutionDescriptorFile.getName();
+    SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
+    String name = fileName.substring(0, fileName.length() - 4);
+    solutionDescriptor.setNamespace(name);
+
+    ModelRoot modelRoot = new ModelRoot();
+    modelRoot.setPrefix("");
+    modelRoot.setPath(runtimeSolutionDescriptorFile.getParent().getPath());
+
+    solutionDescriptor.getModelRoots().add(modelRoot);
+    runtimeSolutionDescriptorFile.createNewFile();
+    SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor);
+    return Solution.newInstance(runtimeSolutionDescriptorFile, myModuleOwner);
+  }
+
   private Language createNewLanguage() {
     String languageNamespace = "TestLanguage";
     IFile descriptorFile = myTmpDir.getDescendant(languageNamespace + File.separator + languageNamespace + MPSExtentions.DOT_LANGUAGE);
     Language language = Language.createLanguage(languageNamespace, descriptorFile, myModuleOwner);
+    Dependency dependency = new Dependency();
+    dependency.setModuleRef(myCreatedRuntimeSolution.getModuleReference());
+    language.getModuleDescriptor().getRuntimeModules().add(dependency);
     descriptorFile.createNewFile();
     language.save();
 

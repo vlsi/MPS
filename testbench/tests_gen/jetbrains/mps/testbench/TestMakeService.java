@@ -11,11 +11,12 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import dependencies.ModulesClusterizer;
+import jetbrains.mps.make.dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
@@ -68,6 +69,14 @@ public class TestMakeService implements IMakeService {
   }
 
   public void endSession(MakeSession session) {
+  }
+
+  public void addListener(IMakeNotificationListener listener) {
+    throw new UnsupportedOperationException();
+  }
+
+  public void removeListener(IMakeNotificationListener listener) {
+    throw new UnsupportedOperationException();
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources) {

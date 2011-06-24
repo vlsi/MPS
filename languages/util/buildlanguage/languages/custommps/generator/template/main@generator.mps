@@ -65,7 +65,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1240396556348">
       <property name="name" nameId="tpck.1169194664001" value="weave_MPSLayout_AddPropertyFile" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tps4.1202916958754" resolveInfo="MPSLayout" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="2521628527372173250">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MPSBuild" />
@@ -83,7 +83,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1233154893746">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="j1at.1233149592028" resolveInfo="MPSBuild" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2521628527372173690">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2521628527372173250" resolveInfo="reduce_MPSBuildFromBuild" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2521628527372173250" resolveInfo="reduce_MPSBuild" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2235195415637092001">
@@ -96,7 +96,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1233931194398">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="j1at.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1233931206835">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1233926023574" resolveInfo="reduce_UndeclaredVariableReference" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1233926023574" resolveInfo="reduce_UndeclaredVariableReferenceInLayout" />
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1234891502382">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1234891502383">
@@ -108,7 +108,7 @@
                   <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="1234891538976" />
                   <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1238405407074">
                     <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1238405414214">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tps4.1202916958754" resolveInfo="MPSLayout" />
+                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
                     </node>
                   </node>
                 </node>
@@ -167,8 +167,8 @@
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="8716889635481504737">
       <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1202916958754" resolveInfo="MPSLayout" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="8716889635481488580" resolveInfo="help-build-pckg" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="8716889635481488580" resolveInfo="help-build" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="8716889635481504738">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8716889635481504739">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8716889635481504740">
@@ -201,7 +201,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="j1at.2235195415637073414" resolveInfo="MPSDistribution" />
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="6128676491055324580">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1202916958754" resolveInfo="MPSLayout" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
       <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.WeaveEach_RuleConsequence" typeId="tpf8.1169569792945" id="6128676491055373717">
         <link role="template" roleId="tpf8.1169569853122" targetNodeId="1233931547920" resolveInfo="weave_UndeclaredVariableReferenceDeclaration" />
         <node role="sourceNodesQuery" roleId="tpf8.1169569939267" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="6128676491055373718">
@@ -265,7 +265,7 @@
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1236880980815">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="j1at.1233149592028" resolveInfo="MPSBuild" />
       <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1236881017239">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1236881017235" resolveInfo="weave_MPSBuild" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1236881017235" resolveInfo="weave_unpack_buildtools_MPSLayout" />
       </node>
       <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="1236880980817">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236880980818">
@@ -292,7 +292,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1236880995152">
                 <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1236881000978">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tps4.1202916958754" resolveInfo="MPSLayout" />
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
                 </node>
               </node>
             </node>
@@ -301,9 +301,9 @@
       </node>
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1240396533791">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1202916958754" resolveInfo="MPSLayout" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
       <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1240396556352">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1240396556348" resolveInfo="weave_MPSLayout" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1240396556348" resolveInfo="weave_MPSLayout_AddPropertyFile" />
       </node>
       <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="1240396533793">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240396533794">
@@ -1031,7 +1031,7 @@
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1234780578731">
                               <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1234780578732">
                                 <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1234780578733">
-                                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tps4.1202916958754" resolveInfo="MPSLayout" />
+                                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
                                 </node>
                               </node>
                             </node>
@@ -2227,7 +2227,7 @@
                     <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="8716889635481488848" resolveInfo="mps_home" />
                   </node>
                   <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8716889635481488865">
-                    <property name="value" nameId="tpsk.1196861024475" value="/lib/jdom/jdom.jar" />
+                    <property name="value" nameId="tpsk.1196861024475" value="/lib/jdom.jar" />
                   </node>
                 </node>
               </node>
@@ -2243,7 +2243,7 @@
                     <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="8716889635481488848" resolveInfo="mps_home" />
                   </node>
                   <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="8716889635481488871">
-                    <property name="value" nameId="tpsk.1196861024475" value="/lib/log4j/log4j.jar" />
+                    <property name="value" nameId="tpsk.1196861024475" value="/lib/log4j.jar" />
                   </node>
                 </node>
               </node>
@@ -2499,7 +2499,7 @@
       </node>
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="8716889635481488974">
-      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tps4.1202916958754" resolveInfo="MPSLayout" />
+      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
     </node>
   </root>
   <root id="2235195415637079240">

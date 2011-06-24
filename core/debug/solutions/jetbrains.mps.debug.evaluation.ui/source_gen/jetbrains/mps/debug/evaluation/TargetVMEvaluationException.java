@@ -11,6 +11,11 @@ import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
 
+
+/**
+ * Wraps com.sun.jdi.InvocationException.
+ * Thrown to indicate an exception occurred in an invoked method within the target VM.
+ */
 public class TargetVMEvaluationException extends EvaluationException {
   private static final Logger LOG = Logger.getLogger(TargetVMEvaluationException.class);
 

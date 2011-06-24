@@ -23,7 +23,7 @@
 
 #************************************ Installation Properties *********************************************#
 Name "${APP_NAME}"
-OutFile "${PRODUCT_NAME}-${PRODUCT_VERSION}-windows.exe"
+OutFile "${PRODUCT_VERSION}-windows.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_NAME}-${PRODUCT_VERSION}"
 ShowInstDetails show
 ShowUnInstDetails show

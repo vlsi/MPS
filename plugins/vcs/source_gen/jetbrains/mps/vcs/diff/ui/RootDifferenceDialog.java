@@ -46,6 +46,7 @@ public class RootDifferenceDialog extends BaseDialog {
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
   private JPanel myContainer = new JPanel(new BorderLayout());
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
+  private boolean myClosed;
 
   public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName) {
     super(modelDialog, "Difference for " + rootName);
@@ -192,7 +193,10 @@ public class RootDifferenceDialog extends BaseDialog {
 
   @Override
   public void dispose() {
-    myModelDialog.rootDialogClosed();
+    if (!(myClosed)) {
+      myModelDialog.rootDialogClosed();
+    }
+    myClosed = true;
     super.dispose();
   }
 

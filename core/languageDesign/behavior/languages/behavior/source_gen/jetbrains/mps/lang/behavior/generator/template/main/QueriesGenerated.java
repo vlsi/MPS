@@ -429,6 +429,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7923290658387314391(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    if (!(ConceptMethodDeclaration_Behavior.call_isCorrectlyOverriden_1227262347923(_context.getNode()))) {
+      _context.showErrorMessage(_context.getNode(), "Behavior method is not correctly overriden");
+    }
+
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "returnType", true);
   }
 
@@ -437,6 +441,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1144956008583623905(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    if (!(ConceptMethodDeclaration_Behavior.call_isCorrectlyOverriden_1227262347923(_context.getNode()))) {
+      _context.showErrorMessage(_context.getNode(), "Behavior method is not correctly overriden");
+    }
+
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "returnType", true);
   }
 
@@ -445,6 +453,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1144956008583655031(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    if (!(ConceptMethodDeclaration_Behavior.call_isCorrectlyOverriden_1227262347923(_context.getNode()))) {
+      _context.showErrorMessage(_context.getNode(), "Behavior method is not correctly overriden");
+    }
+
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "returnType", true);
   }
 

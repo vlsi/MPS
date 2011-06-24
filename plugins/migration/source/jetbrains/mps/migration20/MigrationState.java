@@ -74,28 +74,7 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   //----------component stuff-------------
 
   public void projectOpened() {
-    if (myState == MState.INITIAL || myState == MState.DONE) return;
-    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        MigrationStage stage = myState.getStage();
-        String message = "Migration from 1.5 to 2.0 was started, but hasn't finished yet.\n" +
-          "Last migration executed: " + stage.title() + "\n" +
-          "Next migration: " + MState.values()[myState.ordinal() + 1].getStage().title() + "\n" +
-          "Continue migration?";
-        int res = Messages.showDialog(myProject,
-          message,
-          "Migration to 2.0",
-          new String[]{"Continue", "Not now", "Abort"}, 0, Messages.getQuestionIcon()
-        );
-        if (res > 0) {
-          if (res == 2) {
-            myState = MState.INITIAL;
-          }
-          return;
-        }
-        new MigrationHelper(myProject).migrate();
-      }
-    });
+
   }
 
   public void projectClosed() {

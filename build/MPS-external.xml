@@ -56,9 +56,9 @@
     <mkdir dir="${deploy.dir}/MPS/help-build.append.idea.version" />
     <mkdir dir="${deploy.dir}/MPS" />
     <mkdir dir="${deploy.dir}/help-build.pack.mps.src" />
-    <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp/tools" />
-    <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp/resources" />
-    <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
+    <mkdir dir="${deploy.dir}/${build.number}-buildTools.zip.tmp/tools" />
+    <mkdir dir="${deploy.dir}/${build.number}-buildTools.zip.tmp/resources" />
+    <mkdir dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
   </target>
   <target name="do.the.job" depends="folders.create">
     <fail unless="mps_home" message="Property mps_home unspecified." />
@@ -452,21 +452,21 @@
       <param name="basedir" value="${basedir}" />
     </antcall>
     <delete dir="${deploy.dir}/help-build.pack.mps.src" />
-    <copy todir="${deploy.dir}/MPS-buildTools.zip.tmp/tools">
+    <copy todir="${deploy.dir}/${build.number}-buildTools.zip.tmp/tools">
       <fileset dir="${mps_home}/build/tools" excludes="**/SignCode.exe, **/sign.code.jar, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS-buildTools.zip.tmp/resources">
+    <copy todir="${deploy.dir}/${build.number}-buildTools.zip.tmp/resources">
       <fileset dir="${mps_home}/build/resources" excludes="**/*.spc, **/*.pvk, **/*.pw, " />
     </copy>
-    <zip destfile="${deploy.dir}/MPS-buildTools.zip" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
+    <zip destfile="${deploy.dir}/${build.number}-buildTools.zip" duplicate="preserve" filesonly="true">
+      <zipfileset dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
     </zip>
-    <delete dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
+    <delete dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
   </target>
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
-    <delete dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
+    <delete dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />

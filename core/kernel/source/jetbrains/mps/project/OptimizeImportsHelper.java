@@ -203,7 +203,7 @@ public class OptimizeImportsHelper {
     Language language = GlobalScope.getInstance().getLanguage(languageRef);
     if (language == null) return languageRef;
 
-    for (Dependency dep : language.getDependOn()) {
+    for (Dependency dep : language.getDependencies()) {
       if (getUnusedDependency(result, dep) == null) return null;
     }
 

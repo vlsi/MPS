@@ -269,7 +269,7 @@
   </root>
   <root nodeId="315679020132025010">
     <nodeInfo nodeId="315679020132025026" fileName="FqName.java" startLine="8" startPosition="21" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAMESPACE" />
-    <nodeInfo nodeId="315679020132025120" fileName="FqName.java" startLine="9" startPosition="69" endLine="10" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_NS" />
+    <nodeInfo nodeId="315679020132025120" fileName="FqName.java" startLine="9" startPosition="69" endLine="10" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_NS" />
     <nodeInfo nodeId="315679020132025016" fileName="FqName.java" startLine="11" startPosition="0" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="namespace" />
     <nodeInfo nodeId="315679020132025020" fileName="FqName.java" startLine="12" startPosition="27" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="315679020132025137" fileName="FqName.java" startLine="15" startPosition="29" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

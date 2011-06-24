@@ -26,9 +26,8 @@ import jetbrains.mps.smodel.SNode;
  */
 public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
-  private String myReferenceRole;
-  private SNode myInputNode;
-  private SNode myInputTargetNode;
+  private final SNode myInputNode;
+  private final SNode myInputTargetNode;
 
 
   /**
@@ -39,7 +38,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
    */
   public ReferenceInfo_CopiedInputNode(String role, SNode outputSourceNode, SNode inputNode, SNode inputTargetNode) {
     super(outputSourceNode, role, inputNode);
-    myReferenceRole = role;
     myInputNode = inputNode;
     myInputTargetNode = inputTargetNode;
   }
@@ -51,21 +49,21 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     // output target node might has been copied (reduced) from the input target node
     // here accept only one-to-one copying
-    return generator.findCopiedOutputNodeForInputNode_unique(myInputTargetNode);
+    return myInputTargetNode == null ? null : generator.findCopiedOutputNodeForInputNode_unique(myInputTargetNode);
   }
 
   public SNode doResolve_Tricky(TemplateGenerator generator) {
     // if input was copied - return one of its copies
     // this can easy produce incorrect references
-    return generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
+    return myInputTargetNode == null ? null : generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
   }
 
   public String getResolveInfoForDynamicResolve() {
-    return myInputTargetNode.getResolveInfo();
+    return myInputTargetNode == null ? null : myInputTargetNode.getResolveInfo();
   }
 
   public String getResolveInfoForNothing() {
-    return myInputTargetNode.getResolveInfo();
+    return myInputTargetNode == null ? null : myInputTargetNode.getResolveInfo();
   }
 
   @Override

@@ -113,7 +113,9 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       if (isCheckTypesystem()) {
         ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
       }
-      ListSequence.fromList(specificCheckers).addElement(new LangSpecificChecker());
+      if (isCheckConstraints()) {
+        ListSequence.fromList(specificCheckers).addElement(new LangSpecificChecker());
+      }
     }
     return specificCheckers;
   }
@@ -126,12 +128,10 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     myState.myCheckUnresolvedReferences = checkUnresolvedReferences;
   }
 
-  @Deprecated
   public boolean isCheckConstraints() {
     return myState.myCheckConstraints;
   }
 
-  @Deprecated
   public void setCheckConstraints(boolean checkConstraints) {
     myState.myCheckConstraints = checkConstraints;
   }
@@ -176,7 +176,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
 
   public static class MyState {
     private boolean myCheckUnresolvedReferences = true;
-    @Deprecated
     private boolean myCheckConstraints = true;
     @Deprecated
     private boolean myCheckScopes = true;
@@ -194,12 +193,10 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       myCheckUnresolvedReferences = checkUnresolvedReferences;
     }
 
-    @Deprecated
     public boolean isCheckConstraints() {
       return myCheckConstraints;
     }
 
-    @Deprecated
     public void setCheckConstraints(boolean checkConstraints) {
       myCheckConstraints = checkConstraints;
     }

@@ -23,6 +23,7 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.smodel.IOperationContext;
@@ -34,7 +35,6 @@ import jetbrains.mps.util.Pair;
 import java.util.*;
 
 public class TypeCheckingContextNew extends TypeCheckingContext {
-  public static final String USE_OLD_TYPESYSTEM = "useOldTypeSystem";
 
   public final Object TYPECHECKING_LOCK = new Object();
   private State myState;
@@ -187,6 +187,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
     myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, false, false));
+  }
+
+  @Override
+  public void printToTrace(String message) {
+    myState.executeOperation(new TraceMessageOperation(message));
   }
 
   @Override

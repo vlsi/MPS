@@ -613,6 +613,14 @@
       <node role="delete" roleId="tps4.1210852534988" type="tps4.Delete" typeId="tps4.1204122781510" id="6128676491055265584" />
     </node>
     <node role="component" roleId="tps4.1203599325709" type="tps4.Zip" typeId="tps4.1204018553150" id="2235195415637077143">
+      <node role="title" roleId="tps4.1205340441197" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1004035210977047770">
+        <node role="right" roleId="tps4.1205342834160" type="tps4.SimpleString" typeId="tps4.1205339044029" id="1004035210977047773">
+          <property name="name" nameId="tps4.1223641503366" value="-buildTools.zip" />
+        </node>
+        <node role="left" roleId="tps4.1205342829799" type="tps4.VariableReference" typeId="tps4.1205339464939" id="1004035210977047769">
+          <link role="variable" roleId="tps4.1205339484191" targetNodeId="2235195415637077105" resolveInfo="build" />
+        </node>
+      </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637077144">
         <property name="excludes" nameId="tps4.1204107522064" value="**/SignCode.exe, **/sign.code.jar" />
         <node role="sourcePath" roleId="tps4.1220982054961" type="tps4.Path" typeId="tps4.1220973916698" id="2235195415637077145">
@@ -646,9 +654,6 @@
         </node>
       </node>
       <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="2235195415637077156" />
-      <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2235195415637077157">
-        <property name="name" nameId="tps4.1223641503366" value="MPS-buildTools.zip" />
-      </node>
     </node>
     <node role="configuration" roleId="tps4.1204115898932" type="tps4.Configuration" typeId="tps4.1204115658627" id="2235195415637073460">
       <property name="name" nameId="tpck.1169194664001" value="external" />
@@ -1018,7 +1023,7 @@
                   </node>
                 </node>
                 <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2235195415637076971">
-                  <property name="value" nameId="tpsk.1196861024475" value="/MPS-" />
+                  <property name="value" nameId="tpsk.1196861024475" value="/" />
                 </node>
               </node>
               <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="2235195415637076972">

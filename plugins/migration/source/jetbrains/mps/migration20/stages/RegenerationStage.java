@@ -34,10 +34,6 @@ public class RegenerationStage implements MigrationStage {
     return true;
   }
 
-  public boolean needsRestart() {
-    return true;
-  }
-
   public String messageBefore() {
     return "Migration is almost finished. Now all project modules will be regenerated for the generated code to work properly with the MPS 2.0";
   }

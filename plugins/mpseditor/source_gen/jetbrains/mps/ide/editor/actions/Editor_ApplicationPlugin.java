@@ -45,10 +45,12 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RootEnd_Action());
     addAction(new RootHome_Action());
     addAction(new SelectDown_Action());
+    addAction(new SelectLeft_Action());
     addAction(new SelectLocalEnd_Action());
     addAction(new SelectLocalHome_Action());
     addAction(new SelectNext_Action());
     addAction(new SelectPrevious_Action());
+    addAction(new SelectRight_Action());
     addAction(new SelectUp_Action());
     // groups 
     addGroup(new EditMenuActions_ActionGroup());

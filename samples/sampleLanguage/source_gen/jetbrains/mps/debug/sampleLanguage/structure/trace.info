@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="SampleLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.SampleLanguage_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="34" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.structure.StructureAspectDescriptor" />
   <root nodeId="1816315258006256015">
     <nodeInfo nodeId="1816315258006256015" fileName="WannabeClass.java" startLine="16" startPosition="84" endLine="17" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1816315258006256015" fileName="WannabeClass.java" startLine="17" startPosition="99" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="PrivateMembers_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateMembers_Language" />
-  <unitInfo fileName="PrivateStaticMethodCall.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall" />
-  <unitInfo fileName="PrivateStaticFieldReference.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference" />
   <unitInfo fileName="PrivateInstanceMethodCallOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateInstanceMethodCallOperation" />
   <unitInfo fileName="PrivateFieldReferenceOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="36" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="PrivateStaticFieldReference.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateStaticFieldReference" />
+  <unitInfo fileName="PrivateStaticMethodCall.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.PrivateStaticMethodCall" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debug.privateMembers.structure.StructureAspectDescriptor" />
 </debugInfo>
 

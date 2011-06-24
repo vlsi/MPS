@@ -116,6 +116,8 @@ public abstract class TypeCheckingContext {
     createEquation(node1, node2, false, equationInfo);
   }
 
+  public abstract void printToTrace(String message);
+
   public abstract void createEquation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);
 
   public abstract void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo);

@@ -21,7 +21,7 @@ public class Generator implements TemplateModule {
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     models = TemplateUtil.<TemplateModel>asCollection(new TemplateModelImpl(this));
-    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.closures", "jetbrains.mps.baseLanguage.collections", "jetbrains.mps.baseLanguageInternal", "jetbrains.mps.lang.generator.generationContext", "jetbrains.mps.lang.smodel");
+    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguageInternal");
   }
 
   public String getAlias() {

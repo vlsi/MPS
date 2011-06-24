@@ -88,7 +88,7 @@
     </generator>
   </generators>
   <runtimeStubModels>
-    <stubModelEntry path="${language_descriptor}/lib/gwt-user.jar" include="false">
+    <stubModelEntry path="${language_descriptor}/lib/gwt-user.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </runtimeStubModels>
@@ -103,7 +103,6 @@
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
   <runtime>
-    <dependency reexport="false">954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)</dependency>
     <dependency reexport="false">69934240-945d-492b-83e7-39bda70200e7(jetbrains.mps.ui.swt.runtime)</dependency>
   </runtime>
   <extendedLanguages>

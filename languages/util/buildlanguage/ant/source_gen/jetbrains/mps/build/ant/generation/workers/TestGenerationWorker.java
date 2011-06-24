@@ -56,6 +56,7 @@ import java.net.MalformedURLException;
 import java.net.URLClassLoader;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.ConditionalIterable;
 import java.lang.reflect.Modifier;
@@ -72,6 +73,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.project.ProjectOperationContext;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
+import jetbrains.mps.generator.GenerationCacheContainer;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.FileClassPathItem;
@@ -392,8 +396,14 @@ public class TestGenerationWorker extends MpsWorker {
   private List<String> getTestClassesNames(DiffGenerationHandler generationHandler, List<SModel> outputModels, ClassLoader baseClassLoader) {
     List<String> testClasses = new ArrayList<String>();
     Condition<SNode> nodeCond = new Condition<SNode>() {
-      public boolean met(SNode node) {
-        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      public boolean met(final SNode node) {
+        final Wrappers._boolean result = new Wrappers._boolean();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            result.value = SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+          }
+        });
+        return result.value;
       }
     };
     for (final SModel model : outputModels) {
@@ -641,7 +651,23 @@ public class TestGenerationWorker extends MpsWorker {
     }
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      gm.generateModels(Collections.<SModelDescriptor>singletonList(mySModel), ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, GenerationOptions.getDefaults().saveTransientModels(isInvokeTestsSet()).rebuildAll(true).create());
+      gm.generateModels(Collections.<SModelDescriptor>singletonList(mySModel), ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
+        public Map<String, String> getModelHashes(SModelDescriptor descriptor, IOperationContext context) {
+          return Collections.EMPTY_MAP;
+        }
+
+        public GenerationCacheContainer getContainer() {
+          return null;
+        }
+
+        public GenerationDependencies getDependencies(SModelDescriptor p0) {
+          return null;
+        }
+
+        public boolean isIncrementalEnabled() {
+          return false;
+        }
+      }).saveTransientModels(isInvokeTestsSet()).rebuildAll(true).create());
     }
 
     private List<File> classPathItemToFiles(IClassPathItem cp) {

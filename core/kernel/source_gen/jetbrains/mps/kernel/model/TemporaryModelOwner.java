@@ -65,7 +65,7 @@ public class TemporaryModelOwner extends AbstractModule {
     return result;
   }
 
-  public List<Dependency> getDependOn() {
+  public List<Dependency> getDependencies() {
     List<Dependency> result = new ArrayList<Dependency>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {
       for (SModel.ImportElement ie : md.getSModel().importedModels()) {

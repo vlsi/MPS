@@ -92,51 +92,65 @@ public class ConceptRegistry implements ApplicationComponent {
   public ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
     ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
 
-    if (descriptor != null || !startLoad(fqName, LanguageAspect.STRUCTURE)) {
-      return descriptor != null ? descriptor : new IllegalConceptDescriptor(fqName);
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (!startLoad(fqName, LanguageAspect.STRUCTURE)) {
+      return new IllegalConceptDescriptor(fqName);
     }
 
     try {
-      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-      descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
-    } catch (Exception ignored) {
+      try {
+        LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+        descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
+      } catch (Throwable e) {
+        LOG.warning("Exception while structure descriptor creating", e);
+      }
+
+      if (descriptor == null) {
+        // todo: maybe Interpreted?
+        descriptor = new IllegalConceptDescriptor(fqName);
+      }
+
+      conceptDescriptors.put(fqName, descriptor);
+
+      return descriptor;
+    } finally {
+      finishLoad(fqName, LanguageAspect.STRUCTURE);
     }
-
-    if (descriptor == null) {
-      // todo: maybe Interpreted?
-      descriptor = new IllegalConceptDescriptor(fqName);
-    }
-
-    conceptDescriptors.put(fqName, descriptor);
-
-    finishLoad(fqName, LanguageAspect.STRUCTURE);
-
-    return descriptor;
   }
 
   @NotNull
   public BehaviorDescriptor getBehaviorDescriptor(@Nullable String fqName) {
     BehaviorDescriptor descriptor = behaviorDescriptors.get(fqName);
 
-    if (descriptor != null || !startLoad(fqName, LanguageAspect.BEHAVIOR)) {
-      return descriptor != null ? descriptor : new IllegalBehaviorDescriptor(fqName);
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (!startLoad(fqName, LanguageAspect.BEHAVIOR)) {
+      return new IllegalBehaviorDescriptor(fqName);
     }
 
     try {
-      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-      descriptor = languageRuntime.getBehaviorAspectDescriptor().getDescriptor(fqName);
-    } catch (Exception ignored) {
+      try {
+        LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+        descriptor = languageRuntime.getBehaviorAspectDescriptor().getDescriptor(fqName);
+      } catch (Throwable e) {
+        LOG.warning("Exception while behavior descriptor creating", e);
+      }
+
+      if (descriptor == null) {
+        descriptor = new IllegalBehaviorDescriptor(fqName);
+      }
+
+      behaviorDescriptors.put(fqName, descriptor);
+
+      return descriptor;
+    } finally {
+      finishLoad(fqName, LanguageAspect.BEHAVIOR);
     }
-
-    if (descriptor == null) {
-      descriptor = new IllegalBehaviorDescriptor(fqName);
-    }
-
-    behaviorDescriptors.put(fqName, descriptor);
-
-    finishLoad(fqName, LanguageAspect.BEHAVIOR);
-
-    return descriptor;
   }
 
   public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
@@ -152,25 +166,32 @@ public class ConceptRegistry implements ApplicationComponent {
   public ConstraintsDescriptor getConstraintsDescriptor(@Nullable String fqName) {
     ConstraintsDescriptor descriptor = constraintsDescriptors.get(fqName);
 
-    if (descriptor != null || !startLoad(fqName, LanguageAspect.CONSTRAINTS)) {
-      return descriptor != null ? descriptor : new IllegalConstraintsDescriptor(fqName);
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (!startLoad(fqName, LanguageAspect.CONSTRAINTS)) {
+      return new IllegalConstraintsDescriptor(fqName);
     }
 
     try {
-      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-      descriptor = languageRuntime.getConstraintsAspectDescriptor().getDescriptor(fqName);
-    } catch (Exception ignored) {
+      try {
+        LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+        descriptor = languageRuntime.getConstraintsAspectDescriptor().getDescriptor(fqName);
+      } catch (Throwable e) {
+        LOG.warning("Exception while constraints descriptor creating", e);
+      }
+
+      if (descriptor == null) {
+        descriptor = new IllegalConstraintsDescriptor(fqName);
+      }
+
+      constraintsDescriptors.put(fqName, descriptor);
+
+      return descriptor;
+    } finally {
+      finishLoad(fqName, LanguageAspect.CONSTRAINTS);
     }
-
-    if (descriptor == null) {
-      descriptor = new IllegalConstraintsDescriptor(fqName);
-    }
-
-    constraintsDescriptors.put(fqName, descriptor);
-
-    finishLoad(fqName, LanguageAspect.CONSTRAINTS);
-
-    return descriptor;
   }
 
   public void languagesLoaded(Iterable<LanguageRuntime> languages) {

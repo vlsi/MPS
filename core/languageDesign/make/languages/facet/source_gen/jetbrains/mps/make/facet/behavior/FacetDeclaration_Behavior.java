@@ -70,7 +70,7 @@ public class FacetDeclaration_Behavior {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SConceptPropertyOperations.getString(thisNode, "alias");
   }
 
-  public static String call_getFqName_1919086248986828221(SNode thisNode) {
+  public static String call_getFacetFqName_1919086248986828221(SNode thisNode) {
     SNode mod = SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode));
     return (SNodeOperations.isInstanceOf(mod, "jetbrains.mps.lang.project.structure.Language") ?
       SPropertyOperations.getString(SNodeOperations.cast(mod, "jetbrains.mps.lang.project.structure.Language"), "namespace") + "." + SPropertyOperations.getString(thisNode, "name") :

@@ -42,13 +42,13 @@ public class CustomContainersRegistry {
     List<SNode> res = new ArrayList<SNode>();
     IModule om = this.getOwningModule(fromModel);
     if (om != null) {
-      final Set<IModule> allDependOnModules = om.getDependenciesManager().getAllVisibleModules();
+      final Set<IModule> allVisibleModules = om.getDependenciesManager().getAllVisibleModules();
       final Set<Language> allUsedLanguages = om.getDependenciesManager().getAllUsedLanguages();
       Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode cc) {
           IModule owner = CustomContainersRegistry.this.getOwningModule(SNodeOperations.getModel(cc));
-          return SetSequence.fromSet(allDependOnModules).contains(owner) || SetSequence.fromSet(allUsedLanguages).contains(owner);
+          return SetSequence.fromSet(allVisibleModules).contains(owner) || SetSequence.fromSet(allUsedLanguages).contains(owner);
         }
       }).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode cc) {

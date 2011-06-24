@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * evgeny, 4/28/11
@@ -32,69 +32,26 @@ public class ModelContentUtil {
 
   private static final Logger LOG = Logger.getLogger(ModelContentUtil.class);
 
-  @Deprecated
-  public static List<Language> getUsedLanguages(SModel model, boolean isTemplateModel, IScope scope) {
-    Set<String> namespaces = new HashSet<String>();
-    for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.engagedOnGenerationLanguages()) {
-      namespaces.add(ref.getModuleFqName());
-    }
-    for (SNode root : model.roots()) {
-      collectLanguageNamespaces(root, namespaces, isTemplateModel);
-    }
-    List<Language> result = new ArrayList<Language>();
-    for (String namespace : namespaces) {
-      Language language = scope.getLanguage(new ModuleReference(namespace));
-      if (language != null) {
-        result.add(language);
-      } else {
-        LOG.error("couldn't find language for namespace '" + namespace + "' in scope: " + scope);
-      }
-    }
-    return result;
+  public static Collection<String> getUsedLanguageNamespacesInTemplateModel(SModel model) {
+    TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
+    templateModelScanner.scan();
+    return templateModelScanner.getTargetLanguages();
   }
 
   public static Collection<String> getUsedLanguageNamespaces(SModel model, boolean isTemplateModel) {
+    if (isTemplateModel) {
+      return getUsedLanguageNamespacesInTemplateModel(model);
+    }
     Set<String> namespaces = new HashSet<String>();
-    for (jetbrains.mps.project.structure.modules.ModuleReference ref : model.engagedOnGenerationLanguages()) {
+    for (ModuleReference ref : model.engagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleFqName());
     }
     for (SNode root : model.roots()) {
-      collectLanguageNamespaces(root, namespaces, isTemplateModel);
+      for (SNode child : root.getDescendantsIterable(null, true)) {
+        String namespace1 = child.getLanguageNamespace();
+        namespaces.add(namespace1);
+      }
     }
     return namespaces;
   }
-
-  private static void collectLanguageNamespaces(SNode node, Set<String> namespaces, boolean isTemplateModel) {
-    String namespace1 = node.getLanguageNamespace();
-    if (!namespace1.equals("jetbrains.mps.lang.generator")) {
-      namespaces.add(namespace1);
-      for (SNode child : node.getChildrenIterable()) {
-        collectLanguageNamespaces(child, namespaces, isTemplateModel);
-      }
-    } else {
-      if (isTemplateModel) {
-        // only look into 'content' in template declartions
-        if (node.isInstanceOfConcept(RuleUtil.concept_TemplateDeclaration)) {
-          SNode content = RuleUtil.getTemplateDeclaration_ContentNode(node);
-          if (content != null) {
-            collectLanguageNamespaces(content, namespaces, isTemplateModel);
-          }
-        }
-      } else {
-        namespaces.add(namespace1);
-        // todo: committed because this way we don't look into code inside macros (while we need to generate this code!)
-//        // look into any node except 'content' in template declartions
-//        if (!(node.getAdapter() instanceof TemplateDeclaration)) {
-//          for (SNode child : node.getChildren()) {
-//            collectLanguageNamespaces(child, namespaces, excludeTLBase);
-//          }
-//        }
-        // todo: tmp scan all children
-        for (SNode child : node.getChildren()) {
-          collectLanguageNamespaces(child, namespaces, isTemplateModel);
-        }
-      }
-    }
-  }
-
 }

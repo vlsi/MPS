@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -243,36 +244,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public void runWriteInEDT(Runnable r) {
     myEDTExecutor.scheduleWrite(r);
-  }
-
-  @Override
-  public void runWriteInEDTAndWait(final Runnable r) {
-    if (isInEDT()) {
-      runWriteAction(r);
-      return;
-    }
-
-    final CountDownLatch latch = new CountDownLatch(1);
-    final boolean ownRead = ownReadLock();
-    try {
-      if (ownRead) getReadLock().unlock();
-      myEDTExecutor.scheduleWrite(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            r.run();
-          }
-          finally {
-            latch.countDown();
-          }
-        }
-      });
-      latch.await();
-    }
-    catch (InterruptedException ignore) {}
-    finally {
-      if (ownRead) getReadLock().lock();
-    }
   }
 
   @Override
@@ -797,8 +768,12 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   void waitLock(boolean write) {
     if(write) {
-      getWriteLock().lock();
-      getWriteLock().unlock();
+      try {
+        while (!getWriteLock().tryLock(100, TimeUnit.MILLISECONDS)) {
+        }
+        getWriteLock().unlock();
+      } catch (InterruptedException e) {
+      }
     } else {
       getReadLock().lock();
       getReadLock().unlock();

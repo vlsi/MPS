@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Packaging_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Packaging_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="138" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor" />
   <root nodeId="1202916958754">
     <nodeInfo nodeId="1202916958754" fileName="Layout.java" startLine="16" startPosition="127" endLine="17" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1202916958754" fileName="Layout.java" startLine="17" startPosition="88" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SCRIPTS_FOLDER" />

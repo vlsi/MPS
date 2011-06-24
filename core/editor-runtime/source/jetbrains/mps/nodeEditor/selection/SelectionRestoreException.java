@@ -26,8 +26,8 @@ package jetbrains.mps.nodeEditor.selection;
  * Time: 4:54 PM
  * To change this template use File | Settings | File Templates.
  */
-class SelectionRestoreException extends Exception {
-  SelectionRestoreException() {
+public class SelectionRestoreException extends Exception {
+  public SelectionRestoreException() {
     super("Canot restore selection");
   }
 }

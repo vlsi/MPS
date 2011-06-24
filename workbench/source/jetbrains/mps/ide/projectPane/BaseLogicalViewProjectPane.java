@@ -12,9 +12,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
-import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
@@ -28,6 +25,10 @@ import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.make.IMakeNotificationListener.Stub;
+import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Library;
@@ -62,29 +63,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onAfterReload() {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          rebuild();
-        }
-      });
+      rebuild();
     }
   };
 
-  private GenerationListener myGenerationListener = new GenerationListener() {
-    public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
-
-    }
-
-    public void modelsGenerated(List<SModelDescriptor> models, boolean success) {
-    }
-
-    public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
+  private IMakeNotificationListener myMakeNotificationListener = new Stub() {
+    public void finished(MakeNotification notification) {
       // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          rebuild();
-        }
-      });
+      rebuild();
     }
   };
 
@@ -146,7 +132,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public void dispose() {
-    removeListeners();
+    if (isComponentCreated()) {
+      removeListeners();
+    }
     myDisposed = true;
     super.dispose();
   }
@@ -198,7 +186,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
     ModelAccess.instance().removeCommandListener(myModelAccessListener);
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
-    getProject().getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
+    IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
   }
 
@@ -207,7 +195,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
     ModelAccess.instance().addCommandListener(myModelAccessListener);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
-    getProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+    IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
@@ -417,6 +405,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ActionUtils.createEvent(ActionPlaces.PROJECT_VIEW_POPUP, context);
   }
 
+  protected abstract boolean isComponentCreated();
+
   private class MyCopyProvider implements CopyProvider {
     private CopyNode_Action myAction = new CopyNode_Action();
 
@@ -545,11 +535,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         if (getProjectView() instanceof ProjectViewImpl) {
           ((ProjectViewImpl) getProjectView()).setShowMembers(state, getId());
         }
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            rebuild();
-          }
-        });
+        rebuild();
       }
     }
   }

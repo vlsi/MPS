@@ -35,6 +35,9 @@ public class TransientModelNodeFinder implements FastNodeFinder {
 
   @Override
   public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
+    // notify 'model nodes read access'
+    myModel.rootsIterator();
+
     synchronized (myLock) {
       if (!myInitialized) {
         initCache();

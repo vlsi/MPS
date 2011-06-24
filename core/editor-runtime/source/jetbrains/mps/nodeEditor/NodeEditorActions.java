@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 
 public class NodeEditorActions {
@@ -32,17 +34,44 @@ public class NodeEditorActions {
     }
   }
 
-  public static class MoveLeft extends NavigationAction {
+  public static class MoveLocal extends NavigationAction {
     private boolean myHome;
 
-    public MoveLeft() {
-      this(false);
-    }
-
-    public MoveLeft(boolean home) {
+    public MoveLocal(boolean home) {
       myHome = home;
     }
 
+    public boolean canExecute(EditorContext context) {
+      return findTarget(context.getNodeEditorComponent().getSelectionManager()) != null;
+    }
+
+    public void execute(EditorContext context) {
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      EditorCell cell = findTarget(selectionManager);
+      selectionManager.setSelection(cell);
+      if (cell.isPunctuationLayout() && (cell instanceof EditorCell_Label) && ((EditorCell_Label) cell).isCaretPositionAllowed(1)) {
+        ((EditorCell_Label) cell).setCaretPosition(1);
+      } else {
+        cell.home();
+      }
+    }
+
+    private EditorCell findTarget(SelectionManager selectionManager) {
+      Selection selection = selectionManager.getSelection();
+      if (selection == null) {
+        return null;
+      }
+      List<EditorCell> selectedCells = selection.getSelectedCells();
+      EditorCell cell = myHome ? selectedCells.get(0) : selectedCells.get(selectedCells.size() - 1);
+      EditorCell leaf = myHome ? cell.getLeafToLeft(CellConditions.SELECTABLE) : cell.getLeafToRight(CellConditions.SELECTABLE);
+      if (leaf != null) {
+        return leaf;
+      }
+      return myHome ? cell.getPrevLeaf(CellConditions.SELECTABLE) : cell.getNextLeaf(CellConditions.SELECTABLE);
+    }
+  }
+
+  public static class MoveLeft extends NavigationAction {
     public boolean canExecute(EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
       return selection != null && findTarget(selection) != null;
@@ -54,11 +83,7 @@ public class NodeEditorActions {
       context.getNodeEditorComponent().changeSelection(target);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
-        if (myHome) {
-          label.home();
-        } else {
-          label.end();
-        }
+        label.end();
       }
     }
 
@@ -81,68 +106,61 @@ public class NodeEditorActions {
     }
   }
 
+  public static class MoveToRoot extends NavigationAction {
+    private boolean myHome;
 
-  public static class MoveToRootHome extends NavigationAction {
+    public MoveToRoot(boolean home) {
+      myHome = home;
+    }
 
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && findTarget(selection) != null;
+      return findTarget(context.getNodeEditorComponent().getSelectionManager()) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(findTarget(selection));
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      selectionManager.setSelection(findTarget(selectionManager));
     }
 
-    private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ? (EditorCell_Collection) cell : cell.getParent();
-      while (rootCell != null && rootCell.getParent() != null) {
-        rootCell = rootCell.getParent();
+    private EditorCell findTarget(SelectionManager selectionManager) {
+      Selection selection = selectionManager.getSelection();
+      if (selection == null) {
+        return null;
       }
-      return rootCell == null ? null : rootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
-    }
-  }
-
-  public static class MoveToRootEnd extends NavigationAction {
-
-    public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && findTarget(selection) != null;
-    }
-
-    public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      context.getNodeEditorComponent().changeSelection(findTarget(selection));
-    }
-
-    private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ? (EditorCell_Collection) cell : cell.getParent();
-      while (rootCell != null && rootCell.getParent() != null) {
-        rootCell = rootCell.getParent();
+      EditorCell cell = selection.getSelectedCells().get(0);
+      while (cell.getParent() != null) {
+        cell = cell.getParent();
       }
-      return rootCell == null ? null : rootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF);
+      if (cell instanceof  EditorCell_Collection) {
+        return cell.findChild(myHome ? CellFinders.FIRST_SELECTABLE_LEAF : CellFinders.LAST_SELECTABLE_LEAF);
+      }
+      return cell;
     }
-
   }
 
   public static class MoveHome extends NavigationAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && findTarget(selection) != null;
+      return findTarget(context.getNodeEditorComponent()) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      EditorCell target = findTarget(selection);
+      EditorComponent editorComponent = context.getNodeEditorComponent();
+      EditorCell target = findTarget(editorComponent);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         label.home();
-        context.getNodeEditorComponent().resetLastCaretX();
+        editorComponent.resetLastCaretX();
       }
-      context.getNodeEditorComponent().changeSelection(target);
+      editorComponent.changeSelection(target);
     }
 
-    private EditorCell findTarget(EditorCell cell) {
+    private EditorCell findTarget(EditorComponent editorComponent) {
+      Selection selection = editorComponent.getSelectionManager().getSelection();
+      if (selection == null) {
+        return null;
+      }
+      List<EditorCell> selectedCells = selection.getSelectedCells();
+      EditorCell cell = selectedCells.get(0);
       return cell.getHomeCell(CellConditions.SELECTABLE);
     }
 
@@ -151,22 +169,27 @@ public class NodeEditorActions {
   public static class MoveEnd extends NavigationAction {
 
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      return selection != null && findTarget(selection) != null;
+      return findTarget(context.getNodeEditorComponent()) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-      EditorCell target = findTarget(selection);
+      EditorComponent editorComponent = context.getNodeEditorComponent();
+      EditorCell target = findTarget(editorComponent);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         label.end();
-        context.getNodeEditorComponent().resetLastCaretX();
+        editorComponent.resetLastCaretX();
       }
-      context.getNodeEditorComponent().changeSelection(target);
+      editorComponent.changeSelection(target);
     }
 
-    private EditorCell findTarget(EditorCell cell) {
+    private EditorCell findTarget(EditorComponent editorComponent) {
+      Selection selection = editorComponent.getSelectionManager().getSelection();
+      if (selection == null) {
+        return null;
+      }
+      List<EditorCell> selectedCells = selection.getSelectedCells();
+      EditorCell cell = selectedCells.get(selectedCells.size() - 1);
       return cell.getEndCell(CellConditions.SELECTABLE);
     }
   }
@@ -339,29 +362,33 @@ public class NodeEditorActions {
 
   public static class SelectUp extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
-      EditorCell anchorCell = getAnchorCell(selectionManager.getSelection());
-
-      if (anchorCell instanceof EditorCell_Label && !((EditorCell_Label) anchorCell).isEverythingSelected()) {
-        return true;
-      }
-      return anchorCell != null && anchorCell.getParent() != null && findTarget(anchorCell) != null;
+      return findTarget(context.getNodeEditorComponent().getSelectionManager()) != null;
     }
 
     public void execute(EditorContext context) {
       SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
-      EditorCell anchorCell = getAnchorCell(selectionManager.getSelection());
-
-      if (anchorCell instanceof EditorCell_Label && !((EditorCell_Label) anchorCell).isEverythingSelected()) {
-        EditorCell_Label label = (EditorCell_Label) anchorCell;
-        selectionManager.pushSelection(selectionManager.createSelection(label));
-        label.selectAll();
-      } else {
-        selectionManager.pushSelection(selectionManager.createSelection(findTarget(anchorCell)));
+      EditorCell cell = findTarget(selectionManager);
+      selectionManager.pushSelection(selectionManager.createSelection(cell));
+      if (cell instanceof EditorCell_Label) {
+        ((EditorCell_Label) cell).selectAll();
       }
     }
 
-    private EditorCell findTarget(EditorCell cell) {
+    private EditorCell findTarget(SelectionManager selectionManager) {
+      Selection selection = selectionManager.getSelection();
+      if (selection == null) {
+        return null;
+      }
+
+      EditorCell cell = selection.getSelectedCells().get(0);
+      if (cell instanceof EditorCell_Label && !((EditorCell_Label) cell).isEverythingSelected()) {
+        return cell;
+      }
+
+      if (cell.getParent() == null) {
+        return null;
+      }
+
       while (cell.getParent() != null && cell.getParent().isTransparentCollection()) {
         cell = cell.getParent();
       }
@@ -374,16 +401,6 @@ public class NodeEditorActions {
           return parent;
         }
         parent = parent.getParent();
-      }
-      return null;
-    }
-
-    private EditorCell getAnchorCell(Selection selection) {
-      if (selection instanceof SingularSelection) {
-        return ((SingularSelection) selection).getEditorCell();
-      } else if (selection instanceof MultipleSelection) {
-        // TODO: process MultipleSelection here
-        return null;
       }
       return null;
     }

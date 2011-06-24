@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.migration20;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.migration20.stages.MigrationStage;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -45,7 +43,7 @@ public class MigrationHelper {
           continue;
         }
 
-        if (showMessageBefore(stage)) return;
+        if (!showMessageBefore(stage)) return;
 
         final Runnable stageRunnable = new StageExecutor(stage, mpsProject);
         if (stage.needsCommand()) {
@@ -53,53 +51,28 @@ public class MigrationHelper {
         } else {
           stageRunnable.run();
         }
+
+        if (!showMessageAfter(stage)) return;
+
         msComponent.setMigrationState(next);
-
-        if (showMessageAfter(stage)) return;
-
-        checkRestart(stage);
       }
     }
   }
 
   private boolean showMessageAfter(MigrationStage stage) {
     String ma = stage.messageAfter();
-    if (ma != null) {
-      int res = Messages.showDialog(ma, stage.title() + " finished", new String[]{"Next", "Stop"}, 0, Messages.getInformationIcon());
-      if (res != 0) {
-        Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0", "Migration stopped", Messages.getInformationIcon());
-        checkRestart(stage);
-        return true;
-      }
-    }
-    return false;
+    if (ma == null) return true;
+
+    int res = Messages.showDialog(ma, stage.title() + " finished", new String[]{"Force next step", "Stop"}, 0, Messages.getInformationIcon());
+    return res == 0;
   }
 
   private boolean showMessageBefore(MigrationStage stage) {
     String mb = stage.messageBefore();
-    if (mb != null) {
-      int res = Messages.showDialog(mb, stage.title(), new String[]{"Proceed", "Stop"}, 0, Messages.getInformationIcon());
-      if (res != 0) {
-        Messages.showMessageDialog("You can continue migration later by executing MainMenu->Tools->Continue Migration to MPS 2.0", "Migration stopped", Messages.getInformationIcon());
-        return true;
-      }
-    }
-    return false;
-  }
+    if (mb == null) return true;
 
-  private void checkRestart(MigrationStage stage) {
-    if (stage.needsRestart()) {
-      FSRecords.invalidateCaches();
-
-      int res = Messages.showDialog(
-        "Refactoring " + stage.title() + " requested IDE restart.\n" +
-          "Restart now?",
-        "Restart request", new String[]{"Restart", "Later"}, 0, Messages.getQuestionIcon());
-
-      if (res == 0) {
-        ApplicationManager.getApplication().restart();
-      }
-    }
+    int res = Messages.showDialog(mb, stage.title(), new String[]{"Proceed", "Stop"}, 0, Messages.getInformationIcon());
+    return res == 0;
   }
 
   private static class StageExecutor implements Runnable {

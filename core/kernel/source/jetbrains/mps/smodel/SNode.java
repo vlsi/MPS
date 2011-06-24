@@ -658,6 +658,7 @@ public final class SNode {
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
+  @NotNull
   public List<SNode> getChildren(String role) {
     ModelAccess.assertLegalRead(this);
     if (ourMemberAccessModifier != null) {

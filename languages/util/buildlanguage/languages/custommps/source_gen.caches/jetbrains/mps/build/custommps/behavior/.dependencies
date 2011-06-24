@@ -49,7 +49,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.project.StubPath" />
-    <classNode dependClassName="jetbrains.mps.project.dependency.LanguageDepsManager" />
+    <classNode dependClassName="jetbrains.mps.project.dependency.LanguageDependenciesManager" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />

@@ -29,7 +29,7 @@ public class WhatToDo {
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
-  private boolean myFailOnError = false;
+  private boolean myFailOnError = true;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Set<String> myCompiledLibraries = new LinkedHashSet<String>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();

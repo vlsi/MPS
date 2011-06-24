@@ -121,7 +121,7 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
             final Wrappers._T<SModelDescriptor> modelDescriptor = new Wrappers._T<SModelDescriptor>(null);
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                if (!(root.isDisposed() && SNodeOperations.getModel(root).isDisposed())) {
+                if (!(root.isDisposed() || SNodeOperations.getModel(root).isDisposed())) {
                   modelDescriptor.value = SNodeOperations.getModel(root).getModelDescriptor();
                 }
               }

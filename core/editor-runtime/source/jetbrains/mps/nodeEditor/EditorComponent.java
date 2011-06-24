@@ -58,10 +58,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.folding.*;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SelectionListener;
-import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -342,11 +339,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.DOWN, new NodeEditorActions.MoveDown());
     myActionMap.put(CellActionType.NEXT, new NodeEditorActions.MoveNext());
     myActionMap.put(CellActionType.PREV, new NodeEditorActions.MovePrev());
-    myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLeft(true));
-    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveRight());
+    myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLocal(true));
+    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveLocal(false));
 
-    myActionMap.put(CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRootHome());
-    myActionMap.put(CellActionType.ROOT_END, new NodeEditorActions.MoveToRootEnd());
+    myActionMap.put(CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRoot(true));
+    myActionMap.put(CellActionType.ROOT_END, new NodeEditorActions.MoveToRoot(false));
     myActionMap.put(CellActionType.HOME, new NodeEditorActions.MoveHome());
     myActionMap.put(CellActionType.END, new NodeEditorActions.MoveEnd());
     myActionMap.put(CellActionType.PAGE_DOWN, new NodeEditorActions.MovePageUp());
@@ -624,17 +621,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void moveCurrentUp() {
-    if (getSelectionManager().getSelection() == null) {
-      return;
+    Selection selection = getSelectionManager().getSelection();
+    if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
+      new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
     }
-    new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), false).move();
   }
 
   public void moveCurrentDown() {
-    if (getSelectionManager().getSelection() == null) {
-      return;
+    Selection selection = getSelectionManager().getSelection();
+    if (selection instanceof SingularSelection || selection instanceof NodeRangeSelection) {
+      new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
     }
-    new IntelligentNodeMover(getEditorContext(), getSelectedNodes(), true).move();
   }
 
   private void goToNextErrorCell(boolean backwards) {
@@ -1201,6 +1198,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean isInvalid() {
     return getEditorContext() == null ||
       getEditedNode() == null ||
+      getEditedNode().isDisposed() ||
       getEditedNode().getModel() == null ||
       getEditedNode().getModel().isDisposed() ||
       getEditedNode().getModel().getModelDescriptor() == null;
@@ -1310,12 +1308,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
-    if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && shiftDown(keyEvent)) {
-      return CellActionType.SELECT_LEFT;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && shiftDown(keyEvent)) {
-      return CellActionType.SELECT_RIGHT;
-    }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
       return CellActionType.SELECT_HOME;
     }
@@ -2721,7 +2713,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (getSelectedNode() == null) {
       EditorCell lastSelectedNodeCell = findNodeCell(lastSelectedNode);
       if (lastSelectedNodeCell != null) {
-        changeSelection(lastSelectedNodeCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF));
+        EditorCell child = lastSelectedNodeCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+        if (child != null) {
+          changeSelection(child);
+        }
       }
     }
   }

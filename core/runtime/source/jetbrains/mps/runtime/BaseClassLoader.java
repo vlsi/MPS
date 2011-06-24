@@ -18,7 +18,6 @@ package jetbrains.mps.runtime;
 import gnu.trove.THashMap;
 import jetbrains.mps.util.InternUtil;
 
-import java.util.HashMap;
 import java.util.Map;
 
 abstract class BaseClassLoader extends ClassLoader {
@@ -66,7 +65,7 @@ abstract class BaseClassLoader extends ClassLoader {
           }
         } else {
           definePackageIfNecessary(name);
-          c = defineClass(name, bytes, 0, bytes.length);
+          c = defineClass(name, bytes, 0, bytes.length, null);
         }
       }
       myCache.put(name, c);

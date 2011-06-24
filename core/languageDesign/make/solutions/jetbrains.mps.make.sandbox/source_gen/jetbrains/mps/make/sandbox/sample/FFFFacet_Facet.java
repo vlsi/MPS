@@ -20,9 +20,9 @@ public class FFFFacet_Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("FFFFacet");
 
   public FFFFacet_Facet() {
-    ListSequence.fromList(targets).addElement(new FFFFacet_Facet.Target_chixuw_a());
-    ListSequence.fromList(targets).addElement(new FFFFacet_Facet.Target_chixuw_b());
-    ListSequence.fromList(targets).addElement(new FFFFacet_Facet.Target_chixuw_c());
+    ListSequence.fromList(targets).addElement(new FFFFacet_Facet.Target_QQQ());
+    ListSequence.fromList(targets).addElement(new FFFFacet_Facet.Target_qweqwe());
+    ListSequence.fromList(targets).addElement(new FFFFacet_Facet.Target_Nanana());
   }
 
   public Iterable<ITarget> targets() {
@@ -45,13 +45,13 @@ public class FFFFacet_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_chixuw_a implements ITarget {
+  public static class Target_QQQ implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("QQQ");
 
-    public Target_chixuw_a() {
+    public Target_QQQ() {
     }
 
     public IJob createJob() {
@@ -60,7 +60,7 @@ public class FFFFacet_Facet implements IFacet {
           Iterable<IResource> _output_chixuw_a0a = null;
           switch (0) {
             case 0:
-              pool.parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_i03q2a_a.Variables.class).bar(0);
+              pool.parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
               return new IResult.SUCCESS(_output_chixuw_a0a);
@@ -119,13 +119,13 @@ public class FFFFacet_Facet implements IFacet {
     }
   }
 
-  public static class Target_chixuw_b implements ITarget {
+  public static class Target_qweqwe implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("qweqwe");
 
-    public Target_chixuw_b() {
+    public Target_qweqwe() {
     }
 
     public IJob createJob() {
@@ -196,13 +196,13 @@ public class FFFFacet_Facet implements IFacet {
     }
   }
 
-  public static class Target_chixuw_c implements ITarget {
+  public static class Target_Nanana implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("Nanana");
 
-    public Target_chixuw_c() {
+    public Target_Nanana() {
     }
 
     public IJob createJob() {

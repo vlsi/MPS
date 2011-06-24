@@ -21,10 +21,14 @@ public class typeOf_LambdaMethodParameter_InferenceRule extends AbstractInferenc
 
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode T_typevar_1178551166899 = typeCheckingContext.createNewRuntimeTypesVariable();
+    SNode treePath = SNodeOperations.getAncestor(parameter, "jetbrains.mps.ypath.structure.TreePath", false, false);
+    if (treePath == null) {
+      treePath = SNodeOperations.getAncestor(parameter, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
+    }
     {
-      SNode _nodeToCheck_1029348928467 = SNodeOperations.getAncestor(parameter, "jetbrains.mps.ypath.structure.TreePath", false, false);
+      SNode _nodeToCheck_1029348928467 = treePath;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179327739073", 0, null);
-      typeCheckingContext.createEquation((SNode) new typeOf_LambdaMethodParameter_InferenceRule.QuotationClass_gcyil0_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_1178551166899), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179327748294", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) new typeOf_LambdaMethodParameter_InferenceRule.QuotationClass_gcyil0_a0a3a0().createNode(typeCheckingContext.getRepresentative(T_typevar_1178551166899), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179327748294", true), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = parameter;
@@ -48,8 +52,8 @@ public class typeOf_LambdaMethodParameter_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  public static class QuotationClass_gcyil0_a0a1a0 {
-    public QuotationClass_gcyil0_a0a1a0() {
+  public static class QuotationClass_gcyil0_a0a3a0 {
+    public QuotationClass_gcyil0_a0a3a0() {
     }
 
     public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 
 import java.util.ArrayList;
@@ -45,7 +46,26 @@ public final class CopyUtil {
     }
   }
 
-  private static void copyModelProperties(SModel from, SModel to) {
+  public static void clearModelProperties(SModel model) {
+    for (ImportElement ie : new ArrayList<ImportElement>(model.getAdditionalModelVersions())) {
+      model.deleteModelImport(ie.getModelReference());
+    }
+    for (ImportElement ie : new ArrayList<ImportElement>(model.importedModels())) {
+      model.deleteModelImport(ie.getModelReference());
+    }
+    for (ModuleReference mr :  new ArrayList<ModuleReference>(model.importedDevkits())) {
+      model.deleteDevKit(mr);
+    }
+    for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedLanguages())) {
+      model.deleteLanguage(mr);
+    }
+    for (ModuleReference mr : new ArrayList<ModuleReference>(model.engagedOnGenerationLanguages())) {
+      model.removeEngagedOnGenerationLanguage(mr);
+    }
+    model.calculateImplicitImports();
+  }
+
+  public static void copyModelProperties(SModel from, SModel to) {
     for (ImportElement ie : from.getAdditionalModelVersions()) {
       to.addAdditionalModelVersion(new ImportElement(ie.getModelReference(),
         ie.getReferenceID(), ie.getUsedVersion()));
@@ -53,6 +73,15 @@ public final class CopyUtil {
     for (ImportElement ie : from.importedModels()) {
       to.addModelImport(new ImportElement(ie.getModelReference(),
         ie.getReferenceID(), ie.getUsedVersion()));
+    }
+    for (ModuleReference mr : from.importedDevkits()) {
+      to.addDevKit(mr);
+    }
+    for (ModuleReference mr : from.importedLanguages()) {
+      to.addLanguage(mr);
+    }
+    for (ModuleReference mr : from.engagedOnGenerationLanguages()) {
+      to.addEngagedOnGenerationLanguage(mr);
     }
     to.setPersistenceVersion(from.getPersistenceVersion());
   }
@@ -157,7 +186,7 @@ public final class CopyUtil {
     return results;
   }
 
-  private static void addReferences(List<? extends SNode> inputNodes, Map<SNode, SNode> mapping, boolean copyAttributes, boolean cloneRefs) {
+  private static void addReferences(List<? extends SNode> inputNodes, Map<SNode, SNode> mapping, boolean copyAttributes, boolean forceCloneRefs) {
     for (SNode inputNode : inputNodes) {
       if (inputNode == null) {
         continue;
@@ -165,16 +194,17 @@ public final class CopyUtil {
       SNode outputNode = mapping.get(inputNode);
 
       for (SReference ref : inputNode.getReferencesArray()) {
+        boolean cloneRefs = forceCloneRefs || SModelRepository.getInstance() == null;
         SNode inputTargetNode = cloneRefs ? null : ref.getTargetNode();
-        if (inputTargetNode == null) {//broken reference or need to clone
+        if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {
-            StaticReference staticReference = (StaticReference) ref;
+            StaticReference statRef = (StaticReference) ref;
             outputNode.addReference(new StaticReference(
-              staticReference.getRole(),
+              statRef.getRole(),
               outputNode,
-              staticReference.getTargetSModelReference(),
-              staticReference.getTargetNodeId(),
-              staticReference.getResolveInfo()));
+              statRef.getTargetSModelReference(),
+              statRef.getTargetNodeId(),
+              statRef.getResolveInfo()));
           }
         } else if (mapping.containsKey(inputTargetNode)) {
           outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
@@ -183,7 +213,7 @@ public final class CopyUtil {
         }
       }
 
-      addReferences(inputNode.getChildren(copyAttributes), mapping, copyAttributes, cloneRefs);
+      addReferences(inputNode.getChildren(copyAttributes), mapping, copyAttributes, forceCloneRefs);
     }
   }
 }

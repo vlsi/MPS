@@ -20,7 +20,7 @@ public class Worker__Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("Worker_");
 
   public Worker__Facet() {
-    ListSequence.fromList(targets).addElement(new Worker__Facet.Target_qdke9s_a());
+    ListSequence.fromList(targets).addElement(new Worker__Facet.Target_work());
   }
 
   public Iterable<ITarget> targets() {
@@ -43,13 +43,13 @@ public class Worker__Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_qdke9s_a implements ITarget {
+  public static class Target_work implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("work");
 
-    public Target_qdke9s_a() {
+    public Target_work() {
     }
 
     public IJob createJob() {

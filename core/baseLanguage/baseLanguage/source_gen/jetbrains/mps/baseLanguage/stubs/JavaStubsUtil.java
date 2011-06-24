@@ -21,6 +21,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
+
+/**
+ * Utility class to share some functionality between JavaStubs and AllMemberJavaStubs
+ */
 /*package*/ class JavaStubsUtil {
   public JavaStubsUtil() {
   }

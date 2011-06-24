@@ -21,7 +21,7 @@ public class TextGen__Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("TextGen_");
 
   public TextGen__Facet() {
-    ListSequence.fromList(targets).addElement(new TextGen__Facet.Target_rqwvem_a());
+    ListSequence.fromList(targets).addElement(new TextGen__Facet.Target_ConditionallyGenerate());
   }
 
   public Iterable<ITarget> targets() {
@@ -44,13 +44,13 @@ public class TextGen__Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_rqwvem_a implements ITarget {
+  public static class Target_ConditionallyGenerate implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("ConditionallyGenerate");
 
-    public Target_rqwvem_a() {
+    public Target_ConditionallyGenerate() {
     }
 
     public IJob createJob() {

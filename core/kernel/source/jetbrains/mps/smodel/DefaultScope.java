@@ -177,7 +177,7 @@ public abstract class DefaultScope extends BaseScope {
       Set<IModule> initialModules = getInitialModules();
       myVisibleModules.addAll(initialModules);
       for (IModule module : initialModules) {
-        for (Dependency d : module.getDependOn()) {
+        for (Dependency d : module.getDependencies()) {
           IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
           if (dependency != null) {
             myVisibleModules.add(dependency);
@@ -220,7 +220,7 @@ public abstract class DefaultScope extends BaseScope {
             }
           }
 
-          for (Dependency dep : module.getDependOn()) {
+          for (Dependency dep : module.getDependencies()) {
             if (dep.isReexport()) {
               IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
               if (dependency != null) {
@@ -245,7 +245,7 @@ public abstract class DefaultScope extends BaseScope {
             }
           }
 
-          for (Dependency dep : language.getDependOn()) {
+          for (Dependency dep : language.getDependencies()) {
             IModule dependency = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
             if (dependency != null) {
               if (dep.isReexport() && !myVisibleModules.contains(dependency)) {

@@ -37,17 +37,9 @@ public class DependenciesCorrectionStage implements MigrationStage {
     }
     for (Language l : p.getProjectModules(Language.class)) {
       for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
-        aspect.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-      }
-    }
-    for (Language l : p.getProjectModules(Language.class)) {
-      for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
-        aspect.getSModel().deleteDevKit(LanguageDesign_DevKit.MODULE_REFERENCE);
-      }
-    }
-    for (Language l : p.getProjectModules(Language.class)) {
-      for (SModelDescriptor aspect : l.getAspectModelDescriptors()) {
         SModel sModel = aspect.getSModel();
+        sModel.addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+        sModel.deleteDevKit(LanguageDesign_DevKit.MODULE_REFERENCE);
         if (sModel.importedDevkits().contains(BootstrapLanguages_DevKit.MODULE_REFERENCE)) {
           sModel.deleteDevKit(BootstrapLanguages_DevKit.MODULE_REFERENCE);
         }
@@ -66,15 +58,11 @@ public class DependenciesCorrectionStage implements MigrationStage {
     return true;
   }
 
-  public boolean needsRestart() {
-    return true;
-  }
-
   public String messageBefore() {
     return "Since there were some problems with module dependencies in MPS 1.5, that are now fixed, module imports should be changed correspondingly";
   }
 
   public String messageAfter() {
-    return "Dependencies problems fixed";
+    return null;
   }
 }

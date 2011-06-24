@@ -6,7 +6,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.progress.util.ProgressWindow;
 
 public class ProgressIndicatorDelegate implements ProgressIndicator {
   private ProgressIndicator delegate;
@@ -98,12 +97,6 @@ public class ProgressIndicatorDelegate implements ProgressIndicator {
 
   public void start() {
     delegate.start();
-  }
-
-  public void background() {
-    if (delegate instanceof ProgressWindow) {
-      ((ProgressWindow) delegate).background();
-    }
   }
 
   protected ProgressIndicator getDelegate() {

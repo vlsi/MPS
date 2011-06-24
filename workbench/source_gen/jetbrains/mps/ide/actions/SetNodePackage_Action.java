@@ -33,7 +33,7 @@ public class SetNodePackage_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(SetNodePackage_Action.class);
 
   public SetNodePackage_Action() {
-    super("Set Virtual Folder", "", ICON);
+    super("Set Virtual Package", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

@@ -19,6 +19,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,6 +41,7 @@ public class SelectionInfo {
   private static final Logger LOG = Logger.getLogger(SelectionInfo.class);
 
   private static final String CLASS_NAME_ATTRIBUTE = "className";
+  private static final String MODULE_ID_ATTRIBUTE = "moduleID";
   private static final String CELL_INFO_ELEMENT_NAME = "cellInfo";
   private static final String PROPERTY_ELEMENT_NAME = "property";
   private static final String PROPERTY_NAME_ATTRIBUTE = "name";
@@ -46,11 +49,13 @@ public class SelectionInfo {
 
 
   private String mySelectionClassName;
+  private String myModuleID;
   private Map<String, String> myProperties = new HashMap<String, String>();
   private DefaultCellInfo myCellInfo = null;
 
   public SelectionInfo(Element element) {
     mySelectionClassName = element.getAttributeValue(CLASS_NAME_ATTRIBUTE);
+    myModuleID = element.getAttributeValue(MODULE_ID_ATTRIBUTE);
     for (Object childElement : element.getChildren(PROPERTY_ELEMENT_NAME)) {
       Element entry = (Element) childElement;
       String name = entry.getAttributeValue(PROPERTY_NAME_ATTRIBUTE);
@@ -65,21 +70,39 @@ public class SelectionInfo {
     }
   }
 
-  SelectionInfo(@NotNull String selectionClassName) {
+  public SelectionInfo(@NotNull String selectionClassName, String moduleID) {
+    this(selectionClassName);
+    myModuleID = moduleID;
+  }
+
+  public SelectionInfo(@NotNull String selectionClassName) {
     mySelectionClassName = selectionClassName;
   }
 
-  Map<String, String> getPropertiesMap() {
+  public Map<String, String> getPropertiesMap() {
     return myProperties;
   }
 
-  void setCellInfo(DefaultCellInfo cellInfo) {
-    myCellInfo = cellInfo;
+  public void setCellInfo(CellInfo cellInfo) throws SelectionStoreException {
+    if (!(cellInfo instanceof DefaultCellInfo)) {
+      throw new SelectionStoreException("CellInfo is different from DefaultCellInfo: " + cellInfo);
+    }
+    myCellInfo = (DefaultCellInfo) cellInfo;
   }
 
   Selection createSelection(EditorComponent editorComponent) {
     try {
-      Class<Selection> selectionClass = (Class<Selection>) getClass().getClassLoader().loadClass(mySelectionClassName);
+      Class<Selection> selectionClass;
+      if (myModuleID != null) {
+        IModule module = MPSModuleRepository.getInstance().getModuleByUID(myModuleID);
+        if (module == null) {
+          LOG.error("Specified selection class module was not found by ID: " + myModuleID);
+          return null;
+        }
+        selectionClass = module.getClass(mySelectionClassName);
+      } else {
+        selectionClass = (Class<Selection>) getClass().getClassLoader().loadClass(mySelectionClassName);
+      }
       if (!Selection.class.isAssignableFrom(selectionClass)) {
         LOG.error("Serialized selection class: " + mySelectionClassName + " is not a subclas of " + Selection.class.getName());
         return null;
@@ -115,6 +138,9 @@ public class SelectionInfo {
 
   public void persistToXML(Element element) {
     element.setAttribute(CLASS_NAME_ATTRIBUTE, mySelectionClassName);
+    if (myModuleID != null) {
+      element.setAttribute(MODULE_ID_ATTRIBUTE, myModuleID);
+    }
     for (Entry<String, String> propertyEntry : myProperties.entrySet()) {
       Element propertyElement = new Element(PROPERTY_ELEMENT_NAME);
       propertyElement.setAttribute(PROPERTY_NAME_ATTRIBUTE, propertyEntry.getKey());
@@ -150,8 +176,8 @@ public class SelectionInfo {
     return result;
   }
 
-  static class Util {
-    static int getIntProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
+  public static class Util {
+    public static int getIntProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
       String propertyValue = properties.get(propertyName);
       if (propertyValue == null) {
         throw new SelectionStoreException("Cannot load int property - property value was not specified for propertyName = " + propertyName);
@@ -163,7 +189,7 @@ public class SelectionInfo {
       }
     }
 
-    static boolean getBooleanProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
+    public static boolean getBooleanProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
       String propertyValue = properties.get(propertyName);
       if (propertyValue == null) {
         throw new SelectionStoreException("Cannot load boolean property - property value was not specified for propertyName = " + propertyName);
@@ -171,7 +197,7 @@ public class SelectionInfo {
       return Boolean.parseBoolean(propertyValue);
     }
 
-    static Enum getEnumProperty(Map<String, String> properties, String propertyName, Class<? extends Enum> enumClass, Enum defaultPropertyValue) throws SelectionStoreException {
+    public static Enum getEnumProperty(Map<String, String> properties, String propertyName, Class<? extends Enum> enumClass, Enum defaultPropertyValue) throws SelectionStoreException {
       String propertyValue = properties.get(propertyName);
       if (propertyValue == null) {
         return defaultPropertyValue;

@@ -18,7 +18,7 @@ public class WannabeClass_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   }
 
   public boolean virtual_isNodeRunnable_4666195181811081448(SNode thisNode) {
-    return IMainClass_Behavior.virtual_isNodeRunnable_4666195181811081448(thisNode);
+    return WannabeClass_Behavior.virtual_isNodeRunnable_4666195181811081448(thisNode);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

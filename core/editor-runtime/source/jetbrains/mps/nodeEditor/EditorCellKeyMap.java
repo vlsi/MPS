@@ -16,9 +16,10 @@
 package jetbrains.mps.nodeEditor;
 
 
+import gnu.trove.TIntObjectHashMap;
+import gnu.trove.TObjectProcedure;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 
 import java.awt.event.KeyEvent;
@@ -45,10 +46,10 @@ public class EditorCellKeyMap {
   public static final String KEY_CODE_SPACE = "space char";
   public static final String KEY_CODE_CHAR = "non-space char";
 
-  private static HashMap<Integer, String> ourJavaKeycodesMap = new HashMap<Integer, String>();
-  private static List<String> ourVirtualKeycodes;
-  private static List<String> ourKeycodeCategories;
-  private static List<String> ourModifiers;
+  private static TIntObjectHashMap<String> ourJavaKeycodesMap = new TIntObjectHashMap<String>();
+  private static Set<String> ourVirtualKeycodes;
+  private static Set<String> ourKeycodeCategories;
+  private static Set<String> ourModifiers;
 
   static {
     Field[] declaredFields = KeyEvent.class.getDeclaredFields();
@@ -307,18 +308,35 @@ public class EditorCellKeyMap {
   }
 
   public static List<String> getVirtualKeycodes() {
+    List<String> result = new ArrayList<String>(getOurVirtualKeycodes());
+    Collections.sort(result);
+    return result;
+  }
+
+  private static Set<String> getOurVirtualKeycodes() {
     if (ourVirtualKeycodes == null) {
-      ourVirtualKeycodes = new LinkedList<String>();
-      for (Integer keyCode : ourJavaKeycodesMap.keySet()) {
-        ourVirtualKeycodes.add(ourJavaKeycodesMap.get(keyCode));
-      }
+      final Set<String> keyCodes = new HashSet<String>();
+      ourJavaKeycodesMap.forEachValue(new TObjectProcedure<String>() {
+        @Override
+        public boolean execute(String value) {
+          keyCodes.add(value);
+          return true;
+        }
+      });
+      ourVirtualKeycodes = keyCodes;
     }
     return ourVirtualKeycodes;
   }
 
-  public static synchronized List<String> getModifiers() {
+  public static List<String> getModifiers() {
+    List<String> result = new ArrayList<String>(getOurModifiers());
+    Collections.sort(result);
+    return result;
+  }
+
+  private static synchronized Set<String> getOurModifiers() {
     if (ourModifiers == null) {
-      ourModifiers = new LinkedList<String>();
+      ourModifiers = new HashSet<String>();
       Field[] fields = EditorCellKeyMap.class.getFields();
       for (Field field : fields) {
         String name = field.getName();
@@ -336,27 +354,33 @@ public class EditorCellKeyMap {
   }
 
   public static List<String> getKeycodeCategories() {
+    List<String> result = new ArrayList<String>(getOurKeycodeCategories());
+    Collections.sort(result);
+    return result;
+  }
+
+  private static Set<String> getOurKeycodeCategories() {
     if (ourKeycodeCategories == null) {
-      ourKeycodeCategories = new LinkedList<String>();
+      Set<String> categories = new HashSet<String>();
       Field[] fields = EditorCellKeyMap.class.getFields();
       for (Field field : fields) {
         String name = field.getName();
         if (name.startsWith("KEY_CODE_")) {
           try {
             String value = field.get(null).toString();
-            ourKeycodeCategories.add(value);
+            categories.add(value);
           } catch (IllegalAccessException e) {
             LOG.error(e);
           }
         }
       }
+      ourKeycodeCategories = categories;
     }
     return ourKeycodeCategories;
   }
 
   public static boolean isValidModifiers(String modifiers) {
-    List<String> ourModifiers = getModifiers();
-    return ourModifiers.contains(modifiers);
+    return getOurModifiers().contains(modifiers);
   }
 
   public static boolean isValidKeycode(String keycode) {
@@ -366,10 +390,7 @@ public class EditorCellKeyMap {
     if (keycode.length() == 1) {
       return true;
     }
-
-    List<String> ourVirtualKeycodes = getVirtualKeycodes();
-    List<String> ourKeycodeCategories = getKeycodeCategories();
-    return ourKeycodeCategories.contains(keycode) || ourVirtualKeycodes.contains(keycode);
+    return getOurKeycodeCategories().contains(keycode) || getOurVirtualKeycodes().contains(keycode);
   }
 
   public boolean isApplicableToEveryModel() {

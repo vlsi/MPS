@@ -4,10 +4,7 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.cache.BaseModelCache;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -17,8 +14,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.validation.ModelValidator;
+import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.BasicConfigurator;
@@ -27,7 +24,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
-import java.io.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +41,7 @@ public class CheckProjectStructureHelper {
   public CheckProjectStructureHelper() {
   }
 
-  public void load(final Iterable<File> files) {
+  public void load(final Iterable<IFile> files) {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
@@ -64,25 +61,28 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  public List<String> check(Token token, List<File> files) {
+  public List<String> check(Token token, List<IFile> files) {
     return ((PrivToken) token).check(files);
   }
 
-  public List<String> checkStructure(Token token, List<File> files) {
+  public List<String> checkStructure(Token token, List<IFile> files) {
     return ((PrivToken) token).checkStructure(files);
   }
 
-  public List<String> checkGenerationStatus(Token token, List<File> files) {
+  public List<String> checkGenerationStatus(Token token, List<IFile> files) {
     return ((PrivToken) token).checkGenerationStatus(files);
   }
 
+  public List<String> checkModule(Token token, List<IFile> files) {
+    return ((PrivToken) token).checkModule(files);
+  }
 
   public void cleanUp(Token tok) {
     ((PrivToken) tok).cleanUp();
   }
 
   public String formatErrors(List<String> errors) {
-    StringBuffer sb = new StringBuffer();
+    StringBuilder sb = new StringBuilder();
     String sep = "";
     for (String er : errors) {
       sb.append(sep).append(er);
@@ -97,7 +97,7 @@ public class CheckProjectStructureHelper {
     Testbench.initLogging();
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
+    TestMain.configureMPS(new String[0]);
 
     for (String[] macro : macros) {
       Testbench.setMacro(macro[0], macro[1]);
@@ -126,16 +126,20 @@ public class CheckProjectStructureHelper {
       this.project = project;
     }
 
-    public List<String> check(Iterable<File> files) {
+    public List<String> check(Iterable<IFile> files) {
       return CheckProjectStructureHelper.this.doCheck(files, project);
     }
 
-    public List<String> checkStructure(List<File> files) {
+    public List<String> checkStructure(List<IFile> files) {
       return CheckProjectStructureHelper.this.doCheckStructure(files, project);
     }
 
-    public List<String> checkGenerationStatus(List<File> files) {
+    public List<String> checkGenerationStatus(List<IFile> files) {
       return CheckProjectStructureHelper.this.doCheckGenerationStatus(files, project);
+    }
+
+    public List<String> checkModule(List<IFile> files) {
+      return CheckProjectStructureHelper.this.doCheckModule(files, project);
     }
 
     public void cleanUp() {
@@ -143,7 +147,7 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  private List<String> doCheck(Iterable<File> files, MPSProject project) {
+  private List<String> doCheck(Iterable<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
 
@@ -153,7 +157,7 @@ public class CheckProjectStructureHelper {
     return checkModels(me.getModels());
   }
 
-  private List<String> doCheckStructure(List<File> files, MPSProject project) {
+  private List<String> doCheckStructure(List<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(true);
     me.loadModels(files);
 
@@ -163,7 +167,7 @@ public class CheckProjectStructureHelper {
     return checkStructure(me.getModels());
   }
 
-  private List<String> doCheckGenerationStatus(List<File> files, MPSProject project) {
+  private List<String> doCheckGenerationStatus(List<IFile> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor(false);
     me.loadModels(files);
 
@@ -171,6 +175,13 @@ public class CheckProjectStructureHelper {
     //Testbench.reloadAll();
 
     return checkModelsGenerationStatus(me.getModels());
+  }
+
+   private List<String> doCheckModule(List<IFile> files, MPSProject project) {
+    ModelsExtractor me = new ModelsExtractor(false);
+    me.loadModels(files);
+
+    return checkModules(me.getModules(files));
   }
 
   private void doCleanUp(final MPSProject project) {
@@ -244,6 +255,21 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
+   private List<String> checkModules(final Iterable<IModule> modules) {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (IModule sm : modules) {
+          StringBuilder errorMessages = checkModule(sm);
+          if (errorMessages.length() > 0) {
+            errors.add(errorMessages.toString());
+          }
+        }
+      }
+    });
+    return errors;
+  }
+
   private static void checkModelNodes(@NotNull SModel model, @NotNull List<String> result) {
     for (SNode node : model.nodes()) {
       for (String propname : node.getProperties().keySet()) {
@@ -310,6 +336,23 @@ public class CheckProjectStructureHelper {
             append(node).
             append(")\n");
         }
+      }
+    }
+    return errorMessages;
+  }
+
+  private StringBuilder checkModule(final IModule module) {
+    StringBuilder errorMessages = new StringBuilder();
+    List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return ModuleValidatorFactory.createValidator(module).getErrors();
+      }
+    });
+    if(!validationResult.isEmpty()) {
+      for (String item : validationResult) {
+        errorMessages.append("\t");
+        errorMessages.append(item);
+        errorMessages.append("\n");
       }
     }
     return errorMessages;
