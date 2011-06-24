@@ -32,6 +32,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.build.distrib.behavior.DigitalSignatureWindowsConfiguration_Behavior;
+import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
@@ -738,6 +739,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 
+  public static boolean ifMacro_Condition_3787255561604026011(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
+  }
+
   public static boolean ifMacro_Condition_1239642377685(final IOperationContext operationContext, final IfMacroContext _context) {
     return UniversalConfig_Behavior.call_addWindowsStartupScript_1239641827577(_context.getNode());
   }
@@ -758,6 +763,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile") && UniversalConfig_Behavior.call_addWindowsStartupScript_1239641827577(_context.getNode());
   }
 
+  public static boolean ifMacro_Condition_3787255561604026019(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
+  }
+
   public static boolean ifMacro_Condition_1239641290629(final IOperationContext operationContext, final IfMacroContext _context) {
     return (MacConfig_Behavior.call_getUnixConfig_1234542090729(_context.getNode()) != null);
   }
@@ -774,6 +783,10 @@ public class QueriesGenerated {
     return MacConfig_Behavior.call_addVmoptionsToArchive_1239641445163(_context.getNode());
   }
 
+  public static boolean ifMacro_Condition_3787255561603930377(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
+  }
+
   public static boolean ifMacro_Condition_1234542276642(final IOperationContext operationContext, final IfMacroContext _context) {
     return (MacConfig_Behavior.call_getUnixConfig_1234542090729(_context.getNode()) != null);
   }
@@ -784,6 +797,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1004035210976680209(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_3787255561603930371(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
   public static boolean ifMacro_Condition_1234784613024(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -890,12 +907,20 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 
+  public static boolean ifMacro_Condition_3787255561604026028(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
+  }
+
   public static boolean ifMacro_Condition_1241440614776(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 
   public static boolean ifMacro_Condition_1241441039451(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
+  }
+
+  public static boolean ifMacro_Condition_3787255561604026036(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
   public static boolean ifMacro_Condition_1635896182103908254(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -39,8 +39,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
 import java.util.Comparator;
 import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -821,13 +821,18 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5640794902512565310(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    final String MREF = "mref";
     List<SNode> res = new ArrayList<SNode>();
     for (IModule m : Module_Behavior.call_getModule_1213877515148(_context.getNode()).getDependenciesManager().getAllRequiredModules()) {
       SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
-      propertyNode.setProperty("mref", m.getModuleReference().toString());
+      propertyNode.setProperty(MREF, m.getModuleReference().toString());
       ListSequence.fromList(res).addElement(propertyNode);
     }
-    return res;
+    return ListSequence.fromList(res).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return it.getProperty(MREF);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_2739262311775160744(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
