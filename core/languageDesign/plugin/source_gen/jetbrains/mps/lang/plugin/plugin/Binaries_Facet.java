@@ -17,11 +17,11 @@ import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
@@ -33,9 +33,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
@@ -84,58 +84,47 @@ public class Binaries_Facet implements IFacet {
           Iterable<IResource> _output_8acy7z_a0a = null;
           switch (0) {
             case 0:
-              final List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
+              List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
               final List<Tuples._2<IFile, IFile>> filesToCopy = ListSequence.fromList(new ArrayList<Tuples._2<IFile, IFile>>());
 
-              // Temporaty solution for http://youtrack.jetbrains.net/issue/MPS-12930?projectKey=MPS 
-              final String[] error = new String[]{null};
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  for (IResource res : input) {
-                    final IModule module = ((MResource) res).module();
-                    for (SModelDescriptor smd : ((MResource) res).models()) {
-                      SModel model = smd.getSModel();
-                      String output = module.getOutputFor(smd);
-                      if (output == null) {
-                        error[0] = "no output location for " + smd.getLongName();
-                        return;
-                      }
-                      IFile outputRoot = (pool.parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile() != null ?
-                        pool.parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile().invoke(output) :
-                        FileSystem.getInstance().getFileByPath(output)
-                      );
-                      final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
-                      final FilesDelta fd = new FilesDelta(outputDir);
-                      ListSequence.fromList(deltaList).addElement(fd);
-                      ListSequence.fromList(filesToCopy).addSequence(ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).where(new IWhereFilter<SNode>() {
-                        public boolean accept(SNode it) {
-                          return StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path"));
-                        }
-                      }).<String>select(new ISelector<SNode, String>() {
-                        public String select(SNode bin) {
-                          return MacrosUtil.expandPath(SPropertyOperations.getString(bin, "path"), module.getModuleFqName());
-                        }
-                      }).where(new IWhereFilter<String>() {
-                        public boolean accept(String p) {
-                          return p != null;
-                        }
-                      }).<Tuples._2<IFile, IFile>>select(new ISelector<String, Tuples._2<IFile, IFile>>() {
-                        public Tuples._2<IFile, IFile> select(String p) {
-                          IFile fromFile = FileSystem.getInstance().getFileByPath(p);
-                          IFile toFile = outputDir.getDescendant(fromFile.getName());
-                          fd.written(toFile);
-                          return MultiTuple.<IFile,IFile>from(fromFile, toFile);
-                        }
-                      }));
-                    }
+              for (IResource res : input) {
+                final IModule module = ((MResource) res).module();
+                for (SModelDescriptor smd : ((MResource) res).models()) {
+                  SModel model = smd.getSModel();
+                  String output = module.getOutputFor(smd);
+                  if (output == null) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + smd.getLongName())));
+                    return new IResult.FAILURE(_output_8acy7z_a0a);
                   }
+                  IFile outputRoot = (pool.parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile() != null ?
+                    pool.parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile().invoke(output) :
+                    FileSystem.getInstance().getFileByPath(output)
+                  );
+                  final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
+                  final FilesDelta fd = new FilesDelta(outputDir);
+                  ListSequence.fromList(deltaList).addElement(fd);
+                  ListSequence.fromList(filesToCopy).addSequence(ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.plugin.structure.Resource")).where(new IWhereFilter<SNode>() {
+                    public boolean accept(SNode it) {
+                      return StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path"));
+                    }
+                  }).<String>select(new ISelector<SNode, String>() {
+                    public String select(SNode bin) {
+                      return MacrosUtil.expandPath(SPropertyOperations.getString(bin, "path"), module.getModuleFqName());
+                    }
+                  }).where(new IWhereFilter<String>() {
+                    public boolean accept(String p) {
+                      return p != null;
+                    }
+                  }).<Tuples._2<IFile, IFile>>select(new ISelector<String, Tuples._2<IFile, IFile>>() {
+                    public Tuples._2<IFile, IFile> select(String p) {
+                      IFile fromFile = FileSystem.getInstance().getFileByPath(p);
+                      IFile toFile = outputDir.getDescendant(fromFile.getName());
+                      fd.written(toFile);
+                      return MultiTuple.<IFile,IFile>from(fromFile, toFile);
+                    }
+                  }));
                 }
-              });
-              if (error[0] != null) {
-                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(error[0])));
-                return new IResult.FAILURE(_output_8acy7z_a0a);
               }
-
 
               _output_8acy7z_a0a = Sequence.fromIterable(_output_8acy7z_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
 
