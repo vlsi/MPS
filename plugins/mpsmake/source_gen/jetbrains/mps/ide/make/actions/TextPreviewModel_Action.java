@@ -89,7 +89,7 @@ public class TextPreviewModel_Action extends GeneratedAction {
       final SModelDescriptor md = TextPreviewModel_Action.this.modelToGenerate(_params);
       ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
         public void run() {
-          IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("textGenToMemory")).toScript();
+          IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("textGenToMemory")).toScript();
 
           IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
             public <T extends IOption> T relayQuery(IQuery<T> query) {
