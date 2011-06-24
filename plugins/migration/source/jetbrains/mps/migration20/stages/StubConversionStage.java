@@ -87,7 +87,7 @@ public class StubConversionStage implements MigrationStage {
 
   public String messageBefore() {
     return "As the stubs model format was changed, MPS will now try to correct references to stub models.\n" +
-      "Now MPS will find all references to stub models and try to resolve them in the scope of containing module.";
+      "Now MPS will find all references to stub models and try to resolve them in the scope of containing module, then in global scope.";
   }
 
   public String messageAfter() {
