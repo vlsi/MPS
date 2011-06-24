@@ -203,7 +203,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private NodeInformationDialog myNodeInformationDialog;
-  private HashMap myUserDataMap = new HashMap();
+  private HashMap<Object, Object> myUserDataMap = new HashMap<Object, Object>();
 
   private MyEventsCollector myEventsCollector = new MyEventsCollector();
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
@@ -669,6 +669,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myNode;
   }
 
+  @Nullable
   public MPSNodeVirtualFile getVirtualFile() {
     return myVirtualFile;
   }
@@ -1153,11 +1154,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myDisposed;
   }
 
-  /**
-   * Can be used to check if editor is in valid state or not.
-   * Editor can be in invalid state then corresponding model
-   * was reloaded, but current editor instance was not
-   * updated yet.
+  /*
+    Can be used to check if editor is in valid state or not.
+    Editor can be in invalid state then corresponding model
+    was reloaded, but current editor instance was not
+    updated yet.
    */
   private boolean isInvalid() {
     return getEditorContext() == null ||
@@ -2892,7 +2893,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     public boolean isActionActive(BaseAction action) {
-      if (getSelectedCell() == null || getSelectedCell().getSNode() == null) {
+      EditorCell selectedCell = getSelectedCell();
+      if (selectedCell == null || selectedCell.getSNode() == null) {
         return false;
       }
       DataContext context = DataManager.getInstance().getDataContext(EditorComponent.this);
