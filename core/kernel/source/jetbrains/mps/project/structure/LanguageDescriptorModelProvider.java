@@ -195,7 +195,7 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
 
     @Override
     public boolean isGeneratable() {
-      return true;
+      return !myModule.isPackaged();
     }
 
     public String getModelHash() {
