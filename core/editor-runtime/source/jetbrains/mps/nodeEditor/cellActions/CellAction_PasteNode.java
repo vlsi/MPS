@@ -51,7 +51,7 @@ public class CellAction_PasteNode extends EditorCellAction {
       return false;
     }
     SNode selectedNode = selectedCell.getSNode();
-    if (selectedNode == null) {
+    if (selectedNode == null || selectedNode.isDisposed()) {
       return false;
     }
     List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNode.getModel());
@@ -83,6 +83,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
+            assert !selectedNode.isDisposed();
             List<SNode> pasteNodes = pasteNodeData.getNodes();
             Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
