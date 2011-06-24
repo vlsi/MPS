@@ -106,7 +106,7 @@ public class TextGen_Facet implements IFacet {
                 String output = gres.module().getOutputFor(gres.model());
                 if (output == null) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + gres.model().getLongName())));
-                  return new IResult.FAILURE(_output_21gswx_a0a);
+                  continue;
                 }
                 final IFile targetDir = (pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile() != null ?
                   pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile().invoke(output) :
