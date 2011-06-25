@@ -26,11 +26,11 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
-    if (isTestCase()) {
-      return null;
-    }
     if (SNodeOperations.isInstanceOf(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")) {
       return TestNodeWrapperFactory.tryToWrap(ITestMethod_Behavior.call_getTestCase_1216134500045(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")));
+    }
+    if (isTestCase()) {
+      return null;
     }
     return null;
   }
