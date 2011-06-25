@@ -20,8 +20,9 @@ import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.project.dependency.DependenciesManager;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
@@ -211,7 +212,16 @@ __switch__:
   }
 
   private Iterable<ModuleReference> required(IModule mod) {
-    Iterable<ModuleReference> reqs = Sequence.fromIterable(((Iterable<IModule>) mod.getDependenciesManager().getAllRequiredModules())).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
+    mod.getDependenciesManager();
+    DependenciesManager depman = mod.getDependenciesManager();
+    Set<IModule> reqmods = SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getAllUsedLanguages())).<Generator>translate(new ITranslator2<Language, Generator>() {
+      public Iterable<Generator> translate(Language lang) {
+        return lang.getGenerators();
+      }
+    }));
+    SetSequence.fromSet(reqmods).addSequence(SetSequence.fromSet(depman.getAllRequiredModules()));
+    SetSequence.fromSet(reqmods).addSequence(SetSequence.fromSet(depman.getAllVisibleModules()));
+    Iterable<ModuleReference> reqs = SetSequence.fromSet(reqmods).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
       public ModuleReference select(IModule m) {
         return m.getModuleReference();
       }
