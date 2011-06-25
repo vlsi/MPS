@@ -717,6 +717,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.ITestNodeWrapper" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestStatisticsRow" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodTreeNode" file="TestMethodTreeNode.java">
