@@ -465,8 +465,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   public void clearContent() {
-    setNodeSubstituteInfo(null);
-    mySubstituteActions.clear();
+    setVisible(false);
   }
 
   private enum PopupWindowPosition {
