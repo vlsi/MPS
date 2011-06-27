@@ -14,7 +14,7 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior;
-import jetbrains.mps.execution.configurations.behavior.IMainClass_Behavior;
+import jetbrains.mps.execution.util.behavior.IMainClass_Behavior;
 import jetbrains.mps.execution.lib.Java_Command;
 
 public class Java_Producer {
@@ -91,17 +91,17 @@ public class Java_Producer {
     }
 
     protected boolean isApplicable(Object source) {
-      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.execution.configurations.structure.IMainClass");
+      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.execution.util.structure.IMainClass");
     }
 
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      if (!((IMainClass_Behavior.call_isNodeRunnable_1906992812162479271(source) && Java_Command.isUnitNode(source)))) {
+      if (!((IMainClass_Behavior.call_isNodeRunnable_4666195181811081448(source) && Java_Command.isUnitNode(source)))) {
         return null;
       }
       String name = (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.core.structure.INamedConcept") ?
         SPropertyOperations.getString(SNodeOperations.cast(source, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
-        IMainClass_Behavior.call_getUnitName_747009152928925147(source)
+        IMainClass_Behavior.call_getUnitName_4666195181811081431(source)
       );
       Java_Configuration configuration = new Java_Configuration(getContext().getProject(), (Java_Configuration_Factory) getConfigurationFactory(), "Node " + name);
       configuration.getNode().setNode(source);

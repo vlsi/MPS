@@ -17,7 +17,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.execution.configurations.behavior.IMainClass_Behavior;
+import jetbrains.mps.execution.util.behavior.IMainClass_Behavior;
 import jetbrains.mps.execution.lib.Java_Command;
 import jetbrains.mps.execution.lib.JavaRunParameters_Configuration;
 import com.intellij.openapi.project.Project;
@@ -56,11 +56,11 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   }), MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
     public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.IMainClass");
+      return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.util.structure.IMainClass");
     }
   }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return IMainClass_Behavior.call_isNodeRunnable_1906992812162479271(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.IMainClass")) && Java_Command.isUnitNode(node);
+      return IMainClass_Behavior.call_isNodeRunnable_4666195181811081448(SNodeOperations.cast(node, "jetbrains.mps.execution.util.structure.IMainClass")) && Java_Command.isUnitNode(node);
     }
   })))).toListSequence());
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
