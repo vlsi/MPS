@@ -112,7 +112,7 @@
     <nodeInfo nodeId="3107334613900744127" fileName="Java_Command.java" startLine="287" startPosition="83" endLine="290" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6129022259108656839" fileName="Java_Command.java" startLine="92" startPosition="131" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="3107334613900744127" fileName="Java_Command.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Ljetbrains/mps/smodel/SNode;)Lcom/intellij/execution/process/ProcessHandler;" />
-    <nodeInfo nodeId="1715641077095367950" fileName="Java_Command.java" startLine="122" startPosition="110" endLine="126" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1715641077095367950" fileName="Java_Command.java" startLine="122" startPosition="110" endLine="126" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3107334613900744127" fileName="Java_Command.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
     <nodeInfo nodeId="3107334613900744127" fileName="Java_Command.java" startLine="132" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isUnitNode#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1715641077095354030" fileName="Java_Command.java" startLine="139" startPosition="57" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -206,7 +206,7 @@
     <scopeInfo nodeId="3107334613900744127" fileName="Java_Command.java" startLine="83" startPosition="68" endLine="87" endPosition="16" />
     <scopeInfo nodeId="6129022259108656839" fileName="Java_Command.java" startLine="92" startPosition="131" endLine="96" endPosition="0" />
     <scopeInfo nodeId="3107334613900744127" fileName="Java_Command.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="1715641077095363604" fileName="Java_Command.java" startLine="122" startPosition="110" endLine="126" endPosition="27" />
+    <scopeInfo nodeId="1715641077095363604" fileName="Java_Command.java" startLine="122" startPosition="110" endLine="126" endPosition="67" />
     <scopeInfo nodeId="3107334613900744127" fileName="Java_Command.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
     <scopeInfo nodeId="3107334613900744127" fileName="Java_Command.java" startLine="132" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="1375871677230184341" varName="node" />

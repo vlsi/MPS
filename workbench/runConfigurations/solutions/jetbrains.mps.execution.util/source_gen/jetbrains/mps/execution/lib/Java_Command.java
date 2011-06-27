@@ -123,7 +123,7 @@ public class Java_Command {
     return new Java_Command().setJrePath(check_yvpt_a0a0a0c(runParameters)).setProgramParameter(check_yvpt_a2a0a0c(runParameters)).setVirtualMachineParameter(check_yvpt_a3a0a0c(runParameters)).setWorkingDirectory((check_yvpt_a0a4a0a0c(runParameters) == null ?
       null :
       new File(check_yvpt_a0a0e0a0a2(runParameters))
-    )).createProcess(node);
+    )).setDebuggerSettings(myDebuggerSettings).createProcess(node);
   }
 
   public static IDebugger getDebugger() {
