@@ -22,8 +22,10 @@ public class MakeNotification extends EventObject {
   }
 
   public static   enum Kind {
-    ABOUT_TO_START(),
-    FINISHED();
+    SCRIPT_ABOUT_TO_START(),
+    SCRIPT_FINISHED(),
+    SESSION_OPENED(),
+    SESSION_CLOSED();
 
     Kind() {
     }

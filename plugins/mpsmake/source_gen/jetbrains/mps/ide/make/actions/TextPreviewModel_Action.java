@@ -98,7 +98,7 @@ public class TextPreviewModel_Action extends GeneratedAction {
           }, new IJobMonitor.Stub());
 
           MakeSession session = new MakeSession(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, true);
-          if (IMakeService.INSTANCE.get().startNewSession(session)) {
+          if (IMakeService.INSTANCE.get().openNewSession(session)) {
 
             Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(((IOperationContext) MapSequence.fromMap(_params).get("context")), Sequence.<SModelDescriptor>singleton(md)).resources(false), scr, ctl);
 

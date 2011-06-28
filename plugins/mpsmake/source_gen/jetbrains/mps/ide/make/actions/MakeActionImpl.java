@@ -42,7 +42,7 @@ public class MakeActionImpl {
       }
     };
 
-    if (IMakeService.INSTANCE.get().startNewSession(session)) {
+    if (IMakeService.INSTANCE.get().openNewSession(session)) {
       IMakeService.INSTANCE.get().make(session, inputRes);
     }
   }

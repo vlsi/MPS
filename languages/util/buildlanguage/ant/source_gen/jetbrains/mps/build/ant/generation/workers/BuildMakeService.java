@@ -62,11 +62,11 @@ public class BuildMakeService implements IMakeService {
     return false;
   }
 
-  public boolean startNewSession(MakeSession session) {
+  public boolean openNewSession(MakeSession session) {
     return false;
   }
 
-  public void endSession(MakeSession session) {
+  public void closeSession(MakeSession session) {
   }
 
   public void addListener(IMakeNotificationListener listener) {

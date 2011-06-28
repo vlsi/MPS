@@ -20,6 +20,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.make.IMakeNotificationListener.Stub;
+import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -28,18 +32,25 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class PluginReloader implements ApplicationComponent {
   private ReloadAdapter myReloadListener = new MyReloadAdapter();
+  private IMakeNotificationListener myMakeListener = new MyMakeListener ();
 
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
+  private final IMakeService myMakeService;
+
+  private AtomicReference<Runnable> myLoadPluginsRunnable = new AtomicReference<Runnable>();
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
+  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager, IMakeService makeService) {
     myClassLoaderManager = classLoaderManager;
     myProjectManager = projectManager;
     myPluginManager = pluginManager;
+    myMakeService = makeService;
   }
 
   private void loadPlugins() {
@@ -88,13 +99,16 @@ public class PluginReloader implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
+    myMakeService.addListener(myMakeListener);
   }
 
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
+    myMakeService.removeListener(myMakeListener);
   }
 
   private class MyReloadAdapter extends ReloadAdapter {
+
     public void unload() {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
@@ -105,13 +119,28 @@ public class PluginReloader implements ApplicationComponent {
     }
 
     public void load() {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      Runnable runnable = new Runnable() {
         public void run() {
           //write action is needed the because user can acquire write action inside of this [see MPS-9139]
           loadPlugins();
         }
-      });
+      };
+      if (myLoadPluginsRunnable.compareAndSet(null, runnable)) {
+        if (!myMakeService.isSessionActive()) {
+          myLoadPluginsRunnable.set(null);
+          ModelAccess.instance().runWriteInEDT(runnable);
+        }
+      }
     }
   }
 
+  private class MyMakeListener extends Stub {
+    @Override
+    public void sessionClosed(MakeNotification notification) {
+      Runnable runnable = myLoadPluginsRunnable.getAndSet(null);
+      if (runnable != null) {
+        ModelAccess.instance().runWriteInEDT(runnable);
+      }
+    }
+  }
 }

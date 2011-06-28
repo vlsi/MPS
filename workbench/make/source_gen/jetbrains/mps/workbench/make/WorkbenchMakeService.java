@@ -128,17 +128,23 @@ public class WorkbenchMakeService implements IMakeService {
     return this.getSession() != null;
   }
 
-  public boolean startNewSession(MakeSession session) {
+  public boolean openNewSession(MakeSession session) {
     this.checkValidUsage();
-    return currentSessionStickyMark.compareAndSet(null, session, false, session.isSticky());
+    if (!(currentSessionStickyMark.compareAndSet(null, session, false, session.isSticky()))) {
+      return false;
+    }
+    notifyListeners(new MakeNotification(this, MakeNotification.Kind.SESSION_OPENED));
+    return true;
   }
 
-  public void endSession(MakeSession session) {
+  public void closeSession(MakeSession session) {
     this.checkValidUsage();
     this.checkValidSession(session);
     currentSessionStickyMark.attemptMark(session, false);
     if (currentProcess == null || currentProcess.isDone()) {
-      currentSessionStickyMark.set(null, false);
+      if (currentSessionStickyMark.compareAndSet(session, null, false, false) || currentSessionStickyMark.compareAndSet(session, null, true, false)) {
+        notifyListeners(new MakeNotification(this, MakeNotification.Kind.SESSION_CLOSED));
+      }
     }
   }
 
@@ -192,12 +198,18 @@ public class WorkbenchMakeService implements IMakeService {
       result = _doMake(inputRes, script, controller);
     } finally {
       if (result == null || result.isDone()) {
-        if (!(currentSessionStickyMark.isMarked())) {
-          currentSessionStickyMark.set(null, false);
-        }
+        this.attemptCloseSession();
       }
     }
     return result;
+  }
+
+  private void attemptCloseSession() {
+    boolean[] mark = new boolean[1];
+    MakeSession sess = currentSessionStickyMark.get(mark);
+    if (sess != null && !(mark[0]) && currentSessionStickyMark.compareAndSet(sess, null, false, false)) {
+      notifyListeners(new MakeNotification(this, MakeNotification.Kind.SESSION_CLOSED));
+    }
   }
 
   private synchronized void awaitCurrentProcess() {
@@ -290,9 +302,7 @@ public class WorkbenchMakeService implements IMakeService {
     final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(this.getSession().getContext().getProject(), scrName, scripts, scrName, clInput.value, ctl, mh, PerformInBackgroundOption.DEAF) {
       @Override
       protected void done() {
-        if (!(currentSessionStickyMark.isMarked())) {
-          currentSessionStickyMark.set(null, false);
-        }
+        attemptCloseSession();
       }
     };
     this.getSession().doExecute(new Runnable() {
@@ -492,7 +502,7 @@ public class WorkbenchMakeService implements IMakeService {
 
     public void run(@NotNull ProgressIndicator pi) {
       if (myState.compareAndSet(WorkbenchMakeService.TaskState.NOT_STARTED, WorkbenchMakeService.TaskState.RUNNING)) {
-        notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.ABOUT_TO_START));
+        notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_ABOUT_TO_START));
         pi.pushState();
         final int clsize = Sequence.fromIterable(this.myClInput).count();
         if (clsize == 0) {
@@ -599,7 +609,7 @@ public class WorkbenchMakeService implements IMakeService {
       }
       done();
       myLatch.countDown();
-      notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.FINISHED));
+      notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_FINISHED));
     }
   }
 

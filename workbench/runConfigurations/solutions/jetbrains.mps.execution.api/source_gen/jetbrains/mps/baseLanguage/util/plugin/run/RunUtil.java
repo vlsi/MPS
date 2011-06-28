@@ -55,7 +55,7 @@ public class RunUtil {
       final ProjectOperationContext context = ProjectOperationContext.get(project);
       IResult result = null;
       MakeSession session = new MakeSession(context, null, true);
-      if (IMakeService.INSTANCE.get().startNewSession(session)) {
+      if (IMakeService.INSTANCE.get().openNewSession(session)) {
         Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context, models).resources(false));
         try {
           result = future.get();

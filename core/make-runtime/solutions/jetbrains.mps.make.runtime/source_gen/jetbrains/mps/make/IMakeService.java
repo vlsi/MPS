@@ -11,8 +11,8 @@ import jetbrains.mps.make.script.IScriptController;
 import com.intellij.openapi.application.ApplicationManager;
 
 public interface IMakeService extends ApplicationComponent {
-  public boolean startNewSession(MakeSession session);
-  public void endSession(MakeSession session);
+  public boolean openNewSession(MakeSession session);
+  public void closeSession(MakeSession session);
   public boolean isSessionActive();
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources);
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script);

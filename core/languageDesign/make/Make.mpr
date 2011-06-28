@@ -46,6 +46,7 @@
       <modulePath path="${mps_home}/languages/util/quickQueryLanguage/quickQueryLanguage.mpl" />
       <modulePath path="${mps_home}/languages/core/core/languageDescriptor.mpl" />
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <modulePath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="facet" moduleRef="jetbrains.mps.make.facet" />

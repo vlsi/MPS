@@ -60,8 +60,8 @@
   <unitInfo fileName="CommentLine_Action.java" startLine="19" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="111" startPosition="15" endLine="205" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$1" />
   <unitInfo fileName="GoToOverridenMethod_Action.java" startLine="34" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
+  <unitInfo fileName="ReloadClasses_Facet.java" startLine="25" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet" />
   <unitInfo fileName="GoToInheritedClassifier_Action.java" startLine="33" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
-  <unitInfo fileName="ReloadClasses_Facet.java" startLine="25" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet" />
   <unitInfo fileName="GoToOverridingMethod_Action.java" startLine="36" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="61" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration" />
   <unitInfo fileName="JavaCompile_Facet.java" startLine="52" startPosition="0" endLine="545" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet" />
@@ -2693,93 +2693,92 @@
     <nodeInfo nodeId="6648795410103987990" fileName="ReloadClasses_Facet.java" startLine="71" startPosition="53" endLine="72" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103987965" fileName="ReloadClasses_Facet.java" startLine="74" startPosition="19" endLine="75" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103987974" fileName="ReloadClasses_Facet.java" startLine="79" startPosition="41" endLine="80" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1986840443401904583" fileName="ReloadClasses_Facet.java" startLine="82" startPosition="23" endLine="83" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6648795410103987980" fileName="ReloadClasses_Facet.java" startLine="85" startPosition="19" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103987982" fileName="ReloadClasses_Facet.java" startLine="86" startPosition="78" endLine="87" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103988001" fileName="ReloadClasses_Facet.java" startLine="88" startPosition="15" endLine="89" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="90" startPosition="20" endLine="91" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="97" startPosition="35" endLine="98" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="101" startPosition="46" endLine="102" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="105" startPosition="43" endLine="106" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="109" startPosition="47" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="113" startPosition="44" endLine="114" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="117" startPosition="35" endLine="118" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="121" startPosition="36" endLine="122" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="125" startPosition="37" endLine="126" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="129" startPosition="65" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="133" startPosition="66" endLine="134" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="137" startPosition="49" endLine="138" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="141" startPosition="61" endLine="142" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="142" startPosition="34" endLine="143" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987980" fileName="ReloadClasses_Facet.java" startLine="84" startPosition="19" endLine="85" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6648795410103987982" fileName="ReloadClasses_Facet.java" startLine="85" startPosition="78" endLine="86" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6648795410103988001" fileName="ReloadClasses_Facet.java" startLine="87" startPosition="15" endLine="88" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="89" startPosition="20" endLine="90" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="96" startPosition="35" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="100" startPosition="46" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="104" startPosition="43" endLine="105" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="108" startPosition="47" endLine="109" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="112" startPosition="44" endLine="113" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="116" startPosition="35" endLine="117" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="120" startPosition="36" endLine="121" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="124" startPosition="37" endLine="125" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="128" startPosition="65" endLine="129" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="132" startPosition="66" endLine="133" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="136" startPosition="49" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="140" startPosition="61" endLine="141" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="141" startPosition="34" endLine="142" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="58" startPosition="0" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_reloadClasses#()V" />
     <nodeInfo nodeId="6648795410103987988" fileName="ReloadClasses_Facet.java" startLine="70" startPosition="105" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/make/resources/IResource;)Z" />
-    <nodeInfo nodeId="6648795410103987972" fileName="ReloadClasses_Facet.java" startLine="78" startPosition="72" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="132" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="6702766394052739079" fileName="ReloadClasses_Facet.java" startLine="78" startPosition="72" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="131" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="6648795410103987968" fileName="ReloadClasses_Facet.java" startLine="77" startPosition="37" endLine="82" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="140" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="1986840443401752989" fileName="ReloadClasses_Facet.java" startLine="76" startPosition="65" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1986840443401752986" fileName="ReloadClasses_Facet.java" startLine="75" startPosition="114" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103987963" fileName="ReloadClasses_Facet.java" startLine="69" startPosition="0" endLine="88" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="65" startPosition="56" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="63" startPosition="25" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="62" startPosition="29" endLine="94" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="61" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="139" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
+    <nodeInfo nodeId="6702766394052776130" fileName="ReloadClasses_Facet.java" startLine="76" startPosition="65" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1986840443401752986" fileName="ReloadClasses_Facet.java" startLine="75" startPosition="114" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6648795410103987963" fileName="ReloadClasses_Facet.java" startLine="69" startPosition="0" endLine="87" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="65" startPosition="56" endLine="91" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="63" startPosition="25" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="62" startPosition="29" endLine="93" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="61" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
     <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="59" startPosition="35" endLine="59" endPosition="35" />
     <scopeInfo nodeId="6648795410103987989" fileName="ReloadClasses_Facet.java" startLine="71" startPosition="53" endLine="72" endPosition="82" />
-    <scopeInfo nodeId="6648795410103987973" fileName="ReloadClasses_Facet.java" startLine="79" startPosition="41" endLine="80" endPosition="97" />
-    <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="90" startPosition="20" endLine="91" endPosition="61" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="97" startPosition="35" endLine="98" endPosition="18" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="101" startPosition="46" endLine="102" endPosition="18" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="105" startPosition="43" endLine="106" endPosition="113" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="109" startPosition="47" endLine="110" endPosition="18" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="113" startPosition="44" endLine="114" endPosition="78" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="117" startPosition="35" endLine="118" endPosition="18" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="121" startPosition="36" endLine="122" endPosition="18" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="125" startPosition="37" endLine="126" endPosition="18" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="129" startPosition="65" endLine="130" endPosition="48" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="133" startPosition="66" endLine="134" endPosition="18" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="137" startPosition="49" endLine="138" endPosition="18" />
+    <scopeInfo nodeId="6702766394052739082" fileName="ReloadClasses_Facet.java" startLine="79" startPosition="41" endLine="80" endPosition="97" />
+    <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="89" startPosition="20" endLine="90" endPosition="61" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="96" startPosition="35" endLine="97" endPosition="18" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="100" startPosition="46" endLine="101" endPosition="18" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="104" startPosition="43" endLine="105" endPosition="113" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="108" startPosition="47" endLine="109" endPosition="18" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="112" startPosition="44" endLine="113" endPosition="78" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="116" startPosition="35" endLine="117" endPosition="18" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="120" startPosition="36" endLine="121" endPosition="18" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="124" startPosition="37" endLine="125" endPosition="18" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="128" startPosition="65" endLine="129" endPosition="48" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="132" startPosition="66" endLine="133" endPosition="18" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="136" startPosition="49" endLine="137" endPosition="18" />
     <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="58" startPosition="0" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="141" startPosition="61" endLine="143" endPosition="15" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="140" startPosition="61" endLine="142" endPosition="15" />
     <scopeInfo nodeId="6648795410103987988" fileName="ReloadClasses_Facet.java" startLine="70" startPosition="105" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987972" fileName="ReloadClasses_Facet.java" startLine="78" startPosition="72" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="140" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="1986840443401752990" fileName="ReloadClasses_Facet.java" startLine="77" startPosition="37" endLine="83" endPosition="28" />
-    <scopeInfo nodeId="1986840443401752989" fileName="ReloadClasses_Facet.java" startLine="76" startPosition="65" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987964" fileName="ReloadClasses_Facet.java" startLine="74" startPosition="19" endLine="87" endPosition="74" />
-    <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="67" startPosition="19" endLine="89" endPosition="114">
+    <scopeInfo nodeId="6702766394052739079" fileName="ReloadClasses_Facet.java" startLine="78" startPosition="72" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="6702766394052776131" fileName="ReloadClasses_Facet.java" startLine="77" startPosition="37" endLine="82" endPosition="23" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="139" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="6702766394052776130" fileName="ReloadClasses_Facet.java" startLine="76" startPosition="65" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987964" fileName="ReloadClasses_Facet.java" startLine="74" startPosition="19" endLine="86" endPosition="74" />
+    <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="67" startPosition="19" endLine="88" endPosition="114">
       <varInfo nodeId="6648795410103987951" varName="nonEmptyCompilation" />
     </scopeInfo>
-    <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="64" startPosition="120" endLine="92" endPosition="11" />
-    <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="63" startPosition="25" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="62" startPosition="29" endLine="94" endPosition="8" />
-    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="61" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="64" startPosition="120" endLine="91" endPosition="11" />
+    <scopeInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="63" startPosition="25" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="62" startPosition="29" endLine="93" endPosition="8" />
+    <scopeInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="61" startPosition="0" endLine="95" endPosition="0" />
     <unitInfo nodeId="6648795410103987988" fileName="ReloadClasses_Facet.java" startLine="70" startPosition="78" endLine="74" endPosition="15" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$2" />
-    <unitInfo nodeId="6648795410103987972" fileName="ReloadClasses_Facet.java" startLine="78" startPosition="60" endLine="82" endPosition="21" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$3" />
-    <unitInfo nodeId="1986840443401752989" fileName="ReloadClasses_Facet.java" startLine="76" startPosition="53" endLine="85" endPosition="17" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$2" />
-    <unitInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="63" startPosition="17" endLine="94" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$1" />
-    <unitInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="53" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$Target_reloadClasses" />
+    <unitInfo nodeId="6702766394052739077" fileName="ReloadClasses_Facet.java" startLine="78" startPosition="60" endLine="82" endPosition="21" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$3" />
+    <unitInfo nodeId="6702766394052776130" fileName="ReloadClasses_Facet.java" startLine="76" startPosition="53" endLine="84" endPosition="17" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$2" />
+    <unitInfo nodeId="6648795410103987948" fileName="ReloadClasses_Facet.java" startLine="63" startPosition="17" endLine="93" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$1" />
+    <unitInfo nodeId="6648795410103987946" fileName="ReloadClasses_Facet.java" startLine="53" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ReloadClasses_Facet$Target_reloadClasses" />
   </root>
   <root nodeId="6868777471677670371">
     <nodeInfo nodeId="6868777471677670379" fileName="ShowNullDFA_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

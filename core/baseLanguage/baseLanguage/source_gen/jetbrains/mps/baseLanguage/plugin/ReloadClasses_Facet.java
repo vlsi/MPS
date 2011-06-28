@@ -80,7 +80,6 @@ public class ReloadClasses_Facet implements IFacet {
                         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
                       }
                     });
-                    // void 
                   }
                 });
                 monitor.currentProgress().advanceWork("Reloading classes", 1);

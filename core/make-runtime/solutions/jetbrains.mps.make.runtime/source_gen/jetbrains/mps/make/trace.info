@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2082624981609760242">
-    <nodeInfo nodeId="8695426379435237628" fileName="IMakeService.java" startLine="13" startPosition="60" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
-    <nodeInfo nodeId="3180200298862810275" fileName="IMakeService.java" startLine="14" startPosition="54" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="endSession#(Ljetbrains/mps/make/MakeSession;)V" />
-    <nodeInfo nodeId="8695426379435237656" fileName="IMakeService.java" startLine="15" startPosition="46" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
+    <nodeInfo nodeId="8695426379435237628" fileName="IMakeService.java" startLine="13" startPosition="60" endLine="14" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
+    <nodeInfo nodeId="3180200298862810275" fileName="IMakeService.java" startLine="14" startPosition="53" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeSession#(Ljetbrains/mps/make/MakeSession;)V" />
+    <nodeInfo nodeId="8695426379435237656" fileName="IMakeService.java" startLine="15" startPosition="48" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
     <nodeInfo nodeId="8695426379435237680" fileName="IMakeService.java" startLine="16" startPosition="35" endLine="17" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
     <nodeInfo nodeId="8695426379435237689" fileName="IMakeService.java" startLine="17" startPosition="92" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
     <nodeInfo nodeId="8695426379435237700" fileName="IMakeService.java" startLine="18" startPosition="108" endLine="19" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
@@ -21,13 +21,13 @@
     <nodeInfo nodeId="5959771872497636041" fileName="IMakeService.java" startLine="34" startPosition="38" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8695426379435177666" fileName="IMakeService.java" startLine="33" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="get#()Ljetbrains/mps/make/IMakeService;" />
     <scopeInfo nodeId="8695426379435177655" fileName="IMakeService.java" startLine="31" startPosition="24" endLine="31" endPosition="24" />
-    <scopeInfo nodeId="8695426379435237628" fileName="IMakeService.java" startLine="13" startPosition="60" endLine="14" endPosition="54">
+    <scopeInfo nodeId="8695426379435237628" fileName="IMakeService.java" startLine="13" startPosition="60" endLine="14" endPosition="53">
       <varInfo nodeId="8695426379435237643" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="3180200298862810275" fileName="IMakeService.java" startLine="14" startPosition="54" endLine="15" endPosition="46">
+    <scopeInfo nodeId="3180200298862810275" fileName="IMakeService.java" startLine="14" startPosition="53" endLine="15" endPosition="48">
       <varInfo nodeId="3180200298862810284" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="8695426379435237656" fileName="IMakeService.java" startLine="15" startPosition="46" endLine="16" endPosition="35" />
+    <scopeInfo nodeId="8695426379435237656" fileName="IMakeService.java" startLine="15" startPosition="48" endLine="16" endPosition="35" />
     <scopeInfo nodeId="8695426379435237680" fileName="IMakeService.java" startLine="16" startPosition="35" endLine="17" endPosition="92">
       <varInfo nodeId="8695426379435237681" varName="resources" />
       <varInfo nodeId="8695426379435237718" varName="session" />
@@ -75,65 +75,89 @@
     <nodeInfo nodeId="8464977774480012340" fileName="MakeNotification.java" startLine="11" startPosition="18" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8464977774480006578" fileName="MakeNotification.java" startLine="16" startPosition="35" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8464977774480012346" fileName="MakeNotification.java" startLine="20" startPosition="42" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8464977774480012303" fileName="MakeNotification.java" startLine="27" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Kind#()V" />
+    <nodeInfo nodeId="8464977774480012303" fileName="MakeNotification.java" startLine="29" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Kind#()V" />
     <nodeInfo nodeId="8464977774479999205" fileName="MakeNotification.java" startLine="9" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeNotification#(Ljetbrains/mps/make/IMakeService;Ljetbrains/mps/make/MakeNotification/Kind;)V" />
     <nodeInfo nodeId="8464977774480012329" fileName="MakeNotification.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKind#()Ljetbrains/mps/make/MakeNotification/Kind;" />
     <nodeInfo nodeId="8464977774480006573" fileName="MakeNotification.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/make/IMakeService;" />
-    <scopeInfo nodeId="8464977774480012306" fileName="MakeNotification.java" startLine="28" startPosition="12" endLine="28" endPosition="12" />
+    <scopeInfo nodeId="8464977774480012306" fileName="MakeNotification.java" startLine="30" startPosition="12" endLine="30" endPosition="12" />
     <scopeInfo nodeId="8464977774480006576" fileName="MakeNotification.java" startLine="16" startPosition="35" endLine="17" endPosition="44" />
     <scopeInfo nodeId="8464977774480012332" fileName="MakeNotification.java" startLine="20" startPosition="42" endLine="21" endPosition="16" />
     <scopeInfo nodeId="8464977774479999208" fileName="MakeNotification.java" startLine="10" startPosition="76" endLine="12" endPosition="21" />
-    <scopeInfo nodeId="8464977774480012303" fileName="MakeNotification.java" startLine="27" startPosition="0" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="8464977774480012303" fileName="MakeNotification.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
     <scopeInfo nodeId="8464977774479999205" fileName="MakeNotification.java" startLine="9" startPosition="0" endLine="13" endPosition="3">
       <varInfo nodeId="8464977774480006567" varName="source" />
       <varInfo nodeId="8464977774480012334" varName="kind" />
     </scopeInfo>
     <scopeInfo nodeId="8464977774480012329" fileName="MakeNotification.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="8464977774480006573" fileName="MakeNotification.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="8464977774480012301" fileName="MakeNotification.java" startLine="24" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.make.MakeNotification$Kind" />
-    <unitInfo nodeId="8464977774479999203" fileName="MakeNotification.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.MakeNotification" />
+    <unitInfo nodeId="8464977774480012301" fileName="MakeNotification.java" startLine="24" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.MakeNotification$Kind" />
+    <unitInfo nodeId="8464977774479999203" fileName="MakeNotification.java" startLine="7" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.MakeNotification" />
   </root>
   <root nodeId="8464977774480012290">
     <nodeInfo nodeId="8464977774480012292" fileName="IMakeNotificationListener.java" startLine="6" startPosition="44" endLine="7" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="8464977774480012363" fileName="IMakeNotificationListener.java" startLine="7" startPosition="64" endLine="8" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="aboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="8464977774480012370" fileName="IMakeNotificationListener.java" startLine="8" startPosition="58" endLine="9" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finished#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="8464977774480012377" fileName="IMakeNotificationListener.java" startLine="16" startPosition="28" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8464977774480012381" fileName="IMakeNotificationListener.java" startLine="17" startPosition="37" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8464977774480012382" fileName="IMakeNotificationListener.java" startLine="19" startPosition="22" endLine="20" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8464977774480012389" fileName="IMakeNotificationListener.java" startLine="20" startPosition="33" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8464977774480012314" fileName="IMakeNotificationListener.java" startLine="10" startPosition="65" endLine="12" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" />
-    <nodeInfo nodeId="8464977774480012396" fileName="IMakeNotificationListener.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="aboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="8464977774480012390" fileName="IMakeNotificationListener.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finished#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="8464977774480012325" fileName="IMakeNotificationListener.java" startLine="14" startPosition="73" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="8464977774480012319" fileName="IMakeNotificationListener.java" startLine="13" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <scopeInfo nodeId="8464977774480012317" fileName="IMakeNotificationListener.java" startLine="11" startPosition="19" endLine="11" endPosition="19" />
-    <scopeInfo nodeId="8464977774480012327" fileName="IMakeNotificationListener.java" startLine="22" startPosition="16" endLine="22" endPosition="16" />
-    <scopeInfo nodeId="8464977774480012401" fileName="IMakeNotificationListener.java" startLine="26" startPosition="61" endLine="26" endPosition="61" />
-    <scopeInfo nodeId="8464977774480012395" fileName="IMakeNotificationListener.java" startLine="29" startPosition="57" endLine="29" endPosition="57" />
+    <nodeInfo nodeId="8464977774480012363" fileName="IMakeNotificationListener.java" startLine="7" startPosition="64" endLine="8" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="8464977774480012370" fileName="IMakeNotificationListener.java" startLine="8" startPosition="64" endLine="9" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="6702766394052812711" fileName="IMakeNotificationListener.java" startLine="9" startPosition="60" endLine="10" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="6702766394052812717" fileName="IMakeNotificationListener.java" startLine="10" startPosition="59" endLine="11" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="8464977774480012377" fileName="IMakeNotificationListener.java" startLine="18" startPosition="35" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8464977774480012381" fileName="IMakeNotificationListener.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8464977774480012382" fileName="IMakeNotificationListener.java" startLine="21" startPosition="29" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8464977774480012389" fileName="IMakeNotificationListener.java" startLine="22" startPosition="39" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6702766394052812723" fileName="IMakeNotificationListener.java" startLine="24" startPosition="28" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6702766394052812727" fileName="IMakeNotificationListener.java" startLine="25" startPosition="38" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6702766394052812728" fileName="IMakeNotificationListener.java" startLine="27" startPosition="28" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6702766394052812732" fileName="IMakeNotificationListener.java" startLine="28" startPosition="38" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8464977774480012314" fileName="IMakeNotificationListener.java" startLine="12" startPosition="65" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" />
+    <nodeInfo nodeId="8464977774480012396" fileName="IMakeNotificationListener.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="8464977774480012390" fileName="IMakeNotificationListener.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="6702766394052812739" fileName="IMakeNotificationListener.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="6702766394052812733" fileName="IMakeNotificationListener.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="8464977774480012325" fileName="IMakeNotificationListener.java" startLine="16" startPosition="73" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="8464977774480012319" fileName="IMakeNotificationListener.java" startLine="15" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <scopeInfo nodeId="8464977774480012317" fileName="IMakeNotificationListener.java" startLine="13" startPosition="19" endLine="13" endPosition="19" />
+    <scopeInfo nodeId="8464977774480012327" fileName="IMakeNotificationListener.java" startLine="30" startPosition="16" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="8464977774480012401" fileName="IMakeNotificationListener.java" startLine="34" startPosition="67" endLine="34" endPosition="67" />
+    <scopeInfo nodeId="8464977774480012395" fileName="IMakeNotificationListener.java" startLine="37" startPosition="63" endLine="37" endPosition="63" />
+    <scopeInfo nodeId="6702766394052812744" fileName="IMakeNotificationListener.java" startLine="40" startPosition="62" endLine="40" endPosition="62" />
+    <scopeInfo nodeId="6702766394052812738" fileName="IMakeNotificationListener.java" startLine="43" startPosition="62" endLine="43" endPosition="62" />
     <scopeInfo nodeId="8464977774480012292" fileName="IMakeNotificationListener.java" startLine="6" startPosition="44" endLine="7" endPosition="64">
       <varInfo nodeId="8464977774480012296" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480012363" fileName="IMakeNotificationListener.java" startLine="7" startPosition="64" endLine="8" endPosition="58">
+    <scopeInfo nodeId="8464977774480012363" fileName="IMakeNotificationListener.java" startLine="7" startPosition="64" endLine="8" endPosition="64">
       <varInfo nodeId="8464977774480012367" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480012370" fileName="IMakeNotificationListener.java" startLine="8" startPosition="58" endLine="9" endPosition="54">
+    <scopeInfo nodeId="8464977774480012370" fileName="IMakeNotificationListener.java" startLine="8" startPosition="64" endLine="9" endPosition="60">
       <varInfo nodeId="8464977774480012374" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480012314" fileName="IMakeNotificationListener.java" startLine="10" startPosition="65" endLine="12" endPosition="5" />
-    <scopeInfo nodeId="8464977774480012355" fileName="IMakeNotificationListener.java" startLine="16" startPosition="28" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="8464977774480012360" fileName="IMakeNotificationListener.java" startLine="19" startPosition="22" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="8464977774480012396" fileName="IMakeNotificationListener.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="6702766394052812711" fileName="IMakeNotificationListener.java" startLine="9" startPosition="60" endLine="10" endPosition="59">
+      <varInfo nodeId="6702766394052812715" varName="notification" />
+    </scopeInfo>
+    <scopeInfo nodeId="6702766394052812717" fileName="IMakeNotificationListener.java" startLine="10" startPosition="59" endLine="11" endPosition="59">
+      <varInfo nodeId="6702766394052812721" varName="notification" />
+    </scopeInfo>
+    <scopeInfo nodeId="8464977774480012314" fileName="IMakeNotificationListener.java" startLine="12" startPosition="65" endLine="14" endPosition="5" />
+    <scopeInfo nodeId="8464977774480012355" fileName="IMakeNotificationListener.java" startLine="18" startPosition="35" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="8464977774480012360" fileName="IMakeNotificationListener.java" startLine="21" startPosition="29" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="6702766394052812708" fileName="IMakeNotificationListener.java" startLine="24" startPosition="28" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="6702766394052812702" fileName="IMakeNotificationListener.java" startLine="27" startPosition="28" endLine="29" endPosition="16" />
+    <scopeInfo nodeId="8464977774480012396" fileName="IMakeNotificationListener.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="8464977774480012397" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480012390" fileName="IMakeNotificationListener.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="8464977774480012390" fileName="IMakeNotificationListener.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="8464977774480012391" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="8464977774480012324" fileName="IMakeNotificationListener.java" startLine="14" startPosition="73" endLine="23" endPosition="7" />
-    <scopeInfo nodeId="8464977774480012319" fileName="IMakeNotificationListener.java" startLine="13" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="6702766394052812739" fileName="IMakeNotificationListener.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6702766394052812742" varName="notification" />
+    </scopeInfo>
+    <scopeInfo nodeId="6702766394052812733" fileName="IMakeNotificationListener.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="6702766394052812736" varName="notification" />
+    </scopeInfo>
+    <scopeInfo nodeId="8464977774480012324" fileName="IMakeNotificationListener.java" startLine="16" startPosition="73" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="8464977774480012319" fileName="IMakeNotificationListener.java" startLine="15" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8464977774480012320" varName="notification" />
     </scopeInfo>
-    <unitInfo nodeId="8464977774480012312" fileName="IMakeNotificationListener.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener$Stub" />
-    <unitInfo nodeId="8464977774480012290" fileName="IMakeNotificationListener.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener" />
+    <unitInfo nodeId="8464977774480012312" fileName="IMakeNotificationListener.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener$Stub" />
+    <unitInfo nodeId="8464977774480012290" fileName="IMakeNotificationListener.java" startLine="6" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener" />
   </root>
   <root nodeId="8695426379435232461">
     <nodeInfo nodeId="8695426379435237583" fileName="MakeSession.java" startLine="8" startPosition="26" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
