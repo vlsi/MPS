@@ -18,6 +18,7 @@ public class TypesCheckOperation_Behavior {
       meth.invoke(null, node);
     } catch (Exception ex) {
       ex.printStackTrace();
+      throw new RuntimeException(ex);
     }
   }
 

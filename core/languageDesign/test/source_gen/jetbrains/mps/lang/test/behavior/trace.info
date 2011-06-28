@@ -46,8 +46,8 @@
   <unitInfo fileName="TypesCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TypesCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodesTestMethod_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodesTestMethod_BehaviorDescriptor" />
   <unitInfo fileName="EditorOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorOperation_BehaviorDescriptor" />
-  <unitInfo fileName="TypesCheckOperation_Behavior.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TypesCheckOperation_Behavior" />
   <unitInfo fileName="EditorTestCase_Behavior.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorTestCase_Behavior" />
+  <unitInfo fileName="TypesCheckOperation_Behavior.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TypesCheckOperation_Behavior" />
   <unitInfo fileName="NodeOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeOperation_BehaviorDescriptor" />
   <unitInfo fileName="EditorTestCase_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorTestCase_BehaviorDescriptor" />
   <unitInfo fileName="NodeOperation_Behavior.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeOperation_Behavior" />
@@ -80,26 +80,27 @@
     <nodeInfo nodeId="6385575297337394100" fileName="TypesCheckOperation_Behavior.java" startLine="16" startPosition="85" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6385575297337394108" fileName="TypesCheckOperation_Behavior.java" startLine="17" startPosition="69" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6385575297337394114" fileName="TypesCheckOperation_Behavior.java" startLine="19" startPosition="28" endLine="20" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342735916" fileName="TypesCheckOperation_Behavior.java" startLine="24" startPosition="70" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="501631557342736760" fileName="TypesCheckOperation_Behavior.java" startLine="29" startPosition="149" endLine="30" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="501631557342735935" fileName="TypesCheckOperation_Behavior.java" startLine="31" startPosition="12" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="501631557342735933" fileName="TypesCheckOperation_Behavior.java" startLine="31" startPosition="10" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="501631557342735918" fileName="TypesCheckOperation_Behavior.java" startLine="28" startPosition="74" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6385575297337394084" fileName="TypesCheckOperation_Behavior.java" startLine="14" startPosition="80" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7706322591931754707" fileName="TypesCheckOperation_Behavior.java" startLine="20" startPosition="27" endLine="21" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="501631557342735916" fileName="TypesCheckOperation_Behavior.java" startLine="25" startPosition="70" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="501631557342736760" fileName="TypesCheckOperation_Behavior.java" startLine="30" startPosition="149" endLine="31" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="501631557342735935" fileName="TypesCheckOperation_Behavior.java" startLine="32" startPosition="12" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="501631557342735933" fileName="TypesCheckOperation_Behavior.java" startLine="32" startPosition="10" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="501631557342735918" fileName="TypesCheckOperation_Behavior.java" startLine="29" startPosition="74" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6385575297337394084" fileName="TypesCheckOperation_Behavior.java" startLine="14" startPosition="80" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <scopeInfo nodeId="1215607133329" fileName="TypesCheckOperation_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="6385575297337394087" fileName="TypesCheckOperation_Behavior.java" startLine="19" startPosition="0" endLine="20" endPosition="27">
+    <scopeInfo nodeId="1217437155347" fileName="TypesCheckOperation_Behavior.java" startLine="25" startPosition="70" endLine="26" endPosition="24" />
+    <scopeInfo nodeId="501631557342735919" fileName="TypesCheckOperation_Behavior.java" startLine="30" startPosition="149" endLine="31" endPosition="137" />
+    <scopeInfo nodeId="501631557342735934" fileName="TypesCheckOperation_Behavior.java" startLine="32" startPosition="12" endLine="33" endPosition="70" />
+    <scopeInfo nodeId="6385575297337394087" fileName="TypesCheckOperation_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="37">
       <varInfo nodeId="6385575297337394088" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="6385575297337394090" fileName="TypesCheckOperation_Behavior.java" startLine="19" startPosition="28" endLine="20" endPosition="27" />
-    <scopeInfo nodeId="1217437155347" fileName="TypesCheckOperation_Behavior.java" startLine="24" startPosition="70" endLine="25" endPosition="24" />
-    <scopeInfo nodeId="501631557342735919" fileName="TypesCheckOperation_Behavior.java" startLine="29" startPosition="149" endLine="30" endPosition="137" />
-    <scopeInfo nodeId="501631557342735934" fileName="TypesCheckOperation_Behavior.java" startLine="31" startPosition="12" endLine="32" endPosition="70" />
+    <scopeInfo nodeId="6385575297337394090" fileName="TypesCheckOperation_Behavior.java" startLine="19" startPosition="28" endLine="21" endPosition="37" />
     <scopeInfo nodeId="6385575297337394085" fileName="TypesCheckOperation_Behavior.java" startLine="15" startPosition="9" endLine="18" endPosition="30">
       <varInfo nodeId="6385575297337394095" varName="cls" />
       <varInfo nodeId="6385575297337394101" varName="meth" />
     </scopeInfo>
-    <scopeInfo nodeId="501631557342735913" fileName="TypesCheckOperation_Behavior.java" startLine="28" startPosition="74" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="1215608521838" fileName="TypesCheckOperation_Behavior.java" startLine="14" startPosition="80" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="501631557342735913" fileName="TypesCheckOperation_Behavior.java" startLine="29" startPosition="74" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1215608521838" fileName="TypesCheckOperation_Behavior.java" startLine="14" startPosition="80" endLine="22" endPosition="5" />
   </root>
   <root nodeId="1215611890874">
     <nodeInfo nodeId="6385575297337394126" fileName="CheckDataFlowOperation_Behavior.java" startLine="13" startPosition="9" endLine="14" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
