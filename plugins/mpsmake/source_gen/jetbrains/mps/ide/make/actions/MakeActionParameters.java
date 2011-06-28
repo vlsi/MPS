@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
@@ -14,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.smodel.Language;
@@ -29,9 +30,15 @@ public class MakeActionParameters {
 
   public MakeActionParameters(IOperationContext context, List<SModelDescriptor> models, SModelDescriptor cmodel, List<IModule> modules, IModule cmodule) {
     this.context = context;
-    this.models = models;
+    this.models = (models != null ?
+      ListSequence.fromListWithValues(new ArrayList<SModelDescriptor>(), models) :
+      null
+    );
     this.cmodel = cmodel;
-    this.modules = modules;
+    this.modules = (modules != null ?
+      ListSequence.fromListWithValues(new ArrayList<IModule>(), modules) :
+      null
+    );
     this.cmodule = cmodule;
   }
 
@@ -50,11 +57,11 @@ public class MakeActionParameters {
 
       sb.append("Model '").append(model.getSModelReference().getSModelFqName().getCompactPresentation()).append("'");
 
-    } else if (this.models != null && this.models.size() > 1) {
+    } else if (this.models != null && ListSequence.fromList(this.models).count() > 1) {
       Iterable<SModelDescriptor> mds = this.models;
       if (!(Sequence.fromIterable(mds).any(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor md) {
-          return md.isGeneratable();
+          return md != null && md.isGeneratable();
         }
       }))) {
         return null;
@@ -69,9 +76,13 @@ public class MakeActionParameters {
 
       sb.append(NameUtil.shortNameFromLongName(module.getClass().getName().replaceAll("\\$.*", ""))).append(" '").append(NameUtil.compactNamespace(module.getModuleReference().getModuleFqName())).append("'");
 
-    } else if (this.modules != null && this.modules.size() > 1) {
+    } else if (this.modules != null && ListSequence.fromList(this.modules).count() > 1) {
       Iterable<IModule> mods = this.modules;
-      if (Sequence.fromIterable(mods).all(new IWhereFilter<IModule>() {
+      if (Sequence.fromIterable(mods).any(new IWhereFilter<IModule>() {
+        public boolean accept(IModule m) {
+          return m == null;
+        }
+      }) || Sequence.fromIterable(mods).all(new IWhereFilter<IModule>() {
         public boolean accept(IModule m) {
           return m.isPackaged();
         }
@@ -152,13 +163,13 @@ __switch__:
                       if (model != null && model.isGeneratable()) {
                         this.__CP__ = 3;
                         break;
-                      } else if (models != null && models.size() > 1) {
+                      } else if (models != null && ListSequence.fromList(models).count() > 1) {
                         this.__CP__ = 5;
                         break;
                       } else if (module != null) {
                         this.__CP__ = 12;
                         break;
-                      } else if (modules != null && modules.size() > 1) {
+                      } else if (modules != null && ListSequence.fromList(modules).count() > 1) {
                         this.__CP__ = 19;
                         break;
                       }
@@ -233,7 +244,7 @@ __switch__:
         return !(GeneratorManager.isDoNotGenerate(md));
       }
     });
-    return new ModelsToResources(context, smds).resources(dirtyOnly);
+    return new ModelsToResources(context, Sequence.fromIterable(smds).toListSequence()).resources(dirtyOnly);
   }
 
   public Iterable<SModelDescriptor> modelsToMake(IModule module) {
