@@ -77,10 +77,7 @@ public class ModulesCluster {
 
   public Iterable<? extends Iterable<IModule>> buildOrder() {
     List<List<ModuleReference>> order = new ModulesCluster.ModulesGraph().totalOrder();
-    Iterable<? extends Iterable<ModuleReference>> compacted = (true ?
-      order :
-      this.compact(order)
-    );
+    Iterable<? extends Iterable<ModuleReference>> compacted = this.compact(order);
     return Sequence.fromIterable(compacted).<List<IModule>>select(new ISelector<Iterable<ModuleReference>, IListSequence<IModule>>() {
       public IListSequence<IModule> select(Iterable<ModuleReference> cycle) {
         return Sequence.fromIterable(cycle).<IModule>select(new ISelector<ModuleReference, IModule>() {
