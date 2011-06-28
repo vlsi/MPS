@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -78,8 +79,10 @@ public class WorkbenchMakeService implements IMakeService {
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile Future<IResult> currentProcess;
   private List<IMakeNotificationListener> listeners = ListSequence.fromList(new ArrayList<IMakeNotificationListener>());
+  private PluginReloader pluginReloader;
 
-  public WorkbenchMakeService() {
+  public WorkbenchMakeService(PluginReloader pluginReloader) {
+    this.pluginReloader = pluginReloader;
   }
 
   @Deprecated
@@ -89,10 +92,12 @@ public class WorkbenchMakeService implements IMakeService {
 
   public void initComponent() {
     INSTANCE = this;
+    pluginReloader.setMakeService(this);
   }
 
   public void disposeComponent() {
     INSTANCE = null;
+    pluginReloader.setMakeService(null);
   }
 
   @NonNls

@@ -41,16 +41,15 @@ public class PluginReloader implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
-  private final IMakeService myMakeService;
+  private IMakeService myMakeService;
 
   private AtomicReference<Runnable> myLoadPluginsRunnable = new AtomicReference<Runnable>();
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager, IMakeService makeService) {
+  public PluginReloader(ClassLoaderManager classLoaderManager, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
     myClassLoaderManager = classLoaderManager;
     myProjectManager = projectManager;
     myPluginManager = pluginManager;
-    myMakeService = makeService;
   }
 
   private void loadPlugins() {
@@ -89,6 +88,16 @@ public class PluginReloader implements ApplicationComponent {
     }
   }
 
+  public void setMakeService (IMakeService makeService) {
+    if (myMakeService == null && makeService != null) {
+      this.myMakeService = makeService;
+      myMakeService.addListener(myMakeListener);
+    }
+    else if (myMakeService != null && makeService == null) {
+      myMakeService.removeListener(myMakeListener);
+      this.myMakeService = null;
+    }
+  }
   //----------------COMPONENT STUFF---------------------
 
   @NonNls
@@ -99,12 +108,14 @@ public class PluginReloader implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
-    myMakeService.addListener(myMakeListener);
   }
 
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
-    myMakeService.removeListener(myMakeListener);
+    if (myMakeService != null) {
+      myMakeService.removeListener(myMakeListener);
+      this.myMakeService = null;
+    }
   }
 
   private class MyReloadAdapter extends ReloadAdapter {
@@ -126,7 +137,7 @@ public class PluginReloader implements ApplicationComponent {
         }
       };
       if (myLoadPluginsRunnable.compareAndSet(null, runnable)) {
-        if (!myMakeService.isSessionActive()) {
+        if (myMakeService == null || !myMakeService.isSessionActive()) {
           myLoadPluginsRunnable.set(null);
           ModelAccess.instance().runWriteInEDT(runnable);
         }
