@@ -46,6 +46,14 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
     dependsOn.add(root);
   }
 
+  private void addOriginalNodeAccess(SNode root) {
+    if (root == myOriginalRoot || root.getModel() != myBuilder.originalInputModel || !root.isRoot()) {
+      return;
+    }
+    dependsOn.add(root);
+  }
+
+
   private void addOutputNodeAccess(SNode node) {
     if (myBuilder.nextStepToOriginalMap == null || myBuilder.currentOutputModel == null) {
       return;
@@ -62,7 +70,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   }
 
   private void addModelAccess(SModel model) {
-    if (model == null || model.isTransient() || model == myBuilder.currentInputModel) {
+    if (model == null || model.isTransient() || model == myBuilder.currentInputModel || model == myBuilder.originalInputModel) {
       return;
     }
     dependsOnModels.add(model.getModelDescriptor());
@@ -75,6 +83,8 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getTopmostAncestor());
+      } else if (node.getModel() == myBuilder.originalInputModel) {
+        addOriginalNodeAccess(node.getTopmostAncestor());
       } else {
         addModelAccess(node.getModel());
       }
@@ -88,6 +98,8 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getTopmostAncestor());
+      } else if (node.getModel() == myBuilder.originalInputModel) {
+        addOriginalNodeAccess(node.getTopmostAncestor());
       } else {
         addModelAccess(node.getModel());
       }
@@ -101,6 +113,8 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getTopmostAncestor());
+      } else if (node.getModel() == myBuilder.originalInputModel) {
+        addOriginalNodeAccess(node.getTopmostAncestor());
       } else {
         addModelAccess(node.getModel());
       }
@@ -114,6 +128,8 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getTopmostAncestor());
+      } else if (node.getModel() == myBuilder.originalInputModel) {
+        addOriginalNodeAccess(node.getTopmostAncestor());
       } else {
         addModelAccess(node.getModel());
       }
@@ -127,6 +143,8 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getTopmostAncestor());
+      } else if (node.getModel() == myBuilder.originalInputModel) {
+        addOriginalNodeAccess(node.getTopmostAncestor());
       } else {
         addModelAccess(node.getModel());
       }
@@ -140,6 +158,8 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getTopmostAncestor());
+      } else if (node.getModel() == myBuilder.originalInputModel) {
+        addOriginalNodeAccess(node.getTopmostAncestor());
       } else {
         addModelAccess(node.getModel());
       }
@@ -153,6 +173,8 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getTopmostAncestor());
+      } else if (node.getModel() == myBuilder.originalInputModel) {
+        addOriginalNodeAccess(node.getTopmostAncestor());
       } else {
         addModelAccess(node.getModel());
       }
@@ -168,6 +190,8 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
         addNodeAccess(node.getTopmostAncestor());
       } else if (node.getModel() == myBuilder.currentOutputModel) {
         addOutputNodeAccess(node.getTopmostAncestor());
+      } else if (node.getModel() == myBuilder.originalInputModel) {
+        addOriginalNodeAccess(node.getTopmostAncestor());
       } else {
         addModelAccess(node.getModel());
       }
@@ -176,7 +200,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
 
   @Override
   public void modelNodesReadAccess(SModel model) {
-    if (model == myBuilder.currentInputModel) {
+    if (model == myBuilder.currentInputModel || model == myBuilder.currentOutputModel || model == myBuilder.originalInputModel) {
       dependsOnModelNodes = true;
     } else if (model == myBuilder.currentOutputModel) {
       dependsOnModelNodes = true;

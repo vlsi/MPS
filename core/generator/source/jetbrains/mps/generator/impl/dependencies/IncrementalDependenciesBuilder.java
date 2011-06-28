@@ -39,6 +39,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   /* current step data */
   Map<SNode, SNode> currentToOriginalMap;
+  SModel originalInputModel;
   SModel currentInputModel;
   SModel currentOutputModel;
   private TransientModelWithMetainfo myCachedModel;
@@ -51,7 +52,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   public IncrementalDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes,
                                         String parametersHash, IntermediateModelsCache cache) {
-    currentInputModel = originalInputModel;
+    this.originalInputModel = currentInputModel = originalInputModel;
     myParametersHash = parametersHash;
     myCache = cache;
     currentOutputModel = null;
