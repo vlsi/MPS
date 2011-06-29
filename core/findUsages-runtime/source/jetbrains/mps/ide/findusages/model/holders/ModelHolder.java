@@ -52,7 +52,7 @@ public class ModelHolder implements IHolder<SModel> {
 
   @NotNull
   public String getCaption() {
-    return NameUtil.shortNameFromLongName(getModelDescriptor().getLongName());
+    return NameUtil.shortNameFromLongName(myModelReference.getLongName());
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {
