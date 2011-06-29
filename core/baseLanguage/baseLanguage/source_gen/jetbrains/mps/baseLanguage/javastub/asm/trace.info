@@ -233,15 +233,16 @@
     <nodeInfo nodeId="7241381882860006507" fileName="ASMMethod.java" startLine="185" startPosition="28" endLine="186" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860006522" fileName="ASMMethod.java" startLine="189" startPosition="31" endLine="190" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860006537" fileName="ASMMethod.java" startLine="193" startPosition="29" endLine="194" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006552" fileName="ASMMethod.java" startLine="197" startPosition="34" endLine="198" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006565" fileName="ASMMethod.java" startLine="201" startPosition="40" endLine="202" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006588" fileName="ASMMethod.java" startLine="205" startPosition="52" endLine="206" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006596" fileName="ASMMethod.java" startLine="209" startPosition="34" endLine="210" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006604" fileName="ASMMethod.java" startLine="213" startPosition="41" endLine="214" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006630" fileName="ASMMethod.java" startLine="224" startPosition="44" endLine="225" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006640" fileName="ASMMethod.java" startLine="228" startPosition="51" endLine="229" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006668" fileName="ASMMethod.java" startLine="239" startPosition="62" endLine="240" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006678" fileName="ASMMethod.java" startLine="243" startPosition="44" endLine="244" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1116675434314455517" fileName="ASMMethod.java" startLine="197" startPosition="32" endLine="198" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006552" fileName="ASMMethod.java" startLine="201" startPosition="34" endLine="202" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006565" fileName="ASMMethod.java" startLine="205" startPosition="40" endLine="206" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006588" fileName="ASMMethod.java" startLine="209" startPosition="52" endLine="210" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006596" fileName="ASMMethod.java" startLine="213" startPosition="34" endLine="214" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006604" fileName="ASMMethod.java" startLine="217" startPosition="41" endLine="218" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006630" fileName="ASMMethod.java" startLine="228" startPosition="44" endLine="229" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006640" fileName="ASMMethod.java" startLine="232" startPosition="51" endLine="233" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006668" fileName="ASMMethod.java" startLine="243" startPosition="62" endLine="244" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006678" fileName="ASMMethod.java" startLine="247" startPosition="44" endLine="248" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860005760" fileName="ASMMethod.java" startLine="32" startPosition="10" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7241381882860005785" fileName="ASMMethod.java" startLine="37" startPosition="10" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7241381882860005850" fileName="ASMMethod.java" startLine="50" startPosition="10" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -272,17 +273,18 @@
     <nodeInfo nodeId="7241381882860006503" fileName="ASMMethod.java" startLine="184" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFinal#()Z" />
     <nodeInfo nodeId="7241381882860006518" fileName="ASMMethod.java" startLine="188" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAbstract#()Z" />
     <nodeInfo nodeId="7241381882860006533" fileName="ASMMethod.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBridge#()Z" />
-    <nodeInfo nodeId="7241381882860006548" fileName="ASMMethod.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConstructor#()Z" />
-    <nodeInfo nodeId="7241381882860006561" fileName="ASMMethod.java" startLine="200" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCompilerGenerated#()Z" />
-    <nodeInfo nodeId="7241381882860006583" fileName="ASMMethod.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTypeParameters#()Ljava/util/List;" />
-    <nodeInfo nodeId="7241381882860006592" fileName="ASMMethod.java" startLine="208" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
-    <nodeInfo nodeId="7241381882860006600" fileName="ASMMethod.java" startLine="212" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
-    <nodeInfo nodeId="7241381882860006613" fileName="ASMMethod.java" startLine="217" startPosition="47" endLine="221" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006625" fileName="ASMMethod.java" startLine="223" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterTypes#()Ljava/util/List;" />
-    <nodeInfo nodeId="7241381882860006635" fileName="ASMMethod.java" startLine="227" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericParameterTypes#()Ljava/util/List;" />
-    <nodeInfo nodeId="7241381882860006650" fileName="ASMMethod.java" startLine="232" startPosition="43" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860006662" fileName="ASMMethod.java" startLine="238" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterAnnotations#()Ljava/util/List;" />
-    <nodeInfo nodeId="7241381882860006673" fileName="ASMMethod.java" startLine="242" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExceptionTypes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1116675434314450459" fileName="ASMMethod.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSynthetic#()Z" />
+    <nodeInfo nodeId="7241381882860006548" fileName="ASMMethod.java" startLine="200" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConstructor#()Z" />
+    <nodeInfo nodeId="7241381882860006561" fileName="ASMMethod.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCompilerGenerated#()Z" />
+    <nodeInfo nodeId="7241381882860006583" fileName="ASMMethod.java" startLine="208" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTypeParameters#()Ljava/util/List;" />
+    <nodeInfo nodeId="7241381882860006592" fileName="ASMMethod.java" startLine="212" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860006600" fileName="ASMMethod.java" startLine="216" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericReturnType#()Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860006613" fileName="ASMMethod.java" startLine="221" startPosition="47" endLine="225" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006625" fileName="ASMMethod.java" startLine="227" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterTypes#()Ljava/util/List;" />
+    <nodeInfo nodeId="7241381882860006635" fileName="ASMMethod.java" startLine="231" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenericParameterTypes#()Ljava/util/List;" />
+    <nodeInfo nodeId="7241381882860006650" fileName="ASMMethod.java" startLine="236" startPosition="43" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860006662" fileName="ASMMethod.java" startLine="242" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterAnnotations#()Ljava/util/List;" />
+    <nodeInfo nodeId="7241381882860006673" fileName="ASMMethod.java" startLine="246" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExceptionTypes#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860005754" fileName="ASMMethod.java" startLine="29" startPosition="70" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860005779" fileName="ASMMethod.java" startLine="34" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860005844" fileName="ASMMethod.java" startLine="47" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -294,8 +296,8 @@
     <nodeInfo nodeId="7241381882860005914" fileName="ASMMethod.java" startLine="58" startPosition="7" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860006202" fileName="ASMMethod.java" startLine="103" startPosition="87" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1157126008575868539" fileName="ASMMethod.java" startLine="134" startPosition="10" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7241381882860006608" fileName="ASMMethod.java" startLine="216" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnnotations#()Ljava/util/List;" />
-    <nodeInfo nodeId="7241381882860006645" fileName="ASMMethod.java" startLine="231" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterNames#()Ljava/util/List;" />
+    <nodeInfo nodeId="7241381882860006608" fileName="ASMMethod.java" startLine="220" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnnotations#()Ljava/util/List;" />
+    <nodeInfo nodeId="7241381882860006645" fileName="ASMMethod.java" startLine="235" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterNames#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860005990" fileName="ASMMethod.java" startLine="69" startPosition="45" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860006041" fileName="ASMMethod.java" startLine="77" startPosition="7" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860006131" fileName="ASMMethod.java" startLine="94" startPosition="5" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -334,15 +336,16 @@
     <scopeInfo nodeId="7241381882860006506" fileName="ASMMethod.java" startLine="185" startPosition="28" endLine="186" endPosition="54" />
     <scopeInfo nodeId="7241381882860006521" fileName="ASMMethod.java" startLine="189" startPosition="31" endLine="190" endPosition="57" />
     <scopeInfo nodeId="7241381882860006536" fileName="ASMMethod.java" startLine="193" startPosition="29" endLine="194" endPosition="55" />
-    <scopeInfo nodeId="7241381882860006551" fileName="ASMMethod.java" startLine="197" startPosition="34" endLine="198" endPosition="42" />
-    <scopeInfo nodeId="7241381882860006564" fileName="ASMMethod.java" startLine="201" startPosition="40" endLine="202" endPosition="83" />
-    <scopeInfo nodeId="7241381882860006587" fileName="ASMMethod.java" startLine="205" startPosition="52" endLine="206" endPosition="27" />
-    <scopeInfo nodeId="7241381882860006595" fileName="ASMMethod.java" startLine="209" startPosition="34" endLine="210" endPosition="24" />
-    <scopeInfo nodeId="7241381882860006603" fileName="ASMMethod.java" startLine="213" startPosition="41" endLine="214" endPosition="31" />
-    <scopeInfo nodeId="7241381882860006629" fileName="ASMMethod.java" startLine="224" startPosition="44" endLine="225" endPosition="58" />
-    <scopeInfo nodeId="7241381882860006639" fileName="ASMMethod.java" startLine="228" startPosition="51" endLine="229" endPosition="65" />
-    <scopeInfo nodeId="7241381882860006667" fileName="ASMMethod.java" startLine="239" startPosition="62" endLine="240" endPosition="64" />
-    <scopeInfo nodeId="7241381882860006677" fileName="ASMMethod.java" startLine="243" startPosition="44" endLine="244" endPosition="54" />
+    <scopeInfo nodeId="1116675434314450462" fileName="ASMMethod.java" startLine="197" startPosition="32" endLine="198" endPosition="58" />
+    <scopeInfo nodeId="7241381882860006551" fileName="ASMMethod.java" startLine="201" startPosition="34" endLine="202" endPosition="42" />
+    <scopeInfo nodeId="7241381882860006564" fileName="ASMMethod.java" startLine="205" startPosition="40" endLine="206" endPosition="83" />
+    <scopeInfo nodeId="7241381882860006587" fileName="ASMMethod.java" startLine="209" startPosition="52" endLine="210" endPosition="27" />
+    <scopeInfo nodeId="7241381882860006595" fileName="ASMMethod.java" startLine="213" startPosition="34" endLine="214" endPosition="24" />
+    <scopeInfo nodeId="7241381882860006603" fileName="ASMMethod.java" startLine="217" startPosition="41" endLine="218" endPosition="31" />
+    <scopeInfo nodeId="7241381882860006629" fileName="ASMMethod.java" startLine="228" startPosition="44" endLine="229" endPosition="58" />
+    <scopeInfo nodeId="7241381882860006639" fileName="ASMMethod.java" startLine="232" startPosition="51" endLine="233" endPosition="65" />
+    <scopeInfo nodeId="7241381882860006667" fileName="ASMMethod.java" startLine="243" startPosition="62" endLine="244" endPosition="64" />
+    <scopeInfo nodeId="7241381882860006677" fileName="ASMMethod.java" startLine="247" startPosition="44" endLine="248" endPosition="54" />
     <scopeInfo nodeId="7241381882860006269" fileName="ASMMethod.java" startLine="113" startPosition="86" endLine="115" endPosition="32">
       <varInfo nodeId="7241381882860006271" varName="aa" />
     </scopeInfo>
@@ -381,17 +384,18 @@
     <scopeInfo nodeId="7241381882860006503" fileName="ASMMethod.java" startLine="184" startPosition="0" endLine="188" endPosition="0" />
     <scopeInfo nodeId="7241381882860006518" fileName="ASMMethod.java" startLine="188" startPosition="0" endLine="192" endPosition="0" />
     <scopeInfo nodeId="7241381882860006533" fileName="ASMMethod.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006548" fileName="ASMMethod.java" startLine="196" startPosition="0" endLine="200" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006561" fileName="ASMMethod.java" startLine="200" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006583" fileName="ASMMethod.java" startLine="204" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006592" fileName="ASMMethod.java" startLine="208" startPosition="0" endLine="212" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006600" fileName="ASMMethod.java" startLine="212" startPosition="0" endLine="216" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006612" fileName="ASMMethod.java" startLine="217" startPosition="47" endLine="221" endPosition="6" />
-    <scopeInfo nodeId="7241381882860006625" fileName="ASMMethod.java" startLine="223" startPosition="0" endLine="227" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006635" fileName="ASMMethod.java" startLine="227" startPosition="0" endLine="231" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006649" fileName="ASMMethod.java" startLine="232" startPosition="43" endLine="236" endPosition="7" />
-    <scopeInfo nodeId="7241381882860006662" fileName="ASMMethod.java" startLine="238" startPosition="0" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006673" fileName="ASMMethod.java" startLine="242" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="1116675434314450459" fileName="ASMMethod.java" startLine="196" startPosition="0" endLine="200" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006548" fileName="ASMMethod.java" startLine="200" startPosition="0" endLine="204" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006561" fileName="ASMMethod.java" startLine="204" startPosition="0" endLine="208" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006583" fileName="ASMMethod.java" startLine="208" startPosition="0" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006592" fileName="ASMMethod.java" startLine="212" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006600" fileName="ASMMethod.java" startLine="216" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006612" fileName="ASMMethod.java" startLine="221" startPosition="47" endLine="225" endPosition="6" />
+    <scopeInfo nodeId="7241381882860006625" fileName="ASMMethod.java" startLine="227" startPosition="0" endLine="231" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006635" fileName="ASMMethod.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006649" fileName="ASMMethod.java" startLine="236" startPosition="43" endLine="240" endPosition="7" />
+    <scopeInfo nodeId="7241381882860006662" fileName="ASMMethod.java" startLine="242" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006673" fileName="ASMMethod.java" startLine="246" startPosition="0" endLine="250" endPosition="0" />
     <scopeInfo nodeId="7241381882860005922" fileName="ASMMethod.java" startLine="59" startPosition="56" endLine="64" endPosition="9" />
     <scopeInfo nodeId="1157126008575868540" fileName="ASMMethod.java" startLine="135" startPosition="49" endLine="140" endPosition="11">
       <varInfo nodeId="1157126008575868618" varName="index" />
@@ -408,8 +412,8 @@
     <scopeInfo nodeId="1157126008575868539" fileName="ASMMethod.java" startLine="134" startPosition="10" endLine="141" endPosition="9">
       <varInfo nodeId="1157126008575868543" varName="lv" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860006608" fileName="ASMMethod.java" startLine="216" startPosition="0" endLine="223" endPosition="0" />
-    <scopeInfo nodeId="7241381882860006645" fileName="ASMMethod.java" startLine="231" startPosition="0" endLine="238" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006608" fileName="ASMMethod.java" startLine="220" startPosition="0" endLine="227" endPosition="0" />
+    <scopeInfo nodeId="7241381882860006645" fileName="ASMMethod.java" startLine="235" startPosition="0" endLine="242" endPosition="0" />
     <scopeInfo nodeId="7241381882860006383" fileName="ASMMethod.java" startLine="130" startPosition="100" endLine="141" endPosition="9">
       <varInfo nodeId="8278838086631112233" varName="offset" />
     </scopeInfo>
@@ -434,7 +438,7 @@
     <scopeInfo nodeId="7241381882860005734" fileName="ASMMethod.java" startLine="26" startPosition="0" endLine="147" endPosition="3">
       <varInfo nodeId="7241381882860005735" varName="method" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860005690" fileName="ASMMethod.java" startLine="14" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMMethod" />
+    <unitInfo nodeId="7241381882860005690" fileName="ASMMethod.java" startLine="14" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMMethod" />
   </root>
   <root nodeId="7241381882860006706">
     <nodeInfo nodeId="7241381882860006709" fileName="ASMPrimitiveType.java" startLine="6" startPosition="47" endLine="7" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VOID" />

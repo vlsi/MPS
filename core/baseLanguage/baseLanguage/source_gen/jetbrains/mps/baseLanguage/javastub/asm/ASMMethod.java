@@ -194,6 +194,10 @@ public class ASMMethod {
     return (Opcodes.ACC_BRIDGE & myMethod.access) != 0;
   }
 
+  public boolean isSynthetic() {
+    return (Opcodes.ACC_SYNTHETIC & myMethod.access) != 0;
+  }
+
   public boolean isConstructor() {
     return myMethod.name.equals("<init>");
   }

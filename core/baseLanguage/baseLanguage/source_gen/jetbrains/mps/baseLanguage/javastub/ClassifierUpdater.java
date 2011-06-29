@@ -252,13 +252,17 @@ public class ClassifierUpdater {
 
   private void updateConstructors(ASMClass ac, final SNode cls) {
     for (ASMMethod c : ac.getDeclaredConstructors()) {
+      if (c.isSynthetic()) {
+        continue;
+      }
       if (c.isPrivate() && mySkipPrivate) {
         continue;
       }
-      SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a1a0a11().createNode(createVisibility(c), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, "name"));
+
+      SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a11().createNode(createVisibility(c), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, "name"));
       SPropertyOperations.set(constructor, "isDeprecated", "" + c.isDeprecated());
       for (ASMTypeVariable tv : c.getTypeParameters()) {
-        ListSequence.fromList(SLinkOperations.getTargets(constructor, "typeVariableDeclaration", true)).addElement(new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0d0a0l().createNode(tv.getName()));
+        ListSequence.fromList(SLinkOperations.getTargets(constructor, "typeVariableDeclaration", true)).addElement(new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0f0a0l().createNode(tv.getName()));
       }
       {
         ASMType pt;
@@ -281,7 +285,11 @@ public class ClassifierUpdater {
           pn = pn_iterator.next();
           pa = pa_iterator.next();
           {
-            SNode pd = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a6a6a4a0a11().createNode(getTypeByASMType(pt, constructor, cls), pn);
+            if (!(SPropertyOperations.getBoolean(cls, "isStatic")) && c.getGenericParameterTypes().get(0) == pt) {
+              continue;
+            }
+
+            SNode pd = new ClassifierUpdater.QuotationClass_ol94f8_a0a2a6a6a6a0a11().createNode(getTypeByASMType(pt, constructor, cls), pn);
             addAnnotationsToParameter(pd, pa);
             ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(pd);
           }
@@ -946,8 +954,8 @@ public class ClassifierUpdater {
     }
   }
 
-  public static class QuotationClass_ol94f8_a0a1a0a11 {
-    public QuotationClass_ol94f8_a0a1a0a11() {
+  public static class QuotationClass_ol94f8_a0a3a0a11 {
+    public QuotationClass_ol94f8_a0a3a0a11() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
@@ -998,8 +1006,8 @@ public class ClassifierUpdater {
     }
   }
 
-  public static class QuotationClass_ol94f8_a0a0a0d0a0l {
-    public QuotationClass_ol94f8_a0a0a0d0a0l() {
+  public static class QuotationClass_ol94f8_a0a0a0f0a0l {
+    public QuotationClass_ol94f8_a0a0a0f0a0l() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -1016,8 +1024,8 @@ public class ClassifierUpdater {
     }
   }
 
-  public static class QuotationClass_ol94f8_a0a0a6a6a4a0a11 {
-    public QuotationClass_ol94f8_a0a0a6a6a4a0a11() {
+  public static class QuotationClass_ol94f8_a0a2a6a6a6a0a11 {
+    public QuotationClass_ol94f8_a0a2a6a6a6a0a11() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
