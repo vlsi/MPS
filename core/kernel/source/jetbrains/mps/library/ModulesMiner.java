@@ -143,6 +143,9 @@ public class ModulesMiner {
       if (childDir.getName().endsWith(MPSExtentions.MPS_ARCH)) {
         IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getPath() + "!/" + AbstractModule.MODULE_DIR);
         readModuleDescriptors(dirInJar, excludes, result, refreshFiles, reader);
+      } else if(childDir.getName().equals("mps.jar")) {
+        IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getPath() + "!/modules");
+        readModuleDescriptors(dirInJar, excludes, result, refreshFiles, reader);
       }
 
       readModuleDescriptors(childDir, excludes, result, refreshFiles, reader);
