@@ -79,6 +79,8 @@ public class TestMain {
 
   public static final ProjectContainer PROJECT_CONTAINER = new ProjectContainer();
 
+  private static boolean cachesInvalidated = false;
+
   public static void main(String[] args) {
     if (args.length != 1) {
       System.out.println("Usage : TestMain mpsProject");
@@ -464,7 +466,10 @@ public class TestMain {
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
     System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
-    FSRecords.invalidateCaches();
+    if(!cachesInvalidated) {
+      FSRecords.invalidateCaches();
+      cachesInvalidated = true;
+    }
     try {
       IdeaTestApplication.getInstance(null);
     } catch (Exception e) {
