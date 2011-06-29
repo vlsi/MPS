@@ -27,6 +27,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.generator.GenerationOptions;
@@ -463,7 +464,7 @@ public class TestMain {
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
     System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
-
+    FSRecords.invalidateCaches();
     try {
       IdeaTestApplication.getInstance(null);
     } catch (Exception e) {
