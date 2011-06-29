@@ -14,11 +14,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.migration20.MigrationState;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.migration20.stages.MigrationStage;
-import com.intellij.openapi.ui.Messages;
-import java.awt.Frame;
 import jetbrains.mps.migration20.MigrationHelper;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class Migration20_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -35,7 +32,7 @@ public class Migration20_Action extends GeneratedAction {
       {
         MState state = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class).getMigrationState();
 
-        String act = NameUtil.capitalize(Migration20_Action.this.getContinuationWord(state, _params));
+        String act = NameUtil.capitalize(MigrationHelper.getContinuationWord(state));
 
         event.getPresentation().setEnabled(true);
         event.getPresentation().setText(act + " migration to MPS 2.0");
@@ -65,55 +62,11 @@ public class Migration20_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MigrationState mComp = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class);
-      MState state = mComp.getMigrationState();
-      MState nextState = MState.values()[state.ordinal() + 1];
-      MigrationStage nextStage = nextState.getStage();
-
-      String title = "Migration from MPS 1.5 to MPS 2.0";
-
-      StringBuilder sb = new StringBuilder();
-      sb.append("Welcome to migration assistant.").append("\n");
-      sb.append("This will help to migrate code written in MPS 1.5 to MPS 2.0.").append("\n");
-      sb.append("The migration consists of ").append(MState.values().length - 2).append(" steps. ").append("On each step MPS will tell you what it intends to do, then perform a refactoring and, after some of the steps, ask you to change some code by hand. ").append("\n");
-      sb.append("You can pause the migration on any step and continue performing it at any time just by executing MainMenu->Tools->Continue Migration to MPS 2.0").append("\n");
-      sb.append("Read more about migration here: http://confluence.jetbrains.net/display/MPS/Migration20").append("\n\n");
-      sb.append("WARNING: your files will be changed by the assistant. Please ensure all work is saved and you have a backup copy of your code.").append("\n\n");
-
-      if (state != MState.INITIAL && state != MState.DONE) {
-        sb.append("Last migration executed: ").append(state.getStage().title()).append("\n");
-        sb.append("Next migration: ").append((nextStage != null ?
-          nextStage.title() :
-          "<no stage>"
-        )).append("\n");
-      }
-      sb.append(NameUtil.capitalize(Migration20_Action.this.getContinuationWord(state, _params)) + " migration?");
-
-      String[] values = new String[]{NameUtil.capitalize(Migration20_Action.this.getContinuationWord(state, _params)), "Abort Migration", "Cancel"};
-
-      int res = Messages.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")), sb.toString(), title, values, 0, Messages.getQuestionIcon());
-      if (res == 0) {
-        if (state == MState.DONE) {
-          mComp.setMigrationState(MState.INITIAL);
-        }
-        new MigrationHelper(((Project) MapSequence.fromMap(_params).get("project"))).migrate();
-      } else if (res == 1) {
-        mComp.setMigrationState(MState.INITIAL);
-      }
+      new MigrationHelper(((Project) MapSequence.fromMap(_params).get("project"))).migrate();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Migration20", t);
       }
     }
-  }
-
-  private String getContinuationWord(MState state, final Map<String, Object> _params) {
-    String act = "continue";
-    if (state == MState.INITIAL) {
-      act = "start";
-    } else if (state == MState.DONE) {
-      act = "restart";
-    }
-    return act;
   }
 }

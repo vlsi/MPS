@@ -22,9 +22,12 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.migration20.MigrationState.MyState;
-import jetbrains.mps.migration20.stages.MigrationStage;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @State(
   name = "MigrationState",
@@ -74,7 +77,32 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   //----------component stuff-------------
 
   public void projectOpened() {
+    if (myState == MState.INITIAL) return;
+    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        String message = "MPS detected that this project was not migrated to MPS 2.0.\n" +
+          "If the code is not migrated, many references will be broken and code will not be generatable." +
+          "It is suggested to perform the migration right now or just after the project is opened by executing MainMenu -> Tools -> Start Migration to MPS 2.0";
 
+        List<String> variants = new ArrayList<String>();
+        variants.add("Start");
+        variants.add("Later");
+        if (InternalFlag.isInternalMode()) {
+          variants.add("Already migrated");
+        }
+
+        int res = Messages.showDialog(myProject,
+          message,
+          "Migration to 2.0",
+          variants.toArray(new String[variants.size()]), 0, Messages.getQuestionIcon()
+        );
+        if (res == 2) {
+          myState = MState.DONE;
+        }
+        if (res != 0) return;
+        new MigrationHelper(myProject).migrate();
+      }
+    });
   }
 
   public void projectClosed() {
