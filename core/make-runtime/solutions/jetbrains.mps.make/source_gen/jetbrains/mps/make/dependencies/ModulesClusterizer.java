@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.generator.runtime.TemplateModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -23,7 +24,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class ModulesClusterizer implements IResourceClusterizer {
   private static Logger LOG = Logger.getLogger(ModulesCluster.class);
@@ -75,6 +75,7 @@ public class ModulesClusterizer implements IResourceClusterizer {
 
   private Iterable<String> allNamespaces(Iterable<IModule> modules) {
     Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
+    Set<TemplateModule> seen = SetSequence.fromSet(new HashSet<TemplateModule>());
     Queue<String> nsq = QueueSequence.fromQueue(new LinkedList<String>());
     for (IModule mod : modules) {
       Iterable<Language> langs = mod.getDependenciesManager().getAllUsedLanguages();
@@ -95,7 +96,10 @@ public class ModulesClusterizer implements IResourceClusterizer {
           Collection<TemplateModule> gens = lr.getGenerators();
           if (gens != null) {
             for (TemplateModule tm : gens) {
-              QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(tm.getUsedLanguages()));
+              if (!(SetSequence.fromSet(seen).contains(tm))) {
+                QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(tm.getUsedLanguages()));
+                SetSequence.fromSet(seen).addElement(tm);
+              }
             }
           }
         }
