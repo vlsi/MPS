@@ -38,7 +38,7 @@ public class typeof_NodeListSource_InferenceRule extends AbstractInferenceRule_R
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_eijui7_a0a0a0 {

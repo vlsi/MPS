@@ -49,6 +49,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="529406319400446699">
       <property name="name" nameId="tpck.1169194664001" value="typeof_NodeListSource" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="producer.source" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3642991921658151030">
       <property name="name" nameId="tpck.1169194664001" value="typeof_RunConfigurationSource" />
