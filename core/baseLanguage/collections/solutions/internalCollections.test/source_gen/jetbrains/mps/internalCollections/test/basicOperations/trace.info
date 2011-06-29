@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="LinkedMap_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.LinkedMap_Test" />
-  <unitInfo fileName="Distinct_Test.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test" />
   <unitInfo fileName="SortedMap_Test.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.SortedMap_Test" />
   <unitInfo fileName="SortedSet_Test.java" startLine="14" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.SortedSet_Test" />
   <unitInfo fileName="Iterator_Test.java" startLine="18" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Iterator_Test" />
   <unitInfo fileName="Chunks_Test.java" startLine="17" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test" />
   <unitInfo fileName="QueueDequeStack_Test.java" startLine="14" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.QueueDequeStack_Test" />
+  <unitInfo fileName="Distinct_Test.java" startLine="17" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test" />
   <unitInfo fileName="Set_Test.java" startLine="21" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Set_Test" />
   <unitInfo fileName="Map_Test.java" startLine="29" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Map_Test" />
   <unitInfo fileName="Array_Test.java" startLine="13" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.internalCollections.test.basicOperations.Array_Test" />
@@ -768,37 +768,128 @@
     <unitInfo nodeId="1237784457556" fileName="Chunks_Test.java" startLine="46" startPosition="54" endLine="95" endPosition="5" unitName="jetbrains.mps.internalCollections.test.basicOperations.Chunks_Test$1" />
   </root>
   <root nodeId="1205777714960">
-    <nodeInfo nodeId="1205777729243" fileName="Distinct_Test.java" startLine="16" startPosition="54" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205777767363" fileName="Distinct_Test.java" startLine="17" startPosition="68" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205777790299" fileName="Distinct_Test.java" startLine="21" startPosition="57" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205777827673" fileName="Distinct_Test.java" startLine="22" startPosition="62" endLine="23" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241361120716" fileName="Distinct_Test.java" startLine="26" startPosition="58" endLine="27" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241361159129" fileName="Distinct_Test.java" startLine="27" startPosition="140" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241361167253" fileName="Distinct_Test.java" startLine="28" startPosition="36" endLine="29" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241361174010" fileName="Distinct_Test.java" startLine="29" startPosition="36" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241361179918" fileName="Distinct_Test.java" startLine="30" startPosition="36" endLine="31" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241361188355" fileName="Distinct_Test.java" startLine="32" startPosition="9" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="33" startPosition="16" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="35" startPosition="40" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1205777720379" fileName="Distinct_Test.java" startLine="15" startPosition="46" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_distinctMethod#()V" />
-    <nodeInfo nodeId="1205777784751" fileName="Distinct_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_distinctOperation#()V" />
-    <nodeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="31" startPosition="37" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1241361090861" fileName="Distinct_Test.java" startLine="25" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
-    <scopeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="35" startPosition="0" endLine="36" endPosition="28" />
-    <scopeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="35" startPosition="40" endLine="36" endPosition="28" />
-    <scopeInfo nodeId="1205777720381" fileName="Distinct_Test.java" startLine="16" startPosition="54" endLine="18" endPosition="72">
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="97" startPosition="27" endLine="97" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="104" startPosition="27" endLine="104" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="107" startPosition="28" endLine="107" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1205777729243" fileName="Distinct_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205777767363" fileName="Distinct_Test.java" startLine="19" startPosition="68" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205777790299" fileName="Distinct_Test.java" startLine="23" startPosition="57" endLine="24" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205777827673" fileName="Distinct_Test.java" startLine="24" startPosition="62" endLine="25" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241361120716" fileName="Distinct_Test.java" startLine="28" startPosition="58" endLine="29" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241361159129" fileName="Distinct_Test.java" startLine="29" startPosition="140" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241361167253" fileName="Distinct_Test.java" startLine="30" startPosition="36" endLine="31" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241361174010" fileName="Distinct_Test.java" startLine="31" startPosition="36" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241361179918" fileName="Distinct_Test.java" startLine="32" startPosition="36" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241361188355" fileName="Distinct_Test.java" startLine="34" startPosition="9" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="35" startPosition="16" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="37" startPosition="40" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="47" startPosition="52" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="48" startPosition="37" endLine="49" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_7_i" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="49" startPosition="31" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_j" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="57" startPosition="28" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="58" startPosition="54" endLine="59" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="60" startPosition="27" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="63" startPosition="43" endLine="64" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="64" startPosition="40" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="66" startPosition="23" endLine="67" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="67" startPosition="38" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="69" startPosition="27" endLine="70" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="70" startPosition="29" endLine="71" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="71" startPosition="38" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="73" startPosition="27" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="76" startPosition="44" endLine="77" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="77" startPosition="40" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="79" startPosition="23" endLine="80" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="80" startPosition="38" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="82" startPosition="28" endLine="83" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="83" startPosition="29" endLine="84" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="84" startPosition="38" endLine="85" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="87" startPosition="49" endLine="88" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="88" startPosition="41" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="90" startPosition="23" endLine="91" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="91" startPosition="39" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="93" startPosition="28" endLine="94" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="94" startPosition="39" endLine="95" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="95" startPosition="39" endLine="96" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="97" startPosition="27" endLine="98" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="98" startPosition="38" endLine="99" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="100" startPosition="27" endLine="101" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7999094521537096532" fileName="Distinct_Test.java" startLine="100" startPosition="27" endLine="101" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="101" startPosition="51" endLine="102" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="102" startPosition="38" endLine="103" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="104" startPosition="27" endLine="105" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="105" startPosition="39" endLine="106" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="107" startPosition="28" endLine="108" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="108" startPosition="39" endLine="109" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="110" startPosition="28" endLine="111" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="113" startPosition="31" endLine="114" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7999094521537096485" fileName="Distinct_Test.java" startLine="120" startPosition="7" endLine="121" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="62" startPosition="27" endLine="66" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="75" startPosition="27" endLine="79" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="86" startPosition="28" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205777720379" fileName="Distinct_Test.java" startLine="17" startPosition="46" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_distinctMethod#()V" />
+    <nodeInfo nodeId="1205777784751" fileName="Distinct_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_distinctOperation#()V" />
+    <nodeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="33" startPosition="37" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1241361090861" fileName="Distinct_Test.java" startLine="27" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nextWithoutHasNext#()V" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="54" startPosition="20" endLine="112" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="52" startPosition="46" endLine="113" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="51" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="46" startPosition="47" endLine="116" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="45" startPosition="40" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="44" startPosition="43" endLine="118" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="43" startPosition="82" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7999094521537096521" fileName="Distinct_Test.java" startLine="42" startPosition="52" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7999094521537096377" fileName="Distinct_Test.java" startLine="41" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_distinctLazy#()V" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="97" startPosition="27" endLine="97" endPosition="27" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="104" startPosition="27" endLine="104" endPosition="27" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="107" startPosition="28" endLine="107" endPosition="28" />
+    <scopeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="37" startPosition="0" endLine="38" endPosition="28" />
+    <scopeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="37" startPosition="40" endLine="38" endPosition="28" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="60" startPosition="27" endLine="61" endPosition="36" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="73" startPosition="27" endLine="74" endPosition="36" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="100" startPosition="27" endLine="101" endPosition="51" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="110" startPosition="28" endLine="111" endPosition="37" />
+    <scopeInfo nodeId="1205777720381" fileName="Distinct_Test.java" startLine="18" startPosition="54" endLine="20" endPosition="72">
       <varInfo nodeId="1205777729244" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="1205777784753" fileName="Distinct_Test.java" startLine="21" startPosition="57" endLine="23" endPosition="95">
+    <scopeInfo nodeId="1205777784753" fileName="Distinct_Test.java" startLine="23" startPosition="57" endLine="25" endPosition="95">
       <varInfo nodeId="1205777790300" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="32" startPosition="9" endLine="34" endPosition="20" />
-    <scopeInfo nodeId="1205777720379" fileName="Distinct_Test.java" startLine="15" startPosition="46" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1205777784751" fileName="Distinct_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1241361090863" fileName="Distinct_Test.java" startLine="26" startPosition="58" endLine="37" endPosition="5">
+    <scopeInfo nodeId="1241361186631" fileName="Distinct_Test.java" startLine="34" startPosition="9" endLine="36" endPosition="20" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="57" startPosition="28" endLine="59" endPosition="35" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="63" startPosition="43" endLine="65" endPosition="30" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="76" startPosition="44" endLine="78" endPosition="30" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="87" startPosition="49" endLine="89" endPosition="30" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="97" startPosition="27" endLine="99" endPosition="28" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="104" startPosition="27" endLine="106" endPosition="28" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="107" startPosition="28" endLine="109" endPosition="28" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="69" startPosition="27" endLine="72" endPosition="28" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="82" startPosition="28" endLine="85" endPosition="28" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="93" startPosition="28" endLine="96" endPosition="34" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="100" startPosition="27" endLine="103" endPosition="28" />
+    <scopeInfo nodeId="1205777720379" fileName="Distinct_Test.java" startLine="17" startPosition="46" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1205777784751" fileName="Distinct_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="62" startPosition="27" endLine="68" endPosition="28" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="75" startPosition="27" endLine="81" endPosition="28" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="86" startPosition="28" endLine="92" endPosition="28" />
+    <scopeInfo nodeId="1241361090863" fileName="Distinct_Test.java" startLine="28" startPosition="58" endLine="39" endPosition="5">
       <varInfo nodeId="1241361120717" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1241361090861" fileName="Distinct_Test.java" startLine="25" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1241361090861" fileName="Distinct_Test.java" startLine="27" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="54" startPosition="20" endLine="112" endPosition="19" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="52" startPosition="46" endLine="114" endPosition="29" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="51" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="46" startPosition="47" endLine="116" endPosition="14" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="45" startPosition="40" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="44" startPosition="43" endLine="118" endPosition="10" />
+    <scopeInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="43" startPosition="82" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="7999094521537096380" fileName="Distinct_Test.java" startLine="42" startPosition="52" endLine="121" endPosition="84">
+      <varInfo nodeId="7999094521537096522" varName="seq" />
+    </scopeInfo>
+    <scopeInfo nodeId="7999094521537096377" fileName="Distinct_Test.java" startLine="41" startPosition="0" endLine="123" endPosition="0" />
+    <unitInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="47" startPosition="23" endLine="116" endPosition="13" unitName="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test$3" />
+    <unitInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="45" startPosition="19" endLine="118" endPosition="9" unitName="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test$2" />
+    <unitInfo nodeId="7999094521537096528" fileName="Distinct_Test.java" startLine="43" startPosition="53" endLine="120" endPosition="5" unitName="jetbrains.mps.internalCollections.test.basicOperations.Distinct_Test$1" />
   </root>
   <root nodeId="1205942757641">
     <nodeInfo nodeId="6312172641078801210" fileName="List_Test.java" startLine="312" startPosition="27" endLine="312" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
