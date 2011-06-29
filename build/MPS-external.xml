@@ -197,6 +197,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.make" />
     <antcall target="MPS-languages.pack.jetbrains.mps.plugin.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.refactoring.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />

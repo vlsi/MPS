@@ -2478,6 +2478,11 @@
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.make.runtime" />
       <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
     </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="1768998781380666465">
+      <property name="id" nameId="tps4.1222447189012" value="20351dc3-a2df-46f5-b667-fc9adab1f1c9" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.make" />
+      <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
+    </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="7451905405776981204">
       <property name="id" nameId="tps4.1222447189012" value="40aea410-4b11-411f-9197-07da76ee0e82" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.plugin.runtime" />
