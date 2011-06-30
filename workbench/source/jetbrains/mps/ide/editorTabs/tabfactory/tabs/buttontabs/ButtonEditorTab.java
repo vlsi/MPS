@@ -79,7 +79,9 @@ class ButtonEditorTab {
 
   private String getActionName(SNode node) {
     String rootName = node.getContainingRoot().getName();
-    rootName = rootName.replaceFirst("_", "__");
+    if (rootName != null) {
+      rootName = rootName.replaceFirst("_", "__");
+    }
     return rootName != null ? rootName : "<no name>";
   }
 
