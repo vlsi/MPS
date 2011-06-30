@@ -25,9 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 /**
  * Utility class to share some functionality between JavaStubs and AllMemberJavaStubs
  */
-public class JavaStubsUtil {
-  public static String ALL_MEMBERS_STUBS_ID = "debugger_java";
-
+/*package*/ class JavaStubsUtil {
   public JavaStubsUtil() {
   }
 
@@ -65,7 +63,7 @@ public class JavaStubsUtil {
     return ClassPathFactory.getInstance().createFromPath(location.getPath());
   }
 
-  /*package*/ static Set<IStubRootNodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {
+  public static Set<IStubRootNodeDescriptor> iterateClassPath(ModuleReference module, IClassPathItem item) {
     Set<IStubRootNodeDescriptor> result = new HashSet<IStubRootNodeDescriptor>();
     iterateClassPath(module, item, result, "");
     return result;

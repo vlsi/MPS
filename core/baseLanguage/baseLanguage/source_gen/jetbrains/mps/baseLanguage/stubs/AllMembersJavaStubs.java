@@ -68,6 +68,6 @@ public class AllMembersJavaStubs extends BaseStubModelRootManager {
   }
 
   public String getLanguageId() {
-    return JavaStubsUtil.ALL_MEMBERS_STUBS_ID;
+    return "debugger_java";
   }
 }
