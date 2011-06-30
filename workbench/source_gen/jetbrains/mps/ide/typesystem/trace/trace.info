@@ -755,327 +755,367 @@
     <unitInfo nodeId="866755926374576370" fileName="TypeSystemTracePanel.java" startLine="29" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel" />
   </root>
   <root nodeId="866755926374576838">
-    <nodeInfo nodeId="866755926374576878" fileName="TypeSystemTraceTree.java" startLine="44" startPosition="74" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
-    <nodeInfo nodeId="866755926374576881" fileName="TypeSystemTraceTree.java" startLine="45" startPosition="53" endLine="46" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperation" />
-    <nodeInfo nodeId="866755926374576884" fileName="TypeSystemTraceTree.java" startLine="46" startPosition="40" endLine="47" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTypeCheckingContextNew" />
-    <nodeInfo nodeId="866755926374576887" fileName="TypeSystemTraceTree.java" startLine="47" startPosition="64" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentContext" />
-    <nodeInfo nodeId="866755926374576890" fileName="TypeSystemTraceTree.java" startLine="48" startPosition="50" endLine="49" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedNode" />
-    <nodeInfo nodeId="866755926374576893" fileName="TypeSystemTraceTree.java" startLine="49" startPosition="37" endLine="50" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodes" />
-    <nodeInfo nodeId="866755926374576897" fileName="TypeSystemTraceTree.java" startLine="50" startPosition="35" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="generationMode" />
-    <nodeInfo nodeId="866755926374576901" fileName="TypeSystemTraceTree.java" startLine="51" startPosition="41" endLine="52" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
-    <nodeInfo nodeId="866755926374576904" fileName="TypeSystemTraceTree.java" startLine="52" startPosition="40" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStateCopy" />
-    <nodeInfo nodeId="866755926374576907" fileName="TypeSystemTraceTree.java" startLine="53" startPosition="28" endLine="54" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentState" />
-    <nodeInfo nodeId="866755926374576910" fileName="TypeSystemTraceTree.java" startLine="54" startPosition="31" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldOperation" />
-    <nodeInfo nodeId="866755926374576913" fileName="TypeSystemTraceTree.java" startLine="55" startPosition="43" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponent" />
-    <nodeInfo nodeId="866755926374576916" fileName="TypeSystemTraceTree.java" startLine="56" startPosition="44" endLine="57" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrorNodes" />
-    <nodeInfo nodeId="866755926374577018" fileName="TypeSystemTraceTree.java" startLine="59" startPosition="168" endLine="60" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577022" fileName="TypeSystemTraceTree.java" startLine="60" startPosition="42" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577026" fileName="TypeSystemTraceTree.java" startLine="61" startPosition="35" endLine="62" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577032" fileName="TypeSystemTraceTree.java" startLine="62" startPosition="37" endLine="63" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577038" fileName="TypeSystemTraceTree.java" startLine="63" startPosition="61" endLine="64" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577042" fileName="TypeSystemTraceTree.java" startLine="64" startPosition="26" endLine="65" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577048" fileName="TypeSystemTraceTree.java" startLine="65" startPosition="35" endLine="66" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577055" fileName="TypeSystemTraceTree.java" startLine="66" startPosition="42" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577060" fileName="TypeSystemTraceTree.java" startLine="67" startPosition="22" endLine="68" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577064" fileName="TypeSystemTraceTree.java" startLine="68" startPosition="27" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577068" fileName="TypeSystemTraceTree.java" startLine="69" startPosition="22" endLine="70" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577079" fileName="TypeSystemTraceTree.java" startLine="70" startPosition="64" endLine="71" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577082" fileName="TypeSystemTraceTree.java" startLine="71" startPosition="56" endLine="72" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577086" fileName="TypeSystemTraceTree.java" startLine="72" startPosition="40" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577090" fileName="TypeSystemTraceTree.java" startLine="73" startPosition="22" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577092" fileName="TypeSystemTraceTree.java" startLine="74" startPosition="16" endLine="75" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576924" fileName="TypeSystemTraceTree.java" startLine="78" startPosition="30" endLine="79" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576929" fileName="TypeSystemTraceTree.java" startLine="79" startPosition="56" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576933" fileName="TypeSystemTraceTree.java" startLine="80" startPosition="22" endLine="81" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576943" fileName="TypeSystemTraceTree.java" startLine="84" startPosition="57" endLine="85" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576949" fileName="TypeSystemTraceTree.java" startLine="85" startPosition="41" endLine="86" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576974" fileName="TypeSystemTraceTree.java" startLine="87" startPosition="30" endLine="88" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374576983" fileName="TypeSystemTraceTree.java" startLine="88" startPosition="139" endLine="89" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576988" fileName="TypeSystemTraceTree.java" startLine="89" startPosition="54" endLine="90" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576994" fileName="TypeSystemTraceTree.java" startLine="90" startPosition="43" endLine="91" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576998" fileName="TypeSystemTraceTree.java" startLine="91" startPosition="33" endLine="92" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576959" fileName="TypeSystemTraceTree.java" startLine="93" startPosition="12" endLine="94" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576965" fileName="TypeSystemTraceTree.java" startLine="94" startPosition="60" endLine="95" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576969" fileName="TypeSystemTraceTree.java" startLine="95" startPosition="50" endLine="96" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577100" fileName="TypeSystemTraceTree.java" startLine="100" startPosition="27" endLine="101" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577106" fileName="TypeSystemTraceTree.java" startLine="105" startPosition="35" endLine="106" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577109" fileName="TypeSystemTraceTree.java" startLine="106" startPosition="26" endLine="107" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577119" fileName="TypeSystemTraceTree.java" startLine="108" startPosition="75" endLine="109" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577122" fileName="TypeSystemTraceTree.java" startLine="110" startPosition="5" endLine="111" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577131" fileName="TypeSystemTraceTree.java" startLine="111" startPosition="113" endLine="112" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="775997175435544108" fileName="TypeSystemTraceTree.java" startLine="112" startPosition="32" endLine="113" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577135" fileName="TypeSystemTraceTree.java" startLine="113" startPosition="25" endLine="114" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="999645872103353250" fileName="TypeSystemTraceTree.java" startLine="119" startPosition="100" endLine="120" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="999645872103353261" fileName="TypeSystemTraceTree.java" startLine="120" startPosition="142" endLine="121" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="999645872103353265" fileName="TypeSystemTraceTree.java" startLine="121" startPosition="28" endLine="122" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="999645872103353272" fileName="TypeSystemTraceTree.java" startLine="123" startPosition="91" endLine="124" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="999645872103353245" fileName="TypeSystemTraceTree.java" startLine="126" startPosition="14" endLine="127" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577220" fileName="TypeSystemTraceTree.java" startLine="133" startPosition="75" endLine="134" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577230" fileName="TypeSystemTraceTree.java" startLine="136" startPosition="45" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577237" fileName="TypeSystemTraceTree.java" startLine="139" startPosition="47" endLine="140" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577258" fileName="TypeSystemTraceTree.java" startLine="141" startPosition="80" endLine="142" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577265" fileName="TypeSystemTraceTree.java" startLine="145" startPosition="49" endLine="146" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577287" fileName="TypeSystemTraceTree.java" startLine="148" startPosition="37" endLine="149" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577289" fileName="TypeSystemTraceTree.java" startLine="152" startPosition="5" endLine="153" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577305" fileName="TypeSystemTraceTree.java" startLine="157" startPosition="94" endLine="158" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577315" fileName="TypeSystemTraceTree.java" startLine="160" startPosition="98" endLine="161" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577330" fileName="TypeSystemTraceTree.java" startLine="163" startPosition="152" endLine="164" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577332" fileName="TypeSystemTraceTree.java" startLine="165" startPosition="5" endLine="166" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577338" fileName="TypeSystemTraceTree.java" startLine="169" startPosition="31" endLine="170" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577342" fileName="TypeSystemTraceTree.java" startLine="170" startPosition="24" endLine="171" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577350" fileName="TypeSystemTraceTree.java" startLine="172" startPosition="30" endLine="173" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577364" fileName="TypeSystemTraceTree.java" startLine="174" startPosition="5" endLine="175" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577371" fileName="TypeSystemTraceTree.java" startLine="176" startPosition="28" endLine="177" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577380" fileName="TypeSystemTraceTree.java" startLine="177" startPosition="66" endLine="178" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577391" fileName="TypeSystemTraceTree.java" startLine="182" startPosition="49" endLine="183" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577394" fileName="TypeSystemTraceTree.java" startLine="183" startPosition="23" endLine="184" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577399" fileName="TypeSystemTraceTree.java" startLine="185" startPosition="60" endLine="186" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577407" fileName="TypeSystemTraceTree.java" startLine="186" startPosition="52" endLine="187" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577416" fileName="TypeSystemTraceTree.java" startLine="188" startPosition="27" endLine="189" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577426" fileName="TypeSystemTraceTree.java" startLine="192" startPosition="36" endLine="193" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577435" fileName="TypeSystemTraceTree.java" startLine="194" startPosition="5" endLine="195" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577451" fileName="TypeSystemTraceTree.java" startLine="199" startPosition="23" endLine="200" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577457" fileName="TypeSystemTraceTree.java" startLine="202" startPosition="47" endLine="203" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577463" fileName="TypeSystemTraceTree.java" startLine="203" startPosition="60" endLine="204" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577469" fileName="TypeSystemTraceTree.java" startLine="204" startPosition="34" endLine="205" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577481" fileName="TypeSystemTraceTree.java" startLine="206" startPosition="36" endLine="207" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577493" fileName="TypeSystemTraceTree.java" startLine="209" startPosition="37" endLine="210" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577504" fileName="TypeSystemTraceTree.java" startLine="213" startPosition="46" endLine="214" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577523" fileName="TypeSystemTraceTree.java" startLine="215" startPosition="105" endLine="216" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="999645872103372781" fileName="TypeSystemTraceTree.java" startLine="219" startPosition="64" endLine="220" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577555" fileName="TypeSystemTraceTree.java" startLine="225" startPosition="44" endLine="226" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577561" fileName="TypeSystemTraceTree.java" startLine="226" startPosition="52" endLine="227" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577571" fileName="TypeSystemTraceTree.java" startLine="228" startPosition="28" endLine="229" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577576" fileName="TypeSystemTraceTree.java" startLine="230" startPosition="5" endLine="231" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577582" fileName="TypeSystemTraceTree.java" startLine="231" startPosition="58" endLine="232" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577596" fileName="TypeSystemTraceTree.java" startLine="233" startPosition="61" endLine="234" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577608" fileName="TypeSystemTraceTree.java" startLine="236" startPosition="61" endLine="237" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577632" fileName="TypeSystemTraceTree.java" startLine="240" startPosition="57" endLine="241" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577641" fileName="TypeSystemTraceTree.java" startLine="243" startPosition="5" endLine="244" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8367704267130507995" fileName="TypeSystemTraceTree.java" startLine="248" startPosition="68" endLine="249" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577659" fileName="TypeSystemTraceTree.java" startLine="249" startPosition="228" endLine="250" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374577685" fileName="TypeSystemTraceTree.java" startLine="255" startPosition="25" endLine="256" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577691" fileName="TypeSystemTraceTree.java" startLine="256" startPosition="75" endLine="257" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374577712" fileName="TypeSystemTraceTree.java" startLine="258" startPosition="37" endLine="259" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577717" fileName="TypeSystemTraceTree.java" startLine="259" startPosition="38" endLine="260" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577703" fileName="TypeSystemTraceTree.java" startLine="261" startPosition="16" endLine="262" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577723" fileName="TypeSystemTraceTree.java" startLine="263" startPosition="9" endLine="264" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577728" fileName="TypeSystemTraceTree.java" startLine="264" startPosition="44" endLine="265" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="271" startPosition="36" endLine="272" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="273" startPosition="5" endLine="274" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374576854" fileName="TypeSystemTraceTree.java" startLine="282" startPosition="52" endLine="283" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374576865" fileName="TypeSystemTraceTree.java" startLine="284" startPosition="25" endLine="285" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="866755926374576866" fileName="TypeSystemTraceTree.java" startLine="286" startPosition="7" endLine="287" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="866755926374576872" fileName="TypeSystemTraceTree.java" startLine="287" startPosition="52" endLine="288" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="999645872103353243" fileName="TypeSystemTraceTree.java" startLine="126" startPosition="12" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="866755926374577701" fileName="TypeSystemTraceTree.java" startLine="261" startPosition="14" endLine="263" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="866755926374576844" fileName="TypeSystemTraceTree.java" startLine="277" startPosition="74" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeSelectionListener#()V" />
-    <nodeInfo nodeId="866755926374577112" fileName="TypeSystemTraceTree.java" startLine="107" startPosition="56" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="999645872103353270" fileName="TypeSystemTraceTree.java" startLine="122" startPosition="25" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577213" fileName="TypeSystemTraceTree.java" startLine="132" startPosition="52" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577222" fileName="TypeSystemTraceTree.java" startLine="135" startPosition="5" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577243" fileName="TypeSystemTraceTree.java" startLine="140" startPosition="60" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577281" fileName="TypeSystemTraceTree.java" startLine="147" startPosition="44" endLine="150" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577297" fileName="TypeSystemTraceTree.java" startLine="156" startPosition="63" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577307" fileName="TypeSystemTraceTree.java" startLine="159" startPosition="5" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577317" fileName="TypeSystemTraceTree.java" startLine="162" startPosition="5" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577348" fileName="TypeSystemTraceTree.java" startLine="171" startPosition="52" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577414" fileName="TypeSystemTraceTree.java" startLine="187" startPosition="47" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577424" fileName="TypeSystemTraceTree.java" startLine="191" startPosition="5" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577446" fileName="TypeSystemTraceTree.java" startLine="198" startPosition="53" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577475" fileName="TypeSystemTraceTree.java" startLine="205" startPosition="36" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577487" fileName="TypeSystemTraceTree.java" startLine="208" startPosition="7" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577510" fileName="TypeSystemTraceTree.java" startLine="214" startPosition="70" endLine="217" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="999645872103372774" fileName="TypeSystemTraceTree.java" startLine="218" startPosition="5" endLine="221" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="866755926374577569" fileName="TypeSystemTraceTree.java" startLine="227" startPosition="88" endLine="230" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577588" fileName="TypeSystemTraceTree.java" startLine="232" startPosition="47" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577600" fileName="TypeSystemTraceTree.java" startLine="235" startPosition="5" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577624" fileName="TypeSystemTraceTree.java" startLine="239" startPosition="50" endLine="242" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="270" startPosition="77" endLine="273" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374576860" fileName="TypeSystemTraceTree.java" startLine="283" startPosition="50" endLine="286" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374576957" fileName="TypeSystemTraceTree.java" startLine="93" startPosition="10" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="866755926374577096" fileName="TypeSystemTraceTree.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#()Ljetbrains/mps/newTypesystem/state/State;" />
-    <nodeInfo nodeId="866755926374577369" fileName="TypeSystemTraceTree.java" startLine="175" startPosition="57" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577274" fileName="TypeSystemTraceTree.java" startLine="146" startPosition="63" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="866755926374577622" fileName="TypeSystemTraceTree.java" startLine="238" startPosition="5" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374576920" fileName="TypeSystemTraceTree.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildTrace#()V" />
-    <nodeInfo nodeId="866755926374577232" fileName="TypeSystemTraceTree.java" startLine="138" startPosition="5" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577499" fileName="TypeSystemTraceTree.java" startLine="212" startPosition="5" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577643" fileName="TypeSystemTraceTree.java" startLine="246" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPopupMenu#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljavax/swing/JPopupMenu;" />
-    <nodeInfo nodeId="866755926374577697" fileName="TypeSystemTraceTree.java" startLine="257" startPosition="52" endLine="263" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577397" fileName="TypeSystemTraceTree.java" startLine="184" startPosition="17" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="269" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kyyn1p_a0a1a01#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="866755926374577260" fileName="TypeSystemTraceTree.java" startLine="144" startPosition="5" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="999645872103353233" fileName="TypeSystemTraceTree.java" startLine="118" startPosition="65" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374576848" fileName="TypeSystemTraceTree.java" startLine="280" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
-    <nodeInfo nodeId="866755926374576953" fileName="TypeSystemTraceTree.java" startLine="86" startPosition="26" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="866755926374577452" fileName="TypeSystemTraceTree.java" startLine="201" startPosition="5" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="999645872103353226" fileName="TypeSystemTraceTree.java" startLine="117" startPosition="84" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="866755926374577102" fileName="TypeSystemTraceTree.java" startLine="103" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
-    <nodeInfo nodeId="866755926374577291" fileName="TypeSystemTraceTree.java" startLine="155" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="filterNodeType#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;)Z" />
-    <nodeInfo nodeId="866755926374577334" fileName="TypeSystemTraceTree.java" startLine="168" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToNextError#()V" />
-    <nodeInfo nodeId="866755926374577681" fileName="TypeSystemTraceTree.java" startLine="254" startPosition="57" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="866755926374577674" fileName="TypeSystemTraceTree.java" startLine="253" startPosition="53" endLine="267" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="866755926374577138" fileName="TypeSystemTraceTree.java" startLine="116" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;Ljetbrains/mps/ide/typesystem/trace/TypeSystemTraceTreeNode;)V" />
-    <nodeInfo nodeId="866755926374576937" fileName="TypeSystemTraceTree.java" startLine="83" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGenerationMode#(Z)V" />
-    <nodeInfo nodeId="866755926374577388" fileName="TypeSystemTraceTree.java" startLine="181" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextErrorNode#(I)Ljetbrains/mps/ide/ui/MPSTreeNode;" />
-    <nodeInfo nodeId="866755926374577668" fileName="TypeSystemTraceTree.java" startLine="252" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showState#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="866755926374577004" fileName="TypeSystemTraceTree.java" startLine="58" startPosition="0" endLine="76" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeSystemTraceTree#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/newTypesystem/TypeCheckingContextNew;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ide/typesystem/trace/TypeSystemTracePanel;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="866755926374577547" fileName="TypeSystemTraceTree.java" startLine="223" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="866755926374577207" fileName="TypeSystemTraceTree.java" startLine="131" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showNode#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;)Z" />
-    <nodeInfo nodeId="866755926374577440" fileName="TypeSystemTraceTree.java" startLine="197" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSliceVars#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;)V" />
-    <scopeInfo nodeId="866755926374576847" fileName="TypeSystemTraceTree.java" startLine="278" startPosition="39" endLine="278" endPosition="39" />
-    <scopeInfo nodeId="866755926374577099" fileName="TypeSystemTraceTree.java" startLine="100" startPosition="27" endLine="101" endPosition="23" />
-    <scopeInfo nodeId="866755926374577118" fileName="TypeSystemTraceTree.java" startLine="108" startPosition="75" endLine="109" endPosition="32" />
-    <scopeInfo nodeId="999645872103353271" fileName="TypeSystemTraceTree.java" startLine="123" startPosition="91" endLine="124" endPosition="33" />
-    <scopeInfo nodeId="999645872103353244" fileName="TypeSystemTraceTree.java" startLine="126" startPosition="14" endLine="127" endPosition="30" />
-    <scopeInfo nodeId="866755926374577219" fileName="TypeSystemTraceTree.java" startLine="133" startPosition="75" endLine="134" endPosition="18" />
-    <scopeInfo nodeId="866755926374577229" fileName="TypeSystemTraceTree.java" startLine="136" startPosition="45" endLine="137" endPosition="18" />
-    <scopeInfo nodeId="866755926374577257" fileName="TypeSystemTraceTree.java" startLine="141" startPosition="80" endLine="142" endPosition="20" />
-    <scopeInfo nodeId="866755926374577286" fileName="TypeSystemTraceTree.java" startLine="148" startPosition="37" endLine="149" endPosition="22" />
-    <scopeInfo nodeId="866755926374577304" fileName="TypeSystemTraceTree.java" startLine="157" startPosition="94" endLine="158" endPosition="19" />
-    <scopeInfo nodeId="866755926374577314" fileName="TypeSystemTraceTree.java" startLine="160" startPosition="98" endLine="161" endPosition="19" />
-    <scopeInfo nodeId="866755926374577329" fileName="TypeSystemTraceTree.java" startLine="163" startPosition="152" endLine="164" endPosition="19" />
-    <scopeInfo nodeId="866755926374577349" fileName="TypeSystemTraceTree.java" startLine="172" startPosition="30" endLine="173" endPosition="75" />
-    <scopeInfo nodeId="866755926374577415" fileName="TypeSystemTraceTree.java" startLine="188" startPosition="27" endLine="189" endPosition="25" />
-    <scopeInfo nodeId="866755926374577425" fileName="TypeSystemTraceTree.java" startLine="192" startPosition="36" endLine="193" endPosition="33" />
-    <scopeInfo nodeId="866755926374577450" fileName="TypeSystemTraceTree.java" startLine="199" startPosition="23" endLine="200" endPosition="13" />
-    <scopeInfo nodeId="866755926374577480" fileName="TypeSystemTraceTree.java" startLine="206" startPosition="36" endLine="207" endPosition="55" />
-    <scopeInfo nodeId="866755926374577492" fileName="TypeSystemTraceTree.java" startLine="209" startPosition="37" endLine="210" endPosition="54" />
-    <scopeInfo nodeId="866755926374577522" fileName="TypeSystemTraceTree.java" startLine="215" startPosition="105" endLine="216" endPosition="46" />
-    <scopeInfo nodeId="999645872103372780" fileName="TypeSystemTraceTree.java" startLine="219" startPosition="64" endLine="220" endPosition="30" />
-    <scopeInfo nodeId="866755926374577570" fileName="TypeSystemTraceTree.java" startLine="228" startPosition="28" endLine="229" endPosition="18" />
-    <scopeInfo nodeId="866755926374577595" fileName="TypeSystemTraceTree.java" startLine="233" startPosition="61" endLine="234" endPosition="32" />
-    <scopeInfo nodeId="866755926374577607" fileName="TypeSystemTraceTree.java" startLine="236" startPosition="61" endLine="237" endPosition="18" />
-    <scopeInfo nodeId="866755926374577631" fileName="TypeSystemTraceTree.java" startLine="240" startPosition="57" endLine="241" endPosition="22" />
-    <scopeInfo nodeId="866755926374577702" fileName="TypeSystemTraceTree.java" startLine="261" startPosition="16" endLine="262" endPosition="85" />
-    <scopeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="271" startPosition="36" endLine="272" endPosition="47" />
-    <scopeInfo nodeId="866755926374576864" fileName="TypeSystemTraceTree.java" startLine="284" startPosition="25" endLine="285" endPosition="15" />
-    <scopeInfo nodeId="866755926374577370" fileName="TypeSystemTraceTree.java" startLine="176" startPosition="28" endLine="178" endPosition="33" />
-    <scopeInfo nodeId="866755926374577648" fileName="TypeSystemTraceTree.java" startLine="248" startPosition="68" endLine="250" endPosition="105">
+    <nodeInfo nodeId="866755926374576878" fileName="TypeSystemTraceTree.java" startLine="45" startPosition="74" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
+    <nodeInfo nodeId="866755926374576881" fileName="TypeSystemTraceTree.java" startLine="46" startPosition="53" endLine="47" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperation" />
+    <nodeInfo nodeId="866755926374576884" fileName="TypeSystemTraceTree.java" startLine="47" startPosition="40" endLine="48" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTypeCheckingContextNew" />
+    <nodeInfo nodeId="866755926374576887" fileName="TypeSystemTraceTree.java" startLine="48" startPosition="64" endLine="49" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentContext" />
+    <nodeInfo nodeId="866755926374576890" fileName="TypeSystemTraceTree.java" startLine="49" startPosition="50" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedNode" />
+    <nodeInfo nodeId="866755926374576893" fileName="TypeSystemTraceTree.java" startLine="50" startPosition="37" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodes" />
+    <nodeInfo nodeId="866755926374576897" fileName="TypeSystemTraceTree.java" startLine="51" startPosition="35" endLine="52" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="generationMode" />
+    <nodeInfo nodeId="866755926374576901" fileName="TypeSystemTraceTree.java" startLine="52" startPosition="41" endLine="53" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
+    <nodeInfo nodeId="866755926374576904" fileName="TypeSystemTraceTree.java" startLine="53" startPosition="40" endLine="54" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStateCopy" />
+    <nodeInfo nodeId="866755926374576907" fileName="TypeSystemTraceTree.java" startLine="54" startPosition="28" endLine="55" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentState" />
+    <nodeInfo nodeId="866755926374576910" fileName="TypeSystemTraceTree.java" startLine="55" startPosition="31" endLine="56" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldOperation" />
+    <nodeInfo nodeId="866755926374576913" fileName="TypeSystemTraceTree.java" startLine="56" startPosition="43" endLine="57" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponent" />
+    <nodeInfo nodeId="866755926374576916" fileName="TypeSystemTraceTree.java" startLine="57" startPosition="44" endLine="58" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrorNodes" />
+    <nodeInfo nodeId="866755926374577018" fileName="TypeSystemTraceTree.java" startLine="60" startPosition="168" endLine="61" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577022" fileName="TypeSystemTraceTree.java" startLine="61" startPosition="42" endLine="62" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577026" fileName="TypeSystemTraceTree.java" startLine="62" startPosition="35" endLine="63" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577032" fileName="TypeSystemTraceTree.java" startLine="63" startPosition="37" endLine="64" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577038" fileName="TypeSystemTraceTree.java" startLine="64" startPosition="61" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577042" fileName="TypeSystemTraceTree.java" startLine="65" startPosition="26" endLine="66" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577048" fileName="TypeSystemTraceTree.java" startLine="66" startPosition="35" endLine="67" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577055" fileName="TypeSystemTraceTree.java" startLine="67" startPosition="42" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577060" fileName="TypeSystemTraceTree.java" startLine="68" startPosition="22" endLine="69" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577064" fileName="TypeSystemTraceTree.java" startLine="69" startPosition="27" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577068" fileName="TypeSystemTraceTree.java" startLine="70" startPosition="22" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577079" fileName="TypeSystemTraceTree.java" startLine="71" startPosition="64" endLine="72" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577082" fileName="TypeSystemTraceTree.java" startLine="72" startPosition="56" endLine="73" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577086" fileName="TypeSystemTraceTree.java" startLine="73" startPosition="40" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577090" fileName="TypeSystemTraceTree.java" startLine="74" startPosition="22" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577092" fileName="TypeSystemTraceTree.java" startLine="75" startPosition="16" endLine="76" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576924" fileName="TypeSystemTraceTree.java" startLine="79" startPosition="30" endLine="80" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576929" fileName="TypeSystemTraceTree.java" startLine="80" startPosition="56" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576933" fileName="TypeSystemTraceTree.java" startLine="81" startPosition="22" endLine="82" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576943" fileName="TypeSystemTraceTree.java" startLine="85" startPosition="57" endLine="86" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576949" fileName="TypeSystemTraceTree.java" startLine="86" startPosition="41" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576974" fileName="TypeSystemTraceTree.java" startLine="88" startPosition="30" endLine="89" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374576983" fileName="TypeSystemTraceTree.java" startLine="89" startPosition="139" endLine="90" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576988" fileName="TypeSystemTraceTree.java" startLine="90" startPosition="54" endLine="91" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576994" fileName="TypeSystemTraceTree.java" startLine="91" startPosition="43" endLine="92" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576998" fileName="TypeSystemTraceTree.java" startLine="92" startPosition="33" endLine="93" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576959" fileName="TypeSystemTraceTree.java" startLine="94" startPosition="12" endLine="95" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576965" fileName="TypeSystemTraceTree.java" startLine="95" startPosition="60" endLine="96" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576969" fileName="TypeSystemTraceTree.java" startLine="96" startPosition="50" endLine="97" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577100" fileName="TypeSystemTraceTree.java" startLine="101" startPosition="27" endLine="102" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577106" fileName="TypeSystemTraceTree.java" startLine="106" startPosition="35" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577109" fileName="TypeSystemTraceTree.java" startLine="107" startPosition="26" endLine="108" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577119" fileName="TypeSystemTraceTree.java" startLine="109" startPosition="75" endLine="110" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577122" fileName="TypeSystemTraceTree.java" startLine="111" startPosition="5" endLine="112" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577131" fileName="TypeSystemTraceTree.java" startLine="112" startPosition="113" endLine="113" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="775997175435544108" fileName="TypeSystemTraceTree.java" startLine="113" startPosition="34" endLine="114" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577135" fileName="TypeSystemTraceTree.java" startLine="114" startPosition="25" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="999645872103353250" fileName="TypeSystemTraceTree.java" startLine="120" startPosition="100" endLine="121" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="999645872103353261" fileName="TypeSystemTraceTree.java" startLine="121" startPosition="142" endLine="122" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="999645872103353265" fileName="TypeSystemTraceTree.java" startLine="122" startPosition="28" endLine="123" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="999645872103353272" fileName="TypeSystemTraceTree.java" startLine="124" startPosition="91" endLine="125" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="999645872103353245" fileName="TypeSystemTraceTree.java" startLine="127" startPosition="14" endLine="128" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7469000189634351539" fileName="TypeSystemTraceTree.java" startLine="133" startPosition="71" endLine="134" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7469000189634347615" fileName="TypeSystemTraceTree.java" startLine="135" startPosition="71" endLine="136" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7469000189634347631" fileName="TypeSystemTraceTree.java" startLine="137" startPosition="25" endLine="138" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7469000189634350555" fileName="TypeSystemTraceTree.java" startLine="141" startPosition="39" endLine="142" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7469000189634350581" fileName="TypeSystemTraceTree.java" startLine="144" startPosition="55" endLine="145" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7469000189634347597" fileName="TypeSystemTraceTree.java" startLine="146" startPosition="5" endLine="147" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7469000189634350539" fileName="TypeSystemTraceTree.java" startLine="148" startPosition="51" endLine="149" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7469000189634350604" fileName="TypeSystemTraceTree.java" startLine="151" startPosition="95" endLine="152" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7469000189634347611" fileName="TypeSystemTraceTree.java" startLine="153" startPosition="5" endLine="154" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8261614887724251924" fileName="TypeSystemTraceTree.java" startLine="158" startPosition="52" endLine="159" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577220" fileName="TypeSystemTraceTree.java" startLine="161" startPosition="33" endLine="162" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577230" fileName="TypeSystemTraceTree.java" startLine="164" startPosition="45" endLine="165" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577237" fileName="TypeSystemTraceTree.java" startLine="167" startPosition="47" endLine="168" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577258" fileName="TypeSystemTraceTree.java" startLine="169" startPosition="80" endLine="170" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577265" fileName="TypeSystemTraceTree.java" startLine="173" startPosition="49" endLine="174" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577287" fileName="TypeSystemTraceTree.java" startLine="176" startPosition="37" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577289" fileName="TypeSystemTraceTree.java" startLine="180" startPosition="5" endLine="181" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577305" fileName="TypeSystemTraceTree.java" startLine="185" startPosition="94" endLine="186" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577315" fileName="TypeSystemTraceTree.java" startLine="188" startPosition="98" endLine="189" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577330" fileName="TypeSystemTraceTree.java" startLine="191" startPosition="152" endLine="192" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577332" fileName="TypeSystemTraceTree.java" startLine="193" startPosition="5" endLine="194" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577338" fileName="TypeSystemTraceTree.java" startLine="197" startPosition="31" endLine="198" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577342" fileName="TypeSystemTraceTree.java" startLine="198" startPosition="24" endLine="199" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577350" fileName="TypeSystemTraceTree.java" startLine="200" startPosition="30" endLine="201" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577364" fileName="TypeSystemTraceTree.java" startLine="202" startPosition="5" endLine="203" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577371" fileName="TypeSystemTraceTree.java" startLine="204" startPosition="28" endLine="205" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577380" fileName="TypeSystemTraceTree.java" startLine="205" startPosition="66" endLine="206" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577391" fileName="TypeSystemTraceTree.java" startLine="210" startPosition="49" endLine="211" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577394" fileName="TypeSystemTraceTree.java" startLine="211" startPosition="23" endLine="212" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577399" fileName="TypeSystemTraceTree.java" startLine="213" startPosition="60" endLine="214" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577407" fileName="TypeSystemTraceTree.java" startLine="214" startPosition="52" endLine="215" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577416" fileName="TypeSystemTraceTree.java" startLine="216" startPosition="27" endLine="217" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577426" fileName="TypeSystemTraceTree.java" startLine="220" startPosition="36" endLine="221" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577435" fileName="TypeSystemTraceTree.java" startLine="222" startPosition="5" endLine="223" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577451" fileName="TypeSystemTraceTree.java" startLine="227" startPosition="23" endLine="228" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577457" fileName="TypeSystemTraceTree.java" startLine="230" startPosition="47" endLine="231" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577463" fileName="TypeSystemTraceTree.java" startLine="231" startPosition="60" endLine="232" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577469" fileName="TypeSystemTraceTree.java" startLine="232" startPosition="34" endLine="233" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577481" fileName="TypeSystemTraceTree.java" startLine="234" startPosition="36" endLine="235" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577493" fileName="TypeSystemTraceTree.java" startLine="237" startPosition="37" endLine="238" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577504" fileName="TypeSystemTraceTree.java" startLine="241" startPosition="46" endLine="242" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577523" fileName="TypeSystemTraceTree.java" startLine="243" startPosition="105" endLine="244" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="999645872103372781" fileName="TypeSystemTraceTree.java" startLine="247" startPosition="64" endLine="248" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577555" fileName="TypeSystemTraceTree.java" startLine="253" startPosition="44" endLine="254" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577561" fileName="TypeSystemTraceTree.java" startLine="254" startPosition="52" endLine="255" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577571" fileName="TypeSystemTraceTree.java" startLine="256" startPosition="28" endLine="257" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577576" fileName="TypeSystemTraceTree.java" startLine="258" startPosition="5" endLine="259" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577582" fileName="TypeSystemTraceTree.java" startLine="259" startPosition="58" endLine="260" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577596" fileName="TypeSystemTraceTree.java" startLine="261" startPosition="61" endLine="262" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577608" fileName="TypeSystemTraceTree.java" startLine="264" startPosition="61" endLine="265" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577632" fileName="TypeSystemTraceTree.java" startLine="268" startPosition="57" endLine="269" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577641" fileName="TypeSystemTraceTree.java" startLine="271" startPosition="5" endLine="272" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8367704267130507995" fileName="TypeSystemTraceTree.java" startLine="276" startPosition="68" endLine="277" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577659" fileName="TypeSystemTraceTree.java" startLine="277" startPosition="228" endLine="278" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374577685" fileName="TypeSystemTraceTree.java" startLine="283" startPosition="25" endLine="284" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577691" fileName="TypeSystemTraceTree.java" startLine="284" startPosition="75" endLine="285" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374577712" fileName="TypeSystemTraceTree.java" startLine="286" startPosition="37" endLine="287" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577717" fileName="TypeSystemTraceTree.java" startLine="287" startPosition="38" endLine="288" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577703" fileName="TypeSystemTraceTree.java" startLine="289" startPosition="16" endLine="290" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577723" fileName="TypeSystemTraceTree.java" startLine="291" startPosition="9" endLine="292" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577728" fileName="TypeSystemTraceTree.java" startLine="292" startPosition="44" endLine="293" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="299" startPosition="36" endLine="300" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="301" startPosition="5" endLine="302" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374576854" fileName="TypeSystemTraceTree.java" startLine="310" startPosition="52" endLine="311" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374576865" fileName="TypeSystemTraceTree.java" startLine="312" startPosition="25" endLine="313" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="866755926374576866" fileName="TypeSystemTraceTree.java" startLine="314" startPosition="7" endLine="315" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="866755926374576872" fileName="TypeSystemTraceTree.java" startLine="315" startPosition="52" endLine="316" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="999645872103353243" fileName="TypeSystemTraceTree.java" startLine="127" startPosition="12" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="866755926374577701" fileName="TypeSystemTraceTree.java" startLine="289" startPosition="14" endLine="291" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="866755926374576844" fileName="TypeSystemTraceTree.java" startLine="305" startPosition="74" endLine="307" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeSelectionListener#()V" />
+    <nodeInfo nodeId="866755926374577112" fileName="TypeSystemTraceTree.java" startLine="108" startPosition="56" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="999645872103353270" fileName="TypeSystemTraceTree.java" startLine="123" startPosition="25" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7469000189634347622" fileName="TypeSystemTraceTree.java" startLine="136" startPosition="58" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7469000189634350547" fileName="TypeSystemTraceTree.java" startLine="140" startPosition="5" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7469000189634350559" fileName="TypeSystemTraceTree.java" startLine="143" startPosition="5" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7469000189634350532" fileName="TypeSystemTraceTree.java" startLine="147" startPosition="144" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7469000189634350602" fileName="TypeSystemTraceTree.java" startLine="150" startPosition="5" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8261614887724251916" fileName="TypeSystemTraceTree.java" startLine="157" startPosition="52" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577213" fileName="TypeSystemTraceTree.java" startLine="160" startPosition="5" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577222" fileName="TypeSystemTraceTree.java" startLine="163" startPosition="5" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577243" fileName="TypeSystemTraceTree.java" startLine="168" startPosition="60" endLine="171" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577281" fileName="TypeSystemTraceTree.java" startLine="175" startPosition="44" endLine="178" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577297" fileName="TypeSystemTraceTree.java" startLine="184" startPosition="63" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577307" fileName="TypeSystemTraceTree.java" startLine="187" startPosition="5" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577317" fileName="TypeSystemTraceTree.java" startLine="190" startPosition="5" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577348" fileName="TypeSystemTraceTree.java" startLine="199" startPosition="52" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577414" fileName="TypeSystemTraceTree.java" startLine="215" startPosition="47" endLine="218" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577424" fileName="TypeSystemTraceTree.java" startLine="219" startPosition="5" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577446" fileName="TypeSystemTraceTree.java" startLine="226" startPosition="53" endLine="229" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577475" fileName="TypeSystemTraceTree.java" startLine="233" startPosition="36" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577487" fileName="TypeSystemTraceTree.java" startLine="236" startPosition="7" endLine="239" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577510" fileName="TypeSystemTraceTree.java" startLine="242" startPosition="70" endLine="245" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="999645872103372774" fileName="TypeSystemTraceTree.java" startLine="246" startPosition="5" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="866755926374577569" fileName="TypeSystemTraceTree.java" startLine="255" startPosition="88" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577588" fileName="TypeSystemTraceTree.java" startLine="260" startPosition="47" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577600" fileName="TypeSystemTraceTree.java" startLine="263" startPosition="5" endLine="266" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577624" fileName="TypeSystemTraceTree.java" startLine="267" startPosition="50" endLine="270" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="298" startPosition="77" endLine="301" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374576860" fileName="TypeSystemTraceTree.java" startLine="311" startPosition="50" endLine="314" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374576957" fileName="TypeSystemTraceTree.java" startLine="94" startPosition="10" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="866755926374577096" fileName="TypeSystemTraceTree.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#()Ljetbrains/mps/newTypesystem/state/State;" />
+    <nodeInfo nodeId="866755926374577369" fileName="TypeSystemTraceTree.java" startLine="203" startPosition="57" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577274" fileName="TypeSystemTraceTree.java" startLine="174" startPosition="63" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="866755926374577622" fileName="TypeSystemTraceTree.java" startLine="266" startPosition="5" endLine="271" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374576920" fileName="TypeSystemTraceTree.java" startLine="78" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildTrace#()V" />
+    <nodeInfo nodeId="7469000189634346396" fileName="TypeSystemTraceTree.java" startLine="134" startPosition="86" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="866755926374577232" fileName="TypeSystemTraceTree.java" startLine="166" startPosition="5" endLine="172" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577499" fileName="TypeSystemTraceTree.java" startLine="240" startPosition="5" endLine="246" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577643" fileName="TypeSystemTraceTree.java" startLine="274" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPopupMenu#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljavax/swing/JPopupMenu;" />
+    <nodeInfo nodeId="866755926374577697" fileName="TypeSystemTraceTree.java" startLine="285" startPosition="52" endLine="291" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577397" fileName="TypeSystemTraceTree.java" startLine="212" startPosition="17" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="297" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kyyn1p_a0a1a11#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="866755926374577260" fileName="TypeSystemTraceTree.java" startLine="172" startPosition="5" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="999645872103353233" fileName="TypeSystemTraceTree.java" startLine="119" startPosition="65" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374576848" fileName="TypeSystemTraceTree.java" startLine="308" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
+    <nodeInfo nodeId="866755926374576953" fileName="TypeSystemTraceTree.java" startLine="87" startPosition="26" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="866755926374577452" fileName="TypeSystemTraceTree.java" startLine="229" startPosition="5" endLine="240" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="999645872103353226" fileName="TypeSystemTraceTree.java" startLine="118" startPosition="84" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="866755926374577102" fileName="TypeSystemTraceTree.java" startLine="104" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="866755926374577291" fileName="TypeSystemTraceTree.java" startLine="183" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="filterNodeType#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;)Z" />
+    <nodeInfo nodeId="866755926374577334" fileName="TypeSystemTraceTree.java" startLine="196" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToNextError#()V" />
+    <nodeInfo nodeId="866755926374577681" fileName="TypeSystemTraceTree.java" startLine="282" startPosition="57" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="866755926374577674" fileName="TypeSystemTraceTree.java" startLine="281" startPosition="53" endLine="295" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="866755926374577138" fileName="TypeSystemTraceTree.java" startLine="117" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;Ljetbrains/mps/ide/typesystem/trace/TypeSystemTraceTreeNode;)V" />
+    <nodeInfo nodeId="866755926374576937" fileName="TypeSystemTraceTree.java" startLine="84" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGenerationMode#(Z)V" />
+    <nodeInfo nodeId="866755926374577388" fileName="TypeSystemTraceTree.java" startLine="209" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextErrorNode#(I)Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="866755926374577668" fileName="TypeSystemTraceTree.java" startLine="280" startPosition="0" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showState#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="866755926374577004" fileName="TypeSystemTraceTree.java" startLine="59" startPosition="0" endLine="77" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeSystemTraceTree#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/newTypesystem/TypeCheckingContextNew;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ide/typesystem/trace/TypeSystemTracePanel;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="866755926374577547" fileName="TypeSystemTraceTree.java" startLine="251" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="7469000189634294744" fileName="TypeSystemTraceTree.java" startLine="132" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create2#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;)Ljetbrains/mps/ide/typesystem/trace/TypeSystemTraceTreeNode;" />
+    <nodeInfo nodeId="866755926374577440" fileName="TypeSystemTraceTree.java" startLine="225" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSliceVars#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;)V" />
+    <nodeInfo nodeId="866755926374577207" fileName="TypeSystemTraceTree.java" startLine="156" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showNode#(Ljetbrains/mps/newTypesystem/operation/AbstractOperation;)Z" />
+    <scopeInfo nodeId="866755926374576847" fileName="TypeSystemTraceTree.java" startLine="306" startPosition="39" endLine="306" endPosition="39" />
+    <scopeInfo nodeId="866755926374577099" fileName="TypeSystemTraceTree.java" startLine="101" startPosition="27" endLine="102" endPosition="23" />
+    <scopeInfo nodeId="866755926374577118" fileName="TypeSystemTraceTree.java" startLine="109" startPosition="75" endLine="110" endPosition="32" />
+    <scopeInfo nodeId="999645872103353271" fileName="TypeSystemTraceTree.java" startLine="124" startPosition="91" endLine="125" endPosition="33" />
+    <scopeInfo nodeId="999645872103353244" fileName="TypeSystemTraceTree.java" startLine="127" startPosition="14" endLine="128" endPosition="30" />
+    <scopeInfo nodeId="7469000189634347623" fileName="TypeSystemTraceTree.java" startLine="137" startPosition="25" endLine="138" endPosition="27" />
+    <scopeInfo nodeId="7469000189634350548" fileName="TypeSystemTraceTree.java" startLine="141" startPosition="39" endLine="142" endPosition="18" />
+    <scopeInfo nodeId="7469000189634350560" fileName="TypeSystemTraceTree.java" startLine="144" startPosition="55" endLine="145" endPosition="18" />
+    <scopeInfo nodeId="7469000189634350533" fileName="TypeSystemTraceTree.java" startLine="148" startPosition="51" endLine="149" endPosition="23" />
+    <scopeInfo nodeId="7469000189634350603" fileName="TypeSystemTraceTree.java" startLine="151" startPosition="95" endLine="152" endPosition="31" />
+    <scopeInfo nodeId="8261614887724251917" fileName="TypeSystemTraceTree.java" startLine="158" startPosition="52" endLine="159" endPosition="18" />
+    <scopeInfo nodeId="866755926374577219" fileName="TypeSystemTraceTree.java" startLine="161" startPosition="33" endLine="162" endPosition="18" />
+    <scopeInfo nodeId="866755926374577229" fileName="TypeSystemTraceTree.java" startLine="164" startPosition="45" endLine="165" endPosition="18" />
+    <scopeInfo nodeId="866755926374577257" fileName="TypeSystemTraceTree.java" startLine="169" startPosition="80" endLine="170" endPosition="20" />
+    <scopeInfo nodeId="866755926374577286" fileName="TypeSystemTraceTree.java" startLine="176" startPosition="37" endLine="177" endPosition="22" />
+    <scopeInfo nodeId="866755926374577304" fileName="TypeSystemTraceTree.java" startLine="185" startPosition="94" endLine="186" endPosition="19" />
+    <scopeInfo nodeId="866755926374577314" fileName="TypeSystemTraceTree.java" startLine="188" startPosition="98" endLine="189" endPosition="19" />
+    <scopeInfo nodeId="866755926374577329" fileName="TypeSystemTraceTree.java" startLine="191" startPosition="152" endLine="192" endPosition="19" />
+    <scopeInfo nodeId="866755926374577349" fileName="TypeSystemTraceTree.java" startLine="200" startPosition="30" endLine="201" endPosition="75" />
+    <scopeInfo nodeId="866755926374577415" fileName="TypeSystemTraceTree.java" startLine="216" startPosition="27" endLine="217" endPosition="25" />
+    <scopeInfo nodeId="866755926374577425" fileName="TypeSystemTraceTree.java" startLine="220" startPosition="36" endLine="221" endPosition="33" />
+    <scopeInfo nodeId="866755926374577450" fileName="TypeSystemTraceTree.java" startLine="227" startPosition="23" endLine="228" endPosition="13" />
+    <scopeInfo nodeId="866755926374577480" fileName="TypeSystemTraceTree.java" startLine="234" startPosition="36" endLine="235" endPosition="55" />
+    <scopeInfo nodeId="866755926374577492" fileName="TypeSystemTraceTree.java" startLine="237" startPosition="37" endLine="238" endPosition="54" />
+    <scopeInfo nodeId="866755926374577522" fileName="TypeSystemTraceTree.java" startLine="243" startPosition="105" endLine="244" endPosition="46" />
+    <scopeInfo nodeId="999645872103372780" fileName="TypeSystemTraceTree.java" startLine="247" startPosition="64" endLine="248" endPosition="30" />
+    <scopeInfo nodeId="866755926374577570" fileName="TypeSystemTraceTree.java" startLine="256" startPosition="28" endLine="257" endPosition="18" />
+    <scopeInfo nodeId="866755926374577595" fileName="TypeSystemTraceTree.java" startLine="261" startPosition="61" endLine="262" endPosition="32" />
+    <scopeInfo nodeId="866755926374577607" fileName="TypeSystemTraceTree.java" startLine="264" startPosition="61" endLine="265" endPosition="18" />
+    <scopeInfo nodeId="866755926374577631" fileName="TypeSystemTraceTree.java" startLine="268" startPosition="57" endLine="269" endPosition="22" />
+    <scopeInfo nodeId="866755926374577702" fileName="TypeSystemTraceTree.java" startLine="289" startPosition="16" endLine="290" endPosition="85" />
+    <scopeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="299" startPosition="36" endLine="300" endPosition="47" />
+    <scopeInfo nodeId="866755926374576864" fileName="TypeSystemTraceTree.java" startLine="312" startPosition="25" endLine="313" endPosition="15" />
+    <scopeInfo nodeId="866755926374577370" fileName="TypeSystemTraceTree.java" startLine="204" startPosition="28" endLine="206" endPosition="33" />
+    <scopeInfo nodeId="866755926374577648" fileName="TypeSystemTraceTree.java" startLine="276" startPosition="68" endLine="278" endPosition="105">
       <varInfo nodeId="8367704267130507996" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577711" fileName="TypeSystemTraceTree.java" startLine="258" startPosition="37" endLine="260" endPosition="83" />
-    <scopeInfo nodeId="866755926374576844" fileName="TypeSystemTraceTree.java" startLine="277" startPosition="74" endLine="279" endPosition="5" />
-    <scopeInfo nodeId="866755926374576923" fileName="TypeSystemTraceTree.java" startLine="78" startPosition="30" endLine="81" endPosition="21" />
-    <scopeInfo nodeId="866755926374576958" fileName="TypeSystemTraceTree.java" startLine="93" startPosition="12" endLine="96" endPosition="35" />
-    <scopeInfo nodeId="866755926374577280" fileName="TypeSystemTraceTree.java" startLine="147" startPosition="44" endLine="150" endPosition="9" />
-    <scopeInfo nodeId="999645872103372774" fileName="TypeSystemTraceTree.java" startLine="218" startPosition="5" endLine="221" endPosition="5">
+    <scopeInfo nodeId="866755926374577711" fileName="TypeSystemTraceTree.java" startLine="286" startPosition="37" endLine="288" endPosition="83" />
+    <scopeInfo nodeId="866755926374576844" fileName="TypeSystemTraceTree.java" startLine="305" startPosition="74" endLine="307" endPosition="5" />
+    <scopeInfo nodeId="866755926374576923" fileName="TypeSystemTraceTree.java" startLine="79" startPosition="30" endLine="82" endPosition="21" />
+    <scopeInfo nodeId="866755926374576958" fileName="TypeSystemTraceTree.java" startLine="94" startPosition="12" endLine="97" endPosition="35" />
+    <scopeInfo nodeId="7469000189634350532" fileName="TypeSystemTraceTree.java" startLine="147" startPosition="144" endLine="150" endPosition="5">
+      <varInfo nodeId="7469000189634350535" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="866755926374577280" fileName="TypeSystemTraceTree.java" startLine="175" startPosition="44" endLine="178" endPosition="9" />
+    <scopeInfo nodeId="999645872103372774" fileName="TypeSystemTraceTree.java" startLine="246" startPosition="5" endLine="249" endPosition="5">
       <varInfo nodeId="999645872103372778" varName="childDiff" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577623" fileName="TypeSystemTraceTree.java" startLine="239" startPosition="50" endLine="242" endPosition="7" />
-    <scopeInfo nodeId="866755926374577096" fileName="TypeSystemTraceTree.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="866755926374577236" fileName="TypeSystemTraceTree.java" startLine="139" startPosition="47" endLine="143" endPosition="7">
+    <scopeInfo nodeId="866755926374577623" fileName="TypeSystemTraceTree.java" startLine="267" startPosition="50" endLine="270" endPosition="7" />
+    <scopeInfo nodeId="866755926374577096" fileName="TypeSystemTraceTree.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="7469000189634346397" fileName="TypeSystemTraceTree.java" startLine="135" startPosition="71" endLine="139" endPosition="7">
+      <varInfo nodeId="7469000189634347616" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="866755926374577236" fileName="TypeSystemTraceTree.java" startLine="167" startPosition="47" endLine="171" endPosition="7">
       <varInfo nodeId="866755926374577238" varName="eq" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577503" fileName="TypeSystemTraceTree.java" startLine="213" startPosition="46" endLine="217" endPosition="7">
+    <scopeInfo nodeId="866755926374577503" fileName="TypeSystemTraceTree.java" startLine="241" startPosition="46" endLine="245" endPosition="7">
       <varInfo nodeId="866755926374577505" varName="typeDifference" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="270" startPosition="77" endLine="274" endPosition="16" />
-    <scopeInfo nodeId="866755926374576973" fileName="TypeSystemTraceTree.java" startLine="87" startPosition="30" endLine="92" endPosition="42">
+    <scopeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="298" startPosition="77" endLine="302" endPosition="16" />
+    <scopeInfo nodeId="866755926374576973" fileName="TypeSystemTraceTree.java" startLine="88" startPosition="30" endLine="93" endPosition="42">
       <varInfo nodeId="866755926374576975" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577274" fileName="TypeSystemTraceTree.java" startLine="146" startPosition="63" endLine="151" endPosition="7">
+    <scopeInfo nodeId="866755926374577274" fileName="TypeSystemTraceTree.java" startLine="174" startPosition="63" endLine="179" endPosition="7">
       <varInfo nodeId="866755926374577278" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577398" fileName="TypeSystemTraceTree.java" startLine="185" startPosition="60" endLine="190" endPosition="7" />
-    <scopeInfo nodeId="866755926374576920" fileName="TypeSystemTraceTree.java" startLine="77" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="999645872103353249" fileName="TypeSystemTraceTree.java" startLine="119" startPosition="100" endLine="125" endPosition="9">
+    <scopeInfo nodeId="866755926374577398" fileName="TypeSystemTraceTree.java" startLine="213" startPosition="60" endLine="218" endPosition="7" />
+    <scopeInfo nodeId="866755926374576920" fileName="TypeSystemTraceTree.java" startLine="78" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="999645872103353249" fileName="TypeSystemTraceTree.java" startLine="120" startPosition="100" endLine="126" endPosition="9">
       <varInfo nodeId="999645872103353251" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577264" fileName="TypeSystemTraceTree.java" startLine="145" startPosition="49" endLine="151" endPosition="7">
+    <scopeInfo nodeId="7469000189634346396" fileName="TypeSystemTraceTree.java" startLine="134" startPosition="86" endLine="140" endPosition="5">
+      <varInfo nodeId="7469000189634346399" varName="consequence" />
+    </scopeInfo>
+    <scopeInfo nodeId="866755926374577264" fileName="TypeSystemTraceTree.java" startLine="173" startPosition="49" endLine="179" endPosition="7">
       <varInfo nodeId="866755926374577266" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577643" fileName="TypeSystemTraceTree.java" startLine="246" startPosition="0" endLine="252" endPosition="0">
+    <scopeInfo nodeId="866755926374577643" fileName="TypeSystemTraceTree.java" startLine="274" startPosition="0" endLine="280" endPosition="0">
       <varInfo nodeId="866755926374577646" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374576853" fileName="TypeSystemTraceTree.java" startLine="282" startPosition="52" endLine="288" endPosition="40">
+    <scopeInfo nodeId="866755926374576853" fileName="TypeSystemTraceTree.java" startLine="310" startPosition="52" endLine="316" endPosition="40">
       <varInfo nodeId="866755926374576867" varName="treeNode" />
       <varInfo nodeId="866755926374576855" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577397" fileName="TypeSystemTraceTree.java" startLine="184" startPosition="17" endLine="191" endPosition="5">
+    <scopeInfo nodeId="866755926374577397" fileName="TypeSystemTraceTree.java" startLine="212" startPosition="17" endLine="219" endPosition="5">
       <varInfo nodeId="866755926374577421" varName="errorNode" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="269" startPosition="0" endLine="276" endPosition="0" />
-    <scopeInfo nodeId="866755926374577105" fileName="TypeSystemTraceTree.java" startLine="105" startPosition="35" endLine="114" endPosition="18">
+    <scopeInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="297" startPosition="0" endLine="304" endPosition="0" />
+    <scopeInfo nodeId="866755926374577105" fileName="TypeSystemTraceTree.java" startLine="106" startPosition="35" endLine="115" endPosition="18">
       <varInfo nodeId="866755926374577123" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577456" fileName="TypeSystemTraceTree.java" startLine="202" startPosition="47" endLine="211" endPosition="7">
+    <scopeInfo nodeId="866755926374577456" fileName="TypeSystemTraceTree.java" startLine="230" startPosition="47" endLine="239" endPosition="7">
       <varInfo nodeId="866755926374577464" varName="child" />
       <varInfo nodeId="866755926374577470" varName="parent" />
       <varInfo nodeId="866755926374577458" varName="eq" />
     </scopeInfo>
-    <scopeInfo nodeId="999645872103353232" fileName="TypeSystemTraceTree.java" startLine="118" startPosition="65" endLine="128" endPosition="7" />
-    <scopeInfo nodeId="866755926374577296" fileName="TypeSystemTraceTree.java" startLine="156" startPosition="63" endLine="166" endPosition="16" />
-    <scopeInfo nodeId="866755926374577337" fileName="TypeSystemTraceTree.java" startLine="169" startPosition="31" endLine="179" endPosition="5">
+    <scopeInfo nodeId="999645872103353232" fileName="TypeSystemTraceTree.java" startLine="119" startPosition="65" endLine="129" endPosition="7" />
+    <scopeInfo nodeId="866755926374577296" fileName="TypeSystemTraceTree.java" startLine="184" startPosition="63" endLine="194" endPosition="16" />
+    <scopeInfo nodeId="866755926374577337" fileName="TypeSystemTraceTree.java" startLine="197" startPosition="31" endLine="207" endPosition="5">
       <varInfo nodeId="866755926374577343" varName="currentNode" />
       <varInfo nodeId="866755926374577339" varName="currentRow" />
       <varInfo nodeId="866755926374577365" varName="errorNode" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577684" fileName="TypeSystemTraceTree.java" startLine="255" startPosition="25" endLine="265" endPosition="56">
+    <scopeInfo nodeId="866755926374577684" fileName="TypeSystemTraceTree.java" startLine="283" startPosition="25" endLine="293" endPosition="56">
       <varInfo nodeId="866755926374577692" varName="difference" />
       <varInfo nodeId="866755926374577686" varName="rootDifference" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374576848" fileName="TypeSystemTraceTree.java" startLine="280" startPosition="0" endLine="290" endPosition="0">
+    <scopeInfo nodeId="866755926374576848" fileName="TypeSystemTraceTree.java" startLine="308" startPosition="0" endLine="318" endPosition="0">
       <varInfo nodeId="866755926374576851" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577145" fileName="TypeSystemTraceTree.java" startLine="117" startPosition="84" endLine="129" endPosition="5" />
-    <scopeInfo nodeId="999645872103353226" fileName="TypeSystemTraceTree.java" startLine="117" startPosition="84" endLine="129" endPosition="5">
+    <scopeInfo nodeId="866755926374577145" fileName="TypeSystemTraceTree.java" startLine="118" startPosition="84" endLine="130" endPosition="5" />
+    <scopeInfo nodeId="999645872103353226" fileName="TypeSystemTraceTree.java" startLine="118" startPosition="84" endLine="130" endPosition="5">
       <varInfo nodeId="999645872103353230" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374576942" fileName="TypeSystemTraceTree.java" startLine="84" startPosition="57" endLine="97" endPosition="5" />
-    <scopeInfo nodeId="866755926374577102" fileName="TypeSystemTraceTree.java" startLine="103" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="866755926374577291" fileName="TypeSystemTraceTree.java" startLine="155" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="866755926374576942" fileName="TypeSystemTraceTree.java" startLine="85" startPosition="57" endLine="98" endPosition="5" />
+    <scopeInfo nodeId="866755926374577102" fileName="TypeSystemTraceTree.java" startLine="104" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="866755926374577291" fileName="TypeSystemTraceTree.java" startLine="183" startPosition="0" endLine="196" endPosition="0">
       <varInfo nodeId="866755926374577294" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577334" fileName="TypeSystemTraceTree.java" startLine="168" startPosition="0" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="866755926374577390" fileName="TypeSystemTraceTree.java" startLine="182" startPosition="49" endLine="195" endPosition="16">
+    <scopeInfo nodeId="866755926374577334" fileName="TypeSystemTraceTree.java" startLine="196" startPosition="0" endLine="209" endPosition="0" />
+    <scopeInfo nodeId="866755926374577390" fileName="TypeSystemTraceTree.java" startLine="210" startPosition="49" endLine="223" endPosition="16">
       <varInfo nodeId="866755926374577395" varName="errorRow" />
       <varInfo nodeId="866755926374577392" varName="errorPath" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577681" fileName="TypeSystemTraceTree.java" startLine="254" startPosition="57" endLine="267" endPosition="0" />
-    <scopeInfo nodeId="866755926374577673" fileName="TypeSystemTraceTree.java" startLine="253" startPosition="53" endLine="267" endPosition="7" />
-    <scopeInfo nodeId="866755926374577138" fileName="TypeSystemTraceTree.java" startLine="116" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="866755926374577681" fileName="TypeSystemTraceTree.java" startLine="282" startPosition="57" endLine="295" endPosition="0" />
+    <scopeInfo nodeId="866755926374577673" fileName="TypeSystemTraceTree.java" startLine="281" startPosition="53" endLine="295" endPosition="7" />
+    <scopeInfo nodeId="866755926374577138" fileName="TypeSystemTraceTree.java" startLine="117" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="866755926374577143" varName="result" />
       <varInfo nodeId="866755926374577141" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577017" fileName="TypeSystemTraceTree.java" startLine="59" startPosition="168" endLine="75" endPosition="80" />
-    <scopeInfo nodeId="866755926374576937" fileName="TypeSystemTraceTree.java" startLine="83" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="866755926374577017" fileName="TypeSystemTraceTree.java" startLine="60" startPosition="168" endLine="76" endPosition="80" />
+    <scopeInfo nodeId="866755926374576937" fileName="TypeSystemTraceTree.java" startLine="84" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="866755926374576940" varName="generationMode" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577388" fileName="TypeSystemTraceTree.java" startLine="181" startPosition="0" endLine="197" endPosition="0">
+    <scopeInfo nodeId="866755926374577388" fileName="TypeSystemTraceTree.java" startLine="209" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="866755926374577437" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577668" fileName="TypeSystemTraceTree.java" startLine="252" startPosition="0" endLine="269" endPosition="0">
+    <scopeInfo nodeId="866755926374577668" fileName="TypeSystemTraceTree.java" startLine="280" startPosition="0" endLine="297" endPosition="0">
       <varInfo nodeId="866755926374577671" varName="newNode" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577004" fileName="TypeSystemTraceTree.java" startLine="58" startPosition="0" endLine="76" endPosition="3">
+    <scopeInfo nodeId="866755926374577004" fileName="TypeSystemTraceTree.java" startLine="59" startPosition="0" endLine="77" endPosition="3">
       <varInfo nodeId="866755926374577011" varName="node" />
       <varInfo nodeId="866755926374577007" varName="operationContext" />
       <varInfo nodeId="866755926374577013" varName="parent" />
       <varInfo nodeId="866755926374577015" varName="editorComponent" />
       <varInfo nodeId="866755926374577009" varName="tcc" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577554" fileName="TypeSystemTraceTree.java" startLine="225" startPosition="44" endLine="244" endPosition="16">
+    <scopeInfo nodeId="866755926374577554" fileName="TypeSystemTraceTree.java" startLine="253" startPosition="44" endLine="272" endPosition="16">
       <varInfo nodeId="866755926374577562" varName="operation" />
       <varInfo nodeId="866755926374577583" varName="source" />
       <varInfo nodeId="866755926374577577" varName="rule" />
       <varInfo nodeId="866755926374577556" varName="currentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577212" fileName="TypeSystemTraceTree.java" startLine="132" startPosition="52" endLine="153" endPosition="17" />
-    <scopeInfo nodeId="866755926374577445" fileName="TypeSystemTraceTree.java" startLine="198" startPosition="53" endLine="221" endPosition="5" />
-    <scopeInfo nodeId="866755926374577547" fileName="TypeSystemTraceTree.java" startLine="223" startPosition="0" endLine="246" endPosition="0">
+    <scopeInfo nodeId="7469000189634294747" fileName="TypeSystemTraceTree.java" startLine="133" startPosition="71" endLine="154" endPosition="18">
+      <varInfo nodeId="7469000189634347598" varName="result" />
+      <varInfo nodeId="7469000189634351540" varName="children" />
+    </scopeInfo>
+    <scopeInfo nodeId="866755926374577445" fileName="TypeSystemTraceTree.java" startLine="226" startPosition="53" endLine="249" endPosition="5" />
+    <scopeInfo nodeId="866755926374577547" fileName="TypeSystemTraceTree.java" startLine="251" startPosition="0" endLine="274" endPosition="0">
       <varInfo nodeId="866755926374577550" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577207" fileName="TypeSystemTraceTree.java" startLine="131" startPosition="0" endLine="155" endPosition="0">
-      <varInfo nodeId="866755926374577210" varName="diff" />
+    <scopeInfo nodeId="7469000189634294744" fileName="TypeSystemTraceTree.java" startLine="132" startPosition="0" endLine="156" endPosition="0">
+      <varInfo nodeId="7469000189634294748" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="866755926374577440" fileName="TypeSystemTraceTree.java" startLine="197" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="866755926374577212" fileName="TypeSystemTraceTree.java" startLine="157" startPosition="52" endLine="181" endPosition="17" />
+    <scopeInfo nodeId="866755926374577440" fileName="TypeSystemTraceTree.java" startLine="225" startPosition="0" endLine="251" endPosition="0">
       <varInfo nodeId="866755926374577443" varName="diff" />
     </scopeInfo>
-    <unitInfo nodeId="866755926374577680" fileName="TypeSystemTraceTree.java" startLine="254" startPosition="45" endLine="267" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$1" />
-    <unitInfo nodeId="866755926374576841" fileName="TypeSystemTraceTree.java" startLine="277" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$MyTreeSelectionListener" />
-    <unitInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="44" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" />
+    <scopeInfo nodeId="866755926374577207" fileName="TypeSystemTraceTree.java" startLine="156" startPosition="0" endLine="183" endPosition="0">
+      <varInfo nodeId="866755926374577210" varName="diff" />
+    </scopeInfo>
+    <unitInfo nodeId="866755926374577680" fileName="TypeSystemTraceTree.java" startLine="282" startPosition="45" endLine="295" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$1" />
+    <unitInfo nodeId="866755926374576841" fileName="TypeSystemTraceTree.java" startLine="305" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$MyTreeSelectionListener" />
+    <unitInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="45" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" />
   </root>
   <root nodeId="866755926374577735">
     <nodeInfo nodeId="866755926374577738" fileName="TypeSystemTraceTreeNode.java" startLine="18" startPosition="58" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COLOR_MAP" />
