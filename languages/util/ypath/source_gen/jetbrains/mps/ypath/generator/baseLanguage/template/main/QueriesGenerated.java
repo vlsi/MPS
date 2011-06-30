@@ -22,8 +22,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.ypath.behavior.ChildrenBlock_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
@@ -95,7 +95,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IFeature"), "writable");
   }
 
-  public static Object propertyMacro_GetPropertyValue_5626852792500471081(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1813518414847798679(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameter", true), "name");
   }
 
@@ -496,6 +496,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5626852792500471107(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "whereBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1813518414847798663(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "parameter", true));
   }
 
   public static SNode sourceNodeQuery_5626852792500471093(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

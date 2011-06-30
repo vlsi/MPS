@@ -21,12 +21,14 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +43,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     while (!frontier.isEmpty()){
       List<Language> newFrontier = new ArrayList<Language>();
       for (Language extendedLang : frontier) {
-        if (extendedLang == lang) {
+        if (extendedLang == lang && lang != BootstrapLanguages.coreLanguage()) {
           return false;
         }
         if (!passed.contains(extendedLang)) {
@@ -65,7 +67,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     if (!checkCyclicInheritance(myModule)) {
       errors.add("Cyclic language hierarchy");
     }
-    List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependOn());
+    List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependencies());
     for (IModule runtimeModule: runtimeModules) {
       if (!(runtimeModule instanceof Solution)) {
         errors.add("Runtime module "+ runtimeModule + " is not a solution");
@@ -84,7 +86,11 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     for (ModelRoot stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {
       IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
       if (file == null || !file.exists()) {
-        errors.add("Can't find runtime library: " + stubModelsEntry.getPath());
+        if(new File(stubModelsEntry.getPath()).exists()) {
+          errors.add("Idea VFS is not up-to-date. Can't find library: " + stubModelsEntry.getPath());
+        } else {
+          errors.add("Can't find library: " + stubModelsEntry.getPath());
+        }
       }
     }
     return errors;

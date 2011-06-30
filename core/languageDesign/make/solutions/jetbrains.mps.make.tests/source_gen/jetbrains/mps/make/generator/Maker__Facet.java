@@ -20,7 +20,7 @@ public class Maker__Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("Maker_");
 
   public Maker__Facet() {
-    ListSequence.fromList(targets).addElement(new Maker__Facet.Target_izvplp_a());
+    ListSequence.fromList(targets).addElement(new Maker__Facet.Target_Make());
   }
 
   public Iterable<ITarget> targets() {
@@ -43,13 +43,13 @@ public class Maker__Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_izvplp_a implements ITarget {
+  public static class Target_Make implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("Make");
 
-    public Target_izvplp_a() {
+    public Target_Make() {
     }
 
     public IJob createJob() {

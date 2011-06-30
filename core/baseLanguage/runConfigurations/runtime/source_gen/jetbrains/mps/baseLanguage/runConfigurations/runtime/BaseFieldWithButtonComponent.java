@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 
 public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
   private final List<ActionListener> myListeners = ListSequence.fromList(new ArrayList<ActionListener>());
+  private String myText;
 
   public BaseFieldWithButtonComponent() {
   }
@@ -30,42 +31,45 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
     this.getTextField().addKeyListener(new KeyAdapter() {
       @Override
       public void keyReleased(KeyEvent p0) {
-        BaseFieldWithButtonComponent.this.fireTextChanged();
+        BaseFieldWithButtonComponent.this.onChange();
       }
     });
   }
 
   public void setText(String text) {
-    if (neq_bit6ym_a0a0c(getTextField().getText(), text)) {
-      updateTextField(text);
-      this.fireTextChanged();
+    if (neq_bit6ym_a0a0c(this.myText, text)) {
+      this.myText = text;
+      this.onChange();
     }
   }
 
   public String getText() {
-    return this.getTextField().getText();
+    if (this.myText == null) {
+      return this.getTextField().getText();
+    }
+    return this.myText;
   }
 
-  protected void fireTextChanged() {
+  protected void onChange() {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<ActionListener>() {
       public void visit(ActionListener it) {
         it.actionPerformed(null);
       }
     });
-  }
 
-  protected void updateTextField(String text) {
     // I have no clue, which purpose do next lines serve 
 
     int cp = this.getTextField().getCaretPosition();
     int selStart = this.getTextField().getSelectionStart();
     int selEnd = this.getTextField().getSelectionEnd();
 
-    this.getTextField().setText(text);
+    this.getTextField().setText(this.getText());
     this.getTextField().setCaretPosition(cp);
     // except for those lines: they fix selection, broken by previous line 
     this.getTextField().setSelectionStart(selStart);
     this.getTextField().setSelectionEnd(selEnd);
+
+    this.myText = null;
   }
 
   public void dispose() {

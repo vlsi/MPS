@@ -41,7 +41,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   private File myMpsHome;
   protected final WhatToDo myWhatToDo = new WhatToDo();
   private boolean myUsePropertiesAsMacro = false;
-  private boolean myFork = false;
+  private boolean myFork = true;
   private final List<String> myJvmArgs = new ArrayList<String>();
 
   public void setMpsHome(File mpsHome) {

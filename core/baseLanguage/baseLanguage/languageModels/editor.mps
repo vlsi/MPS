@@ -14015,6 +14015,7 @@
   </root>
   <root id="6329021646629104959">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6329021646629175142">
+      <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.6329021646629104958" resolveInfo="text" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1198594875276" resolveInfo="Comment" />
       <link role="keyMap" roleId="tpc2.1081339532145" targetNodeId="6277919470776558529" resolveInfo="LastCommentPart" />

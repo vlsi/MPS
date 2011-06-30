@@ -20,7 +20,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1205769390549">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Methods" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4f.1205769149993" resolveInfo="DefaultMethodCallOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4f.1205769149993" resolveInfo="DefaultClassifierMethodCallOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1205769853449">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Methods" />
@@ -34,7 +34,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4f.1217433449852" resolveInfo="SuperClassifierExpresson" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1205752655131">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpresson" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
     </node>
   </roots>
   <root id="1205752924231">

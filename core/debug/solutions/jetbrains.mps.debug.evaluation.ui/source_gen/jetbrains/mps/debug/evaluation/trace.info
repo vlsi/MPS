@@ -490,30 +490,30 @@
     <unitInfo nodeId="4727801710070563175" fileName="Evaluator.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debug.evaluation.Evaluator" />
   </root>
   <root nodeId="4727801710070563657">
-    <nodeInfo nodeId="4727801710070563664" fileName="InvocationTargetEvaluationException.java" startLine="7" startPosition="48" endLine="8" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070563671" fileName="InvocationTargetEvaluationException.java" startLine="11" startPosition="62" endLine="12" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070563681" fileName="InvocationTargetEvaluationException.java" startLine="15" startPosition="79" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070563690" fileName="InvocationTargetEvaluationException.java" startLine="19" startPosition="63" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070563660" fileName="InvocationTargetEvaluationException.java" startLine="6" startPosition="78" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvocationTargetEvaluationException#()V" />
-    <nodeInfo nodeId="4727801710070563665" fileName="InvocationTargetEvaluationException.java" startLine="10" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvocationTargetEvaluationException#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4727801710070563673" fileName="InvocationTargetEvaluationException.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvocationTargetEvaluationException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
-    <nodeInfo nodeId="4727801710070563684" fileName="InvocationTargetEvaluationException.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvocationTargetEvaluationException#(Ljava/lang/Throwable;)V" />
-    <scopeInfo nodeId="4727801710070563663" fileName="InvocationTargetEvaluationException.java" startLine="7" startPosition="48" endLine="8" endPosition="12" />
-    <scopeInfo nodeId="4727801710070563670" fileName="InvocationTargetEvaluationException.java" startLine="11" startPosition="62" endLine="12" endPosition="19" />
-    <scopeInfo nodeId="4727801710070563680" fileName="InvocationTargetEvaluationException.java" startLine="15" startPosition="79" endLine="16" endPosition="26" />
-    <scopeInfo nodeId="4727801710070563689" fileName="InvocationTargetEvaluationException.java" startLine="19" startPosition="63" endLine="20" endPosition="17" />
-    <scopeInfo nodeId="4727801710070563660" fileName="InvocationTargetEvaluationException.java" startLine="6" startPosition="78" endLine="9" endPosition="3" />
-    <scopeInfo nodeId="4727801710070563665" fileName="InvocationTargetEvaluationException.java" startLine="10" startPosition="0" endLine="13" endPosition="3">
+    <nodeInfo nodeId="4727801710070563664" fileName="InvocationTargetEvaluationException.java" startLine="12" startPosition="48" endLine="13" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070563671" fileName="InvocationTargetEvaluationException.java" startLine="16" startPosition="62" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070563681" fileName="InvocationTargetEvaluationException.java" startLine="20" startPosition="79" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070563690" fileName="InvocationTargetEvaluationException.java" startLine="24" startPosition="63" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070563660" fileName="InvocationTargetEvaluationException.java" startLine="11" startPosition="78" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvocationTargetEvaluationException#()V" />
+    <nodeInfo nodeId="4727801710070563665" fileName="InvocationTargetEvaluationException.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvocationTargetEvaluationException#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4727801710070563673" fileName="InvocationTargetEvaluationException.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvocationTargetEvaluationException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
+    <nodeInfo nodeId="4727801710070563684" fileName="InvocationTargetEvaluationException.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvocationTargetEvaluationException#(Ljava/lang/Throwable;)V" />
+    <scopeInfo nodeId="4727801710070563663" fileName="InvocationTargetEvaluationException.java" startLine="12" startPosition="48" endLine="13" endPosition="12" />
+    <scopeInfo nodeId="4727801710070563670" fileName="InvocationTargetEvaluationException.java" startLine="16" startPosition="62" endLine="17" endPosition="19" />
+    <scopeInfo nodeId="4727801710070563680" fileName="InvocationTargetEvaluationException.java" startLine="20" startPosition="79" endLine="21" endPosition="26" />
+    <scopeInfo nodeId="4727801710070563689" fileName="InvocationTargetEvaluationException.java" startLine="24" startPosition="63" endLine="25" endPosition="17" />
+    <scopeInfo nodeId="4727801710070563660" fileName="InvocationTargetEvaluationException.java" startLine="11" startPosition="78" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="4727801710070563665" fileName="InvocationTargetEvaluationException.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="4727801710070563668" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070563673" fileName="InvocationTargetEvaluationException.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+    <scopeInfo nodeId="4727801710070563673" fileName="InvocationTargetEvaluationException.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
       <varInfo nodeId="4727801710070563676" varName="message" />
       <varInfo nodeId="4727801710070563678" varName="cause" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070563684" fileName="InvocationTargetEvaluationException.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+    <scopeInfo nodeId="4727801710070563684" fileName="InvocationTargetEvaluationException.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="4727801710070563687" varName="cause" />
     </scopeInfo>
-    <unitInfo nodeId="4727801710070563657" fileName="InvocationTargetEvaluationException.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
+    <unitInfo nodeId="4727801710070563657" fileName="InvocationTargetEvaluationException.java" startLine="6" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
   </root>
   <root nodeId="4727801710070563829">
     <nodeInfo nodeId="4727801710070563836" fileName="EvaluationRuntimeException.java" startLine="7" startPosition="39" endLine="8" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -568,81 +568,81 @@
     <unitInfo nodeId="4727801710070563894" fileName="EvaluationException.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationException" />
   </root>
   <root nodeId="4727801710070563977">
-    <nodeInfo nodeId="4727801710070563980" fileName="TargetVMEvaluationException.java" startLine="14" startPosition="70" endLine="15" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4727801710070563992" fileName="TargetVMEvaluationException.java" startLine="17" startPosition="70" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070564005" fileName="TargetVMEvaluationException.java" startLine="21" startPosition="113" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070564018" fileName="TargetVMEvaluationException.java" startLine="23" startPosition="34" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4727801710070564045" fileName="TargetVMEvaluationException.java" startLine="26" startPosition="9" endLine="27" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4727801710070564055" fileName="TargetVMEvaluationException.java" startLine="27" startPosition="118" endLine="28" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4727801710070564065" fileName="TargetVMEvaluationException.java" startLine="28" startPosition="136" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4727801710070564071" fileName="TargetVMEvaluationException.java" startLine="29" startPosition="42" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4727801710070564090" fileName="TargetVMEvaluationException.java" startLine="31" startPosition="40" endLine="32" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4727801710070564099" fileName="TargetVMEvaluationException.java" startLine="32" startPosition="93" endLine="33" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4727801710070564138" fileName="TargetVMEvaluationException.java" startLine="34" startPosition="7" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4727801710070564022" fileName="TargetVMEvaluationException.java" startLine="36" startPosition="44" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4727801710070564034" fileName="TargetVMEvaluationException.java" startLine="38" startPosition="45" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4727801710070563985" fileName="TargetVMEvaluationException.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetVMEvaluationException#(Lcom/sun/jdi/InvocationException;)V" />
-    <nodeInfo nodeId="4727801710070564013" fileName="TargetVMEvaluationException.java" startLine="22" startPosition="48" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4727801710070564080" fileName="TargetVMEvaluationException.java" startLine="30" startPosition="72" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4727801710070564019" fileName="TargetVMEvaluationException.java" startLine="25" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4727801710070563995" fileName="TargetVMEvaluationException.java" startLine="20" startPosition="0" endLine="41" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetVMEvaluationException#(Lcom/sun/jdi/InvocationException;Lcom/sun/jdi/ThreadReference;)V" />
-    <scopeInfo nodeId="4727801710070563991" fileName="TargetVMEvaluationException.java" startLine="17" startPosition="70" endLine="18" endPosition="18" />
-    <scopeInfo nodeId="4727801710070564017" fileName="TargetVMEvaluationException.java" startLine="23" startPosition="34" endLine="24" endPosition="13" />
-    <scopeInfo nodeId="4727801710070564020" fileName="TargetVMEvaluationException.java" startLine="36" startPosition="0" endLine="37" endPosition="81">
+    <nodeInfo nodeId="4727801710070563980" fileName="TargetVMEvaluationException.java" startLine="19" startPosition="70" endLine="20" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4727801710070563992" fileName="TargetVMEvaluationException.java" startLine="22" startPosition="70" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070564005" fileName="TargetVMEvaluationException.java" startLine="26" startPosition="113" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070564018" fileName="TargetVMEvaluationException.java" startLine="28" startPosition="34" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4727801710070564045" fileName="TargetVMEvaluationException.java" startLine="31" startPosition="9" endLine="32" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070564055" fileName="TargetVMEvaluationException.java" startLine="32" startPosition="118" endLine="33" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070564065" fileName="TargetVMEvaluationException.java" startLine="33" startPosition="136" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070564071" fileName="TargetVMEvaluationException.java" startLine="34" startPosition="42" endLine="35" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070564090" fileName="TargetVMEvaluationException.java" startLine="36" startPosition="40" endLine="37" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070564099" fileName="TargetVMEvaluationException.java" startLine="37" startPosition="93" endLine="38" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4727801710070564138" fileName="TargetVMEvaluationException.java" startLine="39" startPosition="7" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4727801710070564022" fileName="TargetVMEvaluationException.java" startLine="41" startPosition="44" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4727801710070564034" fileName="TargetVMEvaluationException.java" startLine="43" startPosition="45" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4727801710070563985" fileName="TargetVMEvaluationException.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetVMEvaluationException#(Lcom/sun/jdi/InvocationException;)V" />
+    <nodeInfo nodeId="4727801710070564013" fileName="TargetVMEvaluationException.java" startLine="27" startPosition="48" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4727801710070564080" fileName="TargetVMEvaluationException.java" startLine="35" startPosition="72" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4727801710070564019" fileName="TargetVMEvaluationException.java" startLine="30" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4727801710070563995" fileName="TargetVMEvaluationException.java" startLine="25" startPosition="0" endLine="46" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetVMEvaluationException#(Lcom/sun/jdi/InvocationException;Lcom/sun/jdi/ThreadReference;)V" />
+    <scopeInfo nodeId="4727801710070563991" fileName="TargetVMEvaluationException.java" startLine="22" startPosition="70" endLine="23" endPosition="18" />
+    <scopeInfo nodeId="4727801710070564017" fileName="TargetVMEvaluationException.java" startLine="28" startPosition="34" endLine="29" endPosition="13" />
+    <scopeInfo nodeId="4727801710070564020" fileName="TargetVMEvaluationException.java" startLine="41" startPosition="0" endLine="42" endPosition="81">
       <varInfo nodeId="4727801710070564030" varName="exception" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070564021" fileName="TargetVMEvaluationException.java" startLine="36" startPosition="44" endLine="37" endPosition="81" />
-    <scopeInfo nodeId="4727801710070564032" fileName="TargetVMEvaluationException.java" startLine="38" startPosition="0" endLine="39" endPosition="81">
+    <scopeInfo nodeId="4727801710070564021" fileName="TargetVMEvaluationException.java" startLine="41" startPosition="44" endLine="42" endPosition="81" />
+    <scopeInfo nodeId="4727801710070564032" fileName="TargetVMEvaluationException.java" startLine="43" startPosition="0" endLine="44" endPosition="81">
       <varInfo nodeId="4727801710070564042" varName="exception" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070564033" fileName="TargetVMEvaluationException.java" startLine="38" startPosition="45" endLine="39" endPosition="81" />
-    <scopeInfo nodeId="4727801710070564089" fileName="TargetVMEvaluationException.java" startLine="31" startPosition="40" endLine="33" endPosition="336">
+    <scopeInfo nodeId="4727801710070564033" fileName="TargetVMEvaluationException.java" startLine="43" startPosition="45" endLine="44" endPosition="81" />
+    <scopeInfo nodeId="4727801710070564089" fileName="TargetVMEvaluationException.java" startLine="36" startPosition="40" endLine="38" endPosition="336">
       <varInfo nodeId="4727801710070564091" varName="stackTraceElement" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070563985" fileName="TargetVMEvaluationException.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+    <scopeInfo nodeId="4727801710070563985" fileName="TargetVMEvaluationException.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="4727801710070563988" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070564080" fileName="TargetVMEvaluationException.java" startLine="30" startPosition="72" endLine="34" endPosition="7">
+    <scopeInfo nodeId="4727801710070564080" fileName="TargetVMEvaluationException.java" startLine="35" startPosition="72" endLine="39" endPosition="7">
       <varInfo nodeId="4727801710070564084" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070564044" fileName="TargetVMEvaluationException.java" startLine="26" startPosition="9" endLine="35" endPosition="35">
+    <scopeInfo nodeId="4727801710070564044" fileName="TargetVMEvaluationException.java" startLine="31" startPosition="9" endLine="40" endPosition="35">
       <varInfo nodeId="4727801710070564046" varName="exceptionProxy" />
       <varInfo nodeId="4727801710070564066" varName="length" />
       <varInfo nodeId="4727801710070564072" varName="newStackTrace" />
       <varInfo nodeId="4727801710070564056" varName="stackTrace" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070564004" fileName="TargetVMEvaluationException.java" startLine="21" startPosition="113" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="4727801710070563995" fileName="TargetVMEvaluationException.java" startLine="20" startPosition="0" endLine="41" endPosition="3">
+    <scopeInfo nodeId="4727801710070564004" fileName="TargetVMEvaluationException.java" startLine="26" startPosition="113" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="4727801710070563995" fileName="TargetVMEvaluationException.java" startLine="25" startPosition="0" endLine="46" endPosition="3">
       <varInfo nodeId="4727801710070564001" varName="threadReference" />
       <varInfo nodeId="4727801710070563998" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="4727801710070563977" fileName="TargetVMEvaluationException.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.debug.evaluation.TargetVMEvaluationException" />
+    <unitInfo nodeId="4727801710070563977" fileName="TargetVMEvaluationException.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.debug.evaluation.TargetVMEvaluationException" />
   </root>
   <root nodeId="4727801710070564141">
-    <nodeInfo nodeId="4727801710070564148" fileName="InvalidEvaluatedExpressionException.java" startLine="7" startPosition="48" endLine="8" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070564155" fileName="InvalidEvaluatedExpressionException.java" startLine="11" startPosition="62" endLine="12" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070564165" fileName="InvalidEvaluatedExpressionException.java" startLine="15" startPosition="79" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070564174" fileName="InvalidEvaluatedExpressionException.java" startLine="19" startPosition="63" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4727801710070564144" fileName="InvalidEvaluatedExpressionException.java" startLine="6" startPosition="78" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvalidEvaluatedExpressionException#()V" />
-    <nodeInfo nodeId="4727801710070564149" fileName="InvalidEvaluatedExpressionException.java" startLine="10" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvalidEvaluatedExpressionException#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4727801710070564157" fileName="InvalidEvaluatedExpressionException.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvalidEvaluatedExpressionException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
-    <nodeInfo nodeId="4727801710070564168" fileName="InvalidEvaluatedExpressionException.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvalidEvaluatedExpressionException#(Ljava/lang/Throwable;)V" />
-    <scopeInfo nodeId="4727801710070564147" fileName="InvalidEvaluatedExpressionException.java" startLine="7" startPosition="48" endLine="8" endPosition="12" />
-    <scopeInfo nodeId="4727801710070564154" fileName="InvalidEvaluatedExpressionException.java" startLine="11" startPosition="62" endLine="12" endPosition="19" />
-    <scopeInfo nodeId="4727801710070564164" fileName="InvalidEvaluatedExpressionException.java" startLine="15" startPosition="79" endLine="16" endPosition="26" />
-    <scopeInfo nodeId="4727801710070564173" fileName="InvalidEvaluatedExpressionException.java" startLine="19" startPosition="63" endLine="20" endPosition="17" />
-    <scopeInfo nodeId="4727801710070564144" fileName="InvalidEvaluatedExpressionException.java" startLine="6" startPosition="78" endLine="9" endPosition="3" />
-    <scopeInfo nodeId="4727801710070564149" fileName="InvalidEvaluatedExpressionException.java" startLine="10" startPosition="0" endLine="13" endPosition="3">
+    <nodeInfo nodeId="4727801710070564148" fileName="InvalidEvaluatedExpressionException.java" startLine="11" startPosition="48" endLine="12" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070564155" fileName="InvalidEvaluatedExpressionException.java" startLine="15" startPosition="62" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070564165" fileName="InvalidEvaluatedExpressionException.java" startLine="19" startPosition="79" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070564174" fileName="InvalidEvaluatedExpressionException.java" startLine="23" startPosition="63" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4727801710070564144" fileName="InvalidEvaluatedExpressionException.java" startLine="10" startPosition="78" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvalidEvaluatedExpressionException#()V" />
+    <nodeInfo nodeId="4727801710070564149" fileName="InvalidEvaluatedExpressionException.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvalidEvaluatedExpressionException#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4727801710070564157" fileName="InvalidEvaluatedExpressionException.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvalidEvaluatedExpressionException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
+    <nodeInfo nodeId="4727801710070564168" fileName="InvalidEvaluatedExpressionException.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvalidEvaluatedExpressionException#(Ljava/lang/Throwable;)V" />
+    <scopeInfo nodeId="4727801710070564147" fileName="InvalidEvaluatedExpressionException.java" startLine="11" startPosition="48" endLine="12" endPosition="12" />
+    <scopeInfo nodeId="4727801710070564154" fileName="InvalidEvaluatedExpressionException.java" startLine="15" startPosition="62" endLine="16" endPosition="19" />
+    <scopeInfo nodeId="4727801710070564164" fileName="InvalidEvaluatedExpressionException.java" startLine="19" startPosition="79" endLine="20" endPosition="26" />
+    <scopeInfo nodeId="4727801710070564173" fileName="InvalidEvaluatedExpressionException.java" startLine="23" startPosition="63" endLine="24" endPosition="17" />
+    <scopeInfo nodeId="4727801710070564144" fileName="InvalidEvaluatedExpressionException.java" startLine="10" startPosition="78" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="4727801710070564149" fileName="InvalidEvaluatedExpressionException.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="4727801710070564152" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070564157" fileName="InvalidEvaluatedExpressionException.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+    <scopeInfo nodeId="4727801710070564157" fileName="InvalidEvaluatedExpressionException.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="4727801710070564160" varName="message" />
       <varInfo nodeId="4727801710070564162" varName="cause" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070564168" fileName="InvalidEvaluatedExpressionException.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+    <scopeInfo nodeId="4727801710070564168" fileName="InvalidEvaluatedExpressionException.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="4727801710070564171" varName="cause" />
     </scopeInfo>
-    <unitInfo nodeId="4727801710070564141" fileName="InvalidEvaluatedExpressionException.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
+    <unitInfo nodeId="4727801710070564141" fileName="InvalidEvaluatedExpressionException.java" startLine="6" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
   </root>
 </debugInfo>
 

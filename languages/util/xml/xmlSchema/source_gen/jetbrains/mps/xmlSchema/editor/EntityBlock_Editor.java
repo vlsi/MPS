@@ -58,8 +58,8 @@ public class EntityBlock_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_ddir2p_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("comment");
-    provider.setNoTargetText("<no comment>");
+    provider.setRole("sComment");
+    provider.setNoTargetText("<no sComment>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

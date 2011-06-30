@@ -183,12 +183,14 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.xmlInternal.structure.Comment" />
     <classNode dependClassName="jetbrains.mps.xmlSchema.structure.EntityLine" />
+    <classNode dependClassName="jetbrains.mps.xmlSchema.structure.SchemaComment" />
+    <classNode dependClassName="jetbrains.mps.xmlSchema.structure.SchemaCommentable" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.xmlSchema.structure.EntityDeclaration" file="EntityDeclaration.java">
@@ -201,12 +203,16 @@
   </dependency>
   <dependency className="jetbrains.mps.xmlSchema.structure.EntityLine" file="EntityLine.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.xmlInternal.structure.Comment" />
     <classNode dependClassName="jetbrains.mps.xmlSchema.structure.EntityDeclaration" />
+    <classNode dependClassName="jetbrains.mps.xmlSchema.structure.SchemaComment" />
+    <classNode dependClassName="jetbrains.mps.xmlSchema.structure.SchemaCommentable" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.xmlSchema.structure.EntitySet" file="EntitySet.java">
@@ -318,6 +324,22 @@
     <classNode dependClassName="jetbrains.mps.xmlSchema.structure.NamespaceDeclaration" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.xmlSchema.structure.SchemaComment" file="SchemaComment.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.xmlSchema.structure.TextLine" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.xmlSchema.structure.SchemaCommentable" file="SchemaCommentable.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.xmlSchema.structure.SchemaComment" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.xmlSchema.structure.SchemaType" file="SchemaType.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -355,16 +377,12 @@
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.xmlSchema.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
-    <classNode dependClassName="com.google.common.collect.ImmutableList" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.StructureDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.xmlSchema.structure.TextLine" file="TextLine.java">
     <classNode dependClassName="java.lang.String" />

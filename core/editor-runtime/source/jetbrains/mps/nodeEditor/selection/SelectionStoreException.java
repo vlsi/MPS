@@ -7,8 +7,8 @@ package jetbrains.mps.nodeEditor.selection;
  * Time: 3:31 PM
  * To change this template use File | Settings | File Templates.
  */
-class SelectionStoreException extends Exception {
-  SelectionStoreException(String message) {
+public class SelectionStoreException extends Exception {
+  public SelectionStoreException(String message) {
     super(message);
   }
 }

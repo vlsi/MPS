@@ -70,8 +70,8 @@
         </node>
         <node role="see" roleId="m373.2217234381367277533" type="m373.SeeBlockDocTag" typeId="m373.2217234381367190443" id="4021391592916073102">
           <property name="text" nameId="m373.2217234381367190444" value="see, yes" />
-          <node role="reference" roleId="m373.2217234381367190458" type="m373.MethodDocReference" typeId="m373.2217234381367530195" id="4021391592916151383">
-            <link role="methodDeclaration" roleId="m373.2217234381367530196" targetNodeId="e2lb.~CharacterDataUndefined%d&lt;init&gt;()" resolveInfo="CharacterDataUndefined" />
+          <node role="reference" roleId="m373.2217234381367190458" type="m373.ClassifierDocReference" typeId="m373.2217234381367530212" id="3926476116131891511">
+            <link role="classifier" roleId="m373.2217234381367530213" targetNodeId="e2lb.~CharacterDataUndefined" resolveInfo="CharacterDataUndefined" />
           </node>
         </node>
       </node>
@@ -177,8 +177,8 @@
           </node>
           <node role="part" roleId="m373.8970989240999019149" type="m373.InlineTagCommentLinePart" typeId="m373.8970989240999019145" id="4021391592916713264">
             <node role="tag" roleId="m373.6962838954693749192" type="m373.ValueInlineDocTag" typeId="m373.6962838954693748795" id="4021391592916713266">
-              <node role="variableReference" roleId="m373.2565027568480644422" type="m373.StaticFieldDocReference" typeId="m373.6501140109493894267" id="4021391592916713272">
-                <link role="declaration" roleId="m373.5562345046718956740" targetNodeId="1t7x.~BorderLayout%dNORTH" resolveInfo="NORTH" />
+              <node role="variableReference" roleId="m373.2565027568480644422" type="m373.StaticFieldDocReference" typeId="m373.6501140109493894267" id="3926476116131891510">
+                <link role="declaration" roleId="m373.5562345046718956740" targetNodeId="1t7x.~GridBagConstraints%dNORTH" resolveInfo="NORTH" />
               </node>
             </node>
           </node>
@@ -374,6 +374,19 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3196018662491356445" />
     <node role="typeVariableDeclaration" roleId="tpee.1109279881614" type="tpee.TypeVariableDeclaration" typeId="tpee.1109279763828" id="6832197706140691340">
       <property name="name" nameId="tpck.1169194664001" value="TT" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="3926476116131891504">
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="3926476116131891505">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="3926476116131891506">
+          <property name="text" nameId="m373.8970989240999019144" value="Comment for class " />
+        </node>
+      </node>
+      <node role="param" roleId="m373.2068944020170241614" type="m373.ParameterBlockDocTag" typeId="m373.8465538089690881930" id="3926476116131891507">
+        <property name="text" nameId="m373.8465538089690881934" value="param" />
+        <node role="parameter" roleId="m373.6832197706140518123" type="m373.DocTypeParameterReference" typeId="m373.6832197706140518107" id="3926476116131891508">
+          <link role="param" roleId="m373.6832197706140518108" targetNodeId="6832197706140691340" resolveInfo="TT" />
+        </node>
+      </node>
     </node>
   </root>
 </model>

@@ -54,6 +54,9 @@
       <genConfModule name="generate property language" moduleRef="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)" />
     </genConfs>
   </component>
+  <component name="MigrationState">
+    <option name="myState" value="INITIAL" />
+  </component>
   <component name="ProjectDetails">
     <option name="projectName" value="BuildLanguage" />
   </component>

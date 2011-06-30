@@ -21,7 +21,7 @@ public class Generate_Facet implements IFacet {
   private IFacet.Name name = new IFacet.Name("Generate");
 
   public Generate_Facet() {
-    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_a());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_GenerateTarget());
   }
 
   public Iterable<ITarget> targets() {
@@ -44,13 +44,13 @@ public class Generate_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_fi61u2_a implements ITarget {
+  public static class Target_GenerateTarget implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ICResouce.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
     private ITarget.Name name = new ITarget.Name("GenerateTarget");
 
-    public Target_fi61u2_a() {
+    public Target_GenerateTarget() {
     }
 
     public IJob createJob() {

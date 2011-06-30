@@ -4,7 +4,11 @@ package jetbrains.mps.editor.runtime.impl;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 
-public enum LayoutConstraints {
+public 
+/**
+ * TODO: Import layout logic into MPS
+ */
+enum LayoutConstraints {
   NOFLOW_LAYOUT_CONSTRAINT(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Layout_Constraints_Enum"), "noflow"))),
   PUNCTUATION_LAYOUT_CONSTRAINT(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Layout_Constraints_Enum"), "punctuation")));
 

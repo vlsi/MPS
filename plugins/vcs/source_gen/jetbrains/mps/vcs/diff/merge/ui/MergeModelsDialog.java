@@ -78,7 +78,8 @@ public class MergeModelsDialog extends BaseDialog {
         myInitialState = myMergeContext.getCurrentState();
       }
     });
-    DiffTemporaryModule.createModuleForModel(myMergeContext.getResultModel(), "result", myProject);
+    DiffTemporaryModule.createModuleForModel(myMergeContext.getResultModel(), "result", myProject, true);
+    myMergeContext.installResultModelListener();
     DiffTemporaryModule.createModuleForModel(mineModel, "mine", myProject);
     DiffTemporaryModule.createModuleForModel(repositoryModel, "repository", myProject);
 
@@ -272,7 +273,7 @@ public class MergeModelsDialog extends BaseDialog {
 
   /*package*/ void restoreState(MergeContextState state) {
     myMergeContext.restoreState(state);
-    DiffTemporaryModule.createModuleForModel(myMergeContext.getResultModel(), "result", myProject);
+    // <node> 
   }
 
   public void resetState() {

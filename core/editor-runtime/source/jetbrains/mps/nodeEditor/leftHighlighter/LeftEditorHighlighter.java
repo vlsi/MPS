@@ -416,6 +416,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   public void relayout(boolean updateFolding) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
+    if (myEditorComponent.isDisposed()) {
+      return;
+    }
     if (myRightToLeft) {
       recalculateFoldingAreaWidth();
       updateSeparatorLinePosition();

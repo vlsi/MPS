@@ -86,7 +86,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public JComponent createComponent() {
-    if (myScrollPane != null) return myScrollPane;
+    if (isComponentCreated()) return myScrollPane;
     myTree = new MyLogicalViewTree();
     myFavoritesListener = new MPSFavoritesListener() {
       public void rootsChanged(String listName) {
@@ -125,6 +125,10 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
     myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     return myScrollPane;
+  }
+
+  protected boolean isComponentCreated() {
+    return myScrollPane != null;
   }
 
   public MPSTree getTree() {

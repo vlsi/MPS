@@ -9,7 +9,7 @@ public class SomeConcept_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_isNodeRunnable_1906992812162479271(SNode thisNode) {
+  public static boolean virtual_isNodeRunnable_4666195181811081448(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "valid");
   }
 }

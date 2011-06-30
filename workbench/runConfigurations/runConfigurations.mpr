@@ -16,6 +16,7 @@
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.ant" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/custommps/custommps.mpl" folder="usages.ant" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/packaging/packaging.mpl" folder="usages.ant" />
+      <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
       <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" folder="usages.java" />
       <modulePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.implicit" />
       <modulePath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="usages.implicit" />
@@ -29,11 +30,11 @@
       <modulePath path="${project}/languages/configurations/configurations.mpl" />
       <modulePath path="${project}/languages/demo/demo.mpl" folder="usages" />
       <modulePath path="${project}/languages/settings/settings.mpl" folder="" />
+      <modulePath path="${project}/languages/util/util.mpl" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="usages" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="library" />
-      <modulePath path="${project}/languages/util/util.mpl" folder="" />
     </projectModules>
     <genConfs>
       <genConfModule name="api" moduleRef="jetbrains.mps.execution.api" />

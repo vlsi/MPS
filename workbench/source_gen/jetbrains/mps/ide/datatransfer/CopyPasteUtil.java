@@ -189,7 +189,11 @@ public class CopyPasteUtil {
             oldTargetNode.getName()
           );
           if (resolveInfo != null) {
-            newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getSNodeId(), resolveInfo);
+            if (oldTargetNode != null && !(oldTargetNode.isDisposed()) && oldTargetNode.getModel() != null) {
+              newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getSNodeId(), resolveInfo);
+            } else {
+              newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
+            }
             referencesRequireResolve.add(newReference);
           } else
           if (oldTargetNode != null) {

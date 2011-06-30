@@ -25,7 +25,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_z1r74j_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
-    provider.setNoTargetText("<no text>");
+    provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");

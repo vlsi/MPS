@@ -52,7 +52,6 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         component.addError(node, "Child in a role with unknown link", null);
         return;
       }
-
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
           return ModelConstraintsManager.canBeChild(newDescriptor, node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link, checkingNodeContext);

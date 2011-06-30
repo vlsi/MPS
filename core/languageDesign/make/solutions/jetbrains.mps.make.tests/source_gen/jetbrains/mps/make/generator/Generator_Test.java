@@ -5,6 +5,7 @@ package jetbrains.mps.make.generator;
 import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.unittest.MockTestCase;
+import jetbrains.mps.make.facet.IFacetManifest;
 import org.junit.Test;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IProgress;
@@ -30,13 +31,12 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import org.junit.Before;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-import jetbrains.mps.make.facet.FacetRegistry;
 import org.junit.After;
+import jetbrains.mps.make.facet.FacetRegistry;
 
 @RunWith(JMock.class)
 public class Generator_Test extends MockTestCase {
-  private Object manifest;
+  private IFacetManifest manifest;
 
   @Test
   public void test_buildScript() throws Exception {
@@ -64,7 +64,7 @@ public class Generator_Test extends MockTestCase {
     });
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
-    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFinalTarget(new ITarget.Name("Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
@@ -127,7 +127,7 @@ public class Generator_Test extends MockTestCase {
       }
     });
     Mockups.allowing(context, mons);
-    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFacet(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
@@ -192,7 +192,7 @@ public class Generator_Test extends MockTestCase {
     });
     Mockups.allowing(context, mons);
 
-    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFacet(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Make")).toScript();
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
@@ -242,7 +242,7 @@ public class Generator_Test extends MockTestCase {
     });
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
-    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Make")).toScript();
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
@@ -290,7 +290,7 @@ public class Generator_Test extends MockTestCase {
     };
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), jmon);
-    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
@@ -306,15 +306,24 @@ public class Generator_Test extends MockTestCase {
     Class<?> mf = Class.forName(Generator_Test.class.getPackage().getName() + ".FacetManifest");
     Constructor<?> ctor = mf.getConstructor();
     Object inst = ctor.newInstance();
-    this.manifest = inst;
-    Method mth = mf.getMethod("registerFacets", FacetRegistry.class);
-    mth.invoke(inst, FacetRegistry.getInstance());
+    this.manifest = (IFacetManifest) inst;
+    registerFacets(manifest);
   }
 
   @After
   public void tearDown() throws Exception {
-    Class<?> mf = Class.forName(Generator_Test.class.getPackage().getName() + ".FacetManifest");
-    Method mth = mf.getMethod("unRegisterFacets", FacetRegistry.class);
-    mth.invoke(manifest, FacetRegistry.getInstance());
+    unregisterFacets(manifest);
+  }
+
+  private void registerFacets(IFacetManifest fm) {
+    for (IFacet fct : fm.facets()) {
+      FacetRegistry.getInstance().register(fct);
+    }
+  }
+
+  private void unregisterFacets(IFacetManifest fm) {
+    for (IFacet fct : fm.facets()) {
+      FacetRegistry.getInstance().unregister(fct);
+    }
   }
 }

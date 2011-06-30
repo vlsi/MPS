@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.ConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -18,7 +18,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptBehavior_BehaviorDescriptor();
       case 1:
         return new ConceptConstructorDeclaration_BehaviorDescriptor();
-      case 4:
+      case 2:
         return new ConceptMethodDeclaration_BehaviorDescriptor();
       case 6:
         return new StaticConceptMethodDeclaration_BehaviorDescriptor();
@@ -28,10 +28,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ThisNodeExpression_BehaviorDescriptor();
       case 5:
         return new LocalBehaviorMethodCall_BehaviorDescriptor();
-      case 2:
-        return new ConceptDeclarationReference_BehaviorDescriptor();
       case 3:
-        return new ConceptDeclarationsHolder_BehaviorDescriptor();
+        return new InternalConceptDeclarationReference_BehaviorDescriptor();
+      case 4:
+        return new InternalConceptDeclarationsHolder_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

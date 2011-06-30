@@ -41,8 +41,8 @@
     <nodeInfo nodeId="7294814585296232102" fileName="EmbeddableEditor.java" startLine="133" startPosition="50" endLine="134" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7469930712745424632" fileName="EmbeddableEditor.java" startLine="138" startPosition="38" endLine="139" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3094411788089108008" fileName="EmbeddableEditor.java" startLine="142" startPosition="30" endLine="143" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6085445418775341737" fileName="EmbeddableEditor.java" startLine="146" startPosition="57" endLine="147" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6085445418775341706" fileName="EmbeddableEditor.java" startLine="147" startPosition="333" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6085445418775341737" fileName="EmbeddableEditor.java" startLine="146" startPosition="57" endLine="147" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6085445418775341706" fileName="EmbeddableEditor.java" startLine="147" startPosition="336" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4803868321461291487" fileName="EmbeddableEditor.java" startLine="148" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3732264744266842629" fileName="EmbeddableEditor.java" startLine="153" startPosition="68" endLine="154" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3732264744266842642" fileName="EmbeddableEditor.java" startLine="158" startPosition="52" endLine="159" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -56,18 +56,18 @@
     <unitInfo nodeId="1182113674817158574" fileName="CellUtil.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.CellUtil" />
   </root>
   <root nodeId="1182113674817458489">
-    <nodeInfo nodeId="1182113674817458500" fileName="LayoutConstraints.java" startLine="10" startPosition="0" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1182113674817458504" fileName="LayoutConstraints.java" startLine="13" startPosition="34" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817458515" fileName="LayoutConstraints.java" startLine="17" startPosition="27" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817458491" fileName="LayoutConstraints.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LayoutConstraints#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1182113674817458510" fileName="LayoutConstraints.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="1182113674817458494" fileName="LayoutConstraints.java" startLine="13" startPosition="34" endLine="14" endPosition="18" />
-    <scopeInfo nodeId="1182113674817458513" fileName="LayoutConstraints.java" startLine="17" startPosition="27" endLine="18" endPosition="18" />
-    <scopeInfo nodeId="1182113674817458491" fileName="LayoutConstraints.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+    <nodeInfo nodeId="1182113674817458500" fileName="LayoutConstraints.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1182113674817458504" fileName="LayoutConstraints.java" startLine="17" startPosition="34" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1182113674817458515" fileName="LayoutConstraints.java" startLine="21" startPosition="27" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1182113674817458491" fileName="LayoutConstraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LayoutConstraints#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1182113674817458510" fileName="LayoutConstraints.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="1182113674817458494" fileName="LayoutConstraints.java" startLine="17" startPosition="34" endLine="18" endPosition="18" />
+    <scopeInfo nodeId="1182113674817458513" fileName="LayoutConstraints.java" startLine="21" startPosition="27" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="1182113674817458491" fileName="LayoutConstraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
       <varInfo nodeId="1182113674817458498" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817458510" fileName="LayoutConstraints.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="1182113674817458489" fileName="LayoutConstraints.java" startLine="7" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LayoutConstraints" />
+    <scopeInfo nodeId="1182113674817458510" fileName="LayoutConstraints.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="1182113674817458489" fileName="LayoutConstraints.java" startLine="7" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LayoutConstraints" />
   </root>
   <root nodeId="1182113674817469564">
     <nodeInfo nodeId="1182113674817469596" fileName="LanguagesKeymapManager.java" startLine="33" startPosition="69" endLine="34" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

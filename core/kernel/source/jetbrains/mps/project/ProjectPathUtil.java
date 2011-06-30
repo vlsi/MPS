@@ -71,7 +71,7 @@ public class ProjectPathUtil {
   }
 
   public static IFile getGeneratorTestsOutputPath(IFile file, ModuleDescriptor descriptor) {
-    if (file != null && descriptor instanceof SolutionDescriptor) {
+    if (file != null && (descriptor instanceof SolutionDescriptor || descriptor instanceof LanguageDescriptor)) {
       return file.getParent().getDescendant("test_gen");
     }
     return null;

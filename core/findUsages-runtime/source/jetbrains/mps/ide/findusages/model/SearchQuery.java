@@ -106,10 +106,10 @@ public class SearchQuery implements IExternalizeable {
         throw new CantSaveSomethingException("Module is not found for module. Maybe the module was deleted.");
       }
       scopeXML.setAttribute(MODULE_ID, abstractModule.getModuleFqName());
-    } else if (myScope instanceof ModelsScope) {
+    } else if (myScope instanceof ModelsOnlyScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODELS);
       Element modelsXML = new Element(MODELS);
-      for (SModelDescriptor sModelDescriptor : ((ModelsScope) myScope).getModelDescriptors()) {
+      for (SModelDescriptor sModelDescriptor : ((ModelsOnlyScope) myScope).getModelDescriptors()) {
         Element modelXML = new Element(MODEL);
         if (sModelDescriptor == null) {
           LOG.warning("No model descriptor for model. Maybe the model was deleted");
@@ -162,7 +162,7 @@ public class SearchQuery implements IExternalizeable {
           throw new CantLoadSomethingException("model scope not found for model " + modelUID);
         }
       }
-      myScope = new ModelsScope(models.toArray(new SModelDescriptor[models.size()]));
+      myScope = new ModelsOnlyScope(models.toArray(new SModelDescriptor[models.size()]));
     }
     if (scopeType.equals(SCOPE_TYPE_BOOTSTRAP)) {
       myScope = BootstrapScope.getInstance();

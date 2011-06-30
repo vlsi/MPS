@@ -703,16 +703,16 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1220369573364065743" resolveInfo="lang" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6388955611097383385">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~AbstractModule%dgetDependenciesManager()%cjetbrains%dmps%dproject%ddependency%dDependencyManager" resolveInfo="getDependenciesManager" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~AbstractModule%dgetDependenciesManager()%cjetbrains%dmps%dproject%ddependency%dDependenciesManager" resolveInfo="getDependenciesManager" />
                             </node>
                           </node>
-                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6388955611097383389">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qwup.~LanguageDepsManager" resolveInfo="LanguageDepsManager" />
+                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4419659022905407507">
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qwup.~LanguageDependenciesManager" resolveInfo="LanguageDependenciesManager" />
                           </node>
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1220369573364065768">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qwup.~LanguageDepsManager%dgetRuntimeDependOnModules()%cjava%dutil%dList" resolveInfo="getRuntimeDependOnModules" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qwup.~LanguageDependenciesManager%dgetRuntimeDependOnModules()%cjava%dutil%dList" resolveInfo="getRuntimeDependOnModules" />
                       </node>
                     </node>
                   </node>

@@ -4777,7 +4777,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="315679020132025121" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="315679020132025122" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="315679020132025123">
-        <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.make.facet" />
+        <property name="value" nameId="tpee.1070475926801" value="&lt;default&gt;" />
       </node>
     </node>
   </root>

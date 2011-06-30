@@ -1247,14 +1247,14 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230119788157">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="1230130064519">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1230130064520">
-          <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_RIGHT" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="3274482454725612466">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="3274482454725612468">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8257980988067921117" resolveInfo="SelectRight" />
         </node>
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1230130082772">
-          <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_RIGHT" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="3274482454725612470">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="3274482454725612471">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8257980988067921117" resolveInfo="SelectRight" />
         </node>
       </node>
     </node>

@@ -4,7 +4,6 @@ package sample2;
 
 import java.io.File;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
-import jetbrains.mps.ypath.runtime.IFilter;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -16,11 +15,7 @@ import jetbrains.mps.ypath.runtime.ITreeTraversal;
 public class FileDemo {
   public static void main(String[] args) {
     final File f = new File(System.getProperty("user.home"));
-    for (File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(f), TreeTraversalFactory.Axis("DESCENDANTS")), File_TreePath.DIR_NodeKindTrigger.getInstance()), new IFilter<File>() {
-      public boolean accept(File d) {
-        return d.getName().startsWith("D");
-      }
-    })) {
+    for (File dir : TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new File_TreePath().startTraversal(f), TreeTraversalFactory.Axis("DESCENDANTS")), File_TreePath.DIR_NodeKindTrigger.getInstance())) {
       System.out.println(dir);
     }
     for (File d : TreeTraversalFactory.Filter(new File_TreePath().startTraversal(f), File_TreePath.DIR_NodeKindTrigger.getInstance())) {

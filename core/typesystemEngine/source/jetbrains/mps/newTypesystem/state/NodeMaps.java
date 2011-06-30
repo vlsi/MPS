@@ -20,7 +20,9 @@ import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
@@ -154,10 +156,15 @@ public class NodeMaps {
   }
 
   public void expandAll(Set<SNode> nodes, boolean finalExpansion) {
+    Set<SNode> keySet = myNodesToTypes.keySet();
     for (SNode node : nodes) {
+      if (!keySet.contains(node)) continue;
       SNode var = myNodesToTypes.get(node);
       SNode type = myState.getEquations().expandNode(var, finalExpansion);
       updateNodeToType(node, type, null);
+      if (finalExpansion && (type == null || TypesUtil.isVariable(type))) {
+        myState.getTypeCheckingContext().reportWarning(node, "Type was not calculated", null, null, null, new NodeMessageTarget());
+      }
     }
   }
 

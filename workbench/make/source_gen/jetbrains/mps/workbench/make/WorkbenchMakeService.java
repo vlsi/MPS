@@ -9,21 +9,31 @@ import java.util.concurrent.atomic.AtomicMarkableReference;
 import jetbrains.mps.make.MakeSession;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
+import java.util.List;
+import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import dependencies.ModulesClusterizer;
+import jetbrains.mps.make.dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import javax.swing.SwingUtilities;
 import com.intellij.ide.IdeEventQueue;
@@ -32,13 +42,11 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -56,6 +64,7 @@ import com.intellij.openapi.progress.Task;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 import org.jetbrains.annotations.Nullable;
+import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
@@ -68,6 +77,7 @@ public class WorkbenchMakeService implements IMakeService {
   private ProgressIndicatorDelegate progInd;
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile Future<IResult> currentProcess;
+  private List<IMakeNotificationListener> listeners = ListSequence.fromList(new ArrayList<IMakeNotificationListener>());
 
   public WorkbenchMakeService() {
   }
@@ -98,7 +108,7 @@ public class WorkbenchMakeService implements IMakeService {
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
     this.checkValidUsage();
     this.checkValidSession(session);
-    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), null);
+    return doMake(resources, null, null);
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
@@ -136,7 +146,7 @@ public class WorkbenchMakeService implements IMakeService {
     if (isInstance()) {
       throw new IllegalStateException("deprecated API called on a service");
     }
-    return _doMake(resources, WorkbenchMakeService.defaultMakeScript(), null);
+    return _doMake(resources, null, null);
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
@@ -155,6 +165,24 @@ public class WorkbenchMakeService implements IMakeService {
 
   private MakeSession getSession() {
     return currentSessionStickyMark.getReference();
+  }
+
+  public void addListener(IMakeNotificationListener listener) {
+    checkValidUsage();
+    ListSequence.fromList(listeners).addElement(listener);
+  }
+
+  public void removeListener(IMakeNotificationListener listener) {
+    checkValidUsage();
+    ListSequence.fromList(listeners).addElement(listener);
+  }
+
+  private void notifyListeners(final MakeNotification notification) {
+    ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<IMakeNotificationListener>(), listeners)).visitAll(new IVisitor<IMakeNotificationListener>() {
+      public void visit(IMakeNotificationListener li) {
+        li.handleNotification(notification);
+      }
+    });
   }
 
   private Future<IResult> doMake(Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
@@ -209,41 +237,57 @@ public class WorkbenchMakeService implements IMakeService {
       }
     }
 
-
-    if (!(script.isValid())) {
-      String msg = scrName + " failed";
-      showError(mh, msg + ". Invalid script.");
-      this.displayInfo(msg);
-      return new FutureValue(new IResult.FAILURE(null));
-    }
-
     final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
+    final Wrappers._T<Iterable<Iterable<String>>> usedLangs = new Wrappers._T<Iterable<Iterable<String>>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        clInput.value = new ModulesClusterizer().clusterize(Sequence.fromIterable(inputRes).<IResource>select(new ISelector<IResource, IResource>() {
+        final ModulesClusterizer mcr = new ModulesClusterizer();
+        clInput.value = mcr.clusterize(Sequence.fromIterable(inputRes).<IResource>select(new ISelector<IResource, IResource>() {
           public IResource select(IResource r) {
             return (IResource) r;
           }
         }));
+        usedLangs.value = Sequence.fromIterable(clInput.value).<Iterable<String>>select(new ISelector<Iterable<IResource>, Iterable<String>>() {
+          public Iterable<String> select(Iterable<IResource> it) {
+            return mcr.allUsedLangNamespaces(it);
+          }
+        }).toListSequence();
       }
     });
-    final Wrappers._boolean alreadySentToBg = new Wrappers._boolean(false);
-    IScriptController ctl = this.completeController(mh, controller, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        if (!(alreadySentToBg.value)) {
-          progInd.background();
-        }
-      }
-    });
-    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(this.getSession().getContext().getProject(), scrName, script, scrName, clInput.value, ctl, mh, new PerformInBackgroundOption() {
-      public boolean shouldStartInBackground() {
-        return false;
-      }
+    IScriptController ctl = this.completeController(mh, controller);
 
-      public void processSentToBackground() {
-        alreadySentToBg.value = true;
+    Iterable<ScriptBuilder> scriptBuilders = Sequence.fromIterable(usedLangs.value).<ScriptBuilder>select(new ISelector<Iterable<String>, ScriptBuilder>() {
+      public ScriptBuilder select(Iterable<String> langs) {
+        final ScriptBuilder scb = new ScriptBuilder();
+        Sequence.fromIterable(langs).visitAll(new IVisitor<String>() {
+          public void visit(String ns) {
+            LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
+            Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
+            scb.withFacetNames(Sequence.fromIterable(fcts).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
+              public IFacet.Name select(IFacet fct) {
+                return fct.getName();
+              }
+            }));
+          }
+        });
+        return scb.withFinalTarget(new ITarget.Name("make"));
       }
-    }) {
+    }).toListSequence();
+
+    Iterable<IScript> scripts = ((script != null ?
+      Sequence.fromIterable(scriptBuilders).<IScript>select(new ISelector<ScriptBuilder, IScript>() {
+        public IScript select(ScriptBuilder it) {
+          return script;
+        }
+      }) :
+      Sequence.fromIterable(scriptBuilders).<IScript>select(new ISelector<ScriptBuilder, IScript>() {
+        public IScript select(ScriptBuilder scb) {
+          return scb.toScript();
+        }
+      })
+    ));
+
+    final WorkbenchMakeService.MakeTask task = new WorkbenchMakeService.MakeTask(this.getSession().getContext().getProject(), scrName, scripts, scrName, clInput.value, ctl, mh, PerformInBackgroundOption.DEAF) {
       @Override
       protected void done() {
         if (!(currentSessionStickyMark.isMarked())) {
@@ -268,6 +312,9 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private void checkValidUsage() {
+    if (INSTANCE == null) {
+      throw new IllegalStateException("already disposed");
+    }
     if (!(isInstance())) {
       throw new IllegalStateException("invalid usage of service");
     }
@@ -290,12 +337,12 @@ public class WorkbenchMakeService implements IMakeService {
     }
   }
 
-  private IScriptController completeController(final IMessageHandler mh, final IScriptController ctl, final _FunctionTypes._void_P0_E0 beforeDialog) {
-    return new WorkbenchMakeService.Controller(ctl, mh, beforeDialog);
+  private IScriptController completeController(final IMessageHandler mh, final IScriptController ctl) {
+    return new WorkbenchMakeService.Controller(ctl, mh);
   }
 
   public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacets(new IFacet.Name("jetbrains.mps.make.facet.Binaries"), new IFacet.Name("jetbrains.mps.make.facet.Generate"), new IFacet.Name("jetbrains.mps.make.facet.TextGen"), new IFacet.Name("jetbrains.mps.make.facet.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facet.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facet.Make")).withFinalTarget(new ITarget.Name("make")).toScript();
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.plugin.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile"), new IFacet.Name("jetbrains.mps.baseLanguage.ReloadClasses"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("make")).toScript();
   }
 
   private class Controller implements IScriptController {
@@ -305,13 +352,11 @@ public class WorkbenchMakeService implements IMakeService {
     private IConfigMonitor confMon;
     private IJobMonitor jobMon;
     private IMessageHandler mh;
-    private _FunctionTypes._void_P0_E0 beforeDialog;
     private IParametersPool predParamPool;
 
-    public Controller(IScriptController delegate, IMessageHandler mh, _FunctionTypes._void_P0_E0 beforeDialog) {
+    public Controller(IScriptController delegate, IMessageHandler mh) {
       this.delegateScrCtr = delegate;
       this.mh = mh;
-      this.beforeDialog = beforeDialog;
       init();
     }
 
@@ -339,7 +384,7 @@ public class WorkbenchMakeService implements IMakeService {
         code.invoke(jobMon);
       } catch (Throwable e) {
         WorkbenchMakeService.LOG.debug("Error running job", e);
-        jobMon.reportFeedback(new IFeedback.ERROR(e.getMessage()));
+        jobMon.reportFeedback(new IFeedback.ERROR("Error running job", e));
       } finally {
         ApplicationImpl.setExceptionalThreadWithReadAccessFlag(oldFlag);
       }
@@ -382,11 +427,7 @@ public class WorkbenchMakeService implements IMakeService {
           }
           return (opt != null ?
             opt :
-            new UIQueryRelayStrategy(new UIQueryRelayStrategy.DialogListener() {
-              public void beforeDialogShown() {
-                beforeDialog.invoke();
-              }
-            }).relayQuery(query, getSession().getContext())
+            new UIQueryRelayStrategy().relayQuery(query, getSession().getContext())
           );
         }
       };
@@ -433,16 +474,16 @@ public class WorkbenchMakeService implements IMakeService {
   private abstract class MakeTask extends Task.Backgroundable implements Future<IResult> {
     private CountDownLatch myLatch = new CountDownLatch(1);
     private AtomicReference<WorkbenchMakeService.TaskState> myState = new AtomicReference<WorkbenchMakeService.TaskState>(WorkbenchMakeService.TaskState.NOT_STARTED);
-    private final IScript myScript;
+    private final Iterable<IScript> myScripts;
     private final String myScrName;
     private final Iterable<? extends Iterable<IResource>> myClInput;
     private IResult myResult = null;
     private final IScriptController myController;
     private final IMessageHandler myMessageHandler;
 
-    public MakeTask(@Nullable Project project, @NotNull String title, IScript script, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
+    public MakeTask(@Nullable Project project, @NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
       super(project, title, true, bgoption);
-      this.myScript = script;
+      this.myScripts = scripts;
       this.myScrName = scrName;
       this.myClInput = clInput;
       this.myController = ctl;
@@ -451,12 +492,8 @@ public class WorkbenchMakeService implements IMakeService {
 
     public void run(@NotNull ProgressIndicator pi) {
       if (myState.compareAndSet(WorkbenchMakeService.TaskState.NOT_STARTED, WorkbenchMakeService.TaskState.RUNNING)) {
+        notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.ABOUT_TO_START));
         pi.pushState();
-        try {
-          // The progress indicator appears only after 300ms 
-          Thread.sleep(400);
-        } catch (InterruptedException ignore) {
-        }
         final int clsize = Sequence.fromIterable(this.myClInput).count();
         if (clsize == 0) {
           return;
@@ -473,13 +510,27 @@ public class WorkbenchMakeService implements IMakeService {
           public void setText2(String string) {
           }
         };
-        for (Iterable<IResource> cl : this.myClInput) {
+
+        Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
+        Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
+        while (scit.hasNext() && clit.hasNext()) {
+          Iterable<IResource> cl = clit.next();
+          IScript scr = scit.next();
+
+          if (!(scr.isValid())) {
+            String msg = myScrName + " failed";
+            showError(myMessageHandler, msg + ". Invalid script.");
+            WorkbenchMakeService.this.displayInfo(msg);
+            this.myResult = new IResult.FAILURE(null);
+            break;
+          }
+
           pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
             public String select(IResource r) {
               return ((IResource) r).describe();
             }
           }), ","));
-          this.myResult = this.myScript.execute(this.myController, cl);
+          this.myResult = scr.execute(this.myController, cl);
           if (!(this.myResult.isSucessful()) || progInd.isCanceled()) {
             break;
           }
@@ -548,6 +599,7 @@ public class WorkbenchMakeService implements IMakeService {
       }
       done();
       myLatch.countDown();
+      notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.FINISHED));
     }
   }
 

@@ -47,7 +47,7 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
 
   @Nls
   public String getDisplayName() {
-    return "Customization";
+    return "MPS Editor";
   }
 
   public Icon getIcon() {

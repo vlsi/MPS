@@ -12,7 +12,7 @@ public class WannabeClass_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_isNodeRunnable_1906992812162479271(SNode thisNode) {
+  public static boolean virtual_isNodeRunnable_4666195181811081448(SNode thisNode) {
     return (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "isMain");

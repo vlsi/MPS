@@ -22,7 +22,7 @@ public class RawLineEditorComponent extends BaseFieldWithButtonComponent {
     this.myField = new TextFieldWithBrowseButton(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
         Messages.showTextAreaDialog(RawLineEditorComponent.this.myField.getTextField(), RawLineEditorComponent.this.myDialogCaption, "EditParametersPopupWindow");
-        RawLineEditorComponent.this.fireTextChanged();
+        RawLineEditorComponent.this.onChange();
       }
     });
     this.add(this.myField, BorderLayout.CENTER);

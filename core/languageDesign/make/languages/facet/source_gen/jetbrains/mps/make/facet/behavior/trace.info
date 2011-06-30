@@ -42,7 +42,7 @@
     <nodeInfo nodeId="8351679702044365631" fileName="FacetDeclaration_Behavior.java" startLine="60" startPosition="41" endLine="61" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8351679702044331884" fileName="FacetDeclaration_Behavior.java" startLine="65" startPosition="5" endLine="66" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8853708281362068161" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="83" endLine="70" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1919086248986828225" fileName="FacetDeclaration_Behavior.java" startLine="73" startPosition="75" endLine="74" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1919086248986828225" fileName="FacetDeclaration_Behavior.java" startLine="73" startPosition="80" endLine="74" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="37" startPosition="168" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="54" startPosition="168" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="59" startPosition="168" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -62,7 +62,7 @@
     <scopeInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="37" startPosition="168" endLine="41" endPosition="0" />
     <scopeInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="54" startPosition="168" endLine="58" endPosition="0" />
     <scopeInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="59" startPosition="168" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1919086248986828224" fileName="FacetDeclaration_Behavior.java" startLine="73" startPosition="75" endLine="78" endPosition="6">
+    <scopeInfo nodeId="1919086248986828224" fileName="FacetDeclaration_Behavior.java" startLine="73" startPosition="80" endLine="78" endPosition="6">
       <varInfo nodeId="1919086248986828226" varName="mod" />
     </scopeInfo>
     <scopeInfo nodeId="6447445394688511265" fileName="FacetDeclaration_Behavior.java" startLine="35" startPosition="56" endLine="41" endPosition="12" />

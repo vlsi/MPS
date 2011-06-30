@@ -175,7 +175,7 @@ public class GeneratorMappings {
     return Collections.singletonList((SNode) o);
   }
 
-  public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
+  public SNode findCopiedOutputNodeForInputNode(@NotNull SNode inputNode) {
     Object o = myCopiedOutputNodeForInputNode.get(inputNode);
     if (o instanceof SNode) {
       return (SNode) o;

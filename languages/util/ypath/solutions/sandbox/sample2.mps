@@ -144,48 +144,19 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="1168983954930">
-          <node role="iterable" roleId="tpee.1144226360166" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1172249135484">
-            <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1172249037934">
-              <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1169043577975">
-                <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathAdapterExpression" typeId="tpki.1168890168054" id="1169043577976">
-                  <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="1168883727781" resolveInfo="foobar" />
-                  <node role="expression" roleId="tpki.1168890213786" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1169043575403">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1168894296987" resolveInfo="f" />
-                  </node>
-                </node>
-                <node role="operation" roleId="tpki.1168468671991" type="tpki.IterateOperation" typeId="tpki.1168524996431" id="1169043577977" />
-              </node>
-              <node role="operation" roleId="tpki.1168468671991" type="tpki.MatchKindOperation" typeId="tpki.1172242735136" id="1179325799905">
-                <node role="nodeKindOccurrence" roleId="tpki.1175165403535" type="tpki.TreeNodeKindOccurrence" typeId="tpki.1175165417012" id="1179325799906">
-                  <link role="nodeKind" roleId="tpki.1175167444487" targetNodeId="1172248995400" resolveInfo="DIR" />
+          <node role="iterable" roleId="tpee.1144226360166" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1172249037934">
+            <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathOperationExpression" typeId="tpki.1168468602533" id="1169043577975">
+              <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathAdapterExpression" typeId="tpki.1168890168054" id="1169043577976">
+                <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
+                <node role="expression" roleId="tpki.1168890213786" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1169043575403">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1168894296987" resolveInfo="f" />
                 </node>
               </node>
+              <node role="operation" roleId="tpki.1168468671991" type="tpki.IterateOperation" typeId="tpki.1168524996431" id="1169043577977" />
             </node>
-            <node role="operation" roleId="tpki.1168468671991" type="tpki.WhereOperation" typeId="tpki.1168527701993" id="1172249135486">
-              <node role="whereBlock" roleId="tpki.1168527754706" type="tpki.WhereBlock" typeId="tpki.1168527733553" id="1172249139028">
-                <node role="parameter" roleId="tpki.1168428725556" type="tpki.LambdaMethodParameter" typeId="tpki.1168428709096" id="1172249139029">
-                  <property name="name" nameId="tpck.1169194664001" value="d" />
-                </node>
-                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1172249139030">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1172249145668">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628998896">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217628988839">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ClosureParameterReference" typeId="tpee.1153179560115" id="1172249146995">
-                          <link role="closureParameter" roleId="tpee.1153179615652" targetNodeId="1172249139029" resolveInfo="d" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1217628988840">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
-                        </node>
-                      </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1217628998897">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dstartsWith(java%dlang%dString)%cboolean" resolveInfo="startsWith" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1172249215502">
-                          <property name="value" nameId="tpee.1070475926801" value="D" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+            <node role="operation" roleId="tpki.1168468671991" type="tpki.MatchKindOperation" typeId="tpki.1172242735136" id="1179325799905">
+              <node role="nodeKindOccurrence" roleId="tpki.1175165403535" type="tpki.TreeNodeKindOccurrence" typeId="tpki.1175165417012" id="1179325799906">
+                <link role="nodeKind" roleId="tpki.1175167444487" targetNodeId="1172248995400" resolveInfo="DIR" />
               </node>
             </node>
           </node>
@@ -205,7 +176,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1217628998465">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dObject)%cvoid" resolveInfo="println" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1168986003309">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1168983954932" resolveInfo="ff" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1168983954932" resolveInfo="dir" />
                   </node>
                 </node>
               </node>
@@ -395,7 +366,7 @@
             <node role="operand" roleId="tpki.1168468622494" type="tpki.TreePathAdapterExpression" typeId="tpki.1168890168054" id="1179164811722">
               <link role="treepathAspect" roleId="tpki.1168890235188" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
               <node role="expression" roleId="tpki.1168890213786" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1179164809717">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1179163652405" resolveInfo="foobar" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1179163652405" resolveInfo="sequenceOfFiles" />
               </node>
             </node>
             <node role="operation" roleId="tpki.1168468671991" type="tpki.MatchKindOperation" typeId="tpki.1172242735136" id="1179164818114">

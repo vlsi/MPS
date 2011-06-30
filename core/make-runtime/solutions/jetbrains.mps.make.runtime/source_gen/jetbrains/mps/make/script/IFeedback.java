@@ -67,11 +67,17 @@ public interface IFeedback {
     }
   }
 
-  public static class ERROR extends IFeedback.Stub implements IFeedback {
+  public static class Default extends IFeedback.Stub implements IFeedback {
     private String message;
+    private Throwable throwable;
 
-    public ERROR(String message) {
+    public Default(String message) {
       this.message = message;
+    }
+
+    public Default(String message, Throwable throwable) {
+      this.message = message;
+      this.throwable = throwable;
     }
 
     public IFeedback.Severity getSeverity() {
@@ -81,17 +87,34 @@ public interface IFeedback {
     public String getMessage() {
       return message;
     }
+
+    @Override
+    public Throwable getException() {
+      return throwable;
+    }
   }
 
-  public static class WARNING extends IFeedback.Stub implements IFeedback {
-    private String message;
-
-    public WARNING(String message) {
-      this.message = message;
+  public static class ERROR extends IFeedback.Default implements IFeedback {
+    public ERROR(String message) {
+      super(message);
     }
 
-    public String getMessage() {
-      return message;
+    public ERROR(String message, Throwable throwable) {
+      super(message, throwable);
+    }
+
+    public IFeedback.Severity getSeverity() {
+      return IFeedback.Severity.ERROR;
+    }
+  }
+
+  public static class WARNING extends IFeedback.Default implements IFeedback {
+    public WARNING(String message) {
+      super(message);
+    }
+
+    public WARNING(String message, Throwable throwable) {
+      super(message, throwable);
     }
 
     public IFeedback.Severity getSeverity() {
@@ -99,15 +122,13 @@ public interface IFeedback {
     }
   }
 
-  public static class INFORMATION extends IFeedback.Stub implements IFeedback {
-    private String message;
-
+  public static class INFORMATION extends IFeedback.Default implements IFeedback {
     public INFORMATION(String message) {
-      this.message = message;
+      super(message);
     }
 
-    public String getMessage() {
-      return message;
+    public INFORMATION(String message, Throwable throwable) {
+      super(message, throwable);
     }
 
     public IFeedback.Severity getSeverity() {

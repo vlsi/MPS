@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
+import jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor;
 import jetbrains.mps.baseLanguage.behavior.AbstractStaticContainerProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -98,7 +99,7 @@ public class ConceptBehavior_Behavior {
     return result;
   }
 
-  public static AbstractStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
+  public static IStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
     return new AbstractStaticContainerProcessor(node) {
       public SNode createNewMethod() {
         return SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", null);

@@ -179,7 +179,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public JComponent createComponent() {
-    if (myScrollPane != null) return myScrollPane;
+    if (isComponentCreated()) return myScrollPane;
 
     ProjectPaneTree tree = new ProjectPaneTree(this, myProject);
     Disposer.register(this, tree);
@@ -197,6 +197,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     }
     fireComponentCreated();
     return myScrollPane;
+  }
+
+  @Override
+  protected boolean isComponentCreated() {
+    return myScrollPane != null;
   }
 
   public void rebuildTree() {

@@ -122,7 +122,7 @@ public class GeneratorWorker extends MpsWorker {
       public void run() {
         for (IMResource res : (Iterable<IMResource>) resources) {
           graph.addEdges(res);
-          for (IModule depOn : res.module().getDependenciesManager().getDependOnModules()) {
+          for (IModule depOn : res.module().getDependenciesManager().getAllRequiredModules()) {
             if (MapSequence.fromMap(cache).containsKey(depOn)) {
               graph.addEdges(MapSequence.fromMap(cache).get(depOn), res);
             }
@@ -275,6 +275,12 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
+
+  /**
+   * We already have graphs in MPS, why we need this class here?
+   * 
+   * @param V vertex type
+   */
   public static class Graph<V> {
     private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());
     private Map<V, List<V>> fwEdges = MapSequence.fromMap(new HashMap<V, List<V>>());

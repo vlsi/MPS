@@ -18,7 +18,6 @@
   <dependency className="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate" file="ProgressIndicatorDelegate.java">
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.progress.ProcessCanceledException" />
-    <classNode dependClassName="com.intellij.openapi.progress.util.ProgressWindow" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.progress.ProgressIndicator" />

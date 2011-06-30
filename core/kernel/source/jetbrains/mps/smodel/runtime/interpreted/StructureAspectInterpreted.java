@@ -162,7 +162,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Ap
           }
 
           parentsSet.remove(null);
-          if (parentsSet.size() == 0 && !SNodeUtil.concept_BaseConcept.equals(fqName)) {
+          if (superConcept == null && !SNodeUtil.concept_BaseConcept.equals(fqName) && !isInterface) {
             parentsSet.add(SNodeUtil.concept_BaseConcept);
           }
 

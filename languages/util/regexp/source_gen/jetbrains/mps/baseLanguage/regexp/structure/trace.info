@@ -45,7 +45,6 @@
   <unitInfo fileName="FromNToMTimesRegexp.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp" />
   <unitInfo fileName="IntervalSymbolClassPart.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" />
   <unitInfo fileName="BinaryRegexp.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="150" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
   <unitInfo fileName="InlineRegexpExpression.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" />
   <unitInfo fileName="SymbolClassPart.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart" />
   <unitInfo fileName="MatchRegexpOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" />
@@ -65,6 +64,6 @@
   <unitInfo fileName="Regexps.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.Regexps" />
   <unitInfo fileName="PredefinedSymbolClasses.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses" />
   <unitInfo fileName="ReplaceRegexpOperation.java" startLine="15" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.StructureAspectDescriptor" />
 </debugInfo>
 

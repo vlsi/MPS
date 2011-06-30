@@ -28,7 +28,7 @@ public abstract class DocCommentTextGen {
       }
     }
 
-    if (!(BaseDocComment_Behavior.call_isTagSectionEmpty_8465538089690623795(textGen.getSNode()))) {
+    if (!(BaseDocComment_Behavior.call_isTagSectionEmpty_8465538089690623795(node))) {
       textGen.appendNewLine();
       DocCommentTextGen.javadocIndent(textGen);
     }

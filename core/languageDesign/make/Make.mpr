@@ -44,12 +44,17 @@
       <modulePath path="${mps_home}/testbench/languages/suite.mpl" folder="" />
       <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
       <modulePath path="${mps_home}/languages/util/quickQueryLanguage/quickQueryLanguage.mpl" />
+      <modulePath path="${mps_home}/languages/core/core/languageDescriptor.mpl" />
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
     </projectModules>
     <genConfs>
       <genConfModule name="facet" moduleRef="jetbrains.mps.make.facet" />
       <genConfModule name="script" moduleRef="jetbrains.mps.make.script" />
       <genConfModule name="tests" moduleRef="jetbrains.mps.make.tests" />
     </genConfs>
+  </component>
+  <component name="MigrationState">
+    <option name="myState" value="INITIAL" />
   </component>
   <component name="ProjectModuleManager">
     <modules />

@@ -178,8 +178,8 @@ public class Generator extends AbstractModule {
     mySourceLanguage.save();
   }
 
-  public List<Dependency> getDependOn() {
-    List<Dependency> result = super.getDependOn();
+  public List<Dependency> getDependencies() {
+    List<Dependency> result = super.getDependencies();
     Dependency dep = new Dependency();
     dep.setModuleRef(mySourceLanguage.getModuleReference());
     dep.setReexport(false);
@@ -192,7 +192,7 @@ public class Generator extends AbstractModule {
       result.add(depLocal);
     }
 
-    result.addAll(getSourceLanguage().getRuntimeDependOn());
+    result.addAll(getSourceLanguage().getRuntimeDependencies());
     return result;
   }
 

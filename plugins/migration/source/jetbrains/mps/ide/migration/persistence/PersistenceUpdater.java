@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.migration.persistence;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -33,28 +34,25 @@ import java.util.Set;
 
 public class PersistenceUpdater {
   public void upgradePersistence(final List<EditableSModelDescriptor> modelDescriptors, final int toVersion) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
-          IFile file = modelDescriptor.getModelFile();
-          if (file != null && file.isReadOnly()) continue;
+    for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
+      assert ThreadUtils.isEventDispatchThread() : "you must be in EDT to write files";
 
-          boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
-          if (wasInitialized) {
-            modelDescriptor.save();
-          }
+      IFile file = modelDescriptor.getModelFile();
+      if (file != null && file.isReadOnly()) continue;
 
-          int fromVersion = modelDescriptor.getPersistenceVersion();
-          if (fromVersion >= toVersion) continue;
-
-          assert file != null;
-          SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file, false);
-          ModelPersistence.saveModel(model, file, toVersion);
-          modelDescriptor.reloadFromDisk();
-        }
+      boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
+      if (wasInitialized) {
+        modelDescriptor.save();
       }
-    });
+
+      int fromVersion = modelDescriptor.getPersistenceVersion();
+      if (fromVersion >= toVersion) continue;
+
+      assert file != null;
+      SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file, false);
+      ModelPersistence.saveModel(model, file, toVersion);
+      modelDescriptor.reloadFromDisk();
+    }
   }
 
   public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe, boolean silent) {
@@ -88,17 +86,22 @@ public class PersistenceUpdater {
     }
 
     if (modelDescriptors.isEmpty()) {
-      if (!silent){
+      if (!silent) {
         JOptionPane.showMessageDialog(mainframe, "No Models To Upgrade Found");
       }
       return;
     }
 
-    UpdatePersistenceDialog updatePersistenceDialog =
-      new UpdatePersistenceDialog(modelDescriptors, mainframe, unitDescription, false);
-    updatePersistenceDialog.showDialog();
+    boolean dialogOk = false;
 
-    if (updatePersistenceDialog.getAnswer()) {
+    if (!silent) {
+      UpdatePersistenceDialog updatePersistenceDialog =
+        new UpdatePersistenceDialog(modelDescriptors, mainframe, unitDescription, false);
+      updatePersistenceDialog.showDialog();
+      dialogOk = updatePersistenceDialog.getAnswer();
+    }
+
+    if (silent || dialogOk) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           upgradePersistence(modelDescriptors, PersistenceSettings.MAX_VERSION);

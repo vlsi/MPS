@@ -4,28 +4,56 @@ package jetbrains.mps.xmlSchema.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.xmlInternal.structure.Comment;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EntityBlock extends BaseConcept {
+public class EntityBlock extends BaseConcept implements SchemaCommentable {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.EntityBlock";
-  public static final String COMMENT = "comment";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String S_COMMENT = "sComment";
   public static final String ENTITY_LINE = "entityLine";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public EntityBlock(SNode node) {
     super(node);
   }
 
-  public Comment getComment() {
-    return (Comment) this.getChild(Comment.class, EntityBlock.COMMENT);
+  public String getShortDescription() {
+    return this.getProperty(EntityBlock.SHORT_DESCRIPTION);
   }
 
-  public void setComment(Comment node) {
-    super.setChild(EntityBlock.COMMENT, node);
+  public void setShortDescription(String value) {
+    this.setProperty(EntityBlock.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(EntityBlock.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(EntityBlock.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(EntityBlock.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(EntityBlock.VIRTUAL_PACKAGE, value);
+  }
+
+  public SchemaComment getSComment() {
+    return (SchemaComment) this.getChild(SchemaComment.class, EntityBlock.S_COMMENT);
+  }
+
+  public void setSComment(SchemaComment node) {
+    super.setChild(EntityBlock.S_COMMENT, node);
   }
 
   public int getEntityLinesCount() {
@@ -46,6 +74,26 @@ public class EntityBlock extends BaseConcept {
 
   public void insertEntityLine(EntityLine prev, EntityLine node) {
     this.insertChild(prev, EntityBlock.ENTITY_LINE, node);
+  }
+
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(EntityBlock.SMODEL_ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, EntityBlock.SMODEL_ATTRIBUTE);
+  }
+
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, EntityBlock.SMODEL_ATTRIBUTE);
+  }
+
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(EntityBlock.SMODEL_ATTRIBUTE, node);
+  }
+
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EntityBlock.SMODEL_ATTRIBUTE, node);
   }
 
   public static EntityBlock newInstance(SModel sm, boolean init) {

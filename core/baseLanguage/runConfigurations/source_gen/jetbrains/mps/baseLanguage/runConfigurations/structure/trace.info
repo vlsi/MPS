@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="RunConfigurations_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.RunConfigurations_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="54" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.StructureAspectDescriptor$DataBasedStructureDescriptor" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="15" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.StructureAspectDescriptor" />
   <root nodeId="1566895476211680658">
     <nodeInfo nodeId="1566895476211680658" fileName="ComponentInsideOfChangeListenerAnnotation.java" startLine="11" startPosition="78" endLine="12" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1566895476211680658" fileName="ComponentInsideOfChangeListenerAnnotation.java" startLine="14" startPosition="64" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -10,8 +10,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.TableComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
@@ -52,9 +53,20 @@ public class EditorCell_Table extends EditorCell_Collection {
       return;
     }
     for (int row = 0; row < myModel.getRowCount(); row++) {
-      EditorCell_Collection rowCell = this.createRowCell(row);
+      final EditorCell_Collection rowCell = this.createRowCell(row);
       String rowId = myUniquePrefix + "_row_" + row;
       rowCell.setCellId(rowId);
+
+      EditorCellAction selectRowAction = new EditorCellAction() {
+        public void execute(EditorContext editorContext) {
+          assert !(myEmpty);
+          EditorComponent editorComponent = getEditorContext().getNodeEditorComponent();
+          editorComponent.getSelectionManager().pushSelection(editorComponent.getSelectionManager().createSelection(rowCell));
+        }
+      };
+      rowCell.setAction(CellActionType.SELECT_LEFT, selectRowAction);
+      rowCell.setAction(CellActionType.SELECT_RIGHT, selectRowAction);
+
       rowCell.addEditorCell(createRowOutermostCell(row, rowId, true));
       final int finalRow = row;
       if (myModel.getColumnCount() == 0) {
@@ -95,6 +107,8 @@ public class EditorCell_Table extends EditorCell_Collection {
               }
             });
           }
+          editorCell.setAction(CellActionType.SELECT_PREVIOUS, new EditorCell_Table.SelectColumnAction(finalColumn, editorCell.getAction(CellActionType.SELECT_PREVIOUS)));
+          editorCell.setAction(CellActionType.SELECT_NEXT, new EditorCell_Table.SelectColumnAction(finalColumn, editorCell.getAction(CellActionType.SELECT_NEXT)));
           editorCell.setSubstituteInfo(myModel.getSubstituteInfo(row, column));
           if (editorCell.getCellId() == null) {
             editorCell.setCellId(rowId + "_column_" + column);
@@ -163,6 +177,22 @@ public class EditorCell_Table extends EditorCell_Collection {
     for (int x : ListSequence.fromList(positionsX)) {
       graphics.drawLine(x, firstY, x, lastY);
     }
+  }
+
+  public int getColumnCount() {
+    return myModel.getColumnCount();
+  }
+
+  public List<EditorCell> getColumnCells(int columnIntex) {
+    assert !(myEmpty);
+    assert columnIntex >= 0 && columnIntex < myModel.getColumnCount();
+    List<EditorCell> result = ListSequence.fromList(new ArrayList<EditorCell>());
+    for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
+      EditorCell nextRow = rowsIterator.next();
+      assert nextRow instanceof EditorCell_Collection;
+      ListSequence.fromList(result).addElement(((EditorCell_Collection) nextRow).getCellAt(columnIntex + 1));
+    }
+    return result;
   }
 
   private EditorCell_Collection createRowCell(final int row) {
@@ -235,5 +265,25 @@ public class EditorCell_Table extends EditorCell_Collection {
 
   public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
     return new EditorCell_Table(editorContext, node, new CellLayout_Table(), model, uniquePrefix);
+  }
+
+  public class SelectColumnAction extends EditorCellAction {
+    private int myColumnNumber;
+    private EditorCellAction myExistingAction;
+
+    public SelectColumnAction(int columnNumber, EditorCellAction existingAction) {
+      myColumnNumber = columnNumber;
+      myExistingAction = existingAction;
+    }
+
+    public void execute(EditorContext context) {
+      if (myExistingAction != null && myExistingAction.canExecute(context)) {
+        myExistingAction.execute(context);
+        return;
+      }
+      EditorComponent editorComponent = context.getNodeEditorComponent();
+      TableColumnSelection selection = new TableColumnSelection(editorComponent, EditorCell_Table.this, myColumnNumber);
+      editorComponent.getSelectionManager().pushSelection(selection);
+    }
   }
 }

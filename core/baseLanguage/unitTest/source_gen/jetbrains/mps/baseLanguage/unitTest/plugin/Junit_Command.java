@@ -109,6 +109,9 @@ public class Junit_Command {
     final Wrappers._T<TestRunParameters> runParams = new Wrappers._T<TestRunParameters>();
     final Wrappers._T<List<ITestNodeWrapper>> testsToRun = new Wrappers._T<List<ITestNodeWrapper>>();
     final Wrappers._boolean ok = new Wrappers._boolean(true);
+    if (ListSequence.fromList(tests).isEmpty()) {
+      return MultiTuple.<List<ITestNodeWrapper>,TestRunParameters>from(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), new TestRunParameters());
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         runParams.value = ListSequence.fromList(tests).first().getTestRunParameters();
@@ -183,7 +186,7 @@ public class Junit_Command {
     return null;
   }
 
-  private static TestRunParameters check_u7m9j_a0a0a0a0a1a0d0b(ITestNodeWrapper checkedDotOperand) {
+  private static TestRunParameters check_u7m9j_a0a0a0a0a1a0e0b(ITestNodeWrapper checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestRunParameters();
     }

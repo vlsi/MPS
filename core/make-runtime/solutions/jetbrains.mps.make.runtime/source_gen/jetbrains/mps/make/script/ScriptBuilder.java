@@ -8,18 +8,18 @@ import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Set;
-import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.make.facet.ITarget;
 import java.util.List;
 import jetbrains.mps.internal.make.runtime.script.ValidationError;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.make.facet.FacetRegistry;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.script.InvalidScript;
 import jetbrains.mps.internal.make.runtime.script.TargetRange;
 import jetbrains.mps.internal.make.runtime.script.Script;
+import jetbrains.mps.make.facet.FacetRegistry;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
@@ -29,6 +29,7 @@ public class ScriptBuilder {
   private static Logger LOG = Logger.getLogger(ScriptBuilder.class);
 
   private Map<IFacet.Name, IFacet> facetsView = MapSequence.fromMap(new HashMap<IFacet.Name, IFacet>());
+  private Set<IFacet.Name> facets = SetSequence.fromSet(new HashSet<IFacet.Name>());
   private Set<ITarget.Name> requestedTargets = SetSequence.fromSet(new HashSet<ITarget.Name>());
   private ITarget.Name finalTarget;
   private ITarget.Name startingTarget;
@@ -37,32 +38,24 @@ public class ScriptBuilder {
   public ScriptBuilder() {
   }
 
-  public ScriptBuilder withFacet(IFacet.Name facetName) {
-    IFacet fct = FacetRegistry.getInstance().lookup(facetName);
-    if (fct != null) {
-      MapSequence.fromMap(facetsView).put(facetName, fct);
-    } else {
-      String msg = "facet not found: " + facetName;
-      LOG.error(msg);
-      error(facetName, msg);
-    }
+  public ScriptBuilder withFacetName(IFacet.Name facetName) {
+    SetSequence.fromSet(facets).addElement(facetName);
     return this;
   }
 
-  public ScriptBuilder withFacets(IFacet.Name... facetNames) {
-    return withFacets(Sequence.fromArray(facetNames));
+  public ScriptBuilder withFacetNames(IFacet.Name... facetNames) {
+    return withFacetNames(Sequence.fromArray(facetNames));
   }
 
-  public ScriptBuilder withFacets(Iterable<IFacet.Name> facetNames) {
-    for (IFacet.Name fn : Sequence.fromIterable(facetNames)) {
-      IFacet fct = FacetRegistry.getInstance().lookup(fn);
-      if (fct != null) {
-        MapSequence.fromMap(facetsView).put(fn, fct);
-      } else {
-        String msg = "facet not found: " + fn;
-        LOG.error(msg);
-        error(fn, msg);
-      }
+  public ScriptBuilder withFacetNames(Iterable<IFacet.Name> facetNames) {
+    SetSequence.fromSet(facets).addSequence(Sequence.fromIterable(facetNames));
+    return this;
+  }
+
+  @Deprecated
+  public ScriptBuilder withFacets(Iterable<IFacet> facets) {
+    for (IFacet fct : Sequence.fromIterable(facets)) {
+      MapSequence.fromMap(facetsView).put(fct.getName(), fct);
     }
     return this;
   }
@@ -94,6 +87,7 @@ public class ScriptBuilder {
   }
 
   public IScript toScript() {
+    collectFacets();
     if (ListSequence.fromList(errors).isNotEmpty()) {
       return new InvalidScript(errors);
     }
@@ -114,6 +108,19 @@ public class ScriptBuilder {
     Script sc = new Script(tr, finalTarget);
     sc.validate();
     return sc;
+  }
+
+  private void collectFacets() {
+    for (IFacet.Name fn : SetSequence.fromSet(facets)) {
+      IFacet fct = FacetRegistry.getInstance().lookup(fn);
+      if (fct != null) {
+        MapSequence.fromMap(facetsView).put(fn, fct);
+      } else {
+        String msg = "facet not found: " + fn;
+        LOG.error(msg);
+        error(fn, msg);
+      }
+    }
   }
 
   private void collectTargets(Iterable<IFacet.Name> sortedFacets, TargetRange tr) {
