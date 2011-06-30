@@ -3,7 +3,7 @@
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.actions.IconContainer" />
   <unitInfo fileName="Ide_PluginInitializer.java" startLine="15" startPosition="40" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.actions.Ide_PluginInitializer$1" />
   <unitInfo fileName="PersistentOptions_PreferencesComponent.java" startLine="50" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent$MyState" />
-  <unitInfo fileName="Mac_KeymapChanges.java" startLine="35" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges$GoToBookmark_ShortcutChange_tqv_h" />
+  <unitInfo fileName="Mac_KeymapChanges.java" startLine="36" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges$GoToBookmark_ShortcutChange_tqv_i" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="86" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$GoToBookmark_ShortcutChange_qjewi8_fc" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="97" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$SetBookmark_ShortcutChange_qjewi8_gc" />
   <unitInfo fileName="ToolsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
@@ -45,7 +45,7 @@
   <unitInfo fileName="Code_ActionGroup.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.actions.Code_ActionGroup" />
   <unitInfo fileName="DevkitActions_ActionGroup.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
   <unitInfo fileName="Favorites_ActionGroup.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.actions.Favorites_ActionGroup" />
-  <unitInfo fileName="Mac_KeymapChanges.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
+  <unitInfo fileName="Mac_KeymapChanges.java" startLine="12" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
   <unitInfo fileName="Goto_ActionGroup.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ide.actions.Goto_ActionGroup" />
   <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="23" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeStacktrace_Tool" />
   <unitInfo fileName="LanguageNewActions_ActionGroup.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup" />
@@ -2188,8 +2188,8 @@
     <scopeInfo nodeId="3734045384532066592" fileName="RenameSolution_Action.java" startLine="29" startPosition="87" endLine="30" endPosition="86" />
   </root>
   <root nodeId="3734045384533036331">
-    <nodeInfo nodeId="7575217966414163354" fileName="Mac_KeymapChanges.java" startLine="40" startPosition="57" endLine="41" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="8131292300542105283" fileName="Mac_KeymapChanges.java" startLine="40" startPosition="57" endLine="41" endPosition="104" />
+    <nodeInfo nodeId="7575217966414163354" fileName="Mac_KeymapChanges.java" startLine="41" startPosition="57" endLine="42" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="8131292300542105283" fileName="Mac_KeymapChanges.java" startLine="41" startPosition="57" endLine="42" endPosition="104" />
   </root>
   <root nodeId="3858094006307618579">
     <nodeInfo nodeId="3858094006307874156" fileName="NewFile_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -13517,6 +13517,13 @@
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
       </node>
     </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="6329087906628817090">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1229269032161" resolveInfo="AddLanguageImport" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6329087906628817091">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_L" />
+      </node>
+    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="2863241567468286191">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1234018313905" resolveInfo="GoToBookmark" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2863241567468286192">
