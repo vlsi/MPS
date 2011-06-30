@@ -37,21 +37,14 @@ import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.List;
 
-public abstract class BaseDialog extends JDialog implements Disposable {
+public abstract class BaseDialog extends JDialog {
   private static final Logger LOG = Logger.getLogger(BaseDialog.class);
 
   private JLabel myErrorLabel = new ErrorLabel();
   private boolean myPrepared = false;
 
-  private Disposable myDisposable = new Disposable() {
-    public void dispose() {
-
-    }
-
-    public String toString() {
-      return "Containing class: "+BaseDialog.this.getClass().getName();
-    }
-  };
+  private Disposable myDisposableParent = new MyDisposable();
+  private Disposable myDisposableChild = new MyDisposable();
 
   protected BaseDialog(Frame owner) throws HeadlessException {
     this(owner, null);
@@ -63,21 +56,21 @@ public abstract class BaseDialog extends JDialog implements Disposable {
 
   protected BaseDialog(Dialog owner, String title) throws HeadlessException {
     super(owner, title);
-    Disposer.register(this, myDisposable);
+    Disposer.register(myDisposableParent, myDisposableChild);
     doInit(owner);
   }
 
   //required for invocation of "super" in descendants before initialization
   protected BaseDialog(Frame mainFrame, String text, boolean init) throws HeadlessException {
     super(mainFrame, text, true);
-    Disposer.register(this, myDisposable);
+    Disposer.register(myDisposableParent, myDisposableChild);
     if (init) {
       doInit(mainFrame);
     }
   }
 
   public void dispose() {
-    Disposer.dispose(this);
+    Disposer.dispose(myDisposableParent);
     super.dispose();
   }
 
@@ -332,6 +325,16 @@ public abstract class BaseDialog extends JDialog implements Disposable {
       setForeground(Color.RED);
       setFont(getFont().deriveFont(Font.BOLD));
       setBorder(null);
+    }
+  }
+
+  private class MyDisposable implements Disposable {
+    public void dispose() {
+
+    }
+
+    public String toString() {
+      return "Containing class: "+BaseDialog.this.getClass().getName();
     }
   }
 }
