@@ -84,8 +84,8 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
     if (myVersion.getVersion().equals(MPSProjectVersion.CURRENT)) return;
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
-        String message = "MPS detected that this project was not migrated to MPS 2.0.\n" +
-          "If the code is not migrated, many references will be broken and code will not be generatable." +
+        String message = "MPS detected that this project contains old code that was not migrated to MPS 2.0.\n" +
+          "If the code is not migrated, many references will be broken and code will not be generatable.\n" +
           "It is suggested to perform the migration right now or just after the project is opened by executing MainMenu -> Tools -> Start Migration to MPS 2.0";
 
         List<String> variants = new ArrayList<String>();
