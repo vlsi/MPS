@@ -88,6 +88,14 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.library.contributor.BootstrapLibContributor</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.library.contributor.PluginLibContributor</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.library.LibraryManager</implementation-class>
     </component>
 
@@ -253,7 +261,8 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
+      </implementation-class>
     </component>
 
     <component>
@@ -369,7 +378,8 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager</implementation-class>
+      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager
+      </implementation-class>
     </component>
 
     <component>

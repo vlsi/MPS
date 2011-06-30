@@ -18,19 +18,15 @@ package jetbrains.mps;
 import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.extensions.PluginDescriptor;
-import com.intellij.openapi.options.ConfigurableEP;
 import com.intellij.util.xmlb.annotations.Attribute;
 
-public class LanguageLibrary extends AbstractExtensionPointBean{
+public class LanguageLibrary extends AbstractExtensionPointBean {
   public static final ExtensionPointName<LanguageLibrary> EP_LANGUAGE_LIBS = ExtensionPointName.create("com.intellij.mps.LanguageLibrary");
 
   @Attribute("dir")
   public String dir;
 
-  @Attribute("name")
-  public String name;
-
-  public PluginDescriptor getPluginDescriptor(){
+  public PluginDescriptor getPluginDescriptor() {
     return myPluginDescriptor;
   }
 }

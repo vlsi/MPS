@@ -21,6 +21,7 @@ import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
+import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;

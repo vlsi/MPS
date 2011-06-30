@@ -75,10 +75,6 @@ public class PathManager {
     return getHomePath() + File.separator + "languages";
   }
 
-  public static String getPlatformPath() {
-    return getHomePath() + File.separator + "platform";
-  }
-
   private static boolean isMpsDir(File file) {
     return new File(file, "build.number").exists();
   }

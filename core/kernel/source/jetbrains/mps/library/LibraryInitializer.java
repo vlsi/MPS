@@ -16,6 +16,7 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -41,8 +42,6 @@ public class LibraryInitializer {
 
   public void update(boolean refreshFiles) {
     Set<String> newLibs = new HashSet<String>();
-    newLibs.add(PathManager.getBootstrapPath());
-    newLibs.add(PathManager.getLanguagesPath());
 
     for (LibraryContributor lc : myContributors) {
       for (String s : lc.getLibraries()) {
@@ -94,7 +93,7 @@ public class LibraryInitializer {
 
   //----------bootstrap modules
 
-   public Collection<IModule> getModules(String path) {
+  public Collection<IModule> getModules(String path) {
     return myRepo.getModules(myLibsToOwners.get(path));
   }
 
