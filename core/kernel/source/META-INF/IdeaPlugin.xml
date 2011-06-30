@@ -16,6 +16,7 @@
     <extensionPoint name="mps.GenerationHandler"
                     interface="jetbrains.mps.ide.generator.GeneratorUIFacade$GenerationHandlerProvider"/>
     <extensionPoint name="mps.TabColorProvider" interface="jetbrains.mps.ide.editorTabs.TabColorProvider"/>
+    <extensionPoint name="mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
@@ -121,4 +122,5 @@
     <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
     <stepsBeforeRunProvider implementation="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider"/>
   </extensions>
+
 </idea-plugin>

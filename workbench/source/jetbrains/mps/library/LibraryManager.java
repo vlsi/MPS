@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.library;
 
+import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.LanguageLibrary;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -43,6 +47,8 @@ import java.util.Set;
     )}
 )
 public class LibraryManager extends BaseLibraryManager implements ApplicationComponent {
+  private static final Logger LOG = Logger.getLogger(LibraryManager.class);
+
   public static LibraryManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
@@ -76,6 +82,25 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   private Set<Library> createLibs() {
     Set<Library> result = new HashSet<Library>();
+    final LanguageLibrary[] libExts = LanguageLibrary.EP_LANGUAGE_LIBS.getExtensions();
+    for (final LanguageLibrary lib : libExts) {
+      try {
+        PluginId pluginId = lib.getPluginDescriptor().getPluginId();
+        final String pluginPath = PluginManager.getPlugin(pluginId).getPath().getCanonicalPath();
+
+        assert lib.name != null : "lib name should be non-empty: plugin=" + pluginId.getIdString();
+        assert lib.dir != null : "lib dir should be non-empty: plugin=" + pluginId.getIdString();
+        result.add(new Library(lib.name) {
+          @NotNull
+          public String getPath() {
+            return pluginPath + lib.dir;
+          }
+        });
+      } catch (Throwable t) {
+        LOG.error("Error instantiating language library", t);
+      }
+    }
+
     result.add(new Library("mps.platform") {
       @NotNull
       public String getPath() {
