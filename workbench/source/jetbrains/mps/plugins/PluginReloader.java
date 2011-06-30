@@ -112,10 +112,6 @@ public class PluginReloader implements ApplicationComponent {
 
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
-    if (myMakeService != null) {
-      myMakeService.removeListener(myMakeListener);
-      this.myMakeService = null;
-    }
   }
 
   private class MyReloadAdapter extends ReloadAdapter {
