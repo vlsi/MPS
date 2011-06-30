@@ -18,7 +18,7 @@ package jetbrains.mps.newTypesystem.operation;
 @Deprecated
 public class CheckAllOperation extends AbstractOperation {
   public String getPresentation() {
-    return "Difference";
+    return "Type system trace";
   }
 
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {

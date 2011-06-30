@@ -56,12 +56,11 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
   @Override
   protected MPSTreeNode rebuild() {
-    setRootVisible(false);
     return createNode();
   }
 
   private TypeSystemStateTreeNode createNode() {
-    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Type system state", myOperationContext);
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
     /*
       result.add(createNode("Check-only inequalities", myState.getCheckingInequalities(), null));
