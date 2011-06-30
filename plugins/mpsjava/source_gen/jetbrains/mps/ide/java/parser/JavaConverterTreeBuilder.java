@@ -854,10 +854,12 @@ public class JavaConverterTreeBuilder {
       SNode anonymousClassCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
       creator = anonymousClassCreator;
       SNode anonymousClass = SNodeOperations.cast(myTypesProvider.getRaw(x.anonymousType.binding), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
-      MethodBinding superConstructorBinding = ((ConstructorDeclaration) x.anonymousType.methods[0]).constructorCall.binding;
-      SReference methodReference = myTypesProvider.createMethodReference(superConstructorBinding, "baseMethodDeclaration", anonymousClass);
-      anonymousClass.addReference(methodReference);
-      addCallArgs(x.arguments, anonymousClass);
+      if (x.anonymousType.methods.length > 0 && x.anonymousType.methods[0] instanceof ConstructorDeclaration) {
+        MethodBinding superConstructorBinding = ((ConstructorDeclaration) x.anonymousType.methods[0]).constructorCall.binding;
+        SReference methodReference = myTypesProvider.createMethodReference(superConstructorBinding, "baseMethodDeclaration", anonymousClass);
+        anonymousClass.addReference(methodReference);
+        addCallArgs(x.arguments, anonymousClass);
+      }
       SLinkOperations.setTarget(anonymousClassCreator, "cls", anonymousClass, true);
     } else {
       if (x.enclosingInstance() == null) {
