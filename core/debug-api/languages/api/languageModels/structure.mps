@@ -64,7 +64,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="breakpointableConcepts" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3157158168562219319" resolveInfo="DebuggableNodeItem" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3157158168562219319" resolveInfo="BreakpointableNodeItem" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3638114788553694618">
       <property name="value" nameId="tpce.1105725733873" value="breakpoint creators" />

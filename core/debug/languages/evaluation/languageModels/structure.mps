@@ -78,7 +78,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="variables" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6036237525966182694" resolveInfo="HighLevelVariable" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6036237525966182694" resolveInfo="LowLevelVariable" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6036237525966243736">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

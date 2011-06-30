@@ -6390,18 +6390,16 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="nupp.StatementList" typeId="tpee.1068580123136" id="5122318299906073073">
             <node role="statement" roleId="tpee.1068581517665" type="nupp.ReturnStatement" typeId="tpee.1068581242878" id="5122318299906073074">
               <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5122318299906073075">
-                <node role="quotedNode" roleId="tp3r.1196350785114" type="nupp.AnnotationInstanceExpression" typeId="tpee.1188214482800" id="5122318299906073076">
-                  <node role="annotationInstance" roleId="tpee.1188214506790" type="nupp.AnnotationInstance" typeId="tpee.1188207840427" id="5122318299906073077">
-                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="5122318299906073078">
-                      <node role="expression" roleId="tp3r.1196350785111" type="nupp.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5122318299906073079">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2566197375814063427" resolveInfo="createAnnotation" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.CastExpression" typeId="tpee.1070534934090" id="5122318299906073080">
-                          <node role="expression" roleId="tpee.1070534934092" type="nupp.ParameterReference" typeId="tpee.1068581242874" id="5122318299906073081">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063503" resolveInfo="value" />
-                          </node>
-                          <node role="type" roleId="tpee.1070534934091" type="nupp.ClassifierType" typeId="tpee.1107535904670" id="5122318299906073082">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
-                          </node>
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="nupp.AnnotationInstance" typeId="tpee.1188207840427" id="5122318299906073077">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="5122318299906073078">
+                    <node role="expression" roleId="tp3r.1196350785111" type="nupp.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5122318299906073079">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2566197375814063427" resolveInfo="createAnnotation" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.CastExpression" typeId="tpee.1070534934090" id="5122318299906073080">
+                        <node role="expression" roleId="tpee.1070534934092" type="nupp.ParameterReference" typeId="tpee.1068581242874" id="5122318299906073081">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2566197375814063503" resolveInfo="value" />
+                        </node>
+                        <node role="type" roleId="tpee.1070534934091" type="nupp.ClassifierType" typeId="tpee.1107535904670" id="5122318299906073082">
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="45y3.6849912058625332189" resolveInfo="ASMAnnotation" />
                         </node>
                       </node>
                     </node>

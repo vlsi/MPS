@@ -22,7 +22,7 @@
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1270798772176070201">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.3157158168562217892" resolveInfo="DebugInfoProvider" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.3157158168562217892" resolveInfo="BreakpointCreator" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2566194812862845914">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />

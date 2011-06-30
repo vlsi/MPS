@@ -16,7 +16,7 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6036237525966195843">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8sls.6036237525966182694" resolveInfo="HighLevelVariable" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8sls.6036237525966182694" resolveInfo="LowLevelVariable" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6036237525966243740">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8sls.6036237525966182693" resolveInfo="EvaluatorConcept" />

@@ -593,18 +593,18 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="canWrap" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="43370322128194523" resolveInfo="HighLevelCanWrapValue_ConceptFunction" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="43370322128194523" resolveInfo="CanWrapHighLevelValue_ConceptFunction" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="43370322128194610">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="getPresentation" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="43370322128194514" resolveInfo="HighLevelGetValuePresentation_ConceptFunction" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="43370322128194514" resolveInfo="GetHighLevelValuePresentation_ConceptFunction" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="43370322128194611">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="getWatchables" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="43370322128194518" resolveInfo="HighLevelGetWatchablesBlock_ConceptFunction" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="43370322128194518" resolveInfo="GetHighLevelWatchablesBlock_ConceptFunction" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="680105146889009729">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />

@@ -154,7 +154,7 @@
                               </node>
                             </node>
                             <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5619723216767159224">
-                              <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" />
+                              <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
                             </node>
                           </node>
                         </node>

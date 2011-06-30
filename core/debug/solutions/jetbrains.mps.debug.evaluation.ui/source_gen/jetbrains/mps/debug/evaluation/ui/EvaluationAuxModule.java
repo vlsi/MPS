@@ -21,11 +21,20 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.DefaultScope;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class EvaluationAuxModule extends AbstractModule {
+  public static boolean JAVA_STUBS = true;
   @NotNull
-  private static final ModelRootManager STUBS_MANAGER = new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs");
+  private static final ModelRootManager STUBS_MANAGER = (JAVA_STUBS ?
+    new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs") :
+    new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs")
+  );
 
   private Project myProject;
   private IModule myInvocationContext;
@@ -73,7 +82,16 @@ public class EvaluationAuxModule extends AbstractModule {
 
   @NotNull
   public IScope getScope() {
-    return GlobalScope.getInstance();
+    if (JAVA_STUBS) {
+      return GlobalScope.getInstance();
+    } else {
+      // todo when JAVA_STUBS = true, write here whatever is needed for evaluation to work 
+      return new DefaultScope() {
+        protected Set<IModule> getInitialModules() {
+          return SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.<IModule>singleton(EvaluationAuxModule.this));
+        }
+      };
+    }
   }
 
   public ModuleDescriptor getModuleDescriptor() {
