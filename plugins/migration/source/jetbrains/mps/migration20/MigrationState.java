@@ -24,6 +24,7 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.migration20.MigrationState.MyState;
+import jetbrains.mps.project.MPSProjectVersion;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -41,9 +42,11 @@ import java.util.List;
 public class MigrationState implements PersistentStateComponent<MyState>, ProjectComponent {
   private MState myState = MState.INITIAL;
   private Project myProject;
+  private MPSProjectVersion myVersion;
 
-  public MigrationState(Project project) {
+  public MigrationState(Project project,MPSProjectVersion version) {
     myProject = project;
+    myVersion = version;
   }
 
   public MState getMigrationState() {
@@ -77,7 +80,8 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   //----------component stuff-------------
 
   public void projectOpened() {
-    if (myState == MState.INITIAL) return;
+    if (myState != MState.INITIAL) return;
+    if (myVersion.getVersion().equals(MPSProjectVersion.CURRENT)) return;
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
         String message = "MPS detected that this project was not migrated to MPS 2.0.\n" +
