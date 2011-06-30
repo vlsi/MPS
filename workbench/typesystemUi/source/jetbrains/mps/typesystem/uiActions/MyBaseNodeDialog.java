@@ -137,7 +137,7 @@ public class
     if (mySupertypesViewComponent != null && mySupertypesViewComponent.getParent() != null) {
       mySupertypesViewComponent.getParent().remove(mySupertypesViewComponent);
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
           boolean wasLoading = myModel.isLoading();
@@ -149,12 +149,8 @@ public class
             myModel.setLoading(wasLoading);
           }
         }
-        callSuperDispose();
+        MyBaseNodeDialog.super.dispose();
       }
     });
-  }
-
-  private void callSuperDispose() {
-    super.dispose();
   }
 }
