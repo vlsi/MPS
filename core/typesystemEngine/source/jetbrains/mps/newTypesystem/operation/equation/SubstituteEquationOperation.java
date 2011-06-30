@@ -46,7 +46,7 @@ public class SubstituteEquationOperation extends AbstractOperation {
   }
 
   public String getPresentation() {
-    return "Equation " + myRemoved.getShortPresentation() + " substituted with " +
+    return myRemoved.getShortPresentation() + " substituted with " +
       myAdded.getShortPresentation();
   }
 }

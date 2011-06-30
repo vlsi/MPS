@@ -82,7 +82,7 @@ public enum ConditionKind {
 
     @Override
     public String getPresentation() {
-      return "concrete";
+      return "deep";
     }
   };
 

@@ -57,7 +57,7 @@ public abstract class RelationBlock extends Block {
 
   @Override
   public String getPresentation() {
-    return myRelationKind.getTitle() + " : " + getShortPresentation();
+    return getShortPresentation();
   }
 
   public boolean isCheckOnly() {

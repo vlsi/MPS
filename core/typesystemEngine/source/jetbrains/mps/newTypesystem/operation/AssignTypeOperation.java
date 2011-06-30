@@ -43,7 +43,7 @@ public class AssignTypeOperation extends AbstractOperation {
   }
 
   public String getPresentation() {
-    return "Type assigned (" + myNode + " : " + myType + ")";
+    return myNode + " : " + myType+ "   assigned";
   }
 
   public String getPresentationKind() {

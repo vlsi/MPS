@@ -63,18 +63,18 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   private TypeSystemStateTreeNode createNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
-    result.add(createInequalitiesNode());
     /*
       result.add(createNode("Check-only inequalities", myState.getCheckingInequalities(), null));
     */
-    result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
-    result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
-    result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
-    result.add(createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null));
+    TypeSystemStateTreeNode[] nodes = {createInequalitiesNode(), createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null), createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null), createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED), createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null), createEquationsNode()};
+    for (TypeSystemStateTreeNode node : nodes) {
+      if (node.children().hasMoreElements()) {
+        result.add(node);
+      }
+    }
     /*
       result.add(createTypesNode());
     */
-    result.add(createEquationsNode());
     return result;
   }
 
@@ -106,7 +106,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     for (Map.Entry<Set<SNode>, Set<InequalityBlock>> entry : myState.getInequalities().getInequalityGroups(myState.getBlocks(BlockKind.INEQUALITY)).entrySet()) {
       Set<SNode> key = entry.getKey();
       TypeSystemStateTreeNode current;
-      if (key.isEmpty()) {
+      if (key.isEmpty() || entry.getValue().size() <= 1) {
         current = result;
       } else {
         current = new TypeSystemStateTreeNode(key.toString(), myOperationContext);
@@ -120,7 +120,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           nodePresentations.add(presentation);
         }
       }
-      if (!(key.isEmpty())) {
+      if (result != current) {
         result.add(current);
       }
     }

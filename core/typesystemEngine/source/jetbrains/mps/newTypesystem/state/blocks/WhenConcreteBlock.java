@@ -74,7 +74,7 @@ public class WhenConcreteBlock extends Block {
 
   @Override
   public String getPresentation() {
-    return "when concrete (" + myConditionKind.getPresentation() + ") : " + myArgument;
+    return "when concrete (" + myArgument + ") " + myConditionKind.getPresentation();
   }
 
   @Override

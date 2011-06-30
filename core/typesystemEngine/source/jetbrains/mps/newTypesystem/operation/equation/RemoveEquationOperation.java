@@ -38,6 +38,6 @@ public class RemoveEquationOperation extends AbstractEquationOperation {
   }
 
   public String getPresentation() {
-    return "Equation removed " + getShortPresentation();
+    return getShortPresentation()+"   removed";
   }
 }

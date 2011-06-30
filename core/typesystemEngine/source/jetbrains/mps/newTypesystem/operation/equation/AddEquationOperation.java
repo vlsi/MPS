@@ -53,7 +53,7 @@ public class AddEquationOperation extends AbstractEquationOperation {
   }
 
   public String getPresentation() {
-    return "Equation added " + getShortPresentation();
+    return getShortPresentation()+ "   added";
   }
 
   public String getPresentationKind() {

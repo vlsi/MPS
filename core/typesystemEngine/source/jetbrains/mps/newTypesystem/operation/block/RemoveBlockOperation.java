@@ -26,8 +26,10 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
   }
 
   public String getPresentation() {
-    String prefix = "Removed : [";
-    return prefix + myBlock.getPresentation() + "]";
+    if (myBlock.getBlockKind().equals(BlockKind.WHEN_CONCRETE)) {
+      return myBlock.getPresentation() + "   executed";
+    }
+    return myBlock.getPresentation() + "   solved";
   }
 
   public void doUndo(State state) {

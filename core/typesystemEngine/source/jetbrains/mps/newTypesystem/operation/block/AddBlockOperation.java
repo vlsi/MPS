@@ -27,7 +27,7 @@ public class AddBlockOperation extends AbstractBlockOperation {
   }
 
   public String getPresentation() {
-    return "Added : [" + myBlock.getPresentation() + "]";
+    return myBlock.getPresentation()+"   added";
   }
 
   public String getPresentationKind() {
