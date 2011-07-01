@@ -24,6 +24,7 @@ import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
+import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.smodel.IOperationContext;
@@ -171,6 +172,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError == null) {
+      myState.executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
       return;//todo
     }
     getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);

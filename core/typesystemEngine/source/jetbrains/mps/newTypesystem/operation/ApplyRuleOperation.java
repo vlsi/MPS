@@ -45,7 +45,7 @@ public class ApplyRuleOperation extends AbstractOperation {
   }
 
   public String getPresentation() {
-    return "Applying rule " + myRule.getClass().getSimpleName().replace("_InferenceRule", "") + " to node " + myNode;
+    return myRule.getClass().getSimpleName().replace("_InferenceRule", "") + " applied to node \"" + myNode+"\"";
   }
 
   public boolean hasEffect() {

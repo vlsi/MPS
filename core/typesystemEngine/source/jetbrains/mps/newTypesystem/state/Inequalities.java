@@ -74,17 +74,6 @@ public class Inequalities {  //
         return node;
       }
     }
-     /*
-    System.out.println(myState.getTypeCheckingContext().getNode().getContainingRoot());
-    System.out.println(myState.getTypeCheckingContext().getNode());
-    System.out.println(myState.getTypeCheckingContext().getNode().getContainingRoot().getModel());
-    System.out.println("cycle");
-    for (SNode node: unsorted) {
-      System.out.println(myState.expand(node));
-    }
-    printMMMap(inputsToOutputs);
-    printAll();
-       */
     return unsorted.iterator().next();
   }
 
