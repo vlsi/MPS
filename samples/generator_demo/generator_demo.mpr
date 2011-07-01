@@ -20,6 +20,9 @@
       <genConfModule name="demoLang4" moduleRef="jetbrains.mps.samples.generator_demo.demoLang4" />
     </genConfs>
   </component>
+  <component name="MigrationState">
+    <option name="myState" value="DONE" />
+  </component>
   <component name="ProjectDetails">
     <option name="projectName" value="generator_demo" />
   </component>
@@ -27,6 +30,9 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="1.5" />
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
   </component>

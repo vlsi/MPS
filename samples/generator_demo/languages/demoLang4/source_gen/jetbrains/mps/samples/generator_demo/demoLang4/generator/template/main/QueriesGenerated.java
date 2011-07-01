@@ -15,18 +15,17 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_1228678752684(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_5273477653284538095(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
 
-  public static boolean baseMappingRule_Condition_1228678752716(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_5273477653284538097(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
   }
 
-  public static boolean baseMappingRule_Condition_1228679746328(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_5273477653284538099(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("panel");
   }
 
@@ -114,19 +113,11 @@ public class QueriesGenerated {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document");
   }
 
+  public static Iterable sourceNodesQuery_5273477653284500112(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
+  }
+
   public static Iterable sourceNodesQuery_1228681296814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "content", true);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1228678752678(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("main_class");
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1228678752695(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("main_class");
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1228679746322(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("main_class");
   }
 }

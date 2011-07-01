@@ -13,16 +13,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.template.TemplateFragmentContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_1228530334488(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_5273477653284544323(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
 
-  public static boolean baseMappingRule_Condition_1228530974519(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+  public static boolean baseMappingRule_Condition_5273477653284544332(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
   }
 
@@ -52,6 +51,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1228532289178(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "value").equals("true");
+  }
+
+  public static Object referenceMacro_GetReferent_5273477653284546101(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "method");
   }
 
   public static Object referenceMacro_GetReferent_1228532742086(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -90,31 +93,11 @@ public class QueriesGenerated {
     });
   }
 
-  public static SNode templateFragment_ContextNodeQuery_1228531789982(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").equals("addContent");
-      }
-    });
-    return SLinkOperations.getTarget(method, "body", true);
+  public static Iterable sourceNodesQuery_5273477653284544939(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }
 
-  public static SNode templateFragment_ContextNodeQuery_1228531534788(final IOperationContext operationContext, final TemplateFragmentContext _context) {
-    SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").equals("addContent");
-      }
-    });
-    return SLinkOperations.getTarget(method, "body", true);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1228530322221(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("main_class");
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1228530974513(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("main_class");
+  public static Iterable sourceNodesQuery_5273477653284544347(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }
 }
