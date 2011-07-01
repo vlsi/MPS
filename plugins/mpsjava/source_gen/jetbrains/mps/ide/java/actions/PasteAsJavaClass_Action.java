@@ -20,7 +20,7 @@ public class PasteAsJavaClass_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(PasteAsJavaClass_Action.class);
 
   public PasteAsJavaClass_Action() {
-    super("Paste As Java Class", "", ICON);
+    super("Paste as Java Class", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

@@ -226,7 +226,7 @@
     <nodeInfo nodeId="2872212824181502656" fileName="PasteAsJavaClass_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="2872212824181502669">
-    <nodeInfo nodeId="2872212824181502674" fileName="PasteAsJavaMethods_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502674" fileName="PasteAsJavaMethods_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="2872212824181502686">
     <nodeInfo nodeId="2872212824181502691" fileName="PasteAsJavaStatements_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -21,7 +21,7 @@ public class PasteAsJavaMethods_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(PasteAsJavaMethods_Action.class);
 
   public PasteAsJavaMethods_Action() {
-    super("Paste As Java Methods", "", ICON);
+    super("Paste as Java Class Content", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -54,7 +54,7 @@ public class PasteAsJavaMethods_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.METHOD);
+      new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.CLASS_CONTENT);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteAsJavaMethods", t);

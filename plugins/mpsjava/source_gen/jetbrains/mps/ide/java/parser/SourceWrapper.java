@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.StringUtils;
 
 public abstract class SourceWrapper {
@@ -94,7 +95,7 @@ public abstract class SourceWrapper {
     switch (featureKind) {
       case CLASS:
         return new SourceWrapper.ClassWrapper(source, model);
-      case METHOD:
+      case CLASS_CONTENT:
         return new SourceWrapper.MethodsWrapper(source, model);
       case STATEMENTS:
         return new SourceWrapper.StatementsWrapper(source, model);
@@ -112,12 +113,7 @@ public abstract class SourceWrapper {
 
     @Override
     public List<SNode> getOurNodesFromClassifier(SNode classifier) {
-      List<SNode> statementList = SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).first(), "body", true), "statement", true);
-      List<SNode> result = new ArrayList<SNode>();
-      for (SNode s : statementList) {
-        ListSequence.fromList(result).addElement(s);
-      }
-      return result;
+      return SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).first(), "body", true), "statement", true);
     }
   }
 
@@ -130,10 +126,11 @@ public abstract class SourceWrapper {
 
     @Override
     public List<SNode> getOurNodesFromClassifier(SNode classifier) {
-      List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
       List<SNode> result = new ArrayList<SNode>();
-      for (SNode m : methods) {
-        ListSequence.fromList(result).addElement(m);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "staticField", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true)));
+      SNode classs = SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      if ((classs != null)) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classs, "field", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classs, "staticMethod", true)));
       }
       return result;
     }

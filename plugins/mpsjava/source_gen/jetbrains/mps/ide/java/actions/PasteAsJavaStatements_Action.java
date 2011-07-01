@@ -21,7 +21,7 @@ public class PasteAsJavaStatements_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(PasteAsJavaStatements_Action.class);
 
   public PasteAsJavaStatements_Action() {
-    super("Paste As Java Statements", "", ICON);
+    super("Paste as Java Statements", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

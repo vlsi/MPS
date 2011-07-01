@@ -15,10 +15,16 @@ import java.io.IOException;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
-import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
-import jetbrains.mps.datatransfer.PasteEnv;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.java.parser.ConversionFailedException;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class JavaPaster {
   private static Logger LOG = Logger.getLogger(JavaPaster.class);
@@ -68,27 +74,63 @@ public class JavaPaster {
     return null;
   }
 
-  public void pasteJavaAsNode(SNode anchor, SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind) {
+  public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind) {
     IModule module = model.getModelDescriptor().getModule();
     JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, null, false, model);
     try {
       List<SNode> nodes = javaCompiler.compileIsolated(javaCode, featureKind);
-      if (nodes.isEmpty()) {
+      if (ListSequence.fromList(nodes).isEmpty()) {
         JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
       }
-      NodePaster nodePaster = new NodePaster(nodes);
-      if (featureKind != FeatureKind.CLASS) {
-        NodePaster.NodeAndRole nodeAndRole = nodePaster.getActualAnchorNode(anchor, anchor.getRole_());
-        if (nodeAndRole == null) {
-          return;
-        }
-        nodePaster.paste(nodeAndRole.myNode, PasteEnv.NODE_EDITOR);
-      } else {
-        nodePaster.pasteAsRoots(model);
+      switch (featureKind) {
+        case CLASS:
+          ListSequence.fromList(nodes).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode node) {
+              SModelOperations.addRootNode(model, node);
+            }
+          });
+          break;
+        case CLASS_CONTENT:
+          for (SNode node : ListSequence.fromList(nodes)) {
+            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+              pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"));
+            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+              pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticField"));
+            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+              pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "field"));
+            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+              pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "staticMethod"));
+            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+              pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "constructor"));
+            } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+              pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticInnerClassifiers"));
+            }
+          }
+          break;
+        case STATEMENTS:
+          for (SNode node : ListSequence.fromList(nodes)) {
+            pasteAtAnchorInRole(node, anchor, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", "statement"));
+          }
+          break;
+        default:
       }
     } catch (ConversionFailedException ex) {
       JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
     }
+  }
+
+  private static boolean pasteAtAnchorInRole(SNode node, SNode anchor, SNode parentConcept, SNode role) {
+    SNode parent = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(parentConcept), true, false);
+    if ((parent == null)) {
+      return false;
+    }
+    anchor = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(SLinkOperations.getTarget(role, "target", false)), false, false);
+    if ((anchor == null) || SNodeOperations.getParent(anchor) != parent) {
+      parent.addChild(SPropertyOperations.getString(role, "role"), node);
+    } else {
+      parent.insertChild(anchor, SPropertyOperations.getString(role, "role"), node, true);
+    }
+    return true;
   }
 }

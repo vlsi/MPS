@@ -8,7 +8,8 @@ public enum FeatureKind {
   NESTED_CLASS(),
   FIELD(),
   METHOD(),
-  STATEMENTS();
+  STATEMENTS(),
+  CLASS_CONTENT();
 
   FeatureKind() {
   }
