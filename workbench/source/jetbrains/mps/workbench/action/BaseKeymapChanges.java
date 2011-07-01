@@ -28,15 +28,15 @@ import java.util.Map.Entry;
 public abstract class BaseKeymapChanges {
   private static final Logger LOG = Logger.getLogger(BaseKeymapChanges.class);
 
-  private Keymap myKeymap;
-
   private static Map<Keymap, Set<String>> ourClearedActions = new THashMap<Keymap, Set<String>>();
-
   private Map<String, Set<Shortcut>> myRemovedShortcuts = new THashMap<String, Set<Shortcut>>();
+
+  private Map<String, Set<Shortcut>> myAddedComplexShortcuts = new THashMap<String, Set<Shortcut>>();
+
   private Map<String, Set<Shortcut>> mySimpleShortcuts = new THashMap<String, Set<Shortcut>>();
   private Map<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<String, Set<ComplexShortcut>>();
 
-  private Map<String, Set<Shortcut>> myAddedComplexShortcuts = new THashMap<String, Set<Shortcut>>();
+  private Keymap myKeymap;
 
   public abstract String getScheme();
 
