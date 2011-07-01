@@ -1508,7 +1508,7 @@
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2921267027982585649">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2921267027982585650" />
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2921267027982585651">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2921267027982585625" resolveInfo="getFreeMem" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2921267027982585625" resolveInfo="getUsedMem" />
                 </node>
               </node>
             </node>
@@ -1555,7 +1555,7 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.LongType" typeId="tpee.1068581242867" id="2921267027982585666" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2921267027982585668">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2921267027982585669">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2921267027982585625" resolveInfo="getFreeMem" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2921267027982585625" resolveInfo="getUsedMem" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2921267027982585670" />
               </node>
@@ -1592,7 +1592,7 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.LongType" typeId="tpee.1068581242867" id="5699232652750172933" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5699232652750172934">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5699232652750172935">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2921267027982585625" resolveInfo="getFreeMem" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2921267027982585625" resolveInfo="getUsedMem" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5699232652750172936" />
               </node>
@@ -1640,7 +1640,7 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.LongType" typeId="tpee.1068581242867" id="2921267027982585709" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2921267027982585710">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2921267027982585711">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2921267027982585625" resolveInfo="getFreeMem" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2921267027982585625" resolveInfo="getUsedMem" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2921267027982585712" />
               </node>
@@ -1649,8 +1649,8 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertTrue" typeId="tpe3.1171981022339" id="789821184115969060">
             <node role="condition" roleId="tpe3.1171981057159" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="789821184115969070">
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.MulExpression" typeId="tpee.1092119917967" id="789821184115969063">
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="789821184115969062">
-                  <property name="value" nameId="tpee.1068580320021" value="3" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="2740940107228032192">
+                  <property name="value" nameId="tpee.1113006610751" value="2.5" />
                 </node>
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="789821184115969066">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="789821184115969067">
@@ -1755,8 +1755,8 @@
           <node role="statement" roleId="tpee.1177326540772" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="789821184115830208">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="789821184115830209">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="789821184115830210">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="789821184115830211">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
