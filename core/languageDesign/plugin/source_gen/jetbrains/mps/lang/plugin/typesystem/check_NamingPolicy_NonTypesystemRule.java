@@ -23,7 +23,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    String warningMessage = "Naming policies violated: all words except prepositions, articles and particles" + "should be capitalized";
+    String warningMessage = "Naming policies violated: " + "all words except prepositions, articles and particles should be capitalized";
     for (SNode s : ICheckedNamePolicy_Behavior.call_getDescendantsToCheck_1628770029971140562(node)) {
       if (!(NameUtil.satisfiesPartNamingPolicy(SPropertyOperations.getString(s, "value")))) {
         String myWarning = warningMessage + ".";

@@ -1750,12 +1750,12 @@
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1500939545021962990">
           <property name="name" nameId="tpck.1169194664001" value="warningMessage" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1500939545021962991" />
-          <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1500939545021962998">
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1500939545021963001">
-              <property name="value" nameId="tpee.1070475926801" value="Naming policies violated: all words except prepositions, articles and particles" />
+          <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3256924578580182384">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3256924578580182387">
+              <property name="value" nameId="tpee.1070475926801" value="Naming policies violated: " />
             </node>
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1500939545021963002">
-              <property name="value" nameId="tpee.1070475926801" value="should be capitalized" />
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3256924578580182388">
+              <property name="value" nameId="tpee.1070475926801" value="all words except prepositions, articles and particles should be capitalized" />
             </node>
           </node>
         </node>

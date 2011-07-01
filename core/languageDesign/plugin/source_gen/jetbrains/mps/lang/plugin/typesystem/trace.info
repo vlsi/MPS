@@ -392,7 +392,7 @@
     <scopeInfo nodeId="1628770029971140701" fileName="FixNamingPolicy_property_once_QuickFix.java" startLine="18" startPosition="35" endLine="19" endPosition="239" />
   </root>
   <root nodeId="1628770029971140714">
-    <nodeInfo nodeId="1500939545021962989" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1500939545021962989" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="25" startPosition="117" endLine="26" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1500939545021979009" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="93" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="30" startPosition="9" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1628770029971140725" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="31" startPosition="62" endLine="32" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -430,7 +430,7 @@
     <nodeInfo nodeId="1628770029971140761" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="56" startPosition="97" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1628770029971140773" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="66" startPosition="9" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1628770029971140718" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="27" startPosition="102" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1628770029971140716" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="26" startPosition="136" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1628770029971140716" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="26" startPosition="137" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1628770029971140754" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="54" startPosition="7" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1628770029971140744" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="50" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1628770029971140747" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="52" startPosition="33" endLine="53" endPosition="17" />
@@ -449,7 +449,7 @@
     <scopeInfo nodeId="1628770029971140760" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="55" startPosition="60" endLine="77" endPosition="9">
       <varInfo nodeId="1500939545021979019" varName="myWarning" />
     </scopeInfo>
-    <scopeInfo nodeId="1628770029971140716" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="26" startPosition="136" endLine="50" endPosition="5">
+    <scopeInfo nodeId="1628770029971140716" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="26" startPosition="137" endLine="50" endPosition="5">
       <varInfo nodeId="1628770029971140742" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1628770029971140745" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="51" startPosition="113" endLine="78" endPosition="7" />
