@@ -270,8 +270,14 @@ public class TypesProvider {
   }
 
   public SReference createClassifierReference(ReferenceBinding aClass, String role, SNode sourceNode) {
+    if (aClass instanceof ProblemReferenceBinding && aClass.closestMatch() instanceof ReferenceBinding) {
+      aClass = (ReferenceBinding) aClass.closestMatch();
+    }
     SNodePointer classifierPointer = createClassifierPointer(aClass);
-    return SReference.create(role, sourceNode, classifierPointer, new String(aClass.sourceName()));
+    return SReference.create(role, sourceNode, classifierPointer, ((aClass.sourceName == null ?
+      "" :
+      new String(aClass.sourceName)
+    )));
   }
 
   public SNodePointer createClassifierPointer(ReferenceBinding aClass) {
@@ -290,7 +296,10 @@ public class TypesProvider {
       ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) aClass;
       return createClassifierPointer(parameterizedTypeBinding.genericType());
     }
-    throw new JavaConverterException("no classifier for class " + new String(aClass.sourceName));
+    throw new JavaConverterException("no classifier for class " + ((aClass.sourceName == null ?
+      "" :
+      new String(aClass.sourceName)
+    )));
   }
 
   public SReference createFieldReference(FieldBinding binding, String role, SNode sourceNode) {
