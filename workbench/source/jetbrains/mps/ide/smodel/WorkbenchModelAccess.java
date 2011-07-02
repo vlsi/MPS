@@ -36,7 +36,6 @@ import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
@@ -385,17 +384,10 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     };
 
-    final boolean ownRead = ownReadLock();
-    try {
-      if (ownRead) getReadLock().unlock();
-      if (ThreadUtils.isEventDispatchThread()) {
-        return ApplicationManager.getApplication().runWriteAction(computable);
-      } else {
-        return ApplicationManager.getApplication().runReadAction(computable);
-      }
-    }
-    finally {
-      if (ownRead) getReadLock().lock();
+    if (ThreadUtils.isEventDispatchThread()) {
+      return ApplicationManager.getApplication().runWriteAction(computable);
+    } else {
+      return ApplicationManager.getApplication().runReadAction(computable);
     }
   }
 
@@ -428,17 +420,10 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     };
 
-    final boolean ownRead = ownReadLock();
-    try {
-      if (ownRead) getReadLock().unlock();
-      if (ThreadUtils.isEventDispatchThread()) {
-        return ApplicationManager.getApplication().runWriteAction(computable);
-      } else {
-        return ApplicationManager.getApplication().runReadAction(computable);
-      }
-    }
-    finally {
-      if (ownRead) getReadLock().lock();
+    if (ThreadUtils.isEventDispatchThread()) {
+      return ApplicationManager.getApplication().runWriteAction(computable);
+    } else {
+      return ApplicationManager.getApplication().runReadAction(computable);
     }
   }
 
@@ -493,35 +478,27 @@ public class WorkbenchModelAccess extends ModelAccess {
     final boolean[] res = new boolean[]{false};
 
     final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
-
-    final boolean ownRead = ownReadLock();
-    try {
-      if (ownRead) getReadLock().unlock();
-      CommandProcessor.getInstance().executeCommand(
-        project,
-        new Runnable() {
-          public void run() {
-            ApplicationManager.getApplication().runWriteAction(new Runnable() {
-              public void run() {
-                try {
-                  if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-                    try {
-                      new CommandRunnable(r, project).run();
-                    } finally {
-                      getWriteLock().unlock();
-                    }
-                    res[0] = true;
+    CommandProcessor.getInstance().executeCommand(
+      project,
+      new Runnable() {
+        public void run() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            public void run() {
+              try {
+                if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
+                  try {
+                    new CommandRunnable(r, project).run();
+                  } finally {
+                    getWriteLock().unlock();
                   }
-                } catch (InterruptedException ignore) {}
-              }
-            });
-          }
-        },
-        "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-    }
-    finally {
-      if (ownRead) getReadLock().lock();
-    }
+                  res[0] = true;
+                }
+              } catch (InterruptedException ignore) {}
+            }
+          });
+        }
+      },
+      "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
 
     return res[0];
   }
@@ -535,34 +512,27 @@ public class WorkbenchModelAccess extends ModelAccess {
     final T[] res = (T[])new Object[]{null};
 
     final Project project = p != null ? p : CurrentProjectAccessUtil.getProjectFromUI();
-
-    final boolean ownRead = ownReadLock();
-    try {
-      if (ownRead) getReadLock().unlock();
-        CommandProcessor.getInstance().executeCommand(
-          project,
-          new Runnable() {
+    CommandProcessor.getInstance().executeCommand(
+      project,
+      new Runnable() {
+        public void run() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
-              ApplicationManager.getApplication().runWriteAction(new Runnable() {
-                public void run() {
+              try {
+                if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
                   try {
-                    if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-                      try {
-                        res[0] = new CommandComputable<T>(r, project).compute();
-                      } finally {
-                        getWriteLock().unlock();
-                      }
-                    }
-                  } catch (InterruptedException ignore) {}
+                    res[0] = new CommandComputable<T>(r, project).compute();
+                  } finally {
+                    getWriteLock().unlock();
+                  }
                 }
-              });
+              } catch (InterruptedException ignore) {}
             }
-          },
-          "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-    }
-    finally {
-      if (ownRead) getReadLock().lock();
-    }
+          });
+        }
+      },
+      "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+
     return res[0];
   }
 
@@ -657,31 +627,19 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
 
     final int[] chosen = new int [1];
-    final boolean ownRead = ownReadLock();
     final ProgressIndicator pi = ProgressManager.getInstance().getProgressIndicator();
-    try {
-      if (ownRead) getReadLock().unlock();
-
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        @Override
-        public void run() {
-          if (pi instanceof ProgressWindow && !((ProgressWindow) pi).isBackgrounded()) {
-            ((ProgressWindow) pi).background();
-          }
-
-          chosen[0] = Messages.showYesNoDialog("The current action is taking too long, do you want to abort it?", "Unresponsive Process", null);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
+      public void run() {
+        if (pi instanceof ProgressWindow && !((ProgressWindow) pi).isBackgrounded()) {
+          ((ProgressWindow) pi).background();
         }
-      });
-    }
-    finally {
-      if (ownRead) getReadLock().lock();
-    }
+
+        chosen[0] = Messages.showYesNoDialog("The current action is taking too long, do you want to abort it?", "Unresponsive Process", null);
+      }
+    });
 
     return chosen[0] == 0;
-  }
-
-  private boolean ownReadLock() {
-    return canRead() && !canWrite() && !isSharedReadInWriteMode();
   }
 
   //--------command events listening

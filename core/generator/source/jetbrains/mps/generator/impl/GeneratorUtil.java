@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -161,28 +160,29 @@ public class GeneratorUtil {
     if (ModelAccess.instance().canRead() && !ModelAccess.instance().canWrite()) {
       return c.compute();
     }
-    try {
-      return ModelAccess.instance().runReadInWriteAction(new Computable<T>() {
-        @Override
-        public T compute() {
-          try {
-            return c.compute();
-          } catch (GenerationFailureException e) {
-            throw new RuntimeException(e);
-          } catch (GenerationCanceledException e) {
-            throw new RuntimeException(e);
-          }
-        }
-      });
-    } catch (RuntimeException th) {
-      Throwable inner = th.getCause();
-      if (inner instanceof GenerationFailureException) {
-        throw (GenerationFailureException) inner;
-      } else if (inner instanceof GenerationCanceledException) {
-        throw (GenerationCanceledException) inner;
-      }
-      throw th;
-    }
+    throw new UnsupportedOperationException("no read from write");
+//    try {
+//      return ModelAccess.instance().runReadInWriteAction(new Computable<T>() {
+//        @Override
+//        public T compute() {
+//          try {
+//            return c.compute();
+//          } catch (GenerationFailureException e) {
+//            throw new RuntimeException(e);
+//          } catch (GenerationCanceledException e) {
+//            throw new RuntimeException(e);
+//          }
+//        }
+//      });
+//    } catch (RuntimeException th) {
+//      Throwable inner = th.getCause();
+//      if (inner instanceof GenerationFailureException) {
+//        throw (GenerationFailureException) inner;
+//      } else if (inner instanceof GenerationCanceledException) {
+//        throw (GenerationCanceledException) inner;
+//      }
+//      throw th;
+//    }
   }
 
   public static String getTemplateNodeId(SNode templateNode) {

@@ -90,6 +90,8 @@ public class GeneratorManager {
                                 final GenerationOptions options) {
     final boolean[] result = new boolean[1];
     final TransientModelsComponent transientModelsComponent = myProject.getComponent(TransientModelsComponent.class);
+
+    // Calls requireWrite at some point
     transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());
 
     options.getGenerationTracer().startTracing();

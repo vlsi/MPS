@@ -135,16 +135,21 @@ public class TransientModelsComponent implements ProjectComponent {
   }
 
   public TransientModelsModule getModule(final IModule module) {
-    TransientModelsModule transientModelsModule = ModelAccess.instance().requireWrite(new Computable<TransientModelsModule>() {
+    TransientModelsModule transientModelsModule = ModelAccess.instance().requireRead(new Computable<TransientModelsModule>() {
       @Override
       public TransientModelsModule compute() {
-        TransientModelsModule transientModelsModule = myModuleMap.get(module);
-        if (transientModelsModule != null) {
-          return transientModelsModule;
+        if (myModuleMap.containsKey(module)) {
+          return myModuleMap.get(module);
         }
 
-        transientModelsModule = new TransientModelsModule(module, TransientModelsComponent.this);
-        transientModelsModule.initModule();
+        final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsComponent.this);
+        // later
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
+            transientModelsModule.initModule();
+          }
+        });
         myModuleMap.put(module, transientModelsModule);
         return transientModelsModule;
       }
