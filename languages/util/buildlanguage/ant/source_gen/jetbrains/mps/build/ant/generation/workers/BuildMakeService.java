@@ -15,6 +15,13 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.make.dependencies.ModulesClusterizer;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.make.task.MakeTask;
+import com.intellij.openapi.progress.PerformInBackgroundOption;
+import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.script.IConfigMonitor;
@@ -78,45 +85,63 @@ public class BuildMakeService implements IMakeService {
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources) {
-    return new FutureValue(doMake(resources, defaultMakeScript(), null));
+    return doMake(resources, defaultMakeScript(), null);
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script) {
-    return new FutureValue(doMake(resources, script, null));
+    return doMake(resources, script, null);
   }
 
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
     return new FutureValue(doMake(resources, script, controller));
   }
 
-  private IResult doMake(Iterable<? extends IResource> inputRes, IScript script, IScriptController controller) {
+  private Future<IResult> doMake(final Iterable<? extends IResource> inputRes, final IScript script, IScriptController controller) {
     String scrName = "Build";
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
       String msg = scrName + " aborted: nothing to do";
       this.showError(msg);
-      return new IResult.FAILURE(null);
+      return new FutureValue(new IResult.FAILURE(null));
     }
-
 
     if (!(script.isValid())) {
       String msg = scrName + " failed";
       showError(msg + ". Invalid script.");
-      return new IResult.FAILURE(null);
+      return new FutureValue(new IResult.FAILURE(null));
     }
+
+    final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
+    final Wrappers._T<Iterable<Iterable<String>>> usedLangs = new Wrappers._T<Iterable<Iterable<String>>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        final ModulesClusterizer mcr = new ModulesClusterizer();
+        clInput.value = mcr.clusterize(Sequence.fromIterable(inputRes).<IResource>select(new ISelector<IResource, IResource>() {
+          public IResource select(IResource r) {
+            return (IResource) r;
+          }
+        }));
+        usedLangs.value = Sequence.fromIterable(clInput.value).<Iterable<String>>select(new ISelector<Iterable<IResource>, Iterable<String>>() {
+          public Iterable<String> select(Iterable<IResource> it) {
+            return mcr.allUsedLangNamespaces(it);
+          }
+        }).toListSequence();
+      }
+    });
 
     IScriptController ctl = this.completeController(controller);
     IResult res;
-    res = script.execute(ctl, inputRes);
 
-    if (res == null) {
-      String msg = scrName + " aborted";
-      showError(msg);
-    } else if (!(res.isSucessful())) {
-      String msg = scrName + " failed";
-      showError(msg + ". See previous messages for details.");
-    }
-    return res;
+    MakeTask task = new MakeTask(context.getProject(), scrName, Sequence.fromIterable(clInput.value).<IScript>select(new ISelector<Iterable<IResource>, IScript>() {
+      public IScript select(Iterable<IResource> it) {
+        return script;
+      }
+    }), scrName, clInput.value, ctl, messageHandler, PerformInBackgroundOption.DEAF);
+    ProgressManager.getInstance().run(task);
+
+    // <node> 
+
+    return task;
   }
 
   private void showError(String msg) {
