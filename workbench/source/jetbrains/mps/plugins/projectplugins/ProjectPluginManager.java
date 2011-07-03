@@ -137,7 +137,9 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           mySortedPlugins = new ArrayList<BaseProjectPlugin>();
 
           Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
-          mySortedPlugins.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ProjectPluginCreator()));
+          if (!bootstrapPlugins.isEmpty()) {
+            mySortedPlugins.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ProjectPluginCreator()));
+          }
 
           Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
           for (PluginContributor c : pluginContributors) {

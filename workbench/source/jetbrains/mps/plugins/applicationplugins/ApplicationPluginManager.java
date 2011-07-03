@@ -87,8 +87,9 @@ public class ApplicationPluginManager implements ApplicationComponent {
         LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
       }
     }
-
-    GroupAdjuster.adjustTopLevelGroups(idePlugin);
+    if (idePlugin != null) {
+      GroupAdjuster.adjustTopLevelGroups(idePlugin);
+    }
     GroupAdjuster.refreshCustomizations();
   }
 
@@ -96,7 +97,9 @@ public class ApplicationPluginManager implements ApplicationComponent {
     List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
 
     Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
-    result.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ApplicationPluginCreator()));
+    if (!bootstrapPlugins.isEmpty()) {
+      result.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ApplicationPluginCreator()));
+    }
 
     Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
     for (PluginContributor c:pluginContributors){

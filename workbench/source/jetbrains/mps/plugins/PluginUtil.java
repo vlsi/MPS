@@ -66,7 +66,7 @@ public class PluginUtil {
 
   public static List<Solution> getBootstrapPluginModules() {
     Solution ide = MPSModuleRepository.getInstance().getSolution(IDE_MODULE_ID);
-    return Collections.singletonList(ide);
+    return ide != null ? Collections.singletonList(ide) : Collections.<Solution>emptyList();
   }
 
   public static <T> List<T> createPlugins(Collection<IModule> modules, PluginCreator<T> creator) {
