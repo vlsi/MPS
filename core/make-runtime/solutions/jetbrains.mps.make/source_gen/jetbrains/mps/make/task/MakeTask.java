@@ -16,6 +16,10 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressIndicator;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
 import java.util.Iterator;
@@ -23,10 +27,6 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   private CountDownLatch myLatch = new CountDownLatch(1);
@@ -49,64 +49,20 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
 
   public void run(@NotNull ProgressIndicator pi) {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
-      aboutToStart();
-      pi.pushState();
-      final int clsize = Sequence.fromIterable(this.myClInput).count();
-      if (clsize == 0) {
-        return;
+      try {
+        doRun(pi);
+      } finally {
+        try {
+          reconcile();
+        } catch (RuntimeException ignore) {
+        }
       }
-      final double clfrac = (1.0 / clsize);
-      final int[] idx = new int[]{0};
-      useProgressIndicator(new ProgressIndicatorDelegate(pi) {
-        @Override
-        public void setFraction(double d) {
-          getDelegate().setFraction((idx[0] + d) * clfrac);
-        }
-
-        @Override
-        public void setText2(String string) {
-        }
-      });
-
-      Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
-      Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
-      while (scit.hasNext() && clit.hasNext()) {
-        Iterable<IResource> cl = clit.next();
-        IScript scr = scit.next();
-
-        if (!(scr.isValid())) {
-          String msg = myScrName + " failed";
-          myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
-          displayInfo(msg);
-          this.myResult = new IResult.FAILURE(null);
-          break;
-        }
-
-        pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
-          public String select(IResource r) {
-            return ((IResource) r).describe();
-          }
-        }), ","));
-        this.myResult = scr.execute(this.myController, cl);
-        if (!(this.myResult.isSucessful()) || pi.isCanceled()) {
-          break;
-        }
-        idx[0]++;
-      }
-      pi.popState();
-      this.myState.set(MakeTask.TaskState.INDETERMINATE);
     }
-  }
-
-  @Override
-  public void onSuccess() {
-    reconcile();
   }
 
   @Override
   public void onCancel() {
     this.myResult = null;
-    reconcile();
   }
 
   public boolean cancel(boolean b) {
@@ -147,6 +103,55 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   }
 
   protected void done() {
+  }
+
+  private void doRun(ProgressIndicator pi) {
+    aboutToStart();
+    pi.pushState();
+    final int clsize = Sequence.fromIterable(this.myClInput).count();
+    if (clsize == 0) {
+      return;
+    }
+    final double clfrac = (1.0 / clsize);
+    final int[] idx = new int[]{0};
+    useProgressIndicator(new ProgressIndicatorDelegate(pi) {
+      @Override
+      public void setFraction(double d) {
+        getDelegate().setFraction((idx[0] + d) * clfrac);
+      }
+
+      @Override
+      public void setText2(String string) {
+      }
+    });
+
+    Iterator<IScript> scit = Sequence.fromIterable(myScripts).iterator();
+    Iterator<? extends Iterable<IResource>> clit = Sequence.fromIterable(myClInput).iterator();
+    while (scit.hasNext() && clit.hasNext()) {
+      Iterable<IResource> cl = clit.next();
+      IScript scr = scit.next();
+
+      if (!(scr.isValid())) {
+        String msg = myScrName + " failed";
+        myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". Invalid script."));
+        displayInfo(msg);
+        this.myResult = new IResult.FAILURE(null);
+        break;
+      }
+
+      pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+        public String select(IResource r) {
+          return ((IResource) r).describe();
+        }
+      }), ","));
+      this.myResult = scr.execute(this.myController, cl);
+      if (!(this.myResult.isSucessful()) || pi.isCanceled()) {
+        break;
+      }
+      idx[0]++;
+    }
+    pi.popState();
+    this.myState.set(MakeTask.TaskState.INDETERMINATE);
   }
 
   private void reconcile() {
