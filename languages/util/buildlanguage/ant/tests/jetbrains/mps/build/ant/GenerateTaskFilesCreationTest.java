@@ -69,22 +69,19 @@ public class GenerateTaskFilesCreationTest {
 
   @Test
   public void testLanguageAndSolution() throws IOException {
-// TODO FIXME rewrite using Make
+    String projectName = "TestProjectWithLanguageAndSolution";
+    String languageName = projectName + "Language";
+    String solutionName = projectName + "LanguageSolution";
 
+    File destdir = generateProjectFromZipFile(projectName);
 
-//    String projectName = "TestProjectWithLanguageAndSolution";
-//    String languageName = projectName + "Language";
-//    String solutionName = projectName + "LanguageSolution";
-//
-//    File destdir = generateProjectFromZipFile(projectName);
-//
-//    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
-//    assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
-//    assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
-//    assertGeneratorGenerated(projectName, languageName, destdir);
-//
-//    File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, solutionName) + "SomeInstanceOfSomeConcept.java");
-//    TestCase.assertTrue(someConceptInstanceFile.exists());
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertGeneratorGenerated(projectName, languageName, destdir);
+
+    File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, solutionName) + "SomeInstanceOfSomeConcept.java");
+    TestCase.assertTrue(someConceptInstanceFile.exists());
   }
 
   @Test

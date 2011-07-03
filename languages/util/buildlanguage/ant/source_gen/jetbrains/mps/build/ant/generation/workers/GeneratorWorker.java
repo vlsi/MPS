@@ -13,27 +13,21 @@ import org.apache.tools.ant.BuildException;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.ProjectOperationContext;
-import java.util.List;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.concurrent.Future;
+import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.ide.ThreadUtils;
+import java.util.concurrent.ExecutionException;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GeneratorManager;
@@ -41,10 +35,17 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.resources.IResource;
 import java.io.File;
 import jetbrains.mps.messages.IMessageHandler;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.messages.IMessage;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
 
 public class GeneratorWorker extends MpsWorker {
   private final GeneratorWorker.MyMessageHandler myMessageHandler = new GeneratorWorker.MyMessageHandler();
@@ -110,70 +111,28 @@ public class GeneratorWorker extends MpsWorker {
     info(s.toString());
     final ProjectOperationContext ctx = ProjectOperationContext.get(project.getProject());
 
-    final List<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
-    final Map<IModule, IMResource> cache = MapSequence.fromMap(new HashMap<IModule, IMResource>());
-    ListSequence.fromList(resources).visitAll(new IVisitor<IMResource>() {
-      public void visit(IMResource r) {
-        MapSequence.fromMap(cache).put(r.module(), r);
-      }
-    });
-    final GeneratorWorker.Graph<IMResource> graph = new GeneratorWorker.Graph<IMResource>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+    ModelAccess.instance().flushEventQueue();
+    final Wrappers._T<Future<IResult>> res = new Wrappers._T<Future<IResult>>();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        for (IMResource res : (Iterable<IMResource>) resources) {
-          graph.addEdges(res);
-          for (IModule depOn : res.module().getDependenciesManager().getAllRequiredModules()) {
-            if (MapSequence.fromMap(cache).containsKey(depOn)) {
-              graph.addEdges(MapSequence.fromMap(cache).get(depOn), res);
-            }
-          }
-          if (res.module() instanceof Language) {
-            for (Generator gen : ((Language) res.module()).getGenerators()) {
-              if (MapSequence.fromMap(cache).containsKey(gen)) {
-                graph.addEdges(res, MapSequence.fromMap(cache).get(gen));
-                graph.addEdges(MapSequence.fromMap(cache).get(gen), res);
-              }
-            }
-          }
-        }
+        res.value = new BuildMakeService(ctx, myMessageHandler).make(resources);
       }
     });
-    GraphAnalyzer<IMResource> ga = graph.getCycleDetector();
-    List<List<IMResource>> cycles = ga.findCycles();
-    for (IMResource res : Sequence.fromIterable(ga.topologicalSort()).where(new IWhereFilter<IMResource>() {
-      public boolean accept(IMResource r) {
-        return MapSequence.fromMap(cache).containsKey(r.module());
+    try {
+      if (!(res.value.get().isSucessful())) {
+        myErrors.add("Make was not successful");
       }
-    })) {
-      final List<IMResource> toMake = ListSequence.fromList(new ArrayList<IMResource>());
-      for (List<IMResource> cycle : cycles) {
-        if (ListSequence.fromList(cycle).contains(res)) {
-          ListSequence.fromList(toMake).addSequence(ListSequence.fromList(cycle));
-          ListSequence.fromList(cycle).visitAll(new IVisitor<IMResource>() {
-            public void visit(IMResource r) {
-              MapSequence.fromMap(cache).removeKey(r.module());
-            }
-          });
-          break;
-        }
-      }
-      if (ListSequence.fromList(toMake).isEmpty()) {
-        ListSequence.fromList(toMake).addElement(res);
-        MapSequence.fromMap(cache).removeKey(res.module());
-      }
-      ModelAccess.instance().flushEventQueue();
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          new BuildMakeService(ctx, myMessageHandler).make(toMake);
-        }
-      });
-      ModelAccess.instance().flushEventQueue();
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        public void run() {
-        }
-      }, ModalityState.defaultModalityState());
+    } catch (InterruptedException e) {
+      myErrors.add(e.toString());
+    } catch (ExecutionException e) {
+      myErrors.add(e.toString());
     }
-
+    ModelAccess.instance().flushEventQueue();
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+      }
+    }, ModalityState.defaultModalityState());
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
