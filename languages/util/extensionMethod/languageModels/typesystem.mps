@@ -36,7 +36,7 @@
   <root id="3316739663069186517">
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3316739663069186519">
       <property name="name" nameId="tpck.1169194664001" value="extensionThis" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uigu.3316739663067157299" resolveInfo="ExtensionThis" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uigu.3316739663067157299" resolveInfo="ThisExtensionExpression" />
     </node>
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="3316739663069207735">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="3316739663069207740">
@@ -417,7 +417,7 @@
                     <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
                     <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3386826992796747911">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796747897" resolveInfo="currenClassifier" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796747897" resolveInfo="currentClassifier" />
                     </node>
                   </node>
                 </node>
@@ -484,7 +484,7 @@
             </node>
             <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3386826992796746316">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3386826992796747908">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796747897" resolveInfo="currenClassifier" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796747897" resolveInfo="currentClassifier" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="3386826992796746318">
                 <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1109279881614" />
@@ -548,16 +548,16 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3386826992796746341">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3386826992796746342">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9215127012917170786">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpeh.3064704932540204336" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpeh.1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpeh.1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3386826992796746343">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012917170787">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7685333756920239761" resolveInfo="methodClassifier" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3386826992796746344">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012917170788">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796746286" resolveInfo="constructedType" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3386826992796746345">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012917170789">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796746320" resolveInfo="mmap" />
               </node>
             </node>
@@ -633,7 +633,7 @@
         <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="3386826992796746270">
           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3386826992796746273" />
           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3386826992796747910">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796747897" resolveInfo="currenClassifier" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3386826992796747897" resolveInfo="currentClassifier" />
           </node>
         </node>
       </node>
