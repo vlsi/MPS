@@ -33,7 +33,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_SubtypingRule_ExpectedReturns_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_TypeofExpression_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_TypesystemIntentionWithoutDescription_NonTypesystemRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_VarRef_in_WhenConcreteStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_VarRef_in_WhenConcreteStatement_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_WhenConcreteStatement_DF_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_WhenConcreteStatement_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.erasure_SNodeType_SubtypingRule" />
@@ -298,7 +298,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.typesystem.check_VarRef_in_WhenConcreteStatement_InferenceRule" file="check_VarRef_in_WhenConcreteStatement_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.typesystem.typesystem.check_VarRef_in_WhenConcreteStatement_NonTypesystemRule" file="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -311,8 +311,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.typesystem.check_WhenConcreteStatement_DF_NonTypesystemRule" file="check_WhenConcreteStatement_DF_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />

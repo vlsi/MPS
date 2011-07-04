@@ -79,7 +79,7 @@
   <unitInfo fileName="typeof_TypesystemIntentionArgument_InferenceRule.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_TypesystemIntentionArgument_InferenceRule" />
   <unitInfo fileName="check_MessageStatement_QuickFix_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.check_MessageStatement_QuickFix_NonTypesystemRule" />
   <unitInfo fileName="check_AbstractEquation_QuickFix_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.check_AbstractEquation_QuickFix_NonTypesystemRule" />
-  <unitInfo fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="19" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.check_VarRef_in_WhenConcreteStatement_InferenceRule" />
+  <unitInfo fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.check_VarRef_in_WhenConcreteStatement_NonTypesystemRule" />
   <unitInfo fileName="typeOf_ImmediateSupertypes_InferenceRule.java" startLine="46" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeOf_ImmediateSupertypes_InferenceRule$QuotationClass_lj3rrf_a0a0a0" />
   <unitInfo fileName="erasure_SNodeType_SubtypingRule.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.erasure_SNodeType_SubtypingRule" />
   <unitInfo fileName="typeof_WasSelectedNodeOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_WasSelectedNodeOperation_InferenceRule" />
@@ -279,38 +279,6 @@
     <nodeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="21" startPosition="134" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1185805532321" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="373" />
     <scopeInfo nodeId="1185805496669" fileName="typeOf_WhenConcreteStatement_InferenceRule.java" startLine="21" startPosition="134" endLine="26" endPosition="5" />
-  </root>
-  <root nodeId="1185873171746">
-    <nodeInfo nodeId="1185873522778" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="23" startPosition="130" endLine="24" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208263735880" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="25" startPosition="27" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208263746841" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="26" startPosition="77" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208263790074" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="29" startPosition="33" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1208263803861" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="31" startPosition="16" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1185875373232" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219237205137" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="36" startPosition="235" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1185875417873" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="40" startPosition="80" endLine="41" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1185875417873" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="41" startPosition="62" endLine="42" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208263800764" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="31" startPosition="14" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1219237170771" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="35" startPosition="109" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1185875417873" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="39" startPosition="210" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1208263783707" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="28" startPosition="52" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1185875409442" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="38" startPosition="7" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1208263767144" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="27" startPosition="39" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1185873469191" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="24" startPosition="147" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1208263783709" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="29" startPosition="33" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="1208263800765" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="31" startPosition="16" endLine="32" endPosition="53" />
-    <scopeInfo nodeId="1219237170772" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="36" startPosition="235" endLine="37" endPosition="15" />
-    <scopeInfo nodeId="1185875417873" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="40" startPosition="80" endLine="42" endPosition="296" />
-    <scopeInfo nodeId="1185875409443" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="39" startPosition="210" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="1208263767146" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="28" startPosition="52" endLine="33" endPosition="9" />
-    <scopeInfo nodeId="1185873469193" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="25" startPosition="27" endLine="44" endPosition="7">
-      <varInfo nodeId="1185875373233" varName="variableDeclaration" />
-      <varInfo nodeId="1208263735881" varName="argument" />
-      <varInfo nodeId="1208263746842" varName="parent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1185873171747" fileName="check_VarRef_in_WhenConcreteStatement_InferenceRule.java" startLine="23" startPosition="130" endLine="45" endPosition="5">
-      <varInfo nodeId="1185873522779" varName="ancestor" />
-    </scopeInfo>
   </root>
   <root nodeId="1185877934980">
     <nodeInfo nodeId="1185878061141" fileName="typeOf_TypeVarReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -993,6 +961,38 @@
   <root nodeId="8290749460590187666">
     <nodeInfo nodeId="8290749460590220275" fileName="superTypesOfMeet_SubtypingRule.java" startLine="18" startPosition="121" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8290749460590187667" fileName="superTypesOfMeet_SubtypingRule.java" startLine="18" startPosition="121" endLine="19" endPosition="62" />
+  </root>
+  <root nodeId="9215127012916007419">
+    <nodeInfo nodeId="9215127012916007423" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="23" startPosition="130" endLine="24" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012916007436" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="25" startPosition="27" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012916007442" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="26" startPosition="77" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012916007460" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="29" startPosition="33" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9215127012916007463" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="31" startPosition="16" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9215127012916007469" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="35" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012916007477" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="36" startPosition="235" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9215127012916007489" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="40" startPosition="80" endLine="41" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012916007489" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="41" startPosition="62" endLine="42" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012916007461" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="31" startPosition="14" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9215127012916007475" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="35" startPosition="109" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9215127012916007489" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="39" startPosition="210" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9215127012916007455" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="28" startPosition="52" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9215127012916007487" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="38" startPosition="7" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9215127012916007446" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="27" startPosition="39" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="9215127012916007431" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="24" startPosition="147" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="9215127012916007459" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="29" startPosition="33" endLine="30" endPosition="17" />
+    <scopeInfo nodeId="9215127012916007462" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="31" startPosition="16" endLine="32" endPosition="53" />
+    <scopeInfo nodeId="9215127012916007476" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="36" startPosition="235" endLine="37" endPosition="15" />
+    <scopeInfo nodeId="9215127012916007489" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="40" startPosition="80" endLine="42" endPosition="302" />
+    <scopeInfo nodeId="9215127012916007488" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="39" startPosition="210" endLine="43" endPosition="9" />
+    <scopeInfo nodeId="9215127012916007454" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="28" startPosition="52" endLine="33" endPosition="9" />
+    <scopeInfo nodeId="9215127012916007435" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="25" startPosition="27" endLine="44" endPosition="7">
+      <varInfo nodeId="9215127012916007470" varName="variableDeclaration" />
+      <varInfo nodeId="9215127012916007437" varName="argument" />
+      <varInfo nodeId="9215127012916007443" varName="parent" />
+    </scopeInfo>
+    <scopeInfo nodeId="9215127012916007422" fileName="check_VarRef_in_WhenConcreteStatement_NonTypesystemRule.java" startLine="23" startPosition="130" endLine="45" endPosition="5">
+      <varInfo nodeId="9215127012916007424" varName="ancestor" />
+    </scopeInfo>
   </root>
 </debugInfo>
 

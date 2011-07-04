@@ -9,7 +9,7 @@
   <unitInfo fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="665" startPosition="0" endLine="693" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a1a0a0a0a0db0a" />
   <unitInfo fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="694" startPosition="0" endLine="722" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a2a0a0a0a0db0a" />
   <unitInfo fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="723" startPosition="0" endLine="751" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a3a0a0a0a0db0a" />
-  <unitInfo fileName="typeof_ReturnStatement_InferenceRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ReturnStatement_InferenceRule" />
+  <unitInfo fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.check_ReturnStatement_NonTypesystemRule" />
   <unitInfo fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="45" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_FunctionType_SubtypingRule$QuotationClass_8hodjs_a0a0a0a0a" />
   <unitInfo fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="256" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_FunctionType_InequationReplacementRule$QuotationClass_8k7qpx_a0a0h0a" />
   <unitInfo fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="351" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a0a0a0p0a" />
@@ -183,17 +183,6 @@
       <varInfo nodeId="1199711574726" varName="cl" />
       <varInfo nodeId="1225469510772" varName="ptypes" />
     </scopeInfo>
-  </root>
-  <root nodeId="1200829815877">
-    <nodeInfo nodeId="7376433222636453907" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="20" startPosition="128" endLine="21" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7376433222636453875" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="21" startPosition="78" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1200829870877" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="24" startPosition="21" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200829870877" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="25" startPosition="60" endLine="26" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200829870877" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="23" startPosition="152" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200829846975" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="22" startPosition="29" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1200829870877" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="24" startPosition="21" endLine="26" endPosition="273" />
-    <scopeInfo nodeId="1200829846977" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="23" startPosition="152" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1200829815878" fileName="typeof_ReturnStatement_InferenceRule.java" startLine="20" startPosition="128" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1201614755266">
     <nodeInfo nodeId="1229719015332" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="35" startPosition="7" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -982,6 +971,17 @@
     <nodeInfo nodeId="81108310549155632" fileName="check_ClosureLiteralDataFlow_NonTypesystemRule.java" startLine="19" startPosition="127" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="81108310549155633" fileName="check_ClosureLiteralDataFlow_NonTypesystemRule.java" startLine="20" startPosition="102" endLine="21" endPosition="111" />
     <scopeInfo nodeId="81108310549037923" fileName="check_ClosureLiteralDataFlow_NonTypesystemRule.java" startLine="19" startPosition="127" endLine="22" endPosition="5" />
+  </root>
+  <root nodeId="9215127012916007634">
+    <nodeInfo nodeId="7376433222636453907" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="20" startPosition="128" endLine="21" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7376433222636453875" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="21" startPosition="78" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1200829870877" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="24" startPosition="21" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200829870877" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200829870877" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="23" startPosition="152" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1200829846975" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="22" startPosition="29" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1200829870877" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="24" startPosition="21" endLine="26" endPosition="273" />
+    <scopeInfo nodeId="1200829846977" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="23" startPosition="152" endLine="27" endPosition="7" />
+    <scopeInfo nodeId="1200829815878" fileName="check_ReturnStatement_NonTypesystemRule.java" startLine="20" startPosition="128" endLine="28" endPosition="5" />
   </root>
 </debugInfo>
 
