@@ -18,8 +18,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.project.ProjectOperationContext;
+import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.impl.ConsoleViewImpl;
+import jetbrains.mps.ide.common.JavaConsoleCreator;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
@@ -55,7 +57,9 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
 
     TestRunState runState = new TestRunState(nodeWrappers);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
-    final UnitTestViewComponent viewComponent = new UnitTestViewComponent(project, ProjectOperationContext.get(project), new ConsoleViewImpl(project, false), runState, new _FunctionTypes._void_P0_E0() {
+    ConsoleView console = new ConsoleViewImpl(project, false);
+    console.addMessageFilter(new JavaConsoleCreator.StackTraceFilter());
+    final UnitTestViewComponent viewComponent = new UnitTestViewComponent(project, ProjectOperationContext.get(project), console, runState, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         if (process != null) {
           process.destroyProcess();

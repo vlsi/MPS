@@ -870,6 +870,15 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1594211126127899152">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.1594211126127733907" resolveInfo="ConsoleType" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1594211126127899153">
+        <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.console" />
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1594211126127899155">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="l649.~ConsoleView" resolveInfo="ConsoleView" />
+        </node>
+      </node>
+    </node>
   </root>
   <root id="3754890006475632887">
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4042467058397380791">
