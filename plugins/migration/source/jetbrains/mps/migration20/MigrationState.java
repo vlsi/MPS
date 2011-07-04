@@ -44,7 +44,7 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   private Project myProject;
   private MPSProjectVersion myVersion;
 
-  public MigrationState(Project project,MPSProjectVersion version) {
+  public MigrationState(Project project, MPSProjectVersion version) {
     myProject = project;
     myVersion = version;
   }
@@ -55,6 +55,9 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
 
   public void setMigrationState(MState state) {
     myState = state;
+    if (myState == MState.DONE) {
+      myVersion.setVersion(MPSProjectVersion.CURRENT);
+    }
   }
 
   //----------load/save stuff-------------
@@ -67,9 +70,9 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
 
   public void loadState(MyState state) {
     try {
-      myState = MState.valueOf(state.myState);
+      setMigrationState(MState.valueOf(state.myState));
     } catch (IllegalArgumentException e) {
-      myState = MState.INITIAL;
+      setMigrationState(MState.INITIAL);
     }
   }
 
@@ -101,7 +104,7 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
           variants.toArray(new String[variants.size()]), 0, Messages.getQuestionIcon()
         );
         if (res == 2) {
-          myState = MState.DONE;
+          setMigrationState(MState.DONE);
         }
         if (res != 0) return;
         new MigrationHelper(myProject).migrate();
