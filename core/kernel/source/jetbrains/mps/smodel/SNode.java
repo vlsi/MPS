@@ -282,7 +282,7 @@ public final class SNode {
       return resolveInfo;
     }
     // tmp hack
-    return getProperty(SNodeUtil.property_INamedConcept_name);
+    return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
   }
 
   public String getRole_() {
