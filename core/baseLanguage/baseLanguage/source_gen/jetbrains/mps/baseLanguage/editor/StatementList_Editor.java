@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -63,7 +64,10 @@ public class StatementList_Editor extends DefaultNodeEditor {
   }
 
   private static boolean _StyleParameter_QueryFunction_u338ov_a1a0(SNode node, EditorContext editorContext) {
-    return !(StatementList_Behavior.call_isCompact_1237546596168(node));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      return !(StatementList_Behavior.call_isCompact_1237546596168(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")));
+    }
+    return false;
   }
 
   private static class statementListHandler_u338ov_a0 extends RefNodeListHandler {
