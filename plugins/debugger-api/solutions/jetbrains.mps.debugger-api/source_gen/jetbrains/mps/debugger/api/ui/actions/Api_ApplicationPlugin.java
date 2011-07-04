@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -32,7 +31,6 @@ public class Api_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ToggleBreakpoint_Action());
     addAction(new ViewBreakpoints_Action());
     // groups 
-    addGroup(new Breakpoints_ActionGroup());
     addGroup(new DebugRunMenu_ActionGroup());
     addGroup(new DebugTool_ActionGroup());
   }
@@ -43,7 +41,6 @@ public class Api_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(Breakpoints_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
   }
 

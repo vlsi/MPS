@@ -183,7 +183,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FavoritesPopup_ActionGroup.ID, FavoritesPopupWrapper_ActionGroup.ID, null);
-    insertGroupIntoAnother(Bookmarks_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(Bookmarks_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Build_ActionGroup.ID, "BuildMenu", null);
     insertGroupIntoAnother(DebugActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
