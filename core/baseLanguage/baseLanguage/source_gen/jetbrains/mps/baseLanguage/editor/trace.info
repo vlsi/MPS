@@ -69,7 +69,7 @@
   <unitInfo fileName="ArrayType_Brackets_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayType_Brackets_Actions$ArrayType_Brackets_Actions_DELETE" />
   <unitInfo fileName="IfStatement_LastBrace.java" startLine="19" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IfStatement_LastBrace$IfStatement_LastBrace_DELETE" />
   <unitInfo fileName="ClassifierClassExpression_Editor.java" startLine="72" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierClassExpression_Editor$_Inline_ejwutq_a0a" />
-  <unitInfo fileName="ClassifierType_Editor.java" startLine="118" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierType_Editor$_Inline_91bvrs_a0a" />
+  <unitInfo fileName="ClassifierType_Editor.java" startLine="122" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierType_Editor$_Inline_91bvrs_a0a" />
   <unitInfo fileName="ClassCreator_Editor.java" startLine="149" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassCreator_Editor$_Inline_53xyyk_a1a" />
   <unitInfo fileName="AnonymousClass_Editor.java" startLine="408" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnonymousClass_Editor$_Inline_msf9u8_a0a0" />
   <unitInfo fileName="AbstractOperation_Editor.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AbstractOperation_Editor" />
@@ -239,7 +239,7 @@
   <unitInfo fileName="PostfixDecrementExpression_Editor.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.PostfixDecrementExpression_Editor" />
   <unitInfo fileName="ArrayLiteral_Editor.java" startLine="69" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayLiteral_Editor$itemListHandler_maey8r_b0" />
   <unitInfo fileName="_GenericDeclaration_TypeVariables_Component.java" startLine="85" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component$typeVariableDeclarationListHandler_k0lfun_b0" />
-  <unitInfo fileName="ClassifierType_Editor.java" startLine="138" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierType_Editor$parameterListHandler_91bvrs_b1a" />
+  <unitInfo fileName="ClassifierType_Editor.java" startLine="142" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierType_Editor$parameterListHandler_91bvrs_b1a" />
   <unitInfo fileName="TypeVariableDeclaration_Editor.java" startLine="143" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_Editor$auxBoundsListHandler_bfm5ok_b2b0" />
   <unitInfo fileName="ClassCreator_Editor.java" startLine="169" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassCreator_Editor$typeParameterListHandler_53xyyk_b2a" />
   <unitInfo fileName="ConstructorDeclaration_Editor.java" startLine="300" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ConstructorDeclaration_Editor$throwsItemListHandler_1x071y_b8a" />
@@ -394,8 +394,8 @@
   <unitInfo fileName="IMethodCall_actualArguments.java" startLine="28" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments" />
   <unitInfo fileName="ArrayCreatorWithInitializer_Editor.java" startLine="28" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayCreatorWithInitializer_Editor" />
   <unitInfo fileName="ElsifClause_Editor.java" startLine="29" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ElsifClause_Editor" />
-  <unitInfo fileName="ClassifierType_Editor.java" startLine="33" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierType_Editor" />
   <unitInfo fileName="EnumConstantReference_Editor.java" startLine="30" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumConstantReference_Editor" />
+  <unitInfo fileName="ClassifierType_Editor.java" startLine="33" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierType_Editor" />
   <unitInfo fileName="UsingStatement_Editor.java" startLine="28" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.UsingStatement_Editor" />
   <unitInfo fileName="TypeVariableDeclaration_Editor.java" startLine="31" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_Editor" />
   <unitInfo fileName="BreakStatement_Editor.java" startLine="32" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BreakStatement_Editor" />
@@ -783,8 +783,8 @@
     <scopeInfo nodeId="1215091332473" fileName="TypeVariableDeclaration_Editor.java" startLine="139" startPosition="112" endLine="140" endPosition="99" />
   </root>
   <root nodeId="1128163980260">
-    <nodeInfo nodeId="1211505194190" fileName="ClassifierType_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1211505190704" fileName="ClassifierType_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="98" />
+    <nodeInfo nodeId="1211505194190" fileName="ClassifierType_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1211505190704" fileName="ClassifierType_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="98" />
   </root>
   <root nodeId="1137022694554">
     <nodeInfo nodeId="1207578515846" fileName="ConceptFunction_Editor.java" startLine="37" startPosition="75" endLine="38" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
