@@ -53,22 +53,22 @@
   <root nodeId="1143458983612877046">
     <nodeInfo nodeId="1143458983612877343" fileName="SimpleDuplicatesFinder.java" startLine="12" startPosition="37" endLine="13" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeToMatch" />
     <nodeInfo nodeId="1143458983612877351" fileName="SimpleDuplicatesFinder.java" startLine="15" startPosition="45" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1143458983612877053" fileName="SimpleDuplicatesFinder.java" startLine="19" startPosition="49" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1143458983612877090" fileName="SimpleDuplicatesFinder.java" startLine="22" startPosition="92" endLine="23" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7274810114828015514" fileName="SimpleDuplicatesFinder.java" startLine="19" startPosition="49" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1143458983612877090" fileName="SimpleDuplicatesFinder.java" startLine="22" startPosition="92" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1143458983612877100" fileName="SimpleDuplicatesFinder.java" startLine="25" startPosition="5" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1143458983612877347" fileName="SimpleDuplicatesFinder.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleDuplicatesFinder#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1143458983612877088" fileName="SimpleDuplicatesFinder.java" startLine="21" startPosition="156" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1143458983612877059" fileName="SimpleDuplicatesFinder.java" startLine="20" startPosition="47" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1143458983612877047" fileName="SimpleDuplicatesFinder.java" startLine="18" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDuplicates#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1143458983612877350" fileName="SimpleDuplicatesFinder.java" startLine="15" startPosition="45" endLine="16" endPosition="30" />
-    <scopeInfo nodeId="1143458983612877089" fileName="SimpleDuplicatesFinder.java" startLine="22" startPosition="92" endLine="23" endPosition="54" />
+    <scopeInfo nodeId="1143458983612877089" fileName="SimpleDuplicatesFinder.java" startLine="22" startPosition="92" endLine="23" endPosition="24" />
     <scopeInfo nodeId="1143458983612877347" fileName="SimpleDuplicatesFinder.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="1143458983612877357" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1143458983612877066" fileName="SimpleDuplicatesFinder.java" startLine="21" startPosition="156" endLine="24" endPosition="7" />
     <scopeInfo nodeId="1143458983612877059" fileName="SimpleDuplicatesFinder.java" startLine="20" startPosition="47" endLine="25" endPosition="5" />
     <scopeInfo nodeId="1143458983612877052" fileName="SimpleDuplicatesFinder.java" startLine="19" startPosition="49" endLine="26" endPosition="17">
-      <varInfo nodeId="1143458983612877054" varName="found" />
+      <varInfo nodeId="7274810114828015515" varName="found" />
     </scopeInfo>
     <scopeInfo nodeId="1143458983612877047" fileName="SimpleDuplicatesFinder.java" startLine="18" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1143458983612877050" varName="root" />
@@ -721,7 +721,7 @@
     <nodeInfo nodeId="5161277940733353677" fileName="ChangeMethodSignatureDialog.java" startLine="40" startPosition="55" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
     <nodeInfo nodeId="5161277940733353680" fileName="ChangeMethodSignatureDialog.java" startLine="41" startPosition="47" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
     <nodeInfo nodeId="5161277940733382733" fileName="ChangeMethodSignatureDialog.java" startLine="42" startPosition="36" endLine="43" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactorings" />
-    <nodeInfo nodeId="5161277940733353688" fileName="ChangeMethodSignatureDialog.java" startLine="45" startPosition="86" endLine="46" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7274810114828063754" fileName="ChangeMethodSignatureDialog.java" startLine="45" startPosition="86" endLine="46" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5161277940733353693" fileName="ChangeMethodSignatureDialog.java" startLine="46" startPosition="70" endLine="47" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="5161277940733353699" fileName="ChangeMethodSignatureDialog.java" startLine="47" startPosition="51" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5161277940733353705" fileName="ChangeMethodSignatureDialog.java" startLine="48" startPosition="47" endLine="49" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3477,7 +3477,7 @@
   </root>
   <root nodeId="8492459591399165441">
     <nodeInfo nodeId="8492459591399165442" fileName="IntroduceFieldDialog.java" startLine="19" startPosition="67" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoring" />
-    <nodeInfo nodeId="8492459591399165450" fileName="IntroduceFieldDialog.java" startLine="22" startPosition="112" endLine="23" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7274810114828063733" fileName="IntroduceFieldDialog.java" startLine="22" startPosition="112" endLine="23" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2163048091639667527" fileName="IntroduceFieldDialog.java" startLine="23" startPosition="51" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399165454" fileName="IntroduceFieldDialog.java" startLine="24" startPosition="49" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399165460" fileName="IntroduceFieldDialog.java" startLine="25" startPosition="37" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4604,7 +4604,7 @@
     <nodeInfo nodeId="8492459591399169049" fileName="MethodParameter.java" startLine="47" startPosition="47" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169062" fileName="MethodParameter.java" startLine="49" startPosition="35" endLine="50" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399169072" fileName="MethodParameter.java" startLine="51" startPosition="56" endLine="52" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169081" fileName="MethodParameter.java" startLine="52" startPosition="86" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169081" fileName="MethodParameter.java" startLine="52" startPosition="86" endLine="53" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169090" fileName="MethodParameter.java" startLine="55" startPosition="57" endLine="56" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169095" fileName="MethodParameter.java" startLine="57" startPosition="7" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169099" fileName="MethodParameter.java" startLine="59" startPosition="5" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4615,29 +4615,31 @@
     <nodeInfo nodeId="8492459591399169143" fileName="MethodParameter.java" startLine="72" startPosition="35" endLine="73" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169155" fileName="MethodParameter.java" startLine="76" startPosition="42" endLine="77" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169160" fileName="MethodParameter.java" startLine="77" startPosition="27" endLine="78" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169173" fileName="MethodParameter.java" startLine="81" startPosition="33" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169181" fileName="MethodParameter.java" startLine="85" startPosition="31" endLine="86" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169192" fileName="MethodParameter.java" startLine="89" startPosition="45" endLine="90" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169201" fileName="MethodParameter.java" startLine="93" startPosition="43" endLine="94" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169211" fileName="MethodParameter.java" startLine="97" startPosition="31" endLine="98" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169230" fileName="MethodParameter.java" startLine="102" startPosition="119" endLine="103" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399169237" fileName="MethodParameter.java" startLine="104" startPosition="5" endLine="105" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7274810114828063726" fileName="MethodParameter.java" startLine="82" startPosition="118" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169173" fileName="MethodParameter.java" startLine="84" startPosition="5" endLine="85" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169181" fileName="MethodParameter.java" startLine="88" startPosition="31" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169192" fileName="MethodParameter.java" startLine="92" startPosition="45" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169201" fileName="MethodParameter.java" startLine="96" startPosition="43" endLine="97" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169211" fileName="MethodParameter.java" startLine="100" startPosition="31" endLine="101" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169230" fileName="MethodParameter.java" startLine="105" startPosition="119" endLine="106" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399169237" fileName="MethodParameter.java" startLine="107" startPosition="5" endLine="108" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399168981" fileName="MethodParameter.java" startLine="32" startPosition="10" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8492459591399169086" fileName="MethodParameter.java" startLine="54" startPosition="7" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399169222" fileName="MethodParameter.java" startLine="101" startPosition="28" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7274810114828015549" fileName="MethodParameter.java" startLine="81" startPosition="33" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399169222" fileName="MethodParameter.java" startLine="104" startPosition="28" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399169015" fileName="MethodParameter.java" startLine="40" startPosition="46" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399169068" fileName="MethodParameter.java" startLine="50" startPosition="63" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399169106" fileName="MethodParameter.java" startLine="60" startPosition="73" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399169131" fileName="MethodParameter.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8492459591399169139" fileName="MethodParameter.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setType#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399169171" fileName="MethodParameter.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeclaration#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399169179" fileName="MethodParameter.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" />
-    <nodeInfo nodeId="8492459591399169187" fileName="MethodParameter.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
-    <nodeInfo nodeId="8492459591399169199" fileName="MethodParameter.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableTypes#()Ljava/util/List;" />
-    <nodeInfo nodeId="8492459591399169208" fileName="MethodParameter.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReference#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399169179" fileName="MethodParameter.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" />
+    <nodeInfo nodeId="8492459591399169187" fileName="MethodParameter.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
+    <nodeInfo nodeId="8492459591399169199" fileName="MethodParameter.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableTypes#()Ljava/util/List;" />
+    <nodeInfo nodeId="8492459591399169208" fileName="MethodParameter.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReference#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8492459591399168968" fileName="MethodParameter.java" startLine="29" startPosition="23" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399169151" fileName="MethodParameter.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTypeByName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8492459591399169218" fileName="MethodParameter.java" startLine="100" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFinal#()Z" />
+    <nodeInfo nodeId="8492459591399169171" fileName="MethodParameter.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDeclaration#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399169218" fileName="MethodParameter.java" startLine="103" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFinal#()Z" />
     <nodeInfo nodeId="8492459591399169056" fileName="MethodParameter.java" startLine="48" startPosition="30" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8492459591399168946" fileName="MethodParameter.java" startLine="26" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodParameter#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="8492459591399169010" fileName="MethodParameter.java" startLine="39" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAvailableTypes#()Ljava/util/List;" />
@@ -4646,16 +4648,16 @@
     <scopeInfo nodeId="8492459591399169089" fileName="MethodParameter.java" startLine="55" startPosition="57" endLine="56" endPosition="45" />
     <scopeInfo nodeId="8492459591399169132" fileName="MethodParameter.java" startLine="68" startPosition="26" endLine="69" endPosition="23" />
     <scopeInfo nodeId="8492459591399169142" fileName="MethodParameter.java" startLine="72" startPosition="35" endLine="73" endPosition="23" />
-    <scopeInfo nodeId="8492459591399169172" fileName="MethodParameter.java" startLine="81" startPosition="33" endLine="82" endPosition="30" />
-    <scopeInfo nodeId="8492459591399169180" fileName="MethodParameter.java" startLine="85" startPosition="31" endLine="86" endPosition="27" />
-    <scopeInfo nodeId="8492459591399169191" fileName="MethodParameter.java" startLine="89" startPosition="45" endLine="90" endPosition="31" />
-    <scopeInfo nodeId="8492459591399169200" fileName="MethodParameter.java" startLine="93" startPosition="43" endLine="94" endPosition="33" />
-    <scopeInfo nodeId="8492459591399169210" fileName="MethodParameter.java" startLine="97" startPosition="31" endLine="98" endPosition="62" />
-    <scopeInfo nodeId="8492459591399169229" fileName="MethodParameter.java" startLine="102" startPosition="119" endLine="103" endPosition="157" />
+    <scopeInfo nodeId="7274810114828015550" fileName="MethodParameter.java" startLine="82" startPosition="118" endLine="83" endPosition="18" />
+    <scopeInfo nodeId="8492459591399169180" fileName="MethodParameter.java" startLine="88" startPosition="31" endLine="89" endPosition="27" />
+    <scopeInfo nodeId="8492459591399169191" fileName="MethodParameter.java" startLine="92" startPosition="45" endLine="93" endPosition="31" />
+    <scopeInfo nodeId="8492459591399169200" fileName="MethodParameter.java" startLine="96" startPosition="43" endLine="97" endPosition="33" />
+    <scopeInfo nodeId="8492459591399169210" fileName="MethodParameter.java" startLine="100" startPosition="31" endLine="101" endPosition="62" />
+    <scopeInfo nodeId="8492459591399169229" fileName="MethodParameter.java" startLine="105" startPosition="119" endLine="106" endPosition="157" />
     <scopeInfo nodeId="8492459591399169016" fileName="MethodParameter.java" startLine="41" startPosition="30" endLine="43" endPosition="20">
       <varInfo nodeId="8492459591399169018" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169071" fileName="MethodParameter.java" startLine="51" startPosition="56" endLine="53" endPosition="54" />
+    <scopeInfo nodeId="8492459591399169071" fileName="MethodParameter.java" startLine="51" startPosition="56" endLine="53" endPosition="121" />
     <scopeInfo nodeId="8492459591399169109" fileName="MethodParameter.java" startLine="61" startPosition="53" endLine="63" endPosition="70" />
     <scopeInfo nodeId="8492459591399169154" fileName="MethodParameter.java" startLine="76" startPosition="42" endLine="78" endPosition="65" />
     <scopeInfo nodeId="8492459591399169086" fileName="MethodParameter.java" startLine="54" startPosition="7" endLine="57" endPosition="7" />
@@ -4665,18 +4667,19 @@
     <scopeInfo nodeId="8492459591399169139" fileName="MethodParameter.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="8492459591399169140" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169171" fileName="MethodParameter.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="8492459591399169179" fileName="MethodParameter.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="8492459591399169187" fileName="MethodParameter.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="8492459591399169172" fileName="MethodParameter.java" startLine="81" startPosition="33" endLine="85" endPosition="113" />
+    <scopeInfo nodeId="8492459591399169179" fileName="MethodParameter.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169187" fileName="MethodParameter.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="8492459591399169188" varName="selected" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169199" fileName="MethodParameter.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="8492459591399169208" fileName="MethodParameter.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="8492459591399169221" fileName="MethodParameter.java" startLine="101" startPosition="28" endLine="105" endPosition="17" />
+    <scopeInfo nodeId="8492459591399169199" fileName="MethodParameter.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169208" fileName="MethodParameter.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169221" fileName="MethodParameter.java" startLine="104" startPosition="28" endLine="108" endPosition="17" />
     <scopeInfo nodeId="8492459591399169151" fileName="MethodParameter.java" startLine="75" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="8492459591399169152" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169218" fileName="MethodParameter.java" startLine="100" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169171" fileName="MethodParameter.java" startLine="80" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="8492459591399169218" fileName="MethodParameter.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="8492459591399169061" fileName="MethodParameter.java" startLine="49" startPosition="35" endLine="58" endPosition="27">
       <varInfo nodeId="8492459591399169063" varName="ancestors" />
     </scopeInfo>
@@ -4694,7 +4697,7 @@
       <varInfo nodeId="8492459591399169044" varName="found" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399169010" fileName="MethodParameter.java" startLine="39" startPosition="0" endLine="67" endPosition="0" />
-    <unitInfo nodeId="8492459591399168919" fileName="MethodParameter.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
+    <unitInfo nodeId="8492459591399168919" fileName="MethodParameter.java" startLine="19" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
   </root>
   <root nodeId="8492459591399169241">
     <nodeInfo nodeId="8492459591399169248" fileName="IntroduceConstantRefactoring.java" startLine="19" startPosition="32" endLine="20" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -6435,39 +6438,41 @@
     <nodeInfo nodeId="8492459591399174693" fileName="InlineMethodRefactoring.java" startLine="252" startPosition="118" endLine="253" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399174720" fileName="InlineMethodRefactoring.java" startLine="255" startPosition="78" endLine="256" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399174734" fileName="InlineMethodRefactoring.java" startLine="259" startPosition="5" endLine="260" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174760" fileName="InlineMethodRefactoring.java" startLine="262" startPosition="37" endLine="263" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399174771" fileName="InlineMethodRefactoring.java" startLine="265" startPosition="8" endLine="266" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174779" fileName="InlineMethodRefactoring.java" startLine="267" startPosition="15" endLine="268" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399174782" fileName="InlineMethodRefactoring.java" startLine="269" startPosition="5" endLine="270" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174804" fileName="InlineMethodRefactoring.java" startLine="272" startPosition="70" endLine="273" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399174806" fileName="InlineMethodRefactoring.java" startLine="275" startPosition="5" endLine="276" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399174815" fileName="InlineMethodRefactoring.java" startLine="279" startPosition="31" endLine="280" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174820" fileName="InlineMethodRefactoring.java" startLine="280" startPosition="43" endLine="281" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174830" fileName="InlineMethodRefactoring.java" startLine="281" startPosition="142" endLine="282" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174848" fileName="InlineMethodRefactoring.java" startLine="283" startPosition="58" endLine="284" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174858" fileName="InlineMethodRefactoring.java" startLine="285" startPosition="65" endLine="286" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174864" fileName="InlineMethodRefactoring.java" startLine="287" startPosition="111" endLine="288" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399174874" fileName="InlineMethodRefactoring.java" startLine="290" startPosition="109" endLine="291" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399174882" fileName="InlineMethodRefactoring.java" startLine="292" startPosition="9" endLine="293" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399174896" fileName="InlineMethodRefactoring.java" startLine="293" startPosition="71" endLine="294" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399174901" fileName="InlineMethodRefactoring.java" startLine="294" startPosition="79" endLine="295" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399174916" fileName="InlineMethodRefactoring.java" startLine="297" startPosition="5" endLine="298" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="305" startPosition="49" endLine="306" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="306" startPosition="26" endLine="307" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="307" startPosition="67" endLine="308" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="308" startPosition="32" endLine="309" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="310" startPosition="7" endLine="311" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="311" startPosition="164" endLine="312" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="313" startPosition="9" endLine="314" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="314" startPosition="45" endLine="315" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="316" startPosition="66" endLine="317" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="318" startPosition="18" endLine="319" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="319" startPosition="57" endLine="320" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="322" startPosition="38" endLine="323" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="325" startPosition="9" endLine="326" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="327" startPosition="7" endLine="328" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7274810114828063761" fileName="InlineMethodRefactoring.java" startLine="260" startPosition="67" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7274810114828063813" fileName="InlineMethodRefactoring.java" startLine="263" startPosition="37" endLine="264" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7274810114828063764" fileName="InlineMethodRefactoring.java" startLine="266" startPosition="8" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8492459591399174771" fileName="InlineMethodRefactoring.java" startLine="267" startPosition="0" endLine="268" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174779" fileName="InlineMethodRefactoring.java" startLine="269" startPosition="15" endLine="270" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399174782" fileName="InlineMethodRefactoring.java" startLine="271" startPosition="5" endLine="272" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174804" fileName="InlineMethodRefactoring.java" startLine="274" startPosition="70" endLine="275" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399174806" fileName="InlineMethodRefactoring.java" startLine="277" startPosition="5" endLine="278" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399174815" fileName="InlineMethodRefactoring.java" startLine="281" startPosition="31" endLine="282" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174820" fileName="InlineMethodRefactoring.java" startLine="282" startPosition="43" endLine="283" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174830" fileName="InlineMethodRefactoring.java" startLine="283" startPosition="142" endLine="284" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174848" fileName="InlineMethodRefactoring.java" startLine="285" startPosition="58" endLine="286" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174858" fileName="InlineMethodRefactoring.java" startLine="287" startPosition="136" endLine="288" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174864" fileName="InlineMethodRefactoring.java" startLine="289" startPosition="111" endLine="290" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399174874" fileName="InlineMethodRefactoring.java" startLine="292" startPosition="109" endLine="293" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399174882" fileName="InlineMethodRefactoring.java" startLine="294" startPosition="9" endLine="295" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399174896" fileName="InlineMethodRefactoring.java" startLine="295" startPosition="71" endLine="296" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399174901" fileName="InlineMethodRefactoring.java" startLine="296" startPosition="79" endLine="297" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399174916" fileName="InlineMethodRefactoring.java" startLine="299" startPosition="5" endLine="300" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="307" startPosition="49" endLine="308" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="308" startPosition="26" endLine="309" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="309" startPosition="67" endLine="310" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="310" startPosition="32" endLine="311" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="312" startPosition="7" endLine="313" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="313" startPosition="164" endLine="314" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="315" startPosition="9" endLine="316" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="316" startPosition="45" endLine="317" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="318" startPosition="66" endLine="319" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="320" startPosition="18" endLine="321" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="321" startPosition="57" endLine="322" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="324" startPosition="38" endLine="325" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="327" startPosition="9" endLine="328" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="329" startPosition="7" endLine="330" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8492459591399174999" fileName="InlineMethodRefactoring.java" startLine="45" startPosition="10" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="301" startPosition="55" endLine="303" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_49noxv_a0a0a0b0b#()V" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="303" startPosition="55" endLine="305" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_49noxv_a0a0a0b0b#()V" />
     <nodeInfo nodeId="8492459591399173832" fileName="InlineMethodRefactoring.java" startLine="58" startPosition="27" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399173893" fileName="InlineMethodRefactoring.java" startLine="68" startPosition="44" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399173943" fileName="InlineMethodRefactoring.java" startLine="78" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -6485,27 +6490,27 @@
     <nodeInfo nodeId="8492459591399174637" fileName="InlineMethodRefactoring.java" startLine="238" startPosition="57" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399174650" fileName="InlineMethodRefactoring.java" startLine="242" startPosition="14" endLine="245" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8492459591399174712" fileName="InlineMethodRefactoring.java" startLine="254" startPosition="174" endLine="257" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399174777" fileName="InlineMethodRefactoring.java" startLine="266" startPosition="61" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399174796" fileName="InlineMethodRefactoring.java" startLine="271" startPosition="107" endLine="274" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399174862" fileName="InlineMethodRefactoring.java" startLine="286" startPosition="26" endLine="289" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399174872" fileName="InlineMethodRefactoring.java" startLine="289" startPosition="9" endLine="292" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="318" startPosition="16" endLine="321" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="321" startPosition="11" endLine="324" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399174777" fileName="InlineMethodRefactoring.java" startLine="268" startPosition="61" endLine="271" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399174796" fileName="InlineMethodRefactoring.java" startLine="273" startPosition="107" endLine="276" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399174862" fileName="InlineMethodRefactoring.java" startLine="288" startPosition="26" endLine="291" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399174872" fileName="InlineMethodRefactoring.java" startLine="291" startPosition="9" endLine="294" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="320" startPosition="16" endLine="323" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="323" startPosition="11" endLine="326" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399174032" fileName="InlineMethodRefactoring.java" startLine="98" startPosition="30" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399174298" fileName="InlineMethodRefactoring.java" startLine="150" startPosition="177" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8492459591399174754" fileName="InlineMethodRefactoring.java" startLine="261" startPosition="83" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7274810114828063807" fileName="InlineMethodRefactoring.java" startLine="262" startPosition="83" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8492459591399174085" fileName="InlineMethodRefactoring.java" startLine="111" startPosition="49" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399174388" fileName="InlineMethodRefactoring.java" startLine="169" startPosition="14" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8492459591399174704" fileName="InlineMethodRefactoring.java" startLine="253" startPosition="146" endLine="258" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399174740" fileName="InlineMethodRefactoring.java" startLine="260" startPosition="67" endLine="265" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8492459591399174790" fileName="InlineMethodRefactoring.java" startLine="270" startPosition="139" endLine="275" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7274810114828063793" fileName="InlineMethodRefactoring.java" startLine="261" startPosition="0" endLine="266" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8492459591399174790" fileName="InlineMethodRefactoring.java" startLine="272" startPosition="139" endLine="277" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399174972" fileName="InlineMethodRefactoring.java" startLine="41" startPosition="78" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399173846" fileName="InlineMethodRefactoring.java" startLine="61" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399173912" fileName="InlineMethodRefactoring.java" startLine="72" startPosition="64" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399174163" fileName="InlineMethodRefactoring.java" startLine="121" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifierType#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8492459591399174251" fileName="InlineMethodRefactoring.java" startLine="140" startPosition="135" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399174290" fileName="InlineMethodRefactoring.java" startLine="149" startPosition="88" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="315" startPosition="30" endLine="321" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="317" startPosition="30" endLine="323" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399173980" fileName="InlineMethodRefactoring.java" startLine="87" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLastReturnStatement#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="8492459591399174500" fileName="InlineMethodRefactoring.java" startLine="208" startPosition="99" endLine="215" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399174598" fileName="InlineMethodRefactoring.java" startLine="230" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createLocalVariableDeclaration#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
@@ -6521,24 +6526,24 @@
     <nodeInfo nodeId="8492459591399174183" fileName="InlineMethodRefactoring.java" startLine="127" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAssignmentExpression#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8492459591399174540" fileName="InlineMethodRefactoring.java" startLine="219" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVariable#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8492459591399174634" fileName="InlineMethodRefactoring.java" startLine="237" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findName#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8492459591399174856" fileName="InlineMethodRefactoring.java" startLine="284" startPosition="124" endLine="296" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8492459591399174856" fileName="InlineMethodRefactoring.java" startLine="286" startPosition="124" endLine="298" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8492459591399174016" fileName="InlineMethodRefactoring.java" startLine="95" startPosition="89" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399174489" fileName="InlineMethodRefactoring.java" startLine="206" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="variableWriting#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="312" startPosition="43" endLine="325" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="312" startPosition="43" endLine="325" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="314" startPosition="43" endLine="327" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="314" startPosition="43" endLine="327" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8492459591399174357" fileName="InlineMethodRefactoring.java" startLine="162" startPosition="101" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="8492459591399174944" fileName="InlineMethodRefactoring.java" startLine="37" startPosition="0" endLine="52" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineMethodRefactoring#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399174844" fileName="InlineMethodRefactoring.java" startLine="282" startPosition="102" endLine="297" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8492459591399174844" fileName="InlineMethodRefactoring.java" startLine="284" startPosition="102" endLine="299" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8492459591399174012" fileName="InlineMethodRefactoring.java" startLine="94" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceReturnSatements#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="309" startPosition="32" endLine="327" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="309" startPosition="32" endLine="327" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="311" startPosition="32" endLine="329" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="311" startPosition="32" endLine="329" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8492459591399174435" fileName="InlineMethodRefactoring.java" startLine="187" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSubstituteParameter#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8492459591399174327" fileName="InlineMethodRefactoring.java" startLine="157" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareParameters#()Ljava/util/Map;" />
-    <nodeInfo nodeId="8492459591399174813" fileName="InlineMethodRefactoring.java" startLine="278" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProblems#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="304" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8492459591399174672" fileName="InlineMethodRefactoring.java" startLine="248" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNameGood#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8492459591399174813" fileName="InlineMethodRefactoring.java" startLine="280" startPosition="0" endLine="302" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProblems#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="306" startPosition="0" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8492459591399174672" fileName="InlineMethodRefactoring.java" startLine="248" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNameGood#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="8492459591399173796" fileName="InlineMethodRefactoring.java" startLine="53" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactor#()V" />
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="302" startPosition="46" endLine="302" endPosition="46" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="304" startPosition="46" endLine="304" endPosition="46" />
     <scopeInfo nodeId="8492459591399175000" fileName="InlineMethodRefactoring.java" startLine="45" startPosition="12" endLine="46" endPosition="37" />
     <scopeInfo nodeId="8492459591399173833" fileName="InlineMethodRefactoring.java" startLine="59" startPosition="110" endLine="60" endPosition="40" />
     <scopeInfo nodeId="8492459591399173894" fileName="InlineMethodRefactoring.java" startLine="69" startPosition="33" endLine="70" endPosition="38" />
@@ -6557,13 +6562,13 @@
     <scopeInfo nodeId="8492459591399174643" fileName="InlineMethodRefactoring.java" startLine="239" startPosition="43" endLine="240" endPosition="18" />
     <scopeInfo nodeId="8492459591399174651" fileName="InlineMethodRefactoring.java" startLine="243" startPosition="53" endLine="244" endPosition="10" />
     <scopeInfo nodeId="8492459591399174719" fileName="InlineMethodRefactoring.java" startLine="255" startPosition="78" endLine="256" endPosition="23" />
-    <scopeInfo nodeId="8492459591399174759" fileName="InlineMethodRefactoring.java" startLine="262" startPosition="37" endLine="263" endPosition="158" />
-    <scopeInfo nodeId="8492459591399174778" fileName="InlineMethodRefactoring.java" startLine="267" startPosition="15" endLine="268" endPosition="19" />
-    <scopeInfo nodeId="8492459591399174803" fileName="InlineMethodRefactoring.java" startLine="272" startPosition="70" endLine="273" endPosition="21" />
-    <scopeInfo nodeId="8492459591399174863" fileName="InlineMethodRefactoring.java" startLine="287" startPosition="111" endLine="288" endPosition="28" />
-    <scopeInfo nodeId="8492459591399174873" fileName="InlineMethodRefactoring.java" startLine="290" startPosition="109" endLine="291" endPosition="27" />
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="316" startPosition="66" endLine="317" endPosition="64" />
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="322" startPosition="38" endLine="323" endPosition="86" />
+    <scopeInfo nodeId="7274810114828063812" fileName="InlineMethodRefactoring.java" startLine="263" startPosition="37" endLine="264" endPosition="158" />
+    <scopeInfo nodeId="8492459591399174778" fileName="InlineMethodRefactoring.java" startLine="269" startPosition="15" endLine="270" endPosition="19" />
+    <scopeInfo nodeId="8492459591399174803" fileName="InlineMethodRefactoring.java" startLine="274" startPosition="70" endLine="275" endPosition="21" />
+    <scopeInfo nodeId="8492459591399174863" fileName="InlineMethodRefactoring.java" startLine="289" startPosition="111" endLine="290" endPosition="28" />
+    <scopeInfo nodeId="8492459591399174873" fileName="InlineMethodRefactoring.java" startLine="292" startPosition="109" endLine="293" endPosition="27" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="318" startPosition="66" endLine="319" endPosition="64" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="324" startPosition="38" endLine="325" endPosition="86" />
     <scopeInfo nodeId="8492459591399174979" fileName="InlineMethodRefactoring.java" startLine="42" startPosition="132" endLine="44" endPosition="161" />
     <scopeInfo nodeId="8492459591399174036" fileName="InlineMethodRefactoring.java" startLine="99" startPosition="39" endLine="101" endPosition="105" />
     <scopeInfo nodeId="8492459591399174061" fileName="InlineMethodRefactoring.java" startLine="104" startPosition="14" endLine="106" endPosition="71">
@@ -6572,8 +6577,8 @@
     <scopeInfo nodeId="8492459591399174305" fileName="InlineMethodRefactoring.java" startLine="151" startPosition="118" endLine="153" endPosition="51">
       <varInfo nodeId="8492459591399174307" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="301" startPosition="55" endLine="303" endPosition="5" />
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="318" startPosition="18" endLine="320" endPosition="41" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="303" startPosition="55" endLine="305" endPosition="5" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="320" startPosition="18" endLine="322" endPosition="41" />
     <scopeInfo nodeId="8492459591399173965" fileName="InlineMethodRefactoring.java" startLine="81" startPosition="5" endLine="84" endPosition="5" />
     <scopeInfo nodeId="8492459591399174086" fileName="InlineMethodRefactoring.java" startLine="112" startPosition="322" endLine="115" endPosition="85">
       <varInfo nodeId="8492459591399174088" varName="statement" />
@@ -6585,7 +6590,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4412735672778318345" fileName="InlineMethodRefactoring.java" startLine="181" startPosition="74" endLine="184" endPosition="5" />
     <scopeInfo nodeId="8492459591399174711" fileName="InlineMethodRefactoring.java" startLine="254" startPosition="174" endLine="257" endPosition="9" />
-    <scopeInfo nodeId="8492459591399174795" fileName="InlineMethodRefactoring.java" startLine="271" startPosition="107" endLine="274" endPosition="7" />
+    <scopeInfo nodeId="8492459591399174795" fileName="InlineMethodRefactoring.java" startLine="273" startPosition="107" endLine="276" endPosition="7" />
     <scopeInfo nodeId="8492459591399173847" fileName="InlineMethodRefactoring.java" startLine="62" startPosition="135" endLine="66" endPosition="66">
       <varInfo nodeId="8492459591399173860" varName="stat" />
     </scopeInfo>
@@ -6607,8 +6612,8 @@
     <scopeInfo nodeId="8492459591399174600" fileName="InlineMethodRefactoring.java" startLine="231" startPosition="90" endLine="235" endPosition="23">
       <varInfo nodeId="8492459591399174602" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399174754" fileName="InlineMethodRefactoring.java" startLine="261" startPosition="83" endLine="265" endPosition="0">
-      <varInfo nodeId="8492459591399174757" varName="obj" />
+    <scopeInfo nodeId="7274810114828063807" fileName="InlineMethodRefactoring.java" startLine="262" startPosition="83" endLine="266" endPosition="0">
+      <varInfo nodeId="7274810114828063810" varName="obj" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174031" fileName="InlineMethodRefactoring.java" startLine="98" startPosition="30" endLine="103" endPosition="52" />
     <scopeInfo nodeId="4412735672778285498" fileName="InlineMethodRefactoring.java" startLine="180" startPosition="43" endLine="185" endPosition="26">
@@ -6619,7 +6624,7 @@
       <varInfo nodeId="8492459591399174506" varName="write" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174704" fileName="InlineMethodRefactoring.java" startLine="253" startPosition="146" endLine="258" endPosition="7" />
-    <scopeInfo nodeId="8492459591399174790" fileName="InlineMethodRefactoring.java" startLine="270" startPosition="139" endLine="275" endPosition="5" />
+    <scopeInfo nodeId="8492459591399174790" fileName="InlineMethodRefactoring.java" startLine="272" startPosition="139" endLine="277" endPosition="5" />
     <scopeInfo nodeId="8492459591399174163" fileName="InlineMethodRefactoring.java" startLine="121" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="8492459591399174181" varName="c" />
     </scopeInfo>
@@ -6669,7 +6674,7 @@
       <varInfo nodeId="8492459591399174284" varName="body" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174491" fileName="InlineMethodRefactoring.java" startLine="207" startPosition="63" endLine="217" endPosition="17" />
-    <scopeInfo nodeId="8492459591399174857" fileName="InlineMethodRefactoring.java" startLine="285" startPosition="65" endLine="295" endPosition="60">
+    <scopeInfo nodeId="8492459591399174857" fileName="InlineMethodRefactoring.java" startLine="287" startPosition="136" endLine="297" endPosition="60">
       <varInfo nodeId="8492459591399174859" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174023" fileName="InlineMethodRefactoring.java" startLine="96" startPosition="174" endLine="107" endPosition="7">
@@ -6692,7 +6697,7 @@
       <varInfo nodeId="8492459591399174668" varName="statement" />
       <varInfo nodeId="8492459591399174670" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="313" startPosition="9" endLine="324" endPosition="11" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="315" startPosition="9" endLine="326" endPosition="11" />
     <scopeInfo nodeId="8492459591399174358" fileName="InlineMethodRefactoring.java" startLine="163" startPosition="79" endLine="175" endPosition="7">
       <varInfo nodeId="8492459591399174367" varName="argument" />
       <varInfo nodeId="8492459591399174360" varName="parameterDeclaration" />
@@ -6706,25 +6711,25 @@
     <scopeInfo nodeId="8492459591399174489" fileName="InlineMethodRefactoring.java" startLine="206" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="8492459591399174538" varName="parameterDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399174847" fileName="InlineMethodRefactoring.java" startLine="283" startPosition="58" endLine="296" endPosition="7">
+    <scopeInfo nodeId="8492459591399174847" fileName="InlineMethodRefactoring.java" startLine="285" startPosition="58" endLine="298" endPosition="7">
       <varInfo nodeId="8492459591399174849" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="312" startPosition="43" endLine="325" endPosition="9" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="314" startPosition="43" endLine="327" endPosition="9" />
     <scopeInfo nodeId="8492459591399174357" fileName="InlineMethodRefactoring.java" startLine="162" startPosition="101" endLine="176" endPosition="5">
       <varInfo nodeId="8492459591399174418" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174944" fileName="InlineMethodRefactoring.java" startLine="37" startPosition="0" endLine="52" endPosition="3">
       <varInfo nodeId="8492459591399175048" varName="methodCall" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399174844" fileName="InlineMethodRefactoring.java" startLine="282" startPosition="102" endLine="297" endPosition="5" />
+    <scopeInfo nodeId="8492459591399174844" fileName="InlineMethodRefactoring.java" startLine="284" startPosition="102" endLine="299" endPosition="5" />
     <scopeInfo nodeId="8492459591399174012" fileName="InlineMethodRefactoring.java" startLine="94" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="8492459591399174075" varName="body" />
       <varInfo nodeId="8492459591399174079" varName="callStatement" />
       <varInfo nodeId="8492459591399174077" varName="returnVar" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174437" fileName="InlineMethodRefactoring.java" startLine="188" startPosition="79" endLine="204" endPosition="17" />
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="310" startPosition="7" endLine="326" endPosition="31" />
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="309" startPosition="32" endLine="327" endPosition="7" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="312" startPosition="7" endLine="328" endPosition="31" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="311" startPosition="32" endLine="329" endPosition="7" />
     <scopeInfo nodeId="8492459591399174329" fileName="InlineMethodRefactoring.java" startLine="158" startPosition="49" endLine="177" endPosition="15">
       <varInfo nodeId="8492459591399174331" varName="statement" />
       <varInfo nodeId="8492459591399174341" varName="map" />
@@ -6735,26 +6740,22 @@
       <varInfo nodeId="8492459591399174485" varName="e" />
       <varInfo nodeId="8492459591399174487" varName="parameterDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399174814" fileName="InlineMethodRefactoring.java" startLine="279" startPosition="31" endLine="298" endPosition="27">
+    <scopeInfo nodeId="8492459591399174814" fileName="InlineMethodRefactoring.java" startLine="281" startPosition="31" endLine="300" endPosition="27">
       <varInfo nodeId="8492459591399174816" varName="buff" />
       <varInfo nodeId="8492459591399174831" varName="end" />
       <varInfo nodeId="8492459591399174821" varName="nodesToCheck" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399174327" fileName="InlineMethodRefactoring.java" startLine="157" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="8492459591399174813" fileName="InlineMethodRefactoring.java" startLine="278" startPosition="0" endLine="300" endPosition="0" />
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="305" startPosition="49" endLine="328" endPosition="20" />
-    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="304" startPosition="0" endLine="330" endPosition="0" />
-    <scopeInfo nodeId="8492459591399174674" fileName="InlineMethodRefactoring.java" startLine="249" startPosition="66" endLine="276" endPosition="16">
+    <scopeInfo nodeId="8492459591399174813" fileName="InlineMethodRefactoring.java" startLine="280" startPosition="0" endLine="302" endPosition="0" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="307" startPosition="49" endLine="330" endPosition="20" />
+    <scopeInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="306" startPosition="0" endLine="332" endPosition="0" />
+    <scopeInfo nodeId="8492459591399174674" fileName="InlineMethodRefactoring.java" startLine="249" startPosition="66" endLine="278" endPosition="16">
       <varInfo nodeId="8492459591399174772" varName="vars" />
       <varInfo nodeId="8492459591399174783" varName="declaration" />
       <varInfo nodeId="8492459591399174735" varName="scope" />
       <varInfo nodeId="8492459591399174683" varName="start" />
-      <varInfo nodeId="8492459591399174741" varName="nodes" />
+      <varInfo nodeId="7274810114828063794" varName="nodes" />
       <varInfo nodeId="8492459591399174676" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="8492459591399174672" fileName="InlineMethodRefactoring.java" startLine="248" startPosition="0" endLine="278" endPosition="0">
-      <varInfo nodeId="8492459591399174809" varName="statement" />
-      <varInfo nodeId="8492459591399174811" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399173799" fileName="InlineMethodRefactoring.java" startLine="54" startPosition="28" endLine="85" endPosition="46">
       <varInfo nodeId="8492459591399173801" varName="body" />
@@ -6762,10 +6763,14 @@
       <varInfo nodeId="8492459591399173811" varName="paramsMap" />
       <varInfo nodeId="8492459591399173829" varName="returnVar" />
     </scopeInfo>
+    <scopeInfo nodeId="8492459591399174672" fileName="InlineMethodRefactoring.java" startLine="248" startPosition="0" endLine="280" endPosition="0">
+      <varInfo nodeId="8492459591399174809" varName="statement" />
+      <varInfo nodeId="8492459591399174811" varName="name" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399173796" fileName="InlineMethodRefactoring.java" startLine="53" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="8492459591399174751" fileName="InlineMethodRefactoring.java" startLine="261" startPosition="63" endLine="265" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$1" />
-    <unitInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="301" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$QuotationClass_49noxv_a0a0a0b0b" />
-    <unitInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="29" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring" />
+    <unitInfo nodeId="7274810114828063804" fileName="InlineMethodRefactoring.java" startLine="262" startPosition="63" endLine="266" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$1" />
+    <unitInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="303" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$QuotationClass_49noxv_a0a0a0b0b" />
+    <unitInfo nodeId="8492459591399173795" fileName="InlineMethodRefactoring.java" startLine="29" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring" />
   </root>
   <root nodeId="8492459591399175050">
     <nodeInfo nodeId="8492459591399175056" fileName="ClassStaticContainerProcessor.java" startLine="14" startPosition="52" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -50,7 +50,7 @@ public class MethodParameter extends MethodParameterModel {
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : SetSequence.fromSet(frontier)) {
         ancestors.addAllStructurally(manager.collectImmediateSupertypes(node, false));
-        ListSequence.fromList(found).addElement(node);
+        ListSequence.fromList(found).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Type"));
       }
       for (SNode passed : ListSequence.fromList(found)) {
         ancestors.removeStructurally(passed);
@@ -79,7 +79,10 @@ public class MethodParameter extends MethodParameterModel {
   }
 
   public SNode getDeclaration() {
-    return this.myDeclaration;
+    if (!(SNodeOperations.isInstanceOf(myDeclaration, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+      return null;
+    }
+    return SNodeOperations.cast(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
   }
 
   public boolean isSelected() {
