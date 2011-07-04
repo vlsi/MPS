@@ -8,16 +8,16 @@
     <subPane />
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/sandbox/sampleXML.sandbox.msd" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/languages/sampleXML/sampleXML.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/sandbox/sampleXML.sandbox.msd" />
+      <modulePath path="${project}/languages/sampleXML/sampleXML.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="sampleXML" moduleRef="jetbrains.mps.sampleXML" />
     </genConfs>
+  </component>
+  <component name="MigrationState">
+    <option name="myState" value="DONE" />
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="sampleXML" />
@@ -26,5 +26,11 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="1.5" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
 </project>
 

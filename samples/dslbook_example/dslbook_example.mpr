@@ -5,17 +5,17 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/secretCompartmentLanguage.sandbox/secretCompartmentLanguage.sandbox.msd" />
-      <solutionPath path="${project}/solutions/runtime/jetbrains.mps.samples.secretCompartment.runtime.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/languages/secretCompartmentLanguage/secretCompartmentLanguage.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/secretCompartmentLanguage.sandbox/secretCompartmentLanguage.sandbox.msd" />
+      <modulePath path="${project}/solutions/runtime/jetbrains.mps.samples.secretCompartment.runtime.msd" folder="" />
+      <modulePath path="${project}/languages/secretCompartmentLanguage/secretCompartmentLanguage.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="secretCompartmentLanguage" moduleRef="jetbrains.mps.samples.secretCompartmentLanguage" />
     </genConfs>
+  </component>
+  <component name="MigrationState">
+    <option name="myState" value="DONE" />
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="dslbook_example.mpr" />
@@ -24,5 +24,11 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="1.5" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
 </project>
 

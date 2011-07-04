@@ -8,18 +8,18 @@
     <subPane />
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/solutions/jetbrains.mps.matrixLanguage.runtime/jetbrains.mps.matrixLanguage.runtime.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.matrixLanguage.sandbox/jetbrains.mps.matrixLanguage.sandbox.msd" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/languages/matrixLanguage/matrixLanguage.mpl" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/solutions/jetbrains.mps.matrixLanguage.runtime/jetbrains.mps.matrixLanguage.runtime.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.matrixLanguage.sandbox/jetbrains.mps.matrixLanguage.sandbox.msd" />
+      <modulePath path="${project}/languages/matrixLanguage/matrixLanguage.mpl" />
+    </projectModules>
     <genConfs>
       <genConfModule name="test matrix language" moduleRef="aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.samples.matrixLanguage)" />
       <genConfModule name="test matrix runtime" moduleRef="29b98b6d-4c16-4c58-a0bb-9645a5db33a6(jetbrains.mps.matrixLanguage.runtime)" />
     </genConfs>
+  </component>
+  <component name="MigrationState">
+    <option name="myState" value="DONE" />
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="jetbrains.mps.matrixLanguage.mpr" />
@@ -28,5 +28,11 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="ProjectVersion">
+    <option name="version" value="1.5" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+  </component>
 </project>
 
