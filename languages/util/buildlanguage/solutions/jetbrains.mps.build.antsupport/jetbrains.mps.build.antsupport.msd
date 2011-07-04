@@ -9,18 +9,18 @@
     </stubModelEntry>
   </stubModelEntries>
   <dependencies>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
+    <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+    <dependency reexport="false">77c9a130-703f-4530-bf21-6580757768d0(jetbrains.mps.build.antsupport)</dependency>
+    <dependency reexport="false">fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)</dependency>
+    <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
+    <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
+    <dependency reexport="false">20351dc3-a2df-46f5-b667-fc9adab1f1c9(jetbrains.mps.make)</dependency>
+    <dependency reexport="false">696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)</dependency>
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
     <dependency reexport="false">79f9d103-4ff6-4def-9c1a-27070f9ba255(jetbrains.mps.testbench.make)</dependency>
-    <dependency reexport="false">696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)</dependency>
-    <dependency reexport="false">fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)</dependency>
-    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-    <dependency reexport="false">77c9a130-703f-4530-bf21-6580757768d0(jetbrains.mps.build.antsupport)</dependency>
-    <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
-    <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
-    <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
-    <dependency reexport="false">20351dc3-a2df-46f5-b667-fc9adab1f1c9(jetbrains.mps.make)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

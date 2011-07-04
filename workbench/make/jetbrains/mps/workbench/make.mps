@@ -2905,7 +2905,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1312638714832611904">
-        <property name="name" nameId="tpck.1169194664001" value="script" />
+        <property name="name" nameId="tpck.1169194664001" value="defaultScript" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5993420017338767030">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i9so.6168415856807657227" resolveInfo="IScript" />
@@ -3146,7 +3146,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1312638714832611906" resolveInfo="inputRes" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2298333944697024948">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1312638714832611904" resolveInfo="script" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1312638714832611904" resolveInfo="defaultScript" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2298333944697024930">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4691049906353704519" resolveInfo="controller" />
