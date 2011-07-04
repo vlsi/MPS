@@ -109,15 +109,16 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (TraceSettings.isTraceForSelectedNode() && mySelectedNode != null) {
       getSliceVars(myOperation);
     }
-    TypeSystemTraceTreeNode result = create(myOperation);
+    TypeSystemTraceTreeNode result = create(myOperation, false);
     setRootVisible(true);
     return result;
   }
 
-  public TypeSystemTraceTreeNode create(AbstractOperation operation) {
+  public TypeSystemTraceTreeNode create(AbstractOperation operation, boolean showParent) {
+    boolean showNode = showNode(operation);
     List<TypeSystemTraceTreeNode> children = new ArrayList<TypeSystemTraceTreeNode>();
     for (AbstractOperation consequence : operation.getConsequences()) {
-      TypeSystemTraceTreeNode node = create(consequence);
+      TypeSystemTraceTreeNode node = create(consequence, showNode || showParent);
       if (node != null) {
         children.add(node);
       }
@@ -125,8 +126,10 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (!(filterNodeType(operation))) {
       return null;
     }
-    if (!(showNode(operation)) && children.isEmpty()) {
-      return null;
+    if (!(showParent)) {
+      if (!(showNode) && children.isEmpty()) {
+        return null;
+      }
     }
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myOperationContext, myCurrentContext.getState(), myEditorComponent);
     for (TypeSystemTraceTreeNode node : children) {
