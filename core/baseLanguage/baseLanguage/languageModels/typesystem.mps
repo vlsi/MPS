@@ -28755,27 +28755,34 @@
   </root>
   <root id="8319647327702769215">
     <node role="body" roleId="tpd4.1195213635060" type="nupp.StatementList" typeId="tpee.1068580123136" id="8319647327702769216">
-      <node role="statement" roleId="tpee.1068581517665" type="nupp.IfStatement" typeId="tpee.1068580123159" id="8319647327702785206">
-        <node role="ifTrue" roleId="tpee.1068580123161" type="nupp.StatementList" typeId="tpee.1068580123136" id="8319647327702785207">
-          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="8319647327702826265">
-            <node role="errorString" roleId="tpd4.1175517851849" type="nupp.StringLiteral" typeId="tpee.1070475926800" id="8319647327702826268">
-              <property name="value" nameId="tpee.1070475926801" value="Cyclic hierarchy of classifiers" />
-            </node>
-            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="8319647327702826269">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8319647327702785197" resolveInfo="classifier" />
-            </node>
-            <node role="messageTarget" roleId="tpd4.1227096836496" type="tpd4.PropertyMessageTarget" typeId="tpd4.1227096498176" id="8319647327702887521">
-              <link role="propertyDeclaration" roleId="tpd4.1227096521710" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+      <node role="statement" roleId="tpee.1068581517665" type="nupp.SingleLineComment" typeId="tpee.6329021646629104954" id="9215127012916490451">
+        <node role="commentPart" roleId="tpee.6329021646629175155" type="nupp.TextCommentPart" typeId="tpee.6329021646629104957" id="9215127012916490452">
+          <property name="text" nameId="tpee.6329021646629104958" value="temporary turned off, works incorrectly" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="nupp.CommentedStatementsBlock" typeId="tpee.1177326519037" id="9215127012916490437">
+        <node role="statement" roleId="tpee.1177326540772" type="nupp.IfStatement" typeId="tpee.1068580123159" id="9215127012916490438">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="nupp.StatementList" typeId="tpee.1068580123136" id="9215127012916490439">
+            <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="9215127012916490440">
+              <node role="errorString" roleId="tpd4.1175517851849" type="nupp.StringLiteral" typeId="tpee.1070475926800" id="9215127012916490441">
+                <property name="value" nameId="tpee.1070475926801" value="Cyclic hierarchy of classifiers" />
+              </node>
+              <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="9215127012916490442">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8319647327702785197" resolveInfo="classifier" />
+              </node>
+              <node role="messageTarget" roleId="tpd4.1227096836496" type="tpd4.PropertyMessageTarget" typeId="tpd4.1227096498176" id="9215127012916490443">
+                <link role="propertyDeclaration" roleId="tpd4.1227096521710" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+              </node>
             </node>
           </node>
-        </node>
-        <node role="condition" roleId="tpee.1068580123160" type="nupp.NotExpression" typeId="tpee.1081516740877" id="8319647327702785213">
-          <node role="expression" roleId="tpee.1081516765348" type="nupp.DotExpression" typeId="tpee.1197027756228" id="8319647327702785210">
-            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="8319647327702785211">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8319647327702785197" resolveInfo="classifier" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8319647327702785212">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.3980490811621705344" resolveInfo="checkLoops" />
+          <node role="condition" roleId="tpee.1068580123160" type="nupp.NotExpression" typeId="tpee.1081516740877" id="9215127012916490444">
+            <node role="expression" roleId="tpee.1081516765348" type="nupp.DotExpression" typeId="tpee.1197027756228" id="9215127012916490445">
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="9215127012916490446">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8319647327702785197" resolveInfo="classifier" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="9215127012916490447">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.3980490811621705344" resolveInfo="checkLoops" />
+              </node>
             </node>
           </node>
         </node>

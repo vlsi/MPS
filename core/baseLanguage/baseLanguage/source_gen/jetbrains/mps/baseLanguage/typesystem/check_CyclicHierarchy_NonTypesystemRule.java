@@ -19,13 +19,16 @@ public class check_CyclicHierarchy_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Classifier_Behavior.call_checkLoops_3980490811621705344(classifier))) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("name");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifier, "Cyclic hierarchy of classifiers", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8319647327702826265", null, errorTarget);
+    // temporary turned off, works incorrectly 
+    /*
+      if (!(Classifier_Behavior.call_checkLoops_3980490811621705344(classifier))) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget("name");
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifier, "Cyclic hierarchy of classifiers", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9215127012916490440", null, errorTarget);
+        }
       }
-    }
+    */
   }
 
   public String getApplicableConceptFQName() {

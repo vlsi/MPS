@@ -129,7 +129,6 @@
   <unitInfo fileName="typeOf_ReturnStatement_InferenceRule.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_ReturnStatement_InferenceRule" />
   <unitInfo fileName="typeof_AdditionalForLoopVariable_InferenceRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_AdditionalForLoopVariable_InferenceRule" />
   <unitInfo fileName="check_ConceptFunction_NonTypesystemRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ConceptFunction_NonTypesystemRule" />
-  <unitInfo fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_CyclicHierarchy_NonTypesystemRule" />
   <unitInfo fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_FinalAndAbstractMethod_NonTypesystemRule" />
   <unitInfo fileName="check_InstanceOf_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_InstanceOf_NonTypesystemRule" />
   <unitInfo fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_DefaultSuperConstructorThrowables_NonTypesystemRule" />
@@ -208,6 +207,7 @@
   <unitInfo fileName="checkThrowsOfMethodIsCaught_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.checkThrowsOfMethodIsCaught_NonTypesystemRule" />
   <unitInfo fileName="check_ClassDoesNotExtendFinalClass_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ClassDoesNotExtendFinalClass_NonTypesystemRule" />
   <unitInfo fileName="check_CorrectScope_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_CorrectScope_NonTypesystemRule" />
+  <unitInfo fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_CyclicHierarchy_NonTypesystemRule" />
   <unitInfo fileName="check_UnusedStaticFields_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedStaticFields_NonTypesystemRule" />
   <unitInfo fileName="typeOf_thisExpr_InferenceRule.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_thisExpr_InferenceRule" />
   <unitInfo fileName="check_VariableAssignedToItself_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_VariableAssignedToItself_NonTypesystemRule" />
@@ -5997,14 +5997,16 @@
     </scopeInfo>
   </root>
   <root nodeId="8319647327702769215">
-    <nodeInfo nodeId="8319647327702826265" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8319647327702826265" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8319647327702826265" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="25" startPosition="56" endLine="26" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8319647327702826265" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="22" startPosition="81" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8319647327702785206" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="21" startPosition="123" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="8319647327702826265" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="26" endPosition="252" />
-    <scopeInfo nodeId="8319647327702785207" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="22" startPosition="81" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="8319647327702769216" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="21" startPosition="123" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="9215127012916490451" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="21" startPosition="123" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9215127012916490440" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="25" startPosition="9" endLine="26" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012916490440" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="26" startPosition="62" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9215127012916490440" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="27" startPosition="58" endLine="28" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012916490440" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="24" startPosition="83" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9215127012916490438" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="23" startPosition="6" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9215127012916490437" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="22" startPosition="47" endLine="31" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
+    <scopeInfo nodeId="9215127012916490440" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="25" startPosition="9" endLine="28" endPosition="254" />
+    <scopeInfo nodeId="9215127012916490439" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="24" startPosition="83" endLine="29" endPosition="9" />
+    <scopeInfo nodeId="8319647327702769216" fileName="check_CyclicHierarchy_NonTypesystemRule.java" startLine="21" startPosition="123" endLine="31" endPosition="6" />
   </root>
   <root nodeId="843236768047671205">
     <nodeInfo nodeId="469468540691054198" fileName="check_FinalFieldWasAssigned_NonTypesystemRule.java" startLine="26" startPosition="62" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
