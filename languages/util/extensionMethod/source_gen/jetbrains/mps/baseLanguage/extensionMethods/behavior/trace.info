@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ExtensionMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall_Behavior" />
   <unitInfo fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionStaticFieldDeclaration_Behavior" />
   <unitInfo fileName="SimpleExtensionMethodsContainer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.SimpleExtensionMethodsContainer_BehaviorDescriptor" />
   <unitInfo fileName="TypeExtension_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.TypeExtension_BehaviorDescriptor" />
@@ -48,6 +49,11 @@
     <nodeInfo nodeId="8578055449697886105" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8578055449697886100" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="8578055449697886103" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="65" />
+  </root>
+  <root nodeId="8872816273829182991">
+    <nodeInfo nodeId="8872816273829183002" fileName="ExtensionMethodCall_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8872816273829182993" fileName="ExtensionMethodCall_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="8872816273829183000" fileName="ExtensionMethodCall_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" />
   </root>
 </debugInfo>
 

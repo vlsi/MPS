@@ -41,6 +41,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall_Behavior" file="ExtensionMethodCall_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall_BehaviorDescriptor" file="ExtensionMethodCall_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -51,6 +54,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
