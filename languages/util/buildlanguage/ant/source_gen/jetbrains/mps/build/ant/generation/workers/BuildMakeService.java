@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.dependencies.ModulesClusterizer;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.make.task.MakeTask;
+import jetbrains.mps.make.service.MakeTask;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.messages.Message;
