@@ -10,12 +10,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.execution.impl.ConsoleViewImpl;
+import com.intellij.execution.ui.ConsoleView;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 import com.intellij.openapi.ui.Splitter;
 import java.awt.BorderLayout;
-import com.intellij.execution.ui.ConsoleView;
+import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -54,7 +54,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final FailedTestOccurenceNavigator myTestNavigator;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
-  public UnitTestViewComponent(Project project, IOperationContext context, ConsoleViewImpl console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
+  public UnitTestViewComponent(Project project, IOperationContext context, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
     this.myProject = project;
     this.myTestState = testRunState;
     StatisticsTableModel statisticsModel = new StatisticsTableModel(this.myTestState);

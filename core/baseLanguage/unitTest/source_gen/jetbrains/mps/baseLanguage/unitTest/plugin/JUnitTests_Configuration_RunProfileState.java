@@ -17,7 +17,6 @@ import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.project.ProjectOperationContext;
 import com.intellij.execution.impl.ConsoleViewImpl;
@@ -51,21 +50,22 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     List<ITestNodeWrapper> nodeWrappers = ListSequence.fromList(myRunConfiguration.getTests(project.getComponent(MPSProject.class))).toListSequence();
+
+    final ProcessHandler process = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
+
     TestRunState runState = new TestRunState(nodeWrappers);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
-    final Wrappers._T<ProcessHandler> process = new Wrappers._T<ProcessHandler>(null);
-    final UnitTestViewComponent viewComponent = new UnitTestViewComponent(project, ProjectOperationContext.get(project), new ConsoleViewImpl(project, true), runState, new _FunctionTypes._void_P0_E0() {
+    final UnitTestViewComponent viewComponent = new UnitTestViewComponent(project, ProjectOperationContext.get(project), new ConsoleViewImpl(project, false), runState, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        if (process.value != null) {
-          process.value.destroyProcess();
+        if (process != null) {
+          process.destroyProcess();
         }
       }
     });
-    UnitTestProcessListener testProcessListener = new UnitTestProcessListener(eventsDispatcher);
-    process.value = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
+
     {
-      ProcessHandler _processHandler = process.value;
-      _processHandler.addProcessListener(testProcessListener);
+      ProcessHandler _processHandler = process;
+      _processHandler.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(viewComponent, new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           viewComponent.dispose();

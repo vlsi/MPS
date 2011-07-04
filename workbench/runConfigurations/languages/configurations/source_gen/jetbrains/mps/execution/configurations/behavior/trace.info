@@ -6,6 +6,7 @@
   <unitInfo fileName="ProjectSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ProjectSource_BehaviorDescriptor" />
   <unitInfo fileName="ModelSource_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ModelSource_BehaviorDescriptor" />
   <unitInfo fileName="RunConfigurationExecutor_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_BehaviorDescriptor" />
+  <unitInfo fileName="ConsoleCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ConsoleCreator_BehaviorDescriptor" />
   <unitInfo fileName="StartedProcessType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.StartedProcessType_BehaviorDescriptor" />
   <unitInfo fileName="BeforeTaskParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskParameterReference_BehaviorDescriptor" />
   <unitInfo fileName="BeforeTaskCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskCall_BehaviorDescriptor" />
@@ -17,6 +18,7 @@
   <unitInfo fileName="DebuggerSettings_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.DebuggerSettings_Parameter_BehaviorDescriptor" />
   <unitInfo fileName="Project_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.Project_Parameter_BehaviorDescriptor" />
   <unitInfo fileName="RunConfiguration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfiguration_BehaviorDescriptor" />
+  <unitInfo fileName="ConsoleType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ConsoleType_BehaviorDescriptor" />
   <unitInfo fileName="BeforeTaskParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BeforeTaskParameter_BehaviorDescriptor" />
   <unitInfo fileName="Create_ConceptFunction_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.Create_ConceptFunction_BehaviorDescriptor" />
   <unitInfo fileName="ConfigurationFromExecutorReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_BehaviorDescriptor" />
@@ -26,7 +28,7 @@
   <unitInfo fileName="RunConfigurationProducer_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationProducer_BehaviorDescriptor" />
   <unitInfo fileName="RunConfigurationKind_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.RunConfigurationKind_BehaviorDescriptor" />
   <unitInfo fileName="AbstractRunConfigurationExecutor_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.AbstractRunConfigurationExecutor_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1594211126127708540">
     <nodeInfo nodeId="1594211126127708884" fileName="StartProcessHandlerStatement_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1594211126127708890" fileName="StartProcessHandlerStatement_Behavior.java" startLine="19" startPosition="75" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -58,6 +60,16 @@
     </scopeInfo>
     <unitInfo nodeId="1594211126127708871" fileName="StartProcessHandlerStatement_Behavior.java" startLine="31" startPosition="174" endLine="35" endPosition="5" unitName="jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior$1" />
     <unitInfo nodeId="1594211126127708540" fileName="StartProcessHandlerStatement_Behavior.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior" />
+  </root>
+  <root nodeId="1594211126127855068">
+    <nodeInfo nodeId="1594211126127855087" fileName="ConsoleType_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="8" startPosition="35" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAbstractCreator_1213877337340#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1594211126127855070" fileName="ConsoleType_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1594211126127855073" fileName="ConsoleType_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="117" />
+    <scopeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="8" startPosition="35" endLine="11" endPosition="0" />
+    <scopeInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <unitInfo nodeId="1594211126127855068" fileName="ConsoleType_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.configurations.behavior.ConsoleType_Behavior" />
   </root>
   <root nodeId="3642991921658055425">
     <nodeInfo nodeId="3642991921658067841" fileName="Create_ConceptFunction_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

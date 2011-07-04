@@ -82,6 +82,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="uhxm.946964771156870353" resolveInfo="StartProcessHandlerStatement" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1594211126127855068">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.console" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="uhxm.1594211126127733907" resolveInfo="ConsoleType" />
+    </node>
   </roots>
   <root id="3754890006475666593">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="3754890006475713427">
@@ -960,6 +964,33 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="1594211126127855068">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1594211126127855069">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1594211126127855070" />
+    </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1594211126127855071">
+      <property name="name" nameId="tpck.1169194664001" value="getAbstractCreator" />
+      <property name="isVirtual" nameId="1i04.1225194472832" value="false" />
+      <property name="isPrivate" nameId="1i04.1225194472833" value="false" />
+      <property name="isAbstract" nameId="1i04.1225194472834" value="false" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1213877337340" resolveInfo="getAbstractCreator" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1594211126127855072" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1594211126127855073">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1594211126127855087">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1594211126127855088">
+            <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="1594211126127855090">
+              <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1594211126127855091">
+                <link role="concept" roleId="tp25.1138405853777" targetNodeId="uhxm.1594211126127774346" resolveInfo="ConsoleCreator" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1594211126127855074">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
       </node>
     </node>
   </root>
