@@ -1029,34 +1029,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private DefaultActionGroup getCellActionsGroup() {
     DefaultActionGroup result = new DefaultActionGroup("Cell actions", true);
+    result.setPopup(false);
     EditorCell cell = getSelectedCell();
 
     final EditorContext editorContext = createEditorContextForActions();
     for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
       try {
-        if (action.isShownInPopupMenu() && action.canExecute(null, editorContext)) {
-          BaseAction mpsAction = new BaseAction("" + action.getDescriptionText()) {
-            private EditorCellKeyMapAction myAction = action;
-
-            {
-              String keyStroke = action.getKeyStroke();
-              if (keyStroke != null && keyStroke.length() != 0) {
-                KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
-                KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
-              }
-            }
-
-            protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-              try {
-                myAction.execute(null, editorContext);
-              } catch (Throwable t) {
-                LOG.error(t);
-              }
-            }
-          };
-          mpsAction.addPlace(ActionPlace.EDITOR);
-          result.add(mpsAction);
-        }
+        if (!(action.isShownInPopupMenu() && action.canExecute(null, editorContext))) continue;
+        BaseAction mpsAction = new MyBaseAction(action, editorContext);
+        mpsAction.addPlace(ActionPlace.EDITOR);
+        result.add(mpsAction);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -2818,6 +2800,30 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public BracesHighlighter getBracesHighlighter() {
     return myBracesHighlighter;
+  }
+
+  private static class MyBaseAction extends BaseAction {
+    private final EditorCellKeyMapAction myAction;
+    private final EditorContext myEditorContext;
+
+    public MyBaseAction(EditorCellKeyMapAction action, EditorContext editorContext) {
+      super("" + action.getDescriptionText());
+      myAction = action;
+      myEditorContext = editorContext;
+      String keyStroke = action.getKeyStroke();
+      if (keyStroke != null && keyStroke.length() != 0) {
+        KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+        KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+      }
+    }
+
+    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+      try {
+        myAction.execute(null, myEditorContext);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
   }
 
   private class MySimpleModelListener extends SModelAdapter {

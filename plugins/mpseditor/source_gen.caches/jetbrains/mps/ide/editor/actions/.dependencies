@@ -151,7 +151,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Backspace_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.Default_KeymapChanges" />
