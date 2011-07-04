@@ -991,29 +991,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     DefaultActionGroup group = ActionUtils.groupFromActions(
       baseGroup,
       new Separator(),
-      getCellActionsGroup(),
-      getIntentionsGroup()
+      getCellActionsGroup()
     );
 
     JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, group).getComponent();
     popupMenu.show(EditorComponent.this, x, y);
-  }
-
-  private DefaultActionGroup getIntentionsGroup() {
-    DefaultActionGroup result = new DefaultActionGroup("Intentions", true);
-    final EditorContext context = getEditorContext();
-    for (final com.intellij.openapi.util.Pair<Intention, SNode> pair : getAvailableIntentions()) {
-      String description = pair.first.getDescription(pair.second, context);
-      Icon icon = pair.first.getType().getIcon();
-      BaseAction mpsAction = new BaseAction(description, "Execute intention", icon) {
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          executeIntention(pair.first, pair.second, context);
-        }
-      };
-      mpsAction.addPlace(ActionPlace.EDITOR);
-      result.add(mpsAction);
-    }
-    return result;
   }
 
   public void executeIntention(final Intention intention, final SNode node, final EditorContext context) {

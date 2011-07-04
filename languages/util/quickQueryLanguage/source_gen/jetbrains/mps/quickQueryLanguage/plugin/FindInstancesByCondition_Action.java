@@ -47,6 +47,9 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
       }
       MapSequence.fromMap(_params).put("node", node);
     }
+    if (MapSequence.fromMap(_params).get("node") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
