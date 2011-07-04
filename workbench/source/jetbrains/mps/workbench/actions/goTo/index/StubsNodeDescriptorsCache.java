@@ -5,6 +5,8 @@ import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.stubs.IStubRootNodeDescriptor;
 import jetbrains.mps.stubs.StubReloadManager;
@@ -18,6 +20,12 @@ import java.util.List;
 import java.util.Map;
 
 public class StubsNodeDescriptorsCache implements ApplicationComponent {
+  private ReloadAdapter myReloadHandler = new ReloadAdapter(){
+    public void unload() {
+      myCache.clear();
+    }
+  };
+
   public StubsNodeDescriptorsCache() {
   }
 
@@ -49,6 +57,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
   }
 
   public void initComponent() {
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myModuleRepoListener);
     SModelRepository.getInstance().addModelRepositoryListener(myListener);
   }
@@ -56,6 +65,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
   public void disposeComponent() {
     SModelRepository.getInstance().removeModelRepositoryListener(myListener);
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myModuleRepoListener);
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
   }
 
   public List<BaseSNodeDescriptor> getSNodeDescriptors(final IModule m) {
