@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.RunConfiguration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />

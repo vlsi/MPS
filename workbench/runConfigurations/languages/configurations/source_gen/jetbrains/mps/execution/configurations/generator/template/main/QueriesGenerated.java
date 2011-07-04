@@ -33,6 +33,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -411,6 +412,10 @@ public class QueriesGenerated {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
+  public static boolean ifMacro_Condition_1594211126127687772(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "tool", true) == null);
+  }
+
   public static boolean ifMacro_Condition_4042467058397505421(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.execution.configurations.structure.RunConfiguration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -453,6 +458,22 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4762811064051426913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1594211126127687798(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1594211126127708920(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return StartProcessHandlerStatement_Behavior.call_getListener_1594211126127708805(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1594211126127687852(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return StartProcessHandlerStatement_Behavior.call_getComponent_1594211126127708543(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1594211126127708908(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return StartProcessHandlerStatement_Behavior.call_getDispose_1594211126127708769(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_7952658987872141374(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -516,7 +537,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5475888311765497814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> beforeTaskCalls = check_x583g4_a0a0ge(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
+    List<SNode> beforeTaskCalls = check_x583g4_a0a0le(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
     if (beforeTaskCalls == null) {
       return new ArrayList<SNode>();
     }
@@ -609,7 +630,7 @@ public class QueriesGenerated {
     }
   }
 
-  private static List<SNode> check_x583g4_a0a0ge(SNode checkedDotOperand) {
+  private static List<SNode> check_x583g4_a0a0le(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTargets(checkedDotOperand, "beforeTask", true);
     }

@@ -14,14 +14,16 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
-import com.intellij.execution.process.ProcessHandler;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.project.ProjectOperationContext;
 import com.intellij.execution.impl.ConsoleViewImpl;
-import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.execution.executors.DefaultDebugExecutor;
@@ -48,13 +50,25 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
+    List<ITestNodeWrapper> nodeWrappers = ListSequence.fromList(myRunConfiguration.getTests(project.getComponent(MPSProject.class))).toListSequence();
+    TestRunState runState = new TestRunState(nodeWrappers);
+    TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
+    final Wrappers._T<ProcessHandler> process = new Wrappers._T<ProcessHandler>(null);
+    final UnitTestViewComponent viewComponent = new UnitTestViewComponent(project, ProjectOperationContext.get(project), new ConsoleViewImpl(project, true), runState, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        if (process.value != null) {
+          process.value.destroyProcess();
+        }
+      }
+    });
+    UnitTestProcessListener testProcessListener = new UnitTestProcessListener(eventsDispatcher);
+    process.value = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
     {
-      ProcessHandler _processHandler = new Junit_Command().setDebuggerSettings(myDebuggerSettings.getCommandLine(true)).createProcess(ListSequence.fromList(myRunConfiguration.getTests(project.getComponent(MPSProject.class))).toListSequence(), myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
-      final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
-      _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
-      return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
+      ProcessHandler _processHandler = process.value;
+      _processHandler.addProcessListener(testProcessListener);
+      return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(viewComponent, new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          _consoleView.dispose();
+          viewComponent.dispose();
         }
       }));
     }

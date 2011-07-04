@@ -32,6 +32,11 @@ public class typeof_RedirectOutputExpression_InferenceRule extends AbstractInfer
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863848", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863854", true), (SNode) new typeof_RedirectOutputExpression_InferenceRule.QuotationClass_91b0fg_a0a1a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
+    {
+      SNode _nodeToCheck_1029348928467 = redirectOutputExpression;
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "1594211126127559580", 0, null);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "1594211126127559530", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(redirectOutputExpression, "processHandler", true), "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "1594211126127610317", true), _info_12389875345);
+    }
   }
 
   public String getApplicableConceptFQName() {
