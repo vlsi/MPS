@@ -26,6 +26,7 @@ public class TypesLanguageScriptsUtil {
         return inequationsGroup;
       }
     }
+
     return null;
   }
 }

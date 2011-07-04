@@ -93,9 +93,9 @@
   <unitInfo fileName="OrStatement.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OrStatement" />
   <unitInfo fileName="InequationsGroupsRegistry.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry" />
   <unitInfo fileName="VariableConvertersContainer.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer" />
-  <unitInfo fileName="MeetType.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MeetType" />
   <unitInfo fileName="JoinType.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.JoinType" />
   <unitInfo fileName="MultipleForeachLoop.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop" />
+  <unitInfo fileName="MeetType.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MeetType" />
   <unitInfo fileName="InequalityProperty_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" />
   <unitInfo fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind_PropertySupport" />
   <unitInfo fileName="InequationPriority_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority_PropertySupport" />
