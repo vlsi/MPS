@@ -258,13 +258,11 @@ public class InlineMethodRefactoring {
       }
     }
     LocalVariablesScope scope = new LocalVariablesScope(statement);
-
     List<SNode> nodes = scope.getNodes(((Condition<SNode>) new Condition<SNode>() {
       public boolean met(SNode obj) {
         return name.equals(SPropertyOperations.getString(SNodeOperations.cast(obj, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "name"));
       }
     }));
-
     boolean vars = ListSequence.fromList(nodes).isNotEmpty();
     if (vars) {
       return false;
@@ -284,7 +282,7 @@ public class InlineMethodRefactoring {
     String end = SNodeOperations.getParent(this.myMethodDeclaration) + "." + this.myMethodDeclaration;
     for (SNode node : SetSequence.fromSet(nodesToCheck)) {
       SNode classifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      if (!(VisibilityUtil.isVisible(this.myMethodCall, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible")))) {
+      if (!(VisibilityUtil.isVisible(this.myMethodCall, node))) {
         String start = "";
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
           start = "Method ";

@@ -20,7 +20,7 @@ public class SimpleDuplicatesFinder {
     List<SNode> found = new ArrayList<SNode>();
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
       if (node != this.myNodeToMatch && MatchingUtil.matchNodes(node, this.myNodeToMatch)) {
-        found.add(node);
+        ListSequence.fromList(found).addElement(node);
       }
     }
     return found;
