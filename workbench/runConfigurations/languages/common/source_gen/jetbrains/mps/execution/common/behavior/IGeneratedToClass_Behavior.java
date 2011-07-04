@@ -20,8 +20,8 @@ public class IGeneratedToClass_Behavior {
   private static Class[] PARAMETERS_946964771156905488 = {SNode.class};
   private static Class[] PARAMETERS_946964771156905503 = {SNode.class};
   private static Class[] PARAMETERS_4366236229294148974 = {SNode.class};
-  private static Pattern REGEXP_tq53pp_b0a0a3 = Pattern.compile("(\\w)\\W(\\w)", 0);
-  private static Pattern REGEXP_tq53pp_b0a1a3 = Pattern.compile("(.)\\W", 0);
+  private static Pattern REGEXP_tq53pp_b0a0a3 = Pattern.compile("(\\w)\\W+(\\w)", 0);
+  private static Pattern REGEXP_tq53pp_b0a1a3 = Pattern.compile("(.)\\W+$", 0);
 
   public static void init(SNode thisNode) {
   }

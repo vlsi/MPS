@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Data.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.Data" />
   <root nodeId="1876713722539579910">
     <nodeInfo nodeId="6814978825597953741" fileName="SeveralThreads.java" startLine="13" startPosition="25" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="774465993226016888" fileName="SeveralThreads.java" startLine="16" startPosition="32" endLine="17" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -228,6 +227,37 @@
     </scopeInfo>
     <scopeInfo nodeId="4370401284816024235" fileName="DebugCollections.java" startLine="74" startPosition="0" endLine="87" endPosition="0" />
     <unitInfo nodeId="4495133539197110684" fileName="DebugCollections.java" startLine="20" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.DebugCollections" />
+  </root>
+  <root nodeId="4712912993948278068">
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="9" startPosition="17" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="13" startPosition="39" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="17" startPosition="35" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="21" startPosition="35" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="25" startPosition="23" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="29" startPosition="23" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="34" startPosition="58" endLine="35" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="8" startPosition="57" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Data#()V" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Data#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foo#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bar#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bar#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/debugger/java/run/sandbox/Data;" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="9" startPosition="17" endLine="10" endPosition="12" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="13" startPosition="39" endLine="14" endPosition="20" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="17" startPosition="35" endLine="18" endPosition="27" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="21" startPosition="35" endLine="22" endPosition="27" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="25" startPosition="23" endLine="26" endPosition="22" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="29" startPosition="23" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="34" startPosition="58" endLine="35" endPosition="37" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="8" startPosition="57" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="4712912993948278068" fileName="Data.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.Data" />
   </root>
   <root nodeId="7020394447413472663">
     <nodeInfo nodeId="7020394447413472676" fileName="UncaughtException.java" startLine="13" startPosition="42" endLine="14" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />

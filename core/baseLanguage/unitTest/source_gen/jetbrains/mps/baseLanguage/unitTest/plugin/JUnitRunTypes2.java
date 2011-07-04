@@ -39,7 +39,7 @@ public enum JUnitRunTypes2 {
   NODE() {
 
     public Iterable<ITestNodeWrapper> collect(JUnitTests_Configuration configuration, MPSProject project) {
-      return TestUtils.wrapPointerStrings(configuration.getTestMethods());
+      return TestUtils.wrapPointerStrings(configuration.getTestCases());
     }
 
     public String check(JUnitTests_Configuration configuration) {

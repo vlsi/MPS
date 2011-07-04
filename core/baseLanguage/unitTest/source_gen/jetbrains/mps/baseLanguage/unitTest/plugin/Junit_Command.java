@@ -17,9 +17,9 @@ import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -117,12 +117,12 @@ public class Junit_Command {
         runParams.value = ListSequence.fromList(tests).first().getTestRunParameters();
         testsToRun.value = ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
-            return eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0d0c(check_u7m9j_a0a0a0a0a1a0d0b(it), runParams.value);
+            return eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0e0c(check_u7m9j_a0a0a0a0a1a0e0b(it), runParams.value);
           }
         }).toListSequence();
         ListSequence.fromList(tests).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
-            if (!(eq_yo2c7x_a0a0a0a0a0a2a0a0a0a3a2(check_u7m9j_a0a0a0a0c0a3a1(it), runParams.value))) {
+            if (!(eq_yo2c7x_a0a0a0a0a0a2a0a0a0a4a2(check_u7m9j_a0a0a0a0c0a4a1(it), runParams.value))) {
               ok.value = false;
             }
           }
@@ -193,21 +193,21 @@ public class Junit_Command {
     return null;
   }
 
-  private static TestRunParameters check_u7m9j_a0a0a0a0c0a3a1(ITestNodeWrapper checkedDotOperand) {
+  private static TestRunParameters check_u7m9j_a0a0a0a0c0a4a1(ITestNodeWrapper checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestRunParameters();
     }
     return null;
   }
 
-  private static boolean eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0d0c(Object a, Object b) {
+  private static boolean eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0e0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_yo2c7x_a0a0a0a0a0a2a0a0a0a3a2(Object a, Object b) {
+  private static boolean eq_yo2c7x_a0a0a0a0a0a2a0a0a0a4a2(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
