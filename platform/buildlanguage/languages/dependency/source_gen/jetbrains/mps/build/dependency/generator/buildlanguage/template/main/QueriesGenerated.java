@@ -81,6 +81,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ModuleToClassesProperty");
   }
 
+  public static Object referenceMacro_GetReferent_2397028098139205289(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "ModuleToClassesProperty");
+  }
+
   public static Object referenceMacro_GetReferent_1216913346656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "cycle", false), "CyclesToTargets");
   }
@@ -130,6 +134,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_763186553349438419(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_2397028098139226672(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
 
@@ -199,6 +207,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_763186553349438320(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "moduleDescription", true);
+  }
+
+  public static Iterable sourceNodesQuery_2397028098139205280(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "moduleDescription", true);
+  }
+
+  public static Iterable sourceNodesQuery_2397028098139205304(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "sources", true);
   }
 
   public static Iterable sourceNodesQuery_1216908353399(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
