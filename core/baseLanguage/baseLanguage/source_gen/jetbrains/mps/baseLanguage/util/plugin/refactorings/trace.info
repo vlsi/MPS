@@ -4604,7 +4604,7 @@
     <nodeInfo nodeId="8492459591399169049" fileName="MethodParameter.java" startLine="47" startPosition="47" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169062" fileName="MethodParameter.java" startLine="49" startPosition="35" endLine="50" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8492459591399169072" fileName="MethodParameter.java" startLine="51" startPosition="56" endLine="52" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8492459591399169081" fileName="MethodParameter.java" startLine="52" startPosition="86" endLine="53" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8492459591399169081" fileName="MethodParameter.java" startLine="52" startPosition="86" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169090" fileName="MethodParameter.java" startLine="55" startPosition="57" endLine="56" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169095" fileName="MethodParameter.java" startLine="57" startPosition="7" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8492459591399169099" fileName="MethodParameter.java" startLine="59" startPosition="5" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4657,7 +4657,7 @@
     <scopeInfo nodeId="8492459591399169016" fileName="MethodParameter.java" startLine="41" startPosition="30" endLine="43" endPosition="20">
       <varInfo nodeId="8492459591399169018" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8492459591399169071" fileName="MethodParameter.java" startLine="51" startPosition="56" endLine="53" endPosition="121" />
+    <scopeInfo nodeId="8492459591399169071" fileName="MethodParameter.java" startLine="51" startPosition="56" endLine="53" endPosition="54" />
     <scopeInfo nodeId="8492459591399169109" fileName="MethodParameter.java" startLine="61" startPosition="53" endLine="63" endPosition="70" />
     <scopeInfo nodeId="8492459591399169154" fileName="MethodParameter.java" startLine="76" startPosition="42" endLine="78" endPosition="65" />
     <scopeInfo nodeId="8492459591399169086" fileName="MethodParameter.java" startLine="54" startPosition="7" endLine="57" endPosition="7" />
