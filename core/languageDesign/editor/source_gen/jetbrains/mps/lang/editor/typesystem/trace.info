@@ -209,11 +209,11 @@
     <scopeInfo nodeId="1201271578956" fileName="typeof_CaretPositionParameter_InferenceRule.java" startLine="21" startPosition="124" endLine="26" endPosition="5" />
   </root>
   <root nodeId="1901504820902746966">
-    <nodeInfo nodeId="1901504820902798704" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1901504820902798704" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1901504820902798704" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9215127012917439383" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012917439383" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9215127012917439383" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1901504820902748917" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="20" startPosition="130" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1901504820902798704" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="271" />
+    <scopeInfo nodeId="9215127012917439383" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="269" />
     <scopeInfo nodeId="1901504820902748919" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="25" endPosition="7" />
     <scopeInfo nodeId="1901504820902746967" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="20" startPosition="130" endLine="26" endPosition="5" />
   </root>
