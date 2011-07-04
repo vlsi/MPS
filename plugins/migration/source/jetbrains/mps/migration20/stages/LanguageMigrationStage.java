@@ -31,6 +31,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class LanguageMigrationStage implements MigrationStage {
   }
 
   private static void executeScripts(Project project, List<SNodePointer> scripts) {
-    SearchQuery query = new SearchQuery(project.getComponent(ProjectScope.class));
+    SearchQuery query = new SearchQuery(new ModulesOnlyScope(project.getComponent(MPSProject.class).getModules()));
     MigrationScriptFinder finder = new MigrationScriptFinder(scripts, ProjectOperationContext.get(project));
     IResultProvider provider = FindUtils.makeProvider(finder);
     SearchResults<SNode> results = FindUtils.getSearchResults(new EmptyProgressIndicator(), query, provider);
