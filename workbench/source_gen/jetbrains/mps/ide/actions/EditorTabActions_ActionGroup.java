@@ -38,7 +38,6 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
       }
       EditorTabActions_ActionGroup.this.addSeparator();
       EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action");
-      EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action");
       {
         LabelledAnchor action = new LabelledAnchor(EditorTabActions_ActionGroup.LABEL_ID_find_instances);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

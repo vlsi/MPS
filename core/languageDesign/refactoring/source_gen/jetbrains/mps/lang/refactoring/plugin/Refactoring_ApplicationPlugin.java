@@ -4,8 +4,7 @@ package jetbrains.mps.lang.refactoring.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
+import jetbrains.mps.ide.actions.FindUsages_ActionGroup;
 import jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -30,8 +29,7 @@ public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
-    insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, FindUsages_ActionGroup.ID, FindUsages_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(ModelRefactorings_ActionGroup.ID, ModelRefactoring_ActionGroup.ID, null);
   }
 

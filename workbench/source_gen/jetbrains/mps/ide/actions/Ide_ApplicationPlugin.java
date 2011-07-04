@@ -63,7 +63,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new MPSProjectPaths_Action());
-    addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
     addAction(new ModuleProperties_Action());
     addAction(new MoveFileOrDirectory_Action());
@@ -125,6 +124,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Favorites_ActionGroup());
     addGroup(new FileActions_ActionGroup());
     addGroup(new FileSystemNewActions_ActionGroup());
+    addGroup(new FindUsages_ActionGroup());
     addGroup(new FolderActions_ActionGroup());
     addGroup(new Folding_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
@@ -209,6 +209,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, FolderActions_ActionGroup.ID, FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, ModuleActions_ActionGroup.ID, ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(NamespaceInternalActions_ActionGroup.ID, NamespaceActions_ActionGroup.ID, NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
+    insertGroupIntoAnother(FindUsages_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_find);
+    insertGroupIntoAnother(FindUsages_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(Search_ActionGroup.ID, "SearchMenu", null);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);

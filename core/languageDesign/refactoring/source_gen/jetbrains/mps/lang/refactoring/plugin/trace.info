@@ -4,7 +4,7 @@
   <unitInfo fileName="Refactoring_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="30" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Default_KeymapChanges$GenericRefactoringAction_ShortcutChange_qjewi8_a" />
   <unitInfo fileName="ModelRefactorings_ActionGroup.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.ModelRefactorings_ActionGroup" />
-  <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
+  <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
   <unitInfo fileName="NodeRefactoring_ActionGroup.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Default_KeymapChanges" />
   <unitInfo fileName="Refactorings_TabDescriptor.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactorings_TabDescriptor" />
