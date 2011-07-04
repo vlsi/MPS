@@ -46,8 +46,6 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class RulesFunctions_BaseLanguage {
-  private static boolean TRACE_METHOD_TYPES = false;
-
   public RulesFunctions_BaseLanguage() {
   }
 
@@ -167,18 +165,18 @@ __switch__:
   public static void inference_InstanceMethodCallOperation(final TypeCheckingContext typeCheckingContext, SNode imco, SNode returnType, SNode instanceType, SNode methodClassifier) {
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, imco, returnType, mmap);
-    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, instanceType, mmap, imco);
+    RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariablesInternal(typeCheckingContext, methodClassifier, instanceType, mmap, imco);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, imco, mmap);
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
 
   @InferenceMethod
   public static void inference_matchConcreteTypesWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
-    inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, genericClassifier, instanceType, mmap, null);
+    inference_matchConcreteTypesWithTypeVariablesInternal(typeCheckingContext, genericClassifier, instanceType, mmap, null);
   }
 
   @InferenceMethod
-  public static void inference_matchConcreteTypesWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap, SNode nodeToCheck) {
+  public static void inference_matchConcreteTypesWithTypeVariablesInternal(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap, SNode nodeToCheck) {
     if ((genericClassifier != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
       List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
       for (SNode tvd : SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)) {
@@ -242,7 +240,7 @@ __switch__:
       Iterator<SNode> formalIterator = ListSequence.fromList(parameterDeclarations).iterator();
       Iterator<SNode> actualIterator = ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).iterator();
       SNode formalParam = null;
-      SNode actualParam = null;
+      SNode actualParam;
       while (true) {
         if (!(actualIterator.hasNext())) {
           break;

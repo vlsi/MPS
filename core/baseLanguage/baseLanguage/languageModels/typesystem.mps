@@ -2727,14 +2727,6 @@
       <node role="visibility" roleId="tpee.1178549979242" type="nupp.PublicVisibility" typeId="tpee.1146644602865" id="7152041109751866372" />
       <node role="body" roleId="tpee.1068580123135" type="nupp.StatementList" typeId="tpee.1068580123136" id="7152041109751866373" />
     </node>
-    <node role="staticField" roleId="tpee.1128555889557" type="nupp.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1204113905324">
-      <property name="name" nameId="tpck.1169194664001" value="TRACE_METHOD_TYPES" />
-      <node role="visibility" roleId="tpee.1178549979242" type="nupp.PrivateVisibility" typeId="tpee.1146644623116" id="1204113905325" />
-      <node role="type" roleId="tpee.5680397130376446158" type="nupp.BooleanType" typeId="tpee.1070534644030" id="1204113911679" />
-      <node role="initializer" roleId="tpee.1068431790190" type="nupp.BooleanConstant" typeId="tpee.1068580123137" id="1239971965177">
-        <property name="value" nameId="tpee.1068580123138" value="false" />
-      </node>
-    </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="nupp.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1176897078110">
       <property name="name" nameId="tpck.1169194664001" value="comparisonOp" />
       <node role="returnType" roleId="tpee.1068580123133" type="nupp.VoidType" typeId="tpee.1068581517677" id="1176897082253" />
@@ -3054,7 +3046,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="684456904423889841">
           <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="684456904423889842">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariablesInternal" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.ParameterReference" typeId="tpee.1068581242874" id="684456904423889868">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="684456904423889863" resolveInfo="methodClassifier" />
             </node>
@@ -3124,7 +3116,7 @@
       <node role="body" roleId="tpee.1068580123135" type="nupp.StatementList" typeId="tpee.1068580123136" id="3064704932540204339">
         <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="3064704932540204423">
           <node role="expression" roleId="tpee.1068580123156" type="nupp.LocalStaticMethodCall" typeId="tpee.1172058436953" id="3064704932540204424">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariablesInternal" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.ParameterReference" typeId="tpee.1068581242874" id="3064704932540204425">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3064704932540204410" resolveInfo="genericClassifier" />
             </node>
@@ -3162,7 +3154,7 @@
       </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="nupp.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1203432943867">
-      <property name="name" nameId="tpck.1169194664001" value="inference_matchConcreteTypesWithTypeVariables" />
+      <property name="name" nameId="tpck.1169194664001" value="inference_matchConcreteTypesWithTypeVariablesInternal" />
       <node role="returnType" roleId="tpee.1068580123133" type="nupp.VoidType" typeId="tpee.1068581517677" id="1203432943868" />
       <node role="visibility" roleId="tpee.1178549979242" type="nupp.PublicVisibility" typeId="tpee.1146644602865" id="1203432943869" />
       <node role="body" roleId="tpee.1068580123135" type="nupp.StatementList" typeId="tpee.1068580123136" id="1203432943870">
@@ -3589,7 +3581,6 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1219947267010">
                   <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="nupp.NullLiteral" typeId="tpee.1070534058343" id="1219947360965" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="nupp.WhileStatement" typeId="tpee.1076505808687" id="1219946847997">
@@ -8717,7 +8708,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="2925336694746296835">
         <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="2925336694746296836">
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3064704932540204336" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="2925336694746296837">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2925336694746296738" resolveInfo="methodClassifier" />
           </node>
@@ -9542,16 +9533,16 @@
         <node role="nodeToCheck" roleId="tpd4.1174662598553" type="nupp.NullLiteral" typeId="tpee.1070534058343" id="6679360129769834675" />
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="1206554174389">
-        <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="1206554174390">
+        <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="9215127012916251377">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3064704932540204336" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="1206554174391">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251378">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206554174344" resolveInfo="fieldClassifier" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1206554174392">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="9215127012916251379">
             <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1206554174334" resolveInfo="InstanceType" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="1206554174393">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251380">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206554174361" resolveInfo="mmap" />
           </node>
         </node>
@@ -11438,8 +11429,8 @@
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="1212781606067">
         <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="1212781606068">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3064704932540204336" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="1212781606069">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1212781606018" resolveInfo="methodClassifier" />
           </node>
@@ -12802,9 +12793,6 @@
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="nupp.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1219948261807">
           <property name="name" nameId="tpck.1169194664001" value="b" />
           <node role="type" roleId="tpee.5680397130376446158" type="nupp.BooleanType" typeId="tpee.1070534644030" id="1219948261808" />
-          <node role="initializer" roleId="tpee.1068431790190" type="nupp.BooleanConstant" typeId="tpee.1068580123137" id="1219948276221">
-            <property name="value" nameId="tpee.1068580123138" value="true" />
-          </node>
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="nupp.IfStatement" typeId="tpee.1068580123159" id="1241010069472">
@@ -18603,7 +18591,7 @@
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="nupp.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3545977178604772269">
           <property name="name" nameId="tpck.1169194664001" value="classifierType" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3545977178604772270">
-            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
+            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="nupp.DotExpression" typeId="tpee.1197027756228" id="3545977178604772271">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3545977178604772272">
@@ -22358,16 +22346,16 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="8578055449698165530">
-        <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="8578055449698165531">
+        <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="9215127012916251385">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3064704932540204336" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="8578055449698165532">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251386">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8578055449698165467" resolveInfo="methodClassifier" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="8578055449698165533">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251387">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8578055449698165475" resolveInfo="constructedType" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="8578055449698165534">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251388">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2611025225176376326" resolveInfo="mmap" />
           </node>
         </node>
@@ -23129,16 +23117,16 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="5569019188765050066">
-        <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="5569019188765050067">
+        <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="9215127012916251389">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3064704932540204336" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="5569019188765050068">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251390">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5569019188765049992" resolveInfo="methodClassifier" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="5569019188765050069">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="9215127012916251391">
             <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="5569019188765050003" resolveInfo="instanceType" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="5569019188765050070">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251392">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5569019188765050053" resolveInfo="mmap" />
           </node>
         </node>
@@ -25302,16 +25290,16 @@
         <node role="nodeToCheck" roleId="tpd4.1174662598553" type="nupp.NullLiteral" typeId="tpee.1070534058343" id="2233570453276392988" />
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="nupp.ExpressionStatement" typeId="tpee.1068580123155" id="2233570453276392991">
-        <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="2233570453276392992">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1203432943867" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
+        <node role="expression" roleId="tpee.1068580123156" type="nupp.StaticMethodCall" typeId="tpee.1081236700937" id="9215127012916251381">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3064704932540204336" resolveInfo="inference_matchConcreteTypesWithTypeVariables" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="2233570453276392993">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251382">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2233570453276392942" resolveInfo="fieldClassifier" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="2233570453276392994">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="9215127012916251383">
             <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="2233570453276392932" resolveInfo="InstanceType" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="2233570453276392995">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9215127012916251384">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2233570453276392959" resolveInfo="mmap" />
           </node>
         </node>

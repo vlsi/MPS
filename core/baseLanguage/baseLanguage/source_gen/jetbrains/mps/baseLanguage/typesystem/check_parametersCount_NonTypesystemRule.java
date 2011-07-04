@@ -22,7 +22,7 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
 
   public void applyRule(final SNode iMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(iMethodCall, "baseMethodDeclaration", false);
-    boolean b = true;
+    boolean b;
     if (baseMethodDeclaration != null) {
       List<SNode> parameterDeclarations = SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true);
       List<SNode> actualArguments = SLinkOperations.getTargets(iMethodCall, "actualArgument", true);
