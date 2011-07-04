@@ -1164,6 +1164,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
       <property name="name" nameId="tpck.1169194664001" value="FindUsages" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="885275291024029562">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
+      <property name="name" nameId="tpck.1169194664001" value="View" />
+    </node>
   </roots>
   <root id="1204991218714">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148419636">
@@ -1604,12 +1608,6 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1204981009795" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="330316460537638989">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="330316460537638978" resolveInfo="CreateAspect" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6272596508835872976">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7889360268649608396" resolveInfo="ShowParameters" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399672331">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5535460359399556383" resolveInfo="ShowNodeInfo" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1214581695123" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1221753146354">
@@ -29699,6 +29697,19 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1587195459761469122">
         <property name="name" nameId="tpck.1169194664001" value="refactoring" />
+      </node>
+    </node>
+  </root>
+  <root id="885275291024029562">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="885275291024029564">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1215011911267" resolveInfo="IDEAView" />
+    </node>
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="885275291024029565">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="885275291024029566">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7889360268649608396" resolveInfo="ShowParameters" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="885275291024029567">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5535460359399556383" resolveInfo="ShowNodeInfo" />
       </node>
     </node>
   </root>

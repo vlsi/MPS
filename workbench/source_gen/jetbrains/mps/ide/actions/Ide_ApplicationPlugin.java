@@ -161,6 +161,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ToolsInternal_ActionGroup());
     addGroup(new Tools_ActionGroup());
     addGroup(new TransientModulesActions_ActionGroup());
+    addGroup(new View_ActionGroup());
   }
 
   public void adjustInterfaceGroups() {
@@ -220,6 +221,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Favorites_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_favorites);
+    insertGroupIntoAnother(View_ActionGroup.ID, "ViewMenu", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

@@ -81,8 +81,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       }
       EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CreateAspect_Action");
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowParameters_Action");
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInfo_Action");
       EditorPopup_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_vcs);
