@@ -54,7 +54,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowGenerationTraceback_Action());
     addAction(new ShowModelRepository_Action());
     addAction(new ShowModuleRepository_Action());
-    addAction(new ShowNodeInExplorer_Action());
     addAction(new ShowTypeSystemTraceIncremental_Action());
     addAction(new ShowTypeSystemTrace_Action());
     addAction(new TestNodePath_Action());
@@ -74,7 +73,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new LanguageRefactoring_ActionGroup());
     addGroup(new ProjectNewActionsEx_ActionGroup());
     addGroup(new RepositoryToolsGroup_ActionGroup());
-    addGroup(new ShowNodeIn_ActionGroup());
     addGroup(new TraceActions_ActionGroup());
   }
 
@@ -97,9 +95,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
     insertGroupIntoAnother(TraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_showIn);
-    insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_showIn);
-    insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_showIn);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
