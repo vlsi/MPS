@@ -14,8 +14,10 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.ui.ConsoleView;
+import jetbrains.mps.execution.api.configurations.ConsoleCreator;
+import jetbrains.mps.execution.lib.JavaStackTraceFilter;
 import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
@@ -48,9 +50,11 @@ public class Remote_Configuration_RunProfileState extends DebuggerRunProfileStat
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
+    ConsoleView console = ConsoleCreator.createConsoleView(project, false);
+    console.addMessageFilter(new JavaStackTraceFilter());
     {
       ProcessHandler _processHandler = new RemoteProcessHandler(project);
-      final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
+      final ConsoleView _consoleView = console;
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {

@@ -420,6 +420,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "tool", true) == null);
   }
 
+  public static boolean ifMacro_Condition_7236226861153291934(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tool", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), true) != null);
+  }
+
   public static boolean ifMacro_Condition_4042467058397505421(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.execution.configurations.structure.RunConfiguration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -488,6 +492,14 @@ public class QueriesGenerated {
     return StartProcessHandlerStatement_Behavior.call_getDispose_1594211126127708769(_context.getNode());
   }
 
+  public static SNode sourceNodeQuery_7236226861153318862(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_7236226861153318943(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "tool", true);
+  }
+
   public static SNode sourceNodeQuery_7952658987872141374(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "source", true);
   }
@@ -549,7 +561,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5475888311765497814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> beforeTaskCalls = check_x583g4_a0a0oe(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
+    List<SNode> beforeTaskCalls = check_x583g4_a0a0re(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
     if (beforeTaskCalls == null) {
       return new ArrayList<SNode>();
     }
@@ -642,7 +654,7 @@ public class QueriesGenerated {
     }
   }
 
-  private static List<SNode> check_x583g4_a0a0oe(SNode checkedDotOperand) {
+  private static List<SNode> check_x583g4_a0a0re(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTargets(checkedDotOperand, "beforeTask", true);
     }

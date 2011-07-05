@@ -4,7 +4,6 @@ package jetbrains.mps.execution.configurations.structure;
 
 import jetbrains.mps.baseLanguage.structure.ReturnStatement;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,11 +17,11 @@ public class StartProcessHandlerStatement extends ReturnStatement {
     super(node);
   }
 
-  public NamedTupleLiteral getTool() {
-    return (NamedTupleLiteral) this.getChild(NamedTupleLiteral.class, StartProcessHandlerStatement.TOOL);
+  public Expression getTool() {
+    return (Expression) this.getChild(Expression.class, StartProcessHandlerStatement.TOOL);
   }
 
-  public void setTool(NamedTupleLiteral node) {
+  public void setTool(Expression node) {
     super.setChild(StartProcessHandlerStatement.TOOL, node);
   }
 

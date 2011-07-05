@@ -593,8 +593,11 @@
         <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="1594211126127671996" />
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1594211126127672000">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1594211126127672001">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1594211126127672003">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qsa3.1594211126127672004" resolveInfo="ExecutionTool" />
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.JoinType" typeId="tpd4.1179479408386" id="7236226861153266262">
+              <node role="argument" roleId="tpd4.1179479418730" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="7236226861153266263">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qsa3.1594211126127672004" resolveInfo="ExecutionTool" />
+              </node>
+              <node role="argument" roleId="tpd4.1179479418730" type="uhxm.ConsoleType" typeId="uhxm.1594211126127733907" id="7236226861153266265" />
             </node>
           </node>
         </node>

@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,10 +29,13 @@ public class StartProcessHandlerStatement_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "tool", true) == null)) {
       return null;
     }
-    return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "tool", true), "componentRef", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(it, "componentDeclaration", false), "name").equals(name);
-      }
-    }), "value", true);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "tool", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral")) {
+      SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "tool", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), "componentRef", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getString(SLinkOperations.getTarget(it, "componentDeclaration", false), "name").equals(name);
+        }
+      }), "value", true);
+    }
+    return null;
   }
 }
