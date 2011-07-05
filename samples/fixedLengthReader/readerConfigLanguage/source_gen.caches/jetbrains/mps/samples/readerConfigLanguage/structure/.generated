@@ -31,7 +31,6 @@
   </common>
   <source id="1116534870455" name="ReaderConfiguration" hash="8f87faw0zt40xxejubu3tnnhmdoglh9">
     <dep root="1116534914096" />
-    <dep root="1116534962441" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -46,6 +45,7 @@
     <file name="ReaderConfiguration.java" />
   </source>
   <source id="1116534914096" name="Mapping" hash="-6kp5gm16qeep6d56004b9wf57yd22et">
+    <dep root="1116534870455" />
     <dep root="1116534962441" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -61,6 +61,8 @@
     <file name="Mapping.java" />
   </source>
   <source id="1116534962441" name="Field" hash="-7izmbzn3ylkuudiy16iw5on0mwf51fs">
+    <dep root="1116534870455" />
+    <dep root="1116534914096" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
