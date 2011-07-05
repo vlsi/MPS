@@ -48,6 +48,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -122,8 +123,14 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
   }
 
+  @Hack
   public static ProjectPane getInstance(Project project) {
     final ProjectView projectView = ProjectView.getInstance(project);
+
+    //to ensure panes are initialized
+    //filed http://jetbrains.net/tracker/issue/IDEA-24732
+    projectView.getSelectInTargets();
+
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 
@@ -385,11 +392,13 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       myRunReadAction = runReadAction;
     }
 
+    @Override
     public final void run() {
       getProjectView().changeView(getId());
       // TODO: check if we need running read action here, or should we better do it inside myFindHelper methods.
       if (myRunReadAction) {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             doOnPaneActivation();
           }
