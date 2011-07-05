@@ -80,10 +80,16 @@ public class VcsContextWrapper implements VcsContext {
   //this can be removed when there's one file per root node in MPS
   public VirtualFile[] getSelectedFiles() {
     VirtualFile[] fileArray = PlatformDataKeys.VIRTUAL_FILE_ARRAY.getData(myContext);
-    if (fileArray != null) return filterLocalFiles(fileArray);
+    if (fileArray != null) {
+      return filterLocalFiles(fileArray);
+    }
 
     VirtualFile virtualFile = PlatformDataKeys.VIRTUAL_FILE.getData(myContext);
-    if (virtualFile != null) return filterLocalFiles(new VirtualFile[]{virtualFile});
+    // MPS patch begin
+    if (virtualFile != null) {
+      return filterLocalFiles(new VirtualFile[]{virtualFile});
+    }
+    // MPS patch end
 
     return VirtualFile.EMPTY_ARRAY;
   }
@@ -92,27 +98,32 @@ public class VcsContextWrapper implements VcsContext {
     return virtualFile.isInLocalFileSystem();
   }
 
+  @Patch
+  //patched to fix VCS actions
+  //this can be removed when there's one file per root node in MPS
   private static VirtualFile[] filterLocalFiles(VirtualFile[] fileArray) {
-    ArrayList<VirtualFile> result = new ArrayList<VirtualFile>();
+    final ArrayList<VirtualFile> result = new ArrayList<VirtualFile>();
     for (final VirtualFile virtualFile : fileArray) {
       if (isLocal(virtualFile)) {
         result.add(virtualFile);
-      } else if (virtualFile instanceof MPSNodeVirtualFile){
-        return ModelAccess.instance().runReadAction(new Computable<VirtualFile[]>() {
-          public VirtualFile[] compute() {
+      }
+      // MPS patch begin
+      if (virtualFile instanceof MPSNodeVirtualFile) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
             SNode node = ((MPSNodeVirtualFile) virtualFile).getNode();
-            if (node == null) return null;
+            if (node == null) return;
             SModelDescriptor md = node.getModel().getModelDescriptor();
-            if (md == null) return null;
-            if (!(md instanceof EditableSModelDescriptor)) return null;
+            if (!(md instanceof EditableSModelDescriptor)) return;
             IFile ifile = ((EditableSModelDescriptor) md).getModelFile();
-            if (ifile == null || !ifile.exists()) return null;
+            if (ifile == null || !ifile.exists()) return;
             VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
-            if (vfile == null) return null;
-            return new VirtualFile[]{vfile};
+            if (vfile == null) return;
+            result.add(vfile);
           }
         });
       }
+      // MPS patch end
     }
     return VfsUtil.toVirtualFileArray(result);
   }
