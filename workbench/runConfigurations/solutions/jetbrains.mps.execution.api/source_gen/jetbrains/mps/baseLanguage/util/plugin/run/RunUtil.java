@@ -25,6 +25,11 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 
+
+/**
+ * In run configurations to be replaced with "Make" before task
+ * and in Make before task with something
+ */
 @Deprecated
 public class RunUtil {
   @Deprecated

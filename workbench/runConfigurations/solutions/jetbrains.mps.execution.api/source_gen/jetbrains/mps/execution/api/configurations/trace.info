@@ -103,6 +103,24 @@
     <scopeInfo nodeId="3908032508224771318" fileName="DefaultExecutionResult.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <unitInfo nodeId="3908032508224771272" fileName="DefaultExecutionResult.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
   </root>
+  <root nodeId="6875903550967223425">
+    <nodeInfo nodeId="6875903550967223545" fileName="ConsoleCreator.java" startLine="12" startPosition="84" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6875903550967223552" fileName="ConsoleCreator.java" startLine="13" startPosition="66" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6875903550967223554" fileName="ConsoleCreator.java" startLine="14" startPosition="58" endLine="15" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6875903550967223564" fileName="ConsoleCreator.java" startLine="15" startPosition="26" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6875903550967223427" fileName="ConsoleCreator.java" startLine="8" startPosition="29" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConsoleCreator#()V" />
+    <nodeInfo nodeId="6875903550967223541" fileName="ConsoleCreator.java" startLine="11" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createConsoleView#(Lcom/intellij/openapi/project/Project;Z)Lcom/intellij/execution/impl/ConsoleViewImpl;" />
+    <scopeInfo nodeId="6875903550967223430" fileName="ConsoleCreator.java" startLine="9" startPosition="27" endLine="9" endPosition="27" />
+    <scopeInfo nodeId="6875903550967223427" fileName="ConsoleCreator.java" startLine="8" startPosition="29" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="6875903550967223544" fileName="ConsoleCreator.java" startLine="12" startPosition="84" endLine="16" endPosition="18">
+      <varInfo nodeId="6875903550967223546" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6875903550967223541" fileName="ConsoleCreator.java" startLine="11" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="6875903550967223566" varName="project" />
+      <varInfo nodeId="6875903550967223568" varName="viewer" />
+    </scopeInfo>
+    <unitInfo nodeId="6875903550967223425" fileName="ConsoleCreator.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
+  </root>
   <root nodeId="7037083547575991021">
     <nodeInfo nodeId="7037083547575991021" fileName="BaseMpsBeforeTaskProvider.java" startLine="18" startPosition="140" endLine="19" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="7037083547576022690" fileName="BaseMpsBeforeTaskProvider.java" startLine="20" startPosition="0" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />

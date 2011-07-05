@@ -30,6 +30,10 @@
     <classNode extendsClassName="com.intellij.execution.configurations.LocatableConfiguration" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunConfigurationBase" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.api.configurations.ConsoleCreator" file="ConsoleCreator.java">
+    <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" file="ConsoleProcessListener.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />

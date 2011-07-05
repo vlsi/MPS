@@ -128,88 +128,20 @@
     <scopeInfo nodeId="1203605506361" fileName="PathField.java" startLine="120" startPosition="0" endLine="133" endPosition="0" />
   </root>
   <root nodeId="144575100359734006">
-    <nodeInfo nodeId="144575100359734026" fileName="JavaConsoleCreator.java" startLine="16" startPosition="33" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRING_START" />
-    <nodeInfo nodeId="144575100359734043" fileName="JavaConsoleCreator.java" startLine="20" startPosition="80" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="144575100359734045" fileName="JavaConsoleCreator.java" startLine="22" startPosition="5" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="144575100359734046" fileName="JavaConsoleCreator.java" startLine="23" startPosition="0" endLine="24" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734057" fileName="JavaConsoleCreator.java" startLine="24" startPosition="105" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734064" fileName="JavaConsoleCreator.java" startLine="25" startPosition="42" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734073" fileName="JavaConsoleCreator.java" startLine="27" startPosition="27" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="144575100359734078" fileName="JavaConsoleCreator.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="144575100359734079" fileName="JavaConsoleCreator.java" startLine="30" startPosition="0" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734087" fileName="JavaConsoleCreator.java" startLine="31" startPosition="56" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734096" fileName="JavaConsoleCreator.java" startLine="33" startPosition="34" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="144575100359734101" fileName="JavaConsoleCreator.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="144575100359734102" fileName="JavaConsoleCreator.java" startLine="36" startPosition="0" endLine="37" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734112" fileName="JavaConsoleCreator.java" startLine="37" startPosition="74" endLine="38" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734120" fileName="JavaConsoleCreator.java" startLine="39" startPosition="29" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="144575100359734125" fileName="JavaConsoleCreator.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="144575100359734151" fileName="JavaConsoleCreator.java" startLine="44" startPosition="40" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="144575100359734163" fileName="JavaConsoleCreator.java" startLine="50" startPosition="55" endLine="51" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734168" fileName="JavaConsoleCreator.java" startLine="51" startPosition="78" endLine="52" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="144575100359734175" fileName="JavaConsoleCreator.java" startLine="52" startPosition="67" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="144575100359734189" fileName="JavaConsoleCreator.java" startLine="56" startPosition="68" endLine="57" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3009760524306104322" fileName="JavaConsoleCreator.java" startLine="57" startPosition="65" endLine="58" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3009760524306104314" fileName="JavaConsoleCreator.java" startLine="58" startPosition="58" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="144575100359734196" fileName="JavaConsoleCreator.java" startLine="59" startPosition="26" endLine="60" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="144575100359734202" fileName="JavaConsoleCreator.java" startLine="60" startPosition="71" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="144575100359734224" fileName="JavaConsoleCreator.java" startLine="69" startPosition="63" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="144575100359734210" fileName="JavaConsoleCreator.java" startLine="64" startPosition="58" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StackTraceFilter#()V" />
-    <nodeInfo nodeId="144575100359734034" fileName="JavaConsoleCreator.java" startLine="19" startPosition="72" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="144575100359734071" fileName="JavaConsoleCreator.java" startLine="26" startPosition="41" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="144575100359734094" fileName="JavaConsoleCreator.java" startLine="32" startPosition="48" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="144575100359734118" fileName="JavaConsoleCreator.java" startLine="38" startPosition="74" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="144575100359734145" fileName="JavaConsoleCreator.java" startLine="43" startPosition="119" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="144575100359734126" fileName="JavaConsoleCreator.java" startLine="42" startPosition="0" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="144575100359734215" fileName="JavaConsoleCreator.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyFilter#(Ljava/lang/String;I)Lcom/intellij/execution/filters/Filter/Result;" />
-    <nodeInfo nodeId="144575100359734159" fileName="JavaConsoleCreator.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showNode#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="144575100359734185" fileName="JavaConsoleCreator.java" startLine="55" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createConsoleView#(Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/impl/ConsoleViewImpl;" />
-    <nodeInfo nodeId="144575100359734030" fileName="JavaConsoleCreator.java" startLine="18" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryToParseLine#(Ljava/lang/String;I)Lcom/intellij/execution/filters/Filter/Result;" />
-    <scopeInfo nodeId="144575100359734213" fileName="JavaConsoleCreator.java" startLine="65" startPosition="31" endLine="65" endPosition="31" />
-    <scopeInfo nodeId="144575100359734042" fileName="JavaConsoleCreator.java" startLine="20" startPosition="80" endLine="21" endPosition="18" />
-    <scopeInfo nodeId="144575100359734072" fileName="JavaConsoleCreator.java" startLine="27" startPosition="27" endLine="28" endPosition="18" />
-    <scopeInfo nodeId="144575100359734095" fileName="JavaConsoleCreator.java" startLine="33" startPosition="34" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="144575100359734119" fileName="JavaConsoleCreator.java" startLine="39" startPosition="29" endLine="40" endPosition="18" />
-    <scopeInfo nodeId="144575100359734150" fileName="JavaConsoleCreator.java" startLine="44" startPosition="40" endLine="45" endPosition="52" />
-    <scopeInfo nodeId="144575100359734223" fileName="JavaConsoleCreator.java" startLine="69" startPosition="63" endLine="70" endPosition="58" />
-    <scopeInfo nodeId="144575100359734210" fileName="JavaConsoleCreator.java" startLine="64" startPosition="58" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="144575100359734162" fileName="JavaConsoleCreator.java" startLine="50" startPosition="55" endLine="53" endPosition="44">
-      <varInfo nodeId="144575100359734169" varName="opener" />
-      <varInfo nodeId="144575100359734164" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="144575100359734145" fileName="JavaConsoleCreator.java" startLine="43" startPosition="119" endLine="47" endPosition="0">
-      <varInfo nodeId="144575100359734148" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="144575100359734188" fileName="JavaConsoleCreator.java" startLine="56" startPosition="68" endLine="61" endPosition="18">
+    <nodeInfo nodeId="144575100359734189" fileName="JavaConsoleCreator.java" startLine="22" startPosition="68" endLine="23" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="144575100359734196" fileName="JavaConsoleCreator.java" startLine="23" startPosition="78" endLine="24" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="144575100359734202" fileName="JavaConsoleCreator.java" startLine="24" startPosition="56" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4599671019557403091" fileName="JavaConsoleCreator.java" startLine="17" startPosition="33" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaConsoleCreator#()V" />
+    <nodeInfo nodeId="144575100359734185" fileName="JavaConsoleCreator.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createConsoleView#(Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/impl/ConsoleViewImpl;" />
+    <scopeInfo nodeId="4599671019557403094" fileName="JavaConsoleCreator.java" startLine="19" startPosition="31" endLine="19" endPosition="31" />
+    <scopeInfo nodeId="4599671019557403091" fileName="JavaConsoleCreator.java" startLine="17" startPosition="33" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="144575100359734188" fileName="JavaConsoleCreator.java" startLine="22" startPosition="68" endLine="25" endPosition="18">
       <varInfo nodeId="144575100359734190" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="144575100359734215" fileName="JavaConsoleCreator.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="144575100359734220" varName="length" />
-      <varInfo nodeId="144575100359734218" varName="line" />
-    </scopeInfo>
-    <scopeInfo nodeId="144575100359734159" fileName="JavaConsoleCreator.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="144575100359734183" varName="node" />
-      <varInfo nodeId="144575100359734181" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="144575100359734185" fileName="JavaConsoleCreator.java" startLine="55" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="144575100359734185" fileName="JavaConsoleCreator.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="144575100359734204" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="144575100359734033" fileName="JavaConsoleCreator.java" startLine="19" startPosition="72" endLine="47" endPosition="7">
-      <varInfo nodeId="144575100359734103" varName="position" />
-      <varInfo nodeId="144575100359734058" varName="tmpStr" />
-      <varInfo nodeId="144575100359734047" varName="start" />
-      <varInfo nodeId="144575100359734065" varName="parenIndex" />
-      <varInfo nodeId="144575100359734088" varName="closingParenIndex" />
-      <varInfo nodeId="144575100359734113" varName="nodeToShow" />
-      <varInfo nodeId="144575100359734080" varName="methodName" />
-    </scopeInfo>
-    <scopeInfo nodeId="144575100359734030" fileName="JavaConsoleCreator.java" startLine="18" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="144575100359734155" varName="line" />
-      <varInfo nodeId="144575100359734157" varName="offset" />
-    </scopeInfo>
-    <unitInfo nodeId="144575100359734143" fileName="JavaConsoleCreator.java" startLine="43" startPosition="102" endLine="47" endPosition="5" unitName="jetbrains.mps.ide.common.JavaConsoleCreator$1" />
-    <unitInfo nodeId="144575100359734208" fileName="JavaConsoleCreator.java" startLine="64" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.common.JavaConsoleCreator$StackTraceFilter" />
-    <unitInfo nodeId="144575100359734006" fileName="JavaConsoleCreator.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.common.JavaConsoleCreator" />
+    <unitInfo nodeId="144575100359734006" fileName="JavaConsoleCreator.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.common.JavaConsoleCreator" />
   </root>
   <root nodeId="4251154893541678687">
     <nodeInfo nodeId="4251154893541691633" fileName="ReadComboBoxEditor.java" startLine="15" startPosition="25" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

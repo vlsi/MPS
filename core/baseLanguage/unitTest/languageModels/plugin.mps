@@ -34814,7 +34814,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="l649.~ConsoleView%daddMessageFilter(com%dintellij%dexecution%dfilters%dFilter)%cvoid" resolveInfo="addMessageFilter" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1594211126127887499">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1594211126127887501">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzsw.~JavaConsoleCreator$StackTraceFilter%d&lt;init&gt;()" resolveInfo="JavaConsoleCreator.StackTraceFilter" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="awpe.6875903550967220740" resolveInfo="JavaStackTraceFilter" />
                 </node>
               </node>
             </node>

@@ -19,8 +19,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.ConsoleView;
-import com.intellij.execution.impl.ConsoleViewImpl;
-import jetbrains.mps.ide.common.JavaConsoleCreator;
+import jetbrains.mps.execution.api.configurations.ConsoleCreator;
+import jetbrains.mps.execution.lib.JavaStackTraceFilter;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
@@ -57,8 +57,8 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
 
     TestRunState runState = new TestRunState(nodeWrappers);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
-    ConsoleView console = new ConsoleViewImpl(project, false);
-    console.addMessageFilter(new JavaConsoleCreator.StackTraceFilter());
+    ConsoleView console = ConsoleCreator.createConsoleView(project, false);
+    console.addMessageFilter(new JavaStackTraceFilter());
     final UnitTestViewComponent viewComponent = new UnitTestViewComponent(project, ProjectOperationContext.get(project), console, runState, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         if (process != null) {

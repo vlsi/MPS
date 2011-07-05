@@ -23,6 +23,7 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" name="commons-lang" level="project" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>
 
