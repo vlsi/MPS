@@ -5,21 +5,19 @@ package jetbrains.mps.lang.intentions.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
@@ -30,13 +28,22 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
 
   public ShowGenerationIntentions_Action() {
     super("Generate...", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
+  }
+
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup"));
+    group.update(event);
+    return group.getChildren(event).length != 0;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationIntentions", t);
       this.disable(event.getPresentation());
@@ -62,7 +69,6 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
       if (selectedCell instanceof EditorCell_Label) {
         y += ((EditorCell_Label) selectedCell).getHeight();
       }
-      final DataContext dataContext = DataManager.getInstance().getDataContext(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), x, y);
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -71,7 +77,7 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
           if (group.getChildren(event).length == 0) {
             return;
           }
-          popup.value = JBPopupFactory.getInstance().createActionGroupPopup("Generate", group, dataContext, JBPopupFactory.ActionSelectionAid.NUMBERING, false);
+          popup.value = JBPopupFactory.getInstance().createActionGroupPopup("Generate", group, event.getDataContext(), JBPopupFactory.ActionSelectionAid.NUMBERING, false);
         }
       });
       if (popup.value == null) {

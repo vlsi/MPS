@@ -7,20 +7,18 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.ide.DataManager;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Point;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import java.util.List;
@@ -32,12 +30,17 @@ public class ShowSurroundWithIntentions_Action extends GeneratedAction {
 
   public ShowSurroundWithIntentions_Action() {
     super("Surround with...", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ShowSurroundWithIntentions_Action.this.getAnchorCell(_params) != null;
+    if (ShowSurroundWithIntentions_Action.this.getAnchorCell(_params) == null) {
+      return false;
+    }
+    ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.lang.intentions.plugin.SurroundWithIntentions_ActionGroup"));
+    group.update(event);
+    return group.getChildren(event).length != 0;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -69,7 +72,6 @@ public class ShowSurroundWithIntentions_Action extends GeneratedAction {
       int x = selectedCell.getX();
       int y = selectedCell.getY();
       y += selectedCell.getHeight();
-      final DataContext dataContext = DataManager.getInstance().getDataContext(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), x, y);
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -78,7 +80,7 @@ public class ShowSurroundWithIntentions_Action extends GeneratedAction {
           if (group.getChildren(event).length == 0) {
             return;
           }
-          popup.value = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, dataContext, JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
+          popup.value = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, event.getDataContext(), JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
         }
       });
       if (popup.value == null) {

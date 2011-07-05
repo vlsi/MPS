@@ -112,11 +112,9 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.plugin.ShowGenerationIntentions_Action" file="ShowGenerationIntentions_Action.java">
-    <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.ListPopup" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
@@ -139,11 +137,9 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.plugin.ShowSurroundWithIntentions_Action" file="ShowSurroundWithIntentions_Action.java">
-    <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.ListPopup" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />

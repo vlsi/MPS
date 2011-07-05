@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8lpex7zcdpot2wufgea8jcy57bd44pf">
+<dependencies version="2" modelHash="-697trm8c779zz7uu45017czcdx3virr">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.ui.popup(MPS.Classpath/com.intellij.openapi.ui.popup@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.util(MPS.Classpath/com.intellij.openapi.util@java_stub)" />
@@ -21,7 +21,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" hash="4klds9nf40pmqgr5j51ghlfb83j1fu5" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-2obg04a8cz181kb3dba004vwgdf7aie" />
   <dep model="r:00000000-0000-4000-0000-011c8959029c(jetbrains.mps.lang.editor.plugin)" hash="c8v5157do2fpnwsmmia49adxj8rzyzt" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b3(jetbrains.mps.lang.typesystem.plugin)" hash="-1xec6egd1bdmfycyaymouclwehhhibz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b3(jetbrains.mps.lang.typesystem.plugin)" hash="-a76gufqywk2wvsvjx1grpcg1i2rk55v" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-4h1w4jt5jct53w5k7n8e4vrwmuvneg4" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8f40zw2ng3ru04g6jirwqdjoy2uzoh2" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
@@ -39,7 +39,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="e4jnjguecprk4l1dr6a49h3ppl18pp4" />
   <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" hash="8uumyxdmxadrxsmz1enbyk7d6mevte9" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="bs12zx6bureypbcmufkaon2v0z94d94" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-3ey2vfm0hndvx7h8h4gbzgz3acejklh" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="efmsp0yed10aujfvd5ujwnihvlb62s5" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="n57flnwgk5r9dkaaf1oubcs9e184fo" />
   <dep model="r:1ed054af-f407-4447-a858-616e33563f48(jetbrains.mps.lang.behavior.plugin)" hash="-deuuike44kf2a0zudcr578cmbexnn3o" />
   <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="-8gut7thqrfdizr4ee7r2kw1isfzp4e7" />
@@ -171,7 +171,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GenerationIntentions_ActionGroup.java" />
   </source>
-  <source id="3464435412756546224" name="ShowGenerationIntentions" hash="7k7l6fapj98vkc5xvyz1kj1jufy4cdl">
+  <source id="3464435412756546224" name="ShowGenerationIntentions" hash="8n26fi1lfmy8g4l8vq7tqoc73f8hhmi">
     <dep root="3464435412756546091" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.ui.popup(MPS.Classpath/com.intellij.openapi.ui.popup@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.logging(MPS.Classpath/jetbrains.mps.logging@java_stub)" />
@@ -234,7 +234,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SurroundWithIntentions_ActionGroup.java" />
   </source>
-  <source id="3464435412756546477" name="ShowSurroundWithIntentions" hash="81qlj1pvci1vqyredygafj7gdhtffwd">
+  <source id="3464435412756546477" name="ShowSurroundWithIntentions" hash="4txeyhp3pi8x8nwx7mrngcbor52v4h5">
     <dep root="3464435412756546339" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.ui.popup(MPS.Classpath/com.intellij.openapi.ui.popup@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.logging(MPS.Classpath/jetbrains.mps.logging@java_stub)" />
