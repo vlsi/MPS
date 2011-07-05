@@ -39,6 +39,6 @@ public class ActionParameterTypeIsNotClassifier_NonTypesystemRule extends Abstra
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

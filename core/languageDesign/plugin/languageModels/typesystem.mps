@@ -121,6 +121,7 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1217414699163">
       <property name="name" nameId="tpck.1169194664001" value="ActionParameterTypeIsNotClassifier" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1218036779326">
       <property name="name" nameId="tpck.1169194664001" value="typeof_FileGeneratorType" />
