@@ -16,7 +16,6 @@ public class GotoConceptAspect_ActionGroup extends GeneratedActionGroup {
     try {
       GotoConceptAspect_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.GoToConceptDeclaration_Action");
       GotoConceptAspect_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action");
-      GotoConceptAspect_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.GoToRules_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

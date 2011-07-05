@@ -1309,17 +1309,10 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1744445256079579883">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1744445256079578595" resolveInfo="GoToEditorDeclaration" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1744445256079579884">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1744445256079578802" resolveInfo="GoToRules" />
-      </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4753172061859551546">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.5384922150955313088" resolveInfo="GoToEditorPopupAddition" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.7709977758674157454" resolveInfo="other" />
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1744445256079579879">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991215587" resolveInfo="NodeActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1744445256079579881" resolveInfo="gotoConceptAspects" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4753172061859551545">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.2921528350547793592" resolveInfo="EditorTabActions" />
