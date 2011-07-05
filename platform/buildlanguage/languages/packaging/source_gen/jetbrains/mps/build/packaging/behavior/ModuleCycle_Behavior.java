@@ -46,7 +46,9 @@ public class ModuleCycle_Behavior {
 
   public static List<SNode> createPathHolders_1218716903754(List<String> stringClasspath, String homePath, List<SNode> macro) {
     List<SNode> pathHolders = new ArrayList<SNode>();
+    homePath = homePath.replace("\\", "/");
     for (String string : ListSequence.fromList(stringClasspath)) {
+      string = string.replace("\\", "/");
       SNode holder = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);
       String relativePath = ModuleUtil.getRelativePath(string, homePath);
       SPropertyOperations.set(holder, "fullPath", relativePath);

@@ -92,8 +92,10 @@ public class Module_Behavior {
   }
 
   public static SNode call_getPathHolder_1239195000114(SNode thisNode, String path) {
+    path = path.replace("\\", "/");
+    String homePath = AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath().replace("\\", "/");
     SNode pathHolder = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);
-    SPropertyOperations.set(pathHolder, "fullPath", ModuleUtil.getRelativePath(path, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath()));
+    SPropertyOperations.set(pathHolder, "fullPath", ModuleUtil.getRelativePath(path, homePath));
     if (SPropertyOperations.getString(pathHolder, "fullPath").equals(path)) {
       ModuleUtil.findMacro(pathHolder, SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), "macro", true));
     }
