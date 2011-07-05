@@ -10,9 +10,9 @@
   <unitInfo fileName="JavaModuleActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.make.actions.JavaModuleActions_ActionGroup" />
   <unitInfo fileName="ProjectCompileActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.make.actions.ProjectCompileActions_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Default_KeymapChanges" />
-  <unitInfo fileName="GlobalMake_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GlobalMake_ActionGroup" />
   <unitInfo fileName="Make_ActionGroup.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ActionGroup" />
   <unitInfo fileName="GenerateOptions_ActionGroup.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup" />
+  <unitInfo fileName="GlobalMake_ActionGroup.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GlobalMake_ActionGroup" />
   <unitInfo fileName="Make_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer" />
   <unitInfo fileName="Options_Action.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Options_Action" />
   <unitInfo fileName="CheckModelsBeforeGeneration_Action.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CheckModelsBeforeGeneration_Action" />
@@ -525,13 +525,16 @@
     <nodeInfo nodeId="8610665572788515226" fileName="ProjectMake_ActionGroup.java" startLine="17" startPosition="98" endLine="18" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8610665572788515227">
-    <nodeInfo nodeId="8610665572788515230" fileName="GlobalMake_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515231" fileName="GlobalMake_ActionGroup.java" startLine="17" startPosition="97" endLine="18" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515232" fileName="GlobalMake_ActionGroup.java" startLine="18" startPosition="105" endLine="19" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515233" fileName="GlobalMake_ActionGroup.java" startLine="19" startPosition="108" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515234" fileName="GlobalMake_ActionGroup.java" startLine="20" startPosition="104" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515235" fileName="GlobalMake_ActionGroup.java" startLine="21" startPosition="107" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515236" fileName="GlobalMake_ActionGroup.java" startLine="22" startPosition="49" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8546647817422461963" fileName="GlobalMake_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515230" fileName="GlobalMake_ActionGroup.java" startLine="17" startPosition="49" endLine="18" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515236" fileName="GlobalMake_ActionGroup.java" startLine="18" startPosition="97" endLine="19" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8546647817422461959" fileName="GlobalMake_ActionGroup.java" startLine="19" startPosition="100" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515231" fileName="GlobalMake_ActionGroup.java" startLine="20" startPosition="49" endLine="21" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515232" fileName="GlobalMake_ActionGroup.java" startLine="21" startPosition="105" endLine="22" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8546647817422461961" fileName="GlobalMake_ActionGroup.java" startLine="22" startPosition="108" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515233" fileName="GlobalMake_ActionGroup.java" startLine="23" startPosition="49" endLine="24" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515234" fileName="GlobalMake_ActionGroup.java" startLine="24" startPosition="104" endLine="25" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515235" fileName="GlobalMake_ActionGroup.java" startLine="25" startPosition="107" endLine="26" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8610665572788515237">
     <nodeInfo nodeId="8610665572788515353" fileName="MakeActionImpl.java" startLine="17" startPosition="29" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />

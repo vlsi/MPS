@@ -2932,15 +2932,21 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.5716258091890928613" resolveInfo="make" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8610665572788515229">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8546647817422461963" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8610665572788515230">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8610665572788515195" resolveInfo="MakeProject" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8610665572788515236">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="8610665572788515998" resolveInfo="RebuildProject" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8546647817422461959" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8610665572788515231">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8610665572788515637" resolveInfo="MakeSelectedModules" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8610665572788515232">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8610665572788515572" resolveInfo="RebuildSelectedModules" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8546647817422461961" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8610665572788515233">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8610665572788514618" resolveInfo="MakeSelectedModels" />
       </node>
@@ -2948,9 +2954,6 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8610665572788515703" resolveInfo="RebuildSelectedModels" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8610665572788515235" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8610665572788515236">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="8610665572788515998" resolveInfo="RebuildProject" />
-      </node>
     </node>
   </root>
   <root id="8610665572788515237">

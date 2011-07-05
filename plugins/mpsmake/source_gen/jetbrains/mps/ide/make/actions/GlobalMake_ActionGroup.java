@@ -14,13 +14,16 @@ public class GlobalMake_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      GlobalMake_ActionGroup.this.addSeparator();
       GlobalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.MakeProject_Action");
+      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.RebuildProject_Action");
+      GlobalMake_ActionGroup.this.addSeparator();
       GlobalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.MakeSelectedModules_Action");
       GlobalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.RebuildSelectedModules_Action");
+      GlobalMake_ActionGroup.this.addSeparator();
       GlobalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.MakeSelectedModels_Action");
       GlobalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.RebuildSelectedModels_Action");
       GlobalMake_ActionGroup.this.addSeparator();
-      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.RebuildProject_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
