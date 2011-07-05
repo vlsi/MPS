@@ -817,17 +817,17 @@
   <root nodeId="1178725705102">
     <nodeInfo nodeId="1184850918625" fileName="typeof_ToListOperation_InferenceRule.java" startLine="21" startPosition="115" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184850887615" fileName="typeof_ToListOperation_InferenceRule.java" startLine="22" startPosition="79" endLine="23" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184850943303" fileName="typeof_ToListOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184850943303" fileName="typeof_ToListOperation_InferenceRule.java" startLine="25" startPosition="47" endLine="26" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184850943303" fileName="typeof_ToListOperation_InferenceRule.java" startLine="26" startPosition="209" endLine="27" endPosition="450" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1809270905935662927" fileName="typeof_ToListOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1809270905935662927" fileName="typeof_ToListOperation_InferenceRule.java" startLine="25" startPosition="47" endLine="26" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1809270905935662927" fileName="typeof_ToListOperation_InferenceRule.java" startLine="26" startPosition="215" endLine="27" endPosition="453" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="29" startPosition="5" endLine="30" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="30" startPosition="44" endLine="31" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="31" startPosition="209" endLine="32" endPosition="427" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1193827622269" fileName="TypesystemDescriptor.java" startLine="660" startPosition="54" endLine="661" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1184850943303" fileName="typeof_ToListOperation_InferenceRule.java" startLine="23" startPosition="104" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1809270905935662927" fileName="typeof_ToListOperation_InferenceRule.java" startLine="23" startPosition="104" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="28" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1193827557956" fileName="TypesystemDescriptor.java" startLine="660" startPosition="54" endLine="661" endPosition="66" />
-    <scopeInfo nodeId="1184850943303" fileName="typeof_ToListOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="27" endPosition="450" />
+    <scopeInfo nodeId="1809270905935662927" fileName="typeof_ToListOperation_InferenceRule.java" startLine="24" startPosition="5" endLine="27" endPosition="453" />
     <scopeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="29" startPosition="5" endLine="32" endPosition="427" />
     <scopeInfo nodeId="1178725705103" fileName="typeof_ToListOperation_InferenceRule.java" startLine="21" startPosition="115" endLine="33" endPosition="5">
       <varInfo nodeId="1184850918626" varName="input" />
