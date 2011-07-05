@@ -4,8 +4,7 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
+import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -36,8 +35,8 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
     insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemNodeActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
-    insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

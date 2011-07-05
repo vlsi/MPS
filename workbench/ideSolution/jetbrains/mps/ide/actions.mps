@@ -1107,7 +1107,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
       <property name="name" nameId="tpck.1169194664001" value="DebugActions" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Debug" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Language Debug" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="330316460537638978">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions" />
@@ -1598,9 +1598,15 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="5384922150955313087">
         <property name="name" nameId="tpck.1169194664001" value="goto" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="3464435412756546690">
+        <property name="name" nameId="tpck.1169194664001" value="intentions" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1204980917260" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1234869968490316270">
         <property name="name" nameId="tpck.1169194664001" value="gentrace" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="3464435412756412238">
+        <property name="name" nameId="tpck.1169194664001" value="debug" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1211230443709" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1237990503495">
@@ -1614,21 +1620,14 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1221753146354">
         <property name="name" nameId="tpck.1169194664001" value="vcs" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="3464435412756395950" />
     </node>
   </root>
   <root id="1204991232446">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1204998642876">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
     </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148344079">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2662234144540708072">
-        <property name="name" nameId="tpck.1169194664001" value="workbench" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2662234144540708080" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2662234144540708082">
-        <property name="name" nameId="tpck.1169194664001" value="languages" />
-      </node>
-    </node>
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148344079" />
   </root>
   <root id="1204991235731">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205007875051">
@@ -28372,8 +28371,13 @@
   </root>
   <root id="1951613054411714136">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1951613054411714140" />
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1951613054411714142">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3464435412756462059">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="3464435412756412238" resolveInfo="debug" />
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3464435412756462060">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991215587" resolveInfo="NodeActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1234869968490316272" resolveInfo="debug" />
     </node>
   </root>
   <root id="330316460537638978">
@@ -29650,7 +29654,7 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1211230637739" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1234869968490316272">
-        <property name="name" nameId="tpck.1169194664001" value="gentrace" />
+        <property name="name" nameId="tpck.1169194664001" value="debug" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1204908878146" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1237990522669">

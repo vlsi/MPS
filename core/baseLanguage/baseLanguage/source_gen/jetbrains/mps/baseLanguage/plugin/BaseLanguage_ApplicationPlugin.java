@@ -70,7 +70,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(PrintNodePosition_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_languages);
+    insertGroupIntoAnother(PrintNodePosition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

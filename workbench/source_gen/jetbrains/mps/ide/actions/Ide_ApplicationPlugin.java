@@ -185,7 +185,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(FavoritesPopup_ActionGroup.ID, FavoritesPopupWrapper_ActionGroup.ID, null);
     insertGroupIntoAnother(Bookmarks_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Build_ActionGroup.ID, "BuildMenu", null);
-    insertGroupIntoAnother(DebugActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
@@ -194,6 +193,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);
+    insertGroupIntoAnother(DebugActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_debug);
+    insertGroupIntoAnother(DebugActions_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_debug);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
     insertGroupIntoAnother(SolutionNewActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
     insertGroupIntoAnother(GeneratorNewActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);

@@ -10,7 +10,7 @@ public class DebugActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.DebugActions_ActionGroup";
 
   public DebugActions_ActionGroup() {
-    super("Debug", ID);
+    super("Language Debug", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {

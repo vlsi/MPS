@@ -4,34 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.action.LabelledAnchor;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.extensions.PluginId;
 
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorInternal_ActionGroup";
-  public static final String LABEL_ID_workbench = ID + "workbench";
-  public static final String LABEL_ID_languages = ID + "languages";
 
   public EditorInternal_ActionGroup() {
     super("Internal", ID);
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      {
-        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_workbench);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        EditorInternal_ActionGroup.this.addAction(action);
-      }
-      EditorInternal_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_languages);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        EditorInternal_ActionGroup.this.addAction(action);
-      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

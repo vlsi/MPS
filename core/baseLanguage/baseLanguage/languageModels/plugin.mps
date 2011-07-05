@@ -15476,7 +15476,6 @@
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8156047350005480586">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991232446" resolveInfo="EditorInternal" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.2662234144540708082" resolveInfo="languages" />
     </node>
   </root>
   <root id="7000507154716606309">

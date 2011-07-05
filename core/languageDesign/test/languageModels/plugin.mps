@@ -327,7 +327,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1224600058026">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1224600058654">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1224600058027">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224599962066" resolveInfo="t" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224599962066" resolveInfo="thread" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1224600062722">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Thread%dstart()%cvoid" resolveInfo="start" />
@@ -473,11 +473,11 @@
   </root>
   <root id="1224594330528">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1224594334248">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991232446" resolveInfo="EditorInternal" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1951613054411714136" resolveInfo="DebugActions" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1224594359327">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1224594365953">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1224594241712" resolveInfo="RunModelTestsInMPS" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1224594241712" resolveInfo="RunTestInMPS" />
       </node>
     </node>
   </root>

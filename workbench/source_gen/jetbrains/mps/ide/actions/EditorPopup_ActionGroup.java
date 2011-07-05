@@ -17,7 +17,9 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_paste = ID + "paste";
   public static final String LABEL_ID_folding = ID + "folding";
   public static final String LABEL_ID_goto = ID + "goto";
+  public static final String LABEL_ID_intentions = ID + "intentions";
   public static final String LABEL_ID_gentrace = ID + "gentrace";
+  public static final String LABEL_ID_debug = ID + "debug";
   public static final String LABEL_ID_find = ID + "find";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
@@ -65,9 +67,21 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         EditorPopup_ActionGroup.this.addAction(action);
       }
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_intentions);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       EditorPopup_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_gentrace);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_debug);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         EditorPopup_ActionGroup.this.addAction(action);
@@ -88,6 +102,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         EditorPopup_ActionGroup.this.addAction(action);
       }
+      EditorPopup_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

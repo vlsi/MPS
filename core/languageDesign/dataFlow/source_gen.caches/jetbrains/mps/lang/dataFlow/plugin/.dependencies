@@ -8,7 +8,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ApplicationPlugin" file="DataFlow_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action" />

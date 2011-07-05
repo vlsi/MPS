@@ -9,13 +9,12 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
+import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.GoToEditorPopupAddition_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
-import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
+import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -36,7 +35,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddAccessoryModel_Action());
     addAction(new CellProperties_Action());
     addAction(new DeleteGenerator_Action());
-    addAction(new GenerationIntentions_Action());
     addAction(new GoToConceptDeclaration_Action());
     addAction(new GoToEditorDeclaration_Action());
     addAction(new GoToRules_Action());
@@ -59,7 +57,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowNodeInExplorer_Action());
     addAction(new ShowTypeSystemTraceIncremental_Action());
     addAction(new ShowTypeSystemTrace_Action());
-    addAction(new SurroundWithIntentions_Action());
     addAction(new TestNodePath_Action());
     // groups 
     addGroup(new AccessoriesGroupActions_ActionGroup());
@@ -67,7 +64,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new EditorInternalEx_ActionGroup());
     addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateGeneratorPopup_ActionGroup());
-    addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GenerationTraceActions_ActionGroup());
     addGroup(new GeneratorActions_Delete_ActionGroup());
     addGroup(new GotoConceptAspect_ActionGroup());
@@ -79,7 +75,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ProjectNewActionsEx_ActionGroup());
     addGroup(new RepositoryToolsGroup_ActionGroup());
     addGroup(new ShowNodeIn_ActionGroup());
-    addGroup(new SurroundWithIntentions_ActionGroup());
     addGroup(new TraceActions_ActionGroup());
   }
 
@@ -89,8 +84,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(RepositoryToolsGroup_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
-    insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_gentrace);
-    insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gentrace);
+    insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);
     insertGroupIntoAnother(LanguageNewActionsEx_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
     insertGroupIntoAnother(GeneratorActions_Delete_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_delete);
@@ -100,7 +94,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(LanguageActionsEx_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_ex);
     insertGroupIntoAnother(DevKitTools_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_devkitTools);
-    insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_workbench);
+    insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
     insertGroupIntoAnother(TraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_showIn);
@@ -111,7 +105,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
-    ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
     ListSequence.fromList(res).addElement(new Trace_KeymapChanges());
     return res;
   }

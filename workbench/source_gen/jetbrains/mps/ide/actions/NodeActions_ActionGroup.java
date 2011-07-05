@@ -13,7 +13,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.NodeActions_ActionGroup";
   public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
   public static final String LABEL_ID_showIn = ID + "showIn";
-  public static final String LABEL_ID_gentrace = ID + "gentrace";
+  public static final String LABEL_ID_debug = ID + "debug";
   public static final String LABEL_ID_find = ID + "find";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_diff = ID + "diff";
@@ -54,7 +54,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       }
       NodeActions_ActionGroup.this.addSeparator();
       {
-        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_gentrace);
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_debug);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         NodeActions_ActionGroup.this.addAction(action);

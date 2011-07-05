@@ -8,7 +8,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.plugin.Quotation_ApplicationPlugin" file="Quotation_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.plugin.MetaLevelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.plugin.ShowMetaLevel_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />

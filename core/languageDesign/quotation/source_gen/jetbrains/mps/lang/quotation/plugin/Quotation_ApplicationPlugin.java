@@ -4,7 +4,7 @@ package jetbrains.mps.lang.quotation.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
+import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 
 public class Quotation_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.quotation");
@@ -24,6 +24,6 @@ public class Quotation_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(MetaLevelActions_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(MetaLevelActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
   }
 }
