@@ -8,6 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesUtil {
+  public QueriesUtil() {
+  }
+
   public static boolean isMoney(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.formulaLanguage.structure.Operation")) {
       return isMoney(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.formulaLanguage.structure.Operation"), "leftOperand", true));

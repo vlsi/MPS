@@ -12,6 +12,7 @@
     <classNode dependClassName="formulaAdapter.UsageQuantity" />
     <classNode dependClassName="formulaAdapter.ValueDouble" />
     <classNode dependClassName="formulaAdapter.ValueQuantity" />
+    <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.api.DoubleConstant" />
     <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.api.IfFunction" />
     <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation" />
     <classNode dependClassName="mf.Currency" />

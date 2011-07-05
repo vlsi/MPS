@@ -8,9 +8,9 @@
     <projectModules>
       <modulePath path="${project}/framework/jetbrains.mps.samples.agreement.framework.msd" folder="" />
       <modulePath path="${project}/sandbox/agreementRegistryBuilder.msd" />
-      <modulePath path="${project}/../formulaLanguage/runtime/jetbrains.mps.samples.formula.runtime.msd" />
+      <modulePath path="${mps_home}/samples/formulaLanguage/runtime/jetbrains.mps.samples.formula.runtime.msd" />
       <modulePath path="${project}/agreementLanguage/languageDescriptor.mpl" />
-      <modulePath path="${project}/../formulaLanguage/language/formulaLanguage.mpl" />
+      <modulePath path="${mps_home}/samples/formulaLanguage/language/formulaLanguage.mpl" />
     </projectModules>
     <genConfs>
       <genConfModule name="agreementLanguage" moduleRef="jetbrains.mps.samples.agreementLanguage" />
