@@ -149,7 +149,8 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
       if (dialog.isOK()) {
         // review errors and warnings, don't generate 
         ModelCheckerTool_Tool.this.showTabWithResults(viewer);
-        viewer.saveGenerationRunnable(regenerationRunnable);
+        // avoid passing generation runnable here, there's rebuild button for that 
+        viewer.saveGenerationRunnable(null);
         return false;
       } else {
         // ignore errors and warnings 

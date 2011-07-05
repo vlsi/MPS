@@ -7,6 +7,7 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.logging.Logger;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import jetbrains.mps.make.MakeSession;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import java.util.List;
@@ -62,7 +63,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   private static WorkbenchMakeService INSTANCE = null;
 
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
-  private volatile Future<IResult> currentProcess;
+  private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
   private List<IMakeNotificationListener> listeners = ListSequence.fromList(new ArrayList<IMakeNotificationListener>());
   private PluginReloader pluginReloader;
 
@@ -131,7 +132,8 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     this.checkValidUsage();
     this.checkValidSession(session);
     currentSessionStickyMark.attemptMark(session, false);
-    if (currentProcess == null || currentProcess.isDone()) {
+    Future<IResult> cp = currentProcess.get();
+    if (cp == null || cp.isDone()) {
       if (currentSessionStickyMark.compareAndSet(session, null, false, false) || currentSessionStickyMark.compareAndSet(session, null, true, false)) {
         notifyListeners(new MakeNotification(this, MakeNotification.Kind.SESSION_CLOSED));
       }
@@ -203,7 +205,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   private synchronized void awaitCurrentProcess() {
-    Future<IResult> proc = this.currentProcess;
+    Future<IResult> proc = this.currentProcess.get();
     try {
       if (proc != null && !(proc.isDone())) {
         proc.get();
@@ -211,7 +213,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     } catch (InterruptedException ignore) {
     } catch (ExecutionException ignore) {
     } finally {
-      this.currentProcess = null;
+      this.currentProcess.set(null);
     }
   }
 
@@ -293,6 +295,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
         @Override
         protected void done() {
+          currentProcess.compareAndSet(this, null);
           attemptCloseSession();
           notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_FINISHED));
         }
@@ -313,14 +316,15 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
               IdeEventQueue.getInstance().flushQueue();
-              ProgressManager.getInstance().run(task);
+              if (currentProcess.compareAndSet(null, task)) {
+                ProgressManager.getInstance().run(task);
+              }
               IdeEventQueue.getInstance().flushQueue();
             }
           });
         }
       });
 
-      WorkbenchMakeService.this.currentProcess = task;
       return task;
     }
   }

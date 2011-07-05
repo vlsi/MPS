@@ -179,7 +179,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   public void prepareAndCheckModules(List<IModule> modules, String taskTargetTitle, Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
     SearchQuery searchQuery = new SearchQuery(new ModulesHolder(modules, myOperationContext), myProject.getComponent(ProjectScope.class));
-    myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
+    myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;
     setTabProperties(taskTargetTitle, taskIcon);
@@ -190,7 +190,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   public void prepareAndCheckModels(List<SModelDescriptor> modelDescriptors, String taskTargetTitle, Icon taskIcon, ModelCheckerIssueFinder issueFinder) {
     IResultProvider resultProvider = FindUtils.makeProvider(issueFinder);
     SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, myOperationContext), myProject.getComponent(ProjectScope.class));
-    myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
+    myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;
     setTabProperties(taskTargetTitle, taskIcon);
