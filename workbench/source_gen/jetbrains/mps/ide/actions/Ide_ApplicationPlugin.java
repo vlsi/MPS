@@ -87,7 +87,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenamePackage_Action());
     addAction(new RenameSolution_Action());
     addAction(new RevertMemoryChanges_Action());
-    addAction(new SaveModel_Action());
     addAction(new SetBookmarkNoNumber_Action());
     addAction(new SetModuleFolder_Action());
     addAction(new SetNodePackage_Action());
@@ -102,7 +101,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowNodeInInspector_Action());
     addAction(new ShowNodeInfo_Action());
     addAction(new ShowParameters_Action());
-    addAction(new ShowReferencesToMissingStuff_Action());
     addAction(new ShowStructure_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());

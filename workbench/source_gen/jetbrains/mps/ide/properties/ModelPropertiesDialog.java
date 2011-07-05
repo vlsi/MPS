@@ -127,12 +127,6 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   }
 
   public JComponent createAdditionalButtonsComponent() {
-    JButton bShowMissRef = new JButton(new AbstractAction("Show Missing References") {
-      public void actionPerformed(ActionEvent e) {
-        ModelPropertiesDialog.this.dispose();
-        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action"));
-      }
-    });
     JButton bShowModelUsages = new JButton(new AbstractAction("Show Model Usages") {
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
@@ -148,8 +142,6 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     c.gridx = 1;
     c.weightx = 0;
     result.add(bShowModelUsages, c);
-    c.gridx = 2;
-    result.add(bShowMissRef, c);
     return result;
   }
 
