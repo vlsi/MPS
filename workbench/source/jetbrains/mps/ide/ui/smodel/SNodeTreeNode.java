@@ -24,7 +24,6 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -161,6 +160,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     if (n == null) return;
 
     if (showPropertiesAndReferences()) {
+      add(new ConceptTreeNode(getOperationContext(),n));
       add(new PropertiesTreeNode(getOperationContext(), n));
       add(new ReferencesTreeNode(getOperationContext(), n));
     }
@@ -244,4 +244,5 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   public boolean hasErrors() {
     return false;
   }
+
 }
