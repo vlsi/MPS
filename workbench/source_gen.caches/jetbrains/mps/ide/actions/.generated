@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9ws0douv4kba8ugnhuwl1ilzg18fpgw">
+<dependencies version="2" modelHash="efmsp0yed10aujfvd5ujwnihvlb62s5">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.impl(MPS.Classpath/com.intellij.execution.impl@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.ui(MPS.Classpath/com.intellij.execution.ui@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
@@ -565,10 +565,9 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TransientModulesActions_ActionGroup.java" />
   </source>
-  <source id="1204991231476" name="EditorPopup" hash="55hou5p42q9k9idisxvdt4km4v9ha8p">
+  <source id="1204991231476" name="EditorPopup" hash="3q8mal8zvbjmgb7tuw2j5ejwm4ks3bw">
     <dep root="1216119398364" />
     <dep root="1216120033386" />
-    <dep root="1216124527478" />
     <dep root="1216125431295" />
     <dep root="1888601967414926022" />
     <dep root="330316460537638978" />
@@ -2280,6 +2279,7 @@
     <dep model="f:java_stub#d95e286a-03bd-41d2-a04d-9db8f070e89c#org.apache.commons.logging(webr.logging#1167240554582/org.apache.commons.logging@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -5223,12 +5223,11 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QuickCreate_Action.java" />
   </source>
-  <source id="2443880313834662249" name="Default" hash="1jnjx9f995skj8k6ngspzuczbrzn28s">
+  <source id="2443880313834662249" name="Default" hash="-59g5blifcp22fh3jsyxcqkr1frkpd7x">
     <dep root="1215874656794" />
     <dep root="1215874930420" />
     <dep root="1216119398364" />
     <dep root="1216120033386" />
-    <dep root="1216124527478" />
     <dep root="1216125431295" />
     <dep root="1216126715578" />
     <dep root="1222856130125" />

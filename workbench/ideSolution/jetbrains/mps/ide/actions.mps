@@ -1560,9 +1560,6 @@
           </node>
         </node>
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399672323">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216124527478" resolveInfo="ShowInProject" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="8970236339104100102">
         <property name="name" nameId="tpck.1169194664001" value="showIn" />
       </node>
@@ -27374,13 +27371,6 @@
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606518">
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_I" />
-      </node>
-    </node>
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606405">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1216124527478" resolveInfo="ShowInProject" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606406">
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F2" />
-        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
       </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606315">

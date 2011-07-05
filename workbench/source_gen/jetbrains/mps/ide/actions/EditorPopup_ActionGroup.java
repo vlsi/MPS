@@ -29,7 +29,6 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       EditorPopup_ActionGroup.this.addParameterizedAction(new SelectInActionAdapter_Action(new SelectInAction()), PluginId.getId("jetbrains.mps.ide"), new SelectInAction());
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowInProject_Action");
       {
         LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_showIn);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
