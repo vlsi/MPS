@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class JavaCompiler {
+  private static Logger LOG = Logger.getLogger(JavaCompiler.class);
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();

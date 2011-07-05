@@ -110,6 +110,15 @@ public class ModuleMaker {
   }
 
   private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules) {
+    HashSet<IModule> filtered = new HashSet<IModule>();
+    for (IModule m : modules) {
+      if (m.isPackaged()) continue;
+      filtered.add(m);
+      LOG.warning("Module " + m.getModuleFqName() + " was excluded from compilation cycle because it's packaged");
+    }
+
+    modules = filtered;
+
     boolean hasAnythingToCompile = false;
 
     for (IModule m : modules) {
@@ -359,7 +368,7 @@ public class ModuleMaker {
     for (IModule m : modules) {
       m.invalidateClassPath();
     }
-    for (IModule m: MPSModuleRepository.getInstance().getAllModules()){
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       m.updateClassPath();
     }
   }
