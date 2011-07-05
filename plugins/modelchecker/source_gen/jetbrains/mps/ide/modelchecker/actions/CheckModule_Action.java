@@ -10,9 +10,9 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.List;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -22,11 +22,8 @@ public class CheckModule_Action extends GeneratedAction {
   private static final Icon ICON = new ImageIcon(CheckModule_Action.class.getResource("modelChecker.png"));
   protected static Log log = LogFactory.getLog(CheckModule_Action.class);
 
-  private String moduleType;
-
-  public CheckModule_Action(String moduleType_par) {
+  public CheckModule_Action() {
     super("Check [Module]", "Check [module] for structure and typesystem rules", ICON);
-    this.moduleType = moduleType_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -34,7 +31,7 @@ public class CheckModule_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        String whatToCheck = CheckModule_Action.this.moduleType;
+        String whatToCheck = ((IModule) MapSequence.fromMap(_params).get("module")).getClass().getSimpleName();
         if (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() > 1) {
           whatToCheck = ((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() + " Modules";
         }
@@ -84,19 +81,5 @@ public class CheckModule_Action extends GeneratedAction {
         log.error("User's action execute method failed. Action:" + "CheckModule", t);
       }
     }
-  }
-
-  @NotNull
-  public String getActionId() {
-    StringBuilder res = new StringBuilder();
-    res.append(super.getActionId());
-    res.append("#");
-    res.append(moduleType_State((String) this.moduleType));
-    res.append("!");
-    return res.toString();
-  }
-
-  public static String moduleType_State(String object) {
-    return object;
   }
 }

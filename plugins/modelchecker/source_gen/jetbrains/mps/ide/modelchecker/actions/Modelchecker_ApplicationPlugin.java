@@ -6,8 +6,7 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
-import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
+import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
@@ -29,15 +28,14 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new CheckModel_Action());
+    addAction(new CheckModule_Action());
     addAction(new CheckProject_Action());
     addAction(new FindAllAdapterUsages_Action());
     addAction(new FindlAllBrokenReferences_Action());
     addAction(new ShowModelChecker_Action());
     // groups 
     addGroup(new CheckModel_ActionGroup());
-    addGroup(new CheckModuleGenerator_ActionGroup());
-    addGroup(new CheckModuleLanguage_ActionGroup());
-    addGroup(new CheckModuleSolution_ActionGroup());
+    addGroup(new CheckModule_ActionGroup());
     addGroup(new CheckProject_ActionGroup());
     addGroup(new ShowModelCheckerTool_ActionGroup());
     addGroup(new ToolsInternalEx_ActionGroup());
@@ -46,9 +44,8 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(ShowModelCheckerTool_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
     insertGroupIntoAnother(CheckProject_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_check);
-    insertGroupIntoAnother(CheckModuleSolution_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_check);
-    insertGroupIntoAnother(CheckModuleLanguage_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_check);
-    insertGroupIntoAnother(CheckModuleGenerator_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_check);
+    insertGroupIntoAnother(CheckModule_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_check);
+    insertGroupIntoAnother(CheckModule_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModel_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(ToolsInternalEx_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
   }

@@ -179,15 +179,7 @@
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1453248744423276130">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Groups" />
-      <property name="name" nameId="tpck.1169194664001" value="CheckModuleSolution" />
-    </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1453248744423276135">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Groups" />
-      <property name="name" nameId="tpck.1169194664001" value="CheckModuleLanguage" />
-    </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1453248744423276140">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Groups" />
-      <property name="name" nameId="tpck.1169194664001" value="CheckModuleGenerator" />
+      <property name="name" nameId="tpck.1169194664001" value="CheckModule" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1453248744423276145">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Model Checker.Groups" />
@@ -9937,40 +9929,13 @@
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1453248744423276131">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1453248744423276132">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1453248744423276236" resolveInfo="CheckModule" />
-        <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1453248744423276133">
-          <property name="value" nameId="tpee.1070475926801" value="Solution" />
-        </node>
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1453248744423276134">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991226689" resolveInfo="SolutionActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1453248744423271992" resolveInfo="check" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.401659284115173011" resolveInfo="CommonModuleActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.401659284115173016" resolveInfo="check" />
     </node>
-  </root>
-  <root id="1453248744423276135">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1453248744423276136">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1453248744423276137">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1453248744423276236" resolveInfo="CheckModule" />
-        <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1453248744423276138">
-          <property name="value" nameId="tpee.1070475926801" value="Language" />
-        </node>
-      </node>
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1453248744423276139">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991224874" resolveInfo="LanguageActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1453248744423271999" resolveInfo="check" />
-    </node>
-  </root>
-  <root id="1453248744423276140">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1453248744423276141">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1453248744423276142">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1453248744423276236" resolveInfo="CheckModule" />
-        <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1453248744423276143">
-          <property name="value" nameId="tpee.1070475926801" value="Generator" />
-        </node>
-      </node>
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1453248744423276144">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="401659284115215040">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991229896" resolveInfo="GeneratorActions" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1453248744423271984" resolveInfo="check" />
     </node>
@@ -10195,18 +10160,6 @@
     </node>
   </root>
   <root id="1453248744423276236">
-    <node role="constructionParameter" roleId="tp4k.1227008813498" type="tp4k.ActionConstructionParameterDeclaration" typeId="tp4k.1227008846812" id="1453248744423276237">
-      <property name="name" nameId="tpck.1169194664001" value="moduleType" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1453248744423276238" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1453248744423276239" />
-      <node role="toStringFunction" roleId="tp4k.1227019158144" type="tp4k.ToStringConceptFunction" typeId="tp4k.1227019068586" id="1453248744423276240">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1453248744423276241">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1453248744423276242">
-            <node role="expression" roleId="tpee.1068581517676" type="tp4k.ToStringParameter" typeId="tp4k.1227019310584" id="1453248744423276243" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1453248744423276244">
       <property name="name" nameId="tpck.1169194664001" value="module" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dMODULE" resolveInfo="MODULE" />
@@ -10323,10 +10276,20 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1453248744423276294">
             <property name="name" nameId="tpck.1169194664001" value="whatToCheck" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1453248744423276295" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1453248744423276296">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1453248744423276297" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="1453248744423276298">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="1453248744423276237" resolveInfo="moduleType" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="401659284115203042">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="401659284115200585">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="401659284115200582">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="401659284115200583" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="401659284115200584">
+                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="1453248744423276244" resolveInfo="module" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="401659284115201519">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dgetClass()%cjava%dlang%dClass" resolveInfo="getClass" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="401659284115215039">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetSimpleName()%cjava%dlang%dString" resolveInfo="getSimpleName" />
               </node>
             </node>
           </node>

@@ -10,7 +10,7 @@
   <unitInfo fileName="GoToVCS_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup" />
   <unitInfo fileName="ChangesStrip_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup" />
   <unitInfo fileName="Vcs_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" />
-  <unitInfo fileName="Vcs_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
+  <unitInfo fileName="Vcs_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
   <unitInfo fileName="GoToPreviousChange_Action.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToPreviousChange_Action" />
   <unitInfo fileName="GoToNextChange_Action.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToNextChange_Action" />
   <unitInfo fileName="InstalVcsAddons_Action.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.vcs.plugin.InstalVcsAddons_Action" />
