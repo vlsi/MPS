@@ -25,20 +25,19 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EditNode_Action");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EditNodeExplicit_Action");
       NodeActions_ActionGroup.this.addSeparator();
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetNodePackage_Action");
       NodeActions_ActionGroup.this.addSeparator();
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExpandNode_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeName_Action");
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNode_Action");
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action");
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CutNode_Action");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CloneRoot_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeName_Action");
       NodeActions_ActionGroup.this.addSeparator();
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteNode_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CloneRoot_Action");
       NodeActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_gotoConceptAspects);
