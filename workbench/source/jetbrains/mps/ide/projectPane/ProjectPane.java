@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.ide.SelectInContext;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
@@ -49,9 +48,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -156,7 +153,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public SelectInTarget createSelectInTarget() {
-    return new MySelectInTarget();
+    return new ProjectPaneSelectInTarget(this.myProject, true);
   }
 
   public Icon getIcon() {
@@ -378,43 +375,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     @Nullable
     public Object getData(@NonNls String dataId) {
       return ProjectPane.this.getData(dataId);
-    }
-  }
-
-  private class MySelectInTarget extends AbstractProjectViewSelectInTarget {
-    private MySelectInTarget() {
-      super(myProject, ID, 0, "Logical View");
-    }
-
-    @Override
-    public boolean canSelect(SelectInContext context) {
-      return getNode(context) != null;
-    }
-
-
-    @Override
-    protected void doSelectIn(SelectInContext context, boolean requestFocus) {
-      SNode toSelect = getNode(context);
-      if (toSelect != null) {
-        selectNode(toSelect, requestFocus);
-      }
-    }
-
-    private SNode getNode(SelectInContext context) {
-      VirtualFile virtualFile = context.getVirtualFile();
-      if (!(virtualFile instanceof MPSNodeVirtualFile)) return null;
-
-      MPSNodeVirtualFile file = (MPSNodeVirtualFile) virtualFile;
-      FileEditor[] editors = FileEditorManager.getInstance(myProject).getEditors(file);
-      if (editors.length != 0) {
-        FileEditor editor = editors[0];
-        if (!(editor instanceof MPSFileNodeEditor)) return null;
-        EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
-        if (editorComponent == null) return null;
-        return editorComponent.getEditedNode();
-      } else {
-        return file.getNode();
-      }
     }
   }
 
