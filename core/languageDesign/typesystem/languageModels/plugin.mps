@@ -49,7 +49,6 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1205244087094">
       <property name="name" nameId="tpck.1169194664001" value="TypesystemActions" />
       <property name="caption" nameId="tp4k.1204991940915" value="Type System" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
       <property name="mnemonic" nameId="tp4k.1205160812895" value="T" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1205244470519">

@@ -13,7 +13,7 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
     super("Type System", ID);
     this.setIsInternal(false);
     this.setMnemonic("T".charAt(0));
-    this.setPopup(true);
+    this.setPopup(false);
     try {
       TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action");
       TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action");
