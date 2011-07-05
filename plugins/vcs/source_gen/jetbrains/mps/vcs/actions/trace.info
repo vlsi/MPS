@@ -19,87 +19,96 @@
     <unitInfo nodeId="7705742079275757540" fileName="ShowInFileView.java" startLine="13" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.vcs.actions.ShowInFileView" />
   </root>
   <root nodeId="7705742079275757575">
-    <nodeInfo nodeId="7705742079275757588" fileName="GenerateFromChangeListAction.java" startLine="27" startPosition="57" endLine="28" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7705742079275757594" fileName="GenerateFromChangeListAction.java" startLine="28" startPosition="78" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7705742079275757600" fileName="GenerateFromChangeListAction.java" startLine="29" startPosition="46" endLine="30" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1502718409600209640" fileName="GenerateFromChangeListAction.java" startLine="30" startPosition="69" endLine="31" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9190111818814693007" fileName="GenerateFromChangeListAction.java" startLine="31" startPosition="116" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7705742079275757625" fileName="GenerateFromChangeListAction.java" startLine="37" startPosition="79" endLine="38" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7705742079275757632" fileName="GenerateFromChangeListAction.java" startLine="38" startPosition="86" endLine="39" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7705742079275757654" fileName="GenerateFromChangeListAction.java" startLine="41" startPosition="45" endLine="42" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7705742079275757667" fileName="GenerateFromChangeListAction.java" startLine="43" startPosition="28" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757672" fileName="GenerateFromChangeListAction.java" startLine="47" startPosition="5" endLine="48" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7705742079275757682" fileName="GenerateFromChangeListAction.java" startLine="51" startPosition="75" endLine="52" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7705742079275757728" fileName="GenerateFromChangeListAction.java" startLine="53" startPosition="37" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757732" fileName="GenerateFromChangeListAction.java" startLine="54" startPosition="34" endLine="55" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757714" fileName="GenerateFromChangeListAction.java" startLine="57" startPosition="39" endLine="58" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757718" fileName="GenerateFromChangeListAction.java" startLine="58" startPosition="33" endLine="59" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757700" fileName="GenerateFromChangeListAction.java" startLine="60" startPosition="12" endLine="61" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757704" fileName="GenerateFromChangeListAction.java" startLine="61" startPosition="33" endLine="62" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757745" fileName="GenerateFromChangeListAction.java" startLine="67" startPosition="54" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7705742079275757756" fileName="GenerateFromChangeListAction.java" startLine="71" startPosition="66" endLine="72" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757761" fileName="GenerateFromChangeListAction.java" startLine="72" startPosition="36" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7705742079275757578" fileName="GenerateFromChangeListAction.java" startLine="23" startPosition="78" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateFromChangeListAction#()V" />
-    <nodeInfo nodeId="7705742079275757614" fileName="GenerateFromChangeListAction.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationHandler#()Ljetbrains/mps/generator/generationTypes/IGenerationHandler;" />
-    <nodeInfo nodeId="7705742079275757766" fileName="GenerateFromChangeListAction.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWhatToGenerateName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7705742079275757662" fileName="GenerateFromChangeListAction.java" startLine="42" startPosition="103" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7705742079275757698" fileName="GenerateFromChangeListAction.java" startLine="60" startPosition="10" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7705742079275757739" fileName="GenerateFromChangeListAction.java" startLine="65" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forceSyncUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="7705742079275757748" fileName="GenerateFromChangeListAction.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="enable#(Lcom/intellij/openapi/actionSystem/Presentation;Z)V" />
-    <nodeInfo nodeId="7705742079275757644" fileName="GenerateFromChangeListAction.java" startLine="40" startPosition="43" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7705742079275757692" fileName="GenerateFromChangeListAction.java" startLine="56" startPosition="10" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7705742079275757582" fileName="GenerateFromChangeListAction.java" startLine="26" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/vcs/actions/VcsContext;)V" />
-    <nodeInfo nodeId="7705742079275757639" fileName="GenerateFromChangeListAction.java" startLine="39" startPosition="80" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7705742079275757688" fileName="GenerateFromChangeListAction.java" startLine="52" startPosition="78" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7705742079275757618" fileName="GenerateFromChangeListAction.java" startLine="36" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Lcom/intellij/openapi/vcs/actions/VcsContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="7705742079275757674" fileName="GenerateFromChangeListAction.java" startLine="50" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/vcs/actions/VcsContext;Lcom/intellij/openapi/actionSystem/Presentation;)V" />
-    <scopeInfo nodeId="7705742079275757581" fileName="GenerateFromChangeListAction.java" startLine="24" startPosition="41" endLine="24" endPosition="41" />
-    <scopeInfo nodeId="7705742079275757666" fileName="GenerateFromChangeListAction.java" startLine="43" startPosition="28" endLine="44" endPosition="38" />
-    <scopeInfo nodeId="7705742079275757744" fileName="GenerateFromChangeListAction.java" startLine="67" startPosition="54" endLine="68" endPosition="16" />
-    <scopeInfo nodeId="7705742079275757578" fileName="GenerateFromChangeListAction.java" startLine="23" startPosition="78" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="7705742079275757614" fileName="GenerateFromChangeListAction.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="7705742079275757727" fileName="GenerateFromChangeListAction.java" startLine="53" startPosition="37" endLine="55" endPosition="65" />
-    <scopeInfo nodeId="7705742079275757713" fileName="GenerateFromChangeListAction.java" startLine="57" startPosition="39" endLine="59" endPosition="81" />
-    <scopeInfo nodeId="7705742079275757699" fileName="GenerateFromChangeListAction.java" startLine="60" startPosition="12" endLine="62" endPosition="82" />
-    <scopeInfo nodeId="7705742079275757755" fileName="GenerateFromChangeListAction.java" startLine="71" startPosition="66" endLine="73" endPosition="36" />
-    <scopeInfo nodeId="7705742079275757766" fileName="GenerateFromChangeListAction.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="7705742079275757653" fileName="GenerateFromChangeListAction.java" startLine="41" startPosition="45" endLine="45" endPosition="9">
+    <nodeInfo nodeId="4164075873637430393" fileName="GenerateFromChangeListAction.java" startLine="25" startPosition="78" endLine="26" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeSession" />
+    <nodeInfo nodeId="7705742079275757588" fileName="GenerateFromChangeListAction.java" startLine="31" startPosition="57" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7705742079275757594" fileName="GenerateFromChangeListAction.java" startLine="32" startPosition="78" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7705742079275757600" fileName="GenerateFromChangeListAction.java" startLine="33" startPosition="46" endLine="34" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4164075873637459460" fileName="GenerateFromChangeListAction.java" startLine="37" startPosition="78" endLine="38" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4164075873637459484" fileName="GenerateFromChangeListAction.java" startLine="40" startPosition="17" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9190111818814693007" fileName="GenerateFromChangeListAction.java" startLine="43" startPosition="5" endLine="44" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7705742079275757625" fileName="GenerateFromChangeListAction.java" startLine="49" startPosition="79" endLine="50" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7705742079275757632" fileName="GenerateFromChangeListAction.java" startLine="50" startPosition="86" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7705742079275757654" fileName="GenerateFromChangeListAction.java" startLine="53" startPosition="45" endLine="54" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7705742079275757667" fileName="GenerateFromChangeListAction.java" startLine="55" startPosition="28" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757672" fileName="GenerateFromChangeListAction.java" startLine="59" startPosition="5" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7705742079275757682" fileName="GenerateFromChangeListAction.java" startLine="63" startPosition="75" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7705742079275757728" fileName="GenerateFromChangeListAction.java" startLine="65" startPosition="37" endLine="66" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757732" fileName="GenerateFromChangeListAction.java" startLine="66" startPosition="34" endLine="67" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757714" fileName="GenerateFromChangeListAction.java" startLine="69" startPosition="39" endLine="70" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757718" fileName="GenerateFromChangeListAction.java" startLine="70" startPosition="108" endLine="71" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757700" fileName="GenerateFromChangeListAction.java" startLine="72" startPosition="12" endLine="73" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757704" fileName="GenerateFromChangeListAction.java" startLine="73" startPosition="108" endLine="74" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757745" fileName="GenerateFromChangeListAction.java" startLine="79" startPosition="54" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7705742079275757756" fileName="GenerateFromChangeListAction.java" startLine="83" startPosition="66" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757761" fileName="GenerateFromChangeListAction.java" startLine="84" startPosition="36" endLine="85" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7705742079275757578" fileName="GenerateFromChangeListAction.java" startLine="27" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateFromChangeListAction#()V" />
+    <nodeInfo nodeId="7705742079275757614" fileName="GenerateFromChangeListAction.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationHandler#()Ljetbrains/mps/generator/generationTypes/IGenerationHandler;" />
+    <nodeInfo nodeId="7705742079275757766" fileName="GenerateFromChangeListAction.java" startLine="87" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWhatToGenerateName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4164075873637459439" fileName="GenerateFromChangeListAction.java" startLine="36" startPosition="11" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7705742079275757662" fileName="GenerateFromChangeListAction.java" startLine="54" startPosition="103" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7705742079275757698" fileName="GenerateFromChangeListAction.java" startLine="72" startPosition="10" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7705742079275757739" fileName="GenerateFromChangeListAction.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forceSyncUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="7705742079275757748" fileName="GenerateFromChangeListAction.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="enable#(Lcom/intellij/openapi/actionSystem/Presentation;Z)V" />
+    <nodeInfo nodeId="7705742079275757644" fileName="GenerateFromChangeListAction.java" startLine="52" startPosition="43" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4164075873637459493" fileName="GenerateFromChangeListAction.java" startLine="35" startPosition="70" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="7705742079275757692" fileName="GenerateFromChangeListAction.java" startLine="68" startPosition="10" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7705742079275757639" fileName="GenerateFromChangeListAction.java" startLine="51" startPosition="80" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4164075873637430409" fileName="GenerateFromChangeListAction.java" startLine="34" startPosition="69" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7705742079275757688" fileName="GenerateFromChangeListAction.java" startLine="64" startPosition="78" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7705742079275757618" fileName="GenerateFromChangeListAction.java" startLine="48" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Lcom/intellij/openapi/vcs/actions/VcsContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="7705742079275757674" fileName="GenerateFromChangeListAction.java" startLine="62" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/vcs/actions/VcsContext;Lcom/intellij/openapi/actionSystem/Presentation;)V" />
+    <nodeInfo nodeId="7705742079275757582" fileName="GenerateFromChangeListAction.java" startLine="30" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/vcs/actions/VcsContext;)V" />
+    <scopeInfo nodeId="7705742079275757581" fileName="GenerateFromChangeListAction.java" startLine="28" startPosition="41" endLine="28" endPosition="41" />
+    <scopeInfo nodeId="4164075873637459440" fileName="GenerateFromChangeListAction.java" startLine="37" startPosition="78" endLine="38" endPosition="131" />
+    <scopeInfo nodeId="4164075873637459496" fileName="GenerateFromChangeListAction.java" startLine="40" startPosition="17" endLine="41" endPosition="32" />
+    <scopeInfo nodeId="7705742079275757666" fileName="GenerateFromChangeListAction.java" startLine="55" startPosition="28" endLine="56" endPosition="38" />
+    <scopeInfo nodeId="7705742079275757744" fileName="GenerateFromChangeListAction.java" startLine="79" startPosition="54" endLine="80" endPosition="16" />
+    <scopeInfo nodeId="7705742079275757578" fileName="GenerateFromChangeListAction.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="7705742079275757614" fileName="GenerateFromChangeListAction.java" startLine="46" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="7705742079275757727" fileName="GenerateFromChangeListAction.java" startLine="65" startPosition="37" endLine="67" endPosition="65" />
+    <scopeInfo nodeId="7705742079275757713" fileName="GenerateFromChangeListAction.java" startLine="69" startPosition="39" endLine="71" endPosition="81" />
+    <scopeInfo nodeId="7705742079275757699" fileName="GenerateFromChangeListAction.java" startLine="72" startPosition="12" endLine="74" endPosition="82" />
+    <scopeInfo nodeId="7705742079275757755" fileName="GenerateFromChangeListAction.java" startLine="83" startPosition="66" endLine="85" endPosition="36" />
+    <scopeInfo nodeId="7705742079275757766" fileName="GenerateFromChangeListAction.java" startLine="87" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="4164075873637459494" fileName="GenerateFromChangeListAction.java" startLine="36" startPosition="11" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="7705742079275757653" fileName="GenerateFromChangeListAction.java" startLine="53" startPosition="45" endLine="57" endPosition="9">
       <varInfo nodeId="7705742079275757655" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7705742079275757587" fileName="GenerateFromChangeListAction.java" startLine="27" startPosition="57" endLine="32" endPosition="14">
+    <scopeInfo nodeId="7705742079275757739" fileName="GenerateFromChangeListAction.java" startLine="77" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="7705742079275757742" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7705742079275757748" fileName="GenerateFromChangeListAction.java" startLine="82" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="7705742079275757751" varName="presentation" />
+      <varInfo nodeId="7705742079275757753" varName="enable" />
+    </scopeInfo>
+    <scopeInfo nodeId="7705742079275757643" fileName="GenerateFromChangeListAction.java" startLine="52" startPosition="43" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="4164075873637430410" fileName="GenerateFromChangeListAction.java" startLine="35" startPosition="70" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="7705742079275757639" fileName="GenerateFromChangeListAction.java" startLine="51" startPosition="80" endLine="59" endPosition="5">
+      <varInfo nodeId="7705742079275757641" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="7705742079275757624" fileName="GenerateFromChangeListAction.java" startLine="49" startPosition="79" endLine="60" endPosition="28">
+      <varInfo nodeId="7705742079275757633" varName="modelsToGenerate" />
+      <varInfo nodeId="7705742079275757626" varName="filesCollection" />
+    </scopeInfo>
+    <scopeInfo nodeId="7705742079275757681" fileName="GenerateFromChangeListAction.java" startLine="63" startPosition="75" endLine="75" endPosition="5">
+      <varInfo nodeId="7705742079275757683" varName="modelsToGenerate" />
+    </scopeInfo>
+    <scopeInfo nodeId="7705742079275757587" fileName="GenerateFromChangeListAction.java" startLine="31" startPosition="57" endLine="44" endPosition="14">
       <varInfo nodeId="7705742079275757595" varName="project" />
       <varInfo nodeId="7705742079275757589" varName="modelsToGenerate" />
       <varInfo nodeId="7705742079275757601" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="7705742079275757739" fileName="GenerateFromChangeListAction.java" startLine="65" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="7705742079275757742" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="7705742079275757748" fileName="GenerateFromChangeListAction.java" startLine="70" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="7705742079275757751" varName="presentation" />
-      <varInfo nodeId="7705742079275757753" varName="enable" />
-    </scopeInfo>
-    <scopeInfo nodeId="7705742079275757643" fileName="GenerateFromChangeListAction.java" startLine="40" startPosition="43" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="7705742079275757582" fileName="GenerateFromChangeListAction.java" startLine="26" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="7705742079275757585" varName="vcsContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7705742079275757639" fileName="GenerateFromChangeListAction.java" startLine="39" startPosition="80" endLine="47" endPosition="5">
-      <varInfo nodeId="7705742079275757641" varName="f" />
-    </scopeInfo>
-    <scopeInfo nodeId="7705742079275757624" fileName="GenerateFromChangeListAction.java" startLine="37" startPosition="79" endLine="48" endPosition="28">
-      <varInfo nodeId="7705742079275757633" varName="modelsToGenerate" />
-      <varInfo nodeId="7705742079275757626" varName="filesCollection" />
-    </scopeInfo>
-    <scopeInfo nodeId="7705742079275757681" fileName="GenerateFromChangeListAction.java" startLine="51" startPosition="75" endLine="63" endPosition="5">
-      <varInfo nodeId="7705742079275757683" varName="modelsToGenerate" />
-    </scopeInfo>
-    <scopeInfo nodeId="7705742079275757618" fileName="GenerateFromChangeListAction.java" startLine="36" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="7705742079275757618" fileName="GenerateFromChangeListAction.java" startLine="48" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="7705742079275757622" varName="vcsContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7705742079275757674" fileName="GenerateFromChangeListAction.java" startLine="50" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="7705742079275757674" fileName="GenerateFromChangeListAction.java" startLine="62" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="7705742079275757677" varName="vcsContext" />
       <varInfo nodeId="7705742079275757679" varName="presentation" />
     </scopeInfo>
-    <unitInfo nodeId="7705742079275757575" fileName="GenerateFromChangeListAction.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.vcs.actions.GenerateFromChangeListAction" />
+    <scopeInfo nodeId="7705742079275757582" fileName="GenerateFromChangeListAction.java" startLine="30" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="7705742079275757585" varName="vcsContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7705742079275757575" fileName="GenerateFromChangeListAction.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.actions.GenerateFromChangeListAction" />
   </root>
   <root nodeId="7705742079275757770">
     <nodeInfo nodeId="7705742079275757781" fileName="AbstractShowInFileView.java" startLine="20" startPosition="48" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

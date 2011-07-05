@@ -36,11 +36,12 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -53,6 +54,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class UsagesView implements IExternalizeable, INavigator {
   //read/write constants
@@ -78,6 +80,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   //for assertions - check invariant - constructor -> read|setRunOpts
   private boolean myIsInitialized = false;
+  private AtomicReference<MakeSession> myMakeSession = new AtomicReference<MakeSession>();
 
   public UsagesView(Project project, ViewOptions defaultOptions) {
     myProject = project;
@@ -140,7 +143,16 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     }
 
     ProjectOperationContext context = ProjectOperationContext.get(myProject);
-    new WorkbenchMakeService (context, true).make(new ModelsToResources(context, models).resources(false));
+    if (myMakeSession.compareAndSet(null, new MakeSession(context))) {
+      try {
+        if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {
+          IMakeService.INSTANCE.get().make(myMakeSession.get(), new ModelsToResources(context, models).resources(false));
+        }
+      }
+      finally {
+        myMakeSession.set(null);
+      }
+    }
 //    GeneratorUIFacade.getInstance().generateModels(context, models, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
   }
 
@@ -315,6 +327,11 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
         actionGroup.addAction(new AnAction("Rebuild models", "", Icons.MAKE_ICON) {
           public void actionPerformed(AnActionEvent e) {
             regenerate();
+          }
+
+          @Override
+          public void update(AnActionEvent e) {
+            e.getPresentation().setEnabled(myMakeSession.get() == null && !IMakeService.INSTANCE.get().isSessionActive());
           }
         });
       }

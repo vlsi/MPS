@@ -30,14 +30,16 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicReference" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.make.IMakeService" />
+    <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.WorkbenchMakeService" />
     <classNode extendsClassName="com.intellij.openapi.vcs.actions.AbstractVcsAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.GenerateTextFromChangeListAction" file="GenerateTextFromChangeListAction.java">

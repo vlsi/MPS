@@ -23,6 +23,8 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
@@ -31,7 +33,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -146,7 +147,10 @@ public class RenameLanguageDialog extends BaseDialog {
         }
 
         ModuleContext context = new ModuleContext(myLanguage, myProject);
-        new WorkbenchMakeService (context, true).make(new ModelsToResources(context, params.getModelDescriptors()).resources(false));
+        MakeSession sess = new MakeSession(context);
+        if (IMakeService.INSTANCE.get().openNewSession(sess)) {
+          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, params.getModelDescriptors()).resources(false));
+        }
 //        GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
       }
     }

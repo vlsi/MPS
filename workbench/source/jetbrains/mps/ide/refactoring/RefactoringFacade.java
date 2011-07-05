@@ -25,6 +25,8 @@ import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.refactoring.framework.*;
@@ -32,7 +34,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -228,7 +229,10 @@ public class RefactoringFacade {
         }
       });
       IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
-      new WorkbenchMakeService (operationContext, true).make(new ModelsToResources(operationContext, descriptors).resources(false));
+      MakeSession sess = new MakeSession(operationContext);
+      if (IMakeService.INSTANCE.get().openNewSession(sess)) {
+        IMakeService.INSTANCE.get().make(sess, new ModelsToResources(operationContext, descriptors).resources(false));
+      }
 //      GeneratorUIFacade.getInstance().generateModels(operationContext, descriptors, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
     } finally {
       SNode.setNodeMemberAccessModifier(null);
