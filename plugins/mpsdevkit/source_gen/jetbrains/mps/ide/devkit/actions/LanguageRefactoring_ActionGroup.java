@@ -12,7 +12,7 @@ public class LanguageRefactoring_ActionGroup extends GeneratedActionGroup {
   public LanguageRefactoring_ActionGroup() {
     super("Refactoring", ID);
     this.setIsInternal(false);
-    this.setPopup(true);
+    this.setPopup(false);
     try {
       LanguageRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.RenameLanguage_Action");
     } catch (Throwable t) {

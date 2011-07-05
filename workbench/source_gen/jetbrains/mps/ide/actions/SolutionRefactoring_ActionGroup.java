@@ -12,7 +12,7 @@ public class SolutionRefactoring_ActionGroup extends GeneratedActionGroup {
   public SolutionRefactoring_ActionGroup() {
     super("Refactoring", ID);
     this.setIsInternal(false);
-    this.setPopup(true);
+    this.setPopup(false);
     try {
       SolutionRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameSolution_Action");
     } catch (Throwable t) {
