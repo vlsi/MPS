@@ -51,14 +51,12 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.ConsoleAppender;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 import org.jetbrains.annotations.NotNull;
@@ -173,7 +171,7 @@ public abstract class MpsWorker {
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     try {
-      configureMPS("jetbrains.mps.vcs", "jetbrains.mps.ide.editor");
+      configureMPS("jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make");
     } catch (Exception ex) {
       throw new RuntimeException(ex);
     }
