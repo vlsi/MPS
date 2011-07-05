@@ -29,7 +29,7 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(RemoveModuleFromProject_Action.class);
 
   public RemoveModuleFromProject_Action() {
-    super("Remove From Project", "", ICON);
+    super("Remove from Project", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

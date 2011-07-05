@@ -12,7 +12,6 @@ public class Build_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Build_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Build_ActionGroup";
   public static final String LABEL_ID_make = ID + "make";
-  public static final String LABEL_ID_compile = ID + "compile";
   public static final String LABEL_ID_options = ID + "options";
   public static final String LABEL_ID_aux = ID + "aux";
 
@@ -23,13 +22,6 @@ public class Build_ActionGroup extends GeneratedActionGroup {
     try {
       {
         LabelledAnchor action = new LabelledAnchor(Build_ActionGroup.LABEL_ID_make);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        Build_ActionGroup.this.addAction(action);
-      }
-      Build_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(Build_ActionGroup.LABEL_ID_compile);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         Build_ActionGroup.this.addAction(action);

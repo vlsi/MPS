@@ -22,7 +22,7 @@ public class AddModuleToProject_Action extends GeneratedAction {
 
   public AddModuleToProject_Action() {
     super("Add to Project", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
