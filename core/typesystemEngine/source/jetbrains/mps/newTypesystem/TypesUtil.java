@@ -76,15 +76,6 @@ public class TypesUtil {
     }
   }
 
-  public static int getInnerNodeCount(SNode node) {
-    int counter = 0;
-    for (SNode child : node.getChildren()) {
-      counter += getInnerNodeCount(child);
-    }
-    counter += node.getReferences().size();
-    return counter;
-  }
-
   public static int depth(SNode sNode) {
     int childDepth = 0;
     for (SNode child : sNode.getChildrenIterable()) {
@@ -99,7 +90,7 @@ public class TypesUtil {
     return childDepth + 1;
   }
 
-
+  //should be used on expanded node
   public static List<SNode> getVariables(SNode node) {
     List<SNode> result = new LinkedList<SNode>();
     getVariablesInside(node, result);

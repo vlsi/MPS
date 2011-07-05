@@ -427,6 +427,14 @@ public class State {
     return myEquations.getRepresentative(node);
   }
 
+  public Collection<SNode> getRepresentatives(Collection<SNode> nodes) {
+    HashSet<SNode> result = new HashSet<SNode>();
+    for (SNode node: nodes) {
+      result.add(getRepresentative(node));
+    }
+    return result;
+  }
+
   public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
       myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);

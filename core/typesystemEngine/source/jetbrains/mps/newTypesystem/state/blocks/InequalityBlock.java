@@ -127,7 +127,7 @@ public class InequalityBlock extends RelationBlock {
         left = ConditionKind.CONCRETE;
       }
       ConditionKind right = ConditionKind.SHALLOW;
-      if (LatticeUtil.isMeet(myLeftNode)) {
+      if (LatticeUtil.isMeet(myRightNode)) {
         right = ConditionKind.CONCRETE;
       }
       return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, left),

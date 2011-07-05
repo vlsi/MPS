@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Pair;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
 import jetbrains.mps.newTypesystem.relations.AbstractRelation;
 import jetbrains.mps.newTypesystem.relations.ComparableRelation;
@@ -33,7 +34,7 @@ public class Inequalities {  //
   private final State myState;
   private ManyToManyMap<SNode, SNode> myInputsToOutputs = new ManyToManyMap<SNode, SNode>();
   private ManyToManyMap<SNode, RelationBlock> myNodesToBlocks = new ManyToManyMap<SNode, RelationBlock>();
-  private Set<SNode> myNodes = new THashSet<SNode>();
+  private Set<SNode> myNodes = new HashSet<SNode>();
   private static final ComparableRelation comparableRelation = new ComparableRelation();
   private static final SubTypingRelation subTypingRelation = new SubTypingRelation();
 
@@ -74,7 +75,9 @@ public class Inequalities {  //
         return node;
       }
     }
-    return unsorted.iterator().next();
+    SNode next = unsorted.iterator().next();
+    myState.executeOperation(new TraceWarningOperation("There is no node with no input. Choosing node " + next));
+    return next;
   }
 
   public List<RelationBlock> getRelationsToSolve() {
@@ -118,31 +121,21 @@ public class Inequalities {  //
       for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
         SNode input = myState.getRepresentative(pair.first);
         SNode output = myState.getRepresentative(pair.second);
-        if (input != null) {
-          if (TypesUtil.isVariable(input)) {
-            myNodes.add(input);
+        Collection<SNode> inputVariables = myState.getRepresentatives(TypesUtil.getVariables(myState.expand(input)));
+        Collection<SNode> outputVariables = myState.getRepresentatives(TypesUtil.getVariables(myState.expand(output)));
+        myNodes.addAll(inputVariables);
+        myNodes.addAll(outputVariables);
+        for (SNode inputVar : inputVariables) {
+          for (SNode outputVar : outputVariables) {
+            addVariablesLink(inputVar, outputVar);
           }
-          if (TypesUtil.isVariable(output)) {
-            myNodes.add(output);
-          }
-          if (input != output && output != null) {
-            addVariablesLink(input, output);
-            myNodesToBlocks.addLink(input, inequality);
-            if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
-              List<SNode> inputVariables = TypesUtil.getVariables(input);
-              List<SNode> outputVariables = TypesUtil.getVariables(output);
-              myNodes.addAll(inputVariables);
-              myNodes.addAll(outputVariables);
-              for (SNode inputVar : inputVariables) {
-                for (SNode outputVar : outputVariables) {
-                  addVariablesLink(myState.getRepresentative(inputVar), myState.getRepresentative(outputVar));
-                }
-              }
-            }
-          }
-          if (output != null) {
-            myNodesToBlocks.addLink(output, inequality);
-          }
+          assert inputVar == myState.getRepresentative(inputVar);
+        }
+        if (input!=null) {
+          myNodesToBlocks.addLink(input, inequality);
+        }
+        if (output != null) {
+          myNodesToBlocks.addLink(output, inequality);
         }
       }
     }
@@ -189,11 +182,11 @@ public class Inequalities {  //
       if (right == left) {
         continue;
       }
-      if (left == node && !TypesUtil.isVariable(right)) {
+      if (left == node && !TypesUtil.isVariable(right) && right != null) {
         rights.add(right);
         typesToBlocks.put(right, block);
       }
-      if (right == node && !TypesUtil.isVariable(left)) {
+      if (right == node && !TypesUtil.isVariable(left)&& left != null) {
         lefts.add(left);
         typesToBlocks.put(left, block);
       }
@@ -233,7 +226,7 @@ public class Inequalities {  //
     for (Block block : inequalities) {
       InequalityBlock inequality = (InequalityBlock) block;
 
-      List<SNode> variables = TypesUtil.getVariables(myState.expand(inequality.getRightNode()));
+      Collection<SNode> variables = TypesUtil.getVariables(myState.expand(inequality.getRightNode()));
       variables.addAll(TypesUtil.getVariables(myState.expand(inequality.getLeftNode())));
       if (variables.size() == 0) {
         Set<InequalityBlock> emptyBlocks = groupsToInequalities.get(emptySet);
