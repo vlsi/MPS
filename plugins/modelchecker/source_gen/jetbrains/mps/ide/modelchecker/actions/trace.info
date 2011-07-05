@@ -9,7 +9,7 @@
   <unitInfo fileName="ToolsInternalEx_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Default_KeymapChanges" />
   <unitInfo fileName="Modelchecker_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer" />
-  <unitInfo fileName="Modelchecker_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" />
+  <unitInfo fileName="Modelchecker_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" />
   <unitInfo fileName="CheckProject_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckProject_Action" />
   <unitInfo fileName="FindAllAdapterUsages_Action.java" startLine="24" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.FindAllAdapterUsages_Action" />
   <unitInfo fileName="FindlAllBrokenReferences_Action.java" startLine="24" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.FindlAllBrokenReferences_Action" />

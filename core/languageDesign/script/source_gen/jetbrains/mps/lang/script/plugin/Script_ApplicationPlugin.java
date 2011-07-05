@@ -5,7 +5,6 @@ package jetbrains.mps.lang.script.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
-import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
 
@@ -28,7 +27,6 @@ public class Script_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(ScriptsForSelection_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_scripts);
-    insertGroupIntoAnother(ScriptsForSelection_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_scripts);
     insertGroupIntoAnother(ScriptsForSelection_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_scripts);
     insertGroupIntoAnother(ScriptsGlobally_ActionGroup.ID, Tools_ActionGroup.ID, null);
   }

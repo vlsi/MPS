@@ -12,12 +12,8 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup";
   public static final String LABEL_ID_generatorNew = ID + "generatorNew";
-  public static final String LABEL_ID_make = ID + "make";
-  public static final String LABEL_ID_generate = ID + "generate";
+  public static final String LABEL_ID_commonModule = ID + "commonModule";
   public static final String LABEL_ID_delete = ID + "delete";
-  public static final String LABEL_ID_check = ID + "check";
-  public static final String LABEL_ID_favorites = ID + "favorites";
-  public static final String LABEL_ID_scripts = ID + "scripts";
 
   public GeneratorActions_ActionGroup() {
     super("GeneratorActions", ID);
@@ -31,44 +27,13 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
         GeneratorActions_ActionGroup.this.addAction(action);
       }
       {
-        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_make);
+        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_commonModule);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         GeneratorActions_ActionGroup.this.addAction(action);
       }
-      {
-        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_generate);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        GeneratorActions_ActionGroup.this.addAction(action);
-      }
-      GeneratorActions_ActionGroup.this.addSeparator();
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action");
-      GeneratorActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_delete);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        GeneratorActions_ActionGroup.this.addAction(action);
-      }
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
-      GeneratorActions_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_check);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        GeneratorActions_ActionGroup.this.addAction(action);
-      }
-      GeneratorActions_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_favorites);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        GeneratorActions_ActionGroup.this.addAction(action);
-      }
-      GeneratorActions_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_scripts);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         GeneratorActions_ActionGroup.this.addAction(action);

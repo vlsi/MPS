@@ -211,13 +211,13 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_find);
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
+    insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(Search_ActionGroup.ID, "SearchMenu", null);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);
     insertGroupIntoAnother(FavoritesPopupWrapper_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_popup);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_favorites);
-    insertGroupIntoAnother(Favorites_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(View_ActionGroup.ID, "ViewMenu", null);

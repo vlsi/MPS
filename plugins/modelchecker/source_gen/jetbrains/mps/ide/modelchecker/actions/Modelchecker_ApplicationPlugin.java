@@ -7,7 +7,6 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
-import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
 import java.util.List;
@@ -45,7 +44,6 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ShowModelCheckerTool_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
     insertGroupIntoAnother(CheckProject_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModule_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_check);
-    insertGroupIntoAnother(CheckModule_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModel_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(ToolsInternalEx_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
   }
