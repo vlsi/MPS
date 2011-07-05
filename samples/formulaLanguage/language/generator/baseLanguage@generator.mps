@@ -98,7 +98,7 @@
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bbjx.8307544070813664752" resolveInfo="MultiplyOperation" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1112819851630">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1112820006930">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112979325952" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112979325952" resolveInfo="SWITCH_Expression_NewFunction_Double" />
             <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1200430494834">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200430494835">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1200430498102">
@@ -115,7 +115,7 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1112819856304">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1112820006931">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112979325952" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112979325952" resolveInfo="SWITCH_Expression_NewFunction_Double" />
             <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1200430529811">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200430529812">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1200430531657">
@@ -140,7 +140,7 @@
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bbjx.8307544070813664811" resolveInfo="IfFunction" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1112820099529">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1112820163066">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112818835473" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112818835473" resolveInfo="SWITCH_Expression_NewFunction_Default" />
             <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1200430591959">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200430591960">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1200430593868">
@@ -157,7 +157,7 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1112820103749">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1112820163067">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112818835473" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112818835473" resolveInfo="SWITCH_Expression_NewFunction_Default" />
             <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1200430618421">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200430618422">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1200430620298">
@@ -174,7 +174,7 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1112820108814">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1112820163068">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112818835473" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112818835473" resolveInfo="SWITCH_Expression_NewFunction_Default" />
             <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1200430632007">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200430632008">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1200430633868">
@@ -206,13 +206,13 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1200427994981">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1111509017652" resolveInfo="FloatingPointConstant" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1200428023815">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpnk.1111784926012" resolveInfo="FloatingPointConstant" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1809270905935431185">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1112819378866" resolveInfo="_new_DoubleConstant_FromFloatingPointConstant" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1200427994983">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1068580320020" resolveInfo="IntegerConstant" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpnk.1111784858617" resolveInfo="IntegerConstant" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1200428031925">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1112980489607" resolveInfo="_new_DoubleConstant_FromIntegerConstant" />
       </node>
@@ -228,7 +228,7 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1112979500145">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1112979623857">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112818835473" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112818835473" resolveInfo="SWITCH_Expression_NewFunction_Default" />
             <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1200430664124">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200430664125">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1200430665657">
@@ -245,7 +245,7 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1112979623858">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1112979623859">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112979325952" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112979325952" resolveInfo="SWITCH_Expression_NewFunction_Double" />
             <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1200430674101">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200430674102">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1200430675743">
@@ -262,7 +262,7 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1112979623860">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1112979623861">
-            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112979325952" />
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1112979325952" resolveInfo="SWITCH_Expression_NewFunction_Double" />
             <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1200430685109">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1200430685110">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1200430686783">

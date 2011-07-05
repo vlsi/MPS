@@ -78,9 +78,9 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
             if (pattern.endsWith(".")) {
-              SPropertyOperations.set(res, "value", "" + (Float.parseFloat(pattern + "0")));
+              SPropertyOperations.set(res, "value", pattern + "0");
             } else {
-              SPropertyOperations.set(res, "value", "" + (Float.parseFloat(pattern)));
+              SPropertyOperations.set(res, "value", pattern);
             }
             return res;
           }
