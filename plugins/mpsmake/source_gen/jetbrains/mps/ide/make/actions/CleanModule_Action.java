@@ -27,7 +27,7 @@ public class CleanModule_Action extends GeneratedAction {
 
   public CleanModule_Action() {
     super("Clean Compiled Java Files", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 

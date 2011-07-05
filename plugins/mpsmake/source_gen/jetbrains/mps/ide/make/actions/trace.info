@@ -532,7 +532,7 @@
     <nodeInfo nodeId="8610665572788515231" fileName="GlobalMake_ActionGroup.java" startLine="20" startPosition="49" endLine="21" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515232" fileName="GlobalMake_ActionGroup.java" startLine="21" startPosition="105" endLine="22" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8546647817422461961" fileName="GlobalMake_ActionGroup.java" startLine="22" startPosition="108" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515233" fileName="GlobalMake_ActionGroup.java" startLine="23" startPosition="49" endLine="24" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6997441392234452076" fileName="GlobalMake_ActionGroup.java" startLine="23" startPosition="49" endLine="24" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515234" fileName="GlobalMake_ActionGroup.java" startLine="24" startPosition="104" endLine="25" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515235" fileName="GlobalMake_ActionGroup.java" startLine="25" startPosition="107" endLine="26" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
