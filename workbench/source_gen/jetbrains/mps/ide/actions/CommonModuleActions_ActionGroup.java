@@ -18,6 +18,7 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_vcs = ID + "vcs";
+  public static final String LABEL_ID_run = ID + "run";
 
   public CommonModuleActions_ActionGroup() {
     super("CommonModuleActions", ID);
@@ -82,6 +83,14 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         CommonModuleActions_ActionGroup.this.addAction(action);
       }
+      CommonModuleActions_ActionGroup.this.addSeparator();
+      {
+        LabelledAnchor action = new LabelledAnchor(CommonModuleActions_ActionGroup.LABEL_ID_run);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        CommonModuleActions_ActionGroup.this.addAction(action);
+      }
+      CommonModuleActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

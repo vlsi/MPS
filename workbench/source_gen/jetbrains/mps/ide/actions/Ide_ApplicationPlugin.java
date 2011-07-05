@@ -168,15 +168,14 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("VcsGroup", EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_vcs);
     insertInterfaceGroupIntoAnother("VcsGroup", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_ideavcs);
     insertInterfaceGroupIntoAnother("NavbarPopupMenu", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+    insertInterfaceGroupIntoAnother("RunContextGroup", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_run);
     insertInterfaceGroupIntoAnother("RunContextGroup", EditorPopup_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", EditorTabActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", JUnitTestCaseActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", JUnitTestMethodActions_ActionGroup.ID, null);
-    insertInterfaceGroupIntoAnother("RunContextGroup", LanguageActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", ModelActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", NodeActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_runConfig);
-    insertInterfaceGroupIntoAnother("RunContextGroup", SolutionActions_ActionGroup.ID, null);
   }
 
   public void adjustRegularGroups() {

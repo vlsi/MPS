@@ -1311,14 +1311,13 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1204911787238">
         <property name="name" nameId="tpck.1169194664001" value="solutionNew" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="401659284115231184">
-        <property name="name" nameId="tpck.1169194664001" value="commonModule" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1204912175121" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1366781238034254894">
         <property name="name" nameId="tpck.1169194664001" value="contents" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1204912232777" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="401659284115231184">
+        <property name="name" nameId="tpck.1169194664001" value="commonModule" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="696518775937772476" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7685333756920344018">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216126715578" resolveInfo="ModuleProperties" />
       </node>
@@ -14181,10 +14180,8 @@
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991218714" resolveInfo="ModelActions" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2594916007743946175">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991226689" resolveInfo="SolutionActions" />
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2594916007743946176">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991224874" resolveInfo="LanguageActions" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="401659284115173011" resolveInfo="CommonModuleActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="696518775937787051" resolveInfo="run" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1341091614641347438">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1341091614641347434" resolveInfo="JUnitTestCaseActions" />
@@ -29340,6 +29337,11 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="401659284115231193">
         <property name="name" nameId="tpck.1169194664001" value="vcs" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="696518775937787049" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="696518775937787051">
+        <property name="name" nameId="tpck.1169194664001" value="run" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="696518775937787053" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="401659284115231187">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991226689" resolveInfo="SolutionActions" />

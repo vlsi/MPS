@@ -12,8 +12,8 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionActions_ActionGroup";
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
-  public static final String LABEL_ID_commonModule = ID + "commonModule";
   public static final String LABEL_ID_contents = ID + "contents";
+  public static final String LABEL_ID_commonModule = ID + "commonModule";
 
   public SolutionActions_ActionGroup() {
     super("SolutionActions", ID);
@@ -27,14 +27,13 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         SolutionActions_ActionGroup.this.addAction(action);
       }
       {
-        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_commonModule);
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_contents);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         SolutionActions_ActionGroup.this.addAction(action);
       }
-      SolutionActions_ActionGroup.this.addSeparator();
       {
-        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_contents);
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_commonModule);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         SolutionActions_ActionGroup.this.addAction(action);
