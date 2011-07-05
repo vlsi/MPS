@@ -1800,10 +1800,6 @@
         <property name="name" nameId="tpck.1169194664001" value="make" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="5716258091890928617" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="5716258091890928615">
-        <property name="name" nameId="tpck.1169194664001" value="compile" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="5716258091890928619" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="5716258091890928621">
         <property name="name" nameId="tpck.1169194664001" value="options" />
       </node>

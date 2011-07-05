@@ -29,17 +29,14 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new CheckModelsBeforeGeneration_Action());
-    addAction(new CleanAllModules_Action());
     addAction(new CleanModule_Action());
     addAction(new CleanProject_Action());
     addAction(new CompileProject_Action());
-    addAction(new MakeAllModules_Action());
     addAction(new MakeModule_Action());
     addAction(new MakeProject_Action());
     addAction(new MakeSelectedModels_Action());
     addAction(new MakeSelectedModules_Action());
     addAction(new Options_Action());
-    addAction(new RebuildAllModules_Action());
     addAction(new RebuildModule_Action());
     addAction(new RebuildProject_Action());
     addAction(new RebuildSelectedModels_Action());
@@ -48,7 +45,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowMappingsPartitioning_Action());
     addAction(new TextPreviewModel_Action());
     // groups 
-    addGroup(new Compile_ActionGroup());
     addGroup(new GenerateOptions_ActionGroup());
     addGroup(new GlobalMake_ActionGroup());
     addGroup(new JavaModuleActions_ActionGroup());
@@ -65,7 +61,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ProjectCompileActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(JavaModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_compileJava);
     insertGroupIntoAnother(JavaModuleActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_compileJava);
-    insertGroupIntoAnother(Compile_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
     insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
     insertGroupIntoAnother(Make_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_make);
