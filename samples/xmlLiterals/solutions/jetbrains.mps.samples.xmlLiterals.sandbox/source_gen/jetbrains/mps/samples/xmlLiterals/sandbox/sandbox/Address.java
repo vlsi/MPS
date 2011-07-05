@@ -10,6 +10,7 @@ public class Address {
   private String addressString;
 
   public Address(String addressString) {
+    this.addressString = addressString;
   }
 
   public String getAddressString() {

@@ -36,7 +36,7 @@ public class QueriesGenerated {
     return _context.createUniqueName("text_", _context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_7417816926334570620(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7946777123643247113(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "text");
   }
 
@@ -72,7 +72,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.xmlInternal.structure.SimpleElement"), "elementName", true);
   }
 
-  public static SNode sourceNodeQuery_7417816926334570641(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7946777123643247168(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
@@ -80,7 +80,7 @@ public class QueriesGenerated {
     return SNodeOperations.getNextSibling(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_7417816926334600019(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7946777123643247149(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "text", true)).first();
   }
 

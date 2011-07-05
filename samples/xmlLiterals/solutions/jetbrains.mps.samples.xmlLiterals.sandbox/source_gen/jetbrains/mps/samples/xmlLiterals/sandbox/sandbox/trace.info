@@ -63,28 +63,29 @@
   </root>
   <root nodeId="9152904044274518176">
     <nodeInfo nodeId="7417816926334720689" fileName="Address.java" startLine="9" startPosition="22" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="addressString" />
-    <nodeInfo nodeId="7417816926334720722" fileName="Address.java" startLine="15" startPosition="36" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="21" startPosition="31" endLine="22" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="22" startPosition="68" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="23" startPosition="77" endLine="24" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="24" startPosition="67" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9152904044274518178" fileName="Address.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Address#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7417816926334720717" fileName="Address.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddressString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="20" startPosition="56" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jdom/Element;" />
-    <nodeInfo nodeId="7417816926334720699" fileName="Address.java" startLine="19" startPosition="26" endLine="27" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9152904044274518182" fileName="Address.java" startLine="18" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toXml#()Lorg/jdom/Element;" />
-    <scopeInfo nodeId="9152904044274518181" fileName="Address.java" startLine="12" startPosition="40" endLine="12" endPosition="40" />
-    <scopeInfo nodeId="7417816926334720720" fileName="Address.java" startLine="15" startPosition="36" endLine="16" endPosition="30" />
-    <scopeInfo nodeId="9152904044274518178" fileName="Address.java" startLine="11" startPosition="0" endLine="13" endPosition="3">
+    <nodeInfo nodeId="7946777123643247292" fileName="Address.java" startLine="12" startPosition="40" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7417816926334720722" fileName="Address.java" startLine="16" startPosition="36" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="22" startPosition="31" endLine="23" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="23" startPosition="68" endLine="24" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="24" startPosition="77" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="25" startPosition="67" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9152904044274518178" fileName="Address.java" startLine="11" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Address#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7417816926334720717" fileName="Address.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddressString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="21" startPosition="56" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jdom/Element;" />
+    <nodeInfo nodeId="7417816926334720699" fileName="Address.java" startLine="20" startPosition="26" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9152904044274518182" fileName="Address.java" startLine="19" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toXml#()Lorg/jdom/Element;" />
+    <scopeInfo nodeId="9152904044274518181" fileName="Address.java" startLine="12" startPosition="40" endLine="13" endPosition="39" />
+    <scopeInfo nodeId="7417816926334720720" fileName="Address.java" startLine="16" startPosition="36" endLine="17" endPosition="30" />
+    <scopeInfo nodeId="9152904044274518178" fileName="Address.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
       <varInfo nodeId="7417816926334720697" varName="addressString" />
     </scopeInfo>
-    <scopeInfo nodeId="7417816926334720717" fileName="Address.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="21" startPosition="31" endLine="25" endPosition="42" />
-    <scopeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="20" startPosition="56" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="9152904044274518185" fileName="Address.java" startLine="19" startPosition="26" endLine="27" endPosition="15" />
-    <scopeInfo nodeId="9152904044274518182" fileName="Address.java" startLine="18" startPosition="0" endLine="29" endPosition="0" />
-    <unitInfo nodeId="7417816926334720703" fileName="Address.java" startLine="20" startPosition="15" endLine="27" endPosition="5" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address$1" />
-    <unitInfo nodeId="9152904044274518176" fileName="Address.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
+    <scopeInfo nodeId="7417816926334720717" fileName="Address.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="22" startPosition="31" endLine="26" endPosition="42" />
+    <scopeInfo nodeId="7417816926334720703" fileName="Address.java" startLine="21" startPosition="56" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="9152904044274518185" fileName="Address.java" startLine="20" startPosition="26" endLine="28" endPosition="15" />
+    <scopeInfo nodeId="9152904044274518182" fileName="Address.java" startLine="19" startPosition="0" endLine="30" endPosition="0" />
+    <unitInfo nodeId="7417816926334720703" fileName="Address.java" startLine="21" startPosition="15" endLine="28" endPosition="5" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address$1" />
+    <unitInfo nodeId="9152904044274518176" fileName="Address.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
   </root>
 </debugInfo>
 
