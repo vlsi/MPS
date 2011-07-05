@@ -511,6 +511,7 @@
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4160512568111333312">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4160512568111332200">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.MeetType" typeId="tpd4.1188473524530" id="4160512568111332202">
+              <node role="argument" roleId="tpd4.1188473537547" type="tpee.VoidType" typeId="tpee.1068581517677" id="1097110906325963013" />
               <node role="argument" roleId="tpd4.1188473537547" type="tpck.BaseConcept" typeId="tpck.1133920641626" id="4160512568111332203">
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="4160512568111332206">
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4160512568111332212">
@@ -523,7 +524,6 @@
                   </node>
                 </node>
               </node>
-              <node role="argument" roleId="tpd4.1188473537547" type="tpee.VoidType" typeId="tpee.1068581517677" id="4160512568111332205" />
             </node>
           </node>
         </node>
