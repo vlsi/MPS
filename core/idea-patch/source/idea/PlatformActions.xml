@@ -136,12 +136,14 @@
         <separator/>
         <action id="Synchronize" class="com.intellij.ide.actions.SynchronizeAction" icon="/actions/sync.png"/>
         <action id="InvalidateCaches" class="com.intellij.ide.actions.InvalidateCachesAction"/>
-        
+
+        <!-- MPS Patch Start
         <group id="ChangeFileEncodingGroup" popup="true" class="com.intellij.openapi.vfs.encoding.ChangeEncodingUpdateGroup">
           <action id="ChangeFileEncodingGroupAction" class="com.intellij.openapi.vfs.encoding.ChangeFileEncodingGroup" text=""/>
         </group>
         <action id="ToggleReadOnlyAttribute" class="com.intellij.ide.actions.ToggleReadOnlyAttributeAction"/>
         <separator/>
+        -->
         <action id="Exit" class="com.intellij.ide.actions.ExitAction"/>
       </group>
 
@@ -157,28 +159,33 @@
           <action id="$Paste" class="com.intellij.ide.actions.PasteAction" icon="/actions/menu-paste.png"/>
           <action id="PasteMultiple" class="com.intellij.openapi.editor.actions.MultiplePasteAction"/>
           <reference ref="EditorPasteSimple"/>
+          <!-- MPS Patch Start
           <reference ref="EditorToggleColumnMode"/>
+          -->
         </group>
         <separator/>
+        <!-- MPS Patch Start-->
+        <group id="EditCreateDeleteGroup">
+          <action id="$Delete" class="com.intellij.ide.actions.DeleteAction"/>
+        </group>
+        <!-- MPS Patch End-->
+
+        <!-- MPS Patch Start
         <group id="EditSelectGroup">
           <action id="$SelectAll" class="com.intellij.ide.actions.SelectAllAction"/>
         </group>
         <separator/>
-        <group id="EditCreateDeleteGroup">
-          <action id="$Delete" class="com.intellij.ide.actions.DeleteAction"/>
-        </group>
         <separator/>
         <group id="EditSmartGroup">
           <reference ref="EditorJoinLines"/>
           <reference ref="EditorDuplicate"/>
-<!--
           <reference ref="EditorIndentSelection"/>
--->
           <reference ref="EditorUnindentSelection"/>
           <reference ref="EditorToggleCase"/>
           <action id="ConvertIndentsToSpaces" class="com.intellij.openapi.editor.actions.ConvertIndentsToSpacesAction"/>
           <action id="ConvertIndentsToTabs" class="com.intellij.openapi.editor.actions.ConvertIndentsToTabsAction"/>
         </group>
+          -->
       </group>
 
       <!-- View -->
@@ -201,10 +208,12 @@
           <action id="RecentChangedFiles" class="com.intellij.ide.actions.ShowRecentlyEditedFilesAction"/>
         </group>
         <separator/>
+        <!-- MPS Patch Start
         <group id="PairFileActions">
           <reference ref="CompareTwoFiles"/>
           <reference ref="CompareFileWithEditor"/>
         </group>
+        -->
       </group>
 
       <!-- Go to -->
@@ -222,7 +231,7 @@
 
       <!-- Tools -->
       <group id="ToolsMenu" configurable="true" popup="true">
-<!--
+        <!-- MPS Patch Start
         <group id="Macros" popup="false">
           <group id="StanardMacroActions">
             <action id="PlaybackLastMacro" class="com.intellij.ide.actionMacro.actions.PlaybackLastMacroAction"/>
@@ -233,7 +242,7 @@
           <group id="PlaySavedMacroActions" class="com.intellij.ide.actionMacro.actions.MacrosGroup"/>
         </group>
         <action id="PsiViewer" class="com.intellij.internal.psiView.PsiViewerAction"/>
--->
+        -->
       </group>
 
       <group id="WindowMenu" popup="true">
@@ -290,7 +299,7 @@
       <group id="HelpMenu" popup="true">
         <!-- MPS Patch Start
           <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png"/>
-        MPS Patch End-->
+        -->
         <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <action id="ProductivityGude" class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
         <!--MPS Patch Start-->
@@ -356,7 +365,7 @@
       <!-- MPS Patch Start
         <separator/>
         <reference ref="HelpTopics"/>
-      MPS Patch End-->
+      -->
 
     </group>
 
@@ -369,7 +378,9 @@
       <reference ref="EditorToggleColumnMode"/>
       <separator/>
       <action id="CompareClipboardWithSelection" class="com.intellij.openapi.diff.actions.CompareClipboardWithSelection"/>
+      <!--MPS Patch Start
       <reference ref="ChangeFileEncodingGroup"/>
+      -->
     </group>
 
     <group id="EditorTabPopupMenu">
@@ -394,13 +405,13 @@
     </group>
 
     <group id="WelcomeScreen.Documentation">
-      <!--MPS Patch Start-->
-      <!--<action id="WelcomeScreen.ReadHelp" class="com.intellij.openapi.wm.impl.welcomeScreen.ReadHelpAction"-->
-      <!--icon="/general/readHelp.png"/>-->
-      <!--<action id="WelcomeScreen.ShowTips" class="com.intellij.ide.actions.ShowTipsAction"-->
-      <!--icon="/general/tipsOfTheDay.png"/>-->
-      <!--<reference ref="Help.KeymapReference"/>-->
-      <!--MPS Patch End-->
+      <!--MPS Patch Start
+      <action id="WelcomeScreen.ReadHelp" class="com.intellij.openapi.wm.impl.welcomeScreen.ReadHelpAction"
+      icon="/general/readHelp.png"/>
+      <action id="WelcomeScreen.ShowTips" class="com.intellij.ide.actions.ShowTipsAction"
+      icon="/general/tipsOfTheDay.png"/>
+      <reference ref="Help.KeymapReference"/>
+      -->
     </group>
 
     <group id="FileChooser">
@@ -421,11 +432,11 @@
         icon="/nodes/homeFolder.png"/>
       <action id="FileChooser.GotoProject" class="com.intellij.openapi.fileChooser.actions.GotoProjectDirectory"
         icon="/nodes/ideaProject.png"/>
-      <!--PATCHED IN MPS-->
+      <!-- MPS Patch Start-->
       <action id="FileChooser.GotoMPSModule"
               class="jetbrains.mps.ide.ui.filechoosers.treefilechooser.GotoModuleDirectory"
               icon="/nodes/ideaModule.png"/>
-      <!--PATCHED IN MPS-->
+      <!--MPS Patch End-->
       <separator/>
       <action id="FileChooser.NewFile" class="com.intellij.openapi.fileChooser.actions.NewFileAction"
         icon="/actions/new.png"/>
