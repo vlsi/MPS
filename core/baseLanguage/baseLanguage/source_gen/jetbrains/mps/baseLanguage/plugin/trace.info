@@ -1476,8 +1476,8 @@
     </scopeInfo>
     <scopeInfo nodeId="155142699038773183" fileName="ParenthesisUtil.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="155142699038773199" varName="expression" />
-      <varInfo nodeId="155142699038773202" varName="opening" />
       <varInfo nodeId="155142699038773204" varName="context" />
+      <varInfo nodeId="155142699038773202" varName="opening" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773227" fileName="ParenthesisUtil.java" startLine="28" startPosition="129" endLine="33" endPosition="124" />
     <scopeInfo nodeId="155142699038773748" fileName="ParenthesisUtil.java" startLine="164" startPosition="105" endLine="169" endPosition="7">
@@ -1493,8 +1493,8 @@
       <varInfo nodeId="155142699038773310" varName="parExpr" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773941" fileName="ParenthesisUtil.java" startLine="223" startPosition="93" endLine="233" endPosition="5">
-      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773953" varName="nodeCell" />
+      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773960" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773529" fileName="ParenthesisUtil.java" startLine="106" startPosition="30" endLine="117" endPosition="7">
@@ -1555,8 +1555,8 @@
       <varInfo nodeId="155142699038773836" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773208" fileName="ParenthesisUtil.java" startLine="25" startPosition="85" endLine="68" endPosition="19">
-      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773367" varName="parExpr" />
+      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773356" varName="subtree" />
       <varInfo nodeId="155142699038773210" varName="current" />
       <varInfo nodeId="155142699038773287" varName="left" />
@@ -1570,8 +1570,8 @@
     <scopeInfo nodeId="155142699038773405" fileName="ParenthesisUtil.java" startLine="71" startPosition="106" endLine="124" endPosition="39">
       <varInfo nodeId="155142699038773417" varName="binOp" />
       <varInfo nodeId="155142699038773451" varName="backsideSubtree" />
-      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773575" varName="binOpCheck" />
+      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773437" varName="leaf" />
       <varInfo nodeId="155142699038773429" varName="sidemost" />
     </scopeInfo>

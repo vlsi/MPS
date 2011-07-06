@@ -72,10 +72,10 @@
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
-    <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
+    <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -84,6 +84,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.settings.LocalConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />

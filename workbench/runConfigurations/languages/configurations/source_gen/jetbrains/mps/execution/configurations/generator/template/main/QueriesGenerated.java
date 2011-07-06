@@ -421,7 +421,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7236226861153291934(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "tool", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"), true) != null);
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "tool", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral");
   }
 
   public static boolean ifMacro_Condition_4042467058397505421(final IOperationContext operationContext, final IfMacroContext _context) {

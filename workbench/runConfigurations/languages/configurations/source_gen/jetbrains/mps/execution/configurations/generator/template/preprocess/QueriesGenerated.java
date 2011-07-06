@@ -65,7 +65,7 @@ public class QueriesGenerated {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.addReference(SReference.create("variableDeclaration", quotedNode1_6, SModelReference.fromString("r:0063557a-2c7a-4ff0-9b70-6ec78b78bf0f(jetbrains.mps.execution.configurations.generator.template.preprocess@1_1)"), SNodeId.fromString("")));
+          quotedNode1_6.addReference(SReference.create("variableDeclaration", quotedNode1_6, SModelReference.fromString("r:4855146c-0e0d-4075-aa2a-5e7f11985052(jetbrains.mps.execution.configurations.generator.template.preprocess@1_1)"), SNodeId.fromString("")));
           quotedNode_1.addChild("operand", quotedNode1_6);
         }
         {
