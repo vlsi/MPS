@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.EmptySearchScope;
@@ -24,32 +25,27 @@ import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 public abstract class BaseNodeReferenceSearchScopeProvider implements INodeReferentSearchScopeProvider {
+  private static Logger LOG = Logger.getLogger(BaseNodeReferenceSearchScopeProvider.class);
+
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new UndefinedSearchScope();
   }
 
   public ISearchScope createNodeReferentSearchScope(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    Object searchScopeOrListOfNodes = this.createSearchScopeOrListOfNodes(operationContext, _context);
-    if (searchScopeOrListOfNodes == null) {
+    try {
+      Object searchScopeOrListOfNodes = createSearchScopeOrListOfNodes(operationContext, _context);
+      if (searchScopeOrListOfNodes == null) return new EmptySearchScope();
+      if (searchScopeOrListOfNodes instanceof ISearchScope) return (ISearchScope) searchScopeOrListOfNodes;
+      if (searchScopeOrListOfNodes instanceof Iterable) {
+        Iterable iterable = CollectionUtil.withoutNulls((Iterable) searchScopeOrListOfNodes);
+        return new SimpleSearchScope(IterableUtil.asList(iterable));
+      }
+      throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
+    } catch (Throwable t) {
+      LOG.error(t);
       return new EmptySearchScope();
     }
-    if (searchScopeOrListOfNodes instanceof ISearchScope) {
-      return (ISearchScope) searchScopeOrListOfNodes;
-    }
-/*    if (searchScopeOrListOfNodes instanceof List) {
-      Iterable iterable = CollectionUtil.withoutNulls((Iterable) searchScopeOrListOfNodes);
-      return new SimpleSearchScope(IterableUtil.asList(iterable));
-    }*/
-    if (searchScopeOrListOfNodes instanceof Iterable) {
-      Iterable iterable = CollectionUtil.withoutNulls((Iterable) searchScopeOrListOfNodes);
-      return new SimpleSearchScope(IterableUtil.asList(iterable));
-    }
-    throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
   }
 
   public boolean hasPresentation() {
