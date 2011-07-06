@@ -126,7 +126,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     };
 
     final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(new EmptyProgressIndicator());
-    return new IScriptController() {
+    return new IScriptController.Stub() {
       public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
         if (ctl != null) {
           ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {

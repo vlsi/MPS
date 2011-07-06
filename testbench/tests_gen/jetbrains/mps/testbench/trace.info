@@ -91,7 +91,7 @@
     <nodeInfo nodeId="6214179127578268923" fileName="TestMakeService.java" startLine="108" startPosition="92" endLine="120" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6214179127578269037" fileName="TestMakeService.java" startLine="130" startPosition="103" endLine="144" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="151" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IParametersPool;)V" />
-    <nodeInfo nodeId="6214179127578269029" fileName="TestMakeService.java" startLine="129" startPosition="36" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+    <nodeInfo nodeId="6214179127578269029" fileName="TestMakeService.java" startLine="129" startPosition="41" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
     <nodeInfo nodeId="6214179127578269024" fileName="TestMakeService.java" startLine="128" startPosition="113" endLine="167" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6214179127578268910" fileName="TestMakeService.java" startLine="106" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="completeController#(Ljetbrains/mps/make/script/IScriptController;)Ljetbrains/mps/make/script/IScriptController;" />
     <scopeInfo nodeId="3180200298862810294" fileName="TestMakeService.java" startLine="68" startPosition="49" endLine="68" endPosition="49" />
@@ -222,7 +222,7 @@
     <scopeInfo nodeId="6214179127578269113" fileName="TestMakeService.java" startLine="151" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="6214179127578269114" varName="pool" />
     </scopeInfo>
-    <scopeInfo nodeId="6214179127578269029" fileName="TestMakeService.java" startLine="129" startPosition="36" endLine="146" endPosition="0">
+    <scopeInfo nodeId="6214179127578269029" fileName="TestMakeService.java" startLine="129" startPosition="41" endLine="146" endPosition="0">
       <varInfo nodeId="6214179127578269032" varName="code" />
     </scopeInfo>
     <scopeInfo nodeId="6214179127578268918" fileName="TestMakeService.java" startLine="107" startPosition="77" endLine="167" endPosition="6">

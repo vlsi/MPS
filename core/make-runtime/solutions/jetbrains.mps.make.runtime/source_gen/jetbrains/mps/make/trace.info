@@ -160,59 +160,75 @@
     <unitInfo nodeId="8464977774480012290" fileName="IMakeNotificationListener.java" startLine="6" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener" />
   </root>
   <root nodeId="8695426379435232461">
-    <nodeInfo nodeId="8695426379435237583" fileName="MakeSession.java" startLine="8" startPosition="26" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
-    <nodeInfo nodeId="8695426379435237592" fileName="MakeSession.java" startLine="9" startPosition="36" endLine="10" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messageHandler" />
-    <nodeInfo nodeId="8695426379435237601" fileName="MakeSession.java" startLine="10" startPosition="41" endLine="11" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cleanMake" />
-    <nodeInfo nodeId="2181314052156513930" fileName="MakeSession.java" startLine="11" startPosition="28" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sticky" />
-    <nodeInfo nodeId="1841925426083462710" fileName="MakeSession.java" startLine="14" startPosition="49" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="2181314052156502142" fileName="MakeSession.java" startLine="18" startPosition="100" endLine="19" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="8695426379435237586" fileName="MakeSession.java" startLine="22" startPosition="116" endLine="23" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8695426379435237595" fileName="MakeSession.java" startLine="23" startPosition="27" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8695426379435237604" fileName="MakeSession.java" startLine="24" startPosition="41" endLine="25" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2181314052156513933" fileName="MakeSession.java" startLine="25" startPosition="31" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8695426379435237610" fileName="MakeSession.java" startLine="29" startPosition="41" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8695426379435237612" fileName="MakeSession.java" startLine="33" startPosition="46" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8695426379435237614" fileName="MakeSession.java" startLine="37" startPosition="32" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2181314052156513939" fileName="MakeSession.java" startLine="41" startPosition="29" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8695426379435237553" fileName="MakeSession.java" startLine="45" startPosition="50" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1841925426083462703" fileName="MakeSession.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="2181314052156502107" fileName="MakeSession.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;Z)V" />
-    <nodeInfo nodeId="8695426379435232473" fileName="MakeSession.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/IOperationContext;" />
-    <nodeInfo nodeId="8695426379435232480" fileName="MakeSession.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessageHandler#()Ljetbrains/mps/messages/IMessageHandler;" />
-    <nodeInfo nodeId="8695426379435237569" fileName="MakeSession.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCleanMake#()Z" />
-    <nodeInfo nodeId="1841925426083462791" fileName="MakeSession.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSticky#()Z" />
-    <nodeInfo nodeId="8695426379435237541" fileName="MakeSession.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljava/lang/Runnable;)V" />
-    <nodeInfo nodeId="8695426379435232463" fileName="MakeSession.java" startLine="21" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;ZZ)V" />
-    <scopeInfo nodeId="1841925426083462706" fileName="MakeSession.java" startLine="14" startPosition="49" endLine="15" endPosition="30" />
-    <scopeInfo nodeId="2181314052156502110" fileName="MakeSession.java" startLine="18" startPosition="100" endLine="19" endPosition="52" />
-    <scopeInfo nodeId="8695426379435232476" fileName="MakeSession.java" startLine="29" startPosition="41" endLine="30" endPosition="19" />
-    <scopeInfo nodeId="8695426379435232483" fileName="MakeSession.java" startLine="33" startPosition="46" endLine="34" endPosition="26" />
-    <scopeInfo nodeId="8695426379435237572" fileName="MakeSession.java" startLine="37" startPosition="32" endLine="38" endPosition="21" />
-    <scopeInfo nodeId="1841925426083462794" fileName="MakeSession.java" startLine="41" startPosition="29" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="8695426379435237544" fileName="MakeSession.java" startLine="45" startPosition="50" endLine="46" endPosition="25" />
-    <scopeInfo nodeId="1841925426083462703" fileName="MakeSession.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+    <nodeInfo nodeId="8695426379435237583" fileName="MakeSession.java" startLine="9" startPosition="26" endLine="10" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
+    <nodeInfo nodeId="8695426379435237592" fileName="MakeSession.java" startLine="10" startPosition="36" endLine="11" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messageHandler" />
+    <nodeInfo nodeId="8695426379435237601" fileName="MakeSession.java" startLine="11" startPosition="41" endLine="12" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cleanMake" />
+    <nodeInfo nodeId="2181314052156513930" fileName="MakeSession.java" startLine="12" startPosition="28" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sticky" />
+    <nodeInfo nodeId="8075512910924574285" fileName="MakeSession.java" startLine="13" startPosition="25" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="propertiesCollector" />
+    <nodeInfo nodeId="1841925426083462710" fileName="MakeSession.java" startLine="16" startPosition="49" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="2181314052156502142" fileName="MakeSession.java" startLine="20" startPosition="100" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="8075512910924574301" fileName="MakeSession.java" startLine="24" startPosition="116" endLine="25" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="8695426379435237586" fileName="MakeSession.java" startLine="28" startPosition="158" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8695426379435237595" fileName="MakeSession.java" startLine="29" startPosition="27" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8695426379435237604" fileName="MakeSession.java" startLine="30" startPosition="41" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2181314052156513933" fileName="MakeSession.java" startLine="31" startPosition="31" endLine="32" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8075512910924574312" fileName="MakeSession.java" startLine="32" startPosition="25" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8695426379435237610" fileName="MakeSession.java" startLine="36" startPosition="41" endLine="37" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8695426379435237612" fileName="MakeSession.java" startLine="40" startPosition="46" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8695426379435237614" fileName="MakeSession.java" startLine="44" startPosition="32" endLine="45" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2181314052156513939" fileName="MakeSession.java" startLine="48" startPosition="29" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8075512910924574330" fileName="MakeSession.java" startLine="52" startPosition="55" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8695426379435237553" fileName="MakeSession.java" startLine="56" startPosition="50" endLine="57" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1841925426083462703" fileName="MakeSession.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="2181314052156502107" fileName="MakeSession.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;Z)V" />
+    <nodeInfo nodeId="8075512910924574289" fileName="MakeSession.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;ZZ)V" />
+    <nodeInfo nodeId="8695426379435232473" fileName="MakeSession.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/IOperationContext;" />
+    <nodeInfo nodeId="8695426379435232480" fileName="MakeSession.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessageHandler#()Ljetbrains/mps/messages/IMessageHandler;" />
+    <nodeInfo nodeId="8695426379435237569" fileName="MakeSession.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCleanMake#()Z" />
+    <nodeInfo nodeId="1841925426083462791" fileName="MakeSession.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSticky#()Z" />
+    <nodeInfo nodeId="8075512910924574325" fileName="MakeSession.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertiesProvider#()Ljetbrains/mps/make/resources/IPropertiesCollector;" />
+    <nodeInfo nodeId="8695426379435237541" fileName="MakeSession.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="8695426379435232463" fileName="MakeSession.java" startLine="27" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;ZZLjetbrains/mps/make/resources/IPropertiesCollector;)V" />
+    <scopeInfo nodeId="1841925426083462706" fileName="MakeSession.java" startLine="16" startPosition="49" endLine="17" endPosition="30" />
+    <scopeInfo nodeId="2181314052156502110" fileName="MakeSession.java" startLine="20" startPosition="100" endLine="21" endPosition="52" />
+    <scopeInfo nodeId="8075512910924574292" fileName="MakeSession.java" startLine="24" startPosition="116" endLine="25" endPosition="59" />
+    <scopeInfo nodeId="8695426379435232476" fileName="MakeSession.java" startLine="36" startPosition="41" endLine="37" endPosition="19" />
+    <scopeInfo nodeId="8695426379435232483" fileName="MakeSession.java" startLine="40" startPosition="46" endLine="41" endPosition="26" />
+    <scopeInfo nodeId="8695426379435237572" fileName="MakeSession.java" startLine="44" startPosition="32" endLine="45" endPosition="21" />
+    <scopeInfo nodeId="1841925426083462794" fileName="MakeSession.java" startLine="48" startPosition="29" endLine="49" endPosition="18" />
+    <scopeInfo nodeId="8075512910924574328" fileName="MakeSession.java" startLine="52" startPosition="55" endLine="53" endPosition="31" />
+    <scopeInfo nodeId="8695426379435237544" fileName="MakeSession.java" startLine="56" startPosition="50" endLine="57" endPosition="25" />
+    <scopeInfo nodeId="1841925426083462703" fileName="MakeSession.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="1841925426083462707" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="2181314052156502107" fileName="MakeSession.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+    <scopeInfo nodeId="2181314052156502107" fileName="MakeSession.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
       <varInfo nodeId="2181314052156502133" varName="cleanMake" />
       <varInfo nodeId="2181314052156502129" varName="context" />
       <varInfo nodeId="2181314052156502131" varName="messageHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="8695426379435232466" fileName="MakeSession.java" startLine="22" startPosition="116" endLine="26" endPosition="25" />
-    <scopeInfo nodeId="8695426379435232473" fileName="MakeSession.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8695426379435232480" fileName="MakeSession.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8695426379435237569" fileName="MakeSession.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1841925426083462791" fileName="MakeSession.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="8695426379435237541" fileName="MakeSession.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="8075512910924574289" fileName="MakeSession.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="8075512910924574299" varName="sticky" />
+      <varInfo nodeId="8075512910924574297" varName="cleanMake" />
+      <varInfo nodeId="8075512910924574293" varName="context" />
+      <varInfo nodeId="8075512910924574295" varName="messageHandler" />
+    </scopeInfo>
+    <scopeInfo nodeId="8695426379435232473" fileName="MakeSession.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="8695426379435232480" fileName="MakeSession.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="8695426379435237569" fileName="MakeSession.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1841925426083462791" fileName="MakeSession.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8075512910924574325" fileName="MakeSession.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8695426379435237541" fileName="MakeSession.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="8695426379435237550" varName="scriptRunnable" />
     </scopeInfo>
-    <scopeInfo nodeId="8695426379435232463" fileName="MakeSession.java" startLine="21" startPosition="0" endLine="27" endPosition="3">
+    <scopeInfo nodeId="8695426379435232466" fileName="MakeSession.java" startLine="28" startPosition="158" endLine="33" endPosition="51" />
+    <scopeInfo nodeId="8695426379435232463" fileName="MakeSession.java" startLine="27" startPosition="0" endLine="34" endPosition="3">
       <varInfo nodeId="2181314052156502137" varName="sticky" />
       <varInfo nodeId="8695426379435237577" varName="cleanMake" />
+      <varInfo nodeId="8075512910924574308" varName="propertiesCollector" />
       <varInfo nodeId="8695426379435237561" varName="context" />
       <varInfo nodeId="8695426379435237564" varName="messageHandler" />
     </scopeInfo>
-    <unitInfo nodeId="8695426379435232461" fileName="MakeSession.java" startLine="8" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.MakeSession" />
+    <unitInfo nodeId="8695426379435232461" fileName="MakeSession.java" startLine="9" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.make.MakeSession" />
   </root>
 </debugInfo>
 

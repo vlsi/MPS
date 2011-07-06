@@ -12,5 +12,13 @@
     <scopeInfo nodeId="2708838034905920964" fileName="IResource.java" startLine="6" startPosition="28" endLine="7" endPosition="32" />
     <unitInfo nodeId="6168415856807657256" fileName="IResource.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.resources.IResource" />
   </root>
+  <root nodeId="87636868215243407">
+    <nodeInfo nodeId="87636868215243410" fileName="IPropertiesCollector.java" startLine="8" startPosition="39" endLine="9" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectProperties#(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljetbrains/mps/make/script/IParametersPool;" />
+    <scopeInfo nodeId="87636868215243410" fileName="IPropertiesCollector.java" startLine="8" startPosition="39" endLine="9" endPosition="107">
+      <varInfo nodeId="87636868215243419" varName="input" />
+      <varInfo nodeId="87636868215329620" varName="targets" />
+    </scopeInfo>
+    <unitInfo nodeId="87636868215243407" fileName="IPropertiesCollector.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.resources.IPropertiesCollector" />
+  </root>
 </debugInfo>
 

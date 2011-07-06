@@ -118,17 +118,6 @@ public class Script implements IScript {
       throw new IllegalStateException("invalid script");
     }
 
-    LOG.debug("Beginning to execute script");
-    CompositeResult results = new CompositeResult();
-    Script.ParametersPool pool = new Script.ParametersPool();
-
-    LOG.debug("Initializing");
-    IScriptController ctl = (controller != null ?
-      controller :
-      new IScriptController.Stub()
-    );
-    ctl.setup(pool);
-
     final Wrappers._T<ITarget.Name> waitFor = new Wrappers._T<ITarget.Name>(startingTarget);
     Iterable<ITarget> toExecute = Sequence.fromIterable(targetRange.targetAndSortedPrecursors(finalTarget)).<ITarget>translate(new ITranslator2<ITarget, ITarget>() {
       public Iterable<ITarget> translate(final ITarget tn) {
@@ -187,6 +176,17 @@ __switch__:
         };
       }
     });
+
+    LOG.debug("Beginning to execute script");
+    CompositeResult results = new CompositeResult();
+    Script.ParametersPool pool = new Script.ParametersPool();
+
+    LOG.debug("Initializing");
+    IScriptController ctl = (controller != null ?
+      controller :
+      new IScriptController.Stub()
+    );
+    ctl.setup(pool, toExecute, scriptInput);
 
     this.configureTargets(ctl, toExecute, pool, results);
     if (!(results.isSucessful())) {
@@ -350,10 +350,17 @@ __switch__:
       return cls.cast(MapSequence.fromMap(cache).get(target));
     }
 
+    public boolean hasProperties(ITarget.Name target) {
+      return MapSequence.fromMap(cache).containsKey(target) || MapSequence.fromMap(copyFrom).containsKey(target);
+    }
+
     public void setPredecessor(IParametersPool ppool) {
       if (ppool != null) {
         this.copyFrom = ((Script.ParametersPool) ppool).cache;
       }
+    }
+
+    public void setPersistentPredecessor(IParametersPool ppool) {
     }
   }
 

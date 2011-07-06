@@ -197,7 +197,7 @@
     <unitInfo nodeId="2298333944697013633" fileName="MakeTask.java" startLine="31" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.make.service.MakeTask" />
   </root>
   <root nodeId="2298333944697014852">
-    <nodeInfo nodeId="2298333944697085127" fileName="AbstractMakeService.java" startLine="31" startPosition="152" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2298333944697085127" fileName="AbstractMakeService.java" startLine="31" startPosition="158" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2298333944697085133" fileName="AbstractMakeService.java" startLine="32" startPosition="134" endLine="33" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2298333944697085141" fileName="AbstractMakeService.java" startLine="35" startPosition="27" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2298333944697085156" fileName="AbstractMakeService.java" startLine="38" startPosition="50" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -264,7 +264,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2298333944697085139" fileName="AbstractMakeService.java" startLine="34" startPosition="59" endLine="48" endPosition="0" />
     <scopeInfo nodeId="2298333944697085189" fileName="AbstractMakeService.java" startLine="50" startPosition="158" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="2298333944697085126" fileName="AbstractMakeService.java" startLine="31" startPosition="152" endLine="81" endPosition="71">
+    <scopeInfo nodeId="2298333944697085126" fileName="AbstractMakeService.java" startLine="31" startPosition="158" endLine="81" endPosition="71">
       <varInfo nodeId="2298333944697085252" varName="scripts" />
       <varInfo nodeId="2298333944697085182" varName="scriptBuilders" />
       <varInfo nodeId="2298333944697085134" varName="usedLangs" />

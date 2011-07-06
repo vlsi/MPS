@@ -123,7 +123,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     };
 
     final ProgressIndicator pind = new EmptyProgressIndicator();
-    return new IScriptController() {
+    return new IScriptController.Stub() {
       public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
         code.invoke(cmon);
       }

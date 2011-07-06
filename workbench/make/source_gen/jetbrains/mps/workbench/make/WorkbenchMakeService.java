@@ -47,6 +47,7 @@ import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.make.resources.IPropertiesCollector;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
@@ -329,7 +330,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
   }
 
-  private class Controller implements IScriptController {
+  private class Controller extends IScriptController.Stub {
     private ProgressIndicatorProgressStrategy pips;
     private IScriptController delegateScrCtr;
     private IConfigMonitor delegateConfMon;
@@ -345,6 +346,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       init();
     }
 
+    @Override
     public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
       if (delegateScrCtr != null) {
         delegateScrCtr.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
@@ -362,6 +364,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
 
+    @Override
     public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
       final boolean oldFlag = ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
       try {
@@ -374,7 +377,16 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
 
-    public void setup(IParametersPool ppool) {
+    @Override
+    public void setup(IParametersPool ppool, Iterable<ITarget> targets, Iterable<? extends IResource> input) {
+      IPropertiesCollector pcl = getSession().getPropertiesProvider();
+      if (pcl != null) {
+        IParametersPool pp = pcl.collectProperties(targets, input);
+        ppool.setPersistentPredecessor(pp);
+      }
+      if (predParamPool != null) {
+        predParamPool.setPersistentPredecessor(null);
+      }
       ppool.setPredecessor(predParamPool);
       predParamPool = ppool;
       final ProgressIndicator pind = new JobMonitorProgressIndicator(jobMon);
@@ -397,7 +409,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
 
       if (delegateScrCtr != null) {
-        delegateScrCtr.setup(ppool);
+        delegateScrCtr.setup(ppool, targets, input);
       }
     }
 

@@ -1402,6 +1402,7 @@
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2298333944697085115">
         <property name="name" nameId="tpck.1169194664001" value="processRawInput" />
+        <property name="isFinal" nameId="tpee.1181808852946" value="true" />
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2298333944697085116">
           <property name="name" nameId="tpck.1169194664001" value="inputRes" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="2298333944697085117">

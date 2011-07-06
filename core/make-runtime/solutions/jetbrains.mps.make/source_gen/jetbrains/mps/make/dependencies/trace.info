@@ -432,57 +432,5 @@
     <unitInfo nodeId="7959437477381204309" fileName="ModulesCluster.java" startLine="94" startPosition="160" endLine="176" endPosition="5" unitName="jetbrains.mps.make.dependencies.ModulesCluster$3" />
     <unitInfo nodeId="5888262800849895741" fileName="ModulesCluster.java" startLine="31" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.make.dependencies.ModulesCluster" />
   </root>
-  <root nodeId="8469993558298347879">
-    <nodeInfo nodeId="8469993558298348011" fileName="UsedLanguages.java" startLine="20" startPosition="28" endLine="21" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8469993558298347902" fileName="UsedLanguages.java" startLine="26" startPosition="75" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8469993558298347909" fileName="UsedLanguages.java" startLine="27" startPosition="72" endLine="28" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8469993558298347918" fileName="UsedLanguages.java" startLine="29" startPosition="33" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8469993558298347936" fileName="UsedLanguages.java" startLine="32" startPosition="43" endLine="33" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8469993558298347946" fileName="UsedLanguages.java" startLine="36" startPosition="57" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8469993558298347952" fileName="UsedLanguages.java" startLine="37" startPosition="70" endLine="38" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8469993558298347961" fileName="UsedLanguages.java" startLine="39" startPosition="25" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8469993558298347968" fileName="UsedLanguages.java" startLine="40" startPosition="62" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8469993558298347974" fileName="UsedLanguages.java" startLine="43" startPosition="62" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8469993558298347981" fileName="UsedLanguages.java" startLine="45" startPosition="56" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8469993558298348004" fileName="UsedLanguages.java" startLine="50" startPosition="5" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8469993558298347881" fileName="UsedLanguages.java" startLine="22" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UsedLanguages#()V" />
-    <nodeInfo nodeId="8469993558298347979" fileName="UsedLanguages.java" startLine="44" startPosition="57" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8469993558298347934" fileName="UsedLanguages.java" startLine="31" startPosition="126" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8469993558298347959" fileName="UsedLanguages.java" startLine="38" startPosition="76" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8469993558298347927" fileName="UsedLanguages.java" startLine="30" startPosition="84" endLine="35" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8469993558298347972" fileName="UsedLanguages.java" startLine="42" startPosition="9" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8469993558298347944" fileName="UsedLanguages.java" startLine="35" startPosition="10" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8469993558298347916" fileName="UsedLanguages.java" startLine="28" startPosition="74" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8469993558298347885" fileName="UsedLanguages.java" startLine="25" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="allNamespaces#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="8469993558298347884" fileName="UsedLanguages.java" startLine="23" startPosition="26" endLine="23" endPosition="26" />
-    <scopeInfo nodeId="8469993558298347935" fileName="UsedLanguages.java" startLine="32" startPosition="43" endLine="33" endPosition="57" />
-    <scopeInfo nodeId="8469993558298347980" fileName="UsedLanguages.java" startLine="45" startPosition="56" endLine="46" endPosition="99" />
-    <scopeInfo nodeId="8469993558298347881" fileName="UsedLanguages.java" startLine="22" startPosition="0" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="8469993558298347960" fileName="UsedLanguages.java" startLine="39" startPosition="25" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="8469993558298347979" fileName="UsedLanguages.java" startLine="44" startPosition="57" endLine="47" endPosition="11">
-      <varInfo nodeId="8469993558298347988" varName="tm" />
-    </scopeInfo>
-    <scopeInfo nodeId="8469993558298347934" fileName="UsedLanguages.java" startLine="31" startPosition="126" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8469993558298347973" fileName="UsedLanguages.java" startLine="43" startPosition="62" endLine="47" endPosition="11" />
-    <scopeInfo nodeId="8469993558298347945" fileName="UsedLanguages.java" startLine="36" startPosition="57" endLine="48" endPosition="9">
-      <varInfo nodeId="8469993558298347947" varName="ns" />
-      <varInfo nodeId="8469993558298347953" varName="lr" />
-    </scopeInfo>
-    <scopeInfo nodeId="8469993558298347917" fileName="UsedLanguages.java" startLine="29" startPosition="33" endLine="49" endPosition="7">
-      <varInfo nodeId="8469993558298347919" varName="langs" />
-    </scopeInfo>
-    <scopeInfo nodeId="8469993558298347916" fileName="UsedLanguages.java" startLine="28" startPosition="74" endLine="50" endPosition="5">
-      <varInfo nodeId="8469993558298348001" varName="mod" />
-    </scopeInfo>
-    <scopeInfo nodeId="8469993558298347888" fileName="UsedLanguages.java" startLine="26" startPosition="75" endLine="51" endPosition="22">
-      <varInfo nodeId="8469993558298347910" varName="nsq" />
-      <varInfo nodeId="8469993558298347903" varName="namespaces" />
-    </scopeInfo>
-    <scopeInfo nodeId="8469993558298347885" fileName="UsedLanguages.java" startLine="25" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="8469993558298347889" varName="modules" />
-    </scopeInfo>
-    <unitInfo nodeId="8469993558298347934" fileName="UsedLanguages.java" startLine="31" startPosition="95" endLine="35" endPosition="7" unitName="jetbrains.mps.make.dependencies.UsedLanguages$1" />
-    <unitInfo nodeId="8469993558298347879" fileName="UsedLanguages.java" startLine="20" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.dependencies.UsedLanguages" />
-  </root>
 </debugInfo>
 

@@ -28,7 +28,7 @@ public abstract class AbstractMakeService implements IMakeService {
     protected AbstractInputProcessor() {
     }
 
-    protected Future<IResult> processRawInput(final Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller) {
+    protected final Future<IResult> processRawInput(final Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller) {
       final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
       final Wrappers._T<Iterable<Iterable<String>>> usedLangs = new Wrappers._T<Iterable<Iterable<String>>>();
       ModelAccess.instance().runReadAction(new Runnable() {
