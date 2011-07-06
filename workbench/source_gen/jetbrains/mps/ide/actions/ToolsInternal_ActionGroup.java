@@ -14,6 +14,7 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(true);
     try {
+      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UnloadModels_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

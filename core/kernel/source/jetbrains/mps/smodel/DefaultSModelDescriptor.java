@@ -264,40 +264,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return ModelDigestUtil.hash(file);
   }
 
-  //this method should be called only with a fully loaded model as parameter
-  public void replaceModel(@NotNull SModel newModel) {
-    replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
-  }
-
-  private void replaceModel(SModel newModel, ModelLoadingState state) {
-    ModelAccess.assertLegalWrite();
-    if (newModel == mySModel) return;
-    final SModel oldSModel = mySModel;
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-    }
-    mySModel = newModel;
-    setLoadingState(state);
-
+  @Override
+  public void replaceModel(SModel newModel, ModelLoadingState state) {
+    if (newModel==mySModel) return;
     myStructureModificationLog = null;
-    if (mySModel != null) {
-      mySModel.setModelDescriptor(this);
-    }
     setChanged(false);
-    MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacedNotifier = new Runnable() {
-      public void run() {
-        fireModelReplaced();
-        if (oldSModel != null) {
-          oldSModel.dispose();
-        }
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      modelReplacedNotifier.run();
-    } else {
-      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
-    }
+    super.replaceModel(newModel, state);
   }
 
   public void dispose() {
