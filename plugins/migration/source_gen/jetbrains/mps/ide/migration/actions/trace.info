@@ -17,9 +17,9 @@
   <unitInfo fileName="LoadNonStubModels_Action.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.LoadNonStubModels_Action" />
   <unitInfo fileName="UpgradeModelPersistenceInModel_Action.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModel_Action" />
   <unitInfo fileName="UpgradeModelPersistenceInModule_Action.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModule_Action" />
-  <unitInfo fileName="Migration20_Action.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration20_Action" />
   <unitInfo fileName="BuildAllGenerators_Action.java" startLine="25" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.BuildAllGenerators_Action" />
   <unitInfo fileName="OptimizeImportsInGlobalScope_Action.java" startLine="25" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.OptimizeImportsInGlobalScope_Action" />
+  <unitInfo fileName="Migration20_Action.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration20_Action" />
   <unitInfo fileName="BuildAllLanguageDescriptors_Action.java" startLine="25" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.BuildAllLanguageDescriptors_Action" />
   <unitInfo fileName="BuildAllStructures_Action.java" startLine="26" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.BuildAllStructures_Action" />
   <unitInfo fileName="BuildAllConstraints_Action.java" startLine="26" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.BuildAllConstraints_Action" />
@@ -40,7 +40,12 @@
     <nodeInfo nodeId="5509754240190295744" fileName="Migration20_Action.java" startLine="35" startPosition="85" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5509754240190383721" fileName="Migration20_Action.java" startLine="36" startPosition="0" endLine="37" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8171674901904572563" fileName="Migration20_Action.java" startLine="37" startPosition="49" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="972584800005750367" fileName="Migration20_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549895841377701046" fileName="Migration20_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7549895841377702961" fileName="Migration20_Action.java" startLine="66" startPosition="33" endLine="67" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549895841377701045" fileName="Migration20_Action.java" startLine="68" startPosition="7" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="972584800005750367" fileName="Migration20_Action.java" startLine="69" startPosition="0" endLine="70" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549895841377702951" fileName="Migration20_Action.java" startLine="65" startPosition="132" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="7549895841377702952" fileName="Migration20_Action.java" startLine="66" startPosition="33" endLine="67" endPosition="133" />
     <scopeInfo nodeId="8171674901904572562" fileName="Migration20_Action.java" startLine="32" startPosition="7" endLine="38" endPosition="71">
       <varInfo nodeId="8171674901904623315" varName="state" />
       <varInfo nodeId="8171674901904623340" varName="act" />

@@ -62,6 +62,11 @@ public class Migration20_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      MState state = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class).getMigrationState();
+      if (state == MState.DONE) {
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationState.class).setMigrationState(MState.INITIAL);
+      }
+
       new MigrationHelper(((Project) MapSequence.fromMap(_params).get("project"))).migrate();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
