@@ -141,6 +141,7 @@ public class Inequalities {  //
             }
           }
           if (output != null) {
+
             myNodesToBlocks.addLink(output, inequality);
           }
         }
