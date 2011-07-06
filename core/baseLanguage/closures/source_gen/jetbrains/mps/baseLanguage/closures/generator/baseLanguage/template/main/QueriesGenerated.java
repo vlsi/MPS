@@ -3861,7 +3861,7 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(SNodeOperations.cast(bmc, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "baseMethodDeclaration", SLinkOperations.getTarget(_context.getNode(), "controlMethod", false), false);
     }
     for (SNode p : SLinkOperations.getTargets(_context.getNode(), "actualParameter", true)) {
-      SNode copy = CopyUtil.copyAndPreserveId(p);
+      SNode copy = CopyUtil.copyAndPreserveId(p, false);
       ListSequence.fromList(SLinkOperations.getTargets(bmc, "actualArgument", true)).addElement(copy);
     }
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
@@ -3871,7 +3871,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_8665905049776865883(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode copy = CopyUtil.copyAndPreserveId(_context.getNode());
+    SNode copy = ((SNode) CopyUtil.copyAndPreserveId(_context.getNode(), false));
     List<SNode> args = SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
     List<SNode> copyArgs = SLinkOperations.getTargets(copy, "actualArgument", true);
     for (int idx = ListSequence.fromList(args).count() - 1; idx >= 0; idx--) {
