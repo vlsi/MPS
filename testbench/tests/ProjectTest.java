@@ -26,11 +26,8 @@ import java.util.*;
 
 
 /**
- * Created by IntelliJ IDEA.
  * User: fyodor
  * Date: Aug 19, 2010
- * Time: 2:38:27 PM
- * To change this template use File | Settings | File Templates.
  */
 @RunWith(WatchingParameterized.class)
 public class ProjectTest {
@@ -71,7 +68,7 @@ public class ProjectTest {
 //      return  modulePath;
     }
 
-    void after (FrameworkMethod mth) {
+    void after(FrameworkMethod mth) {
       methods.remove(mth);
       if (methods.size() == 0) {
         HELPER.cleanUp(token);
@@ -87,9 +84,9 @@ public class ProjectTest {
   @Parameters
   public static List<Object[]> FIXTURES() {
     HELPER = new ProjectTestHelper();
-    HELPER.setMacro("samples_home", System.getProperty("user.dir")+"/samples");
+    HELPER.setMacro("samples_home", System.getProperty("user.dir") + "/samples");
     List<Object[]> fixtures = new ArrayList<Object[]>();
-    mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir")+ PROJECT));
+    mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir") + PROJECT));
     List<IModule> allModules = ModelAccess.instance().runReadAction(new Computable<List<IModule>>() {
       @Override
       public List<IModule> compute() {
@@ -124,7 +121,7 @@ public class ProjectTest {
   private final Fixture fixture;
 
   @BeforeClass
-  public static void make () throws Exception {
+  public static void make() throws Exception {
     new MpsMakeHelper().make();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -163,26 +160,26 @@ public class ProjectTest {
 
   @Test
   @Order(1)
-  public void buildModule () throws Exception {
-    if (!HELPER.build(fixture.token)){
+  public void buildModule() throws Exception {
+    if (!HELPER.build(fixture.token)) {
       List<String> errors = HELPER.buildErrors(fixture.token);
-      Assert.assertTrue("Build errors:\n"+IterableUtils.join(errors, "\n"),errors.isEmpty());
+      Assert.assertTrue("Build errors:\n" + IterableUtils.join(errors, "\n"), errors.isEmpty());
       List<String> warns = HELPER.buildWarns(fixture.token);
-      Assert.assertTrue("Build warnings:\n"+IterableUtils.join(warns, "\n"),warns.isEmpty());
+      Assert.assertTrue("Build warnings:\n" + IterableUtils.join(warns, "\n"), warns.isEmpty());
     }
   }
 
   @Test
   @Order(2)
-  public void diffModule () throws Exception {
+  public void diffModule() throws Exception {
     List<String> diffReport = HELPER.getDiffReport(fixture.token);
-    Assert.assertTrue("Difference:\n"+ IterableUtils.join(diffReport, "\n"),diffReport.isEmpty());
+    Assert.assertTrue("Difference:\n" + IterableUtils.join(diffReport, "\n"), diffReport.isEmpty());
   }
 
 
-//  @Test
+  //  @Test
   @Order(4)
-  public void testProject () throws Exception {
+  public void testProject() throws Exception {
     HELPER.test(fixture.token);
   }
 }
