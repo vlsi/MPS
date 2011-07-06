@@ -129,8 +129,8 @@ public class Inequalities {  //
             addVariablesLink(input, output);
             myNodesToBlocks.addLink(input, inequality);
             if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
-              List<SNode> inputVariables = TypesUtil.getVariables(input);
-              List<SNode> outputVariables = TypesUtil.getVariables(output);
+              List<SNode> inputVariables = TypesUtil.getVariables(input, myState);
+              List<SNode> outputVariables = TypesUtil.getVariables(output, myState);
               myNodes.addAll(inputVariables);
               myNodes.addAll(outputVariables);
               for (SNode inputVar : inputVariables) {
@@ -234,8 +234,8 @@ public class Inequalities {  //
     for (Block block : inequalities) {
       InequalityBlock inequality = (InequalityBlock) block;
 
-      List<SNode> variables = TypesUtil.getVariables(myState.expand(inequality.getRightNode()));
-      variables.addAll(TypesUtil.getVariables(myState.expand(inequality.getLeftNode())));
+      List<SNode> variables = TypesUtil.getVariables(inequality.getRightNode(), myState);
+      variables.addAll(TypesUtil.getVariables(inequality.getLeftNode(), myState));
       if (variables.size() == 0) {
         Set<InequalityBlock> emptyBlocks = groupsToInequalities.get(emptySet);
         if (emptyBlocks == null) {

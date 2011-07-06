@@ -147,7 +147,7 @@ public class Equations {
 
   private boolean processEquation(SNode var, SNode type, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(var);
-    for (SNode innerVar : TypesUtil.getVariables(expandNode(type, false))) {
+    for (SNode innerVar : TypesUtil.getVariables(type, myState)) {
       if (getRepresentative(innerVar, false).equals(var)){
         reportRecursiveType(source, info);
         return false;

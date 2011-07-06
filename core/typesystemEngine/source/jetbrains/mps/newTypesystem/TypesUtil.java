@@ -20,6 +20,7 @@ import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
@@ -58,33 +59,6 @@ public class TypesUtil {
     return false;
   }
 
-  private static void getVariablesInside(SNode node, List<SNode> result) {
-    if (node == null) {
-      return;
-    }
-    if (isVariable(node)) {
-      result.add(node);
-      return;
-    }
-    for (SNode child : node.getChildren()) {
-      getVariablesInside(child, result);
-    }
-    for (SNode referent : node.getReferents()) {
-      if (referent != null && isVariable(referent)) {
-        result.add(referent);
-      }
-    }
-  }
-
-  public static int getInnerNodeCount(SNode node) {
-    int counter = 0;
-    for (SNode child : node.getChildren()) {
-      counter += getInnerNodeCount(child);
-    }
-    counter += node.getReferences().size();
-    return counter;
-  }
-
   public static int depth(SNode sNode) {
     int childDepth = 0;
     for (SNode child : sNode.getChildrenIterable()) {
@@ -100,10 +74,34 @@ public class TypesUtil {
   }
 
 
-  public static List<SNode> getVariables(SNode node) {
+  public static List<SNode> getVariables(SNode node, State state) {
     List<SNode> result = new LinkedList<SNode>();
-    getVariablesInside(node, result);
+    getVariablesInside(node, result, state);
     return result;
+  }
+
+  private static void getVariablesInside(SNode node, List<SNode> result, State state) {
+    if (node == null) {
+      return;
+    }
+    if (state != null) {
+      node = state.getRepresentative(node);
+    }
+    if (isVariable(node)) {
+      result.add(node);
+      return;
+    }
+    for (SNode child : node.getChildren()) {
+      getVariablesInside(child, result, state);
+    }
+    for (SNode referent : node.getReferents()) {
+      if (state!= null) {
+        referent = state.getRepresentative(referent);
+      }
+      if (referent != null && isVariable(referent)) {
+        result.add(referent);
+      }
+    }
   }
 
   public static boolean match(SNode left, SNode right) {
