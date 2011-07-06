@@ -107,7 +107,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1206286434318">
         <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1206286435351">
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1178666070052" resolveInfo="QueriesUtil" />
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1178844146368" resolveInfo="get_templateFunction_inputNodeType" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1178844146368" resolveInfo="equate_templateFunction_inputNodeType" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1206286435352">
             <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1178562976716" resolveInfo="sourceNode" />
           </node>
@@ -121,7 +121,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1178562976716">
       <property name="name" nameId="tpck.1169194664001" value="sourceNode" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpf8.1167169188348" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpf8.1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
     </node>
   </root>
   <root id="1178562976728">
@@ -130,7 +130,7 @@
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1178564471182">
           <property name="name" nameId="tpck.1169194664001" value="template" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1178564471183">
-            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpck.1169194658468" />
+            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227901229">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1178564455057">
@@ -168,7 +168,7 @@
                   <node role="type" roleId="tpee.5680397130376446158" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1183152964098" />
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227957919">
                     <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178565234287">
-                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1168619357332" />
+                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1168619357332" resolveInfo="RootTemplateAnnotation" />
                       <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1178565219730">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178565150430" resolveInfo="attrib" />
                       </node>
@@ -208,7 +208,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178565280619" resolveInfo="ruleApplicableConcept" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1183153617929">
-                                <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" />
+                                <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                               </node>
                             </node>
                           </node>
@@ -271,7 +271,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1178562976717">
       <property name="name" nameId="tpck.1169194664001" value="rule" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpf8.1167514355419" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpf8.1167514355419" resolveInfo="Root_MappingRule" />
     </node>
   </root>
   <root id="1178562976744">
@@ -304,7 +304,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1722980698497666270">
         <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1722980698497666271">
           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1722980698497666272">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1722980698497666261" resolveInfo="baseMethodDeclaration" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1722980698497666261" resolveInfo="templateDeclaration" />
           </node>
           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1722980698497666273" />
         </node>
@@ -317,7 +317,7 @@
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1722980698497666278">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1722980698497666279">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1722980698497666261" resolveInfo="baseMethodDeclaration" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1722980698497666261" resolveInfo="templateDeclaration" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1722980698497666361">
                   <link role="link" roleId="tp25.1138056546658" targetNodeId="tpf8.1805153994415891175" />
@@ -457,13 +457,13 @@
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1178907996311">
                 <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_ConceptList" typeId="tp25.1154546920561" id="1178907996312">
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1178907996313">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1087833241328" />
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
                   </node>
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1178907996314">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1088761943574" />
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1088761943574" resolveInfo="ReferenceMacro" />
                   </node>
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1178907996315">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1087833466690" />
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1087833466690" resolveInfo="NodeMacro" />
                   </node>
                 </node>
               </node>
@@ -551,7 +551,7 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1184800093524">
                   <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1184800115792">
-                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1131073187192" />
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1131073187192" resolveInfo="MapSrcNodeMacro" />
                   </node>
                 </node>
               </node>
@@ -635,7 +635,7 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1184800575874">
                   <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1184800588487">
-                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1133037731736" />
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1133037731736" resolveInfo="MapSrcListMacro" />
                   </node>
                 </node>
               </node>
@@ -655,7 +655,7 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1184078899083">
                       <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1184078901968">
-                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1087833466690" />
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1087833466690" resolveInfo="NodeMacro" />
                       </node>
                     </node>
                   </node>
@@ -678,10 +678,10 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1178907996325">
                 <property name="name" nameId="tpck.1169194664001" value="prevSourceSubstituteMacro" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1178907996326">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1167951328751" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1167951328751" resolveInfo="SourceSubstituteMacro" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1178907996327">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1178666070052" resolveInfo="Util_TLBase_types" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1178666070052" resolveInfo="QueriesUtil" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1178667009993" resolveInfo="getEnclosing_SourceSubstituteMacro" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1178907996328">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178907996319" resolveInfo="macroOwner" />
@@ -698,10 +698,10 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1178907996333">
                     <property name="name" nameId="tpck.1169194664001" value="query" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1178907996334">
-                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1137021947720" />
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1178907996335">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1178666070052" resolveInfo="Util_TLBase_types" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1178666070052" resolveInfo="QueriesUtil" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1178667968416" resolveInfo="getQueryFunction_fromSourceSubstituteMacro" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1178907996336">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178907996325" resolveInfo="prevSourceSubstituteMacro" />
@@ -748,7 +748,7 @@
             <property name="name" nameId="tpck.1169194664001" value="applicableConcept" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1178907996355" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1178907996356">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1178666070052" resolveInfo="Util_TLBase_types" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1178666070052" resolveInfo="QueriesUtil" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1178670165537" resolveInfo="getApplicableConcept_fromEnvironment" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1178908209916">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178844345408" resolveInfo="contextNode" />
@@ -792,7 +792,7 @@
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178667009993">
       <property name="name" nameId="tpck.1169194664001" value="getEnclosing_SourceSubstituteMacro" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1178667032128">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1167951328751" />
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1167951328751" resolveInfo="SourceSubstituteMacro" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1980960612890669489" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1178667009996">
@@ -910,7 +910,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1178667187694">
             <property name="name" nameId="tpck.1169194664001" value="prevMacro" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1178667187695">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1167951328751" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1167951328751" resolveInfo="SourceSubstituteMacro" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1178667202119" />
           </node>
@@ -953,7 +953,7 @@
                         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1178667462881" />
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227845120">
                           <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178667435854">
-                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1131073187192" />
+                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1131073187192" resolveInfo="MapSrcNodeMacro" />
                             <node role="leftExpression" roleId="tp25.1140138123956" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1178667433580">
                               <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1178667279972" resolveInfo="attribute" />
                             </node>
@@ -971,7 +971,7 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178667399010">
                       <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178667410580">
-                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1131073187192" />
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1131073187192" resolveInfo="MapSrcNodeMacro" />
                       </node>
                     </node>
                   </node>
@@ -991,7 +991,7 @@
                         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1178667527172" />
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227884119">
                           <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178667527174">
-                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1112731569622" />
+                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1112731569622" resolveInfo="SwitchMacro" />
                             <node role="leftExpression" roleId="tp25.1140138123956" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1178667527175">
                               <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1178667279972" resolveInfo="attribute" />
                             </node>
@@ -1009,7 +1009,7 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178667527179">
                       <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178667535665">
-                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1112731569622" />
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1112731569622" resolveInfo="SwitchMacro" />
                       </node>
                     </node>
                   </node>
@@ -1022,7 +1022,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1178667585446">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1178667587754">
                     <node role="rValue" roleId="tpee.1068498886297" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178667595294">
-                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1167951328751" />
+                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1167951328751" resolveInfo="SourceSubstituteMacro" />
                       <node role="leftExpression" roleId="tp25.1140138123956" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1178667591532">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1178667279972" resolveInfo="attribute" />
                       </node>
@@ -1039,7 +1039,7 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178667373675">
                   <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178667379276">
-                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1167951328751" />
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1167951328751" resolveInfo="SourceSubstituteMacro" />
                   </node>
                 </node>
               </node>
@@ -1186,7 +1186,7 @@
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1178667968416">
       <property name="name" nameId="tpck.1169194664001" value="getQueryFunction_fromSourceSubstituteMacro" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1178667975635">
-        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1137021947720" />
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1980960612890672465" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1178667968419">
@@ -1208,7 +1208,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178668204451">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227932845">
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178668204453">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1112731569622" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1112731569622" resolveInfo="SwitchMacro" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1178668204454">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178668019953" resolveInfo="macro" />
                   </node>
@@ -1225,7 +1225,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178668204458">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178668204459">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1112731569622" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1112731569622" resolveInfo="SwitchMacro" />
               </node>
             </node>
           </node>
@@ -1235,7 +1235,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178668229891">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227910227">
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178668229893">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1114706874351" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1114706874351" resolveInfo="CopySrcNodeMacro" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1178668229894">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178668019953" resolveInfo="macro" />
                   </node>
@@ -1252,7 +1252,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178668229898">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178668239168">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1114706874351" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1114706874351" resolveInfo="CopySrcNodeMacro" />
               </node>
             </node>
           </node>
@@ -1262,7 +1262,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178668256718">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227911266">
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178668256720">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1131073187192" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1131073187192" resolveInfo="MapSrcNodeMacro" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1178668256721">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178668019953" resolveInfo="macro" />
                   </node>
@@ -1279,7 +1279,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178668256725">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178668266154">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1131073187192" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1131073187192" resolveInfo="MapSrcNodeMacro" />
               </node>
             </node>
           </node>
@@ -1289,7 +1289,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178668278570">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227909188">
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178668278572">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1118786554307" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1118786554307" resolveInfo="LoopMacro" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1178668278573">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178668019953" resolveInfo="macro" />
                   </node>
@@ -1306,7 +1306,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178668278577">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178668288601">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1118786554307" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1118786554307" resolveInfo="LoopMacro" />
               </node>
             </node>
           </node>
@@ -1316,7 +1316,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178668307726">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227957656">
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178668307728">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1114729360583" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1114729360583" resolveInfo="CopySrcListMacro" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1178668307729">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178668019953" resolveInfo="macro" />
                   </node>
@@ -1333,7 +1333,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178668307733">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178668314275">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1114729360583" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1114729360583" resolveInfo="CopySrcListMacro" />
               </node>
             </node>
           </node>
@@ -1343,7 +1343,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178668329578">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227880910">
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178668329580">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1133037731736" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1133037731736" resolveInfo="MapSrcListMacro" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1178668329581">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178668019953" resolveInfo="macro" />
                   </node>
@@ -1360,7 +1360,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178668329585">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178668338598">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1133037731736" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1133037731736" resolveInfo="MapSrcListMacro" />
               </node>
             </node>
           </node>
@@ -1372,7 +1372,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1178668019953">
         <property name="name" nameId="tpck.1169194664001" value="macro" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1178668019954">
-          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1167951328751" />
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1167951328751" resolveInfo="SourceSubstituteMacro" />
         </node>
       </node>
     </node>
@@ -1409,9 +1409,18 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpd4.TypeVarDeclaration" typeId="tpd4.1174665551739" id="1226671834537">
           <property name="name" nameId="tpck.1169194664001" value="Concept" />
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1226671793009">
+        <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="2562694294549309787">
+          <property name="checkOnly" nameId="tpd4.1206359757216" value="false" />
           <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
-          <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1226671800482">
+          <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1226671793012">
+            <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1226671782084">
+              <property name="skipDependencyOnCurrent" nameId="tpd4.1195058053095" value="true" />
+              <node role="term" roleId="tpd4.1174657509053" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1226671790055">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1184801497342" resolveInfo="query" />
+              </node>
+            </node>
+          </node>
+          <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1226671800482">
             <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1226671800483">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.JoinType" typeId="tpd4.1179479408386" id="1226672269790">
                 <node role="argument" roleId="tpd4.1179479418730" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1226672273463">
@@ -1432,14 +1441,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-          <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1226671793012">
-            <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1226671782084">
-              <property name="skipDependencyOnCurrent" nameId="tpd4.1195058053095" value="true" />
-              <node role="term" roleId="tpd4.1174657509053" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1226671790055">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1184801497342" resolveInfo="query" />
               </node>
             </node>
           </node>
@@ -1468,7 +1469,7 @@
         <property name="name" nameId="tpck.1169194664001" value="query" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1184801497343">
-          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1137021947720" />
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1206283500724">
@@ -1688,10 +1689,10 @@
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1178670265054">
                 <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_ConceptList" typeId="tp25.1154546920561" id="1178670269940">
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1178670275608">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1092059087312" />
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1092059087312" resolveInfo="TemplateDeclaration" />
                   </node>
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1178670288161">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1167169308231" />
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1167169308231" resolveInfo="BaseMappingRule" />
                   </node>
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="2581715795166750434">
                     <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpf8.1805153994416516020" resolveInfo="PatternReduction_MappingRule" />
@@ -1706,7 +1707,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178670323505">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227889076">
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178670332042">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1092059087312" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1092059087312" resolveInfo="TemplateDeclaration" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1178670326198">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178670295329" resolveInfo="ancestor" />
                   </node>
@@ -1723,7 +1724,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178670311841">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178670320900">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1092059087312" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1092059087312" resolveInfo="TemplateDeclaration" />
               </node>
             </node>
           </node>
@@ -1760,7 +1761,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178670348235">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227925527">
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178670348237">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1167169308231" />
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1167169308231" resolveInfo="BaseMappingRule" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1178670348238">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178670295329" resolveInfo="ancestor" />
                   </node>
@@ -1777,7 +1778,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1178670348242">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1178670353872">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1167169308231" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpf8.1167169308231" resolveInfo="BaseMappingRule" />
               </node>
             </node>
           </node>
@@ -1809,7 +1810,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178670551053">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227867953">
             <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1178670551055">
-              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1168619357332" />
+              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpf8.1168619357332" resolveInfo="RootTemplateAnnotation" />
               <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1178670551056">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178670506572" resolveInfo="rootAnnotation" />
               </node>
@@ -2898,7 +2899,7 @@
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1722980698497666411">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1722980698497666412">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1722980698497666404" resolveInfo="iTemplateCall" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1722980698497666404" resolveInfo="templateDeclRef" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1722980698497666413">
               <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1722980698497666414">
@@ -2919,7 +2920,7 @@
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1722980698497666421">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1722980698497666422">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1722980698497666423">
-                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1722980698497666404" resolveInfo="iTemplateCall" />
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1722980698497666404" resolveInfo="templateDeclRef" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1722980698497666424">
                     <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.1722980698497626483" />
@@ -2969,7 +2970,7 @@
                       </node>
                     </node>
                     <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1722980698497666444">
-                      <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1722980698497666404" resolveInfo="iTemplateCall" />
+                      <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1722980698497666404" resolveInfo="templateDeclRef" />
                     </node>
                   </node>
                 </node>
@@ -3409,7 +3410,7 @@
         </node>
         <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1510949579267769255">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1510949579267769256">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1510949579267745155" resolveInfo="includedTemplate" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1510949579267745155" resolveInfo="template" />
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNullOperation" typeId="tp25.1171999116870" id="1510949579267769257" />
         </node>
