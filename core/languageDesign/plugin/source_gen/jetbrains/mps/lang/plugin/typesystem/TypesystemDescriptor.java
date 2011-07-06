@@ -58,6 +58,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ButtonCreator_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_CloseTabOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -280,18 +284,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_executeBlock_returns_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new Button_TypeFromPlatform_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new Popup_TypeFromPlatform_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new Toolbar_TypeFromPlatform_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
     }
     {
       SubtypingRule_Runtime subtypingRule = new Typeof_Action_SubtypingRule();
