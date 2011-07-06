@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="823b2sz3rc7i4wbg0e9u2rny7hfe83v">
+<dependencies version="2" modelHash="curkgqvy8cw6t7o6kik2am4t6qhur9u">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
@@ -346,10 +346,10 @@
   <source id="3339131993542064635" name="reduce_GetPreferencesComponentInProjectOperation" hash="-bnwn8jmr14u28ojbz5s5xpvypm1gqe3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3205675194086673614" name="reduce_ActionAccessOperation" hash="-8omnj50pg9ber5aw9a6oefsiv64ymhk">
+  <source id="3205675194086673614" name="reduce_ActionAccessOperation" hash="262wh1vdeybwiibuma9tvmq0qa0qiq2">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3205675194086686098" name="reduce_GroupAccessOperation" hash="ds0f2fan2ck7m93krqhz1rp874pw9i3">
+  <source id="3205675194086686098" name="reduce_GroupAccessOperation" hash="-60kxl94eapojl96pvxe59b3sko6zc48">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="880980402160494591" name="plugin.xml" hash="39o3tsy56r5cn18s49p882pmfs8pgbe">

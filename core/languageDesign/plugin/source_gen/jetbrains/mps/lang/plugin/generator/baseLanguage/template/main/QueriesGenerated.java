@@ -449,7 +449,7 @@ public class QueriesGenerated {
     return BaseToolDeclaration_Behavior.call_getGeneratedName_6547237850567463427(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_3205675194086681642(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_9011731583464391424(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(_context.getNode(), "action", false));
   }
 
