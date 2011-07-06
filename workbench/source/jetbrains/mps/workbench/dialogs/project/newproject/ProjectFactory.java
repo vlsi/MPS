@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.MPSExtentions;
@@ -117,6 +118,7 @@ public class ProjectFactory {
     boolean opened = projectManager.openProject(myCreatedProject);
 
     if (opened) {
+      ProjectBaseDirectory.getInstance(myCreatedProject).setBaseDir(myCreatedProject.getBaseDir());
       StartupManager.getInstance(myCreatedProject).runWhenProjectIsInitialized(new Runnable() {
         public void run() {
           ProjectPane.getInstance(myCreatedProject).activate();

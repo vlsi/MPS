@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.platform.ProjectBaseDirectory;
 import com.intellij.projectImport.ProjectOpenProcessor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -27,7 +28,7 @@ import javax.swing.Icon;
 
 public class MpsProjectOpenProcessor extends ProjectOpenProcessor {
   public String getName() {
-    return "MPS Project";  //To change body of implemented methods use File | Settings | File Templates.
+    return "MPS Project";
   }
 
   public Icon getIcon() {
@@ -40,6 +41,11 @@ public class MpsProjectOpenProcessor extends ProjectOpenProcessor {
 
   public Project doOpenProject(@NotNull VirtualFile virtualFile, Project projectToClose, boolean forceOpenInNewFrame) {
     String filePath = virtualFile.getPath();
-    return ProjectUtil.openProject(filePath, projectToClose, forceOpenInNewFrame);
+    Project project = ProjectUtil.openProject(filePath, projectToClose, forceOpenInNewFrame);
+    if (project == null) {
+      return null;
+    }
+    ProjectBaseDirectory.getInstance(project).setBaseDir(virtualFile);
+    return project;
   }
 }
