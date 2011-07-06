@@ -15,7 +15,8 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.buildlanguage.plugin.Ant_Command;
-import com.intellij.execution.impl.ConsoleViewImpl;
+import com.intellij.execution.ui.ConsoleView;
+import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
@@ -49,7 +50,7 @@ public class PackagingBuildScript_Configuration_RunProfileState implements RunPr
         myRunConfiguration.getSettings().getOtherAntLocation() :
         null
       )).setOptions(myRunConfiguration.getSettings().getAntOptions()).createProcess(GenerateBuildUtil.getGeneratedFilePath(myRunConfiguration.getConfiguration()));
-      final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
+      final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {
