@@ -975,7 +975,7 @@
     <nodeInfo nodeId="8480419805626072061" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="58" startPosition="7" endLine="59" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8480419805626072061" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="59" startPosition="75" endLine="60" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8480419805626072061" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="60" startPosition="208" endLine="61" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8480419805626072061" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="61" startPosition="64" endLine="62" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8480419805626072061" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="61" startPosition="64" endLine="62" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8480419805626072074" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="63" startPosition="7" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8480419805626072002" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="65" startPosition="5" endLine="66" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8480419805626072011" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="66" startPosition="108" endLine="67" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1034,7 +1034,7 @@
     <scopeInfo nodeId="8480419805626066033" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="28" startPosition="118" endLine="32" endPosition="0" />
     <scopeInfo nodeId="8480419805626066155" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="39" startPosition="150" endLine="43" endPosition="0" />
     <scopeInfo nodeId="8480419805626066173" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="44" startPosition="150" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="8480419805626072061" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="58" startPosition="7" endLine="62" endPosition="196" />
+    <scopeInfo nodeId="8480419805626072061" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="58" startPosition="7" endLine="62" endPosition="174" />
     <scopeInfo nodeId="8480419805626071996" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="68" startPosition="5" endLine="72" endPosition="150" />
     <scopeInfo nodeId="8480419805626066155" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="79" startPosition="152" endLine="83" endPosition="0" />
     <scopeInfo nodeId="8480419805626066173" fileName="ReplaceMeet_InequationReplacementRule.java" startLine="84" startPosition="152" endLine="88" endPosition="0" />

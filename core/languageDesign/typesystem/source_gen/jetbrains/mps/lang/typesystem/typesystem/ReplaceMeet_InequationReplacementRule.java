@@ -59,7 +59,7 @@ public class ReplaceMeet_InequationReplacementRule extends AbstractInequationRep
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8480419805626072061", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createLessThanInequality((SNode) Sequence.fromIterable(variableArguments).first(), (SNode) supertype, false, inequalityIsWeak, inequalityIsLessThan, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) Sequence.fromIterable(variableArguments).first(), (SNode) supertype, false, inequalityIsWeak, _info_12389875345);
       }
       return;
     }
