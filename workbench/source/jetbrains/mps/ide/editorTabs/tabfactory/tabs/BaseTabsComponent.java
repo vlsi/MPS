@@ -25,9 +25,10 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -55,6 +56,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private ModelListener myTabRemovalListener = new MyTabRemovalListener();
 
   private JComponent myComponent;
+  private MySModelCommandListener myRootAdditionListener = new MySModelCommandListener();
 
   public BaseTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback) {
     myBaseNode = baseNode;
@@ -153,7 +155,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
     List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
 
     Map<EditorTabDescriptor, List<SNode>> result = new THashMap<EditorTabDescriptor, List<SNode>>();
-
     getTabRemovalListener().clearAspects();
     for (EditorTabDescriptor d : myPossibleTabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
@@ -184,9 +185,11 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private void addListeners() {
     myTabRemovalListener.startListening();
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myRootAdditionListener);
   }
 
   private void removeListeners() {
+    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myRootAdditionListener);
     myTabRemovalListener.stopListening();
   }
 
@@ -230,6 +233,19 @@ public abstract class BaseTabsComponent implements TabsComponent {
           popupComponent.show(e.getComponent(), e.getX(), e.getY());
         }
       });
+    }
+  }
+
+  private class MySModelCommandListener implements SModelCommandListener {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      for (SModelEvent e: events){
+        if (!(e instanceof SModelRootEvent)) continue;
+        SModelRootEvent re = (SModelRootEvent) e;
+        if (!re.isAdded()) continue;
+
+        updateTabs();
+        return;
+      }
     }
   }
 }
