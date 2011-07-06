@@ -804,6 +804,12 @@
             </node>
           </node>
         </node>
+        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="56245205020308777">
+          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813668" resolveInfo="debug" />
+          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral:21" id="56245205020308779">
+            <property name="value:21" value="true" />
+          </node>
+        </node>
         <node role="nodeMacro$attribute:22" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="763186553349438319">
           <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="763186553349438320">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="763186553349438321">

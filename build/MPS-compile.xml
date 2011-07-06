@@ -95,16 +95,16 @@
     <path path="core/languageDesign/stubs/source_gen" />
     <path path="platform/uiLanguage/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.analyzers_y.src">
+  <path id="cycle.jetbrains.mps.analyzers_s.src">
     <path path="platform/analyzers/languages/analyzers/source_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.analyzers.runtime_x.src">
+  <path id="cycle.jetbrains.mps.analyzers.runtime_r.src">
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.baseLanguage.builders_p.src">
+  <path id="cycle.jetbrains.mps.baseLanguage.builders_u.src">
     <path path="platform/builders/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.dates.runtime_a.src">
@@ -112,10 +112,10 @@
     <path path="core/baseLanguage/dates/runtime/src" />
     <path path="core/baseLanguage/dates/runtime/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.baseLanguage.methodExtension_m.src">
+  <path id="cycle.jetbrains.mps.baseLanguage.methodExtension_o.src">
     <path path="platform/extensionMethod/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_g.src">
+  <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_z.src">
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
   </path>
@@ -123,18 +123,18 @@
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/source_gen" />
     <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.bash_z.src">
+  <path id="cycle.jetbrains.mps.bash_n.src">
     <path path="platform/bash/languages/bash/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.build.custommps_s.src">
+  <path id="cycle.jetbrains.mps.build.custommps_m.src">
     <path path="platform/buildlanguage/languages/custommps/source_gen" />
     <path path="platform/buildlanguage/languages/custommpsInternal/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.build.dependency_q.src">
+  <path id="cycle.jetbrains.mps.build.dependency_k.src">
     <path path="platform/buildlanguage/languages/dependency/source_gen" />
     <path path="platform/buildlanguage/languages/packaging/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.build.distrib_r.src">
+  <path id="cycle.jetbrains.mps.build.distrib_l.src">
     <path path="platform/buildlanguage/languages/distrib/source_gen" />
     <path path="platform/buildlanguage/languages/distrib/source_gen" />
   </path>
@@ -147,29 +147,29 @@
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/source_gen" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.gtext_n.src">
+  <path id="cycle.jetbrains.mps.gtext_h.src">
     <path path="platform/gtext/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.gtext.runtime_k.src">
+  <path id="cycle.jetbrains.mps.gtext.runtime_g.src">
     <path path="platform/gtext/runtime/source" />
     <path path="platform/gtext/runtime/source_gen" />
     <path path="platform/gtext/runtime/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.ide.uiLanguage_w.src">
+  <path id="cycle.jetbrains.mps.ide.uiLanguage_p.src">
     <path path="workbench/ideUiLanguage/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.ide.uiLanguage.runtime_c.src">
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.lang.test.runtime_h.src">
+  <path id="cycle.jetbrains.mps.lang.test.runtime_t.src">
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/source_gen" />
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.quickQueryLanguage_v.src">
+  <path id="cycle.jetbrains.mps.quickQueryLanguage_j.src">
     <path path="platform/quickQueryLanguage/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.xml_o.src">
+  <path id="cycle.jetbrains.mps.xml_i.src">
     <path path="platform/xml/xml/source_gen" />
     <path path="platform/xml/xmlInternal/source_gen" />
     <path path="platform/xml/xmlSchema/source_gen" />
@@ -177,21 +177,21 @@
   <path id="cycle.jetbrains.mps.xml.deprecated_e.src">
     <path path="platform/xmlDeprecated/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.xmlQuery_t.src">
+  <path id="cycle.jetbrains.mps.xmlQuery_y.src">
     <path path="platform/xml/xmlQuery/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.xmlUnitTest_u.src">
+  <path id="cycle.jetbrains.mps.xmlUnitTest_q.src">
     <path path="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.ypath_i.src">
+  <path id="cycle.jetbrains.mps.ypath_v.src">
     <path path="platform/ypath/source" />
     <path path="platform/ypath/source_gen" />
   </path>
-  <path id="cycle.ypath.main_j.src">
+  <path id="cycle.ypath.main_w.src">
     <path path="platform/ypath/solutions/main/source_gen" />
     <path path="platform/ypath/solutions/main/test_gen" />
   </path>
-  <path id="cycle.ypath.test_l.src">
+  <path id="cycle.ypath.test_x.src">
     <path path="platform/ypath/solutions/test/source_gen" />
     <path path="platform/ypath/solutions/test/test_gen" />
   </path>
@@ -326,7 +326,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.analyzers_y.classpaths">
+  <path id="cycle.jetbrains.mps.analyzers_s.classpaths">
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
@@ -416,7 +416,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.analyzers.runtime_x.classpaths">
+  <path id="cycle.jetbrains.mps.analyzers.runtime_r.classpaths">
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -505,7 +505,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.baseLanguage.builders_p.classpaths">
+  <path id="cycle.jetbrains.mps.baseLanguage.builders_u.classpaths">
     <path path="platform/builders/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -612,7 +612,7 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.baseLanguage.methodExtension_m.classpaths">
+  <path id="cycle.jetbrains.mps.baseLanguage.methodExtension_o.classpaths">
     <path path="platform/extensionMethod/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -702,7 +702,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_g.classpaths">
+  <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_z.classpaths">
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -750,7 +750,7 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.bash_z.classpaths">
+  <path id="cycle.jetbrains.mps.bash_n.classpaths">
     <path path="platform/bash/languages/bash/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -840,7 +840,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.build.custommps_s.classpaths">
+  <path id="cycle.jetbrains.mps.build.custommps_m.classpaths">
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
     <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
@@ -945,7 +945,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.build.dependency_q.classpaths">
+  <path id="cycle.jetbrains.mps.build.dependency_k.classpaths">
     <path path="platform/buildlanguage/languages/dependency/classes_gen" />
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
@@ -1047,7 +1047,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.build.distrib_r.classpaths">
+  <path id="cycle.jetbrains.mps.build.distrib_l.classpaths">
     <path path="platform/buildlanguage/languages/distrib/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -1337,7 +1337,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.gtext_n.classpaths">
+  <path id="cycle.jetbrains.mps.gtext_h.classpaths">
     <path path="platform/gtext/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -1427,7 +1427,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.gtext.runtime_k.classpaths">
+  <path id="cycle.jetbrains.mps.gtext.runtime_g.classpaths">
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="core/baseLanguage/closures/runtime/classes" />
@@ -1442,7 +1442,7 @@
     <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.ide.uiLanguage_w.classpaths">
+  <path id="cycle.jetbrains.mps.ide.uiLanguage_p.classpaths">
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -1547,7 +1547,7 @@
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.lang.test.runtime_h.classpaths">
+  <path id="cycle.jetbrains.mps.lang.test.runtime_t.classpaths">
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -1636,7 +1636,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.quickQueryLanguage_v.classpaths">
+  <path id="cycle.jetbrains.mps.quickQueryLanguage_j.classpaths">
     <path path="platform/quickQueryLanguage/classes" />
     <path path="platform/quickQueryLanguage/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
@@ -1728,7 +1728,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.xml_o.classpaths">
+  <path id="cycle.jetbrains.mps.xml_i.classpaths">
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
@@ -1915,7 +1915,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.xmlQuery_t.classpaths">
+  <path id="cycle.jetbrains.mps.xmlQuery_y.classpaths">
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -2010,7 +2010,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.xmlUnitTest_u.classpaths">
+  <path id="cycle.jetbrains.mps.xmlUnitTest_q.classpaths">
     <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -2104,7 +2104,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.jetbrains.mps.ypath_i.classpaths">
+  <path id="cycle.jetbrains.mps.ypath_v.classpaths">
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
@@ -2195,7 +2195,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.ypath.main_j.classpaths">
+  <path id="cycle.ypath.main_w.classpaths">
     <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -2285,7 +2285,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <path id="cycle.ypath.test_l.classpaths">
+  <path id="cycle.ypath.test_x.classpaths">
     <path path="platform/ypath/solutions/test/classes_gen" />
     <path path="MPSPlugin/MPSSupport/classes" />
     <path path="classes" />
@@ -2376,7 +2376,7 @@
     <path path="workbench/classes" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_d,compile.cycle.jetbrains.mps.analyzers_y,compile.cycle.jetbrains.mps.analyzers.runtime_x,compile.cycle.jetbrains.mps.baseLanguage.builders_p,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_a,compile.cycle.jetbrains.mps.baseLanguage.methodExtension_m,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_g,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_b,compile.cycle.jetbrains.mps.bash_z,compile.cycle.jetbrains.mps.build.custommps_s,compile.cycle.jetbrains.mps.build.dependency_q,compile.cycle.jetbrains.mps.build.distrib_r,compile.cycle.jetbrains.mps.build.generictasks_f,compile.cycle.jetbrains.mps.editor.runtime_ab,compile.cycle.jetbrains.mps.gtext_n,compile.cycle.jetbrains.mps.gtext.runtime_k,compile.cycle.jetbrains.mps.ide.uiLanguage_w,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_c,compile.cycle.jetbrains.mps.lang.test.runtime_h,compile.cycle.jetbrains.mps.quickQueryLanguage_v,compile.cycle.jetbrains.mps.xml_o,compile.cycle.jetbrains.mps.xml.deprecated_e,compile.cycle.jetbrains.mps.xmlQuery_t,compile.cycle.jetbrains.mps.xmlUnitTest_u,compile.cycle.jetbrains.mps.ypath_i,compile.cycle.ypath.main_j,compile.cycle.ypath.test_l" />
+  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_d,compile.cycle.jetbrains.mps.analyzers_s,compile.cycle.jetbrains.mps.analyzers.runtime_r,compile.cycle.jetbrains.mps.baseLanguage.builders_u,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_a,compile.cycle.jetbrains.mps.baseLanguage.methodExtension_o,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_z,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_b,compile.cycle.jetbrains.mps.bash_n,compile.cycle.jetbrains.mps.build.custommps_m,compile.cycle.jetbrains.mps.build.dependency_k,compile.cycle.jetbrains.mps.build.distrib_l,compile.cycle.jetbrains.mps.build.generictasks_f,compile.cycle.jetbrains.mps.editor.runtime_ab,compile.cycle.jetbrains.mps.gtext_h,compile.cycle.jetbrains.mps.gtext.runtime_g,compile.cycle.jetbrains.mps.ide.uiLanguage_p,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_c,compile.cycle.jetbrains.mps.lang.test.runtime_t,compile.cycle.jetbrains.mps.quickQueryLanguage_j,compile.cycle.jetbrains.mps.xml_i,compile.cycle.jetbrains.mps.xml.deprecated_e,compile.cycle.jetbrains.mps.xmlQuery_y,compile.cycle.jetbrains.mps.xmlUnitTest_q,compile.cycle.jetbrains.mps.ypath_v,compile.cycle.ypath.main_w,compile.cycle.ypath.test_x" />
   <target name="compile.cycle.collections_trove.runtime_d" depends="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_c">
     <property name="classes.dump" value="${collections_trove.runtime.classes}.tmp" />
     <mkdir dir="core/baseLanguage/collections/languages/trove/runtime/source_gen" />
@@ -2424,100 +2424,100 @@
     <javac classpathref="cycle.collections_trove.runtime_d.classpaths" destdir="${classes.dump}">
       <src refid="cycle.collections_trove.runtime_d.src" />
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${collections_trove.runtime.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${collections_trove.runtime.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/collections/languages/trove/runtime/source_gen" />
         <path path="core/baseLanguage/collections/languages/trove/runtime/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.checkedDots.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.checkedDots.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/checkDot/languages/checkedDots/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.collections.trove.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.collections.trove.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/collections/languages/trove/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.constructors.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.constructors.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/constructors/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.contracts.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.contracts.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/contracts/languages/contracts/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/dates/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.datesInternal.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.datesInternal.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/dates/internal/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.javadoc.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.javadoc.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/javadoc/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.logging.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.logging.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/logging/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.overloadedOperators.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.classes}" debug="true">
       <src>
         <path path="platform/regexp/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.tuples.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.tuples.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/tuples/languages/tuples/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.tuples.runtime.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.tuples.runtime.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/tuples/runtime/source_gen" />
         <path path="core/baseLanguage/tuples/runtime/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/unitTest/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.runtime.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/unitTest/solutions/runtime/source_gen" />
         <path path="core/baseLanguage/unitTest/solutions/runtime/test_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gwt.client.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gwt.client.classes}" debug="true">
       <src>
         <path path="platform/gwtsupport/languages/client/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.editorTest.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.editor.editorTest.classes}" debug="true">
       <src>
         <path path="core/languageDesign/editorTest/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.stubs.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.stubs.classes}" debug="true">
       <src>
         <path path="core/languageDesign/stubs/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.uiLanguage.classes}">
+    <javac classpathref="cycle.collections_trove.runtime_d.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.uiLanguage.classes}" debug="true">
       <src>
         <path path="platform/uiLanguage/source_gen" />
       </src>
@@ -2634,7 +2634,7 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.analyzers_y" depends="compile.cycle.jetbrains.mps.analyzers.runtime_x">
+  <target name="compile.cycle.jetbrains.mps.analyzers_s" depends="compile.cycle.jetbrains.mps.analyzers.runtime_r">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <mkdir dir="platform/analyzers/languages/analyzers/source_gen" />
     <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" />
@@ -2642,15 +2642,15 @@
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.analyzers.classes}" />
     <mkdir dir="${jetbrains.mps.analyzers.mpsAnalyzers.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.analyzers_y.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.analyzers_y.src" />
+    <javac classpathref="cycle.jetbrains.mps.analyzers_s.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.analyzers_s.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_y.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_s.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.classes}" debug="true">
       <src>
         <path path="platform/analyzers/languages/analyzers/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers_y.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.mpsAnalyzers.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers_s.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.mpsAnalyzers.classes}" debug="true">
       <src>
         <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" />
         <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/test_gen" />
@@ -2673,16 +2673,16 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.analyzers.runtime_x" depends="compile.cycle.jetbrains.mps.ide.uiLanguage_w">
+  <target name="compile.cycle.jetbrains.mps.analyzers.runtime_r" depends="compile.cycle.jetbrains.mps.xmlUnitTest_q">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.runtime.classes}.tmp" />
     <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
     <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.analyzers.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.analyzers.runtime_x.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.analyzers.runtime_x.src" />
+    <javac classpathref="cycle.jetbrains.mps.analyzers.runtime_r.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.analyzers.runtime_r.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.analyzers.runtime_x.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.analyzers.runtime_r.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.runtime.classes}" debug="true">
       <src>
         <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
         <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/test_gen" />
@@ -2700,15 +2700,15 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.builders_p" depends="compile.cycle.jetbrains.mps.xml_o">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.builders_u" depends="compile.cycle.jetbrains.mps.lang.test.runtime_t">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.builders.classes}.tmp" />
     <mkdir dir="platform/builders/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.builders.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.builders_p.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.baseLanguage.builders_p.src" />
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.builders_u.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.baseLanguage.builders_u.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.builders_p.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.builders.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.builders_u.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.builders.classes}" debug="true">
       <src>
         <path path="platform/builders/source_gen" />
       </src>
@@ -2730,7 +2730,7 @@
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates.runtime_a.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.baseLanguage.dates.runtime_a.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates.runtime_a.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.dates.runtime_a.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.dates.runtime.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/dates/runtime/source_gen" />
         <path path="core/baseLanguage/dates/runtime/src" />
@@ -2754,15 +2754,15 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.methodExtension_m" depends="compile.cycle.ypath.test_l">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.methodExtension_o" depends="compile.cycle.jetbrains.mps.bash_n">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.methodExtension.classes}.tmp" />
     <mkdir dir="platform/extensionMethod/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.methodExtension.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.methodExtension_m.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.baseLanguage.methodExtension_m.src" />
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.methodExtension_o.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.baseLanguage.methodExtension_o.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.methodExtension_m.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.methodExtension.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.methodExtension_o.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.methodExtension.classes}" debug="true">
       <src>
         <path path="platform/extensionMethod/source_gen" />
       </src>
@@ -2774,16 +2774,16 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_g" depends="compile.cycle.jetbrains.mps.build.generictasks_f">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_z" depends="compile.cycle.jetbrains.mps.xmlQuery_y">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.regexp.examples.classes}.tmp" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.regexp.examples.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_g.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.baseLanguage.regexp.examples_g.src" />
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_z.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.baseLanguage.regexp.examples_z.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_g.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.examples.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.regexp.examples_z.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.regexp.examples.classes}" debug="true">
       <src>
         <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
         <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
@@ -2810,7 +2810,7 @@
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.unitTest.lib_b.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.baseLanguage.unitTest.lib_b.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.baseLanguage.unitTest.lib_b.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.lib.classes}">
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage.unitTest.lib_b.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.baseLanguage.unitTest.lib.classes}" debug="true">
       <src>
         <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/source_gen" />
         <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/test_gen" />
@@ -2828,15 +2828,15 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.bash_z" depends="compile.cycle.jetbrains.mps.analyzers_y">
+  <target name="compile.cycle.jetbrains.mps.bash_n" depends="compile.cycle.jetbrains.mps.build.custommps_m">
     <property name="classes.dump" value="${jetbrains.mps.bash.classes}.tmp" />
     <mkdir dir="platform/bash/languages/bash/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.bash.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.bash_z.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.bash_z.src" />
+    <javac classpathref="cycle.jetbrains.mps.bash_n.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.bash_n.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.bash_z.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.bash.classes}">
+    <javac classpathref="cycle.jetbrains.mps.bash_n.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.bash.classes}" debug="true">
       <src>
         <path path="platform/bash/languages/bash/source_gen" />
       </src>
@@ -2848,22 +2848,22 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.build.custommps_s" depends="compile.cycle.jetbrains.mps.build.distrib_r">
+  <target name="compile.cycle.jetbrains.mps.build.custommps_m" depends="compile.cycle.jetbrains.mps.build.distrib_l">
     <property name="classes.dump" value="${jetbrains.mps.build.custommps.classes}.tmp" />
     <mkdir dir="platform/buildlanguage/languages/custommps/source_gen" />
     <mkdir dir="platform/buildlanguage/languages/custommpsInternal/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.custommps.classes}" />
     <mkdir dir="${jetbrains.mps.build.custommpsInternal.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.build.custommps_s.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.build.custommps_s.src" />
+    <javac classpathref="cycle.jetbrains.mps.build.custommps_m.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.build.custommps_m.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.custommps_s.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.custommps_m.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.classes}" debug="true">
       <src>
         <path path="platform/buildlanguage/languages/custommps/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.custommps_s.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommpsInternal.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.custommps_m.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommpsInternal.classes}" debug="true">
       <src>
         <path path="platform/buildlanguage/languages/custommpsInternal/source_gen" />
       </src>
@@ -2880,22 +2880,22 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.build.dependency_q" depends="compile.cycle.jetbrains.mps.baseLanguage.builders_p">
+  <target name="compile.cycle.jetbrains.mps.build.dependency_k" depends="compile.cycle.jetbrains.mps.quickQueryLanguage_j">
     <property name="classes.dump" value="${jetbrains.mps.build.dependency.classes}.tmp" />
     <mkdir dir="platform/buildlanguage/languages/dependency/source_gen" />
     <mkdir dir="platform/buildlanguage/languages/packaging/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.dependency.classes}" />
     <mkdir dir="${jetbrains.mps.build.packaging.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.build.dependency_q.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.build.dependency_q.src" />
+    <javac classpathref="cycle.jetbrains.mps.build.dependency_k.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.build.dependency_k.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.dependency_q.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.dependency.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.dependency_k.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.dependency.classes}" debug="true">
       <src>
         <path path="platform/buildlanguage/languages/dependency/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.dependency_q.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.packaging.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.dependency_k.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.packaging.classes}" debug="true">
       <src>
         <path path="platform/buildlanguage/languages/packaging/source_gen" />
       </src>
@@ -2912,16 +2912,16 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.build.distrib_r" depends="compile.cycle.jetbrains.mps.build.dependency_q">
+  <target name="compile.cycle.jetbrains.mps.build.distrib_l" depends="compile.cycle.jetbrains.mps.build.dependency_k">
     <property name="classes.dump" value="${jetbrains.mps.build.distrib.classes}.tmp" />
     <mkdir dir="platform/buildlanguage/languages/distrib/source_gen" />
     <mkdir dir="platform/buildlanguage/languages/distrib/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.distrib.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.build.distrib_r.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.build.distrib_r.src" />
+    <javac classpathref="cycle.jetbrains.mps.build.distrib_l.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.build.distrib_l.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.distrib_r.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.distrib.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.distrib_l.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.distrib.classes}" debug="true">
       <src>
         <path path="platform/buildlanguage/languages/distrib/source_gen" />
         <path path="platform/buildlanguage/languages/distrib/source_gen" />
@@ -2951,17 +2951,17 @@
     <javac classpathref="cycle.jetbrains.mps.build.generictasks_f.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.build.generictasks_f.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_f.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.generictasks.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.generictasks_f.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.generictasks.classes}" debug="true">
       <src>
         <path path="platform/buildlanguage/languages/generictasks/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_f.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.property.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.generictasks_f.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.property.classes}" debug="true">
       <src>
         <path path="platform/buildlanguage/languages/property/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_f.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.buildlanguage.classes}">
+    <javac classpathref="cycle.jetbrains.mps.build.generictasks_f.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.buildlanguage.classes}" debug="true">
       <src>
         <path path="platform/buildlanguage/languages/buildlanguage/source_gen" />
       </src>
@@ -2983,7 +2983,7 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.editor.runtime_ab" depends="compile.cycle.jetbrains.mps.bash_z">
+  <target name="compile.cycle.jetbrains.mps.editor.runtime_ab" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_z">
     <property name="classes.dump" value="${jetbrains.mps.editor.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/source_gen" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/test_gen" />
@@ -2992,7 +2992,7 @@
     <javac classpathref="cycle.jetbrains.mps.editor.runtime_ab.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.editor.runtime_ab.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.editor.runtime_ab.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.editor.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.editor.runtime_ab.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.editor.runtime.classes}" debug="true">
       <src>
         <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/source_gen" />
         <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/test_gen" />
@@ -3010,15 +3010,15 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gtext_n" depends="compile.cycle.jetbrains.mps.baseLanguage.methodExtension_m">
+  <target name="compile.cycle.jetbrains.mps.gtext_h" depends="compile.cycle.jetbrains.mps.gtext.runtime_g">
     <property name="classes.dump" value="${jetbrains.mps.gtext.classes}.tmp" />
     <mkdir dir="platform/gtext/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.gtext.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.gtext_n.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.gtext_n.src" />
+    <javac classpathref="cycle.jetbrains.mps.gtext_h.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.gtext_h.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.gtext_n.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.classes}">
+    <javac classpathref="cycle.jetbrains.mps.gtext_h.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.classes}" debug="true">
       <src>
         <path path="platform/gtext/source_gen" />
       </src>
@@ -3030,17 +3030,17 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gtext.runtime_k" depends="compile.cycle.ypath.main_j">
+  <target name="compile.cycle.jetbrains.mps.gtext.runtime_g" depends="compile.cycle.jetbrains.mps.build.generictasks_f">
     <property name="classes.dump" value="${jetbrains.mps.gtext.runtime.classes}.tmp" />
     <mkdir dir="platform/gtext/runtime/source" />
     <mkdir dir="platform/gtext/runtime/source_gen" />
     <mkdir dir="platform/gtext/runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.gtext.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.gtext.runtime_k.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.gtext.runtime_k.src" />
+    <javac classpathref="cycle.jetbrains.mps.gtext.runtime_g.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.gtext.runtime_g.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.gtext.runtime_k.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.gtext.runtime_g.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.runtime.classes}" debug="true">
       <src>
         <path path="platform/gtext/runtime/source" />
         <path path="platform/gtext/runtime/source_gen" />
@@ -3064,15 +3064,15 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage_w" depends="compile.cycle.jetbrains.mps.quickQueryLanguage_v">
+  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage_p" depends="compile.cycle.jetbrains.mps.baseLanguage.methodExtension_o">
     <property name="classes.dump" value="${jetbrains.mps.ide.uiLanguage.classes}.tmp" />
     <mkdir dir="workbench/ideUiLanguage/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ide.uiLanguage.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_w.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.ide.uiLanguage_w.src" />
+    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_p.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.ide.uiLanguage_p.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_w.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage_p.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.classes}" debug="true">
       <src>
         <path path="workbench/ideUiLanguage/source_gen" />
       </src>
@@ -3093,7 +3093,7 @@
     <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage.runtime_c.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.ide.uiLanguage.runtime_c.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage.runtime_c.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ide.uiLanguage.runtime_c.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ide.uiLanguage.runtime.classes}" debug="true">
       <src>
         <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
         <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
@@ -3111,16 +3111,16 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.test.runtime_h" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_g">
+  <target name="compile.cycle.jetbrains.mps.lang.test.runtime_t" depends="compile.cycle.jetbrains.mps.analyzers_s">
     <property name="classes.dump" value="${jetbrains.mps.lang.test.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/source_gen" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.lang.test.runtime.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.lang.test.runtime_h.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.lang.test.runtime_h.src" />
+    <javac classpathref="cycle.jetbrains.mps.lang.test.runtime_t.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.lang.test.runtime_t.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.lang.test.runtime_h.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.test.runtime.classes}">
+    <javac classpathref="cycle.jetbrains.mps.lang.test.runtime_t.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.test.runtime.classes}" debug="true">
       <src>
         <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/source_gen" />
         <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/test_gen" />
@@ -3138,15 +3138,15 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.quickQueryLanguage_v" depends="compile.cycle.jetbrains.mps.xmlUnitTest_u">
+  <target name="compile.cycle.jetbrains.mps.quickQueryLanguage_j" depends="compile.cycle.jetbrains.mps.xml_i">
     <property name="classes.dump" value="${jetbrains.mps.quickQueryLanguage.classes}.tmp" />
     <mkdir dir="platform/quickQueryLanguage/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.quickQueryLanguage.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_v.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.quickQueryLanguage_v.src" />
+    <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_j.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.quickQueryLanguage_j.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_v.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQueryLanguage.classes}">
+    <javac classpathref="cycle.jetbrains.mps.quickQueryLanguage_j.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.quickQueryLanguage.classes}" debug="true">
       <src>
         <path path="platform/quickQueryLanguage/source_gen" />
       </src>
@@ -3158,7 +3158,7 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xml_o" depends="compile.cycle.jetbrains.mps.gtext_n">
+  <target name="compile.cycle.jetbrains.mps.xml_i" depends="compile.cycle.jetbrains.mps.gtext_h">
     <property name="classes.dump" value="${jetbrains.mps.xml.classes}.tmp" />
     <mkdir dir="platform/xml/xml/source_gen" />
     <mkdir dir="platform/xml/xmlInternal/source_gen" />
@@ -3167,20 +3167,20 @@
     <mkdir dir="${jetbrains.mps.xml.classes}" />
     <mkdir dir="${jetbrains.mps.xmlInternal.classes}" />
     <mkdir dir="${jetbrains.mps.xmlSchema.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.xml_o.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.xml_o.src" />
+    <javac classpathref="cycle.jetbrains.mps.xml_i.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.xml_i.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.xml_o.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.classes}">
+    <javac classpathref="cycle.jetbrains.mps.xml_i.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.classes}" debug="true">
       <src>
         <path path="platform/xml/xml/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.xml_o.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlInternal.classes}">
+    <javac classpathref="cycle.jetbrains.mps.xml_i.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlInternal.classes}" debug="true">
       <src>
         <path path="platform/xml/xmlInternal/source_gen" />
       </src>
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.xml_o.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlSchema.classes}">
+    <javac classpathref="cycle.jetbrains.mps.xml_i.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlSchema.classes}" debug="true">
       <src>
         <path path="platform/xml/xmlSchema/source_gen" />
       </src>
@@ -3210,7 +3210,7 @@
     <javac classpathref="cycle.jetbrains.mps.xml.deprecated_e.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.xml.deprecated_e.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.xml.deprecated_e.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.deprecated.classes}">
+    <javac classpathref="cycle.jetbrains.mps.xml.deprecated_e.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.deprecated.classes}" debug="true">
       <src>
         <path path="platform/xmlDeprecated/source_gen" />
       </src>
@@ -3222,15 +3222,15 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlQuery_t" depends="compile.cycle.jetbrains.mps.build.custommps_s">
+  <target name="compile.cycle.jetbrains.mps.xmlQuery_y" depends="compile.cycle.ypath.test_x">
     <property name="classes.dump" value="${jetbrains.mps.xmlQuery.classes}.tmp" />
     <mkdir dir="platform/xml/xmlQuery/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.xmlQuery.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.xmlQuery_t.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.xmlQuery_t.src" />
+    <javac classpathref="cycle.jetbrains.mps.xmlQuery_y.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.xmlQuery_y.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.xmlQuery_t.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlQuery.classes}">
+    <javac classpathref="cycle.jetbrains.mps.xmlQuery_y.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlQuery.classes}" debug="true">
       <src>
         <path path="platform/xml/xmlQuery/source_gen" />
       </src>
@@ -3242,15 +3242,15 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlUnitTest_u" depends="compile.cycle.jetbrains.mps.xmlQuery_t">
+  <target name="compile.cycle.jetbrains.mps.xmlUnitTest_q" depends="compile.cycle.jetbrains.mps.ide.uiLanguage_p">
     <property name="classes.dump" value="${jetbrains.mps.xmlUnitTest.classes}.tmp" />
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.xmlUnitTest.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_u.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.xmlUnitTest_u.src" />
+    <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_q.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.xmlUnitTest_q.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_u.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlUnitTest.classes}">
+    <javac classpathref="cycle.jetbrains.mps.xmlUnitTest_q.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlUnitTest.classes}" debug="true">
       <src>
         <path path="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
       </src>
@@ -3262,16 +3262,16 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ypath_i" depends="compile.cycle.jetbrains.mps.lang.test.runtime_h">
+  <target name="compile.cycle.jetbrains.mps.ypath_v" depends="compile.cycle.jetbrains.mps.baseLanguage.builders_u">
     <property name="classes.dump" value="${jetbrains.mps.ypath.classes}.tmp" />
     <mkdir dir="platform/ypath/source" />
     <mkdir dir="platform/ypath/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.ypath.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.ypath_i.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.jetbrains.mps.ypath_i.src" />
+    <javac classpathref="cycle.jetbrains.mps.ypath_v.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.ypath_v.src" />
     </javac>
-    <javac classpathref="cycle.jetbrains.mps.ypath_i.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ypath.classes}">
+    <javac classpathref="cycle.jetbrains.mps.ypath_v.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.ypath.classes}" debug="true">
       <src>
         <path path="platform/ypath/source" />
         <path path="platform/ypath/source_gen" />
@@ -3289,16 +3289,16 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.ypath.main_j" depends="compile.cycle.jetbrains.mps.ypath_i">
+  <target name="compile.cycle.ypath.main_w" depends="compile.cycle.jetbrains.mps.ypath_v">
     <property name="classes.dump" value="${ypath.main.classes}.tmp" />
     <mkdir dir="platform/ypath/solutions/main/source_gen" />
     <mkdir dir="platform/ypath/solutions/main/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${ypath.main.classes}" />
-    <javac classpathref="cycle.ypath.main_j.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.ypath.main_j.src" />
+    <javac classpathref="cycle.ypath.main_w.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.ypath.main_w.src" />
     </javac>
-    <javac classpathref="cycle.ypath.main_j.classpaths" classpath="${classes.dump}" destdir="${ypath.main.classes}">
+    <javac classpathref="cycle.ypath.main_w.classpaths" classpath="${classes.dump}" destdir="${ypath.main.classes}" debug="true">
       <src>
         <path path="platform/ypath/solutions/main/source_gen" />
         <path path="platform/ypath/solutions/main/test_gen" />
@@ -3316,16 +3316,16 @@
     </copy>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.ypath.test_l" depends="compile.cycle.jetbrains.mps.gtext.runtime_k">
+  <target name="compile.cycle.ypath.test_x" depends="compile.cycle.ypath.main_w">
     <property name="classes.dump" value="${ypath.test.classes}.tmp" />
     <mkdir dir="platform/ypath/solutions/test/source_gen" />
     <mkdir dir="platform/ypath/solutions/test/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${ypath.test.classes}" />
-    <javac classpathref="cycle.ypath.test_l.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.ypath.test_l.src" />
+    <javac classpathref="cycle.ypath.test_x.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.ypath.test_x.src" />
     </javac>
-    <javac classpathref="cycle.ypath.test_l.classpaths" classpath="${classes.dump}" destdir="${ypath.test.classes}">
+    <javac classpathref="cycle.ypath.test_x.classpaths" classpath="${classes.dump}" destdir="${ypath.test.classes}" debug="true">
       <src>
         <path path="platform/ypath/solutions/test/source_gen" />
         <path path="platform/ypath/solutions/test/test_gen" />
