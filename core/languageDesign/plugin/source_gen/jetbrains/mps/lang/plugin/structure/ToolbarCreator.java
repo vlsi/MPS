@@ -25,12 +25,12 @@ public class ToolbarCreator extends Expression {
     this.setBooleanProperty(ToolbarCreator.IS_HORIZONTAL, value);
   }
 
-  public ActionGroupDeclaration getGroup() {
-    return (ActionGroupDeclaration) this.getReferent(ActionGroupDeclaration.class, ToolbarCreator.GROUP);
+  public Expression getGroup() {
+    return (Expression) this.getChild(Expression.class, ToolbarCreator.GROUP);
   }
 
-  public void setGroup(ActionGroupDeclaration node) {
-    super.setReferent(ToolbarCreator.GROUP, node);
+  public void setGroup(Expression node) {
+    super.setChild(ToolbarCreator.GROUP, node);
   }
 
   public static ToolbarCreator newInstance(SModel sm, boolean init) {

@@ -16,12 +16,12 @@ public class PopupCreator extends Expression {
     super(node);
   }
 
-  public ActionGroupDeclaration getGroup() {
-    return (ActionGroupDeclaration) this.getReferent(ActionGroupDeclaration.class, PopupCreator.GROUP);
+  public Expression getGroup() {
+    return (Expression) this.getChild(Expression.class, PopupCreator.GROUP);
   }
 
-  public void setGroup(ActionGroupDeclaration node) {
-    super.setReferent(PopupCreator.GROUP, node);
+  public void setGroup(Expression node) {
+    super.setChild(PopupCreator.GROUP, node);
   }
 
   public static PopupCreator newInstance(SModel sm, boolean init) {

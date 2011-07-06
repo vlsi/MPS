@@ -372,7 +372,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 177:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", "jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"propertyDeclaration"});
       case 178:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.PopupCreator", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"group"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.PopupCreator", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
       case 179:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.PreferencePage", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"}, new String[]{"icon", "helpTopic"}, new String[]{});
       case 180:
@@ -480,7 +480,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 231:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToolType", "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", false, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"}, new String[]{}, new String[]{"tool"});
       case 232:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToolbarCreator", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"isHorizontal"}, new String[]{"group"});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.ToolbarCreator", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"isHorizontal"}, new String[]{});
       case 233:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.plugin.structure.UnitNodeItem", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"unitConcept"});
       case 234:

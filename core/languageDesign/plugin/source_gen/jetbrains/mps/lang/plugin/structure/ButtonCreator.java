@@ -16,11 +16,11 @@ public class ButtonCreator extends Expression {
     super(node);
   }
 
-  public ActionInstance getAction() {
-    return (ActionInstance) this.getChild(ActionInstance.class, ButtonCreator.ACTION);
+  public Expression getAction() {
+    return (Expression) this.getChild(Expression.class, ButtonCreator.ACTION);
   }
 
-  public void setAction(ActionInstance node) {
+  public void setAction(Expression node) {
     super.setChild(ButtonCreator.ACTION, node);
   }
 
