@@ -55,6 +55,9 @@
   <unitInfo fileName="ConceptFunctionParameter_node_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
   <unitInfo fileName="DoUpdateBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.DoUpdateBlock_BehaviorDescriptor" />
   <unitInfo fileName="ToolDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ToolDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="ButtonCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ButtonCreator_BehaviorDescriptor" />
+  <unitInfo fileName="PopupCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PopupCreator_BehaviorDescriptor" />
+  <unitInfo fileName="ToolbarCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ToolbarCreator_BehaviorDescriptor" />
   <unitInfo fileName="IconResourceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResourceExpression_BehaviorDescriptor" />
   <unitInfo fileName="EditorTabReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EditorTabReference_BehaviorDescriptor" />
   <unitInfo fileName="ListenBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ListenBlock_BehaviorDescriptor" />
@@ -306,7 +309,7 @@
   <unitInfo fileName="ActionParameterDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionParameterDeclaration_Behavior" />
   <unitInfo fileName="ActionDataParameterDeclaration_Behavior.java" startLine="21" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior" />
   <unitInfo fileName="RunConfigurationDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.RunConfigurationDeclaration_Behavior" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="452" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1171743928471337190">
     <scopeInfo nodeId="1171743928471337192" fileName="ActionParameter_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
   </root>

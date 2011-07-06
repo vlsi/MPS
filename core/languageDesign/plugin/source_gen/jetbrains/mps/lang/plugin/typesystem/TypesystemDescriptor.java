@@ -274,6 +274,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new Button_TypeFromPlatform_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new Popup_TypeFromPlatform_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new Toolbar_TypeFromPlatform_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new Typeof_Action_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

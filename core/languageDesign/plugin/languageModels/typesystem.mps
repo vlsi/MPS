@@ -34,6 +34,7 @@
   <import index="2f20" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugins.pluginparts.tool(MPS.Classpath/jetbrains.mps.plugins.pluginparts.tool@java_stub)" version="-1" />
   <import index="uqw6" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugins.pluginparts.runconfigs(MPS.Classpath/jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
   <import index="ye75" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.checkedName(MPS.Classpath/jetbrains.mps.checkedName@java_stub)" version="-1" />
+  <import index="6yfw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem.impl(MPS.Classpath/com.intellij.openapi.actionSystem.impl@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -338,6 +339,18 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2450897840534903557">
       <property name="name" nameId="tpck.1169194664001" value="check_OrderConstraints" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+    </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="2983858627857115302">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
+      <property name="name" nameId="tpck.1169194664001" value="Button_TypeFromPlatform" />
+    </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="2983858627857118753">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
+      <property name="name" nameId="tpck.1169194664001" value="Popup_TypeFromPlatform" />
+    </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="2983858627857118760">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Creation" />
+      <property name="name" nameId="tpck.1169194664001" value="Toolbar_TypeFromPlatform" />
     </node>
   </roots>
   <root id="1204039255253">
@@ -3921,6 +3934,51 @@
           <property name="value" nameId="tpee.1070475926801" value="order does not contain current tab" />
         </node>
       </node>
+    </node>
+  </root>
+  <root id="2983858627857115302">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="2983858627857115303">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2983858627857118746">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2983858627857118748">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2983858627857118752">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6yfw.~ActionButton" resolveInfo="ActionButton" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2983858627857115304">
+      <property name="name" nameId="tpck.1169194664001" value="creator" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4k.1988288734101112751" resolveInfo="ButtonCreator" />
+    </node>
+  </root>
+  <root id="2983858627857118753">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="2983858627857118754">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2983858627857118755">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2983858627857118756">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2983858627857118759">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JComponent" resolveInfo="JComponent" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2983858627857118758">
+      <property name="name" nameId="tpck.1169194664001" value="popupCreator" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4k.1988288734101112747" resolveInfo="PopupCreator" />
+    </node>
+  </root>
+  <root id="2983858627857118760">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="2983858627857118761">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2983858627857118762">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2983858627857118763">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2983858627857118764">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JComponent" resolveInfo="JComponent" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2983858627857118765">
+      <property name="name" nameId="tpck.1169194664001" value="toolbarCreator" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4k.1988288734101108470" resolveInfo="ToolbarCreator" />
     </node>
   </root>
 </model>

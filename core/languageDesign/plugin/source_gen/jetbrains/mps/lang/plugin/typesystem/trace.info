@@ -46,6 +46,9 @@
   <unitInfo fileName="check_RunConfigurationCreatesDebugSession_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.check_RunConfigurationCreatesDebugSession_NonTypesystemRule" />
   <unitInfo fileName="check_CommandClosureLiteral_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.check_CommandClosureLiteral_NonTypesystemRule" />
   <unitInfo fileName="HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule" />
+  <unitInfo fileName="Toolbar_TypeFromPlatform_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Toolbar_TypeFromPlatform_SubtypingRule$QuotationClass_bw1rpj_a0a0a" />
+  <unitInfo fileName="Popup_TypeFromPlatform_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Popup_TypeFromPlatform_SubtypingRule$QuotationClass_45hc67_a0a0a" />
+  <unitInfo fileName="Button_TypeFromPlatform_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Button_TypeFromPlatform_SubtypingRule$QuotationClass_x8t15o_a0a0a" />
   <unitInfo fileName="typeof_Console_IsSubtype_JComponent_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_Console_IsSubtype_JComponent_SubtypingRule$QuotationClass_oa5pba_a0a0a" />
   <unitInfo fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule$QuotationClass_d1kmw7_a0a0a" />
   <unitInfo fileName="Typeof_Action_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Typeof_Action_SubtypingRule$QuotationClass_mjowdo_a0a0a" />
@@ -84,6 +87,9 @@
   <unitInfo fileName="check_OrderConstraints_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.check_OrderConstraints_NonTypesystemRule" />
   <unitInfo fileName="typeof_ActionsList_FunctionParameter_InferenceRule.java" startLine="46" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ActionsList_FunctionParameter_InferenceRule$QuotationClass_z2y16_a0a0a0" />
   <unitInfo fileName="typeof_ActionListStatement_InferenceRule.java" startLine="47" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ActionListStatement_InferenceRule$QuotationClass_aab8tt_a0a0a0" />
+  <unitInfo fileName="Toolbar_TypeFromPlatform_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Toolbar_TypeFromPlatform_SubtypingRule" />
+  <unitInfo fileName="Popup_TypeFromPlatform_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Popup_TypeFromPlatform_SubtypingRule" />
+  <unitInfo fileName="Button_TypeFromPlatform_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Button_TypeFromPlatform_SubtypingRule" />
   <unitInfo fileName="typeof_Console_IsSubtype_JComponent_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_Console_IsSubtype_JComponent_SubtypingRule" />
   <unitInfo fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule" />
   <unitInfo fileName="Typeof_Action_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Typeof_Action_SubtypingRule" />
@@ -131,7 +137,7 @@
   <unitInfo fileName="typeof_PersistentPropertyDeclaration_InferenceRule.java" startLine="21" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_PersistentPropertyDeclaration_InferenceRule" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="18" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule" />
   <unitInfo fileName="typeof_ToolTab_InferenceRule.java" startLine="21" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ToolTab_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.TypesystemDescriptor" />
   <root nodeId="1204039255253">
     <nodeInfo nodeId="1204040680751" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="22" startPosition="116" endLine="23" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1204040866922" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="23" startPosition="139" endLine="24" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -509,6 +515,18 @@
     <scopeInfo nodeId="1499919975383982349" fileName="check_OrderConstraints_NonTypesystemRule.java" startLine="25" startPosition="168" endLine="26" endPosition="13" />
     <scopeInfo nodeId="1499919975383986350" fileName="check_OrderConstraints_NonTypesystemRule.java" startLine="28" startPosition="5" endLine="30" endPosition="243" />
     <scopeInfo nodeId="2450897840534916120" fileName="check_OrderConstraints_NonTypesystemRule.java" startLine="21" startPosition="114" endLine="31" endPosition="5" />
+  </root>
+  <root nodeId="2983858627857115302">
+    <nodeInfo nodeId="2983858627857118746" fileName="Button_TypeFromPlatform_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2983858627857115303" fileName="Button_TypeFromPlatform_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="115" />
+  </root>
+  <root nodeId="2983858627857118753">
+    <nodeInfo nodeId="2983858627857118755" fileName="Popup_TypeFromPlatform_SubtypingRule.java" startLine="22" startPosition="122" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2983858627857118754" fileName="Popup_TypeFromPlatform_SubtypingRule.java" startLine="22" startPosition="122" endLine="23" endPosition="114" />
+  </root>
+  <root nodeId="2983858627857118760">
+    <nodeInfo nodeId="2983858627857118762" fileName="Toolbar_TypeFromPlatform_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2983858627857118761" fileName="Toolbar_TypeFromPlatform_SubtypingRule.java" startLine="22" startPosition="124" endLine="23" endPosition="116" />
   </root>
   <root nodeId="3193296763328064950">
     <nodeInfo nodeId="3193296763328075315" fileName="typeof_Parameter_FunctionParameter_InferenceRule.java" startLine="25" startPosition="122" endLine="26" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
