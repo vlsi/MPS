@@ -114,11 +114,12 @@ public class ProjectFactory {
     if (myCreatedProject == null) return;
     myCreatedProject.getComponent(MPSProjectVersion.class).setVersion(MPSProjectVersion.CURRENT);
 
+    ProjectBaseDirectory.getInstance(myCreatedProject).setBaseDir(myCreatedProject.getBaseDir());
+
     ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
     boolean opened = projectManager.openProject(myCreatedProject);
 
     if (opened) {
-      ProjectBaseDirectory.getInstance(myCreatedProject).setBaseDir(myCreatedProject.getBaseDir());
       StartupManager.getInstance(myCreatedProject).runWhenProjectIsInitialized(new Runnable() {
         public void run() {
           ProjectPane.getInstance(myCreatedProject).activate();
