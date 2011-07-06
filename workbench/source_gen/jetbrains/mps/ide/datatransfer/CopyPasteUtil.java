@@ -36,9 +36,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CopyPasteUtil {
   private static final Logger LOG = Logger.getLogger(CopyPasteUtil.class);
+  private static CopyPasteUtil.IDataConverter myDataConverter = null;
 
   public CopyPasteUtil() {
   }
@@ -339,5 +341,37 @@ public class CopyPasteUtil {
       break;
     }
     return false;
+  }
+
+  public static synchronized void setDataConverter(CopyPasteUtil.IDataConverter dataConverter) {
+    myDataConverter = dataConverter;
+  }
+
+  public static synchronized boolean isConversionAvailable(SModel model, SNode anchor) {
+    return myDataConverter != null && myDataConverter.canPasteAsNodes(model, anchor);
+  }
+
+  public static synchronized PasteNodeData getConvertedFromClipboard(SModel model) {
+    return (myDataConverter == null ?
+      null :
+      myDataConverter.getPasteNodeData(model)
+    );
+  }
+
+  public static boolean canPasteNodes(SModel model, SNode anchor) {
+    List<SNode> nodes = getNodesFromClipboard(model);
+    return ListSequence.fromList(nodes).isNotEmpty() || isConversionAvailable(model, anchor);
+  }
+
+  public static synchronized void pasteNodes(SModel model, SNode anchor) {
+    if (myDataConverter != null) {
+      myDataConverter.pasteAsNodes(model, anchor);
+    }
+  }
+
+  public static interface IDataConverter {
+    public boolean canPasteAsNodes(SModel model, SNode anchor);
+    public void pasteAsNodes(SModel model, SNode anchor);
+    public PasteNodeData getPasteNodeData(SModel model);
   }
 }

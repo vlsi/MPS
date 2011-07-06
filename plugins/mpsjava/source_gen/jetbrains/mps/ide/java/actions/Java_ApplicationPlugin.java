@@ -8,6 +8,10 @@ import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionNewActions_ActionGroup;
+import java.util.List;
+import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Java_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide.java");
@@ -41,5 +45,16 @@ public class Java_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, SolutionNewActions_ActionGroup.ID, SolutionNewActions_ActionGroup.LABEL_ID_newModel);
     insertGroupIntoAnother(ModelActions_ActionGroup.ID, jetbrains.mps.ide.actions.ModelActions_ActionGroup.ID, jetbrains.mps.ide.actions.ModelActions_ActionGroup.LABEL_ID_paste);
     insertGroupIntoAnother(EditorPopup_ActionGroup.ID, jetbrains.mps.ide.actions.EditorPopup_ActionGroup.ID, jetbrains.mps.ide.actions.EditorPopup_ActionGroup.LABEL_ID_paste);
+  }
+
+  public List<BaseCustomApplicationPlugin> initCustomParts() {
+    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
+    addCustomPart(res, new PasteJavaTextAsNodes_CustomApplicationPlugin());
+    return res;
+  }
+
+  private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
+    ListSequence.fromList(plugins).addElement(plugin);
+    plugin.init();
   }
 }

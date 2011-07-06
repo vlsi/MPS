@@ -43,7 +43,7 @@ public class PasteNode_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.getPasteData(_params) != null;
+    return ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -84,6 +84,12 @@ public class PasteNode_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(_params);
+      if (pasteNodeData == null || pasteNodeData.getNodes().isEmpty()) {
+        pasteNodeData = CopyPasteUtil.getConvertedFromClipboard(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel());
+        if (pasteNodeData == null) {
+          return;
+        }
+      }
       boolean successfull = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       if (!(successfull)) {
         return;
@@ -135,5 +141,9 @@ public class PasteNode_Action extends GeneratedAction {
       }
     });
     return result.value;
+  }
+
+  private boolean canPasteNodes(final Map<String, Object> _params) {
+    return CopyPasteUtil.canPasteNodes(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((SNode) MapSequence.fromMap(_params).get("node")));
   }
 }

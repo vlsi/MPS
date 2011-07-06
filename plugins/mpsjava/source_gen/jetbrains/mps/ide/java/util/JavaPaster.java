@@ -25,6 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.java.parser.ConversionFailedException;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.ArrayList;
 
 public class JavaPaster {
   private static Logger LOG = Logger.getLogger(JavaPaster.class);
@@ -132,5 +133,14 @@ public class JavaPaster {
       parent.insertChild(anchor, SPropertyOperations.getString(role, "role"), node, true);
     }
     return true;
+  }
+
+  public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context) {
+    IModule module = model.getModelDescriptor().getModule();
+    try {
+      return new JavaCompiler(context, module, null, false, model).compileIsolated(javaCode, FeatureKind.STATEMENTS);
+    } catch (ConversionFailedException e) {
+    }
+    return new ArrayList<SNode>();
   }
 }

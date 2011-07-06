@@ -56,7 +56,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     }
     List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNode.getModel());
     if (pasteNodes == null || pasteNodes.isEmpty()) {
-      return false;
+      return CopyPasteUtil.isConversionAvailable(selectedNode.getModel(), selectedNode);
     }
 
     if (!new NodePaster(pasteNodes).canPaste(getCellToPasteTo(selectedCell))) {
@@ -71,10 +71,14 @@ public class CellAction_PasteNode extends EditorCellAction {
     final EditorComponent editorComponent = context.getNodeEditorComponent();
     final EditorCell selectedCell = getCellToPasteTo(editorComponent.getSelectedCell());
     final SNode selectedNode = selectedCell.getSNode();
-
-    final PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(selectedNode.getModel());
-
     final SModel model = selectedNode.getModel();
+
+    PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
+    if (data == null || data.getNodes().isEmpty()) {
+      data = CopyPasteUtil.getConvertedFromClipboard(model);
+      if (data == null) return;
+    }
+    final PasteNodeData pasteNodeData = data;
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
