@@ -84,7 +84,7 @@ public class WhenConcreteBlock extends Block {
 
   @Override
   public List<SNode> getVariables(State state) {
-    return TypesUtil.getVariables(myArgument,state);
+    return TypesUtil.getVariables(myArgument);
   }
 
   @Override

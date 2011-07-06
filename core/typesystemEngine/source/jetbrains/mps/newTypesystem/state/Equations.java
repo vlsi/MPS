@@ -19,6 +19,7 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
@@ -146,7 +147,7 @@ public class Equations {
 
   private boolean processEquation(SNode var, SNode type, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(var);
-    for (SNode innerVar : TypesUtil.getVariables(type, myState)) {
+    for (SNode innerVar : TypesUtil.getVariables(expandNode(type, false))) {
       if (getRepresentative(innerVar, false).equals(var)){
         reportRecursiveType(source, info);
         return false;
