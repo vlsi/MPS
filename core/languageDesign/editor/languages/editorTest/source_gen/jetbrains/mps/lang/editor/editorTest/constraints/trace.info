@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="NotEditableVaraileReference_Constraints.java" startLine="41" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$2" />
   <unitInfo fileName="VariableDeclarationReference_Constraints.java" startLine="41" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$2" />
+  <unitInfo fileName="NotEditableVaraileReference_Constraints.java" startLine="41" startPosition="19" endLine="59" endPosition="9" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$2" />
   <unitInfo fileName="VariableDeclarationReference_Constraints.java" startLine="32" startPosition="30" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1" />
   <unitInfo fileName="NotEditableVaraileReference_Constraints.java" startLine="32" startPosition="46" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$1" />
-  <unitInfo fileName="NotEditableVaraileReference_Constraints.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints" />
   <unitInfo fileName="VariableDeclarationReference_Constraints.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints" />
+  <unitInfo fileName="NotEditableVaraileReference_Constraints.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints" />
   <root nodeId="4965160547087600886">
     <nodeInfo nodeId="4965160547087600890" fileName="NotEditableVaraileReference_Constraints.java" startLine="43" startPosition="142" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4965160547087600907" fileName="NotEditableVaraileReference_Constraints.java" startLine="47" startPosition="133" endLine="48" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

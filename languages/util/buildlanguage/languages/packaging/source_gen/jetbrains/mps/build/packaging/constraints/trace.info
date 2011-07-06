@@ -6,8 +6,8 @@
   <unitInfo fileName="MacroReference_Constraints.java" startLine="24" startPosition="31" endLine="35" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.MacroReference_Constraints$1" />
   <unitInfo fileName="Configuration_Constraints.java" startLine="47" startPosition="35" endLine="58" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Configuration_Constraints$1" />
   <unitInfo fileName="Antcall_Constraints.java" startLine="41" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
-  <unitInfo fileName="AbstractProjectComponent_Constraints.java" startLine="23" startPosition="31" endLine="37" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints$1" />
   <unitInfo fileName="Echo_Constraints.java" startLine="23" startPosition="31" endLine="37" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Echo_Constraints$1" />
+  <unitInfo fileName="AbstractProjectComponent_Constraints.java" startLine="23" startPosition="31" endLine="37" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints$1" />
   <unitInfo fileName="Plugin_Constraints.java" startLine="24" startPosition="31" endLine="38" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Plugin_Constraints$1" />
   <unitInfo fileName="Folder_Constraints.java" startLine="24" startPosition="31" endLine="41" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Folder_Constraints$1" />
   <unitInfo fileName="File_Constraints.java" startLine="25" startPosition="31" endLine="42" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.File_Constraints$1" />
@@ -15,8 +15,8 @@
   <unitInfo fileName="MacroReference_Constraints.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.MacroReference_Constraints" />
   <unitInfo fileName="Antcall_Constraints.java" startLine="57" startPosition="34" endLine="80" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
   <unitInfo fileName="Antcall_Constraints.java" startLine="32" startPosition="44" endLine="56" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$1" />
-  <unitInfo fileName="AbstractProjectComponent_Constraints.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints" />
   <unitInfo fileName="Echo_Constraints.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Echo_Constraints" />
+  <unitInfo fileName="AbstractProjectComponent_Constraints.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints" />
   <unitInfo fileName="Plugin_Constraints.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Plugin_Constraints" />
   <unitInfo fileName="BaseDirPath_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.BaseDirPath_Constraints" />
   <unitInfo fileName="Folder_Constraints.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Folder_Constraints" />

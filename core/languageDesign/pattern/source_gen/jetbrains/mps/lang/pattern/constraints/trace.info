@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ActionStatement_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.ActionStatement_Constraints" />
-  <unitInfo fileName="PropertyPatternVariableDeclaration_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableDeclaration_Constraints$1" />
-  <unitInfo fileName="LinkPatternVariableDeclaration_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.pattern.constraints.LinkPatternVariableDeclaration_Constraints$1" />
   <unitInfo fileName="PatternVariableDeclaration_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.pattern.constraints.PatternVariableDeclaration_Constraints$1" />
+  <unitInfo fileName="LinkPatternVariableDeclaration_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.pattern.constraints.LinkPatternVariableDeclaration_Constraints$1" />
+  <unitInfo fileName="PropertyPatternVariableDeclaration_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableDeclaration_Constraints$1" />
   <unitInfo fileName="PatternVariableDeclaration_Constraints.java" startLine="34" startPosition="43" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.pattern.constraints.PatternVariableDeclaration_Constraints$2" />
   <unitInfo fileName="OrPatternVariableReference_Constraints.java" startLine="40" startPosition="19" endLine="51" endPosition="9" unitName="jetbrains.mps.lang.pattern.constraints.OrPatternVariableReference_Constraints$2" />
   <unitInfo fileName="PatternVariableReference_Constraints.java" startLine="61" startPosition="19" endLine="77" endPosition="9" unitName="jetbrains.mps.lang.pattern.constraints.PatternVariableReference_Constraints$2" />
   <unitInfo fileName="OrPatternVariableReference_Constraints.java" startLine="31" startPosition="38" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.pattern.constraints.OrPatternVariableReference_Constraints$1" />
-  <unitInfo fileName="PropertyPatternVariableDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableDeclaration_Constraints" />
   <unitInfo fileName="LinkPatternVariableDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.LinkPatternVariableDeclaration_Constraints" />
+  <unitInfo fileName="PropertyPatternVariableDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.PropertyPatternVariableDeclaration_Constraints" />
   <unitInfo fileName="PatternVariableReference_Constraints.java" startLine="52" startPosition="35" endLine="79" endPosition="5" unitName="jetbrains.mps.lang.pattern.constraints.PatternVariableReference_Constraints$1" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.ConstraintsAspectDescriptor" />
   <unitInfo fileName="ActionAsPattern_Constraints.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.pattern.constraints.ActionAsPattern_Constraints" />

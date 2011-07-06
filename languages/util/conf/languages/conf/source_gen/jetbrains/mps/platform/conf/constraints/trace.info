@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BeanExtensionPoint_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.BeanExtensionPoint_Constraints" />
-  <unitInfo fileName="ActionReference_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.ActionReference_Constraints$2" />
-  <unitInfo fileName="PluginDependency_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.PluginDependency_Constraints$2" />
-  <unitInfo fileName="Extension_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.Extension_Constraints$2" />
   <unitInfo fileName="InterfaceExtension_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.InterfaceExtension_Constraints$2" />
+  <unitInfo fileName="Extension_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.Extension_Constraints$2" />
+  <unitInfo fileName="PluginDependency_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.PluginDependency_Constraints$2" />
+  <unitInfo fileName="ActionReference_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.ActionReference_Constraints$2" />
   <unitInfo fileName="ConfigurationXmlDocument_Constraints.java" startLine="24" startPosition="31" endLine="41" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ConfigurationXmlDocument_Constraints$1" />
   <unitInfo fileName="AbstractAction_Constraints.java" startLine="22" startPosition="38" endLine="41" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.AbstractAction_Constraints$1" />
   <unitInfo fileName="BeanExtension_Constraints.java" startLine="43" startPosition="19" endLine="67" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.BeanExtension_Constraints$2" />
-  <unitInfo fileName="ActionReference_Constraints.java" startLine="32" startPosition="33" endLine="57" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ActionReference_Constraints$1" />
   <unitInfo fileName="PluginDependency_Constraints.java" startLine="32" startPosition="33" endLine="57" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.PluginDependency_Constraints$1" />
-  <unitInfo fileName="Extension_Constraints.java" startLine="32" startPosition="41" endLine="57" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.Extension_Constraints$1" />
+  <unitInfo fileName="ActionReference_Constraints.java" startLine="32" startPosition="33" endLine="57" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ActionReference_Constraints$1" />
   <unitInfo fileName="InterfaceExtension_Constraints.java" startLine="32" startPosition="41" endLine="57" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.InterfaceExtension_Constraints$1" />
-  <unitInfo fileName="RootRoot_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.RootRoot_Constraints" />
-  <unitInfo fileName="ComponentsRoot_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ComponentsRoot_Constraints" />
-  <unitInfo fileName="ComponentRoot_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ComponentRoot_Constraints" />
+  <unitInfo fileName="Extension_Constraints.java" startLine="32" startPosition="41" endLine="57" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.Extension_Constraints$1" />
   <unitInfo fileName="ConfigurationXmlRootNode_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ConfigurationXmlRootNode_Constraints" />
+  <unitInfo fileName="ComponentRoot_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ComponentRoot_Constraints" />
+  <unitInfo fileName="ComponentsRoot_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ComponentsRoot_Constraints" />
+  <unitInfo fileName="RootRoot_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.RootRoot_Constraints" />
   <unitInfo fileName="ExtensionPoint_Constraints.java" startLine="22" startPosition="38" endLine="50" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ExtensionPoint_Constraints$1" />
   <unitInfo fileName="ConfigurationXmlDocument_Constraints.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ConfigurationXmlDocument_Constraints" />
-  <unitInfo fileName="Actions_Constraints.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Actions_Constraints" />
-  <unitInfo fileName="Extensions_Constraints.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Extensions_Constraints" />
-  <unitInfo fileName="ExtensionPoints_Constraints.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ExtensionPoints_Constraints" />
   <unitInfo fileName="Components_Constraints.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Components_Constraints" />
+  <unitInfo fileName="ExtensionPoints_Constraints.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ExtensionPoints_Constraints" />
+  <unitInfo fileName="Extensions_Constraints.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Extensions_Constraints" />
+  <unitInfo fileName="Actions_Constraints.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Actions_Constraints" />
   <unitInfo fileName="AbstractAction_Constraints.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.AbstractAction_Constraints" />
   <unitInfo fileName="Plugin_Constraints.java" startLine="45" startPosition="38" endLine="77" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.Plugin_Constraints$1" />
   <unitInfo fileName="GroupReference_Constraints.java" startLine="48" startPosition="19" endLine="80" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.GroupReference_Constraints$2" />
   <unitInfo fileName="GroupReference_Constraints.java" startLine="92" startPosition="19" endLine="124" endPosition="9" unitName="jetbrains.mps.platform.conf.constraints.GroupReference_Constraints$3" />
   <unitInfo fileName="BeanExtension_Constraints.java" startLine="34" startPosition="41" endLine="69" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.BeanExtension_Constraints$1" />
-  <unitInfo fileName="ActionReference_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ActionReference_Constraints" />
-  <unitInfo fileName="PluginDependency_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.PluginDependency_Constraints" />
-  <unitInfo fileName="Extension_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Extension_Constraints" />
   <unitInfo fileName="InterfaceExtension_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.InterfaceExtension_Constraints" />
+  <unitInfo fileName="Extension_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Extension_Constraints" />
+  <unitInfo fileName="PluginDependency_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.PluginDependency_Constraints" />
+  <unitInfo fileName="ActionReference_Constraints.java" startLine="22" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ActionReference_Constraints" />
   <unitInfo fileName="ExtensionPoint_Constraints.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ExtensionPoint_Constraints" />
   <unitInfo fileName="GroupReference_Constraints.java" startLine="39" startPosition="32" endLine="82" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.GroupReference_Constraints$1" />
   <unitInfo fileName="GroupReference_Constraints.java" startLine="83" startPosition="33" endLine="126" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.GroupReference_Constraints$2" />
