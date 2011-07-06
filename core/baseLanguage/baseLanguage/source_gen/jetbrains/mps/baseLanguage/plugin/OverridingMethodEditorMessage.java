@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 
 public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage {
@@ -35,6 +36,6 @@ public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage
   }
 
   public AnAction getClickAction() {
-    return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action");
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action"));
   }
 }

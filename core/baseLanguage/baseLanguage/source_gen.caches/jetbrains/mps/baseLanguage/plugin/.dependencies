@@ -868,6 +868,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.plugin.AbstractOverrideEditorMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.OverridingMethodsFinder" file="OverridingMethodsFinder.java">
@@ -1062,6 +1063,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.plugin.AbstractLeftEditorHighlighterMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.ToDoHighlighter" file="ToDoHighlighter.java">

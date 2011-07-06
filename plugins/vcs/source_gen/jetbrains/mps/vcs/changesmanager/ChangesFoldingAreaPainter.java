@@ -38,7 +38,7 @@ import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import javax.swing.BorderFactory;
 import javax.swing.event.PopupMenuListener;
 import javax.swing.event.PopupMenuEvent;
@@ -429,7 +429,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     private ActionToolbar myActionToolbar;
 
     public MyPopupMenu() {
-      myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup")), true);
+      myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup")), true);
       myActionToolbar.setTargetComponent(getEditorComponent());
       add(myActionToolbar.getComponent());
       setBorder(BorderFactory.createLineBorder(Color.BLACK));

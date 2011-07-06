@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import javax.swing.JPopupMenu;
 
@@ -55,7 +56,7 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
   }
 
   public AnAction getClickAction() {
-    return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action");
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action"));
   }
 
   public JPopupMenu getPopupMenu() {
