@@ -121,8 +121,8 @@ public class Inequalities {  //
       for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
         SNode input = myState.getRepresentative(pair.first);
         SNode output = myState.getRepresentative(pair.second);
-        Collection<SNode> inputVariables = myState.getRepresentatives(TypesUtil.getVariables(myState.expand(input)));
-        Collection<SNode> outputVariables = myState.getRepresentatives(TypesUtil.getVariables(myState.expand(output)));
+        Collection<SNode> inputVariables = myState.getRepresentatives(TypesUtil.getVariables(input, myState));
+        Collection<SNode> outputVariables = myState.getRepresentatives(TypesUtil.getVariables(output, myState));
         myNodes.addAll(inputVariables);
         myNodes.addAll(outputVariables);
         for (SNode inputVar : inputVariables) {
@@ -171,6 +171,35 @@ public class Inequalities {  //
     }
     return false;
   }
+  //todo weak and strong
+  private void collectTransitive(SNode node, Set<SNode> collected, boolean isLeft, Set<RelationBlock> blocks, Map<SNode, RelationBlock> typesToBlocks) {
+    for (RelationBlock block : blocks) {
+      if (block.isCheckOnly()) {
+        continue;
+      }
+      SNode left = myState.getRepresentative(block.getLeftNode());
+      SNode right = myState.getRepresentative(block.getRightNode());
+      if (right == left) {
+        continue;
+      }
+      if (isLeft && left == node && right != null) {
+        if (!TypesUtil.isVariable(right)) {
+          collected.add(right);
+          typesToBlocks.put(right, block);
+        } else {
+          collectTransitive(right, collected, isLeft, myNodesToBlocks.getByFirst(right), typesToBlocks);
+        }
+      }
+      if (!isLeft && right == node && left != null) {
+        if (!TypesUtil.isVariable(left)) {
+          collected.add(left);
+          typesToBlocks.put(left, block);
+        } else {
+          collectTransitive(left, collected, isLeft, myNodesToBlocks.getByFirst(left), typesToBlocks);
+        }
+      }
+    }
+  }
 
   private void collectNodesInRelation(SNode node, Set<SNode> lefts, Set<SNode> rights, Set<RelationBlock> blocks, Map<SNode, RelationBlock> typesToBlocks) {
     for (RelationBlock block : blocks) {
@@ -182,6 +211,7 @@ public class Inequalities {  //
       if (right == left) {
         continue;
       }
+      //node < super
       if (left == node && !TypesUtil.isVariable(right) && right != null) {
         rights.add(right);
         typesToBlocks.put(right, block);
@@ -214,8 +244,8 @@ public class Inequalities {  //
     blocks = getRelationBlocks(blocks, relation);
     Set<SNode> rightTypes = new LinkedHashSet<SNode>();
     Set<SNode> leftTypes = new LinkedHashSet<SNode>();
-
-    collectNodesInRelation(node, leftTypes, rightTypes, blocks, typesToBlocks);
+    collectTransitive(node, rightTypes, true, blocks,typesToBlocks);
+    collectTransitive(node, leftTypes, false, blocks, typesToBlocks);
     return relation.solve(node, leftTypes, rightTypes, myState, typesToBlocks);
   }
 
@@ -226,8 +256,8 @@ public class Inequalities {  //
     for (Block block : inequalities) {
       InequalityBlock inequality = (InequalityBlock) block;
 
-      Collection<SNode> variables = TypesUtil.getVariables(myState.expand(inequality.getRightNode()));
-      variables.addAll(TypesUtil.getVariables(myState.expand(inequality.getLeftNode())));
+      Collection<SNode> variables = TypesUtil.getVariables(inequality.getRightNode(),myState);
+      variables.addAll(TypesUtil.getVariables(inequality.getLeftNode(), myState));
       if (variables.size() == 0) {
         Set<InequalityBlock> emptyBlocks = groupsToInequalities.get(emptySet);
         if (emptyBlocks == null) {
