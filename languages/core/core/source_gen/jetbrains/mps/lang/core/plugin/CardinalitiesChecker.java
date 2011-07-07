@@ -39,8 +39,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
             if ("returnType".equals(SPropertyOperations.getString(link, "role")) && "ConstructorDeclaration".equals(SPropertyOperations.getString(concept, "name"))) {
               continue;
             }
-            // todo warning later 
-            // <node> 
+            component.addError(node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", null);
           }
         } else {
           if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
