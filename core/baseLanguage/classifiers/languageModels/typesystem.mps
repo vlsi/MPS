@@ -32,6 +32,11 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1217433986271">
       <property name="name" nameId="tpck.1169194664001" value="typeof_SuperClassifierExpresson" />
     </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="5415321287508135637">
+      <property name="name" nameId="tpck.1169194664001" value="check_DefaultClassifierFieldDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Fields" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+    </node>
   </roots>
   <root id="1205753100058">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1205753100059">
@@ -95,7 +100,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205753100060">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpresson" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
     </node>
   </root>
   <root id="1205769672845">
@@ -229,7 +234,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1205769672847">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205769149993" resolveInfo="DefaultMethodCallOperation" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1205769149993" resolveInfo="DefaultClassifierMethodCallOperation" />
     </node>
   </root>
   <root id="1205853960046">
@@ -400,6 +405,13 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1217433986273">
       <property name="name" nameId="tpck.1169194664001" value="expresson" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1217433449852" resolveInfo="SuperClassifierExpresson" />
+    </node>
+  </root>
+  <root id="5415321287508135637">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5415321287508135638" />
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5415321287508135639">
+      <property name="name" nameId="tpck.1169194664001" value="decl" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4f.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration" />
     </node>
   </root>
 </model>

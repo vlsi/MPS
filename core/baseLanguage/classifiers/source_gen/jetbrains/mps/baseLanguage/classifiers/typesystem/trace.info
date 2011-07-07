@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="check_DefaultClassifierFieldDeclaration_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.check_DefaultClassifierFieldDeclaration_NonTypesystemRule" />
   <unitInfo fileName="typeof_DefaultClassifierFieldAccessOperation_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_DefaultClassifierFieldAccessOperation_InferenceRule" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_SuperClassifierExpresson_InferenceRule.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_SuperClassifierExpresson_InferenceRule" />
   <unitInfo fileName="typeof_ThisClassifierExpresson_InferenceRule.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.typeof_ThisClassifierExpresson_InferenceRule" />
   <unitInfo fileName="check_IMemberOperation_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.typesystem.check_IMemberOperation_NonTypesystemRule" />
@@ -110,6 +111,9 @@
     <scopeInfo nodeId="1217433986272" fileName="typeof_SuperClassifierExpresson_InferenceRule.java" startLine="22" startPosition="122" endLine="35" endPosition="5">
       <varInfo nodeId="1217434001442" varName="classifier" />
     </scopeInfo>
+  </root>
+  <root nodeId="5415321287508135637">
+    <scopeInfo nodeId="5415321287508135638" fileName="check_DefaultClassifierFieldDeclaration_NonTypesystemRule.java" startLine="16" startPosition="117" endLine="16" endPosition="117" />
   </root>
 </debugInfo>
 
