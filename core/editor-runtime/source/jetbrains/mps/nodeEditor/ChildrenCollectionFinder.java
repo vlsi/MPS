@@ -54,7 +54,7 @@ public class ChildrenCollectionFinder {
               !SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration) &&
               SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {
               return current;
-            } else {
+            } else if (myCurrent != current) {
               return new ChildrenCollectionFinder(current, true).find();
             }
           }
