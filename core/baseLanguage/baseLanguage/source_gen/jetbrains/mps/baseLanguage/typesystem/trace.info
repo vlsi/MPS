@@ -894,9 +894,9 @@
     <nodeInfo nodeId="1228174300650" fileName="RulesFunctions_BaseLanguage.java" startLine="188" startPosition="52" endLine="189" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1228174300650" fileName="RulesFunctions_BaseLanguage.java" startLine="189" startPosition="203" endLine="190" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1228174488039" fileName="RulesFunctions_BaseLanguage.java" startLine="192" startPosition="9" endLine="193" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8217292422591585225" fileName="RulesFunctions_BaseLanguage.java" startLine="195" startPosition="7" endLine="196" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8217292422591585225" fileName="RulesFunctions_BaseLanguage.java" startLine="196" startPosition="55" endLine="197" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8217292422591585225" fileName="RulesFunctions_BaseLanguage.java" startLine="197" startPosition="205" endLine="198" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6610038060571315990" fileName="RulesFunctions_BaseLanguage.java" startLine="195" startPosition="7" endLine="196" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6610038060571315990" fileName="RulesFunctions_BaseLanguage.java" startLine="196" startPosition="55" endLine="197" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6610038060571315990" fileName="RulesFunctions_BaseLanguage.java" startLine="197" startPosition="205" endLine="198" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7769835591074321221" fileName="RulesFunctions_BaseLanguage.java" startLine="206" startPosition="7" endLine="207" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7769835591074321221" fileName="RulesFunctions_BaseLanguage.java" startLine="207" startPosition="18" endLine="208" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7769835591074321221" fileName="RulesFunctions_BaseLanguage.java" startLine="208" startPosition="18" endLine="209" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1236,7 +1236,7 @@
     <nodeInfo nodeId="1203512292514" fileName="RulesFunctions_BaseLanguage.java" startLine="63" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3064704932540204336" fileName="RulesFunctions_BaseLanguage.java" startLine="172" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="inference_matchConcreteTypesWithTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" />
     <nodeInfo nodeId="1228174300650" fileName="RulesFunctions_BaseLanguage.java" startLine="186" startPosition="60" endLine="191" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8217292422591585225" fileName="RulesFunctions_BaseLanguage.java" startLine="194" startPosition="7" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6610038060571315990" fileName="RulesFunctions_BaseLanguage.java" startLine="194" startPosition="7" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7769835591074321262" fileName="RulesFunctions_BaseLanguage.java" startLine="223" startPosition="64" endLine="228" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3768281636845649756" fileName="RulesFunctions_BaseLanguage.java" startLine="256" startPosition="146" endLine="261" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3056149436216248475" fileName="RulesFunctions_BaseLanguage.java" startLine="284" startPosition="158" endLine="289" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1483,7 +1483,7 @@
     <scopeInfo nodeId="1227876792379" fileName="RulesFunctions_BaseLanguage.java" startLine="120" startPosition="27" endLine="123" endPosition="34" />
     <scopeInfo nodeId="1227876792379" fileName="RulesFunctions_BaseLanguage.java" startLine="124" startPosition="28" endLine="127" endPosition="34" />
     <scopeInfo nodeId="1228174300650" fileName="RulesFunctions_BaseLanguage.java" startLine="187" startPosition="11" endLine="190" endPosition="152" />
-    <scopeInfo nodeId="8217292422591585225" fileName="RulesFunctions_BaseLanguage.java" startLine="195" startPosition="7" endLine="198" endPosition="240" />
+    <scopeInfo nodeId="6610038060571315990" fileName="RulesFunctions_BaseLanguage.java" startLine="195" startPosition="7" endLine="198" endPosition="243" />
     <scopeInfo nodeId="7769835591074321262" fileName="RulesFunctions_BaseLanguage.java" startLine="224" startPosition="15" endLine="227" endPosition="97" />
     <scopeInfo nodeId="3768281636845649756" fileName="RulesFunctions_BaseLanguage.java" startLine="257" startPosition="9" endLine="260" endPosition="264" />
     <scopeInfo nodeId="3056149436216248475" fileName="RulesFunctions_BaseLanguage.java" startLine="285" startPosition="25" endLine="288" endPosition="308" />
