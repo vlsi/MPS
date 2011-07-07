@@ -57,31 +57,6 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Unnamed" type="Java Application" factoryName="Java">
-      <MyState />
-      <myNode>
-        <MyState>
-          <option name="myNodeId" value="7141662564075383555" />
-          <option name="myModelId" value="r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)" />
-        </MyState>
-      </myNode>
-      <myRunParameters>
-        <MyState>
-          <option name="myJavaRunParameters">
-            <JavaRunParameters>
-              <option name="jrePath" value="/usr/lib/jvm/java-6-sun" />
-              <option name="programParameters" value="dsadas" />
-              <option name="useAlternativeJre" value="true" />
-              <option name="vmOptions" value="dsad" />
-              <option name="workingDirectory" value="dasda" />
-            </JavaRunParameters>
-          </option>
-        </MyState>
-      </myRunParameters>
-      <method />
-    </configuration>
-  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>

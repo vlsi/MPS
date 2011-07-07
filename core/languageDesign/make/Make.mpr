@@ -27,25 +27,27 @@
   </component>
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <modulePath path="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" folder="" />
+      <modulePath path="${project}/languages/facet/facet.mpl" />
+      <modulePath path="${project}/languages/outlook/outlook.mpl" folder="" />
+      <modulePath path="${project}/languages/script/script.mpl" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.make.sandbox/jetbrains.mps.make.sandbox.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.make.tests/jetbrains.mps.make.tests.msd" />
-      <modulePath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
-      <modulePath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
-      <modulePath path="${mps_home}/workbench/make/jetbrains.mps.workbench.make.msd" folder="" />
-      <modulePath path="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" folder="" />
-      <modulePath path="${mps_home}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="" />
-      <modulePath path="${mps_home}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" />
-      <modulePath path="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" />
-      <modulePath path="${mps_home}/testbench/solution/jetbrains.mps.testbench.msd" folder="" />
-      <modulePath path="${project}/languages/facet/facet.mpl" />
-      <modulePath path="${project}/languages/script/script.mpl" folder="" />
-      <modulePath path="${project}/languages/outlook/outlook.mpl" folder="" />
       <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
-      <modulePath path="${mps_home}/testbench/languages/suite.mpl" folder="" />
-      <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
-      <modulePath path="${mps_home}/languages/util/quickQueryLanguage/quickQueryLanguage.mpl" />
+      <modulePath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
+      <modulePath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
       <modulePath path="${mps_home}/languages/core/core/languageDescriptor.mpl" />
-      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <modulePath path="${mps_home}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" />
+      <modulePath path="${mps_home}/languages/util/quickQueryLanguage/quickQueryLanguage.mpl" />
+      <modulePath path="${mps_home}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" />
+      <modulePath path="${mps_home}/testbench/languages/suite.mpl" folder="" />
+      <modulePath path="${mps_home}/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/jetbrains.mps.makeTest.msd" />
+      <modulePath path="${mps_home}/testbench/solution/jetbrains.mps.testbench.msd" folder="" />
+      <modulePath path="${mps_home}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="" />
+      <modulePath path="${mps_home}/workbench/make/jetbrains.mps.workbench.make.msd" folder="" />
+      <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
+      <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.impl/impl.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="facet" moduleRef="jetbrains.mps.make.facet" />

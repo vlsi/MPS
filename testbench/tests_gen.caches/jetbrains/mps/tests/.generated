@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="864z6sb2bt9hyhpr3kw87mltjubx8di">
+<dependencies version="2" modelHash="docrzs5frwlm8qmr42o2ataqfwhrm1e">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)" hash="-7mjvoz5j1zh73h5s3x7na8mfeyv9htt" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
@@ -18,6 +18,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)" hash="e1450g0eu3mszjcfzuim88mhyy7tczd" />
   <dep model="r:00000000-0000-4000-0000-011c895905bf(ypath_test1)" hash="-79c8t84q15v4st9lqtsnq4pseinyn8a" />
   <dep model="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)" hash="-35o1cdjj1nvzxhpjtl6dbkid99g1d8z" />
+  <dep model="r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)" hash="-12jdarxhcy5mh7fd5y259opgxpfz5xx" />
   <dep model="r:0d165b79-85c3-4fee-8efc-b69a37e1c2ee(orthogonalLayoutTest)" hash="3ret2ab2qyxv6mzxe3iuy2n15lovt3h" />
   <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" hash="-e4dv82i8rl6q0awjdydr1uazjwkk7j" />
   <dep model="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)" hash="54oiavfmd395xfhgvz3tdggx56cfs1i" />
@@ -49,7 +50,7 @@
   <dep model="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" hash="-2bx91dtmp12amuhtysezc2y6n448ukq" />
   <dep model="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" hash="-exf19gg45u524jbznwocvi49jd8l3et" />
   <dep model="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test)" hash="9b1yxs87iubio9t1pmmpnbsylg73zym" />
-  <common hash="7ptvn5brofcze5yeturcyjd8t73kq0m" />
+  <common hash="-4wzgjzz8g10xi4sp2zk4wf8b1csoi9f" />
   <source id="2712670354707830840" name="jetbrains.mps.baseLanguage.test" hash="9s70e0u5g9a1hton9d3prjbni9pwitb">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
@@ -117,7 +118,7 @@
     <dep model="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test)" />
     <file name="TestModule_jetbrains_mps_traceInfo_test.java" />
   </source>
-  <source id="2712670354707847775" name="jetbrains.mps.lang.editor.tests" hash="-809fj9z6h78ts56nkxrxk9aenjuvbu5">
+  <source id="2712670354707847775" name="jetbrains.mps.lang.editor.tests" hash="6nv93vdxif3jxlsas0h2l57buqkxbva">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
     <dep model="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" />
@@ -217,6 +218,12 @@
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
     <dep model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" />
     <file name="TestModule_jetbrains_mps_makeTest.java" />
+  </source>
+  <source id="2356551895168047181" name="jetbrains.mps.execution.impl" hash="8lmclmoez6210k0vt6o5qal9a4x2bat">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)" />
+    <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
+    <file name="TestModule_jetbrains_mps_execution_impl.java" />
   </source>
 </dependencies>
 
