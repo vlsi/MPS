@@ -1304,213 +1304,213 @@
     <unitInfo nodeId="5923576889075041819" fileName="LanguagePropertiesDialog.java" startLine="19" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ide.properties.LanguagePropertiesDialog" />
   </root>
   <root nodeId="5923576889075042074">
-    <nodeInfo nodeId="5923576889075042130" fileName="ModelPropertiesDialog.java" startLine="42" startPosition="65" endLine="43" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPresenter" />
-    <nodeInfo nodeId="5923576889075042133" fileName="ModelPropertiesDialog.java" startLine="43" startPosition="37" endLine="44" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="5923576889075042142" fileName="ModelPropertiesDialog.java" startLine="46" startPosition="97" endLine="47" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5923576889075042149" fileName="ModelPropertiesDialog.java" startLine="47" startPosition="88" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042166" fileName="ModelPropertiesDialog.java" startLine="50" startPosition="25" endLine="51" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5386847946626506570" fileName="ModelPropertiesDialog.java" startLine="56" startPosition="72" endLine="57" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7123761944774892454" fileName="ModelPropertiesDialog.java" startLine="59" startPosition="25" endLine="60" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5386847946626506548" fileName="ModelPropertiesDialog.java" startLine="60" startPosition="64" endLine="61" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042180" fileName="ModelPropertiesDialog.java" startLine="63" startPosition="7" endLine="64" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="579094615414934513" fileName="ModelPropertiesDialog.java" startLine="67" startPosition="70" endLine="68" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7123761944774896241" fileName="ModelPropertiesDialog.java" startLine="70" startPosition="25" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5386847946626562070" fileName="ModelPropertiesDialog.java" startLine="71" startPosition="64" endLine="72" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042222" fileName="ModelPropertiesDialog.java" startLine="74" startPosition="7" endLine="75" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042285" fileName="ModelPropertiesDialog.java" startLine="82" startPosition="6" endLine="83" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042295" fileName="ModelPropertiesDialog.java" startLine="83" startPosition="57" endLine="84" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042309" fileName="ModelPropertiesDialog.java" startLine="87" startPosition="66" endLine="88" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042316" fileName="ModelPropertiesDialog.java" startLine="88" startPosition="51" endLine="89" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042326" fileName="ModelPropertiesDialog.java" startLine="89" startPosition="50" endLine="90" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042334" fileName="ModelPropertiesDialog.java" startLine="90" startPosition="53" endLine="91" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042340" fileName="ModelPropertiesDialog.java" startLine="91" startPosition="52" endLine="92" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042345" fileName="ModelPropertiesDialog.java" startLine="92" startPosition="33" endLine="93" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042351" fileName="ModelPropertiesDialog.java" startLine="93" startPosition="47" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042357" fileName="ModelPropertiesDialog.java" startLine="97" startPosition="51" endLine="98" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042363" fileName="ModelPropertiesDialog.java" startLine="98" startPosition="64" endLine="99" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042387" fileName="ModelPropertiesDialog.java" startLine="101" startPosition="50" endLine="102" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042398" fileName="ModelPropertiesDialog.java" startLine="104" startPosition="7" endLine="105" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042404" fileName="ModelPropertiesDialog.java" startLine="108" startPosition="43" endLine="109" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042424" fileName="ModelPropertiesDialog.java" startLine="111" startPosition="25" endLine="112" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042428" fileName="ModelPropertiesDialog.java" startLine="112" startPosition="27" endLine="113" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042432" fileName="ModelPropertiesDialog.java" startLine="113" startPosition="27" endLine="114" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1921002875291564022" fileName="ModelPropertiesDialog.java" startLine="114" startPosition="37" endLine="115" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042451" fileName="ModelPropertiesDialog.java" startLine="116" startPosition="42" endLine="117" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042459" fileName="ModelPropertiesDialog.java" startLine="117" startPosition="52" endLine="118" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042467" fileName="ModelPropertiesDialog.java" startLine="119" startPosition="9" endLine="120" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042486" fileName="ModelPropertiesDialog.java" startLine="120" startPosition="81" endLine="121" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042497" fileName="ModelPropertiesDialog.java" startLine="121" startPosition="91" endLine="122" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042508" fileName="ModelPropertiesDialog.java" startLine="122" startPosition="78" endLine="123" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042519" fileName="ModelPropertiesDialog.java" startLine="125" startPosition="7" endLine="126" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042570" fileName="ModelPropertiesDialog.java" startLine="131" startPosition="50" endLine="132" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042574" fileName="ModelPropertiesDialog.java" startLine="132" startPosition="45" endLine="133" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042582" fileName="ModelPropertiesDialog.java" startLine="135" startPosition="7" endLine="136" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042589" fileName="ModelPropertiesDialog.java" startLine="136" startPosition="52" endLine="137" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042594" fileName="ModelPropertiesDialog.java" startLine="137" startPosition="52" endLine="138" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042600" fileName="ModelPropertiesDialog.java" startLine="138" startPosition="16" endLine="139" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042606" fileName="ModelPropertiesDialog.java" startLine="139" startPosition="16" endLine="140" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042612" fileName="ModelPropertiesDialog.java" startLine="140" startPosition="18" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042619" fileName="ModelPropertiesDialog.java" startLine="141" startPosition="32" endLine="142" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042625" fileName="ModelPropertiesDialog.java" startLine="142" startPosition="16" endLine="143" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042631" fileName="ModelPropertiesDialog.java" startLine="143" startPosition="18" endLine="144" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042649" fileName="ModelPropertiesDialog.java" startLine="144" startPosition="36" endLine="145" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042655" fileName="ModelPropertiesDialog.java" startLine="148" startPosition="37" endLine="149" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042661" fileName="ModelPropertiesDialog.java" startLine="149" startPosition="30" endLine="150" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042671" fileName="ModelPropertiesDialog.java" startLine="153" startPosition="72" endLine="154" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042677" fileName="ModelPropertiesDialog.java" startLine="154" startPosition="76" endLine="155" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042080" fileName="ModelPropertiesDialog.java" startLine="158" startPosition="54" endLine="159" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRealContext" />
-    <nodeInfo nodeId="5923576889075042104" fileName="ModelPropertiesDialog.java" startLine="166" startPosition="67" endLine="167" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042123" fileName="ModelPropertiesDialog.java" startLine="169" startPosition="55" endLine="170" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042115" fileName="ModelPropertiesDialog.java" startLine="171" startPosition="12" endLine="172" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5386847946626562049" fileName="ModelPropertiesDialog.java" startLine="176" startPosition="71" endLine="177" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
-    <nodeInfo nodeId="5386847946626562043" fileName="ModelPropertiesDialog.java" startLine="179" startPosition="57" endLine="180" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5386847946626506562" fileName="ModelPropertiesDialog.java" startLine="183" startPosition="54" endLine="184" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5386847946626562099" fileName="ModelPropertiesDialog.java" startLine="188" startPosition="74" endLine="189" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedLanguages" />
-    <nodeInfo nodeId="5386847946626562093" fileName="ModelPropertiesDialog.java" startLine="191" startPosition="67" endLine="192" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042233" fileName="ModelPropertiesDialog.java" startLine="195" startPosition="54" endLine="196" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075042086" fileName="ModelPropertiesDialog.java" startLine="160" startPosition="0" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDataContext#()V" />
-    <nodeInfo nodeId="5923576889075042096" fileName="ModelPropertiesDialog.java" startLine="165" startPosition="50" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5386847946626562034" fileName="ModelPropertiesDialog.java" startLine="178" startPosition="0" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelsCondition#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="5386847946626562084" fileName="ModelPropertiesDialog.java" startLine="190" startPosition="0" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguagesCondition#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="5923576889075042162" fileName="ModelPropertiesDialog.java" startLine="49" startPosition="57" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5923576889075042263" fileName="ModelPropertiesDialog.java" startLine="78" startPosition="35" endLine="82" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042381" fileName="ModelPropertiesDialog.java" startLine="100" startPosition="53" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="5923576889075042437" fileName="ModelPropertiesDialog.java" startLine="115" startPosition="43" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5923576889075042108" fileName="ModelPropertiesDialog.java" startLine="168" startPosition="7" endLine="172" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075042185" fileName="ModelPropertiesDialog.java" startLine="182" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SModelReference;)Z" />
-    <nodeInfo nodeId="5923576889075042227" fileName="ModelPropertiesDialog.java" startLine="194" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
-    <nodeInfo nodeId="5923576889075042155" fileName="ModelPropertiesDialog.java" startLine="48" startPosition="17" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5386847946626506435" fileName="ModelPropertiesDialog.java" startLine="58" startPosition="57" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5386847946626562068" fileName="ModelPropertiesDialog.java" startLine="69" startPosition="57" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5923576889075042374" fileName="ModelPropertiesDialog.java" startLine="99" startPosition="67" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042564" fileName="ModelPropertiesDialog.java" startLine="130" startPosition="84" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="5923576889075042651" fileName="ModelPropertiesDialog.java" startLine="147" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSaveChanges#()Z" />
-    <nodeInfo nodeId="5923576889075042663" fileName="ModelPropertiesDialog.java" startLine="152" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActionInContext#(Lcom/intellij/openapi/actionSystem/DataContext;Lcom/intellij/openapi/actionSystem/AnAction;)V" />
-    <nodeInfo nodeId="5386847946626506434" fileName="ModelPropertiesDialog.java" startLine="57" startPosition="93" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5386847946626562067" fileName="ModelPropertiesDialog.java" startLine="68" startPosition="100" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042556" fileName="ModelPropertiesDialog.java" startLine="129" startPosition="56" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5923576889075042136" fileName="ModelPropertiesDialog.java" startLine="45" startPosition="0" endLine="54" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelPropertiesDialog#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="5923576889075042259" fileName="ModelPropertiesDialog.java" startLine="77" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNamePanel#()Ljavax/swing/JPanel;" />
-    <nodeInfo nodeId="5923576889075042301" fileName="ModelPropertiesDialog.java" startLine="86" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldPanel#(Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/JPanel;" />
-    <nodeInfo nodeId="5923576889075042175" fileName="ModelPropertiesDialog.java" startLine="55" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImportedModelsRemoveCondition#()Ljetbrains/mps/util/Condition;" />
-    <nodeInfo nodeId="5923576889075042217" fileName="ModelPropertiesDialog.java" startLine="66" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUsedLanguageRemoveCondition#()Ljetbrains/mps/util/Condition;" />
-    <nodeInfo nodeId="5923576889075042353" fileName="ModelPropertiesDialog.java" startLine="96" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDoNotGenerateCheckBox#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5923576889075042089" fileName="ModelPropertiesDialog.java" startLine="163" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="5923576889075042416" fileName="ModelPropertiesDialog.java" startLine="110" startPosition="57" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5923576889075042409" fileName="ModelPropertiesDialog.java" startLine="109" startPosition="58" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042526" fileName="ModelPropertiesDialog.java" startLine="128" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalButtonsComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5923576889075042400" fileName="ModelPropertiesDialog.java" startLine="107" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInfoComponent#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="5923576889075042088" fileName="ModelPropertiesDialog.java" startLine="161" startPosition="29" endLine="161" endPosition="29" />
-    <scopeInfo nodeId="5923576889075042165" fileName="ModelPropertiesDialog.java" startLine="50" startPosition="25" endLine="51" endPosition="55" />
-    <scopeInfo nodeId="5923576889075042386" fileName="ModelPropertiesDialog.java" startLine="101" startPosition="50" endLine="102" endPosition="71" />
-    <scopeInfo nodeId="5923576889075042103" fileName="ModelPropertiesDialog.java" startLine="166" startPosition="67" endLine="167" endPosition="64" />
-    <scopeInfo nodeId="5923576889075042122" fileName="ModelPropertiesDialog.java" startLine="169" startPosition="55" endLine="170" endPosition="48" />
-    <scopeInfo nodeId="5386847946626562037" fileName="ModelPropertiesDialog.java" startLine="179" startPosition="57" endLine="180" endPosition="24" />
-    <scopeInfo nodeId="5923576889075042190" fileName="ModelPropertiesDialog.java" startLine="183" startPosition="54" endLine="184" endPosition="42" />
-    <scopeInfo nodeId="5386847946626562087" fileName="ModelPropertiesDialog.java" startLine="191" startPosition="67" endLine="192" endPosition="38" />
-    <scopeInfo nodeId="5923576889075042232" fileName="ModelPropertiesDialog.java" startLine="195" startPosition="54" endLine="196" endPosition="49" />
-    <scopeInfo nodeId="5386847946626506436" fileName="ModelPropertiesDialog.java" startLine="59" startPosition="25" endLine="61" endPosition="65">
+    <nodeInfo nodeId="5923576889075042130" fileName="ModelPropertiesDialog.java" startLine="43" startPosition="65" endLine="44" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPresenter" />
+    <nodeInfo nodeId="5923576889075042133" fileName="ModelPropertiesDialog.java" startLine="44" startPosition="37" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="5923576889075042142" fileName="ModelPropertiesDialog.java" startLine="47" startPosition="97" endLine="48" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5923576889075042149" fileName="ModelPropertiesDialog.java" startLine="48" startPosition="88" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042166" fileName="ModelPropertiesDialog.java" startLine="51" startPosition="25" endLine="52" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5386847946626506570" fileName="ModelPropertiesDialog.java" startLine="57" startPosition="72" endLine="58" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7123761944774892454" fileName="ModelPropertiesDialog.java" startLine="60" startPosition="25" endLine="61" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5386847946626506548" fileName="ModelPropertiesDialog.java" startLine="61" startPosition="64" endLine="62" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042180" fileName="ModelPropertiesDialog.java" startLine="64" startPosition="7" endLine="65" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="579094615414934513" fileName="ModelPropertiesDialog.java" startLine="68" startPosition="70" endLine="69" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7123761944774896241" fileName="ModelPropertiesDialog.java" startLine="71" startPosition="25" endLine="72" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5386847946626562070" fileName="ModelPropertiesDialog.java" startLine="72" startPosition="64" endLine="73" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042222" fileName="ModelPropertiesDialog.java" startLine="75" startPosition="7" endLine="76" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042285" fileName="ModelPropertiesDialog.java" startLine="83" startPosition="6" endLine="84" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042295" fileName="ModelPropertiesDialog.java" startLine="84" startPosition="57" endLine="85" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042309" fileName="ModelPropertiesDialog.java" startLine="88" startPosition="66" endLine="89" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042316" fileName="ModelPropertiesDialog.java" startLine="89" startPosition="51" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042326" fileName="ModelPropertiesDialog.java" startLine="90" startPosition="50" endLine="91" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042334" fileName="ModelPropertiesDialog.java" startLine="91" startPosition="53" endLine="92" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042340" fileName="ModelPropertiesDialog.java" startLine="92" startPosition="52" endLine="93" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042345" fileName="ModelPropertiesDialog.java" startLine="93" startPosition="33" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042351" fileName="ModelPropertiesDialog.java" startLine="94" startPosition="47" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042357" fileName="ModelPropertiesDialog.java" startLine="98" startPosition="51" endLine="99" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042363" fileName="ModelPropertiesDialog.java" startLine="99" startPosition="64" endLine="100" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042387" fileName="ModelPropertiesDialog.java" startLine="102" startPosition="50" endLine="103" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042398" fileName="ModelPropertiesDialog.java" startLine="105" startPosition="7" endLine="106" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042404" fileName="ModelPropertiesDialog.java" startLine="109" startPosition="43" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042424" fileName="ModelPropertiesDialog.java" startLine="112" startPosition="25" endLine="113" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042428" fileName="ModelPropertiesDialog.java" startLine="113" startPosition="27" endLine="114" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042432" fileName="ModelPropertiesDialog.java" startLine="114" startPosition="27" endLine="115" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1921002875291564022" fileName="ModelPropertiesDialog.java" startLine="115" startPosition="37" endLine="116" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042451" fileName="ModelPropertiesDialog.java" startLine="117" startPosition="42" endLine="118" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042459" fileName="ModelPropertiesDialog.java" startLine="118" startPosition="52" endLine="119" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042467" fileName="ModelPropertiesDialog.java" startLine="120" startPosition="9" endLine="121" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042486" fileName="ModelPropertiesDialog.java" startLine="121" startPosition="81" endLine="122" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042497" fileName="ModelPropertiesDialog.java" startLine="122" startPosition="91" endLine="123" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042508" fileName="ModelPropertiesDialog.java" startLine="123" startPosition="78" endLine="124" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042519" fileName="ModelPropertiesDialog.java" startLine="126" startPosition="7" endLine="127" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042570" fileName="ModelPropertiesDialog.java" startLine="132" startPosition="50" endLine="133" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042574" fileName="ModelPropertiesDialog.java" startLine="133" startPosition="45" endLine="134" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042582" fileName="ModelPropertiesDialog.java" startLine="136" startPosition="7" endLine="137" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042589" fileName="ModelPropertiesDialog.java" startLine="137" startPosition="52" endLine="138" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042594" fileName="ModelPropertiesDialog.java" startLine="138" startPosition="52" endLine="139" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042600" fileName="ModelPropertiesDialog.java" startLine="139" startPosition="16" endLine="140" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042606" fileName="ModelPropertiesDialog.java" startLine="140" startPosition="16" endLine="141" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042612" fileName="ModelPropertiesDialog.java" startLine="141" startPosition="18" endLine="142" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042619" fileName="ModelPropertiesDialog.java" startLine="142" startPosition="32" endLine="143" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042625" fileName="ModelPropertiesDialog.java" startLine="143" startPosition="16" endLine="144" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042631" fileName="ModelPropertiesDialog.java" startLine="144" startPosition="18" endLine="145" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042649" fileName="ModelPropertiesDialog.java" startLine="145" startPosition="36" endLine="146" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042655" fileName="ModelPropertiesDialog.java" startLine="149" startPosition="37" endLine="150" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042661" fileName="ModelPropertiesDialog.java" startLine="150" startPosition="30" endLine="151" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042671" fileName="ModelPropertiesDialog.java" startLine="154" startPosition="72" endLine="155" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042677" fileName="ModelPropertiesDialog.java" startLine="155" startPosition="76" endLine="156" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042080" fileName="ModelPropertiesDialog.java" startLine="159" startPosition="54" endLine="160" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRealContext" />
+    <nodeInfo nodeId="5923576889075042104" fileName="ModelPropertiesDialog.java" startLine="167" startPosition="67" endLine="168" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042123" fileName="ModelPropertiesDialog.java" startLine="170" startPosition="55" endLine="171" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042115" fileName="ModelPropertiesDialog.java" startLine="172" startPosition="12" endLine="173" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5386847946626562049" fileName="ModelPropertiesDialog.java" startLine="177" startPosition="71" endLine="178" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
+    <nodeInfo nodeId="5386847946626562043" fileName="ModelPropertiesDialog.java" startLine="180" startPosition="57" endLine="181" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5386847946626506562" fileName="ModelPropertiesDialog.java" startLine="184" startPosition="54" endLine="185" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5386847946626562099" fileName="ModelPropertiesDialog.java" startLine="189" startPosition="74" endLine="190" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedLanguages" />
+    <nodeInfo nodeId="5386847946626562093" fileName="ModelPropertiesDialog.java" startLine="192" startPosition="67" endLine="193" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042233" fileName="ModelPropertiesDialog.java" startLine="196" startPosition="54" endLine="197" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075042086" fileName="ModelPropertiesDialog.java" startLine="161" startPosition="0" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDataContext#()V" />
+    <nodeInfo nodeId="5923576889075042096" fileName="ModelPropertiesDialog.java" startLine="166" startPosition="50" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5386847946626562034" fileName="ModelPropertiesDialog.java" startLine="179" startPosition="0" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelsCondition#(Ljava/util/Set;)V" />
+    <nodeInfo nodeId="5386847946626562084" fileName="ModelPropertiesDialog.java" startLine="191" startPosition="0" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguagesCondition#(Ljava/util/Set;)V" />
+    <nodeInfo nodeId="5923576889075042162" fileName="ModelPropertiesDialog.java" startLine="50" startPosition="57" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5923576889075042263" fileName="ModelPropertiesDialog.java" startLine="79" startPosition="35" endLine="83" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042381" fileName="ModelPropertiesDialog.java" startLine="101" startPosition="53" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="5923576889075042437" fileName="ModelPropertiesDialog.java" startLine="116" startPosition="43" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5923576889075042108" fileName="ModelPropertiesDialog.java" startLine="169" startPosition="7" endLine="173" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075042185" fileName="ModelPropertiesDialog.java" startLine="183" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SModelReference;)Z" />
+    <nodeInfo nodeId="5923576889075042227" fileName="ModelPropertiesDialog.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
+    <nodeInfo nodeId="5923576889075042155" fileName="ModelPropertiesDialog.java" startLine="49" startPosition="17" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5386847946626506435" fileName="ModelPropertiesDialog.java" startLine="59" startPosition="57" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5386847946626562068" fileName="ModelPropertiesDialog.java" startLine="70" startPosition="57" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5923576889075042374" fileName="ModelPropertiesDialog.java" startLine="100" startPosition="67" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042564" fileName="ModelPropertiesDialog.java" startLine="131" startPosition="84" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="5923576889075042651" fileName="ModelPropertiesDialog.java" startLine="148" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSaveChanges#()Z" />
+    <nodeInfo nodeId="5923576889075042663" fileName="ModelPropertiesDialog.java" startLine="153" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActionInContext#(Lcom/intellij/openapi/actionSystem/DataContext;Lcom/intellij/openapi/actionSystem/AnAction;)V" />
+    <nodeInfo nodeId="5386847946626506434" fileName="ModelPropertiesDialog.java" startLine="58" startPosition="93" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5386847946626562067" fileName="ModelPropertiesDialog.java" startLine="69" startPosition="100" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042556" fileName="ModelPropertiesDialog.java" startLine="130" startPosition="56" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5923576889075042136" fileName="ModelPropertiesDialog.java" startLine="46" startPosition="0" endLine="55" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelPropertiesDialog#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="5923576889075042259" fileName="ModelPropertiesDialog.java" startLine="78" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNamePanel#()Ljavax/swing/JPanel;" />
+    <nodeInfo nodeId="5923576889075042301" fileName="ModelPropertiesDialog.java" startLine="87" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldPanel#(Ljava/lang/String;Ljava/lang/String;)Ljavax/swing/JPanel;" />
+    <nodeInfo nodeId="5923576889075042175" fileName="ModelPropertiesDialog.java" startLine="56" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImportedModelsRemoveCondition#()Ljetbrains/mps/util/Condition;" />
+    <nodeInfo nodeId="5923576889075042217" fileName="ModelPropertiesDialog.java" startLine="67" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUsedLanguageRemoveCondition#()Ljetbrains/mps/util/Condition;" />
+    <nodeInfo nodeId="5923576889075042353" fileName="ModelPropertiesDialog.java" startLine="97" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDoNotGenerateCheckBox#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5923576889075042089" fileName="ModelPropertiesDialog.java" startLine="164" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="5923576889075042416" fileName="ModelPropertiesDialog.java" startLine="111" startPosition="57" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5923576889075042409" fileName="ModelPropertiesDialog.java" startLine="110" startPosition="58" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042526" fileName="ModelPropertiesDialog.java" startLine="129" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalButtonsComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5923576889075042400" fileName="ModelPropertiesDialog.java" startLine="108" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInfoComponent#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="5923576889075042088" fileName="ModelPropertiesDialog.java" startLine="162" startPosition="29" endLine="162" endPosition="29" />
+    <scopeInfo nodeId="5923576889075042165" fileName="ModelPropertiesDialog.java" startLine="51" startPosition="25" endLine="52" endPosition="55" />
+    <scopeInfo nodeId="5923576889075042386" fileName="ModelPropertiesDialog.java" startLine="102" startPosition="50" endLine="103" endPosition="71" />
+    <scopeInfo nodeId="5923576889075042103" fileName="ModelPropertiesDialog.java" startLine="167" startPosition="67" endLine="168" endPosition="64" />
+    <scopeInfo nodeId="5923576889075042122" fileName="ModelPropertiesDialog.java" startLine="170" startPosition="55" endLine="171" endPosition="48" />
+    <scopeInfo nodeId="5386847946626562037" fileName="ModelPropertiesDialog.java" startLine="180" startPosition="57" endLine="181" endPosition="24" />
+    <scopeInfo nodeId="5923576889075042190" fileName="ModelPropertiesDialog.java" startLine="184" startPosition="54" endLine="185" endPosition="42" />
+    <scopeInfo nodeId="5386847946626562087" fileName="ModelPropertiesDialog.java" startLine="192" startPosition="67" endLine="193" endPosition="38" />
+    <scopeInfo nodeId="5923576889075042232" fileName="ModelPropertiesDialog.java" startLine="196" startPosition="54" endLine="197" endPosition="49" />
+    <scopeInfo nodeId="5386847946626506436" fileName="ModelPropertiesDialog.java" startLine="60" startPosition="25" endLine="62" endPosition="65">
       <varInfo nodeId="7123761944774892455" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="5386847946626562069" fileName="ModelPropertiesDialog.java" startLine="70" startPosition="25" endLine="72" endPosition="67">
+    <scopeInfo nodeId="5386847946626562069" fileName="ModelPropertiesDialog.java" startLine="71" startPosition="25" endLine="73" endPosition="67">
       <varInfo nodeId="7123761944774896242" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042447" fileName="ModelPropertiesDialog.java" startLine="116" startPosition="42" endLine="118" endPosition="55" />
-    <scopeInfo nodeId="5923576889075042569" fileName="ModelPropertiesDialog.java" startLine="131" startPosition="50" endLine="133" endPosition="170" />
-    <scopeInfo nodeId="5923576889075042654" fileName="ModelPropertiesDialog.java" startLine="148" startPosition="37" endLine="150" endPosition="16" />
-    <scopeInfo nodeId="5923576889075042670" fileName="ModelPropertiesDialog.java" startLine="153" startPosition="72" endLine="155" endPosition="54">
+    <scopeInfo nodeId="5923576889075042447" fileName="ModelPropertiesDialog.java" startLine="117" startPosition="42" endLine="119" endPosition="55" />
+    <scopeInfo nodeId="5923576889075042569" fileName="ModelPropertiesDialog.java" startLine="132" startPosition="50" endLine="134" endPosition="185" />
+    <scopeInfo nodeId="5923576889075042654" fileName="ModelPropertiesDialog.java" startLine="149" startPosition="37" endLine="151" endPosition="16" />
+    <scopeInfo nodeId="5923576889075042670" fileName="ModelPropertiesDialog.java" startLine="154" startPosition="72" endLine="156" endPosition="54">
       <varInfo nodeId="5923576889075042672" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042086" fileName="ModelPropertiesDialog.java" startLine="160" startPosition="0" endLine="162" endPosition="5" />
-    <scopeInfo nodeId="5386847946626562034" fileName="ModelPropertiesDialog.java" startLine="178" startPosition="0" endLine="181" endPosition="5">
+    <scopeInfo nodeId="5923576889075042086" fileName="ModelPropertiesDialog.java" startLine="161" startPosition="0" endLine="163" endPosition="5" />
+    <scopeInfo nodeId="5386847946626562034" fileName="ModelPropertiesDialog.java" startLine="179" startPosition="0" endLine="182" endPosition="5">
       <varInfo nodeId="5386847946626562040" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="5386847946626562084" fileName="ModelPropertiesDialog.java" startLine="190" startPosition="0" endLine="193" endPosition="5">
+    <scopeInfo nodeId="5386847946626562084" fileName="ModelPropertiesDialog.java" startLine="191" startPosition="0" endLine="194" endPosition="5">
       <varInfo nodeId="5386847946626562090" varName="usedLanguages" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042162" fileName="ModelPropertiesDialog.java" startLine="49" startPosition="57" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042381" fileName="ModelPropertiesDialog.java" startLine="100" startPosition="53" endLine="104" endPosition="0">
+    <scopeInfo nodeId="5923576889075042162" fileName="ModelPropertiesDialog.java" startLine="50" startPosition="57" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042381" fileName="ModelPropertiesDialog.java" startLine="101" startPosition="53" endLine="105" endPosition="0">
       <varInfo nodeId="5923576889075042384" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042437" fileName="ModelPropertiesDialog.java" startLine="115" startPosition="43" endLine="119" endPosition="9">
+    <scopeInfo nodeId="5923576889075042437" fileName="ModelPropertiesDialog.java" startLine="116" startPosition="43" endLine="120" endPosition="9">
       <varInfo nodeId="5923576889075042445" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042185" fileName="ModelPropertiesDialog.java" startLine="182" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="5923576889075042185" fileName="ModelPropertiesDialog.java" startLine="183" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="5923576889075042188" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042227" fileName="ModelPropertiesDialog.java" startLine="194" startPosition="0" endLine="198" endPosition="0">
+    <scopeInfo nodeId="5923576889075042227" fileName="ModelPropertiesDialog.java" startLine="195" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="5923576889075042230" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="5386847946626506435" fileName="ModelPropertiesDialog.java" startLine="58" startPosition="57" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="5386847946626562068" fileName="ModelPropertiesDialog.java" startLine="69" startPosition="57" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042564" fileName="ModelPropertiesDialog.java" startLine="130" startPosition="84" endLine="135" endPosition="0">
+    <scopeInfo nodeId="5386847946626506435" fileName="ModelPropertiesDialog.java" startLine="59" startPosition="57" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="5386847946626562068" fileName="ModelPropertiesDialog.java" startLine="70" startPosition="57" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042564" fileName="ModelPropertiesDialog.java" startLine="131" startPosition="84" endLine="136" endPosition="0">
       <varInfo nodeId="5923576889075042567" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042651" fileName="ModelPropertiesDialog.java" startLine="147" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042663" fileName="ModelPropertiesDialog.java" startLine="152" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="5923576889075042651" fileName="ModelPropertiesDialog.java" startLine="148" startPosition="0" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042663" fileName="ModelPropertiesDialog.java" startLine="153" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="5923576889075042666" varName="dc" />
       <varInfo nodeId="5923576889075042668" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042262" fileName="ModelPropertiesDialog.java" startLine="78" startPosition="35" endLine="84" endPosition="52">
+    <scopeInfo nodeId="5923576889075042262" fileName="ModelPropertiesDialog.java" startLine="79" startPosition="35" endLine="85" endPosition="52">
       <varInfo nodeId="5923576889075042264" varName="stereotype" />
       <varInfo nodeId="5923576889075042286" varName="initText" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042141" fileName="ModelPropertiesDialog.java" startLine="46" startPosition="97" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="5923576889075042308" fileName="ModelPropertiesDialog.java" startLine="87" startPosition="66" endLine="94" endPosition="18">
+    <scopeInfo nodeId="5923576889075042141" fileName="ModelPropertiesDialog.java" startLine="47" startPosition="97" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="5923576889075042308" fileName="ModelPropertiesDialog.java" startLine="88" startPosition="66" endLine="95" endPosition="18">
       <varInfo nodeId="5923576889075042310" varName="result" />
       <varInfo nodeId="5923576889075042335" varName="nameField" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042095" fileName="ModelPropertiesDialog.java" startLine="165" startPosition="50" endLine="172" endPosition="43" />
-    <scopeInfo nodeId="5923576889075042179" fileName="ModelPropertiesDialog.java" startLine="56" startPosition="72" endLine="64" endPosition="67">
+    <scopeInfo nodeId="5923576889075042095" fileName="ModelPropertiesDialog.java" startLine="166" startPosition="50" endLine="173" endPosition="43" />
+    <scopeInfo nodeId="5923576889075042179" fileName="ModelPropertiesDialog.java" startLine="57" startPosition="72" endLine="65" endPosition="67">
       <varInfo nodeId="5386847946626506571" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042221" fileName="ModelPropertiesDialog.java" startLine="67" startPosition="70" endLine="75" endPosition="77">
+    <scopeInfo nodeId="5923576889075042221" fileName="ModelPropertiesDialog.java" startLine="68" startPosition="70" endLine="76" endPosition="77">
       <varInfo nodeId="579094615414934514" varName="usedLanguages" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042356" fileName="ModelPropertiesDialog.java" startLine="97" startPosition="51" endLine="105" endPosition="20">
+    <scopeInfo nodeId="5923576889075042356" fileName="ModelPropertiesDialog.java" startLine="98" startPosition="51" endLine="106" endPosition="20">
       <varInfo nodeId="5923576889075042358" varName="checkBox" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042136" fileName="ModelPropertiesDialog.java" startLine="45" startPosition="0" endLine="54" endPosition="3">
+    <scopeInfo nodeId="5923576889075042136" fileName="ModelPropertiesDialog.java" startLine="46" startPosition="0" endLine="55" endPosition="3">
       <varInfo nodeId="5923576889075042137" varName="sm" />
       <varInfo nodeId="5923576889075042139" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042259" fileName="ModelPropertiesDialog.java" startLine="77" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042301" fileName="ModelPropertiesDialog.java" startLine="86" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="5923576889075042259" fileName="ModelPropertiesDialog.java" startLine="78" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042301" fileName="ModelPropertiesDialog.java" startLine="87" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="5923576889075042306" varName="initText" />
       <varInfo nodeId="5923576889075042304" varName="label" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042175" fileName="ModelPropertiesDialog.java" startLine="55" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042217" fileName="ModelPropertiesDialog.java" startLine="66" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042353" fileName="ModelPropertiesDialog.java" startLine="96" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042089" fileName="ModelPropertiesDialog.java" startLine="163" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="5923576889075042175" fileName="ModelPropertiesDialog.java" startLine="56" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042217" fileName="ModelPropertiesDialog.java" startLine="67" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042353" fileName="ModelPropertiesDialog.java" startLine="97" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042089" fileName="ModelPropertiesDialog.java" startLine="164" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="5923576889075042092" varName="dataId" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042419" fileName="ModelPropertiesDialog.java" startLine="111" startPosition="25" endLine="123" endPosition="78">
+    <scopeInfo nodeId="5923576889075042419" fileName="ModelPropertiesDialog.java" startLine="112" startPosition="25" endLine="124" endPosition="78">
       <varInfo nodeId="1921002875291564023" varName="model" />
       <varInfo nodeId="5923576889075042425" varName="references" />
       <varInfo nodeId="5923576889075042429" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042416" fileName="ModelPropertiesDialog.java" startLine="110" startPosition="57" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042529" fileName="ModelPropertiesDialog.java" startLine="129" startPosition="56" endLine="145" endPosition="18">
+    <scopeInfo nodeId="5923576889075042416" fileName="ModelPropertiesDialog.java" startLine="111" startPosition="57" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042529" fileName="ModelPropertiesDialog.java" startLine="130" startPosition="56" endLine="146" endPosition="18">
       <varInfo nodeId="5923576889075042583" varName="result" />
       <varInfo nodeId="5923576889075042590" varName="c" />
       <varInfo nodeId="5923576889075042557" varName="bShowModelUsages" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042403" fileName="ModelPropertiesDialog.java" startLine="108" startPosition="43" endLine="126" endPosition="69">
+    <scopeInfo nodeId="5923576889075042403" fileName="ModelPropertiesDialog.java" startLine="109" startPosition="43" endLine="127" endPosition="69">
       <varInfo nodeId="5923576889075042405" varName="messageText" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042526" fileName="ModelPropertiesDialog.java" startLine="128" startPosition="0" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042400" fileName="ModelPropertiesDialog.java" startLine="107" startPosition="0" endLine="128" endPosition="0" />
-    <unitInfo nodeId="5923576889075042161" fileName="ModelPropertiesDialog.java" startLine="49" startPosition="45" endLine="53" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$1" />
-    <unitInfo nodeId="5923576889075042380" fileName="ModelPropertiesDialog.java" startLine="100" startPosition="35" endLine="104" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$4" />
-    <unitInfo nodeId="5386847946626506435" fileName="ModelPropertiesDialog.java" startLine="58" startPosition="45" endLine="63" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$2" />
-    <unitInfo nodeId="5386847946626562068" fileName="ModelPropertiesDialog.java" startLine="69" startPosition="45" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$3" />
-    <unitInfo nodeId="5923576889075042563" fileName="ModelPropertiesDialog.java" startLine="130" startPosition="47" endLine="135" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$6" />
-    <unitInfo nodeId="5386847946626562032" fileName="ModelPropertiesDialog.java" startLine="176" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$ModelsCondition" />
-    <unitInfo nodeId="5386847946626562082" fileName="ModelPropertiesDialog.java" startLine="188" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$LanguagesCondition" />
-    <unitInfo nodeId="5923576889075042415" fileName="ModelPropertiesDialog.java" startLine="110" startPosition="45" endLine="125" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$5" />
-    <unitInfo nodeId="5923576889075042077" fileName="ModelPropertiesDialog.java" startLine="158" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$MyDataContext" />
-    <unitInfo nodeId="5923576889075042074" fileName="ModelPropertiesDialog.java" startLine="42" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog" />
+    <scopeInfo nodeId="5923576889075042526" fileName="ModelPropertiesDialog.java" startLine="129" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042400" fileName="ModelPropertiesDialog.java" startLine="108" startPosition="0" endLine="129" endPosition="0" />
+    <unitInfo nodeId="5923576889075042161" fileName="ModelPropertiesDialog.java" startLine="50" startPosition="45" endLine="54" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$1" />
+    <unitInfo nodeId="5923576889075042380" fileName="ModelPropertiesDialog.java" startLine="101" startPosition="35" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$4" />
+    <unitInfo nodeId="5386847946626506435" fileName="ModelPropertiesDialog.java" startLine="59" startPosition="45" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$2" />
+    <unitInfo nodeId="5386847946626562068" fileName="ModelPropertiesDialog.java" startLine="70" startPosition="45" endLine="75" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$3" />
+    <unitInfo nodeId="5923576889075042563" fileName="ModelPropertiesDialog.java" startLine="131" startPosition="47" endLine="136" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$6" />
+    <unitInfo nodeId="5386847946626562032" fileName="ModelPropertiesDialog.java" startLine="177" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$ModelsCondition" />
+    <unitInfo nodeId="5386847946626562082" fileName="ModelPropertiesDialog.java" startLine="189" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$LanguagesCondition" />
+    <unitInfo nodeId="5923576889075042415" fileName="ModelPropertiesDialog.java" startLine="111" startPosition="45" endLine="126" endPosition="5" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$5" />
+    <unitInfo nodeId="5923576889075042077" fileName="ModelPropertiesDialog.java" startLine="159" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$MyDataContext" />
+    <unitInfo nodeId="5923576889075042074" fileName="ModelPropertiesDialog.java" startLine="43" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog" />
   </root>
   <root nodeId="5923576889075042681">
     <nodeInfo nodeId="5923576889075042684" fileName="SolutionPropertiesDialog.java" startLine="17" startPosition="68" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolution" />

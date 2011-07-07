@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SNode;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
+import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -130,7 +131,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     JButton bShowModelUsages = new JButton(new AbstractAction("Show Model Usages") {
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
-        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionManager.getInstance().getAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action"));
+        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action")));
       }
     });
     JPanel result = new JPanel(new GridBagLayout());
