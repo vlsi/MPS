@@ -76,7 +76,7 @@ public class Junit_Command {
     )).setWorkingDirectory((StringUtils.isEmpty(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
       null :
       new File(javaRunParameters.workingDirectory())
-    )).createProcess(tests);
+    )).setDebuggerSettings(myDebuggerSettings).createProcess(tests);
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {

@@ -33209,6 +33209,12 @@
                   </node>
                 </node>
               </node>
+              <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="6496002361768570420">
+                <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="8478830098674602249" resolveInfo="debuggerSettings" />
+                <node role="value" roleId="rzqf.856705193941281766" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="6496002361768572861">
+                  <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="8478830098674602249" resolveInfo="debuggerSettings" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.lib/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.util/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.impl/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.impl/test_gen" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -27,6 +28,16 @@
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="javaRunConfigurations-runtime" />
+    <orderEntry type="module" module-name="test" />
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

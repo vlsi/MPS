@@ -17,7 +17,9 @@
           <myRunParameters>
             <MyState>
               <option name="myJavaRunParameters">
-                <xsl:copy-of select=".//ConfigRunParameters/option" />
+                <JavaRunParameters>
+                  <xsl:apply-templates select=".//ConfigRunParameters/option" />
+                </JavaRunParameters>
               </option>
             </MyState>
           </myRunParameters>
@@ -26,12 +28,20 @@
               <xsl:for-each select=".//option">
                 <xsl:choose>
                   <xsl:when test="@name = 'modelId'">
-                    <xsl:copy-of select="." />
+                    <option name="myModelId">
+                      <xsl:attribute name="value">
+                        <xsl:value-of select="@value" />
+                      </xsl:attribute>
+                    </option>
                   </xsl:when>
                   <xsl:otherwise>
                     <xsl:choose>
                       <xsl:when test="@name = 'nodeId'">
-                        <xsl:copy-of select="." />
+                        <option name="myNodeId">
+                          <xsl:attribute name="value">
+                            <xsl:value-of select="@value" />
+                          </xsl:attribute>
+                        </option>
                       </xsl:when>
                     </xsl:choose>
                   </xsl:otherwise>
@@ -48,14 +58,36 @@
   </xsl:template>
   <xsl:template match="option">
     <xsl:choose>
-      <xsl:when test="@name = 'modelId'">
-        <xsl:copy-of select="." />
+      <xsl:when test="@name = 'VMParameters'">
+        <option name="vmOptions">
+          <xsl:attribute name="value">
+            <xsl:value-of select="@value" />
+          </xsl:attribute>
+        </option>
       </xsl:when>
       <xsl:otherwise>
         <xsl:choose>
-          <xsl:when test="@name = 'nodeId'">
-            <xsl:copy-of select="." />
+          <xsl:when test="@name = 'alternativeJRE'">
+            <option name="jrePath">
+              <xsl:attribute name="value">
+                <xsl:value-of select="@value" />
+              </xsl:attribute>
+            </option>
           </xsl:when>
+          <xsl:otherwise>
+            <xsl:choose>
+              <xsl:when test="@name = 'useAlternativeJRE'">
+                <option name="useAlternativeJre">
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="@value" />
+                  </xsl:attribute>
+                </option>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:copy-of select="." />
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>

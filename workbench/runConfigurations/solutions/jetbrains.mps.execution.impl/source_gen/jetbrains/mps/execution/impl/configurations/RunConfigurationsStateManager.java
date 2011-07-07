@@ -7,6 +7,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import org.jdom.Element;
+import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.ui.RunContentManagerImpl;
@@ -15,12 +16,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.RunManagerEx;
 import com.intellij.execution.impl.ProjectRunConfigurationManager;
-import org.jdom.transform.JDOMSource;
-import org.jdom.transform.JDOMResult;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.transform.TransformerException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationType;
@@ -29,6 +24,12 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import org.jdom.transform.JDOMSource;
+import org.jdom.transform.JDOMResult;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.transform.TransformerException;
 
 public class RunConfigurationsStateManager implements ProjectComponent {
   protected static Log log = LogFactory.getLog(RunConfigurationsStateManager.class);
@@ -52,21 +53,28 @@ public class RunConfigurationsStateManager implements ProjectComponent {
       return;
     }
     getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
-    if (myState != null) {
-      try {
-        getRunManager().readExternal(myState);
-      } catch (InvalidDataException e) {
-        if (log.isErrorEnabled()) {
-          log.error("", e);
+    RunConfiguration[] runConfigurations = getRunManager().getAllConfigurations();
+    if (runConfigurations != null && runConfigurations.length > 0) {
+      if (log.isErrorEnabled()) {
+        log.error("Already has loaded configurations. We do not want to owerwrite them.");
+      }
+    } else {
+      if (myState != null) {
+        try {
+          getRunManager().readExternal(myState);
+        } catch (InvalidDataException e) {
+          if (log.isErrorEnabled()) {
+            log.error("", e);
+          }
         }
       }
-    }
-    if (mySharedState != null) {
-      try {
-        getSharedConfigurationManager().readExternal(mySharedState);
-      } catch (InvalidDataException e) {
-        if (log.isErrorEnabled()) {
-          log.error("", e);
+      if (mySharedState != null) {
+        try {
+          getSharedConfigurationManager().readExternal(mySharedState);
+        } catch (InvalidDataException e) {
+          if (log.isErrorEnabled()) {
+            log.error("", e);
+          }
         }
       }
     }
@@ -138,7 +146,32 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     }
   }
 
-  private Element migrateConfigurations(Element state) {
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Run Configs Manager";
+  }
+
+  public void initComponent() {
+  }
+
+  public void disposeComponent() {
+  }
+
+  public static ConfigurationType[] getConfigurationTypes() {
+    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
+    final List<ConfigurationType> result = new ArrayList<ConfigurationType>();
+    Set<String> uniqTypes = new HashSet<String>();
+    for (ConfigurationType type : configurationTypes) {
+      if (!(uniqTypes.contains(type.getClass().getName()))) {
+        result.add(type);
+        uniqTypes.add(type.getClass().getName());
+      }
+    }
+    return result.toArray(new ConfigurationType[result.size()]);
+  }
+
+  public static Element migrateConfigurations(Element state) {
 
     Element migratedState = new Element("root");
     JDOMSource source = new JDOMSource(state);
@@ -158,28 +191,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     return migratedState;
   }
 
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS Run Configs Manager";
-  }
-
-  public void initComponent() {
-  }
-
-  public void disposeComponent() {
-  }
-
-  private static ConfigurationType[] getConfigurationTypes() {
-    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
-    final List<ConfigurationType> result = new ArrayList<ConfigurationType>();
-    Set<String> uniqTypes = new HashSet<String>();
-    for (ConfigurationType type : configurationTypes) {
-      if (!(uniqTypes.contains(type.getClass().getName()))) {
-        result.add(type);
-        uniqTypes.add(type.getClass().getName());
-      }
-    }
-    return result.toArray(new ConfigurationType[result.size()]);
+  public static RunConfigurationsStateManager getInstance(Project project) {
+    return project.getComponent(RunConfigurationsStateManager.class);
   }
 }
