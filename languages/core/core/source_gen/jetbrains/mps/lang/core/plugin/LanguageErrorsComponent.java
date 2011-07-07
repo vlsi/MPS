@@ -213,7 +213,7 @@ public class LanguageErrorsComponent {
   }
 
   public void processBeforeModelDisposed(SModel model) {
-    if (SNodeOperations.getModel(myRoot) == model) {
+    if (!(myRoot.shouldHaveBeenDisposed()) && SNodeOperations.getModel(myRoot) == model) {
       return;
     }
     for (SNode additional : new THashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
