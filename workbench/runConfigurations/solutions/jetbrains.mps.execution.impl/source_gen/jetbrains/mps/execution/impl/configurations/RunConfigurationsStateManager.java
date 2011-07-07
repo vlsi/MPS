@@ -46,7 +46,6 @@ public class RunConfigurationsStateManager implements ProjectComponent {
       return;
     }
     getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
-    reInitializeManagers();
     if (myState != null) {
       try {
         getRunManager().readExternal(myState);
@@ -65,6 +64,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         }
       }
     }
+    reInitializeManagers();
   }
 
   public void disposeRunConfigurations() {
@@ -94,9 +94,8 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         log.error("", e);
       }
     }
-    getRunManager().clearAll();
     mySharedState = getSharedConfigurationManager().getState();
-    reInitializeManagers();
+    getRunManager().clearAll();
   }
 
   private RunManagerImpl getRunManager() {
