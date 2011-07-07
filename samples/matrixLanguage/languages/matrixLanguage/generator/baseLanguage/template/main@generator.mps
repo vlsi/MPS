@@ -37,7 +37,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1209997163383">
       <property name="name" nameId="tpck.1169194664001" value="reduce_Determinant" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1209989472341" resolveInfo="Determinant" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1209989472341" resolveInfo="DeterminantExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1209999939836">
       <property name="name" nameId="tpck.1169194664001" value="reduce_Transpose" />
@@ -45,7 +45,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1210003243340">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatrixMultMatrix" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMulExpression" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMultExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1210007546843">
       <property name="name" nameId="tpck.1169194664001" value="reduce_DoubleMultMatrix" />
@@ -53,7 +53,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1210008266034">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatrixMultDouble" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMulExpression" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMultExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1210150442017">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatrixAddMatrix" />
@@ -61,7 +61,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1210151399318">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatrixSubMatrix" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1210151336184" resolveInfo="MatrixSubMatrix" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1210151336184" resolveInfo="MatrixSubExpression" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1210151780791">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MatrixDivDouble" />
@@ -73,7 +73,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1210249389782">
       <property name="name" nameId="tpck.1169194664001" value="reduce_IndexVariableReference" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1210239099519" resolveInfo="MatrixIndexVariableRefirence" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpoo.1210239099519" resolveInfo="MatrixIndexVariableReference" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1210249944328">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ElementVariableReference" />
@@ -90,7 +90,7 @@
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node role="createRootRule" roleId="tpf8.1167088157977" type="tpf8.CreateRootRule" typeId="tpf8.1167087469898" id="1210177087497">
-      <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="8124707847641067510" resolveInfo="_FieldOperations2" />
+      <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="8124707847641067510" resolveInfo="_FieldOperations" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1209988321936">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1209987469663" resolveInfo="MatrixLiteral" />
@@ -105,7 +105,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1209997132376">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1209989472341" resolveInfo="Determinant" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1209989472341" resolveInfo="DeterminantExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1209997163385">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1209997163383" resolveInfo="reduce_Determinant" />
       </node>
@@ -117,9 +117,9 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1210003119113">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMulExpression" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMultExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1210003741702">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210003243340" resolveInfo="reduce_MatrixMult" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210003243340" resolveInfo="reduce_MatrixMultMatrix" />
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1210006619050">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210006619051">
@@ -167,7 +167,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1210007529501">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMulExpression" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMultExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1210007914172">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210007546843" resolveInfo="reduce_DoubleMultMatrix" />
       </node>
@@ -213,7 +213,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1210008117839">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMulExpression" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMultExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1210008404040">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210008266034" resolveInfo="reduce_MatrixMultDouble" />
       </node>
@@ -265,7 +265,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1210151544475">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210151336184" resolveInfo="MatrixSubMatrix" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210151336184" resolveInfo="MatrixSubExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1210151633697">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210151399318" resolveInfo="reduce_MatrixSubMatrix" />
       </node>
@@ -273,7 +273,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1210152517153">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210151722509" resolveInfo="MatrixDivExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1210152530029">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210151780791" resolveInfo="reduce_MatrixDivision" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210151780791" resolveInfo="reduce_MatrixDivDouble" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1210243687610">
@@ -283,7 +283,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1210249687114">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210239099519" resolveInfo="MatrixIndexVariableRefirence" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpoo.1210239099519" resolveInfo="MatrixIndexVariableReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1210249707864">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210249389782" resolveInfo="reduce_IndexVariableReference" />
       </node>
@@ -309,17 +309,12 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1209988376968">
       <property name="name" nameId="tpck.1169194664001" value="a" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1209988378787">
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1209988378788" />
+        <property name="name" nameId="tpck.1169194664001" value="f" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7687103497509437410">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
+        </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209988378789" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1209988378790">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1209988392003">
-            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1209988392004">
-              <property name="name" nameId="tpck.1169194664001" value="m" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1209988392005">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
-              </node>
-            </node>
-          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1210252600154">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1210252600155">
               <property name="name" nameId="tpck.1169194664001" value="m" />
@@ -445,16 +440,29 @@
               </node>
             </node>
           </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7687103497509437416">
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7687103497509437420">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1210252600155" resolveInfo="m" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209988376969" />
+      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7687103497509437402">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7687103497509437403" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7687103497509437404" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7687103497509437405" />
+      </node>
     </node>
   </root>
   <root id="1209988992243">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1209989035448">
       <property name="name" nameId="tpck.1169194664001" value="a" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1209989044676">
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1209989044677" />
+        <property name="name" nameId="tpck.1169194664001" value="f" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7687103497509437432">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
+        </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209989044678" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1209989044679">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1209989111605">
@@ -481,11 +489,30 @@
                   </node>
                 </node>
               </node>
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7687103497509437430">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7687103497509437427" resolveInfo="m" />
+              </node>
             </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7687103497509437433">
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7687103497509437435">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1209989111606" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7687103497509437427">
+          <property name="name" nameId="tpck.1169194664001" value="m" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7687103497509437428">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
           </node>
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209989035449" />
+      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7687103497509437423">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7687103497509437424" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7687103497509437425" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7687103497509437426" />
+      </node>
     </node>
   </root>
   <root id="1209997163383">
@@ -501,6 +528,9 @@
               <property name="name" nameId="tpck.1169194664001" value="m" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1209997215910">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
+              </node>
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7687103497509437401">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7687103497509437398" resolveInfo="m2" />
               </node>
             </node>
           </node>
@@ -530,13 +560,26 @@
             </node>
           </node>
         </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7687103497509437398">
+          <property name="name" nameId="tpck.1169194664001" value="m2" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7687103497509437399">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
+          </node>
+        </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209997179380" />
+      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7687103497509437469">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7687103497509437470" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7687103497509437471" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7687103497509437472" />
+      </node>
     </node>
   </root>
   <root id="1209999939836">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1209999953710">
+      <property name="name" nameId="tpck.1169194664001" value="F" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1209999957106">
+        <property name="name" nameId="tpck.1169194664001" value="f" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1209999957107" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209999957108" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1209999957109">
@@ -546,7 +589,9 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1209999980526">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
               </node>
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1210001063195" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7687103497509437442">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7687103497509437440" resolveInfo="m2" />
+              </node>
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1210000793908">
@@ -575,8 +620,19 @@
             </node>
           </node>
         </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7687103497509437440">
+          <property name="name" nameId="tpck.1169194664001" value="m2" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7687103497509437441">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1209978932613" resolveInfo="Matrix" />
+          </node>
+        </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209999953711" />
+      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7687103497509437436">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7687103497509437437" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7687103497509437438" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7687103497509437439" />
+      </node>
     </node>
   </root>
   <root id="1210003243340">
@@ -1184,7 +1240,7 @@
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210243500078">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1210243500039">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1210243374779" resolveInfo="i" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1210243374779" resolveInfo="it" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1210243554351">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpor.1210241770067" resolveInfo="getNext" />
@@ -1246,7 +1302,7 @@
           </node>
           <node role="condition" roleId="tpee.1144231399730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210243431868">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1210243431844">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1210243374779" resolveInfo="i" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1210243374779" resolveInfo="it" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1210243436716">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpor.1210242026713" resolveInfo="hasNext" />
@@ -1374,7 +1430,7 @@
       <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8124707847641067547">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpor.1210153117710" resolveInfo="FieldOperations" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8124707847641067548">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8124707847641067540" resolveInfo="_FieldOperations2.ABC" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8124707847641067540" resolveInfo="_FieldOperations.ABC" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="8124707847641067549">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="8124707847641067550">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8124707847641067551">

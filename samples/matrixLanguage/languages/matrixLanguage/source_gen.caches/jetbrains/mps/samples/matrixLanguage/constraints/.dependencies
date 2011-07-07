@@ -9,12 +9,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableDeclaration_Behavior" file="MatrixElementVariableDeclaration_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableReference_Behavior" file="MatrixElementVariableReference_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableReference_Constraints" file="MatrixElementVariableReference_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -38,9 +32,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableReference_Behavior" file="MatrixIndexVariableReference_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableReference_Constraints" file="MatrixIndexVariableReference_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -57,12 +48,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider" />
     <classNode dependClassName="jetbrains.mps.smodel.search.SimpleSearchScope" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.samples.matrixLanguage.constraints.MatrixType_Behavior" file="MatrixType_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
 </dependenciesRoot>
 
