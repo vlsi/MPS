@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -33,7 +34,7 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup"));
+    ActionGroup group = ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup"));
     group.update(event);
     return group.getChildren(event).length != 0;
   }
@@ -72,7 +73,7 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup"));
+          ActionGroup group = ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.lang.intentions.plugin.GenerationIntentions_ActionGroup"));
           group.update(event);
           if (group.getChildren(event).length == 0) {
             return;

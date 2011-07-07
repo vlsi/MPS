@@ -247,6 +247,9 @@ public class JavaCompiler {
   }
 
   private void showMessageView() {
+    if (myContext == null) {
+      return;
+    }
     MessagesViewTool messagesView = myContext.getComponent(MessagesViewTool.class);
     if (messagesView == null) {
       return;
@@ -309,7 +312,7 @@ public class JavaCompiler {
       }
     }
     boolean buildAstNow = true;
-    if (!(fqNames.isEmpty())) {
+    if (!(fqNames.isEmpty()) && myContext != null) {
       int option = JOptionPane.showConfirmDialog(null, "Some imports in source code were not resolved.\nDo you want to specify classpaths for unresolved imports?");
       if (option == JOptionPane.YES_OPTION) {
         UIComponents.MyDialog dialog = UIComponents.createClasspathsDialog(myContext, mySourceDir, new Vector<String>(fqNames));

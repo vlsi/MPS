@@ -675,8 +675,8 @@
     </scopeInfo>
     <scopeInfo nodeId="155142699038773183" fileName="ParenthesisUtil.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="155142699038773199" varName="expression" />
-      <varInfo nodeId="155142699038773202" varName="opening" />
       <varInfo nodeId="155142699038773204" varName="context" />
+      <varInfo nodeId="155142699038773202" varName="opening" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773227" fileName="ParenthesisUtil.java" startLine="28" startPosition="129" endLine="33" endPosition="124" />
     <scopeInfo nodeId="155142699038773748" fileName="ParenthesisUtil.java" startLine="164" startPosition="105" endLine="169" endPosition="7">
@@ -692,8 +692,8 @@
       <varInfo nodeId="155142699038773310" varName="parExpr" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773941" fileName="ParenthesisUtil.java" startLine="223" startPosition="93" endLine="233" endPosition="5">
-      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773953" varName="nodeCell" />
+      <varInfo nodeId="155142699038773947" varName="component" />
       <varInfo nodeId="155142699038773960" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773529" fileName="ParenthesisUtil.java" startLine="106" startPosition="30" endLine="117" endPosition="7">
@@ -754,8 +754,8 @@
       <varInfo nodeId="155142699038773836" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773208" fileName="ParenthesisUtil.java" startLine="25" startPosition="85" endLine="68" endPosition="19">
-      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773367" varName="parExpr" />
+      <varInfo nodeId="155142699038773255" varName="binOp" />
       <varInfo nodeId="155142699038773356" varName="subtree" />
       <varInfo nodeId="155142699038773210" varName="current" />
       <varInfo nodeId="155142699038773287" varName="left" />
@@ -769,8 +769,8 @@
     <scopeInfo nodeId="155142699038773405" fileName="ParenthesisUtil.java" startLine="71" startPosition="106" endLine="124" endPosition="39">
       <varInfo nodeId="155142699038773417" varName="binOp" />
       <varInfo nodeId="155142699038773451" varName="backsideSubtree" />
-      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773575" varName="binOpCheck" />
+      <varInfo nodeId="155142699038773495" varName="sideSubtree" />
       <varInfo nodeId="155142699038773437" varName="leaf" />
       <varInfo nodeId="155142699038773429" varName="sidemost" />
     </scopeInfo>
@@ -1151,55 +1151,55 @@
     <unitInfo nodeId="3836499504550259659" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AbstractLeftEditorHighlighterMessage" />
   </root>
   <root nodeId="3836499504550260330">
-    <nodeInfo nodeId="3836499504550260385" fileName="SubclassedClassifierEditorMessage.java" startLine="20" startPosition="93" endLine="21" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
-    <nodeInfo nodeId="3836499504550260393" fileName="SubclassedClassifierEditorMessage.java" startLine="21" startPosition="123" endLine="22" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OVERRIDEN_ICON_PATH" />
-    <nodeInfo nodeId="3836499504550260399" fileName="SubclassedClassifierEditorMessage.java" startLine="22" startPosition="157" endLine="23" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IMPLEMENTED_ICON_PATH" />
-    <nodeInfo nodeId="3836499504550260420" fileName="SubclassedClassifierEditorMessage.java" startLine="24" startPosition="0" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsInterface" />
-    <nodeInfo nodeId="3836499504550260832" fileName="SubclassedClassifierEditorMessage.java" startLine="25" startPosition="32" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassifierNameCellFinder" />
-    <nodeInfo nodeId="3836499504550260343" fileName="SubclassedClassifierEditorMessage.java" startLine="28" startPosition="125" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3836499504550260424" fileName="SubclassedClassifierEditorMessage.java" startLine="29" startPosition="32" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3836499504550260867" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="43" endLine="33" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3836499504550260366" fileName="SubclassedClassifierEditorMessage.java" startLine="45" startPosition="63" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3836499504550260435" fileName="SubclassedClassifierEditorMessage.java" startLine="49" startPosition="55" endLine="50" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1675215363421637688" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="36" endLine="58" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7437471060342841603" fileName="SubclassedClassifierEditorMessage.java" startLine="61" startPosition="36" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3836499504550260851" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="86" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
-    <nodeInfo nodeId="3836499504550260405" fileName="SubclassedClassifierEditorMessage.java" startLine="38" startPosition="25" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3836499504550260362" fileName="SubclassedClassifierEditorMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
-    <nodeInfo nodeId="3836499504550260444" fileName="SubclassedClassifierEditorMessage.java" startLine="50" startPosition="78" endLine="54" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3836499504550260376" fileName="SubclassedClassifierEditorMessage.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
-    <nodeInfo nodeId="7437471060342841599" fileName="SubclassedClassifierEditorMessage.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPopupMenu#()Ljavax/swing/JPopupMenu;" />
-    <nodeInfo nodeId="3836499504550260839" fileName="SubclassedClassifierEditorMessage.java" startLine="30" startPosition="32" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3836499504550260356" fileName="SubclassedClassifierEditorMessage.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="3836499504550260368" fileName="SubclassedClassifierEditorMessage.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnchorCell#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="3836499504550260332" fileName="SubclassedClassifierEditorMessage.java" startLine="27" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubclassedClassifierEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" />
-    <scopeInfo nodeId="3836499504550260856" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="43" endLine="33" endPosition="117" />
-    <scopeInfo nodeId="3836499504550260365" fileName="SubclassedClassifierEditorMessage.java" startLine="45" startPosition="63" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="3836499504550260379" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="36" endLine="58" endPosition="117" />
-    <scopeInfo nodeId="7437471060342841602" fileName="SubclassedClassifierEditorMessage.java" startLine="61" startPosition="36" endLine="62" endPosition="16" />
-    <scopeInfo nodeId="3836499504550260851" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="86" endLine="35" endPosition="0">
+    <nodeInfo nodeId="3836499504550260385" fileName="SubclassedClassifierEditorMessage.java" startLine="21" startPosition="93" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
+    <nodeInfo nodeId="3836499504550260393" fileName="SubclassedClassifierEditorMessage.java" startLine="22" startPosition="123" endLine="23" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OVERRIDEN_ICON_PATH" />
+    <nodeInfo nodeId="3836499504550260399" fileName="SubclassedClassifierEditorMessage.java" startLine="23" startPosition="157" endLine="24" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IMPLEMENTED_ICON_PATH" />
+    <nodeInfo nodeId="3836499504550260420" fileName="SubclassedClassifierEditorMessage.java" startLine="25" startPosition="0" endLine="26" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsInterface" />
+    <nodeInfo nodeId="3836499504550260832" fileName="SubclassedClassifierEditorMessage.java" startLine="26" startPosition="32" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassifierNameCellFinder" />
+    <nodeInfo nodeId="3836499504550260343" fileName="SubclassedClassifierEditorMessage.java" startLine="29" startPosition="125" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3836499504550260424" fileName="SubclassedClassifierEditorMessage.java" startLine="30" startPosition="32" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3836499504550260867" fileName="SubclassedClassifierEditorMessage.java" startLine="33" startPosition="43" endLine="34" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3836499504550260366" fileName="SubclassedClassifierEditorMessage.java" startLine="46" startPosition="63" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3836499504550260435" fileName="SubclassedClassifierEditorMessage.java" startLine="50" startPosition="55" endLine="51" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1675215363421637688" fileName="SubclassedClassifierEditorMessage.java" startLine="58" startPosition="36" endLine="59" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7437471060342841603" fileName="SubclassedClassifierEditorMessage.java" startLine="62" startPosition="36" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3836499504550260851" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="86" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
+    <nodeInfo nodeId="3836499504550260405" fileName="SubclassedClassifierEditorMessage.java" startLine="39" startPosition="25" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3836499504550260362" fileName="SubclassedClassifierEditorMessage.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
+    <nodeInfo nodeId="3836499504550260444" fileName="SubclassedClassifierEditorMessage.java" startLine="51" startPosition="78" endLine="55" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3836499504550260376" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
+    <nodeInfo nodeId="7437471060342841599" fileName="SubclassedClassifierEditorMessage.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPopupMenu#()Ljavax/swing/JPopupMenu;" />
+    <nodeInfo nodeId="3836499504550260839" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="32" endLine="36" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3836499504550260356" fileName="SubclassedClassifierEditorMessage.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="3836499504550260368" fileName="SubclassedClassifierEditorMessage.java" startLine="49" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnchorCell#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3836499504550260332" fileName="SubclassedClassifierEditorMessage.java" startLine="28" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubclassedClassifierEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" />
+    <scopeInfo nodeId="3836499504550260856" fileName="SubclassedClassifierEditorMessage.java" startLine="33" startPosition="43" endLine="34" endPosition="117" />
+    <scopeInfo nodeId="3836499504550260365" fileName="SubclassedClassifierEditorMessage.java" startLine="46" startPosition="63" endLine="47" endPosition="16" />
+    <scopeInfo nodeId="3836499504550260379" fileName="SubclassedClassifierEditorMessage.java" startLine="58" startPosition="36" endLine="59" endPosition="132" />
+    <scopeInfo nodeId="7437471060342841602" fileName="SubclassedClassifierEditorMessage.java" startLine="62" startPosition="36" endLine="63" endPosition="16" />
+    <scopeInfo nodeId="3836499504550260851" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="86" endLine="36" endPosition="0">
       <varInfo nodeId="3836499504550260854" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="3836499504550260359" fileName="SubclassedClassifierEditorMessage.java" startLine="38" startPosition="25" endLine="42" endPosition="13" />
-    <scopeInfo nodeId="3836499504550260362" fileName="SubclassedClassifierEditorMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="3836499504550260376" fileName="SubclassedClassifierEditorMessage.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="7437471060342841599" fileName="SubclassedClassifierEditorMessage.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="3836499504550260373" fileName="SubclassedClassifierEditorMessage.java" startLine="49" startPosition="55" endLine="54" endPosition="6">
+    <scopeInfo nodeId="3836499504550260359" fileName="SubclassedClassifierEditorMessage.java" startLine="39" startPosition="25" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="3836499504550260362" fileName="SubclassedClassifierEditorMessage.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="3836499504550260376" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="7437471060342841599" fileName="SubclassedClassifierEditorMessage.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="3836499504550260373" fileName="SubclassedClassifierEditorMessage.java" startLine="50" startPosition="55" endLine="55" endPosition="6">
       <varInfo nodeId="3836499504550260436" varName="returnTypeCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3836499504550260335" fileName="SubclassedClassifierEditorMessage.java" startLine="28" startPosition="125" endLine="35" endPosition="13" />
-    <scopeInfo nodeId="3836499504550260356" fileName="SubclassedClassifierEditorMessage.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3836499504550260368" fileName="SubclassedClassifierEditorMessage.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="3836499504550260335" fileName="SubclassedClassifierEditorMessage.java" startLine="29" startPosition="125" endLine="36" endPosition="13" />
+    <scopeInfo nodeId="3836499504550260356" fileName="SubclassedClassifierEditorMessage.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3836499504550260368" fileName="SubclassedClassifierEditorMessage.java" startLine="49" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="3836499504550260371" varName="bigCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3836499504550260332" fileName="SubclassedClassifierEditorMessage.java" startLine="27" startPosition="0" endLine="36" endPosition="3">
+    <scopeInfo nodeId="3836499504550260332" fileName="SubclassedClassifierEditorMessage.java" startLine="28" startPosition="0" endLine="37" endPosition="3">
       <varInfo nodeId="3836499504550260339" varName="ovner" />
       <varInfo nodeId="3836499504550260337" varName="node" />
       <varInfo nodeId="3836499504550260416" varName="isInterface" />
       <varInfo nodeId="3836499504550260341" varName="tooltip" />
     </scopeInfo>
-    <unitInfo nodeId="3836499504550260848" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="61" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage$1" />
-    <unitInfo nodeId="3836499504550260330" fileName="SubclassedClassifierEditorMessage.java" startLine="20" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage" />
+    <unitInfo nodeId="3836499504550260848" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="61" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage$1" />
+    <unitInfo nodeId="3836499504550260330" fileName="SubclassedClassifierEditorMessage.java" startLine="21" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.SubclassedClassifierEditorMessage" />
   </root>
   <root nodeId="3856910426407913103">
     <nodeInfo nodeId="6194849458308484474" fileName="DefaultJavaAppFromClass.java" startLine="34" startPosition="52" endLine="35" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1277,33 +1277,33 @@
     </scopeInfo>
   </root>
   <root nodeId="4291694139627064709">
-    <nodeInfo nodeId="113917032267667519" fileName="OverridingMethodEditorMessage.java" startLine="14" startPosition="82" endLine="15" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
-    <nodeInfo nodeId="113917032267548859" fileName="OverridingMethodEditorMessage.java" startLine="15" startPosition="123" endLine="16" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myOverridingIconPath" />
-    <nodeInfo nodeId="113917032267548865" fileName="OverridingMethodEditorMessage.java" startLine="16" startPosition="159" endLine="17" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myImplementingIconPath" />
-    <nodeInfo nodeId="113917032267548845" fileName="OverridingMethodEditorMessage.java" startLine="18" startPosition="0" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isOverriding" />
-    <nodeInfo nodeId="113917032267578788" fileName="OverridingMethodEditorMessage.java" startLine="21" startPosition="114" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="113917032267548851" fileName="OverridingMethodEditorMessage.java" startLine="22" startPosition="32" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="113917032267548887" fileName="OverridingMethodEditorMessage.java" startLine="33" startPosition="63" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9190968457655041649" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4291694139627064711" fileName="OverridingMethodEditorMessage.java" startLine="20" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridingMethodEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="113917032267548871" fileName="OverridingMethodEditorMessage.java" startLine="26" startPosition="25" endLine="30" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="113917032267548783" fileName="OverridingMethodEditorMessage.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
-    <nodeInfo nodeId="113917032267548803" fileName="OverridingMethodEditorMessage.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
-    <nodeInfo nodeId="113917032267548771" fileName="OverridingMethodEditorMessage.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <scopeInfo nodeId="113917032267548786" fileName="OverridingMethodEditorMessage.java" startLine="33" startPosition="63" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="113917032267548806" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="113" />
-    <scopeInfo nodeId="4291694139627064714" fileName="OverridingMethodEditorMessage.java" startLine="21" startPosition="114" endLine="23" endPosition="35" />
-    <scopeInfo nodeId="4291694139627064711" fileName="OverridingMethodEditorMessage.java" startLine="20" startPosition="0" endLine="24" endPosition="3">
+    <nodeInfo nodeId="113917032267667519" fileName="OverridingMethodEditorMessage.java" startLine="15" startPosition="82" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
+    <nodeInfo nodeId="113917032267548859" fileName="OverridingMethodEditorMessage.java" startLine="16" startPosition="123" endLine="17" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myOverridingIconPath" />
+    <nodeInfo nodeId="113917032267548865" fileName="OverridingMethodEditorMessage.java" startLine="17" startPosition="159" endLine="18" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myImplementingIconPath" />
+    <nodeInfo nodeId="113917032267548845" fileName="OverridingMethodEditorMessage.java" startLine="19" startPosition="0" endLine="20" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isOverriding" />
+    <nodeInfo nodeId="113917032267578788" fileName="OverridingMethodEditorMessage.java" startLine="22" startPosition="114" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="113917032267548851" fileName="OverridingMethodEditorMessage.java" startLine="23" startPosition="32" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113917032267548887" fileName="OverridingMethodEditorMessage.java" startLine="34" startPosition="63" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9190968457655041649" fileName="OverridingMethodEditorMessage.java" startLine="38" startPosition="36" endLine="39" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4291694139627064711" fileName="OverridingMethodEditorMessage.java" startLine="21" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridingMethodEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="113917032267548871" fileName="OverridingMethodEditorMessage.java" startLine="27" startPosition="25" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113917032267548783" fileName="OverridingMethodEditorMessage.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
+    <nodeInfo nodeId="113917032267548803" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
+    <nodeInfo nodeId="113917032267548771" fileName="OverridingMethodEditorMessage.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <scopeInfo nodeId="113917032267548786" fileName="OverridingMethodEditorMessage.java" startLine="34" startPosition="63" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="113917032267548806" fileName="OverridingMethodEditorMessage.java" startLine="38" startPosition="36" endLine="39" endPosition="128" />
+    <scopeInfo nodeId="4291694139627064714" fileName="OverridingMethodEditorMessage.java" startLine="22" startPosition="114" endLine="24" endPosition="35" />
+    <scopeInfo nodeId="4291694139627064711" fileName="OverridingMethodEditorMessage.java" startLine="21" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="113917032267548811" varName="ovner" />
       <varInfo nodeId="113917032267548815" varName="overriding" />
       <varInfo nodeId="113917032267548809" varName="node" />
       <varInfo nodeId="113917032267548813" varName="tooltip" />
     </scopeInfo>
-    <scopeInfo nodeId="113917032267548774" fileName="OverridingMethodEditorMessage.java" startLine="26" startPosition="25" endLine="30" endPosition="13" />
-    <scopeInfo nodeId="113917032267548783" fileName="OverridingMethodEditorMessage.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="113917032267548803" fileName="OverridingMethodEditorMessage.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="113917032267548771" fileName="OverridingMethodEditorMessage.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="4291694139627064709" fileName="OverridingMethodEditorMessage.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverridingMethodEditorMessage" />
+    <scopeInfo nodeId="113917032267548774" fileName="OverridingMethodEditorMessage.java" startLine="27" startPosition="25" endLine="31" endPosition="13" />
+    <scopeInfo nodeId="113917032267548783" fileName="OverridingMethodEditorMessage.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="113917032267548803" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="113917032267548771" fileName="OverridingMethodEditorMessage.java" startLine="26" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="4291694139627064709" fileName="OverridingMethodEditorMessage.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverridingMethodEditorMessage" />
   </root>
   <root nodeId="4606119813988084135">
     <nodeInfo nodeId="4606119813988120960" fileName="DefaultJavaAppFromMainMethod.java" startLine="35" startPosition="89" endLine="36" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -7,7 +7,8 @@
   <unitInfo fileName="EditorPopup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.java.actions.EditorPopup_ActionGroup" />
   <unitInfo fileName="ModelActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup" />
   <unitInfo fileName="Java_PluginInitializer.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_PluginInitializer" />
-  <unitInfo fileName="Java_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_ApplicationPlugin" />
+  <unitInfo fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteJavaTextAsNodes_CustomApplicationPlugin" />
+  <unitInfo fileName="Java_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ide.java.actions.Java_ApplicationPlugin" />
   <unitInfo fileName="PasteAsJavaClass_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" />
   <unitInfo fileName="PasteAsJavaStatements_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" />
   <unitInfo fileName="PasteAsJavaMethods_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action" />
@@ -213,6 +214,53 @@
     </scopeInfo>
     <unitInfo nodeId="1366781238034273921" fileName="NewModelFromSource_Action.java" startLine="134" startPosition="42" endLine="138" endPosition="9" unitName="jetbrains.mps.ide.java.actions.NewModelFromSource_Action$2" />
     <unitInfo nodeId="1366781238034273860" fileName="NewModelFromSource_Action.java" startLine="121" startPosition="47" endLine="126" endPosition="7" unitName="jetbrains.mps.ide.java.actions.NewModelFromSource_Action$1" />
+  </root>
+  <root nodeId="2367017510988792886">
+    <nodeInfo nodeId="9012622553972679310" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="15" startPosition="95" endLine="16" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="MIN_TEXT_LENGTH_TO_CONVERT" />
+    <nodeInfo nodeId="1963440973928800045" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="23" startPosition="66" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1963440973928800082" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="24" startPosition="61" endLine="25" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1963440973928800181" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="28" startPosition="60" endLine="29" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1963440973928800214" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="30" startPosition="123" endLine="31" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1963440973928800236" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="35" startPosition="59" endLine="36" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1963440973928800121" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="36" startPosition="36" endLine="37" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1963440973928800158" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="38" startPosition="123" endLine="39" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1963440973928800139" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="39" startPosition="128" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1963440973928800152" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="41" startPosition="9" endLine="42" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1963440973928796549" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="44" startPosition="7" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1963440973928800098" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="48" startPosition="27" endLine="49" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1963440973928800185" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="29" startPosition="61" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1963440973928800126" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="37" startPosition="61" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1963440973928800010" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="22" startPosition="71" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canPasteAsNodes#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1963440973928800014" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteAsNodes#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1963440973928800020" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPasteNodeData#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
+    <nodeInfo nodeId="1963440973928796547" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="21" startPosition="24" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1963440973928800186" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="30" startPosition="123" endLine="31" endPosition="94" />
+    <scopeInfo nodeId="2367017510988812788" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="48" startPosition="27" endLine="49" endPosition="41" />
+    <scopeInfo nodeId="1963440973928800013" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="23" startPosition="66" endLine="25" endPosition="124">
+      <varInfo nodeId="1963440973928800046" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1963440973928800127" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="38" startPosition="123" endLine="40" endPosition="52">
+      <varInfo nodeId="1963440973928800159" varName="transferable" />
+    </scopeInfo>
+    <scopeInfo nodeId="1963440973928800019" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="28" startPosition="60" endLine="32" endPosition="9">
+      <varInfo nodeId="1963440973928800182" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1963440973928800010" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="22" startPosition="71" endLine="27" endPosition="0">
+      <varInfo nodeId="1963440973928800279" varName="model" />
+      <varInfo nodeId="1963440973928800281" varName="anchor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1963440973928800014" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="27" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1963440973928800017" varName="model" />
+      <varInfo nodeId="1963440973928800211" varName="anchor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1963440973928800025" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="35" startPosition="59" endLine="42" endPosition="20">
+      <varInfo nodeId="1963440973928800122" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="1963440973928800020" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1963440973928800023" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="2367017510988792891" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="21" startPosition="24" endLine="45" endPosition="0" />
+    <unitInfo nodeId="1963440973928800008" fileName="PasteJavaTextAsNodes_CustomApplicationPlugin.java" startLine="22" startPosition="39" endLine="44" endPosition="5" unitName="jetbrains.mps.ide.java.actions.PasteJavaTextAsNodes_CustomApplicationPlugin$1" />
   </root>
   <root nodeId="2872212824181502638">
     <nodeInfo nodeId="1366781238034254682" fileName="ModelActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

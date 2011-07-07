@@ -71,7 +71,7 @@ public class GenerateTextFromBuild {
     };
     Runnable generate = new Runnable() {
       public void run() {
-        if (showWindow) {
+        if (false && showWindow) {
           GeneratorUIFacade.getInstance().generateModels(context, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), generationHandler, true, true);
         } else {
           GenerationFacade.generateModels(project, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create());

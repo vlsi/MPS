@@ -58,12 +58,12 @@
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1216908497258">
       <property name="name" nameId="tpck.1169194664001" value="CyclesToSourcePaths" />
       <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="tpsj.1216904128547" resolveInfo="Cycle" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="ddum.353793545802643477" resolveInfo="GenericCall" />
+      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="ddum.353793545802643477" resolveInfo="TaskCall" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1216908579851">
       <property name="name" nameId="tpck.1169194664001" value="CyclesToClasspaths" />
       <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="tpsj.1216904128547" resolveInfo="Cycle" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="ddum.353793545802643477" resolveInfo="GenericCall" />
+      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="ddum.353793545802643477" resolveInfo="TaskCall" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="1216913306006">
       <property name="name" nameId="tpck.1169194664001" value="CyclesToTargets" />
@@ -81,7 +81,7 @@
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpsk.1196851066733" resolveInfo="Project" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1216909134654">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpsj.1216745453338" resolveInfo="Description" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpsj.1216745453338" resolveInfo="ProjectDescription" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1216906941020" resolveInfo="project" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1224775923722" resolveInfo="DescriptionToProject" />
     </node>
@@ -595,7 +595,7 @@
         <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1218638784673">
           <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814435" resolveInfo="dir" />
           <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="763186553349438303">
-            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="763186553349438279" resolveInfo="commonClasses" />
+            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="763186553349438279" resolveInfo="classes.dump" />
           </node>
         </node>
       </node>
@@ -903,6 +903,12 @@
             <property name="value" nameId="tpsk.1196861024475" value="1024m" />
           </node>
         </node>
+        <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1447380174749893624">
+          <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802813668" resolveInfo="debug" />
+          <node role="value" roleId="ddum.353793545802643468" type="tpsk.BooleanLiteral" typeId="tpsk.1196865966685" id="1447380174749893631">
+            <property name="value" nameId="tpsk.1196866040780" value="true" />
+          </node>
+        </node>
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="763186553349438319">
           <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="763186553349438320">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="763186553349438321">
@@ -963,7 +969,7 @@
         </node>
       </node>
       <node role="depends" roleId="tpsk.1196853776690" type="tpsk.TargetReference" typeId="tpsk.1196852921336" id="1216913188277">
-        <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="1216906941021" resolveInfo="compile.modules" />
+        <link role="targetDeclaration" roleId="tpsk.1196852953065" targetNodeId="1216906941021" resolveInfo="compile.cycle" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="1216913286053">
           <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="1216913286054">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1216913286055">
@@ -1058,7 +1064,7 @@
       </node>
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1216906941023">
-      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpsj.1216745453338" resolveInfo="Description" />
+      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpsj.1216745453338" resolveInfo="ProjectDescription" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1216906986544">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="SimpleBuilderChildExpression_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderChildExpression_Constraints" />
   <unitInfo fileName="AsTypeBuilder_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.AsTypeBuilder_Constraints" />
+  <unitInfo fileName="SimpleBuilderChildExpression_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderChildExpression_Constraints" />
   <unitInfo fileName="BaseSimpleBuilderDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.BaseSimpleBuilderDeclaration_Constraints" />
   <unitInfo fileName="SimpleBuilderParameterReference_Constraints.java" startLine="39" startPosition="19" endLine="49" endPosition="9" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderParameterReference_Constraints$2" />
   <unitInfo fileName="BeanBuilder_Constraints.java" startLine="37" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_Constraints$2" />
@@ -9,9 +9,9 @@
   <unitInfo fileName="SimpleBuilderParameterReference_Constraints.java" startLine="30" startPosition="36" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderParameterReference_Constraints$1" />
   <unitInfo fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="44" startPosition="19" endLine="67" endPosition="9" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyBuilder_Constraints$2" />
   <unitInfo fileName="BeanBuilder_Constraints.java" startLine="28" startPosition="48" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_Constraints$1" />
-  <unitInfo fileName="SimpleBuilderPropertyExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyExpression_Constraints" />
-  <unitInfo fileName="SimpleBuilderExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderExpression_Constraints" />
   <unitInfo fileName="ResultExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.ResultExpression_Constraints" />
+  <unitInfo fileName="SimpleBuilderExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderExpression_Constraints" />
+  <unitInfo fileName="SimpleBuilderPropertyExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyExpression_Constraints" />
   <unitInfo fileName="SimpleBuilderDeclaration_Constraints.java" startLine="34" startPosition="34" endLine="64" endPosition="5" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderDeclaration_Constraints$1" />
   <unitInfo fileName="SimpleBuilder_Constraints.java" startLine="47" startPosition="19" endLine="77" endPosition="9" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$2" />
   <unitInfo fileName="BeanPropertyBuilder_Constraints.java" startLine="50" startPosition="19" endLine="83" endPosition="9" unitName="jetbrains.mps.baseLanguage.builders.constraints.BeanPropertyBuilder_Constraints$2" />

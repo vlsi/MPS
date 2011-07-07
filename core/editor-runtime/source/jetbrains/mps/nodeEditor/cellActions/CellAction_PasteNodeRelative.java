@@ -53,7 +53,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     }
     List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(anchorNode.getModel());
     if (pasteNodes == null || pasteNodes.isEmpty()) {
-      return false;
+      return CopyPasteUtil.isConversionAvailable(anchorNode.getModel(), anchorNode);
     }
 
     if (!new NodePaster(pasteNodes).canPasteRelative(anchorNode)) {
@@ -70,6 +70,10 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     SNode anchorNode = selectedCell.getSNode();
 
     PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(anchorNode.getModel());
+    if (pasteNodeData == null || pasteNodeData.getNodes().isEmpty()) {
+      pasteNodeData = CopyPasteUtil.getConvertedFromClipboard(anchorNode.getModel());
+      if (pasteNodeData == null) return;
+    }
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 

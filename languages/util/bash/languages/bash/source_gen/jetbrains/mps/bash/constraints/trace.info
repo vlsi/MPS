@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Command_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.Command_Constraints" />
-  <unitInfo fileName="ExternalCommandDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.ExternalCommandDeclaration_Constraints" />
-  <unitInfo fileName="ExternalOptionDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.ExternalOptionDeclaration_Constraints" />
   <unitInfo fileName="OptionSetReference_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.OptionSetReference_Constraints" />
-  <unitInfo fileName="AbstractFollowingCommandList_Constraints.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.constraints.AbstractFollowingCommandList_Constraints" />
+  <unitInfo fileName="ExternalOptionDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.ExternalOptionDeclaration_Constraints" />
+  <unitInfo fileName="ExternalCommandDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.ExternalCommandDeclaration_Constraints" />
+  <unitInfo fileName="Command_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.Command_Constraints" />
   <unitInfo fileName="InputLine_Constraints.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.constraints.InputLine_Constraints" />
-  <unitInfo fileName="BasicParameterExpansion_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.bash.constraints.BasicParameterExpansion_Constraints$2" />
+  <unitInfo fileName="AbstractFollowingCommandList_Constraints.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.constraints.AbstractFollowingCommandList_Constraints" />
   <unitInfo fileName="VariableReference_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.bash.constraints.VariableReference_Constraints$2" />
-  <unitInfo fileName="SimpleCommand_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.bash.constraints.SimpleCommand_Constraints$1" />
+  <unitInfo fileName="BasicParameterExpansion_Constraints.java" startLine="37" startPosition="19" endLine="47" endPosition="9" unitName="jetbrains.mps.bash.constraints.BasicParameterExpansion_Constraints$2" />
   <unitInfo fileName="BasedIntegerLiteral_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.bash.constraints.BasedIntegerLiteral_Constraints$1" />
+  <unitInfo fileName="SimpleCommand_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.bash.constraints.SimpleCommand_Constraints$1" />
   <unitInfo fileName="OptionWithParamReference_Constraints.java" startLine="39" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.bash.constraints.OptionWithParamReference_Constraints$2" />
   <unitInfo fileName="HexIntegerLiteral_Constraints.java" startLine="23" startPosition="32" endLine="37" endPosition="5" unitName="jetbrains.mps.bash.constraints.HexIntegerLiteral_Constraints$1" />
   <unitInfo fileName="ArgumentReference_Constraints.java" startLine="55" startPosition="23" endLine="69" endPosition="13" unitName="jetbrains.mps.bash.constraints.ArgumentReference_Constraints$3" />
   <unitInfo fileName="VariableNameDeclaration_Constraints.java" startLine="23" startPosition="31" endLine="43" endPosition="5" unitName="jetbrains.mps.bash.constraints.VariableNameDeclaration_Constraints$1" />
-  <unitInfo fileName="BasicParameterExpansion_Constraints.java" startLine="28" startPosition="35" endLine="49" endPosition="5" unitName="jetbrains.mps.bash.constraints.BasicParameterExpansion_Constraints$1" />
   <unitInfo fileName="VariableReference_Constraints.java" startLine="28" startPosition="35" endLine="49" endPosition="5" unitName="jetbrains.mps.bash.constraints.VariableReference_Constraints$1" />
+  <unitInfo fileName="BasicParameterExpansion_Constraints.java" startLine="28" startPosition="35" endLine="49" endPosition="5" unitName="jetbrains.mps.bash.constraints.BasicParameterExpansion_Constraints$1" />
   <unitInfo fileName="OptionWithParamReference_Constraints.java" startLine="30" startPosition="42" endLine="52" endPosition="5" unitName="jetbrains.mps.bash.constraints.OptionWithParamReference_Constraints$1" />
   <unitInfo fileName="OptionReference_Constraints.java" startLine="56" startPosition="23" endLine="78" endPosition="13" unitName="jetbrains.mps.bash.constraints.OptionReference_Constraints$3" />
-  <unitInfo fileName="SimpleCommand_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.bash.constraints.SimpleCommand_Constraints" />
   <unitInfo fileName="BasedIntegerLiteral_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.bash.constraints.BasedIntegerLiteral_Constraints" />
+  <unitInfo fileName="SimpleCommand_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.bash.constraints.SimpleCommand_Constraints" />
   <unitInfo fileName="HexIntegerLiteral_Constraints.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.bash.constraints.HexIntegerLiteral_Constraints" />
   <unitInfo fileName="ArgumentList_Constraints.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.bash.constraints.ArgumentList_Constraints" />
   <unitInfo fileName="SimpleWord_Constraints.java" startLine="23" startPosition="31" endLine="53" endPosition="5" unitName="jetbrains.mps.bash.constraints.SimpleWord_Constraints$1" />
   <unitInfo fileName="ArgumentReference_Constraints.java" startLine="46" startPosition="19" endLine="76" endPosition="9" unitName="jetbrains.mps.bash.constraints.ArgumentReference_Constraints$2" />
   <unitInfo fileName="VariableNameDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.bash.constraints.VariableNameDeclaration_Constraints" />
   <unitInfo fileName="ExternalCommandCall_Constraints.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.bash.constraints.ExternalCommandCall_Constraints" />
-  <unitInfo fileName="BasicParameterExpansion_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.bash.constraints.BasicParameterExpansion_Constraints" />
   <unitInfo fileName="VariableReference_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.bash.constraints.VariableReference_Constraints" />
+  <unitInfo fileName="BasicParameterExpansion_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.bash.constraints.BasicParameterExpansion_Constraints" />
   <unitInfo fileName="OptionWithParamReference_Constraints.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.bash.constraints.OptionWithParamReference_Constraints" />
   <unitInfo fileName="OptionReference_Constraints.java" startLine="47" startPosition="19" endLine="85" endPosition="9" unitName="jetbrains.mps.bash.constraints.OptionReference_Constraints$2" />
   <unitInfo fileName="ArgumentReference_Constraints.java" startLine="37" startPosition="30" endLine="78" endPosition="5" unitName="jetbrains.mps.bash.constraints.ArgumentReference_Constraints$1" />

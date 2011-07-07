@@ -1883,7 +1883,7 @@
     <nodeInfo nodeId="7540119621017432665" fileName="GenerateTextFromBuild.java" startLine="62" startPosition="38" endLine="63" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7540119621017432671" fileName="GenerateTextFromBuild.java" startLine="64" startPosition="16" endLine="65" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6053328609845221856" fileName="GenerateTextFromBuild.java" startLine="67" startPosition="122" endLine="68" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1679850842592136716" fileName="GenerateTextFromBuild.java" startLine="74" startPosition="25" endLine="75" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1679850842592136716" fileName="GenerateTextFromBuild.java" startLine="74" startPosition="34" endLine="75" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1679850842592136731" fileName="GenerateTextFromBuild.java" startLine="76" startPosition="16" endLine="77" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1679850842592148951" fileName="GenerateTextFromBuild.java" startLine="81" startPosition="65" endLine="82" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1679850842592148960" fileName="GenerateTextFromBuild.java" startLine="83" startPosition="12" endLine="84" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1919,7 +1919,7 @@
     <scopeInfo nodeId="7540119621017332290" fileName="GenerateTextFromBuild.java" startLine="62" startPosition="38" endLine="63" endPosition="49" />
     <scopeInfo nodeId="7540119621017432670" fileName="GenerateTextFromBuild.java" startLine="64" startPosition="16" endLine="65" endPosition="49" />
     <scopeInfo nodeId="6053328609845221792" fileName="GenerateTextFromBuild.java" startLine="67" startPosition="122" endLine="68" endPosition="32" />
-    <scopeInfo nodeId="1679850842592136715" fileName="GenerateTextFromBuild.java" startLine="74" startPosition="25" endLine="75" endPosition="175" />
+    <scopeInfo nodeId="1679850842592136715" fileName="GenerateTextFromBuild.java" startLine="74" startPosition="34" endLine="75" endPosition="175" />
     <scopeInfo nodeId="1679850842592136730" fileName="GenerateTextFromBuild.java" startLine="76" startPosition="16" endLine="77" endPosition="265" />
     <scopeInfo nodeId="1679850842592138637" fileName="GenerateTextFromBuild.java" startLine="81" startPosition="65" endLine="82" endPosition="21" />
     <scopeInfo nodeId="1679850842592148959" fileName="GenerateTextFromBuild.java" startLine="83" startPosition="12" endLine="84" endPosition="91" />

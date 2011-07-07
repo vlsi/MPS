@@ -9,7 +9,6 @@
     <classNode extendsClassName="java.util.EventListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter" file="ChangesFoldingAreaPainter.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
@@ -53,6 +52,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SubstituteNodeChange" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="javax.swing.JPopupMenu" />
