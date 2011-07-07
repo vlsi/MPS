@@ -6221,10 +6221,13 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="866755926374577484">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Set%daddAll(java%dutil%dCollection)%cboolean" resolveInfo="addAll" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="866755926374577485">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b43c.~TypesUtil%dgetVariables(jetbrains%dmps%dsmodel%dSNode)%cjava%dutil%dList" resolveInfo="getVariables" />
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="b43c.~TypesUtil" resolveInfo="TypesUtil" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b43c.~TypesUtil%dgetVariables(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnewTypesystem%dstate%dState)%cjava%dutil%dList" resolveInfo="getVariables" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="866755926374577486">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374577470" resolveInfo="parent" />
+                        </node>
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3087688056180390547">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374576904" resolveInfo="myStateCopy" />
                         </node>
                       </node>
                     </node>
@@ -6253,10 +6256,13 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="866755926374577496">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Set%daddAll(java%dutil%dCollection)%cboolean" resolveInfo="addAll" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="866755926374577497">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b43c.~TypesUtil%dgetVariables(jetbrains%dmps%dsmodel%dSNode)%cjava%dutil%dList" resolveInfo="getVariables" />
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="b43c.~TypesUtil" resolveInfo="TypesUtil" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b43c.~TypesUtil%dgetVariables(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnewTypesystem%dstate%dState)%cjava%dutil%dList" resolveInfo="getVariables" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="866755926374577498">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374577464" resolveInfo="child" />
+                        </node>
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3087688056180390545">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="866755926374576904" resolveInfo="myStateCopy" />
                         </node>
                       </node>
                     </node>

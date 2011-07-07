@@ -71,7 +71,7 @@ public enum ConditionKind {
           }
         }
       }
-      if (TypesUtil.getVariables(node).contains(node)) {
+      if (TypesUtil.getVariables(node, state).contains(node)) {
         return result;
       }
       for (SNode child : representative.getChildren(false)) {

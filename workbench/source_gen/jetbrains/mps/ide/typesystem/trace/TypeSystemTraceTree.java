@@ -219,10 +219,10 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       SNode child = eq.getChild();
       SNode parent = eq.getParent();
       if (myNodes.contains(child)) {
-        myNodes.addAll(TypesUtil.getVariables(parent));
+        myNodes.addAll(TypesUtil.getVariables(parent, myStateCopy));
       }
       if (myNodes.contains(parent)) {
-        myNodes.addAll(TypesUtil.getVariables(child));
+        myNodes.addAll(TypesUtil.getVariables(child, myStateCopy));
       }
     }
     if (diff instanceof AssignTypeOperation) {
