@@ -1,0 +1,67 @@
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+  <xsl:output method="xml" indent="yes" />
+  <xsl:template match="/">
+    <xsl:apply-templates select="root/*" />
+  </xsl:template>
+  <xsl:template match="configuration">
+    <xsl:choose>
+      <xsl:when test="@type = 'JavaApplication'">
+        <configuration type="Java Application" factoryName="Java">
+          <xsl:attribute name="default">
+            <xsl:value-of select="@default" />
+          </xsl:attribute>
+          <xsl:attribute name="name">
+            <xsl:value-of select="@name" />
+          </xsl:attribute>
+          <MyState />
+          <myRunParameters>
+            <MyState>
+              <option name="myJavaRunParameters">
+                <xsl:copy-of select=".//ConfigRunParameters/option" />
+              </option>
+            </MyState>
+          </myRunParameters>
+          <myNode>
+            <MyState>
+              <xsl:for-each select=".//option">
+                <xsl:choose>
+                  <xsl:when test="@name = 'modelId'">
+                    <xsl:copy-of select="." />
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:choose>
+                      <xsl:when test="@name = 'nodeId'">
+                        <xsl:copy-of select="." />
+                      </xsl:when>
+                    </xsl:choose>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:for-each>
+            </MyState>
+          </myNode>
+        </configuration>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:copy-of select="." />
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  <xsl:template match="option">
+    <xsl:choose>
+      <xsl:when test="@name = 'modelId'">
+        <xsl:copy-of select="." />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="@name = 'nodeId'">
+            <xsl:copy-of select="." />
+          </xsl:when>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  <xsl:attribute-set name="java">
+    <xsl:attribute name="type">Java Application</xsl:attribute>
+    <xsl:attribute name="factoryName">Java</xsl:attribute>
+  </xsl:attribute-set>
+</xsl:stylesheet>

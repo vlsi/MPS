@@ -9,8 +9,8 @@
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="usages.java" />
       <modulePath path="${mps_home}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="old" />
       <modulePath path="${mps_home}/core/baseLanguage/runConfigurations/runtime/runtime.msd" folder="old" />
-      <modulePath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="old.usages" />
-      <modulePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="old.usages" />
+      <modulePath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="usages.junit" />
+      <modulePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="usages.junit" />
       <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" />
       <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" folder="old" />
       <modulePath path="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.ant" />

@@ -15,6 +15,12 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.RunManagerEx;
 import com.intellij.execution.impl.ProjectRunConfigurationManager;
+import org.jdom.transform.JDOMSource;
+import org.jdom.transform.JDOMResult;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.transform.TransformerException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationType;
@@ -110,8 +116,15 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     Element newState = new Element("root");
     Element newSharedState = new Element("root");
     try {
+      // save 
       getRunManager().writeExternal(newState);
       getSharedConfigurationManager().writeExternal(newSharedState);
+
+      // migrate 
+      newState = migrateConfigurations(newState);
+      newSharedState = migrateConfigurations(newSharedState);
+
+      // read 
       getRunManager().readExternal(newState);
       getSharedConfigurationManager().readExternal(newSharedState);
     } catch (WriteExternalException wee) {
@@ -123,6 +136,26 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         log.error("", ide);
       }
     }
+  }
+
+  private Element migrateConfigurations(Element state) {
+
+    Element migratedState = new Element("root");
+    JDOMSource source = new JDOMSource(state);
+    JDOMResult result = new JDOMResult();
+
+    try {
+      Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(RunConfigurationsStateManager.class.getResourceAsStream("java.transform.xml")));
+      transformer.transform(source, result);
+      migratedState.addContent(result.getResult());
+    } catch (TransformerException e) {
+      if (log.isErrorEnabled()) {
+        log.error("Cant transform", e);
+      }
+      migratedState.addContent(state);
+    }
+
+    return migratedState;
   }
 
   @NonNls
