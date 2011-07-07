@@ -11,11 +11,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Element extends ElementPart {
   public static final String concept = "jetbrains.mps.xml.deprecated.structure.Element";
+  public static final String COLLAPSE = "collapse";
   public static final String ATTRIBUTE = "attribute";
   public static final String CONTENT = "content";
 
   public Element(SNode node) {
     super(node);
+  }
+
+  public boolean getCollapse() {
+    return this.getBooleanProperty(Element.COLLAPSE);
+  }
+
+  public void setCollapse(boolean value) {
+    this.setBooleanProperty(Element.COLLAPSE, value);
   }
 
   public int getAttributesCount() {

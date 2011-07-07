@@ -71,4 +71,49 @@ public class JavaRunParameters extends MultiTuple._5<String, String, String, Str
     }
     return null;
   }
+
+  public void setJrePath(String jrePathValue) {
+    this.jrePath(jrePathValue);
+  }
+
+  public String getJrePath() {
+    return this.jrePath();
+  }
+
+  public void setProgramParameters(String programParameters) {
+    this.programParameters(programParameters);
+  }
+
+  public String getProgramParameters() {
+    return this.programParameters();
+  }
+
+  public void setVmOptions(String vmOptions) {
+    this.vmOptions(vmOptions);
+  }
+
+  public String getVmOptions() {
+    return this.vmOptions();
+  }
+
+  public void setWorkingDirectory(String workingDirectory) {
+    this.workingDirectory(workingDirectory);
+  }
+
+  public String getWorkingDirectory() {
+    return this.workingDirectory();
+  }
+
+  public void setUseAlternativeJre(boolean useAlternativeJre) {
+    this.useAlternativeJre(useAlternativeJre);
+  }
+
+  public boolean getUseAlternativeJre() {
+    try {
+      return (boolean) this.useAlternativeJre();
+    } catch (NullPointerException e) {
+      // useAlternativeJre is basically a Boolean, so can be null and a cast (and thus NPE) is inevitable here 
+      return false;
+    }
+  }
 }

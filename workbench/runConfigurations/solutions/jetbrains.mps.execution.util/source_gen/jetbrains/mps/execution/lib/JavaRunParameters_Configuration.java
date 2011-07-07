@@ -74,7 +74,7 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
   }
 
   public class MyState {
-    public JavaRunParameters myJavaRunParameters;
+    public JavaRunParameters myJavaRunParameters = new JavaRunParameters(null, null, null, null, false);
 
     public MyState() {
     }

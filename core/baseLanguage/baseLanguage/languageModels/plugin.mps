@@ -8947,7 +8947,7 @@
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6018687884935430377">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="6018687884935430376">
-                    <link role="classifier" roleId="tpee.1116615189566" targetNodeId="ykrt.~GoToOverridingMethod_Action" resolveInfo="null" />
+                    <link role="classifier" roleId="tpee.1116615189566" targetNodeId="ykrt.~GoToOverridingMethod_Action" resolveInfo="GoToOverridingMethod_Action" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6018687884935430381">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
