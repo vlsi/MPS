@@ -26,9 +26,9 @@
   <unitInfo fileName="MakeSelectedModules_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeSelectedModules_Action" />
   <unitInfo fileName="RebuildSelectedModules_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildSelectedModules_Action" />
   <unitInfo fileName="MakeSelectedModels_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeSelectedModels_Action" />
-  <unitInfo fileName="Make_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
   <unitInfo fileName="ShowMappingsPartitioning_Action.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.make.actions.ShowMappingsPartitioning_Action" />
   <unitInfo fileName="CleanProject_Action.java" startLine="27" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action" />
+  <unitInfo fileName="Make_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
   <unitInfo fileName="CleanModule_Action.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action" />
   <unitInfo fileName="MakeSelection_Action.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeSelection_Action" />
   <unitInfo fileName="MakeNamespace_Action.java" startLine="23" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeNamespace_Action" />
