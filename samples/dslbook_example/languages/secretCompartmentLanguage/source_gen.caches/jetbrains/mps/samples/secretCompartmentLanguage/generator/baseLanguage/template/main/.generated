@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9adkfijcv3o7g27iwe2h3235edw7e0k">
+<dependencies version="2" modelHash="-812qmvaug81xh58mbjrdsulkvweztet">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8f40zw2ng3ru04g6jirwqdjoy2uzoh2" />
@@ -18,7 +18,7 @@
   <dep model="r:bf569071-47c0-4c8e-8820-c63d5ff55ed1(jetbrains.mps.samples.secretCompartmentLanguage.behavior)" hash="-35rp2gzuw41ixtih7wsmkfymbuo6v3q" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-43wh01onabvwy9s5tyv4yxofdjxsmwy" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
-  <common hash="-9jnmmao59d8w3589ygzca5irgoorgrr" dependsOnNodes="true">
+  <common hash="-da6hx0jk6v414v4exm8qtnpt4nwgr3w" dependsOnNodes="true">
     <dep root="1197167513943" />
     <dep root="1197239799208" />
     <dep root="1197251176277" />
@@ -50,16 +50,16 @@
   <source id="1197167513943" name="StateMachineFactoryImpl" hash="adun50pvd9paxlduzut4aa8o5eggiy9">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1197239799208" name="reduce_State" hash="-75hi2dagoavzkvjy1ge4pcvr1r4lkvw">
+  <source id="1197239799208" name="reduce_State" hash="cah0sq5b07nsxlkia1okbc4mue9m7n2">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1197251176277" name="StateMachineTestImpl_Test" hash="-4yhfse92rvse44hgz2gahopleliwyvx">
+  <source id="1197251176277" name="StateMachineTestImpl_Test" hash="-7zhp1eat7veuxtdarbb0y1qij8ju37e">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1197253199675" name="reduce_StateMachineTestMethod" hash="cw1x8yt4bg64hek95f4dkad98cwblnc">
+  <source id="1197253199675" name="reduce_StateMachineTestMethod" hash="-enfotpebytueap8ykjhwpg75c75vw5a">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1197255964668" name="reduce_HandleEvent" hash="-bhvjjb85ajykemf4jmgtwfamamd694u">
+  <source id="1197255964668" name="reduce_HandleEvent" hash="qmypcbt9ok11q28h9b516jwqg716kw">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

@@ -41,7 +41,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "stateMachineName") + "_StateMachineFactory";
   }
 
-  public static Object propertyMacro_GetPropertyValue_1197240019766(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_199058371937543681(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "stateName");
   }
 
@@ -49,11 +49,11 @@ public class QueriesGenerated {
     return StateMachineTest_Behavior.call_getStateMachineName_1197251245696(_context.getNode()) + "_StateMachine";
   }
 
-  public static Object propertyMacro_GetPropertyValue_1197256505999(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_199058371937525698(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "finalState", false), "stateName");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1197256506011(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_199058371937525715(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "methodName");
   }
 
@@ -86,11 +86,11 @@ public class QueriesGenerated {
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", false, new String[]{});
   }
 
-  public static Iterable sourceNodesQuery_1197253174254(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_199058371937525658(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "testMethod", true);
   }
 
-  public static Iterable sourceNodesQuery_1197256505990(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_199058371937526736(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "handleEvent", true);
   }
 }
