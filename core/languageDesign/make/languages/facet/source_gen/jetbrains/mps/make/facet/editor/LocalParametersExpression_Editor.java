@@ -29,8 +29,8 @@ public class LocalParametersExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_nhhm2n_a0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.red);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
     }
     editorCell.setDefaultText("");
     return editorCell;

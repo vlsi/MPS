@@ -7,16 +7,16 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ConfigDefinition", "jetbrains.mps.make.script.structure.ExpectedInput", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.InputResourcesParameter", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.QueryParameterDeclaration", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ConfigDefinition", "jetbrains.mps.make.script.structure.ExpectedInput", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.InputResourcesParameter", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.PropertiesAccessorParameter", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.QueryParameterDeclaration", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 19:
+      case 20:
         return new ResultStatement_BehaviorDescriptor();
-      case 18:
+      case 19:
         return new ResourceType_BehaviorDescriptor();
       case 13:
         return new OutputResources_BehaviorDescriptor();
@@ -24,13 +24,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new JobDefinition_BehaviorDescriptor();
       case 7:
         return new InputResourcesParameter_BehaviorDescriptor();
-      case 14:
-        return new QueryDefinition_BehaviorDescriptor();
       case 15:
+        return new QueryDefinition_BehaviorDescriptor();
+      case 16:
         return new QueryParameterDeclaration_BehaviorDescriptor();
       case 10:
         return new Option_BehaviorDescriptor();
-      case 20:
+      case 21:
         return new Text_BehaviorDescriptor();
       case 11:
         return new OptionExpression_BehaviorDescriptor();
@@ -42,11 +42,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ExpectedInput_BehaviorDescriptor();
       case 8:
         return new JobDeclaration_BehaviorDescriptor();
-      case 16:
+      case 17:
         return new RelayQueryExpression_BehaviorDescriptor();
       case 3:
         return new ConfigDefinition_BehaviorDescriptor();
-      case 17:
+      case 18:
         return new ReportFeedbackStatement_BehaviorDescriptor();
       case 2:
         return new BeginWorkStatement_BehaviorDescriptor();
@@ -56,6 +56,8 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new FinishWorkStatement_BehaviorDescriptor();
       case 1:
         return new AllWorkLeftExpression_BehaviorDescriptor();
+      case 14:
+        return new PropertiesAccessorParameter_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

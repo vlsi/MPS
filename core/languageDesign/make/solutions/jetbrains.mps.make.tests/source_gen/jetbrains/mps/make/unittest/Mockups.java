@@ -4,6 +4,7 @@ package jetbrains.mps.make.unittest;
 
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -21,12 +22,12 @@ import jetbrains.mps.make.script.IProgress;
 
 public class Mockups {
   private static IConfig DefaultConfig = new IConfig() {
-    public boolean configure(IConfigMonitor cmon, IParametersPool pool) {
+    public boolean configure(IConfigMonitor cmon, IPropertiesAccessor pa, IParametersPool pool) {
       return true;
     }
   };
   private static IJob DefaultJob = new IJob() {
-    public IResult execute(final Iterable<IResource> ignore, IJobMonitor mon, IParametersPool pool) {
+    public IResult execute(final Iterable<IResource> ignore, IJobMonitor mon, IPropertiesAccessor pa, IParametersPool pool) {
       return DefaultResult;
     }
   };
@@ -140,7 +141,7 @@ public class Mockups {
     final IJob job = context.mock(IJob.class, name);
     context.checking(new Expectations() {
       {
-        this.exactly(1).of(job).execute(this.with(aNonNull(Iterable.class)), this.with(aNonNull(IJobMonitor.class)), this.with(aNonNull(IParametersPool.class)));
+        this.exactly(1).of(job).execute(this.with(aNonNull(Iterable.class)), this.with(aNonNull(IJobMonitor.class)), this.with(aNonNull(IPropertiesAccessor.class)), this.with(aNonNull(IParametersPool.class)));
         this.will(returnValue(fun.invoke()));
       }
     });

@@ -4,7 +4,7 @@ package jetbrains.mps.make.facet.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor;
 
-public class ForeignParametersComponentExpression_BehaviorDescriptor extends DotExpression_BehaviorDescriptor {
+public class ForeignParametersComponentExpression_BehaviorDescriptor extends DotExpression_BehaviorDescriptor implements IPropertyExpression_BehaviorDescriptor {
   public ForeignParametersComponentExpression_BehaviorDescriptor() {
   }
 

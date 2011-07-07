@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.resources.IDeltaResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
@@ -62,8 +63,8 @@ public class Make_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_pm9z_a0a = null;
           switch (0) {
             case 0:
@@ -162,8 +163,8 @@ public class Make_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_pm9z_a0b = null;
           switch (0) {
             case 0:

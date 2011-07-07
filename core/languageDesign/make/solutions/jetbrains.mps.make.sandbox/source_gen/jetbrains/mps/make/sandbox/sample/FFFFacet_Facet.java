@@ -12,8 +12,11 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class FFFFacet_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -55,12 +58,13 @@ public class FFFFacet_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_chixuw_a0a = null;
           switch (0) {
             case 0:
-              pool.parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
+              pa.properties(Sequence.fromIterable(input).first()).parameters(Target_QQQ.this.getName(), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
+              pa.properties().parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
               return new IResult.SUCCESS(_output_chixuw_a0a);
@@ -110,12 +114,38 @@ public class FFFFacet_Facet implements IFacet {
     }
 
     public <T> T createParameters(Class<T> cls) {
-      return null;
+      return cls.cast(new Parameters());
     }
 
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
+      if (t != null) {
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+      }
       return t;
+    }
+
+    public static class Parameters extends MultiTuple._1<String> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(String text) {
+        super(text);
+      }
+
+      public String text(String value) {
+        return super._0(value);
+      }
+
+      public String text() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public FFFFacet_Facet.Target_QQQ.Parameters assignFrom(Tuples._1<String> from) {
+        return (FFFFacet_Facet.Target_QQQ.Parameters) super.assign(from);
+      }
     }
   }
 
@@ -129,12 +159,12 @@ public class FFFFacet_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_chixuw_a0b = null;
           switch (0) {
             case 0:
-
+              pa.properties().parameters(new ITarget.Name("QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
               monitor.currentProgress().beginWork("Foobar", 10, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("Foobar", 10);
               monitor.currentProgress().finishWork("Foobar");
@@ -206,8 +236,8 @@ public class FFFFacet_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_chixuw_a0c = null;
           switch (0) {
             case 0:

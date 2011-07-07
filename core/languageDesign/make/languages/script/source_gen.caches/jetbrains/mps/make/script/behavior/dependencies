@@ -35,6 +35,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.behavior.OptionType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.Option_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.OutputResources_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.make.script.behavior.PropertiesAccessorParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.QueryDefinition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.QueryParameterDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.RelayQueryExpression_BehaviorDescriptor" />
@@ -163,6 +164,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.behavior.PropertiesAccessorParameter_BehaviorDescriptor" file="PropertiesAccessorParameter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.behavior.QueryDefinition_Behavior" file="QueryDefinition_Behavior.java">

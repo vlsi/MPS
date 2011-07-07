@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.resources.TResource;
@@ -89,12 +90,12 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
-              pool.parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
+              pa.properties().parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
               int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + ((((TResource) it).module().isCompileInMPS() ?
@@ -125,7 +126,7 @@ public class JavaCompile_Facet implements IFacet {
                   }
                 });
                 if (cr.value != null) {
-                  pool.parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pool.parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
+                  pa.properties().parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pa.properties().parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
                   for (IMessage msg : cr.value.getMessages()) {
                     monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                   }
@@ -239,8 +240,8 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_wf1ya0_a0b = null;
           switch (0) {
             case 0:
@@ -255,11 +256,11 @@ public class JavaCompile_Facet implements IFacet {
               if (work == 0) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
-              if (pool.parameters(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile() != null && pool.parameters(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile()) {
+              if (pa.properties().parameters(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile() != null && pa.properties().parameters(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
 
-              IAuxProjectPeer peer = pool.parameters(new ITarget.Name("checkParameters"), Variables.class).project().getComponent(IAuxProjectPeer.class);
+              IAuxProjectPeer peer = pa.properties().parameters(new ITarget.Name("checkParameters"), Variables.class).project().getComponent(IAuxProjectPeer.class);
               if (peer == null || !(peer.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
@@ -401,8 +402,8 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_wf1ya0_a0c = null;
           switch (0) {
             case 0:
@@ -419,11 +420,11 @@ public class JavaCompile_Facet implements IFacet {
                   SetSequence.fromSet(modules).addElement(fres.module());
                 }
               }
-              pool.parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(false);
+              pa.properties().parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(false);
               jc.addCompilationResultListener(new CompilationResultAdapter() {
                 public void onCompilationResult(CompilationResult cr) {
                   if (cr.hasErrors()) {
-                    pool.parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(true);
+                    pa.properties().parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(true);
                     CategorizedProblem[] categorizedProblems = cr.getErrors();
                     for (int i = 0; i < 3 && i < categorizedProblems.length; i++) {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.valueOf(categorizedProblems[i]))));
@@ -435,7 +436,7 @@ public class JavaCompile_Facet implements IFacet {
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
                   ccp.value = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(modules, true);
-                  Sequence.fromIterable(pool.parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
+                  Sequence.fromIterable(pa.properties().parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
                     public void visit(IClassPathItem cpi) {
                       ccp.value.add(cpi);
                     }
@@ -443,7 +444,7 @@ public class JavaCompile_Facet implements IFacet {
                 }
               });
               jc.compile(ccp.value);
-              if ((boolean) pool.parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors()) {
+              if ((boolean) pa.properties().parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors()) {
                 return new IResult.FAILURE(_output_wf1ya0_a0c);
               }
               _output_wf1ya0_a0c = Sequence.fromIterable(_output_wf1ya0_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(new IClassesData() {

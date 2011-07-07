@@ -12,6 +12,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -57,12 +58,12 @@ public class Generator__Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_j0fmyu_a0a = null;
           switch (0) {
             case 0:
-              pool.parameters(Target_Configure.this.getName(), Generator__Facet.Target_Configure.Variables.class).value("uninitialized");
+              pa.properties().parameters(Target_Configure.this.getName(), Generator__Facet.Target_Configure.Variables.class).value("uninitialized");
             default:
               return new IResult.SUCCESS(_output_j0fmyu_a0a);
           }
@@ -156,14 +157,14 @@ public class Generator__Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_j0fmyu_a0b = null;
           switch (0) {
             case 0:
-              Assert.assertEquals("uninitialized", pool.parameters(new ITarget.Name("Configure"), Generator__Facet.Target_Configure.Variables.class).value());
+              Assert.assertEquals("uninitialized", pa.properties().parameters(new ITarget.Name("Configure"), Generator__Facet.Target_Configure.Variables.class).value());
               monitor.currentProgress().beginWork("GENERATE", 100, monitor.currentProgress().workLeft());
-              pool.parameters(new ITarget.Name("Configure"), Generator__Facet.Target_Configure.Variables.class).value("VALUE");
+              pa.properties().parameters(new ITarget.Name("Configure"), Generator__Facet.Target_Configure.Variables.class).value("VALUE");
               for (IResource resource : input) {
                 _output_j0fmyu_a0b = Sequence.fromIterable(_output_j0fmyu_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }

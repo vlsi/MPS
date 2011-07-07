@@ -14,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.ParametersDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.RelatedFacetReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.ResourceClassifierType_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.make.facet.behavior.ResourceSpecificPropertiesExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.ResourceTypeDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.TargetDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.TargetDependency_BehaviorDescriptor" />
@@ -84,6 +85,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.ForeignParametersExpression_BehaviorDescriptor" file="ForeignParametersExpression_BehaviorDescriptor.java">
@@ -96,10 +99,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.IFacet_BehaviorDescriptor" file="IFacet_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" file="IPropertyExpression_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression_BehaviorDescriptor" file="LocalParametersComponentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DotExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.LocalParametersExpression_BehaviorDescriptor" file="LocalParametersExpression_BehaviorDescriptor.java">
@@ -130,6 +136,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierType_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.ResourceSpecificPropertiesExpression_BehaviorDescriptor" file="ResourceSpecificPropertiesExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.ResourceTypeDeclaration_BehaviorDescriptor" file="ResourceTypeDeclaration_BehaviorDescriptor.java">

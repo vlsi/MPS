@@ -4,15 +4,56 @@ package jetbrains.mps.make.facet.structure;
 
 import jetbrains.mps.baseLanguage.structure.DotExpression;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ForeignParametersComponentExpression extends DotExpression {
+public class ForeignParametersComponentExpression extends DotExpression implements IPropertyExpression {
   public static final String concept = "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOURCE = "resource";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ForeignParametersComponentExpression(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ForeignParametersComponentExpression.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ForeignParametersComponentExpression.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ForeignParametersComponentExpression.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ForeignParametersComponentExpression.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ForeignParametersComponentExpression.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ForeignParametersComponentExpression.VIRTUAL_PACKAGE, value);
+  }
+
+  public Expression getResource() {
+    return (Expression) this.getChild(Expression.class, ForeignParametersComponentExpression.RESOURCE);
+  }
+
+  public void setResource(Expression node) {
+    super.setChild(ForeignParametersComponentExpression.RESOURCE, node);
   }
 
   public ForeignParametersExpression getExpression() {
@@ -21,6 +62,26 @@ public class ForeignParametersComponentExpression extends DotExpression {
 
   public void setExpression(ForeignParametersExpression node) {
     this.setOperand(node);
+  }
+
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(ForeignParametersComponentExpression.SMODEL_ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, ForeignParametersComponentExpression.SMODEL_ATTRIBUTE);
+  }
+
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, ForeignParametersComponentExpression.SMODEL_ATTRIBUTE);
+  }
+
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(ForeignParametersComponentExpression.SMODEL_ATTRIBUTE, node);
+  }
+
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ForeignParametersComponentExpression.SMODEL_ATTRIBUTE, node);
   }
 
   public static ForeignParametersComponentExpression newInstance(SModel sm, boolean init) {

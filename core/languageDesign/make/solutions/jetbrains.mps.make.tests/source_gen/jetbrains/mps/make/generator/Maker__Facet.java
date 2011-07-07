@@ -11,6 +11,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -53,8 +54,8 @@ public class Maker__Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_izvplp_a0a = null;
           switch (0) {
             case 0:

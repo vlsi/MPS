@@ -12,6 +12,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
@@ -99,20 +100,20 @@ public class Generate_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_fi61u2_a0a = null;
           switch (0) {
             case 0:
-              if (pool.parameters(Target_checkParameters.this.getName(), Generate_Facet.Target_checkParameters.Variables.class).project() == null) {
+              if (pa.properties().parameters(Target_checkParameters.this.getName(), Generate_Facet.Target_checkParameters.Variables.class).project() == null) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("project is null")));
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
-              if (pool.parameters(Target_checkParameters.this.getName(), Generate_Facet.Target_checkParameters.Variables.class).operationContext() == null) {
+              if (pa.properties().parameters(Target_checkParameters.this.getName(), Generate_Facet.Target_checkParameters.Variables.class).operationContext() == null) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("operationContext is null")));
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
-              if (pool.parameters(Target_checkParameters.this.getName(), Generate_Facet.Target_checkParameters.Variables.class).cleanMake() == null) {
+              if (pa.properties().parameters(Target_checkParameters.this.getName(), Generate_Facet.Target_checkParameters.Variables.class).cleanMake() == null) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no cleanMake")));
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
@@ -233,13 +234,13 @@ public class Generate_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_fi61u2_a0b = null;
           switch (0) {
             case 0:
-              if (DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).isDumb()) {
-                DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
+              if (DumbService.getInstance(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).isDumb()) {
+                DumbService.getInstance(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
                 return new IResult.FAILURE(_output_fi61u2_a0b);
               }
             default:
@@ -309,25 +310,25 @@ public class Generate_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_fi61u2_a0c = null;
           switch (0) {
             case 0:
               GenerationSettings settings = GenerationSettings.getInstance();
-              pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions((pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() != null ?
-                pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() :
+              pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions((pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() != null ?
+                pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() :
                 GenerationOptions.fromSettings(settings)
               ));
-              pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ?
+              pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ?
                 GeneratorCacheComponent.getInstance().getCache() :
                 null
               ), settings.isIncremental()));
-              IGenerationTracer tracer = (pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() ?
-                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class) :
+              IGenerationTracer tracer = (pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() ?
+                pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class) :
                 new NullGenerationTracer()
               );
-              pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions(pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().saveTransientModels(pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).cleanMake()).keepOutputModel(true));
+              pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().saveTransientModels(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).cleanMake()).keepOutputModel(true));
               return new IResult.SUCCESS(_output_fi61u2_a0c);
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0c);
@@ -337,31 +338,32 @@ public class Generate_Facet implements IFacet {
     }
 
     public IConfig createConfig() {
-      return new IConfig() {
-        public boolean configure(final IConfigMonitor cmonitor, final IParametersPool pool) {
+      return new IConfig.Stub() {
+        @Override
+        public boolean configure(final IConfigMonitor cmonitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           switch (0) {
             case 0:
               GenerationSettings settings = GenerationSettings.getInstance();
-              if (pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() != null) {
+              if (pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() != null) {
                 return true;
               }
               if (settings.isSaveTransientModels()) {
                 switch (cmonitor.<SaveTransient_Option>relayQuery(new SaveTransientModels_Query())) {
                   case SAVE_fi61u2_a0a0c:
-                    pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(true);
+                    pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(true);
                     break;
                   case DONT_SAVE_fi61u2_b0a0c:
-                    pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
+                    pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
                     break;
                   case BUGGER_OFF_fi61u2_c0a0c:
-                    pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
+                    pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
                     settings.setSaveTransientModels(false);
                     break;
                   default:
                     return false;
                 }
               } else {
-                pool.parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
+                pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
               }
             default:
               return true;
@@ -460,8 +462,8 @@ public class Generate_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_fi61u2_a0d = null;
           switch (0) {
             case 0:
@@ -557,15 +559,15 @@ public class Generate_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0e = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
               boolean generationOk;
-              GeneratorManager gm = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(GeneratorManager.class);
-              if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
-                IGenerationTracer tracer = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class);
+              GeneratorManager gm = pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(GeneratorManager.class);
+              if (!(pa.properties().parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
+                IGenerationTracer tracer = pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class);
                 if (tracer != null) {
                   tracer.discardTracing();
                 }
@@ -662,7 +664,7 @@ public class Generate_Facet implements IFacet {
                 }
               }).toListSequence();
 
-              generationOk = gm.generateModels(models, pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).pindGet().invoke(), mh, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create());
+              generationOk = gm.generateModels(models, pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).pindGet().invoke(), mh, pa.properties().parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create());
 
               monitor.currentProgress().finishWork("Generating");
               if (!(generationOk)) {
@@ -678,8 +680,8 @@ public class Generate_Facet implements IFacet {
                 }
 
                 public boolean reconcile() {
-                  if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
-                    pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
+                  if (!(pa.properties().parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
+                    pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
                   }
                   return true;
                 }

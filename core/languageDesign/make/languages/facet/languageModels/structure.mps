@@ -100,6 +100,15 @@
       <property name="name" nameId="tpck.1169194664001" value="NamedFacetReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6447445394688422642" resolveInfo="FacetReference" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2191561637326275574">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="target" />
+      <property name="name" nameId="tpck.1169194664001" value="ResourceSpecificPropertiesExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2191561637326275576">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="target" />
+      <property name="name" nameId="tpck.1169194664001" value="IPropertyExpression" />
+    </node>
   </roots>
   <root id="6418371274763029521" />
   <root id="6418371274763029523">
@@ -244,6 +253,9 @@
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tpee.1197027771414" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7320828025189375154" resolveInfo="LocalParametersExpression" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8170824575195200901">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2191561637326275576" resolveInfo="IPropertyExpression" />
+    </node>
   </root>
   <root id="3344436107830227888">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3344436107830227902">
@@ -263,6 +275,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3344436107830227888" resolveInfo="ForeignParametersExpression" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tpee.1197027771414" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8170824575195200900">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2191561637326275576" resolveInfo="IPropertyExpression" />
     </node>
   </root>
   <root id="1675547159918562083">
@@ -314,5 +329,27 @@
     </node>
   </root>
   <root id="1919086248986845077" />
+  <root id="2191561637326275574">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2191561637326275575">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="properties" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2191561637326275576" resolveInfo="IPropertyExpression" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2191561637326275592">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="resource" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+  </root>
+  <root id="2191561637326275576">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8170824575195151990">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="resource" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+  </root>
 </model>
 

@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -80,8 +81,8 @@ public class Binaries_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_8acy7z_a0a = null;
           switch (0) {
             case 0:
@@ -97,8 +98,8 @@ public class Binaries_Facet implements IFacet {
                         monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + smd.getLongName())));
                         return null;
                       } else {
-                        IFile outputRoot = (pool.parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile() != null ?
-                          pool.parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile().invoke(output) :
+                        IFile outputRoot = (pa.properties().parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile() != null ?
+                          pa.properties().parameters(Target_copyBinaries.this.getName(), Binaries_Facet.Target_copyBinaries.Parameters.class).pathToFile().invoke(output) :
                           FileSystem.getInstance().getFileByPath(output)
                         );
                         final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);

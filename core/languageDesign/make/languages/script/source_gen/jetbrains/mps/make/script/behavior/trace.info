@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IExpected_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.script.behavior.IExpected_BehaviorDescriptor" />
+  <unitInfo fileName="PropertiesAccessorParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.PropertiesAccessorParameter_BehaviorDescriptor" />
   <unitInfo fileName="AllWorkLeftExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.AllWorkLeftExpression_BehaviorDescriptor" />
   <unitInfo fileName="FinishWorkStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.FinishWorkStatement_BehaviorDescriptor" />
   <unitInfo fileName="AdvanceWorkStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.AdvanceWorkStatement_BehaviorDescriptor" />
@@ -23,7 +24,7 @@
   <unitInfo fileName="OptionType_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.script.behavior.OptionType_BehaviorDescriptor" />
   <unitInfo fileName="ExpectedOption_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ExpectedOption_BehaviorDescriptor" />
   <unitInfo fileName="QueryDefinition_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.script.behavior.QueryDefinition_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.make.script.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.make.script.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1977954644795510055">
     <nodeInfo nodeId="1977954644795510055" fileName="RelayQueryExpression_Behavior.java" startLine="11" startPosition="44" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1977954644795510058" />
     <nodeInfo nodeId="1977954644795510066" fileName="RelayQueryExpression_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.make.resources.IPropertiesAccessor" file="IPropertiesAccessor.java">
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
+  </dependency>
   <dependency className="jetbrains.mps.make.resources.IPropertiesCollector" file="IPropertiesCollector.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />

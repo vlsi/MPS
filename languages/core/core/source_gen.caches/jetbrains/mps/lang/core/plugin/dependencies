@@ -203,6 +203,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
@@ -236,6 +237,7 @@
     <classNode dependClassName="jetbrains.mps.make.delta.IInternalDelta" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeGenerationStrategy" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
@@ -361,6 +363,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.delta.IInternalDelta" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
@@ -472,6 +475,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.Generate_Facet" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />

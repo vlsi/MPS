@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.resources.IGResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IFeedback;
@@ -90,8 +91,8 @@ public class TextGen_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_21gswx_a0a = null;
           switch (0) {
             case 0:
@@ -108,8 +109,8 @@ public class TextGen_Facet implements IFacet {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + gres.model().getLongName())));
                   continue;
                 }
-                final IFile targetDir = (pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile() != null ?
-                  pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile().invoke(output) :
+                final IFile targetDir = (pa.properties().parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile() != null ?
+                  pa.properties().parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).pathToFile().invoke(output) :
                   FileSystem.getInstance().getFileByPath(output)
                 );
                 final IFile cachesDir = FileGenerationUtil.getCachesDir(targetDir);
@@ -136,17 +137,17 @@ public class TextGen_Facet implements IFacet {
 
                 final JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, cachesDir);
                 final Wrappers._boolean ok = new Wrappers._boolean();
-                boolean generateDI = pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
+                boolean generateDI = pa.properties().parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo() == null || pa.properties().parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).generateDebugInfo();
                 final TextGenerator textgen = new TextGenerator(javaStreamHandler, BLDependenciesCache.getInstance().getGenerator(), (generateDI ?
                   TraceInfoCache.getInstance().getGenerator() :
                   null
                 ), GenerationDependenciesCache.getInstance().getGenerator());
-                textgen.setFailIfNoTextgen(pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen() != null && pool.parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen());
+                textgen.setFailIfNoTextgen(pa.properties().parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen() != null && pa.properties().parameters(Target_textGen.this.getName(), TextGen_Facet.Target_textGen.Parameters.class).failIfNoTextgen());
                 textgen.setGenerateDebugInfo(generateDI);
                 try {
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
-                      ok.value = textgen.handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gres.status());
+                      ok.value = textgen.handleOutput(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gres.status());
                     }
                   });
                 } finally {
@@ -297,8 +298,8 @@ public class TextGen_Facet implements IFacet {
     }
 
     public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
           Iterable<IResource> _output_21gswx_a0b = null;
           switch (0) {
             case 0:
@@ -315,7 +316,7 @@ public class TextGen_Facet implements IFacet {
                         return rt.getName() != null;
                       }
                     })) {
-                      TextGenerationResult tgr = TextGenerationUtil.generateText(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
+                      TextGenerationResult tgr = TextGenerationUtil.generateText(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
                       errors.value |= tgr.hasErrors();
                       if (errors.value) {
                         break;
