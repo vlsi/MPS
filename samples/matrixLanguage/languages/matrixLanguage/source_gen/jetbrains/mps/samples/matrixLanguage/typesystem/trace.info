@@ -6,8 +6,8 @@
   <unitInfo fileName="typeof_MatrixElementVariableReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixElementVariableReference_InferenceRule" />
   <unitInfo fileName="typeof_MatrixIndexVariableDeclaration_InferenceRule.java" startLine="43" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixIndexVariableDeclaration_InferenceRule$QuotationClass_roul4o_a0a0a0" />
   <unitInfo fileName="typeof_MatrixDivExpression_InferenceRule.java" startLine="55" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixDivExpression_InferenceRule$QuotationClass_ubl348_a0a3a0" />
-  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="178" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$QuotationClass_s4fcwx_a1a0b0a0a0a" />
-  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="264" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$QuotationClass_s4fcwx_a1a0a1a0a0a0" />
+  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="177" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$QuotationClass_s4fcwx_a1a0b0a0a0a" />
+  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="263" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$QuotationClass_s4fcwx_a1a0a1a0a0a0" />
   <unitInfo fileName="typeof_MatrixRow_InferenceRule.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixRow_InferenceRule" />
   <unitInfo fileName="typeof_MatrixType_InferenceRule.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixType_InferenceRule$QuotationClass_fdz8xr_a0a0a0a" />
   <unitInfo fileName="typeof_MatrixSubExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixSubExpression_InferenceRule" />
@@ -19,8 +19,8 @@
   <unitInfo fileName="typeof_Determinant_InferenceRule.java" startLine="51" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_Determinant_InferenceRule$QuotationClass_v3zl66_a0a1a0" />
   <unitInfo fileName="typeof_MatrixLiteral_InferenceRule.java" startLine="55" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixLiteral_InferenceRule$QuotationClass_psm0l7_a0a0a0a" />
   <unitInfo fileName="typeof_MatrixAddExpression_InferenceRule.java" startLine="62" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixAddExpression_InferenceRule$QuotationClass_u8mvbk_a0a2a0" />
-  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="121" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$QuotationClass_s4fcwx_a0a0a2a0a1a0a0a0" />
-  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="207" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$QuotationClass_s4fcwx_a0a0a2a0a0b0a0a0a" />
+  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="120" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$QuotationClass_s4fcwx_a0a0a2a0a1a0a0a0" />
+  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="206" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$QuotationClass_s4fcwx_a0a0a2a0a0b0a0a0a" />
   <unitInfo fileName="typeof_MatrixType_InferenceRule.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixType_InferenceRule" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_MatrixDivExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixDivExpression_InferenceRule" />
@@ -29,7 +29,7 @@
   <unitInfo fileName="typeof_MatrixAddExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixAddExpression_InferenceRule" />
   <unitInfo fileName="typeof_TransposeExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_TransposeExpression_InferenceRule" />
   <unitInfo fileName="typeof_MatrixLiteral_InferenceRule.java" startLine="21" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixLiteral_InferenceRule" />
-  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="24" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule" />
+  <unitInfo fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="24" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule" />
   <root nodeId="1210001185825">
     <nodeInfo nodeId="1210001196874" fileName="typeof_MatrixLiteral_InferenceRule.java" startLine="27" startPosition="7" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210001196874" fileName="typeof_MatrixLiteral_InferenceRule.java" startLine="28" startPosition="55" endLine="29" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -103,7 +103,6 @@
     <nodeInfo nodeId="1210174591739" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="91" startPosition="19" endLine="92" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210174591739" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="92" startPosition="119" endLine="93" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1210174591739" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="93" startPosition="221" endLine="94" endPosition="324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210175734597" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="95" startPosition="19" endLine="96" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1210175930104" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="52" startPosition="32" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1210176257229" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="73" startPosition="32" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1210171765353" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="42" startPosition="62" endLine="47" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -117,15 +116,15 @@
     <nodeInfo nodeId="1210174269259" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="62" startPosition="182" endLine="71" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1210171765349" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="38" startPosition="239" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1210174269259" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="59" startPosition="241" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210174575816" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="79" startPosition="22" endLine="97" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210174269257" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="58" startPosition="22" endLine="97" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1210171356698" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="37" startPosition="37" endLine="97" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="35" startPosition="68" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="34" startPosition="238" endLine="99" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="32" startPosition="27" endLine="100" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="31" startPosition="61" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="30" startPosition="230" endLine="102" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="28" startPosition="124" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210174575816" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="79" startPosition="22" endLine="96" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210174269257" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="58" startPosition="22" endLine="96" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1210171356698" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="37" startPosition="37" endLine="96" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="35" startPosition="68" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="34" startPosition="238" endLine="98" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="32" startPosition="27" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="31" startPosition="61" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="30" startPosition="230" endLine="101" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="28" startPosition="124" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1210175930104" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="53" startPosition="21" endLine="55" endPosition="402" />
     <scopeInfo nodeId="1210176257229" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="74" startPosition="21" endLine="76" endPosition="400" />
     <scopeInfo nodeId="1210171765353" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="43" startPosition="23" endLine="46" endPosition="459" />
@@ -139,20 +138,20 @@
     <scopeInfo nodeId="1210174269262" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="63" startPosition="63" endLine="69" endPosition="34" />
     <scopeInfo nodeId="1210171765349" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="39" startPosition="19" endLine="50" endPosition="21" />
     <scopeInfo nodeId="1210174269259" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="60" startPosition="19" endLine="71" endPosition="21" />
-    <scopeInfo nodeId="1210174575817" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="79" startPosition="24" endLine="96" endPosition="30" />
+    <scopeInfo nodeId="1210174575817" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="79" startPosition="24" endLine="95" endPosition="19" />
     <scopeInfo nodeId="1210171356699" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="38" startPosition="239" endLine="57" endPosition="19" />
     <scopeInfo nodeId="1210174269258" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="59" startPosition="241" endLine="78" endPosition="19" />
-    <scopeInfo nodeId="1210004932932" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="36" startPosition="33" endLine="97" endPosition="17">
+    <scopeInfo nodeId="1210004932932" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="36" startPosition="33" endLine="96" endPosition="17">
       <varInfo nodeId="1210174304771" varName="done" />
     </scopeInfo>
-    <scopeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="35" startPosition="68" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="33" startPosition="11" endLine="99" endPosition="137" />
-    <scopeInfo nodeId="1210004689796" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="32" startPosition="27" endLine="100" endPosition="11" />
-    <scopeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="31" startPosition="61" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="29" startPosition="5" endLine="102" endPosition="131" />
-    <scopeInfo nodeId="1210004306104" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="28" startPosition="124" endLine="103" endPosition="5" />
-    <unitInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="35" startPosition="56" endLine="99" endPosition="13" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$2" />
-    <unitInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="31" startPosition="49" endLine="102" endPosition="7" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$1" />
+    <scopeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="35" startPosition="68" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="33" startPosition="11" endLine="98" endPosition="137" />
+    <scopeInfo nodeId="1210004689796" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="32" startPosition="27" endLine="99" endPosition="11" />
+    <scopeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="31" startPosition="61" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="29" startPosition="5" endLine="101" endPosition="131" />
+    <scopeInfo nodeId="1210004306104" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="28" startPosition="124" endLine="102" endPosition="5" />
+    <unitInfo nodeId="1210004912543" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="35" startPosition="56" endLine="98" endPosition="13" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$2" />
+    <unitInfo nodeId="1210004689795" fileName="typeof_MatrixMulExpression_InferenceRule.java" startLine="31" startPosition="49" endLine="101" endPosition="7" unitName="jetbrains.mps.samples.matrixLanguage.typesystem.typeof_MatrixMulExpression_InferenceRule$1" />
   </root>
   <root nodeId="1210150085816">
     <nodeInfo nodeId="1215411668136" fileName="typeof_MatrixAddExpression_InferenceRule.java" startLine="22" startPosition="124" endLine="23" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -93,7 +93,6 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591739", 0, null);
                     typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210174591743", true), (SNode) typeCheckingContext.getRepresentative(v_typevar_1210174591724), _info_12389875345);
                   }
-                  done = true;
                 }
               }
             }, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210004912543", false, false);

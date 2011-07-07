@@ -222,7 +222,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "items", true);
   }
 
-  public static Iterable sourceNodesQuery_1210245899051(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_2242344438994122563(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 

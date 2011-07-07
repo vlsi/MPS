@@ -176,7 +176,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1210001330927">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpoo.1209989472341" resolveInfo="Determinant" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpoo.1209989472341" resolveInfo="DeterminantExpression" />
     </node>
   </root>
   <root id="1210002038930">
@@ -494,16 +494,6 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1210175734597">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1210175736940">
-                          <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1210175738105">
-                            <property name="value" nameId="tpee.1068580123138" value="true" />
-                          </node>
-                          <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1210175734598">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1210174304771" resolveInfo="done" />
-                          </node>
-                        </node>
-                      </node>
                     </node>
                   </node>
                 </node>
@@ -529,7 +519,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1210004306105">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMulExpression" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpoo.1210001631678" resolveInfo="MatrixMultExpression" />
     </node>
   </root>
   <root id="1210150085816">
@@ -563,7 +553,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1215411640547">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1215411640548">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1215411640549">
-            <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1215411668136" resolveInfo="v" />
+            <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1215411668136" resolveInfo="V" />
           </node>
         </node>
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1215411640550">
@@ -577,7 +567,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1215411640553">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1215411640554">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1215411640555">
-            <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1215411668136" resolveInfo="v" />
+            <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1215411668136" resolveInfo="V" />
           </node>
         </node>
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1215411640556">
@@ -596,7 +586,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1215411640561">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1215411640562">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1215411640563">
-            <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1215411668136" resolveInfo="v" />
+            <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1215411668136" resolveInfo="V" />
           </node>
         </node>
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1215411640564">
@@ -895,7 +885,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1210246902830">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpoo.1210239099519" resolveInfo="MatrixIndexVariableRefirence" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpoo.1210239099519" resolveInfo="MatrixIndexVariableReference" />
     </node>
   </root>
   <root id="1210248692445">
