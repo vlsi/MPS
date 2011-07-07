@@ -243,10 +243,6 @@
                 </node>
               </node>
             </node>
-            <node role="argumentRepresentator" roleId="tpd4.1205761991995" type="tpd4.WhenConcreteVariableDeclaration" typeId="tpd4.1205762105978" id="1210004912546">
-              <property name="name" nameId="tpck.1169194664001" value="right" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tpee.Type" typeId="tpee.1068431790189" id="1210004912547" />
-            </node>
             <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210004932932">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1210174304770">
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1210174304771">
@@ -264,8 +260,8 @@
                       <property name="name" nameId="tpck.1169194664001" value="matrixType" />
                       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpoo.1209978821264" resolveInfo="MatrixType" />
                     </node>
-                    <node role="nodeToCoerce" roleId="tpd4.1176558919376" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1210171769398">
-                      <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1210004912546" resolveInfo="right" />
+                    <node role="nodeToCoerce" roleId="tpd4.1176558919376" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="2368278226919395461">
+                      <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="2368278226919395458" resolveInfo="right" />
                     </node>
                     <node role="body" roleId="tpd4.1176558868203" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210171765352">
                       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1210171765353">
@@ -314,9 +310,9 @@
                         <node role="errorString" roleId="tpd4.1175517851849" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1210176013099">
                           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210176016347">
                             <node role="operand" roleId="tpee.1197027771414" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1210176015186">
-                              <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1210004912546" resolveInfo="right" />
+                              <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="2368278226919395458" resolveInfo="right" />
                             </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="1210176018920" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="2368278226919395488" />
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1210175930105">
                             <property name="value" nameId="tpee.1070475926801" value="Type must be Matrix but " />
@@ -340,8 +336,8 @@
                   </node>
                 </node>
                 <node role="condition" roleId="tpee.1068580123160" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="1210171362419">
-                  <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1210171370491">
-                    <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1210004894726" resolveInfo="left" />
+                  <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="2368278226919395454">
+                    <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="2368278226919395451" resolveInfo="left" />
                   </node>
                   <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1210171689860">
                     <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DoubleType" typeId="tpee.1070534513062" id="1210171744107" />
@@ -354,8 +350,8 @@
                         <property name="name" nameId="tpck.1169194664001" value="matrixType" />
                         <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpoo.1209978821264" resolveInfo="MatrixType" />
                       </node>
-                      <node role="nodeToCoerce" roleId="tpd4.1176558919376" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1210174269261">
-                        <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1210004894726" resolveInfo="left" />
+                      <node role="nodeToCoerce" roleId="tpd4.1176558919376" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="2368278226919395455">
+                        <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="2368278226919395451" resolveInfo="left" />
                       </node>
                       <node role="body" roleId="tpd4.1176558868203" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210174269262">
                         <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1210174269263">
@@ -404,7 +400,7 @@
                           <node role="errorString" roleId="tpd4.1175517851849" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1210176257230">
                             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210176257231">
                               <node role="operand" roleId="tpee.1197027771414" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1210176291355">
-                                <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1210004894726" resolveInfo="left" />
+                                <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="2368278226919395451" resolveInfo="left" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="1210176257233" />
                             </node>
@@ -430,8 +426,8 @@
                     </node>
                   </node>
                   <node role="condition" roleId="tpee.1068580123160" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="1210174269275">
-                    <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1210174269276">
-                      <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1210004912546" resolveInfo="right" />
+                    <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="2368278226919395462">
+                      <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="2368278226919395458" resolveInfo="right" />
                     </node>
                     <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1210174269277">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DoubleType" typeId="tpee.1070534513062" id="1210174269278" />
@@ -499,6 +495,10 @@
                 </node>
               </node>
             </node>
+            <node role="argumentRepresentator" roleId="tpd4.1205761991995" type="tpd4.WhenConcreteVariableDeclaration" typeId="tpd4.1205762105978" id="2368278226919395458">
+              <property name="name" nameId="tpck.1169194664001" value="right" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2368278226919395459" />
+            </node>
           </node>
         </node>
         <node role="argument" roleId="tpd4.1185805056450" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1210005562793">
@@ -511,9 +511,9 @@
             </node>
           </node>
         </node>
-        <node role="argumentRepresentator" roleId="tpd4.1205761991995" type="tpd4.WhenConcreteVariableDeclaration" typeId="tpd4.1205762105978" id="1210004894726">
+        <node role="argumentRepresentator" roleId="tpd4.1205761991995" type="tpd4.WhenConcreteVariableDeclaration" typeId="tpd4.1205762105978" id="2368278226919395451">
           <property name="name" nameId="tpck.1169194664001" value="left" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.Type" typeId="tpee.1068431790189" id="1210004894727" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2368278226919395452" />
         </node>
       </node>
     </node>

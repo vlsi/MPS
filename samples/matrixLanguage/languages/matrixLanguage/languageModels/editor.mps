@@ -21,7 +21,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1209989691485">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpoo.1209989472341" resolveInfo="Determinant" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpoo.1209989472341" resolveInfo="DeterminantExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1209999517477">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
@@ -29,7 +29,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1210235084326">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="for" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpoo.1210234754876" resolveInfo="ForMatrixElemnts" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpoo.1210234754876" resolveInfo="ForEachMatrixElement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1210238291784">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="for" />

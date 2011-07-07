@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)" version="0">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
+  <import index="tpoo" modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1209978821264">
       <property name="name" nameId="tpck.1169194664001" value="MatrixType" />
@@ -183,19 +184,19 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="row" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1210234858018" resolveInfo="MarixIndexVariable" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1210234858018" resolveInfo="MatrixIndexVariableDeclaration" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1210234892102">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="column" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1210234858018" resolveInfo="MarixIndexVariable" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1210234858018" resolveInfo="MatrixIndexVariableDeclaration" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1210234933941">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="element" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1210234982684" resolveInfo="MatrixElemntVariable" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1210234982684" resolveInfo="MatrixElementVariableDeclaration" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1210234913397">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -213,7 +214,7 @@
   <root id="1210238040066">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1210238053057">
       <property name="role" nameId="tpce.1071599776563" value="matrixElementDeclaration" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1210234982684" resolveInfo="MatrixElementVariable" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1210234982684" resolveInfo="MatrixElementVariableDeclaration" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tpee.1070568296581" />
     </node>
   </root>

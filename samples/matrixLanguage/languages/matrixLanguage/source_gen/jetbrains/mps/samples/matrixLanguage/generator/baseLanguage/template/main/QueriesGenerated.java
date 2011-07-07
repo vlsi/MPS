@@ -78,7 +78,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "scalarType", true);
   }
 
-  public static SNode sourceNodeQuery_1210252703573(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2368278226919395502(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
 
@@ -218,7 +218,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "row", true);
   }
 
-  public static Iterable sourceNodesQuery_1210252661231(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_2368278226919395507(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "items", true);
   }
 
