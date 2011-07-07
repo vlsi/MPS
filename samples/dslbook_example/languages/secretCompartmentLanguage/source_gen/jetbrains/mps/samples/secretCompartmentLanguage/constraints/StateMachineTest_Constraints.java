@@ -9,6 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_Behavior;
 
 public class StateMachineTest_Constraints extends BaseConstraintsDescriptor {
   public StateMachineTest_Constraints() {
