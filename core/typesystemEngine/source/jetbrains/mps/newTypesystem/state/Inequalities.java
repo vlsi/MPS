@@ -118,36 +118,26 @@ public class Inequalities {  //
       for (Pair<SNode, SNode> pair : inequality.getInputsAndOutputs()) {
         SNode input = myState.getRepresentative(pair.first);
         SNode output = myState.getRepresentative(pair.second);
-        if (input != null) {
-          if (TypesUtil.isVariable(input)) {
-            myNodes.add(input);
-          }
-          if (TypesUtil.isVariable(output)) {
-            myNodes.add(output);
-          }
-          if (input != output && output != null) {
-            addVariablesLink(input, output);
-            myNodesToBlocks.addLink(input, inequality);
-            if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
-              List<SNode> inputVariables = TypesUtil.getVariables(input, myState);
-              List<SNode> outputVariables = TypesUtil.getVariables(output, myState);
-              myNodes.addAll(inputVariables);
-              myNodes.addAll(outputVariables);
-              for (SNode inputVar : inputVariables) {
-                for (SNode outputVar : outputVariables) {
-                  addVariablesLink(myState.getRepresentative(inputVar), myState.getRepresentative(outputVar));
-                }
-              }
+        if (input == null || output == null) continue;
+        if (TypesUtil.isVariable(input)) {
+          myNodes.add(input);
+        }
+        if (TypesUtil.isVariable(output)) {
+          myNodes.add(output);
+        }
+        if (input != output) {
+          for (SNode inputVar : TypesUtil.getVariables(input, myState)) {
+            for (SNode outputVar : TypesUtil.getVariables(output, myState)) {
+              addVariablesLink(myState.getRepresentative(inputVar), myState.getRepresentative(outputVar));
             }
           }
-          if (output != null) {
-
-            myNodesToBlocks.addLink(output, inequality);
-          }
         }
+        myNodesToBlocks.addLink(input, inequality);
+        myNodesToBlocks.addLink(output, inequality);
       }
     }
   }
+
 
   private boolean iteration(List<RelationBlock> inequalities) {
     initializeMaps(inequalities);
