@@ -36,6 +36,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.ModelAccess;
@@ -261,7 +262,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
-    DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"), ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"));
+    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action")));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 

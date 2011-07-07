@@ -157,7 +157,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
     BaseAction goToNode = null;
     final TypeSystemStateTreeNode stateNode = (TypeSystemStateTreeNode) treeNode;
-    final DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"), goToNode);
+    final DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action")), goToNode);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         NodeMaps maps = myState.getNodeMaps();
