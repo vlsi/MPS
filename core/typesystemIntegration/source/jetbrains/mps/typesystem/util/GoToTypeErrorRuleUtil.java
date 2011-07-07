@@ -49,6 +49,10 @@ public class GoToTypeErrorRuleUtil {
     String ruleModel = ruleModelAndId.o1;
     final String ruleID = ruleModelAndId.o2;
     SModelReference modelUID = SModelReference.fromString(ruleModel);
+    if (modelUID == null) {
+      LOG.error("can't find rule's model " + ruleModel);
+      return;
+    }
     modelUID = SModelReference.fromString(modelUID.getLongName());
     final SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
