@@ -6227,10 +6227,10 @@
     <nodeInfo nodeId="9035995549588750877" fileName="typeof_SwitchCase_InferenceRule.java" startLine="19" startPosition="123" endLine="20" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9035995549588792237" fileName="typeof_SwitchCase_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9035995549588792237" fileName="typeof_SwitchCase_InferenceRule.java" startLine="23" startPosition="101" endLine="24" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9035995549588792237" fileName="typeof_SwitchCase_InferenceRule.java" startLine="24" startPosition="205" endLine="25" endPosition="417" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9035995549588792237" fileName="typeof_SwitchCase_InferenceRule.java" startLine="24" startPosition="205" endLine="25" endPosition="464" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9035995549588792237" fileName="typeof_SwitchCase_InferenceRule.java" startLine="21" startPosition="31" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9035995549588792235" fileName="typeof_SwitchCase_InferenceRule.java" startLine="20" startPosition="137" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="9035995549588792237" fileName="typeof_SwitchCase_InferenceRule.java" startLine="22" startPosition="7" endLine="25" endPosition="417" />
+    <scopeInfo nodeId="9035995549588792237" fileName="typeof_SwitchCase_InferenceRule.java" startLine="22" startPosition="7" endLine="25" endPosition="464" />
     <scopeInfo nodeId="9035995549588792236" fileName="typeof_SwitchCase_InferenceRule.java" startLine="21" startPosition="31" endLine="26" endPosition="7" />
     <scopeInfo nodeId="9035995549588750860" fileName="typeof_SwitchCase_InferenceRule.java" startLine="19" startPosition="123" endLine="27" endPosition="5">
       <varInfo nodeId="9035995549588750878" varName="switchNode" />

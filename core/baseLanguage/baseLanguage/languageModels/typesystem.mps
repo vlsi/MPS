@@ -26833,8 +26833,13 @@
             <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
             <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="9035995549588792239">
               <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="9035995549588792240">
-                <node role="term" roleId="tpd4.1174657509053" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9035995549588792241">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9035995549588750878" resolveInfo="switchNode" />
+                <node role="term" roleId="tpd4.1174657509053" type="nupp.DotExpression" typeId="tpee.1197027756228" id="7292875354317855134">
+                  <node role="operand" roleId="tpee.1197027771414" type="nupp.LocalVariableReference" typeId="tpee.1068581242866" id="9035995549588792241">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9035995549588750878" resolveInfo="switchNode" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7292875354317855138">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1163670766145" />
+                  </node>
                 </node>
               </node>
             </node>
