@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.tempoptions;
+package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
@@ -21,7 +21,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
-import jetbrains.mps.tempoptions.InternalOptionsSettings.MyState;
+import jetbrains.mps.smodel.ModelValidationSettings.MyState;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -31,14 +31,14 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 
 @State(
-  name = "InternalOptionsSettings",
+  name = "ModelValidationSettings",
   storages = {
     @Storage(
       id = "other",
-      file = "$APP_CONFIG$/mpsInternalOptionsSettings.xml"
+      file = "$APP_CONFIG$/mpsModelValidationSettings.xml"
     )}
 )
-public class InternalOptionsSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
+public class ModelValidationSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
 
   private MyPreferencesPage myPreferencesPage;
 
@@ -60,13 +60,13 @@ public class InternalOptionsSettings implements SearchableConfigurable, Persiste
     return myDisableCheckOpenAPI;
   }
 
-  public static InternalOptionsSettings getInstance() {
-    return ApplicationManager.getApplication().getComponent(InternalOptionsSettings.class);
+  public static ModelValidationSettings getInstance() {
+    return ApplicationManager.getApplication().getComponent(ModelValidationSettings.class);
   }
 
   @NotNull
   public String getId() {
-    return "mps.options.settings";
+    return "mps.modelValidation.settings";
   }
 
   public Runnable enableSearch(String option) {
@@ -75,7 +75,7 @@ public class InternalOptionsSettings implements SearchableConfigurable, Persiste
 
   @Nls
   public String getDisplayName() {
-    return "Internal Options";
+    return "Model Validation";
   }
 
   @Nullable

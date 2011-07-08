@@ -18,7 +18,6 @@
   <import index="espb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="ecih" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.tempoptions(MPS.Classpath/jetbrains.mps.tempoptions@java_stub)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -730,7 +729,7 @@
                   <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1556973682253867613" resolveInfo="node" />
                 </node>
                 <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="1556973682253873331">
-                  <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="1556973682253873271" resolveInfo="RemoveUnknownReferences" />
+                  <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="1556973682253873271" resolveInfo="RemoveUnknownReference" />
                   <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="1556973682253873332">
                     <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="1556973682253873274" resolveInfo="role" />
                     <node role="value" roleId="tpd4.1210784642750" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1556973682253873335">
@@ -1023,7 +1022,7 @@
               </node>
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1556973682253891065">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.QuickFixArgumentReference" typeId="tpd4.1216390348809" id="1556973682253891064">
-                  <link role="quickFixArgument" roleId="tpd4.1216390348810" targetNodeId="1556973682253891061" resolveInfo="linkDeclaration" />
+                  <link role="quickFixArgument" roleId="tpd4.1216390348810" targetNodeId="1556973682253891061" resolveInfo="link" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1556973682253891069">
                   <link role="property" roleId="tp25.1138056395725" targetNodeId="tpce.1071599776563" resolveInfo="role" />
@@ -1097,12 +1096,12 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="526633399526794615" />
         </node>
         <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="526633399526794608">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="526633399526794607">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ecih.~InternalOptionsSettings%dgetInstance()%cjetbrains%dmps%dtempoptions%dInternalOptionsSettings" resolveInfo="getInstance" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ecih.~InternalOptionsSettings" resolveInfo="InternalOptionsSettings" />
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="150857605340612086">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lkfb.~ModelValidationSettings" resolveInfo="ModelValidationSettings" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~ModelValidationSettings%dgetInstance()%cjetbrains%dmps%dsmodel%dModelValidationSettings" resolveInfo="getInstance" />
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="526633399526794612">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ecih.~InternalOptionsSettings%disDisableCheckOpenAPI()%cboolean" resolveInfo="isDisableCheckOpenAPI" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~ModelValidationSettings%disDisableCheckOpenAPI()%cboolean" resolveInfo="isDisableCheckOpenAPI" />
           </node>
         </node>
       </node>

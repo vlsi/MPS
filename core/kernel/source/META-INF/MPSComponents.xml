@@ -112,7 +112,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.tempoptions.InternalOptionsSettings</implementation-class>
+      <implementation-class>jetbrains.mps.smodel.ModelValidationSettings</implementation-class>
     </component>
 
     <component>
