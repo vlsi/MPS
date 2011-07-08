@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="263837413765000620">
+    <nodeInfo nodeId="263837413765000622" fileName="DefaultTestSuite.java" startLine="11" startPosition="31" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultTestSuite#()V" />
+    <scopeInfo nodeId="263837413765000625" fileName="DefaultTestSuite.java" startLine="12" startPosition="29" endLine="12" endPosition="29" />
+    <scopeInfo nodeId="263837413765000622" fileName="DefaultTestSuite.java" startLine="11" startPosition="31" endLine="13" endPosition="3" />
+    <unitInfo nodeId="263837413765000620" fileName="DefaultTestSuite.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.testbench.junit.suites.DefaultTestSuite" />
+  </root>
+  <root nodeId="7906452883299946797">
+    <nodeInfo nodeId="7906452883299947424" fileName="ExecuteProjectTests.java" startLine="27" startPosition="53" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7906452883299947671" fileName="ExecuteProjectTests.java" startLine="30" startPosition="25" endLine="31" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7906452883299947738" fileName="ExecuteProjectTests.java" startLine="31" startPosition="76" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7906452883299947896" fileName="ExecuteProjectTests.java" startLine="33" startPosition="70" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7906452883299947919" fileName="ExecuteProjectTests.java" startLine="35" startPosition="92" endLine="36" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5503298173333901138" fileName="ExecuteProjectTests.java" startLine="37" startPosition="151" endLine="38" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637145482862507016" fileName="ExecuteProjectTests.java" startLine="38" startPosition="254" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5637145482862507043" fileName="ExecuteProjectTests.java" startLine="40" startPosition="38" endLine="41" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7906452883299947436" fileName="ExecuteProjectTests.java" startLine="47" startPosition="7" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7906452883299947298" fileName="ExecuteProjectTests.java" startLine="22" startPosition="34" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecuteProjectTests#()V" />
+    <nodeInfo nodeId="5637145482862507034" fileName="ExecuteProjectTests.java" startLine="39" startPosition="63" endLine="42" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7906452883299949034" fileName="ExecuteProjectTests.java" startLine="36" startPosition="55" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7906452883299947907" fileName="ExecuteProjectTests.java" startLine="34" startPosition="84" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7906452883299947746" fileName="ExecuteProjectTests.java" startLine="32" startPosition="63" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7906452883299948764" fileName="ExecuteProjectTests.java" startLine="29" startPosition="57" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7906452883299948751" fileName="ExecuteProjectTests.java" startLine="28" startPosition="83" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7906452883299947302" fileName="ExecuteProjectTests.java" startLine="25" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnitTestClasses#()Ljava/util/List;" />
+    <scopeInfo nodeId="7906452883299947301" fileName="ExecuteProjectTests.java" startLine="23" startPosition="32" endLine="23" endPosition="32" />
+    <scopeInfo nodeId="5637145482862507035" fileName="ExecuteProjectTests.java" startLine="40" startPosition="38" endLine="41" endPosition="68" />
+    <scopeInfo nodeId="7906452883299947298" fileName="ExecuteProjectTests.java" startLine="22" startPosition="34" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="7906452883299949037" fileName="ExecuteProjectTests.java" startLine="37" startPosition="151" endLine="42" endPosition="15">
+      <varInfo nodeId="5637145482862507017" varName="testClass" />
+      <varInfo nodeId="5503298173333901139" varName="testClassName" />
+    </scopeInfo>
+    <scopeInfo nodeId="7906452883299949034" fileName="ExecuteProjectTests.java" startLine="36" startPosition="55" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="7906452883299947910" fileName="ExecuteProjectTests.java" startLine="35" startPosition="92" endLine="43" endPosition="13">
+      <varInfo nodeId="7906452883299947920" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="7906452883299947907" fileName="ExecuteProjectTests.java" startLine="34" startPosition="84" endLine="44" endPosition="11" />
+    <scopeInfo nodeId="7906452883299947749" fileName="ExecuteProjectTests.java" startLine="33" startPosition="70" endLine="44" endPosition="11">
+      <varInfo nodeId="7906452883299947897" varName="modelDescriptors" />
+    </scopeInfo>
+    <scopeInfo nodeId="7906452883299947746" fileName="ExecuteProjectTests.java" startLine="32" startPosition="63" endLine="45" endPosition="9" />
+    <scopeInfo nodeId="7906452883299948767" fileName="ExecuteProjectTests.java" startLine="30" startPosition="25" endLine="45" endPosition="9">
+      <varInfo nodeId="7906452883299947739" varName="projectModules" />
+      <varInfo nodeId="7906452883299947672" varName="mpsProject" />
+    </scopeInfo>
+    <scopeInfo nodeId="7906452883299948764" fileName="ExecuteProjectTests.java" startLine="29" startPosition="57" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7906452883299947305" fileName="ExecuteProjectTests.java" startLine="27" startPosition="53" endLine="48" endPosition="18">
+      <varInfo nodeId="7906452883299947425" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7906452883299947302" fileName="ExecuteProjectTests.java" startLine="25" startPosition="0" endLine="50" endPosition="0" />
+    <unitInfo nodeId="7906452883299948762" fileName="ExecuteProjectTests.java" startLine="29" startPosition="45" endLine="47" endPosition="5" unitName="jetbrains.mps.testbench.junit.suites.ExecuteProjectTests$1" />
+    <unitInfo nodeId="7906452883299946797" fileName="ExecuteProjectTests.java" startLine="21" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.testbench.junit.suites.ExecuteProjectTests" />
+  </root>
+</debugInfo>
+

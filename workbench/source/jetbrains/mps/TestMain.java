@@ -75,7 +75,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 public class TestMain {
-  private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs"};
+  private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make"};
 
   public static final ProjectContainer PROJECT_CONTAINER = new ProjectContainer();
 
@@ -476,6 +476,15 @@ public class TestMain {
       throw new RuntimeException(e);
     }
 
+  }
+
+  public static void disposeMPS() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
+      public void run() {
+        IdeaTestApplication.getInstance(null).dispose();
+      }
+    });
   }
 
   public static interface ProjectRunnable {
