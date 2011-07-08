@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.NameUtil;
@@ -26,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class QueriesGenerated {
   private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a3 = Pattern.compile("-?\\d+", 0);
@@ -50,7 +50,7 @@ public class QueriesGenerated {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.CType");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.nanoc.structure.VarDeclStatement", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.nanoc.structure.VarDeclStatement", null);
           SLinkOperations.setTarget(result, "type", nodeToWrap, true);
           return result;
         }
@@ -75,7 +75,7 @@ public class QueriesGenerated {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.CExpression");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.nanoc.structure.CExpressionStatement", null);
+          SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.nanoc.structure.CExpressionStatement", null);
           SLinkOperations.setTarget(expressionStatement, "expression", nodeToWrap, true);
           return expressionStatement;
         }
@@ -107,7 +107,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.nanoc.structure.IntConst", null);
+            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.nanoc.structure.IntConst", null);
             SPropertyOperations.set(result, "value", pattern);
             return result;
           }
@@ -195,7 +195,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.CAssignmentExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode("jetbrains.mps.nanoc.structure.CAssignmentExpression", null));
+          SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode("jetbrains.mps.nanoc.structure.CAssignmentExpression", null));
           return SLinkOperations.setTarget(result, "variable", _context.getSourceNode(), true);
         }
 
@@ -217,7 +217,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.CExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setNewChild(_context.getSourceNode(), "initializer", "jetbrains.mps.nanoc.structure.CExpression");
+          return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "initializer", "jetbrains.mps.nanoc.structure.CExpression");
         }
 
         public String getMatchingText(String pattern) {
