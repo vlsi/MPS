@@ -145,21 +145,8 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   public T[] find(boolean checkboxState) {
     if (checkboxState) return find(GlobalScope.getInstance());
     MPSProject project = myProject.getComponent(MPSProject.class);
-    return find(new ModulesOnlyScope(collectModulesWithGenerators(project)));
+    return find(new ModulesOnlyScope(project.getModulesWithGenerators()));
   }
-
-  private static List<IModule> collectModulesWithGenerators(MPSProject p) {
-    List<IModule> modules = p.getModules();
-    List<IModule> generators = new ArrayList<IModule>();
-    for (IModule m : modules) {
-      if (m instanceof Language) {
-        generators.addAll(((Language) m).getGenerators());
-      }
-    }
-    modules.addAll(generators);
-    return modules;
-  }
-
 
   public abstract String doGetFullName(Object element);
 

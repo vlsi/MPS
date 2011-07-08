@@ -182,6 +182,18 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
     return result;
   }
 
+  public List<IModule> getModulesWithGenerators() {
+    List<IModule> modules = getModules();
+    List<IModule> generators = new ArrayList<IModule>();
+    for (IModule m : modules) {
+      if (m instanceof Language) {
+        generators.addAll(((Language) m).getGenerators());
+      }
+    }
+    modules.addAll(generators);
+    return modules;
+  }
+
   @NotNull
   public List<Path> getAllModulePaths() {
     return Collections.unmodifiableList(myProjectDescriptor.getModules());

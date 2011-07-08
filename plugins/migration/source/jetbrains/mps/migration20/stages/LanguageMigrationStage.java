@@ -58,7 +58,7 @@ public class LanguageMigrationStage implements MigrationStage {
   }
 
   private static void executeScripts(Project project, List<SNodePointer> scripts) {
-    SearchQuery query = new SearchQuery(new ModulesOnlyScope(project.getComponent(MPSProject.class).getModules()));
+    SearchQuery query = new SearchQuery(new ModulesOnlyScope(project.getComponent(MPSProject.class).getModulesWithGenerators()));
     MigrationScriptFinder finder = new MigrationScriptFinder(scripts, ProjectOperationContext.get(project));
     IResultProvider provider = FindUtils.makeProvider(finder);
     SearchResults<SNode> results = FindUtils.getSearchResults(new EmptyProgressIndicator(), query, provider);
