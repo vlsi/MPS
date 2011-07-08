@@ -3491,15 +3491,17 @@
     <nodeInfo nodeId="1225278748060" fileName="DataFlowUtil.java" startLine="160" startPosition="109" endLine="161" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225278748067" fileName="DataFlowUtil.java" startLine="163" startPosition="11" endLine="164" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225278748067" fileName="DataFlowUtil.java" startLine="164" startPosition="64" endLine="165" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225278681699" fileName="DataFlowUtil.java" startLine="169" startPosition="108" endLine="170" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1934412383769688150" fileName="DataFlowUtil.java" startLine="172" startPosition="199" endLine="173" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="177" startPosition="11" endLine="178" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="178" startPosition="64" endLine="179" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223642399956" fileName="DataFlowUtil.java" startLine="187" startPosition="137" endLine="188" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1472904739618419302" fileName="DataFlowUtil.java" startLine="190" startPosition="54" endLine="191" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8937659523942275424" fileName="DataFlowUtil.java" startLine="195" startPosition="11" endLine="196" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8937659523942275424" fileName="DataFlowUtil.java" startLine="196" startPosition="64" endLine="197" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6067900799350600164" fileName="DataFlowUtil.java" startLine="204" startPosition="53" endLine="205" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225278681699" fileName="DataFlowUtil.java" startLine="168" startPosition="115" endLine="169" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1934412383769688150" fileName="DataFlowUtil.java" startLine="171" startPosition="199" endLine="172" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="176" startPosition="11" endLine="177" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="177" startPosition="64" endLine="178" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="179" startPosition="13" endLine="180" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="180" startPosition="160" endLine="181" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223642399956" fileName="DataFlowUtil.java" startLine="190" startPosition="137" endLine="191" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1472904739618419302" fileName="DataFlowUtil.java" startLine="193" startPosition="54" endLine="194" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8937659523942275424" fileName="DataFlowUtil.java" startLine="198" startPosition="11" endLine="199" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8937659523942275424" fileName="DataFlowUtil.java" startLine="199" startPosition="64" endLine="200" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6067900799350600164" fileName="DataFlowUtil.java" startLine="207" startPosition="53" endLine="208" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1223640197351" fileName="DataFlowUtil.java" startLine="27" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataFlowUtil#()V" />
     <nodeInfo nodeId="1223640343616" fileName="DataFlowUtil.java" startLine="71" startPosition="14" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8249991444799099448" fileName="DataFlowUtil.java" startLine="37" startPosition="126" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3507,8 +3509,8 @@
     <nodeInfo nodeId="1239367302579" fileName="DataFlowUtil.java" startLine="109" startPosition="34" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1239367892226" fileName="DataFlowUtil.java" startLine="112" startPosition="7" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7567158975344997793" fileName="DataFlowUtil.java" startLine="134" startPosition="33" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1934412383769688142" fileName="DataFlowUtil.java" startLine="171" startPosition="115" endLine="174" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1472904739618419286" fileName="DataFlowUtil.java" startLine="189" startPosition="157" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1934412383769688142" fileName="DataFlowUtil.java" startLine="170" startPosition="115" endLine="173" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1472904739618419286" fileName="DataFlowUtil.java" startLine="192" startPosition="157" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6067900799350600197" fileName="DataFlowUtil.java" startLine="43" startPosition="32" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1223640343628" fileName="DataFlowUtil.java" startLine="74" startPosition="35" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1223640343636" fileName="DataFlowUtil.java" startLine="79" startPosition="16" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3517,31 +3519,30 @@
     <nodeInfo nodeId="7567158975344997930" fileName="DataFlowUtil.java" startLine="142" startPosition="242" endLine="146" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7567158975345062849" fileName="DataFlowUtil.java" startLine="151" startPosition="242" endLine="155" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225278748067" fileName="DataFlowUtil.java" startLine="162" startPosition="96" endLine="166" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="176" startPosition="96" endLine="180" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8937659523942275424" fileName="DataFlowUtil.java" startLine="194" startPosition="129" endLine="198" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6067900799350600135" fileName="DataFlowUtil.java" startLine="203" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tooComplex#(Ljetbrains/mps/lang/dataFlow/framework/Program;)Z" />
+    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="178" startPosition="229" endLine="182" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8937659523942275424" fileName="DataFlowUtil.java" startLine="197" startPosition="129" endLine="201" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6067900799350600135" fileName="DataFlowUtil.java" startLine="206" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tooComplex#(Ljetbrains/mps/lang/dataFlow/framework/Program;)Z" />
     <nodeInfo nodeId="8249991444799099355" fileName="DataFlowUtil.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkDataFlow#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1223640343596" fileName="DataFlowUtil.java" startLine="68" startPosition="117" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223640343634" fileName="DataFlowUtil.java" startLine="79" startPosition="14" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8249991444799164481" fileName="DataFlowUtil.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkReturns#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1934412383769688116" fileName="DataFlowUtil.java" startLine="170" startPosition="123" endLine="175" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1934412383769688116" fileName="DataFlowUtil.java" startLine="169" startPosition="123" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223640538232" fileName="DataFlowUtil.java" startLine="96" startPosition="67" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1529050434900907651" fileName="DataFlowUtil.java" startLine="117" startPosition="140" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1225278748065" fileName="DataFlowUtil.java" startLine="161" startPosition="123" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225278681704" fileName="DataFlowUtil.java" startLine="175" startPosition="9" endLine="181" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8937659523942275396" fileName="DataFlowUtil.java" startLine="193" startPosition="238" endLine="199" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8937659523942275396" fileName="DataFlowUtil.java" startLine="196" startPosition="238" endLine="202" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6067900799350600172" fileName="DataFlowUtil.java" startLine="42" startPosition="61" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7567158975344997930" fileName="DataFlowUtil.java" startLine="139" startPosition="137" endLine="147" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7567158975345062849" fileName="DataFlowUtil.java" startLine="148" startPosition="173" endLine="156" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8937659523942275375" fileName="DataFlowUtil.java" startLine="192" startPosition="7" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="175" startPosition="96" endLine="183" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8937659523942275375" fileName="DataFlowUtil.java" startLine="195" startPosition="7" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3652446454730672468" fileName="DataFlowUtil.java" startLine="115" startPosition="7" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225278748058" fileName="DataFlowUtil.java" startLine="159" startPosition="7" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225278681704" fileName="DataFlowUtil.java" startLine="174" startPosition="9" endLine="184" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223640343626" fileName="DataFlowUtil.java" startLine="73" startPosition="9" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223640503736" fileName="DataFlowUtil.java" startLine="93" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkUnreachable#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
-    <nodeInfo nodeId="8937659523942256701" fileName="DataFlowUtil.java" startLine="188" startPosition="81" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1225278681697" fileName="DataFlowUtil.java" startLine="168" startPosition="7" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8937659523942256701" fileName="DataFlowUtil.java" startLine="191" startPosition="81" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1223640624803" fileName="DataFlowUtil.java" startLine="107" startPosition="76" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1223642397405" fileName="DataFlowUtil.java" startLine="185" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkUnusedVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
+    <nodeInfo nodeId="1223642397405" fileName="DataFlowUtil.java" startLine="188" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkUnusedVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
     <nodeInfo nodeId="8249991444799099454" fileName="DataFlowUtil.java" startLine="40" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="7567158975344997872" fileName="DataFlowUtil.java" startLine="138" startPosition="307" endLine="157" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223640343583" fileName="DataFlowUtil.java" startLine="65" startPosition="37" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3549,10 +3550,11 @@
     <nodeInfo nodeId="1223640343581" fileName="DataFlowUtil.java" startLine="64" startPosition="70" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1223640603748" fileName="DataFlowUtil.java" startLine="104" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkUninitializedReads#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
     <nodeInfo nodeId="1223640221746" fileName="DataFlowUtil.java" startLine="35" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkDataFlow#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Z)V" />
+    <nodeInfo nodeId="1225278748058" fileName="DataFlowUtil.java" startLine="159" startPosition="7" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1223640283876" fileName="DataFlowUtil.java" startLine="61" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkReturns#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
     <nodeInfo nodeId="1223642282207" fileName="DataFlowUtil.java" startLine="131" startPosition="43" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223642282205" fileName="DataFlowUtil.java" startLine="130" startPosition="74" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1223642182744" fileName="DataFlowUtil.java" startLine="127" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkUnusedAssignments#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
+    <nodeInfo nodeId="1223642282205" fileName="DataFlowUtil.java" startLine="130" startPosition="74" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1223642182744" fileName="DataFlowUtil.java" startLine="127" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkUnusedAssignments#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
     <scopeInfo nodeId="1223640197354" fileName="DataFlowUtil.java" startLine="28" startPosition="25" endLine="28" endPosition="25" />
     <scopeInfo nodeId="8249991444799099358" fileName="DataFlowUtil.java" startLine="32" startPosition="104" endLine="33" endPosition="61" />
     <scopeInfo nodeId="8249991444799099449" fileName="DataFlowUtil.java" startLine="38" startPosition="32" endLine="39" endPosition="13" />
@@ -3567,9 +3569,9 @@
     <scopeInfo nodeId="1239367302580" fileName="DataFlowUtil.java" startLine="110" startPosition="103" endLine="111" endPosition="108" />
     <scopeInfo nodeId="1239367892227" fileName="DataFlowUtil.java" startLine="113" startPosition="336" endLine="114" endPosition="238" />
     <scopeInfo nodeId="7567158975344997794" fileName="DataFlowUtil.java" startLine="135" startPosition="156" endLine="136" endPosition="215" />
-    <scopeInfo nodeId="1934412383769688143" fileName="DataFlowUtil.java" startLine="172" startPosition="199" endLine="173" endPosition="21" />
-    <scopeInfo nodeId="1472904739618419287" fileName="DataFlowUtil.java" startLine="190" startPosition="54" endLine="191" endPosition="17" />
-    <scopeInfo nodeId="6067900799350600138" fileName="DataFlowUtil.java" startLine="204" startPosition="53" endLine="205" endPosition="56" />
+    <scopeInfo nodeId="1934412383769688143" fileName="DataFlowUtil.java" startLine="171" startPosition="199" endLine="172" endPosition="21" />
+    <scopeInfo nodeId="1472904739618419287" fileName="DataFlowUtil.java" startLine="193" startPosition="54" endLine="194" endPosition="17" />
+    <scopeInfo nodeId="6067900799350600138" fileName="DataFlowUtil.java" startLine="207" startPosition="53" endLine="208" endPosition="56" />
     <scopeInfo nodeId="1223640197351" fileName="DataFlowUtil.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
     <scopeInfo nodeId="6067900799350600197" fileName="DataFlowUtil.java" startLine="44" startPosition="9" endLine="46" endPosition="307" />
     <scopeInfo nodeId="1223640343628" fileName="DataFlowUtil.java" startLine="75" startPosition="11" endLine="77" endPosition="236" />
@@ -3579,17 +3581,16 @@
     <scopeInfo nodeId="7567158975344997930" fileName="DataFlowUtil.java" startLine="143" startPosition="15" endLine="145" endPosition="77" />
     <scopeInfo nodeId="7567158975345062849" fileName="DataFlowUtil.java" startLine="152" startPosition="15" endLine="154" endPosition="77" />
     <scopeInfo nodeId="1225278748067" fileName="DataFlowUtil.java" startLine="163" startPosition="11" endLine="165" endPosition="228" />
-    <scopeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="177" startPosition="11" endLine="179" endPosition="229" />
-    <scopeInfo nodeId="8937659523942275424" fileName="DataFlowUtil.java" startLine="195" startPosition="11" endLine="197" endPosition="231" />
-    <scopeInfo nodeId="1934412383769688117" fileName="DataFlowUtil.java" startLine="171" startPosition="115" endLine="174" endPosition="11" />
+    <scopeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="179" startPosition="13" endLine="181" endPosition="75" />
+    <scopeInfo nodeId="8937659523942275424" fileName="DataFlowUtil.java" startLine="198" startPosition="11" endLine="200" endPosition="231" />
+    <scopeInfo nodeId="1934412383769688117" fileName="DataFlowUtil.java" startLine="170" startPosition="115" endLine="173" endPosition="11" />
     <scopeInfo nodeId="1223640343627" fileName="DataFlowUtil.java" startLine="74" startPosition="35" endLine="78" endPosition="11" />
     <scopeInfo nodeId="1223640343635" fileName="DataFlowUtil.java" startLine="79" startPosition="16" endLine="83" endPosition="11" />
     <scopeInfo nodeId="1223640538233" fileName="DataFlowUtil.java" startLine="97" startPosition="33" endLine="101" endPosition="7" />
     <scopeInfo nodeId="1529050434900907652" fileName="DataFlowUtil.java" startLine="118" startPosition="334" endLine="122" endPosition="11" />
     <scopeInfo nodeId="1225278748066" fileName="DataFlowUtil.java" startLine="162" startPosition="96" endLine="166" endPosition="11" />
-    <scopeInfo nodeId="1225278681705" fileName="DataFlowUtil.java" startLine="176" startPosition="96" endLine="180" endPosition="11" />
-    <scopeInfo nodeId="8937659523942275397" fileName="DataFlowUtil.java" startLine="194" startPosition="129" endLine="198" endPosition="11" />
-    <scopeInfo nodeId="6067900799350600135" fileName="DataFlowUtil.java" startLine="203" startPosition="0" endLine="207" endPosition="0">
+    <scopeInfo nodeId="8937659523942275397" fileName="DataFlowUtil.java" startLine="197" startPosition="129" endLine="201" endPosition="11" />
+    <scopeInfo nodeId="6067900799350600135" fileName="DataFlowUtil.java" startLine="206" startPosition="0" endLine="210" endPosition="0">
       <varInfo nodeId="6067900799350600140" varName="program" />
     </scopeInfo>
     <scopeInfo nodeId="8249991444799099355" fileName="DataFlowUtil.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
@@ -3604,7 +3605,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7567158975344997930" fileName="DataFlowUtil.java" startLine="140" startPosition="13" endLine="146" endPosition="15" />
     <scopeInfo nodeId="7567158975345062849" fileName="DataFlowUtil.java" startLine="149" startPosition="13" endLine="155" endPosition="15" />
-    <scopeInfo nodeId="8937659523942275376" fileName="DataFlowUtil.java" startLine="193" startPosition="238" endLine="199" endPosition="9" />
+    <scopeInfo nodeId="1225278681706" fileName="DataFlowUtil.java" startLine="176" startPosition="11" endLine="182" endPosition="13" />
+    <scopeInfo nodeId="8937659523942275376" fileName="DataFlowUtil.java" startLine="196" startPosition="238" endLine="202" endPosition="9" />
     <scopeInfo nodeId="1223640503739" fileName="DataFlowUtil.java" startLine="95" startPosition="104" endLine="102" endPosition="5">
       <varInfo nodeId="1223640538227" varName="unreachable" />
     </scopeInfo>
@@ -3616,17 +3618,15 @@
     </scopeInfo>
     <scopeInfo nodeId="7567158975344997873" fileName="DataFlowUtil.java" startLine="139" startPosition="137" endLine="147" endPosition="13" />
     <scopeInfo nodeId="7567158975345047756" fileName="DataFlowUtil.java" startLine="148" startPosition="173" endLine="156" endPosition="13" />
+    <scopeInfo nodeId="1225278681705" fileName="DataFlowUtil.java" startLine="175" startPosition="96" endLine="183" endPosition="11" />
     <scopeInfo nodeId="1223640503736" fileName="DataFlowUtil.java" startLine="93" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="8101676149486022469" varName="program" />
     </scopeInfo>
-    <scopeInfo nodeId="8937659523942256702" fileName="DataFlowUtil.java" startLine="189" startPosition="157" endLine="200" endPosition="7" />
-    <scopeInfo nodeId="1225278681698" fileName="DataFlowUtil.java" startLine="169" startPosition="108" endLine="181" endPosition="9">
-      <varInfo nodeId="1225278681700" varName="variableAssignment" />
-    </scopeInfo>
-    <scopeInfo nodeId="8937659523942256701" fileName="DataFlowUtil.java" startLine="188" startPosition="81" endLine="201" endPosition="5">
+    <scopeInfo nodeId="8937659523942256702" fileName="DataFlowUtil.java" startLine="192" startPosition="157" endLine="203" endPosition="7" />
+    <scopeInfo nodeId="8937659523942256701" fileName="DataFlowUtil.java" startLine="191" startPosition="81" endLine="204" endPosition="5">
       <varInfo nodeId="8937659523942256705" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1223642397408" fileName="DataFlowUtil.java" startLine="187" startPosition="137" endLine="201" endPosition="5">
+    <scopeInfo nodeId="1223642397408" fileName="DataFlowUtil.java" startLine="190" startPosition="137" endLine="204" endPosition="5">
       <varInfo nodeId="1223642399957" varName="usedVariables" />
     </scopeInfo>
     <scopeInfo nodeId="8249991444799099455" fileName="DataFlowUtil.java" startLine="41" startPosition="9" endLine="56" endPosition="7">
@@ -3635,6 +3635,9 @@
     <scopeInfo nodeId="1223640624804" fileName="DataFlowUtil.java" startLine="108" startPosition="43" endLine="124" endPosition="7">
       <varInfo nodeId="3652446454730672463" varName="localReference" />
     </scopeInfo>
+    <scopeInfo nodeId="7292875354317743159" fileName="DataFlowUtil.java" startLine="168" startPosition="115" endLine="184" endPosition="9">
+      <varInfo nodeId="1225278681700" varName="variableAssignment" />
+    </scopeInfo>
     <scopeInfo nodeId="1223640343584" fileName="DataFlowUtil.java" startLine="66" startPosition="113" endLine="84" endPosition="9">
       <varInfo nodeId="1223640343589" varName="sl" />
       <varInfo nodeId="1223640343586" varName="nodeToSelect" />
@@ -3642,7 +3645,7 @@
     <scopeInfo nodeId="1223640624803" fileName="DataFlowUtil.java" startLine="107" startPosition="76" endLine="125" endPosition="5">
       <varInfo nodeId="1223640624833" varName="read" />
     </scopeInfo>
-    <scopeInfo nodeId="1223642397405" fileName="DataFlowUtil.java" startLine="185" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="1223642397405" fileName="DataFlowUtil.java" startLine="188" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="1223642429044" varName="statementList" />
       <varInfo nodeId="8101676149486022512" varName="program" />
     </scopeInfo>
@@ -3672,17 +3675,17 @@
     <scopeInfo nodeId="1223640283876" fileName="DataFlowUtil.java" startLine="61" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="8101676149486022478" varName="program" />
     </scopeInfo>
-    <scopeInfo nodeId="1223642282206" fileName="DataFlowUtil.java" startLine="131" startPosition="43" endLine="182" endPosition="7" />
-    <scopeInfo nodeId="1223642282205" fileName="DataFlowUtil.java" startLine="130" startPosition="74" endLine="183" endPosition="5">
+    <scopeInfo nodeId="1223642282206" fileName="DataFlowUtil.java" startLine="131" startPosition="43" endLine="185" endPosition="7" />
+    <scopeInfo nodeId="1223642282205" fileName="DataFlowUtil.java" startLine="130" startPosition="74" endLine="186" endPosition="5">
       <varInfo nodeId="1223642282313" varName="write" />
     </scopeInfo>
-    <scopeInfo nodeId="1223642182747" fileName="DataFlowUtil.java" startLine="129" startPosition="110" endLine="183" endPosition="5">
+    <scopeInfo nodeId="1223642182747" fileName="DataFlowUtil.java" startLine="129" startPosition="110" endLine="186" endPosition="5">
       <varInfo nodeId="1223642282194" varName="unusedAssignments" />
     </scopeInfo>
-    <scopeInfo nodeId="1223642182744" fileName="DataFlowUtil.java" startLine="127" startPosition="0" endLine="185" endPosition="0">
+    <scopeInfo nodeId="1223642182744" fileName="DataFlowUtil.java" startLine="127" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="8249991444799094866" varName="program" />
     </scopeInfo>
-    <unitInfo nodeId="1223640197349" fileName="DataFlowUtil.java" startLine="25" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.DataFlowUtil" />
+    <unitInfo nodeId="1223640197349" fileName="DataFlowUtil.java" startLine="25" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.DataFlowUtil" />
   </root>
   <root nodeId="1224574932971">
     <nodeInfo nodeId="1224574964063" fileName="typeof_EnumValuesExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

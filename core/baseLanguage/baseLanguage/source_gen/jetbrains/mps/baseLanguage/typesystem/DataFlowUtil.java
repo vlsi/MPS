@@ -165,8 +165,7 @@ public class DataFlowUtil {
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(write, "Unused parameter", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278748067", null, errorTarget);
           }
         }
-      }
-      if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
+      } else if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
         SNode variableAssignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
         if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
           if (ILocalDeclaration_Behavior.call_isReferencedInControlFlowInterrupter_1644061362849513751(SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
@@ -177,6 +176,10 @@ public class DataFlowUtil {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278681706", null, errorTarget);
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
           }
         }
       }
