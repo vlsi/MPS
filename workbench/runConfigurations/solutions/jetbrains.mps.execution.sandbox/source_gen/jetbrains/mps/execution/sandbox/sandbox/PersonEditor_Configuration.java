@@ -39,6 +39,9 @@ public class PersonEditor_Configuration implements IPersistentConfiguration, ITe
 
   @Override
   public void readExternal(Element element) throws InvalidDataException {
+    if (element == null) {
+      throw new InvalidDataException("Cant read " + this + ": element is null.");
+    }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
 
