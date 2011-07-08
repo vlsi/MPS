@@ -2433,7 +2433,7 @@
   </root>
   <root nodeId="8804575757433489765">
     <nodeInfo nodeId="7688572620285950322" fileName="TransformationUtil.java" startLine="33" startPosition="33" endLine="34" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="335932010435443404" fileName="TransformationUtil.java" startLine="39" startPosition="102" endLine="40" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2991801935162637675" fileName="TransformationUtil.java" startLine="39" startPosition="102" endLine="40" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="335932010435443415" fileName="TransformationUtil.java" startLine="40" startPosition="117" endLine="41" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="335932010435443422" fileName="TransformationUtil.java" startLine="41" startPosition="124" endLine="42" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="335932010435443354" fileName="TransformationUtil.java" startLine="45" startPosition="125" endLine="46" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5036,7 +5036,7 @@
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="2890" startPosition="54" endLine="2892" endPosition="5" />
     <scopeInfo nodeId="8804575757433489765" fileName="TransformationUtil.java" startLine="2903" startPosition="16" endLine="2905" endPosition="39" />
     <scopeInfo nodeId="335932010435443329" fileName="TransformationUtil.java" startLine="39" startPosition="102" endLine="42" endPosition="88">
-      <varInfo nodeId="335932010435443405" varName="invokeConstructorMethodCall" />
+      <varInfo nodeId="2991801935162637676" varName="invokeConstructorMethodCall" />
     </scopeInfo>
     <scopeInfo nodeId="335932010435443342" fileName="TransformationUtil.java" startLine="45" startPosition="125" endLine="48" endPosition="88">
       <varInfo nodeId="335932010435443355" varName="invokeConstructorMethodCall" />
