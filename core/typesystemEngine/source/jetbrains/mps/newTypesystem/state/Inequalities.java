@@ -181,12 +181,14 @@ public class Inequalities {  //
         continue;
       }
       if (left == node && !TypesUtil.isVariable(right)) {
-        rights.add(right);
-        typesToBlocks.put(right, block);
+        SNode type = myState.expand(right);
+        rights.add(type);
+        typesToBlocks.put(type, block);
       }
       if (right == node && !TypesUtil.isVariable(left)) {
-        lefts.add(left);
-        typesToBlocks.put(left, block);
+        SNode type = myState.expand(left);
+        lefts.add(type);
+        typesToBlocks.put(type, block);
       }
     }
   }
