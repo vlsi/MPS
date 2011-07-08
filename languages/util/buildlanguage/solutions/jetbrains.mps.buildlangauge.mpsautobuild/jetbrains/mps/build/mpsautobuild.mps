@@ -108,6 +108,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="modules.core" />
       <property name="name" nameId="tpck.1169194664001" value="core.execution" />
     </node>
+    <node type="tps4.Block" typeId="tps4.701559220729212645" id="5358686142361317193">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="components" />
+      <property name="name" nameId="tpck.1169194664001" value="mpstest.jar" />
+    </node>    
   </roots>
   <root id="2235195415637073459">
     <node role="variable" roleId="tps4.1205335538326" type="tps4.Variable" typeId="tps4.1205335290326" id="2235195415637077105">
@@ -171,6 +175,9 @@
           </node>
           <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="7715871110555971755">
             <link role="block" roleId="tps4.701559220729212648" targetNodeId="7715871110555971738" resolveInfo="mpsboot.jar" />
+          </node>
+          <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="5358686142361317204">
+            <link role="block" roleId="tps4.701559220729212648" targetNodeId="5358686142361317193" resolveInfo="mpstest.jar" />
           </node>
         </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637076992">
@@ -2559,6 +2566,31 @@
         <property name="name" nameId="tps4.1223641503366" value="execution" />
       </node>
     </node>
-  </root>
+  </root>  
+  <root id="5358686142361317193">
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Jar" typeId="tps4.1203598417283" id="5358686142361317195">
+      <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="5358686142361317196" />
+      <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="5358686142361317197">
+        <property name="name" nameId="tps4.1223641503366" value="mpstest.jar" />
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="5358686142361317205">
+        <property name="name" nameId="tpck.1169194664001" value="" />
+        <property name="excludes" nameId="tps4.1204107538752" value="" />
+        <node role="sourcePath" roleId="tps4.1220974847213" type="tps4.Path" typeId="tps4.1220973916698" id="5358686142361317206">
+          <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="5358686142361317207">
+            <property name="name" nameId="tps4.1220976068141" value="mps_home" />
+          </node>
+          <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="5358686142361317211">
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="5358686142361317212">
+              <property name="path" nameId="tps4.1220974398640" value="testbench" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="5358686142361317214">
+              <property name="path" nameId="tps4.1220974398640" value="classes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>  
 </model>
 

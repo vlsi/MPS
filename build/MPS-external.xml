@@ -33,6 +33,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <mkdir dir="${deploy.dir}/MPS/license" />
     <mkdir dir="${deploy.dir}/MPS/plugins/cvsIntegration" />
@@ -218,6 +219,13 @@
       <fileset dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/lib/mpstest.jar.tmp">
+      <fileset dir="${mps_home}/testbench/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/lib/mpstest.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <copy todir="${deploy.dir}/MPS/license">
       <fileset dir="${mps_home}/license" />
@@ -467,6 +475,7 @@
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
   </target>
   <target name="replace_a72d1a">
