@@ -92,7 +92,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   @Nls
   public String getDisplayName() {
-    return "Library Manager (IDE)";
+    return "Global Libraries";
   }
 
   @NotNull

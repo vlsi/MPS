@@ -52,7 +52,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Nls
   public String getDisplayName() {
-    return "Library Manager";
+    return "Project Libraries";
   }
 
   @Override
