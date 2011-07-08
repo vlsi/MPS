@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)">
+<model modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="1">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -151,7 +151,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5249919352014727761">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5249919352014727759" resolveInfo="VariableExpression" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5249919352014727759" resolveInfo="VariableOwner" />
     </node>
   </root>
   <root id="4022026349914673025">
@@ -329,7 +329,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8360767178776325736" resolveInfo="LetVariable" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5249919352014727760">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5249919352014727759" resolveInfo="VariableExpression" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5249919352014727759" resolveInfo="VariableOwner" />
     </node>
   </root>
   <root id="4939219901992083820">

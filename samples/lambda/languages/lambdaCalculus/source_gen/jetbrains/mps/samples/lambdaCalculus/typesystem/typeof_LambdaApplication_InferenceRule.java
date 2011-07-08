@@ -30,7 +30,6 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474773", true), (SNode) typeCheckingContext.getRepresentative(R_typevar_247065157659474768), _info_12389875345);
     }
     SNode result = typeCheckingContext.getRepresentative(R_typevar_247065157659474768);
-    boolean first = true;
     List<SNode> reversedNodes = new ArrayList<SNode>();
     for (SNode node : SLinkOperations.getTargets(lambdaApplication, "argument", true)) {
       ListSequence.fromList(reversedNodes).insertElement(0, node);
@@ -42,7 +41,7 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474806", 0, null);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474810", true), (SNode) typeCheckingContext.getRepresentative(D_typevar_247065157659474805), _info_12389875345);
       }
-      result = new typeof_LambdaApplication_InferenceRule.QuotationClass_uumt54_a0a2a6a0().createNode(typeCheckingContext.getRepresentative(D_typevar_247065157659474805), result, typeCheckingContext);
+      result = new typeof_LambdaApplication_InferenceRule.QuotationClass_uumt54_a0a2a5a0().createNode(typeCheckingContext.getRepresentative(D_typevar_247065157659474805), result, typeCheckingContext);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lambdaApplication, "function", true);
@@ -66,8 +65,8 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  public static class QuotationClass_uumt54_a0a2a6a0 {
-    public QuotationClass_uumt54_a0a2a6a0() {
+  public static class QuotationClass_uumt54_a0a2a5a0 {
+    public QuotationClass_uumt54_a0a2a5a0() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8, final TypeCheckingContext typeCheckingContext) {

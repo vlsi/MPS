@@ -26,18 +26,18 @@ public class sim {
     private List myOuterVars = new ArrayList();
 
     public Function_2167053794906818092() {
-      this.myType = "(number->number)";
+      myType = "(number->number)";
     }
 
     public Function_2167053794906818092(List outerVars) {
-      this.myType = "(number->number)";
-      this.myOuterVars.addAll(outerVars);
+      myType = "(number->number)";
+      myOuterVars.addAll(outerVars);
     }
 
     public Object eval() {
       int i = 0;
       int j = 0;
-      Integer x = (Integer) this.myArgs.get(i++);
+      Integer x = (Integer) myArgs.get(i++);
       return x * x;
     }
 
@@ -46,7 +46,7 @@ public class sim {
     }
 
     public Function copy() {
-      return new sim.Function_2167053794906818092(this.myOuterVars);
+      return new sim.Function_2167053794906818092(myOuterVars);
     }
   }
 }

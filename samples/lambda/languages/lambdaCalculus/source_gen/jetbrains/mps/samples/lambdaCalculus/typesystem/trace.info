@@ -16,10 +16,10 @@
   <unitInfo fileName="typeof_StringConstant_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_StringConstant_InferenceRule" />
   <unitInfo fileName="typeof_NumericConstant_InferenceRule.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_NumericConstant_InferenceRule" />
   <unitInfo fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_BinaryNumericOperation_InferenceRule" />
-  <unitInfo fileName="typeof_LambdaApplication_InferenceRule.java" startLine="69" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LambdaApplication_InferenceRule$QuotationClass_uumt54_a0a2a6a0" />
-  <unitInfo fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="69" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LambdaAbstraction_InferenceRule$QuotationClass_e7wm7n_a0a2a6a0" />
-  <unitInfo fileName="typeof_LambdaApplication_InferenceRule.java" startLine="21" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LambdaApplication_InferenceRule" />
-  <unitInfo fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="21" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LambdaAbstraction_InferenceRule" />
+  <unitInfo fileName="typeof_LambdaApplication_InferenceRule.java" startLine="68" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LambdaApplication_InferenceRule$QuotationClass_uumt54_a0a2a5a0" />
+  <unitInfo fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="68" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LambdaAbstraction_InferenceRule$QuotationClass_e7wm7n_a0a2a5a0" />
+  <unitInfo fileName="typeof_LambdaApplication_InferenceRule.java" startLine="21" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LambdaApplication_InferenceRule" />
+  <unitInfo fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="21" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LambdaAbstraction_InferenceRule" />
   <root nodeId="1888188276221754553">
     <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="23" startPosition="105" endLine="24" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -66,37 +66,35 @@
     <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="28" startPosition="59" endLine="29" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="29" startPosition="212" endLine="30" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="247065157659474777" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="247065157659474781" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="32" startPosition="87" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="247065157659474785" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="33" startPosition="25" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="247065157659474793" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="35" startPosition="88" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="247065157659474805" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="38" startPosition="38" endLine="39" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="40" startPosition="7" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="41" startPosition="48" endLine="42" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="42" startPosition="214" endLine="43" endPosition="322" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="247065157659474812" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="44" startPosition="7" endLine="45" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="47" startPosition="5" endLine="48" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="48" startPosition="104" endLine="49" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="49" startPosition="212" endLine="50" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="247065157659474791" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="34" startPosition="55" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="247065157659474785" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="32" startPosition="87" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="247065157659474793" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="34" startPosition="88" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="247065157659474805" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="37" startPosition="38" endLine="38" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="39" startPosition="7" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="40" startPosition="48" endLine="41" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="41" startPosition="214" endLine="42" endPosition="322" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="247065157659474812" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="43" startPosition="7" endLine="44" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="46" startPosition="5" endLine="47" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="47" startPosition="104" endLine="48" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="48" startPosition="212" endLine="49" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="247065157659474791" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="33" startPosition="55" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="26" startPosition="99" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="39" startPosition="101" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="46" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="247065157659474803" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="37" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="247065157659474792" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="35" startPosition="88" endLine="36" endPosition="66" />
+    <nodeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="38" startPosition="101" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="45" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="247065157659474803" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="36" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="247065157659474792" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="34" startPosition="88" endLine="35" endPosition="66" />
     <scopeInfo nodeId="247065157659474769" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="27" startPosition="5" endLine="30" endPosition="320" />
-    <scopeInfo nodeId="247065157659474791" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="34" startPosition="55" endLine="37" endPosition="5">
+    <scopeInfo nodeId="247065157659474791" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="33" startPosition="55" endLine="36" endPosition="5">
       <varInfo nodeId="247065157659474801" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="40" startPosition="7" endLine="43" endPosition="322" />
-    <scopeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="47" startPosition="5" endLine="50" endPosition="259" />
-    <scopeInfo nodeId="247065157659474804" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="38" startPosition="38" endLine="45" endPosition="200" />
-    <scopeInfo nodeId="247065157659474803" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="37" startPosition="5" endLine="46" endPosition="5">
+    <scopeInfo nodeId="247065157659474806" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="39" startPosition="7" endLine="42" endPosition="322" />
+    <scopeInfo nodeId="247065157659474826" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="46" startPosition="5" endLine="49" endPosition="259" />
+    <scopeInfo nodeId="247065157659474804" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="37" startPosition="38" endLine="44" endPosition="200" />
+    <scopeInfo nodeId="247065157659474803" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="36" startPosition="5" endLine="45" endPosition="5">
       <varInfo nodeId="247065157659474824" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4530871765544543936" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="25" startPosition="130" endLine="51" endPosition="5">
+    <scopeInfo nodeId="4530871765544543936" fileName="typeof_LambdaApplication_InferenceRule.java" startLine="25" startPosition="130" endLine="50" endPosition="5">
       <varInfo nodeId="247065157659474778" varName="result" />
       <varInfo nodeId="247065157659474786" varName="reversedNodes" />
-      <varInfo nodeId="247065157659474782" varName="first" />
     </scopeInfo>
   </root>
   <root nodeId="6645816968628516758">
@@ -118,37 +116,35 @@
     <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="28" startPosition="100" endLine="29" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="29" startPosition="212" endLine="30" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="627759474950193488" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="627759474950193562" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="32" startPosition="87" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6997567109318329761" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="33" startPosition="25" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6997567109318355510" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="35" startPosition="88" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6115593414628019700" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="38" startPosition="38" endLine="39" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="40" startPosition="7" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="41" startPosition="48" endLine="42" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="42" startPosition="214" endLine="43" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6997567109318355518" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="44" startPosition="7" endLine="45" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="47" startPosition="5" endLine="48" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="48" startPosition="59" endLine="49" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="49" startPosition="213" endLine="50" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6997567109318334060" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="34" startPosition="55" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6997567109318329761" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="32" startPosition="87" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6997567109318355510" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="34" startPosition="88" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6115593414628019700" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="37" startPosition="38" endLine="38" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="39" startPosition="7" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="40" startPosition="48" endLine="41" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="41" startPosition="214" endLine="42" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6997567109318355518" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="43" startPosition="7" endLine="44" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="46" startPosition="5" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="47" startPosition="59" endLine="48" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="48" startPosition="213" endLine="49" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6997567109318334060" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="33" startPosition="55" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="26" startPosition="99" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="39" startPosition="102" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="46" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="627759474950185098" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="37" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <scopeInfo nodeId="6997567109318334061" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="35" startPosition="88" endLine="36" endPosition="66" />
+    <nodeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="38" startPosition="102" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="45" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="627759474950185098" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="36" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="6997567109318334061" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="34" startPosition="88" endLine="35" endPosition="66" />
     <scopeInfo nodeId="627759474950193612" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="27" startPosition="5" endLine="30" endPosition="320" />
-    <scopeInfo nodeId="6997567109318334060" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="34" startPosition="55" endLine="37" endPosition="5">
+    <scopeInfo nodeId="6997567109318334060" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="33" startPosition="55" endLine="36" endPosition="5">
       <varInfo nodeId="6997567109318334064" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="40" startPosition="7" endLine="43" endPosition="323" />
-    <scopeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="47" startPosition="5" endLine="50" endPosition="260" />
-    <scopeInfo nodeId="627759474950185099" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="38" startPosition="38" endLine="45" endPosition="201" />
-    <scopeInfo nodeId="627759474950185098" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="37" startPosition="5" endLine="46" endPosition="5">
+    <scopeInfo nodeId="627759474950193423" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="39" startPosition="7" endLine="42" endPosition="323" />
+    <scopeInfo nodeId="6115593414628019716" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="46" startPosition="5" endLine="49" endPosition="260" />
+    <scopeInfo nodeId="627759474950185099" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="37" startPosition="38" endLine="44" endPosition="201" />
+    <scopeInfo nodeId="627759474950185098" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="36" startPosition="5" endLine="45" endPosition="5">
       <varInfo nodeId="627759474950185102" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6645816968628542131" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="25" startPosition="130" endLine="51" endPosition="5">
+    <scopeInfo nodeId="6645816968628542131" fileName="typeof_LambdaAbstraction_InferenceRule.java" startLine="25" startPosition="130" endLine="50" endPosition="5">
       <varInfo nodeId="627759474950193489" varName="result" />
       <varInfo nodeId="6997567109318329762" varName="reversedNodes" />
-      <varInfo nodeId="627759474950193563" varName="first" />
     </scopeInfo>
   </root>
   <root nodeId="6997567109318694516">
