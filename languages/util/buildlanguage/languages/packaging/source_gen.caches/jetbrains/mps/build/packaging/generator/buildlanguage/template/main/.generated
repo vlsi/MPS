@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6p885reuu9d7athpboce4m59yrie5gz">
+<dependencies version="2" modelHash="-80jmhsxquf4ez8ybxne25gxsvmxy1q1">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.make.dependencies(MPS.Classpath/jetbrains.mps.make.dependencies@java_stub)" />
@@ -32,7 +32,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="bs12zx6bureypbcmufkaon2v0z94d94" />
   <dep model="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)" hash="-2ts2mf4c1hb8iweqvlnm3l4llb1pfih" />
   <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" hash="caob73bt010qamop72qesq01lhfoeik" />
-  <dep model="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" hash="-92c5555iesyfi5uv8jq7gbdj9h1lxh3" />
+  <dep model="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" hash="9ppkzvfl8qc3rktlzrgfbto4uzdlxbz" />
   <dep model="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" hash="-75obg69rvwpzc6mk8ecd00ly9pmo9ee" />
   <dep model="r:00000000-0000-4000-0000-011c895904da(jetbrains.mps.build.packaging.generator.buildlanguage.template.util)" hash="-48d3z1f1x4kxl0lhvcsahu7h2fy11gu" />
   <dep model="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" hash="-c9jn14xx3eznqfw6w68svvps1coym58" />
@@ -195,7 +195,7 @@
   <source id="1234978022753" name="reduce_Macro" hash="-bcwyz4bdkpp9v9qex6nwds4e7gzbo0m">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1238426776123" name="CheckFullDependency" hash="3q4e6koweatediqwp2ukvpate1hijjn">
+  <source id="1238426776123" name="CheckFullDependency" hash="-2400cg7qlo0b68d2v7j4hkjx7qrmm4u">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1240849283962" name="reduce_Space" hash="94w9ei6mvdwxna3zt09edwhboagec46">

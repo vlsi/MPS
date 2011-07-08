@@ -56,7 +56,10 @@ public class GenerateBuildAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.fromMap(_params).get("project")), true);
+      boolean result = GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.fromMap(_params).get("project")), true);
+      if (!(result)) {
+        LOG.error("Build files were not generated.");
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateBuildAction", t);
     }
