@@ -112,7 +112,7 @@ public class EditorActionUtils {
    * child collection below the cell returned from cell.getNextLeaf() or we should go on and insert
    * next child into a collection containing cell itself.
    * 
-   * @throws true if we should redispatch insert event to the next leaft cell
+   * @return true if we should redispatch insert event to the next leaft cell
    */
   private static boolean hasSingleRolesAtRightBoundary(EditorCell cell) {
     if (!(hasSingleRole(cell))) {
@@ -134,7 +134,7 @@ public class EditorActionUtils {
    * child collection below the cell returned from cell.getPrevLeaf() or we should go on and insert
    * prev. child into a collection containing cell itself
    * 
-   * @throws true if we should redispatch insert event to the prev. leaft cell
+   * @return true if we should redispatch insert event to the prev. leaft cell
    */
   private static boolean hasSingleRolesAtLeftBoundary(EditorCell cell) {
     if (!(hasSingleRole(cell))) {

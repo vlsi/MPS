@@ -48,7 +48,7 @@ public class ABC<TT> {
    * @see java.awt.JobAttributes.DialogType 
    * @param a param :)
    * @throws ArrayStoreException ase :)
-   * @throws int :)
+   * @return int :)
    */
   public int foo(int a) throws ArrayStoreException {
     /*

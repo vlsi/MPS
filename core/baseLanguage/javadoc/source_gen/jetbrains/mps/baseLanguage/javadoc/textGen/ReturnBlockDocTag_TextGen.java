@@ -10,7 +10,7 @@ public class ReturnBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     DocCommentTextGen.javadocIndent(this);
-    this.append("@throws ");
+    this.append("@return ");
     this.append(SPropertyOperations.getString(node, "text"));
   }
 }
