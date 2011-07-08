@@ -181,9 +181,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   protected void finishGeneration(final EditableSModelDescriptor targetModelDescriptor, SNode mpsLayout) {
-    targetModelDescriptor.getModule().save();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
+        targetModelDescriptor.getModule().save();
         targetModelDescriptor.save();
       }
     });
