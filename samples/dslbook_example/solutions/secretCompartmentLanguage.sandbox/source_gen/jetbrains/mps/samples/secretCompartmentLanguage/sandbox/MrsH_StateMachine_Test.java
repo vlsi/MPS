@@ -9,10 +9,10 @@ import junit.framework.Assert;
 public class MrsH_StateMachine_Test extends StateMachineTest {
   public void test_A() throws Exception {
     StateMachineFactory stateMachineFactory = new MrsH_StateMachineFactory();
-    this.init(stateMachineFactory);
-    this.getController().handle("D1CL");
-    this.getController().handle("D2OP");
-    this.getController().handle("L1ON");
-    Assert.assertEquals("panelUnlocked", this.getController().getCurrentState().getName());
+    init(stateMachineFactory);
+    getController().handle("D1CL");
+    getController().handle("D2OP");
+    getController().handle("L1ON");
+    Assert.assertEquals("panelUnlocked", getController().getCurrentState().getName());
   }
 }

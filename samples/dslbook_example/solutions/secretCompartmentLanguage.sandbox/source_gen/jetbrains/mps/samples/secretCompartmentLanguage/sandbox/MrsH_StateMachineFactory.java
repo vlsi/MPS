@@ -20,10 +20,10 @@ public class MrsH_StateMachineFactory extends StateMachineFactory {
     this.putState("doorClosed", new State("doorClosed"));
     this.putState("drawOpened", new State("drawOpened"));
     this.putState("panelUnlocked", new State("panelUnlocked"));
-    this.getState("idle").addTransition(this.getEvent("doorClosed"), this.getState("doorClosed"));
-    this.getState("doorClosed").addTransition(this.getEvent("drawOpened"), this.getState("drawOpened"));
-    this.getState("drawOpened").addTransition(this.getEvent("lightOn"), this.getState("panelUnlocked"));
-    State startState = this.getState("idle");
+    getState("idle").addTransition(this.getEvent("doorClosed"), getState("doorClosed"));
+    getState("doorClosed").addTransition(this.getEvent("drawOpened"), getState("drawOpened"));
+    getState("drawOpened").addTransition(this.getEvent("lightOn"), getState("panelUnlocked"));
+    State startState = getState("idle");
     StateMachine stateMachine = new StateMachine(startState);
     return stateMachine;
   }
