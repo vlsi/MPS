@@ -28,10 +28,8 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 
 import javax.swing.SwingUtilities;
@@ -42,7 +40,7 @@ public class GroupAdjuster {
 
   private static void addPlace(String groupId, ActionPlace place) {
     BaseGroup group = ActionUtils.getGroup(groupId);
-    if(group != null)
+    if (group != null)
       group.addPlace(place, null);
   }
 
@@ -78,7 +76,7 @@ public class GroupAdjuster {
     List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
     DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-    for (String id : manager.getPluginActions(idePlugin.getId())) {
+    for (String id : manager.getActionIds("")) {
       AnAction action = manager.getAction(id);
       if (!(action instanceof BaseGroup)) continue;
       BaseGroup group = ((BaseGroup) action);
@@ -88,11 +86,7 @@ public class GroupAdjuster {
     }
 
     for (BaseGroup group : mainMenuGroups) {
-      group.addPlace(null, new Condition<BaseAction>() {
-        public boolean met(BaseAction action) {
-          return action.getPlaces().isEmpty();
-        }
-      });
+      group.addPlace(null, null);
     }
   }
 
