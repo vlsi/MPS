@@ -3563,12 +3563,15 @@
   <root id="1237030526913">
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1237030533535">
       <property name="name" nameId="tpck.1169194664001" value="INT" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1237030526915" resolveInfo="ParameterType" />
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1237030538202">
       <property name="name" nameId="tpck.1169194664001" value="NOT_INT" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1237030526915" resolveInfo="ParameterType" />
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1239017978574">
       <property name="name" nameId="tpck.1169194664001" value="ANY" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1237030526915" resolveInfo="ParameterType" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1237030526914" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1237030526915">

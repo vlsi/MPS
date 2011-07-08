@@ -48,7 +48,7 @@ public class CustomContainersRegistry {
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode cc) {
           IModule owner = CustomContainersRegistry.this.getOwningModule(SNodeOperations.getModel(cc));
-          return SetSequence.fromSet(allVisibleModules).contains(owner) || SetSequence.fromSet(allUsedLanguages).contains(owner);
+          return SetSequence.fromSet(allVisibleModules).contains(owner) || (owner instanceof Language && SetSequence.fromSet(allUsedLanguages).contains((Language) owner));
         }
       }).<SNode>translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode cc) {

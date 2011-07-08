@@ -13,6 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public class SmartClosureParameterTypeUtil {
+  public SmartClosureParameterTypeUtil() {
+  }
+
   @InferenceMethod
   public static void equateInputType(final TypeCheckingContext typeCheckingContext, SNode scpd, SNode InputType) {
     SNode vabs = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "jetbrains.mps.baseLanguage.structure.IMethodCall", "jetbrains.mps.baseLanguage.structure.DotExpression"}, false, false);
