@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.InternalFlag;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
@@ -95,6 +91,8 @@ public class ModelPersistence {
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
 
+  public static final int LAST_VERSION = 7;
+
   private static final IModelPersistence[] myModelPersistenceFactory = {
     null,
     null,
@@ -105,19 +103,6 @@ public class ModelPersistence {
     new ModelPersistence6(),
     new ModelPersistence7()
   };
-  private static final int currentApplicationPersistenceVersion = PersistenceSettings.MAX_VERSION;
-
-  private static PersistenceSettings ourPersistenceSettings;
-
-  private static PersistenceSettings getPersistenceSettings() {
-    if (ApplicationManager.getApplication() == null) {
-      return null;
-    }
-    if (ourPersistenceSettings == null) {
-      ourPersistenceSettings = ApplicationManager.getApplication().getComponent(PersistenceSettings.class);
-    }
-    return ourPersistenceSettings;
-  }
 
   @NotNull
   private static IModelPersistence getCurrentModelPersistence() {
@@ -292,12 +277,7 @@ public class ModelPersistence {
    *  Saves model and metadata.
    */
   public static SModel saveModel(@NotNull SModel model, @NotNull IFile file) {
-    int persistenceVersion = model.getPersistenceVersion();
-    if (persistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(persistenceVersion)) {
-      persistenceVersion = getCurrentPersistenceVersion();
-    }
-
-    return saveModel(model, file, persistenceVersion);
+    return saveModel(model, file, model.getPersistenceVersion());
   }
 
   /*
@@ -398,31 +378,7 @@ public class ModelPersistence {
   }
 
   public static int getCurrentPersistenceVersion() {
-    int persistenceVersion = PersistenceSettings.VERSION_UNDEFINED;
-    if (getPersistenceSettings() != null) {
-      persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
-    }
-
-    if (persistenceVersion == PersistenceSettings.VERSION_UNDEFINED) {
-      return currentApplicationPersistenceVersion;
-    } else if (persistenceVersion == PersistenceSettings.VERSION_UPDATE_TO_THE_LATEST) {
-      return currentApplicationPersistenceVersion;
-    }
-    return persistenceVersion;
-  }
-
-  private static boolean needsUpgrade(int modelPersistenceVersion) {
-    if (MPSCore.getInstance().isTestMode()) {
-      return false;
-    }
-    if (modelPersistenceVersion < getCurrentPersistenceVersion()) {
-      if (getPersistenceSettings().isUserPersistenceVersionDefined()) {
-        return true; //user already decided to convert models now
-      } else {
-        return false; //do not show dialog, for it causes deadlock
-      }
-    }
-    return false;
+    return  ModelPersistence.LAST_VERSION;
   }
 
   private static ModelLoadResult handleNullReaderForPersistence(String modelTitle) {

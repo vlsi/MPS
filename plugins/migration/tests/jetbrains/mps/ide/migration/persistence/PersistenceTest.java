@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -65,7 +64,7 @@ public class PersistenceTest extends BaseMPSTest {
                 EditableSModelDescriptor testModel = (EditableSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                 assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                 SModel model = testModel.getSModel();
-                for (int i = START_PERSISTENCE_TEST_VERSION; i <= PersistenceSettings.MAX_VERSION; ++i) {
+                for (int i = START_PERSISTENCE_TEST_VERSION; i <=  ModelPersistence.LAST_VERSION; ++i) {
                   try { // errors about not found attributes are expected for old models
                     filter.start();
                     ModelPersistence.saveModel(model, file, i);
@@ -95,8 +94,8 @@ public class PersistenceTest extends BaseMPSTest {
       filter.start();
 
       final int version[] = { START_PERSISTENCE_TEST_VERSION, START_PERSISTENCE_TEST_VERSION };
-      for (; version[0] < PersistenceSettings.MAX_VERSION; ++version[0])
-      for (version[1] = version[0] + 1; version[1] <= PersistenceSettings.MAX_VERSION; ++version[1]) {
+      for (; version[0] < ModelPersistence.LAST_VERSION; ++version[0])
+      for (version[1] = version[0] + 1; version[1] <=  ModelPersistence.LAST_VERSION; ++version[1]) {
         boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
           new ProjectRunnable() {
             public boolean execute(final MPSProject project) {

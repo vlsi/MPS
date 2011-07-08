@@ -30,8 +30,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.persistence.PersistenceSettings;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import org.junit.Assert;
@@ -76,7 +74,6 @@ public class DiskMemoryConflictsTest {
         final boolean[] resultArr = new boolean[1];
         try {
           myProject = project.getProject();
-          ApplicationManager.getApplication().getComponent(PersistenceSettings.class).setMaxPersistenceVersion();
           myModelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(MODEL_REFERENCE);
           myModule = (Solution) myModelDescriptor.getModule();
           ModelAccess.instance().runReadAction(new Runnable() {

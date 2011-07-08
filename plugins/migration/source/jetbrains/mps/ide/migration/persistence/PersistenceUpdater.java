@@ -21,7 +21,6 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 
@@ -80,7 +79,7 @@ public class PersistenceUpdater {
           }
         }
       }
-      if (persistenceVersion != -1 && persistenceVersion < PersistenceSettings.MAX_VERSION) {
+      if (persistenceVersion != -1 && persistenceVersion <  ModelPersistence.LAST_VERSION) {
         modelDescriptors.add((EditableSModelDescriptor) modelDescriptor);
       }
     }
@@ -104,7 +103,7 @@ public class PersistenceUpdater {
     if (silent || dialogOk) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          upgradePersistence(modelDescriptors, PersistenceSettings.MAX_VERSION);
+          upgradePersistence(modelDescriptors,  ModelPersistence.LAST_VERSION);
         }
       });
     }
