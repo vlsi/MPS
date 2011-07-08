@@ -28885,7 +28885,6 @@
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="rzqf.RedirectOutputExpression" typeId="rzqf.856705193941281812" id="8478328909877201733">
               <node role="processHandler" roleId="rzqf.856705193941281813" type="rzqf.CommandBuilderExpression" typeId="rzqf.856705193941281780" id="8478328909877201734">
-                <link role="command" targetNodeId="5298715229972355748" resolveInfo="junit" />
                 <link role="commandPart" roleId="rzqf.6129022259108621329" targetNodeId="1715641077095424925" resolveInfo="junit" />
                 <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="8478328909877201735">
                   <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="1715641077095424933" resolveInfo="jrePath" />

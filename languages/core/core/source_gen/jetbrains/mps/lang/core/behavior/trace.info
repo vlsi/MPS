@@ -16,7 +16,7 @@
   <unitInfo fileName="ExportScopeNamespace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" />
   <unitInfo fileName="ExportScopePublic_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="BaseConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+  <unitInfo fileName="BaseConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
   <root nodeId="1213877396626">
     <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="18" startPosition="35" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_5017341185733863694" />
     <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3923831204883340393" />
@@ -27,124 +27,125 @@
     <nodeInfo nodeId="1218237543864" fileName="BaseConcept_Behavior.java" startLine="29" startPosition="74" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5017341185733869648" fileName="BaseConcept_Behavior.java" startLine="33" startPosition="84" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3923831204883365313" fileName="BaseConcept_Behavior.java" startLine="37" startPosition="85" endLine="38" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7941158526576616759" fileName="BaseConcept_Behavior.java" startLine="41" startPosition="80" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396645" fileName="BaseConcept_Behavior.java" startLine="46" startPosition="100" endLine="47" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396654" fileName="BaseConcept_Behavior.java" startLine="48" startPosition="25" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396659" fileName="BaseConcept_Behavior.java" startLine="50" startPosition="7" endLine="51" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636453809" fileName="BaseConcept_Behavior.java" startLine="52" startPosition="5" endLine="53" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1213877396674" fileName="BaseConcept_Behavior.java" startLine="53" startPosition="10" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396681" fileName="BaseConcept_Behavior.java" startLine="55" startPosition="39" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636453351" fileName="BaseConcept_Behavior.java" startLine="57" startPosition="5" endLine="58" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1213877396687" fileName="BaseConcept_Behavior.java" startLine="58" startPosition="10" endLine="59" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396695" fileName="BaseConcept_Behavior.java" startLine="60" startPosition="31" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636454275" fileName="BaseConcept_Behavior.java" startLine="62" startPosition="5" endLine="63" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1213877396701" fileName="BaseConcept_Behavior.java" startLine="63" startPosition="10" endLine="64" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2354269628709769382" fileName="BaseConcept_Behavior.java" startLine="67" startPosition="92" endLine="68" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3981318653438236159" fileName="BaseConcept_Behavior.java" startLine="72" startPosition="28" endLine="73" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="201537367881074507" fileName="BaseConcept_Behavior.java" startLine="74" startPosition="5" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="201537367881074512" fileName="BaseConcept_Behavior.java" startLine="76" startPosition="137" endLine="77" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="201537367881074524" fileName="BaseConcept_Behavior.java" startLine="78" startPosition="5" endLine="79" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="82" startPosition="81" endLine="83" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="83" startPosition="113" endLine="84" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="87" startPosition="82" endLine="88" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="88" startPosition="113" endLine="89" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="92" startPosition="77" endLine="93" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="93" startPosition="113" endLine="94" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="97" startPosition="75" endLine="98" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="98" startPosition="113" endLine="99" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="102" startPosition="89" endLine="103" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="103" startPosition="113" endLine="104" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="107" startPosition="75" endLine="108" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="108" startPosition="113" endLine="109" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="112" startPosition="114" endLine="113" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="116" startPosition="115" endLine="117" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="120" startPosition="110" endLine="121" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="124" startPosition="108" endLine="125" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="128" startPosition="122" endLine="129" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="132" startPosition="108" endLine="133" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7798828310133117189" fileName="BaseConcept_Behavior.java" startLine="42" startPosition="80" endLine="43" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7941158526576616759" fileName="BaseConcept_Behavior.java" startLine="43" startPosition="87" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396645" fileName="BaseConcept_Behavior.java" startLine="48" startPosition="100" endLine="49" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396654" fileName="BaseConcept_Behavior.java" startLine="50" startPosition="25" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396659" fileName="BaseConcept_Behavior.java" startLine="52" startPosition="7" endLine="53" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636453809" fileName="BaseConcept_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1213877396674" fileName="BaseConcept_Behavior.java" startLine="55" startPosition="10" endLine="56" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396681" fileName="BaseConcept_Behavior.java" startLine="57" startPosition="39" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636453351" fileName="BaseConcept_Behavior.java" startLine="59" startPosition="5" endLine="60" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1213877396687" fileName="BaseConcept_Behavior.java" startLine="60" startPosition="10" endLine="61" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396695" fileName="BaseConcept_Behavior.java" startLine="62" startPosition="31" endLine="63" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636454275" fileName="BaseConcept_Behavior.java" startLine="64" startPosition="5" endLine="65" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1213877396701" fileName="BaseConcept_Behavior.java" startLine="65" startPosition="10" endLine="66" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2354269628709769382" fileName="BaseConcept_Behavior.java" startLine="69" startPosition="92" endLine="70" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3981318653438236159" fileName="BaseConcept_Behavior.java" startLine="74" startPosition="28" endLine="75" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="201537367881074507" fileName="BaseConcept_Behavior.java" startLine="76" startPosition="5" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="201537367881074512" fileName="BaseConcept_Behavior.java" startLine="78" startPosition="137" endLine="79" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="201537367881074524" fileName="BaseConcept_Behavior.java" startLine="80" startPosition="5" endLine="81" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="84" startPosition="81" endLine="85" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="85" startPosition="113" endLine="86" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="89" startPosition="82" endLine="90" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="90" startPosition="113" endLine="91" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="94" startPosition="77" endLine="95" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="95" startPosition="113" endLine="96" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="99" startPosition="75" endLine="100" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="100" startPosition="113" endLine="101" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="104" startPosition="89" endLine="105" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="105" startPosition="113" endLine="106" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="109" startPosition="75" endLine="110" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="110" startPosition="113" endLine="111" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="114" startPosition="114" endLine="115" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="118" startPosition="115" endLine="119" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="122" startPosition="110" endLine="123" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="126" startPosition="108" endLine="127" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="130" startPosition="122" endLine="131" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="134" startPosition="108" endLine="135" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877396652" fileName="BaseConcept_Behavior.java" startLine="47" startPosition="141" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877396679" fileName="BaseConcept_Behavior.java" startLine="54" startPosition="81" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877396693" fileName="BaseConcept_Behavior.java" startLine="59" startPosition="82" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3981318653438234733" fileName="BaseConcept_Behavior.java" startLine="71" startPosition="78" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="201537367881074494" fileName="BaseConcept_Behavior.java" startLine="75" startPosition="22" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213877396652" fileName="BaseConcept_Behavior.java" startLine="49" startPosition="141" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877396679" fileName="BaseConcept_Behavior.java" startLine="56" startPosition="81" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877396693" fileName="BaseConcept_Behavior.java" startLine="61" startPosition="82" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3981318653438234733" fileName="BaseConcept_Behavior.java" startLine="73" startPosition="78" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="201537367881074494" fileName="BaseConcept_Behavior.java" startLine="77" startPosition="22" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isInTemplates_1213877396627#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAdditionalIcon_5017341185733863694#(Ljetbrains/mps/smodel/SNode;)Ljavax/swing/Icon;" />
     <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMarkIcons_3923831204883340393#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isRunnable_7941158526576616752#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDetailedPresentation_2354269628709769373#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAdditionalIcon_5017341185733863694#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getMarkIcons_3923831204883340393#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isRunnable_7941158526576616752#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getDetailedPresentation_2354269628709769373#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="131" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getMetaLevel_3981318653438234726#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAdditionalIcon_5017341185733863694#(Ljetbrains/mps/smodel/SNode;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="86" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMarkIcons_3923831204883340393#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="91" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isRunnable_7941158526576616752#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="96" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="101" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDetailedPresentation_2354269628709769373#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="106" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMetaLevel_3981318653438234726#(Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="1213877396643" fileName="BaseConcept_Behavior.java" startLine="45" startPosition="78" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="70" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMetaLevel_3981318653438234726#(Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="44" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDetailedPresentation_2354269628709769373#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAdditionalIcon_5017341185733863694#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getMarkIcons_3923831204883340393#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isRunnable_7941158526576616752#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getDetailedPresentation_2354269628709769373#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getMetaLevel_3981318653438234726#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="83" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAdditionalIcon_5017341185733863694#(Ljetbrains/mps/smodel/SNode;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMarkIcons_3923831204883340393#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isRunnable_7941158526576616752#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="98" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDetailedPresentation_2354269628709769373#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="108" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMetaLevel_3981318653438234726#(Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isRunnable_7941158526576616752#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213877396643" fileName="BaseConcept_Behavior.java" startLine="47" startPosition="78" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="72" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMetaLevel_3981318653438234726#(Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="46" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1213877396713" fileName="BaseConcept_Behavior.java" startLine="26" startPosition="43" endLine="26" endPosition="43" />
     <scopeInfo nodeId="1213877396629" fileName="BaseConcept_Behavior.java" startLine="29" startPosition="74" endLine="30" endPosition="81" />
     <scopeInfo nodeId="5017341185733863697" fileName="BaseConcept_Behavior.java" startLine="33" startPosition="84" endLine="34" endPosition="16" />
     <scopeInfo nodeId="3923831204883340396" fileName="BaseConcept_Behavior.java" startLine="37" startPosition="85" endLine="38" endPosition="33" />
-    <scopeInfo nodeId="7941158526576616755" fileName="BaseConcept_Behavior.java" startLine="41" startPosition="80" endLine="42" endPosition="17" />
-    <scopeInfo nodeId="1213877396653" fileName="BaseConcept_Behavior.java" startLine="48" startPosition="25" endLine="49" endPosition="20" />
-    <scopeInfo nodeId="1213877396680" fileName="BaseConcept_Behavior.java" startLine="55" startPosition="39" endLine="56" endPosition="34" />
-    <scopeInfo nodeId="1213877396694" fileName="BaseConcept_Behavior.java" startLine="60" startPosition="31" endLine="61" endPosition="26" />
-    <scopeInfo nodeId="2354269628709769376" fileName="BaseConcept_Behavior.java" startLine="67" startPosition="92" endLine="68" endPosition="77" />
-    <scopeInfo nodeId="3981318653438234735" fileName="BaseConcept_Behavior.java" startLine="72" startPosition="28" endLine="73" endPosition="15" />
-    <scopeInfo nodeId="201537367881074495" fileName="BaseConcept_Behavior.java" startLine="76" startPosition="137" endLine="77" endPosition="107" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="112" startPosition="114" endLine="113" endPosition="257" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="116" startPosition="115" endLine="117" endPosition="258" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="120" startPosition="110" endLine="121" endPosition="254" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="124" startPosition="108" endLine="125" endPosition="245" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="128" startPosition="122" endLine="129" endPosition="265" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="132" startPosition="108" endLine="133" endPosition="256" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="82" startPosition="81" endLine="84" endPosition="212" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="87" startPosition="82" endLine="89" endPosition="213" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="92" startPosition="77" endLine="94" endPosition="209" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="97" startPosition="75" endLine="99" endPosition="200" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="102" startPosition="89" endLine="104" endPosition="220" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="107" startPosition="75" endLine="109" endPosition="211" />
+    <scopeInfo nodeId="1213877396653" fileName="BaseConcept_Behavior.java" startLine="50" startPosition="25" endLine="51" endPosition="20" />
+    <scopeInfo nodeId="1213877396680" fileName="BaseConcept_Behavior.java" startLine="57" startPosition="39" endLine="58" endPosition="34" />
+    <scopeInfo nodeId="1213877396694" fileName="BaseConcept_Behavior.java" startLine="62" startPosition="31" endLine="63" endPosition="26" />
+    <scopeInfo nodeId="2354269628709769376" fileName="BaseConcept_Behavior.java" startLine="69" startPosition="92" endLine="70" endPosition="77" />
+    <scopeInfo nodeId="3981318653438234735" fileName="BaseConcept_Behavior.java" startLine="74" startPosition="28" endLine="75" endPosition="15" />
+    <scopeInfo nodeId="201537367881074495" fileName="BaseConcept_Behavior.java" startLine="78" startPosition="137" endLine="79" endPosition="107" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="114" startPosition="114" endLine="115" endPosition="257" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="118" startPosition="115" endLine="119" endPosition="258" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="122" startPosition="110" endLine="123" endPosition="254" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="126" startPosition="108" endLine="127" endPosition="245" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="130" startPosition="122" endLine="131" endPosition="265" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="134" startPosition="108" endLine="135" endPosition="256" />
+    <scopeInfo nodeId="7941158526576616755" fileName="BaseConcept_Behavior.java" startLine="42" startPosition="80" endLine="44" endPosition="17" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="84" startPosition="81" endLine="86" endPosition="212" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="89" startPosition="82" endLine="91" endPosition="213" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="94" startPosition="77" endLine="96" endPosition="209" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="99" startPosition="75" endLine="101" endPosition="200" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="104" startPosition="89" endLine="106" endPosition="220" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="109" startPosition="75" endLine="111" endPosition="211" />
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="201537367881074494" fileName="BaseConcept_Behavior.java" startLine="75" startPosition="22" endLine="78" endPosition="5">
+    <scopeInfo nodeId="201537367881074494" fileName="BaseConcept_Behavior.java" startLine="77" startPosition="22" endLine="80" endPosition="5">
       <varInfo nodeId="201537367881074496" varName="metaLevelChanger" />
     </scopeInfo>
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="1213877396644" fileName="BaseConcept_Behavior.java" startLine="46" startPosition="100" endLine="51" endPosition="121">
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="1213877396644" fileName="BaseConcept_Behavior.java" startLine="48" startPosition="100" endLine="53" endPosition="121">
       <varInfo nodeId="1213877396646" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="81" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="86" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="91" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="101" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="3981318653438234729" fileName="BaseConcept_Behavior.java" startLine="71" startPosition="78" endLine="79" endPosition="21">
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="88" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="98" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="103" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="108" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="3981318653438234729" fileName="BaseConcept_Behavior.java" startLine="73" startPosition="78" endLine="81" endPosition="21">
       <varInfo nodeId="201537367881074508" varName="metalevel" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="70" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="1213877396642" fileName="BaseConcept_Behavior.java" startLine="45" startPosition="78" endLine="64" endPosition="98">
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="72" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1213877396642" fileName="BaseConcept_Behavior.java" startLine="47" startPosition="78" endLine="66" endPosition="98">
       <varInfo nodeId="1213877396675" varName="smartRefPresentation" />
       <varInfo nodeId="1213877396688" varName="conceptAlias" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="44" startPosition="0" endLine="66" endPosition="0" />
-    <unitInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="18" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
+    <scopeInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="46" startPosition="0" endLine="68" endPosition="0" />
+    <unitInfo nodeId="1213877396626" fileName="BaseConcept_Behavior.java" startLine="18" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
   </root>
   <root nodeId="1213877404257">
     <nodeInfo nodeId="1213877404257" fileName="INamedConcept_Behavior.java" startLine="12" startPosition="37" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1213877404258" />

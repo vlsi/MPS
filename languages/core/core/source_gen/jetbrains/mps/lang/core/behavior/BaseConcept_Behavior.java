@@ -38,7 +38,9 @@ public class BaseConcept_Behavior {
     return new ArrayList<Icon>();
   }
 
+  @Deprecated
   public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
+    // TODO this method should not be here, only a method of ClassConcept will be left 
     return false;
   }
 
