@@ -38,6 +38,7 @@ public class Layout_Behavior {
       SPropertyOperations.set(var, "antName", MapSequence.fromMap(vars).get(s));
       SLinkOperations.addChild(thisNode, "builtInVariable", var);
     }
+    SPropertyOperations.set(thisNode, "compile", "" + true);
   }
 
   public static String call_getFolderToGenerate_1229522949966(SNode thisNode) {
