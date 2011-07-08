@@ -108,12 +108,12 @@ public class JUnitConfigEditor extends JPanel {
     }
     myThis.myTestCases_d0.init(myThis.getNodes(), false);
     myThis.myTestMethods_e0.init(myThis.getMethods(), true);
-    myThis.setButtons(new JRadioButton[JUnitRunTypes.values().length]);
-    myThis.getButtons()[JUnitRunTypes.METHOD.ordinal()] = myThis.myIsMethod_h1a;
-    myThis.getButtons()[JUnitRunTypes.MODEL.ordinal()] = myThis.myIsModel_f1a;
-    myThis.getButtons()[JUnitRunTypes.MODULE.ordinal()] = myThis.myIsModule_e1a;
-    myThis.getButtons()[JUnitRunTypes.NODE.ordinal()] = myThis.myIsClass_g1a;
-    myThis.getButtons()[JUnitRunTypes.PROJECT.ordinal()] = myThis.myIsProject_d1a;
+    myThis.setButtons(new JRadioButton[JUnitRunTypes2.values().length]);
+    myThis.getButtons()[JUnitRunTypes2.METHOD.ordinal()] = myThis.myIsMethod_h1a;
+    myThis.getButtons()[JUnitRunTypes2.MODEL.ordinal()] = myThis.myIsModel_f1a;
+    myThis.getButtons()[JUnitRunTypes2.MODULE.ordinal()] = myThis.myIsModule_e1a;
+    myThis.getButtons()[JUnitRunTypes2.NODE.ordinal()] = myThis.myIsClass_g1a;
+    myThis.getButtons()[JUnitRunTypes2.PROJECT.ordinal()] = myThis.myIsProject_d1a;
   }
 
   public Events getEvents() {
@@ -467,15 +467,6 @@ public class JUnitConfigEditor extends JPanel {
     });
   }
 
-  public void apply(DefaultJUnit_Configuration config) {
-    myThis.apply((Object) config, new _FunctionTypes._void_P6_E0<Object, Integer, ClonableList<String>, ClonableList<String>, String, String>() {
-      public void invoke(Object c, Integer configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
-        myThis.applyInternal((DefaultJUnit_Configuration) c, configurationIndex, testMethods, testCases, model, module);
-        return;
-      }
-    });
-  }
-
   public void apply(JUnitTests_Configuration config) {
     myThis.apply((Object) config, new _FunctionTypes._void_P6_E0<Object, Integer, ClonableList<String>, ClonableList<String>, String, String>() {
       public void invoke(Object c, Integer configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
@@ -546,100 +537,6 @@ public class JUnitConfigEditor extends JPanel {
     configuration.setTestCases(testCases);
     configuration.setModel(model);
     configuration.setModule(module);
-  }
-
-  private void applyInternal(DefaultJUnit_Configuration configuration, int configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
-    if (configurationIndex >= 0) {
-      configuration.getStateObject().type = JUnitRunTypes.values()[configurationIndex];
-    }
-    // set legacy stuff to null 
-    configuration.getStateObject().fullMethodNames = null;
-    configuration.getStateObject().nodes = null;
-
-    configuration.getStateObject().testMethods = testMethods;
-    configuration.getStateObject().testCases = testCases;
-    configuration.getStateObject().model = model;
-    configuration.getStateObject().module = module;
-
-  }
-
-  public void reset(final DefaultJUnit_Configuration config) {
-    if (config.getStateObject().type != null) {
-      myThis.getButtons()[config.getStateObject().type.ordinal()].setSelected(true);
-    } else {
-      myThis.myIsProject_d1a.setSelected(true);
-    }
-
-    // nodes 
-    myThis.setNodes(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-    myThis.myTestCases_d0.clear();
-    // legacy code (config.nodes should be removed) 
-    if (config.getStateObject().nodes != null) {
-      for (String nodeName : config.getStateObject().nodes) {
-        myThis.addNodeValue(nodeName);
-      }
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        Sequence.fromIterable(TestUtils.wrapPointerStrings(config.getStateObject().testCases)).visitAll(new IVisitor<ITestNodeWrapper>() {
-          public void visit(ITestNodeWrapper it) {
-            myThis.myTestCases_d0.addItem(it);
-            ListSequence.fromList(myThis.getNodes()).addElement(it);
-          }
-        });
-      }
-    });
-
-    // methods 
-    myThis.setMethods(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-    myThis.myTestMethods_e0.clear();
-    // legacy code (config.fullMethodNames should be removed) 
-    if (config.getStateObject().fullMethodNames != null) {
-      for (String methodName : ListSequence.fromList(config.getStateObject().fullMethodNames)) {
-        int separatorIndex = methodName.lastIndexOf(TestUtils.SEPARATOR);
-        myThis.addMethodValue(methodName.substring(0, separatorIndex), methodName.substring(separatorIndex + 1));
-      }
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        Sequence.fromIterable(TestUtils.wrapPointerStrings(config.getStateObject().testMethods)).visitAll(new IVisitor<ITestNodeWrapper>() {
-          public void visit(ITestNodeWrapper it) {
-            myThis.myTestMethods_e0.addItem(it);
-            ListSequence.fromList(myThis.getMethods()).addElement(it);
-          }
-        });
-      }
-    });
-
-    // models 
-    if (config.getStateObject().model != null) {
-      myThis.resetEditorModelWith(config.getStateObject().model);
-    } else {
-      // if model is null, it is convenient to take model from the first node 
-      final Wrappers._T<ITestNodeWrapper> wrapperToTakeModelFrom = new Wrappers._T<ITestNodeWrapper>(null);
-      if (myThis.getNodes() != null && ListSequence.fromList(myThis.getNodes()).isNotEmpty()) {
-        wrapperToTakeModelFrom.value = ListSequence.fromList(myThis.getNodes()).first();
-      }
-      if (myThis.getMethods() != null && ListSequence.fromList(myThis.getMethods()).isNotEmpty()) {
-        wrapperToTakeModelFrom.value = ListSequence.fromList(myThis.getMethods()).first();
-      }
-      if (wrapperToTakeModelFrom.value != null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            myThis.resetEditorModelWith(SNodeOperations.getModel(wrapperToTakeModelFrom.value.getNode()).getSModelFqName().toString());
-          }
-        });
-      }
-    }
-
-    // modules 
-    if (config.getStateObject().module != null) {
-      myThis.setModuleValue(config.getStateObject().module);
-      myThis.myModuleName_d4c0.setText(config.getStateObject().module);
-    }
-
-    // on select?? 
-    myThis.onSelect();
   }
 
   public void reset(final JUnitTests_Configuration configuration) {
