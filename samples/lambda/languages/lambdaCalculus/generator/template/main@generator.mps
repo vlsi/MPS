@@ -77,7 +77,7 @@
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="391739495267627131">
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="391739495267619080" resolveInfo="Function" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="391739495267619080" resolveInfo="Program" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qjd.4022026349915669385" resolveInfo="Program" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="391739495267627132">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="391739495267627133">
@@ -175,7 +175,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2538241123671856972">
               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2538241123671856973" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5575221658156753359">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9dtf.7397484091645986293" resolveInfo="isLetOuter" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9dtf.7397484091645986293" resolveInfo="hasParameterRefs" />
               </node>
             </node>
           </node>
@@ -219,7 +219,7 @@
               <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5894428311684248782">
                 <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5894428311684248781" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5575221658156753360">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9dtf.7397484091645986293" resolveInfo="isLetOuter" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9dtf.7397484091645986293" resolveInfo="hasParameterRefs" />
                 </node>
               </node>
             </node>
@@ -392,7 +392,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="14027134441516710">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qjd.3978364766705449817" resolveInfo="Parenthesis" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qjd.3978364766705449817" resolveInfo="ParenthesisExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="14027134441518089">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1564819815920904272">
           <node role="expression" roleId="tpee.1079359253376" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="14027134441518108">
@@ -418,7 +418,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5066394162984528664">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qjd.4022026349914762717" resolveInfo="LambdaApplication" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="816130369292752812">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="816130369292752557" resolveInfo="ReduceFullApplication2" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="816130369292752557" resolveInfo="ReduceFullApplication" />
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="5066394162984555366">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5066394162984555367">
@@ -458,7 +458,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1308935328408190929">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="qjd.4022026349914673024" resolveInfo="LambdaAbstraction" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="816130369292752790">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2167053794906729439" resolveInfo="ReduceAbstraction2" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2167053794906729439" resolveInfo="ReduceAbstraction" />
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1308935328408191088">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1308935328408191089">
@@ -964,17 +964,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="6139750523307920907">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943869">
                   <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="5277973575494192250" resolveInfo="parameterLetExpr" />
-                  <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="6139750523307920908">
-                    <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6139750523307920909">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6139750523307920910">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6139750523307920911">
-                          <property name="value" nameId="tpee.1068580123138" value="true" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="466391367986582293">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -1043,17 +1034,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="6139750523307920935">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943865">
                   <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="4247542765074851552" resolveInfo="parameterFromVar" />
-                  <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="6139750523307920936">
-                    <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6139750523307920937">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6139750523307920938">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6139750523307920939">
-                          <property name="value" nameId="tpee.1068580123138" value="true" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>
@@ -1417,17 +1399,8 @@
                           </node>
                         </node>
                       </node>
-                      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="2985097847315908617">
+                      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943868">
                         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="4247542765074851552" resolveInfo="parameterFromVar" />
-                        <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="2985097847315908618">
-                          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2985097847315908619">
-                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2985097847315908620">
-                              <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2985097847315908621">
-                                <property name="value" nameId="tpee.1068580123138" value="true" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                       </node>
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2985097847315908603">
                         <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -1579,17 +1552,8 @@
                           </node>
                         </node>
                       </node>
-                      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="2985097847315916686">
+                      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943867">
                         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="4247542765074851552" resolveInfo="parameterFromVar" />
-                        <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="2985097847315916687">
-                          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2985097847315916688">
-                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2985097847315916689">
-                              <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2985097847315916690">
-                                <property name="value" nameId="tpee.1068580123138" value="true" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                       </node>
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2985097847315916691">
                         <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -1816,17 +1780,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="2167053794906731215">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943866">
                     <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="4247542765074851552" resolveInfo="parameterFromVar" />
-                    <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="2167053794906731216">
-                      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2167053794906731217">
-                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2167053794906731218">
-                          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2167053794906731219">
-                            <property name="value" nameId="tpee.1068580123138" value="true" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                   </node>
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2167053794906731220">
                     <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -2067,17 +2022,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="816130369292752600">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943864">
                   <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="4247542765074851552" resolveInfo="parameterFromVar" />
-                  <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="816130369292752601">
-                    <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="816130369292752602">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="816130369292752603">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="816130369292752604">
-                          <property name="value" nameId="tpee.1068580123138" value="true" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
               <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="816130369292752605">
@@ -2126,17 +2072,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="816130369292752628">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943870">
                   <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="4247542765074851552" resolveInfo="parameterFromVar" />
-                  <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="816130369292752629">
-                    <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="816130369292752630">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="816130369292752631">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="816130369292752632">
-                          <property name="value" nameId="tpee.1068580123138" value="true" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
               <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="816130369292752633">

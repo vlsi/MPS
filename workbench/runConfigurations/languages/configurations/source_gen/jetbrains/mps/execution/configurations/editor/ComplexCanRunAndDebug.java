@@ -26,6 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ComplexCanRunAndDebug extends AbstractCellProvider {
   public ComplexCanRunAndDebug(SNode node) {
@@ -236,7 +237,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration");
+      SNodeFactoryOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration");
     }
 
     public String getMatchingText() {

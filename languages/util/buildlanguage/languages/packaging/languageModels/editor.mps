@@ -24,7 +24,7 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1202917336768">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tps4.1202916958754" resolveInfo="MPS" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
     </node>
     <node type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="1203012198750">
       <property name="name" nameId="tpck.1169194664001" value="PackagingStyles" />
@@ -102,7 +102,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1210777580376">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tps4.1210777529562" resolveInfo="Convert" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tps4.1210777529562" resolveInfo="Antcall" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1210778010205">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
@@ -167,7 +167,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1239621783403">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tps4.1239621743648" resolveInfo="Attribute" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tps4.1239621743648" resolveInfo="ManifestAttribute" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1239621955317">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
@@ -476,7 +476,7 @@
           <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1224596805841" resolveInfo="IncludeExcludeEditorComponent" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1204128139480">
-          <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="configurationReferences_editorComponent" />
+          <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310996189">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -534,7 +534,7 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tps4.1220981955937" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1204128152423">
-        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="configurationReferences_editorComponent" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239880076147" />
     </node>
@@ -569,7 +569,7 @@
           <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1224596805841" resolveInfo="IncludeExcludeEditorComponent" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1204128147077">
-          <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="configurationReferences_editorComponent" />
+          <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310998026">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -602,10 +602,10 @@
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1204116805241">
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1206440350344">
-        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1206440283018" resolveInfo="ICompositeComponentEditorComponenmt" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1206440283018" resolveInfo="IncludeExcludeInInspector" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1204116811825">
-        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="configurationReferences_editorComponent" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1239880076105" />
     </node>
@@ -713,7 +713,7 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1204128133822">
-        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="configurationReferences_editorComponent" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239880076132" />
     </node>
@@ -855,7 +855,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239880076083" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1204128157362">
-        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="configurationReferences_editorComponent" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239880076095" />
     </node>
@@ -886,7 +886,7 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239880076069" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1204116777955">
-        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="configurationReferences_editorComponent" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1239880076129" />
     </node>
@@ -2061,7 +2061,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1139535439112" id="1240320622543" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="1240320622544">
                 <node role="replacementNode" roleId="tp25.1140131861877" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240320622545">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240320622536" resolveInfo="leftExpression" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240320622536" resolveInfo="rightExpression" />
                 </node>
               </node>
             </node>

@@ -1456,8 +1456,8 @@
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5041115067675810305" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675810306" />
       </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="5041115067675810307">
-        <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="^" resolveInfo="ConfigurationToStateClass" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943882">
+        <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="5041115067675922954" resolveInfo="ConfigurationToStateClass" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5041115067675810308" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5041115067675810309">
@@ -1733,8 +1733,8 @@
           </node>
         </node>
       </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="5041115067675810437">
-        <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="^" resolveInfo="ConfigurationToCheckMethod" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943875">
+        <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="5041115067675922963" resolveInfo="ConfigurationToCheckMethod" />
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5041115067675810438">
@@ -2095,8 +2095,8 @@
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5041115067675810303" resolveInfo="PersistentConfiguration_Template.MyState" />
         </node>
       </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="5041115067675810579">
-        <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="^" resolveInfo="ConfigurationToStateField" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943891">
+        <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="5041115067675922955" resolveInfo="ConfigurationToStateField" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5041115067675810580" />
     </node>
@@ -3625,8 +3625,8 @@
           </node>
         </node>
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5041115067675811229" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="5041115067675811230">
-          <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="^" resolveInfo="PersistentConfigurationTemplateToEditorConstructor" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943885">
+          <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="5041115067675922969" resolveInfo="PersistentConfigurationTemplateToEditorConstructor" />
         </node>
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="5041115067675811231">
           <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -4208,8 +4208,8 @@
             </node>
           </node>
         </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="5041115067675811456">
-          <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="^" resolveInfo="PersistentConfigurationTemplateToConstructor" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943883">
+          <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="5041115067675922968" resolveInfo="PersistentConfigurationTemplateToConstructor" />
         </node>
       </node>
       <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="251586092485162704">

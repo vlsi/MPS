@@ -46,7 +46,7 @@
         <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1205349810758">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1205349806130">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1205349805020">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205349786375" resolveInfo="jar" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205349786375" resolveInfo="zip" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1205349809601">
               <link role="link" roleId="tp25.1138056516764" targetNodeId="tps4.1205340441197" />
@@ -60,7 +60,7 @@
               <property name="value" nameId="tpee.1070475926801" value="Archive name should be non-empty" />
             </node>
             <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1205349855047">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205349786375" resolveInfo="jar" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205349786375" resolveInfo="zip" />
             </node>
           </node>
         </node>
@@ -79,7 +79,7 @@
             <node role="expression" roleId="tpee.1079359253376" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1205350407976">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1205350407977">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1205350407978">
-                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205350407991" resolveInfo="folder" />
+                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205350407991" resolveInfo="file" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1221142355727">
                   <link role="link" roleId="tp25.1138056516764" targetNodeId="tps4.1220981955937" />
@@ -92,7 +92,7 @@
             <node role="expression" roleId="tpee.1079359253376" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1205350407982">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1205350407983">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1205350407984">
-                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205350407991" resolveInfo="folder" />
+                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205350407991" resolveInfo="file" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1205350407985">
                   <link role="link" roleId="tp25.1138056516764" targetNodeId="tps4.1205340441197" />
@@ -108,7 +108,7 @@
               <property name="value" nameId="tpee.1070475926801" value="File should have name or source." />
             </node>
             <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1205350407990">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205350407991" resolveInfo="folder" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1205350407991" resolveInfo="file" />
             </node>
           </node>
         </node>

@@ -2146,7 +2146,7 @@
           </node>
         </node>
       </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="1241288113913">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943877">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="6291350464112432204" resolveInfo="map_GroupIDConstant" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1205585482484" />
@@ -2969,7 +2969,7 @@
           </node>
         </node>
       </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="6291350464112432196">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943876">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="6291350464112432199" resolveInfo="map_GroupConstructor" />
       </node>
     </node>
@@ -5526,7 +5526,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1215283694627" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1215283694628" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1215283694629" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="1215283706850">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943889">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="1206118279212" resolveInfo="map_ProjectPluginConstructor" />
       </node>
     </node>
@@ -5756,7 +5756,7 @@
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h5ia.~GenerationListener" resolveInfo="GenerationListener" />
     </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1210071062179">
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="1210071435418">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943879">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="1210071362621" resolveInfo="map_GenerationListenerConstructor" />
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1210071062180" />
@@ -6339,7 +6339,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="1217678730583">
           <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1217678730584">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="1217678737134">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943884">
               <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="1217678683829" resolveInfo="map_CreatePages" />
             </node>
           </node>
@@ -8207,7 +8207,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1215283738587" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1215283738588" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1215283738589" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="1215283743513">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943871">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="1215283652343" resolveInfo="map_ApplicationPluginConstructor" />
       </node>
     </node>
@@ -9144,7 +9144,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1218037280982" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1218037280983" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1218037280984" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="1228848680908">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943878">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="1228848525980" resolveInfo="map_FileGeneratorConstructor" />
       </node>
     </node>
@@ -10566,7 +10566,7 @@
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2386704358800555381" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2386704358800555382" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2386704358800555383" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="2386704358800555384">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943886">
           <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="2386704358800499414" resolveInfo="map_ParameterizedChangeConstructor" />
         </node>
       </node>
@@ -11215,7 +11215,7 @@
           </node>
         </node>
       </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="4042687513231504103">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943874">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="6291350464112432207" resolveInfo="map_KeymapConstructor" />
       </node>
     </node>
@@ -12446,7 +12446,7 @@
           </node>
         </node>
       </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="5508914264443135868">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943890">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="1204737391751" resolveInfo="map_BaseToolConstructor" />
       </node>
     </node>
@@ -14527,7 +14527,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3552608880959559183" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3552608880959559184" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3552608880959559185" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="3552608880959559209">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943888">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="1204736981184" resolveInfo="map_TabConstructor" />
       </node>
     </node>
@@ -14626,7 +14626,7 @@
           </node>
         </node>
       </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.MapSrcNodeMacro" typeId="tpf8.1131073187192" id="3038738109029045757">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LabelMacro" typeId="tpf8.5133195082121471908" id="4062373482582943887">
         <link role="mappingLabel" roleId="tpf8.1200912223215" targetNodeId="3038738109028902485" resolveInfo="map_OrderConstructor" />
       </node>
     </node>

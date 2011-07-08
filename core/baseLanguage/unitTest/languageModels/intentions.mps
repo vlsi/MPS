@@ -483,7 +483,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="7523560072226634163">
               <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7523560072226634164">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7523560072226634165">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7523560072226634153" resolveInfo="rightExpression" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7523560072226634153" resolveInfo="actual" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="7523560072226634166" />
               </node>
@@ -501,7 +501,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="7523560072226634172">
               <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7523560072226634173">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7523560072226634174">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7523560072226634147" resolveInfo="leftExpression" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7523560072226634147" resolveInfo="expected" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="7523560072226634175" />
               </node>

@@ -18,6 +18,7 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
   <language namespace="22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)" />
+  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="tpnd" modelUID="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.runtime)" version="-1" />
@@ -80,16 +81,14 @@
   <import index="devd" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.kernel.model(MPS.Classpath/jetbrains.mps.kernel.model@java_stub)" version="-1" />
   <import index="4l8p" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.junit(MPS.Classpath/org.junit@java_stub)" version="-1" />
   <import index="uqw6" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugins.pluginparts.runconfigs(MPS.Classpath/jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
-  <import index="wzsw" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.common(MPS.Classpath/jetbrains.mps.ide.common@java_stub)" version="-1" />
-  <import index="swvc" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)" version="-1" />
   <import index="awpe" modelUID="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)" version="-1" />
   <import index="qsa3" modelUID="r:fe8ea9ce-8e3b-4061-8b50-530dce307009(jetbrains.mps.execution.configurations.lib)" version="-1" />
   <import index="879s" modelUID="r:1efa4888-7e18-4b29-8d80-9f1f32f48e6e(jetbrains.mps.execution.configurations.plugin)" version="-1" />
   <import index="hp43" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui(MPS.Classpath/com.intellij.ui@java_stub)" version="-1" />
   <import index="f3wj" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ui.table(MPS.Classpath/com.intellij.ui.table@java_stub)" version="-1" />
   <import index="7mi2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util.annotation(MPS.Classpath/jetbrains.mps.util.annotation@java_stub)" version="-1" />
-  <import index="89ww" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
   <import index="z1l1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime.settings(MPS.Classpath/jetbrains.mps.debug.runtime.settings@java_stub)" version="-1" />
+  <import index="swvc" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -28658,8 +28657,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1769265426473627701">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8852113381329065909">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.5766538065404272690" resolveInfo="makeBeforeRun" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89ww.8492459591399148601" resolveInfo="RunUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="swvc.5766538065404272690" resolveInfo="makeBeforeRun" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="swvc.8492459591399148601" resolveInfo="RunUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.Project_ConceptFunctionParameter" typeId="tp4k.8255351389869160280" id="8852113381329065910" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8852113381329065911">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8852113381329065912">
@@ -28720,7 +28719,7 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="myConfigurationRunParameters" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2281887280934079565">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89ww.8492459591399148682" resolveInfo="ConfigRunParameters" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="swvc.8492459591399148682" resolveInfo="ConfigRunParameters" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2281887280934079563" />
     </node>
@@ -28821,7 +28820,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2281887280934079559">
         <property name="name" nameId="tpck.1169194664001" value="configurationRunParameters" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2281887280934079561">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89ww.8492459591399148682" resolveInfo="ConfigRunParameters" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="swvc.8492459591399148682" resolveInfo="ConfigRunParameters" />
         </node>
       </node>
     </node>
@@ -28873,7 +28872,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2281887280934079562" resolveInfo="myConfigurationRunParameters" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3303155843399417610">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399148815" resolveInfo="getWorkingDirectory" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="swvc.8492459591399148815" resolveInfo="getWorkingDirectory" />
               </node>
             </node>
           </node>
@@ -28893,7 +28892,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2281887280934079562" resolveInfo="myConfigurationRunParameters" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8478328909877201738">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399148831" resolveInfo="getAlternativeJRE" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="swvc.8492459591399148831" resolveInfo="getAlternativeJRE" />
                     </node>
                   </node>
                 </node>
@@ -28904,7 +28903,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2281887280934079562" resolveInfo="myConfigurationRunParameters" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8478328909877201742">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89ww.8492459591399148799" resolveInfo="getVMParameters" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="swvc.8492459591399148799" resolveInfo="getVMParameters" />
                     </node>
                   </node>
                 </node>

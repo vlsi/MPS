@@ -56,8 +56,8 @@
     </scopeInfo>
   </root>
   <root nodeId="5365453833390719385">
-    <nodeInfo nodeId="5365453833390719391" fileName="QueriesGenerated.java" startLine="124" startPosition="94" endLine="125" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="5365453833390719390" fileName="QueriesGenerated.java" startLine="124" startPosition="94" endLine="125" endPosition="125" />
+    <nodeInfo nodeId="5365453833390719391" fileName="QueriesGenerated.java" startLine="124" startPosition="94" endLine="125" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5365453833390719390" fileName="QueriesGenerated.java" startLine="124" startPosition="94" endLine="125" endPosition="129" />
   </root>
 </debugInfo>
 

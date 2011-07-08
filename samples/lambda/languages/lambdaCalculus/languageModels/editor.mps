@@ -5,7 +5,7 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
+  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="qjd" modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -19,7 +19,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.4022026349914762696" resolveInfo="StringConstant" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4022026349914762711">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.4022026349914762709" resolveInfo="Literal" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.4022026349914762709" resolveInfo="NumericConstant" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4022026349914894289">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.4022026349914762717" resolveInfo="LambdaApplication" />
@@ -55,7 +55,7 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="qjd.1934341835352312155" resolveInfo="BinaryOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3978364766705449819">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.3978364766705449817" resolveInfo="Parenthesis" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.3978364766705449817" resolveInfo="ParenthesisExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1564819815921013157">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="qjd.1564819815921013155" resolveInfo="MultipleExpression" />
@@ -314,7 +314,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1139535439112" id="4516885200389677682" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="4516885200389677683">
                 <node role="replacementNode" roleId="tp25.1140131861877" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4516885200389677684">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4516885200389677675" resolveInfo="function" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4516885200389677675" resolveInfo="body" />
                 </node>
               </node>
             </node>
@@ -347,7 +347,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1139535439112" id="7794386159928020147" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="7794386159928020148">
                 <node role="replacementNode" roleId="tp25.1140131861877" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7794386159928020149">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7794386159928020140" resolveInfo="body" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7794386159928020140" resolveInfo="left" />
                 </node>
               </node>
             </node>

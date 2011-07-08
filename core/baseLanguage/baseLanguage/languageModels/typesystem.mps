@@ -13296,7 +13296,6 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="m9wl.~EquationInfo%dgetNodeWithError()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNodeWithError" />
                       </node>
                     </node>
-                    <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882521" />
                   </node>
                   <node role="statement" roleId="tpee.1068581517665" type="nupp.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5942313089043114545">
                     <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="nupp.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5942313089043114546">
@@ -28309,7 +28308,7 @@
         <node role="ifTrue" roleId="tpee.1068580123161" type="nupp.StatementList" typeId="tpee.1068580123136" id="6125943271043465147">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="6125943271043465197">
             <property name="orientation" nameId="tpd4.7739208407757103786" value="1" />
-            <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="6125943271043465198" />
+            <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
             <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6125943271043465202">
               <node role="normalType" roleId="tpd4.1185788644032" type="nupp.DotExpression" typeId="tpee.1197027756228" id="6125943271043465204">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6125943271043465203">

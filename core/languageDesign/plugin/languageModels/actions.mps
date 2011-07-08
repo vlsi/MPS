@@ -335,13 +335,13 @@
         <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tp4k.1204908117386" resolveInfo="Separator" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1218810531312">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tp4k.1203680534665" resolveInfo="ExtentionPoint" />
+        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tp4k.1203680534665" resolveInfo="GroupAnchor" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="7154590315135353787">
         <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tp4k.1203087890642" resolveInfo="ActionGroupDeclaration" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="1218809073107">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tp4k.1203088046679" resolveInfo="ActionReference" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tp4k.1203088046679" resolveInfo="ActionInstance" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="1218809212509">
           <node role="type" roleId="tpdg.1177337679534" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1218809223437">
             <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4k.1203071646776" resolveInfo="ActionDeclaration" />
@@ -365,7 +365,7 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1218809462252">
                   <property name="name" nameId="tpck.1169194664001" value="result" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1218809462253">
-                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4k.1203088046679" resolveInfo="ActionReference" />
+                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4k.1203088046679" resolveInfo="ActionInstance" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1218809475461">
                     <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="1218809474288" />
@@ -471,7 +471,7 @@
             </node>
             <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="485694842828666257">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="485694842828666258">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="485694842828666242" resolveInfo="sel" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="485694842828666242" resolveInfo="disposeTabClosure" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNullOperation" typeId="tp25.1171999116870" id="485694842828666259" />
             </node>
@@ -487,7 +487,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="485694842828666265">
                     <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="485694842828666266">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="485694842828666242" resolveInfo="sel" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="485694842828666242" resolveInfo="disposeTabClosure" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="485694842828666267">
@@ -523,9 +523,9 @@
   </root>
   <root id="47694270442101941">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="47694270442101942">
-      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tp4k.8179323502814630510" resolveInfo="RunConfigParameterDeclaration" />
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tp4k.8179323502814630510" resolveInfo="RunConfigExecutionParameterDeclaration" />
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="47694270442101944">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tp4k.8179323502814630510" resolveInfo="RunConfigParameterDeclaration" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tp4k.8179323502814630510" resolveInfo="RunConfigExecutionParameterDeclaration" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="47694270442101945">
           <node role="type" roleId="tpdg.1177337679534" type="tp25.SNodeType" typeId="tp25.1138055754698" id="47694270442102565">
             <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
@@ -546,7 +546,7 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="47694270442131080">
                   <property name="name" nameId="tpck.1169194664001" value="result" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="47694270442131081">
-                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4k.8179323502814630510" resolveInfo="RunConfigParameterDeclaration" />
+                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4k.8179323502814630510" resolveInfo="RunConfigExecutionParameterDeclaration" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="47694270442131082">
                     <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="47694270442131083" />

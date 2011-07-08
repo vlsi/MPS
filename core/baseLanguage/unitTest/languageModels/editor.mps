@@ -15,37 +15,37 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1171931690895">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171931690126" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171931690126" resolveInfo="TestMethod" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1171931851749">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171931851043" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171931851043" resolveInfo="BTestCase" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1171931858963">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171931858461" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171931858461" resolveInfo="TestMethodList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1171978123200">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171978097730" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171978097730" resolveInfo="AssertEquals" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1171981034059">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171981022339" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171981022339" resolveInfo="AssertTrue" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1171983868379">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171983834376" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171983834376" resolveInfo="AssertFalse" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1171985776104">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171985735491" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1171985735491" resolveInfo="AssertSame" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1172017252093">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1172017222794" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1172017222794" resolveInfo="Fail" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1172028252153">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1172028177041" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1172028177041" resolveInfo="AssertIsNull" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1172069897161">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1172069869612" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1172069869612" resolveInfo="AssertThrows" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1172073551602">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1172073500303" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.1172073500303" resolveInfo="Message" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7080278351417106682">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpe3.7080278351417106679" resolveInfo="AssertInNotNull" />
@@ -72,7 +72,7 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1171931690899">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpe3.1171931690128" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpe3.1171931690128" resolveInfo="methodName" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingRightStyleClassItem" typeId="tpc2.1215007897487" id="1224675428562">
           <property name="value" nameId="tpc2.1215007802031" value="0.0" />
         </node>
@@ -140,7 +140,7 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1171931851753">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpe3.1171931851045" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpe3.1171931851045" resolveInfo="testCaseName" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1171931851754">
         <property name="text" nameId="tpc2.1073389577007" value="extends" />

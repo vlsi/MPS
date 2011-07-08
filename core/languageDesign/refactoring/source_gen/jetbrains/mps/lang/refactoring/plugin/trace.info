@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Refactoring_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin" />
-  <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
+  <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
   <root nodeId="1106479162954038584">
     <nodeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="22" startPosition="70" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="1106479162954038584" fileName="GenericRefactoringAction_Action.java" startLine="23" startPosition="40" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

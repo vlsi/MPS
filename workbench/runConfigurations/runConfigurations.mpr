@@ -51,46 +51,14 @@
     </genConfs>
   </component>
   <component name="MigrationState">
-    <option name="myState" value="INITIAL" />
+    <option name="myState" value="DONE" />
   </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Old JUnit Config" type="JUnit Tests" factoryName="JUnit Tests">
-      <MyState>
-        <option name="myModel" value="jetbrains.mps.asTest" />
-        <option name="myModule" value="collections_unittest" />
-        <option name="myTestCases">
-          <list>
-            <option value="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)%1883175908513185012" />
-            <option value="r:0d165b79-85c3-4fee-8efc-b69a37e1c2ee(orthogonalLayoutTest)%4422427343208739409" />
-          </list>
-        </option>
-        <option name="myTestMethods">
-          <list />
-        </option>
-        <option name="myRunType" value="MODULE" />
-      </MyState>
-      <myJavaRunParameters>
-        <MyState>
-          <option name="myJavaRunParameters">
-            <JavaRunParameters>
-              <option name="jrePath" value="/usr/lib/jvm/java-6-sun" />
-              <option name="programParameters" value="dew" />
-              <option name="useAlternativeJre" value="true" />
-              <option name="vmOptions" value="ssss" />
-              <option name="workingDirectory" value="dew" />
-            </JavaRunParameters>
-          </option>
-        </MyState>
-      </myJavaRunParameters>
-      <method />
-    </configuration>
-  </component>
   <component name="ProjectVersion">
-    <option name="version" value="1.5" />
+    <option name="version" value="2.0" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />

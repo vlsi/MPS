@@ -43,7 +43,7 @@
               </node>
             </node>
             <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1238771106122">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1234292492499" resolveInfo="mPSBuild" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1234292492499" resolveInfo="mpsBuild" />
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="512310472859159146" />
@@ -51,7 +51,7 @@
         <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238771106124">
           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238771106125">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1238771106126">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1234292492499" resolveInfo="mPSBuild" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1234292492499" resolveInfo="mpsBuild" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1238771106127">
               <link role="link" roleId="tp25.1138056516764" targetNodeId="j1at.1234290845440" />

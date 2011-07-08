@@ -128,9 +128,6 @@
     <dependency reexport="false">73c1a490-99fa-4d0d-8292-b8985697c74b(jetbrains.mps.execution.common)</dependency>
     <dependency reexport="false">756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)</dependency>
     <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
-    <dependency reexport="false">1c0088d4-c911-46d4-ace1-4500911173b5(jetbrains.mps.workbench.make)</dependency>
-    <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
-    <dependency reexport="false">4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)</usedLanguage>
