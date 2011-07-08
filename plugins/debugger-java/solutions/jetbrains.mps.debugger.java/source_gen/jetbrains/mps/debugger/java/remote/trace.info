@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Remote_Configuration.java" startLine="102" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration$MyState" />
-  <unitInfo fileName="Remote_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_Factory" />
-  <unitInfo fileName="Remote_Configuration_Editor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_Editor" />
-  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.RunConfigurationsInitializer_CustomApplicationPlugin" />
-  <unitInfo fileName="Remote_Kind.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Kind" />
-  <unitInfo fileName="Remote_Configuration_RunProfileState.java" startLine="28" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_RunProfileState" />
-  <unitInfo fileName="Remote_Configuration.java" startLine="27" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration" />
+  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <root nodeId="3038368628266736631">
     <nodeInfo nodeId="3038368628266736634" fileName="RemoteProcessHandler.java" startLine="16" startPosition="58" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="3038368628266736643" fileName="RemoteProcessHandler.java" startLine="19" startPosition="48" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -84,16 +78,161 @@
   </root>
   <root nodeId="7806358006983489356">
     <nodeInfo nodeId="4763274727405913089" fileName="Remote_Kind.java" startLine="17" startPosition="55" endLine="18" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="25" startPosition="61" endLine="26" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="26" startPosition="101" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="27" startPosition="85" endLine="28" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="28" startPosition="89" endLine="29" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="34" startPosition="25" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="38" startPosition="25" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="42" startPosition="51" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="46" startPosition="34" endLine="47" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="54" startPosition="43" endLine="55" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Remote_Kind#()V" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationTypeDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisplayName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addForeignFactory#(Lcom/intellij/execution/configurations/ConfigurationFactory;)V" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/debugger/java/remote/Remote_Kind;" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationFactories#()[Lcom/intellij/execution/configurations/ConfigurationFactory;" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="22" startPosition="24" endLine="22" endPosition="24" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="34" startPosition="25" endLine="35" endPosition="20" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="38" startPosition="25" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="42" startPosition="51" endLine="43" endPosition="16" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="46" startPosition="34" endLine="47" endPosition="20" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="50" startPosition="63" endLine="51" endPosition="66" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="54" startPosition="43" endLine="55" endPosition="106" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="25" startPosition="61" endLine="29" endPosition="84" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <unitInfo nodeId="7806358006983489356" fileName="Remote_Kind.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Kind" />
   </root>
   <root nodeId="7806358006983511602">
     <nodeInfo nodeId="7806358006983555636" fileName="Remote_Configuration_Editor.java" startLine="9" startPosition="89" endLine="10" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="10" startPosition="57" endLine="11" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="14" startPosition="72" endLine="15" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983555639" fileName="Remote_Configuration_Editor.java" startLine="19" startPosition="46" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="23" startPosition="101" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7806358006983586564" fileName="Remote_Configuration_Editor.java" startLine="23" startPosition="101" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="27" startPosition="73" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7806358006983577346" fileName="Remote_Configuration_Editor.java" startLine="27" startPosition="73" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7806358006983577340" fileName="Remote_Configuration.java" startLine="102" startPosition="24" endLine="103" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySettings" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="27" startPosition="103" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="33" startPosition="99" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="41" startPosition="76" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="47" startPosition="26" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="49" startPosition="5" endLine="50" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="53" startPosition="49" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="57" startPosition="59" endLine="58" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="62" startPosition="39" endLine="63" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="64" startPosition="9" endLine="65" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="65" startPosition="36" endLine="66" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="66" startPosition="69" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="68" startPosition="45" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="70" startPosition="5" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="75" startPosition="132" endLine="76" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="80" startPosition="91" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="84" startPosition="86" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="88" startPosition="74" endLine="89" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="92" startPosition="53" endLine="93" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="96" startPosition="75" endLine="97" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="101" startPosition="48" endLine="102" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983577340" fileName="Remote_Configuration.java" startLine="105" startPosition="24" endLine="106" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySettings" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="112" startPosition="61" endLine="113" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="113" startPosition="78" endLine="114" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="114" startPosition="36" endLine="115" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Remote_Configuration_Editor#()V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="29" startPosition="0" endLine="31" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="107" startPosition="0" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyState#()V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="9" startPosition="72" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Remote_Configuration_Factory#(Lcom/intellij/execution/configurations/ConfigurationType;)V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeEditor#()V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="32" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Remote_Configuration#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/remote/Remote_Configuration_Factory;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConfiguration#()V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="46" startPosition="73" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTemplateConfiguration#(Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/configurations/RunConfiguration;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyEditorTo#(Ljetbrains/mps/debugger/java/remote/Remote_Configuration;)V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetEditorFrom#(Ljetbrains/mps/debugger/java/remote/Remote_Configuration;)V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSettings#()Ljetbrains/mps/debug/runtime/settings/RemoteConnectionSettings;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSettings#(Ljetbrains/mps/debug/runtime/settings/RemoteConnectionSettings;)V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRunnerSettings#(Lcom/intellij/execution/configurations/ConfigurationInfoProvider;)Lcom/intellij/openapi/util/JDOMExternalizable;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationEditor#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCloneTemplate#()Ljetbrains/mps/debugger/java/remote/Remote_Configuration;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditor#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditor#()Ljetbrains/mps/debugger/java/remote/RemoteSettingsEditor;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeExternal#(Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="73" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)Lcom/intellij/execution/configurations/RunProfileState;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunnerSettingsEditor#(Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/openapi/options/SettingsEditor;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="63" startPosition="38" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="110" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="44" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExternal#(Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="60" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/debugger/java/remote/Remote_Configuration;" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="12" startPosition="40" endLine="12" endPosition="40" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="15" startPosition="31" endLine="15" endPosition="31" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="37" startPosition="73" endLine="37" endPosition="73" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="108" startPosition="22" endLine="108" endPosition="22" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="10" startPosition="57" endLine="11" endPosition="16" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="14" startPosition="72" endLine="15" endPosition="77" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="20" />
     <scopeInfo nodeId="7806358006983511605" fileName="Remote_Configuration_Editor.java" startLine="19" startPosition="46" endLine="20" endPosition="49" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="23" startPosition="101" endLine="24" endPosition="48" />
     <scopeInfo nodeId="7806358006983586563" fileName="Remote_Configuration_Editor.java" startLine="23" startPosition="101" endLine="24" endPosition="48" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="27" startPosition="73" endLine="28" endPosition="48" />
     <scopeInfo nodeId="7806358006983577345" fileName="Remote_Configuration_Editor.java" startLine="27" startPosition="73" endLine="28" endPosition="48" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="33" startPosition="99" endLine="34" endPosition="34" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="41" startPosition="76" endLine="42" endPosition="57" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="47" startPosition="26" endLine="48" endPosition="81" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="53" startPosition="49" endLine="54" endPosition="30" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="57" startPosition="59" endLine="58" endPosition="31" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="68" startPosition="0" endLine="69" endPosition="41" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="68" startPosition="45" endLine="69" endPosition="41" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="75" startPosition="132" endLine="76" endPosition="81" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="80" startPosition="91" endLine="81" endPosition="16" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="84" startPosition="86" endLine="85" endPosition="16" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="88" startPosition="74" endLine="89" endPosition="64" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="92" startPosition="53" endLine="93" endPosition="48" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="96" startPosition="75" endLine="97" endPosition="45" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="101" startPosition="48" endLine="102" endPosition="71" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="107" startPosition="0" endLine="109" endPosition="5" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="9" startPosition="72" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="32" startPosition="0" endLine="35" endPosition="3" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="64" startPosition="9" endLine="67" endPosition="19" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="112" startPosition="61" endLine="115" endPosition="19" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="46" startPosition="73" endLine="50" endPosition="83" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="73" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="99" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="110" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="44" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="62" startPosition="39" endLine="71" endPosition="17" />
+    <scopeInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="60" startPosition="0" endLine="73" endPosition="0" />
+    <unitInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="105" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration$MyState" />
+    <unitInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_Factory" />
+    <unitInfo nodeId="7806358006983511602" fileName="Remote_Configuration_Editor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_Editor" />
+    <unitInfo nodeId="7806358006983511602" fileName="Remote_Configuration.java" startLine="27" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration" />
   </root>
   <root nodeId="7806358006983511789">
     <nodeInfo nodeId="7806358006983511878" fileName="RemoteSettingsEditor.java" startLine="22" startPosition="50" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHostTextField" />
@@ -206,19 +345,61 @@
     <unitInfo nodeId="7806358006983511789" fileName="RemoteSettingsEditor.java" startLine="22" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.RemoteSettingsEditor" />
   </root>
   <root nodeId="801101525254379837">
-    <nodeInfo nodeId="8261999457268953466" fileName="Remote_Configuration_RunProfileState.java" startLine="49" startPosition="49" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="51" startPosition="5" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="52" startPosition="47" endLine="53" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="53" startPosition="79" endLine="54" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="56" startPosition="30" endLine="57" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8091568209161263961" fileName="Remote_Configuration_RunProfileState.java" startLine="68" startPosition="56" endLine="69" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="55" startPosition="148" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="54" startPosition="83" endLine="59" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="50" startPosition="69" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="56" startPosition="30" endLine="57" endPosition="33" />
-    <scopeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="55" startPosition="148" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="51" startPosition="5" endLine="59" endPosition="10" />
-    <unitInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="55" startPosition="118" endLine="59" endPosition="7" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_RunProfileState$1" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="37" startPosition="163" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="38" startPosition="39" endLine="39" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="42" startPosition="68" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="46" startPosition="45" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="51" startPosition="110" endLine="52" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7236226861153446616" fileName="Remote_Configuration_RunProfileState.java" startLine="52" startPosition="49" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7236226861153446623" fileName="Remote_Configuration_RunProfileState.java" startLine="53" startPosition="75" endLine="54" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="55" startPosition="5" endLine="56" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="56" startPosition="73" endLine="57" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="57" startPosition="47" endLine="58" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="60" startPosition="30" endLine="61" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6720907903633331863" fileName="Remote_Configuration_RunProfileState.java" startLine="71" startPosition="57" endLine="72" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6720907903633304906" fileName="Remote_Configuration_RunProfileState.java" startLine="75" startPosition="38" endLine="76" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="82" startPosition="62" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="84" startPosition="5" endLine="85" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="31" startPosition="110" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunConfiguration" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="33" startPosition="56" endLine="35" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnvironment" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="81" startPosition="55" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="36" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Remote_Configuration_RunProfileState#(Ljetbrains/mps/debugger/java/remote/Remote_Configuration;Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationSettings#()Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunnerSettings#()Lcom/intellij/execution/configurations/RunnerSettings;" />
+    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="59" startPosition="148" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="6720907903633304906" fileName="Remote_Configuration_RunProfileState.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
+    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="58" startPosition="83" endLine="63" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6720907903633304906" fileName="Remote_Configuration_RunProfileState.java" startLine="69" startPosition="41" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="54" startPosition="57" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="68" startPosition="60" endLine="78" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="66" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
+    <nodeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="49" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="42" startPosition="68" endLine="43" endPosition="16" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="46" startPosition="45" endLine="47" endPosition="16" />
+    <scopeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="60" startPosition="30" endLine="61" endPosition="33" />
+    <scopeInfo nodeId="6720907903633304906" fileName="Remote_Configuration_RunProfileState.java" startLine="71" startPosition="57" endLine="72" endPosition="48" />
+    <scopeInfo nodeId="6720907903633304906" fileName="Remote_Configuration_RunProfileState.java" startLine="75" startPosition="38" endLine="76" endPosition="65" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="82" startPosition="62" endLine="83" endPosition="18" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="37" startPosition="163" endLine="39" endPosition="32" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="36" startPosition="0" endLine="40" endPosition="3" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="59" startPosition="148" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="6720907903633304906" fileName="Remote_Configuration_RunProfileState.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="81" startPosition="55" endLine="85" endPosition="17" />
+    <scopeInfo nodeId="6720907903633304906" fileName="Remote_Configuration_RunProfileState.java" startLine="69" startPosition="41" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="80" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="55" startPosition="5" endLine="63" endPosition="10" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="68" startPosition="60" endLine="78" endPosition="6" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="51" startPosition="110" endLine="64" endPosition="5">
+      <varInfo nodeId="7236226861153446617" varName="console" />
+    </scopeInfo>
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="66" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="49" startPosition="0" endLine="66" endPosition="0" />
+    <unitInfo nodeId="4762811064051417353" fileName="Remote_Configuration_RunProfileState.java" startLine="59" startPosition="118" endLine="63" endPosition="7" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_RunProfileState$1" />
+    <unitInfo nodeId="6720907903633304906" fileName="Remote_Configuration_RunProfileState.java" startLine="69" startPosition="15" endLine="78" endPosition="5" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_RunProfileState$2" />
+    <unitInfo nodeId="801101525254379837" fileName="Remote_Configuration_RunProfileState.java" startLine="31" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debugger.java.remote.Remote_Configuration_RunProfileState" />
   </root>
 </debugInfo>
 

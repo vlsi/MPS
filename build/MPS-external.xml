@@ -45,6 +45,7 @@
     <mkdir dir="${deploy.dir}/MPS/languages/languageDesign" />
     <mkdir dir="${deploy.dir}/MPS/languages/devkits" />
     <mkdir dir="${deploy.dir}/MPS/languages/debug" />
+    <mkdir dir="${deploy.dir}/MPS/languages/execution" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/editor" />
     <mkdir dir="${deploy.dir}/MPS/languages/util" />
@@ -350,6 +351,14 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.privateMembers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.apiLang" />
     <mkdir dir="${deploy.dir}/MPS/languages/debug" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.configurations" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.api" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.commands" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.common" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.settings" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.util" />
+    <mkdir dir="${deploy.dir}/MPS/languages/execution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage" />

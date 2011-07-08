@@ -58,7 +58,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 20:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression", false, new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"}, new String[]{}, new String[]{});
       case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass"}, new String[]{}, new String[]{});
       case 22:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression", false, new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"}, new String[]{"value"}, new String[]{});
       case 23:

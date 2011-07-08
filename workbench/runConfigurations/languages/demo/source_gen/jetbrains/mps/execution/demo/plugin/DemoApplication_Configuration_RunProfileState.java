@@ -15,16 +15,18 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.execution.lib.JavaNode_Command;
-import com.intellij.execution.impl.ConsoleViewImpl;
+import jetbrains.mps.execution.lib.Java_Command;
+import com.intellij.execution.ui.ConsoleView;
+import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.debug.api.IDebugger;
-import jetbrains.mps.execution.lib.Java_Command;
+import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.Debuggers;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 
@@ -51,8 +53,8 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     {
-      ProcessHandler _processHandler = new JavaNode_Command().setProgramParameter("Julia").setVirtualMachineParameter(myDebuggerSettings.getCommandLine(true)).createProcess(myConfiguration.getNode().getNode());
-      final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
+      ProcessHandler _processHandler = new Java_Command().setProgramParameter("Julia").setVirtualMachineParameter(myDebuggerSettings.getCommandLine(true)).createProcess(myConfiguration.getNode().getNode());
+      final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -62,13 +64,18 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
     }
   }
 
-  public IDebugger getDebugger() {
-    return Java_Command.getDebugger();
-  }
+  @NotNull
+  public IDebuggerConfiguration getDebuggerConfiguration() {
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return new LocalConnectionSettings(true);
+      }
 
-  @Nullable
-  protected IDebuggerSettings createDebuggerSettings() {
-    return new LocalConnectionSettings(true);
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
   }
 
   public static boolean canExecute(String executorId) {

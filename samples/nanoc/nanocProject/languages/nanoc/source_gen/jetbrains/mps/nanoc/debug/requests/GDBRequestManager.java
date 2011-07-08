@@ -11,7 +11,7 @@ import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
 import java.util.List;
 import jetbrains.mps.nanoc.debug.answer.StreamAnswer;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint;
 
 public class GDBRequestManager {
@@ -46,7 +46,7 @@ public class GDBRequestManager {
   }
 
   public void createBreakpointRequests() {
-    for (AbstractMPSBreakpoint breakpoint : myBreakpointManager.getAllBreakpoints()) {
+    for (IBreakpoint breakpoint : myBreakpointManager.getAllIBreakpoints()) {
       if (breakpoint instanceof GDBBreakpoint) {
         ((GDBBreakpoint) breakpoint).createBreakpointRequest(this);
       }

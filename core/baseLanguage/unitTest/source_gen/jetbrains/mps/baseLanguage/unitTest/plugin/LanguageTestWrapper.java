@@ -23,18 +23,14 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     return SNodeOperations.isInstanceOf(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
   }
 
-  private boolean isTestMethod() {
-    return SNodeOperations.isInstanceOf(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
-  }
-
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
-    if (SNodeOperations.isInstanceOf(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")) {
-      return TestNodeWrapperFactory.tryToWrap(ITestMethod_Behavior.call_getTestCase_1216134500045(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")));
-    }
     if (isTestCase()) {
       return null;
+    }
+    if (SNodeOperations.isInstanceOf(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")) {
+      return TestNodeWrapperFactory.tryToWrap(ITestMethod_Behavior.call_getTestCase_1216134500045(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")));
     }
     return null;
   }
@@ -69,9 +65,9 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @NonNls
   @Override
   public String getName() {
-    if (isTestMethod()) {
-      return ITestMethod_Behavior.call_getTestName_1216136419751(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
+    if (isTestCase()) {
+      return ITestCase_Behavior.call_getSimpleClassName_1229278847513(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
     }
-    return ITestCase_Behavior.call_getSimpleClassName_1229278847513(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
+    return ITestMethod_Behavior.call_getTestName_1216136419751(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
   }
 }

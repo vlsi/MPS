@@ -10,5 +10,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.execution.commands.structure.CommandBuilderExpression", new CommandBuilderExpression_DataFlow());
     manager.register("jetbrains.mps.execution.commands.structure.ProcessBuilderExpression", new ProcessBuilderExpression_DataFlow());
     manager.register("jetbrains.mps.execution.commands.structure.ProcessBuilderPart", new ProcessBuilderPart_DataFlow());
+    manager.register("jetbrains.mps.execution.commands.structure.RedirectOutputExpression", new RedirectOutputExpression_DataFlow());
+    manager.register("jetbrains.mps.execution.commands.structure.ReportErrorStatement", new ReportErrorStatement_DataFlow());
   }
 }

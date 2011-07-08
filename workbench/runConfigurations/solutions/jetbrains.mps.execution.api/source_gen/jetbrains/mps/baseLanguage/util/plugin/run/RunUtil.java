@@ -7,22 +7,29 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
+import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 
+
+/**
+ * In run configurations to be replaced with "Make" before task
+ * and in Make before task with something
+ */
 @Deprecated
 public class RunUtil {
   @Deprecated
@@ -33,39 +40,44 @@ public class RunUtil {
     return makeBeforeRun(project, Sequence.fromIterable(Sequence.fromArray(nodes)).toListSequence());
   }
 
-  public static boolean makeBeforeRun(final Project project, List<SNode> nodes) {
+  public static boolean makeBeforeRun(final Project project, final List<SNode> nodes) {
     if (ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Can't run make from the event dispatch thread");
     }
-    final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    for (final SNode node : nodes) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SModelDescriptor md = SNodeOperations.getModel(node).getModelDescriptor();
-          if (md instanceof EditableSModelDescriptor) {
-            if (!(ListSequence.fromList(models).contains((EditableSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, ProjectOperationContext.get(project))) {
-              ListSequence.fromList(models).addElement((EditableSModelDescriptor) md);
-            }
 
+    final Wrappers._T<List<SModelDescriptor>> descriptors = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        descriptors.value = ListSequence.fromList(nodes).<SModelDescriptor>select(new ISelector<SNode, SModelDescriptor>() {
+          public SModelDescriptor select(SNode it) {
+            return SNodeOperations.getModel(it).getModelDescriptor();
           }
-        }
-      });
+        }).distinct().where(new IWhereFilter<SModelDescriptor>() {
+          public boolean accept(SModelDescriptor it) {
+            return ModelGenerationStatusManager.getInstance().generationRequired(it, ProjectOperationContext.get(project));
+          }
+        }).toListSequence();
+      }
+    });
+    return makeModels(project, descriptors.value);
+  }
+
+  private static boolean makeModels(Project project, List<SModelDescriptor> models) {
+    if (ListSequence.fromList(models).isEmpty()) {
+      return true;
     }
-    if (ListSequence.fromList(models).isNotEmpty()) {
-      final ProjectOperationContext context = ProjectOperationContext.get(project);
+
+    MakeSession session = new MakeSession(ProjectOperationContext.get(project), null, true);
+    if (IMakeService.INSTANCE.get().openNewSession(session)) {
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(ProjectOperationContext.get(project), models).resources(false));
       IResult result = null;
-      MakeSession session = new MakeSession(context, null, true);
-      if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context, models).resources(false));
-        try {
-          result = future.get();
-        } catch (CancellationException ignore) {
-        } catch (InterruptedException ignore) {
-        } catch (ExecutionException ignore) {
-        }
+      try {
+        result = future.get();
+      } catch (CancellationException ignore) {
+      } catch (InterruptedException ignore) {
+      } catch (ExecutionException ignore) {
       }
       return result != null && result.isSucessful();
-      // <node> 
     }
     return true;
   }

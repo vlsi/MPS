@@ -9,11 +9,11 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.configurations.lib.Node_Configuration;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.project.Project;
@@ -32,6 +32,8 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
@@ -39,22 +41,15 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
 
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
-  private Node_Configuration myNode = new Node_Configuration(new _FunctionTypes._return_P0_E0<SNode>() {
-    public SNode invoke() {
-      final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          concept.value = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.demo.structure.SomeConcept");
-        }
-      });
-      return concept.value;
+  private Node_Configuration myNode = new Node_Configuration(ModelAccess.instance().runReadAction(new Computable<SNode>() {
+    public SNode compute() {
+      return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.demo.structure.SomeConcept");
     }
-  }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.execution.demo.structure.SomeConcept"), "valid");
     }
   });
-  private Make_Configuration myMake = new Make_Configuration();
 
   public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
     super(project, factory, name);
@@ -72,11 +67,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       myNode.writeExternal(fieldElement);
       element.addContent(fieldElement);
     }
-    {
-      Element fieldElement = new Element("myMake");
-      myMake.writeExternal(fieldElement);
-      element.addContent(fieldElement);
-    }
   }
 
   @Override
@@ -86,18 +76,10 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       Element fieldElement = element.getChild("myNode");
       myNode.readExternal(fieldElement);
     }
-    {
-      Element fieldElement = element.getChild("myMake");
-      myMake.readExternal(fieldElement);
-    }
   }
 
   public Node_Configuration getNode() {
     return myNode;
-  }
-
-  public Make_Configuration getMake() {
-    return myMake;
   }
 
   @Override
@@ -107,7 +89,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       clone = createCloneTemplate();
       clone.myState = (DemoApplication_Configuration.MyState) myState.clone();
       clone.myNode = (Node_Configuration) myNode.clone();
-      clone.myMake = (Make_Configuration) myMake.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       DemoApplication_Configuration.LOG.error(ex);
@@ -138,7 +119,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   }
 
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
-    return new DemoApplication_Configuration_Editor(myNode.getEditor(), myMake.getEditor());
+    return new DemoApplication_Configuration_Editor(myNode.getEditor());
   }
 
   public Icon getIcon() {
@@ -148,6 +129,10 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   @Override
   public boolean canExecute(String executorId) {
     return DemoApplication_Configuration_RunProfileState.canExecute(executorId);
+  }
+
+  public Object[] createMakeTask() {
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNode>(), this.getNode().getNode())};
   }
 
   public class MyState {

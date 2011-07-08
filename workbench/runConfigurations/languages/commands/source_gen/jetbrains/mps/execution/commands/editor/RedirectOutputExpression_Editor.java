@@ -57,6 +57,7 @@ public class RedirectOutputExpression_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no listener>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    RedirectOutputExpression.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

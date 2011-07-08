@@ -15,43 +15,43 @@ import javax.swing.SwingUtilities;
 
 public class TemplateConfigurationTest extends JFrame {
   public TemplateConfigurationTest() {
-    final TwoFieldsEditor_Configuration twoFieldsConfiguration = new TwoFieldsEditor_Configuration();
-    final SettingsEditorEx<TwoFieldsEditor_Configuration> editor = twoFieldsConfiguration.getEditorEx();
+    final PersonEditor_Configuration personEditor = new PersonEditor_Configuration();
+    final SettingsEditorEx<PersonEditor_Configuration> editor = personEditor.getEditorEx();
     JComponent panel = editor.getComponent();
     add(panel, BorderLayout.CENTER);
-    add(this.createButtons(twoFieldsConfiguration, editor), BorderLayout.SOUTH);
+    add(this.createButtons(personEditor, editor), BorderLayout.SOUTH);
     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
   }
 
-  private JPanel createButtons(final TwoFieldsEditor_Configuration twoFieldsConfiguration, final SettingsEditorEx<TwoFieldsEditor_Configuration> editor) {
+  private JPanel createButtons(final PersonEditor_Configuration twoFieldsConfiguration, final SettingsEditorEx<PersonEditor_Configuration> editor) {
     JPanel buttonsPanel = new JPanel(new FlowLayout());
     buttonsPanel.add(new JButton(new AbstractAction("Ok") {
       public void actionPerformed(ActionEvent p0) {
         editor.apply(twoFieldsConfiguration);
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + twoFieldsConfiguration.getName());
+        System.out.println("email = " + twoFieldsConfiguration.getEmail());
         dispose();
       }
     }));
     buttonsPanel.add(new JButton(new AbstractAction("Apply") {
       public void actionPerformed(ActionEvent p0) {
         editor.apply(twoFieldsConfiguration);
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + twoFieldsConfiguration.getName());
+        System.out.println("email = " + twoFieldsConfiguration.getEmail());
       }
     }));
     buttonsPanel.add(new JButton(new AbstractAction("Reset") {
       public void actionPerformed(ActionEvent p0) {
         editor.resetFrom(twoFieldsConfiguration);
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + twoFieldsConfiguration.getName());
+        System.out.println("email = " + twoFieldsConfiguration.getEmail());
       }
     }));
     buttonsPanel.add(new JButton(new AbstractAction("Cancel") {
       public void actionPerformed(ActionEvent p0) {
         editor.resetFrom(twoFieldsConfiguration);
-        System.out.println("property1 = " + twoFieldsConfiguration.getProperty1());
-        System.out.println("property2 = " + twoFieldsConfiguration.getProperty2());
+        System.out.println("name = " + twoFieldsConfiguration.getName());
+        System.out.println("email = " + twoFieldsConfiguration.getEmail());
         dispose();
       }
     }));

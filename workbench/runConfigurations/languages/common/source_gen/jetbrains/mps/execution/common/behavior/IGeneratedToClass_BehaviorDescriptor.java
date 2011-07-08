@@ -11,4 +11,5 @@ public interface IGeneratedToClass_BehaviorDescriptor extends INamedConcept_Beha
   public String virtual_getSuffix_946964771156905483(SNode thisNode);
   public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode);
   public String virtual_getFullName_946964771156905503(SNode thisNode);
+  public String virtual_getBaseName_4366236229294148974(SNode thisNode);
 }

@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.commands.structure.AbstractProcessBuilderPart", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.commands.structure.AbstractProcessBuilderPart", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ProcessType"};
 
   public ConstraintsAspectDescriptor() {
   }
@@ -22,6 +22,14 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new CommandDebuggerOperation_Constraints();
       case 0:
         return new AbstractProcessBuilderPart_Constraints();
+      case 5:
+        return new DebuggerSettingsCommandParameterDeclaration_Constraints();
+      case 6:
+        return new ExecuteCommandPart_Constraints();
+      case 7:
+        return new ProcessType_Constraints();
+      case 4:
+        return new CommandProcessType_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

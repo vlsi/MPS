@@ -10,12 +10,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.execution.impl.ConsoleViewImpl;
+import com.intellij.execution.ui.ConsoleView;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 import com.intellij.openapi.ui.Splitter;
 import java.awt.BorderLayout;
-import com.intellij.execution.ui.ConsoleView;
+import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -54,9 +54,9 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final FailedTestOccurenceNavigator myTestNavigator;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
-  public UnitTestViewComponent(Project project, IOperationContext context, ConsoleViewImpl console, UnitTestExecutionController model) {
+  public UnitTestViewComponent(Project project, IOperationContext context, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
     this.myProject = project;
-    this.myTestState = model.getState();
+    this.myTestState = testRunState;
     StatisticsTableModel statisticsModel = new StatisticsTableModel(this.myTestState);
 
     this.myTreeComponent = new TestTree(this.myProject, this.myTestState, context, this);
@@ -84,7 +84,11 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     this.myTestState.addView(this.myTreeComponent);
     this.myTestState.addView(this.myProgressLineComponent);
     this.myTestState.addView(this.myOutputComponent);
-    this.addCloseListener(model.getCloseListener());
+    this.addCloseListener(closeListener);
+  }
+
+  public UnitTestViewComponent(Project project, IOperationContext context, ConsoleViewImpl console, UnitTestExecutionController model) {
+    this(project, context, console, model.getState(), model.getCloseListener());
   }
 
   public JComponent createActionsToolbar(ConsoleView console) {

@@ -10,45 +10,41 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CommandParameterDeclaration_Behavior {
-  private static Class[] PARAMETERS_856705193941282038 = {SNode.class};
+  private static Class[] PARAMETERS_8478830098674441876 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
-  public static boolean call_isRequired_856705193941282030(SNode thisNode) {
-    return SPropertyOperations.getBoolean(thisNode, "isRequired");
+  public static boolean virtual_generateField_8478830098674441876(SNode thisNode) {
+    return true;
   }
 
-  public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
-    return !(CommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(thisNode));
+  public static String call_getSetterName_7327337331549086044(SNode thisNode) {
+    return "set" + CommandParameterDeclaration_Behavior.call_getUpperCaseName_7327337331549086061(thisNode);
   }
 
-  public static String call_getSetterName_856705193941282045(SNode thisNode) {
-    return "set" + CommandParameterDeclaration_Behavior.call_getUpperCaseName_856705193941282053(thisNode);
+  public static String call_getUpperCaseName_7327337331549086061(SNode thisNode) {
+    return CommandParameterDeclaration_Behavior.getUpperCaseName_7327337331549086070(SPropertyOperations.getString(thisNode, "name"));
   }
 
-  public static String call_getUpperCaseName_856705193941282053(SNode thisNode) {
-    return CommandParameterDeclaration_Behavior.getUpperCaseName_856705193941282000(SPropertyOperations.getString(thisNode, "name"));
+  public static String call_getFieldName_7327337331549117850(SNode thisNode) {
+    return CommandParameterDeclaration_Behavior.getFieldName_7327337331549086089(SPropertyOperations.getString(thisNode, "name"));
   }
 
-  public static String call_getFieldName_856705193941282062(SNode thisNode) {
-    return CommandParameterDeclaration_Behavior.getFieldName_856705193941282019(SPropertyOperations.getString(thisNode, "name"));
-  }
-
-  public static boolean call_isInitializable_856705193941282038(SNode thisNode) {
+  public static boolean call_generateField_8478830098674441876(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876);
   }
 
-  public static boolean callSuper_isInitializable_856705193941282038(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038);
+  public static boolean callSuper_generateField_8478830098674441876(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), callerConceptFqName, "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876);
   }
 
-  public static String getUpperCaseName_856705193941282000(String name) {
+  public static String getUpperCaseName_7327337331549086070(String name) {
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
 
-  public static String getFieldName_856705193941282019(String name) {
-    return "my" + CommandParameterDeclaration_Behavior.getUpperCaseName_856705193941282000(name);
+  public static String getFieldName_7327337331549086089(String name) {
+    return "my" + CommandParameterDeclaration_Behavior.getUpperCaseName_7327337331549086070(name);
   }
 }

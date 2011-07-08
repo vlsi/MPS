@@ -199,7 +199,7 @@ public class TextGenerator {
   private SNode getOriginalInputNode(SNode input) {
     while (input != null && !(input.isDisposed())
       && (input.getModel() instanceof TransientSModel)) {
-      input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE);
+      input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
     }
     return input;
   }

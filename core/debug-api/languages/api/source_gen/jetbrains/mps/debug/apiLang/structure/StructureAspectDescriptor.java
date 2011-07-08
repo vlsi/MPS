@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debug.apiLang.structure.BreakpointCreator", "jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem", "jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", "jetbrains.mps.debug.apiLang.structure.DebuggerReference", "jetbrains.mps.debug.apiLang.structure.DebuggerType"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debug.apiLang.structure.BreakpointCreator", "jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem", "jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", "jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration", "jetbrains.mps.debug.apiLang.structure.DebuggerReference", "jetbrains.mps.debug.apiLang.structure.DebuggerType", "jetbrains.mps.debug.apiLang.structure.GetDebuggerSettings_Function"};
 
   public StructureAspectDescriptor() {
   }
@@ -30,9 +30,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{"kindName", "kindPresentation"}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.debug.apiLang.structure.DebuggerReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"debuggerName"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 8:
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.apiLang.structure.DebuggerReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{"debuggerName"}, new String[]{});
+      case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.debug.apiLang.structure.DebuggerType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{"name"}, new String[]{});
+      case 10:
+        return new CompiledConceptDescriptor("jetbrains.mps.debug.apiLang.structure.GetDebuggerSettings_Function", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

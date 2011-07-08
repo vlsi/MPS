@@ -15,16 +15,13 @@ import com.intellij.openapi.options.ConfigurationException;
 public class DemoApplication_Configuration_Editor extends SettingsEditorEx<DemoApplication_Configuration> {
   private JLabel myLabel;
   private Node_Configuration_Editor myNode;
-  private Make_Configuration_Editor myMake;
 
-  public DemoApplication_Configuration_Editor(Node_Configuration_Editor node, Make_Configuration_Editor make) {
+  public DemoApplication_Configuration_Editor(Node_Configuration_Editor node) {
     myNode = node;
-    myMake = make;
   }
 
   public void disposeEditor() {
     Disposer.dispose(myNode);
-    Disposer.dispose(myMake);
   }
 
   @NotNull
@@ -34,17 +31,14 @@ public class DemoApplication_Configuration_Editor extends SettingsEditorEx<DemoA
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(myLabel, BorderLayout.NORTH);
     panel.add(nodeChooser, BorderLayout.CENTER);
-    panel.add(myMake.createEditor(), BorderLayout.SOUTH);
     return panel;
   }
 
   public void applyEditorTo(final DemoApplication_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
-    myMake.applyEditorTo(configuration.getMake());
   }
 
   public void resetEditorFrom(final DemoApplication_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
-    myMake.resetEditorFrom(configuration.getMake());
   }
 }

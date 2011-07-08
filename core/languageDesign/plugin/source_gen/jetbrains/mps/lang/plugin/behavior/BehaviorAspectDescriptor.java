@@ -438,12 +438,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new MakeConfigBlock_BehaviorDescriptor();
       case 121:
         return new IconResourceExpression_BehaviorDescriptor();
-      case 208:
-        return new ToolbarCreator_BehaviorDescriptor();
-      case 158:
-        return new PopupCreator_BehaviorDescriptor();
       case 33:
         return new ButtonCreator_BehaviorDescriptor();
+      case 158:
+        return new PopupCreator_BehaviorDescriptor();
+      case 208:
+        return new ToolbarCreator_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

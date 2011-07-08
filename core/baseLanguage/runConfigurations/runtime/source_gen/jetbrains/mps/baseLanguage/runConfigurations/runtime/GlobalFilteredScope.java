@@ -70,12 +70,8 @@ public class GlobalFilteredScope extends GlobalScope {
   }
 
   protected boolean acceptModel(SModelDescriptor descriptor) {
-    if (SModelStereotype.isUserModel(descriptor) && !(SModelStereotype.isGeneratorModel(descriptor)) && !(descriptor.getModule() instanceof TransientModelsModule)) {
-      IModule requiredModule = getRequiredModule();
-      if (requiredModule != null) {
-        return descriptor.getModule().getDependenciesManager().getAllUsedLanguages().contains(requiredModule);
-      }
-      return true;
+    if (SModelStereotype.isUserModel(descriptor) && !(SModelStereotype.isGeneratorModel(descriptor))) {
+      return acceptModule(descriptor.getModule());
     }
     return false;
   }
@@ -84,15 +80,20 @@ public class GlobalFilteredScope extends GlobalScope {
     if (m instanceof TransientModelsModule || m instanceof Generator) {
       return false;
     }
-    IModule requiredModule = getRequiredModule();
-    if (requiredModule == null) {
+    Iterable<IModule> requiredModules = getRequiredModules();
+    if (requiredModules == null || Sequence.fromIterable(requiredModules).isEmpty()) {
       return true;
     }
-    return m.getDependenciesManager().getAllUsedLanguages().contains(requiredModule);
+    for (IModule module : Sequence.fromIterable(requiredModules)) {
+      if (m.getDependenciesManager().getAllUsedLanguages().contains(module)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @Nullable
-  protected IModule getRequiredModule() {
+  protected Iterable<IModule> getRequiredModules() {
     return null;
   }
 }

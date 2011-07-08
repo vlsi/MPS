@@ -10,18 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CommandParameterDeclaration extends VariableDeclaration {
   public static final String concept = "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration";
-  public static final String IS_REQUIRED = "isRequired";
 
   public CommandParameterDeclaration(SNode node) {
     super(node);
-  }
-
-  public boolean getIsRequired() {
-    return this.getBooleanProperty(CommandParameterDeclaration.IS_REQUIRED);
-  }
-
-  public void setIsRequired(boolean value) {
-    this.setBooleanProperty(CommandParameterDeclaration.IS_REQUIRED, value);
   }
 
   public static CommandParameterDeclaration newInstance(SModel sm, boolean init) {

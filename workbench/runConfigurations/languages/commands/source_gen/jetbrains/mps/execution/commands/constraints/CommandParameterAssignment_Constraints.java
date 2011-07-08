@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -58,7 +59,7 @@ public class CommandParameterAssignment_Constraints extends BaseConstraintsDescr
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), "command", false), "parameterDeclaration", true);
+            return ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), "commandPart", false));
           }
 
           @Override

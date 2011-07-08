@@ -5,12 +5,12 @@ package jetbrains.mps.execution.commands.behavior;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 
-public class CommandParameterDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor {
+public abstract class CommandParameterDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor {
   public CommandParameterDeclaration_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
-    return CommandParameterDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
+  public boolean virtual_generateField_8478830098674441876(SNode thisNode) {
+    return CommandParameterDeclaration_Behavior.virtual_generateField_8478830098674441876(thisNode);
   }
 
   @Override

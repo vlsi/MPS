@@ -14,15 +14,18 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.ui.ConsoleView;
+import jetbrains.mps.execution.api.configurations.ConsoleCreator;
+import jetbrains.mps.execution.lib.JavaStackTraceFilter;
 import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
+import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
-import jetbrains.mps.debug.api.IDebuggerSettings;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 
 public class Remote_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
@@ -47,10 +50,11 @@ public class Remote_Configuration_RunProfileState extends DebuggerRunProfileStat
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    RemoteProcessHandler handler = new RemoteProcessHandler(project);
+    ConsoleView console = ConsoleCreator.createConsoleView(project, false);
+    console.addMessageFilter(new JavaStackTraceFilter());
     {
-      ProcessHandler _processHandler = handler;
-      final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
+      ProcessHandler _processHandler = new RemoteProcessHandler(project);
+      final ConsoleView _consoleView = console;
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -60,13 +64,18 @@ public class Remote_Configuration_RunProfileState extends DebuggerRunProfileStat
     }
   }
 
-  public IDebugger getDebugger() {
-    return Debuggers.getInstance().getDebuggerByName("Java");
-  }
+  @NotNull
+  public IDebuggerConfiguration getDebuggerConfiguration() {
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return myRunConfiguration.getSettings();
+      }
 
-  @Nullable
-  protected IDebuggerSettings createDebuggerSettings() {
-    return myRunConfiguration.getSettings();
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
   }
 
   public static boolean canExecute(String executorId) {

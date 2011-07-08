@@ -9,6 +9,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
+  <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <import index="fmpm" modelUID="r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)" version="-1" />
   <import index="i1tc" modelUID="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)" version="-1" />
@@ -23,6 +24,8 @@
   <import index="7jsa" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(com.intellij.execution.process@java_stub)" version="-1" />
   <import index="o4uu" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.executable(jetbrains.mps.debug.executable@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="x4jy" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api(MPS.Classpath/jetbrains.mps.debug.api@java_stub)" version="-1" />
+  <import index="bc3m" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api.breakpoints(MPS.Classpath/jetbrains.mps.debug.api.breakpoints@java_stub)" version="-1" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -45,7 +48,10 @@
       <property name="isDebuggable" nameId="tp4k.8255351389868176934" value="true" />
       <link role="configType" roleId="tp4k.678887849223536804" targetNodeId="8325829821233548499" resolveInfo="ExecutableFileRunConfiguration" />
     </node>
-    <node type="86gq.DebugInfoProvider" typeId="86gq.3157158168562217892" id="2074335300786226126" />
+    <node type="86gq.BreakpointCreator" typeId="86gq.3157158168562217892" id="226334238991953693" />
+    <node type="tp4k.ApplicationPluginDeclaration" typeId="tp4k.1215279937187" id="226334238992001471">
+      <property name="name" nameId="tpck.1169194664001" value="CppDebuggerInitializer" />
+    </node>
   </roots>
   <root id="8325829821233548499" />
   <root id="2617013732192775193">
@@ -335,7 +341,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7243599812675939306">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7243599812675939307">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7243599812675939308">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7243599812675939302" resolveInfo="processBuilder" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7243599812675939302" resolveInfo="executableProcessBuilder" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7243599812675939309">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~ProcessBuilder%ddirectory(java%dio%dFile)%cjava%dlang%dProcessBuilder" resolveInfo="directory" />
@@ -348,7 +354,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7243599812675939311">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7243599812675939312">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7243599812675939313">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7243599812675939302" resolveInfo="processBuilder" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7243599812675939302" resolveInfo="executableProcessBuilder" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7243599812675939314">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~ProcessBuilder%dcommand(java%dutil%dList)%cjava%dlang%dProcessBuilder" resolveInfo="command" />
@@ -395,7 +401,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7243599812675939331">
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7243599812675939332">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7243599812675939333">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7243599812675939302" resolveInfo="processBuilder" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7243599812675939302" resolveInfo="executableProcessBuilder" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7243599812675939334">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~ProcessBuilder%dstart()%cjava%dlang%dProcess" resolveInfo="start" />
@@ -622,7 +628,7 @@
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1752598729520584677">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4k.ComponentReference" typeId="tp4k.3452826078638178132" id="1752598729520584678" />
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1752598729520584679">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.6937689104170748805" resolveInfo="getNode" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.747009152929061287" resolveInfo="getNode" />
                 </node>
               </node>
             </node>
@@ -794,7 +800,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1752598729520626172">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4k.ComponentReference" typeId="tp4k.3452826078638178132" id="1752598729520626171" />
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1752598729520626176">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.6937689104170748813" resolveInfo="setNode" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.747009152929061295" resolveInfo="setNode" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1752598729520626177">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1752598729520601344" resolveInfo="node" />
                     </node>
@@ -827,29 +833,93 @@
       </node>
     </node>
   </root>
-  <root id="2074335300786226126">
-    <node role="breakpointableConcepts" roleId="86gq.1270798772176052787" type="86gq.BreakpointableNodeItem" typeId="86gq.3157158168562219319" id="2074335300786226127">
-      <link role="declaration" roleId="86gq.3157158168562219321" targetNodeId="i1tc.7211731935130582982" resolveInfo="CStatement" />
-      <node role="createBreakpoint" roleId="86gq.3157158168562219320" type="86gq.ConceptFunction_CreateBreakpoint" typeId="86gq.3157158168562219322" id="2074335300786226128">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2074335300786226129">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2074335300786226130">
-            <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2074335300786226131">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2074335300786226132">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cici.3990508698139426936" resolveInfo="GDBBreakpoint" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2074335300786226133">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2074335300786226134">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2074335300786226139" />
-                  </node>
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2074335300786226138" />
+  <root id="226334238991953693">
+    <node role="breakpointableConcepts" roleId="86gq.1270798772176052787" type="86gq.BreakpointableNodeItem" typeId="86gq.3157158168562219319" id="226334238991953736">
+      <node role="createBreakpoint" roleId="86gq.3157158168562219320" type="86gq.ConceptFunction_CreateBreakpoint" typeId="86gq.3157158168562219322" id="226334238991953737">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="226334238991953738">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="612376536074164702">
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="612376536074164704">
+              <node role="operand" roleId="tpee.1197027771414" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="612376536074164705">
+                <property name="debuggerName" nameId="86gq.1104094430779068757" value="Cpp" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="612376536074164706">
+                <property name="kindName" nameId="86gq.2569394751387978475" value="CPP_LINE_BREAKPOINT" />
+                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Cpp Line Breakpoint" />
+                <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="612376536074164707" />
+                <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="612376536074164708" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="conceptsToCreateBreakpoint" roleId="86gq.5789575999242884576" type="86gq.ConceptDeclarationReference" typeId="86gq.5789575999242884574" id="2074335300786226137">
+      <node role="conceptsToCreateBreakpoint" roleId="86gq.5789575999242884576" type="86gq.ConceptDeclarationReference" typeId="86gq.5789575999242884574" id="226334238991954229">
         <link role="conceptDeclaration" roleId="86gq.5789575999242884575" targetNodeId="i1tc.7211731935130582982" resolveInfo="CStatement" />
+      </node>
+    </node>
+  </root>
+  <root id="226334238992001471">
+    <node role="fieldDeclaration" roleId="tp4k.1215279937191" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="226334238992001472">
+      <property name="name" nameId="tpck.1169194664001" value="myDebugger" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="226334238992001473" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="226334238992001474">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="70e9.226334238991954936" resolveInfo="CppDebugger" />
+      </node>
+    </node>
+    <node role="initBlock" roleId="tp4k.1215279937189" type="tp4k.ApplicationPluginInitBlock" typeId="tp4k.1215278261851" id="226334238992001475">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="226334238992001476">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="226334238992001477">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="226334238992001478">
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="226334238992001479">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="226334238992001480">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="70e9.226334238991954938" resolveInfo="CppDebugger" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="226334238992001481">
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="x4jy.~Debuggers" resolveInfo="Debuggers" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~Debuggers%dgetInstance()%cjetbrains%dmps%ddebug%dapi%dDebuggers" resolveInfo="getInstance" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="226334238992001482">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bc3m.~BreakpointProvidersManager%dgetInstance()%cjetbrains%dmps%ddebug%dapi%dbreakpoints%dBreakpointProvidersManager" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bc3m.~BreakpointProvidersManager" resolveInfo="BreakpointProvidersManager" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="226334238992001483">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="226334238992001484" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="226334238992001485">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="226334238992001472" resolveInfo="myDebugger" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="226334238992001486">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="226334238992001487">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="226334238992001488">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="226334238992001489" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="226334238992001490">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="226334238992001472" resolveInfo="myDebugger" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="226334238992001491">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~AbstractDebugger%dinit()%cvoid" resolveInfo="init" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="disposeBlock" roleId="tp4k.1215279937190" type="tp4k.ApplicationPluginDisposeBlock" typeId="tp4k.1215278396618" id="226334238992001492">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="226334238992001493">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="226334238992001494">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="226334238992001495">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="226334238992001496">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="226334238992001497" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierFieldAccessOperation" typeId="tp4f.1213999117680" id="226334238992001498">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="226334238992001472" resolveInfo="myDebugger" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="226334238992001499">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x4jy.~AbstractDebugger%ddispose()%cvoid" resolveInfo="dispose" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </root>

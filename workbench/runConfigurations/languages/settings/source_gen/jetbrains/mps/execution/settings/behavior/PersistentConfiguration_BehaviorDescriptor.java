@@ -34,6 +34,10 @@ public class PersistentConfiguration_BehaviorDescriptor extends BaseConcept_Beha
     return PersistentConfiguration_Behavior.virtual_getMembers_1213877528020(thisNode, contextNode);
   }
 
+  public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
+    return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
+  }
+
   public List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
     return IClassifier_Behavior.virtual_getParts_1213877527988(thisNode);
   }

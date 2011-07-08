@@ -5,6 +5,7 @@
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
@@ -29,6 +30,9 @@
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="5365453833390719385">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="error" />
       <property name="name" nameId="tpck.1169194664001" value="reportExecutionError" />
+    </node>
+    <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="1810236057992541217">
+      <property name="name" nameId="tpck.1169194664001" value="ProcessToCommandProcess" />
     </node>
   </roots>
   <root id="5365453833390719265">
@@ -214,7 +218,7 @@
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="rzqf.856705193941281780" resolveInfo="CommandBuilderExpression" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="5365453833390719349">
           <node role="type" roleId="tpdg.1177337679534" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5365453833390719350">
-            <link role="concept" roleId="tp25.1138405853777" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+            <link role="concept" roleId="tp25.1138405853777" targetNodeId="rzqf.6129022259108579244" resolveInfo="ExecuteCommandPart" />
           </node>
           <node role="query" roleId="tpdg.1177338017561" type="tpdg.QueryFunction_ParameterizedSubstitute_Query" typeId="tpdg.1177337890340" id="5365453833390719351">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5365453833390719352">
@@ -222,7 +226,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5365453833390719354">
                   <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="5365453833390719355" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="5365453833390719356">
-                    <link role="concept" roleId="tp25.1182511038750" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+                    <link role="concept" roleId="tp25.1182511038750" targetNodeId="rzqf.6129022259108579244" resolveInfo="ExecuteCommandPart" />
                     <node role="scope" roleId="tp25.1182511038749" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="5365453833390719357" />
                   </node>
                 </node>
@@ -252,8 +256,8 @@
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5365453833390719369">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5365453833390719361" resolveInfo="builder" />
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5365453833390719370">
-                      <link role="link" roleId="tp25.1138056516764" targetNodeId="rzqf.856705193941281782" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1715641077095523572">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="rzqf.6129022259108621329" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="5365453833390719371">
@@ -317,6 +321,43 @@
           </node>
           <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="5365453833390719396">
             <property name="text" nameId="tpdg.1196434851095" value="report execution error" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1810236057992541217">
+    <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1810236057992543712">
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="rzqf.856705193941281810" resolveInfo="ProcessType" />
+      <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="1810236057992543715">
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="rzqf.612376536074296995" resolveInfo="CommandProcessType" />
+        <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="1810236057992543717">
+          <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="1810236057992543718">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1810236057992543719">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1810236057992552422">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1810236057992552424">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1810236057992552423" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Node_ReplaceWithNewOperation" typeId="tpdg.767145758118872828" id="1810236057992604545">
+                    <link role="concept" roleId="tp25.1139867957129" targetNodeId="rzqf.612376536074296995" resolveInfo="CommandProcessType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="1810236057992543720">
+            <property name="text" nameId="tpdg.1196433942569" value="&lt;" />
+          </node>
+          <node role="descriptionText" roleId="tpdg.1177498182537" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="1810236057992543721">
+            <property name="text" nameId="tpdg.1196433942569" value="command process" />
+          </node>
+          <node role="actionType" roleId="tpdg.1230300823443" type="tpdg.QueryFunction_ActionType" typeId="tpdg.1230300670420" id="1810236057992543722">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1810236057992543723">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1810236057992552418">
+                <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1810236057992552419">
+                  <node role="quotedNode" roleId="tp3r.1196350785114" type="rzqf.CommandProcessType" typeId="rzqf.612376536074296995" id="1810236057992552421" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

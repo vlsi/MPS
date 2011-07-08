@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.debug.apiLang.structure.BreakpointCreator", "jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem", "jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", "jetbrains.mps.debug.apiLang.structure.DebuggerReference", "jetbrains.mps.debug.apiLang.structure.DebuggerType"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.debug.apiLang.structure.BreakpointCreator", "jetbrains.mps.debug.apiLang.structure.BreakpointableNodeItem", "jetbrains.mps.debug.apiLang.structure.ConceptDeclarationReference", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.debug.apiLang.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.debug.apiLang.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.debug.apiLang.structure.CreateBreakpointOperation", "jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration", "jetbrains.mps.debug.apiLang.structure.DebuggerReference", "jetbrains.mps.debug.apiLang.structure.DebuggerType", "jetbrains.mps.debug.apiLang.structure.GetDebuggerSettings_Function"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -26,12 +26,16 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor();
       case 2:
         return new ConceptDeclarationReference_BehaviorDescriptor();
-      case 8:
+      case 9:
         return new DebuggerType_BehaviorDescriptor();
-      case 7:
+      case 8:
         return new DebuggerReference_BehaviorDescriptor();
       case 6:
         return new CreateBreakpointOperation_BehaviorDescriptor();
+      case 10:
+        return new GetDebuggerSettings_Function_BehaviorDescriptor();
+      case 7:
+        return new DebuggerConfiguration_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

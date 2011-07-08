@@ -17,11 +17,11 @@ public class typeof_DebuggerSettings_Parameter_InferenceRule extends AbstractInf
   }
 
   public void applyRule(final SNode debuggerConnectionSettings, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerConnectionSettings), "jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerConnectionSettings), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")) {
       {
         SNode _nodeToCheck_1029348928467 = debuggerConnectionSettings;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351281", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351291", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(debuggerConnectionSettings), "jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor"), "getDebuggerSettings", true), "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351283", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351291", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(debuggerConnectionSettings), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"), "debuggerConfiguration", true), "getSettings", true), "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "2867534278886351283", true), _info_12389875345);
       }
     }
   }

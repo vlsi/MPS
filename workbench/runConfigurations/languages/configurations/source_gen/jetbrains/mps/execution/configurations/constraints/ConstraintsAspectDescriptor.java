@@ -7,19 +7,31 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.ComplexRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource"};
 
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
-      case 2:
-        return new RunConfigurationExecutor_Constraints();
       case 0:
-        return new ComplexRunConfigurationExecutor_Constraints();
-      case 1:
+        return new AbstractRunConfigurationExecutor_Constraints();
+      case 5:
+        return new RunConfigurationExecutor_Constraints();
+      case 2:
         return new ConfigurationFromExecutorReference_Constraints();
+      case 6:
+        return new RunConfigurationProducer_Constraints();
+      case 3:
+        return new Create_ConceptFunction_Constraints();
+      case 7:
+        return new RunConfigurationProducerPart_Constraints();
+      case 4:
+        return new RunConfigurationCreator_Constraints();
+      case 8:
+        return new RunConfigurationSource_Constraints();
+      case 1:
+        return new BeforeTaskParameterReference_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

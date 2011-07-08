@@ -351,7 +351,11 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
   </root>
-  <root id="1203013653398" />
+  <root id="1203013653398">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2923080516832353657">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1234968728594" resolveInfo="IMacroHolder" />
+    </node>
+  </root>
   <root id="1203598300291">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1204116468206">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

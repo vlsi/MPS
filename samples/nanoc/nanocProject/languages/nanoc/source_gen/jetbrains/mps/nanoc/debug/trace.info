@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="226334238991954936">
+    <nodeInfo nodeId="226334238991992649" fileName="CppDebugger.java" startLine="14" startPosition="99" endLine="15" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsProvider" />
+    <nodeInfo nodeId="226334238991992661" fileName="CppDebugger.java" startLine="17" startPosition="98" endLine="18" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="226334238991992645" fileName="CppDebugger.java" startLine="22" startPosition="58" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991961363" fileName="CppDebugger.java" startLine="27" startPosition="90" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="226334238991954938" fileName="CppDebugger.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppDebugger#(Ljetbrains/mps/debug/api/Debuggers;Ljetbrains/mps/debug/api/breakpoints/BreakpointProvidersManager;)V" />
+    <nodeInfo nodeId="226334238991961344" fileName="CppDebugger.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBreakpointsProvider#()Ljetbrains/mps/nanoc/debug/breakpoints/GDBBreakpointsProvider;" />
+    <nodeInfo nodeId="226334238991961351" fileName="CppDebugger.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebugSessionCreator#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSessionCreator;" />
+    <scopeInfo nodeId="226334238991954941" fileName="CppDebugger.java" startLine="17" startPosition="98" endLine="18" endPosition="56" />
+    <scopeInfo nodeId="226334238991961350" fileName="CppDebugger.java" startLine="22" startPosition="58" endLine="23" endPosition="38" />
+    <scopeInfo nodeId="226334238991961358" fileName="CppDebugger.java" startLine="27" startPosition="90" endLine="28" endPosition="31" />
+    <scopeInfo nodeId="226334238991954938" fileName="CppDebugger.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="226334238991992666" varName="breakpointProvidersManager" />
+      <varInfo nodeId="226334238991992664" varName="debuggers" />
+    </scopeInfo>
+    <scopeInfo nodeId="226334238991961344" fileName="CppDebugger.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="226334238991961351" fileName="CppDebugger.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="226334238991961354" varName="project" />
+    </scopeInfo>
+    <unitInfo nodeId="226334238991954936" fileName="CppDebugger.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppDebugger" />
+  </root>
   <root nodeId="3990508698139426393">
     <nodeInfo nodeId="3990508698139426409" fileName="CppGDBCreator.java" startLine="34" startPosition="64" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
     <nodeInfo nodeId="3990508698139426411" fileName="CppGDBCreator.java" startLine="35" startPosition="45" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReadyForInput" />

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cqxafwbawur3mmt624pq1y6ouapzl1x">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6a6zpdzd0uayt755yuizj6hqmo45nke" />
+<dependencies version="2" modelHash="7lrmf24sfdfl1s13vyvl42utwp3s6el">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8f40zw2ng3ru04g6jirwqdjoy2uzoh2" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
-  <common hash="cdjxezyj5g5i0h75sj63x516x5n4jai" />
-  <source id="3990508698139426393" name="CppGDBCreator" hash="26yuunq0vbu1muwjp06883017x4cvur">
+  <common hash="-4qtaa6fmgpvg6fz7vqplnbezjyt05d8" />
+  <source id="3990508698139426393" name="CppGDBCreator" hash="82vftx9ihvy266y31e87610r3lfn1am">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -14,13 +14,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CppGDBCreator.java" />
   </source>
-  <source id="3990508698139427192" name="ProgramsLocationUtil" hash="-eivkm9jufsy7whbw17jl7cgzdbzkaf">
+  <source id="3990508698139427192" name="ProgramsLocationUtil" hash="82y0vn63f98wsmj5iaovvpkgxgt83t6">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ProgramsLocationUtil.java" />
   </source>
-  <source id="3990508698139427473" name="GDBCommands" hash="-d536az5cy89nopk0krinys8qm5g216t">
+  <source id="3990508698139427473" name="GDBCommands" hash="e2ervlkr1nqr8v3n9dea8gt0g2qmqkt">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -28,7 +28,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GDBCommands.java" />
   </source>
-  <source id="3990508698139428411" name="CppDebugSession" hash="-cmk9teioue4nviwpjfme8xkzaq2mmu8">
+  <source id="3990508698139428411" name="CppDebugSession" hash="-27yu97slt8w8r34j13569e39km2zb9p">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -36,7 +36,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CppDebugSession.java" />
   </source>
-  <source id="3990508698139429713" name="CppUiStateImpl" hash="-1h29i9usmgzjbg1q704kn1c8vm219xu">
+  <source id="3990508698139429713" name="CppUiStateImpl" hash="bx7h498vq14kd012vlf7wi97dxq9xk6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -44,10 +44,18 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CppUiStateImpl.java" />
   </source>
-  <source id="3990508698139430350" name="CppUiState" hash="-dvbfegspyktd5owv7i1f8b3znh0al3g">
+  <source id="3990508698139430350" name="CppUiState" hash="-16sylmr8c8tae0wnqdidzczq92uyxtx">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CppUiState.java" />
+  </source>
+  <source id="226334238991954936" name="CppDebugger" hash="-9ruh735eiksidgx68hg8lfzaw4ko3sv">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="CppDebugger.java" />
   </source>
 </dependencies>
 

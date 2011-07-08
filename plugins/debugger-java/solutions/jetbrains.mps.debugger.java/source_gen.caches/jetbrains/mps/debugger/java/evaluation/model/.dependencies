@@ -19,6 +19,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
@@ -29,9 +30,12 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.EvaluationContext" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
+    <classNode dependClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
     <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
     <classNode dependClassName="jetbrains.mps.ide.progress.ITaskProgressHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />

@@ -67,8 +67,8 @@ public class CommandBuilderExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefCell_lo57cy_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("command");
-    provider.setNoTargetText("<no command>");
+    provider.setRole("commandPart");
+    provider.setNoTargetText("<no commandPart>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new CommandBuilderExpression_Editor._Inline_lo57cy_a0a());
     editorCell = provider.createEditorCell(editorContext);

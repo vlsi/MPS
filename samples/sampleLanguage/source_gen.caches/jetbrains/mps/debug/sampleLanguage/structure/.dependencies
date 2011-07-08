@@ -18,6 +18,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.debug.sampleLanguage.structure.WannabeMethod" />
+    <classNode dependClassName="jetbrains.mps.execution.util.structure.IMainClass" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />

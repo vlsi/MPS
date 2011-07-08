@@ -10,6 +10,8 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExplicitCommandParameterDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />

@@ -36,15 +36,12 @@
     </genConfs>
   </component>
   <component name="MigrationState">
-    <option name="myState" value="DONE" />
+    <option name="myState" value="INITIAL" />
   </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectVersion">
-    <option name="version" value="2.0" />
-  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />

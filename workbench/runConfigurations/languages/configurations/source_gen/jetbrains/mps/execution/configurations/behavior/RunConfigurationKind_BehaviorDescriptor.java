@@ -18,6 +18,10 @@ public class RunConfigurationKind_BehaviorDescriptor extends BaseConcept_Behavio
     return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
   }
 
+  public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
+    return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
+  }
+
   @NonNls
   public String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return RunConfigurationKind_Behavior.virtual_getSuffix_946964771156905483(thisNode);

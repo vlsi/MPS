@@ -6,26 +6,32 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="old.usages" />
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="usages.java" />
       <modulePath path="${mps_home}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="old" />
       <modulePath path="${mps_home}/core/baseLanguage/runConfigurations/runtime/runtime.msd" folder="old" />
-      <modulePath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="old.usages" />
-      <modulePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="old.usages" />
+      <modulePath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="usages.junit" />
+      <modulePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="usages.junit" />
       <modulePath path="${mps_home}/core/debug-api/languages/api/api.mpl" />
       <modulePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" folder="old" />
-      <modulePath path="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="old.usages" />
-      <modulePath path="${mps_home}/languages/util/buildlanguage/languages/custommps/custommps.mpl" folder="old.usages" />
-      <modulePath path="${mps_home}/languages/util/buildlanguage/languages/packaging/packaging.mpl" folder="old.usages" />
-      <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" folder="usages" />
-      <modulePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="old.usages" />
-      <modulePath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="old.usages" />
+      <modulePath path="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.ant" />
+      <modulePath path="${mps_home}/languages/util/buildlanguage/languages/custommps/custommps.mpl" folder="usages.ant" />
+      <modulePath path="${mps_home}/languages/util/buildlanguage/languages/packaging/packaging.mpl" folder="usages.ant" />
+      <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
+      <modulePath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" folder="usages.java" />
+      <modulePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.implicit" />
+      <modulePath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="usages.implicit" />
+      <modulePath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="usages.implicit" />
+      <modulePath path="${mps_home}/samples/nanoc/nanocProject/languages/nanoc/nanoc.mpl" folder="old.usages" />
+      <modulePath path="${mps_home}/samples/nanoc/nanocProject/solutions/jetbrains.mps.nanoc.sandbox/jetbrains.mps.nanoc.sandbox.msd" folder="usages" />
+      <modulePath path="${mps_home}/samples/sampleLanguage/sampleLanguage.mpl" folder="usages.implicit" />
+      <modulePath path="${mps_home}/samples/sampleLanguage/solutions/sandbox/jetbrains.mps.samples.sampleLanguage.sandbox.msd" folder="usages.implicit" />
       <modulePath path="${project}/languages/commands/commands.mpl" folder="" />
       <modulePath path="${project}/languages/common/common.mpl" folder="" />
       <modulePath path="${project}/languages/configurations/configurations.mpl" />
       <modulePath path="${project}/languages/demo/demo.mpl" folder="usages" />
       <modulePath path="${project}/languages/settings/settings.mpl" folder="" />
+      <modulePath path="${project}/languages/util/util.mpl" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" folder="runtime" />
-      <modulePath path="${project}/solutions/jetbrains.mps.execution.configurations.lib2/jetbrains.mps.execution.configurations.lib.msd" folder="library" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.impl/impl.msd" folder="runtime" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="usages" />
       <modulePath path="${project}/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" folder="library" />
@@ -44,10 +50,48 @@
       <genConfModule name="settings" moduleRef="jetbrains.mps.execution.settings" />
     </genConfs>
   </component>
+  <component name="MigrationState">
+    <option name="myState" value="INITIAL" />
+  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Old JUnit Config" type="JUnit Tests" factoryName="JUnit Tests">
+      <MyState>
+        <option name="myModel" value="jetbrains.mps.asTest" />
+        <option name="myModule" value="collections_unittest" />
+        <option name="myTestCases">
+          <list>
+            <option value="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)%1883175908513185012" />
+            <option value="r:0d165b79-85c3-4fee-8efc-b69a37e1c2ee(orthogonalLayoutTest)%4422427343208739409" />
+          </list>
+        </option>
+        <option name="myTestMethods">
+          <list />
+        </option>
+        <option name="myRunType" value="MODULE" />
+      </MyState>
+      <myJavaRunParameters>
+        <MyState>
+          <option name="myJavaRunParameters">
+            <JavaRunParameters>
+              <option name="jrePath" value="/usr/lib/jvm/java-6-sun" />
+              <option name="programParameters" value="dew" />
+              <option name="useAlternativeJre" value="true" />
+              <option name="vmOptions" value="ssss" />
+              <option name="workingDirectory" value="dew" />
+            </JavaRunParameters>
+          </option>
+        </MyState>
+      </myJavaRunParameters>
+      <method />
+    </configuration>
+  </component>
+  <component name="ProjectVersion">
+    <option name="version" value="1.5" />
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>

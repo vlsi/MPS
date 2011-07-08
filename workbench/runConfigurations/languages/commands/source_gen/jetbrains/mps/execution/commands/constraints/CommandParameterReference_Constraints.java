@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommandParameterReference_Constraints extends BaseConstraintsDescriptor {
@@ -58,7 +58,7 @@ public class CommandParameterReference_Constraints extends BaseConstraintsDescri
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "parameterDeclaration", true);
+            return ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", false, false));
           }
 
           @Override
@@ -72,6 +72,6 @@ public class CommandParameterReference_Constraints extends BaseConstraintsDescri
   }
 
   public static boolean static_canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getParentNode()), "jetbrains.mps.execution.commands.structure.CommandDeclaration");
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", false, false) != null);
   }
 }

@@ -5,11 +5,9 @@ package jetbrains.mps.execution.commands.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
-import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.execution.common.structure.IGeneratedToClass;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Expression;
-import jetbrains.mps.baseLanguage.structure.BlockStatement;
+import jetbrains.mps.debug.apiLang.structure.DebuggerConfiguration;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.lang.core.structure.Attribute;
@@ -17,16 +15,16 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class CommandDeclaration extends BaseConcept implements INamedConcept, IClassifier, IMethodLike, IGeneratedToClass {
+public class CommandDeclaration extends BaseConcept implements INamedConcept, IClassifier, IGeneratedToClass {
   public static final String concept = "jetbrains.mps.execution.commands.structure.CommandDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String DEBUGGER = "debugger";
-  public static final String EXECUTE = "execute";
+  public static final String DEBUGGER_CONFIGURATION = "debuggerConfiguration";
+  public static final String DEBUGGER_PARAMETER = "debuggerParameter";
   public static final String METHOD = "method";
-  public static final String PARAMETER_DECLARATION = "parameterDeclaration";
+  public static final String EXECUTE_PART = "executePart";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public CommandDeclaration(SNode node) {
@@ -65,20 +63,20 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
     this.setProperty(CommandDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public Expression getDebugger() {
-    return (Expression) this.getChild(Expression.class, CommandDeclaration.DEBUGGER);
+  public DebuggerConfiguration getDebuggerConfiguration() {
+    return (DebuggerConfiguration) this.getChild(DebuggerConfiguration.class, CommandDeclaration.DEBUGGER_CONFIGURATION);
   }
 
-  public void setDebugger(Expression node) {
-    super.setChild(CommandDeclaration.DEBUGGER, node);
+  public void setDebuggerConfiguration(DebuggerConfiguration node) {
+    super.setChild(CommandDeclaration.DEBUGGER_CONFIGURATION, node);
   }
 
-  public BlockStatement getExecute() {
-    return (BlockStatement) this.getChild(BlockStatement.class, CommandDeclaration.EXECUTE);
+  public DebuggerSettingsCommandParameterDeclaration getDebuggerParameter() {
+    return (DebuggerSettingsCommandParameterDeclaration) this.getChild(DebuggerSettingsCommandParameterDeclaration.class, CommandDeclaration.DEBUGGER_PARAMETER);
   }
 
-  public void setExecute(BlockStatement node) {
-    super.setChild(CommandDeclaration.EXECUTE, node);
+  public void setDebuggerParameter(DebuggerSettingsCommandParameterDeclaration node) {
+    super.setChild(CommandDeclaration.DEBUGGER_PARAMETER, node);
   }
 
   public int getMethodsCount() {
@@ -101,24 +99,24 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
     this.insertChild(prev, CommandDeclaration.METHOD, node);
   }
 
-  public int getParameterDeclarationsCount() {
-    return this.getChildCount(CommandDeclaration.PARAMETER_DECLARATION);
+  public int getExecutePartsCount() {
+    return this.getChildCount(CommandDeclaration.EXECUTE_PART);
   }
 
-  public Iterator<CommandParameterDeclaration> parameterDeclarations() {
-    return this.children(CommandParameterDeclaration.class, CommandDeclaration.PARAMETER_DECLARATION);
+  public Iterator<ExecuteCommandPart> executeParts() {
+    return this.children(ExecuteCommandPart.class, CommandDeclaration.EXECUTE_PART);
   }
 
-  public List<CommandParameterDeclaration> getParameterDeclarations() {
-    return this.getChildren(CommandParameterDeclaration.class, CommandDeclaration.PARAMETER_DECLARATION);
+  public List<ExecuteCommandPart> getExecuteParts() {
+    return this.getChildren(ExecuteCommandPart.class, CommandDeclaration.EXECUTE_PART);
   }
 
-  public void addParameterDeclaration(CommandParameterDeclaration node) {
-    this.addChild(CommandDeclaration.PARAMETER_DECLARATION, node);
+  public void addExecutePart(ExecuteCommandPart node) {
+    this.addChild(CommandDeclaration.EXECUTE_PART, node);
   }
 
-  public void insertParameterDeclaration(CommandParameterDeclaration prev, CommandParameterDeclaration node) {
-    this.insertChild(prev, CommandDeclaration.PARAMETER_DECLARATION, node);
+  public void insertExecutePart(ExecuteCommandPart prev, ExecuteCommandPart node) {
+    this.insertChild(prev, CommandDeclaration.EXECUTE_PART, node);
   }
 
   public int getSmodelAttributesCount() {

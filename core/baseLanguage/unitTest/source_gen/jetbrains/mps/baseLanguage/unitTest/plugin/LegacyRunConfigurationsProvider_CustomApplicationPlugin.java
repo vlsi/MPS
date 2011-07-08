@@ -28,42 +28,6 @@ public class LegacyRunConfigurationsProvider_CustomApplicationPlugin extends Bas
     }
     // register foreign factories 
     // register creators 
-    ExtensionPoint<RuntimeConfigurationProducer> creatorsExtensionPoint = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
-    {
-      JUnitConfigFromClass configurationCreator = new JUnitConfigFromClass();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      JUnitConfigFromMethod configurationCreator = new JUnitConfigFromMethod();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      JUnitConfigFromModel configurationCreator = new JUnitConfigFromModel();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      JUnitConfigFromModule configurationCreator = new JUnitConfigFromModule();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      JUnitConfigFromProject configurationCreator = new JUnitConfigFromProject();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      JUnitConfigFromLanguageTestCases configurationCreator = new JUnitConfigFromLanguageTestCases();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
-    {
-      JUnitConfigFromLanguageTestMethods configurationCreator = new JUnitConfigFromLanguageTestMethods();
-      ListSequence.fromList(LegacyRunConfigurationsProvider_CustomApplicationPlugin.this.myConfigurationCreators).addElement(configurationCreator);
-      creatorsExtensionPoint.registerExtension(configurationCreator);
-    }
   }
 
   public void doDispose() {

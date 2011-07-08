@@ -12,6 +12,8 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.dataFlow.CommandBuilderExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.execution.commands.dataFlow.ProcessBuilderExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.execution.commands.dataFlow.ProcessBuilderPart_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.dataFlow.RedirectOutputExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.dataFlow.ReportErrorStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
   </dependency>
@@ -28,6 +30,19 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.commands.dataFlow.RedirectOutputExpression_DataFlow" file="RedirectOutputExpression_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.commands.dataFlow.ReportErrorStatement_DataFlow" file="ReportErrorStatement_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
 </dependenciesRoot>

@@ -50,6 +50,10 @@ import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Collections;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
+import java.util.Map;
+import jetbrains.mps.generator.GenerationCacheContainer;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import com.intellij.openapi.util.Disposer;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
@@ -245,7 +249,23 @@ public abstract class AbstractEvaluationModel {
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, progressWindow, messageHandler, GenerationOptions.getDefaults().saveTransientModels(IS_DEVELOPER_MODE).rebuildAll(false).reporting(false, false, false, 0).create());
+      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, progressWindow, messageHandler, GenerationOptions.getDefaults().incremental(new IncrementalGenerationStrategy() {
+        public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
+          return Collections.emptyMap();
+        }
+
+        public GenerationCacheContainer getContainer() {
+          return null;
+        }
+
+        public GenerationDependencies getDependencies(SModelDescriptor p0) {
+          return null;
+        }
+
+        public boolean isIncrementalEnabled() {
+          return false;
+        }
+      }).saveTransientModels(IS_DEVELOPER_MODE).rebuildAll(false).reporting(false, false, false, 0).create());
 
       Disposer.dispose(progressWindow);
 

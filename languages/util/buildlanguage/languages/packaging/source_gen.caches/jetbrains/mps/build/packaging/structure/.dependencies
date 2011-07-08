@@ -218,6 +218,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.structure.ILayoutComponent" file="ILayoutComponent.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.structure.IMacroHolder" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.structure.IMacroHolder" file="IMacroHolder.java">

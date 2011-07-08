@@ -215,6 +215,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Property_HasValue_Simple_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Property_RemoveOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Property_SetOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ReadConceptReferenceExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.RefConcept_Reference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Reference_GetLinkDeclarationOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Reference_GetResolveInfo_BehaviorDescriptor" />
@@ -1091,6 +1092,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.behavior.ReadConceptReferenceExpression_BehaviorDescriptor" file="ReadConceptReferenceExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.RefConcept_Reference_BehaviorDescriptor" file="RefConcept_Reference_BehaviorDescriptor.java">

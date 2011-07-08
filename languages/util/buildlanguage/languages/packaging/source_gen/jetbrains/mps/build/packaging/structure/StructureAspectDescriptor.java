@@ -56,7 +56,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.build.packaging.structure.ICondition", null, true, new String[]{}, new String[]{}, new String[]{});
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.packaging.structure.ILayoutComponent", null, true, new String[]{}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.packaging.structure.ILayoutComponent", null, true, new String[]{"jetbrains.mps.build.packaging.structure.IMacroHolder"}, new String[]{}, new String[]{});
       case 21:
         return new CompiledConceptDescriptor("jetbrains.mps.build.packaging.structure.IMacroHolder", null, true, new String[]{}, new String[]{}, new String[]{});
       case 22:

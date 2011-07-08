@@ -10,31 +10,37 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
-import jetbrains.mps.debug.api.IDebugger;
-import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunParameters;
+import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.CommonPaths;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.debug.api.IDebuggerSettings;
+import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debug.api.Debuggers;
 
 public class Java_Command {
   private File myWorkingDirectory = new File(System.getProperty("user.home"));
   private String myJrePath = Java_Command.getJdkHome();
   private String myProgramParameter;
   private String myVirtualMachineParameter;
-  private String myClassName;
   private List<String> myClassPath = ListSequence.fromList(new ArrayList<String>());
+  private String myDebuggerSettings;
 
   public Java_Command() {
   }
@@ -67,13 +73,6 @@ public class Java_Command {
     return this;
   }
 
-  public Java_Command setClassName(String className) {
-    if (className != null) {
-      myClassName = className;
-    }
-    return this;
-  }
-
   public Java_Command setClassPath(List<String> classPath) {
     if (classPath != null) {
       myClassPath = classPath;
@@ -81,14 +80,24 @@ public class Java_Command {
     return this;
   }
 
-  public ProcessHandler createProcess() throws ExecutionException {
+  public Java_Command setDebuggerSettings(String debuggerSettings) {
+    if (debuggerSettings != null) {
+      myDebuggerSettings = debuggerSettings;
+    }
+    return this;
+  }
+
+  public ProcessHandler createProcess(String className) throws ExecutionException {
     String java = Java_Command.getJavaCommand(myJrePath);
     String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return Java_Command.protect(it);
       }
     }), Java_Command.ps());
-    if (check_yvpt_a0c0a(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
+    if (StringUtils.isEmpty(className)) {
+      throw new ExecutionException("Classname is empty");
+    }
+    if (check_yvpt_a0d0a0(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
       File tmpFile = FileUtil.createTmpFile();
       // we want to be sure that file is deleted, even when process is not started 
       tmpFile.deleteOnExit();
@@ -97,17 +106,42 @@ public class Java_Command {
         writer.append(myProgramParameter);
         writer.flush();
         writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build(myWorkingDirectory);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(className).append(myProgramParameter).build(myWorkingDirectory);
     }
   }
 
+  public ProcessHandler createProcess(SNode node) throws ExecutionException {
+    return new Java_Command().setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setClassPath(Java_Command.getClasspath(node)).setDebuggerSettings(myDebuggerSettings).createProcess(Java_Command.getClassName(node));
+  }
+
+  public ProcessHandler createProcess(JavaRunParameters runParameters, SNode node) throws ExecutionException {
+    return new Java_Command().setJrePath(check_yvpt_a0a0a0c(runParameters)).setProgramParameter(check_yvpt_a2a0a0c(runParameters)).setVirtualMachineParameter(check_yvpt_a3a0a0c(runParameters)).setWorkingDirectory((check_yvpt_a0a4a0a0c(runParameters) == null ?
+      null :
+      new File(check_yvpt_a0a0e0a0a2(runParameters))
+    )).setDebuggerSettings(myDebuggerSettings).createProcess(node);
+  }
+
   public static IDebugger getDebugger() {
-    return Debuggers.getInstance().getDebuggerByName("Java");
+    return getDebuggerConfiguration().getDebugger();
+  }
+
+  public static boolean isUnitNode(SNode node) {
+    return StringUtils.isNotEmpty(Java_Command.getClassName(node));
+  }
+
+  private static String getClassName(final SNode node) {
+    final Wrappers._T<String> className = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        className.value = TraceInfoUtil.getUnitName(node);
+      }
+    });
+    return className.value;
   }
 
   private static int getMaxCommandLine() {
@@ -202,10 +236,58 @@ public class Java_Command {
     return result;
   }
 
-  private static int check_yvpt_a0c0a(String checkedDotOperand) {
+  public static IDebuggerConfiguration getDebuggerConfiguration() {
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return new LocalConnectionSettings(true);
+      }
+
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
+  }
+
+  private static int check_yvpt_a0d0a0(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }
     return 0;
+  }
+
+  private static String check_yvpt_a0a0a0c(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getAlternativeJre();
+    }
+    return null;
+  }
+
+  private static String check_yvpt_a2a0a0c(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.programParameters();
+    }
+    return null;
+  }
+
+  private static String check_yvpt_a3a0a0c(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.vmOptions();
+    }
+    return null;
+  }
+
+  private static String check_yvpt_a0a0e0a0a2(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.workingDirectory();
+    }
+    return null;
+  }
+
+  private static String check_yvpt_a0a4a0a0c(JavaRunParameters checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.workingDirectory();
+    }
+    return null;
   }
 }

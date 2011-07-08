@@ -35,7 +35,7 @@ public abstract class DebuggerRunProfileState implements RunProfileState {
       return;
     }
     myUpdated = true;
-    IDebuggerSettings debuggerSettings = createDebuggerSettings();
+    IDebuggerSettings debuggerSettings = getDebuggerConfiguration().createDebuggerSettings();
     if (debuggerSettings != null) {
       myDebuggerSettings = debuggerSettings;
     }
@@ -47,8 +47,6 @@ public abstract class DebuggerRunProfileState implements RunProfileState {
     return myDebuggerSettings;
   }
 
-  @Nullable
-  protected abstract IDebuggerSettings createDebuggerSettings();
-
-  public abstract IDebugger getDebugger();
+  @NotNull
+  public abstract IDebuggerConfiguration getDebuggerConfiguration();
 }

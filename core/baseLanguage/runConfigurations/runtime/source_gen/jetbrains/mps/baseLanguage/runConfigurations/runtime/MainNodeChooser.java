@@ -6,36 +6,27 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 
-public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
+public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   @NotNull
   private C myTargetConcept;
   @Nullable
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
-  private SNode myNode;
-  private final List<IJavaNodeChangeListener> myListeners = ListSequence.fromList(new ArrayList<IJavaNodeChangeListener>());
   private final GlobalFilteredScope myScope;
 
   public MainNodeChooser() {
@@ -57,135 +48,10 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
     myScope = new GlobalFilteredScope() {
       @Nullable
       @Override
-      protected IModule getRequiredModule() {
-        return module.value;
+      protected Iterable<IModule> getRequiredModules() {
+        return Sequence.<IModule>singleton(module.value);
       }
     };
-
-    this.init(new ActionListener() {
-      public void actionPerformed(ActionEvent p0) {
-
-        final FindUsagesManager findUsegesManager = FindUsagesManager.getInstance();
-        final FindUsagesManager.ProgressAdapter progressAdapter = new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator());
-
-        final Wrappers._T<List<SNode>> toChooseFrom = new Wrappers._T<List<SNode>>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            Set<SNode> instances = findUsegesManager.findInstances(MainNodeChooser.this.myTargetConcept, myScope, progressAdapter, false);
-            if (MainNodeChooser.this.myAcceptor == null) {
-              toChooseFrom.value = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).toListSequence();
-            } else {
-              toChooseFrom.value = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return MainNodeChooser.this.myAcceptor.invoke(it);
-                }
-              }).toListSequence();
-            }
-          }
-        });
-
-        SNode selectedNode = CommonChoosers.showDialogNodeChooser(MainNodeChooser.this, toChooseFrom.value);
-        MainNodeChooser.this.setNode(selectedNode);
-      }
-    });
-
-    addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        final String text = getText();
-        if (StringUtils.isEmpty(text)) {
-          setNode(null);
-          return;
-        }
-        int lastDot = text.lastIndexOf(".");
-        if (lastDot <= 0) {
-          setNode(null);
-          return;
-        }
-
-        final List<SModelDescriptor> descriptors = myScope.getModelDescriptors(text.substring(0, lastDot));
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SNode foundNode = null;
-            for (SModelDescriptor descriptor : ListSequence.fromList(descriptors)) {
-              SModel smodel = descriptor.getSModel();
-              Iterable<SNode> nodes = ListSequence.fromList(SModelOperations.getNodes(smodel, null)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  if (!(it.isInstanceOfConcept(MainNodeChooser.this.myTargetConcept))) {
-                    return false;
-                  }
-                  if (myAcceptor == null) {
-                    return getFqName(it).equals(text);
-                  } else {
-                    return myAcceptor.invoke(it) && getFqName(it).equals(text);
-                  }
-                }
-              });
-              if (!(Sequence.fromIterable(nodes).isEmpty())) {
-                foundNode = Sequence.fromIterable(nodes).first();
-                break;
-              }
-            }
-            setNode(foundNode);
-          }
-        });
-      }
-    });
-
-    // <node> 
-  }
-
-  public SNode getNode() {
-    return this.myNode;
-  }
-
-  public void setNode(final SNode node) {
-    if (this.myNode == node) {
-      return;
-    }
-    if (node == null) {
-      if (this.myNode == null) {
-        this.setText(null);
-        return;
-      } else {
-        myNode = null;
-      }
-    } else {
-      this.myNode = node;
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          MainNodeChooser.this.setText(getFqName(node));
-        }
-      });
-    }
-    this.fireNodeChanged();
-  }
-
-  public String getFqName(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
-    } else {
-      String longName = SNodeOperations.getModel(node).getLongName();
-      if (longName.equals("")) {
-        return node.getSNodeId().toString();
-      }
-      return longName + "." + node.getSNodeId().toString();
-    }
-  }
-
-  public void addNodeChangeListener(@NotNull IJavaNodeChangeListener listener) {
-    ListSequence.fromList(this.myListeners).addElement(listener);
-  }
-
-  public void removeNodeChangeListener(IJavaNodeChangeListener listener) {
-    ListSequence.fromList(this.myListeners).removeElement(listener);
-  }
-
-  private void fireNodeChanged() {
-    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<IJavaNodeChangeListener>() {
-      public void visit(IJavaNodeChangeListener it) {
-        it.nodeChanged(MainNodeChooser.this.myNode);
-      }
-    });
   }
 
   public C getTargetConcept() {
@@ -202,5 +68,37 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
 
   public void setAcceptor(_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     myAcceptor = acceptor;
+  }
+
+  protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, FindUsagesManager.ProgressAdapter progressAdapter) {
+    Set<SNode> instances = manager.findInstances(this.myTargetConcept, myScope, progressAdapter, false);
+    if (this.myAcceptor == null) {
+      return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
+    } else {
+      return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return MainNodeChooser.this.myAcceptor.invoke(it);
+        }
+      }).toListSequence();
+    }
+  }
+
+  protected List<SModelDescriptor> getModelDescriptors(String model) {
+    return myScope.getModelDescriptors(model);
+  }
+
+  protected Iterable<SNode> findNodes(SModel model, final String fqName) {
+    return ListSequence.fromList(SModelOperations.getNodes(model, null)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        if (!(it.isInstanceOfConcept(MainNodeChooser.this.myTargetConcept))) {
+          return false;
+        }
+        if (myAcceptor == null) {
+          return getFqName(it).equals(fqName);
+        } else {
+          return myAcceptor.invoke(it) && getFqName(it).equals(fqName);
+        }
+      }
+    });
   }
 }

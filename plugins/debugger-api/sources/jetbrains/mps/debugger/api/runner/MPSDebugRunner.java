@@ -53,7 +53,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
     IDebugger debugger;
     //todo get connection settings
     if (state instanceof DebuggerRunProfileState) {
-      debugger = ((DebuggerRunProfileState) state).getDebugger();
+      debugger = ((DebuggerRunProfileState) state).getDebuggerConfiguration().getDebugger();
     } else {
       throw new ExecutionException("Unknown Run Profile State");
     }

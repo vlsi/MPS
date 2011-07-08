@@ -4,6 +4,7 @@ package jetbrains.mps.samples.lambdaCalculus.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.execution.util.structure.IMainClass;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;
@@ -12,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Program extends BaseConcept implements INamedConcept {
+public class Program extends BaseConcept implements INamedConcept, IMainClass {
   public static final String concept = "jetbrains.mps.samples.lambdaCalculus.structure.Program";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

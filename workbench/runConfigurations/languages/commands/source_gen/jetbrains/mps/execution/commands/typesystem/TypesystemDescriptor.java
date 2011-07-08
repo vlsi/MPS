@@ -4,6 +4,7 @@ package jetbrains.mps.execution.commands.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
@@ -39,6 +40,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InferenceRule_Runtime inferenceRule = new typeof_RedirectOutputExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ReportErrorStatement_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new CommandProcessCanSurviveWithoutCommand_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new CommandProcessIsProcess_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
     }
     {
       SubtypingRule_Runtime subtypingRule = new processIsProcessHandler_SubtypingRule();

@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
@@ -22,9 +23,9 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
 
   public void applyRule(final SNode startProcessHandlerStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = startProcessHandlerStatement;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "946964771156870372", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "946964771156870375", true), (SNode) new typeof_StartProcessHandlerStatement_InferenceRule.QuotationClass_psezx7_a0a0a0().createNode(typeCheckingContext), false, true, _info_12389875345);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(startProcessHandlerStatement, "tool", true);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "1594211126127671995", 0, null);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "1594211126127671987", true), (SNode) new typeof_StartProcessHandlerStatement_InferenceRule.QuotationClass_psezx7_a0a0a0().createNode(typeCheckingContext), false, false, _info_12389875345);
     }
   }
 
@@ -57,14 +58,14 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.addReference(SReference.create("classifier", quotedNode1_5, SModelReference.fromString("r:fe8ea9ce-8e3b-4061-8b50-530dce307009(jetbrains.mps.execution.configurations.lib)"), SNodeId.fromString("1594211126127672004")));
           quotedNode_1.addChild("argument", quotedNode1_5);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.configurations.structure.ConsoleType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
           quotedNode_1.addChild("argument", quotedNode1_6);
         }
         result = quotedNode1_4;
@@ -82,14 +83,14 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.addReference(SReference.create("classifier", quotedNode1_5, SModelReference.fromString("r:fe8ea9ce-8e3b-4061-8b50-530dce307009(jetbrains.mps.execution.configurations.lib)"), SNodeId.fromString("1594211126127672004")));
           quotedNode_1.addChild("argument", quotedNode1_5);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.configurations.structure.ConsoleType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
           quotedNode_1.addChild("argument", quotedNode1_6);
         }
         result = quotedNode1_4;
