@@ -28,7 +28,7 @@ public class ShowGenerationIntentions_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(ShowGenerationIntentions_Action.class);
 
   public ShowGenerationIntentions_Action() {
-    super("Generate...", "", ICON);
+    super("Insert...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

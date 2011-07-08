@@ -54,7 +54,7 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3464435412756546224">
       <property name="name" nameId="tpck.1169194664001" value="ShowGenerationIntentions" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Generate..." />
+      <property name="caption" nameId="tp4k.1205250923097" value="Insert..." />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
     </node>
