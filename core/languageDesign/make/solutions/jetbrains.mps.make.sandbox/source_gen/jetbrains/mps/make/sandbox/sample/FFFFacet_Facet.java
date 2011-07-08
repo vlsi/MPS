@@ -8,6 +8,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -17,8 +18,10 @@ import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
-public class FFFFacet_Facet implements IFacet {
+public class FFFFacet_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("FFFFacet");
 
@@ -46,6 +49,10 @@ public class FFFFacet_Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new FFFFacet_Facet.TargetProperties();
   }
 
   public static class Target_QQQ implements ITarget {
@@ -295,6 +302,35 @@ public class FFFFacet_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("QQQ");
+        if (properties.hasProperties(name)) {
+          FFFFacet_Facet.Target_QQQ.Parameters props = properties.parameters(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
+          MapSequence.fromMap(store).put("FFFFacet.QQQ.text", String.valueOf(props.text()));
+        }
+      }
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+        {
+          ITarget.Name name = new ITarget.Name("QQQ");
+          if (MapSequence.fromMap(store).containsKey("FFFFacet.QQQ.QQQ")) {
+            FFFFacet_Facet.Target_QQQ.Parameters props = properties.parameters(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
+            String key = "FFFFacet.QQQ.QQQ";
+            props.text(String.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+        }
+      } catch (RuntimeException re) {
+      }
     }
   }
 }

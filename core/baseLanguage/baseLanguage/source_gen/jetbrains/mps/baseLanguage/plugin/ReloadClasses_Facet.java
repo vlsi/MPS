@@ -8,6 +8,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
@@ -22,8 +23,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.make.script.IConfig;
+import java.util.Map;
 
-public class ReloadClasses_Facet implements IFacet {
+public class ReloadClasses_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.baseLanguage.ReloadClasses");
 
@@ -49,6 +51,10 @@ public class ReloadClasses_Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new ReloadClasses_Facet.TargetProperties();
   }
 
   public static class Target_reloadClasses implements ITarget {
@@ -141,6 +147,20 @@ public class ReloadClasses_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+      } catch (RuntimeException re) {
+      }
     }
   }
 }

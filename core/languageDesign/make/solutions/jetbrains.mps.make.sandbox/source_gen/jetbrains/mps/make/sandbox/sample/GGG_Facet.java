@@ -7,8 +7,11 @@ import java.util.List;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
+import java.util.Map;
+import jetbrains.mps.make.script.IParametersPool;
 
-public class GGG_Facet implements IFacet {
+public class GGG_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("GGG");
 
@@ -33,5 +36,23 @@ public class GGG_Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new GGG_Facet.TargetProperties();
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+      } catch (RuntimeException re) {
+      }
+    }
   }
 }

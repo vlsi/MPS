@@ -8,6 +8,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.make.script.IJob;
@@ -42,8 +43,10 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
-public class Binaries_Facet implements IFacet {
+public class Binaries_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.plugin.Binaries");
 
@@ -69,6 +72,10 @@ public class Binaries_Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new Binaries_Facet.TargetProperties();
   }
 
   public static class Target_copyBinaries implements ITarget {
@@ -224,6 +231,35 @@ public class Binaries_Facet implements IFacet {
       @SuppressWarnings(value = "unchecked")
       public Binaries_Facet.Target_copyBinaries.Parameters assignFrom(Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> from) {
         return (Binaries_Facet.Target_copyBinaries.Parameters) super.assign(from);
+      }
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("copyBinaries");
+        if (properties.hasProperties(name)) {
+          Binaries_Facet.Target_copyBinaries.Parameters props = properties.parameters(name, Binaries_Facet.Target_copyBinaries.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.plugin.Binaries.copyBinaries.pathToFile", null);
+        }
+      }
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+        {
+          ITarget.Name name = new ITarget.Name("copyBinaries");
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.plugin.Binaries.copyBinaries.copyBinaries")) {
+            Binaries_Facet.Target_copyBinaries.Parameters props = properties.parameters(name, Binaries_Facet.Target_copyBinaries.Parameters.class);
+            String key = "jetbrains.mps.lang.plugin.Binaries.copyBinaries.copyBinaries";
+            props.pathToFile(null);
+          }
+        }
+      } catch (RuntimeException re) {
       }
     }
   }

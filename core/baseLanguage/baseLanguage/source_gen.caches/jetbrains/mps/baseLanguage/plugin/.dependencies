@@ -691,11 +691,13 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -715,6 +717,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables" />
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
@@ -739,8 +742,9 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.LegacyRunConfigurationsProvider_CustomApplicationPlugin" file="LegacyRunConfigurationsProvider_CustomApplicationPlugin.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
@@ -946,13 +950,17 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
@@ -964,8 +972,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ITResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.TResource" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" file="RenameVariable_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

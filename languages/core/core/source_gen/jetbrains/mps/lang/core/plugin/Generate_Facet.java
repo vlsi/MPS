@@ -8,6 +8,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -53,7 +54,7 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.generator.TransientModelsComponent;
 
-public class Generate_Facet implements IFacet {
+public class Generate_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.core.Generate");
 
@@ -83,6 +84,10 @@ public class Generate_Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new Generate_Facet.TargetProperties();
   }
 
   public static class Target_checkParameters implements ITarget {
@@ -674,6 +679,58 @@ public class Generate_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("checkParameters");
+        if (properties.hasProperties(name)) {
+          Generate_Facet.Target_checkParameters.Variables props = properties.parameters(name, Generate_Facet.Target_checkParameters.Variables.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.project", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.operationContext", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake", String.valueOf(props.cleanMake()));
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.pindGet", null);
+        }
+      }
+      {
+        ITarget.Name name = new ITarget.Name("configure");
+        if (properties.hasProperties(name)) {
+          Generate_Facet.Target_configure.Variables props = properties.parameters(name, Generate_Facet.Target_configure.Variables.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.saveTransient", String.valueOf(props.saveTransient()));
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.generationOptions", null);
+        }
+      }
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+        {
+          ITarget.Name name = new ITarget.Name("checkParameters");
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.checkParameters")) {
+            Generate_Facet.Target_checkParameters.Variables props = properties.parameters(name, Generate_Facet.Target_checkParameters.Variables.class);
+            String key = "jetbrains.mps.lang.core.Generate.checkParameters.checkParameters";
+            props.project(null);
+            props.operationContext(null);
+            props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+            props.pindGet(null);
+          }
+        }
+        {
+          ITarget.Name name = new ITarget.Name("configure");
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.configure")) {
+            Generate_Facet.Target_configure.Variables props = properties.parameters(name, Generate_Facet.Target_configure.Variables.class);
+            String key = "jetbrains.mps.lang.core.Generate.configure.configure";
+            props.saveTransient(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+            props.generationOptions(null);
+          }
+        }
+      } catch (RuntimeException re) {
+      }
     }
   }
 }

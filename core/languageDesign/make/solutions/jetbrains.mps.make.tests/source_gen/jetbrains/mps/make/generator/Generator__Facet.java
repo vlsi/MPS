@@ -8,6 +8,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -18,8 +19,10 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import junit.framework.Assert;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
-public class Generator__Facet implements IFacet {
+public class Generator__Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("Generator_");
 
@@ -46,6 +49,10 @@ public class Generator__Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new Generator__Facet.TargetProperties();
   }
 
   public static class Target_Configure implements ITarget {
@@ -226,6 +233,35 @@ public class Generator__Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("Configure");
+        if (properties.hasProperties(name)) {
+          Generator__Facet.Target_Configure.Variables props = properties.parameters(name, Generator__Facet.Target_Configure.Variables.class);
+          MapSequence.fromMap(store).put("Generator_.Configure.value", String.valueOf(props.value()));
+        }
+      }
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+        {
+          ITarget.Name name = new ITarget.Name("Configure");
+          if (MapSequence.fromMap(store).containsKey("Generator_.Configure.Configure")) {
+            Generator__Facet.Target_Configure.Variables props = properties.parameters(name, Generator__Facet.Target_Configure.Variables.class);
+            String key = "Generator_.Configure.Configure";
+            props.value(String.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+        }
+      } catch (RuntimeException re) {
+      }
     }
   }
 }

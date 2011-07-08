@@ -7,6 +7,19 @@
     </scopeInfo>
     <unitInfo nodeId="1077540970775387639" fileName="IResourceClusterizer.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.resources.IResourceClusterizer" />
   </root>
+  <root nodeId="1521318412423194894">
+    <nodeInfo nodeId="1521318412423194895" fileName="IPropertiesPersistence.java" startLine="8" startPosition="41" endLine="9" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IParametersPool;)V" />
+    <nodeInfo nodeId="1521318412423194901" fileName="IPropertiesPersistence.java" startLine="9" startPosition="80" endLine="10" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IParametersPool;)V" />
+    <scopeInfo nodeId="1521318412423194895" fileName="IPropertiesPersistence.java" startLine="8" startPosition="41" endLine="9" endPosition="80">
+      <varInfo nodeId="3823234540026607448" varName="store" />
+      <varInfo nodeId="3823234540026607452" varName="properties" />
+    </scopeInfo>
+    <scopeInfo nodeId="1521318412423194901" fileName="IPropertiesPersistence.java" startLine="9" startPosition="80" endLine="10" endPosition="81">
+      <varInfo nodeId="44444360532497735" varName="store" />
+      <varInfo nodeId="44444360532507206" varName="properties" />
+    </scopeInfo>
+    <unitInfo nodeId="1521318412423194894" fileName="IPropertiesPersistence.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.make.resources.IPropertiesPersistence" />
+  </root>
   <root nodeId="3353120829256410483">
     <nodeInfo nodeId="3353120829256410485" fileName="IPropertiesAccessor.java" startLine="7" startPosition="38" endLine="8" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="properties#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/make/script/IParametersPool;" />
     <nodeInfo nodeId="2191561637326275449" fileName="IPropertiesAccessor.java" startLine="8" startPosition="51" endLine="9" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="properties#()Ljetbrains/mps/make/script/IParametersPool;" />

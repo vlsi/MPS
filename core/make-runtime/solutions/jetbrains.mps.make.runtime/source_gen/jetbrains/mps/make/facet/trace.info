@@ -10,24 +10,54 @@
     <unitInfo nodeId="2192279360708028642" fileName="IFacetManifest.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.facet.IFacetManifest" />
   </root>
   <root nodeId="6168415856807657096">
-    <nodeInfo nodeId="6168415856807657109" fileName="IFacet.java" startLine="7" startPosition="25" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
-    <nodeInfo nodeId="6168415856807657113" fileName="IFacet.java" startLine="8" startPosition="31" endLine="9" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6168415856807657118" fileName="IFacet.java" startLine="9" startPosition="42" endLine="10" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6168415856807657123" fileName="IFacet.java" startLine="10" startPosition="42" endLine="11" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6168415856807657128" fileName="IFacet.java" startLine="11" startPosition="42" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="315679020132026568" fileName="IFacet.java" startLine="14" startPosition="29" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6168415856807657099" fileName="IFacet.java" startLine="13" startPosition="43" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Name#(Ljava/lang/String;)V" />
-    <scopeInfo nodeId="6168415856807657109" fileName="IFacet.java" startLine="7" startPosition="25" endLine="8" endPosition="31" />
-    <scopeInfo nodeId="6168415856807657113" fileName="IFacet.java" startLine="8" startPosition="31" endLine="9" endPosition="42" />
-    <scopeInfo nodeId="6168415856807657118" fileName="IFacet.java" startLine="9" startPosition="42" endLine="10" endPosition="42" />
-    <scopeInfo nodeId="6168415856807657123" fileName="IFacet.java" startLine="10" startPosition="42" endLine="11" endPosition="42" />
-    <scopeInfo nodeId="6168415856807657128" fileName="IFacet.java" startLine="11" startPosition="42" endLine="12" endPosition="37" />
-    <scopeInfo nodeId="6168415856807657102" fileName="IFacet.java" startLine="14" startPosition="29" endLine="15" endPosition="17" />
-    <scopeInfo nodeId="6168415856807657099" fileName="IFacet.java" startLine="13" startPosition="43" endLine="16" endPosition="5">
+    <nodeInfo nodeId="6168415856807657109" fileName="IFacet.java" startLine="8" startPosition="25" endLine="9" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
+    <nodeInfo nodeId="6168415856807657113" fileName="IFacet.java" startLine="9" startPosition="31" endLine="10" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6168415856807657118" fileName="IFacet.java" startLine="10" startPosition="42" endLine="11" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6168415856807657123" fileName="IFacet.java" startLine="11" startPosition="42" endLine="12" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6168415856807657128" fileName="IFacet.java" startLine="12" startPosition="42" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1521318412423194911" fileName="IFacet.java" startLine="13" startPosition="37" endLine="14" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
+    <nodeInfo nodeId="315679020132026568" fileName="IFacet.java" startLine="16" startPosition="29" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1521318412423199214" fileName="IFacet.java" startLine="25" startPosition="40" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1521318412423199216" fileName="IFacet.java" startLine="29" startPosition="45" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1521318412423199218" fileName="IFacet.java" startLine="33" startPosition="45" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1521318412423199220" fileName="IFacet.java" startLine="37" startPosition="45" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1521318412423199211" fileName="IFacet.java" startLine="41" startPosition="34" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1521318412423300477" fileName="IFacet.java" startLine="45" startPosition="59" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1521318412423199180" fileName="IFacet.java" startLine="21" startPosition="46" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" />
+    <nodeInfo nodeId="6168415856807657099" fileName="IFacet.java" startLine="15" startPosition="43" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Name#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1521318412423199187" fileName="IFacet.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1521318412423199192" fileName="IFacet.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1521318412423199197" fileName="IFacet.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1521318412423199202" fileName="IFacet.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1521318412423199207" fileName="IFacet.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
+    <nodeInfo nodeId="1521318412423300473" fileName="IFacet.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
+    <scopeInfo nodeId="1521318412423199183" fileName="IFacet.java" startLine="22" startPosition="19" endLine="22" endPosition="19" />
+    <scopeInfo nodeId="6168415856807657109" fileName="IFacet.java" startLine="8" startPosition="25" endLine="9" endPosition="31" />
+    <scopeInfo nodeId="6168415856807657113" fileName="IFacet.java" startLine="9" startPosition="31" endLine="10" endPosition="42" />
+    <scopeInfo nodeId="6168415856807657118" fileName="IFacet.java" startLine="10" startPosition="42" endLine="11" endPosition="42" />
+    <scopeInfo nodeId="6168415856807657123" fileName="IFacet.java" startLine="11" startPosition="42" endLine="12" endPosition="42" />
+    <scopeInfo nodeId="6168415856807657128" fileName="IFacet.java" startLine="12" startPosition="42" endLine="13" endPosition="37" />
+    <scopeInfo nodeId="1521318412423194911" fileName="IFacet.java" startLine="13" startPosition="37" endLine="14" endPosition="56" />
+    <scopeInfo nodeId="6168415856807657102" fileName="IFacet.java" startLine="16" startPosition="29" endLine="17" endPosition="17" />
+    <scopeInfo nodeId="1521318412423199191" fileName="IFacet.java" startLine="25" startPosition="40" endLine="26" endPosition="18" />
+    <scopeInfo nodeId="1521318412423199196" fileName="IFacet.java" startLine="29" startPosition="45" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="1521318412423199201" fileName="IFacet.java" startLine="33" startPosition="45" endLine="34" endPosition="18" />
+    <scopeInfo nodeId="1521318412423199206" fileName="IFacet.java" startLine="37" startPosition="45" endLine="38" endPosition="18" />
+    <scopeInfo nodeId="1521318412423199210" fileName="IFacet.java" startLine="41" startPosition="34" endLine="42" endPosition="18" />
+    <scopeInfo nodeId="1521318412423300476" fileName="IFacet.java" startLine="45" startPosition="59" endLine="46" endPosition="18" />
+    <scopeInfo nodeId="1521318412423199180" fileName="IFacet.java" startLine="21" startPosition="46" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="6168415856807657099" fileName="IFacet.java" startLine="15" startPosition="43" endLine="18" endPosition="5">
       <varInfo nodeId="6168415856807657105" varName="fqn" />
     </scopeInfo>
-    <unitInfo nodeId="6168415856807657097" fileName="IFacet.java" startLine="13" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet$Name" />
-    <unitInfo nodeId="6168415856807657096" fileName="IFacet.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet" />
+    <scopeInfo nodeId="1521318412423199187" fileName="IFacet.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1521318412423199192" fileName="IFacet.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1521318412423199197" fileName="IFacet.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1521318412423199202" fileName="IFacet.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1521318412423199207" fileName="IFacet.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1521318412423300473" fileName="IFacet.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="6168415856807657097" fileName="IFacet.java" startLine="15" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet$Name" />
+    <unitInfo nodeId="1521318412423199178" fileName="IFacet.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet$Stub" />
+    <unitInfo nodeId="6168415856807657096" fileName="IFacet.java" startLine="8" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.facet.IFacet" />
   </root>
   <root nodeId="6168415856807657134">
     <nodeInfo nodeId="6168415856807657147" fileName="ITarget.java" startLine="10" startPosition="26" endLine="11" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />

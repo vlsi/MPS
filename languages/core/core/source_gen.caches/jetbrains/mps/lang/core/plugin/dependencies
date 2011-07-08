@@ -205,6 +205,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -233,6 +234,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.SaveTransient_Option" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.delta.IInternalDelta" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeGenerationStrategy" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
@@ -257,8 +259,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.LanguageChecker" file="LanguageChecker.java">
     <classNode dependClassName="java.lang.Runnable" />
@@ -349,8 +352,11 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -359,6 +365,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
     <classNode dependClassName="jetbrains.mps.make.delta.IInternalDelta" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
@@ -368,8 +375,9 @@
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.IDeltaResource" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.RefScopeChecker" file="RefScopeChecker.java">
     <classNode dependClassName="java.lang.String" />
@@ -460,6 +468,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -487,6 +496,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.Generate_Facet" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -511,8 +521,9 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
 </dependenciesRoot>
 

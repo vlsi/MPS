@@ -17,6 +17,7 @@
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="z5g5" modelUID="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="8351679702044320280">
       <property name="name" nameId="tpck.1169194664001" value="Generate" />
@@ -97,6 +98,14 @@
                   <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="3344436107830276758">
                     <link role="component" roleId="cx9y.1239576542472" targetNodeId="7320828025189358925" resolveInfo="foo" />
                   </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2380149729653742074">
+              <node role="expression" roleId="tpee.1068580123156" type="vvvw.LocalParametersComponentExpression" typeId="vvvw.7320828025189375155" id="2380149729653742075">
+                <node role="operand" roleId="tpee.1197027771414" type="vvvw.LocalParametersExpression" typeId="vvvw.7320828025189375154" id="2380149729653742076" />
+                <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="2380149729653742078">
+                  <link role="component" roleId="cx9y.1239576542472" targetNodeId="2380149729653716972" resolveInfo="FooFoo" />
                 </node>
               </node>
             </node>
@@ -195,6 +204,27 @@
           <property name="final" nameId="cx9y.1240400839614" value="false" />
           <property name="name" nameId="tpck.1169194664001" value="baz" />
           <node role="type" roleId="cx9y.1239462974287" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7320828025189472058" />
+        </node>
+        <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="2380149729653716972">
+          <property name="final" nameId="cx9y.1240400839614" value="false" />
+          <property name="name" nameId="tpck.1169194664001" value="FooFoo" />
+          <node role="type" roleId="cx9y.1239462974287" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2380149729653716974">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+          </node>
+        </node>
+        <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="2380149729653716975">
+          <property name="final" nameId="cx9y.1240400839614" value="false" />
+          <property name="name" nameId="tpck.1169194664001" value="BarBar" />
+          <node role="type" roleId="cx9y.1239462974287" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2380149729653716977">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          </node>
+        </node>
+        <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="2380149729653716978">
+          <property name="final" nameId="cx9y.1240400839614" value="false" />
+          <property name="name" nameId="tpck.1169194664001" value="BazBaz" />
+          <node role="type" roleId="cx9y.1239462974287" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2380149729653716980">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+          </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7320828025189358924" />
       </node>

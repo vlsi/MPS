@@ -8,6 +8,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -18,8 +19,10 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
-public class GenerateSpecial_Facet implements IFacet {
+public class GenerateSpecial_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("GenerateSpecial");
 
@@ -47,6 +50,10 @@ public class GenerateSpecial_Facet implements IFacet {
     return this.name;
   }
 
+  public IPropertiesPersistence propertiesPersistence() {
+    return new GenerateSpecial_Facet.TargetProperties();
+  }
+
   public static class Target_GenerateSpecialTarget implements ITarget {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
@@ -63,6 +70,7 @@ public class GenerateSpecial_Facet implements IFacet {
           switch (0) {
             case 0:
               pa.properties().parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).foo("asdasdsd");
+              pa.properties().parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).FooFoo();
               return new IResult.SUCCESS(_output_i03q2a_a0a);
             default:
               return new IResult.SUCCESS(_output_i03q2a_a0a);
@@ -139,18 +147,18 @@ public class GenerateSpecial_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._3) t).assign((Tuples._3) copyFrom);
+        ((Tuples._6) t).assign((Tuples._6) copyFrom);
       }
       return t;
     }
 
-    public static class Variables extends MultiTuple._3<String, Integer, Boolean> {
+    public static class Variables extends MultiTuple._6<String, Integer, Boolean, String, Integer, Boolean> {
       public Variables() {
         super();
       }
 
-      public Variables(String foo, Integer bar, Boolean baz) {
-        super(foo, bar, baz);
+      public Variables(String foo, Integer bar, Boolean baz, String FooFoo, Integer BarBar, Boolean BazBaz) {
+        super(foo, bar, baz, FooFoo, BarBar, BazBaz);
       }
 
       public String foo(String value) {
@@ -165,6 +173,18 @@ public class GenerateSpecial_Facet implements IFacet {
         return super._2(value);
       }
 
+      public String FooFoo(String value) {
+        return super._3(value);
+      }
+
+      public Integer BarBar(Integer value) {
+        return super._4(value);
+      }
+
+      public Boolean BazBaz(Boolean value) {
+        return super._5(value);
+      }
+
       public String foo() {
         return super._0();
       }
@@ -177,9 +197,60 @@ public class GenerateSpecial_Facet implements IFacet {
         return super._2();
       }
 
+      public String FooFoo() {
+        return super._3();
+      }
+
+      public Integer BarBar() {
+        return super._4();
+      }
+
+      public Boolean BazBaz() {
+        return super._5();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables assignFrom(Tuples._3<String, Integer, Boolean> from) {
+      public GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables assignFrom(Tuples._6<String, Integer, Boolean, String, Integer, Boolean> from) {
         return (GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables) super.assign(from);
+      }
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("GenerateSpecialTarget");
+        if (properties.hasProperties(name)) {
+          GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.parameters(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
+          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.foo", String.valueOf(props.foo()));
+          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.bar", String.valueOf((int) props.bar()));
+          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.baz", String.valueOf((boolean) props.baz()));
+          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.FooFoo", String.valueOf(props.FooFoo()));
+          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.BarBar", String.valueOf(props.BarBar()));
+          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.BazBaz", String.valueOf(props.BazBaz()));
+        }
+      }
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+        {
+          ITarget.Name name = new ITarget.Name("GenerateSpecialTarget");
+          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.GenerateSpecialTarget")) {
+            GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.parameters(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
+            String key = "GenerateSpecial.GenerateSpecialTarget.GenerateSpecialTarget";
+            props.foo(String.valueOf(MapSequence.fromMap(store).get(key)));
+            props.bar(Integer.valueOf(MapSequence.fromMap(store).get(key)));
+            props.baz(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+            props.FooFoo(String.valueOf(MapSequence.fromMap(store).get(key)));
+            props.BarBar(Integer.valueOf(MapSequence.fromMap(store).get(key)));
+            props.BazBaz(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+        }
+      } catch (RuntimeException re) {
       }
     }
   }

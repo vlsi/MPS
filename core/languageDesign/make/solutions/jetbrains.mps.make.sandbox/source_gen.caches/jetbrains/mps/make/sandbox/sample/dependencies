@@ -10,14 +10,18 @@
   <dependency className="jetbrains.mps.make.sandbox.sample.FFFFacet_Facet" file="FFFFacet_Facet.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet" />
@@ -27,8 +31,9 @@
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
@@ -52,11 +57,17 @@
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.GGG_Facet" file="GGG_Facet.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet" file="GenerateSpecial_Facet.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -64,14 +75,18 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.sandbox.sample.DOH_Query" />
@@ -82,17 +97,22 @@
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._6" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.Generate_Facet" file="Generate_Facet.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
@@ -101,8 +121,9 @@
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ICResouce" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.make.sandbox.sample.outlook1_outlook" file="outlook1_outlook.java">
     <classNode dependClassName="java.lang.Iterable" />

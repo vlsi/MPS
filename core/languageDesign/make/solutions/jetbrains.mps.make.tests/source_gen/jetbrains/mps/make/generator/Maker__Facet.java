@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
@@ -15,8 +16,9 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Map;
 
-public class Maker__Facet implements IFacet {
+public class Maker__Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("Maker_");
 
@@ -42,6 +44,10 @@ public class Maker__Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new Maker__Facet.TargetProperties();
   }
 
   public static class Target_Make implements ITarget {
@@ -113,6 +119,20 @@ public class Maker__Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+      } catch (RuntimeException re) {
+      }
     }
   }
 }

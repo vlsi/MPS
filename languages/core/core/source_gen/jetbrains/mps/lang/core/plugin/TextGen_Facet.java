@@ -8,6 +8,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.IGResource;
 import jetbrains.mps.make.script.IJob;
@@ -52,7 +53,7 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
 
-public class TextGen_Facet implements IFacet {
+public class TextGen_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.core.TextGen");
 
@@ -79,6 +80,10 @@ public class TextGen_Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new TextGen_Facet.TargetProperties();
   }
 
   public static class Target_textGen implements ITarget {
@@ -389,6 +394,39 @@ public class TextGen_Facet implements IFacet {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("textGen");
+        if (properties.hasProperties(name)) {
+          TextGen_Facet.Target_textGen.Parameters props = properties.parameters(name, TextGen_Facet.Target_textGen.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.pathToFile", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen", String.valueOf(props.failIfNoTextgen()));
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo", String.valueOf(props.generateDebugInfo()));
+        }
+      }
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+        {
+          ITarget.Name name = new ITarget.Name("textGen");
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.textGen")) {
+            TextGen_Facet.Target_textGen.Parameters props = properties.parameters(name, TextGen_Facet.Target_textGen.Parameters.class);
+            String key = "jetbrains.mps.lang.core.TextGen.textGen.textGen";
+            props.pathToFile(null);
+            props.failIfNoTextgen(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+            props.generateDebugInfo(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+        }
+      } catch (RuntimeException re) {
+      }
     }
   }
 }

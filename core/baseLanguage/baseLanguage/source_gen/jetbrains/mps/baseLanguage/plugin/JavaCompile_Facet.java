@@ -8,6 +8,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
@@ -49,8 +50,9 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.resources.CResource;
 import jetbrains.mps.compiler.IClassesData;
+import java.util.Map;
 
-public class JavaCompile_Facet implements IFacet {
+public class JavaCompile_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile");
 
@@ -78,6 +80,10 @@ public class JavaCompile_Facet implements IFacet {
 
   public IFacet.Name getName() {
     return this.name;
+  }
+
+  public IPropertiesPersistence propertiesPersistence() {
+    return new JavaCompile_Facet.TargetProperties();
   }
 
   public static class Target_compile implements ITarget {
@@ -539,6 +545,67 @@ public class JavaCompile_Facet implements IFacet {
       @SuppressWarnings(value = "unchecked")
       public JavaCompile_Facet.Target_compileToMemory.Parameters assignFrom(Tuples._2<Iterable<IClassPathItem>, Boolean> from) {
         return (JavaCompile_Facet.Target_compileToMemory.Parameters) super.assign(from);
+      }
+    }
+  }
+
+  public static class TargetProperties implements IPropertiesPersistence {
+    public TargetProperties() {
+    }
+
+    public void storeValues(Map<String, String> store, IParametersPool properties) {
+      {
+        ITarget.Name name = new ITarget.Name("compile");
+        if (properties.hasProperties(name)) {
+          JavaCompile_Facet.Target_compile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compile.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything", String.valueOf(props.compiledAnything()));
+        }
+      }
+      {
+        ITarget.Name name = new ITarget.Name("auxCompile");
+        if (properties.hasProperties(name)) {
+          JavaCompile_Facet.Target_auxCompile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile", String.valueOf(props.skipAuxCompile()));
+        }
+      }
+      {
+        ITarget.Name name = new ITarget.Name("compileToMemory");
+        if (properties.hasProperties(name)) {
+          JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.classPath", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors", String.valueOf((boolean) props.errors()));
+        }
+      }
+    }
+
+    public void loadValues(Map<String, String> store, IParametersPool properties) {
+      try {
+        {
+          ITarget.Name name = new ITarget.Name("compile");
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compile.compile")) {
+            JavaCompile_Facet.Target_compile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compile.Parameters.class);
+            String key = "jetbrains.mps.baseLanguage.JavaCompile.compile.compile";
+            props.compiledAnything(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+        }
+        {
+          ITarget.Name name = new ITarget.Name("auxCompile");
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.auxCompile")) {
+            JavaCompile_Facet.Target_auxCompile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
+            String key = "jetbrains.mps.baseLanguage.JavaCompile.auxCompile.auxCompile";
+            props.skipAuxCompile(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+        }
+        {
+          ITarget.Name name = new ITarget.Name("compileToMemory");
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.compileToMemory")) {
+            JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
+            String key = "jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.compileToMemory";
+            props.classPath(null);
+            props.errors(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+        }
+      } catch (RuntimeException re) {
       }
     }
   }
