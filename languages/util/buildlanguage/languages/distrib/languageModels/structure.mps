@@ -29,7 +29,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1230059161514">
       <property name="name" nameId="tpck.1169194664001" value="SimplePath" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classpath" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1230059161512" resolveInfo="ClassPathItem" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1230207207601">
       <property name="name" nameId="tpck.1169194664001" value="SystemSpecificConfig" />
@@ -208,7 +208,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="classPathItem" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1230059161512" resolveInfo="ClassPathItem" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1230059161512" resolveInfo="AbstractPath" />
     </node>
   </root>
   <root id="1230059161512">

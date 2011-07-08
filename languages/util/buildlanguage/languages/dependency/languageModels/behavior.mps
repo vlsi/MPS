@@ -9,7 +9,7 @@
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1218717217275">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpsj.1216745453338" resolveInfo="Description" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpsj.1216745453338" resolveInfo="ProjectDescription" />
     </node>
   </roots>
   <root id="1218717217275">

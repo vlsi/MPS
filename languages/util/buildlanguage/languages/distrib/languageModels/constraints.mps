@@ -24,7 +24,7 @@
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1234515214530">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="systemSpecific" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="60oz.1234515156408" resolveInfo="VariableReference" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="60oz.1234515156408" resolveInfo="ExternalVariableReference" />
     </node>
   </roots>
   <root id="1230207820573">

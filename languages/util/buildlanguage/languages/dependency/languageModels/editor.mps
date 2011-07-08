@@ -13,16 +13,16 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1216895516234">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpsj.1216745453338" resolveInfo="Description" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpsj.1216745453338" resolveInfo="ProjectDescription" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1216895627284">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpsj.1216745525843" resolveInfo="Module" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpsj.1216745525843" resolveInfo="ModuleDescription" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1216904153879">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpsj.1216904128547" resolveInfo="Cycle" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1216907478941">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpsj.1216907456863" resolveInfo="Path" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpsj.1216907456863" resolveInfo="PathHolder" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1216914816789">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpsj.1216913230927" resolveInfo="CycleReference" />

@@ -24,7 +24,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1230059173980">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classpath" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="60oz.1230059161514" resolveInfo="SimpleClassPathItem" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="60oz.1230059161514" resolveInfo="SimplePath" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1230208353028">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="systemSpecific.windows" />
@@ -54,7 +54,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1234515192490">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="systemSpecific" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="60oz.1234515156408" resolveInfo="VariableReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="60oz.1234515156408" resolveInfo="ExternalVariableReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1234544168360">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="systemSpecific" />
@@ -322,7 +322,7 @@
                 <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1230217833302" resolveInfo="keyword" />
               </node>
               <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1230058190549">
-                <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="60oz.1230058022109" resolveInfo="StartupClass" />
+                <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="60oz.1230058022109" resolveInfo="startupClass" />
               </node>
               <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1230058174618">
                 <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -381,7 +381,7 @@
                 <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1230217833302" resolveInfo="keyword" />
               </node>
               <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1231691747696">
-                <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="60oz.1231691563959" resolveInfo="useVMOptions" />
+                <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="60oz.1231691563959" resolveInfo="useVMOptionsFile" />
               </node>
               <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1231768819579">
                 <property name="vertical" nameId="tpc2.1073389446425" value="false" />

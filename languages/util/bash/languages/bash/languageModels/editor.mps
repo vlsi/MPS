@@ -15,7 +15,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3321051580269922208">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3321051580269917239" resolveInfo="CommandList" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3321051580269917239" resolveInfo="InputLines" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3321051580270259006">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3321051580270055527" resolveInfo="SimpleCommand" />
@@ -24,10 +24,10 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3321051580269925631" resolveInfo="ShellScript" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3321051580270761365">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3321051580269894529" resolveInfo="Command" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3321051580269894529" resolveInfo="CommandList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3321051580272063543">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3321051580272063536" resolveInfo="ParamList" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3321051580272063536" resolveInfo="WordList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7633559109504426814">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="loop" />
@@ -39,10 +39,10 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7633559109506274373">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="loop" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7633559109506044887" resolveInfo="ForIterationCommand" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7633559109506044887" resolveInfo="ForeachCommand" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7633559109506501548">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7633559109506263695" resolveInfo="ForIterVariable" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7633559109506263695" resolveInfo="VariableNameDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7633559109507211199">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="loop" />
@@ -85,18 +85,18 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467437184651">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467437060443" resolveInfo="BinaryArithmeticOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467437060443" resolveInfo="BinaryArithmeticExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467437635797">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467437635795" resolveInfo="ArithmeticCommand" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467438007074">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467438007070" resolveInfo="PostUnaryExpression" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467438007070" resolveInfo="PostVariableExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467438007087">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467438007071" resolveInfo="PreUnaryExpression" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467438007071" resolveInfo="PreVariableExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467439274732">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="number" />
@@ -104,7 +104,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467439346941">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="number" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467439274735" resolveInfo="HexadecimalIntegerLiteral" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467439274735" resolveInfo="HexIntegerLiteral" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467439473298">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="number" />
@@ -123,25 +123,25 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467440224562" resolveInfo="BaseAssingmentExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467441293218">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467441205664" resolveInfo="VariableAssingment" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467441205664" resolveInfo="BaseVariableAssingment" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467442263101">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467442053841" resolveInfo="VariableReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467442053841" resolveInfo="BasicParameterExpansion" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3999172467442724023">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467442724020" resolveInfo="ExpressionExpansion" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3999172467442724020" resolveInfo="ArithmeticExpansion" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8353259571483751825">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8353259571483751823" resolveInfo="TildeExpansion" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8353259571485353283">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8353259571485353280" resolveInfo="JustWord" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8353259571485353280" resolveInfo="SimpleWord" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8353259571485385866">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8353259571483884165" resolveInfo="ExpandedWordConcept" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8353259571483884165" resolveInfo="GeneralizedWord" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4857814468235197591">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468235197585" resolveInfo="BaseCommandExpansion" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468235197585" resolveInfo="BaseCommandSubstitution" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4857814468235580308">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468235439117" resolveInfo="RedirectedCommand" />
@@ -194,23 +194,23 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4857814468241318044">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468241254994" resolveInfo="BuiltinCommandDeclaration" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468241254994" resolveInfo="ExternalCommandDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4857814468241607044">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468241254997" resolveInfo="BuiltinCommand" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468241254997" resolveInfo="ExternalCommandCall" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4857814468242547376">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468242547367" resolveInfo="FlagsAttribute" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468242547367" resolveInfo="OptionSet" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4857814468242904306">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468242547369" resolveInfo="FlagAttribute" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468242547369" resolveInfo="Option" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4857814468243514706">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468243308834" resolveInfo="FlagWithArgument" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.4857814468243308834" resolveInfo="OptionWithParam" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4857814468243911291">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
@@ -236,11 +236,11 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7803330421058150859">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7803330421058150857" resolveInfo="ParameterReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7803330421058150857" resolveInfo="ArgumentReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7803330421059093008">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7803330421058939228" resolveInfo="ArgumentOptionReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7803330421058939228" resolveInfo="OptionWithParamReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3147078024744480397">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="external" />
@@ -254,7 +254,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3147078024747082354" resolveInfo="ConditionalCommand" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3147078024751877536">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3147078024751877531" resolveInfo="WordDoubleQuote" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3147078024751877531" resolveInfo="QuotedWord" />
     </node>
     <node type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="3147078024755445596">
       <property name="name" nameId="tpck.1169194664001" value="BashLanguageStyle" />
@@ -270,27 +270,27 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8457058248751696148">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="comment" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8457058248751600624" resolveInfo="TextComment" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8457058248751600624" resolveInfo="CommentedText" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8457058248751696158">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="comment" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8457058248751696156" resolveInfo="CommandComment" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8457058248751696156" resolveInfo="CommentedCommandList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8474643070102636480">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="commandlist" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8474643070102636479" resolveInfo="BaseCommandLine" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8474643070102636479" resolveInfo="HeadCommandList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8474643070102636525">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="commandlist" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8474643070102636489" resolveInfo="PipelineFollowing" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8474643070102636489" resolveInfo="FollowingCommandList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8474643070110067655">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="comment" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8474643070110067628" resolveInfo="CommentFollowingCommandList" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8474643070110067628" resolveInfo="CommentedFollowingCommandList" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8474643070111564671">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="pipeline" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8474643070110245381" resolveInfo="BasePipeline" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.8474643070110245381" resolveInfo="HeadPipeline" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8474643070112197221">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="pipeline" />
@@ -300,7 +300,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.7633559109504426816" resolveInfo="AbstractCommand" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3905757829901343111">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3905757829901343108" resolveInfo="CommandKeeper" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="u9e0.3905757829901343108" resolveInfo="Command" />
     </node>
     <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="4515773109208483480">
       <property name="name" nameId="tpck.1169194664001" value="CommentSymbol" />
@@ -2156,7 +2156,7 @@
   <root id="8474643070102636525">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8474643070102636529">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="8474643070102636532">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="u9e0.8474643070102636523" resolveInfo="pipe" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="u9e0.8474643070102636523" resolveInfo="operator" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="3905757829909578551">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
