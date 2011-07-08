@@ -48,6 +48,10 @@
       <property name="extension" nameId="tpkv.1234428502488" value="xml" />
       <property name="name" nameId="tpck.1169194664001" value="old.java.configuration" />
     </node>
+    <node type="tpkv.Document" typeId="tpkv.1119976146404" id="2356551895168358975">
+      <property name="extension" nameId="tpkv.1234428502488" value="xml" />
+      <property name="name" nameId="tpck.1169194664001" value="old.junit.configuration" />
+    </node>
   </roots>
   <root id="7141662564075383485">
     <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="6496002361768451915">
@@ -61,6 +65,23 @@
               <link role="member" roleId="tp4f.1205756909548" targetNodeId="5440470834283012038" resolveInfo="testConfigurationMigrated" />
               <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5440470834283012113">
                 <property name="value" nameId="tpee.1070475926801" value="old.java.configuration.xml" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="2356551895168359035">
+      <property name="name" nameId="tpck.1169194664001" value="junit" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2356551895168359036" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2356551895168359037">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2356551895168359038">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2356551895168359039">
+            <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2356551895168359040" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="2356551895168359041">
+              <link role="member" roleId="tp4f.1205756909548" targetNodeId="5440470834283012038" resolveInfo="testConfigurationMigrated" />
+              <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2356551895168359042">
+                <property name="value" nameId="tpee.1070475926801" value="old.junit.configuration.xml" />
               </node>
             </node>
           </node>
@@ -544,7 +565,7 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7141662564075412233">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7141662564075383750" resolveInfo="readAndTransform" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7141662564075412234">
-                <property name="value" nameId="tpee.1070475926801" value="old.java.configuration.xml" />
+                <property name="value" nameId="tpee.1070475926801" value="old.junit.configuration.xml" />
               </node>
             </node>
           </node>
@@ -756,7 +777,7 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7141662564075383811">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetResourceAsStream(java%dlang%dString)%cjava%dio%dInputStream" resolveInfo="getResourceAsStream" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7141662564075383812">
-                              <property name="value" nameId="tpee.1070475926801" value="../java.transform.xml" />
+                              <property name="value" nameId="tpee.1070475926801" value="../junit.transform.xml" />
                             </node>
                           </node>
                         </node>
@@ -855,120 +876,334 @@
     </node>
   </root>
   <root id="7141662564075383666">
-    <node role="rootElement" roleId="tpkv.1119976595358" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383667">
+    <node role="rootElement" roleId="tpkv.1119976595358" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358944">
       <property name="name" nameId="tpck.1169194664001" value="root" />
-      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383668">
+      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358945">
         <property name="name" nameId="tpck.1169194664001" value="configuration" />
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383669">
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358946">
           <property name="name" nameId="tpck.1169194664001" value="default" />
           <property name="value" nameId="tpkv.1107866755246" value="false" />
         </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383670">
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358947">
           <property name="name" nameId="tpck.1169194664001" value="name" />
           <property name="value" nameId="tpkv.1107866755246" value="Test old" />
         </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383671">
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358948">
           <property name="name" nameId="tpck.1169194664001" value="type" />
           <property name="value" nameId="tpkv.1107866755246" value="JavaApplication" />
         </node>
-        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383672">
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358949">
           <property name="name" nameId="tpck.1169194664001" value="factoryName" />
           <property name="value" nameId="tpkv.1107866755246" value="Java Application" />
         </node>
-        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383673">
+        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358950">
           <property name="name" nameId="tpck.1169194664001" value="MyState" />
-          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383674">
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358951">
             <property name="name" nameId="tpck.1169194664001" value="option" />
-            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383675">
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358952">
               <property name="name" nameId="tpck.1169194664001" value="name" />
               <property name="value" nameId="tpkv.1107866755246" value="myJavaRunParameters" />
             </node>
-            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383676">
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358953">
               <property name="name" nameId="tpck.1169194664001" value="ConfigRunParameters" />
-              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383677">
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358954">
                 <property name="name" nameId="tpck.1169194664001" value="option" />
                 <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383678">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358955">
                   <property name="name" nameId="tpck.1169194664001" value="name" />
                   <property name="value" nameId="tpkv.1107866755246" value="VMParameters" />
                 </node>
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383679">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358956">
                   <property name="name" nameId="tpck.1169194664001" value="value" />
                   <property name="value" nameId="tpkv.1107866755246" value="VMParameters old" />
                 </node>
               </node>
-              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383680">
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358957">
                 <property name="name" nameId="tpck.1169194664001" value="option" />
                 <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383681">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358958">
                   <property name="name" nameId="tpck.1169194664001" value="name" />
                   <property name="value" nameId="tpkv.1107866755246" value="alternativeJRE" />
                 </node>
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383682">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358959">
                   <property name="name" nameId="tpck.1169194664001" value="value" />
                   <property name="value" nameId="tpkv.1107866755246" value="alternativeJRE old" />
                 </node>
               </node>
-              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383734">
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358960">
                 <property name="name" nameId="tpck.1169194664001" value="option" />
                 <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383735">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358961">
                   <property name="name" nameId="tpck.1169194664001" value="name" />
                   <property name="value" nameId="tpkv.1107866755246" value="programParameters" />
                 </node>
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383736">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358962">
                   <property name="name" nameId="tpck.1169194664001" value="value" />
                   <property name="value" nameId="tpkv.1107866755246" value="programParameters old" />
                 </node>
               </node>
-              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383737">
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358963">
                 <property name="name" nameId="tpck.1169194664001" value="option" />
                 <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383738">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358964">
                   <property name="name" nameId="tpck.1169194664001" value="name" />
                   <property name="value" nameId="tpkv.1107866755246" value="useAlternativeJRE" />
                 </node>
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383739">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358965">
                   <property name="name" nameId="tpck.1169194664001" value="value" />
                   <property name="value" nameId="tpkv.1107866755246" value="true" />
                 </node>
               </node>
-              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383740">
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358966">
                 <property name="name" nameId="tpck.1169194664001" value="option" />
                 <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383741">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358967">
                   <property name="name" nameId="tpck.1169194664001" value="name" />
                   <property name="value" nameId="tpkv.1107866755246" value="workingDirectory" />
                 </node>
-                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383742">
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358968">
                   <property name="name" nameId="tpck.1169194664001" value="value" />
                   <property name="value" nameId="tpkv.1107866755246" value="workingDirectory old" />
                 </node>
               </node>
             </node>
           </node>
-          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383683">
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358969">
             <property name="name" nameId="tpck.1169194664001" value="option" />
             <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383684">
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358970">
               <property name="name" nameId="tpck.1169194664001" value="name" />
               <property name="value" nameId="tpkv.1107866755246" value="modelId" />
             </node>
-            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383685">
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358971">
               <property name="name" nameId="tpck.1169194664001" value="value" />
               <property name="value" nameId="tpkv.1107866755246" value="modelIdValue old" />
             </node>
           </node>
-          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="7141662564075383686">
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358972">
             <property name="name" nameId="tpck.1169194664001" value="option" />
             <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383687">
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358973">
               <property name="name" nameId="tpck.1169194664001" value="name" />
               <property name="value" nameId="tpkv.1107866755246" value="nodeId" />
             </node>
-            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="7141662564075383688">
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358974">
               <property name="name" nameId="tpck.1169194664001" value="value" />
               <property name="value" nameId="tpkv.1107866755246" value="nodeIdValue old" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2356551895168358975">
+    <node role="rootElement" roleId="tpkv.1119976595358" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358976">
+      <property name="name" nameId="tpck.1169194664001" value="root" />
+      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358977">
+        <property name="name" nameId="tpck.1169194664001" value="configuration" />
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358978">
+          <property name="name" nameId="tpck.1169194664001" value="default" />
+          <property name="value" nameId="tpkv.1107866755246" value="false" />
+        </node>
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358979">
+          <property name="name" nameId="tpck.1169194664001" value="name" />
+          <property name="value" nameId="tpkv.1107866755246" value="Test old" />
+        </node>
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358980">
+          <property name="name" nameId="tpck.1169194664001" value="type" />
+          <property name="value" nameId="tpkv.1107866755246" value="JUnit" />
+        </node>
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358981">
+          <property name="name" nameId="tpck.1169194664001" value="factoryName" />
+          <property name="value" nameId="tpkv.1107866755246" value="JUnit" />
+        </node>
+        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358982">
+          <property name="name" nameId="tpck.1169194664001" value="MyState" />
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358983">
+            <property name="name" nameId="tpck.1169194664001" value="option" />
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358984">
+              <property name="name" nameId="tpck.1169194664001" value="name" />
+              <property name="value" nameId="tpkv.1107866755246" value="myJavaRunParameters" />
+            </node>
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358985">
+              <property name="name" nameId="tpck.1169194664001" value="ConfigRunParameters" />
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358986">
+                <property name="name" nameId="tpck.1169194664001" value="option" />
+                <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358987">
+                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                  <property name="value" nameId="tpkv.1107866755246" value="VMParameters" />
+                </node>
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358988">
+                  <property name="name" nameId="tpck.1169194664001" value="value" />
+                  <property name="value" nameId="tpkv.1107866755246" value="VMParameters old" />
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358989">
+                <property name="name" nameId="tpck.1169194664001" value="option" />
+                <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358990">
+                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                  <property name="value" nameId="tpkv.1107866755246" value="alternativeJRE" />
+                </node>
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358991">
+                  <property name="name" nameId="tpck.1169194664001" value="value" />
+                  <property name="value" nameId="tpkv.1107866755246" value="alternativeJRE old" />
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358992">
+                <property name="name" nameId="tpck.1169194664001" value="option" />
+                <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358993">
+                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                  <property name="value" nameId="tpkv.1107866755246" value="programParameters" />
+                </node>
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358994">
+                  <property name="name" nameId="tpck.1169194664001" value="value" />
+                  <property name="value" nameId="tpkv.1107866755246" value="programParameters old" />
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358995">
+                <property name="name" nameId="tpck.1169194664001" value="option" />
+                <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358996">
+                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                  <property name="value" nameId="tpkv.1107866755246" value="useAlternativeJRE" />
+                </node>
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358997">
+                  <property name="name" nameId="tpck.1169194664001" value="value" />
+                  <property name="value" nameId="tpkv.1107866755246" value="true" />
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168358998">
+                <property name="name" nameId="tpck.1169194664001" value="option" />
+                <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168358999">
+                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                  <property name="value" nameId="tpkv.1107866755246" value="workingDirectory" />
+                </node>
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359000">
+                  <property name="name" nameId="tpck.1169194664001" value="value" />
+                  <property name="value" nameId="tpkv.1107866755246" value="workingDirectory old" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359008">
+            <property name="name" nameId="tpck.1169194664001" value="option" />
+            <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359009">
+              <property name="name" nameId="tpck.1169194664001" value="name" />
+              <property name="value" nameId="tpkv.1107866755246" value="nodes" />
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359010">
+            <property name="name" nameId="tpck.1169194664001" value="option" />
+            <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359012">
+              <property name="name" nameId="tpck.1169194664001" value="option" />
+              <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359013">
+                <property name="name" nameId="tpck.1169194664001" value="name" />
+                <property name="value" nameId="tpkv.1107866755246" value="fullMethodNames" />
+              </node>
+            </node>
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359011">
+              <property name="name" nameId="tpck.1169194664001" value="name" />
+              <property name="value" nameId="tpkv.1107866755246" value="fullMethodNames" />
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359884">
+            <property name="name" nameId="tpck.1169194664001" value="option" />
+            <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359885">
+              <property name="name" nameId="tpck.1169194664001" value="name" />
+              <property name="value" nameId="tpkv.1107866755246" value="model" />
+            </node>
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359886">
+              <property name="name" nameId="tpck.1169194664001" value="value" />
+              <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.asTest" />
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359880">
+            <property name="name" nameId="tpck.1169194664001" value="option" />
+            <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359881">
+              <property name="name" nameId="tpck.1169194664001" value="option" />
+              <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359882">
+                <property name="name" nameId="tpck.1169194664001" value="name" />
+                <property name="value" nameId="tpkv.1107866755246" value="fullMethodNames" />
+              </node>
+            </node>
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359883">
+              <property name="name" nameId="tpck.1169194664001" value="name" />
+              <property name="value" nameId="tpkv.1107866755246" value="module" />
+            </node>
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359887">
+              <property name="name" nameId="tpck.1169194664001" value="value" />
+              <property name="value" nameId="tpkv.1107866755246" value="collections_unittest" />
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359024">
+            <property name="name" nameId="tpck.1169194664001" value="option" />
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359025">
+              <property name="name" nameId="tpck.1169194664001" value="name" />
+              <property name="value" nameId="tpkv.1107866755246" value="testMethods" />
+            </node>
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359027">
+              <property name="name" nameId="tpck.1169194664001" value="list" />
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="1626917511854908302">
+                <property name="name" nameId="tpck.1169194664001" value="option" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="1626917511854908303">
+                  <property name="name" nameId="tpck.1169194664001" value="value" />
+                  <property name="value" nameId="tpkv.1107866755246" value="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)%1883175908513185012" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359028">
+            <property name="name" nameId="tpck.1169194664001" value="option" />
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359029">
+              <property name="name" nameId="tpck.1169194664001" value="name" />
+              <property name="value" nameId="tpkv.1107866755246" value="testCases" />
+            </node>
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359030">
+              <property name="name" nameId="tpck.1169194664001" value="list" />
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359031">
+                <property name="name" nameId="tpck.1169194664001" value="option" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359032">
+                  <property name="name" nameId="tpck.1169194664001" value="value" />
+                  <property name="value" nameId="tpkv.1107866755246" value="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)%1883175908513185012" />
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359033">
+                <property name="name" nameId="tpck.1169194664001" value="option" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359034">
+                  <property name="name" nameId="tpck.1169194664001" value="value" />
+                  <property name="value" nameId="tpkv.1107866755246" value="r:0d165b79-85c3-4fee-8efc-b69a37e1c2ee(orthogonalLayoutTest)%4422427343208739409" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359014">
+            <property name="name" nameId="tpck.1169194664001" value="option" />
+            <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359015">
+              <property name="name" nameId="tpck.1169194664001" value="option" />
+              <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359016">
+                <property name="name" nameId="tpck.1169194664001" value="name" />
+                <property name="value" nameId="tpkv.1107866755246" value="fullMethodNames" />
+              </node>
+            </node>
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359017">
+              <property name="name" nameId="tpck.1169194664001" value="name" />
+              <property name="value" nameId="tpkv.1107866755246" value="type" />
+            </node>
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359018">
+              <property name="name" nameId="tpck.1169194664001" value="value" />
+              <property name="value" nameId="tpkv.1107866755246" value="MODULE" />
             </node>
           </node>
         </node>

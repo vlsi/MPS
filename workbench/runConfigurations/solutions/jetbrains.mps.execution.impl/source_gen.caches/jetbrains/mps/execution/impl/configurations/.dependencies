@@ -21,6 +21,7 @@
     <classNode dependClassName="javax.xml.transform.Transformer" />
     <classNode dependClassName="javax.xml.transform.TransformerException" />
     <classNode dependClassName="javax.xml.transform.TransformerFactory" />
+    <classNode dependClassName="javax.xml.transform.TransformerFactoryConfigurationError" />
     <classNode dependClassName="javax.xml.transform.stream.StreamSource" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -32,5 +33,6 @@
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
   </dependency>
   <dependency className="jetbrains.mps.execution.impl.configurations.java.transform" file="java.transform.xml" />
+  <dependency className="jetbrains.mps.execution.impl.configurations.junit.transform" file="junit.transform.xml" />
 </dependenciesRoot>
 

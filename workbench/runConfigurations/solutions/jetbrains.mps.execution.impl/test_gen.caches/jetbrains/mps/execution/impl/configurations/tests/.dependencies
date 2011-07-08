@@ -40,5 +40,6 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.impl.configurations.tests.configurations" file="configurations.xml" />
   <dependency className="jetbrains.mps.execution.impl.configurations.tests.old.java.configuration" file="old.java.configuration.xml" />
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.old.junit.configuration" file="old.junit.configuration.xml" />
 </dependenciesRoot>
 

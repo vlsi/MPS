@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import org.jdom.transform.JDOMSource;
 import org.jdom.transform.JDOMResult;
 import javax.xml.transform.Transformer;
@@ -172,13 +173,16 @@ public class RunConfigurationsStateManager implements ProjectComponent {
   }
 
   public static Element migrateConfigurations(Element state) {
+    return RunConfigurationsStateManager.migrateConfigurations(RunConfigurationsStateManager.migrateConfigurations(state, "java.transform.xml"), "junit.transform.xml");
+  }
 
+  private static Element migrateConfigurations(Element state, String string) throws TransformerFactoryConfigurationError {
     Element migratedState = new Element("root");
     JDOMSource source = new JDOMSource(state);
     JDOMResult result = new JDOMResult();
 
     try {
-      Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(RunConfigurationsStateManager.class.getResourceAsStream("java.transform.xml")));
+      Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(RunConfigurationsStateManager.class.getResourceAsStream(string)));
       transformer.transform(source, result);
       migratedState.addContent(result.getResult());
     } catch (TransformerException e) {

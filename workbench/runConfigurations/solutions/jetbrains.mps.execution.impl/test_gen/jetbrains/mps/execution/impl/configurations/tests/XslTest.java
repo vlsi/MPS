@@ -24,7 +24,7 @@ public class XslTest {
   }
 
   public static void main(String[] args) {
-    Element element = readAndTransform("old.java.configuration.xml");
+    Element element = readAndTransform("old.junit.configuration.xml");
     if (element != null) {
       StringWriter writer = new StringWriter();
       Document resultDocument = new Document(element);
@@ -43,7 +43,7 @@ public class XslTest {
       JDOMSource source = new JDOMSource(document);
       JDOMResult result = new JDOMResult();
 
-      Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(XslTest.class.getResourceAsStream("../java.transform.xml")));
+      Transformer transformer = TransformerFactory.newInstance().newTransformer(new StreamSource(XslTest.class.getResourceAsStream("../junit.transform.xml")));
       transformer.transform(source, result);
 
       Element root = new Element("root");

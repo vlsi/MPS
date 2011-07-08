@@ -42,6 +42,10 @@
       <property name="extension" nameId="tpkv.1234428502488" value="xml" />
       <property name="name" nameId="tpck.1169194664001" value="java.transform" />
     </node>
+    <node type="tpkv.Document" typeId="tpkv.1119976146404" id="2356551895168237695">
+      <property name="extension" nameId="tpkv.1234428502488" value="xml" />
+      <property name="name" nameId="tpck.1169194664001" value="junit.transform" />
+    </node>
   </roots>
   <root id="5145867626676099642">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5145867626676112738" />
@@ -982,79 +986,117 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5252685582975979872">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5252685582976598810" />
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5252685582975980371">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5252685582975980372">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2356551895168237686">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2356551895168237687">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5145867626676099642" resolveInfo="RunConfigurationsStateManager" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2356551895168237624" resolveInfo="migrateConfigurations" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2356551895168237692">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5145867626676099642" resolveInfo="RunConfigurationsStateManager" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2356551895168237624" resolveInfo="migrateConfigurations" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2356551895168237693">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582975980367" resolveInfo="state" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2356551895168237694">
+                <property name="value" nameId="tpee.1070475926801" value="java.transform.xml" />
+              </node>
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2356551895168237690">
+              <property name="value" nameId="tpee.1070475926801" value="junit.transform.xml" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7141662564075412290" />
+    </node>
+    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2356551895168237624">
+      <property name="name" nameId="tpck.1169194664001" value="migrateConfigurations" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2356551895168237625" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2356551895168237626">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xuot.~Element" resolveInfo="Element" />
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2356551895168237622">
+        <property name="name" nameId="tpck.1169194664001" value="state" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2356551895168237627">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xuot.~Element" resolveInfo="Element" />
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2356551895168237623">
+        <property name="name" nameId="tpck.1169194664001" value="string" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2356551895168237628" />
+      </node>
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2356551895168237629">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2356551895168237630">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2356551895168237620">
             <property name="name" nameId="tpck.1169194664001" value="migratedState" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5252685582975980373">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2356551895168237631">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xuot.~Element" resolveInfo="Element" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5252685582975980375">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5252685582975980377">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2356551895168237632">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2356551895168237633">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuot.~Element%d&lt;init&gt;(java%dlang%dString)" resolveInfo="Element" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5252685582975980378">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2356551895168237634">
                   <property name="value" nameId="tpee.1070475926801" value="root" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5252685582976664974">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5252685582976664975">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2356551895168237635">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2356551895168237618">
             <property name="name" nameId="tpck.1169194664001" value="source" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5252685582976664976">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2356551895168237636">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yv6j.~JDOMSource" resolveInfo="JDOMSource" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5252685582976664977">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5252685582976664978">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2356551895168237637">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2356551895168237638">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yv6j.~JDOMSource%d&lt;init&gt;(org%djdom%dElement)" resolveInfo="JDOMSource" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5252685582976665025">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582975980367" resolveInfo="state" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2356551895168237639">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237622" resolveInfo="state" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5252685582976664980">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5252685582976664981">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2356551895168237640">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2356551895168237619">
             <property name="name" nameId="tpck.1169194664001" value="result" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5252685582976664982">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2356551895168237641">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yv6j.~JDOMResult" resolveInfo="JDOMResult" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5252685582976664983">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5252685582976664984">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2356551895168237642">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2356551895168237643">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yv6j.~JDOMResult%d&lt;init&gt;()" resolveInfo="JDOMResult" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5252685582976664985" />
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.TryCatchStatement" typeId="tpee.1164879751025" id="5252685582976664986">
-          <node role="body" roleId="tpee.1164879758292" type="tpee.StatementList" typeId="tpee.1068580123136" id="5252685582976664987">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5252685582976664988">
-              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5252685582976664989">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2356551895168237644" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.TryCatchStatement" typeId="tpee.1164879751025" id="2356551895168237645">
+          <node role="body" roleId="tpee.1164879758292" type="tpee.StatementList" typeId="tpee.1068580123136" id="2356551895168237646">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2356551895168237647">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2356551895168237617">
                 <property name="name" nameId="tpck.1169194664001" value="transformer" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5252685582976664990">
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2356551895168237648">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bmea.~Transformer" resolveInfo="Transformer" />
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5252685582976664991">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5252685582976664992">
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2356551895168237649">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2356551895168237650">
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bmea.~TransformerFactory" resolveInfo="TransformerFactory" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmea.~TransformerFactory%dnewInstance()%cjavax%dxml%dtransform%dTransformerFactory" resolveInfo="newInstance" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5252685582976664993">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2356551895168237651">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmea.~TransformerFactory%dnewTransformer(javax%dxml%dtransform%dSource)%cjavax%dxml%dtransform%dTransformer" resolveInfo="newTransformer" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5252685582976664994">
-                      <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5252685582976664995">
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2356551895168237652">
+                      <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2356551895168237653">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m8c.~StreamSource%d&lt;init&gt;(java%dio%dInputStream)" resolveInfo="StreamSource" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5252685582976664996">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5252685582976664997">
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2356551895168237654">
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="2356551895168237655">
                             <link role="classifier" roleId="tpee.1116615189566" targetNodeId="5145867626676099642" resolveInfo="RunConfigurationsStateManager" />
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5252685582976664998">
+                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2356551895168237656">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetResourceAsStream(java%dlang%dString)%cjava%dio%dInputStream" resolveInfo="getResourceAsStream" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5252685582976664999">
-                              <property name="value" nameId="tpee.1070475926801" value="java.transform.xml" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2356551895168237657">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237623" resolveInfo="string" />
                             </node>
                           </node>
                         </node>
@@ -1064,34 +1106,34 @@
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5252685582976665000">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5252685582976665001">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5252685582976665002">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582976664989" resolveInfo="transformer" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2356551895168237658">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2356551895168237659">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2356551895168237660">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237617" resolveInfo="transformer" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5252685582976665003">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2356551895168237661">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmea.~Transformer%dtransform(javax%dxml%dtransform%dSource,javax%dxml%dtransform%dResult)%cvoid" resolveInfo="transform" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5252685582976665004">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582976664975" resolveInfo="source" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2356551895168237662">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237618" resolveInfo="source" />
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5252685582976665005">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582976664981" resolveInfo="result" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2356551895168237663">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237619" resolveInfo="result" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5252685582976665006">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5252685582976665007">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5252685582976665008">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582975980372" resolveInfo="migratedState" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2356551895168237664">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2356551895168237665">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2356551895168237666">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237620" resolveInfo="migratedState" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5252685582976665009">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2356551895168237667">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuot.~Element%daddContent(java%dutil%dCollection)%corg%djdom%dElement" resolveInfo="addContent" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5252685582976665010">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5252685582976665011">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582976664981" resolveInfo="result" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2356551895168237668">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2356551895168237669">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237619" resolveInfo="result" />
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5252685582976665012">
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2356551895168237670">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yv6j.~JDOMResult%dgetResult()%cjava%dutil%dList" resolveInfo="getResult" />
                     </node>
                   </node>
@@ -1099,33 +1141,33 @@
               </node>
             </node>
           </node>
-          <node role="catchClause" roleId="tpee.1164903496223" type="tpee.CatchClause" typeId="tpee.1164903280175" id="5252685582976665013">
-            <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5252685582976665014">
+          <node role="catchClause" roleId="tpee.1164903496223" type="tpee.CatchClause" typeId="tpee.1164903280175" id="2356551895168237671">
+            <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2356551895168237621">
               <property name="name" nameId="tpck.1169194664001" value="e" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5252685582976665015">
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2356551895168237672">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bmea.~TransformerException" resolveInfo="TransformerException" />
               </node>
             </node>
-            <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="5252685582976665016">
-              <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="5252685582976665017">
+            <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="2356551895168237673">
+              <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="2356551895168237674">
                 <property name="severity" nameId="tpib.1167245565795" value="error" />
                 <property name="hasException" nameId="tpib.1167228628751" value="true" />
-                <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5252685582976665018">
+                <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2356551895168237675">
                   <property name="value" nameId="tpee.1070475926801" value="Cant transform" />
                 </node>
-                <node role="exception" roleId="tpib.1167227561449" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5252685582976665019">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582976665014" resolveInfo="e" />
+                <node role="exception" roleId="tpib.1167227561449" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2356551895168237676">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237621" resolveInfo="e" />
                 </node>
               </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5252685582976665020">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5252685582976665021">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5252685582976665022">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582975980372" resolveInfo="migratedState" />
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2356551895168237677">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2356551895168237678">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2356551895168237679">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237620" resolveInfo="migratedState" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5252685582976665023">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2356551895168237680">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuot.~Element%daddContent(org%djdom%dElement)%corg%djdom%dElement" resolveInfo="addContent" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5252685582976665026">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582975980367" resolveInfo="state" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2356551895168237681">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237622" resolveInfo="state" />
                     </node>
                   </node>
                 </node>
@@ -1133,14 +1175,16 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5252685582976664961" />
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5252685582975980391">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5252685582975980393">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5252685582975980372" resolveInfo="migratedState" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2356551895168237682" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2356551895168237683">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2356551895168237684">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2356551895168237620" resolveInfo="migratedState" />
           </node>
         </node>
       </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7141662564075412290" />
+      <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2356551895168237685">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bmea.~TransformerFactoryConfigurationError" resolveInfo="TransformerFactoryConfigurationError" />
+      </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="778004717327684279">
       <property name="name" nameId="tpck.1169194664001" value="getInstance" />
@@ -1531,6 +1575,424 @@
           <node role="content" roleId="tpkv.1107866800972" type="tpkv.Text" typeId="tpkv.1107866821377" id="5252685582976600012">
             <property name="name" nameId="tpck.1169194664001" value="J" />
             <property name="text" nameId="tpkv.1107866834687" value="Java" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2356551895168237695">
+    <node role="rootElement" roleId="tpkv.1119976595358" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237696">
+      <property name="name" nameId="tpck.1169194664001" value="xsl:stylesheet" />
+      <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237697">
+        <property name="name" nameId="tpck.1169194664001" value="xmlns:xsl" />
+        <property name="value" nameId="tpkv.1107866755246" value="http://www.w3.org/1999/XSL/Transform" />
+      </node>
+      <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237698">
+        <property name="name" nameId="tpck.1169194664001" value="version" />
+        <property name="value" nameId="tpkv.1107866755246" value="1.0" />
+      </node>
+      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237699">
+        <property name="name" nameId="tpck.1169194664001" value="xsl:output" />
+        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237700">
+          <property name="name" nameId="tpck.1169194664001" value="method" />
+          <property name="value" nameId="tpkv.1107866755246" value="xml" />
+        </node>
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237701">
+          <property name="name" nameId="tpck.1169194664001" value="indent" />
+          <property name="value" nameId="tpkv.1107866755246" value="yes" />
+        </node>
+      </node>
+      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237702">
+        <property name="name" nameId="tpck.1169194664001" value="xsl:template" />
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237703">
+          <property name="name" nameId="tpck.1169194664001" value="match" />
+          <property name="value" nameId="tpkv.1107866755246" value="/" />
+        </node>
+        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237704">
+          <property name="name" nameId="tpck.1169194664001" value="xsl:apply-templates" />
+          <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237705">
+            <property name="name" nameId="tpck.1169194664001" value="select" />
+            <property name="value" nameId="tpkv.1107866755246" value="root/*" />
+          </node>
+        </node>
+      </node>
+      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237706">
+        <property name="name" nameId="tpck.1169194664001" value="xsl:template" />
+        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237707">
+          <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237708">
+            <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237709">
+              <property name="name" nameId="tpck.1169194664001" value="configuration" />
+              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237710">
+                <property name="name" nameId="tpck.1169194664001" value="type" />
+                <property name="value" nameId="tpkv.1107866755246" value="JUnit Tests" />
+              </node>
+              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237711">
+                <property name="name" nameId="tpck.1169194664001" value="factoryName" />
+                <property name="value" nameId="tpkv.1107866755246" value="JUnit Tests" />
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237712">
+                <property name="name" nameId="tpck.1169194664001" value="xsl:attribute" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237713">
+                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                  <property name="value" nameId="tpkv.1107866755246" value="default" />
+                </node>
+                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237714">
+                  <property name="name" nameId="tpck.1169194664001" value="xsl:value-of" />
+                  <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                  <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237715">
+                    <property name="name" nameId="tpck.1169194664001" value="select" />
+                    <property name="value" nameId="tpkv.1107866755246" value="@default" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237716">
+                <property name="name" nameId="tpck.1169194664001" value="xsl:attribute" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237717">
+                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                  <property name="value" nameId="tpkv.1107866755246" value="name" />
+                </node>
+                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237718">
+                  <property name="name" nameId="tpck.1169194664001" value="xsl:value-of" />
+                  <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                  <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237719">
+                    <property name="name" nameId="tpck.1169194664001" value="select" />
+                    <property name="value" nameId="tpkv.1107866755246" value="@name" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237720">
+                <property name="name" nameId="tpck.1169194664001" value="MyState" />
+                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359799">
+                  <property name="name" nameId="tpck.1169194664001" value="xsl:for-each" />
+                  <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359800">
+                    <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+                    <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359801">
+                      <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+                      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359802">
+                        <property name="name" nameId="tpck.1169194664001" value="option" />
+                        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359803">
+                          <property name="name" nameId="tpck.1169194664001" value="name" />
+                          <property name="value" nameId="tpkv.1107866755246" value="myTestCases" />
+                        </node>
+                        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359820">
+                          <property name="name" nameId="tpck.1169194664001" value="xsl:copy-of" />
+                          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359821">
+                            <property name="name" nameId="tpck.1169194664001" value="select" />
+                            <property name="value" nameId="tpkv.1107866755246" value="./list" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359808">
+                        <property name="name" nameId="tpck.1169194664001" value="test" />
+                        <property name="value" nameId="tpkv.1107866755246" value="@name = 'testCases'" />
+                      </node>
+                    </node>
+                    <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359809">
+                      <property name="name" nameId="tpck.1169194664001" value="xsl:otherwise" />
+                      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359828">
+                        <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+                        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359829">
+                          <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+                          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359830">
+                            <property name="name" nameId="tpck.1169194664001" value="option" />
+                            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359831">
+                              <property name="name" nameId="tpck.1169194664001" value="name" />
+                              <property name="value" nameId="tpkv.1107866755246" value="myTestMethods" />
+                            </node>
+                            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359832">
+                              <property name="name" nameId="tpck.1169194664001" value="xsl:copy-of" />
+                              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359833">
+                                <property name="name" nameId="tpck.1169194664001" value="select" />
+                                <property name="value" nameId="tpkv.1107866755246" value="./list" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359834">
+                            <property name="name" nameId="tpck.1169194664001" value="test" />
+                            <property name="value" nameId="tpkv.1107866755246" value="@name = 'testMethods'" />
+                          </node>
+                        </node>
+                        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359842">
+                          <property name="name" nameId="tpck.1169194664001" value="xsl:otherwise" />
+                          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359858">
+                            <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+                            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359859">
+                              <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+                              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359860">
+                                <property name="name" nameId="tpck.1169194664001" value="option" />
+                                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168360003">
+                                  <property name="name" nameId="tpck.1169194664001" value="xsl:attribute" />
+                                  <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168360004">
+                                    <property name="name" nameId="tpck.1169194664001" value="xsl:value-of" />
+                                    <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                                    <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168360005">
+                                      <property name="name" nameId="tpck.1169194664001" value="select" />
+                                      <property name="value" nameId="tpkv.1107866755246" value="@value" />
+                                    </node>
+                                  </node>
+                                  <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168360006">
+                                    <property name="name" nameId="tpck.1169194664001" value="name" />
+                                    <property name="value" nameId="tpkv.1107866755246" value="value" />
+                                  </node>
+                                </node>
+                                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359861">
+                                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                                  <property name="value" nameId="tpkv.1107866755246" value="myModule" />
+                                </node>
+                              </node>
+                              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359864">
+                                <property name="name" nameId="tpck.1169194664001" value="test" />
+                                <property name="value" nameId="tpkv.1107866755246" value="@name = 'module'" />
+                              </node>
+                            </node>
+                            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359865">
+                              <property name="name" nameId="tpck.1169194664001" value="xsl:otherwise" />
+                              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359873">
+                                <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+                                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359874">
+                                  <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+                                  <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168359875">
+                                    <property name="name" nameId="tpck.1169194664001" value="option" />
+                                    <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168360007">
+                                      <property name="name" nameId="tpck.1169194664001" value="xsl:attribute" />
+                                      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168360008">
+                                        <property name="name" nameId="tpck.1169194664001" value="xsl:value-of" />
+                                        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                                        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168360009">
+                                          <property name="name" nameId="tpck.1169194664001" value="select" />
+                                          <property name="value" nameId="tpkv.1107866755246" value="@value" />
+                                        </node>
+                                      </node>
+                                      <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168360010">
+                                        <property name="name" nameId="tpck.1169194664001" value="name" />
+                                        <property name="value" nameId="tpkv.1107866755246" value="value" />
+                                      </node>
+                                    </node>
+                                    <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359876">
+                                      <property name="name" nameId="tpck.1169194664001" value="name" />
+                                      <property name="value" nameId="tpkv.1107866755246" value="myModel" />
+                                    </node>
+                                  </node>
+                                  <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359879">
+                                    <property name="name" nameId="tpck.1169194664001" value="test" />
+                                    <property name="value" nameId="tpkv.1107866755246" value="@name = 'model'" />
+                                  </node>
+                                </node>
+                                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="1626917511854908292">
+                                  <property name="name" nameId="tpck.1169194664001" value="xsl:otherwise" />
+                                  <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="1626917511854908293">
+                                    <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+                                    <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="1626917511854908294">
+                                      <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+                                      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="1626917511854908295">
+                                        <property name="name" nameId="tpck.1169194664001" value="option" />
+                                        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="1626917511854908296">
+                                          <property name="name" nameId="tpck.1169194664001" value="xsl:attribute" />
+                                          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="1626917511854908297">
+                                            <property name="name" nameId="tpck.1169194664001" value="xsl:value-of" />
+                                            <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                                            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="1626917511854908298">
+                                              <property name="name" nameId="tpck.1169194664001" value="select" />
+                                              <property name="value" nameId="tpkv.1107866755246" value="@value" />
+                                            </node>
+                                          </node>
+                                          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="1626917511854908299">
+                                            <property name="name" nameId="tpck.1169194664001" value="name" />
+                                            <property name="value" nameId="tpkv.1107866755246" value="value" />
+                                          </node>
+                                        </node>
+                                        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="1626917511854908300">
+                                          <property name="name" nameId="tpck.1169194664001" value="name" />
+                                          <property name="value" nameId="tpkv.1107866755246" value="myRunType" />
+                                        </node>
+                                      </node>
+                                      <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="1626917511854908301">
+                                        <property name="name" nameId="tpck.1169194664001" value="test" />
+                                        <property name="value" nameId="tpkv.1107866755246" value="@name = 'type'" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168359819">
+                    <property name="name" nameId="tpck.1169194664001" value="select" />
+                    <property name="value" nameId="tpkv.1107866755246" value=".//option" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237721">
+                <property name="name" nameId="tpck.1169194664001" value="myJavaRunParameters" />
+                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237722">
+                  <property name="name" nameId="tpck.1169194664001" value="MyState" />
+                  <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237723">
+                    <property name="name" nameId="tpck.1169194664001" value="option" />
+                    <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237724">
+                      <property name="name" nameId="tpck.1169194664001" value="JavaRunParameters" />
+                      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237725">
+                        <property name="name" nameId="tpck.1169194664001" value="xsl:apply-templates" />
+                        <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237726">
+                          <property name="name" nameId="tpck.1169194664001" value="select" />
+                          <property name="value" nameId="tpkv.1107866755246" value=".//ConfigRunParameters/option" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237727">
+                      <property name="name" nameId="tpck.1169194664001" value="name" />
+                      <property name="value" nameId="tpkv.1107866755246" value="myJavaRunParameters" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237751">
+              <property name="name" nameId="tpck.1169194664001" value="test" />
+              <property name="value" nameId="tpkv.1107866755246" value="@type = 'JUnit'" />
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237752">
+            <property name="name" nameId="tpck.1169194664001" value="xsl:otherwise" />
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237753">
+              <property name="name" nameId="tpck.1169194664001" value="xsl:copy-of" />
+              <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237754">
+                <property name="name" nameId="tpck.1169194664001" value="select" />
+                <property name="value" nameId="tpkv.1107866755246" value="." />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237755">
+          <property name="name" nameId="tpck.1169194664001" value="match" />
+          <property name="value" nameId="tpkv.1107866755246" value="configuration" />
+        </node>
+      </node>
+      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237756">
+        <property name="name" nameId="tpck.1169194664001" value="xsl:template" />
+        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237757">
+          <property name="name" nameId="tpck.1169194664001" value="match" />
+          <property name="value" nameId="tpkv.1107866755246" value="option" />
+        </node>
+        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237758">
+          <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237759">
+            <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+            <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237760">
+              <property name="name" nameId="tpck.1169194664001" value="test" />
+              <property name="value" nameId="tpkv.1107866755246" value="@name = 'VMParameters'" />
+            </node>
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237761">
+              <property name="name" nameId="tpck.1169194664001" value="option" />
+              <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237762">
+                <property name="name" nameId="tpck.1169194664001" value="name" />
+                <property name="value" nameId="tpkv.1107866755246" value="vmOptions" />
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237763">
+                <property name="name" nameId="tpck.1169194664001" value="xsl:attribute" />
+                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237764">
+                  <property name="name" nameId="tpck.1169194664001" value="xsl:value-of" />
+                  <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                  <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237765">
+                    <property name="name" nameId="tpck.1169194664001" value="select" />
+                    <property name="value" nameId="tpkv.1107866755246" value="@value" />
+                  </node>
+                </node>
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237766">
+                  <property name="name" nameId="tpck.1169194664001" value="name" />
+                  <property name="value" nameId="tpkv.1107866755246" value="value" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237767">
+            <property name="name" nameId="tpck.1169194664001" value="xsl:otherwise" />
+            <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237768">
+              <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237769">
+                <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+                <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237770">
+                  <property name="name" nameId="tpck.1169194664001" value="test" />
+                  <property name="value" nameId="tpkv.1107866755246" value="@name = 'alternativeJRE'" />
+                </node>
+                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237771">
+                  <property name="name" nameId="tpck.1169194664001" value="option" />
+                  <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237772">
+                    <property name="name" nameId="tpck.1169194664001" value="name" />
+                    <property name="value" nameId="tpkv.1107866755246" value="jrePath" />
+                  </node>
+                  <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237773">
+                    <property name="name" nameId="tpck.1169194664001" value="xsl:attribute" />
+                    <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237774">
+                      <property name="name" nameId="tpck.1169194664001" value="xsl:value-of" />
+                      <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                      <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237775">
+                        <property name="name" nameId="tpck.1169194664001" value="select" />
+                        <property name="value" nameId="tpkv.1107866755246" value="@value" />
+                      </node>
+                    </node>
+                    <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237776">
+                      <property name="name" nameId="tpck.1169194664001" value="name" />
+                      <property name="value" nameId="tpkv.1107866755246" value="value" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237777">
+                <property name="name" nameId="tpck.1169194664001" value="xsl:otherwise" />
+                <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237778">
+                  <property name="name" nameId="tpck.1169194664001" value="xsl:choose" />
+                  <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237779">
+                    <property name="name" nameId="tpck.1169194664001" value="xsl:when" />
+                    <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237780">
+                      <property name="name" nameId="tpck.1169194664001" value="test" />
+                      <property name="value" nameId="tpkv.1107866755246" value="@name = 'useAlternativeJRE'" />
+                    </node>
+                    <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237781">
+                      <property name="name" nameId="tpck.1169194664001" value="option" />
+                      <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237782">
+                        <property name="name" nameId="tpck.1169194664001" value="name" />
+                        <property name="value" nameId="tpkv.1107866755246" value="useAlternativeJre" />
+                      </node>
+                      <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237783">
+                        <property name="name" nameId="tpck.1169194664001" value="xsl:attribute" />
+                        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237784">
+                          <property name="name" nameId="tpck.1169194664001" value="xsl:value-of" />
+                          <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+                          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237785">
+                            <property name="name" nameId="tpck.1169194664001" value="select" />
+                            <property name="value" nameId="tpkv.1107866755246" value="@value" />
+                          </node>
+                        </node>
+                        <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237786">
+                          <property name="name" nameId="tpck.1169194664001" value="name" />
+                          <property name="value" nameId="tpkv.1107866755246" value="value" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237787">
+                    <property name="name" nameId="tpck.1169194664001" value="xsl:otherwise" />
+                    <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2356551895168237788">
+                      <property name="name" nameId="tpck.1169194664001" value="xsl:copy-of" />
+                      <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2356551895168237789">
+                        <property name="name" nameId="tpck.1169194664001" value="select" />
+                        <property name="value" nameId="tpkv.1107866755246" value="." />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

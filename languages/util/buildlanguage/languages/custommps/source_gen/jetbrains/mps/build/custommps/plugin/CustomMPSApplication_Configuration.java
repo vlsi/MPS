@@ -85,6 +85,9 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
 
   @Override
   public void readExternal(Element element) throws InvalidDataException {
+    if (element == null) {
+      throw new InvalidDataException("Cant read " + this + ": element is null.");
+    }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
     {
       Element fieldElement = element.getChild("myNode");
