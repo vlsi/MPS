@@ -32,10 +32,14 @@ import java.io.FileNotFoundException;
     String globalConfigPath = WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig";
     File configFile = new File(globalConfigPath);
     if (!(configFile.exists())) {
-      if (!(dryRun)) {
-        Messages.showErrorDialog(myProject, "Git config (~/.gitconfig) file is not present", "No Git Config");
+      if (dryRun) {
+        return AbstractInstaller.State.NOT_INSTALLED;
+      } else {
+        String msg = String.format("Git config (%s) file is not present. Do you want to create it?", configFile.getAbsolutePath());
+        if (Messages.showYesNoDialog(myProject, msg, "No Git Config", Messages.getQuestionIcon()) != 0) {
+          return AbstractInstaller.State.NOT_INSTALLED;
+        }
       }
-      return AbstractInstaller.State.NOT_INSTALLED;
     }
 
     List<String> newConfigLines = ListSequence.fromList(new ArrayList<String>());
@@ -100,7 +104,7 @@ import java.io.FileNotFoundException;
 
     try {
       StringsIO.writeLines(configFile, configLines);
-      Messages.showInfoMessage(myProject, "Successfully updated ~/.gitconfig", "Global Git Merge Driver Installed");
+      Messages.showInfoMessage(myProject, String.format("Successfully updated %s", configFile.getAbsolutePath()), "Global Git Merge Driver Installed");
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
       if (log.isErrorEnabled()) {
