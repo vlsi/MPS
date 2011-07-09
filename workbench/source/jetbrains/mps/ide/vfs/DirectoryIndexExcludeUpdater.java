@@ -77,7 +77,9 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     Runnable action = new Runnable() {
       @Override
       public void run() {
-        myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).rootsChanged(new ModuleRootEventImpl(myProject, false));
+        if (!myProject.isDisposed()) {
+          myMessageBus.syncPublisher(ProjectTopics.PROJECT_ROOTS).rootsChanged(new ModuleRootEventImpl(myProject, false));
+        }
       }
     };
     if (immediately) {
