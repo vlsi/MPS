@@ -349,6 +349,10 @@
       <skipForDummyProject/>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.ide.vfs.DirectoryIndexExcludeUpdater</implementation-class>
+    </component>
+
     <!-- typesystem -->
 
     <component>

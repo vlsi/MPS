@@ -36,6 +36,9 @@ public abstract class BaseDirectoryIndexExcludePolicy implements DirectoryIndexE
   }
 
   public VirtualFile[] getExcludeRootsForProject() {
+    if (myProject.isDisposed()) {
+      return VirtualFile.EMPTY_ARRAY;
+    }
     final Collection<VirtualFile> roots = getAllExcludeRoots();
     return roots.toArray(new VirtualFile[roots.size()]);
   }
