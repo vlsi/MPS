@@ -17,6 +17,8 @@ import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
+import com.intellij.openapi.util.SystemInfo;
+import java.io.FileNotFoundException;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
   protected static Log log = LogFactory.getLog(GitGlobalInstaller.class);
@@ -104,7 +106,11 @@ import java.io.IOException;
       if (log.isErrorEnabled()) {
         log.error("Writing gitconfig file failed", e);
       }
-      Messages.showErrorDialog(myProject, "Writing gitconfig file failed (" + e.getMessage() + ")", "Writing .gitconfig Failed");
+      String msg = e.getMessage() + ".";
+      if (SystemInfo.isWindows && e instanceof FileNotFoundException) {
+        msg += " Try unsetting hidden attribute for that file in Windows Explorer.";
+      }
+      Messages.showErrorDialog(myProject, "Writing gitconfig file failed. " + msg, "Writing .gitconfig Failed");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
