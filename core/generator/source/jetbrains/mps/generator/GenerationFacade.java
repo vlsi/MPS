@@ -68,7 +68,7 @@ public class GenerationFacade {
 
       GenerationDependencies oldDependencies = GenerationDependenciesCache.getInstance().get(sm);
       if (oldDependencies == null) {
-        // TODO turn on when .generated file will be mandatory
+        // TODO turn on when generated file will be mandatory
         //result.add(sm);
         continue;
       }

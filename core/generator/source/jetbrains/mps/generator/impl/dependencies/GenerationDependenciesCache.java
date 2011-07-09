@@ -36,7 +36,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   }
 
   protected String getCacheFileName() {
-    return ".generated";
+    return "generated";
   }
 
   protected Element toXml(GenerationDependencies dependencies) {

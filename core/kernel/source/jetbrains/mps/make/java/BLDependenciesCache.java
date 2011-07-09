@@ -39,7 +39,7 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
   }
 
   protected String getCacheFileName() {
-    return ".dependencies";
+    return "dependencies";
   }
 
   @NotNull

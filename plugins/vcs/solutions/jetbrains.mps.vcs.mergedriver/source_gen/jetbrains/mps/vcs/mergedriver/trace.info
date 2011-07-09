@@ -728,7 +728,7 @@
   </root>
   <root nodeId="572687202609933800">
     <nodeInfo nodeId="428846146748920274" fileName="GitRepositoriesInstaller.java" startLine="21" startPosition="70" endLine="22" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ATTRIBUTES_FILE" />
-    <nodeInfo nodeId="428846146748920516" fileName="GitRepositoriesInstaller.java" startLine="22" startPosition="65" endLine="23" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATTERNS" />
+    <nodeInfo nodeId="428846146748920516" fileName="GitRepositoriesInstaller.java" startLine="22" startPosition="65" endLine="23" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATTERNS" />
     <nodeInfo nodeId="7179404661240009034" fileName="GitRepositoriesInstaller.java" startLine="25" startPosition="52" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7179404661240011046" fileName="GitRepositoriesInstaller.java" startLine="30" startPosition="67" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1376744028423395770" fileName="GitRepositoriesInstaller.java" startLine="32" startPosition="52" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

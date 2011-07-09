@@ -20,7 +20,7 @@ import java.io.IOException;
 
 /*package*/ class GitRepositoriesInstaller extends AbstractInstaller {
   private static final String ATTRIBUTES_FILE = ".gitattributes";
-  private static final List<String> PATTERNS = ListSequence.fromListAndArray(new ArrayList<String>(), "*.mps", "trace.info", ".dependencies");
+  private static final List<String> PATTERNS = ListSequence.fromListAndArray(new ArrayList<String>(), "*.mps", "trace.info", "dependencies");
 
   public GitRepositoriesInstaller(Project project) {
     super(project);

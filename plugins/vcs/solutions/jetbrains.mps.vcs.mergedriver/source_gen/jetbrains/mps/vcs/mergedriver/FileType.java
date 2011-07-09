@@ -15,8 +15,8 @@ import jetbrains.mps.util.FileUtil;
 public enum FileType {
   MODEL(".mps", "model"),
   TRACE_CACHE("trace.info", "debugInfo"),
-  GENERATOR_DEPENDENCIES(".generated", "dependencies"),
-  JAVA_DEPENDENCIES(".dependencies", "dependenciesRoot");
+  GENERATOR_DEPENDENCIES("generated", "dependencies"),
+  JAVA_DEPENDENCIES("dependencies", "dependenciesRoot");
 
   private static final String SVN_BASE = ".svn-base";
 

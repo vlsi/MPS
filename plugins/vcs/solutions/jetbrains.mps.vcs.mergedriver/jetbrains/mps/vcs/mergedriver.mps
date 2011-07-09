@@ -1214,7 +1214,7 @@
             <property name="value" nameId="tpee.1070475926801" value="trace.info" />
           </node>
           <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5338163118782152667">
-            <property name="value" nameId="tpee.1070475926801" value=".dependencies" />
+            <property name="value" nameId="tpee.1070475926801" value="dependencies" />
           </node>
         </node>
       </node>
@@ -6521,7 +6521,7 @@
       <property name="name" nameId="tpck.1169194664001" value="GENERATOR_DEPENDENCIES" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1016968294606545897" resolveInfo="FileType" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1016968294606545925">
-        <property name="value" nameId="tpee.1070475926801" value=".generated" />
+        <property name="value" nameId="tpee.1070475926801" value="generated" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1016968294606545927">
         <property name="value" nameId="tpee.1070475926801" value="dependencies" />
@@ -6531,7 +6531,7 @@
       <property name="name" nameId="tpck.1169194664001" value="JAVA_DEPENDENCIES" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1016968294606545897" resolveInfo="FileType" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1016968294606545930">
-        <property name="value" nameId="tpee.1070475926801" value=".dependencies" />
+        <property name="value" nameId="tpee.1070475926801" value="dependencies" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1016968294606545931">
         <property name="value" nameId="tpee.1070475926801" value="dependenciesRoot" />
