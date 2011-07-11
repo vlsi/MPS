@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import gnu.trove.THashMap;
@@ -42,7 +43,10 @@ public class SModelRepository implements ApplicationComponent {
 
   public static SModelRepository getInstance() {
     if (ourInstance == null) {
-      ourInstance = ApplicationManager.getApplication().getComponent(SModelRepository.class);
+      Application application = ApplicationManager.getApplication();
+      if (application != null) {
+        ourInstance = application.getComponent(SModelRepository.class);
+      }
     }
     return ourInstance;
   }
