@@ -117,7 +117,9 @@ public class BreakpointsUiComponent implements ProjectComponent {
     if (editorComponent == null) return;
     final SNode rootNode = editorComponent.getEditedNode();
     if (rootNode == null) return;
-    editorComponent.addLeftMarginPressListener(myMouseListener);
+    if (!editorComponent.getLeftMarginPressListeners().contains(myMouseListener)) {
+      editorComponent.addLeftMarginPressListener(myMouseListener);
+    }
     SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
       @Override
       public SNodePointer compute() {
@@ -278,9 +280,14 @@ public class BreakpointsUiComponent implements ProjectComponent {
   }
 
   private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
-    SNode node = breakpoint.getLocation().getSNode();
+    final SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
-      SNode root = node.getContainingRoot();
+      SNode root = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        @Override
+        public SNode compute() {
+          return node.getContainingRoot();
+        }
+      });
       if (root != null) {
         for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
           EditorComponent editorComponent = editor.getCurrentEditorComponent();
