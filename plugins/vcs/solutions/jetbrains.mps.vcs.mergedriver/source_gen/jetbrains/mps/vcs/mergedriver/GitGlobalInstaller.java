@@ -12,7 +12,6 @@ import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -45,19 +44,13 @@ import java.io.FileNotFoundException;
     List<String> newConfigLines = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(newConfigLines).addElement("[merge \"mps\"]");
     ListSequence.fromList(newConfigLines).addElement("\tname = MPS merge driver");
-    String cmd;
-    if (InternalFlag.isInternalMode()) {
-      if (dryRun) {
-        if (InternalRuntimePacker.getFile().exists()) {
-          return AbstractInstaller.State.OUTDATED;
-        } else {
-          return AbstractInstaller.State.NOT_INSTALLED;
-        }
-      } else {
-        InternalRuntimePacker.pack();
-      }
+
+    AbstractInstaller.State packerState = InternalRuntimePacker.packIfNeeded(dryRun);
+    if (packerState != AbstractInstaller.State.INSTALLED) {
+      return packerState;
     }
-    cmd = CommandLineGenerator.getCommandLine(false).replace("\\", "\\\\");
+
+    String cmd = CommandLineGenerator.getCommandLine(false).replace("\\", "\\\\");
     ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = %s --git %%O %%A %%B %%L", cmd));
     ListSequence.fromList(newConfigLines).addElement("");
 
@@ -78,7 +71,7 @@ import java.io.FileNotFoundException;
       boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0e0p0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0e0r0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -119,7 +112,7 @@ import java.io.FileNotFoundException;
     }
   }
 
-  private static boolean neq_btx4zt_a0a0a0e0p0a(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0e0r0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

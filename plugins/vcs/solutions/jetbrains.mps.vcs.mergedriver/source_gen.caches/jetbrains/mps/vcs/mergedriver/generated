@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ct4b5ktjonma9x9x0v5gplifh6fghmx">
+<dependencies version="2" modelHash="7bvyhlzdbuoquupw99gpzvddhntb6v5">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.plugins(MPS.Classpath/com.intellij.ide.plugins@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
@@ -163,8 +163,9 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GitRepositoriesInstaller.java" />
   </source>
-  <source id="572687202609936946" name="GitGlobalInstaller" hash="8uh1i9m60xg8vmb67nvim8ej2g7wwxt" dependsOnNodes="true">
+  <source id="572687202609936946" name="GitGlobalInstaller" hash="ap3f37fznc29ng3751uto5ceejosbul" dependsOnNodes="true">
     <dep root="1376744028423385490" />
+    <dep root="3042807695808129902" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.plugins(MPS.Classpath/com.intellij.ide.plugins@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
@@ -255,9 +256,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleMerger.java" />
   </source>
-  <source id="5006749173646651481" name="SvnInstaller" hash="-4jg1vbe3z8fwwhl7dsrfq61h5qd7c6" dependsOnNodes="true">
+  <source id="5006749173646651481" name="SvnInstaller" hash="-4bs4mm4u4dxmwhh4i40logkvbfkpkrj" dependsOnNodes="true">
     <dep root="1016968294606525391" />
     <dep root="1376744028423385490" />
+    <dep root="3042807695808129902" />
     <dep root="5332772916083838064" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.plugins(MPS.Classpath/com.intellij.ide.plugins@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" />
@@ -455,7 +457,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EmptyMerger.java" />
   </source>
-  <source id="3042807695808129902" name="InternalRuntimePacker" hash="-714y35ngivrwim4tqtv1wbqkgmwf03o">
+  <source id="3042807695808129902" name="InternalRuntimePacker" hash="6bp2cudbojyqwu8mb2rs3tiuwd4spz2">
     <dep root="1016968294606525391" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -529,7 +531,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MergerRoleIdsHandler.java" />
   </source>
-  <source id="5332772916083838064" name="ScriptGenerator" hash="-7vdmzyoylz0t05q7lq0fsijuozsbn2x" dependsOnNodes="true">
+  <source id="5332772916083838064" name="ScriptGenerator" hash="-av53a3dbdw4suxf5u5gf16b7fbhatuc" dependsOnNodes="true">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.plugins(MPS.Classpath/com.intellij.ide.plugins@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
