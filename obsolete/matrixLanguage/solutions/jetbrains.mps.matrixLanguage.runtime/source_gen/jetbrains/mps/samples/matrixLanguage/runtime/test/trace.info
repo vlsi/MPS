@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MatrixTest_Test.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.runtime.test.MatrixTest_Test" />
   <root nodeId="1209979054679">
     <nodeInfo nodeId="1209997010404" fileName="MatrixTest_Test.java" startLine="11" startPosition="47" endLine="12" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EPSILON" />
     <nodeInfo nodeId="1209979090779" fileName="MatrixTest_Test.java" startLine="14" startPosition="53" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -77,6 +76,7 @@
     <scopeInfo nodeId="1209998882758" fileName="MatrixTest_Test.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1210002752505" fileName="MatrixTest_Test.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="1210242075071" fileName="MatrixTest_Test.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
+    <unitInfo nodeId="1209979054679" fileName="MatrixTest_Test.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.runtime.test.MatrixTest_Test" />
   </root>
 </debugInfo>
 

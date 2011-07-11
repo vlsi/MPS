@@ -25,16 +25,16 @@
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="25" startPosition="75" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="29" startPosition="95" endLine="30" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="33" startPosition="68" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOuterVars" />
-    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="36" startPosition="42" endLine="37" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="40" startPosition="56" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="41" startPosition="49" endLine="42" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="36" startPosition="42" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="40" startPosition="56" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="41" startPosition="44" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="45" startPosition="26" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="46" startPosition="16" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="47" startPosition="16" endLine="48" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="48" startPosition="49" endLine="49" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="49" startPosition="49" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="47" startPosition="16" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="48" startPosition="44" endLine="49" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="49" startPosition="44" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="53" startPosition="33" endLine="54" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="57" startPosition="28" endLine="58" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="57" startPosition="28" endLine="58" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="9" startPosition="20" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="first#()V" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="35" startPosition="0" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Function_816130369292799568#()V" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
@@ -52,11 +52,11 @@
     <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="21" startPosition="67" endLine="22" endPosition="88" />
     <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="25" startPosition="75" endLine="26" endPosition="56" />
     <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="29" startPosition="95" endLine="30" endPosition="64" />
-    <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="36" startPosition="42" endLine="37" endPosition="49" />
+    <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="36" startPosition="42" endLine="37" endPosition="44" />
     <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="53" startPosition="33" endLine="54" endPosition="15" />
-    <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="57" startPosition="28" endLine="58" endPosition="69" />
+    <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="57" startPosition="28" endLine="58" endPosition="64" />
     <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="9" startPosition="20" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="40" startPosition="56" endLine="42" endPosition="41" />
+    <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="40" startPosition="56" endLine="42" endPosition="36" />
     <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="35" startPosition="0" endLine="38" endPosition="5" />
     <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="816130369292799544" fileName="first.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
