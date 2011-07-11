@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-17unip3d0l6seyqglgmhvq1fkgq45bz">
+<dependencies version="2" modelHash="ct4b5ktjonma9x9x0v5gplifh6fghmx">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.plugins(MPS.Classpath/com.intellij.ide.plugins@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
@@ -255,7 +255,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleMerger.java" />
   </source>
-  <source id="5006749173646651481" name="SvnInstaller" hash="-whurnvbz6ncaw9cuim1mdr5yi5k1se" dependsOnNodes="true">
+  <source id="5006749173646651481" name="SvnInstaller" hash="-4jg1vbe3z8fwwhl7dsrfq61h5qd7c6" dependsOnNodes="true">
     <dep root="1016968294606525391" />
     <dep root="1376744028423385490" />
     <dep root="5332772916083838064" />
@@ -529,7 +529,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MergerRoleIdsHandler.java" />
   </source>
-  <source id="5332772916083838064" name="ScriptGenerator" hash="4g6dn4jkyzukde39w4f3pq9dbeq932m" dependsOnNodes="true">
+  <source id="5332772916083838064" name="ScriptGenerator" hash="-7vdmzyoylz0t05q7lq0fsijuozsbn2x" dependsOnNodes="true">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.plugins(MPS.Classpath/com.intellij.ide.plugins@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />

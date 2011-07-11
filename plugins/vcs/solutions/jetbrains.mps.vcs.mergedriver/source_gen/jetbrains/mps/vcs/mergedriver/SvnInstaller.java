@@ -138,7 +138,7 @@ import com.intellij.openapi.util.SystemInfo;
       }
     }
 
-    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, getScriptFile(), dryRun);
+    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, getScriptFile(), dryRun);
     if (createScriptResult != AbstractInstaller.State.INSTALLED) {
       return createScriptResult;
     }

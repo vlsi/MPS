@@ -14,16 +14,29 @@ import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 
 /*package*/ class ScriptGenerator {
+  public static final int GIT = 1;
+  public static final int SVN = 2;
+
   private ScriptGenerator() {
   }
 
   @NotNull
-  public static AbstractInstaller.State generateScript(Project project, File scriptFile, boolean dryRun) {
+  public static AbstractInstaller.State generateScript(Project project, int type, File scriptFile, boolean dryRun) {
     String[] lines;
-    if (SystemInfo.isWindows) {
-      lines = new String[]{"@ECHO OFF", "SHIFT", "SHIFT", String.format("%s --svn %8 %7 %9 %4 %2 %6", CommandLineGenerator.getCommandLine(true))};
+    if (GIT == type) {
+      if (SystemInfo.isWindows) {
+        lines = new String[]{"@ECHO OFF", String.format("%s --git %1 %2 %3 %4", CommandLineGenerator.getCommandLine(true))};
+      } else {
+        lines = new String[]{"#/bin/sh", String.format("%s --git $1 $2 $3 $4", CommandLineGenerator.getCommandLine(true))};
+      }
+    } else if (SVN == type) {
+      if (SystemInfo.isWindows) {
+        lines = new String[]{"@ECHO OFF", "SHIFT", "SHIFT", String.format("%s --svn %8 %7 %9 %4 %2 %6", CommandLineGenerator.getCommandLine(true))};
+      } else {
+        lines = new String[]{"#/bin/sh", String.format("%s --svn ${10} $9 ${11} $6 $4 $8", CommandLineGenerator.getCommandLine(true))};
+      }
     } else {
-      lines = new String[]{"#/bin/sh", String.format("%s --svn ${10} $9 ${11} $6 $4 $8", CommandLineGenerator.getCommandLine(true))};
+      throw new IllegalArgumentException();
     }
     try {
       if (dryRun) {
