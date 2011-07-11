@@ -668,7 +668,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1220986250252(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name").equals("basedir")) && !(StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name")));
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"));
   }
 
   public static boolean ifMacro_Condition_4104037887205451177(final IOperationContext operationContext, final IfMacroContext _context) {
