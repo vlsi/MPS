@@ -19,7 +19,6 @@
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication_Behavior" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression_Behavior" />
-    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
