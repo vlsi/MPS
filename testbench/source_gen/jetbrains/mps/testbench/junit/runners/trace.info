@@ -556,8 +556,8 @@
       <varInfo nodeId="7906452883299897344" varName="builder" />
     </scopeInfo>
     <scopeInfo nodeId="7906452883299897347" fileName="MPSOpenProjectSuite.java" startLine="14" startPosition="0" endLine="18" endPosition="3">
-      <varInfo nodeId="7906452883299897352" varName="klass" />
       <varInfo nodeId="7906452883299897357" varName="openProjectRunner" />
+      <varInfo nodeId="7906452883299897352" varName="klass" />
       <varInfo nodeId="7906452883299897355" varName="builder" />
     </scopeInfo>
     <scopeInfo nodeId="7906452883299946317" fileName="MPSOpenProjectSuite.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
