@@ -591,7 +591,7 @@ public class JavaConverterTreeBuilder {
 
   /*package*/ SNode processExpression(SingleMemberAnnotation x) {
     SNode annotationInstance = prepareAnnotationInstance(x);
-    SNode value = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", null);
+    SNode value = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null);
     MemberValuePair[] pairs = x.memberValuePairs();
     if (pairs != null) {
       MemberValuePair pair = pairs[0];
