@@ -194,6 +194,22 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler" />
     <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.SimpleMerger" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.mergedriver.ScriptGenerator" file="ScriptGenerator.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.util.StringsIO" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.SimpleMerger" file="SimpleMerger.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
@@ -223,6 +239,7 @@
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.CommandLineGenerator" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.InternalRuntimePacker" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ScriptGenerator" />
     <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
