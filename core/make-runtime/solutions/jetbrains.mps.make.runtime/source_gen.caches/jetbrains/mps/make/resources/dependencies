@@ -22,5 +22,14 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
+  <dependency className="jetbrains.mps.make.resources.IResourceProperties" file="IResourceProperties.java">
+    <classNode dependClassName="jetbrains.mps.make.resources.PropertiesIO" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.resources.PropertiesIO" file="PropertiesIO.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+  </dependency>
 </dependenciesRoot>
 

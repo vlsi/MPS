@@ -4,5 +4,5 @@ package jetbrains.mps.make.resources;
 
 
 public interface IResource {
-  /*package*/ String describe();
+  public String describe();
 }
