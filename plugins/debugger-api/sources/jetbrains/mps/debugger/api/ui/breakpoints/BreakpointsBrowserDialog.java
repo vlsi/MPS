@@ -38,6 +38,13 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   private final BreakpointsView[] myViews;
   private int myCurrentViewIndex;
   private final Map<IBreakpointKind, IBreakpointPropertiesUi> myKindToUi = new HashMap<IBreakpointKind, IBreakpointPropertiesUi>();
+  private final BreakpointManagerListener myBreakpointManagerListener = new BreakpointManagerListener() {
+    @Override
+    public void breakpointsChanged() {
+      IBreakpoint bp = myViews[myCurrentViewIndex].getSelectedBreakpoint();
+      breakpointSelected(bp);
+    }
+  };
 
   public BreakpointsBrowserDialog(IOperationContext context) {
     super(context.getMainFrame(), "Breakpoints");
@@ -104,13 +111,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         }
       });
     }
-    myBreakpointsManager.addChangeListener(new BreakpointManagerListener() {
-      @Override
-      public void breakpointsChanged() {
-        IBreakpoint bp = myViews[myCurrentViewIndex].getSelectedBreakpoint();
-        breakpointSelected(bp);
-      }
-    });
+    myBreakpointsManager.addChangeListener(myBreakpointManagerListener);
 
     IBreakpoint selectedBreakpoint = myViews[myCurrentViewIndex].getSelectedBreakpoint();
     if (selectedBreakpoint != null) {
@@ -422,6 +423,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     for (BreakpointsView view : myViews) {
       view.dispose();
     }
+    myBreakpointsManager.removeChangeListener(myBreakpointManagerListener);
     super.dispose();
   }
 }
