@@ -1297,12 +1297,13 @@ public class JavaConverterTreeBuilder {
   public SNode processType(TypeDeclaration x) {
     SNode classifier = SNodeOperations.cast(myTypesProvider.getRaw(x.binding), "jetbrains.mps.baseLanguage.structure.Classifier");
     if (x.binding.isAnnotationType()) {
+      myCurrentTypeDeclaration = x;
       if (x.methods != null) {
         for (AbstractMethodDeclaration method : x.methods) {
           processAnnotationMethod((AnnotationMethodDeclaration) method);
         }
       }
-      myCurrentTypeDeclaration = x;
+      addClassifierAnnotations(classifier, x);
       addClassifierJavadoc(classifier, x.javadoc);
       myCurrentTypeDeclaration = null;
       return classifier;

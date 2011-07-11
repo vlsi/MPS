@@ -141,11 +141,16 @@ public abstract class SourceWrapper {
 
     public ClassWrapper(String source, SModel model) {
       super(source, model);
-      int index = source.indexOf("class");
+      String sClass = "class";
+      int index = source.indexOf(sClass);
       if (index == -1) {
-        throw new ConversionFailedException("not a class");
+        sClass = "interface";
+        index = source.indexOf(sClass);
+      }
+      if (index == -1) {
+        throw new ConversionFailedException("not a class or interface");
       } else {
-        int i = index + "class".length();
+        int i = index + sClass.length();
         while (Character.isWhitespace(source.charAt(i))) {
           i++;
         }
