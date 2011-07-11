@@ -373,8 +373,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      setVersion(latestVersion);
-      LOG.error("Metadata file for model " + getSModelReference().getSModelFqName() + " wasn't present. Recreated a new one.");
+      getSModelHeader().setVersion(latestVersion);
+      LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
     }
   }
 
