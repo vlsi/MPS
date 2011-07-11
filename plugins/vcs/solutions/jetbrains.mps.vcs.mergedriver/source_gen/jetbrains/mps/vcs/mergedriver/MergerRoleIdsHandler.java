@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.mergedriver;
 
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -13,10 +13,10 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 /*package*/ class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {
   private boolean myConsistent = true;
-  private Map<String, SNodeId> myConceptsToIds = MapSequence.fromMap(new HashMap<String, SNodeId>());
-  private Map<Tuples._2<String, String>, SNodeId> myNodeRolesToIds = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodeId>());
-  private Map<Tuples._2<String, String>, SNodeId> myReferenceRolesToIds = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodeId>());
-  private Map<Tuples._2<String, String>, SNodeId> myPropertyNamesToIds = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodeId>());
+  private Map<String, SNodePointer> myConceptsToPointers = MapSequence.fromMap(new HashMap<String, SNodePointer>());
+  private Map<Tuples._2<String, String>, SNodePointer> myNodeRolesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
+  private Map<Tuples._2<String, String>, SNodePointer> myReferenceRolesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
+  private Map<Tuples._2<String, String>, SNodePointer> myPropertyNamesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
   private Map<SModelReference, Integer> myModelVersions = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
 
   /*package*/ MergerRoleIdsHandler() {
@@ -30,40 +30,40 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
     }
   }
 
-  public void conceptRead(String conceptFqName, SNodeId conceptId) {
-    storeAndCheckConsistency(myConceptsToIds, conceptFqName, conceptId);
+  public void conceptRead(String conceptFqName, SNodePointer conceptPointer) {
+    storeAndCheckConsistency(myConceptsToPointers, conceptFqName, conceptPointer);
   }
 
-  public void nodeRoleRead(String conceptFqName, String linkRole, SNodeId linkId) {
-    storeAndCheckConsistency(myNodeRolesToIds, MultiTuple.<String,String>from(conceptFqName, linkRole), linkId);
+  public void nodeRoleRead(String conceptFqName, String linkRole, SNodePointer linkPointer) {
+    storeAndCheckConsistency(myNodeRolesToPointers, MultiTuple.<String,String>from(conceptFqName, linkRole), linkPointer);
   }
 
-  public void referenceRoleRead(String conceptFqName, String referenceLinkRole, SNodeId linkId) {
-    storeAndCheckConsistency(myReferenceRolesToIds, MultiTuple.<String,String>from(conceptFqName, referenceLinkRole), linkId);
+  public void referenceRoleRead(String conceptFqName, String referenceLinkRole, SNodePointer linkPointer) {
+    storeAndCheckConsistency(myReferenceRolesToPointers, MultiTuple.<String,String>from(conceptFqName, referenceLinkRole), linkPointer);
+  }
+
+  public void propertyNameRead(String conceptFqName, String propertyName, SNodePointer namePointer) {
+    storeAndCheckConsistency(myPropertyNamesToPointers, MultiTuple.<String,String>from(conceptFqName, propertyName), namePointer);
   }
 
   public void modelVersionRead(SModelReference reference, int i) {
     storeAndCheckConsistency(myModelVersions, reference, i);
   }
 
-  public void propertyNameRead(String conceptFqName, String propertyName, SNodeId nameId) {
-    storeAndCheckConsistency(myPropertyNamesToIds, MultiTuple.<String,String>from(conceptFqName, propertyName), nameId);
+  public SNodePointer getConceptPointer(String conceptFqName) {
+    return MapSequence.fromMap(myConceptsToPointers).get(conceptFqName);
   }
 
-  public SNodeId getConceptId(String conceptFqName) {
-    return MapSequence.fromMap(myConceptsToIds).get(conceptFqName);
+  public SNodePointer getNodeRolePointer(String conceptFqName, String linkRole) {
+    return MapSequence.fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(conceptFqName, linkRole));
   }
 
-  public SNodeId getNodeRoleId(String conceptFqName, String linkRole) {
-    return MapSequence.fromMap(myNodeRolesToIds).get(MultiTuple.<String,String>from(conceptFqName, linkRole));
+  public SNodePointer getReferenceRolePointer(String conceptFqName, String referenceLinkRole) {
+    return MapSequence.fromMap(myReferenceRolesToPointers).get(MultiTuple.<String,String>from(conceptFqName, referenceLinkRole));
   }
 
-  public SNodeId getReferenceRoleId(String conceptFqName, String referenceLinkRole) {
-    return MapSequence.fromMap(myReferenceRolesToIds).get(MultiTuple.<String,String>from(conceptFqName, referenceLinkRole));
-  }
-
-  public SNodeId getPropertyNameId(String conceptFqName, String propertyName) {
-    return MapSequence.fromMap(myPropertyNamesToIds).get(MultiTuple.<String,String>from(conceptFqName, propertyName));
+  public SNodePointer getPropertyNamePointer(String conceptFqName, String propertyName) {
+    return MapSequence.fromMap(myPropertyNamesToPointers).get(MultiTuple.<String,String>from(conceptFqName, propertyName));
   }
 
   public int getModelVersion(SModelReference reference) {

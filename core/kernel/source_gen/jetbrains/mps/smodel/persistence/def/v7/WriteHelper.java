@@ -94,7 +94,7 @@ public class WriteHelper {
 
   public String genTypeId(@NotNull SNode node) {
     if (RoleIdsComponent.isEnabled()) {
-      SNodeId conceptId = RoleIdsComponent.getConceptId(node);
+      SNodeId conceptId = RoleIdsComponent.getConceptPointer(node).getNodeId();
       return genReferenceId(getModelReferenceForConcept(node), conceptId);
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node);
@@ -117,7 +117,7 @@ public class WriteHelper {
       return null;
     }
     if (RoleIdsComponent.isEnabled()) {
-      SNodeId roleId = RoleIdsComponent.getNodeRoleId(node);
+      SNodeId roleId = RoleIdsComponent.getNodeRolePointer(node).getNodeId();
       return genReferenceId(getModelReferenceForConcept(SNodeOperations.getParent(node)), roleId);
     }
     SNode linkDecl = SNodeOperations.getContainingLinkDeclaration(node);
@@ -129,7 +129,7 @@ public class WriteHelper {
 
   public String genRoleId(@NotNull SReference ref) {
     if (RoleIdsComponent.isEnabled()) {
-      SNodeId roleId = RoleIdsComponent.getReferenceRoleId(ref);
+      SNodeId roleId = RoleIdsComponent.getReferenceRolePointer(ref).getNodeId();
       return genReferenceId(getModelReferenceForConcept(ref.getSourceNode()), roleId);
     }
     SNode linkDecl = SLinkOperations.findLinkDeclaration(ref);
@@ -145,7 +145,7 @@ public class WriteHelper {
 
   public String genNameId(@NotNull SNode node, @NotNull String prop) {
     if (RoleIdsComponent.isEnabled()) {
-      SNodeId propertyId = RoleIdsComponent.getPropertyNameId(node, prop);
+      SNodeId propertyId = RoleIdsComponent.getPropertyNamePointer(node, prop).getNodeId();
       return genReferenceId(getModelReferenceForConcept(node), propertyId);
     }
     SNode propDecl = node.getPropertyDeclaration(prop);
