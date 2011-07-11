@@ -50,8 +50,7 @@ public class Module_Behavior {
   }
 
   public static SNode call_getModuleBaseDirectory_6863060912307757632(SNode thisNode) {
-    String descriptor = Module_Behavior.call_getMacros_1213877515158(thisNode).expandPath(MacrosFactory.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile());
-    return Module_Behavior.call_getPathHolder_1239195000114(thisNode, ModuleUtil.getRelativePath(descriptor, AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode)));
+    return Module_Behavior.call_getPathHolder_1239195000114(thisNode, Module_Behavior.call_getMacros_1213877515158(thisNode).expandPath(MacrosFactory.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile()));
   }
 
   public static SNode call_getModuleDescriptorFile_6863060912307764362(SNode thisNode) {
@@ -163,6 +162,12 @@ public class Module_Behavior {
     SNode pathHolder = new Module_Behavior.QuotationClass_835h7m_a0a1a71().createNode(ModuleUtil.getRelativePath(path, AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath()), thisNode, ModuleUtil.getRelativePath(path, Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode)));
     if (SPropertyOperations.getString(pathHolder, "fullPath").equals(path)) {
       ModuleUtil.findMacro(pathHolder, SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true));
+    } else {
+      SLinkOperations.setTarget(pathHolder, "macro", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_835h7m_a0a0a0a0a2a0a0c0r(SPropertyOperations.getString(it, "name"), Layout_Behavior.getBasedirName_1226509010730());
+        }
+      }), false);
     }
     if (SPropertyOperations.getString(pathHolder, "moduleRelativePath").equals(path)) {
       if (path.equals(Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode))) {
@@ -236,6 +241,13 @@ public class Module_Behavior {
       return checkedDotOperand.replace(File.separator, Util.SEPARATOR);
     }
     return null;
+  }
+
+  private static boolean eq_835h7m_a0a0a0a0a2a0a0c0r(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public static class QuotationClass_835h7m_a0a1a71 {

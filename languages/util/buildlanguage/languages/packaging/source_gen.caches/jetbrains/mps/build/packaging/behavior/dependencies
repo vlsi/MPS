@@ -630,6 +630,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ModuleUtil" />
     <classNode dependClassName="jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
