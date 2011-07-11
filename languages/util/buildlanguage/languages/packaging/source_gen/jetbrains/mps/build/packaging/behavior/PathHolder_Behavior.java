@@ -5,6 +5,16 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
+import java.io.File;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class PathHolder_Behavior {
   public static void init(SNode thisNode) {
@@ -26,5 +36,70 @@ public class PathHolder_Behavior {
       return false;
     }
     return PathHolder_Behavior.call_getValue_1219231432401(thisNode).equals(PathHolder_Behavior.call_getValue_1219231432401(pathHolder));
+  }
+
+  public static void call_shrink_55204148067446984(final SNode thisNode, List<SNode> macro) {
+    SNode suitableMacro = ListSequence.fromList(macro).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(thisNode, "fullPath").startsWith(SPropertyOperations.getString(it, "path") + Util.SEPARATOR);
+      }
+    });
+    if (suitableMacro == null) {
+      return;
+    }
+    SLinkOperations.setTarget(thisNode, "macro", suitableMacro, false);
+    SPropertyOperations.set(thisNode, "fullPath", ModuleUtil.getRelativePath(SPropertyOperations.getString(thisNode, "fullPath"), SPropertyOperations.getString(suitableMacro, "path")));
+  }
+
+  public static SNode createPathHolder_55204148067446946(String path, SNode module) {
+    path = path.replace(File.separator, Util.SEPARATOR);
+    SNode pathHolder = new PathHolder_Behavior.QuotationClass_ohoc40_a0a1a5().createNode(ModuleUtil.getRelativePath(path, AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(module).getPath()), module, ModuleUtil.getRelativePath(path, Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(module)));
+
+    SNode layout = SNodeOperations.getAncestor(module, "jetbrains.mps.build.packaging.structure.Layout", true, true);
+    if (SPropertyOperations.getString(pathHolder, "fullPath").equals(path)) {
+      PathHolder_Behavior.call_shrink_55204148067446984(pathHolder, SLinkOperations.getTargets(layout, "macro", true));
+    } else {
+      SLinkOperations.setTarget(pathHolder, "macro", ListSequence.fromList(SLinkOperations.getTargets(layout, "macro", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_ohoc40_a0a0a0a0a2a0a0e0f(SPropertyOperations.getString(it, "name"), Layout_Behavior.getBasedirName_1226509010730());
+        }
+      }), false);
+    }
+
+    if (SPropertyOperations.getString(pathHolder, "moduleRelativePath").equals(path)) {
+      if (path.equals(Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(module))) {
+        SPropertyOperations.set(pathHolder, "moduleRelativePath", "");
+      } else {
+        SPropertyOperations.set(pathHolder, "moduleRelativePath", null);
+      }
+    }
+    return pathHolder;
+  }
+
+  private static boolean eq_ohoc40_a0a0a0a0a2a0a0e0f(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  public static class QuotationClass_ohoc40_a0a1a5 {
+    public QuotationClass_ohoc40_a0a1a5() {
+    }
+
+    public SNode createNode(Object parameter_3, Object parameter_4, Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("fullPath", (String) parameter_3);
+        quotedNode1_2.setProperty("moduleRelativePath", (String) parameter_5);
+        quotedNode1_2.setReferent("module", (SNode) parameter_4);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

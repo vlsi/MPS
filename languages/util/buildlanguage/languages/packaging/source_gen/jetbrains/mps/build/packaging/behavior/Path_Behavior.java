@@ -53,6 +53,20 @@ public class Path_Behavior {
     return IPath_Behavior.call_getFile_1233322718999(thisNode).getAbsolutePath();
   }
 
+  public static String call_getPathUntilCurrent_55204148067303513(SNode thisNode, SNode currentNode) {
+    String basePath = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "path");
+    if (basePath == null) {
+      basePath = "";
+    }
+    for (SNode path : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
+      if (path == currentNode) {
+        break;
+      }
+      basePath += "/" + SPropertyOperations.getString(path, "path");
+    }
+    return basePath;
+  }
+
   public static String call_getName_1221141245424(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), "virtual_getName_1221141245424", PARAMETERS_1221141245424);
