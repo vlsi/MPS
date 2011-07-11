@@ -25,7 +25,10 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
     return tryToWrap(classFQname, javaValue);
   }
 
-  public static JavaValue fromJDIValue(Value value, ThreadReference threadReference) {
+  public static JavaValue fromJDIValue(@Nullable Value value, ThreadReference threadReference) {
+    if (value == null) {
+      return fromJDIValueRaw(value, "java.lang.Object", threadReference);
+    }
     JavaValue javaValue = fromJDIValueRaw(value, value.type().name(), threadReference);
     return tryToWrap(value.type().name(), javaValue);
   }
