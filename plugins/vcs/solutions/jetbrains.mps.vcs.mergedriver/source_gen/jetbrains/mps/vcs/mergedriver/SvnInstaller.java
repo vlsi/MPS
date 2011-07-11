@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.mergedriver;
 import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.WorkbenchPathManager;
+import com.intellij.openapi.util.SystemInfo;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
@@ -15,16 +16,20 @@ import java.util.regex.Pattern;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
-import com.intellij.openapi.util.SystemInfo;
 
 /*package*/ class SvnInstaller extends AbstractInstaller {
   private File myConfigFile;
   private File myConfigDir;
+  private File myScriptFile;
 
   public SvnInstaller(Project project) {
     super(project);
     myConfigDir = new File(WorkbenchPathManager.getUserHome() + File.separator + ".subversion");
     myConfigFile = new File(myConfigDir, "config");
+    myScriptFile = new File(myConfigDir, "mps-merger." + ((SystemInfo.isWindows ?
+      "bat" :
+      "sh"
+    )));
   }
 
   @NotNull
@@ -50,7 +55,7 @@ import com.intellij.openapi.util.SystemInfo;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
 
-    String configLine = String.format("diff3-cmd = %s", getScriptFile());
+    String configLine = String.format("diff3-cmd = %s", myScriptFile);
 
     List<String> lines = StringsIO.readLines(myConfigFile);
     int lineToReplace = -1;
@@ -130,7 +135,7 @@ import com.intellij.openapi.util.SystemInfo;
       }
     }
 
-    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, getScriptFile(), dryRun);
+    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
     if (createScriptResult != AbstractInstaller.State.INSTALLED) {
       return createScriptResult;
     }
@@ -158,13 +163,6 @@ import com.intellij.openapi.util.SystemInfo;
       Messages.showErrorDialog(myProject, "Could not update Subversion configuration file (~/.subversion/config)." + e.getMessage(), "Could Not Save Config");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
-  }
-
-  private File getScriptFile() {
-    return new File(myConfigDir, "mps-merger." + ((SystemInfo.isWindows ?
-      "bat" :
-      "sh"
-    )));
   }
 
   private static boolean neq_k2wvr2_a0a2a2a3a1a11a0(Object a, Object b) {

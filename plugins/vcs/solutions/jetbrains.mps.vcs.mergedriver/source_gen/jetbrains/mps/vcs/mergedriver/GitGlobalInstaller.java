@@ -4,10 +4,10 @@ package jetbrains.mps.vcs.mergedriver;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.WorkbenchPathManager;
 import java.io.File;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.workbench.WorkbenchPathManager;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,19 +22,20 @@ import java.io.FileNotFoundException;
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
   protected static Log log = LogFactory.getLog(GitGlobalInstaller.class);
 
+  private File myConfigFile;
+
   public GitGlobalInstaller(Project project) {
     super(project);
+    myConfigFile = new File(WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig");
   }
 
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
-    String globalConfigPath = WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig";
-    File configFile = new File(globalConfigPath);
-    if (!(configFile.exists())) {
+    if (!(myConfigFile.exists())) {
       if (dryRun) {
         return AbstractInstaller.State.NOT_INSTALLED;
       } else {
-        String msg = String.format("Git config (%s) file is not present. Do you want to create it?", configFile.getAbsolutePath());
+        String msg = String.format("Git config (%s) file is not present. Do you want to create it?", myConfigFile.getAbsolutePath());
         if (Messages.showYesNoDialog(myProject, msg, "No Git Config", Messages.getQuestionIcon()) != 0) {
           return AbstractInstaller.State.NOT_INSTALLED;
         }
@@ -54,7 +55,7 @@ import java.io.FileNotFoundException;
     ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = %s --git %%O %%A %%B %%L", cmd));
     ListSequence.fromList(newConfigLines).addElement("");
 
-    List<String> configLines = StringsIO.readLines(configFile);
+    List<String> configLines = StringsIO.readLines(myConfigFile);
     int sectionStart = ListSequence.fromList(configLines).indexOf(ListSequence.fromList(configLines).findFirst(new IWhereFilter<String>() {
       public boolean accept(String line) {
         return line.matches("\\s*\\[merge\\s+\"mps\"\\]\\s*");
@@ -71,7 +72,7 @@ import java.io.FileNotFoundException;
       boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0e0r0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0e0p0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -96,8 +97,8 @@ import java.io.FileNotFoundException;
     }
 
     try {
-      StringsIO.writeLines(configFile, configLines);
-      Messages.showInfoMessage(myProject, String.format("Successfully updated %s", configFile.getAbsolutePath()), "Global Git Merge Driver Installed");
+      StringsIO.writeLines(myConfigFile, configLines);
+      Messages.showInfoMessage(myProject, String.format("Successfully updated %s", myConfigFile.getAbsolutePath()), "Global Git Merge Driver Installed");
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
       if (log.isErrorEnabled()) {
@@ -112,7 +113,7 @@ import java.io.FileNotFoundException;
     }
   }
 
-  private static boolean neq_btx4zt_a0a0a0e0r0a(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0e0p0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
