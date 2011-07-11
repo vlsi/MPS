@@ -4,30 +4,15 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class VariableOwner_Behavior {
   private static Class[] PARAMETERS_8981808925914841576 = {SNode.class};
 
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> call_getOuterVariables_5249919352014727828(SNode thisNode) {
-    List<SNode> allVar = SNodeOperations.getDescendants(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.Variable", false, new String[]{});
-    List<SNode> allRef = SNodeOperations.getDescendants(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference", false, new String[]{});
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode ref : allRef) {
-      if (!(ListSequence.fromList(allVar).contains(SLinkOperations.getTarget(ref, "variable", false))) && !(ListSequence.fromList(result).contains(SLinkOperations.getTarget(ref, "variable", false)))) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "variable", false));
-      }
-    }
-    return result;
   }
 
   public static List<SNode> call_getVariables_8981808925914841576(SNode thisNode) {

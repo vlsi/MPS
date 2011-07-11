@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import java.util.ArrayList;
 
 public class LambdaExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -30,7 +32,10 @@ public class LambdaExpression_Behavior {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")) {
       return true;
     }
-    return LambdaExpression_Behavior.call_isInFull_7347119454575591465(node);
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"))) {
+      return false;
+    }
+    return LambdaExpression_Behavior.call_isInFull_7347119454575591465(SNodeOperations.cast(node, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"));
   }
 
   public static boolean call_isInFull_7347119454575591465(SNode thisNode) {
@@ -39,5 +44,17 @@ public class LambdaExpression_Behavior {
       return false;
     }
     return LambdaApplication_Behavior.call_isFullApplication_1308935328408190838(LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(thisNode));
+  }
+
+  public static List<SNode> call_getOuterVariables_5249919352014727828(SNode thisNode) {
+    List<SNode> allVar = SNodeOperations.getDescendants(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.Variable", false, new String[]{});
+    List<SNode> allRef = SNodeOperations.getDescendants(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference", false, new String[]{});
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode ref : allRef) {
+      if (!(ListSequence.fromList(allVar).contains(SLinkOperations.getTarget(ref, "variable", false))) && !(ListSequence.fromList(result).contains(SLinkOperations.getTarget(ref, "variable", false)))) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "variable", false));
+      }
+    }
+    return result;
   }
 }

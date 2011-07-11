@@ -28,9 +28,7 @@
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="2985097847315916739">
       <property name="name" nameId="tpck.1169194664001" value="myType" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="2985097847315916758" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2985097847315916772">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
-      </node>
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2584857295430387265" />
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1308935328408157894">
       <property name="name" nameId="tpck.1169194664001" value="apply" />
@@ -200,14 +198,14 @@
                   </node>
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3083376787866928709">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3083376787866928696" resolveInfo="i" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3083376787866928696" resolveInfo="j" />
                 </node>
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3083376787866928706">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="3083376787866928707">
                 <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3083376787866928708">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3083376787866928696" resolveInfo="i" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3083376787866928696" resolveInfo="j" />
                 </node>
               </node>
             </node>

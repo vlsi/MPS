@@ -34,19 +34,19 @@ public class first {
     private List myOuterVars = new ArrayList();
 
     public Function_816130369292799568() {
-      this.myType = "(number->(number->number))";
+      myType = "(number->(number->number))";
     }
 
     public Function_816130369292799568(List outerVars) {
-      this.myType = "(number->(number->number))";
-      this.myOuterVars.addAll(outerVars);
+      myType = "(number->(number->number))";
+      myOuterVars.addAll(outerVars);
     }
 
     public Object eval() {
       int i = 0;
       int j = 0;
-      Integer y = (Integer) this.myArgs.get(i++);
-      Integer z = (Integer) this.myArgs.get(i++);
+      Integer y = (Integer) myArgs.get(i++);
+      Integer z = (Integer) myArgs.get(i++);
       return (y + z) * (y + z);
     }
 
@@ -55,7 +55,7 @@ public class first {
     }
 
     public Function copy() {
-      return new first.Function_816130369292799568(this.myOuterVars);
+      return new first.Function_816130369292799568(myOuterVars);
     }
   }
 }

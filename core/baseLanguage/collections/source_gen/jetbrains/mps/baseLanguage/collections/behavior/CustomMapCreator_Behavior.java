@@ -17,7 +17,7 @@ public class CustomMapCreator_Behavior {
 
   public static SNode call_createType_1576845966386891475(SNode thisNode) {
     SNode res = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "containerType", true));
-    //  workaround an SModel's dumbness
+    //  workaround an SModel's dumbness 
     if (res != null) {
       res.changeModel(AuxilaryRuntimeModel.getDescriptor().getSModel());
     }
@@ -35,7 +35,7 @@ public class CustomMapCreator_Behavior {
           int index = ListSequence.fromList(tvars).indexOf(SLinkOperations.getTarget(SNodeOperations.cast(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
           SNode realType = ((index >= 0 && index < ListSequence.fromList(params).count()) ?
             SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)) :
-            (SNode) null
+            null
           );
           SNodeOperations.replaceWithAnother(chld, realType);
         }

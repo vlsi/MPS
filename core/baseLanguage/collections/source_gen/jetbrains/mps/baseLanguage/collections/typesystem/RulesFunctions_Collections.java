@@ -19,6 +19,9 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class RulesFunctions_Collections {
+  public RulesFunctions_Collections() {
+  }
+
   @CheckingMethod
   public static SNode getInput(final TypeCheckingContext typeCheckingContext, SNode op) {
     SNode input = null;
@@ -35,7 +38,7 @@ public class RulesFunctions_Collections {
   }
 
   public static SNode getOutput(SNode op) {
-    SNode output = null;
+    SNode output;
     SNode parent = SNodeOperations.getParent(op);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       output = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation");
