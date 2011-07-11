@@ -159,7 +159,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   });
   private Map<Object, AdditionalPainter> myItemsToAdditionalPainters = new HashMap<Object, AdditionalPainter>();
 
-  private List<LeftMarginMouseListener> myLeftMarginPressListeners = new ArrayList<LeftMarginMouseListener>(0);
+  private final List<LeftMarginMouseListener> myLeftMarginPressListeners = new ArrayList<LeftMarginMouseListener>(0);
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
@@ -1143,6 +1143,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myRootCell = null;
     }
     mySelectionManager.dispose();
+
+    myLeftMarginPressListeners.clear();
   }
 
   public boolean hasValidSelectedNode() {
