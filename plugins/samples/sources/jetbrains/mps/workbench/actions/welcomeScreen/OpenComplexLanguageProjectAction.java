@@ -19,6 +19,8 @@ import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
+import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.build.SamplesExtractor;
 
 import java.io.File;
@@ -33,6 +35,9 @@ public class OpenComplexLanguageProjectAction extends AnAction {
     if (!new File(projectFile).exists()) {
       SamplesExtractor.getInstance().extractSamples();
     }
-    ProjectUtil.openProject(projectFile, e.getData(PlatformDataKeys.PROJECT), false);
+    Project project = ProjectUtil.openProject(projectFile, e.getData(PlatformDataKeys.PROJECT), false);
+    if (project != null) {
+      ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
+    }
   }
 }

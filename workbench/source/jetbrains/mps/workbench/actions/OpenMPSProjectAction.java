@@ -19,6 +19,8 @@ import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
+import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
@@ -69,6 +71,9 @@ public class OpenMPSProjectAction extends BaseAction {
 
     String filePath = file.getPath();
 
-    ProjectUtil.openProject(filePath, e.getData(PlatformDataKeys.PROJECT), false);
+    Project project = ProjectUtil.openProject(filePath, e.getData(PlatformDataKeys.PROJECT), false);
+    if (project != null) {
+      ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
+    }
   }
 }

@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3521790172251160903">
-    <nodeInfo nodeId="3521790172251160936" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="52" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251160952" fileName="ProjectCheckoutListener.java" startLine="23" startPosition="44" endLine="24" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251160973" fileName="ProjectCheckoutListener.java" startLine="25" startPosition="20" endLine="26" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251160982" fileName="ProjectCheckoutListener.java" startLine="27" startPosition="7" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251160984" fileName="ProjectCheckoutListener.java" startLine="29" startPosition="5" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="13" startPosition="66" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectCheckoutListener#()V" />
-    <nodeInfo nodeId="3521790172251160968" fileName="ProjectCheckoutListener.java" startLine="24" startPosition="219" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="61" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3521790172251160918" fileName="ProjectCheckoutListener.java" startLine="17" startPosition="78" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251160941" fileName="ProjectCheckoutListener.java" startLine="22" startPosition="7" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="16" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
-    <scopeInfo nodeId="3521790172251160909" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="36" endLine="14" endPosition="36" />
-    <scopeInfo nodeId="3521790172251160991" fileName="ProjectCheckoutListener.java" startLine="33" startPosition="63" endLine="33" endPosition="63" />
-    <scopeInfo nodeId="3521790172251160935" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="52" endLine="20" endPosition="60" />
-    <scopeInfo nodeId="3521790172251160972" fileName="ProjectCheckoutListener.java" startLine="25" startPosition="20" endLine="26" endPosition="76" />
-    <scopeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="13" startPosition="66" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <nodeInfo nodeId="3521790172251160936" fileName="ProjectCheckoutListener.java" startLine="20" startPosition="52" endLine="21" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3521790172251160952" fileName="ProjectCheckoutListener.java" startLine="24" startPosition="44" endLine="25" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7171758144016813665" fileName="ProjectCheckoutListener.java" startLine="26" startPosition="20" endLine="27" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7171758144016903359" fileName="ProjectCheckoutListener.java" startLine="28" startPosition="36" endLine="29" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3521790172251160982" fileName="ProjectCheckoutListener.java" startLine="31" startPosition="7" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3521790172251160984" fileName="ProjectCheckoutListener.java" startLine="33" startPosition="5" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="66" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectCheckoutListener#()V" />
+    <nodeInfo nodeId="7171758144016813677" fileName="ProjectCheckoutListener.java" startLine="27" startPosition="100" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="61" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3521790172251160918" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="78" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3521790172251160968" fileName="ProjectCheckoutListener.java" startLine="25" startPosition="219" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3521790172251160941" fileName="ProjectCheckoutListener.java" startLine="23" startPosition="7" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="17" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
+    <scopeInfo nodeId="3521790172251160909" fileName="ProjectCheckoutListener.java" startLine="15" startPosition="36" endLine="15" endPosition="36" />
+    <scopeInfo nodeId="3521790172251160991" fileName="ProjectCheckoutListener.java" startLine="37" startPosition="63" endLine="37" endPosition="63" />
+    <scopeInfo nodeId="3521790172251160935" fileName="ProjectCheckoutListener.java" startLine="20" startPosition="52" endLine="21" endPosition="60" />
+    <scopeInfo nodeId="7171758144016813678" fileName="ProjectCheckoutListener.java" startLine="28" startPosition="36" endLine="29" endPosition="97" />
+    <scopeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="66" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="3521790172251160989" varName="lastOpenedProject" />
     </scopeInfo>
-    <scopeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="61" endLine="22" endPosition="0">
+    <scopeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="61" endLine="23" endPosition="0">
       <varInfo nodeId="3521790172251160931" varName="dir" />
       <varInfo nodeId="3521790172251160933" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3521790172251160951" fileName="ProjectCheckoutListener.java" startLine="23" startPosition="44" endLine="28" endPosition="18">
+    <scopeInfo nodeId="3521790172251160972" fileName="ProjectCheckoutListener.java" startLine="26" startPosition="20" endLine="30" endPosition="9">
+      <varInfo nodeId="7171758144016813666" varName="openedProject" />
+    </scopeInfo>
+    <scopeInfo nodeId="3521790172251160951" fileName="ProjectCheckoutListener.java" startLine="24" startPosition="44" endLine="32" endPosition="18">
       <varInfo nodeId="3521790172251160953" varName="rc" />
     </scopeInfo>
-    <scopeInfo nodeId="3521790172251160917" fileName="ProjectCheckoutListener.java" startLine="17" startPosition="78" endLine="30" endPosition="17">
+    <scopeInfo nodeId="3521790172251160917" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="78" endLine="34" endPosition="17">
       <varInfo nodeId="3521790172251160919" varName="files" />
     </scopeInfo>
-    <scopeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="16" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="17" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="3521790172251160913" varName="project" />
       <varInfo nodeId="3521790172251160915" varName="directory" />
     </scopeInfo>
-    <unitInfo nodeId="3521790172251160927" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="43" endLine="22" endPosition="5" unitName="jetbrains.mps.vcs.integration.ProjectCheckoutListener$1" />
-    <unitInfo nodeId="3521790172251160903" fileName="ProjectCheckoutListener.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.vcs.integration.ProjectCheckoutListener" />
+    <unitInfo nodeId="3521790172251160927" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="43" endLine="23" endPosition="5" unitName="jetbrains.mps.vcs.integration.ProjectCheckoutListener$1" />
+    <unitInfo nodeId="3521790172251160903" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.vcs.integration.ProjectCheckoutListener" />
   </root>
   <root nodeId="3521790172251160992">
     <nodeInfo nodeId="3521790172251161017" fileName="OptimizeImportsCheckinHandler.java" startLine="31" startPosition="67" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
