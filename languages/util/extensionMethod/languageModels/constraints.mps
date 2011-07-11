@@ -15,7 +15,6 @@
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="wc2m" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.search(jetbrains.mps.baseLanguage/jetbrains.mps.baseLanguage.search@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="5h2r" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
@@ -32,10 +31,10 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uigu.1894531970723270160" resolveInfo="TypeExtension" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1550313277221324861">
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uigu.1550313277221324859" resolveInfo="TypeExtensionReference" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uigu.1550313277221324859" resolveInfo="ExtensionMethodCall" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3316739663067166481">
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uigu.3316739663067157299" resolveInfo="ExtensionThis" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uigu.3316739663067157299" resolveInfo="ThisExtensionExpression" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2763618064981525308">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uigu.1550313277222152185" resolveInfo="ExtensionMethodDeclaration" />
@@ -415,7 +414,7 @@
                       </node>
                     </node>
                     <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6235310215814037994">
-                      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" />
+                      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
                     </node>
                   </node>
                 </node>

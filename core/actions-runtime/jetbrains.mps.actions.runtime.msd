@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.actions.runtime" uuid="e24ff7ba-0bee-4ca8-af7d-16f704ae56e7" compileInMPS="false" java-stubs-enabled="false">
+<solution name="jetbrains.mps.actions.runtime" uuid="e24ff7ba-0bee-4ca8-af7d-16f704ae56e7" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/models" namespacePrefix="jetbrains.mps.actions" />
   </models>
   <dependencies>
     <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
-    <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
   </dependencies>
   <usedLanguages>

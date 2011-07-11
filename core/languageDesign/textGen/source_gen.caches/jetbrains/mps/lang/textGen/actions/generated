@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ephy32tw6g4cu51u82hipcd2xjx34yt">
+<dependencies version="2" modelHash="hl6155wcl07zeax2p1wsmr2t1ggr94">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.action(MPS.Classpath/jetbrains.mps.smodel.action@java_stub)" />
@@ -29,7 +29,7 @@
   <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="-rwmllia2y1s03q7hf4mke0314kbhj6" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-c8o7egrhhlddj60rzgg330ecnpq5k8d" />
-  <common hash="-5qzp3yj1wa7b3ez5xzhho14fe17xefj" dependsOnNodes="true">
+  <common hash="-1kxwn5dit9h170f18q25sxj5s6g89le" dependsOnNodes="true">
     <dep root="1234362649055" />
     <dep root="1237476071395" />
     <dep root="1237983620276" />
@@ -67,7 +67,7 @@
   <source id="1234362649055" name="operationParameters" hash="b27cwgeh1d42dlnvnb3xoqkiqjc7lms">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1237476071395" name="customAction" hash="64txdadi0wuwn38tkepuu5opci59oiw">
+  <source id="1237476071395" name="customAction" hash="5ljq7dbcsjbjzivxnbj1ydn9dz42oko">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1237983620276" name="addSeparator" hash="-29m1pkpsdfi6egbmm0tgsdqkvist6er">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="collections.runtime.gwt" uuid="86abb39a-11fb-4a1e-ae95-ea43cc94ae42" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/core/baseLanguage/collections/runtime/source_gen.gwt">
+<solution name="collections.runtime.gwt" uuid="86abb39a-11fb-4a1e-ae95-ea43cc94ae42" compileInMPS="false" generatorOutputPath="${mps_home}/core/baseLanguage/collections/runtime/source_gen.gwt">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

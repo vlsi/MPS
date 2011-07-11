@@ -34,7 +34,7 @@
     </generator>
   </generators>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/core/baseLanguage/tuples/runtime/classes" include="false">
+    <stubModelEntry path="${mps_home}/core/baseLanguage/tuples/runtime/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>

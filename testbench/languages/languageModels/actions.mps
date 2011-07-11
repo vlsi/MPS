@@ -15,7 +15,6 @@
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="pqw3" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#junit.framework(MPS.Classpath/junit.framework@java_stub)" version="-1" />
   <import index="4l8p" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.junit(MPS.Classpath/org.junit@java_stub)" version="-1" />
-  <import index="inbo" modelUID="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" version="-1" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -273,13 +272,13 @@
                                   </node>
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="1280144168199520255">
                                     <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1280144168199520256">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1280144168199520239" resolveInfo="ms" />
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1280144168199520239" resolveInfo="mscope" />
                                     </node>
                                     <node role="ifFalse" roleId="tpee.1163668934364" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="1280144168199520257" />
                                     <node role="condition" roleId="tpee.1163668914799" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1280144168199520258">
                                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1280144168199520259" />
                                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1280144168199520260">
-                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1280144168199520239" resolveInfo="ms" />
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1280144168199520239" resolveInfo="mscope" />
                                       </node>
                                     </node>
                                   </node>

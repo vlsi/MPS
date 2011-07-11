@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AuthorBlockDocTag_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.AuthorBlockDocTag_Behavior" />
-  <unitInfo fileName="ClassifierDocComment_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocComment_Behavior" />
-  <unitInfo fileName="MethodDocComment_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_Behavior" />
   <unitInfo fileName="StaticFieldDocReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.StaticFieldDocReference_BehaviorDescriptor" />
   <unitInfo fileName="BaseVariableDocReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseVariableDocReference_BehaviorDescriptor" />
   <unitInfo fileName="InheritDocInlineDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.InheritDocInlineDocTag_BehaviorDescriptor" />
@@ -36,37 +33,61 @@
   <unitInfo fileName="InlineTagCommentLinePart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_BehaviorDescriptor" />
   <unitInfo fileName="BaseDocComment_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor" />
   <unitInfo fileName="CommentLinePart_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLinePart_BehaviorDescriptor" />
-  <unitInfo fileName="BaseDocComment_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior" />
-  <unitInfo fileName="CommentLinePart_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLinePart_Behavior" />
-  <unitInfo fileName="CommentLine_Behavior.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" />
-  <unitInfo fileName="InlineTagCommentLinePart_Behavior.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_Behavior" />
-  <unitInfo fileName="HTMLElement_Behavior.java" startLine="14" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_Behavior" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
   <root nodeId="2068944020170643572">
     <nodeInfo nodeId="8970989240998299492" fileName="ClassifierDocComment_Behavior.java" startLine="13" startPosition="87" endLine="14" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2068944020170643572" fileName="ClassifierDocComment_Behavior.java" startLine="9" startPosition="44" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2068944020170643572" fileName="ClassifierDocComment_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isTagSectionEmpty_8465538089690623795#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="2068944020170643574" fileName="ClassifierDocComment_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="2068944020170643578" fileName="ClassifierDocComment_Behavior.java" startLine="13" startPosition="87" endLine="14" endPosition="250" />
+    <scopeInfo nodeId="2068944020170643572" fileName="ClassifierDocComment_Behavior.java" startLine="9" startPosition="44" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="2068944020170643572" fileName="ClassifierDocComment_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <unitInfo nodeId="2068944020170643572" fileName="ClassifierDocComment_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocComment_Behavior" />
   </root>
   <root nodeId="3633133276124276204">
+    <nodeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="14" startPosition="48" endLine="15" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3633133276124360200" />
     <nodeInfo nodeId="3633133276124360206" fileName="InlineTagCommentLinePart_Behavior.java" startLine="20" startPosition="107" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3633133276124360226" fileName="InlineTagCommentLinePart_Behavior.java" startLine="21" startPosition="59" endLine="22" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3633133276124360217" fileName="InlineTagCommentLinePart_Behavior.java" startLine="22" startPosition="135" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8277869836209818598" fileName="InlineTagCommentLinePart_Behavior.java" startLine="23" startPosition="41" endLine="24" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8277869836209839969" fileName="InlineTagCommentLinePart_Behavior.java" startLine="25" startPosition="23" endLine="26" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8277869836209845228" fileName="InlineTagCommentLinePart_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="32" startPosition="104" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="33" startPosition="113" endLine="34" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="37" startPosition="137" endLine="38" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8277869836209845226" fileName="InlineTagCommentLinePart_Behavior.java" startLine="27" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_smartDelete_3633133276124360200#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
     <nodeInfo nodeId="8277869836209839960" fileName="InlineTagCommentLinePart_Behavior.java" startLine="24" startPosition="103" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_smartDelete_3633133276124360200#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
+    <nodeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="19" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_smartDelete_9042833497008205283#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
     <scopeInfo nodeId="3633133276124276206" fileName="InlineTagCommentLinePart_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="8277869836209839961" fileName="InlineTagCommentLinePart_Behavior.java" startLine="25" startPosition="23" endLine="26" endPosition="123" />
     <scopeInfo nodeId="8277869836209845227" fileName="InlineTagCommentLinePart_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="18" />
+    <scopeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="37" startPosition="137" endLine="38" endPosition="296" />
+    <scopeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="32" startPosition="104" endLine="34" endPosition="251" />
+    <scopeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="8277869836209604977" varName="isBegining" />
+    </scopeInfo>
+    <scopeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8277869836209604977" varName="isBegining" />
+    </scopeInfo>
     <scopeInfo nodeId="3633133276124360202" fileName="InlineTagCommentLinePart_Behavior.java" startLine="20" startPosition="107" endLine="29" endPosition="5">
       <varInfo nodeId="3633133276124360207" varName="index" />
       <varInfo nodeId="8277869836209818599" varName="pair" />
       <varInfo nodeId="3633133276124360227" varName="line" />
     </scopeInfo>
+    <scopeInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="19" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="8277869836209604977" varName="isBegining" />
+    </scopeInfo>
+    <unitInfo nodeId="3633133276124276204" fileName="InlineTagCommentLinePart_Behavior.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.InlineTagCommentLinePart_Behavior" />
   </root>
   <root nodeId="4021391592914343326">
+    <nodeInfo nodeId="4021391592914343326" fileName="AuthorBlockDocTag_Behavior.java" startLine="7" startPosition="41" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="4021391592914343328" fileName="AuthorBlockDocTag_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="4021391592914343326" fileName="AuthorBlockDocTag_Behavior.java" startLine="7" startPosition="41" endLine="10" endPosition="0" />
+    <unitInfo nodeId="4021391592914343326" fileName="AuthorBlockDocTag_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.AuthorBlockDocTag_Behavior" />
   </root>
   <root nodeId="6612597108004626828">
     <nodeInfo nodeId="6612597108004626831" fileName="HTMLElement_Behavior.java" startLine="15" startPosition="43" endLine="16" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -110,6 +131,7 @@
     <nodeInfo nodeId="3633133276124307749" fileName="HTMLElement_Behavior.java" startLine="36" startPosition="29" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3633133276124307921" fileName="HTMLElement_Behavior.java" startLine="48" startPosition="111" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3633133276124409277" fileName="HTMLElement_Behavior.java" startLine="63" startPosition="109" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="14" startPosition="35" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="5521685164201558377" fileName="HTMLElement_Behavior.java" startLine="40" startPosition="116" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5521685164201818823" fileName="HTMLElement_Behavior.java" startLine="55" startPosition="45" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5521685164201558496" fileName="HTMLElement_Behavior.java" startLine="67" startPosition="45" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -117,6 +139,7 @@
     <nodeInfo nodeId="3633133276124409249" fileName="HTMLElement_Behavior.java" startLine="52" startPosition="0" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="439148907936531663" fileName="HTMLElement_Behavior.java" startLine="35" startPosition="10" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="439148907936340114" fileName="HTMLElement_Behavior.java" startLine="26" startPosition="0" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="18" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_smartDelete_9042833497008205283#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
     <scopeInfo nodeId="6612597108004626830" fileName="HTMLElement_Behavior.java" startLine="15" startPosition="43" endLine="16" endPosition="110" />
     <scopeInfo nodeId="5521685164201377200" fileName="HTMLElement_Behavior.java" startLine="29" startPosition="170" endLine="30" endPosition="159" />
     <scopeInfo nodeId="3633133276124307752" fileName="HTMLElement_Behavior.java" startLine="37" startPosition="173" endLine="38" endPosition="63" />
@@ -128,6 +151,7 @@
     <scopeInfo nodeId="3633133276124307749" fileName="HTMLElement_Behavior.java" startLine="36" startPosition="29" endLine="39" endPosition="7" />
     <scopeInfo nodeId="3633133276124307921" fileName="HTMLElement_Behavior.java" startLine="48" startPosition="111" endLine="51" endPosition="7" />
     <scopeInfo nodeId="3633133276124409277" fileName="HTMLElement_Behavior.java" startLine="63" startPosition="109" endLine="66" endPosition="9" />
+    <scopeInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="14" startPosition="35" endLine="18" endPosition="0" />
     <scopeInfo nodeId="439148907936340115" fileName="HTMLElement_Behavior.java" startLine="27" startPosition="52" endLine="34" endPosition="44">
       <varInfo nodeId="5521685164201377132" varName="prev" />
     </scopeInfo>
@@ -143,6 +167,10 @@
       <varInfo nodeId="439148907936340170" varName="lines" />
       <varInfo nodeId="5521685164201558369" varName="nodeToSelect" />
     </scopeInfo>
+    <scopeInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="18" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="5521685164201377124" varName="isBeginning" />
+    </scopeInfo>
+    <unitInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="14" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_Behavior" />
   </root>
   <root nodeId="6962838954693316943">
     <nodeInfo nodeId="6962838954693316946" fileName="CommentLine_Behavior.java" startLine="14" startPosition="43" endLine="15" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -154,9 +182,12 @@
     <nodeInfo nodeId="439148907936414703" fileName="CommentLine_Behavior.java" startLine="31" startPosition="54" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="439148907936414722" fileName="CommentLine_Behavior.java" startLine="32" startPosition="44" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="439148907936414718" fileName="CommentLine_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6962838954693316943" fileName="CommentLine_Behavior.java" startLine="13" startPosition="35" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="439148907936414609" fileName="CommentLine_Behavior.java" startLine="23" startPosition="0" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="439148907936414410" fileName="CommentLine_Behavior.java" startLine="18" startPosition="98" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6962838954693316943" fileName="CommentLine_Behavior.java" startLine="17" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_tryMergeToRight_439148907936414403#(Ljetbrains/mps/smodel/SNode;I)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
     <scopeInfo nodeId="6962838954693316945" fileName="CommentLine_Behavior.java" startLine="14" startPosition="43" endLine="15" endPosition="118" />
+    <scopeInfo nodeId="6962838954693316943" fileName="CommentLine_Behavior.java" startLine="13" startPosition="35" endLine="17" endPosition="0" />
     <scopeInfo nodeId="439148907936414452" fileName="CommentLine_Behavior.java" startLine="19" startPosition="508" endLine="33" endPosition="49">
       <varInfo nodeId="439148907936414566" varName="leftPart" />
       <varInfo nodeId="439148907936414610" varName="text" />
@@ -164,22 +195,67 @@
       <varInfo nodeId="439148907936414588" varName="rightPart" />
     </scopeInfo>
     <scopeInfo nodeId="439148907936414406" fileName="CommentLine_Behavior.java" startLine="18" startPosition="98" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="6962838954693316943" fileName="CommentLine_Behavior.java" startLine="17" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="439148907936414408" varName="index" />
+    </scopeInfo>
+    <unitInfo nodeId="6962838954693316943" fileName="CommentLine_Behavior.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" />
   </root>
   <root nodeId="8465538089690623792">
+    <nodeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="13" startPosition="38" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8465538089690623795" />
     <nodeInfo nodeId="8465538089690623801" fileName="BaseDocComment_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="24" startPosition="113" endLine="25" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="28" startPosition="117" endLine="29" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isTagSectionEmpty_8465538089690623795#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isTagSectionEmpty_8465538089690623795#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isTagSectionEmpty_8465538089690623795#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="8465538089690623794" fileName="BaseDocComment_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="8465538089690623798" fileName="BaseDocComment_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="430" />
+    <scopeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="28" startPosition="117" endLine="29" endPosition="275" />
+    <scopeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="23" startPosition="84" endLine="25" endPosition="230" />
+    <scopeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="8465538089690623792" fileName="BaseDocComment_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior" />
   </root>
   <root nodeId="8465538089690983820">
     <nodeInfo nodeId="7164413372960827413" fileName="MethodDocComment_Behavior.java" startLine="13" startPosition="87" endLine="14" endPosition="403" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8465538089690983820" fileName="MethodDocComment_Behavior.java" startLine="9" startPosition="40" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8465538089690983820" fileName="MethodDocComment_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isTagSectionEmpty_8465538089690623795#(Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="8465538089690983822" fileName="MethodDocComment_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="8465538089690983829" fileName="MethodDocComment_Behavior.java" startLine="13" startPosition="87" endLine="14" endPosition="403" />
+    <scopeInfo nodeId="8465538089690983820" fileName="MethodDocComment_Behavior.java" startLine="9" startPosition="40" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="8465538089690983820" fileName="MethodDocComment_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <unitInfo nodeId="8465538089690983820" fileName="MethodDocComment_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_Behavior" />
   </root>
   <root nodeId="9042833497008205275">
+    <nodeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="12" startPosition="39" endLine="13" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_9042833497008205283" />
     <nodeInfo nodeId="9042833497008205289" fileName="CommentLinePart_Behavior.java" startLine="18" startPosition="108" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5521685164201345777" fileName="CommentLinePart_Behavior.java" startLine="19" startPosition="41" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="23" startPosition="105" endLine="24" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="24" startPosition="113" endLine="25" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="28" startPosition="138" endLine="29" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_smartDelete_9042833497008205283#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
+    <nodeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_smartDelete_9042833497008205283#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
+    <nodeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_smartDelete_9042833497008205283#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
     <scopeInfo nodeId="9042833497008205277" fileName="CommentLinePart_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="28" startPosition="138" endLine="29" endPosition="288" />
     <scopeInfo nodeId="9042833497008205286" fileName="CommentLinePart_Behavior.java" startLine="18" startPosition="108" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="23" startPosition="105" endLine="25" endPosition="243" />
+    <scopeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="5521685164201377120" varName="isBeginning" />
+    </scopeInfo>
+    <scopeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="5521685164201377120" varName="isBeginning" />
+    </scopeInfo>
+    <scopeInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="5521685164201377120" varName="isBeginning" />
+    </scopeInfo>
+    <unitInfo nodeId="9042833497008205275" fileName="CommentLinePart_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLinePart_Behavior" />
   </root>
 </debugInfo>
 

@@ -14,7 +14,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="qqjz" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.pattern.util(MPS.Classpath/jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="wc2m" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.search(jetbrains.mps.baseLanguage/jetbrains.mps.baseLanguage.search@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" version="-1" />
@@ -35,7 +34,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="cx9y.1239560581441" resolveInfo="NamedTupleComponentReference" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1239576894334">
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="cx9y.1239576519914" resolveInfo="NamedTupleAccessOperation" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="cx9y.1239576519914" resolveInfo="NamedTupleComponentAccessOperation" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240488415103">
       <property name="name" nameId="tpck.1169194664001" value="TupleIntefaceUtils" />
@@ -242,7 +241,7 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1240573214503">
         <node role="elementType" roleId="tp2q.1151688676805" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573217707">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240573211678" />
@@ -252,13 +251,13 @@
             <property name="name" nameId="tpck.1169194664001" value="accessors" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1240573261717">
               <node role="elementType" roleId="tp2q.1151688676805" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573261946">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240573261719">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="1240573261720">
                 <node role="elementType" roleId="tp2q.1237721435807" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573261870">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
                 </node>
               </node>
             </node>
@@ -269,13 +268,13 @@
             <property name="name" nameId="tpck.1169194664001" value="mutators" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1240573261725">
               <node role="elementType" roleId="tp2q.1151688676805" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573261865">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240573261727">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="1240573261728">
                 <node role="elementType" roleId="tp2q.1237721435807" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573261969">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
                 </node>
               </node>
             </node>
@@ -347,9 +346,9 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="1240573261760">
                       <node role="argument" roleId="tp2q.1160612519549" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="1240573261761">
-                        <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1240488553401" resolveInfo="Property" />
+                        <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
                         <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="1240573267467">
-                          <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1240573219818" resolveInfo="final" />
+                          <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1240573219818" resolveInfo="isfinal" />
                           <node role="value" roleId="cx9y.1239560837729" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1240573276041">
                             <property name="value" nameId="tpee.1068580123138" value="true" />
                           </node>
@@ -434,9 +433,9 @@
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="1240573261795">
                         <node role="argument" roleId="tp2q.1160612519549" type="cx9y.NamedTupleLiteral" typeId="cx9y.1239559992092" id="1240573261796">
-                          <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1240488553401" resolveInfo="Property" />
+                          <link role="tupleDeclaration" roleId="cx9y.1239560008022" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
                           <node role="componentRef" roleId="cx9y.1239560910577" type="cx9y.NamedTupleComponentReference" typeId="cx9y.1239560581441" id="1240573279274">
-                            <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1240573219818" resolveInfo="final" />
+                            <link role="componentDeclaration" roleId="cx9y.1239560595302" targetNodeId="1240573219818" resolveInfo="isfinal" />
                             <node role="value" roleId="cx9y.1239560837729" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1240573283327">
                               <property name="value" nameId="tpee.1068580123138" value="true" />
                             </node>
@@ -601,7 +600,7 @@
             <property name="name" nameId="tpck.1169194664001" value="result" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1240573382661">
               <node role="elementType" roleId="tp2q.1151688676805" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573384103">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240573448190" />
@@ -643,7 +642,7 @@
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.EnumeratorType" typeId="tp2q.1237496250641" id="1240573551383">
               <node role="elementType" roleId="tp2q.1237496250642" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573554165">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
               </node>
             </node>
           </node>
@@ -684,7 +683,7 @@
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tp2q.EnumeratorType" typeId="tp2q.1237496250641" id="1240573557600">
               <node role="elementType" roleId="tp2q.1237496250642" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573559555">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
               </node>
             </node>
           </node>
@@ -725,7 +724,7 @@
                     <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1240573486521">
                       <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="1240573486522">
                         <node role="elementType" roleId="tp2q.1237721435807" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1240573486530">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="Property" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1240488553401" resolveInfo="TupleIntefaceUtils.Property" />
                         </node>
                       </node>
                     </node>
@@ -834,7 +833,7 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetCurrentOperation" typeId="tp2q.1237471080820" id="1240574096189" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="1240574097436">
-                        <link role="component" roleId="cx9y.1239576542472" targetNodeId="1240573219818" resolveInfo="final" />
+                        <link role="component" roleId="cx9y.1239576542472" targetNodeId="1240573219818" resolveInfo="isfinal" />
                       </node>
                     </node>
                     <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1240574191474">

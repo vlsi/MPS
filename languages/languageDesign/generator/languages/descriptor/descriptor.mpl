@@ -27,9 +27,6 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <dependencies>
-    <dependency reexport="false">3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)</dependency>
-  </dependencies>
   <usedLanguages>
     <usedLanguage>d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)</usedLanguage>
   </usedLanguages>

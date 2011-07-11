@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CheckDependencies_Test.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.makeTest.test.CheckDependencies_Test" />
-  <unitInfo fileName="NotMake_Test.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.makeTest.test.NotMake_Test" />
   <root nodeId="1957199320903967681">
     <nodeInfo nodeId="1957199320903967682" fileName="ChangeModel.java" startLine="9" startPosition="35" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="1957199320903967690" fileName="ChangeModel.java" startLine="15" startPosition="36" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -34,6 +32,7 @@
     <scopeInfo nodeId="1957199320903967724" fileName="CheckDependencies_Test.java" startLine="17" startPosition="51" endLine="24" endPosition="7" />
     <scopeInfo nodeId="1957199320903967722" fileName="CheckDependencies_Test.java" startLine="15" startPosition="54" endLine="26" endPosition="0" />
     <unitInfo nodeId="1957199320903967730" fileName="CheckDependencies_Test.java" startLine="18" startPosition="60" endLine="24" endPosition="5" unitName="jetbrains.mps.makeTest.test.CheckDependencies_Test$1" />
+    <unitInfo nodeId="1957199320903967715" fileName="CheckDependencies_Test.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.makeTest.test.CheckDependencies_Test" />
   </root>
   <root nodeId="1957199320903967759">
     <nodeInfo nodeId="1957199320903968387" fileName="MakeAssert.java" startLine="24" startPosition="25" endLine="25" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE_COMPILATION_FAILED" />
@@ -226,6 +225,7 @@
     <unitInfo nodeId="1957199320903968460" fileName="NotMake_Test.java" startLine="30" startPosition="47" endLine="36" endPosition="5" unitName="jetbrains.mps.makeTest.test.NotMake_Test$2" />
     <unitInfo nodeId="1957199320903968548" fileName="NotMake_Test.java" startLine="58" startPosition="51" endLine="64" endPosition="5" unitName="jetbrains.mps.makeTest.test.NotMake_Test$4" />
     <unitInfo nodeId="1957199320903968490" fileName="NotMake_Test.java" startLine="41" startPosition="57" endLine="53" endPosition="5" unitName="jetbrains.mps.makeTest.test.NotMake_Test$3" />
+    <unitInfo nodeId="1957199320903968411" fileName="NotMake_Test.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.makeTest.test.NotMake_Test" />
   </root>
   <root nodeId="7196776143116381095">
     <nodeInfo nodeId="7196776143116382452" fileName="ChangeModelProcessor.java" startLine="28" startPosition="35" endLine="29" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEST_RESOURCES_PATH" />

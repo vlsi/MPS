@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ui.swing.runtime" uuid="acc947bf-6778-444a-9dc7-4cc72d4eb3d0" compileInMPS="true" java-stubs-enabled="false">
+<solution name="jetbrains.mps.ui.swing.runtime" uuid="acc947bf-6778-444a-9dc7-4cc72d4eb3d0" compileInMPS="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" include="false">
+    <stubModelEntry path="${mps_home}/languages/util/ui/languages/swing/lib/swingx-1.6.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>

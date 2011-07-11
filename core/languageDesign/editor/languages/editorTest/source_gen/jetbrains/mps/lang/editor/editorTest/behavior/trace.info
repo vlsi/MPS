@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IBaseTestBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" />
-  <unitInfo fileName="AttractsFocusBlock_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_Behavior" />
   <unitInfo fileName="PlusExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.PlusExpression_BehaviorDescriptor" />
   <unitInfo fileName="VerticalLayoutBlockList_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.VerticalLayoutBlockList_BehaviorDescriptor" />
   <unitInfo fileName="BracesBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.BracesBlock_BehaviorDescriptor" />
@@ -20,7 +19,10 @@
   <unitInfo fileName="VariableDeclarationBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationBlock_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
   <root nodeId="6956295981009368164">
+    <nodeInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="6956295981009368166" fileName="AttractsFocusBlock_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0" />
+    <unitInfo nodeId="6956295981009368164" fileName="AttractsFocusBlock_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_Behavior" />
   </root>
 </debugInfo>
 

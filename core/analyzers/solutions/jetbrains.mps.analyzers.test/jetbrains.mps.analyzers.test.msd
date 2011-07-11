@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.analyzers.test" uuid="0f9a5ba9-b0fe-4c93-9142-ff0b6f1e3dea" compileInMPS="true" java-stubs-enabled="false">
+<solution name="jetbrains.mps.analyzers.test" uuid="0f9a5ba9-b0fe-4c93-9142-ff0b6f1e3dea" compileInMPS="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

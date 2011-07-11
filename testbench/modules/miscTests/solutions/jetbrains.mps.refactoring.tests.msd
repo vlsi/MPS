@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.refactoring.tests" uuid="9e6a0894-dcdb-4946-967f-35c0fc5d51f8" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/testbench/modules/miscTests/tests_gen">
+<solution name="jetbrains.mps.refactoring.tests" uuid="9e6a0894-dcdb-4946-967f-35c0fc5d51f8" compileInMPS="false" generatorOutputPath="${mps_home}/testbench/modules/miscTests/tests_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
-    <dependency reexport="false">5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)</dependency>
     <dependency reexport="false">3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)</dependency>
   </dependencies>
   <usedLanguages>

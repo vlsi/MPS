@@ -2,10 +2,6 @@
 <debugInfo>
   <unitInfo fileName="MatrixOrVectorInitializer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorInitializer_BehaviorDescriptor" />
   <unitInfo fileName="MatrixOrVectorType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorType_BehaviorDescriptor" />
-  <unitInfo fileName="DecimalBinaryOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalBinaryOperation_Behavior" />
-  <unitInfo fileName="MathContext_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathContext_Behavior" />
-  <unitInfo fileName="MatrixConstructor_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_Behavior" />
-  <unitInfo fileName="MatrixType_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixType_Behavior" />
   <unitInfo fileName="ConjugateOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_BehaviorDescriptor" />
   <unitInfo fileName="MatrixExponentialOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixExponentialOperation_BehaviorDescriptor" />
   <unitInfo fileName="DecimalPlusExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_BehaviorDescriptor" />
@@ -63,7 +59,6 @@
   <unitInfo fileName="MatrixType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixType_BehaviorDescriptor" />
   <unitInfo fileName="MatrixInitializerIndex_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixInitializerIndex_BehaviorDescriptor" />
   <unitInfo fileName="AbstractIndex_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.AbstractIndex_BehaviorDescriptor" />
-  <unitInfo fileName="MathSymbol_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1236440389435">
     <nodeInfo nodeId="1236440451754" fileName="MathSymbol_Behavior.java" startLine="16" startPosition="110" endLine="17" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -72,20 +67,33 @@
     <nodeInfo nodeId="1236440647503" fileName="MathSymbol_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236440685960" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237828408196" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="12" startPosition="34" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1236440595176" fileName="MathSymbol_Behavior.java" startLine="18" startPosition="10" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1236440677385" fileName="MathSymbol_Behavior.java" startLine="22" startPosition="123" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getEmptyIndexList_1237828382992#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="15" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVisibleIndices_1236440390782#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
     <scopeInfo nodeId="1236440389437" fileName="MathSymbol_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="1236440595177" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="65" endLine="20" endPosition="98" />
     <scopeInfo nodeId="1236440677386" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" />
     <scopeInfo nodeId="1237828382994" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" />
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="12" startPosition="34" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="1236440390784" fileName="MathSymbol_Behavior.java" startLine="16" startPosition="110" endLine="25" endPosition="5">
       <varInfo nodeId="1236440647504" varName="ms" />
       <varInfo nodeId="1236440451755" varName="sI" />
       <varInfo nodeId="1238334881763" varName="i" />
     </scopeInfo>
+    <scopeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="15" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1236440416647" varName="sender" />
+      <varInfo nodeId="1236440623606" varName="indices" />
+    </scopeInfo>
+    <unitInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior" />
   </root>
   <root nodeId="1238405584079">
+    <nodeInfo nodeId="1238405584079" fileName="DecimalBinaryOperation_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1238405584081" fileName="DecimalBinaryOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1238405584079" fileName="DecimalBinaryOperation_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0" />
+    <unitInfo nodeId="1238405584079" fileName="DecimalBinaryOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalBinaryOperation_Behavior" />
   </root>
   <root nodeId="1238406290274">
     <nodeInfo nodeId="2705856473428695571" fileName="MathUtil.java" startLine="22" startPosition="23" endLine="23" endPosition="599" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="operations" />
@@ -1559,16 +1567,27 @@
   </root>
   <root nodeId="1904947163751563871">
     <nodeInfo nodeId="1904947163751563874" fileName="MathContext_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904947163751563871" fileName="MathContext_Behavior.java" startLine="8" startPosition="35" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1904947163751563873" fileName="MathContext_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="59" />
+    <scopeInfo nodeId="1904947163751563871" fileName="MathContext_Behavior.java" startLine="8" startPosition="35" endLine="12" endPosition="0" />
+    <unitInfo nodeId="1904947163751563871" fileName="MathContext_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathContext_Behavior" />
   </root>
   <root nodeId="3498370411873438939">
     <nodeInfo nodeId="3498370411873438942" fileName="MatrixConstructor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3498370411873438939" fileName="MatrixConstructor_Behavior.java" startLine="8" startPosition="41" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="3498370411873438941" fileName="MatrixConstructor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="60" />
+    <scopeInfo nodeId="3498370411873438939" fileName="MatrixConstructor_Behavior.java" startLine="8" startPosition="41" endLine="12" endPosition="0" />
+    <unitInfo nodeId="3498370411873438939" fileName="MatrixConstructor_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_Behavior" />
   </root>
   <root nodeId="5217243589491051780">
     <nodeInfo nodeId="5217243589491052895" fileName="MatrixType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="9" startPosition="34" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="5217243589491051782" fileName="MatrixType_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5217243589491051786" fileName="MatrixType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="144" />
+    <scopeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="9" startPosition="34" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <unitInfo nodeId="5217243589491051780" fileName="MatrixType_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MatrixType_Behavior" />
   </root>
 </debugInfo>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.refactoring.runtime" uuid="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f" compileInMPS="false" java-stubs-enabled="false">
+<solution name="jetbrains.mps.refactoring.runtime" uuid="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/models" namespacePrefix="jetbrains.mps.refactoring" />
   </models>
@@ -8,7 +8,6 @@
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)</dependency>
     <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
-    <dependency reexport="false">5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

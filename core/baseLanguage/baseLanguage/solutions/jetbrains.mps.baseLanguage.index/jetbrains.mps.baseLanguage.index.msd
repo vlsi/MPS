@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.index" uuid="cab85f8b-9525-42cb-8e6d-258ca6e56432" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${solution_descriptor}/source_gen">
+<solution name="jetbrains.mps.baseLanguage.index" uuid="cab85f8b-9525-42cb-8e6d-258ca6e56432" compileInMPS="false" generatorOutputPath="${solution_descriptor}/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>

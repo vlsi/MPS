@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.unitTest.runtime" uuid="f618e99a-2641-465c-bb54-31fe76f9e285" compileInMPS="false" java-stubs-enabled="false">
+<solution name="jetbrains.mps.baseLanguage.unitTest.runtime" uuid="f618e99a-2641-465c-bb54-31fe76f9e285" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${solution_descriptor}/classes" include="false">
+    <stubModelEntry path="${solution_descriptor}/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>

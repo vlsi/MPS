@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="stubUtils" uuid="b55d8dfc-0d9d-43d5-886d-c644e7083bff" compileInMPS="false" java-stubs-enabled="false">
+<solution name="stubUtils" uuid="b55d8dfc-0d9d-43d5-886d-c644e7083bff" compileInMPS="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
