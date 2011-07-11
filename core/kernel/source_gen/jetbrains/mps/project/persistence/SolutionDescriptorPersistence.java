@@ -70,6 +70,10 @@ public class SolutionDescriptorPersistence {
             entry.setManager(LanguageID.JAVA_MANAGER);
             result_8ckma3_a0a0g0c0a.getStubModelEntries().add(entry);
           }
+
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "sourcePath")).first(), "source"))) {
+            result_8ckma3_a0a0g0c0a.getSourcePaths().add(macros.expandPath(entryElement.getAttributeValue("path"), file));
+          }
           return result_8ckma3_a0a0g0c0a;
         }
       }.invoke();
@@ -120,6 +124,15 @@ public class SolutionDescriptorPersistence {
           ModuleDescriptorPersistence.saveStubModelEntries(result_8ckma3_a0a8a0a0d0b, descriptor.getStubModelEntries(), file, macros);
           result_8ckma3_a0a0d0b.addContent(result_8ckma3_a0a8a0a0d0b);
         }
+
+        final Element result_8ckma3_a01a0a0d0b = new Element("sourcePath");
+        for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
+          final Element result_8ckma3_a0a0a01a0a0d0b = new Element("source");
+          final String result_8ckma3_a0a0a0a01a0a0d0b = macros.shrinkPath(p, file);
+          result_8ckma3_a0a0a01a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a01a0a0d0b);
+          result_8ckma3_a01a0a0d0b.addContent(result_8ckma3_a0a0a01a0a0d0b);
+        }
+        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a01a0a0d0b);
 
         ModuleDescriptorPersistence.saveDependencies(result_8ckma3_a0a0d0b, descriptor);
         return result_8ckma3_a0a0d0b;

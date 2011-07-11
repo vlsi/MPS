@@ -15,9 +15,21 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SolutionDescriptor extends ModuleDescriptor {
   private String myOutputPath;
   private boolean myDontLoadClasses;
+  private List<String> mySourcePaths;
+
+  public SolutionDescriptor() {
+    mySourcePaths = new ArrayList<String>();
+  }
+
+  public List<String> getSourcePaths() {
+    return mySourcePaths;
+  }
 
   public String getOutputPath() {
     return myOutputPath;
