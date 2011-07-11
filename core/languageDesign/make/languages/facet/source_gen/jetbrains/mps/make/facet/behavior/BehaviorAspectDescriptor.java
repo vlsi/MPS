@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.make.facet.structure.TargetReferenceExpression"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -44,6 +44,8 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new NamedFacetReference_BehaviorDescriptor();
       case 11:
         return new ResourceSpecificPropertiesExpression_BehaviorDescriptor();
+      case 15:
+        return new TargetReferenceExpression_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

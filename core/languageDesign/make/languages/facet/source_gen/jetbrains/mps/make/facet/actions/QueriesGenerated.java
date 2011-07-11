@@ -34,6 +34,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.nodeEditor.CellSide;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -47,6 +49,14 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IPropertyExpression_2191561637326275635(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "resource", true) == null);
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_FacetReferenceExpression_8703512757937161166(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.facet.structure.TargetReferenceExpression"));
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_FacetReference_8703512757937205101(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.TargetReferenceExpression", false, false) == null);
   }
 
   public static void nodeFactory_NodeSetup_ParametersDeclaration_7320828025189345690(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -165,7 +175,7 @@ __switch__:
                 SNode lve = SNodeFactoryOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersExpression", null);
                 SNode lvce = SNodeFactoryOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", null);
                 SLinkOperations.setTarget(lvce, "operand", lve, true);
-                SLinkOperations.setTarget(lvce, "operation", new QueriesGenerated.QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a5().createNode((item)), true);
+                SLinkOperations.setTarget(lvce, "operation", new QueriesGenerated.QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a7().createNode((item)), true);
                 return lvce;
               }
 
@@ -218,9 +228,9 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode fve = new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a6().createNode(SNodeOperations.getAncestor((item), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false));
-                SNode op = new QueriesGenerated.QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a6().createNode((item));
-                return new QueriesGenerated.QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0g().createNode(fve, op);
+                SNode fve = new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a8().createNode(SNodeOperations.getAncestor((item), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false));
+                SNode op = new QueriesGenerated.QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a8().createNode((item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0i().createNode(fve, op);
               }
 
               public String getMatchingText(String pattern) {
@@ -254,7 +264,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h().createNode((item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j().createNode((item));
               }
 
               public String getMatchingText(String pattern) {
@@ -302,8 +312,55 @@ __switch__:
     return result;
   }
 
-  public static class QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a5 {
-    public QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a5() {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FacetReferenceExpression_8703512757937161165(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetReferenceExpression");
+      Calculable calculable = new Calculable() {
+        public Object calculate() {
+          return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "reference", true), "facet", false), "targetDeclaration", true);
+        }
+      };
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      assert parameterObjects != null;
+      for (final SNode item : parameterObjects) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode tre = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.TargetReferenceExpression");
+            SLinkOperations.setTarget(tre, "facetRef", _context.getSourceNode(), true);
+            SLinkOperations.setTarget(tre, "target", (item), false);
+            return tre;
+          }
+
+          public String getMatchingText(String text) {
+            return "." + SPropertyOperations.getString((item), "name");
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FacetReference_8703512757937205090(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      Calculable calc = new Calculable() {
+        public Object calculate() {
+          return SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.FacetReferenceExpression", false, false);
+        }
+      };
+      SNode node = (SNode) calc.calculate();
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+    }
+    return result;
+  }
+
+  public static class QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a7 {
+    public QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a7() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -320,8 +377,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a6 {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a6() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a8 {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0a2a2a0a1a8() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -338,8 +395,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a6 {
-    public QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a6() {
+  public static class QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a8 {
+    public QuotationClass_x583g4_a0a1a0a0a0a0a0a2a2a0a1a8() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -356,8 +413,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0g {
-    public QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0g() {
+  public static class QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0i {
+    public QuotationClass_x583g4_a0c0a0a0a0a0a0c0c0a0b0i() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -401,8 +458,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j() {
     }
 
     public SNode createNode(Object parameter_5) {

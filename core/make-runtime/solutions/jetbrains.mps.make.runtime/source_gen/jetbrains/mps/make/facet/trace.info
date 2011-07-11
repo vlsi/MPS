@@ -74,7 +74,9 @@
     <nodeInfo nodeId="3173704087496311615" fileName="ITarget.java" startLine="21" startPosition="49" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
     <nodeInfo nodeId="6168415856807657171" fileName="ITarget.java" startLine="22" startPosition="61" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
     <nodeInfo nodeId="6168415856807657141" fileName="ITarget.java" startLine="25" startPosition="30" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6168415856807657137" fileName="ITarget.java" startLine="24" startPosition="57" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Name#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1150121516825542527" fileName="ITarget.java" startLine="29" startPosition="71" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6168415856807657137" fileName="ITarget.java" startLine="24" startPosition="62" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Name#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1150121516825542489" fileName="ITarget.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParentName#(Ljava/lang/String;)Ljetbrains/mps/make/facet/IFacet/Name;" />
     <scopeInfo nodeId="6168415856807657147" fileName="ITarget.java" startLine="10" startPosition="26" endLine="11" endPosition="32" />
     <scopeInfo nodeId="2878100257845887603" fileName="ITarget.java" startLine="11" startPosition="32" endLine="12" endPosition="33" />
     <scopeInfo nodeId="7082294419594885835" fileName="ITarget.java" startLine="12" startPosition="33" endLine="13" endPosition="34" />
@@ -94,11 +96,15 @@
     </scopeInfo>
     <scopeInfo nodeId="6168415856807657171" fileName="ITarget.java" startLine="22" startPosition="61" endLine="23" endPosition="26" />
     <scopeInfo nodeId="6168415856807657140" fileName="ITarget.java" startLine="25" startPosition="30" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="6168415856807657137" fileName="ITarget.java" startLine="24" startPosition="57" endLine="27" endPosition="5">
+    <scopeInfo nodeId="1150121516825542500" fileName="ITarget.java" startLine="29" startPosition="71" endLine="30" endPosition="43" />
+    <scopeInfo nodeId="6168415856807657137" fileName="ITarget.java" startLine="24" startPosition="62" endLine="27" endPosition="5">
       <varInfo nodeId="6168415856807657143" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="6168415856807657135" fileName="ITarget.java" startLine="24" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget$Name" />
-    <unitInfo nodeId="6168415856807657134" fileName="ITarget.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget" />
+    <scopeInfo nodeId="1150121516825542489" fileName="ITarget.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1150121516825542490" varName="parentFqName" />
+    </scopeInfo>
+    <unitInfo nodeId="6168415856807657135" fileName="ITarget.java" startLine="24" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget$Name" />
+    <unitInfo nodeId="6168415856807657134" fileName="ITarget.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.make.facet.ITarget" />
   </root>
   <root nodeId="6168415856807659069">
     <nodeInfo nodeId="6168415856807662021" fileName="FacetRegistry.java" startLine="14" startPosition="28" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

@@ -82,7 +82,7 @@ public class Binaries_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("copyBinaries");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries");
 
     public Target_copyBinaries() {
     }
@@ -168,7 +168,7 @@ public class Binaries_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("configure")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.configure")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -176,7 +176,7 @@ public class Binaries_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make"), new ITarget.Name("reconcile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.make"), new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile")});
     }
 
     public ITarget.Name getName() {
@@ -241,7 +241,7 @@ public class Binaries_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IParametersPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("copyBinaries");
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries");
         if (properties.hasProperties(name)) {
           Binaries_Facet.Target_copyBinaries.Parameters props = properties.parameters(name, Binaries_Facet.Target_copyBinaries.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.plugin.Binaries.copyBinaries.pathToFile", null);
@@ -252,7 +252,7 @@ public class Binaries_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IParametersPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("copyBinaries");
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries");
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.plugin.Binaries.copyBinaries.copyBinaries")) {
             Binaries_Facet.Target_copyBinaries.Parameters props = properties.parameters(name, Binaries_Facet.Target_copyBinaries.Parameters.class);
             String key = "jetbrains.mps.lang.plugin.Binaries.copyBinaries.copyBinaries";

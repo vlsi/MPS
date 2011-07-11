@@ -69,6 +69,15 @@
     <unitInfo nodeId="8695426379435177650" fileName="IMakeService.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.make.IMakeService$INSTANCE" />
     <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
   </root>
+  <root nodeId="2958721966247272985">
+    <nodeInfo nodeId="2958721966247272990" fileName="IHName.java" startLine="6" startPosition="28" endLine="7" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parentName#()null" />
+    <nodeInfo nodeId="922321631991217137" fileName="IHName.java" startLine="7" startPosition="24" endLine="8" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="name#()Ljava/lang/String;" />
+    <nodeInfo nodeId="922321631991212069" fileName="IHName.java" startLine="8" startPosition="23" endLine="9" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fqName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="2958721966247272990" fileName="IHName.java" startLine="6" startPosition="28" endLine="7" endPosition="24" />
+    <scopeInfo nodeId="922321631991217137" fileName="IHName.java" startLine="7" startPosition="24" endLine="8" endPosition="23" />
+    <scopeInfo nodeId="922321631991212069" fileName="IHName.java" startLine="8" startPosition="23" endLine="9" endPosition="25" />
+    <unitInfo nodeId="2958721966247272985" fileName="IHName.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.IHName" />
+  </root>
   <root nodeId="8464977774479999203">
     <nodeInfo nodeId="8464977774480012337" fileName="MakeNotification.java" startLine="7" startPosition="51" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kind" />
     <nodeInfo nodeId="8464977774480011644" fileName="MakeNotification.java" startLine="10" startPosition="76" endLine="11" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -207,8 +216,8 @@
       <varInfo nodeId="2181314052156502131" varName="messageHandler" />
     </scopeInfo>
     <scopeInfo nodeId="8075512910924574289" fileName="MakeSession.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
-      <varInfo nodeId="8075512910924574299" varName="sticky" />
       <varInfo nodeId="8075512910924574297" varName="cleanMake" />
+      <varInfo nodeId="8075512910924574299" varName="sticky" />
       <varInfo nodeId="8075512910924574293" varName="context" />
       <varInfo nodeId="8075512910924574295" varName="messageHandler" />
     </scopeInfo>
@@ -222,8 +231,8 @@
     </scopeInfo>
     <scopeInfo nodeId="8695426379435232466" fileName="MakeSession.java" startLine="28" startPosition="158" endLine="33" endPosition="51" />
     <scopeInfo nodeId="8695426379435232463" fileName="MakeSession.java" startLine="27" startPosition="0" endLine="34" endPosition="3">
-      <varInfo nodeId="2181314052156502137" varName="sticky" />
       <varInfo nodeId="8695426379435237577" varName="cleanMake" />
+      <varInfo nodeId="2181314052156502137" varName="sticky" />
       <varInfo nodeId="8075512910924574308" varName="propertiesCollector" />
       <varInfo nodeId="8695426379435237561" varName="context" />
       <varInfo nodeId="8695426379435237564" varName="messageHandler" />

@@ -5,7 +5,7 @@ package jetbrains.mps.make.facet;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IJob;
-import jetbrains.mps.internal.make.runtime.util.SmartWrapper;
+import jetbrains.mps.internal.make.runtime.util.DefaultHName;
 
 public interface ITarget {
   public ITarget.Name getName();
@@ -21,9 +21,13 @@ public interface ITarget {
   public <T> T createParameters(Class<T> varCls);
   public <T> T createParameters(Class<T> varCls, T copyFrom);
   public IJob createJob();
-  public static class Name extends SmartWrapper<String> {
+  public static class Name extends DefaultHName<IFacet.Name> {
     public Name(String name) {
       super(name);
+    }
+
+    protected final IFacet.Name createParentName(String parentFqName) {
+      return new IFacet.Name(parentFqName);
     }
   }
 

@@ -30,10 +30,10 @@
       <property name="name" nameId="tpck.1169194664001" value="IPropertiesPersistence" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="2958721966247231626">
-      <property name="name" nameId="tpck.1169194664001" value="IResourceProperties" />
+      <property name="name" nameId="tpck.1169194664001" value="IResourceWithProperties" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="2958721966247231768">
-      <property name="name" nameId="tpck.1169194664001" value="PropertiesIO" />
+      <property name="name" nameId="tpck.1169194664001" value="IPropertiesIO" />
     </node>
   </roots>
   <root id="6168415856807657256">
@@ -177,7 +177,7 @@
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="getProperties" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2958721966247250938">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2958721966247231768" resolveInfo="PropertiesIO" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2958721966247231768" resolveInfo="IPropertiesIO" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2958721966247250935" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2958721966247250936" />
@@ -187,7 +187,7 @@
   <root id="2958721966247231768">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2958721966247231776">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="getID" />
+      <property name="name" nameId="tpck.1169194664001" value="getKey" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2958721966247231781">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
       </node>

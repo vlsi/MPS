@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.make.facet.constraints.ResourceTypeDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.facet.constraints.TargetDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.facet.constraints.TargetDependency_Constraints" />
+    <classNode dependClassName="jetbrains.mps.make.facet.constraints.TargetReferenceExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
@@ -183,6 +184,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.constraints.TargetReferenceExpression_Constraints" file="TargetReferenceExpression_Constraints.java">
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
 </dependenciesRoot>

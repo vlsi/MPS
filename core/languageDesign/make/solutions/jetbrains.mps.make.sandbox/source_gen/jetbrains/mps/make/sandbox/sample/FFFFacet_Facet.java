@@ -59,7 +59,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("QQQ");
+    private ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
 
     public Target_QQQ() {
     }
@@ -71,7 +71,8 @@ public class FFFFacet_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               pa.properties(Sequence.fromIterable(input).first()).parameters(Target_QQQ.this.getName(), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
-              pa.properties().parameters(new ITarget.Name("GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
+              new IFacet.Name("FFFFacet");
+              pa.properties().parameters(new ITarget.Name("GenerateSpecial.GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
               return new IResult.SUCCESS(_output_chixuw_a0a);
@@ -85,7 +86,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> notAfter() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("GenerateSpecialTarget")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("GenerateSpecial.GenerateSpecialTarget")});
     }
 
     public Iterable<ITarget.Name> after() {
@@ -160,7 +161,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("qweqwe");
+    private ITarget.Name name = new ITarget.Name("FFFFacet.qweqwe");
 
     public Target_qweqwe() {
     }
@@ -171,7 +172,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
           Iterable<IResource> _output_chixuw_a0b = null;
           switch (0) {
             case 0:
-              pa.properties().parameters(new ITarget.Name("QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
+              pa.properties().parameters(new ITarget.Name("FFFFacet.QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
               monitor.currentProgress().beginWork("Foobar", 10, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("Foobar", 10);
               monitor.currentProgress().finishWork("Foobar");
@@ -237,7 +238,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("Nanana");
+    private ITarget.Name name = new ITarget.Name("FFFFacet.Nanana");
 
     public Target_Nanana() {
     }
@@ -311,7 +312,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IParametersPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("QQQ");
+        ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
         if (properties.hasProperties(name)) {
           FFFFacet_Facet.Target_QQQ.Parameters props = properties.parameters(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
           MapSequence.fromMap(store).put("FFFFacet.QQQ.text", String.valueOf(props.text()));
@@ -322,7 +323,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IParametersPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("QQQ");
+          ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
           if (MapSequence.fromMap(store).containsKey("FFFFacet.QQQ.QQQ")) {
             FFFFacet_Facet.Target_QQQ.Parameters props = properties.parameters(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
             String key = "FFFFacet.QQQ.QQQ";

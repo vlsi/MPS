@@ -61,7 +61,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("reloadClasses");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.ReloadClasses.reloadClasses");
 
     public Target_reloadClasses() {
     }
@@ -72,7 +72,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
           Iterable<IResource> _output_i849au_a0a = null;
           switch (0) {
             case 0:
-              boolean nonEmptyCompilation = pa.properties().parameters(new ITarget.Name("compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() != null && pa.properties().parameters(new ITarget.Name("compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything();
+              boolean nonEmptyCompilation = pa.properties().parameters(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() != null && pa.properties().parameters(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything();
 
               if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
                 public boolean accept(IResource in) {
@@ -109,7 +109,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("compile"), new ITarget.Name("auxCompile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.auxCompile")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -117,7 +117,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
     }
 
     public ITarget.Name getName() {

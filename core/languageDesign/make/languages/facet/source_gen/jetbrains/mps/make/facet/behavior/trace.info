@@ -4,10 +4,10 @@
   <unitInfo fileName="IFacet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IFacet_BehaviorDescriptor" />
   <unitInfo fileName="FacetReferenceExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_Behavior" />
   <unitInfo fileName="IFacet_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IFacet_Behavior" />
-  <unitInfo fileName="TargetDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDeclaration_Behavior" />
   <unitInfo fileName="NamedFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.NamedFacetReference_BehaviorDescriptor" />
   <unitInfo fileName="RelatedFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.RelatedFacetReference_BehaviorDescriptor" />
   <unitInfo fileName="ExtendsFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ExtendsFacetReference_BehaviorDescriptor" />
+  <unitInfo fileName="TargetReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetReferenceExpression_BehaviorDescriptor" />
   <unitInfo fileName="ResourceSpecificPropertiesExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ResourceSpecificPropertiesExpression_BehaviorDescriptor" />
   <unitInfo fileName="FacetReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_BehaviorDescriptor" />
   <unitInfo fileName="ResourceClassifierType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ResourceClassifierType_BehaviorDescriptor" />
@@ -20,8 +20,9 @@
   <unitInfo fileName="FacetReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReference_BehaviorDescriptor" />
   <unitInfo fileName="TargetDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDependency_BehaviorDescriptor" />
   <unitInfo fileName="TargetDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="TargetDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.TargetDeclaration_Behavior" />
   <unitInfo fileName="FacetDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="FacetDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior" />
   <root nodeId="1919086248986828152">
     <scopeInfo nodeId="1919086248986828154" fileName="IFacet_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -88,9 +89,14 @@
     <unitInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="59" startPosition="141" endLine="63" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$3" />
   </root>
   <root nodeId="7854369758457971843">
-    <nodeInfo nodeId="7854369758457974823" fileName="TargetDeclaration_Behavior.java" startLine="12" startPosition="81" endLine="13" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7854369758457971845" fileName="TargetDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="7854369758457971851" fileName="TargetDeclaration_Behavior.java" startLine="12" startPosition="81" endLine="13" endPosition="122" />
+    <nodeInfo nodeId="7854369758457974823" fileName="TargetDeclaration_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="899969561582409501" fileName="TargetDeclaration_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="899969561582409511" fileName="TargetDeclaration_Behavior.java" startLine="18" startPosition="196" endLine="22" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7854369758457971845" fileName="TargetDeclaration_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="7854369758457971851" fileName="TargetDeclaration_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="122" />
+    <scopeInfo nodeId="899969561582409484" fileName="TargetDeclaration_Behavior.java" startLine="17" startPosition="80" endLine="22" endPosition="6">
+      <varInfo nodeId="899969561582409502" varName="ffqn" />
+    </scopeInfo>
   </root>
 </debugInfo>
 

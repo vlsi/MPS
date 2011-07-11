@@ -5,8 +5,8 @@ package jetbrains.mps.make.resources;
 import java.util.Map;
 import java.io.IOException;
 
-public interface PropertiesIO {
-  public Object getID();
+public interface IPropertiesIO {
+  public Object getKey();
   public Map<String, String> readProperties() throws IOException;
   public void writeProperties(Map<String, String> store) throws IOException;
 }

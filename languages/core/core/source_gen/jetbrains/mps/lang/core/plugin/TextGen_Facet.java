@@ -90,7 +90,7 @@ public class TextGen_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("textGen");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
 
     public Target_textGen() {
     }
@@ -152,7 +152,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 try {
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
-                      ok.value = textgen.handleOutput(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gres.status());
+                      ok.value = textgen.handleOutput(pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gres.status());
                     }
                   });
                 } finally {
@@ -210,7 +210,7 @@ public class TextGen_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -218,7 +218,7 @@ public class TextGen_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("reconcile"), new ITarget.Name("make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
     }
 
     public ITarget.Name getName() {
@@ -297,7 +297,7 @@ public class TextGen_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("textGenToMemory");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory");
 
     public Target_textGenToMemory() {
     }
@@ -321,7 +321,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         return rt.getName() != null;
                       }
                     })) {
-                      TextGenerationResult tgr = TextGenerationUtil.generateText(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
+                      TextGenerationResult tgr = TextGenerationUtil.generateText(pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
                       errors.value |= tgr.hasErrors();
                       if (errors.value) {
                         break;
@@ -356,7 +356,7 @@ public class TextGen_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -403,7 +403,7 @@ public class TextGen_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IParametersPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("textGen");
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
         if (properties.hasProperties(name)) {
           TextGen_Facet.Target_textGen.Parameters props = properties.parameters(name, TextGen_Facet.Target_textGen.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.TextGen.textGen.pathToFile", null);
@@ -416,7 +416,7 @@ public class TextGen_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IParametersPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("textGen");
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.textGen")) {
             TextGen_Facet.Target_textGen.Parameters props = properties.parameters(name, TextGen_Facet.Target_textGen.Parameters.class);
             String key = "jetbrains.mps.lang.core.TextGen.textGen.textGen";

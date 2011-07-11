@@ -23,5 +23,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_ResourceSpecificPropertiesExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_TargetReferenceExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }

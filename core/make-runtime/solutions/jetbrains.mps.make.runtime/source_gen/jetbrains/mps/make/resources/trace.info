@@ -21,20 +21,20 @@
     <unitInfo nodeId="1521318412423194894" fileName="IPropertiesPersistence.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </root>
   <root nodeId="2958721966247231626">
-    <nodeInfo nodeId="2958721966247250933" fileName="IResourceProperties.java" startLine="6" startPosition="38" endLine="7" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljetbrains/mps/make/resources/PropertiesIO;" />
-    <scopeInfo nodeId="2958721966247250933" fileName="IResourceProperties.java" startLine="6" startPosition="38" endLine="7" endPosition="38" />
-    <unitInfo nodeId="2958721966247231626" fileName="IResourceProperties.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.resources.IResourceProperties" />
+    <nodeInfo nodeId="2958721966247250933" fileName="IResourceWithProperties.java" startLine="6" startPosition="42" endLine="7" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljetbrains/mps/make/resources/IPropertiesIO;" />
+    <scopeInfo nodeId="2958721966247250933" fileName="IResourceWithProperties.java" startLine="6" startPosition="42" endLine="7" endPosition="39" />
+    <unitInfo nodeId="2958721966247231626" fileName="IResourceWithProperties.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.resources.IResourceWithProperties" />
   </root>
   <root nodeId="2958721966247231768">
-    <nodeInfo nodeId="2958721966247231776" fileName="PropertiesIO.java" startLine="8" startPosition="31" endLine="9" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getID#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="2958721966247231629" fileName="PropertiesIO.java" startLine="9" startPosition="24" endLine="10" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readProperties#()Ljava/util/Map;" />
-    <nodeInfo nodeId="2958721966247250902" fileName="PropertiesIO.java" startLine="10" startPosition="65" endLine="11" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeProperties#(Ljava/util/Map;)V" />
-    <scopeInfo nodeId="2958721966247231776" fileName="PropertiesIO.java" startLine="8" startPosition="31" endLine="9" endPosition="24" />
-    <scopeInfo nodeId="2958721966247231629" fileName="PropertiesIO.java" startLine="9" startPosition="24" endLine="10" endPosition="65" />
-    <scopeInfo nodeId="2958721966247250902" fileName="PropertiesIO.java" startLine="10" startPosition="65" endLine="11" endPosition="76">
+    <nodeInfo nodeId="2958721966247231776" fileName="IPropertiesIO.java" startLine="8" startPosition="32" endLine="9" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKey#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="2958721966247231629" fileName="IPropertiesIO.java" startLine="9" startPosition="25" endLine="10" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readProperties#()Ljava/util/Map;" />
+    <nodeInfo nodeId="2958721966247250902" fileName="IPropertiesIO.java" startLine="10" startPosition="65" endLine="11" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeProperties#(Ljava/util/Map;)V" />
+    <scopeInfo nodeId="2958721966247231776" fileName="IPropertiesIO.java" startLine="8" startPosition="32" endLine="9" endPosition="25" />
+    <scopeInfo nodeId="2958721966247231629" fileName="IPropertiesIO.java" startLine="9" startPosition="25" endLine="10" endPosition="65" />
+    <scopeInfo nodeId="2958721966247250902" fileName="IPropertiesIO.java" startLine="10" startPosition="65" endLine="11" endPosition="76">
       <varInfo nodeId="2958721966247250915" varName="store" />
     </scopeInfo>
-    <unitInfo nodeId="2958721966247231768" fileName="PropertiesIO.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.make.resources.PropertiesIO" />
+    <unitInfo nodeId="2958721966247231768" fileName="IPropertiesIO.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.make.resources.IPropertiesIO" />
   </root>
   <root nodeId="3353120829256410483">
     <nodeInfo nodeId="3353120829256410485" fileName="IPropertiesAccessor.java" startLine="7" startPosition="38" endLine="8" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="properties#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/make/script/IParametersPool;" />

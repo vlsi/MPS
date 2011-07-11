@@ -58,7 +58,7 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("GenerateSpecialTarget");
+    private ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
 
     public Target_GenerateSpecialTarget() {
     }
@@ -222,7 +222,7 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IParametersPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("GenerateSpecialTarget");
+        ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
         if (properties.hasProperties(name)) {
           GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.parameters(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
           MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.foo", String.valueOf(props.foo()));
@@ -238,7 +238,7 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IParametersPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("GenerateSpecialTarget");
+          ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
           if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.GenerateSpecialTarget")) {
             GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.parameters(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
             String key = "GenerateSpecial.GenerateSpecialTarget.GenerateSpecialTarget";

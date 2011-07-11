@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="57sqcip9dk2ctf8iwjolndb21t2j340">
+<dependencies version="2" modelHash="-affqw7ixn38kh09aeg48118ke78jlut">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8f40zw2ng3ru04g6jirwqdjoy2uzoh2" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-5g8163zp0j3pctdgbcilsfbj6z1v6tf" />
@@ -40,17 +40,17 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="IPropertiesPersistence.java" />
   </source>
-  <source id="2958721966247231626" name="IResourceProperties" hash="cr8j2apf8rkcwx2t8l4isq9ntqkewkn">
+  <source id="2958721966247231626" name="IResourceWithProperties" hash="6fcue3qej6feuk2bvmfy70xqch1k2mi">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <file name="IResourceProperties.java" />
+    <file name="IResourceWithProperties.java" />
   </source>
-  <source id="2958721966247231768" name="PropertiesIO" hash="-6lyd1hn5p0v7dwcu7bo4t7ri3ywev1i">
+  <source id="2958721966247231768" name="IPropertiesIO" hash="77pzk8iskfn6t1lu5yjsc3etbbrrw0m">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <file name="PropertiesIO.java" />
+    <file name="IPropertiesIO.java" />
   </source>
 </dependencies>
 

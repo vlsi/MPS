@@ -54,7 +54,7 @@ public class Maker__Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("Make");
+    private ITarget.Name name = new ITarget.Name("Maker_.Make");
 
     public Target_Make() {
     }

@@ -68,6 +68,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="facet" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vvvw.1919086248986845077" resolveInfo="NamedFacetReference" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8703512757937161149">
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="vvvw.8703512757937156087" resolveInfo="TargetReferenceExpression" />
+    </node>
   </roots>
   <root id="7854369758457864776">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7854369758457971299">
@@ -487,5 +490,6 @@
       </node>
     </node>
   </root>
+  <root id="8703512757937161149" />
 </model>
 

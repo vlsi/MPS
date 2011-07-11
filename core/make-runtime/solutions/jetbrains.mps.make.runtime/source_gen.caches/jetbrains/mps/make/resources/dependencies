@@ -10,6 +10,12 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
   </dependency>
+  <dependency className="jetbrains.mps.make.resources.IPropertiesIO" file="IPropertiesIO.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+  </dependency>
   <dependency className="jetbrains.mps.make.resources.IPropertiesPersistence" file="IPropertiesPersistence.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
@@ -22,14 +28,8 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
-  <dependency className="jetbrains.mps.make.resources.IResourceProperties" file="IResourceProperties.java">
-    <classNode dependClassName="jetbrains.mps.make.resources.PropertiesIO" />
-  </dependency>
-  <dependency className="jetbrains.mps.make.resources.PropertiesIO" file="PropertiesIO.java">
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Map" />
+  <dependency className="jetbrains.mps.make.resources.IResourceWithProperties" file="IResourceWithProperties.java">
+    <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesIO" />
   </dependency>
 </dependenciesRoot>
 

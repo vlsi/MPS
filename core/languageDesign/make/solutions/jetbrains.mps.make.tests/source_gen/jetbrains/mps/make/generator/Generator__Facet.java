@@ -59,7 +59,7 @@ public class Generator__Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("Configure");
+    private ITarget.Name name = new ITarget.Name("Generator_.Configure");
 
     public Target_Configure() {
     }
@@ -158,7 +158,7 @@ public class Generator__Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("Generate");
+    private ITarget.Name name = new ITarget.Name("Generator_.Generate");
 
     public Target_Generate() {
     }
@@ -169,9 +169,9 @@ public class Generator__Facet extends IFacet.Stub {
           Iterable<IResource> _output_j0fmyu_a0b = null;
           switch (0) {
             case 0:
-              Assert.assertEquals("uninitialized", pa.properties().parameters(new ITarget.Name("Configure"), Generator__Facet.Target_Configure.Variables.class).value());
+              Assert.assertEquals("uninitialized", pa.properties().parameters(new ITarget.Name("Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value());
               monitor.currentProgress().beginWork("GENERATE", 100, monitor.currentProgress().workLeft());
-              pa.properties().parameters(new ITarget.Name("Configure"), Generator__Facet.Target_Configure.Variables.class).value("VALUE");
+              pa.properties().parameters(new ITarget.Name("Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value("VALUE");
               for (IResource resource : input) {
                 _output_j0fmyu_a0b = Sequence.fromIterable(_output_j0fmyu_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
@@ -195,7 +195,7 @@ public class Generator__Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Configure")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Generator_.Configure")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -203,7 +203,7 @@ public class Generator__Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Maker_.Make")});
     }
 
     public ITarget.Name getName() {
@@ -242,7 +242,7 @@ public class Generator__Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IParametersPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("Configure");
+        ITarget.Name name = new ITarget.Name("Generator_.Configure");
         if (properties.hasProperties(name)) {
           Generator__Facet.Target_Configure.Variables props = properties.parameters(name, Generator__Facet.Target_Configure.Variables.class);
           MapSequence.fromMap(store).put("Generator_.Configure.value", String.valueOf(props.value()));
@@ -253,7 +253,7 @@ public class Generator__Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IParametersPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("Configure");
+          ITarget.Name name = new ITarget.Name("Generator_.Configure");
           if (MapSequence.fromMap(store).containsKey("Generator_.Configure.Configure")) {
             Generator__Facet.Target_Configure.Variables props = properties.parameters(name, Generator__Facet.Target_Configure.Variables.class);
             String key = "Generator_.Configure.Configure";

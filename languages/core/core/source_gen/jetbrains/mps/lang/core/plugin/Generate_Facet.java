@@ -94,7 +94,7 @@ public class Generate_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("checkParameters");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
 
     public Target_checkParameters() {
     }
@@ -228,7 +228,7 @@ public class Generate_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("checkDumbMode");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkDumbMode");
 
     public Target_checkDumbMode() {
     }
@@ -239,8 +239,8 @@ public class Generate_Facet extends IFacet.Stub {
           Iterable<IResource> _output_fi61u2_a0b = null;
           switch (0) {
             case 0:
-              if (DumbService.getInstance(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).isDumb()) {
-                DumbService.getInstance(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
+              if (DumbService.getInstance(pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).isDumb()) {
+                DumbService.getInstance(pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
                 return new IResult.FAILURE(_output_fi61u2_a0b);
               }
             default:
@@ -304,7 +304,7 @@ public class Generate_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("configure");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
 
     public Target_configure() {
     }
@@ -325,10 +325,10 @@ public class Generate_Facet extends IFacet.Stub {
                 null
               ), settings.isIncremental()));
               IGenerationTracer tracer = (pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() ?
-                pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class) :
+                pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class) :
                 new NullGenerationTracer()
               );
-              pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().saveTransientModels(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).cleanMake()).keepOutputModel(true));
+              pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().saveTransientModels(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).cleanMake()).keepOutputModel(true));
               return new IResult.SUCCESS(_output_fi61u2_a0c);
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0c);
@@ -377,7 +377,7 @@ public class Generate_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters"), new ITarget.Name("checkDumbMode")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), new ITarget.Name("jetbrains.mps.lang.core.Generate.checkDumbMode")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -456,7 +456,7 @@ public class Generate_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("preloadModels");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.preloadModels");
 
     public Target_preloadModels() {
     }
@@ -508,7 +508,7 @@ public class Generate_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("configure")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.configure")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -516,7 +516,7 @@ public class Generate_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
     }
 
     public ITarget.Name getName() {
@@ -553,7 +553,7 @@ public class Generate_Facet extends IFacet.Stub {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("generate");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.generate");
 
     public Target_generate() {
     }
@@ -565,9 +565,9 @@ public class Generate_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               boolean generationOk;
-              GeneratorManager gm = pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(GeneratorManager.class);
-              if (!(pa.properties().parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
-                IGenerationTracer tracer = pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class);
+              GeneratorManager gm = pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(GeneratorManager.class);
+              if (!(pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
+                IGenerationTracer tracer = pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class);
                 if (tracer != null) {
                   tracer.discardTracing();
                 }
@@ -603,7 +603,7 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               }).toListSequence();
 
-              generationOk = gm.generateModels(models, pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).pindGet().invoke(), mh, pa.properties().parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create());
+              generationOk = gm.generateModels(models, pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).pindGet().invoke(), mh, pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create());
 
               monitor.currentProgress().finishWork("Generating");
               if (!(generationOk)) {
@@ -619,8 +619,8 @@ public class Generate_Facet extends IFacet.Stub {
                 }
 
                 public boolean reconcile() {
-                  if (!(pa.properties().parameters(new ITarget.Name("configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
-                    pa.properties().parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
+                  if (!(pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
+                    pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
                   }
                   return true;
                 }
@@ -641,7 +641,7 @@ public class Generate_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("configure")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.configure")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -649,7 +649,7 @@ public class Generate_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("reconcile"), new ITarget.Name("make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
     }
 
     public ITarget.Name getName() {
@@ -688,7 +688,7 @@ public class Generate_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IParametersPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("checkParameters");
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
         if (properties.hasProperties(name)) {
           Generate_Facet.Target_checkParameters.Variables props = properties.parameters(name, Generate_Facet.Target_checkParameters.Variables.class);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.checkParameters.project", null);
@@ -698,7 +698,7 @@ public class Generate_Facet extends IFacet.Stub {
         }
       }
       {
-        ITarget.Name name = new ITarget.Name("configure");
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
         if (properties.hasProperties(name)) {
           Generate_Facet.Target_configure.Variables props = properties.parameters(name, Generate_Facet.Target_configure.Variables.class);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.saveTransient", String.valueOf(props.saveTransient()));
@@ -710,7 +710,7 @@ public class Generate_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IParametersPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("checkParameters");
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.checkParameters")) {
             Generate_Facet.Target_checkParameters.Variables props = properties.parameters(name, Generate_Facet.Target_checkParameters.Variables.class);
             String key = "jetbrains.mps.lang.core.Generate.checkParameters.checkParameters";
@@ -721,7 +721,7 @@ public class Generate_Facet extends IFacet.Stub {
           }
         }
         {
-          ITarget.Name name = new ITarget.Name("configure");
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.configure")) {
             Generate_Facet.Target_configure.Variables props = properties.parameters(name, Generate_Facet.Target_configure.Variables.class);
             String key = "jetbrains.mps.lang.core.Generate.configure.configure";

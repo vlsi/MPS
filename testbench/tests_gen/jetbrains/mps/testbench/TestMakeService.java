@@ -150,7 +150,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
       }
 
       public void setup(IParametersPool pool) {
-        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
+        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         vars._0(TestMakeService.this.context.getProject());
         vars._1(TestMakeService.this.context);
         vars._2(true);

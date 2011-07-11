@@ -144,7 +144,7 @@ public class EmbeddableEditor {
   }
 
   public void make(final Set<IClassPathItem> classPath) {
-    final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("compileToMemory")).toScript();
+    final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory")).toScript();
 
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
@@ -157,7 +157,7 @@ public class EmbeddableEditor {
           @Override
           public void setup(IParametersPool ppool) {
             super.setup(ppool);
-            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("compileToMemory"), Object.class);
+            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory"), Object.class);
             if (params != null) {
               params._0(classPath);
             }
