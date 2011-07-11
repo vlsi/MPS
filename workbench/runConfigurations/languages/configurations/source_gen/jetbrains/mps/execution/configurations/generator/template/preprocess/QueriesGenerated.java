@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,6 +21,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static void mappingScript_CodeBlock_5916922432461069146(final IOperationContext operationContext, final MappingScriptContext _context) {
@@ -38,9 +40,10 @@ public class QueriesGenerated {
         }
       })) {
         if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, "commandPart", false)))) {
-          SNode debuggerSettings = new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0().createNode();
+          SNode debuggerSettignsParameter = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", null);
+          SNode debuggerSettings = new QueriesGenerated.QuotationClass_x583g4_a0a1a0a0a0a0().createNode(debuggerSettignsParameter);
           SLinkOperations.setNewChild(debuggerSettings, "operand", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter");
-          SNode debuggerAssignment = new QueriesGenerated.QuotationClass_x583g4_a0a2a0a0a0a0().createNode(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, "commandPart", false)), "debuggerParameter", true));
+          SNode debuggerAssignment = new QueriesGenerated.QuotationClass_x583g4_a0a3a0a0a0a0().createNode(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, "commandPart", false)), "debuggerParameter", true));
           ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).addElement(debuggerAssignment);
           SLinkOperations.setTarget(debuggerAssignment, "value", debuggerSettings, true);
         }
@@ -48,11 +51,11 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0 {
-    public QuotationClass_x583g4_a0a0a0a0a0a0() {
+  public static class QuotationClass_x583g4_a0a1a0a0a0a0 {
+    public QuotationClass_x583g4_a0a1a0a0a0a0() {
     }
 
-    public SNode createNode() {
+    public SNode createNode(Object parameter_9) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -63,22 +66,29 @@ public class QueriesGenerated {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.addReference(SReference.create("variableDeclaration", quotedNode1_6, SModelReference.fromString("r:ef62eed0-f24e-4ff0-94b8-b3d170d4cdcb(jetbrains.mps.execution.configurations.generator.template.preprocess@1_1)"), SNodeId.fromString("")));
-          quotedNode_1.addChild("operand", quotedNode1_6);
-        }
-        {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_7 = quotedNode_3;
-          quotedNode1_7.addReference(SReference.create("baseMethodDeclaration", quotedNode1_7, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime.settings(MPS.Classpath/jetbrains.mps.debug.runtime.settings@java_stub)"), SNodeId.fromString("~DebugConnectionSettings.getCommandLine(boolean):java.lang.String")));
+          quotedNode1_6.addReference(SReference.create("baseMethodDeclaration", quotedNode1_6, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime.settings(MPS.Classpath/jetbrains.mps.debug.runtime.settings@java_stub)"), SNodeId.fromString("~DebugConnectionSettings.getCommandLine(boolean):java.lang.String")));
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_8 = quotedNode_4;
-            quotedNode1_8.setProperty("value", "true");
-            quotedNode_3.addChild("actualArgument", quotedNode1_8);
+            SNode quotedNode1_7 = quotedNode_4;
+            quotedNode1_7.setProperty("value", "true");
+            quotedNode_2.addChild("actualArgument", quotedNode1_7);
           }
-          quotedNode_1.addChild("operation", quotedNode1_7);
+          quotedNode_1.addChild("operation", quotedNode1_6);
+        }
+        {
+          quotedNode_3 = (SNode) parameter_9;
+          SNode quotedNode1_8;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_8 = quotedNode_3;
+          }
+          if (quotedNode1_8 != null) {
+            quotedNode_1.addChild("operand", HUtil.copyIfNecessary(quotedNode1_8));
+          }
         }
         result = quotedNode1_5;
       }
@@ -86,8 +96,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a2a0a0a0a0 {
-    public QuotationClass_x583g4_a0a2a0a0a0a0() {
+  public static class QuotationClass_x583g4_a0a3a0a0a0a0 {
+    public QuotationClass_x583g4_a0a3a0a0a0a0() {
     }
 
     public SNode createNode(Object parameter_5) {
