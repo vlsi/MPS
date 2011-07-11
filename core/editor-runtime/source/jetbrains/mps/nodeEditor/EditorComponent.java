@@ -1716,6 +1716,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return Collections.unmodifiableList(myLeftMarginPressListeners);
   }
 
+  public void clearLeftMarginListeners() {
+    myLeftMarginPressListeners.clear();
+  }
+
   private void processCoordSelection(MouseEvent mouseEvent) {
     EditorCell newSelectedCell = myRootCell.findLeaf(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     if (newSelectedCell != null && newSelectedCell.isUnderFolded()) {
