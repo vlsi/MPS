@@ -22,7 +22,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
+import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Collections;
 import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 
@@ -72,37 +77,35 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            SNode compositePathComponent = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.CompositePathComponent");
-            String base = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(compositePathComponent), "jetbrains.mps.build.packaging.structure.Path"), "macro", true), "path");
-            if (base == null) {
-              base = "";
-            }
-            for (SNode path : ListSequence.fromList(SLinkOperations.getTargets(compositePathComponent, "pathComponent", true))) {
-              if (path == _context.getCurrentTargetNode()) {
-                break;
-              }
-              base += "/" + SPropertyOperations.getString(path, "path");
-            }
-            File baseDir = new File(base);
+            File baseDir = new File(Path_Behavior.call_getPathUntilCurrent_55204148067303513(SNodeOperations.cast(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.build.packaging.structure.Path"), _context.getCurrentTargetNode()));
+
+            boolean inRootDir = false;
             File[] suggestFiles = baseDir.listFiles();
             if (suggestFiles == null) {
+              inRootDir = true;
               suggestFiles = File.listRoots();
               if (suggestFiles.length == 1 && suggestFiles[0].getAbsolutePath().equals("/")) {
                 suggestFiles = suggestFiles[0].listFiles();
               }
             }
             SNode abstractProjectComponent = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", true, false);
-            boolean isFile = (abstractProjectComponent == null ?
+            final boolean isFile = (abstractProjectComponent == null ?
               true :
               SConceptPropertyOperations.getBoolean(abstractProjectComponent, "acceptFiles")
             );
-            List<String> suggestStrings = ListSequence.fromList(new ArrayList<String>());
-            for (File f : suggestFiles) {
-              if (f.exists() && (isFile || f.isDirectory())) {
-                ListSequence.fromList(suggestStrings).addElement(f.getName());
+
+            return Sequence.fromIterable(Sequence.fromArray(suggestFiles)).where(new IWhereFilter<File>() {
+              public boolean accept(File it) {
+                return it.exists() && (isFile || it.isDirectory());
               }
-            }
-            return suggestStrings;
+            }).<String>select(new ISelector<File, String>() {
+              public String select(File it) {
+                return it.getName();
+              }
+            }).union(Sequence.fromIterable((inRootDir ?
+              Sequence.fromIterable(Collections.<String>emptyList()) :
+              Sequence.<String>singleton("..")
+            ))).toListSequence();
           }
         };
         Iterable<String> queryResult = (Iterable) calc.calculate();
