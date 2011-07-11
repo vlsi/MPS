@@ -22,6 +22,10 @@ public class LocalBehaviorMethodCall_BehaviorDescriptor extends Expression_Behav
     return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
+  public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return LocalBehaviorMethodCall_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
+  }
+
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
   }

@@ -25,4 +25,8 @@ public class LocalBehaviorMethodCall_Behavior {
       return null;
     }
   }
+
+  public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return true;
+  }
 }
