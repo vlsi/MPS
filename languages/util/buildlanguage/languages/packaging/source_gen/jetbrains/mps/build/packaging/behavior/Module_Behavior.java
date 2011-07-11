@@ -95,16 +95,13 @@ public class Module_Behavior {
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
-      List<StubPath> paths = ((Language) module).getRuntimeStubPaths();
-      List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, paths)).distinct().toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode))).toListSequence();
+      List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode))).toListSequence();
       if (includeRuntimeSolutions) {
-        for (Dependency rdep : ListSequence.fromList(((Language) module).getRuntimeDependOn())) {
-          IModule rs = MPSModuleRepository.getInstance().getModule(rdep.getModuleRef());
-          if (rs instanceof Solution) {
-            Solution sol = (Solution) rs;
-            paths = sol.getAllStubPaths();
+        for (Dependency runtimeDependency : ListSequence.fromList(((Language) module).getRuntimeDependOn())) {
+          IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency.getModuleRef());
+          if (runtimeDependencyModule instanceof Solution) {
             // TODO proper module in holder? 
-            ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, paths)).toListSequence(), true)));
+            ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Solution) runtimeDependencyModule).getAllStubPaths())).toListSequence(), true)));
           }
         }
       }
