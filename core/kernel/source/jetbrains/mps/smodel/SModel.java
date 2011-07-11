@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -597,40 +596,56 @@ public class SModel {
   @NotNull
   private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     for (SNode node : model.nodes()) {
-      SNode concept = node.getConceptDeclarationNode();
-      if (concept == null) {
-        LOG.error("concept not found for node " + node.getDebugText());
+      if (RoleIdsComponent.isEnabled()) {
+        result.add(RoleIdsComponent.getConceptPointer(node).getModelReference());
+        for (String propname : node.getProperties().keySet()) {
+          result.add(RoleIdsComponent.getPropertyNamePointer(node, propname).getModelReference());
+        }
+        for (SReference ref : node.getReferencesIterable()) {
+          if (ref.getTargetSModelReference() != null) {
+            result.add(ref.getTargetSModelReference());
+          }
+          result.add(RoleIdsComponent.getReferenceRolePointer(ref).getModelReference());
+        }
+        for (SNode child : node.getChildrenIterable()) {
+          result.add(RoleIdsComponent.getNodeRolePointer(child).getModelReference());
+        }
       } else {
-        result.add(concept.getModel().getSModelReference());
-      }
-      for (String propname : node.getProperties().keySet()) {
-        SNode decl = node.getPropertyDeclaration(propname);
-        if (decl == null) {
-          LOG.error("undeclared property: '" + propname + "' in node " + node.getDebugText());
+        SNode concept = node.getConceptDeclarationNode();
+        if (concept == null) {
+          LOG.error("concept not found for node " + node.getDebugText());
         } else {
-          result.add(decl.getModel().getSModelReference());
+          result.add(concept.getModel().getSModelReference());
         }
-      }
-      for (SReference ref : node.getReferencesIterable()) {
-        SModelReference targetModelRef = ref.getTargetSModelReference();
-        if (targetModelRef == null) {
-          LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + node.getDebugText());
-        } else {
-          result.add(targetModelRef);
+        for (String propname : node.getProperties().keySet()) {
+          SNode decl = node.getPropertyDeclaration(propname);
+          if (decl == null) {
+            LOG.error("undeclared property: '" + propname + "' in node " + node.getDebugText());
+          } else {
+            result.add(decl.getModel().getSModelReference());
+          }
         }
-        SNode decl = node.getLinkDeclaration(ref.getRole());
-        if (decl == null) {
-          LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + node.getDebugText());
-        } else {
-          result.add(decl.getModel().getSModelReference());
+        for (SReference ref : node.getReferencesIterable()) {
+          SModelReference targetModelRef = ref.getTargetSModelReference();
+          if (targetModelRef == null) {
+            LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + node.getDebugText());
+          } else {
+            result.add(targetModelRef);
+          }
+          SNode decl = node.getLinkDeclaration(ref.getRole());
+          if (decl == null) {
+            LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + node.getDebugText());
+          } else {
+            result.add(decl.getModel().getSModelReference());
+          }
         }
-      }
-      for (SNode child : node.getChildrenIterable()) {
-        SNode decl = child.getRoleLink();
-        if (decl == null) {
-          LOG.error("undeclared child role: '" + child.getRole_() + "' in node " + node.getDebugText());
-        } else {
-          result.add(decl.getModel().getSModelReference());
+        for (SNode child : node.getChildrenIterable()) {
+          SNode decl = child.getRoleLink();
+          if (decl == null) {
+            LOG.error("undeclared child role: '" + child.getRole_() + "' in node " + node.getDebugText());
+          } else {
+            result.add(decl.getModel().getSModelReference());
+          }
         }
       }
     }
