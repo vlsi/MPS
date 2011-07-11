@@ -76,9 +76,11 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.TargetRange" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ValidationError" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesIO" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResourceWithProperties" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />

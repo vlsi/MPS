@@ -31,13 +31,15 @@ import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.make.resources.IResourceWithProperties;
-import jetbrains.mps.make.resources.IPropertiesIO;
-import java.io.IOException;
 import java.util.Set;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.make.resources.IPropertiesIO;
+import java.io.IOException;
+import jetbrains.mps.make.facet.FacetRegistry;
+import jetbrains.mps.make.resources.IPropertiesPersistence;
+import jetbrains.mps.make.resources.IResourceWithProperties;
 
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
@@ -327,15 +329,7 @@ __switch__:
           try {
             LOG.debug("Configuring " + trg.getName());
             IConfig cfg = trg.createConfig();
-            if (cfg != null && !(cfg.configure(cmon, new IPropertiesAccessor() {
-              public IParametersPool properties(IResource res) {
-                return properties();
-              }
-
-              public IParametersPool properties() {
-                return pool;
-              }
-            }, pool))) {
+            if (cfg != null && !(cfg.configure(cmon, new Script.PropertiesAccessor(pool), pool))) {
               LOG.debug("Configuration failed for target " + trg.getName());
               cmon.reportFeedback(new IFeedback.ERROR("Configuration failed for target " + trg.getName()));
               results.addResult(trg.getName(), new IResult.FAILURE(null));
@@ -388,58 +382,43 @@ __switch__:
     }
   }
 
-  private class PropertiesAccessor implements IPropertiesAccessor {
-    private Map<Object, Map<String, String>> allProperties = MapSequence.fromMap(new HashMap<Object, Map<String, String>>());
-
-    public PropertiesAccessor() {
-    }
-
-    public IParametersPool properties() {
-      return null;
-    }
-
-    public IParametersPool properties(IResource res) {
-      if (res instanceof IResourceWithProperties) {
-        IPropertiesIO pio = ((IResourceWithProperties) res).getProperties();
-        if (!(MapSequence.fromMap(allProperties).containsKey(pio.getKey()))) {
-          Map<String, String> props = null;
-          try {
-            props = pio.readProperties();
-          } catch (IOException ignore) {
-          }
-          MapSequence.fromMap(allProperties).put(pio.getKey(), props);
-        }
-      }
-      return null;
-    }
-  }
-
   private class PropertiesWithBackstore implements IParametersPool {
-    private IParametersPool transProps = new Script.ParametersPool();
-    private Set<IFacet.Name> loadedFacets = SetSequence.fromSet(new HashSet<IFacet.Name>());
-    private IPropertiesIO propio;
+    private final IParametersPool transProps;
+    private final IParametersPool persProps = new Script.ParametersPool();
+    private final Set<IFacet.Name> loadedFacets = SetSequence.fromSet(new HashSet<IFacet.Name>());
+    private final IPropertiesIO propio;
     private Map<String, String> rawProps;
 
-    public PropertiesWithBackstore(IPropertiesIO propio) {
+    public PropertiesWithBackstore(IParametersPool transProps, IPropertiesIO propio) {
+      this.transProps = transProps;
       this.propio = propio;
+      init();
     }
 
     public void setPersistentPredecessor(IParametersPool ppool) {
     }
 
     public void setPredecessor(IParametersPool ppool) {
-      this.transProps = ppool;
+      if (ppool instanceof Script.PropertiesWithBackstore) {
+        ppool = ((Script.PropertiesWithBackstore) ppool).transProps;
+      }
+      transProps.setPredecessor(ppool);
     }
 
     public <T> T parameters(ITarget.Name target, Class<T> cls) {
       if (transProps.hasProperties(target)) {
         return transProps.parameters(target, cls);
       }
-      return null;
+      this.loadProperties(target.parentName());
+      return persProps.<T>parameters(target, cls);
     }
 
     public boolean hasProperties(ITarget.Name target) {
-      return false;
+      if (transProps.hasProperties(target)) {
+        return true;
+      }
+      loadProperties(target.parentName());
+      return persProps.hasProperties(target);
     }
 
     private void init() {
@@ -449,7 +428,42 @@ __switch__:
       }
     }
 
-    private void loadProperties() {
+    private void loadProperties(IFacet.Name facetName) {
+      if (!(SetSequence.fromSet(loadedFacets).contains(facetName))) {
+        IFacet fct = FacetRegistry.getInstance().lookup(facetName);
+        if (fct != null) {
+          IPropertiesPersistence pp = fct.propertiesPersistence();
+          if (pp != null) {
+            pp.loadValues(rawProps, persProps);
+          }
+        }
+        SetSequence.fromSet(loadedFacets).addElement(facetName);
+      }
+    }
+  }
+
+  private class PropertiesAccessor implements IPropertiesAccessor {
+    private Map<Object, IParametersPool> allProperties = MapSequence.fromMap(new HashMap<Object, IParametersPool>());
+    private final IParametersPool transProps;
+
+    public PropertiesAccessor(IParametersPool transProps) {
+      this.transProps = transProps;
+    }
+
+    public IParametersPool properties() {
+      return transProps;
+    }
+
+    public IParametersPool properties(IResource res) {
+      if (!(res instanceof IResourceWithProperties)) {
+        return transProps;
+      }
+      IPropertiesIO pio = ((IResourceWithProperties) res).getProperties();
+      if (!(MapSequence.fromMap(allProperties).containsKey(pio.getKey()))) {
+        Script.PropertiesWithBackstore props = new Script.PropertiesWithBackstore(transProps, pio);
+        MapSequence.fromMap(allProperties).put(pio.getKey(), props);
+      }
+      return MapSequence.fromMap(allProperties).get(pio.getKey());
     }
   }
 
