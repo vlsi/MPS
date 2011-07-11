@@ -25,13 +25,13 @@ import com.intellij.openapi.ui.Messages;
     String[] lines;
     if (GIT == type) {
       if (SystemInfo.isWindows) {
-        lines = new String[]{"@ECHO OFF", String.format("%s --git %1 %2 %3 %4", CommandLineGenerator.getCommandLine(true))};
+        lines = new String[]{"@ECHO OFF", String.format("%s --git %%1 %%2 %%3 %%4", CommandLineGenerator.getCommandLine(true))};
       } else {
         lines = new String[]{"#/bin/sh", String.format("%s --git $1 $2 $3 $4", CommandLineGenerator.getCommandLine(true))};
       }
     } else if (SVN == type) {
       if (SystemInfo.isWindows) {
-        lines = new String[]{"@ECHO OFF", "SHIFT", "SHIFT", String.format("%s --svn %8 %7 %9 %4 %2 %6", CommandLineGenerator.getCommandLine(true))};
+        lines = new String[]{"@ECHO OFF", "SHIFT", "SHIFT", String.format("%s --svn %%8 %%7 %%9 %%4 %%2 %%6", CommandLineGenerator.getCommandLine(true))};
       } else {
         lines = new String[]{"#/bin/sh", String.format("%s --svn ${10} $9 ${11} $6 $4 $8", CommandLineGenerator.getCommandLine(true))};
       }

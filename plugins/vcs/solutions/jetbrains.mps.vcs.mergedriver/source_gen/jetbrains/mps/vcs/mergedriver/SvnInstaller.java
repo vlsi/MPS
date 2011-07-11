@@ -135,7 +135,7 @@ import java.io.IOException;
       }
     }
 
-    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
+    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.SVN, myScriptFile, dryRun);
     if (createScriptResult != AbstractInstaller.State.INSTALLED) {
       return createScriptResult;
     }

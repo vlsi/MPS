@@ -7,6 +7,8 @@ import org.apache.commons.logging.LogFactory;
 import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.WorkbenchPathManager;
+import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.util.SystemInfo;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
@@ -16,17 +18,21 @@ import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
-import com.intellij.openapi.util.SystemInfo;
 import java.io.FileNotFoundException;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
   protected static Log log = LogFactory.getLog(GitGlobalInstaller.class);
 
   private File myConfigFile;
+  private File myScriptFile;
 
   public GitGlobalInstaller(Project project) {
     super(project);
     myConfigFile = new File(WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig");
+    myScriptFile = new File(PathManager.getConfigPath() + File.separator + "mps-merger." + ((SystemInfo.isWindows ?
+      "bat" :
+      "sh"
+    )));
   }
 
   @NotNull
@@ -51,8 +57,12 @@ import java.io.FileNotFoundException;
       return packerState;
     }
 
-    String cmd = CommandLineGenerator.getCommandLine(false).replace("\\", "\\\\");
-    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = %s --git %%O %%A %%B %%L", cmd));
+    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
+    if (createScriptResult != AbstractInstaller.State.INSTALLED) {
+      return createScriptResult;
+    }
+
+    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"%s\" %%O %%A %%B %%L", myScriptFile.getAbsolutePath().replace("\\", "\\\\")));
     ListSequence.fromList(newConfigLines).addElement("");
 
     List<String> configLines = StringsIO.readLines(myConfigFile);
@@ -72,7 +82,7 @@ import java.io.FileNotFoundException;
       boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0e0p0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0e0r0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -113,7 +123,7 @@ import java.io.FileNotFoundException;
     }
   }
 
-  private static boolean neq_btx4zt_a0a0a0e0p0a(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0e0r0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
