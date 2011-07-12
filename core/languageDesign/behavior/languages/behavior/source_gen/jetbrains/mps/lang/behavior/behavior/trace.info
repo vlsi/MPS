@@ -4,11 +4,11 @@
   <unitInfo fileName="SuperNodeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor" />
   <unitInfo fileName="ConceptConstructorDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptConstructorDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ThisNodeExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ThisNodeExpression_BehaviorDescriptor" />
+  <unitInfo fileName="LocalBehaviorMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="StaticConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="InternalConceptDeclarationsHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationsHolder_BehaviorDescriptor" />
   <unitInfo fileName="ConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="LocalBehaviorMethodCall_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="ConceptBehavior_BehaviorDescriptor.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor" />
   <root nodeId="1225194243289">
     <nodeInfo nodeId="1225194243289" fileName="ConceptBehavior_Behavior.java" startLine="31" startPosition="39" endLine="32" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_6261424444345978650" />
