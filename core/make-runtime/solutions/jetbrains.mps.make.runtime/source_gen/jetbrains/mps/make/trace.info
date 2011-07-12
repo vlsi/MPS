@@ -216,8 +216,8 @@
       <varInfo nodeId="2181314052156502131" varName="messageHandler" />
     </scopeInfo>
     <scopeInfo nodeId="8075512910924574289" fileName="MakeSession.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
-      <varInfo nodeId="8075512910924574297" varName="cleanMake" />
       <varInfo nodeId="8075512910924574299" varName="sticky" />
+      <varInfo nodeId="8075512910924574297" varName="cleanMake" />
       <varInfo nodeId="8075512910924574293" varName="context" />
       <varInfo nodeId="8075512910924574295" varName="messageHandler" />
     </scopeInfo>
@@ -231,8 +231,8 @@
     </scopeInfo>
     <scopeInfo nodeId="8695426379435232466" fileName="MakeSession.java" startLine="28" startPosition="158" endLine="33" endPosition="51" />
     <scopeInfo nodeId="8695426379435232463" fileName="MakeSession.java" startLine="27" startPosition="0" endLine="34" endPosition="3">
-      <varInfo nodeId="8695426379435237577" varName="cleanMake" />
       <varInfo nodeId="2181314052156502137" varName="sticky" />
+      <varInfo nodeId="8695426379435237577" varName="cleanMake" />
       <varInfo nodeId="8075512910924574308" varName="propertiesCollector" />
       <varInfo nodeId="8695426379435237561" varName="context" />
       <varInfo nodeId="8695426379435237564" varName="messageHandler" />

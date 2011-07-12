@@ -64,7 +64,7 @@ public abstract class DefaultHName<T> implements IHName<T> {
    * Override and make final. Called from the constructor when object is not fully constructed.
    * 
    * @param parentFqName  
-   * @throws  
+   * @return  
    */
   protected abstract T createParentName(String parentFqName);
 
