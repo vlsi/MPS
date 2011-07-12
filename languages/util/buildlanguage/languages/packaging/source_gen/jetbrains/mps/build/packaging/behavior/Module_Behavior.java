@@ -24,10 +24,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
 
@@ -95,7 +95,7 @@ public class Module_Behavior {
     if (module instanceof Language) {
       List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode))).toListSequence();
       if (includeRuntimeSolutions) {
-        for (Dependency runtimeDependency : ListSequence.fromList(((Language) module).getRuntimeDependOn())) {
+        for (Dependency runtimeDependency : ListSequence.fromList(((Language) module).getRuntimeDependencies())) {
           IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency.getModuleRef());
           if (runtimeDependencyModule instanceof Solution) {
             // TODO proper module in holder? 
@@ -112,12 +112,16 @@ public class Module_Behavior {
     return ModuleUtil.getRelativePath(AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath(), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode));
   }
 
+  public static String call_getModuleSourcesJarPath_1986682148700597281(SNode thisNode) {
+    return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + "-src.jar";
+  }
+
   public static String call_getRuntimeJarPath_1213877515126(SNode thisNode) {
-    return ModuleUtil.getRelativePath(AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath(), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode)) + "." + MPSExtentions.RUNTIME_ARCH;
+    return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + "-runtime.jar";
   }
 
   public static String call_getModuleJarPath_1213877515137(SNode thisNode) {
-    return ModuleUtil.getRelativePath(AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath(), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode)) + "." + MPSExtentions.MPS_ARCH;
+    return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + ".jar";
   }
 
   public static IModule call_getModule_1213877515148(SNode thisNode) {
@@ -132,7 +136,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a41(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a51(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> stubpath, boolean onlyUnderProjectBasedir) {
@@ -205,7 +209,7 @@ public class Module_Behavior {
     return name.replace("/", "_").replace("\\", "_");
   }
 
-  private static String check_835h7m_a0a41(String checkedDotOperand, String separator, String SEPARATOR) {
+  private static String check_835h7m_a0a51(String checkedDotOperand, String separator, String SEPARATOR) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.replace(File.separator, Util.SEPARATOR);
     }

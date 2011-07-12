@@ -20,10 +20,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.Antcall_Behavior;
-import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
 import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
@@ -37,7 +40,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
@@ -196,16 +198,60 @@ public class QueriesGenerated {
     return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleReference().getModuleId().toString();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1986682148700631550(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    IModule module = Module_Behavior.call_getModule_1213877515148(_context.getNode());
+    if (module instanceof Solution) {
+      return "solution";
+    }
+    if (module instanceof Language) {
+      return "language";
+    }
+    return "unknown";
+  }
+
   public static Object propertyMacro_GetPropertyValue_5640794902512695297(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getProperty("mref");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1210098113087(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Util.SEPARATOR + Module_Behavior.call_getModuleJarPath_1213877515137(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_1986682148700630788(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String name = Util.SEPARATOR + Module_Behavior.call_getModuleSourcesJarPath_1986682148700597281(_context.getNode());
+    int slash = Math.max(name.lastIndexOf('/'), name.lastIndexOf('\\'));
+    return (slash == -1 ?
+      name :
+      name.substring(slash + 1)
+    );
   }
 
-  public static Object propertyMacro_GetPropertyValue_1237395828460(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1986682148700631619(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String name = PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(Module_Behavior.call_getModuleDescriptorFile_6863060912307764362(_context.getNode()));
+    int slash = Math.max(name.lastIndexOf('/'), name.lastIndexOf('\\'));
+    return (slash == -1 ?
+      name :
+      name.substring(slash + 1)
+    );
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1986682148700630335(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractModule.MODULE_DIR;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1986682148700630590(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String s = SPropertyOperations.getString(_context.getNode(), "moduleRelativePath").replace(File.separator, Util.SEPARATOR);
+    if (s == null) {
+      _context.showErrorMessage(null, "language: model root folder should be placed under language root: " + SPropertyOperations.getString(_context.getNode(), "fullPath"));
+      s = "";
+    } else if (StringUtils.isNotEmpty(s)) {
+      s = "/" + s;
+    }
+    return AbstractModule.MODULE_DIR + s;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1986682148700597265(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Util.SEPARATOR + Module_Behavior.call_getModuleSourcesJarPath_1986682148700597281(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1210098113087(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Util.SEPARATOR + Module_Behavior.call_getModuleJarPath_1213877515137(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_3749843785778432734(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -218,17 +264,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1175062284955467608(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractModule.MODULE_DIR;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2739262311775160732(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String s = SPropertyOperations.getString(_context.getNode(), "moduleRelativePath").replace(File.separator, Util.SEPARATOR);
-    if (s == null) {
-      _context.showErrorMessage(null, "language: model root folder should be placed under language root: " + SPropertyOperations.getString(_context.getNode(), "fullPath"));
-      s = "";
-    } else if (StringUtils.isNotEmpty(s)) {
-      s = "/" + s;
-    }
-    return AbstractModule.MODULE_DIR + s;
   }
 
   public static Object propertyMacro_GetPropertyValue_3749843785777956683(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -695,16 +730,16 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static SNode sourceNodeQuery_1239195389762(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1986682148700630326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return Module_Behavior.call_getModuleDescriptorFile_6863060912307764362(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1986682148700630581(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_1175062284955467589(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return Module_Behavior.call_getModuleBaseDirectory_6863060912307757632(_context.getNode());
-  }
-
-  public static SNode sourceNodeQuery_2739262311775160699(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_1237396009295(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -842,7 +877,7 @@ public class QueriesGenerated {
     }, true);
   }
 
-  public static Iterable sourceNodesQuery_2739262311775160744(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1986682148700630636(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Module_Behavior.call_getModelRootPaths_2739262311775052381(_context.getNode());
   }
 
@@ -925,8 +960,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0ch;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0ch_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0gh;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0gh_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -949,13 +984,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0ch_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0gh_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0ch_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0gh_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0ch = this._7__yield_x583g4_a0a0a0a0a0ch_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0gh = this._7__yield_x583g4_a0a0a0a0a0gh_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -967,7 +1002,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0ch);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0gh);
                       return true;
                     case 12:
                       this.__CP__ = 3;
