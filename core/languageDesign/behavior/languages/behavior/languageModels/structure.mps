@@ -44,7 +44,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6496299201655527393">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <property name="name" nameId="tpck.1169194664001" value="LocalBehaviorMethodCall" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068499141036" resolveInfo="BaseMethodCall" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="646895014681116169">
       <property name="name" nameId="tpck.1169194664001" value="InternalConceptDeclarationReference" />
@@ -165,9 +165,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1225194472830" resolveInfo="ConceptMethodDeclaration" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tpee.1068499141037" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6496299201655529023">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1204053956946" resolveInfo="IMethodCall" />
     </node>
   </root>
   <root id="646895014681116169">
