@@ -6,10 +6,12 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.make.resources.IResourceWithProperties;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.make.resources.IPropertiesIO;
 
-public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>> implements IResource, IMResource {
+public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>> implements IResource, IMResource, IResourceWithProperties {
   public MResource() {
     super();
   }
@@ -41,5 +43,9 @@ public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>
 
   public String describe() {
     return NameUtil.compactNamespace(this.module().getModuleReference().getModuleFqName());
+  }
+
+  public IPropertiesIO getProperties() {
+    return new FlatFilePropertiesIO(this.module().getDescriptorFile());
   }
 }

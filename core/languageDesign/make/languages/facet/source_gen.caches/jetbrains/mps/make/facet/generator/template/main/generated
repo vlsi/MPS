@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9m92fvgz0r38o5h47qtdkzm4qoqpbht">
+<dependencies version="2" modelHash="-3bwck9muty8kmewstejheg1ffmm0s7c">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.pattern(MPS.Classpath/jetbrains.mps.lang.pattern@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.typesystem.runtime(MPS.Classpath/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -88,7 +88,7 @@
   <source id="5086995156117116955" name="main" hash="-5xlw06liye2exkdzfay3bcns3ror5j2">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5086995156117142503" name="Facet_" hash="-123lbhnm2xj3yrqqdq1jkfb0mwr0g1g">
+  <source id="5086995156117142503" name="Facet_" hash="46rlgivrsc7yhwpk3fphbvz60uoduz9">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="5086995156117328657" name="TargetDeclaration_class" hash="-e84imf6f71sn3z0lbu5wrhyo4mio694">
@@ -127,7 +127,7 @@
   <source id="1521318412423323200" name="frag_PropertyAccess" hash="59yrut33skxdbcnk45jett11mdwjn01">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="44444360532554723" name="switch_Property_fromString" hash="-6wf1ck084vw33n2uiaallc5ced9mhy3">
+  <source id="44444360532554723" name="switch_Property_fromString" hash="31h67ecyjqsgrz7gz4gat4sd3eok91c">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

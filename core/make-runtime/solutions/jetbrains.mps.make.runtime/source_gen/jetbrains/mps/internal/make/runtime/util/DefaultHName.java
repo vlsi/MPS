@@ -72,9 +72,9 @@ public abstract class DefaultHName<T> implements IHName<T> {
     if (parentName == null) {
       return "";
     }
-    return "." + ((parentName instanceof IHName) ?
+    return (((parentName instanceof IHName) ?
       ((IHName) parentName).fqName() :
       parentName.toString()
-    );
+    )) + ".";
   }
 }

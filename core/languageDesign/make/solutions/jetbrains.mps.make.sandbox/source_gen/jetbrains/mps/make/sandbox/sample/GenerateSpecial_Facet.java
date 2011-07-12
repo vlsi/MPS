@@ -239,15 +239,24 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
       try {
         {
           ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
-          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.GenerateSpecialTarget")) {
-            GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.parameters(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
-            String key = "GenerateSpecial.GenerateSpecialTarget.GenerateSpecialTarget";
-            props.foo(String.valueOf(MapSequence.fromMap(store).get(key)));
-            props.bar(Integer.valueOf(MapSequence.fromMap(store).get(key)));
-            props.baz(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
-            props.FooFoo(String.valueOf(MapSequence.fromMap(store).get(key)));
-            props.BarBar(Integer.valueOf(MapSequence.fromMap(store).get(key)));
-            props.BazBaz(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.parameters(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
+          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.foo")) {
+            props.foo(String.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.foo")));
+          }
+          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.bar")) {
+            props.bar(Integer.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.bar")));
+          }
+          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.baz")) {
+            props.baz(Boolean.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.baz")));
+          }
+          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.FooFoo")) {
+            props.FooFoo(String.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.FooFoo")));
+          }
+          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.BarBar")) {
+            props.BarBar(Integer.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.BarBar")));
+          }
+          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.BazBaz")) {
+            props.BazBaz(Boolean.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.BazBaz")));
           }
         }
       } catch (RuntimeException re) {

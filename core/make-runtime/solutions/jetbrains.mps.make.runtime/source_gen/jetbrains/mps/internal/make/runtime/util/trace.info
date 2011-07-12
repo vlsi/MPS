@@ -781,7 +781,7 @@
     <nodeInfo nodeId="922321631991212025" fileName="DefaultHName.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parentName#()null" />
     <nodeInfo nodeId="922321631991212080" fileName="DefaultHName.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fqName#()Ljava/lang/String;" />
     <nodeInfo nodeId="922321631991217215" fileName="DefaultHName.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="name#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3403828022601591183" fileName="DefaultHName.java" startLine="74" startPosition="5" endLine="78" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3403828022601591183" fileName="DefaultHName.java" startLine="74" startPosition="5" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="922321631991217370" fileName="DefaultHName.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
     <nodeInfo nodeId="899969561582425224" fileName="DefaultHName.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="1150121516825542396" fileName="DefaultHName.java" startLine="21" startPosition="39" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -813,7 +813,7 @@
       <varInfo nodeId="1150121516825542409" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="922321631991217357" fileName="DefaultHName.java" startLine="43" startPosition="38" endLine="50" endPosition="53" />
-    <scopeInfo nodeId="922321631991217293" fileName="DefaultHName.java" startLine="71" startPosition="27" endLine="78" endPosition="6" />
+    <scopeInfo nodeId="922321631991217293" fileName="DefaultHName.java" startLine="71" startPosition="27" endLine="78" endPosition="13" />
     <scopeInfo nodeId="1150121516825542380" fileName="DefaultHName.java" startLine="62" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1150121516825542385" varName="parentFqName" />
     </scopeInfo>

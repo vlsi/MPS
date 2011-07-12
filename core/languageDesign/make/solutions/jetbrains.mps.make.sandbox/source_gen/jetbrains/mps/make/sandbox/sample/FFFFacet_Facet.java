@@ -324,10 +324,9 @@ public class FFFFacet_Facet extends IFacet.Stub {
       try {
         {
           ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
-          if (MapSequence.fromMap(store).containsKey("FFFFacet.QQQ.QQQ")) {
-            FFFFacet_Facet.Target_QQQ.Parameters props = properties.parameters(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
-            String key = "FFFFacet.QQQ.QQQ";
-            props.text(String.valueOf(MapSequence.fromMap(store).get(key)));
+          FFFFacet_Facet.Target_QQQ.Parameters props = properties.parameters(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("FFFFacet.QQQ.text")) {
+            props.text(String.valueOf(MapSequence.fromMap(store).get("FFFFacet.QQQ.text")));
           }
         }
       } catch (RuntimeException re) {

@@ -417,12 +417,15 @@ public class TextGen_Facet extends IFacet.Stub {
       try {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.textGen")) {
-            TextGen_Facet.Target_textGen.Parameters props = properties.parameters(name, TextGen_Facet.Target_textGen.Parameters.class);
-            String key = "jetbrains.mps.lang.core.TextGen.textGen.textGen";
+          TextGen_Facet.Target_textGen.Parameters props = properties.parameters(name, TextGen_Facet.Target_textGen.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.pathToFile")) {
             props.pathToFile(null);
-            props.failIfNoTextgen(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
-            props.generateDebugInfo(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")) {
+            props.failIfNoTextgen(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.failIfNoTextgen")));
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")) {
+            props.generateDebugInfo(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.TextGen.textGen.generateDebugInfo")));
           }
         }
       } catch (RuntimeException re) {

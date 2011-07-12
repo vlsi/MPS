@@ -711,21 +711,27 @@ public class Generate_Facet extends IFacet.Stub {
       try {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.checkParameters")) {
-            Generate_Facet.Target_checkParameters.Variables props = properties.parameters(name, Generate_Facet.Target_checkParameters.Variables.class);
-            String key = "jetbrains.mps.lang.core.Generate.checkParameters.checkParameters";
+          Generate_Facet.Target_checkParameters.Variables props = properties.parameters(name, Generate_Facet.Target_checkParameters.Variables.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.project")) {
             props.project(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.operationContext")) {
             props.operationContext(null);
-            props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")) {
+            props.cleanMake(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.checkParameters.cleanMake")));
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.checkParameters.pindGet")) {
             props.pindGet(null);
           }
         }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.configure")) {
-            Generate_Facet.Target_configure.Variables props = properties.parameters(name, Generate_Facet.Target_configure.Variables.class);
-            String key = "jetbrains.mps.lang.core.Generate.configure.configure";
-            props.saveTransient(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          Generate_Facet.Target_configure.Variables props = properties.parameters(name, Generate_Facet.Target_configure.Variables.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.saveTransient")) {
+            props.saveTransient(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Generate.configure.saveTransient")));
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.generationOptions")) {
             props.generationOptions(null);
           }
         }

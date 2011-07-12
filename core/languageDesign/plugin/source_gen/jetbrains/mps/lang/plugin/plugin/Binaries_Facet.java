@@ -253,9 +253,8 @@ public class Binaries_Facet extends IFacet.Stub {
       try {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries");
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.plugin.Binaries.copyBinaries.copyBinaries")) {
-            Binaries_Facet.Target_copyBinaries.Parameters props = properties.parameters(name, Binaries_Facet.Target_copyBinaries.Parameters.class);
-            String key = "jetbrains.mps.lang.plugin.Binaries.copyBinaries.copyBinaries";
+          Binaries_Facet.Target_copyBinaries.Parameters props = properties.parameters(name, Binaries_Facet.Target_copyBinaries.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.plugin.Binaries.copyBinaries.pathToFile")) {
             props.pathToFile(null);
           }
         }

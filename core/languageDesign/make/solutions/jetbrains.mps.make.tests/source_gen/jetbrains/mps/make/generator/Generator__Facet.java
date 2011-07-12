@@ -254,10 +254,9 @@ public class Generator__Facet extends IFacet.Stub {
       try {
         {
           ITarget.Name name = new ITarget.Name("Generator_.Configure");
-          if (MapSequence.fromMap(store).containsKey("Generator_.Configure.Configure")) {
-            Generator__Facet.Target_Configure.Variables props = properties.parameters(name, Generator__Facet.Target_Configure.Variables.class);
-            String key = "Generator_.Configure.Configure";
-            props.value(String.valueOf(MapSequence.fromMap(store).get(key)));
+          Generator__Facet.Target_Configure.Variables props = properties.parameters(name, Generator__Facet.Target_Configure.Variables.class);
+          if (MapSequence.fromMap(store).containsKey("Generator_.Configure.value")) {
+            props.value(String.valueOf(MapSequence.fromMap(store).get("Generator_.Configure.value")));
           }
         }
       } catch (RuntimeException re) {

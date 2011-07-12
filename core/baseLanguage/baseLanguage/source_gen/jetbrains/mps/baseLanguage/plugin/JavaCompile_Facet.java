@@ -582,27 +582,26 @@ public class JavaCompile_Facet extends IFacet.Stub {
       try {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile");
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compile.compile")) {
-            JavaCompile_Facet.Target_compile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compile.Parameters.class);
-            String key = "jetbrains.mps.baseLanguage.JavaCompile.compile.compile";
-            props.compiledAnything(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          JavaCompile_Facet.Target_compile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compile.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")) {
+            props.compiledAnything(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")));
           }
         }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.auxCompile");
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.auxCompile")) {
-            JavaCompile_Facet.Target_auxCompile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
-            String key = "jetbrains.mps.baseLanguage.JavaCompile.auxCompile.auxCompile";
-            props.skipAuxCompile(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          JavaCompile_Facet.Target_auxCompile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile")) {
+            props.skipAuxCompile(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile")));
           }
         }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory");
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.compileToMemory")) {
-            JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
-            String key = "jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.compileToMemory";
+          JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.classPath")) {
             props.classPath(null);
-            props.errors(Boolean.valueOf(MapSequence.fromMap(store).get(key)));
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors")) {
+            props.errors(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors")));
           }
         }
       } catch (RuntimeException re) {
