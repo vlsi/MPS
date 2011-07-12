@@ -23,11 +23,10 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IJob;
-import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.make.script.IParametersPool;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -39,6 +38,7 @@ import jetbrains.mps.make.resources.IPropertiesIO;
 import java.io.IOException;
 import jetbrains.mps.make.facet.FacetRegistry;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
+import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.make.resources.IResourceWithProperties;
 
 public class Script implements IScript {
@@ -274,15 +274,7 @@ __switch__:
               public boolean accept(IResource it) {
                 return !(monit.stopRequested());
               }
-            }), monit, new IPropertiesAccessor() {
-              public IParametersPool properties(IResource res) {
-                return properties();
-              }
-
-              public IParametersPool properties() {
-                return pool;
-              }
-            }, pool);
+            }), monit, new Script.PropertiesAccessor(pool), pool);
             if (!(trg.producesOutput())) {
               // ignore the output 
               jr = new Script.SubsOutputResult(jr, (trg.requiresInput() ?
