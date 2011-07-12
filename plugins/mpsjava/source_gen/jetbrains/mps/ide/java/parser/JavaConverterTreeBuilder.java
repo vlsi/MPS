@@ -611,10 +611,12 @@ public class JavaConverterTreeBuilder {
     SNode annotationInstance = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
     SNode sourceNode = annotationInstance;
     AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
-    SReference classifierReference;
+    SReference classifierReference = null;
     if (annotationBinding == null) {
       TypeReference type = annotation.type;
-      classifierReference = myTypesProvider.createErrorClassifierReference("annotation", type.resolvedType, sourceNode);
+      if (type != null) {
+        classifierReference = myTypesProvider.createErrorClassifierReference("annotation", type.resolvedType, sourceNode);
+      }
     } else {
       classifierReference = myTypesProvider.createClassifierReference(annotationBinding.getAnnotationType(), "annotation", sourceNode);
     }
