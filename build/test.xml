@@ -32,8 +32,6 @@
       <src>
         <path path="${mps_home}/testbench/tests"/>
         <path path="${mps_home}/testbench/tests_gen"/>
-        <path path="${mps_home}/testbench/source_gen"/>
-        <path path="${mps_home}/testbench/source"/>
       </src>
     </javac>
     <jar destfile="${dest}/MPS/lib/mpstests.jar" duplicate="preserve" filesonly="true">
