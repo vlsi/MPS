@@ -824,10 +824,12 @@ public class JavaConverterTreeBuilder {
     MethodBinding b = x.binding;
     SNode classCreator = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ClassCreator", null);
     SReference methodReference = myTypesProvider.createMethodReference(b, "baseMethodDeclaration", classCreator);
-    if (methodReference == null) {
+    if (methodReference == null && x.resolvedType != null) {
       methodReference = myTypesProvider.createErrorReference("baseMethodDeclaration", new String(x.resolvedType.sourceName()), classCreator);
     }
-    classCreator.addReference(methodReference);
+    if (methodReference != null) {
+      classCreator.addReference(methodReference);
+    }
     if (x.enumConstant != null) {
       throw new JavaConverterException("unexpected enum constant creation");
     }
