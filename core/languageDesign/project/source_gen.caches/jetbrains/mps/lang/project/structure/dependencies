@@ -143,6 +143,7 @@
     <classNode dependClassName="jetbrains.mps.lang.project.structure.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.lang.project.structure.ModuleDependency" />
     <classNode dependClassName="jetbrains.mps.lang.project.structure.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.lang.project.structure.SourcePath" />
     <classNode dependClassName="jetbrains.mps.lang.project.structure.StubEntry" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
