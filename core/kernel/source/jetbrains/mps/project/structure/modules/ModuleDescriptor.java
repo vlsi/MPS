@@ -26,18 +26,22 @@ public class ModuleDescriptor {
   private String myTimestamp;
   private boolean myCompileInMPS = true;
 
+  private boolean myEnableJavaStubs;
+
   private List<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
   private List<Dependency> myDependencies;
   private List<ModuleReference> myUsedLanguages;
   private List<ModuleReference> myUsedDevkits;
   private List<ModelRoot> myStubModels;
-
+  private List<String> mySourcePaths;
+  
   public ModuleDescriptor() {
     myModelRoots = new ArrayList<jetbrains.mps.project.structure.model.ModelRoot>();
     myDependencies = new ArrayList<Dependency>();
     myUsedLanguages = new ArrayList<ModuleReference>();
     myUsedDevkits = new ArrayList<ModuleReference>();
     myStubModels = new ArrayList<ModelRoot>();
+    mySourcePaths = new ArrayList<String>();
   }
 
   public String getUUID() {
@@ -76,7 +80,15 @@ public class ModuleDescriptor {
     myCompileInMPS = compileInMPS;
   }
 
-  public List<jetbrains.mps.project.structure.model.ModelRoot> getModelRoots() {
+  public boolean getEnableJavaStubs() {
+    return myEnableJavaStubs;
+  }
+
+  public void setEnableJavaStubs(boolean enableJavaStubs) {
+    myEnableJavaStubs = enableJavaStubs;
+  }
+
+  public List<ModelRoot> getModelRoots() {
     return myModelRoots;
   }
 
@@ -94,6 +106,10 @@ public class ModuleDescriptor {
 
   public List<ModelRoot> getStubModelEntries() {
     return myStubModels;
+  }
+
+  public List<String> getSourcePaths() {
+    return mySourcePaths;
   }
 
   public boolean updateModelRefs() {

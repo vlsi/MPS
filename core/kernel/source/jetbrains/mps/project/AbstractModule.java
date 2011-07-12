@@ -130,7 +130,7 @@ public abstract class AbstractModule implements IModule {
     dep.setModuleRef(moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
-//    setModuleDescriptor(descriptor, true);// removed as it follows to models disposing even after addChild()
+    //setModuleDescriptor(descriptor, true);
     save();
   }
 
@@ -189,6 +189,10 @@ public abstract class AbstractModule implements IModule {
   }
 
   //----stubs
+
+  public boolean areJavaStubsEnabled() {
+    return true;
+  }
 
   public List<StubPath> getAllStubPaths() {
     ArrayList<StubPath> result = new ArrayList<StubPath>();

@@ -58,6 +58,14 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
     ModuleDescriptor descriptor = myModule.getModuleDescriptor();
     if (descriptor == null) return errors;
 
+    if (descriptor.getSourcePaths() != null && !myModule.isPackaged()) {
+      for (String sourcePath : descriptor.getSourcePaths()) {
+        IFile file = FileSystem.getInstance().getFileByPath(sourcePath);
+        if (file == null || !file.exists()) {
+          errors.add("Can't find source path: " + sourcePath);
+        }
+      }
+    }
     if (descriptor.getStubModelEntries() != null) {
       for (ModelRoot stubModelsEntry : descriptor.getStubModelEntries()) {
         IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());

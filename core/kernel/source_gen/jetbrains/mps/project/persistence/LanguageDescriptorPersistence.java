@@ -126,10 +126,14 @@ public class LanguageDescriptorPersistence {
             }
           }
 
-          final boolean result_v3r4p8_a72a0a0d0d0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("compileInMPS"), false);
-          result_v3r4p8_a0a0d0d0a.setCompileInMPS(result_v3r4p8_a72a0a0d0d0a);
-          final boolean result_v3r4p8_a82a0a0d0d0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("doNotGenerateAdapters"), false);
-          result_v3r4p8_a0a0d0d0a.setDoNotGenerateAdapters(result_v3r4p8_a82a0a0d0d0a);
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "sourcePath")).first(), "source"))) {
+            result_v3r4p8_a0a0d0d0a.getSourcePaths().add(macros.expandPath(entryElement.getAttributeValue("path"), file));
+          }
+
+          final boolean result_v3r4p8_a92a0a0d0d0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("compileInMPS"), false);
+          result_v3r4p8_a0a0d0d0a.setCompileInMPS(result_v3r4p8_a92a0a0d0d0a);
+          final boolean result_v3r4p8_a03a0a0d0d0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("doNotGenerateAdapters"), false);
+          result_v3r4p8_a0a0d0d0a.setDoNotGenerateAdapters(result_v3r4p8_a03a0a0d0d0a);
           return result_v3r4p8_a0a0d0d0a;
         }
       }.invoke();
@@ -225,22 +229,30 @@ public class LanguageDescriptorPersistence {
           result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a0a61a0a0d0c);
         }
 
+        final Element result_v3r4p8_a81a0a0d0c = new Element("sourcePath");
+        for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
+          final Element result_v3r4p8_a0a0a81a0a0d0c = new Element("source");
+          final String result_v3r4p8_a0a0a0a81a0a0d0c = macros.shrinkPath(p, file);
+          result_v3r4p8_a0a0a81a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a81a0a0d0c);
+          result_v3r4p8_a81a0a0d0c.addContent(result_v3r4p8_a0a0a81a0a0d0c);
+        }
+        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a81a0a0d0c);
 
-        final boolean result_v3r4p8_a91a0a0d0c = descriptor.getCompileInMPS();
-        result_v3r4p8_a0a0d0c.setAttribute("compileInMPS", "" + result_v3r4p8_a91a0a0d0c);
-        final boolean result_v3r4p8_a02a0a0d0c = descriptor.isDoNotGenerateAdapters();
-        result_v3r4p8_a0a0d0c.setAttribute("doNotGenerateAdapters", "" + result_v3r4p8_a02a0a0d0c);
+        final boolean result_v3r4p8_a02a0a0d0c = descriptor.getCompileInMPS();
+        result_v3r4p8_a0a0d0c.setAttribute("compileInMPS", "" + result_v3r4p8_a02a0a0d0c);
+        final boolean result_v3r4p8_a12a0a0d0c = descriptor.isDoNotGenerateAdapters();
+        result_v3r4p8_a0a0d0c.setAttribute("doNotGenerateAdapters", "" + result_v3r4p8_a12a0a0d0c);
 
         ModuleDescriptorPersistence.saveDependencies(result_v3r4p8_a0a0d0c, descriptor);
 
-        final Element result_v3r4p8_a42a0a0d0c = new Element("extendedLanguages");
+        final Element result_v3r4p8_a52a0a0d0c = new Element("extendedLanguages");
         for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedLanguages())) {
-          final Element result_v3r4p8_a0a0a42a0a0d0c = new Element("extendedLanguage");
-          final String result_v3r4p8_a0a0a0a42a0a0d0c = ref.toString();
-          result_v3r4p8_a0a0a42a0a0d0c.setText(result_v3r4p8_a0a0a0a42a0a0d0c);
-          result_v3r4p8_a42a0a0d0c.addContent(result_v3r4p8_a0a0a42a0a0d0c);
+          final Element result_v3r4p8_a0a0a52a0a0d0c = new Element("extendedLanguage");
+          final String result_v3r4p8_a0a0a0a52a0a0d0c = ref.toString();
+          result_v3r4p8_a0a0a52a0a0d0c.setText(result_v3r4p8_a0a0a0a52a0a0d0c);
+          result_v3r4p8_a52a0a0d0c.addContent(result_v3r4p8_a0a0a52a0a0d0c);
         }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a42a0a0d0c);
+        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a52a0a0d0c);
         return result_v3r4p8_a0a0d0c;
       }
     }.invoke();

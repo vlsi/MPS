@@ -151,6 +151,9 @@ public abstract class ProjectStructureBuilder {
     for (ModelRoot entry : source.getStubModelEntries()) {
       SLinkOperations.getTargets(module, "stubModels", true).add(convert(entry));
     }
+    for (String s : source.getSourcePaths()) {
+      SLinkOperations.getTargets(module, "sourcePaths", true).add(convertSourcePath(s));
+    }
   }
 
   private SNode convert(ModelRoot source) {
@@ -168,6 +171,12 @@ public abstract class ProjectStructureBuilder {
     SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModelRootManager", null);
     SPropertyOperations.set(result, "moduleId", source.getModuleId());
     SPropertyOperations.set(result, "className", source.getClassName());
+    return result;
+  }
+
+  private SNode convertSourcePath(String s) {
+    SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.SourcePath", null);
+    SPropertyOperations.set(result, "value", s);
     return result;
   }
 

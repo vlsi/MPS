@@ -231,6 +231,7 @@ public class TestMakeOnRealProject {
 
             String generatorOutputPath = myCreatedSolution.getGeneratorOutputPath();
             IFile resourceDir = FileSystem.getInstance().getFileByPath(generatorOutputPath).getParent().getDescendant("resources");
+            myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourceDir.getPath());
             createFile(resourceDir, "res.0.1/test.txt", "test");
           }
         });

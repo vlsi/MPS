@@ -201,6 +201,10 @@ public class ModulesMiner {
       return;
     }
 
+    for (String p : descriptor.getSourcePaths()) {
+      excludes.add(FileSystem.getInstance().getFileByPath(p));
+    }
+
     IFile genPath = ProjectPathUtil.getGeneratorOutputPath(descriptorFile, descriptor);
     if (genPath != null) {
       excludes.add(genPath);
