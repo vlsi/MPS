@@ -871,8 +871,16 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "company", true) != null);
   }
 
+  public static boolean ifMacro_Condition_7878409884608584594(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_7878409884608584634(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) == null);
+  }
+
   public static boolean ifMacro_Condition_1234789892371(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
+    return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) == null) && (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true) != null);
   }
 
   public static boolean ifMacro_Condition_1240557190171(final IOperationContext operationContext, final IfMacroContext _context) {
