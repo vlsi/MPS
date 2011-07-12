@@ -259,7 +259,7 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private List<StubPath> getModuleStubPaths(AbstractModule m) {
-    return m.getStubPaths();
+    return m.areJavaStubsEnabled() ? m.getAllStubPaths() : m.getStubPaths();
   }
 
   private void buildUnchangedPaths() {
