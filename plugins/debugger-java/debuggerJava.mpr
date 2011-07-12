@@ -22,6 +22,8 @@
       <modulePath path="${mps_home}/core/debug/languages/privateMembers/privateMembers.mpl" folder="evaluation" />
       <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="evaluation" />
       <modulePath path="${mps_home}/core/debug/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" folder="evaluation" />
+      <modulePath path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="trace" />
+      <modulePath path="${mps_home}/core/languageDesign/textGen/textGen.mpl" folder="trace" />
       <modulePath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" folder="api" />
       <modulePath path="${project}/solutions/jetbrains.mps.debugger.java.run.sandbox/jetbrains.mps.debugger.java.run.sandbox.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
