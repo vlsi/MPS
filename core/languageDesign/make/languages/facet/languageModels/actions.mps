@@ -975,7 +975,7 @@
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8703512757937161217">
-                    <property name="value" nameId="tpee.1070475926801" value="." />
+                    <property name="value" nameId="tpee.1070475926801" value=":" />
                   </node>
                 </node>
               </node>

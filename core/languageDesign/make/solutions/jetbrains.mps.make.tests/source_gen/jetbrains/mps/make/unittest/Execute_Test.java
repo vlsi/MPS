@@ -345,7 +345,7 @@ public class Execute_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
-        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)));
+        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
 
         exactly(1).of(jmon).reportFeedback(with(new BaseMatcher<IFeedback>() {
           public boolean matches(Object o) {

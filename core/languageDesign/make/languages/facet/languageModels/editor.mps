@@ -966,12 +966,18 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vvvw.8703512757937161134" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8703512757937161146">
-        <property name="text" nameId="tpc2.1073389577007" value="." />
+        <property name="text" nameId="tpc2.1073389577007" value=":" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215096040201" resolveInfo="Dot" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="8703512757937161292">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vvvw.8703512757937161148" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="8703512757937161296" resolveInfo="TargetReferenceExpression_DELETE" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1198160801001">
+          <property name="color" nameId="tpc2.1186403713874" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1198160806066">
+          <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
+        </node>
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="8703512757937161293">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8703512757937161295">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />

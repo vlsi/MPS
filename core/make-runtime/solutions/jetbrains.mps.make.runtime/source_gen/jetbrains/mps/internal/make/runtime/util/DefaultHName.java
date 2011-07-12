@@ -32,7 +32,7 @@ public abstract class DefaultHName<T> implements IHName<T> {
   }
 
   public final String fqName() {
-    return parentFqName() + "." + name;
+    return prefix() + name;
   }
 
   public String name() {
@@ -68,11 +68,11 @@ public abstract class DefaultHName<T> implements IHName<T> {
    */
   protected abstract T createParentName(String parentFqName);
 
-  private String parentFqName() {
+  private String prefix() {
     if (parentName == null) {
       return "";
     }
-    return ((parentName instanceof IHName) ?
+    return "." + ((parentName instanceof IHName) ?
       ((IHName) parentName).fqName() :
       parentName.toString()
     );

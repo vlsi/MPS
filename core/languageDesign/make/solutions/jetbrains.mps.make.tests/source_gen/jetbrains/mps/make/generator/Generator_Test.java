@@ -45,18 +45,18 @@ public class Generator_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         exactly(1).of(pstub).beginWork(with(equal("Script")), with(equal(1020)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Configure").toString())), with(equal(1000)), with(equal(10)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Generate").toString())), with(equal(1000)), with(equal(1000)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Make").toString())), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Generator_.Configure").toString())), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Generator_.Generate").toString())), with(equal(1000)), with(equal(1000)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Maker_.Make").toString())), with(equal(1000)), with(equal(10)));
 
         exactly(1).of(pstub).beginWork(with(equal("GENERATE")), with(same(100)), with(any(Integer.class)));
         atMost(1).of(pstub).advanceWork(with(equal("GENERATE")), with(same(50)));
         exactly(1).of(pstub).finishWork(with(equal("GENERATE")));
 
         atMost(3).of(pstub).advanceWork(with(equal("Script")), with(same(1)));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Make").toString())));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Generate").toString())));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Configure").toString())));
+        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Maker_.Make").toString())));
+        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Generator_.Generate").toString())));
+        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Generator_.Configure").toString())));
         exactly(1).of(pstub).finishWork(with(equal("Script")));
         allowing(pstub).workLeft();
         will(returnValue(Integer.MAX_VALUE));
@@ -64,11 +64,11 @@ public class Generator_Test extends MockTestCase {
     });
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
@@ -101,7 +101,7 @@ public class Generator_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
-        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)));
+        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
 
         final IQuery[] query = new IQuery[1];
         exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery>() {
@@ -127,11 +127,11 @@ public class Generator_Test extends MockTestCase {
       }
     });
     Mockups.allowing(context, mons);
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
@@ -164,7 +164,7 @@ public class Generator_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
-        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)));
+        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
         exactly(1).of(cmon).reportFeedback(with(aNonNull(IFeedback.class)));
 
         final IQuery[] query = new IQuery[1];
@@ -192,12 +192,12 @@ public class Generator_Test extends MockTestCase {
     });
     Mockups.allowing(context, mons);
 
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
@@ -211,8 +211,8 @@ public class Generator_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         exactly(1).of(pstub).beginWork(with(equal("Script")), with(same(20)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("work").toString())), with(equal(1000)), with(equal(10)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Make").toString())), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Worker_.work").toString())), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Maker_.Make").toString())), with(equal(1000)), with(equal(10)));
 
 
         org.jmock.Sequence seq = context.sequence("sequence");
@@ -232,8 +232,8 @@ public class Generator_Test extends MockTestCase {
         inSequence(seq);
 
         atMost(2).of(pstub).advanceWork(with(equal("Script")), with(same(1)));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Make").toString())));
-        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("work").toString())));
+        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Maker_.Make").toString())));
+        exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Worker_.work").toString())));
         exactly(1).of(pstub).finishWork(with(equal("Script")));
 
         allowing(pstub).workLeft();
@@ -242,12 +242,12 @@ public class Generator_Test extends MockTestCase {
     });
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
@@ -259,16 +259,16 @@ public class Generator_Test extends MockTestCase {
     final LoggingProgressStrategy.Log logger = context.mock(LoggingProgressStrategy.Log.class);
     context.checking(new Expectations() {
       {
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- started")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- done 50%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK/WORKWORK -- started")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- done 62%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK/WORKWORK -- done 50%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- done 74%")));
-        exactly(2).of(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK/WORKWORK -- done 100%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK/WORKWORK -- finished")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- done 100%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- finished")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- started")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK/WORKWORK -- started")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- done 62%")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK/WORKWORK -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- done 74%")));
+        exactly(2).of(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK/WORKWORK -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK/WORKWORK -- finished")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("Worker_.work") + "/WORK -- finished")));
 
         allowing(logger).info(with(new BaseMatcher<String>() {
           public boolean matches(Object s) {
@@ -290,11 +290,11 @@ public class Generator_Test extends MockTestCase {
     };
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), jmon);
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());

@@ -333,7 +333,7 @@ __switch__:
           }
 
           public String getMatchingText(String text) {
-            return "." + SPropertyOperations.getString((item), "name");
+            return ":" + SPropertyOperations.getString((item), "name");
           }
 
           public String getVisibleMatchingText(String text) {
