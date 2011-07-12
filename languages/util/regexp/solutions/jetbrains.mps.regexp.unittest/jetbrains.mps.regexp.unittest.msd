@@ -3,6 +3,10 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
+  <sourcePath />
+  <dependencies>
+    <dependency reexport="false">23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguage>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</usedLanguage>
     <usedLanguage>daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)</usedLanguage>
