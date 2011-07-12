@@ -635,7 +635,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2850282874221194302(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false)).isNotEmpty() || ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode())).isNotEmpty() || !(SPropertyOperations.getBoolean(_context.getNode(), "doNotJar"));
+    if (SPropertyOperations.getBoolean(_context.getNode(), "doNotJar")) {
+      if (ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false)).isNotEmpty()) {
+        _context.showErrorMessage(_context.getNode(), "non-empty runtime classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName());
+      }
+      if (ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode())).isNotEmpty()) {
+        _context.showErrorMessage(_context.getNode(), "non-empty stub classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName());
+      }
+    }
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "doNotJar"));
   }
 
   public static boolean ifMacro_Condition_1225993322931(final IOperationContext operationContext, final IfMacroContext _context) {
