@@ -61,7 +61,7 @@ public class StubConversionStage implements MigrationStage {
     reResolveStubRefs(p);
     SModelRepository.getInstance().saveAll();
 
-    new OptimizeImportsHelper(ProjectOperationContext.get(p.getProject())).optimizeProjectImports(p);
+    //new OptimizeImportsHelper(ProjectOperationContext.get(p.getProject())).optimizeProjectImports(p);
     for (IModule module : p.getModules()) {
       module.save();
     }
