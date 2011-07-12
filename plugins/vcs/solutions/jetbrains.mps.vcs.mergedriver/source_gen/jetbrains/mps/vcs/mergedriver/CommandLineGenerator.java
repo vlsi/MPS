@@ -40,7 +40,9 @@ public class CommandLineGenerator {
         }
       }).concat(ListSequence.fromList(Arrays.asList(InternalRuntimePacker.getPath())));
     }
-    return "\"" + System.getProperty("java.home") + File.separator + "bin" + File.separator + "java\" -cp \"" + StringUtils.join(Sequence.fromIterable(classpath).toListSequence(), File.pathSeparator) + "\" " + MergeDriverMain.class.getName();
+    String javaExecutable = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
+    String classpathString = StringUtils.join(Sequence.fromIterable(classpath).toListSequence(), File.pathSeparator);
+    return String.format("\"%s\" -cp \"%s\" %s", javaExecutable, classpathString, MergeDriverMain.class.getName());
   }
 
   /*package*/ static String getSvnkitJar() {

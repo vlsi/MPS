@@ -55,7 +55,7 @@ import java.io.IOException;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
 
-    String configLine = String.format("diff3-cmd = %s", myScriptFile);
+    String configLine = String.format("diff3-cmd = %s", myScriptFile.getAbsolutePath().replace("\\", "\\\\"));
 
     List<String> lines = StringsIO.readLines(myConfigFile);
     int lineToReplace = -1;

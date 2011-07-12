@@ -62,7 +62,7 @@ import java.io.FileNotFoundException;
       return createScriptResult;
     }
 
-    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"%s\" %%O %%A %%B %%L", myScriptFile.getAbsolutePath().replace("\\", "\\\\")));
+    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"\\\"%s\\\" %%O %%A %%B %%L\"", myScriptFile.getAbsolutePath().replace("\\", "\\\\")));
     ListSequence.fromList(newConfigLines).addElement("");
 
     List<String> configLines = StringsIO.readLines(myConfigFile);
