@@ -5866,7 +5866,7 @@
   </target>
   <target name="pack.jetbrains.mps.lang.test.runtime">
     <fail unless="basedir" message="Property basedir unspecified." />
-    <mkdir dir="${basedir}/core/languageDesign/test/testclasses" />
+    <mkdir dir="${basedir}/core/languageDesign/test/classes" />
     <mkdir dir="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.test.runtime.mpsarch.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.test.runtime.mpsarch.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.lang.test.runtime" uuid="707c4fde-f79a-44b5-b3d7-b5cef8844ccf">
@@ -5992,7 +5992,7 @@
       <zipfileset file="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.test.runtime.mpsarch.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${basedir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime" includes="icons/**, resources/**" prefix="module" />
       <zipfileset dir="${basedir}/core/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
-      <zipfileset dir="${basedir}/core/languageDesign/test/testclasses" />
+      <zipfileset dir="${basedir}/core/languageDesign/test/classes" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/languageDesign/jetbrains.mps.lang.test.runtime.mpsarch.jar.jtmp" />
   </target>
