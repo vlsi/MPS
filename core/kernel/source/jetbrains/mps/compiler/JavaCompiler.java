@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.compiler;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.NameUtil;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.*;
 import org.eclipse.jdt.internal.compiler.Compiler;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
@@ -43,15 +45,15 @@ public class JavaCompiler {
   }
 
   public void addSourceFile(String path, String filename, Object contents) {
-    if(!(contents instanceof String)) {
+    if (!(contents instanceof String)) {
       // binary files aren't sources
       return;
     }
     if (!path.isEmpty()) {
       path = path + (path.endsWith(File.separator) ? "" : File.separatorChar);
     }
-    String filePath = path  + filename;
-    CompilationUnit compilationUnit = new CompilationUnit(((String)contents).toCharArray(), filePath, "UTF-8");
+    String filePath = path + filename;
+    CompilationUnit compilationUnit = new CompilationUnit(((String) contents).toCharArray(), filePath, "UTF-8");
     myCompilationUnits.put(NameUtil.namespaceFromPath(filePath.substring(0, MPSExtentions.DOT_JAVAFILE.length())), compilationUnit);
   }
 
@@ -71,8 +73,7 @@ public class JavaCompiler {
 
     try {
       c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
-    }
-    catch (RuntimeException ex) {
+    } catch (RuntimeException ex) {
       onFatalError(ex.getMessage());
     }
   }
@@ -141,8 +142,14 @@ public class JavaCompiler {
     return sb.toString();
   }
 
+  private static Logger LOG = Logger.getLogger(JavaCompiler.class);
+
   private class MyCompilerRequestor implements ICompilerRequestor {
     public void acceptResult(CompilationResult result) {
+      for (CategorizedProblem e : result.getErrors()) {
+        char[] fname = e.getOriginatingFileName();
+        LOG.error((fname == null ? "" : new String(fname)) + ":::" + e.getMessage());
+      }
       for (ClassFile file : result.getClassFiles()) {
         onClass(file);
         myClasses.put(getClassName(file), file.getBytes());
