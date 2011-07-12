@@ -4,15 +4,15 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -28,13 +28,17 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
   public subtypesOfClassifierTypeWWildcards_InequationReplacementRule() {
   }
 
+  public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
+    return !(SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+  }
+
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     {
       final SNode t = subtype;
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           {
-            GeneratedMatchingPattern pattern_n8ubly_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a0(SLinkOperations.getTarget(supertype, "classifier", false));
+            GeneratedMatchingPattern pattern_n8ubly_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a1(SLinkOperations.getTarget(supertype, "classifier", false));
             SNode coercedNode_n8ubly_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(t), pattern_n8ubly_a0a0, inequalityIsWeak);
             if (coercedNode_n8ubly_a0a0 != null) {
               {
@@ -97,7 +101,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     {
       final SNode t = subtype;
       {
-        GeneratedMatchingPattern pattern_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a1a1(SLinkOperations.getTarget(supertype, "classifier", false));
+        GeneratedMatchingPattern pattern_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a1a2(SLinkOperations.getTarget(supertype, "classifier", false));
         SNode coercedNode_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_a0a0, inequalityIsWeak);
         if (coercedNode_a0a0 != null) {
           {
@@ -162,12 +166,12 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public static class Pattern_1s2zdh_a0a0a0a0a0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1s2zdh_a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_ignored;
     /*package*/ Object AntiquotationField_n8ubly_a0a0a0a0a;
 
-    public Pattern_1s2zdh_a0a0a0a0a0(Object parameter_n8ubly_a0a0a0a0a) {
+    public Pattern_1s2zdh_a0a0a0a0a1(Object parameter_n8ubly_a0a0a0a0a) {
       this.AntiquotationField_n8ubly_a0a0a0a0a = parameter_n8ubly_a0a0a0a0a;
     }
 
@@ -223,12 +227,12 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     }
   }
 
-  public static class Pattern_1s2zdh_a0a0a0a0a1a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1s2zdh_a0a0a0a0a1a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_ignored;
     /*package*/ Object AntiquotationField_n8ubly_a0a0a0a0a_0;
 
-    public Pattern_1s2zdh_a0a0a0a0a1a1(Object parameter_n8ubly_a0a0a0a0a_0) {
+    public Pattern_1s2zdh_a0a0a0a0a1a2(Object parameter_n8ubly_a0a0a0a0a_0) {
       this.AntiquotationField_n8ubly_a0a0a0a0a_0 = parameter_n8ubly_a0a0a0a0a_0;
     }
 
