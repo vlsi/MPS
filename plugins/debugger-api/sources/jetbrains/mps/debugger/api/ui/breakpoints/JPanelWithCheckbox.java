@@ -25,21 +25,14 @@ import java.awt.Insets;
 
 class JPanelWithCheckbox extends JPanel {
   private final JCheckBox myCheckBox;
+  protected final JLabel myLabel;
 
-  public JPanelWithCheckbox(IBreakpoint breakpoint, boolean isSelected) {
-    Color bg;
-    if (isSelected) {
-      bg = UIManager.getColor("Table.selectionBackground");
-    } else {
-      bg = UIManager.getColor("Table.background");
-    }
-    this.setBackground(bg);
+  public JPanelWithCheckbox() {
     this.setLayout(new GridBagLayout());
     myCheckBox = new JCheckBox();
-    myCheckBox.setSelected(breakpoint.isEnabled());
     myCheckBox.setMargin(new Insets(0, 0, 0, 0));
-    myCheckBox.setBackground(bg);
-    JLabel iconLabel = new JLabel(breakpoint.getPresentation(), BreakpointIconRenderer.getIconFor(breakpoint), SwingConstants.LEFT);
+    myLabel = new JLabel();
+    myLabel.setHorizontalAlignment(SwingConstants.LEFT);
 
     GridBagConstraints constraints = new GridBagConstraints();
     constraints.gridy = 0;
@@ -50,7 +43,21 @@ class JPanelWithCheckbox extends JPanel {
     constraints.gridx = 1;
     constraints.weightx = 1;
     constraints.anchor = GridBagConstraints.WEST;
-    add(iconLabel, constraints);
+    add(myLabel, constraints);
+  }
+
+  public void update(IBreakpoint breakpoint, boolean isSelected) {
+    Color bg;
+    if (isSelected) {
+      bg = UIManager.getColor("Table.selectionBackground");
+    } else {
+      bg = UIManager.getColor("Table.background");
+    }
+    this.setBackground(bg);
+    myCheckBox.setSelected(breakpoint.isEnabled());
+    myCheckBox.setBackground(bg);
+    myLabel.setText(breakpoint.getPresentation());
+    myLabel.setIcon(BreakpointIconRenderer.getIconFor(breakpoint));
   }
 
   public JCheckBox getCheckBox() {

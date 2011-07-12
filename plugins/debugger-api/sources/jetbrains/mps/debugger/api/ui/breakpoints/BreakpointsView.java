@@ -30,23 +30,15 @@ import java.util.*;
 abstract class BreakpointsView implements DataProvider {
   public static DataKey<IBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   private List<IBreakpoint> myBreakpointsList;
-  private final BreakpointManagerComponent myBreakpointsManager;
+  protected final BreakpointManagerComponent myBreakpointsManager;
   private final List<BreakpointSelectionListener> mySelectionListeners = new ArrayList<BreakpointSelectionListener>();
-  private final IBreakpointManagerListener myListener = new BreakpointManagerListener() {
-    @Override
-    public void breakpointsChanged() {
-      update();
-    }
-  };
 
   public BreakpointsView(BreakpointManagerComponent breakpointsManager) {
     myBreakpointsManager = breakpointsManager;
-    myBreakpointsManager.addChangeListener(myListener);
     updateBreakpoints();
   }
 
   public void dispose() {
-    myBreakpointsManager.removeChangeListener(myListener);
   }
 
   protected final void updateBreakpoints() {

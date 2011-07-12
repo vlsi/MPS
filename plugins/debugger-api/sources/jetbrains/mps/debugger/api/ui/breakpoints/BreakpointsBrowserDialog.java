@@ -56,7 +56,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myBreakpointsUi = BreakpointsUiComponent.getInstance(myContext.getProject());
     myProvidersManager = myContext.getComponent(BreakpointProvidersManager.class);
     myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getViewIndex();
-    myViews = new BreakpointsView[]{new BreakpointsTable(myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};
+    myViews = new BreakpointsView[]{new BreakpointsTable(myContext, myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};
 
     myMainPanel = new JPanel(new BorderLayout());
 
