@@ -80,6 +80,7 @@
   <property name="jetbrains.mps.lang.stubs.classes" value="${basedir}/core/languageDesign/stubs/classes_gen" />
   <property name="jetbrains.mps.lang.test.classes" value="${basedir}/core/languageDesign/test/classes_gen" />
   <property name="jetbrains.mps.lang.textGen.classes" value="${basedir}/core/languageDesign/textGen/classes_gen" />
+  <property name="jetbrains.mps.lang.traceable.classes" value="${basedir}/core/languageDesign/traceable/classes_gen" />
   <property name="jetbrains.mps.lang.typesystem.classes" value="${basedir}/core/languageDesign/typesystem/classes_gen" />
   <property name="jetbrains.mps.make.facet.classes" value="${basedir}/core/languageDesign/make/languages/facet/classes_gen" />
   <property name="jetbrains.mps.make.script.classes" value="${basedir}/core/languageDesign/make/languages/script/classes_gen" />
@@ -392,6 +393,10 @@
   <path id="cycle.jetbrains.mps.lang.smodelTests_tjc.src">
     <path path="${basedir}/core/languageDesign/smodel/languages/smodelTests/source_gen" />
     <path path="${basedir}/core/languageDesign/smodel/languages/smodelTests/test_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.lang.traceable_tjc.src">
+    <path path="${basedir}/core/languageDesign/traceable/source_gen" />
+    <path path="${basedir}/core/languageDesign/traceable/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.nanoj_tjc.src">
     <path path="${basedir}/languages/util/mps-lite/languages/nanoj/source_gen" />
@@ -2840,6 +2845,100 @@
     <path path="${basedir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
+  <path id="cycle.jetbrains.mps.lang.traceable_tjc.classpaths">
+    <path path="${basedir}/core/languageDesign/traceable/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/baseLanguage/classes" />
+    <path path="${basedir}/core/baseLanguage/baseLanguage/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/blTypes/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/classifiers/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/closures/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/closures/runtime/classes" />
+    <path path="${basedir}/core/baseLanguage/collections/classes" />
+    <path path="${basedir}/core/baseLanguage/collections/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/collections/languages/trove/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="${basedir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${basedir}/core/baseLanguage/collections/runtime/classes" />
+    <path path="${basedir}/core/baseLanguage/javadoc/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/logging/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/runConfigurations/runtime/classes" />
+    <path path="${basedir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/tuples/runtime/classes" />
+    <path path="${basedir}/core/baseLanguage/unitTest/classes_gen" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="${basedir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
+    <path path="${basedir}/core/debug-api/languages/api/classes_gen" />
+    <path path="${basedir}/core/languageDesign/actions/classes_gen" />
+    <path path="${basedir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
+    <path path="${basedir}/core/languageDesign/constraints/classes_gen" />
+    <path path="${basedir}/core/languageDesign/dataFlow/classes_gen" />
+    <path path="${basedir}/core/languageDesign/editor/classes_gen" />
+    <path path="${basedir}/core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <path path="${basedir}/core/languageDesign/findUsages/classes_gen" />
+    <path path="${basedir}/core/languageDesign/intentions/classes_gen" />
+    <path path="${basedir}/core/languageDesign/make/languages/facet/classes_gen" />
+    <path path="${basedir}/core/languageDesign/make/languages/script/classes_gen" />
+    <path path="${basedir}/core/languageDesign/pattern/classes_gen" />
+    <path path="${basedir}/core/languageDesign/plugin/classes_gen" />
+    <path path="${basedir}/core/languageDesign/project/classes_gen" />
+    <path path="${basedir}/core/languageDesign/quotation/classes_gen" />
+    <path path="${basedir}/core/languageDesign/refactoring/classes_gen" />
+    <path path="${basedir}/core/languageDesign/script/classes_gen" />
+    <path path="${basedir}/core/languageDesign/sharedConcepts/classes_gen" />
+    <path path="${basedir}/core/languageDesign/smodel/classes_gen" />
+    <path path="${basedir}/core/languageDesign/structure/classes_gen" />
+    <path path="${basedir}/core/languageDesign/stubs/classes_gen" />
+    <path path="${basedir}/core/languageDesign/test/classes" />
+    <path path="${basedir}/core/languageDesign/test/classes_gen" />
+    <path path="${basedir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${basedir}/core/languageDesign/traceable/classes_gen" />
+    <path path="${basedir}/core/languageDesign/typesystem/classes_gen" />
+    <path path="${basedir}/languages/core/core/classes_gen" />
+    <path path="${basedir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
+    <path path="${basedir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
+    <path path="${basedir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${basedir}/languages/util/dates/runtime/classes_gen" />
+    <path path="${basedir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${basedir}/languages/util/gtext/runtime/classes_gen" />
+    <path path="${basedir}/languages/util/math/runtimeSolution/classes_gen" />
+    <path path="${basedir}/languages/util/money/runtimeSolution/classes_gen" />
+    <path path="${basedir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
+    <path path="${basedir}/languages/util/regexp/classes_gen" />
+    <path path="${basedir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${basedir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
+    <path path="${basedir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
+    <path path="${basedir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${basedir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <path path="${basedir}/languages/util/ui/languages/swt/runtime/classes_gen" />
+    <path path="${basedir}/languages/util/uiLanguage/classes_gen" />
+    <path path="${basedir}/languages/util/uiLanguage/runtime/classes" />
+    <path path="${basedir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${basedir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
+    <path path="${basedir}/languages/util/ypath/classes_gen" />
+    <path path="${basedir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${basedir}/lib/asm.jar" />
+    <path path="${basedir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${basedir}/lib/commons-lang-2.4.jar" />
+    <path path="${basedir}/lib/commons-logging-1.1.jar" />
+    <path path="${basedir}/lib/guava-r06.jar" />
+    <path path="${basedir}/lib/junit-4.8.2.jar" />
+    <path path="${basedir}/lib/tools.jar" />
+    <path path="${basedir}/workbench/runConfigurations/languages/commands/classes_gen" />
+    <path path="${basedir}/workbench/runConfigurations/languages/common/classes_gen" />
+    <path path="${basedir}/workbench/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${basedir}/workbench/runConfigurations/languages/settings/classes_gen" />
+    <path path="${basedir}/workbench/runConfigurations/languages/util/classes_gen" />
+    <path refid="common.classpath" />
+  </path>
   <path id="cycle.jetbrains.mps.nanoj_tjc.classpaths">
     <path path="${basedir}/languages/util/mps-lite/languages/nanoj/classes_gen" />
     <path path="${basedir}/core/baseLanguage/baseLanguage/classes" />
@@ -3598,7 +3697,7 @@
     <path path="${basedir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.traceable_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <fail unless="basedir" message="Property basedir unspecified." />
@@ -5124,7 +5223,29 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.nanoj_tjc" depends="compile.cycle.jetbrains.mps.lang.smodelTests_tjc">
+  <target name="compile.cycle.jetbrains.mps.lang.traceable_tjc" depends="compile.cycle.jetbrains.mps.lang.smodelTests_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.lang.traceable.classes}.tmp" />
+    <fail unless="basedir" message="Property basedir unspecified." />
+    <mkdir dir="${basedir}/core/languageDesign/traceable/source_gen" />
+    <mkdir dir="${basedir}/core/languageDesign/traceable/test_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.lang.traceable.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.lang.traceable_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
+      <src refid="cycle.jetbrains.mps.lang.traceable_tjc.src" />
+    </javac>
+    <copy todir="${jetbrains.mps.lang.traceable.classes}">
+      <fileset includes="**/*.png" dir="${basedir}/core/languageDesign/traceable/source_gen" />
+      <fileset includes="**/*.png" dir="${basedir}/core/languageDesign/traceable/test_gen" />
+    </copy>
+    <javac classpathref="cycle.jetbrains.mps.lang.traceable_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.traceable.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${basedir}/core/languageDesign/traceable/source_gen" />
+        <path path="${basedir}/core/languageDesign/traceable/test_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
+  <target name="compile.cycle.jetbrains.mps.nanoj_tjc" depends="compile.cycle.jetbrains.mps.lang.traceable_tjc">
     <property name="classes.dump" value="${jetbrains.mps.nanoj.classes}.tmp" />
     <fail unless="basedir" message="Property basedir unspecified." />
     <mkdir dir="${basedir}/languages/util/mps-lite/languages/nanoj/source_gen" />
@@ -5401,6 +5522,7 @@
     <delete dir="${jetbrains.mps.lang.editor.table.classes}" />
     <delete dir="${jetbrains.mps.lang.pattern.testLang.classes}" />
     <delete dir="${jetbrains.mps.lang.smodelTests.classes}" />
+    <delete dir="${jetbrains.mps.lang.traceable.classes}" />
     <delete dir="${jetbrains.mps.nanoj.classes}" />
     <delete dir="${jetbrains.mps.platform.conf.classes}" />
     <delete dir="${jetbrains.mps.quickQueryLanguage.classes}" />

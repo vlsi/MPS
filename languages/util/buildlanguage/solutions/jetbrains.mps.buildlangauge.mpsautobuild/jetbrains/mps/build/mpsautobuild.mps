@@ -111,7 +111,7 @@
     <node type="tps4.Block" typeId="tps4.701559220729212645" id="5358686142361317193">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="components" />
       <property name="name" nameId="tpck.1169194664001" value="mpstest.jar" />
-    </node>    
+    </node>
   </roots>
   <root id="2235195415637073459">
     <node role="variable" roleId="tps4.1205335538326" type="tps4.Variable" typeId="tps4.1205335290326" id="2235195415637077105">
@@ -2167,6 +2167,10 @@
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472937">
         <property name="id" nameId="tps4.1222447189012" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
       </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2406271501070014044">
+        <property name="id" nameId="tps4.1222447189012" value="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.traceable" />
+      </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472938">
         <property name="id" nameId="tps4.1222447189012" value="ef703a71-a5a3-42af-b53c-ddced816ad5c" />
       </node>
@@ -2566,7 +2570,7 @@
         <property name="name" nameId="tps4.1223641503366" value="execution" />
       </node>
     </node>
-  </root>  
+  </root>
   <root id="5358686142361317193">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Jar" typeId="tps4.1203598417283" id="5358686142361317195">
       <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="5358686142361317196" />
@@ -2591,6 +2595,6 @@
         </node>
       </node>
     </node>
-  </root>  
+  </root>
 </model>
 

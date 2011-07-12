@@ -343,6 +343,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.traceable" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodelTests" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.facet" />
