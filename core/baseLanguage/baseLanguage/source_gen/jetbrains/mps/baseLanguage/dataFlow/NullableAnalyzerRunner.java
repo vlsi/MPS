@@ -78,7 +78,7 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
           node = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         }
         if (node != null) {
-          result.put((SNode) node, nullableState);
+          result.put(node, nullableState);
         }
       }
       if (instruction instanceof WriteInstruction) {

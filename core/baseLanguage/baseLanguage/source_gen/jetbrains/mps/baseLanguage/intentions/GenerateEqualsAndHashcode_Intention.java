@@ -74,7 +74,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     SNode fieldRefLocal = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
     SNode fieldRefOperation = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
 
-    for (SNode field : (List<SNode>) ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
+    for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       SLinkOperations.setTarget(fieldRefLocal, "variableDeclaration", field, false);
       SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
       SNode checkStmt;

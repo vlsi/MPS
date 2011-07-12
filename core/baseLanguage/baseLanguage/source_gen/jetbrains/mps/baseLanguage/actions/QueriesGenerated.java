@@ -1238,7 +1238,7 @@ __switch__:
         Calculable calc = new Calculable() {
           public Object calculate() {
             VisibleClassifiersScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
-            List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
+            List<SNode> list = searchScope.getClassifierNodes();
             return ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass"));
@@ -1298,7 +1298,7 @@ __switch__:
         Calculable calc = new Calculable() {
           public Object calculate() {
             VisibleClassifiersScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
-            List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
+            List<SNode> list = searchScope.getClassifierNodes();
             List<SNode> types = new ArrayList<SNode>();
             for (SNode classifier : ListSequence.fromList(list)) {
               SNode type = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
@@ -1743,7 +1743,7 @@ __switch__:
         Calculable calc = new Calculable() {
           public Object calculate() {
             IClassifiersSearchScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
-            List<SNode> visibleClassifiers = (List<SNode>) searchScope.getClassifierNodes();
+            List<SNode> visibleClassifiers = searchScope.getClassifierNodes();
             List<SNode> classifiers = new ArrayList<SNode>();
             for (SNode cls : visibleClassifiers) {
               ListSequence.fromList(classifiers).addElement(cls);

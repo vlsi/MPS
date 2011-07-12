@@ -225,7 +225,7 @@ public class ClassConcept_Behavior {
       ListSequence.fromList(args).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)));
       ListSequence.fromList(args).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "actualArgument", true)));
       for (SNode param : args) {
-        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(((SNode) expr))) {
+        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(expr)) {
           contextNode = parent;
           break;
         }
