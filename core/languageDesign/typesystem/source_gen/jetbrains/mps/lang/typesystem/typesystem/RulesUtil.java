@@ -17,6 +17,9 @@ import jetbrains.mps.smodel.SNodeId;
 public class RulesUtil {
   public static final Object MAY_BE_VARIABLE = new Object();
 
+  public RulesUtil() {
+  }
+
   public static boolean withinInferenceItem(SNode node) {
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false) != null)) {
       return true;

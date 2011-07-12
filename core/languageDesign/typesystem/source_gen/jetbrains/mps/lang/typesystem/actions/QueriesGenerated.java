@@ -123,7 +123,7 @@ public class QueriesGenerated {
             public boolean accept(SNode it) {
               return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), scope);
             }
-          });
+          }).toListSequence();
         }
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();

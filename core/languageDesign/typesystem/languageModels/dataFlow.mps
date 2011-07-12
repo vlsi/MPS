@@ -87,10 +87,10 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpd4.1227107461373" resolveInfo="ReferenceRoleTarget" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1227267531685">
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpd4.1210784285454" resolveInfo="HelginsIntention" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpd4.1210784285454" resolveInfo="TypesystemIntention" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1227267723019">
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpd4.1210784384552" resolveInfo="HelginsIntentionArgument" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpd4.1210784384552" resolveInfo="TypesystemIntentionArgument" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1227268308384">
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpd4.1207055528241" resolveInfo="WarningStatement" />
@@ -991,7 +991,7 @@
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1227267649005">
             <property name="name" nameId="tpck.1169194664001" value="argument" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1227267653510">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.1210784384552" resolveInfo="HelginsIntentionArgument" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.1210784384552" resolveInfo="TypesystemIntentionArgument" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1227267649007">

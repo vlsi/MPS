@@ -3415,7 +3415,10 @@
   </root>
   <root nodeId="1176893712697">
     <nodeInfo nodeId="1176893715917" fileName="Colors.java" startLine="7" startPosition="21" endLine="8" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BROWN" />
-    <unitInfo nodeId="1176893712697" fileName="Colors.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.Colors" />
+    <nodeInfo nodeId="8416435656503108580" fileName="Colors.java" startLine="9" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Colors#()V" />
+    <scopeInfo nodeId="8416435656503108582" fileName="Colors.java" startLine="10" startPosition="19" endLine="10" endPosition="19" />
+    <scopeInfo nodeId="8416435656503108580" fileName="Colors.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
+    <unitInfo nodeId="1176893712697" fileName="Colors.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.Colors" />
   </root>
   <root nodeId="1176905448397">
     <nodeInfo nodeId="1176905448397" fileName="ApplicableNodeCondition_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
