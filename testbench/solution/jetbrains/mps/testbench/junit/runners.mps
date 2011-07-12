@@ -90,7 +90,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ParameterizedSuite" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5503298173333910467">
-      <property name="name" nameId="tpck.1169194664001" value="CurrentProjectTestSuite" />
+      <property name="name" nameId="tpck.1169194664001" value="MPSProjectITestsSuite" />
     </node>
   </roots>
   <root id="935017990628671485">
@@ -3823,7 +3823,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1209415647739118412" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1209415647739118414" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1209415647739118416">
-        <property name="value" nameId="tpee.1070475926801" value="mps.unit.test.project" />
+        <property name="value" nameId="tpee.1070475926801" value="mps.junit.project" />
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7906452883299947570">
@@ -4947,7 +4947,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5503298173333996384" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5503298173333996385" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5503298173333996386">
-        <property name="value" nameId="tpee.1070475926801" value="mps.unit.test.suite.moduleUUID" />
+        <property name="value" nameId="tpee.1070475926801" value="mps.junit.projectSuite.moduleUUID" />
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5503298173333996390">
@@ -4955,7 +4955,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5503298173333996391" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5503298173333996392" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5503298173333996393">
-        <property name="value" nameId="tpee.1070475926801" value="mps.unit.test.suite.modelLongName" />
+        <property name="value" nameId="tpee.1070475926801" value="mps.junit.projectSuite.modelLongName" />
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5503298173333996394">
@@ -4963,7 +4963,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5503298173333996395" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5503298173333996396" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5503298173333996397">
-        <property name="value" nameId="tpee.1070475926801" value="mps.unit.test.suite.testClassName" />
+        <property name="value" nameId="tpee.1070475926801" value="mps.junit.projectSuite.testClassName" />
       </node>
     </node>
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.Annotation" typeId="tpee.1188206331916" id="5503298173333995913">
@@ -5765,7 +5765,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5503298173333996333">
             <property name="name" nameId="tpck.1169194664001" value="moduleAnnotation" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333996334">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995913" resolveInfo="CurrentProjectTestSuite.ModuleUUID" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995913" resolveInfo="MPSProjectITestsSuite.ModuleUUID" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5503298173333996335">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5503298173333996336">
@@ -5779,7 +5779,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333996339">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetAnnotation(java%dlang%dClass)%cjava%dlang%dannotation%dAnnotation" resolveInfo="getAnnotation" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5503298173333996340">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="5503298173333995913" resolveInfo="CurrentProjectTestSuite.ModuleUUID" />
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="5503298173333995913" resolveInfo="MPSProjectITestsSuite.ModuleUUID" />
                 </node>
               </node>
             </node>
@@ -5811,7 +5811,7 @@
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~System" resolveInfo="System" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5503298173333997440">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333996383" resolveInfo="PROPERTY_MODULE_UUID" />
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5503298173333910467" resolveInfo="CurrentProjectTestSuite" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5503298173333910467" resolveInfo="MPSProjectITestsSuite" />
             </node>
           </node>
         </node>
@@ -5832,7 +5832,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5503298173333997481">
             <property name="name" nameId="tpck.1169194664001" value="modelAnnotation" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333997504">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995932" resolveInfo="CurrentProjectTestSuite.ModelLongName" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995932" resolveInfo="MPSProjectITestsSuite.ModelLongName" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5503298173333997483">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5503298173333997484">
@@ -5846,7 +5846,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333997487">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetAnnotation(java%dlang%dClass)%cjava%dlang%dannotation%dAnnotation" resolveInfo="getAnnotation" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5503298173333997507">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="5503298173333995932" resolveInfo="CurrentProjectTestSuite.ModelLongName" />
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="5503298173333995932" resolveInfo="MPSProjectITestsSuite.ModelLongName" />
                 </node>
               </node>
             </node>
@@ -5898,7 +5898,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5503298173333997453">
             <property name="name" nameId="tpck.1169194664001" value="testClassAnnotation" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333997511">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="CurrentProjectTestSuite.TestClass" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5503298173333997455">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5503298173333997456">
@@ -5912,7 +5912,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5503298173333997459">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetAnnotation(java%dlang%dClass)%cjava%dlang%dannotation%dAnnotation" resolveInfo="getAnnotation" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5503298173333997514">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="5503298173333995951" resolveInfo="CurrentProjectTestSuite.TestClass" />
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="5503298173333995951" resolveInfo="MPSProjectITestsSuite.TestClass" />
                 </node>
               </node>
             </node>
@@ -6036,6 +6036,29 @@
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5503298173333910793">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tp7i.~Suite" resolveInfo="Suite" />
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8349516052137006548">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="getChildren" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="8349516052137006549" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8349516052137006550">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8349516052137006551">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7dx1.~Runner" resolveInfo="Runner" />
+        </node>
+      </node>
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8349516052137006552">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8349516052137006557">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8349516052137082078">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5503298173333910794" resolveInfo="myRunners" />
+          </node>
+        </node>
+      </node>
+      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="8349516052137006553">
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+      </node>
     </node>
   </root>
 </model>

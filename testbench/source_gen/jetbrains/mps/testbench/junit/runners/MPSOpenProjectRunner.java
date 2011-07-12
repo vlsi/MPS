@@ -20,7 +20,7 @@ import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
 public class MPSOpenProjectRunner extends Runner {
-  private static String MPS_PROJECT_PROPERTY_NAME = "mps.unit.test.project";
+  private static String MPS_PROJECT_PROPERTY_NAME = "mps.junit.project";
   private static jetbrains.mps.project.MPSProject ourMPSProject;
 
   private Description myDescription;

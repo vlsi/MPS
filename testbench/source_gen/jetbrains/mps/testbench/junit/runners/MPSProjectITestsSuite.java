@@ -26,14 +26,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
-public class CurrentProjectTestSuite extends Suite {
-  private static String PROPERTY_MODULE_UUID = "mps.unit.test.suite.moduleUUID";
-  private static String PROPERTY_MODEL_NAME = "mps.unit.test.suite.modelLongName";
-  private static String PROPERTY_TESTCLASS_NAME = "mps.unit.test.suite.testClassName";
+public class MPSProjectITestsSuite extends Suite {
+  private static String PROPERTY_MODULE_UUID = "mps.junit.projectSuite.moduleUUID";
+  private static String PROPERTY_MODEL_NAME = "mps.junit.projectSuite.modelLongName";
+  private static String PROPERTY_TESTCLASS_NAME = "mps.junit.projectSuite.testClassName";
 
   private List<Runner> myRunners = ListSequence.fromList(new ArrayList<Runner>());
 
-  public CurrentProjectTestSuite(Class<?> klass, RunnerBuilder builder) throws Throwable {
+  public MPSProjectITestsSuite(Class<?> klass, RunnerBuilder builder) throws Throwable {
     super(klass, Collections.<Runner>emptyList());
     for (Class<?> parameter : ListSequence.fromList(getUnitTestClasses(getTestClass()))) {
       ListSequence.fromList(myRunners).addElement(builder.runnerForClass(parameter));
@@ -104,15 +104,15 @@ public class CurrentProjectTestSuite extends Suite {
   }
 
   private String getModuleUUID(org.junit.runners.model.TestClass klass) {
-    CurrentProjectTestSuite.ModuleUUID moduleAnnotation = klass.getJavaClass().getAnnotation(CurrentProjectTestSuite.ModuleUUID.class);
+    MPSProjectITestsSuite.ModuleUUID moduleAnnotation = klass.getJavaClass().getAnnotation(MPSProjectITestsSuite.ModuleUUID.class);
     if (moduleAnnotation != null) {
       return moduleAnnotation.value();
     }
-    return System.getProperty(CurrentProjectTestSuite.PROPERTY_MODULE_UUID);
+    return System.getProperty(MPSProjectITestsSuite.PROPERTY_MODULE_UUID);
   }
 
   private String getModelLongName(org.junit.runners.model.TestClass klass) {
-    CurrentProjectTestSuite.ModelLongName modelAnnotation = klass.getJavaClass().getAnnotation(CurrentProjectTestSuite.ModelLongName.class);
+    MPSProjectITestsSuite.ModelLongName modelAnnotation = klass.getJavaClass().getAnnotation(MPSProjectITestsSuite.ModelLongName.class);
     if (modelAnnotation != null) {
       return modelAnnotation.value();
     }
@@ -120,11 +120,16 @@ public class CurrentProjectTestSuite extends Suite {
   }
 
   private String getTestClassName(org.junit.runners.model.TestClass klass) {
-    CurrentProjectTestSuite.TestClass testClassAnnotation = klass.getJavaClass().getAnnotation(CurrentProjectTestSuite.TestClass.class);
+    MPSProjectITestsSuite.TestClass testClassAnnotation = klass.getJavaClass().getAnnotation(MPSProjectITestsSuite.TestClass.class);
     if (testClassAnnotation != null) {
       return testClassAnnotation.value();
     }
     return System.getProperty(PROPERTY_TESTCLASS_NAME);
+  }
+
+  @Override
+  protected List<Runner> getChildren() {
+    return myRunners;
   }
 
   @Retention(RetentionPolicy.RUNTIME)
