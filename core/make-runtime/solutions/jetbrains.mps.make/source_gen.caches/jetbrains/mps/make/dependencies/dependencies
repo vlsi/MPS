@@ -53,7 +53,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
-    <classNode extendsClassName="jetbrains.mps.make.resources.IResourceClusterizer" />
   </dependency>
 </dependenciesRoot>
 
