@@ -57,7 +57,8 @@ public enum FileType {
       final String str = new String(buf, 0, read);
       return Sequence.fromIterable(Sequence.fromArray(FileType.values())).findFirst(new IWhereFilter<FileType>() {
         public boolean accept(FileType t) {
-          return str.indexOf("<" + t.myRootElement) != -1;
+          String tagBegin = "<" + t.myRootElement;
+          return str.contains(tagBegin + ">") || str.contains(tagBegin + " ");
         }
       });
     } catch (IOException ioe) {
