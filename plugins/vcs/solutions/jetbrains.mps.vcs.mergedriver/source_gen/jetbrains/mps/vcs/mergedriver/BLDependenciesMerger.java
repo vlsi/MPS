@@ -10,6 +10,10 @@ import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
+import jetbrains.mps.make.java.RootDependencies;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 /*package*/ class BLDependenciesMerger extends AbstractFileMerger {
   /*package*/ BLDependenciesMerger() {
@@ -31,6 +35,9 @@ import org.jdom.Document;
     } catch (JDOMException e) {
       e.printStackTrace();
       return FATAL_ERROR;
+    } catch (BLDependenciesMerger.MergeException e) {
+      e.printStackTrace();
+      return CONFLICTS;
     }
   }
 
@@ -42,7 +49,38 @@ import org.jdom.Document;
     JDOMUtil.writeDocument(new Document(deps.toXml()), out);
   }
 
-  private static void copyDependencies(ModelDependencies from, ModelDependencies to) {
-    // TODO 
+  private static void copyDependencies(ModelDependencies from, ModelDependencies to) throws BLDependenciesMerger.MergeException {
+    for (RootDependencies fromRootDep : Sequence.fromIterable(from.getDependencies())) {
+      RootDependencies toRootDep = to.getDependency(fromRootDep.getFileName());
+      if (toRootDep == null) {
+        to.addDependencies(fromRootDep);
+      } else {
+        to.replaceRoot(mergeRootDependencies(fromRootDep, toRootDep));
+      }
+    }
+  }
+
+  private static RootDependencies mergeRootDependencies(RootDependencies rd1, RootDependencies rd2) throws BLDependenciesMerger.MergeException {
+    if (neq_qnv4k6_a0a0d(rd1.getClassName(), rd2.getClassName())) {
+      throw new BLDependenciesMerger.MergeException("Different class names: " + rd1.getClassName() + " and " + rd2.getClassName());
+    }
+    Set<String> dependNodes = rd1.getDependencies();
+    SetSequence.fromSet(dependNodes).addSequence(SetSequence.fromSet(rd2.getDependencies()));
+    Set<String> extendsNodes = rd1.getExtends();
+    SetSequence.fromSet(extendsNodes).addSequence(SetSequence.fromSet(rd2.getExtends()));
+    return new RootDependencies(rd1.getClassName(), rd1.getFileName(), SetSequence.fromSet(dependNodes).toListSequence(), SetSequence.fromSet(extendsNodes).toListSequence());
+  }
+
+  private static boolean neq_qnv4k6_a0a0d(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static class MergeException extends Exception {
+    private MergeException(String msg) {
+      super(msg);
+    }
   }
 }
