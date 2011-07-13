@@ -79,6 +79,9 @@
     <option name="LOCK_ON_CHECKOUT" value="false" />
     <option name="UNLOCK_ON_CHECKIN" value="false" />
   </component>
+  <component name="ProjectVersion">
+    <option name="version" value="2.0" />
+  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
