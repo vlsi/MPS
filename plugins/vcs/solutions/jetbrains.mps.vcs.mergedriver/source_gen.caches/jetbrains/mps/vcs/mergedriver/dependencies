@@ -17,6 +17,9 @@
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="jetbrains.mps.make.java.ModelDependencies" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="org.jdom.Document" />
+    <classNode dependClassName="org.jdom.JDOMException" />
     <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.CommandLineGenerator" file="CommandLineGenerator.java">

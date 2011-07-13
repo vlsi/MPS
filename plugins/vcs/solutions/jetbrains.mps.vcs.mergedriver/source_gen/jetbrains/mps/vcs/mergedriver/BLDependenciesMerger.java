@@ -7,6 +7,9 @@ import jetbrains.mps.make.java.ModelDependencies;
 import java.io.OutputStream;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
+import org.jdom.JDOMException;
+import jetbrains.mps.util.JDOMUtil;
+import org.jdom.Document;
 
 /*package*/ class BLDependenciesMerger extends AbstractFileMerger {
   /*package*/ BLDependenciesMerger() {
@@ -25,16 +28,18 @@ import java.io.IOException;
     } catch (IOException e) {
       e.printStackTrace();
       return FATAL_ERROR;
+    } catch (JDOMException e) {
+      e.printStackTrace();
+      return FATAL_ERROR;
     }
   }
 
-  private static ModelDependencies loadDependencies(File f) throws IOException {
-    // TODO 
-    return null;
+  private static ModelDependencies loadDependencies(File f) throws IOException, JDOMException {
+    return ModelDependencies.fromXml(JDOMUtil.loadDocument(f).getRootElement());
   }
 
-  private static void saveDependencies(ModelDependencies deps, OutputStream out) {
-    // TODO 
+  private static void saveDependencies(ModelDependencies deps, OutputStream out) throws IOException {
+    JDOMUtil.writeDocument(new Document(deps.toXml()), out);
   }
 
   private static void copyDependencies(ModelDependencies from, ModelDependencies to) {
