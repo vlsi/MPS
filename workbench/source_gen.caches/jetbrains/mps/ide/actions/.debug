@@ -32,10 +32,10 @@
   <unitInfo fileName="CreateRootNode_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
   <unitInfo fileName="VCS_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.VCS_ActionGroup" />
   <unitInfo fileName="Build_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.Build_ActionGroup" />
-  <unitInfo fileName="ToolsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
   <unitInfo fileName="ProjectNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup" />
   <unitInfo fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageNewCustomPartActions_ActionGroup" />
   <unitInfo fileName="FavoritesPopup_ActionGroup.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.actions.FavoritesPopup_ActionGroup" />
+  <unitInfo fileName="ToolsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
   <unitInfo fileName="GenerateModule_ActionGroup.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModule_ActionGroup" />
   <unitInfo fileName="ModelNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelNewActions_ActionGroup" />
   <unitInfo fileName="GenerateModels_ActionGroup.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModels_ActionGroup" />
@@ -106,6 +106,7 @@
   <unitInfo fileName="StepOver_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepOver_Action" />
   <unitInfo fileName="Pause_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Pause_Action" />
   <unitInfo fileName="Resume_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Resume_Action" />
+  <unitInfo fileName="ReSaveAllModels_Action.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.ReSaveAllModels_Action" />
   <unitInfo fileName="RemoveTransientModels_Action.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
   <unitInfo fileName="NamespaceInternalActions_ActionGroup.java" startLine="24" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup" />
   <unitInfo fileName="ViewBreakpoints_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.ViewBreakpoints_Action" />
@@ -859,8 +860,9 @@
     <nodeInfo nodeId="1216663315861" fileName="Tools_ActionGroup.java" startLine="18" startPosition="117" endLine="19" endPosition="116" />
     <nodeInfo nodeId="1241287334170" fileName="ToolsInternal_ActionGroup.java" startLine="18" startPosition="119" endLine="19" endPosition="133" />
     <nodeInfo nodeId="1234190474703" fileName="Tools_ActionGroup.java" startLine="19" startPosition="116" endLine="20" endPosition="110" />
-    <nodeInfo nodeId="1207148387807" fileName="ToolsInternal_ActionGroup.java" startLine="19" startPosition="133" endLine="20" endPosition="52" />
+    <nodeInfo nodeId="2734899699099227171" fileName="ToolsInternal_ActionGroup.java" startLine="19" startPosition="133" endLine="20" endPosition="120" />
     <nodeInfo nodeId="4234072580447136276" fileName="Tools_ActionGroup.java" startLine="20" startPosition="110" endLine="21" endPosition="113" />
+    <nodeInfo nodeId="1207148387807" fileName="ToolsInternal_ActionGroup.java" startLine="20" startPosition="120" endLine="21" endPosition="52" />
     <nodeInfo nodeId="1217598172089" fileName="Tools_ActionGroup.java" startLine="21" startPosition="113" endLine="22" endPosition="79" />
     <nodeInfo nodeId="1216662587333" fileName="Tools_ActionGroup.java" startLine="22" startPosition="79" endLine="23" endPosition="44" />
     <nodeInfo nodeId="6840593892233920147" fileName="Tools_ActionGroup.java" startLine="23" startPosition="44" endLine="24" endPosition="106" />
@@ -3105,6 +3107,21 @@
     </scopeInfo>
     <scopeInfo nodeId="2721881173282609903" fileName="NewSubTestModel_Action.java" startLine="132" startPosition="0" endLine="156" endPosition="0" />
     <unitInfo nodeId="4127104578870619331" fileName="NewSubTestModel_Action.java" startLine="105" startPosition="57" endLine="124" endPosition="7" unitName="jetbrains.mps.ide.actions.NewSubTestModel_Action$1" />
+  </root>
+  <root nodeId="2734899699099226725">
+    <nodeInfo nodeId="2734899699099227169" fileName="ReSaveAllModels_Action.java" startLine="56" startPosition="55" endLine="57" endPosition="19" />
+    <nodeInfo nodeId="2734899699099227132" fileName="ReSaveAllModels_Action.java" startLine="59" startPosition="30" endLine="60" endPosition="19" />
+    <nodeInfo nodeId="2734899699099227144" fileName="ReSaveAllModels_Action.java" startLine="62" startPosition="30" endLine="63" endPosition="19" />
+    <nodeInfo nodeId="2734899699099227146" fileName="ReSaveAllModels_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="18" />
+    <nodeInfo nodeId="2734899699099227154" fileName="ReSaveAllModels_Action.java" startLine="55" startPosition="111" endLine="58" endPosition="9" />
+    <nodeInfo nodeId="2734899699099226739" fileName="ReSaveAllModels_Action.java" startLine="58" startPosition="9" endLine="61" endPosition="9" />
+    <nodeInfo nodeId="2734899699099227134" fileName="ReSaveAllModels_Action.java" startLine="61" startPosition="9" endLine="64" endPosition="9" />
+    <nodeInfo nodeId="2734899699099226728" fileName="ReSaveAllModels_Action.java" startLine="54" startPosition="9" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="2734899699099227155" fileName="ReSaveAllModels_Action.java" startLine="56" startPosition="55" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="2734899699099226741" fileName="ReSaveAllModels_Action.java" startLine="59" startPosition="30" endLine="60" endPosition="19" />
+    <scopeInfo nodeId="2734899699099227135" fileName="ReSaveAllModels_Action.java" startLine="62" startPosition="30" endLine="63" endPosition="19" />
+    <scopeInfo nodeId="2734899699099226731" fileName="ReSaveAllModels_Action.java" startLine="55" startPosition="111" endLine="65" endPosition="18" />
+    <scopeInfo nodeId="2734899699099226728" fileName="ReSaveAllModels_Action.java" startLine="54" startPosition="9" endLine="66" endPosition="7" />
   </root>
   <root nodeId="2834677590307284262">
     <nodeInfo nodeId="2834677590307738360" fileName="FavoritesPopup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="100" />
