@@ -42,7 +42,7 @@ public class RootDependencies implements Comparable<RootDependencies> {
     myClassName = InternUtil.intern(element.getAttribute(CLASS_NAME).getValue());
     Attribute attr = element.getAttribute(FILE_NAME);
     if (attr != null) {
-      myFileName = InternUtil.intern(element.getAttribute(CLASS_NAME).getValue());
+      myFileName = InternUtil.intern(attr.getValue());
     }
     for (Element e : ((List<Element>) element.getChildren(DEPEND_CLASS))) {
       if (e == null) {
