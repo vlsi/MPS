@@ -116,7 +116,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5985671663020762000">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="mergers" />
-      <property name="name" nameId="tpck.1169194664001" value="BLDependenciesMerger" />
+      <property name="name" nameId="tpck.1169194664001" value="JavaDependenciesMerger" />
     </node>
   </roots>
   <root id="7551811584090935086">
@@ -518,78 +518,71 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1016968294606640088" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1016968294606640087">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1016968294606640110">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1016968294606640111">
-            <property name="name" nameId="tpck.1169194664001" value="fileType" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1016968294606640112">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1016968294606545841" resolveInfo="FileType" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1016968294606640113">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1016968294606545841" resolveInfo="FileType" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1016968294606545853" resolveInfo="get" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1016968294606640115">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1016968294606640090" resolveInfo="file" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1016968294606640092">
-          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1016968294606640093">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1016968294606640117">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1016968294606640121">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5635826768688060335">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6564671247051168467" resolveInfo="ModelMerger" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1016968294606640099">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1016968294606640100">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1016968294606640111" resolveInfo="fileType" />
-            </node>
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1016968294606640101">
-              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SwitchStatement" typeId="tpee.1163670490218" id="5985671663020947165">
+          <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="5985671663020947169">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020947173">
               <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545847" resolveInfo="MODEL" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
             </node>
-          </node>
-          <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="1016968294606640102">
-            <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1016968294606640103">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1016968294606640123">
-                <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1016968294606640124">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1016968294606640125">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4789521689475675663" resolveInfo="TextMerger" />
+            <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="5985671663020947171">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5985671663020947174">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5985671663020947176">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5985671663020947178">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6564671247051168467" resolveInfo="ModelMerger" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node role="elsifClauses" roleId="tpee.1206060520071" type="tpee.ElsifClause" typeId="tpee.1206060495898" id="5338163118782171801">
-            <node role="condition" roleId="tpee.1206060619838" type="tpee.OrExpression" typeId="tpee.1080223426719" id="5338163118782171820">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5338163118782171825">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5338163118782171828">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1016968294606640111" resolveInfo="fileType" />
-                </node>
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5338163118782172495">
-                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545849" resolveInfo="GENERATOR_DEPENDENCIES" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
-                </node>
-              </node>
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5338163118782171813">
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5338163118782171806">
-                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545848" resolveInfo="TRACE_CACHE" />
-                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
-                </node>
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5338163118782171816">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1016968294606640111" resolveInfo="fileType" />
-                </node>
-              </node>
+          <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="5985671663020947179">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020947183">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545848" resolveInfo="TRACE_CACHE" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
             </node>
-            <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="5338163118782171803">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5338163118782171829">
-                <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5338163118782171831">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5338163118782171833">
+            <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="5985671663020947181" />
+          </node>
+          <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="5985671663020947185">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020947189">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545849" resolveInfo="GENERATOR_DEPENDENCIES" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            </node>
+            <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="5985671663020947187">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5985671663020947190">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5985671663020947192">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5985671663020947194">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1016968294606640822" resolveInfo="EmptyMerger" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="5985671663020947195">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020947199">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545850" resolveInfo="JAVA_DEPENDENCIES" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            </node>
+            <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="5985671663020947197">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5985671663020947200">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5985671663020947202">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5985671663020947204">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020762002" resolveInfo="JavaDependenciesMerger" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="expression" roleId="tpee.1163670766145" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5985671663020947210">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1016968294606545853" resolveInfo="get" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5985671663020947211">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1016968294606640090" resolveInfo="file" />
+            </node>
+          </node>
+          <node role="defaultBlock" roleId="tpee.1163670592366" type="tpee.StatementList" typeId="tpee.1068580123136" id="5985671663020947167">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5985671663020947205">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5985671663020947207">
+                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5985671663020947209">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4789521689475675663" resolveInfo="TextMerger" />
                 </node>
               </node>
             </node>
@@ -1220,11 +1213,32 @@
           <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="428846146748920523">
             <property name="value" nameId="tpee.1070475926801" value="*.mps" />
           </node>
-          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5423662835293924058">
-            <property name="value" nameId="tpee.1070475926801" value="trace.info" />
+          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5985671663020948205">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020948204">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545848" resolveInfo="TRACE_CACHE" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5985671663020948219">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020948213" resolveInfo="getSuffix" />
+            </node>
           </node>
-          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5338163118782152667">
-            <property name="value" nameId="tpee.1070475926801" value="dependencies" />
+          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5985671663020948220">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020948223">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545850" resolveInfo="JAVA_DEPENDENCIES" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5985671663020948222">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020948213" resolveInfo="getSuffix" />
+            </node>
+          </node>
+          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5985671663020948224">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020948227">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545849" resolveInfo="GENERATOR_DEPENDENCIES" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5985671663020948226">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020948213" resolveInfo="getSuffix" />
+            </node>
           </node>
         </node>
       </node>
@@ -6414,6 +6428,18 @@
         <property name="value" nameId="tpee.1070475926801" value=".svn-base" />
       </node>
     </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5985671663020948213">
+      <property name="name" nameId="tpck.1169194664001" value="getSuffix" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5985671663020948214" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5985671663020948215" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5985671663020948216">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5985671663020948217">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5985671663020948218">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1016968294606545881" resolveInfo="mySuffix" />
+          </node>
+        </node>
+      </node>
+    </node>
   </root>
   <root id="1016968294606640813">
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1016968294606640822">
@@ -8791,7 +8817,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5985671663020905414" />
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5985671663020930329">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5985671663020930287" resolveInfo="BLDependenciesMerger.MergeException" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5985671663020930287" resolveInfo="JavaDependenciesMerger.MergeException" />
       </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5985671663020930509">
@@ -8805,7 +8831,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="5985671663020930527">
               <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5985671663020930528">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5985671663020930529">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020930305" resolveInfo="BLDependenciesMerger.MergeException" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020930305" resolveInfo="JavaDependenciesMerger.MergeException" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5985671663020930530">
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5985671663020930531">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5985671663020930551">
@@ -8973,7 +8999,7 @@
         </node>
       </node>
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5985671663020930603">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5985671663020930287" resolveInfo="BLDependenciesMerger.MergeException" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5985671663020930287" resolveInfo="JavaDependenciesMerger.MergeException" />
       </node>
     </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5985671663020762002">
@@ -9147,7 +9173,7 @@
             <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5985671663020930331">
               <property name="name" nameId="tpck.1169194664001" value="e" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5985671663020930342">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5985671663020930287" resolveInfo="BLDependenciesMerger.MergeException" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5985671663020930287" resolveInfo="JavaDependenciesMerger.MergeException" />
               </node>
             </node>
             <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="5985671663020930333">

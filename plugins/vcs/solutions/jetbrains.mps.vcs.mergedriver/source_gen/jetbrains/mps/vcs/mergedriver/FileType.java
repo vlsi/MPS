@@ -28,6 +28,10 @@ public enum FileType {
     myRootElement = rootElement;
   }
 
+  public String getSuffix() {
+    return mySuffix;
+  }
+
   public static FileType get(File file) {
     final Wrappers._T<String> fileName = new Wrappers._T<String>(file.getName());
     if (fileName.value.endsWith(SVN_BASE)) {
