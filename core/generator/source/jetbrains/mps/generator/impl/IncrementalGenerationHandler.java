@@ -510,7 +510,7 @@ public class IncrementalGenerationHandler {
     }
     String val = (String) parameters.get(GenerationParametersProvider.HASH);
     if (val != null) {
-      return null;
+      return val;
     }
 
     StringBuilder sb = new StringBuilder();
