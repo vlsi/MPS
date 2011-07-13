@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import java.util.Map;
-import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IPropertiesPool;
 
 public class GGG_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -46,10 +46,10 @@ public class GGG_Facet extends IFacet.Stub {
     public TargetProperties() {
     }
 
-    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    public void storeValues(Map<String, String> store, IPropertiesPool properties) {
     }
 
-    public void loadValues(Map<String, String> store, IParametersPool properties) {
+    public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
       } catch (RuntimeException re) {
       }

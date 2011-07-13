@@ -25,7 +25,7 @@ import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.jmock.api.Action;
 import org.jmock.api.Invocation;
-import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
@@ -101,7 +101,7 @@ public class Generator_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
-        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
+        exactly(1).of(mons).setup(with(aNonNull(IPropertiesPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
 
         final IQuery[] query = new IQuery[1];
         exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery>() {
@@ -164,7 +164,7 @@ public class Generator_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
-        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
+        exactly(1).of(mons).setup(with(aNonNull(IPropertiesPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
         exactly(1).of(cmon).reportFeedback(with(aNonNull(IFeedback.class)));
 
         final IQuery[] query = new IQuery[1];

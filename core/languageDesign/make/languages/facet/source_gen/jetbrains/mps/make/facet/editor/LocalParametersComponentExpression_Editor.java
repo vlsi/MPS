@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -27,40 +26,28 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
   private EditorCell createCollection_m2es92_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_m2es92_a");
-    editorCell.addEditorCell(this.createConstant_m2es92_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_m2es92_b0(editorContext, node));
-    if (renderingCondition_m2es92_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_m2es92_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_m2es92_a0(editorContext, node));
+    if (renderingCondition_m2es92_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_m2es92_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_m2es92_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_m2es92_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_m2es92_c0");
+    editorCell.setCellId("Collection_m2es92_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_m2es92_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_m2es92_b2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m2es92_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_m2es92_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_m2es92_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "local");
-    editorCell.setCellId("Constant_m2es92_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_m2es92_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m2es92_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_m2es92_a2a");
+    editorCell.setCellId("Constant_m2es92_a1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -71,7 +58,7 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createRefNode_m2es92_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_m2es92_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operation");
     provider.setNoTargetText("<no operation>");
@@ -88,7 +75,7 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createRefNode_m2es92_b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_m2es92_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("resource");
     provider.setNoTargetText("<no resource>");
@@ -105,7 +92,7 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private static boolean renderingCondition_m2es92_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_m2es92_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "resource", true) != null);
   }
 }

@@ -14,11 +14,11 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class FFFFacet_Facet extends IFacet.Stub {
@@ -66,13 +66,13 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_chixuw_a0a = null;
           switch (0) {
             case 0:
-              pa.properties(Sequence.fromIterable(input).first()).parameters(Target_QQQ.this.getName(), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
+              pa.forResource(Sequence.fromIterable(input).first()).properties(Target_QQQ.this.getName(), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
               new IFacet.Name("FFFFacet");
-              pa.properties().parameters(new ITarget.Name("GenerateSpecial.GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
+              pa.global().properties(new ITarget.Name("GenerateSpecial.GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
               return new IResult.SUCCESS(_output_chixuw_a0a);
@@ -168,11 +168,11 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_chixuw_a0b = null;
           switch (0) {
             case 0:
-              pa.properties().parameters(new ITarget.Name("FFFFacet.QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
+              pa.global().properties(new ITarget.Name("FFFFacet.QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
               monitor.currentProgress().beginWork("Foobar", 10, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("Foobar", 10);
               monitor.currentProgress().finishWork("Foobar");
@@ -245,7 +245,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_chixuw_a0c = null;
           switch (0) {
             case 0:
@@ -310,21 +310,21 @@ public class FFFFacet_Facet extends IFacet.Stub {
     public TargetProperties() {
     }
 
-    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
         if (properties.hasProperties(name)) {
-          FFFFacet_Facet.Target_QQQ.Parameters props = properties.parameters(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
+          FFFFacet_Facet.Target_QQQ.Parameters props = properties.properties(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
           MapSequence.fromMap(store).put("FFFFacet.QQQ.text", String.valueOf(props.text()));
         }
       }
     }
 
-    public void loadValues(Map<String, String> store, IParametersPool properties) {
+    public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
           ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
-          FFFFacet_Facet.Target_QQQ.Parameters props = properties.parameters(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
+          FFFFacet_Facet.Target_QQQ.Parameters props = properties.properties(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("FFFFacet.QQQ.text")) {
             props.text(String.valueOf(MapSequence.fromMap(store).get("FFFFacet.QQQ.text")));
           }

@@ -15,7 +15,6 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -51,6 +50,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.resources.CResource;
 import jetbrains.mps.compiler.IClassesData;
 import java.util.Map;
+import jetbrains.mps.make.script.IPropertiesPool;
 
 public class JavaCompile_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -97,11 +97,11 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
-              pa.properties().parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
+              pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
               int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + ((((TResource) it).module().isCompileInMPS() ?
@@ -132,7 +132,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   }
                 });
                 if (cr.value != null) {
-                  pa.properties().parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pa.properties().parameters(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
+                  pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
                   for (IMessage msg : cr.value.getMessages()) {
                     monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                   }
@@ -247,7 +247,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_wf1ya0_a0b = null;
           switch (0) {
             case 0:
@@ -262,11 +262,11 @@ public class JavaCompile_Facet extends IFacet.Stub {
               if (work == 0) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
-              if (pa.properties().parameters(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile() != null && pa.properties().parameters(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile()) {
+              if (pa.global().properties(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile() != null && pa.global().properties(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
 
-              IAuxProjectPeer peer = pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Variables.class).project().getComponent(IAuxProjectPeer.class);
+              IAuxProjectPeer peer = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Variables.class).project().getComponent(IAuxProjectPeer.class);
               if (peer == null || !(peer.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
@@ -409,7 +409,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_wf1ya0_a0c = null;
           switch (0) {
             case 0:
@@ -426,11 +426,11 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   SetSequence.fromSet(modules).addElement(fres.module());
                 }
               }
-              pa.properties().parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(false);
+              pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(false);
               jc.addCompilationResultListener(new CompilationResultAdapter() {
                 public void onCompilationResult(CompilationResult cr) {
                   if (cr.hasErrors()) {
-                    pa.properties().parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(true);
+                    pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(true);
                     CategorizedProblem[] categorizedProblems = cr.getErrors();
                     for (int i = 0; i < 3 && i < categorizedProblems.length; i++) {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.valueOf(categorizedProblems[i]))));
@@ -442,7 +442,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
                   ccp.value = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(modules, true);
-                  Sequence.fromIterable(pa.properties().parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
+                  Sequence.fromIterable(pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
                     public void visit(IClassPathItem cpi) {
                       ccp.value.add(cpi);
                     }
@@ -450,7 +450,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 }
               });
               jc.compile(ccp.value);
-              if ((boolean) pa.properties().parameters(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors()) {
+              if ((boolean) pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors()) {
                 return new IResult.FAILURE(_output_wf1ya0_a0c);
               }
               _output_wf1ya0_a0c = Sequence.fromIterable(_output_wf1ya0_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(new IClassesData() {
@@ -553,50 +553,50 @@ public class JavaCompile_Facet extends IFacet.Stub {
     public TargetProperties() {
     }
 
-    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile");
         if (properties.hasProperties(name)) {
-          JavaCompile_Facet.Target_compile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compile.Parameters.class);
+          JavaCompile_Facet.Target_compile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything", String.valueOf(props.compiledAnything()));
         }
       }
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.auxCompile");
         if (properties.hasProperties(name)) {
-          JavaCompile_Facet.Target_auxCompile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
+          JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile", String.valueOf(props.skipAuxCompile()));
         }
       }
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory");
         if (properties.hasProperties(name)) {
-          JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
+          JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.classPath", null);
           MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.errors", String.valueOf((boolean) props.errors()));
         }
       }
     }
 
-    public void loadValues(Map<String, String> store, IParametersPool properties) {
+    public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile");
-          JavaCompile_Facet.Target_compile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compile.Parameters.class);
+          JavaCompile_Facet.Target_compile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")) {
             props.compiledAnything(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")));
           }
         }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.auxCompile");
-          JavaCompile_Facet.Target_auxCompile.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
+          JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile")) {
             props.skipAuxCompile(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.auxCompile.skipAuxCompile")));
           }
         }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory");
-          JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.parameters(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
+          JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory.classPath")) {
             props.classPath(null);
           }

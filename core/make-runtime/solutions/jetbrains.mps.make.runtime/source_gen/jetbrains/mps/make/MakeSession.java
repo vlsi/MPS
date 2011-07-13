@@ -4,14 +4,12 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.make.resources.IPropertiesCollector;
 
 public class MakeSession {
   private IOperationContext context;
   private IMessageHandler messageHandler;
   private boolean cleanMake;
   private boolean sticky;
-  private IPropertiesCollector propertiesCollector;
 
   public MakeSession(IOperationContext context) {
     this(context, null, true);
@@ -22,15 +20,10 @@ public class MakeSession {
   }
 
   public MakeSession(IOperationContext context, IMessageHandler messageHandler, boolean cleanMake, boolean sticky) {
-    this(context, messageHandler, cleanMake, sticky, null);
-  }
-
-  public MakeSession(IOperationContext context, IMessageHandler messageHandler, boolean cleanMake, boolean sticky, IPropertiesCollector propertiesCollector) {
     this.context = context;
     this.messageHandler = messageHandler;
     this.cleanMake = cleanMake;
     this.sticky = sticky;
-    this.propertiesCollector = propertiesCollector;
   }
 
   public IOperationContext getContext() {
@@ -47,10 +40,6 @@ public class MakeSession {
 
   public boolean isSticky() {
     return sticky;
-  }
-
-  public IPropertiesCollector getPropertiesProvider() {
-    return propertiesCollector;
   }
 
   public void doExecute(Runnable scriptRunnable) {

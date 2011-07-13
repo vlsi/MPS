@@ -15,7 +15,6 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure.Variables;
@@ -23,6 +22,7 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Sample_Facet extends IFacet.Stub {
@@ -68,24 +68,24 @@ public class Sample_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_kf1bs5_a0a = null;
           switch (0) {
             case 0:
               for (IResource resource : input) {
                 MResource mres = (MResource) resource;
-                String paramVal = pa.properties(mres).parameters(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).SomeParam();
-                Integer countVal = pa.properties(mres).parameters(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).Count();
+                String paramVal = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).SomeParam();
+                Integer countVal = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).Count();
                 for (SModelDescriptor smd : mres.models()) {
                   if (paramVal != null) {
-                    pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "sample.parameter", paramVal);
+                    pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "sample.parameter", paramVal);
                   }
                   if (countVal != null) {
-                    pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "count", countVal);
+                    pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "count", countVal);
                   }
                 }
               }
-              pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter("count", 100500);
+              pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter("count", 100500);
             default:
               return new IResult.SUCCESS(_output_kf1bs5_a0a);
           }
@@ -181,22 +181,22 @@ public class Sample_Facet extends IFacet.Stub {
     public TargetProperties() {
     }
 
-    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
         if (properties.hasProperties(name)) {
-          Sample_Facet.Target_readParams.Parameters props = properties.parameters(name, Sample_Facet.Target_readParams.Parameters.class);
+          Sample_Facet.Target_readParams.Parameters props = properties.properties(name, Sample_Facet.Target_readParams.Parameters.class);
           MapSequence.fromMap(store).put("sampleFacet.Sample.readParams.SomeParam", String.valueOf(props.SomeParam()));
           MapSequence.fromMap(store).put("sampleFacet.Sample.readParams.Count", String.valueOf(props.Count()));
         }
       }
     }
 
-    public void loadValues(Map<String, String> store, IParametersPool properties) {
+    public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
           ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
-          Sample_Facet.Target_readParams.Parameters props = properties.parameters(name, Sample_Facet.Target_readParams.Parameters.class);
+          Sample_Facet.Target_readParams.Parameters props = properties.properties(name, Sample_Facet.Target_readParams.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("sampleFacet.Sample.readParams.SomeParam")) {
             props.SomeParam(String.valueOf(MapSequence.fromMap(store).get("sampleFacet.Sample.readParams.SomeParam")));
           }

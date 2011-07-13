@@ -14,12 +14,12 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class GenerateSpecial_Facet extends IFacet.Stub {
@@ -65,12 +65,12 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_i03q2a_a0a = null;
           switch (0) {
             case 0:
-              pa.properties().parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).foo("asdasdsd");
-              pa.properties().parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).FooFoo();
+              pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).foo("asdasdsd");
+              pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).FooFoo();
               return new IResult.SUCCESS(_output_i03q2a_a0a);
             default:
               return new IResult.SUCCESS(_output_i03q2a_a0a);
@@ -82,18 +82,18 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
     public IConfig createConfig() {
       return new IConfig.Stub() {
         @Override
-        public boolean configure(final IConfigMonitor cmonitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public boolean configure(final IConfigMonitor cmonitor, final IPropertiesAccessor pa) {
           switch (0) {
             case 0:
               switch (cmonitor.<what_Option>relayQuery(new DOH_Query())) {
                 case ABORT_i03q2a_a0a0a:
-                  pa.properties().parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(false);
+                  pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(false);
                   break;
                 case IGNORE_i03q2a_c0a0a:
-                  pa.properties().parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(false);
+                  pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(false);
                   break;
                 case RETRY_i03q2a_b0a0a:
-                  pa.properties().parameters(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(true);
+                  pa.global().properties(Target_GenerateSpecialTarget.this.getName(), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).baz(true);
                   break;
                 default:
               }
@@ -220,11 +220,11 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
     public TargetProperties() {
     }
 
-    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
         if (properties.hasProperties(name)) {
-          GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.parameters(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
+          GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.properties(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
           MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.foo", String.valueOf(props.foo()));
           MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.bar", String.valueOf((int) props.bar()));
           MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.baz", String.valueOf((boolean) props.baz()));
@@ -235,11 +235,11 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
       }
     }
 
-    public void loadValues(Map<String, String> store, IParametersPool properties) {
+    public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
           ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
-          GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.parameters(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
+          GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.properties(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
           if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.foo")) {
             props.foo(String.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.foo")));
           }

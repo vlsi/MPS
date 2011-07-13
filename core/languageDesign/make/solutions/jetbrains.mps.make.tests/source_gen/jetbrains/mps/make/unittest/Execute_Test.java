@@ -19,13 +19,13 @@ import java.util.ArrayList;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IFeedback;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.jmock.api.Action;
 import org.jmock.api.Invocation;
+import jetbrains.mps.make.script.IPropertiesPool;
 
 @RunWith(JMock.class)
 public class Execute_Test extends MockTestCase {
@@ -72,7 +72,7 @@ public class Execute_Test extends MockTestCase {
 
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
-          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, IParametersPool pp) {
+          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
             Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
             return result;
           }
@@ -108,7 +108,7 @@ public class Execute_Test extends MockTestCase {
       {
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
-          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, IParametersPool pp) {
+          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
             Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
             return result;
           }
@@ -162,7 +162,7 @@ public class Execute_Test extends MockTestCase {
 
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
-          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, IParametersPool pp) {
+          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
             Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
             return result;
           }
@@ -240,7 +240,7 @@ public class Execute_Test extends MockTestCase {
 
         exactly(1).of(make).createJob();
         IJob makejob = new IJob() {
-          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, IParametersPool pp) {
+          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
             Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
             return result;
           }
@@ -345,7 +345,7 @@ public class Execute_Test extends MockTestCase {
           public void describeTo(Description description) {
           }
         });
-        exactly(1).of(mons).setup(with(aNonNull(IParametersPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
+        exactly(1).of(mons).setup(with(aNonNull(IPropertiesPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
 
         exactly(1).of(jmon).reportFeedback(with(new BaseMatcher<IFeedback>() {
           public boolean matches(Object o) {
@@ -379,7 +379,7 @@ public class Execute_Test extends MockTestCase {
         will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("res")})));
 
         IJob genjob = new IJob() {
-          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, IParametersPool pp) {
+          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa) {
             Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
             return failresult;
           }
@@ -425,8 +425,8 @@ public class Execute_Test extends MockTestCase {
         will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
         exactly(1).of(config).createJob();
         IJob cj = new IJob() {
-          public IResult execute(Iterable<IResource> res, IJobMonitor mon, IPropertiesAccessor pa, IParametersPool pool) {
-            String[] arr = pool.parameters(new ITarget.Name("make"), (new String[0]).getClass());
+          public IResult execute(Iterable<IResource> res, IJobMonitor mon, IPropertiesAccessor pa) {
+            String[] arr = pa.global().properties(new ITarget.Name("make"), (new String[0]).getClass());
             arr[0] = "BARFOO";
             return new IResult.SUCCESS(res);
           }
@@ -437,8 +437,8 @@ public class Execute_Test extends MockTestCase {
         will(returnValue(vars));
         exactly(1).of(make).createJob();
         IJob mj = new IJob() {
-          public IResult execute(Iterable<IResource> res, IJobMonitor mon, IPropertiesAccessor pa, IParametersPool pool) {
-            String[] arr = pool.parameters(new ITarget.Name("make"), (new String[0]).getClass());
+          public IResult execute(Iterable<IResource> res, IJobMonitor mon, IPropertiesAccessor pa) {
+            String[] arr = pa.global().properties(new ITarget.Name("make"), (new String[0]).getClass());
             Assert.assertEquals("BARFOO", arr[0]);
             arr[0] = "FUBAR";
             return new IResult.SUCCESS(res);

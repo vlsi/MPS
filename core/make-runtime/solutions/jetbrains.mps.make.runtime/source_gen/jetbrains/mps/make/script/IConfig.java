@@ -5,16 +5,12 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 
 public interface IConfig {
-  public boolean configure(IConfigMonitor cmon, IPropertiesAccessor pa, IParametersPool pool);
+  public boolean configure(IConfigMonitor cmon, IPropertiesAccessor pa);
   public static class Stub implements IConfig {
     public Stub() {
     }
 
-    public final boolean configure(IConfigMonitor cmon, final IParametersPool pool) {
-      throw new UnsupportedOperationException();
-    }
-
-    public boolean configure(IConfigMonitor cmon, IPropertiesAccessor pa, IParametersPool pool) {
+    public boolean configure(IConfigMonitor cmon, IPropertiesAccessor pa) {
       throw new UnsupportedOperationException();
     }
   }

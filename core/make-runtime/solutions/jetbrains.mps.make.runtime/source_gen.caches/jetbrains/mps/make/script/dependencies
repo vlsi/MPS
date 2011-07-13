@@ -4,7 +4,6 @@
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IConfigMonitor" file="IConfigMonitor.java">
     <classNode dependClassName="jetbrains.mps.make.script.IOption" />
@@ -28,7 +27,6 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IJobMonitor" file="IJobMonitor.java">
@@ -40,12 +38,12 @@
   <dependency className="jetbrains.mps.make.script.IOption" file="IOption.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.make.script.IParametersPool" file="IParametersPool.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
-  </dependency>
   <dependency className="jetbrains.mps.make.script.IProgress" file="IProgress.java">
     <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.IPropertiesPool" file="IPropertiesPool.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IQuery" file="IQuery.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -72,7 +70,7 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
+    <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.ScriptBuilder" file="ScriptBuilder.java">
     <classNode dependClassName="java.lang.Deprecated" />

@@ -14,12 +14,12 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import junit.framework.Assert;
 import java.util.Map;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class Generator__Facet extends IFacet.Stub {
@@ -66,11 +66,11 @@ public class Generator__Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_j0fmyu_a0a = null;
           switch (0) {
             case 0:
-              pa.properties().parameters(Target_Configure.this.getName(), Generator__Facet.Target_Configure.Variables.class).value("uninitialized");
+              pa.global().properties(Target_Configure.this.getName(), Generator__Facet.Target_Configure.Variables.class).value("uninitialized");
             default:
               return new IResult.SUCCESS(_output_j0fmyu_a0a);
           }
@@ -165,13 +165,13 @@ public class Generator__Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_j0fmyu_a0b = null;
           switch (0) {
             case 0:
-              Assert.assertEquals("uninitialized", pa.properties().parameters(new ITarget.Name("Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value());
+              Assert.assertEquals("uninitialized", pa.global().properties(new ITarget.Name("Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value());
               monitor.currentProgress().beginWork("GENERATE", 100, monitor.currentProgress().workLeft());
-              pa.properties().parameters(new ITarget.Name("Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value("VALUE");
+              pa.global().properties(new ITarget.Name("Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value("VALUE");
               for (IResource resource : input) {
                 _output_j0fmyu_a0b = Sequence.fromIterable(_output_j0fmyu_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
@@ -240,21 +240,21 @@ public class Generator__Facet extends IFacet.Stub {
     public TargetProperties() {
     }
 
-    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("Generator_.Configure");
         if (properties.hasProperties(name)) {
-          Generator__Facet.Target_Configure.Variables props = properties.parameters(name, Generator__Facet.Target_Configure.Variables.class);
+          Generator__Facet.Target_Configure.Variables props = properties.properties(name, Generator__Facet.Target_Configure.Variables.class);
           MapSequence.fromMap(store).put("Generator_.Configure.value", String.valueOf(props.value()));
         }
       }
     }
 
-    public void loadValues(Map<String, String> store, IParametersPool properties) {
+    public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
           ITarget.Name name = new ITarget.Name("Generator_.Configure");
-          Generator__Facet.Target_Configure.Variables props = properties.parameters(name, Generator__Facet.Target_Configure.Variables.class);
+          Generator__Facet.Target_Configure.Variables props = properties.properties(name, Generator__Facet.Target_Configure.Variables.class);
           if (MapSequence.fromMap(store).containsKey("Generator_.Configure.value")) {
             props.value(String.valueOf(MapSequence.fromMap(store).get("Generator_.Configure.value")));
           }

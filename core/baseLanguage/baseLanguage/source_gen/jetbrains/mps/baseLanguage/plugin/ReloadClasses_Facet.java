@@ -15,7 +15,6 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
-import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.ide.ThreadUtils;
@@ -24,6 +23,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
+import jetbrains.mps.make.script.IPropertiesPool;
 
 public class ReloadClasses_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -68,11 +68,11 @@ public class ReloadClasses_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, final IParametersPool pool) {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
           Iterable<IResource> _output_i849au_a0a = null;
           switch (0) {
             case 0:
-              boolean nonEmptyCompilation = pa.properties().parameters(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() != null && pa.properties().parameters(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything();
+              boolean nonEmptyCompilation = pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() != null && pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything();
 
               if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
                 public boolean accept(IResource in) {
@@ -154,10 +154,10 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     public TargetProperties() {
     }
 
-    public void storeValues(Map<String, String> store, IParametersPool properties) {
+    public void storeValues(Map<String, String> store, IPropertiesPool properties) {
     }
 
-    public void loadValues(Map<String, String> store, IParametersPool properties) {
+    public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
       } catch (RuntimeException re) {
       }

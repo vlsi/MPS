@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
@@ -189,15 +189,15 @@ public class ProjectTestHelper {
 
       final IScriptController ctl = new IScriptController.Stub() {
         @Override
-        public void setup(IParametersPool ppool) {
-          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> bparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.parameters(new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries"), Object.class);
+        public void setup(IPropertiesPool ppool) {
+          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> bparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.plugin.Binaries.copyBinaries"), Object.class);
           bparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
             public IFile invoke(String path) {
               return tmpFile(path);
             }
           });
 
-          Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.parameters(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
+          Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean> tparams = (Tuples._2<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
           tparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
             public IFile invoke(String path) {
               return tmpFile(path);
@@ -205,7 +205,7 @@ public class ProjectTestHelper {
           });
           tparams._1(false);
 
-          Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
+          Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
           params._1(optBuilder);
         }
       };

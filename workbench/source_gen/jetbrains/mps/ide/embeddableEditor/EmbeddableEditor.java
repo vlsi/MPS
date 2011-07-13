@@ -29,7 +29,7 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
@@ -155,9 +155,9 @@ public class EmbeddableEditor {
           }
         }, new IJobMonitor.Stub()) {
           @Override
-          public void setup(IParametersPool ppool) {
+          public void setup(IPropertiesPool ppool) {
             super.setup(ppool);
-            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory"), Object.class);
+            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory"), Object.class);
             if (params != null) {
               params._0(classPath);
             }

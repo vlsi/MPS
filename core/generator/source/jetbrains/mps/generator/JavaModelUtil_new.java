@@ -115,7 +115,7 @@ public class JavaModelUtil_new {
 //      return false;
 //    }
 //    int count = 0;
-//    for (Iterator<ParameterDeclaration> parms = method.parameters(); parms.hasNext(); count++) {
+//    for (Iterator<ParameterDeclaration> parms = method.properties(); parms.hasNext(); count++) {
 //      Type parmType = parms.next().getType();
 //      // hack ?
 //      if (parmType instanceof TypeVariableReference) {

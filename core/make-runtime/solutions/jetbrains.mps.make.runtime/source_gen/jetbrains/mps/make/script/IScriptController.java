@@ -10,8 +10,8 @@ public interface IScriptController {
   public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code);
   public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code);
   @Deprecated
-  public void setup(IParametersPool ppool);
-  public void setup(IParametersPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input);
+  public void setup(IPropertiesPool ppool);
+  public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input);
   public static class Stub implements IScriptController {
     private IConfigMonitor cmon;
     private IJobMonitor jmon;
@@ -34,10 +34,10 @@ public interface IScriptController {
       code.invoke(cmon);
     }
 
-    public void setup(IParametersPool ppool) {
+    public void setup(IPropertiesPool ppool) {
     }
 
-    public void setup(IParametersPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
+    public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
       setup(pp);
     }
   }
