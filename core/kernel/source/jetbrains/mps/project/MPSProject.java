@@ -26,8 +26,11 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
@@ -328,19 +331,9 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
       if (descriptorFile.exists()) {
-        Class type = null;
-        if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
-          type = Language.class;
-        } else if (path.endsWith(MPSExtentions.DOT_SOLUTION)) {
-          type = Solution.class;
-        } else if (path.endsWith(MPSExtentions.DOT_DEVKIT)) {
-          type = DevKit.class;
-        } else if (path.endsWith(MPSExtentions.DOT_LIBRARY)) {
-          type = Library.class;
-        }
-
-        if (type != null) {
-          myModules.add(MPSModuleRepository.getInstance().registerModule(descriptorFile, this, type).getModuleReference());
+        ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
+        if (descriptor != null) {
+          myModules.add(MPSModuleRepository.getInstance().registerModule(new ModuleHandle(descriptorFile, descriptor), this).getModuleReference());
         } else {
           error("Can't load module from " + descriptorFile.getPath() + " Unknown file type.");
         }

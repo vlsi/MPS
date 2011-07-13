@@ -16,11 +16,11 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -54,7 +54,7 @@ public class Solution extends AbstractModule {
     Solution solution = new Solution();
     SolutionDescriptor descriptor;
     if (descriptorFile.exists()) {
-      descriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(descriptorFile);
+      descriptor = (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
       if (descriptor.getUUID() == null) {
         descriptor.setUUID(UUID.randomUUID().toString());
         SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
@@ -101,20 +101,25 @@ public class Solution extends AbstractModule {
     return solution;
   }
 
+  @Deprecated
   public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    return newInstance(new ModuleHandle(descriptorFile, null), moduleOwner);
+  }
+
+  public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SolutionDescriptor solutionDescriptor;
-    if (descriptorFile.exists()) {
-      solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(descriptorFile);
+    if (handle.getDescriptor() != null) {
+      solutionDescriptor = (SolutionDescriptor) handle.getDescriptor();
       if (solutionDescriptor.getUUID() == null) {
         solutionDescriptor.setUUID(UUID.randomUUID().toString());
-        SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
+        SolutionDescriptorPersistence.saveSolutionDescriptor(handle.getFile(), solutionDescriptor);
       }
     } else {
       solutionDescriptor = new SolutionDescriptor();
       solutionDescriptor.setUUID(UUID.randomUUID().toString());
     }
-    solution.myDescriptorFile = descriptorFile;
+    solution.myDescriptorFile = handle.getFile();
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (repository.existsModule(solutionDescriptor.getModuleReference())) {
@@ -227,7 +232,7 @@ public class Solution extends AbstractModule {
   protected SolutionDescriptor loadDescriptor() {
     IFile file = getDescriptorFile();
     assert file != null;
-    return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
+    return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
   }
 
   private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {

@@ -20,9 +20,11 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
@@ -144,31 +146,37 @@ public class MPSModuleRepository implements ApplicationComponent {
     return myFqNameToModulesMap.get(ref.getModuleFqName());
   }
 
+  @Deprecated
+  public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
+    ModuleDescriptor moduleDescriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
+    if(moduleDescriptor == null) {
+      throw new IllegalArgumentException("Unknown module " + file.getName());
+    }
+    return registerModule(new ModuleHandle(file, moduleDescriptor), owner);
+  }
+
   /*
    *   TODO merge with addModule
    */
-  public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
+  public <TM extends IModule> TM registerModule(ModuleHandle handle, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
     myDirtyFlag = true;
-    String canonicalPath = IFileUtils.getCanonicalPath(file);
+    String canonicalPath = IFileUtils.getCanonicalPath(handle.getFile());
     IModule module = myCanonicalFileToModuleMap.get(canonicalPath);
     if (module == null) {
-      if (cls == Language.class) {
-        module = Language.createLanguage(null, file, owner);
-      } else if (cls == Solution.class) {
-        module = Solution.newInstance(file, owner);
-      } else if (cls == Library.class) {
-        module = Library.newInstance(file, owner);
-      } else if (cls == DevKit.class){
-        module = DevKit.newInstance(file, owner);
-      } else{
-        throw new IllegalArgumentException("Unknown class "+cls.getName());
+      if (handle.getDescriptor() instanceof LanguageDescriptor) {
+        module = Language.createLanguage(null, handle, owner);
+      } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
+        module = Solution.newInstance(handle, owner);
+      } else if (handle.getDescriptor() instanceof LibraryDescriptor) {
+        module = Library.newInstance(handle, owner);
+      } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
+        module = DevKit.newInstance(handle, owner);
+      } else {
+        throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
       }
     } else {
-      if (!cls.isInstance(module)) {
-        LOG.error("can't register module " + module + " : module of another kind with the same name already exists", module);
-      }
       if (owner == module) {
         LOG.warning("module " + module + " wants to owe itself: will be collected very quickly", module);
       }

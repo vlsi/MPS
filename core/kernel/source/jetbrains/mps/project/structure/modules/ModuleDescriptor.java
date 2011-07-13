@@ -34,7 +34,8 @@ public class ModuleDescriptor {
   private List<ModuleReference> myUsedDevkits;
   private List<ModelRoot> myStubModels;
   private List<String> mySourcePaths;
-  
+  private DeploymentDescriptor myDeploymentDescriptor;
+
   public ModuleDescriptor() {
     myModelRoots = new ArrayList<jetbrains.mps.project.structure.model.ModelRoot>();
     myDependencies = new ArrayList<Dependency>();
@@ -107,9 +108,17 @@ public class ModuleDescriptor {
   public List<ModelRoot> getStubModelEntries() {
     return myStubModels;
   }
-
+  
   public List<String> getSourcePaths() {
     return mySourcePaths;
+  }
+
+  public DeploymentDescriptor getDeploymentDescriptor() {
+    return myDeploymentDescriptor;
+  }
+
+  public void setDeploymentDescriptor(DeploymentDescriptor deploymentDescriptor) {
+    myDeploymentDescriptor = deploymentDescriptor;
   }
 
   public boolean updateModelRefs() {

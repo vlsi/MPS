@@ -16,6 +16,8 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DevkitDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
@@ -72,15 +74,20 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return descriptor;
   }
 
+  @Deprecated
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    return newInstance(new ModuleHandle(descriptorFile, null), moduleOwner);
+  }
+
+  public static DevKit newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
 
     DevkitDescriptor devKitDescriptor;
-    if (descriptorFile.exists()) {
-      devKitDescriptor = DevkitDescriptorPersistence.loadDevKitDescriptor(descriptorFile);
+    if (handle.getDescriptor() != null) {
+      devKitDescriptor = (DevkitDescriptor) handle.getDescriptor();
       if (devKitDescriptor.getUUID() == null) {
         devKitDescriptor.setUUID(UUID.randomUUID().toString());
-        DevkitDescriptorPersistence.saveDevKitDescriptor(devKitDescriptor, descriptorFile);
+        DevkitDescriptorPersistence.saveDevKitDescriptor(devKitDescriptor, handle.getFile());
       }
     } else {
       devKitDescriptor = new DevkitDescriptor();
@@ -88,7 +95,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     }
 
 
-    result.myDescriptorFile = descriptorFile;
+    result.myDescriptorFile = handle.getFile();
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (repository.existsModule(devKitDescriptor.getModuleReference())) {
@@ -166,8 +173,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   }
 
   @Override
-  protected DevkitDescriptor loadDescriptor() {
-    return DevkitDescriptorPersistence.loadDevKitDescriptor(getDescriptorFile());
+  protected ModuleDescriptor loadDescriptor() {
+    return ModulesMiner.getInstance().loadModuleDescriptor(getDescriptorFile());
   }
 
   public List<Language> getExportedLanguages() {

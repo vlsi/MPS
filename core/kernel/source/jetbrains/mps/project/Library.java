@@ -16,10 +16,9 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.persistence.LibraryDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -93,20 +92,25 @@ public class Library extends AbstractModule {
     return lib;
   }
 
+  @Deprecated
   public static Library newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    return newInstance(new ModuleHandle(descriptorFile, null), moduleOwner);
+  }
+
+  public static Library newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Library solution = new Library();
     LibraryDescriptor descriptor;
-    if (descriptorFile.exists()) {
-      descriptor = LibraryDescriptorPersistence.loadLibraryDescriptor(descriptorFile);
+    if (handle.getDescriptor() != null) {
+      descriptor = (LibraryDescriptor) handle.getDescriptor();
       if (descriptor.getUUID() == null) {
         descriptor.setUUID(UUID.randomUUID().toString());
-        LibraryDescriptorPersistence.saveLibraryDescriptor(descriptorFile, descriptor);
+        LibraryDescriptorPersistence.saveLibraryDescriptor(handle.getFile(), descriptor);
       }
     } else {
       descriptor = new LibraryDescriptor();
       descriptor.setUUID(UUID.randomUUID().toString());
     }
-    solution.myDescriptorFile = descriptorFile;
+    solution.myDescriptorFile = handle.getFile();
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (repository.existsModule(descriptor.getModuleReference())) {

@@ -18,6 +18,8 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
@@ -63,19 +65,24 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private List<Language> myAllExtendedLanguages;
 
+  @Deprecated
   public static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    return createLanguage(namespace, new ModuleHandle(descriptorFile, null), moduleOwner);
+  }
+
+  public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     LanguageDescriptor languageDescriptor;
-    if (descriptorFile.exists()) {
-      languageDescriptor = LanguageDescriptorPersistence.loadLanguageDescriptor(descriptorFile);
+    if (handle.getDescriptor() != null) {
+      languageDescriptor = (LanguageDescriptor) handle.getDescriptor();
       if (languageDescriptor.getUUID() == null) {
         languageDescriptor.setUUID(UUID.randomUUID().toString());
-        LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, languageDescriptor);
+        LanguageDescriptorPersistence.saveLanguageDescriptor(handle.getFile(), languageDescriptor);
       }
     } else {
-      languageDescriptor = createNewDescriptor(namespace, descriptorFile);
+      languageDescriptor = createNewDescriptor(namespace, handle.getFile());
     }
-    language.myDescriptorFile = descriptorFile;
+    language.myDescriptorFile = handle.getFile();
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (repository.existsModule(languageDescriptor.getModuleReference())) {
@@ -230,7 +237,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   protected ModuleDescriptor loadDescriptor() {
-    return LanguageDescriptorPersistence.loadLanguageDescriptor(getDescriptorFile());
+    return ModulesMiner.getInstance().loadModuleDescriptor(getDescriptorFile());
   }
 
   public void validateExtends() {
