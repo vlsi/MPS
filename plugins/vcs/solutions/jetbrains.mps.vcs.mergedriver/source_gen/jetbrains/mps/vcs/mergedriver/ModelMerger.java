@@ -59,7 +59,7 @@ import jetbrains.mps.util.FileUtil;
           byte[] bytes = ModelUtils.modelToBytes(mergeContext.getResultModel());
           OutputStream out = null;
           try {
-            out = getResultStream(baseFile);
+            out = getResultStream(localFile);
             out.write(bytes);
             return MERGED;
           } catch (IOException e) {

@@ -39,7 +39,7 @@ public class MergeDriverMain {
     System.exit(selectMerger(baseFile).mergeFiles(baseFile, currentFile, otherFile, overwrite, conflictStart, conflictEnd, conflictSeparator));
   }
 
-  private static FileMerger selectMerger(File file) {
+  private static AbstractFileMerger selectMerger(File file) {
     FileType fileType = FileType.get(file);
     if (FileType.MODEL == fileType) {
       return new ModelMerger();

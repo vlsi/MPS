@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-/*package*/ abstract class FileMerger {
+/*package*/ abstract class AbstractFileMerger {
   public static final int MERGED = 0;
   public static final int CONFLICTS = 1;
   public static final int FATAL_ERROR = 2;
@@ -17,7 +17,7 @@ import java.io.FileOutputStream;
   protected byte[] myConflictEnd;
   protected byte[] mySeparator;
 
-  /*package*/ FileMerger() {
+  /*package*/ AbstractFileMerger() {
   }
 
   public final int mergeFiles(File baseFile, File localFile, File latestFile, boolean overwrite, byte[] conflictStart, byte[] conflictEnd, byte[] separator) {
@@ -30,9 +30,9 @@ import java.io.FileOutputStream;
 
   protected abstract int mergeFiles(File baseFile, File localFile, File latestFile);
 
-  protected OutputStream getResultStream(File baseFile) throws FileNotFoundException {
+  protected OutputStream getResultStream(File rewritable) throws FileNotFoundException {
     return (myOverwrite ?
-      new FileOutputStream(baseFile) :
+      new FileOutputStream(rewritable) :
       System.out
     );
   }

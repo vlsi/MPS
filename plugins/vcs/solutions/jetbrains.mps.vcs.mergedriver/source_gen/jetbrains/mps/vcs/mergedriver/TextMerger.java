@@ -16,7 +16,7 @@ import jetbrains.mps.util.FileUtil;
 import org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle;
 import java.io.IOException;
 
-/*package*/ class TextMerger extends FileMerger {
+/*package*/ class TextMerger extends AbstractFileMerger {
   public TextMerger() {
   }
 
@@ -39,8 +39,8 @@ import java.io.IOException;
       QSequenceLineRAData localData = new QSequenceLineRAFileData(local);
       QSequenceLineRAData latestData = new QSequenceLineRAFileData(latest);
 
-      FileUtil.closeFileSafe(base);
-      result = getResultStream(baseFile);
+      FileUtil.closeFileSafe(local);
+      result = getResultStream(localFile);
 
       mergeResult = merger.merge(baseData, localData, latestData, diffOptions, result, SVNDiffConflictChoiceStyle.CHOOSE_MODIFIED_LATEST);
     } catch (IOException e) {

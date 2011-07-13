@@ -7,14 +7,14 @@ import java.io.OutputStream;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 
-/*package*/ class EmptyMerger extends FileMerger {
+/*package*/ class EmptyMerger extends AbstractFileMerger {
   public EmptyMerger() {
   }
 
   protected int mergeFiles(File baseFile, File localFile, File latestFile) {
     OutputStream out = null;
     try {
-      out = getResultStream(baseFile);
+      out = getResultStream(localFile);
       return MERGED;
     } catch (IOException e) {
       return FATAL_ERROR;

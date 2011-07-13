@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" file="AbstractFileMerger.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileNotFoundException" />
+    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.System" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.AbstractInstaller" file="AbstractInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -40,14 +47,7 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.FileMerger" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.mergedriver.FileMerger" file="FileMerger.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.FileNotFoundException" />
-    <classNode dependClassName="java.io.FileOutputStream" />
-    <classNode dependClassName="java.io.OutputStream" />
-    <classNode dependClassName="java.lang.System" />
+    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.FileType" file="FileType.java">
     <classNode dependClassName="java.io.File" />
@@ -134,8 +134,8 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.EmptyMerger" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.FileMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.FileType" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ModelMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.TextMerger" />
@@ -220,7 +220,7 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
-    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.FileMerger" />
+    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.SvnInstaller" file="SvnInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -259,7 +259,7 @@
     <classNode dependClassName="org.tmatesoft.svn.core.internal.wc.FSMergerBySequence" />
     <classNode dependClassName="org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle" />
     <classNode dependClassName="org.tmatesoft.svn.core.wc.SVNDiffOptions" />
-    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.FileMerger" />
+    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />
   </dependency>
 </dependenciesRoot>
 

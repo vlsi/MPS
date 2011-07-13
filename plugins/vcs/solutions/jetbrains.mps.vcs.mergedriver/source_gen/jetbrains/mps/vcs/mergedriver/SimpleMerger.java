@@ -9,7 +9,7 @@ import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 
-/*package*/ class SimpleMerger extends FileMerger {
+/*package*/ class SimpleMerger extends AbstractFileMerger {
   private static byte[] LINE_SEPARATOR = System.getProperty("line.separator").getBytes();
 
   /*package*/ SimpleMerger() {
@@ -25,21 +25,21 @@ import java.io.IOException;
       localIS = new FileInputStream(localFile);
       latestIS = new FileInputStream(latestFile);
 
-      byte[] baseContent = ReadUtil.read(baseIS);
-      FileUtil.closeFileSafe(baseIS);
+      byte[] localContent = ReadUtil.read(localIS);
+      FileUtil.closeFileSafe(localIS);
 
-      out = getResultStream(baseFile);
+      out = getResultStream(localFile);
 
       out.write(myConflictStart);
       out.write(LINE_SEPARATOR);
 
       // current 
-      out.write(ReadUtil.read(localIS));
+      out.write(localContent);
       out.write(mySeparator);
       out.write(LINE_SEPARATOR);
 
       // base 
-      out.write(baseContent);
+      out.write(ReadUtil.read(baseIS));
       out.write(mySeparator);
       out.write(LINE_SEPARATOR);
 

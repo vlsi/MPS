@@ -97,7 +97,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6564671247051075189">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="mergers" />
-      <property name="name" nameId="tpck.1169194664001" value="FileMerger" />
+      <property name="name" nameId="tpck.1169194664001" value="AbstractFileMerger" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6564671247051168465">
@@ -508,7 +508,7 @@
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1016968294606640084">
       <property name="name" nameId="tpck.1169194664001" value="selectMerger" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6564671247051081981">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6564671247051075189" resolveInfo="FileMerger" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6564671247051075189" resolveInfo="AbstractFileMerger" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1016968294606640088" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1016968294606640087">
@@ -2839,8 +2839,8 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3562544874609588616">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~FileUtil%dcloseFileSafe(java%dio%dCloseable)%cvoid" resolveInfo="closeFileSafe" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~FileUtil" resolveInfo="FileUtil" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3562544874609588617">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3562544874609368709" resolveInfo="base" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6928472566064694274">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3562544874609368701" resolveInfo="local" />
                 </node>
               </node>
             </node>
@@ -2851,8 +2851,8 @@
                 </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6564671247051075320">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6564671247051075304" resolveInfo="getResultStream" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6564671247051075351">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3562544874609368654" resolveInfo="baseFile" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6928472566064694273">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3562544874609368656" resolveInfo="localFile" />
                   </node>
                 </node>
               </node>
@@ -2978,7 +2978,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4789521689475675666" />
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6564671247051075310">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6564671247051075189" resolveInfo="FileMerger" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6564671247051075189" resolveInfo="AbstractFileMerger" />
     </node>
   </root>
   <root id="4398460844209836155">
@@ -3115,15 +3115,15 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3562544874609320795" />
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3562544874609320797">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3562544874609320798">
-                <property name="name" nameId="tpck.1169194664001" value="baseContent" />
+                <property name="name" nameId="tpck.1169194664001" value="localContent" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="3562544874609320800">
                   <node role="componentType" roleId="tpee.1070534760952" type="tpee.ByteType" typeId="tpee.1070534604311" id="3562544874609320799" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3562544874609320805">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~ReadUtil%dread(java%dio%dInputStream)%cbyte[]" resolveInfo="read" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~ReadUtil" resolveInfo="ReadUtil" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3562544874609320806">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4398460844209836454" resolveInfo="baseIS" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6928472566064694275">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4398460844209836461" resolveInfo="localIS" />
                   </node>
                 </node>
               </node>
@@ -3132,8 +3132,8 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3562544874609367431">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~FileUtil%dcloseFileSafe(java%dio%dCloseable)%cvoid" resolveInfo="closeFileSafe" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~FileUtil" resolveInfo="FileUtil" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3562544874609367432">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4398460844209836454" resolveInfo="baseIS" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6928472566064694276">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4398460844209836461" resolveInfo="localIS" />
                 </node>
               </node>
             </node>
@@ -3142,8 +3142,8 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6564671247051075357">
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6564671247051075360">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6564671247051075304" resolveInfo="getResultStream" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6564671247051075361">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4398460844209836246" resolveInfo="baseFile" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6928472566064694272">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4398460844209836248" resolveInfo="localFile" />
                   </node>
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3562544874609320818">
@@ -3191,12 +3191,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3562544874609367374">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~OutputStream%dwrite(byte[])%cvoid" resolveInfo="write" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3562544874609367427">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~ReadUtil%dread(java%dio%dInputStream)%cbyte[]" resolveInfo="read" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~ReadUtil" resolveInfo="ReadUtil" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3562544874609367433">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4398460844209836461" resolveInfo="localIS" />
-                    </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6928472566064694278">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3562544874609320798" resolveInfo="localContent" />
                   </node>
                 </node>
               </node>
@@ -3240,8 +3236,12 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3562544874609367388">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~OutputStream%dwrite(byte[])%cvoid" resolveInfo="write" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3562544874609367439">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3562544874609320798" resolveInfo="baseContent" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6928472566064694280">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~ReadUtil%dread(java%dio%dInputStream)%cbyte[]" resolveInfo="read" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~ReadUtil" resolveInfo="ReadUtil" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6928472566064694282">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4398460844209836454" resolveInfo="baseIS" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3385,7 +3385,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6564671247051075354">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6564671247051075189" resolveInfo="FileMerger" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6564671247051075189" resolveInfo="AbstractFileMerger" />
     </node>
   </root>
   <root id="5006749173646651481">
@@ -6447,8 +6447,8 @@
                 </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6564671247051075331">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6564671247051075304" resolveInfo="getResultStream" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6564671247051075350">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1016968294606640828" resolveInfo="baseFile" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6928472566064694111">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1016968294606640830" resolveInfo="localFile" />
                   </node>
                 </node>
               </node>
@@ -6489,7 +6489,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6564671247051075328">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6564671247051075189" resolveInfo="FileMerger" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6564671247051075189" resolveInfo="AbstractFileMerger" />
     </node>
   </root>
   <root id="3042807695808129902">
@@ -6927,7 +6927,7 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6564671247051075342">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~FileOutputStream%d&lt;init&gt;(java%dio%dFile)" resolveInfo="FileOutputStream" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6564671247051075348">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6564671247051075346" resolveInfo="baseFile" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6564671247051075346" resolveInfo="rewritable" />
                 </node>
               </node>
             </node>
@@ -6940,7 +6940,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="6564671247051075307" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6564671247051075346">
-        <property name="name" nameId="tpck.1169194664001" value="baseFile" />
+        <property name="name" nameId="tpck.1169194664001" value="rewritable" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6564671247051075347">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~File" resolveInfo="File" />
         </node>
@@ -7362,8 +7362,8 @@
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5635826768688025356">
                             <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5635826768688025344">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6564671247051075304" resolveInfo="getResultStream" />
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5635826768688025345">
-                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6564671247051168474" resolveInfo="baseFile" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6928472566064694271">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6564671247051168476" resolveInfo="localFile" />
                               </node>
                             </node>
                             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5635826768688025357">
