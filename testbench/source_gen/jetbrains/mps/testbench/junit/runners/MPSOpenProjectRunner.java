@@ -72,7 +72,7 @@ public class MPSOpenProjectRunner extends Runner {
     }
     String mpsProjectSystemProperty = System.getProperty(MPS_PROJECT_PROPERTY_NAME);
     if (mpsProjectSystemProperty == null) {
-      throw new InitializationError("Neither @MPSProject annotation nore System property \"" + MPS_PROJECT_PROPERTY_NAME + "\" was not specified.");
+      throw new InitializationError("Neither @MPSProject annotation nor System property \"" + MPS_PROJECT_PROPERTY_NAME + "\" was not specified.");
     }
     return mpsProjectSystemProperty;
   }

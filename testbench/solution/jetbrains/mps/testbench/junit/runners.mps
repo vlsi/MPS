@@ -4252,7 +4252,7 @@
                     </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1209415647739275458">
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1209415647739275457">
-                        <property name="value" nameId="tpee.1070475926801" value="Neither @MPSProject annotation nore System property \&quot;" />
+                        <property name="value" nameId="tpee.1070475926801" value="Neither @MPSProject annotation nor System property \&quot;" />
                       </node>
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="1209415647739275461">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1209415647739118411" resolveInfo="MPS_PROJECT_PROPERTY_NAME" />

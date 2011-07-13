@@ -226,7 +226,7 @@
     <nodeInfo nodeId="1209415647739202088" fileName="MPSOpenProjectRunner.java" startLine="68" startPosition="79" endLine="69" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209415647739214925" fileName="MPSOpenProjectRunner.java" startLine="70" startPosition="29" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209415647739275434" fileName="MPSOpenProjectRunner.java" startLine="72" startPosition="5" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209415647739275452" fileName="MPSOpenProjectRunner.java" startLine="74" startPosition="43" endLine="75" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1209415647739275452" fileName="MPSOpenProjectRunner.java" startLine="74" startPosition="43" endLine="75" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="1209415647739275469" fileName="MPSOpenProjectRunner.java" startLine="76" startPosition="5" endLine="77" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7906452883299947624" fileName="MPSOpenProjectRunner.java" startLine="80" startPosition="73" endLine="81" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209415647739046626" fileName="MPSOpenProjectRunner.java" startLine="27" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSOpenProjectRunner#(Ljava/lang/Class;)V" />
@@ -244,7 +244,7 @@
     <scopeInfo nodeId="263837413765000157" fileName="MPSOpenProjectRunner.java" startLine="38" startPosition="32" endLine="39" endPosition="124" />
     <scopeInfo nodeId="7906452883299947578" fileName="MPSOpenProjectRunner.java" startLine="52" startPosition="32" endLine="53" endPosition="183" />
     <scopeInfo nodeId="1209415647739214924" fileName="MPSOpenProjectRunner.java" startLine="70" startPosition="29" endLine="71" endPosition="32" />
-    <scopeInfo nodeId="1209415647739275442" fileName="MPSOpenProjectRunner.java" startLine="74" startPosition="43" endLine="75" endPosition="148" />
+    <scopeInfo nodeId="1209415647739275442" fileName="MPSOpenProjectRunner.java" startLine="74" startPosition="43" endLine="75" endPosition="147" />
     <scopeInfo nodeId="7906452883299947623" fileName="MPSOpenProjectRunner.java" startLine="80" startPosition="73" endLine="81" endPosition="25" />
     <scopeInfo nodeId="1209415647739118404" fileName="MPSOpenProjectRunner.java" startLine="32" startPosition="41" endLine="34" endPosition="48" />
     <scopeInfo nodeId="1209415647739046626" fileName="MPSOpenProjectRunner.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
