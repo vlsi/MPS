@@ -69,13 +69,14 @@ public class MoveConcepts extends BaseLoggableRefactoring {
           }
         }
         result.value = true;
+        refactoringContext.setParameter("sourceModel", model.getModelDescriptor());
       }
     });
     return result.value;
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
+    // <node> 
     Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel")));
     Language targetLanguage = Language.getLanguageFor(SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))));
     List<SNode> editors = new ArrayList<SNode>();
