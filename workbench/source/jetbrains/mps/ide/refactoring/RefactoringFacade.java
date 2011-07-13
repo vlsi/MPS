@@ -27,6 +27,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.refactoring.framework.*;
@@ -42,6 +43,8 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * Evgeny Gryaznov, Aug 25, 2010
@@ -215,28 +218,36 @@ public class RefactoringFacade {
 
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
 
-    try {
-      final List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          refactoringContext.setUpMembersAccessModifier(modifier);
-          modifier.addModelsToModify(sourceModels);
-          SNode.setNodeMemberAccessModifier(modifier);
+    final List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        refactoringContext.setUpMembersAccessModifier(modifier);
+        modifier.addModelsToModify(sourceModels);
+        SNode.setNodeMemberAccessModifier(modifier);
 
-          for (SModel model : sourceModels) {
-            descriptors.add(model.getModelDescriptor());
-          }
+        for (SModel model : sourceModels) {
+          descriptors.add(model.getModelDescriptor());
         }
-      });
-      IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
-      MakeSession sess = new MakeSession(operationContext);
-      if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-        IMakeService.INSTANCE.get().make(sess, new ModelsToResources(operationContext, descriptors).resources(false));
       }
-//      GeneratorUIFacade.getInstance().generateModels(operationContext, descriptors, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
-    } finally {
-      SNode.setNodeMemberAccessModifier(null);
-    }
+    });
+    final IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
+    new Thread() {
+      public void run() {
+        try{
+          MakeSession sess = new MakeSession(operationContext);
+          if (IMakeService.INSTANCE.get().openNewSession(sess)) {
+            Future<IResult> result = IMakeService.INSTANCE.get().make(sess, new ModelsToResources(operationContext, descriptors).resources(false));
+            result.get();   // wait for end of make to remove member access modifier
+          }
+        } catch (InterruptedException e) {
+        } catch (ExecutionException e) {
+          e.printStackTrace();
+        } finally {
+          SNode.setNodeMemberAccessModifier(null);
+        }
+      }
+    }.start();
+//    GeneratorUIFacade.getInstance().generateModels(operationContext, descriptors, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
   }
 
   protected static void updateModels(RefactoringContext refactoringContext) {
