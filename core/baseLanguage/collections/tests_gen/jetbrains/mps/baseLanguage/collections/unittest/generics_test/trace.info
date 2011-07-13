@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Generics1_Test.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.Generics1_Test" />
   <root nodeId="1170878927223">
     <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="53" startPosition="27" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="56" startPosition="27" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -138,6 +137,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1172029180836" fileName="Generics1_Test.java" startLine="9" startPosition="46" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1172029195858" fileName="Generics1_Test.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="1172029167443" fileName="Generics1_Test.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.Generics1_Test" />
   </root>
 </debugInfo>
 

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Intersect_Test.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Intersect_Test" />
-  <unitInfo fileName="SubtractTest_Test.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test" />
-  <unitInfo fileName="Union_Test.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Union_Test" />
-  <unitInfo fileName="Concat_Test.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Concat_Test" />
-  <unitInfo fileName="Disjunct_Test.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test" />
   <root nodeId="1205497877107">
     <nodeInfo nodeId="1205511148280" fileName="Union_Test.java" startLine="16" startPosition="51" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1205511178142" fileName="Union_Test.java" startLine="17" startPosition="62" endLine="18" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -42,6 +37,7 @@
       <varInfo nodeId="1241359235506" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1241359235502" fileName="Union_Test.java" startLine="27" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="1205497877107" fileName="Union_Test.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Union_Test" />
   </root>
   <root nodeId="1205514854257">
     <nodeInfo nodeId="1205514874053" fileName="SubtractTest_Test.java" startLine="16" startPosition="54" endLine="17" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -79,6 +75,7 @@
       <varInfo nodeId="1241359271613" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1241359271609" fileName="SubtractTest_Test.java" startLine="27" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="1205514854257" fileName="SubtractTest_Test.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test" />
   </root>
   <root nodeId="1205515610187">
     <nodeInfo nodeId="1205515636456" fileName="Intersect_Test.java" startLine="16" startPosition="55" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -115,6 +112,7 @@
       <varInfo nodeId="1241359315970" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1241359315966" fileName="Intersect_Test.java" startLine="27" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="1205515610187" fileName="Intersect_Test.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Intersect_Test" />
   </root>
   <root nodeId="1205528089811">
     <nodeInfo nodeId="1205528129142" fileName="Disjunct_Test.java" startLine="16" startPosition="57" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -163,6 +161,7 @@
       <varInfo nodeId="1241359347136" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1241359347132" fileName="Disjunct_Test.java" startLine="34" startPosition="0" endLine="49" endPosition="0" />
+    <unitInfo nodeId="1205528089811" fileName="Disjunct_Test.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test" />
   </root>
   <root nodeId="1205574331460">
     <nodeInfo nodeId="1205574351719" fileName="Concat_Test.java" startLine="16" startPosition="52" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -202,6 +201,7 @@
       <varInfo nodeId="1241359038130" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1241358954601" fileName="Concat_Test.java" startLine="27" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="1205574331460" fileName="Concat_Test.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.internalCollections.test.compareOperations.Concat_Test" />
   </root>
 </debugInfo>
 

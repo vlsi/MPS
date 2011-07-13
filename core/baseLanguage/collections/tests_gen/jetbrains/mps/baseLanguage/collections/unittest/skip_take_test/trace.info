@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="SkipTakePage_Test.java" startLine="12" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test" />
   <root nodeId="1172667103846">
     <nodeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="47" startPosition="27" endLine="47" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="50" startPosition="27" endLine="50" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -257,6 +256,7 @@
     <unitInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="74" startPosition="51" endLine="123" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$2" />
     <unitInfo nodeId="1224596675141" fileName="SkipTakePage_Test.java" startLine="134" startPosition="51" endLine="183" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$3" />
     <unitInfo nodeId="1224596675396" fileName="SkipTakePage_Test.java" startLine="191" startPosition="51" endLine="240" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$4" />
+    <unitInfo nodeId="1172667103846" fileName="SkipTakePage_Test.java" startLine="12" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test" />
   </root>
 </debugInfo>
 
