@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c89590601(jetbrains.mps.transformation.test.inputModels.test_reduceInheritors)">
+<model modelUID="r:00000000-0000-4000-0000-011c89590601(jetbrains.mps.transformation.test.inputModels.test_reduceInheritors)" doNotGenerate="true">
   <persistence version="7" />
   <language namespace="ab0ae915-e3b5-4f35-b55a-c655d649a03c(jetbrains.mps.transformation.test.inputLang)" />
+  <language-engaged-on-generation namespace="411cfb96-468d-4c3f-accc-a13ad135b216(sampleFacet)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpm0" modelUID="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" version="-1" implicit="yes" />
   <roots>

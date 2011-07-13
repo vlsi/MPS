@@ -76,12 +76,16 @@ public class Sample_Facet extends IFacet.Stub {
                 MResource mres = (MResource) resource;
                 String paramVal = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).SomeParam();
                 Integer countVal = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).Count();
+                String sarch = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).arch();
                 for (SModelDescriptor smd : mres.models()) {
                   if (paramVal != null) {
                     pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "sample.parameter", paramVal);
                   }
                   if (countVal != null) {
                     pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "count", countVal);
+                  }
+                  if (sarch != null) {
+                    pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.arch", sarch);
                   }
                 }
               }
@@ -140,18 +144,18 @@ public class Sample_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._2) t).assign((Tuples._2) copyFrom);
+        ((Tuples._3) t).assign((Tuples._3) copyFrom);
       }
       return t;
     }
 
-    public static class Parameters extends MultiTuple._2<String, Integer> {
+    public static class Parameters extends MultiTuple._3<String, Integer, String> {
       public Parameters() {
         super();
       }
 
-      public Parameters(String SomeParam, Integer Count) {
-        super(SomeParam, Count);
+      public Parameters(String SomeParam, Integer Count, String arch) {
+        super(SomeParam, Count, arch);
       }
 
       public String SomeParam(String value) {
@@ -162,6 +166,10 @@ public class Sample_Facet extends IFacet.Stub {
         return super._1(value);
       }
 
+      public String arch(String value) {
+        return super._2(value);
+      }
+
       public String SomeParam() {
         return super._0();
       }
@@ -170,8 +178,12 @@ public class Sample_Facet extends IFacet.Stub {
         return super._1();
       }
 
+      public String arch() {
+        return super._2();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public Sample_Facet.Target_readParams.Parameters assignFrom(Tuples._2<String, Integer> from) {
+      public Sample_Facet.Target_readParams.Parameters assignFrom(Tuples._3<String, Integer, String> from) {
         return (Sample_Facet.Target_readParams.Parameters) super.assign(from);
       }
     }
@@ -188,6 +200,7 @@ public class Sample_Facet extends IFacet.Stub {
           Sample_Facet.Target_readParams.Parameters props = properties.properties(name, Sample_Facet.Target_readParams.Parameters.class);
           MapSequence.fromMap(store).put("sampleFacet.Sample.readParams.SomeParam", String.valueOf(props.SomeParam()));
           MapSequence.fromMap(store).put("sampleFacet.Sample.readParams.Count", String.valueOf(props.Count()));
+          MapSequence.fromMap(store).put("sampleFacet.Sample.readParams.arch", String.valueOf(props.arch()));
         }
       }
     }
@@ -202,6 +215,9 @@ public class Sample_Facet extends IFacet.Stub {
           }
           if (MapSequence.fromMap(store).containsKey("sampleFacet.Sample.readParams.Count")) {
             props.Count(Integer.valueOf(MapSequence.fromMap(store).get("sampleFacet.Sample.readParams.Count")));
+          }
+          if (MapSequence.fromMap(store).containsKey("sampleFacet.Sample.readParams.arch")) {
+            props.arch(String.valueOf(MapSequence.fromMap(store).get("sampleFacet.Sample.readParams.arch")));
           }
         }
       } catch (RuntimeException re) {

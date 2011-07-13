@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -33,6 +34,10 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1206460092545(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceInheritors", "none");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8014813979421777301(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "arch:" + ((String) _context.getGenerationParameter("r:00000000-0000-4000-0000-011c895905f9.GlobalParameters.arch"));
   }
 
   public static Iterable sourceNodesQuery_8417539822878722925(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

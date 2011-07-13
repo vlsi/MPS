@@ -49,6 +49,8 @@
       <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
       <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.impl/impl.msd" />
       <modulePath path="${mps_home}/samples/sampleFacet/sampleFacet.mpl" folder="" />
+      <modulePath path="${mps_home}/languages/languageDesign/generator/test/inputLang/inputLang.mpl" />
+      <modulePath path="${mps_home}/languages/languageDesign/generator/test/inputModels/inputModels.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="facet" moduleRef="jetbrains.mps.make.facet" />
