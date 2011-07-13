@@ -48,6 +48,7 @@
       <modulePath path="${mps_home}/workbench/make/jetbrains.mps.workbench.make.msd" folder="" />
       <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
       <modulePath path="${mps_home}/workbench/runConfigurations/solutions/jetbrains.mps.execution.impl/impl.msd" />
+      <modulePath path="${mps_home}/samples/sampleFacet/sampleFacet.mpl" folder="" />
     </projectModules>
     <genConfs>
       <genConfModule name="facet" moduleRef="jetbrains.mps.make.facet" />

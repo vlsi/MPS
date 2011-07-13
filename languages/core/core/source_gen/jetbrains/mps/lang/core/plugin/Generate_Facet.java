@@ -30,6 +30,7 @@ import jetbrains.mps.make.facet.plugin.MakeGenerationStrategy;
 import jetbrains.mps.ide.generator.GeneratorCacheComponent;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
+import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -329,6 +330,8 @@ public class Generate_Facet extends IFacet.Stub {
                 new NullGenerationTracer()
               );
               pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().saveTransientModels(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pa.properties().parameters(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).cleanMake()).keepOutputModel(true));
+              pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).parametersProvider(new DefaultGenerationParametersProvider());
+              pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().parameters(pa.properties().parameters(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).parametersProvider());
               return new IResult.SUCCESS(_output_fi61u2_a0c);
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0c);
@@ -415,18 +418,18 @@ public class Generate_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._2) t).assign((Tuples._2) copyFrom);
+        ((Tuples._3) t).assign((Tuples._3) copyFrom);
       }
       return t;
     }
 
-    public static class Variables extends MultiTuple._2<Boolean, GenerationOptions.OptionsBuilder> {
+    public static class Variables extends MultiTuple._3<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider> {
       public Variables() {
         super();
       }
 
-      public Variables(Boolean saveTransient, GenerationOptions.OptionsBuilder generationOptions) {
-        super(saveTransient, generationOptions);
+      public Variables(Boolean saveTransient, GenerationOptions.OptionsBuilder generationOptions, DefaultGenerationParametersProvider parametersProvider) {
+        super(saveTransient, generationOptions, parametersProvider);
       }
 
       public Boolean saveTransient(Boolean value) {
@@ -437,6 +440,10 @@ public class Generate_Facet extends IFacet.Stub {
         return super._1(value);
       }
 
+      public DefaultGenerationParametersProvider parametersProvider(DefaultGenerationParametersProvider value) {
+        return super._2(value);
+      }
+
       public Boolean saveTransient() {
         return super._0();
       }
@@ -445,8 +452,12 @@ public class Generate_Facet extends IFacet.Stub {
         return super._1();
       }
 
+      public DefaultGenerationParametersProvider parametersProvider() {
+        return super._2();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_configure.Variables assignFrom(Tuples._2<Boolean, GenerationOptions.OptionsBuilder> from) {
+      public Generate_Facet.Target_configure.Variables assignFrom(Tuples._3<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider> from) {
         return (Generate_Facet.Target_configure.Variables) super.assign(from);
       }
     }
@@ -703,6 +714,7 @@ public class Generate_Facet extends IFacet.Stub {
           Generate_Facet.Target_configure.Variables props = properties.parameters(name, Generate_Facet.Target_configure.Variables.class);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.saveTransient", String.valueOf(props.saveTransient()));
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.generationOptions", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.parametersProvider", null);
         }
       }
     }
@@ -733,6 +745,9 @@ public class Generate_Facet extends IFacet.Stub {
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.generationOptions")) {
             props.generationOptions(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.parametersProvider")) {
+            props.parametersProvider(null);
           }
         }
       } catch (RuntimeException re) {
