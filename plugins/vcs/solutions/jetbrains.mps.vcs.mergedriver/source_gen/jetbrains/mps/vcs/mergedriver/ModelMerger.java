@@ -63,6 +63,7 @@ import jetbrains.mps.util.FileUtil;
             out.write(bytes);
             return MERGED;
           } catch (IOException e) {
+            e.printStackTrace();
             return FATAL_ERROR;
           } finally {
             FileUtil.closeFileSafe(out);
@@ -72,6 +73,7 @@ import jetbrains.mps.util.FileUtil;
 
       return super.mergeFiles(baseFile, localFile, latestFile);
     } catch (IOException e) {
+      e.printStackTrace();
       return FATAL_ERROR;
     }
   }

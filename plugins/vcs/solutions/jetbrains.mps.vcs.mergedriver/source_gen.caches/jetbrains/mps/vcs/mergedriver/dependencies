@@ -11,6 +11,14 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.mergedriver.BLDependenciesMerger" file="BLDependenciesMerger.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="jetbrains.mps.make.java.ModelDependencies" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractFileMerger" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.CommandLineGenerator" file="CommandLineGenerator.java">
     <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
     <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />

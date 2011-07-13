@@ -50,6 +50,7 @@ import java.io.IOException;
 
       return CONFLICTS;
     } catch (IOException e) {
+      e.printStackTrace();
       return FATAL_ERROR;
     } finally {
       FileUtil.closeFileSafe(baseIS);
