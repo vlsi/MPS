@@ -44,7 +44,7 @@ public class ModulesMiner {
 
   private static final Logger LOG = Logger.getLogger(ModulesMiner.class);
   private static final ModulesMiner INSTANCE = new ModulesMiner();
-  private static final String META_INF_MODULE_XML = "!/META-INF/module.xml";
+  public static final String META_INF_MODULE_XML = "!/META-INF/module.xml";
 
   public static ModulesMiner getInstance() {
     return INSTANCE;

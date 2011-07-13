@@ -1,5 +1,6 @@
 package jetbrains.mps.util;
 
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -68,21 +69,30 @@ public class MacrosFactory {
       myMacroString = macroString;
     }
 
-    protected String expandPath_internal(String path, IFile descriptor) {
+    protected String expandPath_internal(String path, IFile anchorFile) {
       if (path.startsWith(myMacroString)) {
+        IFile anchorFolder = anchorFile.getParent();
+        if(anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+          anchorFolder = anchorFolder.getParent();
+        }
         String modelRelativePath = removePrefix(path, myMacroString);
-        return IFileUtils.getCanonicalPath(descriptor.getParent().getDescendant(modelRelativePath));
+        return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
       }
-      return super.expandPath_internal(path, descriptor);
+      return super.expandPath_internal(path, anchorFile);
     }
 
-    protected String shrinkPath_internal(String absolutePath, IFile descriptor) {
-      String prefix = IFileUtils.getCanonicalPath(descriptor.getParent());
+    protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
+      IFile anchorFolder = anchorFile.getParent();
+      if(anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+        anchorFolder = anchorFolder.getParent();
+      }
+
+      String prefix = IFileUtils.getCanonicalPath(anchorFolder);
       if (pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
         return myMacroString + relationalPath;
       }
-      return super.shrinkPath_internal(absolutePath, descriptor);
+      return super.shrinkPath_internal(absolutePath, anchorFile);
     }
   }
 
