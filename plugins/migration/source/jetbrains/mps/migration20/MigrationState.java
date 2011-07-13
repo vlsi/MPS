@@ -77,7 +77,7 @@ public class MigrationState implements PersistentStateComponent<MyState>, Projec
   }
 
   public static class MyState {
-    public String myState;
+    public String myState = MState.INITIAL.name();
   }
 
   //----------component stuff-------------
