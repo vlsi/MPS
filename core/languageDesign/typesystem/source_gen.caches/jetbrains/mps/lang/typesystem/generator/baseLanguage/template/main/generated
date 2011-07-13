@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ajqxg84rvxtjl40hseo2xqdtzq31j0f">
+<dependencies version="2" modelHash="aqq9sfknu84puamnetydwyvd7qhmkhn">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -412,10 +412,10 @@
   <source id="4484478261143735461" name="LinkPatternVariableReference_to_expression_in_rule1" hash="7is6qu8zjm9mvm9hfbkhqxg0bbjwc07">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4484478261143735512" name="PropertyPatternVariableReference_to_expression_in_rule1" hash="-bio7dj4gnomt9w04x0mg0g0q6fjb9qe">
+  <source id="4484478261143735512" name="PropertyPatternVariableReference_to_expression_in_rule1" hash="556osc1ghx94ui5q3u29xill9sm3j4u">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4484478261143735565" name="PropertyPatternVariableReference_to_expression_in_rule2" hash="-4mdmfqt6w865bc3i0673hstxjss0orq">
+  <source id="4484478261143735565" name="PropertyPatternVariableReference_to_expression_in_rule2" hash="-5va9dfx9dit3qgrxuvpbojv9z0u3kw6">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="4197825331980780989" name="reduce_ReplacementRuleReference" hash="-7w4fh0n8wwg4yndinj1jq6wo1qx6842">
