@@ -17,10 +17,12 @@ package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 public class ReferencePersister4 implements IReferencePersister {
 
@@ -188,8 +190,22 @@ public class ReferencePersister4 implements IReferencePersister {
     //stack overflow was here!!
     targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId, VersionUtil.getReferenceToNodeVersion(node, reference.getTargetSModelReference()));
     linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
-    String resolveInfo = reference.getResolveInfo();
-    if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
+    DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, genResolveInfo(reference));
+  }
+
+
+  public String genResolveInfo(@NotNull SReference ref) {
+    SNode target = (ref instanceof StaticReference ?
+      ref.getTargetNode() :
+      null
+    );
+    if ((target != null)) {
+      String resolveInfo = target.getResolveInfo();
+      if (resolveInfo != null) {
+        return resolveInfo;
+      }
+    }
+    return ref.getResolveInfo();
   }
 
   public int getImportIndex() {
