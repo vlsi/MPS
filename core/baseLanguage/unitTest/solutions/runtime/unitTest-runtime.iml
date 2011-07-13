@@ -27,6 +27,7 @@
         <jarDirectory url="file://$MODULE_DIR$/../lib/lib/jmock-2.5.1" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="commons-lang" level="project" />
   </component>
 </module>
 
