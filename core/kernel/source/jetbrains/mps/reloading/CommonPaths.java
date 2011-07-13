@@ -102,6 +102,7 @@ public class CommonPaths {
     addIfExists(result, "/core/findUsages-runtime/classes");
     addIfExists(result, "/core/refactoring-runtime/classes");
     addIfExists(result, "/core/runtime/classes");
+    addIfExists(result, "/core/languageDesign/test/classes");
     addIfExists(result, "/workbench/typesystemUi/classes");
     addIfExists(result, "/core/baseLanguage/runConfigurations/runtime/classes");
     addIfExists(result, "/workbench/runConfigurations/classes");

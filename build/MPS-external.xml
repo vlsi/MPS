@@ -174,6 +174,9 @@
       <fileset dir="${mps_home}/core/kernel/classes" excludes="idea/IdeaApplicationInfo.xml, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
+      <fileset dir="${mps_home}/core/languageDesign/test/classes" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/workbench/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
@@ -188,7 +191,7 @@
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
     </copy>
-    <antcall target="replace_a72d1a" />
+    <antcall target="replace_a82d1a" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
     <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
@@ -198,6 +201,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make" />
     <antcall target="MPS-languages.pack.jetbrains.mps.plugin.runtime" />
@@ -341,7 +345,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationContext" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationParameters" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodelTests" />
@@ -478,7 +481,7 @@
     <delete dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
   </target>
-  <target name="replace_a72d1a">
+  <target name="replace_a82d1a">
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy file="${mps_home}/core/kernel/classes/idea/IdeaApplicationInfo.xml" tofile="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />

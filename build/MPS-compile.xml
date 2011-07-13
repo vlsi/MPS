@@ -121,6 +121,7 @@
     <path path="core/idea-patch/classes" />
     <path path="core/intentions-runtime/classes" />
     <path path="core/kernel/classes" />
+    <path path="core/languageDesign/test/classes" />
     <path path="core/make-runtime/classes" />
     <path path="core/plugin-runtime/classes" />
     <path path="core/refactoring-runtime/classes" />
@@ -478,7 +479,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -657,7 +657,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -763,7 +762,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -858,7 +856,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -951,7 +948,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1045,7 +1041,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1140,7 +1135,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1234,7 +1228,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1329,7 +1322,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1422,7 +1414,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1516,7 +1507,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1611,7 +1601,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1730,7 +1719,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1823,7 +1811,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -1919,7 +1906,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2023,7 +2009,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2126,7 +2111,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2226,7 +2210,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2328,7 +2311,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2422,7 +2404,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2517,7 +2498,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2611,7 +2591,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2705,7 +2684,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2799,7 +2777,6 @@
     <path path="core/languageDesign/smodel/languages/smodelTests/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2892,7 +2869,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -2986,7 +2962,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -3080,7 +3055,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -3174,7 +3148,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -3268,7 +3241,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -3367,7 +3339,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -3461,7 +3432,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />
@@ -3555,7 +3525,6 @@
     <path path="core/languageDesign/smodel/classes_gen" />
     <path path="core/languageDesign/structure/classes_gen" />
     <path path="core/languageDesign/stubs/classes_gen" />
-    <path path="core/languageDesign/test/classes" />
     <path path="core/languageDesign/test/classes_gen" />
     <path path="core/languageDesign/textGen/classes_gen" />
     <path path="core/languageDesign/typesystem/classes_gen" />

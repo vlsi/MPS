@@ -21,6 +21,7 @@ core/baseLanguage/collections/languages/trove/runtime/classes
 core/baseLanguage/runConfigurations/runtime/classes
 core/baseLanguage/tuples/runtime/classes
 core/kernel/classes
+core/languageDesign/test/classes
 workbench/classes
 workbench/runConfigurations/classes
 workbench/typesystemUi/classes
@@ -40,4 +41,3 @@ core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar
 core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar
 core/baseLanguage/tuples/runtime/classes
 core/baseLanguage/runConfigurations/runtime/classes
-core/languageDesign/test/classes
