@@ -362,9 +362,15 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, false);
-    String propertyValue = getProperty_internal(propertyName);
-    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
-    return propertyValue;
+
+    try {
+      String propertyValue = getProperty_internal(propertyName);
+      NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
+      return propertyValue;
+    } catch (Throwable t) {
+      LOG.error(t);
+      return getPersistentProperty(propertyName);
+    }
   }
 
   private String getProperty_internal(String propertyName) {
