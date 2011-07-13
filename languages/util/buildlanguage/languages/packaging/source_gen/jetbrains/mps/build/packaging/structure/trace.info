@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Packaging_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Packaging_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.StructureAspectDescriptor" />
   <root nodeId="1202916958754">
     <nodeInfo nodeId="1202916958754" fileName="Layout.java" startLine="16" startPosition="127" endLine="17" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1202916958754" fileName="Layout.java" startLine="17" startPosition="88" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SCRIPTS_FOLDER" />
@@ -2661,6 +2661,250 @@
     <scopeInfo nodeId="4159241239519649208" fileName="Plugin.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4159241239519649208" fileName="Plugin.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <unitInfo nodeId="4159241239519649208" fileName="Plugin.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Plugin" />
+  </root>
+  <root nodeId="437343344536486293">
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="11" startPosition="39" endLine="12" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="12" startPosition="86" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="URL" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="13" startPosition="41" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROOT" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="14" startPosition="43" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FILE" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="17" startPosition="27" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="21" startPosition="37" endLine="22" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="25" startPosition="46" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="29" startPosition="38" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="33" startPosition="47" endLine="34" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="37" startPosition="38" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="41" startPosition="47" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="45" startPosition="59" endLine="46" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="49" startPosition="45" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Help#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUrl#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUrl#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoot#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRoot#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFile#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/packaging/structure/Help;" />
+    <nodeInfo nodeId="437343344536486293" fileName="Help.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/packaging/structure/Help;" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="17" startPosition="27" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="21" startPosition="37" endLine="22" endPosition="80" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="25" startPosition="46" endLine="26" endPosition="35" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="29" startPosition="38" endLine="30" endPosition="81" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="33" startPosition="47" endLine="34" endPosition="36" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="37" startPosition="38" endLine="38" endPosition="81" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="41" startPosition="47" endLine="42" endPosition="36" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="45" startPosition="59" endLine="46" endPosition="161" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="49" startPosition="45" endLine="50" endPosition="39" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="437343344536486293" fileName="Help.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <unitInfo nodeId="437343344536486293" fileName="Help.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Help" />
+  </root>
+  <root nodeId="6108265972537166326">
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="10" startPosition="56" endLine="11" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="11" startPosition="90" endLine="12" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SPLASH_SCREEN" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="12" startPosition="60" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ABOUT_SCREEN" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="13" startPosition="58" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BUILD_NUMBER" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="14" startPosition="58" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON32" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="15" startPosition="47" endLine="16" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON16" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="16" startPosition="47" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON32OPAQUE" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="17" startPosition="59" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WELCOME_SCREEN" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="18" startPosition="62" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UPDATE_WEBSITE" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="19" startPosition="62" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_NAME" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="20" startPosition="54" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FULL_NAME" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="21" startPosition="52" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HELP" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="22" startPosition="43" endLine="23" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEXT_COLOR" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="25" startPosition="31" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="29" startPosition="33" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="33" startPosition="42" endLine="34" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="37" startPosition="32" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="41" startPosition="41" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="45" startPosition="45" endLine="46" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="49" startPosition="54" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="53" startPosition="27" endLine="54" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="57" startPosition="36" endLine="58" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="61" startPosition="27" endLine="62" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="65" startPosition="36" endLine="66" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="69" startPosition="33" endLine="70" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="73" startPosition="42" endLine="74" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="77" startPosition="43" endLine="78" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="81" startPosition="52" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="85" startPosition="43" endLine="86" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="89" startPosition="52" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="93" startPosition="43" endLine="94" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="97" startPosition="52" endLine="98" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="101" startPosition="42" endLine="102" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="105" startPosition="51" endLine="106" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="109" startPosition="25" endLine="110" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="113" startPosition="34" endLine="114" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="117" startPosition="43" endLine="118" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="121" startPosition="52" endLine="122" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="125" startPosition="63" endLine="126" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="129" startPosition="49" endLine="130" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Branding#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSplashScreen#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSplashScreen#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAboutScreen#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAboutScreen#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBuildNumber#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBuildNumber#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon32#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIcon32#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon16#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIcon16#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon32opaque#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIcon32opaque#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWelcomeScreen#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setWelcomeScreen#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUpdateWebsite#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUpdateWebsite#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortName#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortName#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFullName#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFullName#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHelp#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHelp#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTextColor#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTextColor#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/packaging/structure/Branding;" />
+    <nodeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/packaging/structure/Branding;" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="25" startPosition="31" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="29" startPosition="33" endLine="30" endPosition="68" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="33" startPosition="42" endLine="34" endPosition="49" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="37" startPosition="32" endLine="38" endPosition="67" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="41" startPosition="41" endLine="42" endPosition="48" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="45" startPosition="45" endLine="46" endPosition="93" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="49" startPosition="54" endLine="50" endPosition="48" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="53" startPosition="27" endLine="54" endPosition="61" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="57" startPosition="36" endLine="58" endPosition="42" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="61" startPosition="27" endLine="62" endPosition="61" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="65" startPosition="36" endLine="66" endPosition="42" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="69" startPosition="33" endLine="70" endPosition="67" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="73" startPosition="42" endLine="74" endPosition="48" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="77" startPosition="43" endLine="78" endPosition="87" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="81" startPosition="52" endLine="82" endPosition="50" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="85" startPosition="43" endLine="86" endPosition="87" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="89" startPosition="52" endLine="90" endPosition="50" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="93" startPosition="43" endLine="94" endPosition="91" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="97" startPosition="52" endLine="98" endPosition="46" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="101" startPosition="42" endLine="102" endPosition="90" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="105" startPosition="51" endLine="106" endPosition="45" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="109" startPosition="25" endLine="110" endPosition="59" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="113" startPosition="34" endLine="114" endPosition="40" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="117" startPosition="43" endLine="118" endPosition="91" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="121" startPosition="52" endLine="122" endPosition="46" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="125" startPosition="63" endLine="126" endPosition="169" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="129" startPosition="49" endLine="130" endPosition="43" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
+    <scopeInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
+    <unitInfo nodeId="6108265972537166326" fileName="Branding.java" startLine="10" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Branding" />
+  </root>
+  <root nodeId="6108265972537229343">
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="11" startPosition="48" endLine="12" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="12" startPosition="95" endLine="13" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CAPTION" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="13" startPosition="49" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLOGAN" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="16" startPosition="36" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="20" startPosition="28" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="24" startPosition="37" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="28" startPosition="27" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="32" startPosition="36" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="36" startPosition="68" endLine="37" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="40" startPosition="54" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WelcomeScreen#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCaption#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCaption#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSlogan#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSlogan#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/packaging/structure/WelcomeScreen;" />
+    <nodeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/packaging/structure/WelcomeScreen;" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="16" startPosition="36" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="20" startPosition="28" endLine="21" endPosition="67" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="24" startPosition="37" endLine="25" endPosition="48" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="28" startPosition="27" endLine="29" endPosition="66" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="32" startPosition="36" endLine="33" endPosition="47" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="36" startPosition="68" endLine="37" endPosition="179" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="40" startPosition="54" endLine="41" endPosition="48" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="6108265972537229343" fileName="WelcomeScreen.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.WelcomeScreen" />
+  </root>
+  <root nodeId="6108265972537335223">
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="11" startPosition="48" endLine="12" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="12" startPosition="95" endLine="13" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHECK_URL" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="13" startPosition="52" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UPDATE_URL" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="14" startPosition="54" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UPDATE_CHANNEL" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="17" startPosition="36" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="21" startPosition="42" endLine="22" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="25" startPosition="51" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="29" startPosition="43" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="33" startPosition="52" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="37" startPosition="47" endLine="38" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="41" startPosition="56" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="45" startPosition="68" endLine="46" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="49" startPosition="54" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpdateWebsite#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckUrl#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCheckUrl#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUpdateUrl#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUpdateUrl#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUpdateChannel#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUpdateChannel#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/packaging/structure/UpdateWebsite;" />
+    <nodeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/packaging/structure/UpdateWebsite;" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="17" startPosition="36" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="21" startPosition="42" endLine="22" endPosition="95" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="25" startPosition="51" endLine="26" endPosition="50" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="29" startPosition="43" endLine="30" endPosition="96" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="33" startPosition="52" endLine="34" endPosition="51" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="37" startPosition="47" endLine="38" endPosition="100" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="41" startPosition="56" endLine="42" endPosition="55" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="45" startPosition="68" endLine="46" endPosition="179" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="49" startPosition="54" endLine="50" endPosition="48" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <unitInfo nodeId="6108265972537335223" fileName="UpdateWebsite.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.UpdateWebsite" />
   </root>
   <root nodeId="701559220729139189">
     <nodeInfo nodeId="701559220729139189" fileName="BlockReference.java" startLine="10" startPosition="62" endLine="11" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

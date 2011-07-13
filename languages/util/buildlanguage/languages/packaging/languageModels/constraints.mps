@@ -75,6 +75,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tps4.4159241239519649208" resolveInfo="Plugin" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1779718524640627537">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="branding" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tps4.6108265972537166326" resolveInfo="Branding" />
+    </node>
   </roots>
   <root id="1213104846985">
     <node role="property" roleId="tp1t.1213098023997" type="tp1t.NodePropertyConstraint" typeId="tp1t.1147467115080" id="1213104846986">
@@ -707,6 +711,20 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1221141245424" resolveInfo="getName" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1779718524640627537">
+    <node role="property" roleId="tp1t.1213098023997" type="tp1t.NodePropertyConstraint" typeId="tp1t.1147467115080" id="1779718524640627538">
+      <link role="applicableProperty" roleId="tp1t.1147467295099" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+      <node role="propertyGetter" roleId="tp1t.1147468630220" type="tp1t.ConstraintFunction_PropertyGetter" typeId="tp1t.1147467790433" id="1779718524640627539">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1779718524640627540">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1779718524640628331">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1779718524640628332">
+              <property name="value" nameId="tpee.1070475926801" value="branding.jar" />
             </node>
           </node>
         </node>

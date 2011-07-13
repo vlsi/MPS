@@ -25,6 +25,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.Antcall_Behavior;
 import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
 import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
+import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -379,6 +380,106 @@ public class QueriesGenerated {
     return PathHolder_Behavior.call_getValue_1219231432401(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_8795525031433494625(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "updateChannel", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344535871158(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "buildNumber", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537197103(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "splashScreen", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8795525031433494646(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "textColor", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537229298(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "aboutScreen", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537372669(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "icon32", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537372688(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "icon16", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537372707(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + (((SLinkOperations.getTarget(_context.getNode(), "icon32opaque", true) == null) ?
+      Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "icon32", true)) :
+      Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(_context.getNode(), "icon32opaque", true))
+    ));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344535871127(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "shortName", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344535871142(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "fullName", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537335263(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "checkUrl", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537372584(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true), "updateUrl", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537372620(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true), "caption", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537372640(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true), "slogan", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344536578759(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "file", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344536578780(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "root", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344536578802(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "help", true), "url", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6108265972537179243(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName(_context.getTemplateValue(), null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344536264660(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode layout = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false);
+    return (StringUtils.isEmpty(SPropertyOperations.getString(layout, "scriptsFolder")) ?
+      "${" + Layout_Behavior.getBasedirName_1226509010730() + "}/" :
+      "${" + Layout_Behavior.getBasedirName_1226509010730() + "}/" + SPropertyOperations.getString(layout, "scriptsFolder") + "/"
+    );
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344536148133(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode document = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "BrandingToDocument");
+    return SPropertyOperations.getString(document, "name") + "." + SPropertyOperations.getString(document, "extension");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344535742220(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Util.SEPARATOR + AbstractProjectComponent_Behavior.call_getPath_1213877333777(_context.getNode()).getPath().replace(File.separator, Util.SEPARATOR);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344536148053(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName(_context.getTemplateValue(), null);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_437343344536148203(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName(_context.getTemplateValue(), null);
+  }
+
   public static Object referenceMacro_GetReferent_1240840479911(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode"), "declaration", true)).first();
   }
@@ -536,6 +637,14 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
   }
 
+  public static Object referenceMacro_GetReferent_437343344536148072(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "BrandingToTarget");
+  }
+
+  public static Object referenceMacro_GetReferent_437343344535742236(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
+  }
+
   public static boolean ifMacro_Condition_1220361608323(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> references = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, false), "jetbrains.mps.build.packaging.structure.VariableReference", false, new String[]{});
     for (SNode ref : ListSequence.fromList(references)) {
@@ -675,6 +784,42 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
   }
 
+  public static boolean ifMacro_Condition_8795525031433494662(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "textColor", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_6108265972537197112(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "splashScreen", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_6108265972537229281(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "aboutScreen", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_6108265972537335248(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "updateWebsite", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_6108265972537372605(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_437343344536578744(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "help", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_437343344535742497(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "icon32opaque", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_437343344535742562(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_437343344535742583(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true) != null);
+  }
+
   public static SNode sourceNodeQuery_8148924375507507659(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "propertyFile", true);
   }
@@ -775,8 +920,44 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "sourcePath", true);
   }
 
+  public static SNode sourceNodeQuery_437343344535742462(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon16", true);
+  }
+
+  public static SNode sourceNodeQuery_437343344535742476(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon32", true);
+  }
+
+  public static SNode sourceNodeQuery_437343344535742488(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "icon32opaque", true);
+  }
+
+  public static SNode sourceNodeQuery_437343344535742519(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "splashScreen", true);
+  }
+
+  public static SNode sourceNodeQuery_437343344535742530(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "aboutScreen", true);
+  }
+
+  public static SNode sourceNodeQuery_437343344535742554(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true), "caption", true);
+  }
+
+  public static SNode sourceNodeQuery_437343344535742543(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "welcomeScreen", true), "slogan", true);
+  }
+
   public static Iterable sourceNodesQuery_1234271765511(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return AbstractProjectComponent_Behavior.call_included_1213877333807(it, _context.getNode());
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_437343344536141882(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "jetbrains.mps.build.packaging.structure.Branding", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AbstractProjectComponent_Behavior.call_included_1213877333807(it, _context.getNode());
       }
@@ -925,8 +1106,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0ch;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0ch_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0si;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0si_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -949,13 +1130,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0ch_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0si_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0ch_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0si_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0ch = this._7__yield_x583g4_a0a0a0a0a0ch_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0si = this._7__yield_x583g4_a0a0a0a0a0si_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -967,7 +1148,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0ch);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0si);
                       return true;
                     case 12:
                       this.__CP__ = 3;
@@ -1002,6 +1183,10 @@ __switch__:
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1234271391130(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToProject");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_437343344536141865(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToProject");
   }
 

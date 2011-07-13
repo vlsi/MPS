@@ -226,6 +226,7 @@
       <fileset dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
+    <antcall target="pack.branding_g1a" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <copy todir="${deploy.dir}/MPS/license">
       <fileset dir="${mps_home}/license" />
@@ -485,5 +486,27 @@
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_DATE__" value="${DSTAMP}" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__VERSION__" value="${version}" />
+  </target>
+  <target name="pack.branding_g1a">
+    <property name="tmpdir" value="${java.io.tmpdir}/branding_g1a_0" />
+    <property name="idea.application.info" value="${tmpdir}/IdeaApplicationInfo.xml" />
+    <fail unless="mps_home" message="Property mps_home unspecified." />
+    <mkdir dir="${java.io.tmpdir}/" />
+    <loadfile srcfile="${basedir}/build/branding_g1a.xml" property="idea.application.info.contents">
+      <filterchain>
+        <expandproperties />
+      </filterchain>
+    </loadfile>
+    <echo file="${idea.application.info}">${idea.application.info.contents}</echo>
+    <jar destfile="${deploy.dir}/MPS/lib/branding.jar" duplicate="preserve" compress="true">
+      <zipfileset file="${idea.application.info}" prefix="idea" />
+      <zipfileset file="${mps_home}/core/kernel/source/MPS_16.png" />
+      <zipfileset file="${mps_home}/core/kernel/source/MPS_32.png" />
+      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/splash.png" />
+      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
+      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" />
+      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsSlogan.png" />
+    </jar>
+    <delete dir="${tmpdir}" />
   </target>
 </project>

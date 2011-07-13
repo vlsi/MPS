@@ -32,6 +32,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PathHolder_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Path_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
