@@ -12,12 +12,11 @@
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="baseLanguage" />
-    <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="unitTest-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="intentions-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="workbench" scope="TEST" />
+    <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="library" name="commons-lang" level="project" />
