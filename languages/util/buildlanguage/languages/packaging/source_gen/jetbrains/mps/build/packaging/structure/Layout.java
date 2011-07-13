@@ -23,6 +23,8 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
   public static final String COMPILE = "compile";
   public static final String USE_TMP_DIR = "useTmpDir";
   public static final String BASE_DIRECTORY = "baseDirectory";
+  public static final String DEPLOY_DIRECTORY = "deployDirectory";
+  public static final String SCRIPTS_DIRECTORY = "scriptsDirectory";
   public static final String PROPERTY_FILE = "propertyFile";
   public static final String CONFIGURATION = "configuration";
   public static final String COMPONENT = "component";
@@ -98,6 +100,22 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
 
   public void setBaseDirectory(BaseDirPath node) {
     super.setChild(Layout.BASE_DIRECTORY, node);
+  }
+
+  public Path getDeployDirectory() {
+    return (Path) this.getChild(Path.class, Layout.DEPLOY_DIRECTORY);
+  }
+
+  public void setDeployDirectory(Path node) {
+    super.setChild(Layout.DEPLOY_DIRECTORY, node);
+  }
+
+  public Path getScriptsDirectory() {
+    return (Path) this.getChild(Path.class, Layout.SCRIPTS_DIRECTORY);
+  }
+
+  public void setScriptsDirectory(Path node) {
+    super.setChild(Layout.SCRIPTS_DIRECTORY, node);
   }
 
   public PropertiesImport getPropertyFile() {

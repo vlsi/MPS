@@ -12,15 +12,15 @@ import jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.AbstractPath_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
-import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
+import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
 import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
@@ -104,6 +104,10 @@ public class QueriesGenerated {
     return WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_4738159245302510147(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false)), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1240245813995(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SLinkOperations.getTarget(_context.getNode(), "projectFolder", false));
   }
@@ -152,8 +156,8 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "antName");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1230642678733(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  public static Object propertyMacro_GetPropertyValue_4738159245302510261(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
   public static Object propertyMacro_GetPropertyValue_1230568551733(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -236,16 +240,16 @@ public class QueriesGenerated {
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239642210661(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  public static Object propertyMacro_GetPropertyValue_4738159245302510195(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
   public static Object propertyMacro_GetPropertyValue_1239642210672(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return UniversalConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode()) + "." + UniversalConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239641603397(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  public static Object propertyMacro_GetPropertyValue_4738159245302510208(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
   public static Object propertyMacro_GetPropertyValue_1239641603408(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -257,8 +261,8 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239642466878(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  public static Object propertyMacro_GetPropertyValue_4738159245302510221(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
   public static Object propertyMacro_GetPropertyValue_1230293422263(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -302,7 +306,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1234517927659(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
   public static Object propertyMacro_GetPropertyValue_1234520360607(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -453,8 +457,8 @@ public class QueriesGenerated {
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1241440614630(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  public static Object propertyMacro_GetPropertyValue_4738159245302510235(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
   public static Object propertyMacro_GetPropertyValue_1241440614641(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -465,8 +469,8 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getVMOptionfFileName_1231748960223(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1241440614719(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return DistribConfiguration_Behavior.call_getScriptsFolderSafe_1230566454921(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  public static Object propertyMacro_GetPropertyValue_4738159245302510248(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
   public static Object propertyMacro_GetPropertyValue_1241440614739(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -602,10 +606,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1231750627497(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
-  }
-
-  public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(DistribConfiguration_Behavior.call_getScriptsFolder_1230570100269(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1239643296242(final IOperationContext operationContext, final IfMacroContext _context) {

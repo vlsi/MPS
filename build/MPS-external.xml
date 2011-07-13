@@ -1,4 +1,4 @@
-<project name="MPS-external" default="main" basedir="..">
+<project name="MPS-external" default="main">
   <property file="${ant.file}/../MPS.properties" />
   <fail unless="build.number" message="Property build.number unspecified." />
   <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
@@ -61,7 +61,6 @@
     <mkdir dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
   </target>
   <target name="do.the.job" depends="folders.create">
-    <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy todir="${deploy.dir}/MPS/bin">
       <fileset dir="${mps_home}/bin" excludes="**/*.hprof, " />
     </copy>
@@ -481,7 +480,6 @@
     <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
   </target>
   <target name="replace_a72d1a">
-    <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy file="${mps_home}/core/kernel/classes/idea/IdeaApplicationInfo.xml" tofile="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_DATE__" value="${DSTAMP}" />
@@ -490,9 +488,8 @@
   <target name="pack.branding_g1a">
     <property name="tmpdir" value="${java.io.tmpdir}/branding_g1a_0" />
     <property name="idea.application.info" value="${tmpdir}/IdeaApplicationInfo.xml" />
-    <fail unless="mps_home" message="Property mps_home unspecified." />
     <mkdir dir="${java.io.tmpdir}/" />
-    <loadfile srcfile="${basedir}/build/branding_g1a.xml" property="idea.application.info.contents">
+    <loadfile srcfile="${scripts.dir}/branding_g1a.xml" property="idea.application.info.contents">
       <filterchain>
         <expandproperties />
       </filterchain>

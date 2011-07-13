@@ -1,4 +1,5 @@
-<project name="MPS-compile" default="compile.all" basedir="..">
+<project name="MPS-compile" default="compile.all">
+  <property file="${ant.file}/../MPS.properties" />
   <property name="jetbrains.mps.analyzers.classes" value="${basedir}/core/analyzers/languages/analyzers/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.classes" value="${basedir}/core/baseLanguage/baseLanguage/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.blTypes.classes" value="${basedir}/core/baseLanguage/blTypes/classes_gen" />

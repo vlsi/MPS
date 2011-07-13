@@ -293,6 +293,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.IVariableHolder" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.Macro" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.ModuleCycle" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.structure.Path" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.PropertiesImport" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.Variable" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.structure.IAntScript" />

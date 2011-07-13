@@ -9,11 +9,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior;
 import jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
+import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.library.BuiltInLibrariesIO;
 import java.io.File;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -63,52 +63,40 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239975476522(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641892(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239714303951(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641882(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239714309621(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641887(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239714056018(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641897(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239714255706(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641907(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239714264392(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641922(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239714274693(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641902(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239714279856(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641912(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239714288015(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1239714246915(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1240558468369(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1240558476327(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSDistribution_Behavior.call_getScriptsFolder_8431776905956256048(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641917(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
   }
 
   public static Object propertyMacro_GetPropertyValue_2235195415637077314(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -123,12 +111,20 @@ public class QueriesGenerated {
     return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
   }
 
-  public static Object propertyMacro_GetPropertyValue_8716889635481488775(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSBuild_Behavior.call_getScriptsFolder_1241536330057(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641861(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
-  public static Object propertyMacro_GetPropertyValue_8716889635481488800(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSBuild_Behavior.call_getScriptsFolder_1241536330057(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_4738159245302641867(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getUnpackBuildToolsPropertyName_4738159245302641872();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234517927659(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4738159245302535286(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
 
   public static Object propertyMacro_GetPropertyValue_8716889635481488819(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -248,7 +244,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_6128676491055373718(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a05().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a05().createNode());
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a94().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a94().createNode());
   }
 
   public static Iterable sourceNodesQuery_2235195415637077365(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -291,8 +287,8 @@ public class QueriesGenerated {
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
-  public static class QuotationClass_x583g4_a1a0a05 {
-    public QuotationClass_x583g4_a1a0a05() {
+  public static class QuotationClass_x583g4_a1a0a94 {
+    public QuotationClass_x583g4_a1a0a94() {
     }
 
     public SNode createNode() {
@@ -310,8 +306,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a2a0a05 {
-    public QuotationClass_x583g4_a2a0a05() {
+  public static class QuotationClass_x583g4_a2a0a94 {
+    public QuotationClass_x583g4_a2a0a94() {
     }
 
     public SNode createNode() {

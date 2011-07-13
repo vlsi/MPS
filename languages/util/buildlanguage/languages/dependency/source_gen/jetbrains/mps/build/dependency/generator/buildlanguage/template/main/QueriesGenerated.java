@@ -10,13 +10,16 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
+  public static Object propertyMacro_GetPropertyValue_4738159245302261856(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "propertiesFile");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1219773202905(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -39,10 +42,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1216906986545(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_7857794759872021243(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "basedir");
   }
 
   public static Object propertyMacro_GetPropertyValue_1219772533883(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -99,10 +98,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1224775901838(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "description", false), "DescriptionToProject");
-  }
-
-  public static boolean ifMacro_Condition_7857794759871997503(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "basedir"));
   }
 
   public static boolean ifMacro_Condition_1219772493889(final IOperationContext operationContext, final IfMacroContext _context) {
