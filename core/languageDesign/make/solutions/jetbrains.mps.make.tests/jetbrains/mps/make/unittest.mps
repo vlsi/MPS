@@ -2614,7 +2614,7 @@
           <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="3104510729105061769">
             <link role="key" roleId="tpee.1188214555875" targetNodeId="k0af.~ExpectLogEvent%dtext()" resolveInfo="text" />
             <node role="value" roleId="tpee.1188214607812" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3104510729105064234">
-              <property name="value" nameId="tpee.1070475926801" value="target not found: ITarget.Name[none]" />
+              <property name="value" nameId="tpee.1070475926801" value="target not found: none" />
             </node>
           </node>
           <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="3104510729105061776">
@@ -12987,7 +12987,7 @@
                                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6908938625125646992" resolveInfo="pa" />
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6667331158047670716">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yo81.2191561637326275449" resolveInfo="properties" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yo81.2191561637326275449" resolveInfo="global" />
                                           </node>
                                         </node>
                                       </node>
@@ -13168,7 +13168,7 @@
                                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6908938625125645713" resolveInfo="pa" />
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6667331158047673248">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yo81.2191561637326275449" resolveInfo="properties" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yo81.2191561637326275449" resolveInfo="global" />
                                           </node>
                                         </node>
                                       </node>

@@ -67,7 +67,7 @@ public class ScriptBuilder_Test extends MockTestCase {
   }
 
   @Test
-  @ExpectLogEvent(text = "target not found: ITarget.Name[none]", level = Priority.ERROR_INT)
+  @ExpectLogEvent(text = "target not found: none", level = Priority.ERROR_INT)
   public void test_none() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
     scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).<IFacet.Name>select(new ISelector<IFacet, IFacet.Name>() {
