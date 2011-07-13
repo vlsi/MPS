@@ -71,6 +71,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new MoveInitializerToConstructor_Intention(), "1201102619707");
     add(new OverrideMethods_Intention(), "1028039751735280089");
     add(new RemoveArrayType_Intention(), "1226918395187");
+    add(new RemoveTVDInAnonymousClass_Intention(), "4138629533259838060");
     add(new ReplaceAssertWithIf_Intention(), "1199622460250");
     add(new ReplaceBlockWithItsContent_Intention(), "1199892779474");
     add(new ReplaceConditionalWithIf_Intention(), "1199561300578");
