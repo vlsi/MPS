@@ -693,8 +693,8 @@
     <nodeInfo nodeId="6562343564267124257" fileName="ImportedModelChange.java" startLine="13" startPosition="29" endLine="14" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6562343564267124278" fileName="ImportedModelChange.java" startLine="17" startPosition="46" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6562343564267124302" fileName="ImportedModelChange.java" startLine="30" startPosition="48" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6562343564267134083" fileName="ImportedModelChange.java" startLine="35" startPosition="21" endLine="36" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6562343564267137865" fileName="ImportedModelChange.java" startLine="37" startPosition="12" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6562343564267137865" fileName="ImportedModelChange.java" startLine="35" startPosition="21" endLine="36" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6562343564267134083" fileName="ImportedModelChange.java" startLine="37" startPosition="12" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6562343564267137863" fileName="ImportedModelChange.java" startLine="37" startPosition="10" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6562343564267124241" fileName="ImportedModelChange.java" startLine="11" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImportedModelChange#(Ljetbrains/mps/vcs/diff/changes/ChangeSet;Ljetbrains/mps/smodel/SModelReference;Z)V" />
     <nodeInfo nodeId="6562343564267124274" fileName="ImportedModelChange.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelReference#()Ljetbrains/mps/smodel/SModelReference;" />
@@ -705,8 +705,8 @@
     <nodeInfo nodeId="6562343564267124290" fileName="ImportedModelChange.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
     <scopeInfo nodeId="6562343564267124277" fileName="ImportedModelChange.java" startLine="17" startPosition="46" endLine="18" endPosition="28" />
     <scopeInfo nodeId="6562343564267124289" fileName="ImportedModelChange.java" startLine="30" startPosition="48" endLine="31" endPosition="107" />
-    <scopeInfo nodeId="6562343564267134081" fileName="ImportedModelChange.java" startLine="35" startPosition="21" endLine="36" endPosition="52" />
-    <scopeInfo nodeId="6562343564267137864" fileName="ImportedModelChange.java" startLine="37" startPosition="12" endLine="38" endPosition="48" />
+    <scopeInfo nodeId="6562343564267134081" fileName="ImportedModelChange.java" startLine="35" startPosition="21" endLine="36" endPosition="48" />
+    <scopeInfo nodeId="6562343564267137864" fileName="ImportedModelChange.java" startLine="37" startPosition="12" endLine="38" endPosition="52" />
     <scopeInfo nodeId="6562343564267124245" fileName="ImportedModelChange.java" startLine="12" startPosition="117" endLine="14" endPosition="38" />
     <scopeInfo nodeId="6562343564267124241" fileName="ImportedModelChange.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="6562343564267124247" varName="changeSet" />

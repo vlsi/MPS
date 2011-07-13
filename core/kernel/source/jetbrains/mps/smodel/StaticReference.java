@@ -123,9 +123,12 @@ public class StaticReference extends SReferenceBase {
 //      return null;
 //    }
 
-    SModelDescriptor modelDescriptor = current == null
-      ? SModelRepository.getInstance().getModelDescriptor(targetModelReference)
-      : current.resolveModel(targetModelReference);
+    SModelDescriptor modelDescriptor = null;
+    if (current != null) {
+      modelDescriptor = current.resolveModel(targetModelReference);
+    } else if (SModelRepository.getInstance() != null) {
+      modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+    }
     if (modelDescriptor == null) {
       return null;
     }

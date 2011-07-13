@@ -567,7 +567,7 @@ public class SModel {
     if (importElement != null) return;
     importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
     if (importElement == null) {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance() == null ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
       if (modelDescriptor instanceof EditableSModelDescriptor) {
         usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
@@ -655,7 +655,7 @@ public class SModel {
   // create new implicit import list based on used models, explicit import and old implicit import list
   public void calculateImplicitImports() {
     Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
-    if (myModelDescriptor != null && !LanguageAspect.STRUCTURE.is(myModelDescriptor))
+    if (myModelDescriptor == null || !LanguageAspect.STRUCTURE.is(myModelDescriptor))
       usedModels.remove(myReference);   // do not import self if not structure
     for (ImportElement elem : myImports) {
       usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit

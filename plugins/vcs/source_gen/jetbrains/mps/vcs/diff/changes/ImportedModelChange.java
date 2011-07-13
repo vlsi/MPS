@@ -33,9 +33,9 @@ public class ImportedModelChange extends DependencyChange {
 
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     if (isDelete()) {
-      model.addModelImport(myModelReference, false);
-    } else {
       model.deleteModelImport(myModelReference);
+    } else {
+      model.addModelImport(myModelReference, false);
     }
   }
 }
