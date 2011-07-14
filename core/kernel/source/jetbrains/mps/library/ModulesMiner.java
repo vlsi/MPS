@@ -144,6 +144,8 @@ public class ModulesMiner {
 
       if (childDir.getName().endsWith(".jar")) {
         IFile moduleFile = FileSystem.getInstance().getFileByPath(childDir.getPath() + META_INF_MODULE_XML);
+        // a way to load all modules packed into /modules folder inside mps.jar/plugin jars
+        IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getPath() + "!/modules");
         if (moduleFile.exists()) {
           ModuleDescriptor moduleDescriptor = loadModuleDescriptor(moduleFile);
           if (moduleDescriptor != null) {
@@ -152,10 +154,9 @@ public class ModulesMiner {
               result.add(descriptor);
             }
           }
+        } else if (dirInJar.exists()) {
+          readModuleDescriptors(dirInJar, excludes, result, refreshFiles, reader);
         }
-      } else if (childDir.getName().equals("mps.jar")) {
-        IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getPath() + "!/modules");
-        readModuleDescriptors(dirInJar, excludes, result, refreshFiles, reader);
       }
 
       readModuleDescriptors(childDir, excludes, result, refreshFiles, reader);
