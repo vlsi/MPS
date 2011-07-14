@@ -152,7 +152,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     if(moduleDescriptor == null) {
       throw new IllegalArgumentException("Unknown module " + file.getName());
     }
-    return registerModule(new ModuleHandle(file, moduleDescriptor), owner);
+    return this.<TM>registerModule(new ModuleHandle(file, moduleDescriptor), owner);
   }
 
   /*
