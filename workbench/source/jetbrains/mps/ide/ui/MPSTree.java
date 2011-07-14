@@ -369,7 +369,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void rebuildLater() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         rebuildNow();
       }
