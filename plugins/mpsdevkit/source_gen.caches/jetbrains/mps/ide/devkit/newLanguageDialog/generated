@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2123cnkd1gcb2ji00eiub2ouyadt8q4">
+<dependencies version="2" modelHash="c0c4gm387kfrelg804djxmuz2bdg8r9">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(MPS.Classpath/com.intellij.openapi.progress@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.library(MPS.Classpath/jetbrains.mps.library@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
@@ -94,7 +94,7 @@
     <file name="NewLanguageDialog.java" />
     <file name="NewLanguageDialogContentPane.java" />
   </source>
-  <source id="1203685087824" name="NewLanguageDialog_Controller" hash="7wluc6wjdseqp1o2qq5sbni7mwuaipt">
+  <source id="1203685087824" name="NewLanguageDialog_Controller" hash="5b7h400is94rekexuomooqbwm0udh3n">
     <dep root="1203684597238" />
     <dep model="r:00000000-0000-4000-0000-011c895904b2(jetbrains.mps.ide.uiLanguage.generator.baseLanguage.template.main@generator)" />
   </source>

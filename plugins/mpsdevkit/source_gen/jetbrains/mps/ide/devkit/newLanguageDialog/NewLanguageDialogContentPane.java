@@ -233,6 +233,7 @@ public class NewLanguageDialogContentPane extends JPanel {
           LanguageAspect.STRUCTURE.createNew(language.value, false);
           LanguageAspect.EDITOR.createNew(language.value, false);
           LanguageAspect.CONSTRAINTS.createNew(language.value, false);
+          LanguageAspect.BEHAVIOR.createNew(language.value, false);
           LanguageAspect.TYPESYSTEM.createNew(language.value, false);
         }
         if (myThis.myNeedRuntime_f0.isSelected()) {
