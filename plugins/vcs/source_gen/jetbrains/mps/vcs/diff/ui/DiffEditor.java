@@ -18,12 +18,11 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -50,8 +49,8 @@ public class DiffEditor implements EditorMessageOwner {
 
     SModel model = SNodeOperations.getModel(node);
     if (model != null) {
-      IModule module = check_n3ensp_a0a0i0a(model.getModelDescriptor());
-      boolean editable = !(model.isNotEditable()) || module instanceof DiffTemporaryModule && ((DiffTemporaryModule) module).isEditable();
+      SModelDescriptor md = model.getModelDescriptor();
+      boolean editable = !(model.isNotEditable()) || md instanceof DiffTemporaryModule.DiffSModelDescriptor && ((DiffTemporaryModule.DiffSModelDescriptor) md).isEditable();
       setReadOnly(!(editable));
     }
 
@@ -135,13 +134,6 @@ public class DiffEditor implements EditorMessageOwner {
 
   private Iterable<EditorComponent> getEditorComponents() {
     return Sequence.fromArray(new EditorComponent[]{myMainEditorComponent, myInspector});
-  }
-
-  private static IModule check_n3ensp_a0a0i0a(SModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
   }
 
   public class MainEditorComponent extends EditorComponent {

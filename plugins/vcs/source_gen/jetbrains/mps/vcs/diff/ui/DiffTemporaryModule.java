@@ -17,8 +17,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -32,13 +33,11 @@ import jetbrains.mps.smodel.ModelLoadingState;
 public class DiffTemporaryModule extends AbstractModule {
   private SModel myModel;
   private Project myProject;
-  private boolean myEditable;
 
-  private DiffTemporaryModule(SModel model, String version, Project project, boolean editable) {
+  private DiffTemporaryModule(SModel model, String version, Project project) {
     setModuleReference(ModuleReference.fromString(SModelOperations.getModelName(model) + "@" + version));
     myModel = model;
     myProject = project;
-    myEditable = editable;
   }
 
   public Class getClass(String fqName) {
@@ -67,10 +66,6 @@ public class DiffTemporaryModule extends AbstractModule {
 
   protected AbstractModule.ModuleScope createScope() {
     return new DiffTemporaryModule.DiffModuleScope();
-  }
-
-  private DiffTemporaryModule.DiffSModelDescriptor createModelDescriptor() {
-    return new DiffTemporaryModule.DiffSModelDescriptor();
   }
 
   private DiffTemporaryModule.DiffModuleContext createContext() {
@@ -104,20 +99,26 @@ public class DiffTemporaryModule extends AbstractModule {
     return null;
   }
 
-  public boolean isEditable() {
-    return myEditable;
-  }
-
   public static void createModuleForModel(SModel model, String version, Project project) {
     createModuleForModel(model, version, project, false);
   }
 
-  public static void createModuleForModel(SModel model, String version, Project project, boolean editable) {
+  public static void createModuleForModel(SModel model, String version, Project project, boolean mergeResultModel) {
     if (model.getModelDescriptor() != null) {
       return;
     }
-    DiffTemporaryModule module = new DiffTemporaryModule(model, version, project, editable);
-    model.setModelDescriptor(module.createModelDescriptor());
+    IModule module = null;
+    if (mergeResultModel) {
+      SModelDescriptor mdInRepo = SModelRepository.getInstance().getModelDescriptor(model.getSModelReference());
+      if (mdInRepo != null) {
+        module = mdInRepo.getModule();
+      }
+    }
+
+    if (module == null) {
+      module = new DiffTemporaryModule(model, version, project);
+    }
+    model.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
   }
 
   public static IOperationContext getOperationContext(Project project, SModel model) {
@@ -152,10 +153,15 @@ public class DiffTemporaryModule extends AbstractModule {
     }
   }
 
-  private class DiffSModelDescriptor extends BaseSModelDescriptor {
-    private DiffSModelDescriptor() {
-      super(IModelRootManager.NULL_MANAGER, myModel.getSModelReference(), false);
-      mySModel = myModel;
+  public static class DiffSModelDescriptor extends BaseSModelDescriptor {
+    private IModule myModule;
+    private boolean myEditable;
+
+    private DiffSModelDescriptor(IModule module, SModel model, boolean editable) {
+      super(IModelRootManager.NULL_MANAGER, model.getSModelReference(), false);
+      myModule = module;
+      mySModel = model;
+      myEditable = editable;
       setLoadingState(ModelLoadingState.FULLY_LOADED);
     }
 
@@ -165,12 +171,20 @@ public class DiffTemporaryModule extends AbstractModule {
 
     @Override
     public IModule getModule() {
-      return DiffTemporaryModule.this;
+      return myModule;
     }
 
     @Override
     public SModelDescriptor resolveModel(SModelReference reference) {
-      return findModel(reference);
+      if (myModule instanceof DiffTemporaryModule.DiffModuleScope) {
+        return ((DiffTemporaryModule) myModule).findModel(reference);
+      } else {
+        return super.resolveModel(reference);
+      }
+    }
+
+    public boolean isEditable() {
+      return myEditable;
     }
   }
 
