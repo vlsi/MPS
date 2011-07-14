@@ -273,9 +273,19 @@
       <property name="name" nameId="tpck.1169194664001" value="getBasedirName" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="1226509020816" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1226509010732">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4483399040246573433">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4483399040246573434">
+            <property name="text" nameId="tpee.6329021646629104958" value="ant has standart property basedir, so we use base_dir here to avoid clashing with it" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4483399040246573437">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4483399040246573439">
+            <property name="text" nameId="tpee.6329021646629104958" value="&quot;_&quot; symbol was chosen to look similar to mps_home" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1226509028881">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1226509030392">
-            <property name="value" nameId="tpee.1070475926801" value="basedir" />
+            <property name="value" nameId="tpee.1070475926801" value="base_dir" />
           </node>
         </node>
       </node>
@@ -1295,7 +1305,15 @@
               <node role="linkTarget" roleId="tp25.1140725362529" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="462257719548507237">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tps4.Path" typeId="tps4.1220973916698" id="462257719548507240">
                   <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="462257719548507241">
-                    <property name="name" nameId="tps4.1220976068141" value="basedir" />
+                    <property name="name" nameId="tps4.1220976068141" value="base_dir" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4483399040246435276">
+                      <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
+                      <property name="label" nameId="tp3r.6489343236075007666" value="MacroReference" />
+                      <node role="expression" roleId="tp3r.1196350785111" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246435279">
+                        <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1226509010730" resolveInfo="getBasedirName" />
+                      </node>
+                    </node>
                   </node>
                   <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="462257719548507242">
                     <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="462257719548507244">
@@ -1319,7 +1337,15 @@
               <node role="linkTarget" roleId="tp25.1140725362529" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="462257719548507245">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tps4.Path" typeId="tps4.1220973916698" id="462257719548507246">
                   <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="462257719548507247">
-                    <property name="name" nameId="tps4.1220976068141" value="basedir" />
+                    <property name="name" nameId="tps4.1220976068141" value="base_dir" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4483399040246435280">
+                      <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
+                      <property name="label" nameId="tp3r.6489343236075007666" value="MacroReference" />
+                      <node role="expression" roleId="tp3r.1196350785111" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246435283">
+                        <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1226509010730" resolveInfo="getBasedirName" />
+                      </node>
+                    </node>
                   </node>
                   <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="462257719548507248">
                     <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="462257719548507251">

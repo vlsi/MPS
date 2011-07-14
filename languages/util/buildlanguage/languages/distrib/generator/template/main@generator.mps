@@ -3092,7 +3092,7 @@
                 </node>
               </node>
               <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230577420062">
-                <property name="value" nameId="tpsk.1196861024475" value="${basedir}/" />
+                <property name="value" nameId="tpsk.1196861024475" value="${base_dir}/" />
               </node>
             </node>
           </node>
@@ -3628,7 +3628,7 @@
                         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230650061632">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1230650066027">
                             <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1230650066028">
-                              <property name="value" nameId="tpee.1070475926801" value="${basedir}" />
+                              <property name="value" nameId="tpee.1070475926801" value="${base_dir}" />
                             </node>
                           </node>
                         </node>
@@ -3658,8 +3658,36 @@
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="6261107747136120073">
           <property name="name" nameId="tpck.1169194664001" value="help.file" />
           <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="6261107747136120074">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6261107747136120075">
-              <property name="value" nameId="tpsk.1196861024475" value="help/mpshelp.jar" />
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924398">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6261107747136120075">
+                <property name="value" nameId="tpsk.1196861024475" value="/help/mpshelp.jar" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246940271">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246940272">
+                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246940273">
+                    <property name="value" nameId="tpsk.1196861024475" value="}" />
+                  </node>
+                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246940274">
+                    <property name="value" nameId="tpsk.1196861024475" value="mps_home" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="4483399040246940275">
+                      <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                      <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="4483399040246940276">
+                        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4483399040246940277">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4483399040246940278">
+                            <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246940279">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226508944077" resolveInfo="getMPSHomeName" />
+                              <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246940280">
+                  <property name="value" nameId="tpsk.1196861024475" value="${" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="6261107747136120076" />
@@ -4134,8 +4162,36 @@
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="6261107747136120023">
           <property name="name" nameId="tpck.1169194664001" value="help.file" />
           <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="6261107747136120024">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6261107747136120025">
-              <property name="value" nameId="tpsk.1196861024475" value="help/mpshelp.jar" />
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924432">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6261107747136120025">
+                <property name="value" nameId="tpsk.1196861024475" value="/help/mpshelp.jar" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924435">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924436">
+                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924437">
+                    <property name="value" nameId="tpsk.1196861024475" value="}" />
+                  </node>
+                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924438">
+                    <property name="value" nameId="tpsk.1196861024475" value="mps_home" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="4483399040246924439">
+                      <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                      <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="4483399040246924440">
+                        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4483399040246924441">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4483399040246924442">
+                            <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246924443">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226508944077" resolveInfo="getMPSHomeName" />
+                              <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924444">
+                  <property name="value" nameId="tpsk.1196861024475" value="${" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="6261107747136120026" />
@@ -5765,8 +5821,36 @@
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="6261107747135864115">
           <property name="name" nameId="tpck.1169194664001" value="help.file" />
           <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="6261107747135979222">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6261107747135979227">
-              <property name="value" nameId="tpsk.1196861024475" value="help/mpshelp_mac.jar" />
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924449">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6261107747135979227">
+                <property name="value" nameId="tpsk.1196861024475" value="/help/mpshelp_mac.jar" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924452">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924453">
+                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924454">
+                    <property name="value" nameId="tpsk.1196861024475" value="}" />
+                  </node>
+                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924455">
+                    <property name="value" nameId="tpsk.1196861024475" value="mps_home" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="4483399040246924456">
+                      <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                      <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="4483399040246924457">
+                        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4483399040246924458">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4483399040246924459">
+                            <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246924460">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226508944077" resolveInfo="getMPSHomeName" />
+                              <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924461">
+                  <property name="value" nameId="tpsk.1196861024475" value="${" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="6261107747135979220" />
@@ -8978,8 +9062,36 @@
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="6261107747136120048">
           <property name="name" nameId="tpck.1169194664001" value="help.file" />
           <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="6261107747136120049">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6261107747136120050">
-              <property name="value" nameId="tpsk.1196861024475" value="help/mpshelp.jar" />
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924403">
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="6261107747136120050">
+                <property name="value" nameId="tpsk.1196861024475" value="/help/mpshelp.jar" />
+              </node>
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924417">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="4483399040246924421">
+                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924424">
+                    <property name="value" nameId="tpsk.1196861024475" value="}" />
+                  </node>
+                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924420">
+                    <property name="value" nameId="tpsk.1196861024475" value="mps_home" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="4483399040246924425">
+                      <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
+                      <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="4483399040246924426">
+                        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4483399040246924427">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4483399040246924428">
+                            <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246924430">
+                              <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226508944077" resolveInfo="getMPSHomeName" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4483399040246924416">
+                  <property name="value" nameId="tpsk.1196861024475" value="${" />
+                </node>
+              </node>
             </node>
           </node>
           <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="6261107747136120051" />

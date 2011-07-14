@@ -43,8 +43,8 @@ public class Layout_Behavior {
       SLinkOperations.addChild(thisNode, "builtInVariable", var);
     }
     SPropertyOperations.set(thisNode, "compile", "" + true);
-    SLinkOperations.setTarget(thisNode, "deployDirectory", new Layout_Behavior.QuotationClass_g9j203_a2a01a0().createNode(), true);
-    SLinkOperations.setTarget(thisNode, "scriptsDirectory", new Layout_Behavior.QuotationClass_g9j203_a2a11a0().createNode(), true);
+    SLinkOperations.setTarget(thisNode, "deployDirectory", new Layout_Behavior.QuotationClass_g9j203_a2a01a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
+    SLinkOperations.setTarget(thisNode, "scriptsDirectory", new Layout_Behavior.QuotationClass_g9j203_a2a11a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
   }
 
   public static String call_getFolderToGenerate_1229522949966(SNode thisNode) {
@@ -123,7 +123,9 @@ public class Layout_Behavior {
   }
 
   public static String getBasedirName_1226509010730() {
-    return "basedir";
+    // ant has standart property basedir, so we use base_dir here to avoid clashing with it 
+    // "_" symbol was chosen to look similar to mps_home 
+    return "base_dir";
   }
 
   public static String getDeployDirName_462257719548547196() {
@@ -153,7 +155,7 @@ public class Layout_Behavior {
     public QuotationClass_g9j203_a2a01a0() {
     }
 
-    public SNode createNode() {
+    public SNode createNode(Object parameter_9) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -166,7 +168,7 @@ public class Layout_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("name", "basedir");
+          quotedNode1_6.setProperty("name", (String) parameter_9);
           quotedNode_1.addChild("macro", quotedNode1_6);
         }
         {
@@ -190,7 +192,7 @@ public class Layout_Behavior {
     public QuotationClass_g9j203_a2a11a0() {
     }
 
-    public SNode createNode() {
+    public SNode createNode(Object parameter_9) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -203,7 +205,7 @@ public class Layout_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("name", "basedir");
+          quotedNode1_6.setProperty("name", (String) parameter_9);
           quotedNode_1.addChild("macro", quotedNode1_6);
         }
         {

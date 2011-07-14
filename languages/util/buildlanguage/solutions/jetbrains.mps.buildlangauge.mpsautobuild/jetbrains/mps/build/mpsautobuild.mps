@@ -698,8 +698,8 @@
       <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="2235195415637073468" />
     </node>
     <node role="deployDirectory" roleId="tps4.462257719548209895" type="tps4.Path" typeId="tps4.1220973916698" id="462257719548547135">
-      <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="462257719548547136">
-        <property name="name" nameId="tps4.1220976068141" value="basedir" />
+      <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="4483399040246280652">
+        <property name="name" nameId="tps4.1220976068141" value="base_dir" />
       </node>
       <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="462257719548547137">
         <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="462257719548547138">
@@ -711,8 +711,8 @@
       </node>
     </node>
     <node role="scriptsDirectory" roleId="tps4.462257719548209896" type="tps4.Path" typeId="tps4.1220973916698" id="462257719548547161">
-      <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="462257719548547162">
-        <property name="name" nameId="tps4.1220976068141" value="basedir" />
+      <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="4483399040246280653">
+        <property name="name" nameId="tps4.1220976068141" value="base_dir" />
       </node>
       <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="462257719548547163">
         <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="462257719548547164">
@@ -1034,7 +1034,7 @@
             <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811856" resolveInfo="dir" />
             <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="2235195415637076954">
               <node role="value" roleId="tpsk.1199031757132" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="2235195415637076955">
-                <property name="value" nameId="tpsk.1196861024475" value="${basedir}" />
+                <property name="value" nameId="tpsk.1196861024475" value="${base_dir}" />
               </node>
             </node>
           </node>

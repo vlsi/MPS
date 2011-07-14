@@ -43,7 +43,7 @@
     <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
     <property name="windows.startup.file" value="${scripts.dir}/mps.bat" />
     <property name="vmoptions.file" value="${scripts.dir}/mps.vmoptions" />
-    <property name="help.file" value="help/mpshelp.jar" />
+    <property name="help.file" value="${mps_home}/help/mpshelp.jar" />
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${windows.startup.file}" eof="asis" eol="dos" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
@@ -65,7 +65,7 @@
     <property name="tar.gz.file" value="${build.number}-linux.tar.gz" />
     <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
     <property name="vmoptions.file" value="${scripts.dir}/mps.vmoptions" />
-    <property name="help.file" value="help/mpshelp.jar" />
+    <property name="help.file" value="${mps_home}/help/mpshelp.jar" />
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
@@ -90,7 +90,7 @@
     <property name="zip.file" value="${build.number}-macos.zip" />
     <property name="root.folder" value="MPS" />
     <property name="root.folder.dest" value="${root.folder}.app" />
-    <property name="help.file" value="help/mpshelp_mac.jar" />
+    <property name="help.file" value="${mps_home}/help/mpshelp_mac.jar" />
     <copy file="${info.plist}" tofile="${info.plist.tmp}" />
     <replace file="${info.plist.tmp}" token="$version$" value="${version}" />
     <replace file="${info.plist.tmp}" token="$build$" value="${build.number}" />
@@ -121,7 +121,7 @@
     <property name="root.folder.name" value="MPS" />
     <property name="root.folder" value="${deploy.dir}/${root.folder.name}" />
     <property name="nsis.script.name" value="installer.nsi" />
-    <property name="nsis.script.path" value="${basedir}/${scripts.folder}/${nsis.script.name}" />
+    <property name="nsis.script.path" value="${base_dir}/${scripts.folder}/${nsis.script.name}" />
     <property name="nsis.script.path.tmp" value="${deploy.dir}/installation.script${DSTAMP}.nsi" />
     <property name="application.icon" value="${deploy.dir}/application.ico" />
     <property name="homepage.icon" value="${deploy.dir}/homepage.ico" />
@@ -132,8 +132,8 @@
     <property name="jre.zip.path" value="${scripts.dir}/tools/jre.zip" />
     <property name="jre.unzipped.path" value="${deploy.dir}" />
     <property name="installer.relative.path" value="${deploy.dir}/${build.number}-windows.exe" />
-    <property name="mps_home" value="${basedir}" />
-    <property name="help.file" value="help/mpshelp.jar" />
+    <property name="mps_home" value="${base_dir}" />
+    <property name="help.file" value="${mps_home}/help/mpshelp.jar" />
     <property name="help.folder.tmp" value="${deploy.dir}/help" />
     <property name="installer" location="${installer.relative.path}" />
     <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />

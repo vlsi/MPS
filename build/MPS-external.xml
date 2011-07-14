@@ -92,7 +92,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
       <param name="output.dir" value="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
-      <param name="basedir" value="${basedir}" />
+      <param name="base_dir" value="${base_dir}" />
     </antcall>
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
     <zip destfile="${deploy.dir}/MPS/lib/MPS-src.zip" duplicate="preserve" filesonly="true">
@@ -443,7 +443,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/MPS/help-build.append.idea.version" />
       <param name="output.dir" value="${deploy.dir}/MPS" />
-      <param name="basedir" value="${basedir}" />
+      <param name="base_dir" value="${base_dir}" />
     </antcall>
     <delete dir="${deploy.dir}/MPS/help-build.append.idea.version" />
     <copy file="${mps_home}/entryPoints.xml" tofile="${deploy.dir}/MPS/entryPoints.xml" />
@@ -455,7 +455,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/help-build.pack.mps.src" />
       <param name="output.dir" value="${deploy.dir}/" />
-      <param name="basedir" value="${basedir}" />
+      <param name="base_dir" value="${base_dir}" />
     </antcall>
     <delete dir="${deploy.dir}/help-build.pack.mps.src" />
     <copy todir="${deploy.dir}/${build.number}-buildTools.zip.tmp/tools">

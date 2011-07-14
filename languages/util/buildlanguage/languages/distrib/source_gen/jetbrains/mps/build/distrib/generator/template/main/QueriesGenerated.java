@@ -217,10 +217,14 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1230650061631(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "${basedir}";
+    return "${base_dir}";
   }
 
   public static Object propertyMacro_GetPropertyValue_1230642371372(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getMPSHomeName_1226508944077();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4483399040246940276(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Layout_Behavior.getMPSHomeName_1226508944077();
   }
 
@@ -263,6 +267,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4738159245302510221(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Layout_Behavior.getScriptsDirName_462257719548547202();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4483399040246924440(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getMPSHomeName_1226508944077();
   }
 
   public static Object propertyMacro_GetPropertyValue_1230293422263(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -324,6 +332,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1234519414225(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4483399040246924457(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getMPSHomeName_1226508944077();
   }
 
   public static Object propertyMacro_GetPropertyValue_1234428002224(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -471,6 +483,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4738159245302510248(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Layout_Behavior.getScriptsDirName_462257719548547202();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4483399040246924426(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Layout_Behavior.getMPSHomeName_1226508944077();
   }
 
   public static Object propertyMacro_GetPropertyValue_1241440614739(final IOperationContext operationContext, final PropertyMacroContext _context) {

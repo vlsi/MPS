@@ -10,6 +10,8 @@
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
+  <import index="tpsf" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" implicit="yes" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="462257719548498247">
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
@@ -44,7 +46,15 @@
                     <node role="linkTarget" roleId="tp25.1140725362529" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="462257719548507237">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="tps4.Path" typeId="tps4.1220973916698" id="462257719548507240">
                         <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="462257719548507241">
-                          <property name="name" nameId="tps4.1220976068141" value="basedir" />
+                          <property name="name" nameId="tps4.1220976068141" value="base_dir" />
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4483399040246435260">
+                            <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
+                            <property name="label" nameId="tp3r.6489343236075007666" value="MacroReference" />
+                            <node role="expression" roleId="tp3r.1196350785111" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246435263">
+                              <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226509010730" resolveInfo="getBasedirName" />
+                            </node>
+                          </node>
                         </node>
                         <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="462257719548507242">
                           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="462257719548525256">
@@ -89,7 +99,15 @@
                       <node role="linkTarget" roleId="tp25.1140725362529" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="462257719548525296">
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tps4.Path" typeId="tps4.1220973916698" id="462257719548525297">
                           <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="462257719548525298">
-                            <property name="name" nameId="tps4.1220976068141" value="basedir" />
+                            <property name="name" nameId="tps4.1220976068141" value="base_dir" />
+                            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4483399040246435256">
+                              <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
+                              <property name="label" nameId="tp3r.6489343236075007666" value="MacroReference" />
+                              <node role="expression" roleId="tp3r.1196350785111" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246435259">
+                                <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226509010730" resolveInfo="getBasedirName" />
+                              </node>
+                            </node>
                           </node>
                           <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="462257719548525299">
                             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="462257719548525300">
@@ -150,7 +168,15 @@
                     <node role="linkTarget" roleId="tp25.1140725362529" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="462257719548525316">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="tps4.Path" typeId="tps4.1220973916698" id="462257719548525317">
                         <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="462257719548525318">
-                          <property name="name" nameId="tps4.1220976068141" value="basedir" />
+                          <property name="name" nameId="tps4.1220976068141" value="base_dir" />
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4483399040246435264">
+                            <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
+                            <property name="label" nameId="tp3r.6489343236075007666" value="MacroReference" />
+                            <node role="expression" roleId="tp3r.1196350785111" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246435267">
+                              <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226509010730" resolveInfo="getBasedirName" />
+                            </node>
+                          </node>
                         </node>
                         <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="462257719548525319">
                           <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="462257719548525321">
@@ -187,7 +213,15 @@
                       <node role="linkTarget" roleId="tp25.1140725362529" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="462257719548525336">
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tps4.Path" typeId="tps4.1220973916698" id="462257719548525337">
                           <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="462257719548525338">
-                            <property name="name" nameId="tps4.1220976068141" value="basedir" />
+                            <property name="name" nameId="tps4.1220976068141" value="base_dir" />
+                            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="4483399040246435268">
+                              <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
+                              <property name="label" nameId="tp3r.6489343236075007666" value="MacroReference" />
+                              <node role="expression" roleId="tp3r.1196350785111" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246435271">
+                                <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226509010730" resolveInfo="getBasedirName" />
+                              </node>
+                            </node>
                           </node>
                           <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="462257719548525339" />
                         </node>
@@ -211,6 +245,50 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNullOperation" typeId="tp25.1171999116870" id="462257719548525348" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="4483399040246412795">
+      <property name="description" nameId="tp33.1177457972041" value="Replace basedir macro with base_dir" />
+      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tps4.1219228952036" resolveInfo="Macro" />
+      <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="4483399040246412796">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4483399040246412797">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4483399040246412814">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4483399040246412821">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4483399040246412816">
+                <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="4483399040246412815" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4483399040246412820">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="4483399040246412825">
+                <node role="value" roleId="tp25.1138662048170" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4483399040246417850">
+                  <link role="concept" roleId="tp25.1206019820684" targetNodeId="tps4.1202916958754" resolveInfo="Layout" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsf.1226509010730" resolveInfo="getBasedirName" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" roleId="tp33.1177457957478" type="tp33.MigrationScriptPart_Instance_Predicate" typeId="tp33.1177458061340" id="4483399040246412798">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4483399040246412799">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4483399040246412800">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4483399040246412807">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4483399040246412802">
+                <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="4483399040246412801" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4483399040246412806">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4483399040246412812">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4483399040246412813">
+                  <property name="value" nameId="tpee.1070475926801" value="basedir" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import org.apache.commons.lang.StringUtils;
 import java.util.Set;
 import java.util.HashSet;
@@ -36,9 +37,9 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         if (SPropertyOperations.getBoolean(node, "useTmpDir")) {
-          SLinkOperations.setTarget(node, "deployDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a().createNode(SPropertyOperations.getString(node, "name") + ".artifacts"), true);
+          SLinkOperations.setTarget(node, "deployDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a().createNode(Layout_Behavior.getBasedirName_1226509010730(), SPropertyOperations.getString(node, "name") + ".artifacts"), true);
         } else {
-          SLinkOperations.setTarget(node, "deployDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a1a0().createNode(), true);
+          SLinkOperations.setTarget(node, "deployDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a1a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
         }
       }
 
@@ -65,10 +66,35 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "scriptsFolder"))) {
-          SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a().createNode(SPropertyOperations.getString(node, "scriptsFolder")), true);
+          SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a().createNode(Layout_Behavior.getBasedirName_1226509010730(), SPropertyOperations.getString(node, "scriptsFolder")), true);
         } else {
-          SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0().createNode(), true);
+          SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
         }
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replace basedir macro with base_dir";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replace basedir macro with base_dir";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.build.packaging.structure.Macro";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SPropertyOperations.getString(node, "name").equals("basedir");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SPropertyOperations.set(node, "name", Layout_Behavior.getBasedirName_1226509010730());
       }
 
       public boolean isShowAsIntention() {
@@ -81,7 +107,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     public QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a() {
     }
 
-    public SNode createNode(Object parameter_11) {
+    public SNode createNode(Object parameter_11, Object parameter_12) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -95,7 +121,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_7 = quotedNode_2;
-          quotedNode1_7.setProperty("name", "basedir");
+          quotedNode1_7.setProperty("name", (String) parameter_11);
           quotedNode_1.addChild("macro", quotedNode1_7);
         }
         {
@@ -110,7 +136,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_10 = quotedNode_5;
-            quotedNode1_10.setProperty("path", (String) parameter_11);
+            quotedNode1_10.setProperty("path", (String) parameter_12);
             quotedNode_3.addChild("pathComponent", quotedNode1_10);
           }
           quotedNode_1.addChild("compositePathComponent", quotedNode1_8);
@@ -125,7 +151,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     public QuotationClass_6u5ptb_a0a0a0a0a4a0a0a1a0() {
     }
 
-    public SNode createNode() {
+    public SNode createNode(Object parameter_9) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -138,7 +164,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("name", "basedir");
+          quotedNode1_6.setProperty("name", (String) parameter_9);
           quotedNode_1.addChild("macro", quotedNode1_6);
         }
         {
@@ -162,7 +188,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     public QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a() {
     }
 
-    public SNode createNode(Object parameter_9) {
+    public SNode createNode(Object parameter_9, Object parameter_10) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -175,7 +201,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("name", "basedir");
+          quotedNode1_6.setProperty("name", (String) parameter_9);
           quotedNode_1.addChild("macro", quotedNode1_6);
         }
         {
@@ -184,7 +210,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
           {
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_8 = quotedNode_4;
-            quotedNode1_8.setProperty("path", (String) parameter_9);
+            quotedNode1_8.setProperty("path", (String) parameter_10);
             quotedNode_3.addChild("pathComponent", quotedNode1_8);
           }
           quotedNode_1.addChild("compositePathComponent", quotedNode1_7);
@@ -199,7 +225,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     public QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0() {
     }
 
-    public SNode createNode() {
+    public SNode createNode(Object parameter_7) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -211,7 +237,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.setProperty("name", "basedir");
+          quotedNode1_5.setProperty("name", (String) parameter_7);
           quotedNode_1.addChild("macro", quotedNode1_5);
         }
         {
