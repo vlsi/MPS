@@ -1,205 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3521790172251160903">
-    <nodeInfo nodeId="3521790172251160936" fileName="ProjectCheckoutListener.java" startLine="20" startPosition="52" endLine="21" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251160952" fileName="ProjectCheckoutListener.java" startLine="24" startPosition="44" endLine="25" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7171758144016813665" fileName="ProjectCheckoutListener.java" startLine="26" startPosition="20" endLine="27" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7171758144016903359" fileName="ProjectCheckoutListener.java" startLine="28" startPosition="36" endLine="29" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251160982" fileName="ProjectCheckoutListener.java" startLine="31" startPosition="7" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251160984" fileName="ProjectCheckoutListener.java" startLine="33" startPosition="5" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="66" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectCheckoutListener#()V" />
-    <nodeInfo nodeId="7171758144016813677" fileName="ProjectCheckoutListener.java" startLine="27" startPosition="100" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="61" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3521790172251160918" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="78" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251160968" fileName="ProjectCheckoutListener.java" startLine="25" startPosition="219" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251160941" fileName="ProjectCheckoutListener.java" startLine="23" startPosition="7" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="17" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
-    <scopeInfo nodeId="3521790172251160909" fileName="ProjectCheckoutListener.java" startLine="15" startPosition="36" endLine="15" endPosition="36" />
-    <scopeInfo nodeId="3521790172251160991" fileName="ProjectCheckoutListener.java" startLine="37" startPosition="63" endLine="37" endPosition="63" />
-    <scopeInfo nodeId="3521790172251160935" fileName="ProjectCheckoutListener.java" startLine="20" startPosition="52" endLine="21" endPosition="60" />
-    <scopeInfo nodeId="7171758144016813678" fileName="ProjectCheckoutListener.java" startLine="28" startPosition="36" endLine="29" endPosition="97" />
-    <scopeInfo nodeId="3521790172251160906" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="66" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="3521790172251160986" fileName="ProjectCheckoutListener.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="3521790172251160989" varName="lastOpenedProject" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251160928" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="61" endLine="23" endPosition="0">
-      <varInfo nodeId="3521790172251160931" varName="dir" />
-      <varInfo nodeId="3521790172251160933" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251160972" fileName="ProjectCheckoutListener.java" startLine="26" startPosition="20" endLine="30" endPosition="9">
-      <varInfo nodeId="7171758144016813666" varName="openedProject" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251160951" fileName="ProjectCheckoutListener.java" startLine="24" startPosition="44" endLine="32" endPosition="18">
-      <varInfo nodeId="3521790172251160953" varName="rc" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251160917" fileName="ProjectCheckoutListener.java" startLine="18" startPosition="78" endLine="34" endPosition="17">
-      <varInfo nodeId="3521790172251160919" varName="files" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251160910" fileName="ProjectCheckoutListener.java" startLine="17" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="3521790172251160913" varName="project" />
-      <varInfo nodeId="3521790172251160915" varName="directory" />
-    </scopeInfo>
-    <unitInfo nodeId="3521790172251160927" fileName="ProjectCheckoutListener.java" startLine="19" startPosition="43" endLine="23" endPosition="5" unitName="jetbrains.mps.vcs.integration.ProjectCheckoutListener$1" />
-    <unitInfo nodeId="3521790172251160903" fileName="ProjectCheckoutListener.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.vcs.integration.ProjectCheckoutListener" />
-  </root>
-  <root nodeId="3521790172251160992">
-    <nodeInfo nodeId="3521790172251161017" fileName="OptimizeImportsCheckinHandler.java" startLine="31" startPosition="67" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3521790172251161022" fileName="OptimizeImportsCheckinHandler.java" startLine="33" startPosition="0" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="3521790172251161025" fileName="OptimizeImportsCheckinHandler.java" startLine="34" startPosition="28" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="3521790172251161036" fileName="OptimizeImportsCheckinHandler.java" startLine="37" startPosition="84" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161042" fileName="OptimizeImportsCheckinHandler.java" startLine="38" startPosition="29" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161052" fileName="OptimizeImportsCheckinHandler.java" startLine="42" startPosition="44" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251161059" fileName="OptimizeImportsCheckinHandler.java" startLine="47" startPosition="70" endLine="48" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251161073" fileName="OptimizeImportsCheckinHandler.java" startLine="50" startPosition="40" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251161082" fileName="OptimizeImportsCheckinHandler.java" startLine="51" startPosition="56" endLine="52" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161087" fileName="OptimizeImportsCheckinHandler.java" startLine="52" startPosition="43" endLine="53" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251161093" fileName="OptimizeImportsCheckinHandler.java" startLine="56" startPosition="34" endLine="57" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161104" fileName="OptimizeImportsCheckinHandler.java" startLine="60" startPosition="31" endLine="61" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161126" fileName="OptimizeImportsCheckinHandler.java" startLine="71" startPosition="63" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251161133" fileName="OptimizeImportsCheckinHandler.java" startLine="72" startPosition="58" endLine="73" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251161140" fileName="OptimizeImportsCheckinHandler.java" startLine="73" startPosition="86" endLine="74" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251161149" fileName="OptimizeImportsCheckinHandler.java" startLine="75" startPosition="39" endLine="76" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251161166" fileName="OptimizeImportsCheckinHandler.java" startLine="77" startPosition="28" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3521790172251161167" fileName="OptimizeImportsCheckinHandler.java" startLine="79" startPosition="9" endLine="80" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161172" fileName="OptimizeImportsCheckinHandler.java" startLine="81" startPosition="7" endLine="82" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251161177" fileName="OptimizeImportsCheckinHandler.java" startLine="82" startPosition="88" endLine="83" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161191" fileName="OptimizeImportsCheckinHandler.java" startLine="84" startPosition="11" endLine="85" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251161213" fileName="OptimizeImportsCheckinHandler.java" startLine="88" startPosition="31" endLine="89" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161225" fileName="OptimizeImportsCheckinHandler.java" startLine="90" startPosition="69" endLine="91" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161182" fileName="OptimizeImportsCheckinHandler.java" startLine="96" startPosition="29" endLine="97" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161233" fileName="OptimizeImportsCheckinHandler.java" startLine="99" startPosition="5" endLine="100" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251161008" fileName="OptimizeImportsCheckinHandler.java" startLine="109" startPosition="68" endLine="110" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251160998" fileName="OptimizeImportsCheckinHandler.java" startLine="103" startPosition="90" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsCheckinHandlerFactory#()V" />
-    <nodeInfo nodeId="3521790172251161112" fileName="OptimizeImportsCheckinHandler.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#()V" />
-    <nodeInfo nodeId="3521790172251161161" fileName="OptimizeImportsCheckinHandler.java" startLine="76" startPosition="123" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251161220" fileName="OptimizeImportsCheckinHandler.java" startLine="89" startPosition="96" endLine="92" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3521790172251161028" fileName="OptimizeImportsCheckinHandler.java" startLine="36" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsCheckinHandler#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/CheckinProjectPanel;)V" />
-    <nodeInfo nodeId="3521790172251161048" fileName="OptimizeImportsCheckinHandler.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSettings#()Lcom/intellij/openapi/vcs/VcsConfiguration;" />
-    <nodeInfo nodeId="3521790172251161089" fileName="OptimizeImportsCheckinHandler.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="restoreState#()V" />
-    <nodeInfo nodeId="3521790172251161100" fileName="OptimizeImportsCheckinHandler.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveState#()V" />
-    <nodeInfo nodeId="3521790172251161069" fileName="OptimizeImportsCheckinHandler.java" startLine="49" startPosition="41" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="3521790172251161002" fileName="OptimizeImportsCheckinHandler.java" startLine="106" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHandler#(Lcom/intellij/openapi/vcs/CheckinProjectPanel;)Lcom/intellij/openapi/vcs/checkin/CheckinHandler;" />
-    <nodeInfo nodeId="3521790172251161144" fileName="OptimizeImportsCheckinHandler.java" startLine="74" startPosition="72" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3521790172251161209" fileName="OptimizeImportsCheckinHandler.java" startLine="87" startPosition="65" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3521790172251161202" fileName="OptimizeImportsCheckinHandler.java" startLine="86" startPosition="30" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251161197" fileName="OptimizeImportsCheckinHandler.java" startLine="85" startPosition="56" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251161179" fileName="OptimizeImportsCheckinHandler.java" startLine="83" startPosition="35" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3521790172251161065" fileName="OptimizeImportsCheckinHandler.java" startLine="48" startPosition="86" endLine="66" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251161055" fileName="OptimizeImportsCheckinHandler.java" startLine="45" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBeforeCheckinConfigurationPanel#()Lcom/intellij/openapi/vcs/ui/RefreshableOnComponent;" />
-    <nodeInfo nodeId="3521790172251161121" fileName="OptimizeImportsCheckinHandler.java" startLine="70" startPosition="54" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251161117" fileName="OptimizeImportsCheckinHandler.java" startLine="68" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeCheckin#()Lcom/intellij/openapi/vcs/checkin/CheckinHandler/ReturnResult;" />
-    <scopeInfo nodeId="3521790172251161115" fileName="OptimizeImportsCheckinHandler.java" startLine="64" startPosition="29" endLine="64" endPosition="29" />
-    <scopeInfo nodeId="3521790172251161001" fileName="OptimizeImportsCheckinHandler.java" startLine="104" startPosition="51" endLine="104" endPosition="51" />
-    <scopeInfo nodeId="3521790172251161051" fileName="OptimizeImportsCheckinHandler.java" startLine="42" startPosition="44" endLine="43" endPosition="51" />
-    <scopeInfo nodeId="3521790172251161092" fileName="OptimizeImportsCheckinHandler.java" startLine="56" startPosition="34" endLine="57" endPosition="98" />
-    <scopeInfo nodeId="3521790172251161103" fileName="OptimizeImportsCheckinHandler.java" startLine="60" startPosition="31" endLine="61" endPosition="100" />
-    <scopeInfo nodeId="3521790172251161165" fileName="OptimizeImportsCheckinHandler.java" startLine="77" startPosition="28" endLine="78" endPosition="19" />
-    <scopeInfo nodeId="3521790172251161224" fileName="OptimizeImportsCheckinHandler.java" startLine="90" startPosition="69" endLine="91" endPosition="66" />
-    <scopeInfo nodeId="3521790172251161180" fileName="OptimizeImportsCheckinHandler.java" startLine="96" startPosition="0" endLine="97" endPosition="64">
-      <varInfo nodeId="3521790172251161188" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161181" fileName="OptimizeImportsCheckinHandler.java" startLine="96" startPosition="29" endLine="97" endPosition="64" />
-    <scopeInfo nodeId="3521790172251161007" fileName="OptimizeImportsCheckinHandler.java" startLine="109" startPosition="68" endLine="110" endPosition="74" />
-    <scopeInfo nodeId="3521790172251161035" fileName="OptimizeImportsCheckinHandler.java" startLine="37" startPosition="84" endLine="39" endPosition="25" />
-    <scopeInfo nodeId="3521790172251160998" fileName="OptimizeImportsCheckinHandler.java" startLine="103" startPosition="90" endLine="105" endPosition="5" />
-    <scopeInfo nodeId="3521790172251161072" fileName="OptimizeImportsCheckinHandler.java" startLine="50" startPosition="40" endLine="53" endPosition="21">
-      <varInfo nodeId="3521790172251161074" varName="panel" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161112" fileName="OptimizeImportsCheckinHandler.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="3521790172251161220" fileName="OptimizeImportsCheckinHandler.java" startLine="89" startPosition="96" endLine="92" endPosition="15">
-      <varInfo nodeId="3521790172251161222" varName="affectedModel" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161028" fileName="OptimizeImportsCheckinHandler.java" startLine="36" startPosition="0" endLine="40" endPosition="3">
-      <varInfo nodeId="3521790172251161033" varName="panel" />
-      <varInfo nodeId="3521790172251161031" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161048" fileName="OptimizeImportsCheckinHandler.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3521790172251161089" fileName="OptimizeImportsCheckinHandler.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3521790172251161100" fileName="OptimizeImportsCheckinHandler.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="3521790172251161212" fileName="OptimizeImportsCheckinHandler.java" startLine="88" startPosition="31" endLine="92" endPosition="15" />
-    <scopeInfo nodeId="3521790172251161148" fileName="OptimizeImportsCheckinHandler.java" startLine="75" startPosition="39" endLine="80" endPosition="34">
-      <varInfo nodeId="3521790172251161150" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161069" fileName="OptimizeImportsCheckinHandler.java" startLine="49" startPosition="41" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="3521790172251161002" fileName="OptimizeImportsCheckinHandler.java" startLine="106" startPosition="0" endLine="112" endPosition="0">
-      <varInfo nodeId="3521790172251161005" varName="panel" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161144" fileName="OptimizeImportsCheckinHandler.java" startLine="74" startPosition="72" endLine="81" endPosition="7">
-      <varInfo nodeId="3521790172251161146" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161209" fileName="OptimizeImportsCheckinHandler.java" startLine="87" startPosition="65" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="3521790172251161201" fileName="OptimizeImportsCheckinHandler.java" startLine="86" startPosition="30" endLine="94" endPosition="22" />
-    <scopeInfo nodeId="3521790172251161190" fileName="OptimizeImportsCheckinHandler.java" startLine="84" startPosition="11" endLine="95" endPosition="9">
-      <varInfo nodeId="3521790172251161192" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161058" fileName="OptimizeImportsCheckinHandler.java" startLine="47" startPosition="70" endLine="66" endPosition="6">
-      <varInfo nodeId="3521790172251161060" varName="optimizeImportsCheckBox" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161055" fileName="OptimizeImportsCheckinHandler.java" startLine="45" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="3521790172251161125" fileName="OptimizeImportsCheckinHandler.java" startLine="71" startPosition="63" endLine="98" endPosition="7">
-      <varInfo nodeId="3521790172251161173" varName="operationContext" />
-      <varInfo nodeId="3521790172251161141" varName="modelRepository" />
-      <varInfo nodeId="3521790172251161127" varName="affectedFiles" />
-      <varInfo nodeId="3521790172251161134" varName="affectedModels" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251161120" fileName="OptimizeImportsCheckinHandler.java" startLine="70" startPosition="54" endLine="100" endPosition="46" />
-    <scopeInfo nodeId="3521790172251161117" fileName="OptimizeImportsCheckinHandler.java" startLine="68" startPosition="0" endLine="102" endPosition="0" />
-    <unitInfo nodeId="3521790172251161208" fileName="OptimizeImportsCheckinHandler.java" startLine="87" startPosition="53" endLine="94" endPosition="11" unitName="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$2" />
-    <unitInfo nodeId="3521790172251160995" fileName="OptimizeImportsCheckinHandler.java" startLine="103" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory" />
-    <unitInfo nodeId="3521790172251161068" fileName="OptimizeImportsCheckinHandler.java" startLine="49" startPosition="15" endLine="66" endPosition="5" unitName="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$1" />
-    <unitInfo nodeId="3521790172251160992" fileName="OptimizeImportsCheckinHandler.java" startLine="31" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler" />
-  </root>
-  <root nodeId="3521790172251226878">
-    <nodeInfo nodeId="3521790172251226881" fileName="ModuleVcsPathPresenter.java" startLine="17" startPosition="62" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="3521790172251226884" fileName="ModuleVcsPathPresenter.java" startLine="18" startPosition="34" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myManager" />
-    <nodeInfo nodeId="3521790172251226895" fileName="ModuleVcsPathPresenter.java" startLine="21" startPosition="94" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251226899" fileName="ModuleVcsPathPresenter.java" startLine="22" startPosition="24" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3521790172251226914" fileName="ModuleVcsPathPresenter.java" startLine="27" startPosition="23" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251226928" fileName="ModuleVcsPathPresenter.java" startLine="31" startPosition="31" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3521790172251226945" fileName="ModuleVcsPathPresenter.java" startLine="34" startPosition="56" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251226974" fileName="ModuleVcsPathPresenter.java" startLine="39" startPosition="58" endLine="40" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251226990" fileName="ModuleVcsPathPresenter.java" startLine="42" startPosition="9" endLine="43" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251227006" fileName="ModuleVcsPathPresenter.java" startLine="48" startPosition="114" endLine="49" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251226909" fileName="ModuleVcsPathPresenter.java" startLine="26" startPosition="71" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251226939" fileName="ModuleVcsPathPresenter.java" startLine="33" startPosition="30" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251226966" fileName="ModuleVcsPathPresenter.java" startLine="38" startPosition="57" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251226887" fileName="ModuleVcsPathPresenter.java" startLine="20" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleVcsPathPresenter#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;)V" />
-    <nodeInfo nodeId="3521790172251226998" fileName="ModuleVcsPathPresenter.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentableRelativePath#(Lcom/intellij/openapi/vcs/changes/ContentRevision;Lcom/intellij/openapi/vcs/changes/ContentRevision;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3521790172251226934" fileName="ModuleVcsPathPresenter.java" startLine="32" startPosition="53" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3521790172251226959" fileName="ModuleVcsPathPresenter.java" startLine="37" startPosition="9" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3521790172251226924" fileName="ModuleVcsPathPresenter.java" startLine="30" startPosition="87" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3521790172251226916" fileName="ModuleVcsPathPresenter.java" startLine="29" startPosition="5" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3521790172251226903" fileName="ModuleVcsPathPresenter.java" startLine="25" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentableRelativePathFor#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/String;" />
-    <scopeInfo nodeId="3521790172251226913" fileName="ModuleVcsPathPresenter.java" startLine="27" startPosition="23" endLine="28" endPosition="16" />
-    <scopeInfo nodeId="3521790172251226944" fileName="ModuleVcsPathPresenter.java" startLine="34" startPosition="56" endLine="35" endPosition="85" />
-    <scopeInfo nodeId="3521790172251226973" fileName="ModuleVcsPathPresenter.java" startLine="39" startPosition="58" endLine="40" endPosition="85" />
-    <scopeInfo nodeId="3521790172251227005" fileName="ModuleVcsPathPresenter.java" startLine="48" startPosition="114" endLine="49" endPosition="106" />
-    <scopeInfo nodeId="3521790172251226894" fileName="ModuleVcsPathPresenter.java" startLine="21" startPosition="94" endLine="23" endPosition="24" />
-    <scopeInfo nodeId="3521790172251226938" fileName="ModuleVcsPathPresenter.java" startLine="33" startPosition="30" endLine="36" endPosition="11" />
-    <scopeInfo nodeId="3521790172251226965" fileName="ModuleVcsPathPresenter.java" startLine="38" startPosition="57" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="3521790172251226887" fileName="ModuleVcsPathPresenter.java" startLine="20" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="3521790172251226890" varName="project" />
-      <varInfo nodeId="3521790172251226892" varName="manager" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251226998" fileName="ModuleVcsPathPresenter.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="3521790172251227003" varName="toRevision" />
-      <varInfo nodeId="3521790172251227001" varName="fromRevision" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251226959" fileName="ModuleVcsPathPresenter.java" startLine="37" startPosition="9" endLine="42" endPosition="9">
-      <varInfo nodeId="3521790172251226963" varName="root" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251226927" fileName="ModuleVcsPathPresenter.java" startLine="31" startPosition="31" endLine="43" endPosition="54">
-      <varInfo nodeId="3521790172251226929" varName="baseDir" />
-    </scopeInfo>
-    <scopeInfo nodeId="3521790172251226924" fileName="ModuleVcsPathPresenter.java" startLine="30" startPosition="87" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3521790172251226908" fileName="ModuleVcsPathPresenter.java" startLine="26" startPosition="71" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="3521790172251226903" fileName="ModuleVcsPathPresenter.java" startLine="25" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="3521790172251226906" varName="file" />
-    </scopeInfo>
-    <unitInfo nodeId="3521790172251226922" fileName="ModuleVcsPathPresenter.java" startLine="30" startPosition="65" endLine="45" endPosition="5" unitName="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter$1" />
-    <unitInfo nodeId="3521790172251226878" fileName="ModuleVcsPathPresenter.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter" />
-  </root>
   <root nodeId="4124845871897257719">
     <nodeInfo nodeId="4124845871897257733" fileName="ModelDiffTool.java" startLine="35" startPosition="48" endLine="36" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4124845871897257748" fileName="ModelDiffTool.java" startLine="41" startPosition="47" endLine="42" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -367,114 +167,115 @@
     <nodeInfo nodeId="4124845871897258217" fileName="ModelMergeTool.java" startLine="40" startPosition="132" endLine="41" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4124845871897258229" fileName="ModelMergeTool.java" startLine="41" startPosition="131" endLine="42" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4124845871897258241" fileName="ModelMergeTool.java" startLine="42" startPosition="136" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4124845871897258242" fileName="ModelMergeTool.java" startLine="43" startPosition="0" endLine="44" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258256" fileName="ModelMergeTool.java" startLine="45" startPosition="36" endLine="46" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258265" fileName="ModelMergeTool.java" startLine="47" startPosition="7" endLine="48" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258271" fileName="ModelMergeTool.java" startLine="49" startPosition="36" endLine="50" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258291" fileName="ModelMergeTool.java" startLine="51" startPosition="55" endLine="52" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258303" fileName="ModelMergeTool.java" startLine="54" startPosition="29" endLine="55" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258323" fileName="ModelMergeTool.java" startLine="56" startPosition="26" endLine="57" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258329" fileName="ModelMergeTool.java" startLine="58" startPosition="9" endLine="59" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4124845871897258333" fileName="ModelMergeTool.java" startLine="60" startPosition="7" endLine="61" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258346" fileName="ModelMergeTool.java" startLine="62" startPosition="32" endLine="63" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258365" fileName="ModelMergeTool.java" startLine="65" startPosition="29" endLine="66" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258369" fileName="ModelMergeTool.java" startLine="68" startPosition="11" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258375" fileName="ModelMergeTool.java" startLine="70" startPosition="46" endLine="71" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258383" fileName="ModelMergeTool.java" startLine="71" startPosition="74" endLine="72" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258396" fileName="ModelMergeTool.java" startLine="74" startPosition="14" endLine="75" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258405" fileName="ModelMergeTool.java" startLine="75" startPosition="110" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4124845871897258410" fileName="ModelMergeTool.java" startLine="78" startPosition="29" endLine="79" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258414" fileName="ModelMergeTool.java" startLine="81" startPosition="11" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258425" fileName="ModelMergeTool.java" startLine="83" startPosition="46" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4124845871897258433" fileName="ModelMergeTool.java" startLine="84" startPosition="74" endLine="85" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258177" fileName="ModelMergeTool.java" startLine="88" startPosition="45" endLine="89" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258183" fileName="ModelMergeTool.java" startLine="89" startPosition="68" endLine="90" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258190" fileName="ModelMergeTool.java" startLine="91" startPosition="29" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258453" fileName="ModelMergeTool.java" startLine="96" startPosition="47" endLine="97" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1547210892702467216" fileName="ModelMergeTool.java" startLine="100" startPosition="45" endLine="101" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4124845871897258346" fileName="ModelMergeTool.java" startLine="44" startPosition="32" endLine="45" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258365" fileName="ModelMergeTool.java" startLine="47" startPosition="29" endLine="48" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258369" fileName="ModelMergeTool.java" startLine="50" startPosition="11" endLine="51" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258375" fileName="ModelMergeTool.java" startLine="52" startPosition="46" endLine="53" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258383" fileName="ModelMergeTool.java" startLine="53" startPosition="74" endLine="54" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258242" fileName="ModelMergeTool.java" startLine="56" startPosition="14" endLine="57" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258256" fileName="ModelMergeTool.java" startLine="58" startPosition="38" endLine="59" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258265" fileName="ModelMergeTool.java" startLine="60" startPosition="9" endLine="61" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258271" fileName="ModelMergeTool.java" startLine="62" startPosition="38" endLine="63" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258291" fileName="ModelMergeTool.java" startLine="64" startPosition="57" endLine="65" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258303" fileName="ModelMergeTool.java" startLine="67" startPosition="31" endLine="68" endPosition="364" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258323" fileName="ModelMergeTool.java" startLine="69" startPosition="28" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258329" fileName="ModelMergeTool.java" startLine="71" startPosition="11" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8507913872068585576" fileName="ModelMergeTool.java" startLine="73" startPosition="9" endLine="74" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4124845871897258333" fileName="ModelMergeTool.java" startLine="74" startPosition="39" endLine="75" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258396" fileName="ModelMergeTool.java" startLine="75" startPosition="105" endLine="76" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258405" fileName="ModelMergeTool.java" startLine="76" startPosition="110" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4124845871897258410" fileName="ModelMergeTool.java" startLine="79" startPosition="29" endLine="80" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258414" fileName="ModelMergeTool.java" startLine="82" startPosition="11" endLine="83" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258425" fileName="ModelMergeTool.java" startLine="84" startPosition="46" endLine="85" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4124845871897258433" fileName="ModelMergeTool.java" startLine="85" startPosition="74" endLine="86" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258177" fileName="ModelMergeTool.java" startLine="89" startPosition="45" endLine="90" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258183" fileName="ModelMergeTool.java" startLine="90" startPosition="68" endLine="91" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258190" fileName="ModelMergeTool.java" startLine="92" startPosition="29" endLine="93" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258453" fileName="ModelMergeTool.java" startLine="97" startPosition="47" endLine="98" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1547210892702467216" fileName="ModelMergeTool.java" startLine="101" startPosition="45" endLine="102" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4124845871897258158" fileName="ModelMergeTool.java" startLine="25" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeTool#()V" />
     <nodeInfo nodeId="4124845871897258140" fileName="ModelMergeTool.java" startLine="30" startPosition="72" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258251" fileName="ModelMergeTool.java" startLine="44" startPosition="123" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258321" fileName="ModelMergeTool.java" startLine="55" startPosition="362" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="64" startPosition="51" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4124845871897258373" fileName="ModelMergeTool.java" startLine="69" startPosition="28" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="77" startPosition="51" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4124845871897258418" fileName="ModelMergeTool.java" startLine="82" startPosition="28" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258438" fileName="ModelMergeTool.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
-    <nodeInfo nodeId="1547210892702467212" fileName="ModelMergeTool.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNewMergeEnabled#()Z" />
-    <nodeInfo nodeId="4124845871897258269" fileName="ModelMergeTool.java" startLine="48" startPosition="29" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258361" fileName="ModelMergeTool.java" startLine="63" startPosition="105" endLine="68" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4124845871897258406" fileName="ModelMergeTool.java" startLine="76" startPosition="0" endLine="81" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258251" fileName="ModelMergeTool.java" startLine="57" startPosition="125" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258321" fileName="ModelMergeTool.java" startLine="68" startPosition="364" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="46" startPosition="51" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4124845871897258373" fileName="ModelMergeTool.java" startLine="51" startPosition="28" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="78" startPosition="51" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4124845871897258418" fileName="ModelMergeTool.java" startLine="83" startPosition="28" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258438" fileName="ModelMergeTool.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
+    <nodeInfo nodeId="1547210892702467212" fileName="ModelMergeTool.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNewMergeEnabled#()Z" />
+    <nodeInfo nodeId="4124845871897258361" fileName="ModelMergeTool.java" startLine="45" startPosition="105" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4124845871897258269" fileName="ModelMergeTool.java" startLine="61" startPosition="31" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258406" fileName="ModelMergeTool.java" startLine="77" startPosition="0" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4124845871897258128" fileName="ModelMergeTool.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showTextMerge#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <nodeInfo nodeId="4124845871897258301" fileName="ModelMergeTool.java" startLine="53" startPosition="7" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258394" fileName="ModelMergeTool.java" startLine="74" startPosition="12" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4124845871897258344" fileName="ModelMergeTool.java" startLine="61" startPosition="103" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4124845871897258174" fileName="ModelMergeTool.java" startLine="37" startPosition="61" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4124845871897258162" fileName="ModelMergeTool.java" startLine="35" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <nodeInfo nodeId="4124845871897258301" fileName="ModelMergeTool.java" startLine="66" startPosition="9" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258394" fileName="ModelMergeTool.java" startLine="56" startPosition="12" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4124845871897258344" fileName="ModelMergeTool.java" startLine="43" startPosition="0" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4124845871897258174" fileName="ModelMergeTool.java" startLine="37" startPosition="61" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4124845871897258162" fileName="ModelMergeTool.java" startLine="35" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
     <scopeInfo nodeId="4124845871897258161" fileName="ModelMergeTool.java" startLine="26" startPosition="27" endLine="26" endPosition="27" />
     <scopeInfo nodeId="4124845871897258145" fileName="ModelMergeTool.java" startLine="31" startPosition="40" endLine="32" endPosition="33" />
-    <scopeInfo nodeId="4124845871897258255" fileName="ModelMergeTool.java" startLine="45" startPosition="36" endLine="46" endPosition="105" />
-    <scopeInfo nodeId="4124845871897258270" fileName="ModelMergeTool.java" startLine="49" startPosition="36" endLine="50" endPosition="87" />
-    <scopeInfo nodeId="4124845871897258290" fileName="ModelMergeTool.java" startLine="51" startPosition="55" endLine="52" endPosition="87" />
-    <scopeInfo nodeId="4124845871897258322" fileName="ModelMergeTool.java" startLine="56" startPosition="26" endLine="57" endPosition="33" />
-    <scopeInfo nodeId="4124845871897258364" fileName="ModelMergeTool.java" startLine="65" startPosition="29" endLine="66" endPosition="29" />
-    <scopeInfo nodeId="4124845871897258409" fileName="ModelMergeTool.java" startLine="78" startPosition="29" endLine="79" endPosition="29" />
-    <scopeInfo nodeId="4124845871897258188" fileName="ModelMergeTool.java" startLine="91" startPosition="0" endLine="92" endPosition="19">
+    <scopeInfo nodeId="4124845871897258364" fileName="ModelMergeTool.java" startLine="47" startPosition="29" endLine="48" endPosition="29" />
+    <scopeInfo nodeId="4124845871897258255" fileName="ModelMergeTool.java" startLine="58" startPosition="38" endLine="59" endPosition="107" />
+    <scopeInfo nodeId="4124845871897258270" fileName="ModelMergeTool.java" startLine="62" startPosition="38" endLine="63" endPosition="89" />
+    <scopeInfo nodeId="4124845871897258290" fileName="ModelMergeTool.java" startLine="64" startPosition="57" endLine="65" endPosition="89" />
+    <scopeInfo nodeId="4124845871897258322" fileName="ModelMergeTool.java" startLine="69" startPosition="28" endLine="70" endPosition="35" />
+    <scopeInfo nodeId="4124845871897258409" fileName="ModelMergeTool.java" startLine="79" startPosition="29" endLine="80" endPosition="29" />
+    <scopeInfo nodeId="4124845871897258188" fileName="ModelMergeTool.java" startLine="92" startPosition="0" endLine="93" endPosition="19">
       <varInfo nodeId="4124845871897258195" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258189" fileName="ModelMergeTool.java" startLine="91" startPosition="29" endLine="92" endPosition="19" />
-    <scopeInfo nodeId="4124845871897258443" fileName="ModelMergeTool.java" startLine="96" startPosition="47" endLine="97" endPosition="48" />
-    <scopeInfo nodeId="1547210892702467215" fileName="ModelMergeTool.java" startLine="100" startPosition="45" endLine="101" endPosition="65" />
+    <scopeInfo nodeId="4124845871897258189" fileName="ModelMergeTool.java" startLine="92" startPosition="29" endLine="93" endPosition="19" />
+    <scopeInfo nodeId="4124845871897258443" fileName="ModelMergeTool.java" startLine="97" startPosition="47" endLine="98" endPosition="48" />
+    <scopeInfo nodeId="1547210892702467215" fileName="ModelMergeTool.java" startLine="101" startPosition="45" endLine="102" endPosition="65" />
     <scopeInfo nodeId="4124845871897258158" fileName="ModelMergeTool.java" startLine="25" startPosition="0" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="4124845871897258374" fileName="ModelMergeTool.java" startLine="70" startPosition="46" endLine="72" endPosition="35">
+    <scopeInfo nodeId="4124845871897258374" fileName="ModelMergeTool.java" startLine="52" startPosition="46" endLine="54" endPosition="35">
       <varInfo nodeId="4124845871897258376" varName="bytes" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258424" fileName="ModelMergeTool.java" startLine="83" startPosition="46" endLine="85" endPosition="35">
+    <scopeInfo nodeId="4124845871897258424" fileName="ModelMergeTool.java" startLine="84" startPosition="46" endLine="86" endPosition="35">
       <varInfo nodeId="4124845871897258426" varName="bytes" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258175" fileName="ModelMergeTool.java" startLine="88" startPosition="0" endLine="90" endPosition="29">
+    <scopeInfo nodeId="4124845871897258175" fileName="ModelMergeTool.java" startLine="89" startPosition="0" endLine="91" endPosition="29">
       <varInfo nodeId="4124845871897258186" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258176" fileName="ModelMergeTool.java" startLine="88" startPosition="45" endLine="90" endPosition="29" />
+    <scopeInfo nodeId="4124845871897258176" fileName="ModelMergeTool.java" startLine="89" startPosition="45" endLine="91" endPosition="29" />
     <scopeInfo nodeId="4124845871897258133" fileName="ModelMergeTool.java" startLine="29" startPosition="51" endLine="33" endPosition="5">
       <varInfo nodeId="4124845871897258135" varName="ideaDiffTool" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="64" startPosition="51" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="77" startPosition="51" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="4124845871897258438" fileName="ModelMergeTool.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="46" startPosition="51" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="78" startPosition="51" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="4124845871897258438" fileName="ModelMergeTool.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="4124845871897258441" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="1547210892702467212" fileName="ModelMergeTool.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="4124845871897258302" fileName="ModelMergeTool.java" startLine="54" startPosition="29" endLine="59" endPosition="15">
+    <scopeInfo nodeId="1547210892702467212" fileName="ModelMergeTool.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="4124845871897258302" fileName="ModelMergeTool.java" startLine="67" startPosition="31" endLine="72" endPosition="17">
       <varInfo nodeId="4124845871897258304" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897258128" fileName="ModelMergeTool.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="4124845871897258129" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258345" fileName="ModelMergeTool.java" startLine="62" startPosition="32" endLine="73" endPosition="9">
+    <scopeInfo nodeId="4124845871897258345" fileName="ModelMergeTool.java" startLine="44" startPosition="32" endLine="55" endPosition="9">
       <varInfo nodeId="4124845871897258347" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258395" fileName="ModelMergeTool.java" startLine="74" startPosition="14" endLine="86" endPosition="9">
-      <varInfo nodeId="4124845871897258397" varName="dialog" />
-    </scopeInfo>
-    <scopeInfo nodeId="4124845871897258197" fileName="ModelMergeTool.java" startLine="38" startPosition="9" endLine="87" endPosition="7">
-      <varInfo nodeId="4124845871897258230" varName="newModel" />
+    <scopeInfo nodeId="4124845871897258395" fileName="ModelMergeTool.java" startLine="56" startPosition="14" endLine="87" endPosition="9">
       <varInfo nodeId="4124845871897258243" varName="modelDescriptor" />
-      <varInfo nodeId="4124845871897258199" varName="contents" />
-      <varInfo nodeId="4124845871897258206" varName="baseModel" />
       <varInfo nodeId="4124845871897258334" varName="context" />
       <varInfo nodeId="4124845871897258266" varName="errorMsg" />
+      <varInfo nodeId="4124845871897258397" varName="dialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="4124845871897258197" fileName="ModelMergeTool.java" startLine="38" startPosition="9" endLine="88" endPosition="7">
+      <varInfo nodeId="4124845871897258230" varName="newModel" />
+      <varInfo nodeId="4124845871897258199" varName="contents" />
+      <varInfo nodeId="4124845871897258206" varName="baseModel" />
       <varInfo nodeId="4124845871897258218" varName="mineModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258167" fileName="ModelMergeTool.java" startLine="36" startPosition="47" endLine="93" endPosition="5">
+    <scopeInfo nodeId="4124845871897258167" fileName="ModelMergeTool.java" startLine="36" startPosition="47" endLine="94" endPosition="5">
       <varInfo nodeId="4124845871897258169" varName="mrequest" />
     </scopeInfo>
-    <scopeInfo nodeId="4124845871897258162" fileName="ModelMergeTool.java" startLine="35" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="4124845871897258162" fileName="ModelMergeTool.java" startLine="35" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="4124845871897258165" varName="request" />
     </scopeInfo>
-    <unitInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="64" startPosition="39" endLine="68" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$1" />
-    <unitInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="77" startPosition="39" endLine="81" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$2" />
-    <unitInfo nodeId="4124845871897258127" fileName="ModelMergeTool.java" startLine="23" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModelMergeTool" />
+    <unitInfo nodeId="4124845871897258363" fileName="ModelMergeTool.java" startLine="46" startPosition="39" endLine="50" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$1" />
+    <unitInfo nodeId="4124845871897258408" fileName="ModelMergeTool.java" startLine="78" startPosition="39" endLine="82" endPosition="9" unitName="jetbrains.mps.vcs.integration.ModelMergeTool$2" />
+    <unitInfo nodeId="4124845871897258127" fileName="ModelMergeTool.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModelMergeTool" />
   </root>
   <root nodeId="4124845871897259248">
     <nodeInfo nodeId="4124845871897259285" fileName="MPSDiffRequestFactory.java" startLine="20" startPosition="75" endLine="21" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
