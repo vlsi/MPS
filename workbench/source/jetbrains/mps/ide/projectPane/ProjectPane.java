@@ -164,7 +164,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public Icon getIcon() {
-    return Icons.CLOSED_FOLDER;
+    return Icons.PROJECT_ICON;
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {

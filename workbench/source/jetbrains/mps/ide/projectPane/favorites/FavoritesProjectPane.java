@@ -144,7 +144,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public int getWeight() {
-    return 4;
+    return 10;
   }
 
   public SelectInTarget createSelectInTarget() {
