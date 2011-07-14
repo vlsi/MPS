@@ -59,8 +59,8 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7705742079275757547">
       <property name="name" nameId="tpck.1169194664001" value="getView" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="7705742079275757548" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7705742079275757549">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3f2l.~BaseDirectoryProjectView" resolveInfo="BaseDirectoryProjectView" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3108445741808049485">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3f2l.~FileViewProjectPane" resolveInfo="FileViewProjectPane" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7705742079275757550">
         <property name="name" nameId="tpck.1169194664001" value="project" />
@@ -82,13 +82,13 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7705742079275757558">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="97sb.~ProjectView%dgetProjectViewPaneById(java%dlang%dString)%ccom%dintellij%dide%dprojectView%dimpl%dAbstractProjectViewPane" resolveInfo="getProjectViewPaneById" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7705742079275757559">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3f2l.~BaseDirectoryProjectView" resolveInfo="BaseDirectoryProjectView" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3f2l.~BaseDirectoryProjectView%dID" resolveInfo="ID" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3f2l.~FileViewProjectPane%dID" resolveInfo="ID" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3f2l.~FileViewProjectPane" resolveInfo="FileViewProjectPane" />
                 </node>
               </node>
             </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7705742079275757560">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3f2l.~BaseDirectoryProjectView" resolveInfo="BaseDirectoryProjectView" />
+            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3108445741808049484">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3f2l.~FileViewProjectPane" resolveInfo="FileViewProjectPane" />
             </node>
           </node>
         </node>

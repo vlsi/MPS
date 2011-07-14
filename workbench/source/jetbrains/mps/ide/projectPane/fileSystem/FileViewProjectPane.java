@@ -48,10 +48,7 @@ import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.FolderTreeNode;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.*;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -66,6 +63,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -80,9 +78,12 @@ import java.awt.event.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
+public class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
   private static final Logger LOG = Logger.getLogger(FileViewProjectPane.class);
   private static final int DELAY = 10;
+  @NonNls
+  public static final String ID = "FileSystem";
+  public static final String TITLE = "File System";
 
   private final Project myProject;
   private final MessageBus myBus;
@@ -119,7 +120,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myEditorManager = fileEditorManager;
   }
 
-  protected abstract MPSTreeNode createRoot(Project project);
+  private MPSTreeNode createRoot(Project project) {
+    VirtualFile folder = project.getBaseDir();
+    assert folder != null;
+    return new ProjectTreeNode(project);
+  }
 
   public void dispose() {
     if (isInitialized()) {
@@ -442,6 +447,20 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         });
       }
     };
+  }
+
+  public String getTitle() {
+    return TITLE;
+  }
+
+  @NotNull
+  public String getId() {
+    return ID;
+  }
+
+  // used for sorting tabs in the tabbed pane
+  public int getWeight() {
+    return 5;
   }
 
   private class RefreshListener implements VirtualFileManagerListener {

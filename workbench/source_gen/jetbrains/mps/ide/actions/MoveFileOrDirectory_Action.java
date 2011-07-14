@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
+import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
@@ -85,7 +85,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
             ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
+                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
               }
             });
           } catch (IOException e) {

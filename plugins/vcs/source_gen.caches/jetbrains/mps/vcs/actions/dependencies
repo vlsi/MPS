@@ -63,7 +63,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane" />
     <classNode extendsClassName="jetbrains.mps.vcs.actions.AbstractShowInFileView" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.ShowInLogicalView" file="ShowInLogicalView.java">

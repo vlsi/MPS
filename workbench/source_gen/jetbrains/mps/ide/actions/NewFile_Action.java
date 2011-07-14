@@ -21,7 +21,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
+import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 
 public class NewFile_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -94,7 +94,7 @@ public class NewFile_Action extends GeneratedAction {
         ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, result[0], true);
+            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(FileViewProjectPane.ID).select(null, result[0], true);
           }
         });
       }

@@ -11,7 +11,7 @@
               factoryClass="com.intellij.ide.projectView.impl.ProjectViewToolWindowFactory"/>
   <!--MPS Patch Start: project view tool tabs-->
   <projectViewPane implementation="jetbrains.mps.ide.projectPane.ProjectPane"/>
-  <projectViewPane implementation="jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView"/>
+  <projectViewPane implementation="jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane"/>
   <projectViewPane implementation="jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane"/>
   <!--Fix NPE in FileTypeConfigurable, which needs TemplateDataLanguagePatterns-->
   <projectService serviceInterface="com.intellij.psi.templateLanguages.TemplateDataLanguageMappings"

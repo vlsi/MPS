@@ -5276,7 +5276,7 @@
     <nodeInfo nodeId="859814836892231143" fileName="MoveFileOrDirectory_Action.java" startLine="82" startPosition="13" endLine="83" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="859814836892231129" fileName="MoveFileOrDirectory_Action.java" startLine="83" startPosition="91" endLine="84" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3812855676554060548" fileName="MoveFileOrDirectory_Action.java" startLine="84" startPosition="101" endLine="85" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812855676554060559" fileName="MoveFileOrDirectory_Action.java" startLine="87" startPosition="33" endLine="88" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812855676554060559" fileName="MoveFileOrDirectory_Action.java" startLine="87" startPosition="33" endLine="88" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2589658255268083877" fileName="MoveFileOrDirectory_Action.java" startLine="96" startPosition="33" endLine="97" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6134778262076358054" fileName="MoveFileOrDirectory_Action.java" startLine="103" startPosition="49" endLine="104" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6134778262076358060" fileName="MoveFileOrDirectory_Action.java" startLine="104" startPosition="109" endLine="105" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5322,7 +5322,7 @@
     <scopeInfo nodeId="2589658255268083877" fileName="MoveFileOrDirectory_Action.java" startLine="62" startPosition="60" endLine="63" endPosition="19" />
     <scopeInfo nodeId="1557895745570983230" fileName="MoveFileOrDirectory_Action.java" startLine="73" startPosition="29" endLine="74" endPosition="15" />
     <scopeInfo nodeId="7454493598691787105" fileName="MoveFileOrDirectory_Action.java" startLine="80" startPosition="78" endLine="81" endPosition="21" />
-    <scopeInfo nodeId="3812855676554060558" fileName="MoveFileOrDirectory_Action.java" startLine="87" startPosition="33" endLine="88" endPosition="234" />
+    <scopeInfo nodeId="3812855676554060558" fileName="MoveFileOrDirectory_Action.java" startLine="87" startPosition="33" endLine="88" endPosition="229" />
     <scopeInfo nodeId="2589658255268083877" fileName="MoveFileOrDirectory_Action.java" startLine="96" startPosition="33" endLine="97" endPosition="93" />
     <scopeInfo nodeId="6134778262076358053" fileName="MoveFileOrDirectory_Action.java" startLine="103" startPosition="49" endLine="105" endPosition="18" />
     <scopeInfo nodeId="6134778262076358063" fileName="MoveFileOrDirectory_Action.java" startLine="107" startPosition="160" endLine="109" endPosition="18" />
@@ -6172,7 +6172,7 @@
     <nodeInfo nodeId="3858094006307874136" fileName="NewFile_Action.java" startLine="88" startPosition="13" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3858094006307874138" fileName="NewFile_Action.java" startLine="91" startPosition="8" endLine="92" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3812855676553894590" fileName="NewFile_Action.java" startLine="93" startPosition="30" endLine="94" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2477882740604863095" fileName="NewFile_Action.java" startLine="96" startPosition="29" endLine="97" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2477882740604863095" fileName="NewFile_Action.java" startLine="96" startPosition="29" endLine="97" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3858094006307618579" fileName="NewFile_Action.java" startLine="102" startPosition="33" endLine="103" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3858094006307618579" fileName="NewFile_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3858094006307618579" fileName="NewFile_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -6215,7 +6215,7 @@
     <scopeInfo nodeId="3858094006307874109" fileName="NewFile_Action.java" startLine="75" startPosition="32" endLine="76" endPosition="25" />
     <scopeInfo nodeId="3858094006307874113" fileName="NewFile_Action.java" startLine="78" startPosition="65" endLine="79" endPosition="25" />
     <scopeInfo nodeId="3858094006307874125" fileName="NewFile_Action.java" startLine="83" startPosition="19" endLine="84" endPosition="57" />
-    <scopeInfo nodeId="3812855676554056466" fileName="NewFile_Action.java" startLine="96" startPosition="29" endLine="97" endPosition="175" />
+    <scopeInfo nodeId="3812855676554056466" fileName="NewFile_Action.java" startLine="96" startPosition="29" endLine="97" endPosition="170" />
     <scopeInfo nodeId="3858094006307618579" fileName="NewFile_Action.java" startLine="102" startPosition="33" endLine="103" endPosition="81" />
     <scopeInfo nodeId="3858094006307618579" fileName="NewFile_Action.java" startLine="30" startPosition="27" endLine="33" endPosition="41" />
     <scopeInfo nodeId="3858094006307618579" fileName="NewFile_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" />
@@ -6277,7 +6277,7 @@
     <nodeInfo nodeId="3858094006307790646" fileName="NewDirectory_Action.java" startLine="88" startPosition="13" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3858094006307749556" fileName="NewDirectory_Action.java" startLine="91" startPosition="8" endLine="92" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3812855676554056472" fileName="NewDirectory_Action.java" startLine="93" startPosition="30" endLine="94" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812855676554056483" fileName="NewDirectory_Action.java" startLine="96" startPosition="29" endLine="97" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812855676554056483" fileName="NewDirectory_Action.java" startLine="96" startPosition="29" endLine="97" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="102" startPosition="33" endLine="103" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -6320,7 +6320,7 @@
     <scopeInfo nodeId="3858094006307790601" fileName="NewDirectory_Action.java" startLine="75" startPosition="32" endLine="76" endPosition="25" />
     <scopeInfo nodeId="3858094006307790620" fileName="NewDirectory_Action.java" startLine="78" startPosition="65" endLine="79" endPosition="25" />
     <scopeInfo nodeId="3858094006307874053" fileName="NewDirectory_Action.java" startLine="83" startPosition="19" endLine="84" endPosition="62" />
-    <scopeInfo nodeId="3812855676554056482" fileName="NewDirectory_Action.java" startLine="96" startPosition="29" endLine="97" endPosition="175" />
+    <scopeInfo nodeId="3812855676554056482" fileName="NewDirectory_Action.java" startLine="96" startPosition="29" endLine="97" endPosition="170" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="102" startPosition="33" endLine="103" endPosition="86" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="30" startPosition="32" endLine="33" endPosition="41" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" />

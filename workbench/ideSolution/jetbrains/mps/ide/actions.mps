@@ -22709,8 +22709,8 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2477882740604863105">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="97sb.~ProjectView%dgetProjectViewPaneById(java%dlang%dString)%ccom%dintellij%dide%dprojectView%dimpl%dAbstractProjectViewPane" resolveInfo="getProjectViewPaneById" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2477882740604863108">
-                              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3f2l.~BaseDirectoryProjectView" resolveInfo="BaseDirectoryProjectView" />
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3f2l.~BaseDirectoryProjectView%dID" resolveInfo="ID" />
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3f2l.~FileViewProjectPane%dID" resolveInfo="ID" />
+                              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3f2l.~FileViewProjectPane" resolveInfo="FileViewProjectPane" />
                             </node>
                           </node>
                         </node>
@@ -23070,8 +23070,8 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3812855676554056490">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="97sb.~ProjectView%dgetProjectViewPaneById(java%dlang%dString)%ccom%dintellij%dide%dprojectView%dimpl%dAbstractProjectViewPane" resolveInfo="getProjectViewPaneById" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3812855676554056491">
-                              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3f2l.~BaseDirectoryProjectView" resolveInfo="BaseDirectoryProjectView" />
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3f2l.~BaseDirectoryProjectView%dID" resolveInfo="ID" />
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3f2l.~FileViewProjectPane%dID" resolveInfo="ID" />
+                              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3f2l.~FileViewProjectPane" resolveInfo="FileViewProjectPane" />
                             </node>
                           </node>
                         </node>
@@ -23810,8 +23810,8 @@
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3812855676554060566">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="97sb.~ProjectView%dgetProjectViewPaneById(java%dlang%dString)%ccom%dintellij%dide%dprojectView%dimpl%dAbstractProjectViewPane" resolveInfo="getProjectViewPaneById" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3812855676554060567">
-                                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3f2l.~BaseDirectoryProjectView" resolveInfo="BaseDirectoryProjectView" />
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3f2l.~BaseDirectoryProjectView%dID" resolveInfo="ID" />
+                                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3f2l.~FileViewProjectPane" resolveInfo="FileViewProjectPane" />
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3f2l.~FileViewProjectPane%dID" resolveInfo="ID" />
                                   </node>
                                 </node>
                               </node>
