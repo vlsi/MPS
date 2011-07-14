@@ -9970,7 +9970,7 @@
           </node>
         </node>
         <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="6108265972537229328">
-          <property name="name" nameId="tpck.1169194664001" value="fullName" />
+          <property name="name" nameId="tpck.1169194664001" value="fullname" />
           <property name="value" nameId="tpkv.1107866755246" value="JetBrains MPS" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="437343344535871141">
             <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
