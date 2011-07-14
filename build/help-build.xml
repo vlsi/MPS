@@ -23,7 +23,7 @@
     <fail unless="output.dir" message="Property output.dir unspecified." />
     <mkdir dir="${tmpdir}" />
     <zip destfile="${output.dir}/${build.number}-src.zip" filesonly="true">
-      <zipfileset dir="${basedir}" prefix="MPS">
+      <zipfileset dir="${base_dir}" prefix="MPS">
         <exclude name="${deploy.dir}/**" />
         <exclude name="classes/**" />
         <exclude name="**/*.class" />

@@ -45,15 +45,15 @@ public class Module_Behavior {
   }
 
   public static SNode call_getModuleBaseDirectory_6863060912307757632(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_55204148067446946(MacrosFactory.moduleDescriptor(Module_Behavior.call_getModule_1213877515148(thisNode)).expandPath(MacrosFactory.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile()), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(MacrosFactory.moduleDescriptor(Module_Behavior.call_getModule_1213877515148(thisNode)).expandPath(MacrosFactory.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile()), thisNode);
   }
 
   public static SNode call_getModuleDescriptorFile_6863060912307764362(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_55204148067446946(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getPath(), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getPath(), thisNode);
   }
 
   public static SNode call_getClassesGen_3315989002810564857(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_55204148067446946(Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getPath(), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getPath(), thisNode);
   }
 
   public static List<SNode> call_getSourcesDirectories_1775602641704992067(SNode thisNode) {
@@ -152,7 +152,7 @@ public class Module_Behavior {
     // process classpath 
     for (String cp : ListSequence.fromList(stubpath)) {
       if (!(onlyUnderProjectBasedir) || cp.startsWith(projectBasedir)) {
-        ListSequence.fromList(result).addElement(PathHolder_Behavior.createPathHolder_55204148067446946(cp, thisNode));
+        ListSequence.fromList(result).addElement(PathHolder_Behavior.createPathHolder_7235580512916878209(cp, thisNode));
       }
     }
     return result;

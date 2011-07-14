@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1213104846985">
     <nodeInfo nodeId="1213104846985" fileName="Folder_Constraints.java" startLine="17" startPosition="31" endLine="18" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104846985" fileName="Folder_Constraints.java" startLine="22" startPosition="82" endLine="23" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -384,6 +384,31 @@
     <scopeInfo nodeId="1239623935212" fileName="AbstractProjectComponent_Constraints.java" startLine="19" startPosition="0" endLine="40" endPosition="0" />
     <unitInfo nodeId="1239623935212" fileName="AbstractProjectComponent_Constraints.java" startLine="23" startPosition="31" endLine="37" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints$1" />
     <unitInfo nodeId="1239623935212" fileName="AbstractProjectComponent_Constraints.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_Constraints" />
+  </root>
+  <root nodeId="1779718524640627537">
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="14" startPosition="33" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="28" startPosition="56" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1779718524640628331" fileName="Branding_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="32" startPosition="7" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="13" startPosition="69" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Branding_Constraints#()V" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="21" startPosition="80" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="20" startPosition="74" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="17" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="14" startPosition="33" endLine="15" endPosition="62" />
+    <scopeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="1779718524640627540" fileName="Branding_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="30" />
+    <scopeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="28" startPosition="56" endLine="30" endPosition="30" />
+    <scopeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="13" startPosition="69" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="21" startPosition="80" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="17" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Branding_Constraints$1" />
+    <unitInfo nodeId="1779718524640627537" fileName="Branding_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Branding_Constraints" />
   </root>
   <root nodeId="4159241239519649233">
     <nodeInfo nodeId="4159241239519649233" fileName="Plugin_Constraints.java" startLine="17" startPosition="31" endLine="18" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

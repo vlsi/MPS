@@ -162,93 +162,92 @@
     <unitInfo nodeId="1241455730164" fileName="ProjectAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" />
   </root>
   <root nodeId="1241460295003">
-    <nodeInfo nodeId="1241460436577" fileName="CustomMPSBuildGenerator.java" startLine="26" startPosition="65" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPathToBuildTools" />
-    <nodeInfo nodeId="1241460347292" fileName="CustomMPSBuildGenerator.java" startLine="29" startPosition="51" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1241460463116" fileName="CustomMPSBuildGenerator.java" startLine="33" startPosition="48" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241460480370" fileName="CustomMPSBuildGenerator.java" startLine="37" startPosition="39" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241530183517" fileName="CustomMPSBuildGenerator.java" startLine="41" startPosition="28" endLine="42" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1068566623012711115" fileName="CustomMPSBuildGenerator.java" startLine="45" startPosition="62" endLine="46" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241461874413" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="140" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6696460285989678931" fileName="CustomMPSBuildGenerator.java" startLine="50" startPosition="101" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1241513427963" fileName="CustomMPSBuildGenerator.java" startLine="51" startPosition="0" endLine="52" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462457541" fileName="CustomMPSBuildGenerator.java" startLine="52" startPosition="177" endLine="53" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462046533" fileName="CustomMPSBuildGenerator.java" startLine="53" startPosition="177" endLine="54" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462080184" fileName="CustomMPSBuildGenerator.java" startLine="54" startPosition="80" endLine="55" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462090778" fileName="CustomMPSBuildGenerator.java" startLine="55" startPosition="112" endLine="56" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6696460285989678932" fileName="CustomMPSBuildGenerator.java" startLine="56" startPosition="105" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1241462265545" fileName="CustomMPSBuildGenerator.java" startLine="57" startPosition="0" endLine="58" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462286494" fileName="CustomMPSBuildGenerator.java" startLine="60" startPosition="98" endLine="61" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462537227" fileName="CustomMPSBuildGenerator.java" startLine="62" startPosition="105" endLine="63" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462543957" fileName="CustomMPSBuildGenerator.java" startLine="63" startPosition="104" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462547837" fileName="CustomMPSBuildGenerator.java" startLine="64" startPosition="57" endLine="65" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241513050069" fileName="CustomMPSBuildGenerator.java" startLine="65" startPosition="173" endLine="66" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241514497971" fileName="CustomMPSBuildGenerator.java" startLine="69" startPosition="103" endLine="70" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241513551034" fileName="CustomMPSBuildGenerator.java" startLine="71" startPosition="5" endLine="72" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6696460285989678933" fileName="CustomMPSBuildGenerator.java" startLine="72" startPosition="40" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636454285" fileName="CustomMPSBuildGenerator.java" startLine="73" startPosition="0" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241528711530" fileName="CustomMPSBuildGenerator.java" startLine="74" startPosition="36" endLine="75" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528703986" fileName="CustomMPSBuildGenerator.java" startLine="75" startPosition="114" endLine="76" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528704001" fileName="CustomMPSBuildGenerator.java" startLine="76" startPosition="130" endLine="77" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528704010" fileName="CustomMPSBuildGenerator.java" startLine="78" startPosition="21" endLine="79" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528774338" fileName="CustomMPSBuildGenerator.java" startLine="79" startPosition="70" endLine="80" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241528975016" fileName="CustomMPSBuildGenerator.java" startLine="81" startPosition="12" endLine="82" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241529084902" fileName="CustomMPSBuildGenerator.java" startLine="83" startPosition="5" endLine="84" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241538805968" fileName="CustomMPSBuildGenerator.java" startLine="84" startPosition="85" endLine="85" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7819841746799323909" fileName="CustomMPSBuildGenerator.java" startLine="87" startPosition="25" endLine="88" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462370968" fileName="CustomMPSBuildGenerator.java" startLine="93" startPosition="66" endLine="94" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241462373817" fileName="CustomMPSBuildGenerator.java" startLine="94" startPosition="122" endLine="95" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462389829" fileName="CustomMPSBuildGenerator.java" startLine="95" startPosition="129" endLine="96" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462413207" fileName="CustomMPSBuildGenerator.java" startLine="96" startPosition="119" endLine="97" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241462443966" fileName="CustomMPSBuildGenerator.java" startLine="97" startPosition="240" endLine="98" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241528704037" fileName="CustomMPSBuildGenerator.java" startLine="81" startPosition="10" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1241460295005" fileName="CustomMPSBuildGenerator.java" startLine="28" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomMPSBuildGenerator#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="1241514482054" fileName="CustomMPSBuildGenerator.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241460422222" fileName="CustomMPSBuildGenerator.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPathToBuildTools#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1241460466826" fileName="CustomMPSBuildGenerator.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPathToBuildTools#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1241530165165" fileName="CustomMPSBuildGenerator.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="1068566623012711112" fileName="CustomMPSBuildGenerator.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleReferencesToAdd#()Ljava/util/List;" />
-    <nodeInfo nodeId="7819841746799323905" fileName="CustomMPSBuildGenerator.java" startLine="86" startPosition="27" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7819841746799323898" fileName="CustomMPSBuildGenerator.java" startLine="85" startPosition="65" endLine="90" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241528704008" fileName="CustomMPSBuildGenerator.java" startLine="77" startPosition="40" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241462141060" fileName="CustomMPSBuildGenerator.java" startLine="59" startPosition="56" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1241462303819" fileName="CustomMPSBuildGenerator.java" startLine="92" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLibraryFolder#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="58" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1241461874401" fileName="CustomMPSBuildGenerator.java" startLine="48" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljava/lang/Runnable;" />
-    <scopeInfo nodeId="1241460295008" fileName="CustomMPSBuildGenerator.java" startLine="29" startPosition="51" endLine="30" endPosition="19" />
-    <scopeInfo nodeId="1241460422225" fileName="CustomMPSBuildGenerator.java" startLine="33" startPosition="48" endLine="34" endPosition="35" />
-    <scopeInfo nodeId="1241460466829" fileName="CustomMPSBuildGenerator.java" startLine="37" startPosition="39" endLine="38" endPosition="35" />
-    <scopeInfo nodeId="1241530165168" fileName="CustomMPSBuildGenerator.java" startLine="41" startPosition="28" endLine="42" endPosition="78" />
-    <scopeInfo nodeId="1068566623012711114" fileName="CustomMPSBuildGenerator.java" startLine="45" startPosition="62" endLine="46" endPosition="178" />
-    <scopeInfo nodeId="1241462141062" fileName="CustomMPSBuildGenerator.java" startLine="60" startPosition="98" endLine="61" endPosition="106" />
-    <scopeInfo nodeId="1241514482055" fileName="CustomMPSBuildGenerator.java" startLine="69" startPosition="103" endLine="70" endPosition="107" />
-    <scopeInfo nodeId="1241528704038" fileName="CustomMPSBuildGenerator.java" startLine="81" startPosition="12" endLine="82" endPosition="89" />
-    <scopeInfo nodeId="7819841746799323908" fileName="CustomMPSBuildGenerator.java" startLine="87" startPosition="25" endLine="88" endPosition="88" />
-    <scopeInfo nodeId="1241528704009" fileName="CustomMPSBuildGenerator.java" startLine="78" startPosition="21" endLine="80" endPosition="96">
+    <nodeInfo nodeId="1241460436577" fileName="CustomMPSBuildGenerator.java" startLine="25" startPosition="65" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPathToBuildTools" />
+    <nodeInfo nodeId="1241460347292" fileName="CustomMPSBuildGenerator.java" startLine="28" startPosition="51" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1241460463116" fileName="CustomMPSBuildGenerator.java" startLine="32" startPosition="48" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241460480370" fileName="CustomMPSBuildGenerator.java" startLine="36" startPosition="39" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241530183517" fileName="CustomMPSBuildGenerator.java" startLine="40" startPosition="28" endLine="41" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1068566623012711115" fileName="CustomMPSBuildGenerator.java" startLine="44" startPosition="62" endLine="45" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241461874413" fileName="CustomMPSBuildGenerator.java" startLine="48" startPosition="140" endLine="49" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6696460285989678931" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="101" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1241513427963" fileName="CustomMPSBuildGenerator.java" startLine="50" startPosition="0" endLine="51" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462457541" fileName="CustomMPSBuildGenerator.java" startLine="51" startPosition="177" endLine="52" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462046533" fileName="CustomMPSBuildGenerator.java" startLine="52" startPosition="177" endLine="53" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462080184" fileName="CustomMPSBuildGenerator.java" startLine="53" startPosition="80" endLine="54" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462090778" fileName="CustomMPSBuildGenerator.java" startLine="54" startPosition="112" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6696460285989678932" fileName="CustomMPSBuildGenerator.java" startLine="55" startPosition="105" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1241462265545" fileName="CustomMPSBuildGenerator.java" startLine="56" startPosition="0" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462286494" fileName="CustomMPSBuildGenerator.java" startLine="59" startPosition="98" endLine="60" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462537227" fileName="CustomMPSBuildGenerator.java" startLine="61" startPosition="105" endLine="62" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462543957" fileName="CustomMPSBuildGenerator.java" startLine="62" startPosition="104" endLine="63" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462547837" fileName="CustomMPSBuildGenerator.java" startLine="63" startPosition="57" endLine="64" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241513050069" fileName="CustomMPSBuildGenerator.java" startLine="64" startPosition="173" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241514497971" fileName="CustomMPSBuildGenerator.java" startLine="68" startPosition="103" endLine="69" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241513551034" fileName="CustomMPSBuildGenerator.java" startLine="70" startPosition="5" endLine="71" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6696460285989678933" fileName="CustomMPSBuildGenerator.java" startLine="71" startPosition="40" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636454285" fileName="CustomMPSBuildGenerator.java" startLine="72" startPosition="0" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241528711530" fileName="CustomMPSBuildGenerator.java" startLine="73" startPosition="36" endLine="74" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528703986" fileName="CustomMPSBuildGenerator.java" startLine="74" startPosition="114" endLine="75" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528704001" fileName="CustomMPSBuildGenerator.java" startLine="75" startPosition="130" endLine="76" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528704010" fileName="CustomMPSBuildGenerator.java" startLine="77" startPosition="21" endLine="78" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528774338" fileName="CustomMPSBuildGenerator.java" startLine="78" startPosition="70" endLine="79" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241528975016" fileName="CustomMPSBuildGenerator.java" startLine="80" startPosition="12" endLine="81" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241529084902" fileName="CustomMPSBuildGenerator.java" startLine="82" startPosition="5" endLine="83" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7819841746799323909" fileName="CustomMPSBuildGenerator.java" startLine="85" startPosition="25" endLine="86" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462370968" fileName="CustomMPSBuildGenerator.java" startLine="91" startPosition="66" endLine="92" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241462373817" fileName="CustomMPSBuildGenerator.java" startLine="92" startPosition="122" endLine="93" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462389829" fileName="CustomMPSBuildGenerator.java" startLine="93" startPosition="129" endLine="94" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462413207" fileName="CustomMPSBuildGenerator.java" startLine="94" startPosition="119" endLine="95" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241462443966" fileName="CustomMPSBuildGenerator.java" startLine="95" startPosition="240" endLine="96" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241528704037" fileName="CustomMPSBuildGenerator.java" startLine="80" startPosition="10" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1241460295005" fileName="CustomMPSBuildGenerator.java" startLine="27" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomMPSBuildGenerator#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="1241514482054" fileName="CustomMPSBuildGenerator.java" startLine="67" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241460422222" fileName="CustomMPSBuildGenerator.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPathToBuildTools#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1241460466826" fileName="CustomMPSBuildGenerator.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPathToBuildTools#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1241530165165" fileName="CustomMPSBuildGenerator.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
+    <nodeInfo nodeId="1068566623012711112" fileName="CustomMPSBuildGenerator.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleReferencesToAdd#()Ljava/util/List;" />
+    <nodeInfo nodeId="7819841746799323905" fileName="CustomMPSBuildGenerator.java" startLine="84" startPosition="27" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7819841746799323898" fileName="CustomMPSBuildGenerator.java" startLine="83" startPosition="85" endLine="88" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241528704008" fileName="CustomMPSBuildGenerator.java" startLine="76" startPosition="40" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241462141060" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="56" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1241462303819" fileName="CustomMPSBuildGenerator.java" startLine="90" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLibraryFolder#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="57" startPosition="58" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1241461874401" fileName="CustomMPSBuildGenerator.java" startLine="47" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljava/lang/Runnable;" />
+    <scopeInfo nodeId="1241460295008" fileName="CustomMPSBuildGenerator.java" startLine="28" startPosition="51" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="1241460422225" fileName="CustomMPSBuildGenerator.java" startLine="32" startPosition="48" endLine="33" endPosition="35" />
+    <scopeInfo nodeId="1241460466829" fileName="CustomMPSBuildGenerator.java" startLine="36" startPosition="39" endLine="37" endPosition="35" />
+    <scopeInfo nodeId="1241530165168" fileName="CustomMPSBuildGenerator.java" startLine="40" startPosition="28" endLine="41" endPosition="78" />
+    <scopeInfo nodeId="1068566623012711114" fileName="CustomMPSBuildGenerator.java" startLine="44" startPosition="62" endLine="45" endPosition="178" />
+    <scopeInfo nodeId="1241462141062" fileName="CustomMPSBuildGenerator.java" startLine="59" startPosition="98" endLine="60" endPosition="106" />
+    <scopeInfo nodeId="1241514482055" fileName="CustomMPSBuildGenerator.java" startLine="68" startPosition="103" endLine="69" endPosition="107" />
+    <scopeInfo nodeId="1241528704038" fileName="CustomMPSBuildGenerator.java" startLine="80" startPosition="12" endLine="81" endPosition="89" />
+    <scopeInfo nodeId="7819841746799323908" fileName="CustomMPSBuildGenerator.java" startLine="85" startPosition="25" endLine="86" endPosition="88" />
+    <scopeInfo nodeId="1241528704009" fileName="CustomMPSBuildGenerator.java" startLine="77" startPosition="21" endLine="79" endPosition="96">
       <varInfo nodeId="1241528704011" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="1241460295005" fileName="CustomMPSBuildGenerator.java" startLine="28" startPosition="0" endLine="31" endPosition="3">
+    <scopeInfo nodeId="1241460295005" fileName="CustomMPSBuildGenerator.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
       <varInfo nodeId="1241460342896" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1241460422222" fileName="CustomMPSBuildGenerator.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1241460422222" fileName="CustomMPSBuildGenerator.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1241460432427" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1241460466826" fileName="CustomMPSBuildGenerator.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1241530165165" fileName="CustomMPSBuildGenerator.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1068566623012711112" fileName="CustomMPSBuildGenerator.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1241462499492" fileName="CustomMPSBuildGenerator.java" startLine="62" startPosition="105" endLine="66" endPosition="105">
+    <scopeInfo nodeId="1241460466826" fileName="CustomMPSBuildGenerator.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1241530165165" fileName="CustomMPSBuildGenerator.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1068566623012711112" fileName="CustomMPSBuildGenerator.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1241462499492" fileName="CustomMPSBuildGenerator.java" startLine="61" startPosition="105" endLine="65" endPosition="105">
       <varInfo nodeId="1241462537228" varName="oldFolder" />
       <varInfo nodeId="1241462543958" varName="newFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="7819841746799323905" fileName="CustomMPSBuildGenerator.java" startLine="86" startPosition="27" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1241462303822" fileName="CustomMPSBuildGenerator.java" startLine="93" startPosition="66" endLine="98" endPosition="25">
+    <scopeInfo nodeId="7819841746799323905" fileName="CustomMPSBuildGenerator.java" startLine="84" startPosition="27" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1241462303822" fileName="CustomMPSBuildGenerator.java" startLine="91" startPosition="66" endLine="96" endPosition="25">
       <varInfo nodeId="1241462370969" varName="libraryFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="1241462111817" fileName="CustomMPSBuildGenerator.java" startLine="59" startPosition="56" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="1241462303819" fileName="CustomMPSBuildGenerator.java" startLine="92" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="1241462111817" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="56" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="1241462303819" fileName="CustomMPSBuildGenerator.java" startLine="90" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1241462336068" varName="prototypeFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="58" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="1241461874412" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="140" endLine="90" endPosition="6">
+    <scopeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="57" startPosition="58" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="1241461874412" fileName="CustomMPSBuildGenerator.java" startLine="48" startPosition="140" endLine="88" endPosition="6">
       <varInfo nodeId="1241528711531" varName="buildToolsPath" />
       <varInfo nodeId="1241528703987" varName="result" />
       <varInfo nodeId="1241528704002" varName="index" />
@@ -259,14 +258,14 @@
       <varInfo nodeId="1241462046534" varName="entries" />
       <varInfo nodeId="1241462265546" varName="libraryFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="1241461874401" fileName="CustomMPSBuildGenerator.java" startLine="48" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="1241461874401" fileName="CustomMPSBuildGenerator.java" startLine="47" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="1241461874403" varName="targetModelDescriptor" />
       <varInfo nodeId="1241461874405" varName="name" />
       <varInfo nodeId="1241461874409" varName="selectedData" />
       <varInfo nodeId="1241461874407" varName="basedir" />
     </scopeInfo>
-    <unitInfo nodeId="7819841746799323903" fileName="CustomMPSBuildGenerator.java" startLine="86" startPosition="15" endLine="90" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSBuildGenerator$1" />
-    <unitInfo nodeId="1241460295003" fileName="CustomMPSBuildGenerator.java" startLine="26" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSBuildGenerator" />
+    <unitInfo nodeId="7819841746799323903" fileName="CustomMPSBuildGenerator.java" startLine="84" startPosition="15" endLine="88" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSBuildGenerator$1" />
+    <unitInfo nodeId="1241460295003" fileName="CustomMPSBuildGenerator.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CustomMPSBuildGenerator" />
   </root>
   <root nodeId="1289308558160174593">
     <nodeInfo nodeId="1289308558160174593" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="11" startPosition="68" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -1,4 +1,4 @@
-<project name="MPS-external" default="main" basedir="..">
+<project name="MPS-external" default="main">
   <property file="${ant.file}/../MPS.properties" />
   <fail unless="build.number" message="Property build.number unspecified." />
   <fail unless="build.vcs.number" message="Property build.vcs.number unspecified." />
@@ -61,7 +61,6 @@
     <mkdir dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
   </target>
   <target name="do.the.job" depends="folders.create">
-    <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy todir="${deploy.dir}/MPS/bin">
       <fileset dir="${mps_home}/bin" excludes="**/*.hprof, " />
     </copy>
@@ -93,7 +92,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
       <param name="output.dir" value="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
-      <param name="basedir" value="${basedir}" />
+      <param name="base_dir" value="${base_dir}" />
     </antcall>
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
     <zip destfile="${deploy.dir}/MPS/lib/MPS-src.zip" duplicate="preserve" filesonly="true">
@@ -230,6 +229,7 @@
       <fileset dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mpstest.jar.tmp" />
+    <antcall target="pack.branding_g1a" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <copy todir="${deploy.dir}/MPS/license">
       <fileset dir="${mps_home}/license" />
@@ -346,6 +346,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.generationParameters" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.traceable" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodelTests" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.facet" />
@@ -445,7 +446,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/MPS/help-build.append.idea.version" />
       <param name="output.dir" value="${deploy.dir}/MPS" />
-      <param name="basedir" value="${basedir}" />
+      <param name="base_dir" value="${base_dir}" />
     </antcall>
     <delete dir="${deploy.dir}/MPS/help-build.append.idea.version" />
     <copy file="${mps_home}/entryPoints.xml" tofile="${deploy.dir}/MPS/entryPoints.xml" />
@@ -457,7 +458,7 @@
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/help-build.pack.mps.src" />
       <param name="output.dir" value="${deploy.dir}/" />
-      <param name="basedir" value="${basedir}" />
+      <param name="base_dir" value="${base_dir}" />
     </antcall>
     <delete dir="${deploy.dir}/help-build.pack.mps.src" />
     <copy todir="${deploy.dir}/${build.number}-buildTools.zip.tmp/tools">
@@ -482,10 +483,30 @@
     <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
   </target>
   <target name="replace_a82d1a">
-    <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy file="${mps_home}/core/kernel/classes/idea/IdeaApplicationInfo.xml" tofile="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_DATE__" value="${DSTAMP}" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__VERSION__" value="${version}" />
+  </target>
+  <target name="pack.branding_g1a">
+    <property name="tmpdir" value="${java.io.tmpdir}/branding_g1a_0" />
+    <property name="idea.application.info" value="${tmpdir}/IdeaApplicationInfo.xml" />
+    <mkdir dir="${java.io.tmpdir}/" />
+    <loadfile srcfile="${scripts.dir}/branding_g1a.xml" property="idea.application.info.contents">
+      <filterchain>
+        <expandproperties />
+      </filterchain>
+    </loadfile>
+    <echo file="${idea.application.info}">${idea.application.info.contents}</echo>
+    <jar destfile="${deploy.dir}/MPS/lib/branding.jar" duplicate="preserve" compress="true">
+      <zipfileset file="${idea.application.info}" prefix="idea" />
+      <zipfileset file="${mps_home}/core/kernel/source/MPS_16.png" />
+      <zipfileset file="${mps_home}/core/kernel/source/MPS_32.png" />
+      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/splash.png" />
+      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
+      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" />
+      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsSlogan.png" />
+    </jar>
+    <delete dir="${tmpdir}" />
   </target>
 </project>

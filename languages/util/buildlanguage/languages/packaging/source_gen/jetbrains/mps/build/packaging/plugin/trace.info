@@ -257,257 +257,346 @@
     <unitInfo nodeId="1221153700178" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup" />
   </root>
   <root nodeId="1222854011172">
-    <nodeInfo nodeId="1222949660688" fileName="BuildGeneratorImpl.java" startLine="41" startPosition="64" endLine="42" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="1222949688158" fileName="BuildGeneratorImpl.java" startLine="44" startPosition="46" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224777806214" fileName="BuildGeneratorImpl.java" startLine="45" startPosition="29" endLine="46" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224777996115" fileName="BuildGeneratorImpl.java" startLine="47" startPosition="62" endLine="48" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224170485232" fileName="BuildGeneratorImpl.java" startLine="49" startPosition="5" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225196270615" fileName="BuildGeneratorImpl.java" startLine="50" startPosition="37" endLine="51" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521479887" fileName="BuildGeneratorImpl.java" startLine="56" startPosition="69" endLine="57" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521479962" fileName="BuildGeneratorImpl.java" startLine="57" startPosition="49" endLine="58" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521479967" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="50" endLine="59" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6979612000521479974" fileName="BuildGeneratorImpl.java" startLine="59" startPosition="107" endLine="60" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6979612000521479980" fileName="BuildGeneratorImpl.java" startLine="60" startPosition="76" endLine="61" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6979612000521479990" fileName="BuildGeneratorImpl.java" startLine="61" startPosition="80" endLine="62" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6979612000521479997" fileName="BuildGeneratorImpl.java" startLine="62" startPosition="76" endLine="63" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521481991" fileName="BuildGeneratorImpl.java" startLine="63" startPosition="56" endLine="64" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6979612000521480020" fileName="BuildGeneratorImpl.java" startLine="66" startPosition="29" endLine="67" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8683696394983855211" fileName="BuildGeneratorImpl.java" startLine="67" startPosition="79" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6979612000521482038" fileName="BuildGeneratorImpl.java" startLine="71" startPosition="90" endLine="72" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521480032" fileName="BuildGeneratorImpl.java" startLine="78" startPosition="90" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521480039" fileName="BuildGeneratorImpl.java" startLine="80" startPosition="17" endLine="81" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521480049" fileName="BuildGeneratorImpl.java" startLine="83" startPosition="15" endLine="84" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8683696394983855000" fileName="BuildGeneratorImpl.java" startLine="84" startPosition="33" endLine="85" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8683696394983855109" fileName="BuildGeneratorImpl.java" startLine="85" startPosition="104" endLine="86" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521479937" fileName="BuildGeneratorImpl.java" startLine="88" startPosition="77" endLine="89" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521479942" fileName="BuildGeneratorImpl.java" startLine="89" startPosition="57" endLine="90" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8683696394983855230" fileName="BuildGeneratorImpl.java" startLine="92" startPosition="37" endLine="93" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1068566623012681020" fileName="BuildGeneratorImpl.java" startLine="104" startPosition="62" endLine="105" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223991390036" fileName="BuildGeneratorImpl.java" startLine="109" startPosition="32" endLine="110" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223991390045" fileName="BuildGeneratorImpl.java" startLine="111" startPosition="37" endLine="112" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7376433222636454485" fileName="BuildGeneratorImpl.java" startLine="112" startPosition="65" endLine="113" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1223991390054" fileName="BuildGeneratorImpl.java" startLine="113" startPosition="25" endLine="114" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223991390060" fileName="BuildGeneratorImpl.java" startLine="114" startPosition="56" endLine="115" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1223991390075" fileName="BuildGeneratorImpl.java" startLine="115" startPosition="121" endLine="116" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240394407338" fileName="BuildGeneratorImpl.java" startLine="116" startPosition="78" endLine="117" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223991390086" fileName="BuildGeneratorImpl.java" startLine="117" startPosition="50" endLine="118" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223991390095" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="14" endLine="120" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240394428626" fileName="BuildGeneratorImpl.java" startLine="121" startPosition="7" endLine="122" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223991404543" fileName="BuildGeneratorImpl.java" startLine="122" startPosition="45" endLine="123" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223991364734" fileName="BuildGeneratorImpl.java" startLine="124" startPosition="12" endLine="125" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225196493706" fileName="BuildGeneratorImpl.java" startLine="129" startPosition="64" endLine="130" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225196279763" fileName="BuildGeneratorImpl.java" startLine="130" startPosition="55" endLine="131" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225196513298" fileName="BuildGeneratorImpl.java" startLine="131" startPosition="45" endLine="132" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225196502478" fileName="BuildGeneratorImpl.java" startLine="133" startPosition="55" endLine="134" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225196535576" fileName="BuildGeneratorImpl.java" startLine="134" startPosition="48" endLine="135" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225196270604" fileName="BuildGeneratorImpl.java" startLine="136" startPosition="5" endLine="137" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222854358083" fileName="BuildGeneratorImpl.java" startLine="140" startPosition="140" endLine="141" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241461908144" fileName="BuildGeneratorImpl.java" startLine="143" startPosition="25" endLine="144" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636454165" fileName="BuildGeneratorImpl.java" startLine="149" startPosition="133" endLine="150" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241461839329" fileName="BuildGeneratorImpl.java" startLine="150" startPosition="25" endLine="151" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7376433222636454055" fileName="BuildGeneratorImpl.java" startLine="151" startPosition="111" endLine="152" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241461839336" fileName="BuildGeneratorImpl.java" startLine="152" startPosition="42" endLine="153" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241461839342" fileName="BuildGeneratorImpl.java" startLine="153" startPosition="60" endLine="154" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453105" fileName="BuildGeneratorImpl.java" startLine="154" startPosition="58" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241461839348" fileName="BuildGeneratorImpl.java" startLine="155" startPosition="22" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453651" fileName="BuildGeneratorImpl.java" startLine="156" startPosition="53" endLine="157" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241528543663" fileName="BuildGeneratorImpl.java" startLine="157" startPosition="27" endLine="158" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241461839355" fileName="BuildGeneratorImpl.java" startLine="158" startPosition="22" endLine="159" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241461839369" fileName="BuildGeneratorImpl.java" startLine="159" startPosition="114" endLine="160" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241461839378" fileName="BuildGeneratorImpl.java" startLine="161" startPosition="21" endLine="162" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241528578910" fileName="BuildGeneratorImpl.java" startLine="162" startPosition="70" endLine="163" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241528596524" fileName="BuildGeneratorImpl.java" startLine="164" startPosition="12" endLine="165" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241461839410" fileName="BuildGeneratorImpl.java" startLine="166" startPosition="5" endLine="167" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636454123" fileName="BuildGeneratorImpl.java" startLine="167" startPosition="77" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241461839419" fileName="BuildGeneratorImpl.java" startLine="168" startPosition="7" endLine="169" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241461839426" fileName="BuildGeneratorImpl.java" startLine="169" startPosition="63" endLine="170" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453377" fileName="BuildGeneratorImpl.java" startLine="170" startPosition="140" endLine="171" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241461839438" fileName="BuildGeneratorImpl.java" startLine="171" startPosition="18" endLine="172" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241461839445" fileName="BuildGeneratorImpl.java" startLine="172" startPosition="102" endLine="173" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241461839455" fileName="BuildGeneratorImpl.java" startLine="173" startPosition="112" endLine="174" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636454381" fileName="BuildGeneratorImpl.java" startLine="174" startPosition="100" endLine="175" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241461839463" fileName="BuildGeneratorImpl.java" startLine="175" startPosition="32" endLine="176" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241461839468" fileName="BuildGeneratorImpl.java" startLine="176" startPosition="65" endLine="177" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453303" fileName="BuildGeneratorImpl.java" startLine="177" startPosition="93" endLine="178" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1241461839476" fileName="BuildGeneratorImpl.java" startLine="178" startPosition="29" endLine="179" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241461839481" fileName="BuildGeneratorImpl.java" startLine="179" startPosition="73" endLine="180" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1241542919460" fileName="BuildGeneratorImpl.java" startLine="185" startPosition="25" endLine="186" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8683696394982846675" fileName="BuildGeneratorImpl.java" startLine="186" startPosition="49" endLine="187" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1241461908124" fileName="BuildGeneratorImpl.java" startLine="189" startPosition="7" endLine="190" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1241461908133" fileName="BuildGeneratorImpl.java" startLine="190" startPosition="86" endLine="191" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224166925335" fileName="BuildGeneratorImpl.java" startLine="195" startPosition="37" endLine="196" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224166994495" fileName="BuildGeneratorImpl.java" startLine="197" startPosition="47" endLine="198" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224167076395" fileName="BuildGeneratorImpl.java" startLine="198" startPosition="58" endLine="199" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224167095658" fileName="BuildGeneratorImpl.java" startLine="200" startPosition="5" endLine="201" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224167163196" fileName="BuildGeneratorImpl.java" startLine="204" startPosition="101" endLine="205" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224167471720" fileName="BuildGeneratorImpl.java" startLine="205" startPosition="96" endLine="206" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7376433222636453081" fileName="BuildGeneratorImpl.java" startLine="207" startPosition="63" endLine="208" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1224167141123" fileName="BuildGeneratorImpl.java" startLine="208" startPosition="28" endLine="209" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224167141131" fileName="BuildGeneratorImpl.java" startLine="210" startPosition="30" endLine="211" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1224167197687" fileName="BuildGeneratorImpl.java" startLine="212" startPosition="7" endLine="213" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224169995613" fileName="BuildGeneratorImpl.java" startLine="213" startPosition="65" endLine="214" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453163" fileName="BuildGeneratorImpl.java" startLine="214" startPosition="58" endLine="215" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1224167666678" fileName="BuildGeneratorImpl.java" startLine="216" startPosition="115" endLine="217" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224167666695" fileName="BuildGeneratorImpl.java" startLine="219" startPosition="73" endLine="220" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224167666701" fileName="BuildGeneratorImpl.java" startLine="220" startPosition="84" endLine="221" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224167774438" fileName="BuildGeneratorImpl.java" startLine="222" startPosition="73" endLine="223" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453149" fileName="BuildGeneratorImpl.java" startLine="227" startPosition="7" endLine="228" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1224168796641" fileName="BuildGeneratorImpl.java" startLine="228" startPosition="29" endLine="229" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224168807854" fileName="BuildGeneratorImpl.java" startLine="230" startPosition="27" endLine="231" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224168859747" fileName="BuildGeneratorImpl.java" startLine="233" startPosition="70" endLine="234" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224169030806" fileName="BuildGeneratorImpl.java" startLine="234" startPosition="231" endLine="235" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636454201" fileName="BuildGeneratorImpl.java" startLine="237" startPosition="5" endLine="238" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1224167850019" fileName="BuildGeneratorImpl.java" startLine="239" startPosition="67" endLine="240" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223991390093" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="12" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1223991361194" fileName="BuildGeneratorImpl.java" startLine="124" startPosition="10" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1241461839408" fileName="BuildGeneratorImpl.java" startLine="164" startPosition="10" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224777888496" fileName="BuildGeneratorImpl.java" startLine="46" startPosition="50" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="33" endLine="73" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="77" startPosition="33" endLine="80" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1224167141129" fileName="BuildGeneratorImpl.java" startLine="209" startPosition="60" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224167759857" fileName="BuildGeneratorImpl.java" startLine="221" startPosition="200" endLine="224" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224168798684" fileName="BuildGeneratorImpl.java" startLine="229" startPosition="41" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="238" startPosition="7" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="70" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleReferencesToAdd#()Ljava/util/List;" />
-    <nodeInfo nodeId="1225196315041" fileName="BuildGeneratorImpl.java" startLine="132" startPosition="18" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="142" startPosition="27" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1224168814055" fileName="BuildGeneratorImpl.java" startLine="232" startPosition="7" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8683696394984066698" fileName="BuildGeneratorImpl.java" startLine="90" startPosition="78" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7819841746799321421" fileName="BuildGeneratorImpl.java" startLine="141" startPosition="101" endLine="146" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="184" startPosition="67" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="66" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1241461839376" fileName="BuildGeneratorImpl.java" startLine="160" startPosition="40" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8683696394982846672" fileName="BuildGeneratorImpl.java" startLine="183" startPosition="106" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224166837677" fileName="BuildGeneratorImpl.java" startLine="194" startPosition="75" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6979612000521482024" fileName="BuildGeneratorImpl.java" startLine="68" startPosition="72" endLine="75" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="76" startPosition="75" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1224167666689" fileName="BuildGeneratorImpl.java" startLine="218" startPosition="64" endLine="225" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6979612000521480023" fileName="BuildGeneratorImpl.java" startLine="75" startPosition="15" endLine="83" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222863546137" fileName="BuildGeneratorImpl.java" startLine="43" startPosition="0" endLine="52" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildGeneratorImpl#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="1225396780423" fileName="BuildGeneratorImpl.java" startLine="139" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljava/lang/Runnable;" />
-    <nodeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="217" startPosition="53" endLine="226" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="87" startPosition="125" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="1224166787164" fileName="BuildGeneratorImpl.java" startLine="193" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createComponent#(Ljetbrains/mps/build/packaging/plugin/NodeData;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6979612000521479917" fileName="BuildGeneratorImpl.java" startLine="86" startPosition="93" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223991390040" fileName="BuildGeneratorImpl.java" startLine="110" startPosition="24" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225196270598" fileName="BuildGeneratorImpl.java" startLine="128" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValidDefaultSolutionName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1241461908112" fileName="BuildGeneratorImpl.java" startLine="182" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishGeneration#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1224167651025" fileName="BuildGeneratorImpl.java" startLine="215" startPosition="31" endLine="227" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223991352200" fileName="BuildGeneratorImpl.java" startLine="108" startPosition="76" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="107" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModelDescriptor#(Lcom/intellij/openapi/progress/ProgressIndicator;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="206" startPosition="74" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6979612000521479909" fileName="BuildGeneratorImpl.java" startLine="65" startPosition="72" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="148" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMPSLayout#(Ljetbrains/mps/smodel/SModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6979612000521479901" fileName="BuildGeneratorImpl.java" startLine="64" startPosition="111" endLine="99" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="203" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createContent#(Ljava/util/List;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="6979612000521479880" fileName="BuildGeneratorImpl.java" startLine="55" startPosition="123" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="6979612000521479867" fileName="BuildGeneratorImpl.java" startLine="54" startPosition="26" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="53" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#()V" />
-    <scopeInfo nodeId="1224777888497" fileName="BuildGeneratorImpl.java" startLine="47" startPosition="62" endLine="48" endPosition="108" />
-    <scopeInfo nodeId="6979612000521482030" fileName="BuildGeneratorImpl.java" startLine="71" startPosition="90" endLine="72" endPosition="79" />
-    <scopeInfo nodeId="6979612000521480031" fileName="BuildGeneratorImpl.java" startLine="78" startPosition="90" endLine="79" endPosition="58" />
-    <scopeInfo nodeId="8683696394984066700" fileName="BuildGeneratorImpl.java" startLine="92" startPosition="37" endLine="93" endPosition="37" />
-    <scopeInfo nodeId="1068566623012681012" fileName="BuildGeneratorImpl.java" startLine="104" startPosition="62" endLine="105" endPosition="77" />
-    <scopeInfo nodeId="1223991390094" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="14" endLine="120" endPosition="38" />
-    <scopeInfo nodeId="1223991361195" fileName="BuildGeneratorImpl.java" startLine="124" startPosition="12" endLine="125" endPosition="29" />
-    <scopeInfo nodeId="7819841746799321433" fileName="BuildGeneratorImpl.java" startLine="143" startPosition="25" endLine="144" endPosition="83" />
-    <scopeInfo nodeId="1241461839409" fileName="BuildGeneratorImpl.java" startLine="164" startPosition="12" endLine="165" endPosition="78" />
-    <scopeInfo nodeId="1224166837679" fileName="BuildGeneratorImpl.java" startLine="195" startPosition="37" endLine="196" endPosition="86" />
-    <scopeInfo nodeId="1224167141130" fileName="BuildGeneratorImpl.java" startLine="210" startPosition="30" endLine="211" endPosition="17" />
-    <scopeInfo nodeId="1224167759858" fileName="BuildGeneratorImpl.java" startLine="222" startPosition="73" endLine="223" endPosition="74" />
-    <scopeInfo nodeId="1224168798685" fileName="BuildGeneratorImpl.java" startLine="230" startPosition="27" endLine="231" endPosition="14" />
-    <scopeInfo nodeId="1224167835667" fileName="BuildGeneratorImpl.java" startLine="239" startPosition="67" endLine="240" endPosition="109" />
-    <scopeInfo nodeId="1225196315043" fileName="BuildGeneratorImpl.java" startLine="133" startPosition="55" endLine="135" endPosition="14" />
-    <scopeInfo nodeId="1241461839377" fileName="BuildGeneratorImpl.java" startLine="161" startPosition="21" endLine="163" endPosition="101">
+    <nodeInfo nodeId="1222949660688" fileName="BuildGeneratorImpl.java" startLine="45" startPosition="64" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="1222949688158" fileName="BuildGeneratorImpl.java" startLine="48" startPosition="46" endLine="49" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224777806214" fileName="BuildGeneratorImpl.java" startLine="49" startPosition="29" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224777996115" fileName="BuildGeneratorImpl.java" startLine="51" startPosition="62" endLine="52" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224170485232" fileName="BuildGeneratorImpl.java" startLine="53" startPosition="5" endLine="54" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225196270615" fileName="BuildGeneratorImpl.java" startLine="54" startPosition="37" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521479887" fileName="BuildGeneratorImpl.java" startLine="60" startPosition="69" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521479962" fileName="BuildGeneratorImpl.java" startLine="61" startPosition="49" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521479967" fileName="BuildGeneratorImpl.java" startLine="62" startPosition="50" endLine="63" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6979612000521479974" fileName="BuildGeneratorImpl.java" startLine="63" startPosition="107" endLine="64" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6979612000521479980" fileName="BuildGeneratorImpl.java" startLine="64" startPosition="76" endLine="65" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6979612000521479990" fileName="BuildGeneratorImpl.java" startLine="65" startPosition="80" endLine="66" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6979612000521479997" fileName="BuildGeneratorImpl.java" startLine="66" startPosition="76" endLine="67" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521481991" fileName="BuildGeneratorImpl.java" startLine="67" startPosition="56" endLine="68" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6979612000521480020" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="29" endLine="71" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8683696394983855211" fileName="BuildGeneratorImpl.java" startLine="71" startPosition="79" endLine="72" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6979612000521482038" fileName="BuildGeneratorImpl.java" startLine="75" startPosition="90" endLine="76" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521480032" fileName="BuildGeneratorImpl.java" startLine="82" startPosition="90" endLine="83" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521480039" fileName="BuildGeneratorImpl.java" startLine="84" startPosition="17" endLine="85" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521480049" fileName="BuildGeneratorImpl.java" startLine="87" startPosition="15" endLine="88" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8683696394983855000" fileName="BuildGeneratorImpl.java" startLine="88" startPosition="33" endLine="89" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8683696394983855109" fileName="BuildGeneratorImpl.java" startLine="89" startPosition="104" endLine="90" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521479937" fileName="BuildGeneratorImpl.java" startLine="92" startPosition="77" endLine="93" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521479942" fileName="BuildGeneratorImpl.java" startLine="93" startPosition="57" endLine="94" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8683696394983855230" fileName="BuildGeneratorImpl.java" startLine="96" startPosition="37" endLine="97" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1068566623012681020" fileName="BuildGeneratorImpl.java" startLine="108" startPosition="62" endLine="109" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223991390036" fileName="BuildGeneratorImpl.java" startLine="113" startPosition="32" endLine="114" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223991390045" fileName="BuildGeneratorImpl.java" startLine="115" startPosition="37" endLine="116" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7376433222636454485" fileName="BuildGeneratorImpl.java" startLine="116" startPosition="65" endLine="117" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1223991390054" fileName="BuildGeneratorImpl.java" startLine="117" startPosition="25" endLine="118" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223991390060" fileName="BuildGeneratorImpl.java" startLine="118" startPosition="56" endLine="119" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223991390075" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="121" endLine="120" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240394407338" fileName="BuildGeneratorImpl.java" startLine="120" startPosition="78" endLine="121" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223991390086" fileName="BuildGeneratorImpl.java" startLine="121" startPosition="50" endLine="122" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223991390095" fileName="BuildGeneratorImpl.java" startLine="123" startPosition="14" endLine="124" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240394428626" fileName="BuildGeneratorImpl.java" startLine="125" startPosition="7" endLine="126" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223991404543" fileName="BuildGeneratorImpl.java" startLine="126" startPosition="45" endLine="127" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223991364734" fileName="BuildGeneratorImpl.java" startLine="128" startPosition="12" endLine="129" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225196493706" fileName="BuildGeneratorImpl.java" startLine="133" startPosition="64" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225196279763" fileName="BuildGeneratorImpl.java" startLine="134" startPosition="55" endLine="135" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225196513298" fileName="BuildGeneratorImpl.java" startLine="135" startPosition="45" endLine="136" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225196502478" fileName="BuildGeneratorImpl.java" startLine="137" startPosition="55" endLine="138" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225196535576" fileName="BuildGeneratorImpl.java" startLine="138" startPosition="48" endLine="139" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225196270604" fileName="BuildGeneratorImpl.java" startLine="140" startPosition="5" endLine="141" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854358083" fileName="BuildGeneratorImpl.java" startLine="144" startPosition="140" endLine="145" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241461908144" fileName="BuildGeneratorImpl.java" startLine="147" startPosition="25" endLine="148" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636454165" fileName="BuildGeneratorImpl.java" startLine="153" startPosition="133" endLine="154" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241461839329" fileName="BuildGeneratorImpl.java" startLine="154" startPosition="25" endLine="155" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7376433222636454055" fileName="BuildGeneratorImpl.java" startLine="155" startPosition="111" endLine="156" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241461839336" fileName="BuildGeneratorImpl.java" startLine="156" startPosition="42" endLine="157" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241461839342" fileName="BuildGeneratorImpl.java" startLine="157" startPosition="60" endLine="158" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453105" fileName="BuildGeneratorImpl.java" startLine="158" startPosition="58" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241461839348" fileName="BuildGeneratorImpl.java" startLine="159" startPosition="22" endLine="160" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453651" fileName="BuildGeneratorImpl.java" startLine="160" startPosition="53" endLine="161" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241528543663" fileName="BuildGeneratorImpl.java" startLine="161" startPosition="27" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241461839355" fileName="BuildGeneratorImpl.java" startLine="162" startPosition="22" endLine="163" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241461839369" fileName="BuildGeneratorImpl.java" startLine="163" startPosition="114" endLine="164" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241461839378" fileName="BuildGeneratorImpl.java" startLine="165" startPosition="21" endLine="166" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241528578910" fileName="BuildGeneratorImpl.java" startLine="166" startPosition="70" endLine="167" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241528596524" fileName="BuildGeneratorImpl.java" startLine="168" startPosition="12" endLine="169" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241461839410" fileName="BuildGeneratorImpl.java" startLine="170" startPosition="5" endLine="171" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="462257719548601484" fileName="BuildGeneratorImpl.java" startLine="171" startPosition="77" endLine="172" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="462257719548601508" fileName="BuildGeneratorImpl.java" startLine="172" startPosition="182" endLine="173" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636454123" fileName="BuildGeneratorImpl.java" startLine="173" startPosition="181" endLine="174" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241461839419" fileName="BuildGeneratorImpl.java" startLine="174" startPosition="7" endLine="175" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241461839426" fileName="BuildGeneratorImpl.java" startLine="175" startPosition="63" endLine="176" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453377" fileName="BuildGeneratorImpl.java" startLine="176" startPosition="140" endLine="177" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241461839438" fileName="BuildGeneratorImpl.java" startLine="177" startPosition="18" endLine="178" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241461839445" fileName="BuildGeneratorImpl.java" startLine="178" startPosition="102" endLine="179" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241461839455" fileName="BuildGeneratorImpl.java" startLine="179" startPosition="112" endLine="180" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636454381" fileName="BuildGeneratorImpl.java" startLine="180" startPosition="100" endLine="181" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241461839463" fileName="BuildGeneratorImpl.java" startLine="181" startPosition="32" endLine="182" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241461839468" fileName="BuildGeneratorImpl.java" startLine="182" startPosition="65" endLine="183" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453303" fileName="BuildGeneratorImpl.java" startLine="183" startPosition="93" endLine="184" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1241461839476" fileName="BuildGeneratorImpl.java" startLine="184" startPosition="29" endLine="185" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241461839481" fileName="BuildGeneratorImpl.java" startLine="185" startPosition="73" endLine="186" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1241542919460" fileName="BuildGeneratorImpl.java" startLine="191" startPosition="25" endLine="192" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8683696394982846675" fileName="BuildGeneratorImpl.java" startLine="192" startPosition="49" endLine="193" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241461908124" fileName="BuildGeneratorImpl.java" startLine="195" startPosition="7" endLine="196" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241461908133" fileName="BuildGeneratorImpl.java" startLine="196" startPosition="86" endLine="197" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224166925335" fileName="BuildGeneratorImpl.java" startLine="201" startPosition="37" endLine="202" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224166994495" fileName="BuildGeneratorImpl.java" startLine="203" startPosition="47" endLine="204" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224167076395" fileName="BuildGeneratorImpl.java" startLine="204" startPosition="58" endLine="205" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224167095658" fileName="BuildGeneratorImpl.java" startLine="206" startPosition="5" endLine="207" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224167163196" fileName="BuildGeneratorImpl.java" startLine="210" startPosition="101" endLine="211" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224167471720" fileName="BuildGeneratorImpl.java" startLine="211" startPosition="96" endLine="212" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7376433222636453081" fileName="BuildGeneratorImpl.java" startLine="213" startPosition="63" endLine="214" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1224167141123" fileName="BuildGeneratorImpl.java" startLine="214" startPosition="28" endLine="215" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224167141131" fileName="BuildGeneratorImpl.java" startLine="216" startPosition="30" endLine="217" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1224167197687" fileName="BuildGeneratorImpl.java" startLine="218" startPosition="7" endLine="219" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224169995613" fileName="BuildGeneratorImpl.java" startLine="219" startPosition="65" endLine="220" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453163" fileName="BuildGeneratorImpl.java" startLine="220" startPosition="58" endLine="221" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1224167666678" fileName="BuildGeneratorImpl.java" startLine="222" startPosition="115" endLine="223" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224167666695" fileName="BuildGeneratorImpl.java" startLine="225" startPosition="73" endLine="226" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224167666701" fileName="BuildGeneratorImpl.java" startLine="226" startPosition="84" endLine="227" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224167774438" fileName="BuildGeneratorImpl.java" startLine="228" startPosition="73" endLine="229" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636453149" fileName="BuildGeneratorImpl.java" startLine="233" startPosition="7" endLine="234" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1224168796641" fileName="BuildGeneratorImpl.java" startLine="234" startPosition="29" endLine="235" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224168807854" fileName="BuildGeneratorImpl.java" startLine="236" startPosition="27" endLine="237" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1224168859747" fileName="BuildGeneratorImpl.java" startLine="239" startPosition="70" endLine="240" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224169030806" fileName="BuildGeneratorImpl.java" startLine="240" startPosition="231" endLine="241" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7376433222636454201" fileName="BuildGeneratorImpl.java" startLine="243" startPosition="5" endLine="244" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1224167850019" fileName="BuildGeneratorImpl.java" startLine="245" startPosition="67" endLine="246" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="254" startPosition="49" endLine="255" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="255" startPosition="26" endLine="256" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="256" startPosition="67" endLine="257" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="257" startPosition="32" endLine="258" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="258" startPosition="32" endLine="259" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="259" startPosition="32" endLine="260" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="261" startPosition="7" endLine="262" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="262" startPosition="156" endLine="263" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="264" startPosition="9" endLine="265" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="265" startPosition="168" endLine="266" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="266" startPosition="45" endLine="267" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="267" startPosition="66" endLine="268" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="270" startPosition="9" endLine="271" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="271" startPosition="176" endLine="272" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="273" startPosition="11" endLine="274" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="274" startPosition="169" endLine="275" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="275" startPosition="47" endLine="276" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="276" startPosition="55" endLine="277" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="278" startPosition="11" endLine="279" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="280" startPosition="9" endLine="281" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="282" startPosition="7" endLine="283" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="291" startPosition="49" endLine="292" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="292" startPosition="26" endLine="293" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="293" startPosition="67" endLine="294" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="294" startPosition="32" endLine="295" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="295" startPosition="32" endLine="296" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="296" startPosition="32" endLine="297" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="298" startPosition="7" endLine="299" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="299" startPosition="156" endLine="300" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="301" startPosition="9" endLine="302" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="302" startPosition="168" endLine="303" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="303" startPosition="45" endLine="304" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="304" startPosition="66" endLine="305" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="307" startPosition="9" endLine="308" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="308" startPosition="176" endLine="309" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="310" startPosition="11" endLine="311" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="311" startPosition="169" endLine="312" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="312" startPosition="47" endLine="313" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="313" startPosition="59" endLine="314" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="315" startPosition="11" endLine="316" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="317" startPosition="9" endLine="318" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="319" startPosition="7" endLine="320" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223991390093" fileName="BuildGeneratorImpl.java" startLine="123" startPosition="12" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1223991361194" fileName="BuildGeneratorImpl.java" startLine="128" startPosition="10" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1241461839408" fileName="BuildGeneratorImpl.java" startLine="168" startPosition="10" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="250" startPosition="53" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0a0n0f#()V" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="287" startPosition="53" endLine="289" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0a0o0f#()V" />
+    <nodeInfo nodeId="1224777888496" fileName="BuildGeneratorImpl.java" startLine="50" startPosition="50" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="74" startPosition="33" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="81" startPosition="33" endLine="84" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1224167141129" fileName="BuildGeneratorImpl.java" startLine="215" startPosition="60" endLine="218" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224167759857" fileName="BuildGeneratorImpl.java" startLine="227" startPosition="200" endLine="230" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224168798684" fileName="BuildGeneratorImpl.java" startLine="235" startPosition="41" endLine="238" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="244" startPosition="7" endLine="247" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="95" startPosition="70" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleReferencesToAdd#()Ljava/util/List;" />
+    <nodeInfo nodeId="1225196315041" fileName="BuildGeneratorImpl.java" startLine="136" startPosition="18" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="146" startPosition="27" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1224168814055" fileName="BuildGeneratorImpl.java" startLine="238" startPosition="7" endLine="242" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8683696394984066698" fileName="BuildGeneratorImpl.java" startLine="94" startPosition="78" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7819841746799321421" fileName="BuildGeneratorImpl.java" startLine="145" startPosition="101" endLine="150" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="190" startPosition="67" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="73" startPosition="66" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1241461839376" fileName="BuildGeneratorImpl.java" startLine="164" startPosition="40" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8683696394982846672" fileName="BuildGeneratorImpl.java" startLine="189" startPosition="106" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224166837677" fileName="BuildGeneratorImpl.java" startLine="200" startPosition="75" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="263" startPosition="43" endLine="269" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="263" startPosition="43" endLine="269" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="272" startPosition="45" endLine="278" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="272" startPosition="45" endLine="278" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="300" startPosition="43" endLine="306" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="300" startPosition="43" endLine="306" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="309" startPosition="45" endLine="315" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="309" startPosition="45" endLine="315" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6979612000521482024" fileName="BuildGeneratorImpl.java" startLine="72" startPosition="72" endLine="79" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="80" startPosition="75" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1224167666689" fileName="BuildGeneratorImpl.java" startLine="224" startPosition="64" endLine="231" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6979612000521480023" fileName="BuildGeneratorImpl.java" startLine="79" startPosition="15" endLine="87" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222863546137" fileName="BuildGeneratorImpl.java" startLine="47" startPosition="0" endLine="56" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildGeneratorImpl#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="1225396780423" fileName="BuildGeneratorImpl.java" startLine="143" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljava/lang/Runnable;" />
+    <nodeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="223" startPosition="53" endLine="232" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="125" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="1224166787164" fileName="BuildGeneratorImpl.java" startLine="199" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createComponent#(Ljetbrains/mps/build/packaging/plugin/NodeData;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6979612000521479917" fileName="BuildGeneratorImpl.java" startLine="90" startPosition="93" endLine="101" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223991390040" fileName="BuildGeneratorImpl.java" startLine="114" startPosition="24" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225196270598" fileName="BuildGeneratorImpl.java" startLine="132" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValidDefaultSolutionName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1241461908112" fileName="BuildGeneratorImpl.java" startLine="188" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishGeneration#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="269" startPosition="9" endLine="280" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="269" startPosition="9" endLine="280" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="306" startPosition="9" endLine="317" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="306" startPosition="9" endLine="317" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1224167651025" fileName="BuildGeneratorImpl.java" startLine="221" startPosition="31" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1223991352200" fileName="BuildGeneratorImpl.java" startLine="112" startPosition="76" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="111" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModelDescriptor#(Lcom/intellij/openapi/progress/ProgressIndicator;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="260" startPosition="32" endLine="282" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="260" startPosition="32" endLine="282" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="297" startPosition="32" endLine="319" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="297" startPosition="32" endLine="319" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="212" startPosition="74" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="253" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="290" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6979612000521479909" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="72" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6979612000521479901" fileName="BuildGeneratorImpl.java" startLine="68" startPosition="111" endLine="103" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="152" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMPSLayout#(Ljetbrains/mps/smodel/SModelDescriptor;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="209" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createContent#(Ljava/util/List;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="6979612000521479880" fileName="BuildGeneratorImpl.java" startLine="59" startPosition="123" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="6979612000521479867" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="26" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="57" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#()V" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="251" startPosition="44" endLine="251" endPosition="44" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="288" startPosition="44" endLine="288" endPosition="44" />
+    <scopeInfo nodeId="1224777888497" fileName="BuildGeneratorImpl.java" startLine="51" startPosition="62" endLine="52" endPosition="108" />
+    <scopeInfo nodeId="6979612000521482030" fileName="BuildGeneratorImpl.java" startLine="75" startPosition="90" endLine="76" endPosition="79" />
+    <scopeInfo nodeId="6979612000521480031" fileName="BuildGeneratorImpl.java" startLine="82" startPosition="90" endLine="83" endPosition="58" />
+    <scopeInfo nodeId="8683696394984066700" fileName="BuildGeneratorImpl.java" startLine="96" startPosition="37" endLine="97" endPosition="37" />
+    <scopeInfo nodeId="1068566623012681012" fileName="BuildGeneratorImpl.java" startLine="108" startPosition="62" endLine="109" endPosition="77" />
+    <scopeInfo nodeId="1223991390094" fileName="BuildGeneratorImpl.java" startLine="123" startPosition="14" endLine="124" endPosition="38" />
+    <scopeInfo nodeId="1223991361195" fileName="BuildGeneratorImpl.java" startLine="128" startPosition="12" endLine="129" endPosition="29" />
+    <scopeInfo nodeId="7819841746799321433" fileName="BuildGeneratorImpl.java" startLine="147" startPosition="25" endLine="148" endPosition="83" />
+    <scopeInfo nodeId="1241461839409" fileName="BuildGeneratorImpl.java" startLine="168" startPosition="12" endLine="169" endPosition="78" />
+    <scopeInfo nodeId="1224166837679" fileName="BuildGeneratorImpl.java" startLine="201" startPosition="37" endLine="202" endPosition="86" />
+    <scopeInfo nodeId="1224167141130" fileName="BuildGeneratorImpl.java" startLine="216" startPosition="30" endLine="217" endPosition="17" />
+    <scopeInfo nodeId="1224167759858" fileName="BuildGeneratorImpl.java" startLine="228" startPosition="73" endLine="229" endPosition="74" />
+    <scopeInfo nodeId="1224168798685" fileName="BuildGeneratorImpl.java" startLine="236" startPosition="27" endLine="237" endPosition="14" />
+    <scopeInfo nodeId="1224167835667" fileName="BuildGeneratorImpl.java" startLine="245" startPosition="67" endLine="246" endPosition="109" />
+    <scopeInfo nodeId="1225196315043" fileName="BuildGeneratorImpl.java" startLine="137" startPosition="55" endLine="139" endPosition="14" />
+    <scopeInfo nodeId="1241461839377" fileName="BuildGeneratorImpl.java" startLine="165" startPosition="21" endLine="167" endPosition="101">
       <varInfo nodeId="1241461839379" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="8683696394982846674" fileName="BuildGeneratorImpl.java" startLine="185" startPosition="25" endLine="187" endPosition="37" />
-    <scopeInfo nodeId="1224166956300" fileName="BuildGeneratorImpl.java" startLine="197" startPosition="47" endLine="199" endPosition="64">
+    <scopeInfo nodeId="8683696394982846674" fileName="BuildGeneratorImpl.java" startLine="191" startPosition="25" endLine="193" endPosition="37" />
+    <scopeInfo nodeId="1224166956300" fileName="BuildGeneratorImpl.java" startLine="203" startPosition="47" endLine="205" endPosition="64">
       <varInfo nodeId="1224166994496" varName="namespace" />
     </scopeInfo>
-    <scopeInfo nodeId="1224168814056" fileName="BuildGeneratorImpl.java" startLine="233" startPosition="70" endLine="235" endPosition="63" />
-    <scopeInfo nodeId="6979612000521482026" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="33" endLine="73" endPosition="17" />
-    <scopeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="33" endLine="73" endPosition="17" />
-    <scopeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="77" startPosition="33" endLine="80" endPosition="17" />
-    <scopeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="238" startPosition="7" endLine="241" endPosition="5" />
-    <scopeInfo nodeId="6979612000521480025" fileName="BuildGeneratorImpl.java" startLine="77" startPosition="33" endLine="81" endPosition="149" />
-    <scopeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="70" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="142" startPosition="27" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="184" startPosition="67" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="1224167666694" fileName="BuildGeneratorImpl.java" startLine="219" startPosition="73" endLine="224" endPosition="13">
+    <scopeInfo nodeId="1224168814056" fileName="BuildGeneratorImpl.java" startLine="239" startPosition="70" endLine="241" endPosition="63" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="250" startPosition="53" endLine="252" endPosition="5" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="287" startPosition="53" endLine="289" endPosition="5" />
+    <scopeInfo nodeId="6979612000521482026" fileName="BuildGeneratorImpl.java" startLine="74" startPosition="33" endLine="77" endPosition="17" />
+    <scopeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="74" startPosition="33" endLine="77" endPosition="17" />
+    <scopeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="81" startPosition="33" endLine="84" endPosition="17" />
+    <scopeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="244" startPosition="7" endLine="247" endPosition="5" />
+    <scopeInfo nodeId="6979612000521480025" fileName="BuildGeneratorImpl.java" startLine="81" startPosition="33" endLine="85" endPosition="149" />
+    <scopeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="95" startPosition="70" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="146" startPosition="27" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="264" startPosition="9" endLine="268" endPosition="56" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="273" startPosition="11" endLine="277" endPosition="66" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="301" startPosition="9" endLine="305" endPosition="56" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="310" startPosition="11" endLine="314" endPosition="66" />
+    <scopeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="190" startPosition="67" endLine="195" endPosition="0" />
+    <scopeInfo nodeId="1224167666694" fileName="BuildGeneratorImpl.java" startLine="225" startPosition="73" endLine="230" endPosition="13">
       <varInfo nodeId="1224167666696" varName="childComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="66" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1222854358081" fileName="BuildGeneratorImpl.java" startLine="140" startPosition="140" endLine="146" endPosition="6">
+    <scopeInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="73" startPosition="66" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1222854358081" fileName="BuildGeneratorImpl.java" startLine="144" startPosition="140" endLine="150" endPosition="6">
       <varInfo nodeId="1222854358084" varName="mpsLayout" />
     </scopeInfo>
-    <scopeInfo nodeId="1222863546140" fileName="BuildGeneratorImpl.java" startLine="44" startPosition="46" endLine="51" endPosition="50">
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="263" startPosition="43" endLine="269" endPosition="9" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="272" startPosition="45" endLine="278" endPosition="11" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="300" startPosition="43" endLine="306" endPosition="9" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="309" startPosition="45" endLine="315" endPosition="11" />
+    <scopeInfo nodeId="1222863546140" fileName="BuildGeneratorImpl.java" startLine="48" startPosition="46" endLine="55" endPosition="50">
       <varInfo nodeId="1224777806215" varName="projectName" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="76" startPosition="75" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6979612000521479936" fileName="BuildGeneratorImpl.java" startLine="88" startPosition="77" endLine="95" endPosition="19" />
-    <scopeInfo nodeId="1223991390044" fileName="BuildGeneratorImpl.java" startLine="111" startPosition="37" endLine="118" endPosition="96">
+    <scopeInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="80" startPosition="75" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="6979612000521479936" fileName="BuildGeneratorImpl.java" startLine="92" startPosition="77" endLine="99" endPosition="19" />
+    <scopeInfo nodeId="1223991390044" fileName="BuildGeneratorImpl.java" startLine="115" startPosition="37" endLine="122" endPosition="96">
       <varInfo nodeId="1223991390046" varName="projectBaseDir" />
       <varInfo nodeId="1223991390076" varName="mpsProject" />
       <varInfo nodeId="1223991390055" varName="solutionName" />
       <varInfo nodeId="1223991390061" varName="solutionBaseDir" />
     </scopeInfo>
-    <scopeInfo nodeId="1224166787167" fileName="BuildGeneratorImpl.java" startLine="194" startPosition="75" endLine="201" endPosition="16" />
-    <scopeInfo nodeId="1224167666688" fileName="BuildGeneratorImpl.java" startLine="218" startPosition="64" endLine="225" endPosition="11" />
-    <scopeInfo nodeId="1225196270603" fileName="BuildGeneratorImpl.java" startLine="129" startPosition="64" endLine="137" endPosition="42">
+    <scopeInfo nodeId="1224166787167" fileName="BuildGeneratorImpl.java" startLine="200" startPosition="75" endLine="207" endPosition="16" />
+    <scopeInfo nodeId="1224167666688" fileName="BuildGeneratorImpl.java" startLine="224" startPosition="64" endLine="231" endPosition="11" />
+    <scopeInfo nodeId="1225196270603" fileName="BuildGeneratorImpl.java" startLine="133" startPosition="64" endLine="141" endPosition="42">
       <varInfo nodeId="1225196493707" varName="solutionNamePrefix" />
       <varInfo nodeId="1225196513299" varName="count" />
       <varInfo nodeId="1225196279764" varName="solutionName" />
     </scopeInfo>
-    <scopeInfo nodeId="1241461908119" fileName="BuildGeneratorImpl.java" startLine="183" startPosition="106" endLine="191" endPosition="37">
+    <scopeInfo nodeId="1241461908119" fileName="BuildGeneratorImpl.java" startLine="189" startPosition="106" endLine="197" endPosition="37">
       <varInfo nodeId="1241461908125" varName="editorOpener" />
     </scopeInfo>
-    <scopeInfo nodeId="1222863546137" fileName="BuildGeneratorImpl.java" startLine="43" startPosition="0" endLine="52" endPosition="3">
+    <scopeInfo nodeId="1222863546137" fileName="BuildGeneratorImpl.java" startLine="47" startPosition="0" endLine="56" endPosition="3">
       <varInfo nodeId="1222949647138" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1225396780423" fileName="BuildGeneratorImpl.java" startLine="139" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="1225396780423" fileName="BuildGeneratorImpl.java" startLine="143" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="1222854358067" varName="targetModelDescriptor" />
       <varInfo nodeId="1222854358069" varName="name" />
       <varInfo nodeId="1222854358073" varName="selectedData" />
       <varInfo nodeId="1222854358071" varName="basedir" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="217" startPosition="53" endLine="226" endPosition="9" />
-    <scopeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="87" startPosition="125" endLine="97" endPosition="0">
+    <scopeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="223" startPosition="53" endLine="232" endPosition="9" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="270" startPosition="9" endLine="279" endPosition="73" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="307" startPosition="9" endLine="316" endPosition="73" />
+    <scopeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="125" endLine="101" endPosition="0">
       <varInfo nodeId="6979612000521479933" varName="progressIndicator" />
     </scopeInfo>
-    <scopeInfo nodeId="1224166787164" fileName="BuildGeneratorImpl.java" startLine="193" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="1224166787164" fileName="BuildGeneratorImpl.java" startLine="199" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="1224166834601" varName="data" />
       <varInfo nodeId="1224166879916" varName="targetSModel" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167651026" fileName="BuildGeneratorImpl.java" startLine="216" startPosition="115" endLine="226" endPosition="9">
+    <scopeInfo nodeId="1224167651026" fileName="BuildGeneratorImpl.java" startLine="222" startPosition="115" endLine="232" endPosition="9">
       <varInfo nodeId="1224167666679" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="1225196270598" fileName="BuildGeneratorImpl.java" startLine="128" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="1225196270598" fileName="BuildGeneratorImpl.java" startLine="132" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="1225196270601" varName="projectName" />
     </scopeInfo>
-    <scopeInfo nodeId="1241461908112" fileName="BuildGeneratorImpl.java" startLine="182" startPosition="0" endLine="193" endPosition="0">
+    <scopeInfo nodeId="1241461908112" fileName="BuildGeneratorImpl.java" startLine="188" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="1241461908115" varName="targetModelDescriptor" />
       <varInfo nodeId="1241461908117" varName="mpsLayout" />
     </scopeInfo>
-    <scopeInfo nodeId="1223991352201" fileName="BuildGeneratorImpl.java" startLine="109" startPosition="32" endLine="123" endPosition="78">
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="269" startPosition="9" endLine="280" endPosition="9" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="306" startPosition="9" endLine="317" endPosition="9" />
+    <scopeInfo nodeId="1223991352201" fileName="BuildGeneratorImpl.java" startLine="113" startPosition="32" endLine="127" endPosition="78">
       <varInfo nodeId="1223991390037" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="1223991159402" fileName="BuildGeneratorImpl.java" startLine="108" startPosition="76" endLine="126" endPosition="5" />
-    <scopeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="107" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="1223991159402" fileName="BuildGeneratorImpl.java" startLine="112" startPosition="76" endLine="130" endPosition="5" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="261" startPosition="7" endLine="281" endPosition="31" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="298" startPosition="7" endLine="318" endPosition="31" />
+    <scopeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="111" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="1240394372601" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167141122" fileName="BuildGeneratorImpl.java" startLine="207" startPosition="63" endLine="236" endPosition="7">
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="260" startPosition="32" endLine="282" endPosition="7" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="297" startPosition="32" endLine="319" endPosition="7" />
+    <scopeInfo nodeId="1224167141122" fileName="BuildGeneratorImpl.java" startLine="213" startPosition="63" endLine="242" endPosition="7">
       <varInfo nodeId="1224167141124" varName="component" />
       <varInfo nodeId="1224168796642" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521479912" fileName="BuildGeneratorImpl.java" startLine="66" startPosition="29" endLine="97" endPosition="15">
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="254" startPosition="49" endLine="283" endPosition="20" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="291" startPosition="49" endLine="320" endPosition="20" />
+    <scopeInfo nodeId="6979612000521479912" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="29" endLine="101" endPosition="15">
       <varInfo nodeId="8683696394983855001" varName="project" />
       <varInfo nodeId="6979612000521480021" varName="runnable" />
       <varInfo nodeId="8683696394983855212" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="1241461839327" fileName="BuildGeneratorImpl.java" startLine="149" startPosition="133" endLine="180" endPosition="21">
+    <scopeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="212" startPosition="74" endLine="243" endPosition="5" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="253" startPosition="0" endLine="285" endPosition="0" />
+    <scopeInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="290" startPosition="0" endLine="322" endPosition="0" />
+    <scopeInfo nodeId="1241461839327" fileName="BuildGeneratorImpl.java" startLine="153" startPosition="133" endLine="186" endPosition="21">
       <varInfo nodeId="1241461839464" varName="folder" />
       <varInfo nodeId="1241461839439" varName="zip" />
       <varInfo nodeId="1241461839356" varName="result" />
@@ -516,44 +605,45 @@
       <varInfo nodeId="1241528543664" varName="basedirPath" />
       <varInfo nodeId="1241461839337" varName="targetSModel" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="206" startPosition="74" endLine="237" endPosition="5" />
-    <scopeInfo nodeId="6979612000521479909" fileName="BuildGeneratorImpl.java" startLine="65" startPosition="72" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="148" startPosition="0" endLine="182" endPosition="0">
+    <scopeInfo nodeId="6979612000521479909" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="72" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="152" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="1241461839318" varName="targetModelDescriptor" />
       <varInfo nodeId="1241461839320" varName="name" />
       <varInfo nodeId="1241461839324" varName="selectedData" />
       <varInfo nodeId="1241461839322" varName="basedir" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167141118" fileName="BuildGeneratorImpl.java" startLine="204" startPosition="101" endLine="241" endPosition="5">
+    <scopeInfo nodeId="1224167141118" fileName="BuildGeneratorImpl.java" startLine="210" startPosition="101" endLine="247" endPosition="5">
       <varInfo nodeId="1224167163197" varName="createdComponent" />
       <varInfo nodeId="1224167471721" varName="topLevel" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="203" startPosition="0" endLine="243" endPosition="0">
+    <scopeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="209" startPosition="0" endLine="249" endPosition="0">
       <varInfo nodeId="1224167818490" varName="folder" />
       <varInfo nodeId="1224167141113" varName="selectedData" />
       <varInfo nodeId="1224167141116" varName="targetSModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521479886" fileName="BuildGeneratorImpl.java" startLine="56" startPosition="69" endLine="99" endPosition="36">
+    <scopeInfo nodeId="6979612000521479886" fileName="BuildGeneratorImpl.java" startLine="60" startPosition="69" endLine="103" endPosition="36">
       <varInfo nodeId="6979612000521479981" varName="projectBasedirPath" />
       <varInfo nodeId="6979612000521481992" varName="moduleReferencesToAdd" />
       <varInfo nodeId="6979612000521479968" varName="descriptor" />
       <varInfo nodeId="6979612000521479991" varName="modules" />
       <varInfo nodeId="6979612000521479975" varName="projectName" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521479880" fileName="BuildGeneratorImpl.java" startLine="55" startPosition="123" endLine="101" endPosition="0">
+    <scopeInfo nodeId="6979612000521479880" fileName="BuildGeneratorImpl.java" startLine="59" startPosition="123" endLine="105" endPosition="0">
       <varInfo nodeId="6979612000521479883" varName="progressIndicator" />
     </scopeInfo>
-    <scopeInfo nodeId="1222854026112" fileName="BuildGeneratorImpl.java" startLine="54" startPosition="26" endLine="101" endPosition="7" />
-    <scopeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="53" startPosition="0" endLine="103" endPosition="0" />
-    <unitInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="58" endLine="95" endPosition="17" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$4" />
-    <unitInfo nodeId="7819841746799321428" fileName="BuildGeneratorImpl.java" startLine="142" startPosition="15" endLine="146" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$2" />
-    <unitInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="184" startPosition="55" endLine="189" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
-    <unitInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="54" endLine="75" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
-    <unitInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="76" startPosition="63" endLine="83" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
-    <unitInfo nodeId="6979612000521479923" fileName="BuildGeneratorImpl.java" startLine="87" startPosition="50" endLine="97" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
-    <unitInfo nodeId="6979612000521479907" fileName="BuildGeneratorImpl.java" startLine="65" startPosition="60" endLine="99" endPosition="9" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$2" />
-    <unitInfo nodeId="6979612000521479873" fileName="BuildGeneratorImpl.java" startLine="55" startPosition="42" endLine="101" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$1" />
-    <unitInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="41" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl" />
+    <scopeInfo nodeId="1222854026112" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="26" endLine="105" endPosition="7" />
+    <scopeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="57" startPosition="0" endLine="107" endPosition="0" />
+    <unitInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="95" startPosition="58" endLine="99" endPosition="17" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$4" />
+    <unitInfo nodeId="7819841746799321428" fileName="BuildGeneratorImpl.java" startLine="146" startPosition="15" endLine="150" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$2" />
+    <unitInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="190" startPosition="55" endLine="195" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
+    <unitInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="73" startPosition="54" endLine="79" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
+    <unitInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="80" startPosition="63" endLine="87" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
+    <unitInfo nodeId="6979612000521479923" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="50" endLine="101" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
+    <unitInfo nodeId="6979612000521479907" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="60" endLine="103" endPosition="9" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$2" />
+    <unitInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="250" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0n0f" />
+    <unitInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="287" startPosition="0" endLine="323" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0o0f" />
+    <unitInfo nodeId="6979612000521479873" fileName="BuildGeneratorImpl.java" startLine="59" startPosition="42" endLine="105" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$1" />
+    <unitInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="45" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl" />
   </root>
   <root nodeId="1222950292812">
     <nodeInfo nodeId="1222950820920" fileName="BuildGeneratorUtil.java" startLine="29" startPosition="89" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

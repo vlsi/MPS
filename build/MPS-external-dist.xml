@@ -1,4 +1,5 @@
-<project name="MPS-external-dist" default="default" basedir="..">
+<project name="MPS-external-dist" default="default">
+  <property file="${ant.file}/../MPS.properties" />
   <import file="${ant.file}/../MPS-external-dist.xml" />
   <import file="${ant.file}/../MPS-external.xml" />
   <condition property="windows">
@@ -39,10 +40,10 @@
     <fail unless="build.number" message="Property build.number unspecified." />
     <property name="root.folder" value="MPS" />
     <property name="zip.file" value="${build.number}.zip" />
-    <property name="unix.startup.file" value="build/mps.sh" />
-    <property name="windows.startup.file" value="build/mps.bat" />
-    <property name="vmoptions.file" value="build/mps.vmoptions" />
-    <property name="help.file" value="help/mpshelp.jar" />
+    <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
+    <property name="windows.startup.file" value="${scripts.dir}/mps.bat" />
+    <property name="vmoptions.file" value="${scripts.dir}/mps.vmoptions" />
+    <property name="help.file" value="${mps_home}/help/mpshelp.jar" />
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${windows.startup.file}" eof="asis" eol="dos" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
@@ -62,9 +63,9 @@
     <fail unless="build.number" message="Property build.number unspecified." />
     <property name="root.folder" value="MPS" />
     <property name="tar.gz.file" value="${build.number}-linux.tar.gz" />
-    <property name="unix.startup.file" value="build/mps.sh" />
-    <property name="vmoptions.file" value="build/mps.vmoptions" />
-    <property name="help.file" value="help/mpshelp.jar" />
+    <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
+    <property name="vmoptions.file" value="${scripts.dir}/mps.vmoptions" />
+    <property name="help.file" value="${mps_home}/help/mpshelp.jar" />
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
@@ -79,18 +80,17 @@
   <target name="macos.dist">
     <fail unless="version" message="Property version unspecified." />
     <fail unless="build.number" message="Property build.number unspecified." />
-    <property name="scripts.folder" value="build" />
+    <property name="scripts.folder" value="${scripts.dir}" />
     <property name="info.plist.name" value="Info.plist" />
     <property name="info.plist" value="${scripts.folder}/${info.plist.name}" />
     <property name="info.plist.tmp" value="${deploy.dir}/Info.plist" />
-    <property name="icon.file" value="${mps_home}/build/resources/mps.icns" />
-    <property name="java.application.stub" value="${mps_home}/build/resources/mps" />
+    <property name="icon.file" value="${scripts.dir}/resources/mps.icns" />
+    <property name="java.application.stub" value="${scripts.dir}/resources/mps" />
     <property name="unix.startup.script" value="${scripts.folder}/mps.sh" />
     <property name="zip.file" value="${build.number}-macos.zip" />
     <property name="root.folder" value="MPS" />
     <property name="root.folder.dest" value="${root.folder}.app" />
-    <property name="help.file" value="help/mpshelp_mac.jar" />
-    <fail unless="mps_home" message="Property mps_home unspecified." />
+    <property name="help.file" value="${mps_home}/help/mpshelp_mac.jar" />
     <copy file="${info.plist}" tofile="${info.plist.tmp}" />
     <replace file="${info.plist.tmp}" token="$version$" value="${version}" />
     <replace file="${info.plist.tmp}" token="$build$" value="${build.number}" />
@@ -101,7 +101,7 @@
       <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${root.folder.dest}" excludes="**/*.dll, **/*.exe" />
       <zipfileset file="${info.plist.tmp}" prefix="${root.folder.dest}/Contents" />
       <zipfileset file="${icon.file}" prefix="${root.folder.dest}/Contents/Resources" />
-      <zipfileset file="${mps_home}/build/resources/mps.icns" prefix="${root.folder.dest}/Contents/Resources" />
+      <zipfileset file="${scripts.dir}/resources/mps.icns" prefix="${root.folder.dest}/Contents/Resources" />
       <zipfileset file="${java.application.stub}" prefix="${root.folder.dest}/Contents/MacOS" filemode="755" />
       <zipfileset file="${unix.startup.script}" prefix="${root.folder.dest}" filemode="755" />
       <zipfileset file="${scripts.folder}/mps.vmoptions" prefix="${root.folder.dest}/bin" />
@@ -112,7 +112,7 @@
   <target name="windows.dist" if="windows">
     <fail unless="version" message="Property version unspecified." />
     <fail unless="build.number" message="Property build.number unspecified." />
-    <property name="scripts.folder" value="build" />
+    <property name="scripts.folder" value="${scripts.dir}" />
     <property name="startup.bat.name" value="mps.bat" />
     <property name="startup.bat" value="${scripts.folder}/${startup.bat.name}" />
     <property name="vmoptions.file.name" value="mps.vmoptions" />
@@ -121,7 +121,7 @@
     <property name="root.folder.name" value="MPS" />
     <property name="root.folder" value="${deploy.dir}/${root.folder.name}" />
     <property name="nsis.script.name" value="installer.nsi" />
-    <property name="nsis.script.path" value="${basedir}/${scripts.folder}/${nsis.script.name}" />
+    <property name="nsis.script.path" value="${base_dir}/${scripts.folder}/${nsis.script.name}" />
     <property name="nsis.script.path.tmp" value="${deploy.dir}/installation.script${DSTAMP}.nsi" />
     <property name="application.icon" value="${deploy.dir}/application.ico" />
     <property name="homepage.icon" value="${deploy.dir}/homepage.ico" />
@@ -129,21 +129,20 @@
     <property name="uninstaller.icon" value="${deploy.dir}/uninstaller.ico" />
     <property name="license.path" value="${deploy.dir}/license.txt" />
     <property name="license.src.path" value="${mps_home}/license/mps_license.txt" />
-    <property name="jre.zip.path" value="${mps_home}/build/tools/jre.zip" />
+    <property name="jre.zip.path" value="${scripts.dir}/tools/jre.zip" />
     <property name="jre.unzipped.path" value="${deploy.dir}" />
     <property name="installer.relative.path" value="${deploy.dir}/${build.number}-windows.exe" />
-    <property name="mps_home" value="${basedir}" />
-    <property name="help.file" value="help/mpshelp.jar" />
+    <property name="mps_home" value="${base_dir}" />
+    <property name="help.file" value="${mps_home}/help/mpshelp.jar" />
     <property name="help.folder.tmp" value="${deploy.dir}/help" />
-    <fail unless="mps_home" message="Property mps_home unspecified." />
     <property name="installer" location="${installer.relative.path}" />
     <fixcrlf file="${startup.bat}" eol="dos" eof="asis" />
     <fixcrlf file="${vmoptions.file}" eol="dos" eof="asis" />
     <copy file="${nsis.script.path}" tofile="${nsis.script.path.tmp}" />
-    <copy file="${mps_home}/build/resources/mps.ico" tofile="${application.icon}" />
-    <copy file="${mps_home}/build/resources/homepage.ico" tofile="${homepage.icon}" />
-    <copy file="${mps_home}/build/resources/mps.inst.ico" tofile="${installer.icon}" />
-    <copy file="${mps_home}/build/resources/mps.uninst.ico" tofile="${uninstaller.icon}" />
+    <copy file="${scripts.dir}/resources/mps.ico" tofile="${application.icon}" />
+    <copy file="${scripts.dir}/resources/homepage.ico" tofile="${homepage.icon}" />
+    <copy file="${scripts.dir}/resources/mps.inst.ico" tofile="${installer.icon}" />
+    <copy file="${scripts.dir}/resources/mps.uninst.ico" tofile="${uninstaller.icon}" />
     <copy file="${license.src.path}" tofile="${license.path}" />
     <unzip src="${jre.zip.path}" dest="${jre.unzipped.path}/jre" />
     <copy file="${vmoptions.file}" tofile="${root.folder}/bin/${vmoptions.exe.file.name}" />
@@ -164,7 +163,7 @@
     </java>
     <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
     <replace file="${nsis.script.path.tmp}" token="$build$" value="${build.number}" />
-    <unzip src="${mps_home}/build/tools/nsis.zip" dest="${deploy.dir}" />
+    <unzip src="${scripts.dir}/tools/nsis.zip" dest="${deploy.dir}" />
     <exec executable="${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
       <arg file="${nsis.script.path.tmp}" />
     </exec>

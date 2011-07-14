@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 
@@ -53,18 +52,6 @@ public class DistribConfiguration_Behavior {
 
   public static String call_getProjectFolderAntName_1230295546376(SNode thisNode) {
     return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(thisNode, "projectFolder", false)).getPath();
-  }
-
-  public static String call_getScriptsFolderSafe_1230566454921(SNode thisNode) {
-    String scriptsFolder = DistribConfiguration_Behavior.call_getScriptsFolder_1230570100269(thisNode);
-    if (scriptsFolder == null || StringUtils.isEmpty(scriptsFolder)) {
-      return ".";
-    }
-    return scriptsFolder;
-  }
-
-  public static String call_getScriptsFolder_1230570100269(SNode thisNode) {
-    return SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false)), "scriptsFolder");
   }
 
   public static String call_getVMOptionsExt_1231692561653(SNode thisNode) {

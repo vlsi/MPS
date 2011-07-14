@@ -19,8 +19,6 @@ import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
 import jetbrains.mps.reloading.CommonPaths;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModuleCycle_Behavior {
   public static void init(SNode thisNode) {
@@ -60,13 +58,7 @@ public class ModuleCycle_Behavior {
     homePath = homePath.replace(File.separator, Util.SEPARATOR);
     List<SNode> pathHolders = new ArrayList<SNode>();
     for (String string : Sequence.fromIterable(stringClasspath)) {
-      SNode holder = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);
-      String relativePath = ModuleUtil.getRelativePath(string, homePath);
-      SPropertyOperations.set(holder, "fullPath", relativePath);
-      if (string.equals(relativePath)) {
-        ModuleUtil.findMacro(holder, macro);
-      }
-      ListSequence.fromList(pathHolders).addElement(holder);
+      ListSequence.fromList(pathHolders).addElement(PathHolder_Behavior.createPathHolder_55204148067446946(string, macro, homePath, null));
     }
     return pathHolders;
   }

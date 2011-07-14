@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.build.packaging.plugin.PackagingLanguageGenerator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 
 public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
@@ -82,7 +81,6 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
       PackagingLanguageGenerator.createPath(buildToolsPath, "", this.myPathToBuildTools);
     }
     SLinkOperations.setTarget(mpsBuild, "pathToBuildToolsZip", buildToolsPath, true);
-    SPropertyOperations.set(mpsLayout, "scriptsFolder", "build");
     return new Runnable() {
       public void run() {
         CustomMPSBuildGenerator.this.finishGeneration(targetModelDescriptor, mpsLayout);

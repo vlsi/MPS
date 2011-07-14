@@ -26,7 +26,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"path"}, new String[]{"macro"});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"basedir"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"basedir", "propertiesFile"}, new String[]{});
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.ProjectDescriptionReference", "jetbrains.mps.buildlanguage.structure.ImportProject", false, new String[]{"jetbrains.mps.buildlanguage.structure.ImportProject"}, new String[]{}, new String[]{"description"});
       default:
