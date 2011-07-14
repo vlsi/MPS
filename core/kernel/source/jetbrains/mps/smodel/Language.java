@@ -724,7 +724,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     if (myLanguageDescriptor != null) {
       IFile bundleParent = getBundleHome().getParent();
-      String jarName = getModuleFqName() + "." + MPSExtentions.RUNTIME_ARCH;
+      String jarName = getModuleFqName() + ".jar";
       IFile bundleHomeFile = bundleParent.getDescendant(jarName);
 
       if(!bundleHomeFile.exists()) return;
