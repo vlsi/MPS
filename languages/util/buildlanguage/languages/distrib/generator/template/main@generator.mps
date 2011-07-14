@@ -3077,22 +3077,17 @@
         <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1230577410525">
           <property name="name" nameId="tpck.1169194664001" value="nsis.script.path" />
           <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1230577420046">
-            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230577420047">
-              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230577420049">
-                <node role="left" roleId="tpsk.1197107855106" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230642703091">
-                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230577420051">
-                    <property name="value" nameId="tpsk.1196861024475" value="/" />
-                  </node>
-                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1230642704894">
-                    <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1230642678729" resolveInfo="scripts.folder" />
-                  </node>
+            <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230577420049">
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230642703091">
+                <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230577420051">
+                  <property name="value" nameId="tpsk.1196861024475" value="/" />
                 </node>
-                <node role="right" roleId="tpsk.1197107881958" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1230655076992">
-                  <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1230570261456" resolveInfo="nsis.script.name" />
+                <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1230642704894">
+                  <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1230642678729" resolveInfo="scripts.folder" />
                 </node>
               </node>
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230577420062">
-                <property name="value" nameId="tpsk.1196861024475" value="${base_dir}/" />
+              <node role="right" roleId="tpsk.1197107881958" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1230655076992">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1230570261456" resolveInfo="nsis.script.name" />
               </node>
             </node>
           </node>

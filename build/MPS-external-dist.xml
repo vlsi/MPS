@@ -121,7 +121,7 @@
     <property name="root.folder.name" value="MPS" />
     <property name="root.folder" value="${deploy.dir}/${root.folder.name}" />
     <property name="nsis.script.name" value="installer.nsi" />
-    <property name="nsis.script.path" value="${base_dir}/${scripts.folder}/${nsis.script.name}" />
+    <property name="nsis.script.path" value="${scripts.folder}/${nsis.script.name}" />
     <property name="nsis.script.path.tmp" value="${deploy.dir}/installation.script${DSTAMP}.nsi" />
     <property name="application.icon" value="${deploy.dir}/application.ico" />
     <property name="homepage.icon" value="${deploy.dir}/homepage.ico" />
