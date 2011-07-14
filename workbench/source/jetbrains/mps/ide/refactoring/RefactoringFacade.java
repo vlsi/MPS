@@ -243,11 +243,15 @@ public class RefactoringFacade {
         } catch (ExecutionException e) {
           e.printStackTrace();
         } finally {
-          SNode.setNodeMemberAccessModifier(null);
+          onGenerationFinished();
         }
       }
     }.start();
 //    GeneratorUIFacade.getInstance().generateModels(operationContext, descriptors, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
+  }
+
+  protected void onGenerationFinished() {
+    SNode.setNodeMemberAccessModifier(null);
   }
 
   protected static void updateModels(RefactoringContext refactoringContext) {

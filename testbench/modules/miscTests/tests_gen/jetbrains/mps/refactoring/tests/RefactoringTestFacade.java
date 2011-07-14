@@ -11,6 +11,8 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 
   public void doExecuteInTest(RefactoringContext refactoringContext) {
     try {
+      // generation switched off temporary 
+      refactoringContext.setDoesGenerateModels(false);
       super.doExecute(refactoringContext);
     } catch (Throwable t) {
       RefactoringFacade.LOG.error(t);
