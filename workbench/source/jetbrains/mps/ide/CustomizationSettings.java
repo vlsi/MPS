@@ -28,7 +28,6 @@ import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 
 @State(
   name = "CustomizationSettings",
@@ -41,9 +40,13 @@ import java.awt.event.ActionEvent;
 
 public class CustomizationSettings implements PersistentStateComponent<MyState>, Configurable {
   private MyState myState = new MyState();
-  private JCheckBox myPlainCheckbox;
-  private JCheckBox myGrayedCheckbox;
-  private JCheckBox myShowCheckbox;
+
+  private JRadioButton myDontShow;
+  private JRadioButton myTabPerAspect;
+  private JRadioButton myTabPerNode;
+  private JRadioButton myAllTabs;
+
+  private JRadioButton myFirstSelection;
 
   @Nls
   public String getDisplayName() {
@@ -71,20 +74,26 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
     eTabs.setLayout(new BoxLayout(eTabs, BoxLayout.Y_AXIS));
     eTabs.setBorder(BorderFactory.createTitledBorder("Editor tabs"));
 
+    ButtonGroup group = new ButtonGroup();
 
-    myShowCheckbox = new JCheckBox(new AbstractAction("show") {
-      public void actionPerformed(ActionEvent e) {
-        myPlainCheckbox.setEnabled(myShowCheckbox.isSelected());
-        myGrayedCheckbox.setEnabled(myShowCheckbox.isSelected());
-      }
-    });
+    myDontShow = new JRadioButton("Do not show tabs");
+    eTabs.add(myDontShow);
+    group.add(myDontShow);
 
-    myPlainCheckbox = new JCheckBox("show plain");
-    myGrayedCheckbox = new JCheckBox("show grayed");
+    myTabPerAspect = new JRadioButton("Show 1 tab for each aspect");
+    eTabs.add(myTabPerAspect);
+    group.add(myTabPerAspect);
 
-    eTabs.add(myShowCheckbox);
-    eTabs.add(myPlainCheckbox);
-    eTabs.add(myGrayedCheckbox);
+    myTabPerNode = new JRadioButton("Each aspect node in a separate tab");
+    eTabs.add(myTabPerNode);
+    group.add(myTabPerNode);
+
+    myAllTabs = new JRadioButton("Each aspect node in a separate tab, tabs for non-existing aspects");
+    eTabs.add(myAllTabs);
+    group.add(myAllTabs);
+
+    myFirstSelection = myTabPerAspect;
+    myFirstSelection.setSelected(true);
 
     JPanel result = new JPanel(new BorderLayout());
     result.add(eTabs, BorderLayout.NORTH);
@@ -93,25 +102,34 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
   }
 
   public boolean isModified() {
-    return myPlainCheckbox.isSelected() != myState.showPlain ||
-      myGrayedCheckbox.isSelected() != myState.showGrayed||
-      myShowCheckbox.isSelected() != myState.show;
+    return !myFirstSelection.isSelected();
   }
 
   public void apply() throws ConfigurationException {
-    myState.showPlain = myPlainCheckbox.isSelected();
-    myState.showGrayed = myGrayedCheckbox.isSelected();
-    myState.show = myShowCheckbox.isSelected();
-
-    for (Project p:ProjectManager.getInstance().getOpenProjects()){
+    myState.show = myTabPerAspect.isSelected() ||myTabPerNode.isSelected() || myAllTabs.isSelected();
+    myState.showPlain = myTabPerNode.isSelected() || myAllTabs.isSelected();
+    myState.showGrayed = myAllTabs.isSelected();
+    applyState();
+    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).recreateTabbedEditors();
     }
   }
 
   public void reset() {
-    myPlainCheckbox.setSelected(myState.showPlain);
-    myGrayedCheckbox.setSelected(myState.showGrayed);
-    myShowCheckbox.setSelected(myState.show);
+    applyState();
+    myFirstSelection.setSelected(true);
+  }
+
+  private void applyState() {
+    if (!myState.show) {
+      myFirstSelection = myDontShow;
+    } else if (!myState.showPlain) {
+      myFirstSelection = myTabPerAspect;
+    } else if (!myState.showGrayed) {
+      myFirstSelection = myTabPerNode;
+    } else {
+      myFirstSelection = myAllTabs;
+    }
   }
 
   public void disposeUIResources() {
