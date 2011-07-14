@@ -57,9 +57,6 @@ public class DevkitDescriptorPersistence {
             entry.setManager(LanguageID.JAVA_MANAGER);
             result_raojav_a0a0c0a0a.getStubModelEntries().add(entry);
           }
-
-          final String result_raojav_a31a0a0c0a0a = root.getAttributeValue("pluginClass");
-          result_raojav_a0a0c0a0a.setPlugin(result_raojav_a31a0a0c0a0a);
           return result_raojav_a0a0c0a0a;
         }
       }.invoke();
@@ -112,12 +109,6 @@ public class DevkitDescriptorPersistence {
             result_raojav_a0a01a0a0a0b.addContent(result_raojav_a0a0a0a01a0a0a0b);
           }
           result_raojav_a0a0a0b.addContent(result_raojav_a0a01a0a0a0b);
-        }
-
-
-        if (descriptor.getPlugin() != null) {
-          final String result_raojav_a0a31a0a0a0b = descriptor.getPlugin();
-          result_raojav_a0a0a0b.setAttribute("pluginClass", "" + result_raojav_a0a31a0a0a0b);
         }
         return result_raojav_a0a0a0b;
       }

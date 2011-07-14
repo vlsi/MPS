@@ -9,9 +9,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 
 public class DevkitProperties extends ModuleProperties {
-  public static final String PLUGIN = "plugin";
-
-  private String myPlugin;
   private List<ModuleReference> myExportedLanguages;
   private List<ModuleReference> myExportedSolutions;
   private List<ModuleReference> myExtendedDevkits;
@@ -20,14 +17,6 @@ public class DevkitProperties extends ModuleProperties {
     myExportedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myExportedSolutions = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myExtendedDevkits = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
-  }
-
-  public String getPlugin() {
-    return myPlugin;
-  }
-
-  public void setPlugin(String plugin) {
-    myPlugin = plugin;
   }
 
   public List<ModuleReference> getExportedLanguages() {
@@ -47,7 +36,6 @@ public class DevkitProperties extends ModuleProperties {
     assert descriptor instanceof DevkitDescriptor;
     super.loadFrom(descriptor);
     DevkitDescriptor d = (DevkitDescriptor) descriptor;
-    myPlugin = d.getPlugin();
     for (ModuleReference ref : d.getExportedLanguages()) {
       myExportedLanguages.add(ref);
     }
@@ -64,7 +52,6 @@ public class DevkitProperties extends ModuleProperties {
     assert descriptor instanceof DevkitDescriptor;
     super.saveTo(descriptor);
     DevkitDescriptor d = (DevkitDescriptor) descriptor;
-    d.setPlugin(myPlugin);
     d.getExportedLanguages().clear();
     d.getExportedLanguages().addAll(myExportedLanguages);
     d.getExportedSolutions().clear();

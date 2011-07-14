@@ -103,7 +103,6 @@ public abstract class ProjectStructureBuilder {
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "devkitPath", myFile.getPath());
-    SPropertyOperations.set(result, "plugin", source.getPlugin());
     for (ModuleReference ref : source.getExtendedDevkits()) {
       SLinkOperations.getTargets(result, "extendedDevkits", true).add(convert(ref));
     }

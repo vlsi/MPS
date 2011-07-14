@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DevkitDescriptor extends ModuleDescriptor {
-  private String myPlugin;
-
   private List<ModuleReference> myExportedLanguages;
   private List<ModuleReference> myExportedSolutions;
   private List<ModuleReference> myExtendedDevkits;
@@ -30,14 +28,6 @@ public class DevkitDescriptor extends ModuleDescriptor {
     myExportedLanguages = new ArrayList<ModuleReference>();
     myExportedSolutions = new ArrayList<ModuleReference>();
     myExtendedDevkits = new ArrayList<ModuleReference>();
-  }
-
-  public String getPlugin() {
-    return myPlugin;
-  }
-
-  public void setPlugin(String plugin) {
-    myPlugin = plugin;
   }
 
   public List<ModuleReference> getExportedLanguages() {

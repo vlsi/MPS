@@ -274,7 +274,4 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return getName();
   }
 
-  public String getDevKitPluginClass() {
-    return myDescriptor.getPlugin();
-  }
 }

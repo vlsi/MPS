@@ -118,9 +118,7 @@ public class PluginUtil {
         Solution solution = (Solution) module;
         return getPlugin(solution);
       } else if (module instanceof DevKit) {
-        DevKit dk = (DevKit) module;
-        if (dk.getDevKitPluginClass() == null) return null;
-        return getPlugin(dk);
+        return null;
       } else {
         throw new IllegalStateException("Module type \"" + module.getClass().getSimpleName() + "\" is not supported");
       }
@@ -130,19 +128,12 @@ public class PluginUtil {
     public abstract String getPlugin(Language l);
 
     @Nullable
-    public abstract String getPlugin(DevKit d);
-
-    @Nullable
     public abstract String getPlugin(Solution s);
   }
 
   public static final class ProjectPluginCreator extends PluginCreator<BaseProjectPlugin> {
     public String getPlugin(Language l) {
       return LanguageAspect.PLUGIN.get(l).getLongName() + "." + PluginNameUtils.getPluginName(l);
-    }
-
-    public String getPlugin(DevKit d) {
-      return d.getDevKitPluginClass();
     }
 
     public String getPlugin(Solution s) {
@@ -154,10 +145,6 @@ public class PluginUtil {
   public static final class ApplicationPluginCreator extends PluginCreator<BaseApplicationPlugin> {
     public String getPlugin(Language l) {
       return LanguageAspect.PLUGIN.get(l).getLongName() + "." + PluginNameUtils.getApplicationPluginName(l);
-    }
-
-    public String getPlugin(DevKit d) {
-      return null;
     }
 
     public String getPlugin(Solution s) {
