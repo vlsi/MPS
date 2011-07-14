@@ -221,6 +221,8 @@ public class RefactoringFacade {
     final List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        SModelRepository.getInstance().saveAll();   // save all before launching make
+
         refactoringContext.setUpMembersAccessModifier(modifier);
         modifier.addModelsToModify(sourceModels);
         SNode.setNodeMemberAccessModifier(modifier);
