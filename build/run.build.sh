@@ -16,4 +16,5 @@ else
 fi
 
 mkdir $mps_home/help
+export ANT_OPTS=-Xmx1024m
 ant -f MPS-external-dist.xml -Dmps_home=$mps_home -Dbuild.number=28 -Dversion=EAP -Dbuild.vcs.number=222 -Dteamcity.buildConfName=Local universal.single
