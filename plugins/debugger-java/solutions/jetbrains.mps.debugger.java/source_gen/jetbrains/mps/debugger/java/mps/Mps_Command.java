@@ -7,6 +7,7 @@ import com.intellij.execution.ExecutionException;
 import jetbrains.mps.execution.lib.Java_Command;
 import java.io.File;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.InternalFlag;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -75,7 +76,10 @@ public class Mps_Command {
   }
 
   public static String getDefaultVirtualMachineParameters() {
-    return "-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=150m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8";
+    return "-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=150m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" + ((InternalFlag.isInternalMode() ?
+      " -Dmps.internal=true" :
+      ""
+    ));
   }
 
   public static String getDefaultConfigurationPath() {
