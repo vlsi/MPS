@@ -28,6 +28,7 @@
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="MPS-platform" />
     <orderEntry type="library" scope="PROVIDED" name="IDEA-vcs-plugins" level="project" />
+    <orderEntry type="module" module-name="make-runtime" />
   </component>
 </module>
 

@@ -35,13 +35,17 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
     if (myMakeSession.compareAndSet(null, new MakeSession(context))) {
       try {
         if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {
-          IMakeService.INSTANCE.get().make(myMakeSession.get(), new ModelsToResources(context, modelsToGenerate).resources(false));
+          doPerformAction(myMakeSession.get(), context, modelsToGenerate);
         }
       } finally {
         myMakeSession.set(null);
       }
     }
     // <node> 
+  }
+
+  protected void doPerformAction(MakeSession session, IOperationContext context, List<SModelDescriptor> modelsToGenerate) {
+    IMakeService.INSTANCE.get().make(session, new ModelsToResources(context, modelsToGenerate).resources(false));
   }
 
   protected abstract IGenerationHandler getGenerationHandler();
@@ -80,7 +84,7 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
     return true;
   }
 
-  private void enable(Presentation presentation, boolean enable) {
+  protected void enable(Presentation presentation, boolean enable) {
     presentation.setVisible(enable);
     presentation.setEnabled(enable);
   }

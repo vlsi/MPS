@@ -7,10 +7,10 @@ import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 import com.intellij.openapi.vcs.actions.VcsContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.generator.GeneratorUIFacade;
+import jetbrains.mps.workbench.make.TextPreviewUtil;
+import com.intellij.openapi.actionSystem.Presentation;
 
 public class GenerateTextFromChangeListAction extends GenerateFromChangeListAction {
   public GenerateTextFromChangeListAction() {
@@ -27,8 +27,24 @@ public class GenerateTextFromChangeListAction extends GenerateFromChangeListActi
   @Override
   protected void actionPerformed(VcsContext vcsContext) {
     List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
-    Project project = vcsContext.getProject();
-    IOperationContext context = ProjectOperationContext.get(project);
-    GeneratorUIFacade.getInstance().generateModels(context, modelsToGenerate, getGenerationHandler(), true, false);
+    if (modelsToGenerate.size() == 1) {
+      super.actionPerformed(vcsContext);
+    }
+  }
+
+  @Override
+  protected void doPerformAction(MakeSession session, IOperationContext context, List<SModelDescriptor> modelsToGenerate) {
+    TextPreviewUtil.previewModelText(session, context, modelsToGenerate.get(0));
+  }
+
+  @Override
+  protected void update(VcsContext vcsContext, Presentation presentation) {
+    List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
+    if (modelsToGenerate.size() != 1) {
+      enable(presentation, false);
+      presentation.setText("Rebuild " + getWhatToGenerateName());
+    } else {
+      super.update(vcsContext, presentation);
+    }
   }
 }

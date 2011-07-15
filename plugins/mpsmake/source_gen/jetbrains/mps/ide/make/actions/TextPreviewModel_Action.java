@@ -13,28 +13,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.make.script.IOption;
-import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
-import java.util.concurrent.Future;
-import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.resources.FResource;
-import jetbrains.mps.workbench.make.TextPreviewFile;
-import javax.swing.SwingUtilities;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.OpenFileDescriptor;
-import java.util.concurrent.ExecutionException;
+import jetbrains.mps.workbench.make.TextPreviewUtil;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -86,41 +67,10 @@ public class TextPreviewModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModelDescriptor md = TextPreviewModel_Action.this.modelToGenerate(_params);
-      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-        public void run() {
-          IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
-
-          IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
-            public <T extends IOption> T relayQuery(IQuery<T> query) {
-              return query.defaultOption();
-            }
-          }, new IJobMonitor.Stub());
-
-          MakeSession session = new MakeSession(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, true);
-          if (IMakeService.INSTANCE.get().openNewSession(session)) {
-
-            Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(((IOperationContext) MapSequence.fromMap(_params).get("context")), Sequence.<SModelDescriptor>singleton(md)).resources(false), scr, ctl);
-
-            try {
-              IResult result = future.get();
-              if (result.isSucessful()) {
-                FResource fres = (FResource) Sequence.fromIterable(result.output()).first();
-
-                final TextPreviewFile tfile = new TextPreviewFile(md.getSModelReference().getSModelFqName().getCompactPresentation(), "Generated text for " + md.getSModelReference().getSModelFqName().getLongName(), fres.contents());
-
-                SwingUtilities.invokeLater(new Runnable() {
-                  public void run() {
-                    FileEditorManager.getInstance(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()).openTextEditor(new OpenFileDescriptor(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject(), tfile), true);
-                  }
-                });
-              }
-            } catch (InterruptedException ignore) {
-            } catch (ExecutionException ignore) {
-            }
-          }
-        }
-      });
+      MakeSession session = new MakeSession(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, true);
+      if (IMakeService.INSTANCE.get().openNewSession(session)) {
+        TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params));
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "TextPreviewModel", t);
