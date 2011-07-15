@@ -90,6 +90,14 @@ public class Module_Behavior {
     }).distinct().toListSequence(), true);
   }
 
+  public static List<SNode> call_getSourcePaths_3673831299872169203(SNode thisNode) {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(((List<String>) Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).<String>select(new ISelector<String, String>() {
+      public String select(String it) {
+        return it.replace(File.separator, Util.SEPARATOR);
+      }
+    }).distinct().toListSequence(), true);
+  }
+
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
@@ -136,7 +144,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a51(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a61(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> stubpath, boolean onlyUnderProjectBasedir) {
@@ -209,7 +217,7 @@ public class Module_Behavior {
     return name.replace("/", "_").replace("\\", "_");
   }
 
-  private static String check_835h7m_a0a51(String checkedDotOperand, String separator, String SEPARATOR) {
+  private static String check_835h7m_a0a61(String checkedDotOperand, String separator, String SEPARATOR) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.replace(File.separator, Util.SEPARATOR);
     }

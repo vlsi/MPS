@@ -972,6 +972,10 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
+  public static SNode sourceNodeQuery_3673831299872201471(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
   public static SNode sourceNodeQuery_1986682148700630326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return Module_Behavior.call_getModuleDescriptorFile_6863060912307764362(_context.getNode());
   }
@@ -1167,6 +1171,10 @@ public class QueriesGenerated {
     }, true);
   }
 
+  public static Iterable sourceNodesQuery_3673831299872169201(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return Module_Behavior.call_getSourcePaths_3673831299872169203(_context.getNode());
+  }
+
   public static Iterable sourceNodesQuery_1986682148700630636(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Module_Behavior.call_getModelRootPaths_2739262311775052381(_context.getNode());
   }
@@ -1250,8 +1258,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0cj;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0cj_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0ej;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0ej_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -1274,13 +1282,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0cj_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0ej_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0cj_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0ej_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0cj = this._7__yield_x583g4_a0a0a0a0a0cj_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0ej = this._7__yield_x583g4_a0a0a0a0a0ej_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -1292,7 +1300,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0cj);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0ej);
                       return true;
                     case 12:
                       this.__CP__ = 3;
