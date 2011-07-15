@@ -5,6 +5,8 @@ package jetbrains.mps.vcs.diff.ui;
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.ide.projectPane.Icons;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -22,12 +24,16 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
 public class NextPreviousTraverser {
   private static final Icon PREVIOUS_ICON = IconLoader.getIcon("/actions/previousOccurence.png", Icons.class);
   private static final Icon NEXT_ICON = IconLoader.getIcon("/actions/nextOccurence.png", Icons.class);
+  protected static Log log = LogFactory.getLog(NextPreviousTraverser.class);
 
   private List<ChangeGroupBuilder> myChangeGroupBuilders;
   private EditorComponent myLastEditor;
@@ -161,7 +167,25 @@ public class NextPreviousTraverser {
   }
 
   private void goToChangeGroup(int y) {
-    myLastEditor.changeSelection(myLastEditor.findCellWeak(1, y + 1));
+    EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
+    if (editorCell != null) {
+      myLastEditor.changeSelection(editorCell);
+    } else {
+      if (log.isWarnEnabled()) {
+        log.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
+          public String compute() {
+            return check_mf966z_a0a0a2a0a0b0i(myLastEditor.getEditedNode());
+          }
+        })));
+      }
+    }
+  }
+
+  private static String check_mf966z_a0a0a2a0a0b0i(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getConceptFqName();
+    }
+    return null;
   }
 
   private class TheAction extends BaseAction {
