@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -44,6 +45,10 @@ public class AbstractProjectComponent_Behavior {
 
   public static File virtual_getPath_1213877333777(SNode thisNode) {
     return AbstractProjectComponent_Behavior.call_getPath_1233752667763(thisNode, SNodeOperations.getParent(thisNode));
+  }
+
+  public static String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.callSuper_getFqName_1213877404258(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent");
   }
 
   public static boolean call_included_1213877333807(SNode thisNode, SNode config) {

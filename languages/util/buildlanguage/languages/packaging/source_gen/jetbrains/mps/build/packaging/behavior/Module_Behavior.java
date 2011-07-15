@@ -116,19 +116,55 @@ public class Module_Behavior {
     return new ArrayList<SNode>();
   }
 
+  public static boolean call_needsSeparateFolder_1902360454496029008(SNode thisNode) {
+    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
+      }
+    }) || ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
+      }
+    });
+  }
+
+  public static List<SNode> call_getRequiredJars_1902360454496272739(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
+      }
+    }));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
+      }
+    }));
+    return result;
+  }
+
   public static String call_getModuleFolderPath_2850282874221203279(SNode thisNode) {
     return ModuleUtil.getRelativePath(AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode).getPath(), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode));
   }
 
   public static String call_getModuleSourcesJarPath_1986682148700597281(SNode thisNode) {
+    if (Module_Behavior.call_needsSeparateFolder_1902360454496029008(thisNode)) {
+      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleFqName() + "-src.jar";
+    }
     return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + "-src.jar";
   }
 
   public static String call_getRuntimeJarPath_1213877515126(SNode thisNode) {
+    if (Module_Behavior.call_needsSeparateFolder_1902360454496029008(thisNode)) {
+      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleFqName() + "-runtime.jar";
+    }
     return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + "-runtime.jar";
   }
 
   public static String call_getModuleJarPath_1213877515137(SNode thisNode) {
+    if (Module_Behavior.call_needsSeparateFolder_1902360454496029008(thisNode)) {
+      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleFqName() + ".jar";
+    }
     return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + ".jar";
   }
 
@@ -144,7 +180,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a61(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a81(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> stubpath, boolean onlyUnderProjectBasedir) {
@@ -217,7 +253,7 @@ public class Module_Behavior {
     return name.replace("/", "_").replace("\\", "_");
   }
 
-  private static String check_835h7m_a0a61(String checkedDotOperand, String separator, String SEPARATOR) {
+  private static String check_835h7m_a0a81(String checkedDotOperand, String separator, String SEPARATOR) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.replace(File.separator, Util.SEPARATOR);
     }

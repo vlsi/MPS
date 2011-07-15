@@ -30,10 +30,10 @@ public class Variable_Behavior {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _2_node;
-              private Iterator<SNode> _2_node_it;
               private SNode _5__yield_4cy34q_a0a0a0a0b0c;
               private Iterator<SNode> _5__yield_4cy34q_a0a0a0a0b0c_it;
+              private SNode _2_node;
+              private Iterator<SNode> _2_node_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -43,16 +43,6 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
-                    case 2:
-                      this._2_node_it = smodel.getSModel().roots().iterator();
-                    case 3:
-                      if (!(this._2_node_it.hasNext())) {
-                        this.__CP__ = 1;
-                        break;
-                      }
-                      this._2_node = this._2_node_it.next();
-                      this.__CP__ = 4;
-                      break;
                     case 5:
                       this._5__yield_4cy34q_a0a0a0a0b0c_it = Sequence.fromIterable(SNodeOperations.getDescendants(_2_node, "jetbrains.mps.build.packaging.structure.Variable", true, new String[]{})).iterator();
                     case 6:
@@ -63,18 +53,28 @@ __switch__:
                       this._5__yield_4cy34q_a0a0a0a0b0c = this._5__yield_4cy34q_a0a0a0a0b0c_it.next();
                       this.__CP__ = 7;
                       break;
+                    case 2:
+                      this._2_node_it = smodel.getSModel().roots().iterator();
+                    case 3:
+                      if (!(this._2_node_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._2_node = this._2_node_it.next();
+                      this.__CP__ = 4;
+                      break;
                     case 8:
                       this.__CP__ = 6;
                       this.yield(_5__yield_4cy34q_a0a0a0a0b0c);
                       return true;
-                    case 0:
-                      this.__CP__ = 2;
+                    case 7:
+                      this.__CP__ = 8;
                       break;
                     case 4:
                       this.__CP__ = 5;
                       break;
-                    case 7:
-                      this.__CP__ = 8;
+                    case 0:
+                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;

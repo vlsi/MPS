@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import java.io.File;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public abstract class AbstractProjectComponent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public AbstractProjectComponent_BehaviorDescriptor() {
@@ -26,7 +25,7 @@ public abstract class AbstractProjectComponent_BehaviorDescriptor extends BaseCo
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+    return AbstractProjectComponent_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   @Override

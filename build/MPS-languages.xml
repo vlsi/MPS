@@ -313,8 +313,8 @@
   <target name="pack.collections_trove.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
-    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar.jtmp/module.xml">
       <module namespace="collections_trove.runtime" uuid="134ef213-c518-42b0-b12c-c109aa13d320" type="solution">
         <dependencies>
           <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
@@ -328,22 +328,24 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
         </dependencies>
+        <library jar="trove-2.1.0.jar" />
         <sources jar="collections_trove.runtime-src.jar" descriptor="collections_trove.runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime" file="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" prefix="module" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/collections_trove.runtime/collections_trove.runtime.jar.jtmp" />
   </target>
   <target name="pack.collections_samples">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -1573,6 +1575,7 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="jetbrains.mps.baseLanguage.collections-runtime.jar" />
         <sources jar="jetbrains.mps.baseLanguage.collections-src.jar" descriptor="collections.mpl" />
       </module>
     </echoxml>
@@ -2318,8 +2321,8 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.lib">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib/jetbrains.mps.baseLanguage.unitTest.lib.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib/jetbrains.mps.baseLanguage.unitTest.lib.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.baseLanguage.unitTest.lib" uuid="83f155ff-422c-4b5a-a2f2-b459302dd215" type="solution">
         <dependencies>
           <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
@@ -2333,28 +2336,37 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
         </dependencies>
+        <library jar="bsh-core-2.0b4.jar" />
+        <library jar="cglib-nodep-2.1_3.jar" />
+        <library jar="hamcrest-core-1.1.jar" />
+        <library jar="hamcrest-library-1.1.jar" />
+        <library jar="jmock-2.5.1.jar" />
+        <library jar="jmock-junit3-2.5.1.jar" />
+        <library jar="jmock-junit4-2.5.1.jar" />
+        <library jar="objenesis-1.0.jar" />
         <sources jar="jetbrains.mps.baseLanguage.unitTest.lib-src.jar" descriptor="jetbrains.mps.baseLnaguage.unitTest.lib.msd" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib" file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib/jetbrains.mps.baseLanguage.unitTest.lib-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/lib/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/lib/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" prefix="module" />
       <zipfileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/lib" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib/jetbrains.mps.baseLanguage.unitTest.lib.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib/jetbrains.mps.baseLanguage.unitTest.lib.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/unitTest/solutions/lib" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-      <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-      <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-      <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-      <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-      <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-      <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-      <zipfileset file="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib/jetbrains.mps.baseLanguage.unitTest.lib.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.tuples">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -4714,6 +4726,7 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="jetbrains.mps.lang.sharedConcepts-runtime.jar" />
         <sources jar="jetbrains.mps.lang.sharedConcepts-src.jar" descriptor="sharedConcepts.mpl" />
       </module>
     </echoxml>
@@ -4855,6 +4868,7 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="jetbrains.mps.lang.smodel-runtime.jar" />
         <sources jar="jetbrains.mps.lang.smodel-src.jar" descriptor="smodel.mpl" />
       </module>
     </echoxml>
@@ -5270,6 +5284,7 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="jetbrains.mps.lang.structure-runtime.jar" />
         <sources jar="jetbrains.mps.lang.structure-src.jar" descriptor="languageDescriptor.mpl" />
       </module>
     </echoxml>
@@ -5411,6 +5426,7 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="jetbrains.mps.lang.core-runtime.jar" />
         <sources jar="jetbrains.mps.lang.core-src.jar" descriptor="languageDescriptor.mpl" />
       </module>
     </echoxml>
@@ -7282,8 +7298,8 @@
   <target name="pack.jetbrains.mps.debug.evaluation">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/core/debug/languages/evaluation/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation/jetbrains.mps.debug.evaluation.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation/jetbrains.mps.debug.evaluation.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.debug.evaluation" uuid="7da4580f-9d75-4603-8162-51a896d78375" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -7402,29 +7418,31 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <library jar="tools.jar" />
         <sources jar="jetbrains.mps.debug.evaluation-src.jar" descriptor="evaluation.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation" />
+    <copy todir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation" file="${base_dir}/lib/tools.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation/jetbrains.mps.debug.evaluation-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/debug/languages/evaluation/evaluation.mpl" prefix="module" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation/jetbrains.mps.debug.evaluation.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation/jetbrains.mps.debug.evaluation.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/lib/tools.jar" />
       <zipfileset dir="${base_dir}/core/debug/languages/evaluation/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.evaluation/jetbrains.mps.debug.evaluation.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debug.customViewers">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/core/debug/languages/customViewers/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers/jetbrains.mps.debug.customViewers.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers/jetbrains.mps.debug.customViewers.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.debug.customViewers" uuid="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -7544,25 +7562,25 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="tools.jar" />
         <sources jar="jetbrains.mps.debug.customViewers-src.jar" descriptor="customViewers.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers" />
+    <copy todir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers" file="${base_dir}/lib/tools.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers/jetbrains.mps.debug.customViewers-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/core/debug/languages/customViewers/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/debug/languages/customViewers/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/debug/languages/customViewers/customViewers.mpl" prefix="module" />
       <zipfileset dir="${base_dir}/core/debug/languages/customViewers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/core/debug/languages/customViewers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers/jetbrains.mps.debug.customViewers.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers/jetbrains.mps.debug.customViewers.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/debug/languages/customViewers" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/core/debug/languages/customViewers/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers.jar.jtmp" />
-    <jar destfile="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers-runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset file="${base_dir}/lib/tools.jar" />
-    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/debug/jetbrains.mps.debug.customViewers/jetbrains.mps.debug.customViewers.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.debug.privateMembers">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -9058,6 +9076,7 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="jetbrains.mps.uiLanguage-runtime.jar" />
         <sources jar="jetbrains.mps.uiLanguage-src.jar" descriptor="uiLanguage.mpl" />
       </module>
     </echoxml>
@@ -9647,8 +9666,8 @@
   <target name="pack.jetbrains.mps.ui.gwt">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt/jetbrains.mps.ui.gwt.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt/jetbrains.mps.ui.gwt.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.ui.gwt" uuid="e5c2a44a-6085-4aeb-a5b6-851cecd2d926" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -9780,10 +9799,13 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="gwt-user.jar" />
         <sources jar="jetbrains.mps.ui.gwt-src.jar" descriptor="gwt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt" />
+    <copy todir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt" file="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt/jetbrains.mps.ui.gwt-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/ui/languages/gwt/gwt.mpl" prefix="module" />
@@ -9791,21 +9813,18 @@
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt/jetbrains.mps.ui.gwt.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt/jetbrains.mps.ui.gwt.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt.jar.jtmp" />
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt-runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset file="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.gwt/jetbrains.mps.ui.gwt.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.ui.swing">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing/jetbrains.mps.ui.swing.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing/jetbrains.mps.ui.swing.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.ui.swing" uuid="51805413-e01e-4f51-bf62-a054ab51eb54" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -9938,10 +9957,15 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)" />
         </dependencies>
+        <runtime jar="swingx-1.6.jar" />
+        <library jar="swingx-1.6.jar" />
         <sources jar="jetbrains.mps.ui.swing-src.jar" descriptor="swing.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing" />
+    <copy todir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing" file="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing" file="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing/jetbrains.mps.ui.swing-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/ui/languages/swing/swing.mpl" prefix="module" />
@@ -9949,50 +9973,48 @@
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing/jetbrains.mps.ui.swing.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing/jetbrains.mps.ui.swing.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.jar.jtmp" />
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing-runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset file="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
-    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing/jetbrains.mps.ui.swing.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.ui.swing.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime/jetbrains.mps.ui.swing.runtime.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime/jetbrains.mps.ui.swing.runtime.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.ui.swing.runtime" uuid="acc947bf-6778-444a-9dc7-4cc72d4eb3d0" type="solution">
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
         </dependencies>
+        <library jar="swingx-1.6.jar" />
         <sources jar="jetbrains.mps.ui.swing.runtime-src.jar" descriptor="runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime" />
+    <copy todir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime" file="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime/jetbrains.mps.ui.swing.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/runtime/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/runtime/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/ui/languages/swing/runtime/runtime.msd" prefix="module" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime/jetbrains.mps.ui.swing.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime/jetbrains.mps.ui.swing.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/runtime" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swing.runtime/jetbrains.mps.ui.swing.runtime.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.ui.swt">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/ui/languages/swt/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt/jetbrains.mps.ui.swt.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt/jetbrains.mps.ui.swt.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.ui.swt" uuid="71c80332-b17f-4f0a-be23-b5cba1d261f7" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -10126,10 +10148,14 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)" />
         </dependencies>
+        <runtime jar="swt.jar" />
+        <runtime jar="jetbrains.mps.ui.swt-runtime.jar" />
         <sources jar="jetbrains.mps.ui.swt-src.jar" descriptor="swt.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt" />
+    <copy todir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt" file="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt/jetbrains.mps.ui.swt-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/ui/languages/swt/swt.mpl" prefix="module" />
@@ -10137,43 +10163,44 @@
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt/jetbrains.mps.ui.swt.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt/jetbrains.mps.ui.swt.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.jar.jtmp" />
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt-runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset file="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt/jetbrains.mps.ui.swt.jar.jtmp" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt/jetbrains.mps.ui.swt-runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ui.swt.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime/jetbrains.mps.ui.swt.runtime.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime/jetbrains.mps.ui.swt.runtime.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.ui.swt.runtime" uuid="69934240-945d-492b-83e7-39bda70200e7" type="solution">
         <dependencies>
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
         </dependencies>
+        <library jar="swt.jar" />
         <sources jar="jetbrains.mps.ui.swt.runtime-src.jar" descriptor="runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime" />
+    <copy todir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime" file="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime/jetbrains.mps.ui.swt.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/runtime/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/runtime/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/ui/languages/swt/runtime/runtime.msd" prefix="module" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime/jetbrains.mps.ui.swt.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime/jetbrains.mps.ui.swt.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/runtime" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
       <zipfileset dir="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/util/ui/jetbrains.mps.ui.swt.runtime/jetbrains.mps.ui.swt.runtime.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.buildlanguage">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -11797,8 +11824,8 @@
   <target name="pack.jetbrains.mps.xmlUnitTest">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.xmlUnitTest" uuid="f85adbd8-2ec2-4572-bcfc-8dd799a7f025" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -11922,25 +11949,25 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <runtime jar="xmlunit-1.3.jar" />
         <sources jar="jetbrains.mps.xmlUnitTest-src.jar" descriptor="xmlUnitTest.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest" />
+    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest" file="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/xmlUnitTest.mpl" prefix="module" />
       <zipfileset dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest" includes="icons/**, resources/**" />
       <zipfileset dir="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest.jar.jtmp" />
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest-runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset file="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
-    </jar>
+    <delete dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.regexp">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -12288,8 +12315,8 @@
   <target name="pack.jetbrains.mps.baseLanguage.collections.trove">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove/jetbrains.mps.baseLanguage.collections.trove.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove/jetbrains.mps.baseLanguage.collections.trove.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.baseLanguage.collections.trove" uuid="73736c50-f124-433b-b789-2828a15a0adc" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -12406,10 +12433,13 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <library jar="trove-2.1.0.jar" />
         <sources jar="jetbrains.mps.baseLanguage.collections.trove-src.jar" descriptor="trove.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove" />
+    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove" file="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove/jetbrains.mps.baseLanguage.collections.trove-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/core/baseLanguage/collections/languages/trove/trove.mpl" prefix="module" />
@@ -12417,13 +12447,12 @@
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove/jetbrains.mps.baseLanguage.collections.trove.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove/jetbrains.mps.baseLanguage.collections.trove.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
       <zipfileset dir="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.collections.trove/jetbrains.mps.baseLanguage.collections.trove.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.contracts">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -14084,8 +14113,8 @@
   <target name="pack.jetbrains.mps.gwt.client">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.gwt.client" uuid="954c4d77-e24b-4e49-a5a5-5476c966c092" type="language">
         <dependencies>
           <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
@@ -14211,24 +14240,27 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
+        <library jar="gwt-dev.jar" />
+        <library jar="gwt-user.jar" />
         <sources jar="jetbrains.mps.gwt.client-src.jar" descriptor="client.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" />
+    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-dev.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/gwtsupport/languages/client/client.mpl" prefix="module" />
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-dev.jar" />
-      <zipfileset file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.gtext">
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -14817,8 +14849,8 @@
   <target name="pack.jetbrains.mps.baseLanguage.dates.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/dates/runtime/classes_gen" />
-    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime.jar.jtmp" />
-    <echoxml file="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime.jar.jtmp/module.xml">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime/jetbrains.mps.baseLanguage.dates.runtime.jar.jtmp" />
+    <echoxml file="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime/jetbrains.mps.baseLanguage.dates.runtime.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.baseLanguage.dates.runtime" uuid="2ebbb458-8ebb-481e-a5d7-9e27903323d4" type="solution">
         <dependencies>
           <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
@@ -14833,22 +14865,24 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
         </dependencies>
+        <library jar="joda-time-1.6.jar" />
         <sources jar="jetbrains.mps.baseLanguage.dates.runtime-src.jar" descriptor="jetbrains.mps.baseLanguage.dates.runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
+    <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime" />
+    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime" file="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime/jetbrains.mps.baseLanguage.dates.runtime-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/dates/runtime/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/dates/runtime/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/languages/util/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" prefix="module" />
       <zipfileset dir="${base_dir}/languages/util/dates/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime.jar.jtmp/module.xml" prefix="META-INF" />
+    <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime/jetbrains.mps.baseLanguage.dates.runtime.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime/jetbrains.mps.baseLanguage.dates.runtime.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/languages/util/dates/runtime" includes="icons/**, resources/**" />
-      <zipfileset file="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
       <zipfileset dir="${base_dir}/languages/util/dates/runtime/classes_gen" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime.jar.jtmp" />
+    <delete dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.baseLanguage.dates.runtime/jetbrains.mps.baseLanguage.dates.runtime.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.math">
     <fail unless="base_dir" message="Property base_dir unspecified." />
