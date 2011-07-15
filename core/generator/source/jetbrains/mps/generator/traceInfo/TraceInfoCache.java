@@ -1,23 +1,21 @@
 package jetbrains.mps.generator.traceInfo;
 
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.NameUtil;
-import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.management.Descriptor;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -63,6 +61,21 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     if (classLoader == null) {
       return null;
     }
+    DebugInfo info = getCacheFromClassloader(sm, classLoader);
+    if (info == null) {
+      if (InternalFlag.isInternalMode() && !(sm.getModule().isCompileInMPS())) {
+        for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {
+          info = TraceInfoCache.getInstance().getCacheFromClassloader(sm, plugin.getPluginClassLoader());
+          if (info != null) {
+            return info;
+          }
+        }
+      }
+    }
+    return info;
+  }
+
+  public DebugInfo getCacheFromClassloader(@NotNull SModelDescriptor sm, @NotNull ClassLoader classLoader) {
     InputStream stream = classLoader.getResourceAsStream(sm.getLongName().replace(".", "/") + "/" + TRACE_FILE_NAME);
     if (stream == null) {
       return null;
