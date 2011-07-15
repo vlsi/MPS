@@ -51,7 +51,9 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
     final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(FileUtil.toSystemIndependentName(projectPath));
     if (projectFile != null) {
       Project project = ProjectUtil.openProject(projectPath, projectToClose, forceNewFrame);
-      ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
+      if (project != null) {
+        ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
+      }
     }
   }
 }
