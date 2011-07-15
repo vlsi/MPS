@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.ui.DiffEditorsGroup;
 import jetbrains.mps.vcs.diff.merge.MergeContextState;
-import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -27,6 +26,7 @@ import jetbrains.mps.vcs.diff.ui.NextPreviousTraverser;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.smodel.SModel;
@@ -57,7 +57,6 @@ public class MergeRootsDialog extends BaseDialog {
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeContextState myStateToRestore;
-  private ActionToolbar myToolbar;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.MERGE_TYPES);
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
@@ -69,15 +68,6 @@ public class MergeRootsDialog extends BaseDialog {
     };
     myModelsDialog = mergeModelsDialog;
     myMergeContext = mergeContext;
-    myMergeContext.setChangesInvalidateHandler(new MergeContext.ChangesInvalidateHandler() {
-      public void someChangesInvalidated() {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            rehighlight();
-          }
-        });
-      }
-    });
     myRootId = rootId;
     myStateToRestore = myMergeContext.getCurrentState();
 
@@ -90,15 +80,25 @@ public class MergeRootsDialog extends BaseDialog {
     linkEditors(true, true);
     linkEditors(false, true);
 
+    myMergeContext.setChangesInvalidateHandler(new MergeContext.ChangesInvalidateHandler() {
+      public void someChangesInvalidated() {
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            rehighlight();
+          }
+        });
+      }
+    });
+
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
     MergeRootsDialog.MyGoToNeighbourRootActions neighbourActions = new MergeRootsDialog.MyGoToNeighbourRootActions();
     NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupBuilders, myResultEditor.getMainEditor());
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction());
-    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
-    neighbourTraverser.setActionToolbar(myToolbar);
+    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+    neighbourTraverser.setActionToolbar(toolbar);
 
-    myContainer.add(myToolbar.getComponent(), BorderLayout.NORTH);
+    myContainer.add(toolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
     myContainer.add(this.myStatusBar, BorderLayout.SOUTH);
     highlightAllChanges();
