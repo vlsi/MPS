@@ -7530,8 +7530,11 @@
           </node>
         </node>
       </node>
+      <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="8440524662291564351">
+        <property name="text" nameId="tpih.1164413036326" value="${PRODUCT_NAME}" />
+      </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="7878409884608584591">
-        <property name="text" nameId="tpih.1164413036326" value="${PRODUCT_VERSION}" />
+        <property name="text" nameId="tpih.1164413036326" value=" ${PRODUCT_VERSION}" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="7878409884608584593">
           <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="7878409884608584594">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7878409884608584595">
@@ -7544,18 +7547,13 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bv9p.1230207861621" resolveInfo="getDistribConfiguration" />
                       </node>
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7995425423995771193">
-                      <link role="link" roleId="tp25.1138056516764" targetNodeId="60oz.1234784309457" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8440524662291596512">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="60oz.1234784329127" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="7878409884608584603" />
                 </node>
               </node>
-            </node>
-          </node>
-          <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7995425423995771195">
-            <node role="templateNode" roleId="tpf8.1177093586806" type="tpih.GText" typeId="tpih.1164412789837" id="7995425423995771197">
-              <property name="text" nameId="tpih.1164413036326" value="${PRODUCT_NAME}" />
             </node>
           </node>
         </node>
