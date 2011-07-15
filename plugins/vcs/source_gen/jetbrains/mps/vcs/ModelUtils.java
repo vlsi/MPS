@@ -110,7 +110,7 @@ public class ModelUtils {
           return name.endsWith(MPSExtentions.DOT_MODEL + "." + v.getSuffix());
         }
       });
-      if (files == null || files.length == 1) {
+      if (files == null || files.length != 1) {
         if (log.isErrorEnabled()) {
           log.error("Wrong zip contents");
         }
