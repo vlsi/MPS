@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"title", "migrationFromBuild", "category", "type", "toBuild"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier"}, new String[]{"title", "migrationFromBuild", "category", "type", "toBuild"}, new String[]{});
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{"description", "showAsIntention"}, new String[]{"affectedInstanceConcept"});
       case 2:
