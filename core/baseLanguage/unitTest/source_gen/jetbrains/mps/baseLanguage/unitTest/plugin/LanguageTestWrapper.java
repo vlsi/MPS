@@ -65,7 +65,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @NonNls
   @Override
   public String getName() {
-    if (isTestCase()) {
+    if (isTestCase() && !(SNodeOperations.isInstanceOf(myNode, "jetbrains.mps.lang.test.structure.EditorTestCase"))) {
       return ITestCase_Behavior.call_getSimpleClassName_1229278847513(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
     }
     return ITestMethod_Behavior.call_getTestName_1216136419751(SNodeOperations.cast(myNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"));
