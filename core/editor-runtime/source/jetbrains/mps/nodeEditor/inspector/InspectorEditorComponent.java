@@ -72,7 +72,7 @@ public class InspectorEditorComponent extends EditorComponent {
       public void run() {
         myNode = node;
         myRoot = myNode == null ? null : myNode.getContainingRoot();
-        setReadOnly(node == null || node.isDeleted() || node.getModel().isNotEditable());
+        setReadOnly(node == null || node.isDeleted() || node.getModel().isDisposed() || node.getModel().isNotEditable());
         if (node == null) {
           setOperationContext(null);
         } else {
