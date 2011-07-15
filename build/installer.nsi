@@ -24,7 +24,7 @@
 #************************************ Installation Properties *********************************************#
 Name "${APP_NAME}"
 OutFile "${PRODUCT_VERSION}-windows.exe"
-InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_MAJOR_VERSION}"
+InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_VERSION}"
 ShowInstDetails show
 ShowUnInstDetails show
 !define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${APP_NAME}.\n\nClick Next to continue."
