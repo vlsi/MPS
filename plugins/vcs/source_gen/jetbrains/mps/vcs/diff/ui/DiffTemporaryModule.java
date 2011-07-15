@@ -189,10 +189,6 @@ public class DiffTemporaryModule extends AbstractModule {
       }
     }
 
-    public boolean isEditable() {
-      return myEditable;
-    }
-
     public boolean isDoNotGenerate() {
       throw new UnsupportedOperationException();
     }
