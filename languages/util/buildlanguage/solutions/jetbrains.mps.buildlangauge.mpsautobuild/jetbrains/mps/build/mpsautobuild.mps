@@ -2831,11 +2831,11 @@
         <node role="checkUrl" roleId="tps4.6108265972537335224" type="tps4.SimpleString" typeId="tps4.1205339044029" id="437343344535662889">
           <property name="name" nameId="tps4.1223641503366" value="http://www.jetbrains.com/mps/update.xml" />
         </node>
-        <node role="updateUrl" roleId="tps4.6108265972537335225" type="tps4.SimpleString" typeId="tps4.1205339044029" id="437343344535662890">
-          <property name="name" nameId="tps4.1223641503366" value="http://www.jetbrains.com/mps/download/" />
-        </node>
         <node role="updateChannel" roleId="tps4.8795525031433091059" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8795525031433494621">
           <property name="name" nameId="tps4.1223641503366" value="MPS20EAP" />
+        </node>
+        <node role="updateUrl" roleId="tps4.6108265972537335225" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8440524662291451225">
+          <property name="name" nameId="tps4.1223641503366" value="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page" />
         </node>
       </node>
       <node role="help" roleId="tps4.437343344536486297" type="tps4.Help" typeId="tps4.437343344536486293" id="437343344536578822">
