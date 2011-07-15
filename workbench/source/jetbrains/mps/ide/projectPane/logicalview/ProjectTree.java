@@ -11,7 +11,10 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
 
@@ -19,11 +22,13 @@ import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ProjectTree extends MPSTree {
   private Project myProject;
   private ProjectTreeNode myProjectTreeNode;
   private jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode myModulesPoolTreeNode;
+  private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<IMakeNotificationListener>();
 
   public ProjectTree(Project project) {
     myProject = project;
@@ -62,6 +67,20 @@ public class ProjectTree extends MPSTree {
     if (!IMakeService.INSTANCE.get().isSessionActive()) {
       for(TransientModelsModule module : myProject.getComponent(TransientModelsComponent.class).getModules()) {
         root.add(new TransientModelsTreeNode(myProject, module));
+      }
+    }
+    else {
+      // postpone the update until the make session ends
+      if (myMakeNotificationListener.compareAndSet(null, new Stub() {
+        @Override
+        public void sessionClosed(MakeNotification notification) {
+          rebuildLater();
+          IMakeService.INSTANCE.get().removeListener(this);
+          myMakeNotificationListener.set(null);
+        }
+      }))
+      {
+        IMakeService.INSTANCE.get().addListener(myMakeNotificationListener.get());
       }
     }
     myProjectTreeNode = projectRoot;
