@@ -23,6 +23,6 @@ public class ShowTrackerAction extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return Command.TEAMSYS + "/issues/MPS";
+    return Command.YOUTRACK_BASE_URL + "/issues/MPS";
   }
 }

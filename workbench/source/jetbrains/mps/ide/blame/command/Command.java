@@ -24,10 +24,10 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
 public class Command {
-  public static final String TEAMSYS = "http://youtrack.jetbrains.net";
+  public static final String YOUTRACK_BASE_URL = "http://youtrack.jetbrains.net";
   public static final String LOGIN = "/rest/user/login";
   public static final String POST_ISSUE = "/rest/issue/";
-  public static final String ISSUE_URL = TEAMSYS + "/issue/";
+  public static final String ISSUE_BASE_URL = YOUTRACK_BASE_URL + "/issue/";
 
   private static final String PROJECT = "MPS";
   private static final String EXCEPTION = "Exception";
@@ -40,15 +40,15 @@ public class Command {
   private static final String TYPE_PARAM_NAME = "type";
 
   public static Response login(final HttpClient c, Query query) throws IOException {
-    PostMethod p = new PostMethod(TEAMSYS + LOGIN);
+    PostMethod p = new PostMethod(YOUTRACK_BASE_URL + LOGIN);
     p.addParameter(LOGIN_PARAM_NAME, query.getUser());
     p.addParameter(PASSWORD_PARAM_NAME, query.getPassword());
     c.executeMethod(p);
 
     int statusCode = p.getStatusCode();
     String responseString = p.getResponseBodyAsString();
-    if (statusCode != 200 || responseString.indexOf("ok") == -1) {
-      return new Response("Can't login into issue tracker (status " + statusCode + ")", responseString, false, null);
+    if (statusCode != 200 || !responseString.contains("ok")) {
+      return new Response("Can't login into issue tracker", responseString, false, null);
     } else {
       return new Response("Logged in correctly", responseString, true, null);
     }
@@ -56,7 +56,7 @@ public class Command {
 
   @NotNull
   public static Response postIssue(HttpClient c, String summary, String description) throws IOException {
-    PostMethod p = new PostMethod(TEAMSYS + POST_ISSUE);
+    PostMethod p = new PostMethod(YOUTRACK_BASE_URL + POST_ISSUE);
     p.addParameter(PROJECT_PARAM_NAME, PROJECT);
     p.addParameter(SUMMARY_PARAM_NAME, summary);
     p.addParameter(DESCRIPTION_PARAM_NAME, description);

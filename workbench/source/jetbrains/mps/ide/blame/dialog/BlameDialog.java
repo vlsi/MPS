@@ -134,7 +134,7 @@ public class BlameDialog extends BaseDialog {
   }
 
   private Query createQuery() {
-    return myAnonymousRadio.isSelected() ? Query.ANONYMOUS : new Query(myUsername.getText(), myPassword.getText());
+    return myAnonymousRadio.isSelected() || myUsername.getText().isEmpty() ? Query.ANONYMOUS : new Query(myUsername.getText(), myPassword.getText());
   }
 
   private String ex2str(Throwable e) {
@@ -219,12 +219,17 @@ public class BlameDialog extends BaseDialog {
     myResult = poster.send(query);
 
     if (!myResult.isSuccess()) {
-      String message = "Was unable to post the issue: \n" + myResult.getMessage();
+      String message = myResult.getMessage();
       String response = myResult.getResponseString();
       if (response != null && !response.equals("")) {
-        message += "\n" + response;
+        Element responseXML = responseXML();
+        if (responseXML != null && "error".equalsIgnoreCase(responseXML.getName())) {
+          message += ". " + responseXML.getText();
+        } else {
+          message += ". " + response;
+        }
       }
-      JOptionPane.showMessageDialog(BlameDialog.this, message, "Error", JOptionPane.ERROR_MESSAGE);
+      Messages.showErrorDialog(BlameDialog.this, message, "Error");
       return;
     }
 
@@ -235,20 +240,29 @@ public class BlameDialog extends BaseDialog {
     dispose();
   }
 
-  private void openIssueInBrowser() {
-    final String ID = "id";
+  private Element responseXML() {
+    String responseString = myResult.getResponseString();
+    if (responseString == null || responseString.isEmpty()) {
+      return null;
+    }
     SAXBuilder saxBuilder = new SAXBuilder();
     Document document = null;
     try {
-      document = saxBuilder.build(new StringReader(myResult.getResponseString()));
+      document = saxBuilder.build(new StringReader(responseString));
     } catch (Exception e) {
       LOG.error("Can't open created issue", e);
-      return;
+      return null;
     }
-    Element responseXML = document.getRootElement();
-    String issueId = responseXML.getAttribute(ID).getValue();
+    return document.getRootElement();
+  }
 
-    BrowserUtil.launchBrowser(Command.ISSUE_URL + issueId);
+  private void openIssueInBrowser() {
+    final String ID = "id";
+    Element responseXML = responseXML();
+    if (responseXML != null) {
+      String issueId = responseXML.getAttribute(ID).getValue();
+      BrowserUtil.launchBrowser(Command.ISSUE_BASE_URL + issueId);
+    }
   }
 
   @Button(position = 1, name = "Cancel", mnemonic = 'C')
