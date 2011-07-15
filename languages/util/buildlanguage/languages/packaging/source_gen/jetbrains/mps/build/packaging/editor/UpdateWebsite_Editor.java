@@ -41,7 +41,9 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_2cmpa5_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2cmpa5_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2cmpa5_c1a(editorContext, node));
+    if (renderingCondition_2cmpa5_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_2cmpa5_c1a(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -77,9 +79,7 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_2cmpa5_a2b0(editorContext, node));
-    if (renderingCondition_2cmpa5_a1c1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_2cmpa5_b2b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createRefNode_2cmpa5_b2b0(editorContext, node));
     return editorCell;
   }
 
@@ -177,7 +177,7 @@ public class UpdateWebsite_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2cmpa5_a1c1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2cmpa5_a2b0(SNode node, EditorContext editorContext, IScope scope) {
     return InternalFlag.isInternalMode();
   }
 }
