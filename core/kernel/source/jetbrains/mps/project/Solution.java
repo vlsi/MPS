@@ -103,7 +103,11 @@ public class Solution extends AbstractModule {
 
   @Deprecated
   public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    return newInstance(new ModuleHandle(descriptorFile, null), moduleOwner);
+    ModuleDescriptor desciptor = null;
+    if(descriptorFile.exists()) {
+      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
+    }
+    return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);
   }
 
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {

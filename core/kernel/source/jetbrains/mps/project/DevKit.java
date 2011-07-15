@@ -76,7 +76,11 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
 
   @Deprecated
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    return newInstance(new ModuleHandle(descriptorFile, null), moduleOwner);
+    ModuleDescriptor desciptor = null;
+    if(descriptorFile.exists()) {
+      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
+    }
+    return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);
   }
 
   public static DevKit newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {

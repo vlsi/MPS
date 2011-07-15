@@ -67,7 +67,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   @Deprecated
   public static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    return createLanguage(namespace, new ModuleHandle(descriptorFile, null), moduleOwner);
+    ModuleDescriptor desciptor = null;
+    if(descriptorFile.exists()) {
+      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
+    }
+    return createLanguage(namespace, new ModuleHandle(descriptorFile, desciptor), moduleOwner);
   }
 
   public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
