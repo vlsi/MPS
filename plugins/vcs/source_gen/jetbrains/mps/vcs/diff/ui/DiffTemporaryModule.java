@@ -27,8 +27,14 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
+import java.util.Map;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.refactoring.StructureModificationLog;
 
 public class DiffTemporaryModule extends AbstractModule {
   private SModel myModel;
@@ -153,7 +159,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
   }
 
-  public static class DiffSModelDescriptor extends BaseSModelDescriptor {
+  public static class DiffSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
     private IModule myModule;
     private boolean myEditable;
 
@@ -185,6 +191,88 @@ public class DiffTemporaryModule extends AbstractModule {
 
     public boolean isEditable() {
       return myEditable;
+    }
+
+    public boolean isDoNotGenerate() {
+      throw new UnsupportedOperationException();
+    }
+
+    public void setDoNotGenerate(boolean b) {
+      throw new UnsupportedOperationException();
+    }
+
+    public boolean isPackaged() {
+      return !(myEditable);
+    }
+
+    public void setChanged(boolean b) {
+      throw new UnsupportedOperationException();
+    }
+
+    public boolean isChanged() {
+      throw new UnsupportedOperationException();
+    }
+
+    public long lastChangeTime() {
+      throw new UnsupportedOperationException();
+    }
+
+    public void setModelFile(IFile file) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Nullable
+    public IFile getModelFile() {
+      throw new UnsupportedOperationException();
+    }
+
+    public int getPersistenceVersion() {
+      throw new UnsupportedOperationException();
+    }
+
+    public void setVersion(int i) {
+      throw new UnsupportedOperationException();
+    }
+
+    public void save() {
+      throw new UnsupportedOperationException();
+    }
+
+    public Map<String, String> getMetaData() {
+      throw new UnsupportedOperationException();
+    }
+
+    public int getVersion() {
+      throw new UnsupportedOperationException();
+    }
+
+    public void reloadFromDiskSafe() {
+      throw new UnsupportedOperationException();
+    }
+
+    public void setAttribute(String string, String string1) {
+      throw new UnsupportedOperationException();
+    }
+
+    public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
+      throw new UnsupportedOperationException();
+    }
+
+    public void reloadFromDisk() {
+      throw new UnsupportedOperationException();
+    }
+
+    public String getAttribute(String string) {
+      throw new UnsupportedOperationException();
+    }
+
+    @NotNull
+    public StructureModificationLog getStructureModificationLog() {
+      throw new UnsupportedOperationException();
+    }
+
+    public boolean needsReloading() {
+      throw new UnsupportedOperationException();
     }
   }
 
