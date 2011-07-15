@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -30,6 +30,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.event.KeyEvent;
 import javax.swing.KeyStroke;
@@ -88,26 +89,34 @@ public class BaseEditorTestBody extends BaseTestBody {
     return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getId()), ListSequence.fromList(annotations).first(), this.myMap);
   }
 
-  public void checkAssertion() throws InvocationTargetException, InterruptedException {
+  public void checkAssertion() throws Throwable {
+    final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              SNode editedNode = BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode().getNode();
-              Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
-              Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
-              if (BaseEditorTestBody.this.myFinish != null) {
-                BaseEditorTestBody.this.myFinish.assertEditor(BaseEditorTestBody.this.myEditor, map);
+              try {
+                SNode editedNode = BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode().getNode();
+                Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
+                Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
+                if (BaseEditorTestBody.this.myFinish != null) {
+                  BaseEditorTestBody.this.myFinish.assertEditor(BaseEditorTestBody.this.myEditor, map);
+                }
+              } catch (Throwable t) {
+                throwable.value = t;
               }
             }
           });
         }
       }
     });
+    if (throwable.value != null) {
+      throw throwable.value;
+    }
   }
 
-  public void testMethod() throws Exception {
+  public void testMethod() throws Throwable {
     try {
       this.testMethodImpl();
       this.checkAssertion();

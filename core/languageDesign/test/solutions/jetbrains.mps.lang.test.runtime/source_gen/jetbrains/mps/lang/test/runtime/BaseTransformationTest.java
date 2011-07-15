@@ -153,7 +153,7 @@ public abstract class BaseTransformationTest extends TestCase {
     } catch (IllegalAccessException e) {
       e.printStackTrace();
     } catch (InvocationTargetException e) {
-      exception = e.getCause();
+      exception = e.getTargetException();
     }
     return exception;
   }
