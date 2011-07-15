@@ -47,7 +47,7 @@ public class TransientModelPersistence {
       return null;
     }
 
-    SModel m = new TransientSModel(myModelReference);
+    SModel m = new TransientSModel(myModelReference, false);
     m.setLoading(true);
     List<SNode> roots = new NodesReader(myModelReference).readNodes(m, is);
     return roots;
