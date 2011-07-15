@@ -10,19 +10,13 @@ import org.jetbrains.annotations.NotNull;
  * Evgeny Gryaznov, Apr 19, 2010
  */
 public class TransientSModel extends SModel {
-  private final boolean myModifiable;
-
-  public TransientSModel(@NotNull SModelReference modelReference, boolean modifiable) {
+  public TransientSModel(@NotNull SModelReference modelReference) {
     super(modelReference, new RegularNodeIdMap());
-    myModifiable = modifiable;
   }
 
   @Override
   protected FastNodeFinder createFastNodeFinder() {
-    if (!myModifiable) {
-      return new TransientModelNodeFinder(this);
-    }
-    return super.createFastNodeFinder();
+    return new TransientModelNodeFinder(this);
   }
 
   public boolean isTransient() {

@@ -193,7 +193,7 @@ public class TransientModelsComponent implements ProjectComponent {
 
     boolean swapOut(TransientSModel model);
 
-    TransientSModel restoreFromSwap (SModelReference mref, boolean modifiable);
+    TransientSModel restoreFromSwap (SModelReference mref);
 
     void clear();
   }

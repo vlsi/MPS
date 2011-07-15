@@ -194,13 +194,13 @@ public class TransientModelsModule extends AbstractModule {
     }
   }
 
-  public SModelDescriptor createTransientModel(final String longName, String stereotype, boolean modifiable) {
+  public SModelDescriptor createTransientModel(final String longName, String stereotype) {
     while (!isValidName(longName, stereotype)) {
       stereotype += "_";
     }
 
     SModelFqName fqName = new SModelFqName(longName, stereotype);
-    SModelDescriptor result = new TransientSModelDescriptor(fqName, longName, modifiable);
+    SModelDescriptor result = new TransientSModelDescriptor(fqName, longName);
 
     myModels.put(result.getSModelReference().getSModelFqName(), result);
     invalidateCaches();
@@ -240,13 +240,11 @@ public class TransientModelsModule extends AbstractModule {
 
   public class TransientSModelDescriptor extends BaseSModelDescriptor {
     private final String myLongName;
-    private final boolean myModifiable;
     private boolean wasUnloaded = false;
 
-    private TransientSModelDescriptor(SModelFqName fqName, String longName, boolean modifiable) {
+    private TransientSModelDescriptor(SModelFqName fqName, String longName) {
       super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
       myLongName = longName;
-      myModifiable = modifiable;
     }
 
     protected ModelLoadResult initialLoad() {
@@ -257,11 +255,11 @@ public class TransientModelsModule extends AbstractModule {
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
         if (swap == null) { throw new IllegalStateException("no swap space"); }
 
-        model = swap.restoreFromSwap(getSModelReference(), myModifiable);
+        model = swap.restoreFromSwap(getSModelReference());
         if (model == null) { throw new IllegalStateException("lost swapped out model"); }
       }
       else{
-        model = new TransientSModel(getSModelReference(), myModifiable);
+        model = new TransientSModel(getSModelReference());
       }
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }

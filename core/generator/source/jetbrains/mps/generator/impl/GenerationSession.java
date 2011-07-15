@@ -266,7 +266,7 @@ public class GenerationSession {
     currentInputModel = preProcessModel(ruleManager, currentInputModel);
     ttrace.pop();
 
-    SModel currentOutputModel = createTransientModel(false);
+    SModel currentOutputModel = createTransientModel();
     tracer.startTracing(currentInputModel, currentOutputModel);
 
     // -----------------------
@@ -300,7 +300,7 @@ public class GenerationSession {
       currentInputModel.setLoading(false);
       currentInputModel.disposeFastNodeFinder();
 
-      SModel transientModel = createTransientModel(false);
+      SModel transientModel = createTransientModel();
       if (myLogger.needsInfo()) {
         myLogger.info("next minor step '" + currentInputModel.getSModelFqName().getStereotype() + "' --> '" + transientModel.getSModelFqName().getStereotype() + "'");
       }
@@ -383,19 +383,20 @@ public class GenerationSession {
 
     // need to clone input model?
     boolean needToCloneInputModel = !myDiscardTransients;  // clone model if save transients (needed for tracing)
-    boolean modifiesModel = false;
-    for (TemplateMappingScript preMappingScript : preMappingScripts) {
-      if (preMappingScript.getKind() == TemplateMappingScript.PREPROCESS) {
-        if (preMappingScript.modifiesModel()) {
-          needToCloneInputModel = modifiesModel = true;
-          break;
+    if (!needToCloneInputModel) {
+      for (TemplateMappingScript preMappingScript : preMappingScripts) {
+        if (preMappingScript.getKind() == TemplateMappingScript.PREPROCESS) {
+          if (preMappingScript.modifiesModel()) {
+            needToCloneInputModel = true;
+            break;
+          }
         }
       }
     }
     SModel toRecycle = null;
     if (needToCloneInputModel) {
       ttrace.push("model clone", false);
-      SModel currentInputModel_clone = createTransientModel(modifiesModel);
+      SModel currentInputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
       }
@@ -453,7 +454,7 @@ public class GenerationSession {
     SModel toRecycle = null;
     if (needToCloneModel) {
       ttrace.push("model clone", false);
-      SModel currentOutputModel_clone = createTransientModel(false);
+      SModel currentOutputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
       }
@@ -498,10 +499,10 @@ public class GenerationSession {
   }
 
 
-  private SModel createTransientModel(boolean modifiable) {
+  private SModel createTransientModel() {
     String longName = myOriginalInputModel.getLongName();
     String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
-    SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype, modifiable);
+    SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
     transientModel.getSModel().setLoading(true); // we dont need any events to be cast
     return transientModel.getSModel();
   }

@@ -106,7 +106,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
     }
 
     @Override
-    public TransientSModel restoreFromSwap(SModelReference mref, boolean modifiable) {
+    public TransientSModel restoreFromSwap(SModelReference mref) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
       String modelId = mref.getSModelId().toString();
@@ -119,7 +119,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
       ModelInputStream mis = null;
       try {
         mis = new ModelInputStream(new FileInputStream(swapFile));
-        return loadModel(mref, mis, new TransientSModel(mref, modifiable));
+        return loadModel(mref, mis, new TransientSModel(mref));
       } catch (IOException e) {
         LOG.error(e);
         throw new RuntimeException(e);
