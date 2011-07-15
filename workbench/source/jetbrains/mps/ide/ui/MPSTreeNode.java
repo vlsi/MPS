@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.ui.treeStructure.Tree;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
@@ -196,7 +197,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   final void removeThisAndChildren() {
     if (!myAdded) {
-      throw new IllegalStateException("Trying to remove tree node which have not been added");
+      throw new IllegalStateException(
+        String.format("Trying to remove tree node which have not been added, tree=%s, node=%s",
+          myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
     }
     try {
       onRemove();
@@ -214,7 +217,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   final void addThisAndChildren() {
     if (myAdded) {
-      throw new IllegalStateException("Trying to add tree node which have already been added");
+      throw new IllegalStateException(
+        String.format("Trying to add tree node which have already been added, tree=%s, node=%s",
+        myTree != null ? myTree.getClass().getName() : "null", getClass().getName()));
     }
     try {
       onAdd();
