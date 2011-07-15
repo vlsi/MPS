@@ -25,7 +25,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.model.*;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -68,7 +68,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Deprecated
   public static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     ModuleDescriptor desciptor = null;
-    if(descriptorFile.exists()) {
+    if (descriptorFile.exists()) {
       desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
     }
     return createLanguage(namespace, new ModuleHandle(descriptorFile, desciptor), moduleOwner);
@@ -529,7 +529,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     // language aspects
     for (LanguageAspect aspect : LanguageAspect.values()) {
       SModelDescriptor model = aspect.get(this);
-      if (model instanceof EditableSModelDescriptor && !((EditableSModelDescriptor)model).isPackaged()) {
+      if (model instanceof EditableSModelDescriptor && !((EditableSModelDescriptor) model).isPackaged()) {
         inputModels.add(model);
       }
     }
@@ -547,7 +547,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     // util models
-    for (EditableSModelDescriptor esmd: getUtilModels()) {
+    for (EditableSModelDescriptor esmd : getUtilModels()) {
       if (!esmd.isPackaged()) {
         inputModels.add(esmd);
       }
@@ -556,8 +556,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     // generators
     List<Generator> list = getGenerators();
     for (Generator generator : list) {
-      for (SModelDescriptor smd: generator.getGeneratorModels()) {
-        if (smd instanceof EditableSModelDescriptor && !((EditableSModelDescriptor)smd).isPackaged()) {
+      for (SModelDescriptor smd : generator.getGeneratorModels()) {
+        if (smd instanceof EditableSModelDescriptor && !((EditableSModelDescriptor) smd).isPackaged()) {
           inputModels.add(smd);
         }
       }
@@ -665,14 +665,14 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public List<StubPath> getOwnStubPaths() {
     List<StubPath> result = new ArrayList<StubPath>();
-    if(isCompileInMPS()) {
+    if (isCompileInMPS()) {
       IFile classesGen = getClassesGen();
-      if (classesGen!=null){
+      if (classesGen != null) {
         result.add(new StubPath(classesGen.getPath(), LanguageID.JAVA_MANAGER));
       }
     } else {
       IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
-      if (classes!=null){
+      if (classes != null) {
         result.add(new StubPath(classes.getPath(), LanguageID.JAVA_MANAGER));
       }
     }
@@ -731,31 +731,34 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       String jarName = getModuleFqName() + ".jar";
       IFile bundleHomeFile = bundleParent.getDescendant(jarName);
 
-      if(!bundleHomeFile.exists()) return;
+      if (!bundleHomeFile.exists()) return;
 
-      boolean hasClasspath = false, skipClasspath = false;
-      List<ModelRoot> remove = new ArrayList<ModelRoot>();
+      boolean hasClasspath = false;
 
       for (ModelRoot entry : myLanguageDescriptor.getRuntimeStubModels()) {
         String path = entry.getPath();
-        if(path.endsWith(".jar")) {
-          IFile cp = FileSystem.getInstance().getFileByPath(path);
-          if(!cp.exists()) {
-            entry.setPath(bundleHomeFile.getPath() + "!/" + cp.getName());
-          } else if(bundleHomeFile.equals(cp)) {
-            skipClasspath = true;
-          }
-        } else {
+        if (!(path.endsWith(".jar")) || bundleHomeFile.getPath().equals(path)) {
           hasClasspath = true;
-          remove.add(entry);
         }
       }
-      myLanguageDescriptor.getRuntimeStubModels().removeAll(remove);
+      myLanguageDescriptor.getRuntimeStubModels().clear();
 
-      if(hasClasspath && !skipClasspath) {
+      if (hasClasspath) {
         ClassPathEntry bundleHome = new ClassPathEntry();
         bundleHome.setPath(bundleHomeFile.getPath());
         myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(bundleHome));
+      }
+
+      DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
+      if (dd == null) return;
+
+      for (String jarFile : dd.getRuntimeJars()) {
+        IFile jar = bundleParent.getDescendant(jarFile);
+        if (jar.exists()) {
+          ClassPathEntry jarEntry = new ClassPathEntry();
+          jarEntry.setPath(jar.getPath());
+          myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
+        }
       }
     }
   }

@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Evgeny Gryaznov, 7/12/11
  */
@@ -22,6 +25,9 @@ public class DeploymentDescriptor extends ModuleDescriptor {
   private String mySourcesJar;
   private String myDescriptorFile;
   private String myType;
+
+  private final List<String> myRuntime = new ArrayList<String>();
+  private final List<String> myLibraries = new ArrayList<String>();
 
   public String getSourcesJar() {
     return mySourcesJar;
@@ -45,5 +51,13 @@ public class DeploymentDescriptor extends ModuleDescriptor {
 
   public void setType(String type) {
     myType = type;
+  }
+
+  public List<String> getRuntimeJars() {
+    return myRuntime;
+  }
+
+  public List<String> getLibraries() {
+    return myLibraries;
   }
 }

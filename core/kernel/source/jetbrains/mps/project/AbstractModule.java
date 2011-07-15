@@ -23,10 +23,7 @@ import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -257,29 +254,35 @@ public abstract class AbstractModule implements IModule {
     IFile bundleHomeFile = getBundleHome();
     if (bundleHomeFile == null) return;
 
-    boolean hasClasspath = false, skipClasspath = false;
-    List<ModelRoot> remove = new ArrayList<ModelRoot>();
+    IFile bundleParent = bundleHomeFile.getParent();
+    if(bundleParent == null || !bundleParent.exists()) return;
+
+    boolean hasClasspath = false;
 
     for (ModelRoot entry : descriptor.getStubModelEntries()) {
       String path = entry.getPath();
-      if (path.endsWith(".jar")) {
-        IFile cp = FileSystem.getInstance().getFileByPath(path);
-        if (!cp.exists()) {
-          entry.setPath(bundleHomeFile.getPath() + "!/" + cp.getName());
-        } else if (bundleHomeFile.equals(cp)) {
-          skipClasspath = true;
-        }
-      } else {
+      if (!(path.endsWith(".jar")) || bundleHomeFile.getPath().equals(path)) {
         hasClasspath = true;
-        remove.add(entry);
       }
     }
-    descriptor.getStubModelEntries().removeAll(remove);
+    descriptor.getStubModelEntries().clear();
 
-    if (hasClasspath && !skipClasspath) {
+    if (hasClasspath) {
       ClassPathEntry bundleHome = new ClassPathEntry();
       bundleHome.setPath(bundleHomeFile.getPath());
       descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(bundleHome));
+    }
+
+    DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
+    if(dd == null) return;
+
+    for (String jarFile : dd.getLibraries()) {
+      IFile jar = bundleParent.getDescendant(jarFile);
+      if(jar.exists()) {
+        ClassPathEntry jarEntry = new ClassPathEntry();
+        jarEntry.setPath(jar.getPath());
+        descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
+      }
     }
   }
 
