@@ -85,7 +85,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         });
         StubReloadManager.getInstance().loadImmediately(myAuxModule, pathsToAdd);
 
-        createNodesToShow(myAuxModel);
+        myAuxModel.getSModel().runLoadingAction(new Runnable() {
+          public void run() {
+            createNodesToShow(myAuxModel);
+          }
+        });
       }
     });
   }
@@ -131,21 +135,21 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   @Override
   public void updateState() {
     super.updateState();
-    createVars();
+    myAuxModel.getSModel().runLoadingAction(new Runnable() {
+      public void run() {
+        createVars();
+      }
+    });
   }
 
   @Override
   public void createNodesToShow(EditableSModelDescriptor model) {
     super.createNodesToShow(model);
 
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
-      public void run() {
-        SModel model = getLocationModel();
-        if (model != null) {
-          LowLevelEvaluationModel.this.importStubForFqName(model.getSModelFqName().toString());
-        }
-      }
-    }, myDebugSession.getProject());
+    SModel locationModel = getLocationModel();
+    if (locationModel != null) {
+      LowLevelEvaluationModel.this.importStubForFqName(locationModel.getSModelFqName().toString());
+    }
 
     createVars();
   }
@@ -178,12 +182,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         }
       });
     }
-
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         fillVariables();
       }
-    }, myDebugSession.getProject());
+    });
   }
 
   private void fillVariables() {

@@ -133,13 +133,8 @@ public abstract class AbstractEvaluationModel {
     // todo do we need a separate method for that now? 
     // creating evaluator node 
     myEvaluator = createEvaluator(model);
-
-    model.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        model.getSModel().addRoot(myEvaluator);
-        SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
-      }
-    });
+    model.getSModel().addRoot(myEvaluator);
+    SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
   }
 
   protected SNode createEvaluator(SModelDescriptor model) {
