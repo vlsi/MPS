@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
@@ -735,13 +736,23 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       boolean hasClasspath = false;
 
+      List<ModelRoot> jarsToRetain = new ArrayList<ModelRoot>();
+      Set<String> skipJars = new HashSet<String>();
+
+      String libFolder = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).getDescendant("lib").getPath();
       for (ModelRoot entry : myLanguageDescriptor.getRuntimeStubModels()) {
         String path = entry.getPath();
         if (!(path.endsWith(".jar")) || bundleHomeFile.getPath().equals(path)) {
           hasClasspath = true;
+        } else {
+          IFile jar = FileSystem.getInstance().getFileByPath(path);
+          if(jar.exists() && jar.getPath().startsWith(libFolder)) {
+            skipJars.add(jar.getName());
+            jarsToRetain.add(entry);
+          }
         }
       }
-      myLanguageDescriptor.getRuntimeStubModels().clear();
+      myLanguageDescriptor.getRuntimeStubModels().retainAll(jarsToRetain);
 
       if (hasClasspath) {
         ClassPathEntry bundleHome = new ClassPathEntry();
@@ -754,7 +765,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       for (String jarFile : dd.getRuntimeJars()) {
         IFile jar = bundleParent.getDescendant(jarFile);
-        if (jar.exists()) {
+        if (!skipJars.contains(jarFile) && jar.exists()) {
           ClassPathEntry jarEntry = new ClassPathEntry();
           jarEntry.setPath(jar.getPath());
           myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
