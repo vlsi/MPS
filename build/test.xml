@@ -22,7 +22,7 @@
 
     <mkdir dir="${dest}/buildtests.tmp"/>
     <path id="tests.classpath">
-      <fileset dir="${dest}/MPS/lib">
+      <fileset dir="${dest}/MPS ${version}/lib">
         <include name="**/*.jar"/>
       </fileset>
       <path path="${dest}/MPS/languages/generate.ant.task.jar"/>
