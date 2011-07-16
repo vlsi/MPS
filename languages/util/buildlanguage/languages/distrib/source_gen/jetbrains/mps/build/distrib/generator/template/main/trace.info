@@ -487,8 +487,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1234545169127" fileName="QueriesGenerated.java" startLine="1091" startPosition="74" endLine="1099" endPosition="5" />
     <scopeInfo nodeId="1234544998539" fileName="QueriesGenerated.java" startLine="1089" startPosition="149" endLine="1100" endPosition="20">
-      <varInfo nodeId="1234545184329" varName="elements" />
       <varInfo nodeId="1234545164165" varName="extensions" />
+      <varInfo nodeId="1234545184329" varName="elements" />
     </scopeInfo>
   </root>
   <root nodeId="1234781216378">

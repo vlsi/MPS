@@ -69,7 +69,7 @@
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
-      <tarfileset dir="${deploy.dir}${root.folder}" prefix="${dist.folder.name}" excludes="**/*.dll, **/*.exe" />
+      <tarfileset dir="${deploy.dir}/${root.folder}" prefix="${dist.folder.name}" excludes="**/*.dll, **/*.exe" />
       <tarfileset file="${unix.startup.file}" prefix="${dist.folder.name}" filemode="755" />
       <tarfileset file="${vmoptions.file}" prefix="${dist.folder.name}/bin" />
       <tarfileset file="${help.file}" prefix="${dist.folder.name}/help" />

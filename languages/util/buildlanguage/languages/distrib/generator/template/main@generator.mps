@@ -9462,7 +9462,7 @@
                     <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1241440614570" resolveInfo="root.folder" />
                   </node>
                   <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1241440916369">
-                    <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}" />
+                    <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}/" />
                   </node>
                 </node>
               </node>

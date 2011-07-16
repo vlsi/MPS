@@ -25,7 +25,7 @@
       <fileset dir="${dest}/MPS ${version}/lib">
         <include name="**/*.jar"/>
       </fileset>
-      <path path="${dest}/MPS/languages/generate.ant.task.jar"/>
+      <path path="${dest}/MPS ${version}/languages/generate.ant.task.jar"/>
     </path>
     <javac classpathref="tests.classpath" destdir="${dest}/buildtests.tmp" fork="true" includeantruntime="false"
            memorymaximumsize="1024m">
@@ -34,12 +34,12 @@
         <path path="${mps_home}/testbench/tests_gen"/>
       </src>
     </javac>
-    <jar destfile="${dest}/MPS/lib/mpstests.jar" duplicate="preserve" filesonly="true">
+    <jar destfile="${dest}/MPS ${version}/lib/mpstests.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${dest}/buildtests.tmp"/>
     </jar>
     <delete dir="${dest}/buildtests.tmp"/>
 
-    <junit fork="true" dir="${dest}/MPS" haltonfailure="true">
+    <junit fork="true" dir="${dest}/MPS ${version}" haltonfailure="true">
       <jvmarg value="-ea"/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1200m"/>
@@ -50,10 +50,10 @@
       <test name="CheckProjectStructure"/>
       <formatter type="brief" usefile="false"/>
       <classpath>
-        <fileset dir="${dest}/MPS/lib">
+        <fileset dir="${dest}/MPS ${version}/lib">
           <include name="*.jar"/>
         </fileset>
-        <path path="${dest}/MPS/languages/generate.ant.task.jar"/>
+        <path path="${dest}/MPS ${version}/languages/generate.ant.task.jar"/>
       </classpath>
     </junit>
   </target>
