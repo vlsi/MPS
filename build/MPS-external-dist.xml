@@ -38,6 +38,7 @@
   <target name="universal.dist">
     <fail unless="version" message="Property version unspecified." />
     <fail unless="build.number" message="Property build.number unspecified." />
+    <property name="dist.folder.name" value="MPS ${version}" />
     <property name="root.folder" value="MPS" />
     <property name="zip.file" value="${build.number}.zip" />
     <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
@@ -48,19 +49,20 @@
     <fixcrlf file="${windows.startup.file}" eof="asis" eol="dos" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <zip destfile="${deploy.dir}/${zip.file}">
-      <zipfileset dir="${deploy.dir}">
+      <zipfileset dir="${deploy.dir}" prefix="${dist.folder.name}">
         <include name="${root.folder}/**" />
       </zipfileset>
-      <zipfileset file="${unix.startup.file}" prefix="${root.folder}" filemode="755" />
-      <zipfileset file="${windows.startup.file}" prefix="${root.folder}" />
-      <zipfileset file="${vmoptions.file}" prefix="${root.folder}/bin" />
-      <zipfileset file="${vmoptions.file}" fullpath="${root.folder}/bin/mps.exe.vmoptions" />
-      <zipfileset file="${help.file}" prefix="${root.folder}/help" />
+      <zipfileset file="${unix.startup.file}" prefix="${dist.folder.name}" filemode="755" />
+      <zipfileset file="${windows.startup.file}" prefix="${dist.folder.name}" />
+      <zipfileset file="${vmoptions.file}" prefix="${dist.folder.name}/bin" />
+      <zipfileset file="${vmoptions.file}" fullpath="${dist.folder.name}/bin/mps.exe.vmoptions" />
+      <zipfileset file="${help.file}" prefix="${dist.folder.name}/help" />
     </zip>
   </target>
   <target name="unix.dist">
     <fail unless="version" message="Property version unspecified." />
     <fail unless="build.number" message="Property build.number unspecified." />
+    <property name="dist.folder.name" value="MPS ${version}" />
     <property name="root.folder" value="MPS" />
     <property name="tar.gz.file" value="${build.number}-linux.tar.gz" />
     <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
@@ -69,12 +71,12 @@
     <fixcrlf file="${unix.startup.file}" eof="remove" eol="unix" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
-      <tarfileset dir="${deploy.dir}" excludes="**/*.dll, **/*.exe">
+      <tarfileset dir="${deploy.dir}" prefix="${dist.folder.name}" excludes="**/*.dll, **/*.exe">
         <include name="${root.folder}/**" />
       </tarfileset>
-      <tarfileset file="${unix.startup.file}" prefix="${root.folder}" filemode="755" />
-      <tarfileset file="${vmoptions.file}" prefix="${root.folder}/bin" />
-      <tarfileset file="${help.file}" prefix="${root.folder}/help" />
+      <tarfileset file="${unix.startup.file}" prefix="${dist.folder.name}" filemode="755" />
+      <tarfileset file="${vmoptions.file}" prefix="${dist.folder.name}/bin" />
+      <tarfileset file="${help.file}" prefix="${dist.folder.name}/help" />
     </tar>
   </target>
   <target name="macos.dist">
@@ -89,7 +91,7 @@
     <property name="unix.startup.script" value="${scripts.folder}/mps.sh" />
     <property name="zip.file" value="${build.number}-macos.zip" />
     <property name="root.folder" value="MPS" />
-    <property name="root.folder.dest" value="${root.folder}.app" />
+    <property name="root.folder.dest" value="MPS ${version}.app" />
     <property name="help.file" value="${mps_home}/help/mpshelp_mac.jar" />
     <copy file="${info.plist}" tofile="${info.plist.tmp}" />
     <replace file="${info.plist.tmp}" token="$version$" value="${version}" />

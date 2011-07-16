@@ -236,6 +236,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "antName");
   }
 
+  public static Object propertyMacro_GetPropertyValue_2833246249519010030(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) != null) {
+      return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true)) + " " + IStringExpression_Behavior.call_getAntValue_8148924375507875982(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true));
+    }
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1230565019437(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
@@ -332,6 +339,13 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1234519414225(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8301938783869594524(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) != null) {
+      return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true)) + " " + IStringExpression_Behavior.call_getAntValue_8148924375507875982(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true));
+    }
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_4483399040246924457(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -459,6 +473,13 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1241440614564(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "antName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8301938783869594425(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true) != null) {
+      return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true)) + " " + IStringExpression_Behavior.call_getAntValue_8148924375507875982(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "releaseVersion", true));
+    }
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "shortName", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1241440614574(final IOperationContext operationContext, final PropertyMacroContext _context) {
