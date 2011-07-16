@@ -4430,25 +4430,16 @@
           </node>
           <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1230296201164">
             <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815941" resolveInfo="zipfileset" />
-            <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1230565087315">
-              <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811556" resolveInfo="include" />
-              <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1230565098868">
-                <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814494" resolveInfo="name" />
-                <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1230565102404">
-                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230565103447">
-                    <property name="value" nameId="tpsk.1196861024475" value="/**" />
-                  </node>
-                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1230565101356">
-                    <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1230564965779" resolveInfo="root.folder" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1230296204972">
               <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811856" resolveInfo="dir" />
               <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1230296207557">
-                <node role="value" roleId="tpsk.1199031757132" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230296207558">
-                  <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}" />
+                <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="226195605107880140">
+                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="226195605107880143">
+                    <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1230564965779" resolveInfo="root.folder" />
+                  </node>
+                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1230296207558">
+                    <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}/" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -9463,25 +9454,16 @@
           <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815492" resolveInfo="tar" />
           <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1241440903775">
             <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802815533" resolveInfo="tarfileset" />
-            <node role="nested" roleId="tpsk.1196858559206" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1241440921298">
-              <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802811556" resolveInfo="include" />
-              <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1241440924021">
-                <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802814494" resolveInfo="name" />
-                <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1241440928180">
-                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1241440928181">
-                    <property name="value" nameId="tpsk.1196861024475" value="/**" />
-                  </node>
-                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="1241440928182">
-                    <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1241440614570" resolveInfo="root.folder" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1241440908387">
               <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811856" resolveInfo="dir" />
               <node role="value" roleId="ddum.353793545802643468" type="tpsk.FileName" typeId="tpsk.1199031681512" id="1241440916368">
-                <node role="value" roleId="tpsk.1199031757132" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1241440916369">
-                  <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}" />
+                <node role="value" roleId="tpsk.1199031757132" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="226195605107880144">
+                  <node role="right" roleId="tpsk.1197107881958" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="226195605107880147">
+                    <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="1241440614570" resolveInfo="root.folder" />
+                  </node>
+                  <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1241440916369">
+                    <property name="value" nameId="tpsk.1196861024475" value="${deploy.dir}" />
+                  </node>
                 </node>
               </node>
             </node>
