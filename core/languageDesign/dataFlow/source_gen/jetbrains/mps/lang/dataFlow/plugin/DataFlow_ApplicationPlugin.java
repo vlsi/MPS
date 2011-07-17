@@ -24,6 +24,7 @@ public class DataFlow_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowDFA_Action());
     // groups 
     addGroup(new DFAActions_ActionGroup());
+    addGroup(new DataFlowInternal_ActionGroup());
   }
 
   public void adjustRegularGroups() {

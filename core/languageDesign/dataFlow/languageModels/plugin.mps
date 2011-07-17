@@ -45,7 +45,7 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1206642260578">
       <property name="name" nameId="tpck.1169194664001" value="ShowDFA" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show DFA (under construction)" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Data Flow Graph" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1207219950955">
       <property name="name" nameId="tpck.1169194664001" value="PrintReachingDefinintionsInformation" />
@@ -60,6 +60,9 @@
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="D" />
       <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="4138629533260026289">
+      <property name="name" nameId="tpck.1169194664001" value="DataFlowInternal" />
     </node>
   </roots>
   <root id="1206459480619">
@@ -123,15 +126,6 @@
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1951613054411714136" resolveInfo="DebugActions" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148334750">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1206459839831">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1206459480619" resolveInfo="PrintDFAResult" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1211452084362">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1211451948539" resolveInfo="PrintInitializationInformation" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1207220194607">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1207219950955" resolveInfo="PrintReachingDefinintionsInformation" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1206642561766">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1206642260578" resolveInfo="ShowDFA" />
       </node>
@@ -489,6 +483,19 @@
     </node>
     <node role="icon" roleId="tp4k.2386275659558598338" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="3911341278723471701">
       <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/goRound.png" />
+    </node>
+  </root>
+  <root id="4138629533260026289">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="4138629533260026291">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1206459839831">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1206459480619" resolveInfo="PrintDFAResult" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1211452084362">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1211451948539" resolveInfo="PrintInitializationInformation" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1207220194607">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1207219950955" resolveInfo="PrintReachingDefinintionsInformation" />
+      </node>
     </node>
   </root>
 </model>

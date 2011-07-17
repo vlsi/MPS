@@ -22,7 +22,7 @@ public class ShowDFA_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(ShowDFA_Action.class);
 
   public ShowDFA_Action() {
-    super("Show DFA (under construction)", "", ICON);
+    super("Show Data Flow Graph", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

@@ -14,9 +14,6 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action");
-      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action");
-      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action");
       DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
