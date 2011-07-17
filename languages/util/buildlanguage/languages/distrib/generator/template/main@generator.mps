@@ -10579,8 +10579,12 @@
               <node role="refToOptions" roleId="u9e0.4857814468241607047" type="u9e0.ArgumentReference" typeId="u9e0.7803330421058150857" id="1635896182103904783">
                 <link role="arg" roleId="u9e0.7803330421058150858" targetNodeId="jvj3.3263637656462774227" resolveInfo="directory" />
                 <node role="value" roleId="u9e0.7803330421058150868" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="1635896182103904784">
-                  <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1635896182103904785">
-                    <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="1635896182103904830" resolveInfo="PROJECT_HOME" />
+                  <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.DoubleQuote" typeId="u9e0.3263637656455059166" id="8991405968772259724">
+                    <node role="word" roleId="u9e0.3147078024751877535" type="u9e0.GeneralizedWord" typeId="u9e0.8353259571483884165" id="8991405968772259725">
+                      <node role="units" roleId="u9e0.8353259571485385865" type="u9e0.BasicParameterExpansion" typeId="u9e0.3999172467442053841" id="1635896182103904785">
+                        <link role="variable" roleId="u9e0.3999172467442053842" targetNodeId="1635896182103904830" resolveInfo="PROJECT_HOME" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
