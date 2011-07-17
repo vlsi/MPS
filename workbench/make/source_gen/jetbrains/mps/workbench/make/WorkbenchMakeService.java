@@ -12,6 +12,7 @@ import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import java.util.List;
 import jetbrains.mps.make.IMakeNotificationListener;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.PluginReloader;
@@ -64,7 +65,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   private AtomicMarkableReference<MakeSession> currentSessionStickyMark = new AtomicMarkableReference<MakeSession>(null, false);
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
-  private List<IMakeNotificationListener> listeners = ListSequence.fromList(new ArrayList<IMakeNotificationListener>());
+  private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.fromList(new ArrayList<IMakeNotificationListener>()));
   private PluginReloader pluginReloader;
 
   public WorkbenchMakeService(PluginReloader pluginReloader) {
@@ -172,7 +173,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   public void removeListener(IMakeNotificationListener listener) {
     checkValidUsage();
-    ListSequence.fromList(listeners).addElement(listener);
+    ListSequence.fromList(listeners).removeElement(listener);
   }
 
   private void notifyListeners(final MakeNotification notification) {
