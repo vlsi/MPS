@@ -37,7 +37,7 @@ CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/log4j.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/extensions.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/trove4j.jar
 
-cd ${PROJECT_HOME}
+cd "${PROJECT_HOME}"
 cd bin
 if [ "${UNAME}" = "Darwin" ]; then
   if [ -z ${DYLD_LIBRARY_PATH} ]; then
