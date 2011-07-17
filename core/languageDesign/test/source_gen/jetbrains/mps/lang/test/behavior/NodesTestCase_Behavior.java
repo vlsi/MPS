@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
+import java.net.URI;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.StubPath;
@@ -62,7 +63,7 @@ public class NodesTestCase_Behavior {
     try {
       List<URL> urls = ((List<URL>) cls.getMethod("getUrls", new Class[0]).invoke(classLoader, new Object[0]));
       for (URL url : urls) {
-        ListSequence.fromList(result).addElement(url.getFile());
+        ListSequence.fromList(result).addElement(new URI(url.toString()).getPath());
       }
     } catch (Throwable e) {
     }
