@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.structure.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 
@@ -95,6 +96,7 @@ public abstract class LanguageRuntime {
     return facetDescriptor;
   }
 
+  @NotNull
   public StructureAspectDescriptor getStructureAspectDescriptor() {
 //    return StructureAspectInterpreted.getInstance();
     if (structureDescriptor == null) {
