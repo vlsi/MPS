@@ -23,9 +23,9 @@ import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
 import jetbrains.mps.project.AbstractModule;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.Antcall_Behavior;
 import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
 import jetbrains.mps.build.packaging.behavior.Path_Behavior;
@@ -219,6 +219,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1902360454495868335(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "moduleRelativePath"))) {
+      return Util.SEPARATOR + SPropertyOperations.getString(_context.getNode(), "fullPath");
+    }
     return new File(SPropertyOperations.getString(_context.getNode(), "fullPath")).getName();
   }
 
@@ -227,6 +230,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1902360454495907451(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "moduleRelativePath"))) {
+      return Util.SEPARATOR + SPropertyOperations.getString(_context.getNode(), "fullPath");
+    }
     return new File(SPropertyOperations.getString(_context.getNode(), "fullPath")).getName();
   }
 
@@ -884,7 +890,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1902360454496031486(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "fullPath").endsWith(".jar"));
       }
@@ -896,7 +902,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1210099219016(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "fullPath").endsWith(".jar"));
       }
@@ -905,10 +911,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_2850282874221194302(final IOperationContext operationContext, final IfMacroContext _context) {
     if (SPropertyOperations.getBoolean(_context.getNode(), "doNotJar")) {
-      if (ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false)).isNotEmpty()) {
+      if (ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).isNotEmpty()) {
         _context.showErrorMessage(_context.getNode(), "non-empty runtime classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName());
       }
-      if (ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode())).isNotEmpty()) {
+      if (ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), false)).isNotEmpty()) {
         _context.showErrorMessage(_context.getNode(), "non-empty stub classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName());
       }
     }
@@ -1177,7 +1183,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1210254517273(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode());
+    return Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), false);
   }
 
   public static Iterable sourceNodesQuery_5640794902512565310(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1196,7 +1202,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1902360454495856121(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -1204,7 +1210,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1902360454495907423(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode())).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -1224,7 +1230,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1237395979883(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode())).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "fullPath").endsWith(".jar"));
       }
@@ -1232,7 +1238,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1210099260514(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "fullPath").endsWith(".jar"));
       }
@@ -1260,7 +1266,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067859683(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(SLinkOperations.getTarget(_context.getNode(), "module", false))).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(SLinkOperations.getTarget(_context.getNode(), "module", false), false)).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }

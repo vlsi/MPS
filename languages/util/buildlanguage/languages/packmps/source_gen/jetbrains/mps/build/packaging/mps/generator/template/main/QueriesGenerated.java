@@ -88,7 +88,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_8037435193861318628(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode module = SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module");
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(module)).concat(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(module, true)));
+    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(module, false)).concat(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(module, true, false)));
   }
 
   public static void mappingScript_CodeBlock_3583849467508042413(final IOperationContext operationContext, final MappingScriptContext _context) {
