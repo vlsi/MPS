@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)">
+<model modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0">
   <persistence version="7" />
   <language namespace="97a52717-898f-4598-8150-573d9fd03868(jetbrains.mps.analyzers)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
@@ -18,6 +18,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Analyzer" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Analyzer" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/DataFlowAnalyser.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6618572076229093258">
@@ -84,6 +85,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Rule" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Rules" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/DataFlowRule.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="430844094082202272">
@@ -213,7 +215,7 @@
   <root id="6393434056522580745">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="4746038179140566719">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="4746038179140566716" resolveInfo="AnalyzerMergeParameterProgram" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="4746038179140566716" resolveInfo="AnalyzerParameterProgram" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="4746038179140566721">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -243,7 +245,7 @@
   <root id="4746038179140588744">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="4746038179140588749">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="4746038179140566716" resolveInfo="AnalyzerMergeParameterProgram" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="4746038179140566716" resolveInfo="AnalyzerParameterProgram" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="4746038179140588751">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
