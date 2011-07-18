@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Antcall_Constraints.java" startLine="78" startPosition="19" endLine="22" endPosition="0" />
+  <unitInfo fileName="Jar_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Jar_Constraints" />
+  <unitInfo fileName="Branding_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Branding_Constraints$1" />
+  <unitInfo fileName="Antcall_Constraints.java" startLine="41" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
+  <unitInfo fileName="Branding_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Branding_Constraints" />
+  <unitInfo fileName="Antcall_Constraints.java" startLine="57" startPosition="34" endLine="80" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$2" />
+  <unitInfo fileName="Antcall_Constraints.java" startLine="32" startPosition="44" endLine="56" endPosition="5" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints$1" />
+  <unitInfo fileName="BaseDirPath_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.BaseDirPath_Constraints" />
+  <unitInfo fileName="Delete_Constraints.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Delete_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="Antcall_Constraints.java" startLine="22" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_Constraints" />
   <root nodeId="1213104846985">
     <nodeInfo nodeId="1213104846985" fileName="Folder_Constraints.java" startLine="17" startPosition="31" endLine="18" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104846985" fileName="Folder_Constraints.java" startLine="22" startPosition="82" endLine="23" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

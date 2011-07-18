@@ -26,8 +26,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
 
@@ -64,13 +63,13 @@ public class Module_Behavior {
     }).toListSequence(), false);
   }
 
-  public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode) {
+  public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode, boolean includeHomeLib) {
     List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ListSequence.fromList(paths).where(new IWhereFilter<StubPath>() {
+    return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ListSequence.fromList(paths).where(new IWhereFilter<StubPath>() {
       public boolean accept(StubPath it) {
         return LanguageID.JAVA_MANAGER.equals(it.getManager()) || it.getPath().endsWith(".jar");
       }
-    }).toListSequence())).distinct().toListSequence(), true);
+    }).toListSequence())).distinct().toListSequence(), true, includeHomeLib);
   }
 
   public static List<SNode> call_getModelRootPaths_2739262311775052381(SNode thisNode) {
@@ -93,15 +92,15 @@ public class Module_Behavior {
   public static List<SNode> call_getSourcePaths_3673831299872169203(SNode thisNode) {
     return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(((List<String>) Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths())).<String>select(new ISelector<String, String>() {
       public String select(String it) {
-        return it.replace(File.separator, Util.SEPARATOR);
+        return (String) it.replace(File.separator, Util.SEPARATOR);
       }
     }).distinct().toListSequence(), true);
   }
 
-  public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions) {
+  public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions, boolean includeHomeLib) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
-      List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode))).toListSequence();
+      List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true, includeHomeLib)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true))).toListSequence();
       if (includeRuntimeSolutions) {
         for (Dependency runtimeDependency : ListSequence.fromList(((Language) module).getRuntimeDependencies())) {
           IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency.getModuleRef());
@@ -117,11 +116,11 @@ public class Module_Behavior {
   }
 
   public static boolean call_needsSeparateFolder_1902360454496029008(SNode thisNode) {
-    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false, false)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
-    }) || ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode)).any(new IWhereFilter<SNode>() {
+    }) || ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, false)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -130,12 +129,12 @@ public class Module_Behavior {
 
   public static List<SNode> call_getRequiredJars_1902360454496272739(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(thisNode, false, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
     }));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "fullPath").endsWith(".jar");
       }
@@ -183,41 +182,33 @@ public class Module_Behavior {
     return check_835h7m_a0a81(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
+  public static String call_getHomeLibPath_4642981534832311125(SNode thisNode) {
+    String path = PathManager.getHomePath() + "/lib";
+    return path.replace(File.separator, Util.SEPARATOR);
+  }
+
   public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> stubpath, boolean onlyUnderModuleBasedir) {
+    return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, stubpath, onlyUnderModuleBasedir, false);
+  }
+
+  public static List<SNode> call_getPathHolders_4642981534832278885(SNode thisNode, List<String> stubpath, boolean onlyUnderModuleBasedir, boolean includeLibJars) {
     List<SNode> result = new ArrayList<SNode>();
     String moduleBasedir = "";
+    String homeLib = "";
     // search for project if needed 
     if (onlyUnderModuleBasedir) {
       moduleBasedir = Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode);
     }
+    if (includeLibJars) {
+      homeLib = Module_Behavior.call_getHomeLibPath_4642981534832311125(thisNode);
+    }
     // process classpath 
     for (String cp : ListSequence.fromList(stubpath)) {
-      if (!(onlyUnderModuleBasedir) || cp.startsWith(moduleBasedir)) {
+      if ((!(onlyUnderModuleBasedir) || cp.startsWith(moduleBasedir)) || (includeLibJars && cp.startsWith(homeLib))) {
         ListSequence.fromList(result).addElement(PathHolder_Behavior.createPathHolder_7235580512916878209(cp, thisNode));
       }
     }
     return result;
-  }
-
-  public static String call_getProjectBasedir_1213877514893(SNode thisNode) {
-    IFile file = Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent());
-    if (file == null) {
-      return null;
-    }
-    return file.getPath().replace(File.separator, Util.SEPARATOR);
-  }
-
-  public static IFile call_findMPSProjectFile_1213877514840(SNode thisNode, IFile file) {
-    if (AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getAbsolutePath().startsWith(file.getPath()) && !(AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getAbsolutePath().equals(file.getPath()))) {
-      return null;
-    }
-    List<IFile> children = file.getChildren();
-    for (IFile child : children) {
-      if (!(child.isDirectory()) && (child.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
-        return child.getParent();
-      }
-    }
-    return Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, file.getParent());
   }
 
   public static Iterable<String> call_convertSeparators_4777659345279794559(SNode thisNode, List<StubPath> paths) {
