@@ -734,38 +734,16 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       if (!bundleHomeFile.exists()) return;
 
-      boolean hasClasspath = false;
-
-      List<ModelRoot> jarsToRetain = new ArrayList<ModelRoot>();
-      Set<String> skipJars = new HashSet<String>();
-
-      String libFolder = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).getDescendant("lib").getPath();
-      for (ModelRoot entry : myLanguageDescriptor.getRuntimeStubModels()) {
-        String path = entry.getPath();
-        if (!(path.endsWith(".jar")) || bundleHomeFile.getPath().equals(path)) {
-          hasClasspath = true;
-        } else {
-          IFile jar = FileSystem.getInstance().getFileByPath(path);
-          if(jar.exists() && jar.getPath().startsWith(libFolder)) {
-            skipJars.add(jar.getName());
-            jarsToRetain.add(entry);
-          }
-        }
-      }
-      myLanguageDescriptor.getRuntimeStubModels().retainAll(jarsToRetain);
-
-      if (hasClasspath) {
-        ClassPathEntry bundleHome = new ClassPathEntry();
-        bundleHome.setPath(bundleHomeFile.getPath());
-        myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(bundleHome));
-      }
+      myLanguageDescriptor.getRuntimeStubModels().clear();
 
       DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
       if (dd == null) return;
 
       for (String jarFile : dd.getRuntimeJars()) {
-        IFile jar = bundleParent.getDescendant(jarFile);
-        if (!skipJars.contains(jarFile) && jar.exists()) {
+        IFile jar = jarFile.startsWith("/")
+           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
+           : bundleParent.getDescendant(jarFile);
+        if (jar.exists()) {
           ClassPathEntry jarEntry = new ClassPathEntry();
           jarEntry.setPath(jar.getPath());
           myLanguageDescriptor.getRuntimeStubModels().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
