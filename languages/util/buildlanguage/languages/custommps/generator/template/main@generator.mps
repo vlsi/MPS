@@ -1037,37 +1037,15 @@
       <property name="name" nameId="tps4.1223641503366" value="http://www.jetbrains.com/mps" />
     </node>
     <node role="longName" roleId="60oz.1234784294876" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771749">
-      <node role="right" roleId="tps4.1205342834160" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771750">
-        <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771751">
-          <node role="right" roleId="tps4.1205342834160" type="tps4.Space" typeId="tps4.1234531699390" id="1234787771752" />
-          <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771753">
-            <node role="right" roleId="tps4.1205342834160" type="j1at.UndeclaredVariableReference" typeId="j1at.8431776905956790237" id="1234787781924">
-              <property name="antName" nameId="j1at.8431776905956790240" value="version" />
-              <property name="name" nameId="j1at.8431776905956790241" value="version" />
-            </node>
-            <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771755">
-              <node role="right" roleId="tps4.1205342834160" type="tps4.Space" typeId="tps4.1234531699390" id="1234787771756" />
-              <node role="left" roleId="tps4.1205342829799" type="tps4.SimpleString" typeId="tps4.1205339044029" id="1234787771757">
-                <property name="name" nameId="tps4.1223641503366" value="MPS" />
-              </node>
-            </node>
-          </node>
+      <node role="right" roleId="tps4.1205342834160" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771753">
+        <node role="right" roleId="tps4.1205342834160" type="j1at.UndeclaredVariableReference" typeId="j1at.8431776905956790237" id="1234787781924">
+          <property name="antName" nameId="j1at.8431776905956790240" value="version" />
+          <property name="name" nameId="j1at.8431776905956790241" value="version" />
         </node>
-        <node role="right" roleId="tps4.1205342834160" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771759">
-          <node role="right" roleId="tps4.1205342834160" type="tps4.SimpleString" typeId="tps4.1205339044029" id="1234787771760">
-            <property name="name" nameId="tps4.1223641503366" value=")" />
-          </node>
-          <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771761">
-            <node role="right" roleId="tps4.1205342834160" type="j1at.UndeclaredVariableReference" typeId="j1at.8431776905956790237" id="1234787790522">
-              <property name="name" nameId="j1at.8431776905956790241" value="build" />
-              <property name="antName" nameId="j1at.8431776905956790240" value="build.number" />
-            </node>
-            <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771763">
-              <node role="right" roleId="tps4.1205342834160" type="tps4.Space" typeId="tps4.1234531699390" id="1234787771764" />
-              <node role="left" roleId="tps4.1205342829799" type="tps4.SimpleString" typeId="tps4.1205339044029" id="1234787771765">
-                <property name="name" nameId="tps4.1223641503366" value="(build" />
-              </node>
-            </node>
+        <node role="left" roleId="tps4.1205342829799" type="tps4.CompositeString" typeId="tps4.1205342812422" id="1234787771755">
+          <node role="right" roleId="tps4.1205342834160" type="tps4.Space" typeId="tps4.1234531699390" id="1234787771756" />
+          <node role="left" roleId="tps4.1205342829799" type="tps4.SimpleString" typeId="tps4.1205339044029" id="1234787771757">
+            <property name="name" nameId="tps4.1223641503366" value="MPS" />
           </node>
         </node>
       </node>

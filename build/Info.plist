@@ -4,7 +4,7 @@
     <key>CFBundleName</key>
     <string>MPS</string>
     <key>CFBundleGetInfoString</key>
-    <string>JetBrains MPS $version$ (build $build$)</string>
+    <string>JetBrains MPS $version$</string>
     <key>CFBundleShortVersionString</key>
     <string>$version$</string>
     <key>CFBundleVersion</key>
