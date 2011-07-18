@@ -258,38 +258,16 @@ public abstract class AbstractModule implements IModule {
     IFile bundleParent = bundleHomeFile.getParent();
     if(bundleParent == null || !bundleParent.exists()) return;
 
-    boolean hasClasspath = false;
-
-    List<ModelRoot> jarsToRetain = new ArrayList<ModelRoot>();
-    Set<String> skipJars = new HashSet<String>();
-
-    String libFolder = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).getDescendant("lib").getPath();
-    for (ModelRoot entry : descriptor.getStubModelEntries()) {
-      String path = entry.getPath();
-      if (!(path.endsWith(".jar")) || bundleHomeFile.getPath().equals(path)) {
-        hasClasspath = true;
-      } else {
-        IFile jar = FileSystem.getInstance().getFileByPath(path);
-        if(jar.exists() && jar.getPath().startsWith(libFolder)) {
-          skipJars.add(jar.getName());
-          jarsToRetain.add(entry);
-        }
-      }
-    }
-    descriptor.getStubModelEntries().retainAll(jarsToRetain);
-
-    if (hasClasspath) {
-      ClassPathEntry bundleHome = new ClassPathEntry();
-      bundleHome.setPath(bundleHomeFile.getPath());
-      descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(bundleHome));
-    }
+    descriptor.getStubModelEntries().clear();
 
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
     if(dd == null) return;
 
     for (String jarFile : dd.getLibraries()) {
-      IFile jar = bundleParent.getDescendant(jarFile);
-      if(!skipJars.contains(jarFile) && jar.exists()) {
+      IFile jar = jarFile.startsWith("/")
+         ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
+         : bundleParent.getDescendant(jarFile);
+      if(jar.exists()) {
         ClassPathEntry jarEntry = new ClassPathEntry();
         jarEntry.setPath(jar.getPath());
         descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
