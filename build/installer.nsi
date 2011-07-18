@@ -4,7 +4,7 @@
 !define PRODUCT_MAJOR_VERSION "$version$"
 !define PRODUCT_PUBLISHER "JetBrains"
 !define PRODUCT_WEB_SITE "http://www.jetbrains.com/mps"
-!define APP_NAME "JetBrains MPS $version$ (build $build$)"
+!define APP_NAME "JetBrains MPS $version$"
 
 #************************************ Registry ************************************************************#
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
@@ -27,7 +27,7 @@ OutFile "${PRODUCT_VERSION}-windows.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_PUBLISHER}\${PRODUCT_NAME} ${PRODUCT_MAJOR_VERSION}"
 ShowInstDetails show
 ShowUnInstDetails show
-!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${APP_NAME}.\n\nClick Next to continue."
+!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${APP_NAME} (build ${PRODUCT_VERSION}).\n\nClick Next to continue."
 !define MUI_ICON "installer.ico"
 !define MUI_UNICON "uninstaller.ico"
 !define MUI_COMPONENTSPAGE_NODESC
