@@ -7706,7 +7706,7 @@
         <property name="text" nameId="tpih.1164413036326" value="${PRODUCT_NAME}" />
       </node>
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="7878409884608584591">
-        <property name="text" nameId="tpih.1164413036326" value=" ${PRODUCT_VERSION}" />
+        <property name="text" nameId="tpih.1164413036326" value=" ${PRODUCT_MAJOR_VERSION}" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="7878409884608584593">
           <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="7878409884608584594">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7878409884608584595">
