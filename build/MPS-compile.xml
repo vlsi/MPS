@@ -446,8 +446,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -501,8 +501,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -535,7 +535,6 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -545,13 +544,11 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/languages/customViewers/classes_gen" />
     <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
-    <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
     <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
@@ -597,11 +594,9 @@
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/meta/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
@@ -621,8 +616,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -686,8 +681,8 @@
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/meta/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
@@ -729,8 +724,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -785,8 +780,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -822,8 +817,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/constructors/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
@@ -878,8 +873,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -915,8 +910,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -971,8 +966,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1008,8 +1003,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1065,8 +1060,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1102,8 +1097,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1158,8 +1153,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1195,8 +1190,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1251,8 +1246,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1288,8 +1283,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/jdk7/languages/jdk7/classes_gen" />
@@ -1344,8 +1339,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1381,8 +1376,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1437,8 +1432,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1474,8 +1469,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1530,8 +1525,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1567,8 +1562,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1623,8 +1618,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1685,8 +1680,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1741,8 +1736,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1778,8 +1773,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1835,8 +1830,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1873,8 +1868,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -1936,8 +1931,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -1976,8 +1971,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2036,8 +2031,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2078,8 +2073,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2137,8 +2132,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2177,8 +2172,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2238,8 +2233,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2278,8 +2273,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2333,8 +2328,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2371,8 +2366,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2427,8 +2422,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2464,8 +2459,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2520,8 +2515,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2557,8 +2552,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2613,8 +2608,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2650,8 +2645,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2706,8 +2701,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2743,8 +2738,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2799,8 +2794,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2836,8 +2831,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2892,8 +2887,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -2929,8 +2924,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -2985,8 +2980,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -3022,8 +3017,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -3078,8 +3073,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -3115,8 +3110,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -3171,8 +3166,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -3208,8 +3203,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -3263,8 +3258,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -3301,8 +3296,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -3358,8 +3353,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -3399,8 +3394,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -3455,8 +3450,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -3492,8 +3487,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -3547,8 +3542,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
@@ -3585,8 +3580,8 @@
     <path path="${base_dir}/core/baseLanguage/collections/classes" />
     <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
@@ -3640,8 +3635,8 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />

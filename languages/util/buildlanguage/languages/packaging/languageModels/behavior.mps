@@ -4399,7 +4399,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1213877515009">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1213877515010">
-            <property name="name" nameId="tpck.1169194664001" value="projectBasedir" />
+            <property name="name" nameId="tpck.1169194664001" value="moduleBasedir" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1213877515011" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1218642649700">
               <property name="value" nameId="tpee.1070475926801" value="" />
@@ -4413,39 +4413,19 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1218642589001">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1218642589002">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1218642595761">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1218642597644">
-                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1218642595762">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877515010" resolveInfo="projectBasedir" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1218642607279">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="55204148067474249">
+                <node role="rValue" roleId="tpee.1068498886297" type="1i04.LocalBehaviorMethodCall" typeId="1i04.6496299201655527393" id="55204148067474252">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4777659345280330855" resolveInfo="getModuleDescriptorPath" />
                 </node>
-                <node role="rValue" roleId="tpee.1068498886297" type="1i04.LocalBehaviorMethodCall" typeId="1i04.6496299201655527393" id="4062373482582943997">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1213877514893" resolveInfo="getProjectBasedir" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1218642607277">
-              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1218642607278">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1218642607279">
-                  <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="55204148067474249">
-                    <node role="rValue" roleId="tpee.1068498886297" type="1i04.LocalBehaviorMethodCall" typeId="1i04.6496299201655527393" id="55204148067474252">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4777659345280330855" resolveInfo="getModuleDescriptorPath" />
-                    </node>
-                    <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1218642607284">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877515010" resolveInfo="projectBasedir" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1218642607285">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1218642607286" />
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1218642607287">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877515010" resolveInfo="projectBasedir" />
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1218642607284">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877515010" resolveInfo="moduleBasedir" />
                 </node>
               </node>
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1218642591993">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1218642494882" resolveInfo="onlyUnderProjectBasedir" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1218642494882" resolveInfo="onlyUnderModuleBasedir" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7376433222636454371">
@@ -4465,7 +4445,7 @@
               <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="1218642562887">
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1218642566089">
                   <node role="expression" roleId="tpee.1081516765348" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1218642567669">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1218642494882" resolveInfo="onlyUnderProjectBasedir" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1218642494882" resolveInfo="onlyUnderModuleBasedir" />
                   </node>
                 </node>
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1213877515041">
@@ -4475,7 +4455,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1213877515043">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dstartsWith(java%dlang%dString)%cboolean" resolveInfo="startsWith" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1213877515044">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877515010" resolveInfo="projectBasedir" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877515010" resolveInfo="moduleBasedir" />
                     </node>
                   </node>
                 </node>
@@ -4515,7 +4495,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1218642494882">
-        <property name="name" nameId="tpck.1169194664001" value="onlyUnderProjectBasedir" />
+        <property name="name" nameId="tpck.1169194664001" value="onlyUnderModuleBasedir" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1218642498907" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7235580512916878193" />

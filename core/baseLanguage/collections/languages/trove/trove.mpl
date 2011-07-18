@@ -19,12 +19,9 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/lib/trove-2.1.0.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
+  <sourcePath />
   <dependencies>
+    <dependency reexport="false">134ef213-c518-42b0-b12c-c109aa13d320(collections_trove.runtime)</dependency>
     <dependency reexport="false">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</dependency>
   </dependencies>
   <usedLanguages>

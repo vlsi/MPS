@@ -39,7 +39,7 @@
   <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="w3e1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.inspector(MPS.Classpath/jetbrains.mps.nodeEditor.inspector@java_stub)" version="-1" />
   <import index="rgbs" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.checking(MPS.Classpath/jetbrains.mps.nodeEditor.checking@java_stub)" version="-1" />
-  <import index="ppbs" modelUID="f:java_stub#73736c50-f124-433b-b789-2828a15a0adc#gnu.trove(jetbrains.mps.baseLanguage.collections.trove/gnu.trove@java_stub)" version="-1" />
+  <import index="ppbs" modelUID="f:java_stub#134ef213-c518-42b0-b12c-c109aa13d320#gnu.trove(collections_trove.runtime/gnu.trove@java_stub)" version="-1" />
   <import index="g1dt" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.extensions(MPS.Classpath/com.intellij.openapi.extensions@java_stub)" version="-1" />
   <import index="lnp5" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide(MPS.Classpath/jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="wya9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.runtime(MPS.Classpath/jetbrains.mps.smodel.runtime@java_stub)" version="-1" />

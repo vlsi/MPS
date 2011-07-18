@@ -15,7 +15,7 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="osf5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(JDK/javax.swing.tree@java_stub)" version="-1" />
   <import index="gsmj" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.table(JDK/javax.swing.table@java_stub)" version="-1" />
-  <import index="juh8" modelUID="f:java_stub#51805413-e01e-4f51-bf62-a054ab51eb54#org.jdesktop.swingx(jetbrains.mps.ui.swing/org.jdesktop.swingx@java_stub)" version="-1" />
+  <import index="juh8" modelUID="f:java_stub#acc947bf-6778-444a-9dc7-4cc72d4eb3d0#org.jdesktop.swingx(jetbrains.mps.ui.swing.runtime/org.jdesktop.swingx@java_stub)" version="-1" />
   <import index="oj8w" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" implicit="yes" />

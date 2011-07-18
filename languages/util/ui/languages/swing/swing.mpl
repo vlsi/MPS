@@ -82,18 +82,10 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/lib/swingx-1.6.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
-  <runtimeStubModels>
-    <stubModelEntry path="${language_descriptor}/lib/swingx-1.6.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </runtimeStubModels>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)</dependency>
+    <dependency reexport="false">acc947bf-6778-444a-9dc7-4cc72d4eb3d0(jetbrains.mps.ui.swing.runtime)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</usedLanguage>

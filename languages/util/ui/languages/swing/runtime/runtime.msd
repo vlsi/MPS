@@ -4,16 +4,12 @@
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/languages/util/ui/languages/swing/lib/swingx-1.6.jar">
+    <stubModelEntry path="${solution_descriptor}/lib/swingx-1.6.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
   </stubModelEntries>
+  <sourcePath />
   <dependencies>
-    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <usedLanguages>
