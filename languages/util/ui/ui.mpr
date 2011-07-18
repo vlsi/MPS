@@ -15,22 +15,19 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${project}/languages/swt/runtime/runtime.msd" folder="" />
-      <solutionPath path="${project}/languages/swing/runtime/runtime.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.ui.unittest/jetbrains.mps.ui.unittest.msd" folder="" />
-      <solutionPath path="${project}/solutions/ui.sandbox/ui.sandbox.msd" folder="" />
-    </projectSolutions>
-    <projectLanguages>
-      <languagePath path="${project}/languages/gwt/gwt.mpl" folder="" />
-      <languagePath path="${project}/languages/meta/meta.mpl" folder="" />
-      <languagePath path="${project}/languages/swing/swing.mpl" />
-      <languagePath path="${project}/languages/swt/swt.mpl" folder="" />
-      <languagePath path="${project}/languages/testdata/testdata.mpl" folder="" />
-      <languagePath path="${project}/languages/ui/ui.mpl" />
-      <languagePath path="${project}/languages/internal/internal.mpl" folder="" />
-    </projectLanguages>
-    <projectDevkits />
+    <projectModules>
+      <modulePath path="${project}/languages/swt/runtime/runtime.msd" folder="" />
+      <modulePath path="${project}/languages/swing/runtime/runtime.msd" folder="" />
+      <modulePath path="${project}/solutions/jetbrains.mps.ui.unittest/jetbrains.mps.ui.unittest.msd" folder="" />
+      <modulePath path="${project}/solutions/ui.sandbox/ui.sandbox.msd" folder="" />
+      <modulePath path="${project}/languages/gwt/gwt.mpl" folder="" />
+      <modulePath path="${project}/languages/meta/meta.mpl" folder="" />
+      <modulePath path="${project}/languages/swing/swing.mpl" />
+      <modulePath path="${project}/languages/swt/swt.mpl" folder="" />
+      <modulePath path="${project}/languages/testdata/testdata.mpl" folder="" />
+      <modulePath path="${project}/languages/ui/ui.mpl" />
+      <modulePath path="${project}/languages/internal/internal.mpl" folder="" />
+    </projectModules>
     <genConfs>
       <genConfModule name="unittest" moduleRef="jetbrains.mps.ui.unittest" />
     </genConfs>

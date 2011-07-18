@@ -615,7 +615,7 @@
       </node>
     </node>
     <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="8590671622324486331">
-      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="1taj.8590671622324268192" resolveInfo="Multiplex" />
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="1taj.8590671622324268192" resolveInfo="GenerateVariants" />
       <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="8590671622324507730">
         <link role="key" roleId="tpee.1188214555875" targetNodeId="1taj.8590671622324287920" resolveInfo="value" />
         <node role="value" roleId="tpee.1188214607812" type="tpee.ArrayLiteral" typeId="tpee.1188220165133" id="8590671622324544129">
@@ -1874,7 +1874,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="fb0y.AppendUIObjectStatement" typeId="fb0y.4981225789809472779" id="2663453265346430523">
                           <link role="uiObject" roleId="fb0y.8381258131358446226" targetNodeId="2yj1.2663453265346089636" resolveInfo="LayoutPanel" />
                           <node role="compartment" roleId="fb0y.4391079257750099456" type="fb0y.ContainerCompartment" typeId="fb0y.4391079257750083005" id="2663453265346451899">
-                            <link role="container" roleId="fb0y.4391079257750083006" targetNodeId="2yj1.2663453265346089637" resolveInfo="children" />
+                            <link role="container" roleId="fb0y.4391079257750083006" targetNodeId="2yj1.2663453265346089637" resolveInfo="layoutChildren" />
                             <node role="body" roleId="fb0y.4391079257750099467" type="tpee.StatementList" typeId="tpee.1068580123136" id="2663453265346488294">
                               <node role="statement" roleId="tpee.1068581517665" type="fb0y.AppendUIObjectStatement" typeId="fb0y.4981225789809472779" id="2663453265346488295">
                                 <link role="uiObject" roleId="fb0y.8381258131358446226" targetNodeId="2yj1.7421785601023770752" resolveInfo="Button" />
@@ -2547,7 +2547,7 @@
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1438009850184746935">
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1438009850184746936">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1438009850184746937">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1438009850184747019" resolveInfo="verticalPanel" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1438009850184747019" resolveInfo="tree" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1438009850184746938" />
                         </node>
@@ -2907,7 +2907,7 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1438009850184746910">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1438009850184746911" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1438009850184746912">
-                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1438009850184746905" resolveInfo="uiDemo" />
+                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1438009850184746905" resolveInfo="uidemo" />
               </node>
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1438009850184746913">

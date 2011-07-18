@@ -3,12 +3,12 @@
   <unitInfo fileName="Function.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.ui.sandbox.Function" />
   <unitInfo fileName="Executor.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.ui.sandbox.Executor" />
   <unitInfo fileName="ControlsDemo_GWT.java" startLine="32" startPosition="38" endLine="36" endPosition="9" unitName="jetbrains.mps.ui.sandbox.ControlsDemo_GWT$2" />
-  <unitInfo fileName="PanelsDemo_GWT.java" startLine="38" startPosition="38" endLine="42" endPosition="9" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_GWT$2" />
   <unitInfo fileName="WindowsDemo_GWT.java" startLine="38" startPosition="38" endLine="42" endPosition="9" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_GWT$2" />
+  <unitInfo fileName="PanelsDemo_GWT.java" startLine="38" startPosition="38" endLine="42" endPosition="9" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_GWT$2" />
   <unitInfo fileName="ControlsDemo_SWT.java" startLine="38" startPosition="67" endLine="42" endPosition="9" unitName="jetbrains.mps.ui.sandbox.ControlsDemo_SWT$2" />
   <unitInfo fileName="WindowsDemo_Swing.java" startLine="40" startPosition="64" endLine="44" endPosition="9" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_Swing$2" />
-  <unitInfo fileName="PanelsDemo_SWT.java" startLine="42" startPosition="67" endLine="46" endPosition="9" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_SWT$2" />
   <unitInfo fileName="WindowsDemo_SWT.java" startLine="42" startPosition="67" endLine="46" endPosition="9" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_SWT$2" />
+  <unitInfo fileName="PanelsDemo_SWT.java" startLine="42" startPosition="67" endLine="46" endPosition="9" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_SWT$2" />
   <unitInfo fileName="ControlsDemo_Swing.java" startLine="43" startPosition="64" endLine="47" endPosition="9" unitName="jetbrains.mps.ui.sandbox.ControlsDemo_Swing$2" />
   <unitInfo fileName="PanelsDemo_Swing.java" startLine="45" startPosition="64" endLine="49" endPosition="9" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_Swing$2" />
   <unitInfo fileName="ControlsDemo_GWT.java" startLine="46" startPosition="38" endLine="50" endPosition="9" unitName="jetbrains.mps.ui.sandbox.ControlsDemo_GWT$3" />
@@ -181,8 +181,8 @@
   <unitInfo fileName="PanelsDemo_GWT.java" startLine="286" startPosition="38" endLine="294" endPosition="9" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_GWT$16" />
   <unitInfo fileName="UIDemo_SWT.java" startLine="297" startPosition="52" endLine="305" endPosition="5" unitName="jetbrains.mps.ui.sandbox.UIDemo_SWT$22" />
   <unitInfo fileName="ControlsDemo_GWT.java" startLine="30" startPosition="44" endLine="39" endPosition="5" unitName="jetbrains.mps.ui.sandbox.ControlsDemo_GWT$1" />
-  <unitInfo fileName="PanelsDemo_GWT.java" startLine="36" startPosition="44" endLine="45" endPosition="5" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_GWT$1" />
   <unitInfo fileName="WindowsDemo_GWT.java" startLine="36" startPosition="44" endLine="45" endPosition="5" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_GWT$1" />
+  <unitInfo fileName="PanelsDemo_GWT.java" startLine="36" startPosition="44" endLine="45" endPosition="5" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_GWT$1" />
   <unitInfo fileName="WindowsDemo_Swing.java" startLine="38" startPosition="46" endLine="47" endPosition="5" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_Swing$1" />
   <unitInfo fileName="ControlsDemo_Swing.java" startLine="41" startPosition="46" endLine="50" endPosition="5" unitName="jetbrains.mps.ui.sandbox.ControlsDemo_Swing$1" />
   <unitInfo fileName="PanelsDemo_Swing.java" startLine="43" startPosition="45" endLine="52" endPosition="5" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_Swing$1" />
@@ -215,8 +215,8 @@
   <unitInfo fileName="UIDemo_GWT.java" startLine="237" startPosition="53" endLine="246" endPosition="5" unitName="jetbrains.mps.ui.sandbox.UIDemo_GWT$15" />
   <unitInfo fileName="PanelsDemo_Swing.java" startLine="367" startPosition="54" endLine="376" endPosition="13" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_Swing$23" />
   <unitInfo fileName="ControlsDemo_SWT.java" startLine="35" startPosition="49" endLine="45" endPosition="5" unitName="jetbrains.mps.ui.sandbox.ControlsDemo_SWT$1" />
-  <unitInfo fileName="PanelsDemo_SWT.java" startLine="39" startPosition="49" endLine="49" endPosition="5" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_SWT$1" />
   <unitInfo fileName="WindowsDemo_SWT.java" startLine="39" startPosition="49" endLine="49" endPosition="5" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_SWT$1" />
+  <unitInfo fileName="PanelsDemo_SWT.java" startLine="39" startPosition="49" endLine="49" endPosition="5" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_SWT$1" />
   <unitInfo fileName="ControlsDemo_SWT.java" startLine="50" startPosition="49" endLine="60" endPosition="5" unitName="jetbrains.mps.ui.sandbox.ControlsDemo_SWT$2" />
   <unitInfo fileName="PanelsDemo_SWT.java" startLine="54" startPosition="49" endLine="64" endPosition="5" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_SWT$2" />
   <unitInfo fileName="WindowsDemo_SWT.java" startLine="65" startPosition="49" endLine="75" endPosition="5" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_SWT$3" />
