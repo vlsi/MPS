@@ -183,19 +183,16 @@ public class Module_Behavior {
     return check_835h7m_a0a81(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
-  public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> stubpath, boolean onlyUnderProjectBasedir) {
+  public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> stubpath, boolean onlyUnderModuleBasedir) {
     List<SNode> result = new ArrayList<SNode>();
-    String projectBasedir = "";
+    String moduleBasedir = "";
     // search for project if needed 
-    if (onlyUnderProjectBasedir) {
-      projectBasedir = Module_Behavior.call_getProjectBasedir_1213877514893(thisNode);
-      if (projectBasedir == null) {
-        projectBasedir = Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode);
-      }
+    if (onlyUnderModuleBasedir) {
+      moduleBasedir = Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(thisNode);
     }
     // process classpath 
     for (String cp : ListSequence.fromList(stubpath)) {
-      if (!(onlyUnderProjectBasedir) || cp.startsWith(projectBasedir)) {
+      if (!(onlyUnderModuleBasedir) || cp.startsWith(moduleBasedir)) {
         ListSequence.fromList(result).addElement(PathHolder_Behavior.createPathHolder_7235580512916878209(cp, thisNode));
       }
     }
