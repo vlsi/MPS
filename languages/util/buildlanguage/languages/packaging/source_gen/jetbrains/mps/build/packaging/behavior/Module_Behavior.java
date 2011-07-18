@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.File;
 import jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.SModelRoot;
@@ -61,6 +61,14 @@ public class Module_Behavior {
         return it.replace(File.separator, Util.SEPARATOR);
       }
     }).toListSequence(), false);
+  }
+
+  public static boolean call_needsOwnStubs_8177148268721488524(SNode thisNode) {
+    return Sequence.fromIterable(((Iterable<StubPath>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getStubPaths())).where(new IWhereFilter<StubPath>() {
+      public boolean accept(StubPath it) {
+        return !(it.getPath().endsWith(".jar"));
+      }
+    }).isNotEmpty();
   }
 
   public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode, boolean includeHomeLib) {
@@ -179,7 +187,7 @@ public class Module_Behavior {
   }
 
   public static String call_getModuleDescriptorPath_4777659345280330855(SNode thisNode) {
-    return check_835h7m_a0a81(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
+    return check_835h7m_a0a91(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getPath(), File.separator, Util.SEPARATOR);
   }
 
   public static String call_getHomeLibPath_4642981534832311125(SNode thisNode) {
@@ -241,7 +249,7 @@ public class Module_Behavior {
     return name.replace("/", "_").replace("\\", "_");
   }
 
-  private static String check_835h7m_a0a81(String checkedDotOperand, String separator, String SEPARATOR) {
+  private static String check_835h7m_a0a91(String checkedDotOperand, String separator, String SEPARATOR) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.replace(File.separator, Util.SEPARATOR);
     }
