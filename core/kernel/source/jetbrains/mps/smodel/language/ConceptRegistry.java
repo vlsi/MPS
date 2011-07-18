@@ -103,9 +103,13 @@ public class ConceptRegistry implements ApplicationComponent {
     try {
       try {
         LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-        descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
+        if(languageRuntime == null) {
+          LOG.warning("No language for: " + fqName);
+        } else {
+          descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
+        }
       } catch (Throwable e) {
-        LOG.warning("Exception while structure descriptor creating", e);
+        LOG.warning("Exception while structure descriptor creating: " + fqName, e);
       }
 
       if (descriptor == null) {
