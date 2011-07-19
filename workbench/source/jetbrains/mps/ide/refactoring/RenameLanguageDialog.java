@@ -105,7 +105,7 @@ public class RenameLanguageDialog extends BaseDialog {
         indicator.pushState();
         try {
           indicator.setIndeterminate(true);
-          ModelAccess.instance().runWriteAction(new Runnable() {
+          ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
               renamer.update();
             }
