@@ -28,6 +28,8 @@ import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.DumbAwareRunnable;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.roots.impl.DirectoryIndex;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.*;
 import com.intellij.openapi.util.io.FileUtil;
@@ -51,6 +53,7 @@ import com.intellij.util.NullableFunction;
 import com.intellij.util.containers.MultiMap;
 import com.intellij.util.messages.Topic;
 import com.intellij.vcsUtil.Rethrow;
+import jetbrains.mps.util.annotation.Patch;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -1065,7 +1068,23 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
     return myIgnoredIdeaLevel.getFilesToIgnore();
   }
 
+  @Patch
   public boolean isIgnoredFile(@NotNull VirtualFile file) {
+    // MPS Patch begin
+    // This is a workaround to fix MPS-9118 and MPS-13187
+    // This patch should be reviewed after updating IDEA platform (MPS-13350)
+    VirtualFile currentFile = file;
+    while (currentFile != null) {
+      if (".svn".equals(currentFile.getName())) {
+        return true;
+      }
+      if (ProjectRootManager.getInstance(myProject) != null &&
+          ProjectRootManager.getInstance(myProject).getFileIndex().isIgnored(file)) {
+        return true;
+      }
+      currentFile = currentFile.getParent();
+    }
+    // MPS Patch end
     return myIgnoredIdeaLevel.isIgnoredFile(file);
   }
 
