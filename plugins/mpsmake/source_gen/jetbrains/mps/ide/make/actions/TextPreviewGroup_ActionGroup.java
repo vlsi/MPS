@@ -15,6 +15,7 @@ public class TextPreviewGroup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       TextPreviewGroup_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.TextPreviewModel_Action");
+      TextPreviewGroup_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.ShowMappingsPartitioning_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
