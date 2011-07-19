@@ -23,7 +23,7 @@ core/baseLanguage/tuples/runtime/classes
 core/kernel/classes
 core/languageDesign/test/classes
 workbench/classes
-workbench/runConfigurations/classes
+languages/util/runConfigurations/classes
 workbench/typesystemUi/classes
 languages/util/uiLanguage/runtime/classes
 MPSPlugin/apiclasses

@@ -181,7 +181,7 @@
       <fileset dir="${mps_home}/workbench/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/workbench/runConfigurations/classes" />
+      <fileset dir="${mps_home}/languages/util/runConfigurations/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/workbench/typesystemUi/classes" />
