@@ -29,6 +29,9 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.HackSNodeUtil;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SReference;
@@ -284,6 +287,18 @@ public class RefactoringContext {
       if (kind == StructureModificationData.ConceptFeatureKind.CONCEPT && !(oldConceptFQName.equals(newConceptFQName))) {
       }
     }
+  }
+
+  public void changeModelName(SModelDescriptor model, String newName) {
+    if (LanguageAspect.STRUCTURE.is(model)) {
+      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) model.getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+        this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
+      }
+    }
+
+    SModelReference oldModelRef = model.getSModelReference();
+    model.rename(SModelFqName.fromString(newName), false);
+    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getSModelReference()));
   }
 
   public void updateByDefault(SModel model) {

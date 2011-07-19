@@ -22,6 +22,8 @@ import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.refactoring.StructureModification;
+import jetbrains.mps.refactoring.StructureModification.RenameModel;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -53,6 +55,9 @@ public class LanguageRenamer {
     renameLanguage(oldFqName);
     renameGenerators(oldFqName);
 
+    RefactoringFacade.writeIntoLog(myContext);
+    SModelRepository.getInstance().saveAll();
+
     if (deleteOldFiles) {
       oldOutputDir.delete();
       oldCachesDir.delete();
@@ -65,17 +70,12 @@ public class LanguageRenamer {
       root.setPrefix(myNewName);
     }
 
-    EditableSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    for (SNode concept : structure.getSModel().getFastNodeFinder().getNodes(SNodeUtil.concept_AbstractConceptDeclaration, true)) {
-      myContext.changeFeatureName(concept, myNewName + ".structure." + concept.getName(), concept.getName());
-    }
-
     for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
 
       if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
         String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
-        sm.rename(SModelFqName.fromString(myNewName + suffix), false);
+        myContext.changeModelName(sm, myNewName + suffix);
       }
     }
 
@@ -83,9 +83,6 @@ public class LanguageRenamer {
     descriptor.setNamespace(myNewName);
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
-
-    RefactoringFacade.writeIntoLog(myContext);
-    SModelRepository.getInstance().saveAll();
   }
 
   private void renameGenerators(String oldFqName) {
@@ -99,7 +96,15 @@ public class LanguageRenamer {
         String oldPrefix = root.getPrefix();
         if (oldPrefix != null && oldPrefix.startsWith(oldFqName)) {
           String newPrefix = myNewName + oldPrefix.substring(oldFqName.length());
-          root.changePrefix(newPrefix, g);
+
+          root.setPrefix(newPrefix);
+          for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
+            if (!SModelStereotype.isUserModel(sm)) continue;
+            if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldPrefix + ".")) {
+              String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
+              myContext.changeModelName(sm, newPrefix + suffix);
+            }
+          }
         }
       }
     }
