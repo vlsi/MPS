@@ -3297,6 +3297,9 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8610665572788515364">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8610665572788515769" resolveInfo="TextPreviewModel" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8084699805054913149">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3366942412399973391" resolveInfo="ShowMappingsPartitioning" />
+      </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8610665572788515365">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="8610665572788515183" resolveInfo="Make" />

@@ -1329,15 +1329,16 @@
     <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="13" startPosition="34" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8610665572788515364" fileName="TextPreviewGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewGroup_ActionGroup#()V" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="108" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="12" startPosition="41" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
-    <unitInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
+    <nodeInfo nodeId="8084699805054913149" fileName="TextPreviewGroup_ActionGroup.java" startLine="17" startPosition="108" endLine="18" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewGroup_ActionGroup#()V" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="116" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="12" startPosition="41" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
+    <unitInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
   </root>
   <root nodeId="8610665572788515366">
     <nodeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="9" startPosition="69" endLine="10" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
