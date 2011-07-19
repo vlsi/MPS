@@ -6,8 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -48,7 +49,7 @@ public class ConceptMethodDeclaration_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "overriddenMethod", false) == null)) {
       return true;
     }
-    if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(thisNode, "returnType", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "returnType", true)))) {
+    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "returnType", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "returnType", true)))) {
       return false;
     }
     int parameterCount = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count();
