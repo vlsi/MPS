@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.SModel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -83,6 +84,11 @@ public class RootDifferenceDialog extends BaseDialog {
     myContainer.add(myStatusBar, BorderLayout.SOUTH);
 
     highlightAllChanges();
+  }
+
+  @Override
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+    return DialogDimensionsSettings.generateDialogDimensions(-100, -100);
   }
 
   private DiffEditor addEditor(int index, SModel model) {

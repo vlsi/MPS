@@ -22,6 +22,9 @@ import com.intellij.openapi.components.Storage;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.MyState;
 
 import java.awt.Dimension;
+import java.awt.DisplayMode;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.util.HashMap;
 
 
@@ -56,6 +59,27 @@ public class DialogDimensionsSettings implements PersistentStateComponent<MyStat
 
   public void loadState(MyState state) {
     myState = state;
+  }
+
+  public static DialogDimensions generateDialogDimensions(int width, int height) {
+    int screenWidth = 800;
+    int screenHeight = 600;
+    GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    if (graphicsEnvironment != null) {
+      GraphicsDevice defaultScreenDevice = graphicsEnvironment.getDefaultScreenDevice();
+      if (defaultScreenDevice != null) {
+        DisplayMode displayMode = defaultScreenDevice.getDisplayMode();
+        if (displayMode != null) {
+          screenWidth = displayMode.getWidth();
+          screenHeight = displayMode.getHeight();
+        }
+      }
+    }
+    if (width <= 0 && height <= 0) {
+      width = screenWidth + width;
+      height = screenHeight + height;
+    }
+    return new DialogDimensions((screenWidth - width) / 2, (screenHeight - height) / 2, width, height);
   }
 
   public static class DialogDimensions {

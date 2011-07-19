@@ -98,7 +98,7 @@ public class MergeModelsDialog extends BaseDialog {
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(10, 10, 500, 700);
+    return DialogDimensionsSettings.generateDialogDimensions(500, 700);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)

@@ -236,7 +236,7 @@ public class MergeRootsDialog extends BaseDialog {
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(10, 10, 1000, 900);
+    return DialogDimensionsSettings.generateDialogDimensions(-50, -100);
   }
 
   @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
