@@ -20,8 +20,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -63,7 +65,7 @@ public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
             SNode contextBuilder = Builder_Behavior.getContextBuilder_7057666463730366732(_context.getEnclosingNode());
             SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Builder_Behavior.call_getResultType_7057666463730718251(contextBuilder), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
             if (classifierType == null) {
-              return new ArrayList<SNode>();
+              return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
             List<SNode> methods = new ArrayList<SNode>();
             for (SNode m : Classifier_Behavior.call_getVisibleMembers_1213877306257(SLinkOperations.getTarget(classifierType, "classifier", false), _context.getEnclosingNode(), IClassifiersSearchScope.INSTANCE_METHOD)) {
