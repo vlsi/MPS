@@ -42,11 +42,11 @@
   <property name="jetbrains.mps.debug.customViewers.classes" value="${base_dir}/core/debug/languages/customViewers/classes_gen" />
   <property name="jetbrains.mps.debug.evaluation.classes" value="${base_dir}/core/debug/languages/evaluation/classes_gen" />
   <property name="jetbrains.mps.debug.privateMembers.classes" value="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
-  <property name="jetbrains.mps.execution.commands.classes" value="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-  <property name="jetbrains.mps.execution.common.classes" value="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-  <property name="jetbrains.mps.execution.configurations.classes" value="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-  <property name="jetbrains.mps.execution.settings.classes" value="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-  <property name="jetbrains.mps.execution.util.classes" value="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
+  <property name="jetbrains.mps.execution.commands.classes" value="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+  <property name="jetbrains.mps.execution.common.classes" value="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+  <property name="jetbrains.mps.execution.configurations.classes" value="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+  <property name="jetbrains.mps.execution.settings.classes" value="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+  <property name="jetbrains.mps.execution.util.classes" value="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
   <property name="jetbrains.mps.gtext.classes" value="${base_dir}/languages/util/gtext/classes_gen" />
   <property name="jetbrains.mps.gtext.runtime.classes" value="${base_dir}/languages/util/gtext/runtime/classes_gen" />
   <property name="jetbrains.mps.gwt.client.classes" value="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -143,7 +143,6 @@
     <path path="${base_dir}/lib/platform.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/workbench/classes" />
-    <path path="${base_dir}/workbench/runConfigurations/classes" />
     <path path="${base_dir}/workbench/typesystemUi/classes" />
   </path>
   <path id="cycle.jetbrains.mps.analyzers_tjc.src">
@@ -193,16 +192,16 @@
     <path path="${base_dir}/core/debug/languages/evaluation/test_gen" />
     <path path="${base_dir}/core/debug/languages/privateMembers/source_gen" />
     <path path="${base_dir}/core/debug/languages/privateMembers/test_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/source_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/test_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/source_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/test_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/source_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/test_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/source_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/test_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/source_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/test_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/source_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/test_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/source_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/test_gen" />
     <path path="${base_dir}/languages/util/gtext/source_gen" />
     <path path="${base_dir}/languages/util/gtext/test_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/source_gen" />
@@ -506,6 +505,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -522,11 +526,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage_tjc.classpaths">
@@ -554,11 +553,11 @@
     <path path="${base_dir}/core/debug/languages/customViewers/classes_gen" />
     <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
     <path path="${base_dir}/core/debug/languages/privateMembers/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/classes_gen" />
@@ -677,6 +676,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
@@ -701,11 +705,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.builders_tjc.classpaths">
@@ -776,6 +775,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -792,11 +796,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.constructors_tjc.classpaths">
@@ -867,6 +866,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -883,11 +887,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.contracts_tjc.classpaths">
@@ -958,6 +957,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -974,11 +978,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.dates_tjc.classpaths">
@@ -1050,6 +1049,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1066,11 +1070,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.datesInternal_tjc.classpaths">
@@ -1141,6 +1140,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1157,11 +1161,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths">
@@ -1232,6 +1231,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1248,11 +1252,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.jdk7_tjc.classpaths">
@@ -1323,6 +1322,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1339,11 +1343,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.math_tjc.classpaths">
@@ -1414,6 +1413,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1430,11 +1434,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.money_tjc.classpaths">
@@ -1505,6 +1504,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1521,11 +1525,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc.classpaths">
@@ -1596,6 +1595,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1612,11 +1616,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc.classpaths">
@@ -1712,6 +1711,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1728,11 +1732,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.bash_tjc.classpaths">
@@ -1804,6 +1803,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1820,11 +1824,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
@@ -1903,6 +1902,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1922,11 +1926,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.dependency_tjc.classpaths">
@@ -2001,6 +2000,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2020,11 +2024,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.generictasks_tjc.classpaths">
@@ -2100,6 +2099,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2119,11 +2123,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.build.packaging_tjc.classpaths">
@@ -2199,6 +2198,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2218,11 +2222,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ide.uiLanguage_tjc.classpaths">
@@ -2292,6 +2291,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2309,11 +2313,6 @@
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
     <path path="${base_dir}/workbench/ideUiLanguage/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.descriptor_tjc.classpaths">
@@ -2384,6 +2383,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2400,11 +2404,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.editorTest_tjc.classpaths">
@@ -2475,6 +2474,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2491,11 +2495,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.editor.table_tjc.classpaths">
@@ -2566,6 +2565,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2582,11 +2586,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.pattern.testLang_tjc.classpaths">
@@ -2657,6 +2656,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2673,11 +2677,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.smodelTests_tjc.classpaths">
@@ -2748,6 +2747,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2764,11 +2768,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.traceable_tjc.classpaths">
@@ -2839,6 +2838,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2855,11 +2859,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.nanoj_tjc.classpaths">
@@ -2930,6 +2929,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2946,11 +2950,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.platform.conf_tjc.classpaths">
@@ -3021,6 +3020,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3037,11 +3041,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.quickQueryLanguage_tjc.classpaths">
@@ -3112,6 +3111,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3333,11 +3337,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ui.swt.runtime_tjc.classpaths">
@@ -3416,6 +3415,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3433,11 +3437,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xmlQuery_tjc.classpaths">
@@ -3509,6 +3508,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3529,11 +3533,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mpslite_tjc.classpaths">
@@ -3604,6 +3603,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3620,11 +3624,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.ypath.main_tjc.classpaths">
@@ -3694,6 +3693,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3711,11 +3715,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.ypath.test_tjc.classpaths">
@@ -3785,6 +3784,11 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3803,11 +3807,6 @@
     <path path="${base_dir}/lib/guava-r06.jar" />
     <path path="${base_dir}/lib/junit-4.8.2.jar" />
     <path path="${base_dir}/lib/tools.jar" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.traceable_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
@@ -3878,16 +3877,16 @@
     <mkdir dir="${base_dir}/core/debug/languages/evaluation/test_gen" />
     <mkdir dir="${base_dir}/core/debug/languages/privateMembers/source_gen" />
     <mkdir dir="${base_dir}/core/debug/languages/privateMembers/test_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/commands/source_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/commands/test_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/common/source_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/common/test_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/configurations/source_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/configurations/test_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/settings/source_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/settings/test_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/util/source_gen" />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/util/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/commands/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/commands/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/common/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/util/test_gen" />
     <mkdir dir="${base_dir}/languages/util/gtext/source_gen" />
     <mkdir dir="${base_dir}/languages/util/gtext/test_gen" />
     <mkdir dir="${base_dir}/languages/util/gtext/runtime/source_gen" />
@@ -4135,24 +4134,24 @@
       <fileset includes="**/*.png" dir="${base_dir}/core/debug/languages/privateMembers/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.execution.commands.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/commands/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/commands/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/commands/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/commands/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.execution.common.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/common/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/common/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/common/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.execution.configurations.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/configurations/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/configurations/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.execution.settings.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/settings/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/settings/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.execution.util.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/util/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/workbench/runConfigurations/languages/util/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/util/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.gtext.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/gtext/source_gen" />
@@ -4458,32 +4457,32 @@
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.commands.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/workbench/runConfigurations/languages/commands/source_gen" />
-        <path path="${base_dir}/workbench/runConfigurations/languages/commands/test_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/commands/source_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/commands/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.common.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/workbench/runConfigurations/languages/common/source_gen" />
-        <path path="${base_dir}/workbench/runConfigurations/languages/common/test_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/common/source_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.configurations.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/workbench/runConfigurations/languages/configurations/source_gen" />
-        <path path="${base_dir}/workbench/runConfigurations/languages/configurations/test_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.settings.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/workbench/runConfigurations/languages/settings/source_gen" />
-        <path path="${base_dir}/workbench/runConfigurations/languages/settings/test_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.util.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/workbench/runConfigurations/languages/util/source_gen" />
-        <path path="${base_dir}/workbench/runConfigurations/languages/util/test_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/languages/util/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.gtext.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">

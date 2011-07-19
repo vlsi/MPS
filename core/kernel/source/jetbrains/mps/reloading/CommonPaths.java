@@ -105,7 +105,7 @@ public class CommonPaths {
     addIfExists(result, "/core/languageDesign/test/classes");
     addIfExists(result, "/workbench/typesystemUi/classes");
     addIfExists(result, "/core/baseLanguage/runConfigurations/runtime/classes");
-    addIfExists(result, "/workbench/runConfigurations/classes");
+    addIfExists(result, "/languages/util/runConfigurations/classes");
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
     addIfExists(result, "/lib/annotations.jar");

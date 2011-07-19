@@ -7716,7 +7716,7 @@
   </target>
   <target name="pack.jetbrains.mps.execution.configurations">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.configurations.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.configurations.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.configurations" uuid="22e72e4c-0f69-46ce-8403-6750153aa615" type="language">
@@ -7836,16 +7836,16 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.configurations-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/configurations/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/configurations/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/workbench/runConfigurations/languages/configurations/configurations.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/configurations/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/configurations/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/runConfigurations/languages/configurations/configurations.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/configurations/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/configurations/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.configurations.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.configurations.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/configurations" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/configurations/classes_gen" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/configurations" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.configurations.jar.jtmp" />
   </target>
@@ -7970,14 +7970,14 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.api-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" prefix="module" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.api.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.api.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.api" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api" includes="icons/**, resources/**" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.api.jar.jtmp" />
   </target>
@@ -8102,20 +8102,20 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.lib-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.util/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.util/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" prefix="module" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.util/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.util/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.util/jetbrains.mps.execution.lib.msd" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.lib.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.lib.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/solutions/jetbrains.mps.execution.util" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.util" includes="icons/**, resources/**" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.lib.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.execution.commands">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.commands.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.commands.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.commands" uuid="f3347d8a-0e79-4f35-8ac9-1574f25c986f" type="language">
@@ -8235,22 +8235,22 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.commands-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/commands/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/commands/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/workbench/runConfigurations/languages/commands/commands.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/commands/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/commands/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/commands/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/commands/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/runConfigurations/languages/commands/commands.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/commands/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/commands/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.commands.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.commands.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/commands" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/commands/classes_gen" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/commands" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.commands.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.execution.common">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.common.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.common.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.common" uuid="73c1a490-99fa-4d0d-8292-b8985697c74b" type="language">
@@ -8370,21 +8370,21 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.common-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/common/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/common/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/workbench/runConfigurations/languages/common/common.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/common/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/common/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/runConfigurations/languages/common/common.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/common/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.common.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.common.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/common" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/common/classes_gen" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/common" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.common.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.execution.settings">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.settings.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.settings.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.settings" uuid="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" type="language">
@@ -8504,22 +8504,22 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.settings-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/settings/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/settings/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/workbench/runConfigurations/languages/settings/settings.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/settings/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/settings/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/runConfigurations/languages/settings/settings.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/settings/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/settings/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.settings.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.settings.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/settings" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/settings/classes_gen" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/settings" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.settings.jar.jtmp" />
   </target>
   <target name="pack.jetbrains.mps.execution.util">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.execution.util" uuid="4caf0310-491e-41f5-8a9b-2006b3a94898" type="language">
@@ -8639,15 +8639,15 @@
       </module>
     </echoxml>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util-src.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/util/source_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/util/test_gen" includes="**/*.java" erroronmissingdir="false" />
-      <zipfileset file="${base_dir}/workbench/runConfigurations/languages/util/util.mpl" prefix="module" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/util/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/util/test_gen" includes="**/*.java" erroronmissingdir="false" />
+      <zipfileset file="${base_dir}/languages/util/runConfigurations/languages/util/util.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/util/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.jar.jtmp/module.xml" prefix="META-INF" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/util" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/workbench/runConfigurations/languages/util/classes_gen" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/util" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/execution/jetbrains.mps.execution.util.jar.jtmp" />
   </target>
