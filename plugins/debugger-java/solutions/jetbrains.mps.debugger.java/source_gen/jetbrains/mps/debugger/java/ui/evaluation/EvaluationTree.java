@@ -94,7 +94,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   @Override
   public void dispose() {
     MapSequence.fromMap(myStates).clear();
-    // <node> 
+    this.clear();
     super.dispose();
   }
 
