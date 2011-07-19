@@ -170,11 +170,11 @@
         </group>
         <!-- MPS Patch End-->
 
-        <!-- MPS Patch Start
         <group id="EditSelectGroup">
           <action id="$SelectAll" class="com.intellij.ide.actions.SelectAllAction"/>
         </group>
         <separator/>
+        <!-- MPS Patch Start
         <separator/>
         <group id="EditSmartGroup">
           <reference ref="EditorJoinLines"/>
