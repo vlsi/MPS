@@ -292,7 +292,8 @@ public class SModelRepository implements ApplicationComponent {
     for (SModelDescriptor md : myModelsWithOwners.keySet()) {
       if (md instanceof EditableSModelDescriptor) {
         EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
-        if (emd.isChanged()) {
+        // HOTFIX MPS-13326
+        if (emd.isChanged() && !emd.isPackaged()) {
           modelsToSave.add(emd);
         }
       }
