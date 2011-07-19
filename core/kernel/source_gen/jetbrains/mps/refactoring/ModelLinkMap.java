@@ -22,9 +22,10 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.HackSNodeUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ModelLinkMap {
   private SModel myModel;
@@ -177,10 +178,61 @@ public class ModelLinkMap {
     return res;
   }
 
-  public boolean updateModelReference(SModelReference model, SModelReference newModel) {
+  public boolean updateModelReference(SModelReference model, final SModelReference newModel) {
+    boolean res = false;
+    // update imports 
     for (SModel.ImportElement element : ListSequence.fromList(myModel.importedModels())) {
+      if (model.equals(element.getModelReference())) {
+        res = true;
+        element.setModelReference(newModel);
+      }
     }
-    return false;
+    for (SModel.ImportElement element : ListSequence.fromList(myModel.getAdditionalModelVersions())) {
+      if (model.equals(element.getModelReference())) {
+        element.setModelReference(newModel);
+      }
+    }
+    // update references 
+    List<DynamicReference> list = myDynRefMap.remove(model);
+    if (list != null) {
+      res = true;
+      ListSequence.fromList(list).visitAll(new IVisitor<DynamicReference>() {
+        public void visit(DynamicReference it) {
+          it.setTargetSModelReference(newModel);
+        }
+      });
+      MapSequence.fromMap(myDynRefMap).put(newModel, list);
+    }
+    for (SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myTargetMap).keySet())) {
+      if (model.equals(ptr.getModelReference())) {
+        res = true;
+        ListSequence.fromList(MapSequence.fromMap(myTargetMap).get(ptr)).visitAll(new IVisitor<StaticReference>() {
+          public void visit(StaticReference it) {
+            it.setTargetSModelReference(newModel);
+          }
+        });
+      }
+    }
+    // update conceptFqNames (if it was structure model) 
+    for (SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
+      if (model.equals(ptr.getModelReference())) {
+        res = true;
+        ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode node) {
+            String name = NameUtil.shortNameFromLongName(node.getConceptFqName());
+            HackSNodeUtil.setConceptFqName(node, NameUtil.longNameFromNamespaceAndShortName(newModel.getLongName(), name));
+
+          }
+        });
+      }
+    }
+    // update maps themselves 
+    updatePtrMap(myNodeRoleMap, model, newModel);
+    updatePtrMap(myNodeTypeMap, model, newModel);
+    updatePtrMap(myPropNameMap, model, newModel);
+    updatePtrMap(myRefRoleMap, model, newModel);
+    updatePtrMap(myTargetMap, model, newModel);
+    return res;
   }
 
   public void fillRoleIdsComponent() {
@@ -268,6 +320,18 @@ public class ModelLinkMap {
       }
     });
     return true;
+  }
+
+  private static <T> void updatePtrMap(Map<SNodePointer, List<T>> map, final SModelReference oldModel, SModelReference newModel) {
+    List<SNodePointer> ptrList = SetSequence.fromSet(MapSequence.fromMap(map).keySet()).where(new IWhereFilter<SNodePointer>() {
+      public boolean accept(SNodePointer it) {
+        return oldModel.equals(it.getModelReference());
+      }
+    }).toListSequence();
+    for (SNodePointer ptr : ListSequence.fromList(ptrList)) {
+      List<T> list = MapSequence.fromMap(map).removeKey(ptr);
+      MapSequence.fromMap(map).put(new SNodePointer(newModel, ptr.getNodeId()), list);
+    }
   }
 
   private static SNodePointer ptr(SNode node) {
