@@ -825,6 +825,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JSplitPane" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

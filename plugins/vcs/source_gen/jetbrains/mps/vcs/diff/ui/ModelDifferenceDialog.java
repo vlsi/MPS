@@ -163,7 +163,7 @@ public class ModelDifferenceDialog extends BaseDialog {
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(10, 10, 500, 700);
+    return DialogDimensionsSettings.generateDialogDimensions(500, 700);
   }
 
   private class ModelDifferenceTree extends DiffModelTree {

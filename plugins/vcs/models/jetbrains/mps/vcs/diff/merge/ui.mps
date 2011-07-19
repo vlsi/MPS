@@ -2335,22 +2335,15 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xpbq.~DialogDimensionsSettings$DialogDimensions" resolveInfo="DialogDimensionsSettings.DialogDimensions" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4124845871897267052">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4124845871897267053">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4124845871897267054">
-            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4124845871897267055">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xpbq.~DialogDimensionsSettings$DialogDimensions%d&lt;init&gt;(int,int,int,int)" resolveInfo="DialogDimensionsSettings.DialogDimensions" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897267056">
-                <property name="value" nameId="tpee.1068580320021" value="10" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897267057">
-                <property name="value" nameId="tpee.1068580320021" value="10" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897267058">
-                <property name="value" nameId="tpee.1068580320021" value="500" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897267059">
-                <property name="value" nameId="tpee.1068580320021" value="700" />
-              </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3340971203685202098">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3340971203685202100">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xpbq.~DialogDimensionsSettings" resolveInfo="DialogDimensionsSettings" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xpbq.~DialogDimensionsSettings%dgenerateDialogDimensions(int,int)%cjetbrains%dmps%dide%ddialogs%dDialogDimensionsSettings$DialogDimensions" resolveInfo="generateDialogDimensions" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3340971203685202104">
+              <property name="value" nameId="tpee.1068580320021" value="500" />
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3340971203685202105">
+              <property name="value" nameId="tpee.1068580320021" value="700" />
             </node>
           </node>
         </node>
@@ -6205,22 +6198,15 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xpbq.~DialogDimensionsSettings$DialogDimensions" resolveInfo="DialogDimensionsSettings.DialogDimensions" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4124845871897268460">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4124845871897268461">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4124845871897268462">
-            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4124845871897268463">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xpbq.~DialogDimensionsSettings$DialogDimensions%d&lt;init&gt;(int,int,int,int)" resolveInfo="DialogDimensionsSettings.DialogDimensions" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897268464">
-                <property name="value" nameId="tpee.1068580320021" value="10" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897268465">
-                <property name="value" nameId="tpee.1068580320021" value="10" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897268466">
-                <property name="value" nameId="tpee.1068580320021" value="1000" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4124845871897268467">
-                <property name="value" nameId="tpee.1068580320021" value="900" />
-              </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3340971203685205161">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3340971203685205162">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xpbq.~DialogDimensionsSettings" resolveInfo="DialogDimensionsSettings" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xpbq.~DialogDimensionsSettings%dgenerateDialogDimensions(int,int)%cjetbrains%dmps%dide%ddialogs%dDialogDimensionsSettings$DialogDimensions" resolveInfo="generateDialogDimensions" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3340971203685205163">
+              <property name="value" nameId="tpee.1068580320021" value="-50" />
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3340971203685205164">
+              <property name="value" nameId="tpee.1068580320021" value="-100" />
             </node>
           </node>
         </node>
