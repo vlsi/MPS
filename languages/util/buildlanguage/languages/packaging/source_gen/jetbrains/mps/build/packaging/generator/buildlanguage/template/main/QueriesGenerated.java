@@ -991,7 +991,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4738159245301622246(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "macro", true) != null);
+    return Path_Behavior.call_hasMacro_4323997179924030474(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_8148924375507507659(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
