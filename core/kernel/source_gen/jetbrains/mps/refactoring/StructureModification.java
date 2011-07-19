@@ -135,7 +135,9 @@ public class StructureModification {
     public SModelReference oldModel;
     public SModelReference newModel;
 
-    public RenameModel() {
+    public RenameModel(SModelReference from, SModelReference to) {
+      oldModel = from;
+      newModel = to;
     }
 
     public boolean apply(ModelLinkMap linkMap) {

@@ -23,6 +23,7 @@ import java.util.Collection;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -162,7 +163,8 @@ public class RefactoringContext {
       SNode target = mapping.get(key);
       myMoveMap.put(new StructureModificationData.FullNodeId(key), new StructureModificationData.FullNodeId(target));
       myCachesAreUpToDate = false;
-      myLoggedData.getData().add(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
+
+      ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -173,7 +175,8 @@ public class RefactoringContext {
   public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode) {
     myMoveMap.put(new StructureModificationData.FullNodeId(whatNode), new StructureModificationData.FullNodeId(withNode));
     myCachesAreUpToDate = false;
-    myLoggedData.getData().add(new StructureModification.MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
+
+    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
     whatNode.delete();
   }
 
@@ -188,7 +191,6 @@ public class RefactoringContext {
     if (sourceNodes.isEmpty()) {
       return new ArrayList<SNode>();
     }
-    SModel sourceModel = sourceNodes.get(0).getModel();
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, mapping);
     for (SNode node : targetNodes) {
@@ -198,7 +200,8 @@ public class RefactoringContext {
       SNode target = mapping.get(key);
       myMoveMap.put(new StructureModificationData.FullNodeId(key), new StructureModificationData.FullNodeId(target));
       myCachesAreUpToDate = false;
-      myLoggedData.getData().add(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
+
+      ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -274,8 +277,9 @@ public class RefactoringContext {
       if (newFeatureName == null) {
         return;
       }
+
       if (!(newFeatureName.equals(oldFeatureName))) {
-        myLoggedData.getData().add(new StructureModification.RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
+        ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
       } else
       if (kind == StructureModificationData.ConceptFeatureKind.CONCEPT && !(oldConceptFQName.equals(newConceptFQName))) {
       }
@@ -314,6 +318,7 @@ public class RefactoringContext {
     if (!(myCachesAreUpToDate)) {
       computeCaches();
     }
+
     for (SNode node : model.nodes()) {
       String conceptFQName = node.getConceptFqName();
       Set<StructureModificationData.ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);

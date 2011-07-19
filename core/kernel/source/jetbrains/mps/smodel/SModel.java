@@ -743,6 +743,10 @@ public class SModel {
       return myModelReference;
     }
 
+    public void setModelReference(SModelReference modelReference) {
+      myModelReference = modelReference;
+    }
+
     public int getReferenceID() {
       return myReferenceID;
     }

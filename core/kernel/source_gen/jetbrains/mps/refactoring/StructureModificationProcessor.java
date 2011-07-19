@@ -29,11 +29,12 @@ public class StructureModificationProcessor {
   }
 
   private boolean playRefactoring(@NotNull StructureModification data) {
+    boolean result = data.apply(myModelMap);
     for (IMapping<SModelReference, Integer> entry : MapSequence.fromMap(data.getDependencies())) {
       // also adds implicit import if necessary 
       myModel.updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
     }
-    return data.apply(myModelMap);
+    return result;
   }
 
   private boolean playModelRefactorings(EditableSModelDescriptor model, int usedVersion) {

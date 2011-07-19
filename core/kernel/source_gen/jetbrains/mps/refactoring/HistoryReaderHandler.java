@@ -362,7 +362,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
 
     @Override
     protected StructureModification.RenameModel createObject(Attributes attrs) {
-      return new StructureModification.RenameModel();
+      return new StructureModification.RenameModel(SModelReference.fromString(attrs.getValue("oldModel")), SModelReference.fromString(attrs.getValue("newModel")));
     }
 
     @Override
