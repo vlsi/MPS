@@ -96,8 +96,12 @@ public class RulesManager {
       }
       LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageNamespace);
       if (language == null) return false;
-      IHelginsDescriptor typesystemDescriptor = language.getTypesystem();
-
+      IHelginsDescriptor typesystemDescriptor = null;
+      try {
+        typesystemDescriptor = language.getTypesystem();
+      } catch (Throwable t) {
+        LOG.error("Error while loading language: " + t);
+      }
       if (typesystemDescriptor == null) return false;
       try {
         myInferenceRules.addRuleSetItem(typesystemDescriptor.getInferenceRules());
