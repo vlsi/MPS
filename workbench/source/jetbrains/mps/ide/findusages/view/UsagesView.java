@@ -138,7 +138,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   private void regenerate() {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
-      if (GeneratorManager.isDoNotGenerate(modelDescriptor)) continue;
+      if (GeneratorManager.isDoNotGenerate(modelDescriptor) || !modelDescriptor.isGeneratable()) continue;
       models.add(modelDescriptor);
     }
 
