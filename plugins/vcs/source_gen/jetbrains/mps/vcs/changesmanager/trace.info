@@ -2,7 +2,6 @@
 <debugInfo>
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager._Adapters$_return_P0_E0_to_Runnable_adapter" />
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager._Adapters" />
-  <unitInfo fileName="MPSTreeUtils.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.MPSTreeUtils" />
   <root nodeId="166132277801266530">
     <nodeInfo nodeId="3211037171927458401" fileName="EditorComponentChangesHighligher.java" startLine="49" startPosition="77" endLine="50" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HIGHLIGHT_COLOR_ADDED" />
     <nodeInfo nodeId="3211037171927458433" fileName="EditorComponentChangesHighligher.java" startLine="50" startPosition="78" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HIGHLIGHT_COLOR_CHANGED" />
@@ -2380,6 +2379,7 @@
     <nodeInfo nodeId="833977803389943647" fileName="MPSTreeUtils.java" startLine="61" startPosition="60" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="833977803389943652" fileName="MPSTreeUtils.java" startLine="62" startPosition="56" endLine="63" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="833977803389943662" fileName="MPSTreeUtils.java" startLine="64" startPosition="5" endLine="65" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="18" startPosition="27" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSTreeUtils#()V" />
     <nodeInfo nodeId="6753405296903809164" fileName="MPSTreeUtils.java" startLine="23" startPosition="60" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6753405296903809205" fileName="MPSTreeUtils.java" startLine="32" startPosition="97" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6753405296903809261" fileName="MPSTreeUtils.java" startLine="41" startPosition="60" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2389,10 +2389,17 @@
     <nodeInfo nodeId="6753405296903809202" fileName="MPSTreeUtils.java" startLine="31" startPosition="108" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6753405296903809257" fileName="MPSTreeUtils.java" startLine="40" startPosition="91" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6753405296903809290" fileName="MPSTreeUtils.java" startLine="49" startPosition="102" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findPropertiesTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;)Ljetbrains/mps/ide/ui/smodel/PropertiesTreeNode;" />
+    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="30" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findPropertyTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/ui/smodel/PropertyTreeNode;" />
+    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="39" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findReferencesTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;)Ljetbrains/mps/ide/ui/smodel/ReferencesTreeNode;" />
+    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findReferenceTreeNode#(Ljetbrains/mps/ide/ui/smodel/SNodeTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/ui/smodel/ReferenceTreeNode;" />
+    <nodeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="57" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDescendants#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="19" startPosition="25" endLine="19" endPosition="25" />
     <scopeInfo nodeId="6753405296903809165" fileName="MPSTreeUtils.java" startLine="24" startPosition="48" endLine="25" endPosition="44" />
     <scopeInfo nodeId="6753405296903809218" fileName="MPSTreeUtils.java" startLine="33" startPosition="124" endLine="34" endPosition="42" />
     <scopeInfo nodeId="6753405296903809262" fileName="MPSTreeUtils.java" startLine="42" startPosition="48" endLine="43" endPosition="44" />
     <scopeInfo nodeId="6753405296903809308" fileName="MPSTreeUtils.java" startLine="51" startPosition="123" endLine="52" endPosition="43" />
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="18" startPosition="27" endLine="20" endPosition="3" />
     <scopeInfo nodeId="833977803389943646" fileName="MPSTreeUtils.java" startLine="61" startPosition="60" endLine="63" endPosition="121" />
     <scopeInfo nodeId="6753405296903809163" fileName="MPSTreeUtils.java" startLine="23" startPosition="60" endLine="26" endPosition="7" />
     <scopeInfo nodeId="6753405296903809204" fileName="MPSTreeUtils.java" startLine="32" startPosition="97" endLine="35" endPosition="7" />
@@ -2411,6 +2418,16 @@
       <varInfo nodeId="833977803389943630" varName="children" />
       <varInfo nodeId="833977803389943637" varName="descendants" />
     </scopeInfo>
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="21" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="6753405296903809238" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="6753405296903809254" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="57" startPosition="0" endLine="67" endPosition="0" />
+    <unitInfo nodeId="6753405296903707476" fileName="MPSTreeUtils.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.MPSTreeUtils" />
   </root>
   <root nodeId="8006781392765204425">
     <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="482" startPosition="31" endLine="482" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

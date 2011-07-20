@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-719epkwzxbk9f43ssfnb6vru5wmk613">
+<dependencies version="2" modelHash="-1q3fgs6jgp0w87kq3l3lac6l4lfjch">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.actions(MPS.Classpath/com.intellij.ide.actions@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd(MPS.Classpath/com.intellij.ide.dnd@java_stub)" />
@@ -89,15 +89,15 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-5g8163zp0j3pctdgbcilsfbj6z1v6tf" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-1nd6uy0e8gxev0yzcrmonka8fmr2chr" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6wcb0wku66kauzfch9knq1rbzi73svq" />
-  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-5z9z92cts6sp21qa5vbyaa9dxv4xjpz" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-9ca850zjul8cjnucvx760kzg806xfvg" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="bs12zx6bureypbcmufkaon2v0z94d94" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="3jhs6thyanegs87zg673xmwxikuwcue" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="duo6iz57nl2irveomybeo915zs7c0ny" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="2ijfhi81ec8762pk0ririvhopnswqvg" />
   <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" hash="-bgznvokgb361qonnvwu1ytof1l3k61k" />
   <dep model="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.oldchanges)" hash="-448thfp0q0laf2pxy31l1a57mh0pox2" />
   <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="-8gut7thqrfdizr4ee7r2kw1isfzp4e7" />
   <dep model="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" hash="-bwayo8zdimv8j8axyc1d5idtgf630k9" />
+  <dep model="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" hash="-45qp2v6labxr6ibdojilkgfgbxtr0en" />
   <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="dnz97vavfj4vrb8pqqlml2e4fk5dw43" />
   <dep model="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" hash="-cxtpgmzjlo6jo8x6gn30g26svqrtouy" />
   <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" hash="-9qj9em3tv0p8nc21l7qtsw7pmyhscq5" />
@@ -117,7 +117,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" />
   </common>
-  <source id="4707157387247567127" name="OldMergeView" hash="ejlutrxj6yt93p9gb7thx5u7shklo33">
+  <source id="4707157387247567127" name="OldMergeView" hash="-xibwa8hw85d55r2mzjrg6r4ojqy3lf">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -137,7 +137,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldMergeView.java" />
   </source>
-  <source id="4707157387247567125" name="OldMergeModelsDialog" hash="edlc63ecwhfvzdn8820n0zdf1cubsob">
+  <source id="4707157387247567125" name="OldMergeModelsDialog" hash="-4zvk48hjtpz9ma1j68ei9tf3sj9uwjf">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.ui(MPS.Classpath/com.intellij.openapi.ui@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -155,7 +155,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldMergeModelsDialog.java" />
   </source>
-  <source id="4707157387247559468" name="OldMergeResultView" hash="4xyghoupqt4f9cihh6gztzlyc88kx5g" dependsOnNodes="true">
+  <source id="4707157387247559468" name="OldMergeResultView" hash="-4le99um0hyi6mg83lcl12ua4f3eiee3" dependsOnNodes="true">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.actions(MPS.Classpath/com.intellij.ide.actions@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
@@ -249,7 +249,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="OldMergeResultView.java" />
   </source>
-  <source id="4707157387247568950" name="OldRootMergeDialog" hash="-7ihe2spk3usdtgp3qwjjtxpi2yjy95u">
+  <source id="4707157387247568950" name="OldRootMergeDialog" hash="8lwr4ljjts311n9jnts68l93a9rxblm">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.dialogs(MPS.Classpath/jetbrains.mps.ide.dialogs@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.projectPane(MPS.Classpath/jetbrains.mps.ide.projectPane@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -272,7 +272,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
@@ -284,7 +283,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldRootMergeDialog.java" />
   </source>
-  <source id="4707157387247567124" name="OldModelDifferenceDialog" hash="cay95lotoshl3khs5noeuxmphqd6pnk">
+  <source id="4707157387247567124" name="OldModelDifferenceDialog" hash="1qryj5b016ffyzutg77i5maap92ncx5">
     <dep root="4707157387247567123" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.dialogs(MPS.Classpath/jetbrains.mps.ide.dialogs@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -311,7 +310,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldModelDifferenceDialog.java" />
   </source>
-  <source id="4707157387247567126" name="OldChangeEditorMessage" hash="og8fat9ystjb6xbqq8gnby0n3j4wts">
+  <source id="4707157387247567126" name="OldChangeEditorMessage" hash="8cywzelhifghgucmvc2q9vsy4qvv28r">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -332,7 +331,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldChangeEditorMessage.java" />
   </source>
-  <source id="4707157387247571106" name="OldRootDifferenceDialog" hash="-d0leokoaiy9nmb7nrjiiqzoyjcguhjh">
+  <source id="4707157387247571106" name="OldRootDifferenceDialog" hash="-8iuhlla2ibuejnx2eku8rrj0hvvn85u">
     <dep root="4707157387247567126" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util.containers(MPS.Classpath/com.intellij.util.containers@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.dialogs(MPS.Classpath/jetbrains.mps.ide.dialogs@java_stub)" />
@@ -368,7 +367,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldRootDifferenceDialog.java" />
   </source>
-  <source id="4707157387247572408" name="OldChangesBlock" hash="5rbtnjgl7au0898qoma151md0u15q0">
+  <source id="4707157387247572408" name="OldChangesBlock" hash="-b25jg9g6c2sfwuxyq04j8oy4gvyvkzo">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -388,7 +387,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldChangesBlock.java" />
   </source>
-  <source id="4707157387247567123" name="OldModelDifferenceComponent" hash="etea7rwz1tkd6z5who34iy1lv7lgcwg">
+  <source id="4707157387247567123" name="OldModelDifferenceComponent" hash="-xjal9iougineu1c6kgqsbph3dnqvdr">
     <dep root="4707157387247573403" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd(MPS.Classpath/com.intellij.ide.dnd@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd.aware(MPS.Classpath/com.intellij.ide.dnd.aware@java_stub)" />
@@ -425,7 +424,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldModelDifferenceComponent.java" />
   </source>
-  <source id="4707157387247573403" name="OldModelChangesTree" hash="1t912srvzsexlf27jr06pghk7ur1ctt" dependsOnNodes="true">
+  <source id="4707157387247573403" name="OldModelChangesTree" hash="5v5gkdfi1mn55mhi9tf279rm996y5qd" dependsOnNodes="true">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.actions(MPS.Classpath/com.intellij.ide.actions@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd(MPS.Classpath/com.intellij.ide.dnd@java_stub)" />
@@ -529,7 +528,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="OldModelChangesTree.java" />
   </source>
-  <source id="4707157387247567122" name="OldDiffEditorComponent" hash="bjfib4r959w7il5htogdjfabr324wjp">
+  <source id="4707157387247567122" name="OldDiffEditorComponent" hash="8ig12t2khi7ihe9m6lmaaqa46r6oya5">
     <dep root="4707157387247567126" />
     <dep root="4707157387247572408" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
@@ -565,7 +564,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OldDiffEditorComponent.java" />
   </source>
-  <source id="3021948350273458192" name="ChangeGroup" hash="70o3dqpummyb9g3l4637dkwubc2hrkh">
+  <source id="3021948350273458192" name="ChangeGroup" hash="-bcho9yaklpbpvazxgwy919pnruh5aca">
     <dep root="8755562548669444442" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -588,7 +587,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangeGroup.java" />
   </source>
-  <source id="8401260027345469827" name="ChangeEditorMessage" hash="5yz8ke3bc0i6b2isc1xrrqigglmg9cp" dependsOnNodes="true">
+  <source id="8401260027345469827" name="ChangeEditorMessage" hash="-d797uxfinmr5pk5jgzeg4uvnw17nfed" dependsOnNodes="true">
     <dep root="8755562548669444442" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.actions(MPS.Classpath/com.intellij.ide.actions@java_stub)" />
@@ -681,7 +680,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangeEditorMessage.java" />
   </source>
-  <source id="3724655318819677795" name="ModelDifferenceDialog" hash="-a84byz13omc9nvp1h98kaf2qhjwwb43">
+  <source id="3724655318819677795" name="ModelDifferenceDialog" hash="ev3rqdwbdelr9s5geapuw8jxxa2syy3">
     <dep root="278581607615156826" />
     <dep root="278581607615217307" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd(MPS.Classpath/com.intellij.ide.dnd@java_stub)" />
@@ -725,7 +724,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelDifferenceDialog.java" />
   </source>
-  <source id="3021948350273458186" name="ChangeGroupBuilder" hash="-bffw74sbrvoai8dyr9uunts0c3ctuvh">
+  <source id="3021948350273458186" name="ChangeGroupBuilder" hash="4hs037456ts1ckql446n7qvej7hwgof">
     <dep root="1270946566396265091" />
     <dep root="3021948350273458192" />
     <dep root="8401260027345469827" />
@@ -747,6 +746,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" />
     <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" />
@@ -757,7 +757,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangeGroupBuilder.java" />
   </source>
-  <source id="7088622708994254413" name="RootDifferenceDialog" hash="96d6ac3guq34obig9d07alyxlx3rr5x">
+  <source id="7088622708994254413" name="RootDifferenceDialog" hash="6lgphmjkv8jwkc09nmwq5aesq2f58tj">
     <dep root="3021948350273458186" />
     <dep root="3724655318819677795" />
     <dep root="6473905640924171094" />
@@ -794,7 +794,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RootDifferenceDialog.java" />
   </source>
-  <source id="742766381634604040" name="ChangeTrapeciumStrip" hash="-4hpioj4z3k52cml5f8ybwr0t38lteid">
+  <source id="742766381634604040" name="ChangeTrapeciumStrip" hash="8jwkljyce9s8nxvqz2k5plf33xvpi0m">
     <dep root="1270946566396265091" />
     <dep root="3021948350273458186" />
     <dep root="3021948350273458192" />
@@ -822,7 +822,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ChangeTrapeciumStrip.java" />
   </source>
-  <source id="6473905640924171094" name="DiffEditor" hash="6vovwkb37rv9s5ldqdcr22kze3g0f20">
+  <source id="6473905640924171094" name="DiffEditor" hash="6swxq4zpwo9azr3dnpvlr8ak2efs39">
     <dep root="8401260027345469827" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.tooltips(MPS.Classpath/jetbrains.mps.ide.tooltips@java_stub)" />
@@ -862,12 +862,12 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffEditor.java" />
   </source>
-  <source id="1270946566396265091" name="ChangeGroupInvalidateListener" hash="-s6cnweqb61dy8g5u1on908xl7lvjpx">
+  <source id="1270946566396265091" name="ChangeGroupInvalidateListener" hash="-au2hmxeatgctcg25b00gyfjykz7wlff">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="ChangeGroupInvalidateListener.java" />
   </source>
-  <source id="5019828647791521160" name="DiffEditorsGroup" hash="3ywpyi43oohy0fz32fvokh98r9wrs80">
+  <source id="5019828647791521160" name="DiffEditorsGroup" hash="-7x1pwm278bn7qhudluyi61wdp6xxfi9">
     <dep root="6473905640924171094" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.cells(MPS.Classpath/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -887,6 +887,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" />
     <dep model="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" />
     <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" />
     <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" />
@@ -896,7 +897,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffEditorsGroup.java" />
   </source>
-  <source id="3416287804356520387" name="FoldingAreaButton" hash="-194ygyqcj5kreukoda7kzfqou7gun0a">
+  <source id="3416287804356520387" name="FoldingAreaButton" hash="5fmqr21k88gc4brnka3y2d61i1mtwnw">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -912,7 +913,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FoldingAreaButton.java" />
   </source>
-  <source id="7115262660808722246" name="ButtonsPainter" hash="960f9mw9v14lxxk0lwtsapdx14szqk3" dependsOnNodes="true">
+  <source id="7115262660808722246" name="ButtonsPainter" hash="-zbqjpunh76uzeenstbj7pi9n7ncip" dependsOnNodes="true">
     <dep root="1270946566396265091" />
     <dep root="3021948350273458186" />
     <dep root="3021948350273458192" />
@@ -1006,7 +1007,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ButtonsPainter.java" />
   </source>
-  <source id="7617953927522682042" name="DiffButtonsPainter" hash="-4d6ok4dzn2k2yxrlyyu4n7kne329d4c">
+  <source id="7617953927522682042" name="DiffButtonsPainter" hash="a4vsrjv95ycyfj2fj0yy2n4egtul8x0">
     <dep root="3021948350273458192" />
     <dep root="3416287804356520387" />
     <dep root="7115262660808722246" />
@@ -1030,7 +1031,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffButtonsPainter.java" />
   </source>
-  <source id="8755562548669444442" name="Bounds" hash="-940dldpjbph45y5bu9exsbk642hn5tv">
+  <source id="8755562548669444442" name="Bounds" hash="-cjmmsw15pw7h39pw5xkjqi0mvjat3ui">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#a247e09e-2435-45ba-b8d2-07e93feba96a#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples/jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1051,7 +1052,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Bounds.java" />
   </source>
-  <source id="278581607615156826" name="DiffModelTree" hash="-eh4olhwm3xakdbr1a4nywh1uidx7wm4" dependsOnNodes="true">
+  <source id="278581607615156826" name="DiffModelTree" hash="-5itmqr66ttfu7zjn35yigyar4e9onhs" dependsOnNodes="true">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.actions(MPS.Classpath/com.intellij.ide.actions@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd(MPS.Classpath/com.intellij.ide.dnd@java_stub)" />
@@ -1153,7 +1154,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffModelTree.java" />
   </source>
-  <source id="278581607615217307" name="InvokeRootDifferenceAction" hash="-e9wurpuilkqzaj1ivmhkiow4nkyghio">
+  <source id="278581607615217307" name="InvokeRootDifferenceAction" hash="bgssjkzxyij0yzmqtbjoeoaf2l3klfw">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1172,7 +1173,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InvokeRootDifferenceAction.java" />
   </source>
-  <source id="4503715620529392813" name="InvokeTextDiffAction" hash="3n81lylkcvwm4055v0nz6y8d6qcz200">
+  <source id="4503715620529392813" name="InvokeTextDiffAction" hash="8yxqlrg7c5apiyw7b41z9seif5dab36">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.projectPane(MPS.Classpath/jetbrains.mps.ide.projectPane@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -1189,7 +1190,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InvokeTextDiffAction.java" />
   </source>
-  <source id="2090008153514841277" name="GoToNeighbourRootActions" hash="67t4d15c2hl42s219fwc2dytbwx5lcz">
+  <source id="2090008153514841277" name="GoToNeighbourRootActions" hash="682a60kekqc040q4a006759425ic1xj">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -1211,7 +1212,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GoToNeighbourRootActions.java" />
   </source>
-  <source id="2090008153514920543" name="SimpleDiffRequest" hash="-53g8j44sv0rq5nc6326kascpfj6gil6">
+  <source id="2090008153514920543" name="SimpleDiffRequest" hash="-8vdjirhdnniafzqv1u9d6t1pk0w7jpf">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -1224,15 +1225,17 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleDiffRequest.java" />
   </source>
-  <source id="5743590290452044030" name="ChangeColors" hash="-9817q6ys6zoc5j88xo3sz97xhg98z">
+  <source id="5743590290452044030" name="ChangeColors" hash="dccymg4k1cwhgpl2676ptjqjtr86pw4">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.vcs(MPS.Classpath/com.intellij.openapi.vcs@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
@@ -1245,7 +1248,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangeColors.java" />
   </source>
-  <source id="4644674181061538807" name="NextPreviousTraverser" hash="-24qxvl8jdz08bvhraqxdn64e4uvour3" dependsOnNodes="true">
+  <source id="4644674181061538807" name="NextPreviousTraverser" hash="38zkxn2hodk2bcw4b024ubpwu99nswo" dependsOnNodes="true">
     <dep root="1270946566396265091" />
     <dep root="3021948350273458186" />
     <dep root="3021948350273458192" />
@@ -1342,7 +1345,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="NextPreviousTraverser.java" />
   </source>
-  <source id="4743311727820113131" name="DiffTemporaryModule" hash="-bjg1ocgu8pjdyhm3862utucvrum58hc" dependsOnNodes="true">
+  <source id="4743311727820113131" name="DiffTemporaryModule" hash="-ay7ir6981ecg9szecdie84t9x3isu4f" dependsOnNodes="true">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide(MPS.Classpath/com.intellij.ide@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.actions(MPS.Classpath/com.intellij.ide.actions@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />

@@ -12,12 +12,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import java.awt.Dimension;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.awt.Dimension;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JComponent;
@@ -35,14 +35,10 @@ public class DiffEditor implements EditorMessageOwner {
 
   public DiffEditor(IOperationContext context, SNode node, String contentTitle, boolean isLeftEditor) {
     myMainEditorComponent = new DiffEditor.MainEditorComponent(context, isLeftEditor);
-    myMainEditorComponent.editNode(node, myMainEditorComponent.getOperationContext());
     myInspector = new InspectorEditorComponent(isLeftEditor);
-    myInspector.getExternalComponent().setPreferredSize(new Dimension());
-
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
-        ec.getLeftEditorHighlighter().setDefaultFoldingAreaPaintersEnabled(false);
-        ec.setPopupMenuEnabled(false);
+        ec.setNoVirtualFile(true);
       }
     });
 
@@ -51,6 +47,15 @@ public class DiffEditor implements EditorMessageOwner {
       boolean editable = !(model.isNotEditable());
       setReadOnly(!(editable));
     }
+
+    myMainEditorComponent.editNode(node, myMainEditorComponent.getOperationContext());
+    myInspector.getExternalComponent().setPreferredSize(new Dimension());
+    Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
+      public void visit(EditorComponent ec) {
+        ec.getLeftEditorHighlighter().setDefaultFoldingAreaPaintersEnabled(false);
+        ec.setPopupMenuEnabled(false);
+      }
+    });
 
     myTopComponent = new JPanel(new BorderLayout());
     JLabel title = new JLabel(contentTitle);
