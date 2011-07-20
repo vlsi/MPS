@@ -21,6 +21,9 @@ public class ClassRunner {
   @NotNull
   public static final String FILE_PREFIX = "f";
 
+  public ClassRunner() {
+  }
+
   public static void main(String[] args) {
     String className = null;
     String fileName = null;
