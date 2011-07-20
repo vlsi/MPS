@@ -27,9 +27,9 @@ import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.CommonPaths;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
@@ -180,10 +180,17 @@ public class Java_Command {
     return visited;
   }
 
-  public static String getJavaCommand(String javaHome) {
+  public static String getJavaCommand(@Nullable String javaHome) throws ExecutionException {
     if (StringUtils.isEmpty(javaHome) || !(new File(javaHome).exists())) {
       javaHome = Java_Command.getJdkHome();
     }
+    if (StringUtils.isEmpty(javaHome)) {
+      throw new ExecutionException("Could not find valid java home.");
+    }
+    return Java_Command.protect(Java_Command.getJavaCommandUnprotected(javaHome));
+  }
+
+  public static String getJavaCommandUnprotected(String javaHome) {
     String result = javaHome + Java_Command.fs() + "bin" + Java_Command.fs();
     String osName = System.getProperty("os.name");
     if (osName.startsWith("Mac OS")) {
@@ -194,7 +201,7 @@ public class Java_Command {
     } else {
       result += "java";
     }
-    return Java_Command.protect(result);
+    return result;
   }
 
   public static String fs() {
@@ -222,11 +229,11 @@ public class Java_Command {
   public static String getJdkHome() {
     List<String> homes = Java_Command.getJavaHomes();
     for (String javaHome : ListSequence.fromList(homes)) {
-      if (new File(Java_Command.getJavaCommand(javaHome)).exists()) {
+      if (new File(Java_Command.getJavaCommandUnprotected(javaHome)).exists()) {
         return javaHome;
       }
     }
-    return ListSequence.fromList(homes).first();
+    return null;
   }
 
   private static String protect(String result) {
