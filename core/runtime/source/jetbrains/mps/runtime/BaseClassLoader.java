@@ -18,6 +18,7 @@ package jetbrains.mps.runtime;
 import gnu.trove.THashMap;
 import jetbrains.mps.util.InternUtil;
 
+import java.security.ProtectionDomain;
 import java.util.Map;
 
 abstract class BaseClassLoader extends ClassLoader {
@@ -65,7 +66,7 @@ abstract class BaseClassLoader extends ClassLoader {
           }
         } else {
           definePackageIfNecessary(name);
-          c = defineClass(name, bytes, 0, bytes.length, null);
+          c = defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
         }
       }
       myCache.put(name, c);
@@ -73,6 +74,7 @@ abstract class BaseClassLoader extends ClassLoader {
     if (resolve) {
       resolveClass(c);
     }
+
     return c;
   }
 

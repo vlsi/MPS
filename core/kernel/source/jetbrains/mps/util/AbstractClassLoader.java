@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.runtime.ProtectionDomainUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,7 +57,7 @@ public abstract class AbstractClassLoader extends ClassLoader {
         }
       } else {
         definePackageIfNecessary(name);
-        c = defineClass(name, bytes, 0, bytes.length, null);
+        c = defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
       myCache.put(name, c);
     }
