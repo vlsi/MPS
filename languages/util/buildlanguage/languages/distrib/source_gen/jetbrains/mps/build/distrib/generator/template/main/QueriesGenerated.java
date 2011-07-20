@@ -539,7 +539,7 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1635896182103908320(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7955687276642236520(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "defaultVMOptions");
   }
 
@@ -968,7 +968,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 
-  public static boolean ifMacro_Condition_1635896182103908264(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7955687276642236503(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 

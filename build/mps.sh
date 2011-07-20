@@ -23,7 +23,7 @@ if [ -z "${MPS_VM_OPTIONS}" ]; then
 else
   echo "$0 info: Using vmoptions defined in ${MPS_VM_OPTIONS}."
 fi
-JVM_ARGS=`tr '\n' ' ' <${MPS_VM_OPTIONS} | tr '\r' ' '`
+JVM_ARGS=`cat "${MPS_VM_OPTIONS}" | tr '\n' ' ' | tr '\r' ' '`
 # ADDITIONAL_JVM_ARGS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 
 CLASSPATH=""
