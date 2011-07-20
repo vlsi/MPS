@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.actions.help;
 public class ShowDocumentationAction extends ShowSiteAction {
   public ShowDocumentationAction() {
     super("Online Documentation");
+    getTemplatePresentation().setIcon(Icons.DOCUMENTATION);
   }
 
   protected String getSiteURL() {
