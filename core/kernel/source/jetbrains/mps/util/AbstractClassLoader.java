@@ -55,7 +55,7 @@ public abstract class AbstractClassLoader extends ClassLoader {
         }
       } else {
         definePackageIfNecessary(name);
-        c = defineClass(name, bytes, 0, bytes.length);
+        c = defineClass(name, bytes, 0, bytes.length, null);
       }
       myCache.put(name, c);
     }
