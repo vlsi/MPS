@@ -35,7 +35,6 @@ public class ShowDiffererenceWithCurrentRevision_Action extends GeneratedAction 
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IconUtil.useIcon(ShowDiffererenceWithCurrentRevision_Action.this, event.getPresentation(), "icons/diff.png");
     if (!(((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor)) {
       return false;
     }
