@@ -28,7 +28,6 @@ public class GoToPreviousChange_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IconUtil.useIcon(GoToPreviousChange_Action.this, event.getPresentation(), "icons/previousOccurence.png");
       event.getPresentation().setVisible(true);
       event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isPreviousChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
     } catch (Throwable t) {

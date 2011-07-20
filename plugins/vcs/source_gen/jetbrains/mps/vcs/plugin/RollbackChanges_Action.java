@@ -28,7 +28,6 @@ public class RollbackChanges_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IconUtil.useIcon(RollbackChanges_Action.this, event.getPresentation(), "icons/reset.png");
       event.getPresentation().setVisible(true);
       event.getPresentation().setEnabled(true);
 

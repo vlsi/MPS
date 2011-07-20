@@ -28,7 +28,6 @@ public class GoToNextChange_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IconUtil.useIcon(GoToNextChange_Action.this, event.getPresentation(), "icons/nextOccurence.png");
       event.getPresentation().setVisible(true);
       event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isNextChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
     } catch (Throwable t) {
