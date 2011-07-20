@@ -31,7 +31,7 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"), "configuration", false);
     }
-    return node;
+    return null;
   }
 
   public boolean isApplicable(SNode node) {
