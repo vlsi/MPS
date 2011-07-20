@@ -30,7 +30,6 @@ import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -46,7 +45,6 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.*;
@@ -152,7 +150,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   }
 
   public Icon getIcon() {
-    return IconLoader.getIcon("/nodes/project.png");
+    return FileIcons.FILE_VIEW_ICON;
   }
 
   public JComponent createComponent() {
