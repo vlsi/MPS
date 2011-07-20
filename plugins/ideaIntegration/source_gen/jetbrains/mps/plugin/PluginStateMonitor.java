@@ -179,7 +179,7 @@ public class PluginStateMonitor implements ProjectComponent {
   private static   enum State {
     DISCONNECTED(Icons.DISCONNECTED, "Not connected to IDEA. Click to reconnect.", PluginStateMonitor.INITIAL_DELAY),
     TRYING_TO_CONNECT(Icons.TRYING_TO_CONNECT, "Connecting to IDEA...", PluginStateMonitor.INITIAL_DELAY),
-    CONNECTED_BAD_PROJECT(Icons.CONNECTED, "Connected to IDEA, Project does not match", PluginStateMonitor.CRITICAL_DELAY),
+    CONNECTED_BAD_PROJECT(Icons.CONNECTED_ERRORS, "Connected to IDEA, Project does not match", PluginStateMonitor.CRITICAL_DELAY),
     CONNECTED(Icons.CONNECTED, "Connected to IDEA", PluginStateMonitor.INITIAL_DELAY);
 
     private Icon myIcon;
