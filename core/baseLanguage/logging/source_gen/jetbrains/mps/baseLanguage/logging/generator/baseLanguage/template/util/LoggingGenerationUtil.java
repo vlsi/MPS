@@ -15,6 +15,9 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LoggingGenerationUtil {
+  public LoggingGenerationUtil() {
+  }
+
   public static SNode toPlus(List<SNode> textExpressions) {
     SNode result = null;
     if (ListSequence.fromList(textExpressions).isNotEmpty()) {
