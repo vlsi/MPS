@@ -16,8 +16,10 @@
 package jetbrains.mps.workbench.actions.help;
 
 public class ReadMPSTutorialAction extends ShowSiteAction {
+
   public ReadMPSTutorialAction() {
     super("Online Tutorial");
+    getTemplatePresentation().setIcon(Icons.TUTORIAL);
   }
 
   protected String getSiteURL() {
