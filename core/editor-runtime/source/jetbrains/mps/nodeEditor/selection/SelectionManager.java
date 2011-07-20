@@ -207,6 +207,9 @@ public class SelectionManager {
   }
 
   public void dispose() {
+    if (!mySelectionStack.isEmpty()) {
+      mySelectionStack.peek().deactivate();
+    }
     mySelectionStack.clear();
     mySelectionStack = null;
   }
