@@ -95,16 +95,20 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
       final List<BaseSNodeDescriptor> descriptors = new ArrayList<BaseSNodeDescriptor>();
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
-          SModel model = doModelParsing(inputData);
+          try {
+            SModel model = doModelParsing(inputData);
 
-          for (final SNode node : getRootsToIterate(model)) {
-            String persistentName = node.getPersistentProperty(SNodeUtil.property_INamedConcept_name);
-            String nodeName = (persistentName == null) ? "null" : persistentName;
-            String conceptFqName = node.getConceptFqName();
-            SModelReference modelRef = model.getSModelReference();
-            SNodeId id = node.getSNodeId();
-            BaseSNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
-            descriptors.add(value);
+            for (final SNode node : getRootsToIterate(model)) {
+              String persistentName = node.getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+              String nodeName = (persistentName == null) ? "null" : persistentName;
+              String conceptFqName = node.getConceptFqName();
+              SModelReference modelRef = model.getSModelReference();
+              SNodeId id = node.getSNodeId();
+              BaseSNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
+              descriptors.add(value);
+            }
+          } catch (Exception e) {
+            LOG.error("Cannot index model file " + inputData.getFileName());
           }
         }
       });
