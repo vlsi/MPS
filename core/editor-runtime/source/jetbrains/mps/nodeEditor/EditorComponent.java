@@ -222,6 +222,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected SNode myNode;
   @Nullable
   private MPSNodeVirtualFile myVirtualFile;
+  private boolean myNoVirtualFile;
+
   @Nullable
   private SNodePointer myNodePointer;
   private EditorContext myEditorContext;
@@ -590,6 +592,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
+  public void setNoVirtualFile(boolean noVirtualFile) {
+    myNoVirtualFile = noVirtualFile;
+  }
+
   public int getShiftX() {
     return myShiftX;
   }
@@ -806,7 +812,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         disposeTypeCheckingContext();
         myNode = node;
         myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
-        myVirtualFile = myNode != null ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
+        myVirtualFile = myNode != null && !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
