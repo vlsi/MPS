@@ -22,4 +22,5 @@ public class Icons {
   public static final Icon CONNECTED = new ImageIcon(Icons.class.getResource("connected.png"));
   public static final Icon DISCONNECTED = new ImageIcon(Icons.class.getResource("disconnected.png"));
   public static final Icon TRYING_TO_CONNECT = new ImageIcon(Icons.class.getResource("trying.png"));
+  public static final Icon CONNECTED_ERRORS = new ImageIcon(Icons.class.getResource("connected_with_errors.png"));
 }
