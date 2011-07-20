@@ -25,6 +25,7 @@ import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorDelegate;
 import java.util.Iterator;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -137,6 +138,14 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
         displayInfo(msg);
         this.myResult = new IResult.FAILURE(null);
         break;
+      }
+
+      if (InternalFlag.isInternalMode()) {
+        myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx[0] + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
+          public String select(IResource r) {
+            return ((IResource) r).describe();
+          }
+        }), ", ") + "]"));
       }
 
       pi.setText2((idx[0] + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).<String>select(new ISelector<IResource, String>() {
