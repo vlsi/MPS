@@ -31,7 +31,7 @@ public class RegenerationStage implements MigrationStage {
   }
 
   public boolean needsCommand() {
-    return true;
+    return false;
   }
 
   public String messageBefore() {
