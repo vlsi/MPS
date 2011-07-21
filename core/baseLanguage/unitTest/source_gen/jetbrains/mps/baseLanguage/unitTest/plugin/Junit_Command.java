@@ -81,7 +81,10 @@ public class Junit_Command {
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {
     Tuples._2<List<ITestNodeWrapper>, TestRunParameters> testsToRun = Junit_Command.getTestsToRunWithParameters(tests);
-    return new Java_Command().setVirtualMachineParameter(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ")).setDebuggerSettings(myDebuggerSettings).setClassPath(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(Junit_Command.getProgramParameters(testsToRun._0())).createProcess(testsToRun._1().getTestRunner());
+    return new Java_Command().setVirtualMachineParameter(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter) ?
+      " " + myVirtualMachineParameter :
+      ""
+    ))).setDebuggerSettings(myDebuggerSettings).setClassPath(ListSequence.fromList(testsToRun._1().getClassPath()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath(myJrePath).setWorkingDirectory(myWorkingDirectory).setProgramParameter(Junit_Command.getProgramParameters(testsToRun._0())).createProcess(testsToRun._1().getTestRunner());
   }
 
   public static IDebugger getDebugger() {
