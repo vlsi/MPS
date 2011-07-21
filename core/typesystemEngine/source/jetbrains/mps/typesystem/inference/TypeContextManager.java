@@ -273,7 +273,7 @@ public class TypeContextManager implements ApplicationComponent {
       if (context == null) return null;
       return context.getTypeOf(node, myTypeChecker);
     } finally {
-      removeOwnerForRootNodeContext(node, owner);
+      removeOwnerForRootNodeContext(root, owner);
     }
   }
 
