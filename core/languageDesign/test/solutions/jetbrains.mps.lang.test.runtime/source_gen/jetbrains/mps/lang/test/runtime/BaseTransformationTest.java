@@ -12,6 +12,7 @@ import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import javax.swing.SwingUtilities;
@@ -53,6 +54,8 @@ public abstract class BaseTransformationTest extends TestCase {
   public void initTest(String projectName, final String model) throws Exception {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
+    // we do not want to save our project, see MPS-13352 
+    ApplicationManagerEx.getApplicationEx().doNotSave();
     clearSystemClipboard();
     // see MPS-10568 
     readSystemMacro();
