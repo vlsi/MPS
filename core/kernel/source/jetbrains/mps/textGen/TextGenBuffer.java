@@ -15,6 +15,13 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.*;
 
 /**
@@ -37,7 +44,7 @@ public final class TextGenBuffer {
   private int myIndent = 2;
   private int myDepth = 0;
   private boolean myContainsErrors = false;
-  private List<String> myErrors = new ArrayList<String>();
+  private List<IMessage> myErrors = new ArrayList<IMessage>();
 
   private final int[] myPostions;
   private final int[] myLineNumbers;
@@ -67,7 +74,7 @@ public final class TextGenBuffer {
     return myContainsErrors;
   }
 
-  public Collection<String> errors() {
+  public Collection<IMessage> problems() {
     return Collections.unmodifiableList(myErrors);
   }
 
@@ -77,7 +84,24 @@ public final class TextGenBuffer {
 
   public void foundError(String error) {
     myContainsErrors = true;
-    myErrors.add(error);
+    myErrors.add(prepare(MessageKind.ERROR, error, null));
+  }
+
+  public void foundError(String error, @Nullable SNode node, @Nullable Throwable t) {
+    myContainsErrors = true;
+    Message m = prepare(MessageKind.ERROR, error, node);
+    if(t != null) {
+      m.setException(t);
+    }
+    myErrors.add(m);
+  }
+
+  private Message prepare(MessageKind kind, String text, @Nullable SNode node) {
+    Message message = new Message(kind, text);
+    if (node != null && node.isRegistered() && node.getModel() != null && !node.getModel().isTransient()) {
+      message.setHintObject(new SNodePointer(node));
+    }
+    return message;
   }
 
   protected void increaseDepth() {

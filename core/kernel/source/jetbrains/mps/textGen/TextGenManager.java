@@ -101,11 +101,11 @@ public class TextGenManager {
         try {
           result = EncodingUtil.encode((String) result, outputEncoding);
         } catch (IOException ex) {
-          LOG.error("cannot encode the output stream", ex);
+          buffer.foundError("cannot encode the output stream", null, ex);
         }
       }
     }
-    return new TextGenerationResult(result, buffer.hasErrors(), buffer.errors(), positionInfo, scopeInfo, unitInfo, deps);
+    return new TextGenerationResult(result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
   private void adjustPositions(int delta, Map<SNode, ? extends PositionInfo> positionInfo) {
@@ -129,7 +129,7 @@ public class TextGenManager {
       buffer.append("???");
 
       if (contextNode != null) {
-        LOG.error("possible broken reference in " + contextNode.getDebugText(), contextNode);
+        buffer.foundError("possible broken reference in " + contextNode.getDebugText(), contextNode, null);
       }
 
       return;
@@ -137,7 +137,7 @@ public class TextGenManager {
 
     SNodeTextGen nodeTextGen = loadNodeTextGen(context, node);
     if (nodeTextGen == null) {
-      LOG.error("couldn't find text generator for " + node.getDebugText(), node);
+      buffer.foundError("couldn't find text generator for " + node.getDebugText(), node, null);
     }
     assert nodeTextGen != null;
 
@@ -147,8 +147,7 @@ public class TextGenManager {
       nodeTextGen.doGenerateText(node);
       nodeTextGen.setSNode(null);
     } catch (Exception e) {
-      buffer.foundError("failed to generate text for " + node.getDebugText());
-      LOG.error("failed to generate text for " + node.getDebugText(), e, node);
+      buffer.foundError("failed to generate text for " + node.getDebugText(), node, e);
     }
   }
 
