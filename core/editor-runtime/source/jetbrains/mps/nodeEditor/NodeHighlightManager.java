@@ -93,7 +93,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * this method should be called inside synchronize(myMessagesLock) block only
    */
   private void invalidateMessagesCaches() {
-    myMessagesCache.clear();
     myRebuildMessagesCache = true;
     myRebuildIconRenderersCacheFlag = true;
   }
