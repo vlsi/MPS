@@ -18,15 +18,20 @@ import javax.swing.JCheckBox;
 public class MergeDriverOptionsDialog extends BaseDialog {
   private JPanel myPanel = new JPanel(new GridLayout(0, 1));
   private JPanel myMainPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-  private MergeDriverOptionsDialog.InstallerCheckBox myGitGlobal;
-  private MergeDriverOptionsDialog.InstallerCheckBox myGitRepos;
-  private MergeDriverOptionsDialog.InstallerCheckBox mySvn;
+  private MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalInstaller> myGitGlobal;
+  private MergeDriverOptionsDialog.InstallerCheckBox<GitRepositoriesInstaller> myGitRepos;
+  private MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller> myCommonSvn;
+  private MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller> myIdeSvn;
 
   public MergeDriverOptionsDialog(Project project) {
     super(WindowManager.getInstance().getFrame(project), "MPS VCS Add-ons");
-    myGitGlobal = new MergeDriverOptionsDialog.InstallerCheckBox(new GitGlobalInstaller(project));
-    myGitRepos = new MergeDriverOptionsDialog.InstallerCheckBox(new GitRepositoriesInstaller(project));
-    mySvn = new MergeDriverOptionsDialog.InstallerCheckBox(new SvnInstaller(project));
+    myGitGlobal = new MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalInstaller>(new GitGlobalInstaller(project));
+    myGitRepos = new MergeDriverOptionsDialog.InstallerCheckBox<GitRepositoriesInstaller>(new GitRepositoriesInstaller(project));
+    myCommonSvn = new MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller>(new SvnInstaller(project, false));
+    myIdeSvn = new MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller>(new SvnInstaller(project, true));
+    if (myCommonSvn.myInstaller.sameAs(myIdeSvn.myInstaller)) {
+      myIdeSvn = null;
+    }
 
     myGitGlobal.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
@@ -35,7 +40,10 @@ public class MergeDriverOptionsDialog extends BaseDialog {
     });
     myGitGlobal.adIfNeeded();
     myGitRepos.adIfNeeded();
-    mySvn.adIfNeeded();
+    myCommonSvn.adIfNeeded();
+    if (myIdeSvn != null) {
+      myIdeSvn.adIfNeeded();
+    }
     myMainPanel.add(myPanel);
   }
 
@@ -45,7 +53,7 @@ public class MergeDriverOptionsDialog extends BaseDialog {
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return DialogDimensionsSettings.generateDialogDimensions(600, 150);
+    return DialogDimensionsSettings.generateDialogDimensions(600, 200);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
@@ -56,7 +64,10 @@ public class MergeDriverOptionsDialog extends BaseDialog {
         if (myGitGlobal.myInstaller.getCurrentState() == AbstractInstaller.State.INSTALLED) {
           myGitRepos.installIfNeeded();
         }
-        mySvn.installIfNeeded();
+        myCommonSvn.installIfNeeded();
+        if (myIdeSvn != null) {
+          myIdeSvn.installIfNeeded();
+        }
         dispose();
       }
     });
@@ -67,10 +78,10 @@ public class MergeDriverOptionsDialog extends BaseDialog {
     dispose();
   }
 
-  private class InstallerCheckBox extends JCheckBox {
-    private AbstractInstaller myInstaller;
+  private class InstallerCheckBox<I extends AbstractInstaller> extends JCheckBox {
+    private I myInstaller;
 
-    public InstallerCheckBox(AbstractInstaller installer) {
+    public InstallerCheckBox(I installer) {
       super(installer.getActionTitle() + ((installer.getCurrentState() == AbstractInstaller.State.OUTDATED ?
         " (update)" :
         ""

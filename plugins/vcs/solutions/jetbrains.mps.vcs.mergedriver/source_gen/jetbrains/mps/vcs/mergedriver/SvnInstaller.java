@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.mergedriver;
 import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.WorkbenchPathManager;
+import org.jetbrains.idea.svn.SvnConfiguration;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
 import com.intellij.openapi.util.SystemInfo;
 import org.jetbrains.annotations.NotNull;
@@ -22,12 +23,18 @@ import java.io.IOException;
   private File myConfigFile;
   private File myConfigDir;
   private File myScriptFile;
+  private boolean myUseIdeConfig;
 
-  public SvnInstaller(Project project) {
+  public SvnInstaller(Project project, boolean useIdeConfig) {
     super(project);
     myConfigDir = new File(WorkbenchPathManager.getUserHome() + File.separator + ".subversion");
+    myUseIdeConfig = useIdeConfig;
     if (CommandLineGenerator.getSvnkitJar() != null) {
-      myConfigDir = SVNWCUtil.getDefaultConfigurationDirectory();
+      if (useIdeConfig) {
+        myConfigDir = new File(SvnConfiguration.getInstance(project).getConfigurationDirectory());
+      } else {
+        myConfigDir = SVNWCUtil.getDefaultConfigurationDirectory();
+      }
     }
     myConfigFile = new File(myConfigDir, "config");
     myScriptFile = new File(myConfigDir, "mps-merger." + ((SystemInfo.isWindows ?
@@ -170,7 +177,14 @@ import java.io.IOException;
   }
 
   public String getActionTitle() {
-    return String.format("Subversion custom diff3 cmd (%s)", myConfigFile.getAbsolutePath());
+    return String.format("Subversion custom diff3 cmd (%s, %s)", (myUseIdeConfig ?
+      "MPS config" :
+      "common"
+    ), myConfigFile.getAbsolutePath());
+  }
+
+  public boolean sameAs(SvnInstaller other) {
+    return eq_k2wvr2_a0a0c(other.myConfigDir.getAbsolutePath(), myConfigDir.getAbsolutePath());
   }
 
   private static boolean neq_k2wvr2_a0a2a2a3a1a11a0(Object a, Object b) {
@@ -181,6 +195,13 @@ import java.io.IOException;
   }
 
   private static boolean eq_k2wvr2_a0a0a81a0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_k2wvr2_a0a0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
