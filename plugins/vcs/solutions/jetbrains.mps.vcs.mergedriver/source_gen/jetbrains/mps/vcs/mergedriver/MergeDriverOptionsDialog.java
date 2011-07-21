@@ -45,7 +45,7 @@ public class MergeDriverOptionsDialog extends BaseDialog {
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(400, 400, 400, 150);
+    return DialogDimensionsSettings.generateDialogDimensions(600, 150);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)

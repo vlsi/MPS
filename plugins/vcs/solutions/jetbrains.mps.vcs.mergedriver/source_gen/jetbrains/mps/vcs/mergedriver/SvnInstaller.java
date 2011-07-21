@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.mergedriver;
 import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.WorkbenchPathManager;
+import org.tmatesoft.svn.core.wc.SVNWCUtil;
 import com.intellij.openapi.util.SystemInfo;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.ui.Messages;
@@ -25,6 +26,9 @@ import java.io.IOException;
   public SvnInstaller(Project project) {
     super(project);
     myConfigDir = new File(WorkbenchPathManager.getUserHome() + File.separator + ".subversion");
+    if (CommandLineGenerator.getSvnkitJar() != null) {
+      myConfigDir = SVNWCUtil.getDefaultConfigurationDirectory();
+    }
     myConfigFile = new File(myConfigDir, "config");
     myScriptFile = new File(myConfigDir, "mps-merger." + ((SystemInfo.isWindows ?
       "bat" :
@@ -44,13 +48,13 @@ import java.io.IOException;
 
     if (!(myConfigFile.exists())) {
       if (!(dryRun)) {
-        Messages.showErrorDialog(myProject, "Could not find Subversion configuration file (~/.subversion/config).", "Subversion Config Not Found");
+        Messages.showErrorDialog(myProject, String.format("Could not find Subversion configuration file (%s).", myConfigFile.getAbsolutePath()), "Subversion Config Not Found");
       }
       return AbstractInstaller.State.NOT_INSTALLED;
     }
     if (!(myConfigFile.canWrite()) && myConfigDir.canWrite()) {
       if (!(dryRun)) {
-        Messages.showErrorDialog(myProject, "Can't write to Subversion config (~/.subversion).", "Can't Write");
+        Messages.showErrorDialog(myProject, String.format("Can't write to Subversion config (%s).", myConfigFile.getAbsolutePath()), "Can't Write");
       }
       return AbstractInstaller.State.NOT_INSTALLED;
     }
@@ -160,13 +164,13 @@ import java.io.IOException;
       Messages.showInfoMessage(myProject, "Successfully installed MPS merger for Subversion", "Subversion Merger Installed");
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
-      Messages.showErrorDialog(myProject, "Could not update Subversion configuration file (~/.subversion/config)." + e.getMessage(), "Could Not Save Config");
+      Messages.showErrorDialog(myProject, String.format("Could not update Subversion configuration file (%s). %s", myConfigFile.getAbsolutePath(), e.getMessage()), "Could Not Save Config");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
 
   public String getActionTitle() {
-    return "Subversion custom diff3 cmd (~/.subversion/config)";
+    return String.format("Subversion custom diff3 cmd (%s)", myConfigFile.getAbsolutePath());
   }
 
   private static boolean neq_k2wvr2_a0a2a2a3a1a11a0(Object a, Object b) {
