@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
@@ -35,13 +36,12 @@ public class BracesHighlighter {
 
   private List<Pair<EditorCell, Color>> myHightLightedCells = new ArrayList<Pair<EditorCell, Color>>();
   private EditorComponent myEditorComponent;
-  private SelectionListener mySelectionListener = new SingularSelectionListenerAdapter() {
+  private SelectionListener mySelectionListener = new SelectionListener() {
     @Override
-    protected void selectionChangedTo(EditorComponent editorComponent, SingularSelection newSelection) {
-      updateBracesSelection(newSelection.getEditorCell());
+    public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+      updateBracesSelection(newSelection instanceof SingularSelection ? ((SingularSelection) newSelection).getEditorCell() : null);
     }
   };
-
 
   public BracesHighlighter(EditorComponent editorComponent) {
     this.myEditorComponent = editorComponent;
