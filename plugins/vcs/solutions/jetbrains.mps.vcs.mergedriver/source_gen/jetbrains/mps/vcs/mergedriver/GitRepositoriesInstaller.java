@@ -60,7 +60,7 @@ import java.io.IOException;
     }
   }
 
-  /*package*/ int getRootsToInstall() {
+  private int getRootsToInstall() {
     return Sequence.fromIterable(getGitRoots()).<AbstractInstaller.State>select(new ISelector<VcsRoot, AbstractInstaller.State>() {
       public AbstractInstaller.State select(VcsRoot r) {
         return installForRoot(r.path, true);
@@ -99,6 +99,10 @@ import java.io.IOException;
     } else {
       return AbstractInstaller.State.NOT_INSTALLED;
     }
+  }
+
+  public String getActionTitle() {
+    return "Git file attributes for " + NameUtil.formatNumericalString(getRootsToInstall(), "repository") + "  (.gitattributes)";
   }
 
   @NotNull

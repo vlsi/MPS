@@ -123,6 +123,10 @@ import java.io.FileNotFoundException;
     }
   }
 
+  public String getActionTitle() {
+    return "Git global merge driver setting (~/.gitconfig)";
+  }
+
   private static boolean neq_btx4zt_a0a0a0e0r0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :

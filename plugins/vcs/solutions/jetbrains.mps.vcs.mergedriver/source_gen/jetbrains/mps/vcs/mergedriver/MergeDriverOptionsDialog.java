@@ -8,7 +8,6 @@ import java.awt.GridLayout;
 import java.awt.FlowLayout;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.util.NameUtil;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import javax.swing.JComponent;
@@ -25,10 +24,9 @@ public class MergeDriverOptionsDialog extends BaseDialog {
 
   public MergeDriverOptionsDialog(Project project) {
     super(WindowManager.getInstance().getFrame(project), "MPS VCS Add-ons");
-    myGitGlobal = new MergeDriverOptionsDialog.InstallerCheckBox(new GitGlobalInstaller(project), "Git global merge driver setting (~/.gitconfig)");
-    GitRepositoriesInstaller gitRep = new GitRepositoriesInstaller(project);
-    myGitRepos = new MergeDriverOptionsDialog.InstallerCheckBox(gitRep, "Git file attributes for " + NameUtil.formatNumericalString(gitRep.getRootsToInstall(), "repository") + "  (.gitattributes)");
-    mySvn = new MergeDriverOptionsDialog.InstallerCheckBox(new SvnInstaller(project), "Subversion custom diff3 cmd (~/.subversion/config)");
+    myGitGlobal = new MergeDriverOptionsDialog.InstallerCheckBox(new GitGlobalInstaller(project));
+    myGitRepos = new MergeDriverOptionsDialog.InstallerCheckBox(new GitRepositoriesInstaller(project));
+    mySvn = new MergeDriverOptionsDialog.InstallerCheckBox(new SvnInstaller(project));
 
     myGitGlobal.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
@@ -72,8 +70,8 @@ public class MergeDriverOptionsDialog extends BaseDialog {
   private class InstallerCheckBox extends JCheckBox {
     private AbstractInstaller myInstaller;
 
-    public InstallerCheckBox(AbstractInstaller installer, String name) {
-      super(name + ((installer.getCurrentState() == AbstractInstaller.State.OUTDATED ?
+    public InstallerCheckBox(AbstractInstaller installer) {
+      super(installer.getActionTitle() + ((installer.getCurrentState() == AbstractInstaller.State.OUTDATED ?
         " (update)" :
         ""
       )));
@@ -81,8 +79,13 @@ public class MergeDriverOptionsDialog extends BaseDialog {
     }
 
     private void adIfNeeded() {
-      if (myInstaller.getCurrentState() != AbstractInstaller.State.INSTALLED) {
+      AbstractInstaller.State currentState = myInstaller.getCurrentState();
+      if (currentState != AbstractInstaller.State.INSTALLED) {
         myPanel.add(this);
+        setText(myInstaller.getActionTitle() + ((currentState == AbstractInstaller.State.OUTDATED ?
+          " (update)" :
+          ""
+        )));
         setSelected(true);
       }
     }

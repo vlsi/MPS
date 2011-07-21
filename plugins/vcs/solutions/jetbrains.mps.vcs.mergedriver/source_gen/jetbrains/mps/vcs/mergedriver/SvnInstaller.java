@@ -165,6 +165,10 @@ import java.io.IOException;
     }
   }
 
+  public String getActionTitle() {
+    return "Subversion custom diff3 cmd (~/.subversion/config)";
+  }
+
   private static boolean neq_k2wvr2_a0a2a2a3a1a11a0(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
