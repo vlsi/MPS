@@ -16,6 +16,10 @@ public class SaveTransientModels_Query implements IQuery<SaveTransient_Option> {
     return name;
   }
 
+  public String getTitle() {
+    return "Generator";
+  }
+
   public String getText() {
     return "Save transient models?";
   }

@@ -9154,6 +9154,9 @@
           <node role="presentation" roleId="q9ra.505095865854429687" type="q9ra.Text" typeId="q9ra.505095865854369482" id="6648795410103939616">
             <property name="text" nameId="q9ra.505095865854436862" value="Save transient models?" />
           </node>
+          <node role="title" roleId="q9ra.3698730011374153266" type="q9ra.Text" typeId="q9ra.505095865854369482" id="3698730011374181900">
+            <property name="text" nameId="q9ra.505095865854436862" value="Generator" />
+          </node>
         </node>
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="6648795410103939617">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6648795410103939618">

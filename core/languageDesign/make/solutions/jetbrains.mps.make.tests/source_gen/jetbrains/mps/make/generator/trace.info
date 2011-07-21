@@ -11,13 +11,14 @@
     <nodeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="14" startPosition="27" endLine="15" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="15" startPosition="32" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="19" startPosition="27" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="19" startPosition="28" endLine="20" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="22" startPosition="49" endLine="23" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="23" startPosition="41" endLine="24" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="23" startPosition="27" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="23" startPosition="82" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="26" startPosition="27" endLine="27" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="27" startPosition="34" endLine="28" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="27" startPosition="41" endLine="28" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="30" startPosition="38" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="31" startPosition="34" endLine="32" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="34" startPosition="43" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="38" startPosition="43" endLine="39" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="42" startPosition="43" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -52,12 +53,13 @@
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="149" startPosition="83" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/script/IQuery/Name;" />
     <nodeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="options#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voidOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="options#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="31" startPosition="37" endLine="35" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voidOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="37" endLine="39" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
@@ -75,7 +77,7 @@
     <nodeInfo nodeId="2551169102353069024" fileName="TextGen__Facet.java" startLine="66" startPosition="56" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="135" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
     <nodeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="148" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
     <nodeInfo nodeId="1977954644795431797" fileName="TextGen__Facet.java" startLine="81" startPosition="19" endLine="88" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="2551169102353069024" fileName="TextGen__Facet.java" startLine="64" startPosition="30" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;)Ljetbrains/mps/make/script/IResult;" />
     <nodeInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="63" startPosition="29" endLine="73" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -96,11 +98,12 @@
     <scopeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="14" startPosition="27" endLine="15" endPosition="21" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="15" startPosition="32" endLine="16" endPosition="16" />
     <scopeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="18" startPosition="27" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="19" startPosition="27" endLine="20" endPosition="18" />
-    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="23" startPosition="41" endLine="24" endPosition="97" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="19" startPosition="28" endLine="20" endPosition="15" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="23" startPosition="27" endLine="24" endPosition="18" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="26" startPosition="27" endLine="27" endPosition="97" />
-    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="27" startPosition="34" endLine="28" endPosition="97" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="27" startPosition="41" endLine="28" endPosition="97" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="30" startPosition="38" endLine="31" endPosition="19" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="31" startPosition="34" endLine="32" endPosition="97" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="34" startPosition="43" endLine="35" endPosition="16" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="38" startPosition="43" endLine="39" endPosition="76" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="42" startPosition="43" endLine="43" endPosition="16" />
@@ -134,8 +137,9 @@
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="31" startPosition="37" endLine="35" endPosition="6" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="37" endLine="39" endPosition="6" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
@@ -153,7 +157,7 @@
     <scopeInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="135" startPosition="0" endLine="140" endPosition="0" />
     <scopeInfo nodeId="2551169102353069024" fileName="TextGen__Facet.java" startLine="65" startPosition="122" endLine="71" endPosition="11" />
     <scopeInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="148" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1977954644795408617" fileName="TextGen__Facet.java" startLine="81" startPosition="19" endLine="88" endPosition="15" />
     <scopeInfo nodeId="2551169102353069024" fileName="TextGen__Facet.java" startLine="64" startPosition="30" endLine="73" endPosition="0" />
     <scopeInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="63" startPosition="29" endLine="73" endPosition="8" />
@@ -166,7 +170,7 @@
     <unitInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="142" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.make.generator.TextGen__Facet$TargetProperties" />
     <unitInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.generator.Bar_Option" />
     <unitInfo nodeId="1977954644795408617" fileName="TextGen__Facet.java" startLine="77" startPosition="17" endLine="93" endPosition="7" unitName="jetbrains.mps.make.generator.TextGen__Facet$2" />
-    <unitInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.generator.Askfoo_Query" />
+    <unitInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="8" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.generator.Askfoo_Query" />
     <unitInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="54" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.make.generator.TextGen__Facet$Target_ConditionallyGenerate" />
     <unitInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="22" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.make.generator.TextGen__Facet" />
   </root>

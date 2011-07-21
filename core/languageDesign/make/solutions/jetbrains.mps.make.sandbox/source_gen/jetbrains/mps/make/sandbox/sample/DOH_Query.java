@@ -16,6 +16,10 @@ public class DOH_Query implements IQuery<what_Option> {
     return name;
   }
 
+  public String getTitle() {
+    return "Something";
+  }
+
   public String getText() {
     return "Whoops...";
   }
