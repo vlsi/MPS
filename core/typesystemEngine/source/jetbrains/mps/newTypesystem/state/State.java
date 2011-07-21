@@ -57,7 +57,6 @@ public class State {
   private AbstractOperation myOperation;
   private List<AbstractOperation> myOperationsAsList;
   private boolean myInsideStateChangeAction = false;
-  private Thread myThread = null;
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
@@ -79,12 +78,6 @@ public class State {
     myOperationStack = new Stack<AbstractOperation>();
     myOperation = new CheckAllOperation();
     myOperationStack.push(myOperation);
-    if (myThread == null) {
-      myThread = Thread.currentThread();
-    }
-    if (Thread.currentThread() != myThread) {
-      System.out.println(myThread.getName() + " " + Thread.currentThread().getName());
-    }
   }
 
   public State(TypeCheckingContextNew tcc, AbstractOperation operation) {
@@ -271,9 +264,6 @@ public class State {
   }
 
   public void assertIsInStateChangeAction() {
-    if (myThread == null) {
-      myThread = Thread.currentThread();
-    }
     LOG.assertLog(myInsideStateChangeAction, "state change can be executed only inside state change action");
   }
 
