@@ -32,7 +32,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class LanguageDescriptorModelProvider implements ApplicationComponent {
 
-  private Map<SModelFqName, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, LanguageModelDescriptor>();
+  private Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
 
   public LanguageDescriptorModelProvider(MPSModuleRepository repository, SModelRepository modelRepository) {
     repository.addModuleRepositoryListener(new ModuleRepositoryAdapter() {
@@ -74,16 +74,16 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
   private void refreshModule(Language module, boolean isDeleted) {
     ModelAccess.assertLegalWrite();
 
-    SModelFqName fq = getModelFqName(module);
+    SModelReference ref = getSModelReference(module);
     if (isDeleted) {
-      LanguageModelDescriptor descriptor = myModels.get(fq);
+      LanguageModelDescriptor descriptor = myModels.get(ref);
       if (descriptor != null) {
         removeModel(descriptor);
       }
-    } else if (!myModels.containsKey(fq)) {
+    } else if (!myModels.containsKey(ref)) {
       createModel(module);
     } else {
-      LanguageModelDescriptor languageModelDescriptor = myModels.get(fq);
+      LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
       if(languageModelDescriptor != null) {
         languageModelDescriptor.invalidate();
       }
@@ -93,12 +93,12 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
   private void refresh() {
     ModelAccess.assertLegalWrite();
 
-    Set<SModelFqName> old = new HashSet<SModelFqName>(myModels.keySet());
+    Set<SModelReference> old = new HashSet<SModelReference>(myModels.keySet());
     for (Language module : MPSModuleRepository.getInstance().getAllLanguages()) {
-      SModelFqName fq = getModelFqName(module);
-      if (myModels.containsKey(fq)) {
-        old.remove(fq);
-        LanguageModelDescriptor languageModelDescriptor = myModels.get(fq);
+      SModelReference ref = getSModelReference(module);
+      if (myModels.containsKey(ref)) {
+        old.remove(ref);
+        LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
         if(languageModelDescriptor != null) {
           languageModelDescriptor.invalidate();
         }
@@ -107,7 +107,7 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
       }
     }
 
-    for (SModelFqName mm : old) {
+    for (SModelReference mm : old) {
       LanguageModelDescriptor model = myModels.get(mm);
       if (model != null) {
         removeModel(model);
@@ -146,24 +146,28 @@ public class LanguageDescriptorModelProvider implements ApplicationComponent {
   }
 
   private void removeModel(SModelDescriptor md) {
-    if (myModels.remove(md.getSModelReference().getSModelFqName()) != null) {
+    if (myModels.remove(md.getSModelReference()) != null) {
       SModelRepository.getInstance().removeModelDescriptor(md);
     }
   }
 
   public LanguageModelDescriptor createModel(Language module) {
-    SModelFqName fqName = getModelFqName(module);
-    ModuleId moduleId = module.getModuleReference().getModuleId();
-    SModelId id = moduleId != null ? SModelId.foreign("descriptor", moduleId.toString()) : SModelId.generate();
-    LanguageModelDescriptor result = new LanguageModelDescriptor(new SModelReference(fqName, id), module);
+    LanguageModelDescriptor result = new LanguageModelDescriptor(getSModelReference(module), module);
 
-    myModels.put(result.getSModelReference().getSModelFqName(), result);
+    myModels.put(result.getSModelReference(), result);
     SModelRepository.getInstance().registerModelDescriptor(result, module);
     return result;
   }
 
-  private SModelFqName getModelFqName(Language module) {
+  private static SModelFqName getModelFqName(Language module) {
     return new SModelFqName(module.getModuleFqName(), SModelStereotype.DESCRIPTOR);
+  }
+
+  private static SModelReference getSModelReference(Language module) {
+    SModelFqName fqName = getModelFqName(module);
+    ModuleId moduleId = module.getModuleReference().getModuleId();
+    SModelId id = moduleId != null ? SModelId.foreign("descriptor", moduleId.toString()) : null;
+    return new SModelReference(fqName, id);
   }
 
   public String toString() {
