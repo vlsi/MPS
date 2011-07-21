@@ -2067,33 +2067,37 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  public void update() {
+    Highlighter.runUpdateMessagesAction(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode sNode = getRootCell().getSNode();
+            if (sNode == null) {
+              return;
+            }
+            TypeCheckingContext typeCheckingContext = getTypeCheckingContext();
+            typeCheckingContext.clear();
+            Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
+            if (highlighter != null) {
+              highlighter.resetCheckedState(EditorComponent.this);
+            } else {
+              typeCheckingContext.checkRoot();
+            }
+            rebuildEditorContent();
+          }
+        });
+      }
+    });
+  }
+
   public void processKeyPressed(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
 
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && noKeysDown(keyEvent)) {
       //this lock should be obtained before the following read action to avoid deadlock
-      Highlighter.runUpdateMessagesAction(new Runnable() {
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              SNode sNode = getRootCell().getSNode();
-              if (sNode == null) {
-                return;
-              }
-              TypeCheckingContext typeCheckingContext = getTypeCheckingContext();
-              typeCheckingContext.clear();
-              Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
-              if (highlighter != null) {
-                highlighter.resetCheckedState(EditorComponent.this);
-              } else {
-                typeCheckingContext.checkRoot();
-              }
-              rebuildEditorContent();
-            }
-          });
-        }
-      });
+      update();
       keyEvent.consume();
       return;
     }

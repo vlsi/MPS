@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.structure.typesystem.CreateDefaultEditor_QuickFix" file="CreateDefaultEditor_QuickFix.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.structure.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.structure.typesystem.check_EditorForNonAbstractConcept_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.structure.typesystem.check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule" />
@@ -25,7 +15,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Queue" />
-    <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
