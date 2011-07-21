@@ -183,10 +183,9 @@ public class GenerationSession {
     } catch (GenerationCanceledException gce) {
       throw gce;
     } catch (GenerationFailureException gfe) {
-      if (gfe.getCause() != null) {
-        myLogger.handleException(gfe.getCause());
+      if (gfe.getMessage() != null && gfe.getCause() == null) {
+        myLogger.error(gfe.getMessage());
       }
-      myLogger.error(gfe.getMessage());
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + gfe);
       return new GenerationStatus.ERROR(myOriginalInputModel);
     } catch (Exception e) {
@@ -234,7 +233,9 @@ public class GenerationSession {
         }
       } catch (GenerationException e) {
         if (!(e instanceof GenerationFailureException)) {
-          throw new GenerationFailureException("mapping configuration's isApplicable block threw an exception", null, e);
+          myLogger.handleException(e);
+          myLogger.error("mapping configuration's isApplicable block threw an exception");
+          throw new GenerationFailureException(e);
         }
         throw (GenerationFailureException) e;
       }
@@ -329,7 +330,8 @@ public class GenerationSession {
         } else {
           myLogger.error("to get more diagnostic generate model with the 'save transient models' option");
         }
-        throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
+        myLogger.error("failed to generate output after 10 repeated mappings");
+        throw new GenerationFailureException();
       }
 
       // next iteration ...
@@ -426,7 +428,9 @@ public class GenerationSession {
       try {
         templateGenerator.getDefaultExecutionContext(null).executeScript(preMappingScript, currentInputModel);
       } catch (Exception t) {
-        throw new GenerationFailureException("error executing script " + preMappingScript.getLongName(), preMappingScript.getScriptNode().getNode(), t);
+        myLogger.handleException(t);
+        myLogger.error(preMappingScript.getScriptNode().getNode(), "error executing script " + preMappingScript.getLongName() + " (see exception)");
+        throw new GenerationFailureException(t);
       }
       preProcessed = true;
     }
@@ -480,7 +484,9 @@ public class GenerationSession {
       try {
         templateGenerator.getDefaultExecutionContext(null).executeScript(postMappingScript, currentModel);
       } catch (Exception t) {
-        throw new GenerationFailureException("error executing script " + postMappingScript.getLongName(), postMappingScript.getScriptNode().getNode(), t);
+        myLogger.handleException(t);
+        myLogger.error(postMappingScript.getScriptNode().getNode(), "error executing script " + postMappingScript.getLongName() + " (see exception)");
+        throw new GenerationFailureException(t);
       }
       postProcessed = true;
     }

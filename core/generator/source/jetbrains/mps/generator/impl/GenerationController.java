@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
@@ -31,7 +30,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
@@ -123,7 +121,9 @@ public class GenerationController implements ITaskPoolProvider {
       myLogger.warning("generation canceled");
       return false;
     } catch (GenerationFailureException e) {
-      myLogger.error(e.getMessage());
+      if (e.getMessage() != null && e.getCause() == null) {
+        myLogger.error(e.getMessage());
+      }
       return false;
     } catch (Exception t) {
       myLogger.handleException(t);

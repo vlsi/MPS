@@ -97,7 +97,9 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
     } catch (NoSuchMethodException e) {
       generator.getLogger().warning(ruleNode, "cannot find condition method '" + methodName + "' : not applied");
     } catch (Throwable t) {
-      throw new GenerationFailureException("error executing pattern/condition ", ruleNode, t);
+      generator.getLogger().handleException(t);
+      generator.getLogger().error(ruleNode, "error executing pattern/condition " + methodName + " (see exception)");
+      throw new GenerationFailureException(t);
     }
     return null;
   }

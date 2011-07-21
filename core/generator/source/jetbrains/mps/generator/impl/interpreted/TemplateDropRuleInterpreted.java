@@ -71,7 +71,9 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
     } catch (NoSuchMethodException e) {
       environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", condition, t);
+      environment.getGenerator().getLogger().handleException(t);
+      environment.getGenerator().getLogger().error(condition, "error executing condition " + methodName + " (see exception)");
+      throw new GenerationFailureException(t);
     }
     // in this case 'true' is better default
     return true;

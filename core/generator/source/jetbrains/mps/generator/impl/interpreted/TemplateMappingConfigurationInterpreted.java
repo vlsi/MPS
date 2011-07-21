@@ -113,7 +113,9 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
     } catch (NoSuchMethodException e) {
       generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", condition, t);
+      generator.getLogger().handleException(t);
+      generator.getLogger().error(condition, "error executing condition " + methodName + " (see exception)");
+      throw new GenerationFailureException(t);
     }
     return true;
   }

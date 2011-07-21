@@ -78,7 +78,8 @@ public class TemplateProcessor {
         logger.error("try to increase JVM stack size (-Xss option)");
         logger.error("to get more diagnostic generate model with the 'save transient models' option");
       }
-      throw new GenerationFailureException("couldn't process template", context.getInput(), templateNode, null, e);
+      myGenerator.showErrorMessage(context.getInput(), templateNode, "couldn't process template");
+      throw new GenerationFailureException(e);
     }
   }
 
@@ -247,7 +248,7 @@ public class TemplateProcessor {
       return outputNodes;
     } else if (macroConceptFQName.equals(RuleUtil.concept_InsertMacro)) {
       // $INSERT$
-      SNode child = InputQueryUtil.getNodeToInsert(macro, templateContext.subContext(mappingName), myReductionContext);
+      SNode child = InputQueryUtil.getNodeToInsert(macro, templateContext.subContext(mappingName), myReductionContext, myGenerator);
       if (child != null) {
         // check node languages : prevent 'insert' query from returnning node, which language was not counted when
         // planning the generation steps.
@@ -594,11 +595,11 @@ public class TemplateProcessor {
   }
 
   private SNode getNewInputNode(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    return InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext);
+    return InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext, myGenerator);
   }
 
   private List<SNode> getNewInputNodes(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    return InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext);
+    return InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext, myGenerator);
   }
 
   @Nullable

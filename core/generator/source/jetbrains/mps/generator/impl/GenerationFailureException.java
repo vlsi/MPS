@@ -16,30 +16,35 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 
 public class GenerationFailureException extends GenerationException {
-  private static final Logger LOG = Logger.getLogger(GenerationFailureException.class);
 
+  public GenerationFailureException() {
+  }
+
+  public GenerationFailureException(Throwable cause) {
+    super(toBetterCause(cause));
+  }
+
+  @Deprecated
   public GenerationFailureException(String message) {
     super(message);
-    logError(message, null, null, null);
   }
 
+  @Deprecated
   public GenerationFailureException(String message, SNode hintNode, Throwable cause) {
     super(toBetterMessage(message, cause), toBetterCause(cause));
-    LOG.error(message, toBetterCause(cause), hintNode);
   }
 
+  @Deprecated
   public GenerationFailureException(String message, SNode inputNode, SNode templateNode, SNode ruleNode) {
     super(message);
-    logError(message, inputNode, templateNode, ruleNode);
   }
 
+  @Deprecated
   public GenerationFailureException(String message, SNode inputNode, SNode templateNode, SNode ruleNode, Throwable cause) {
     super(toBetterMessage(message, cause), toBetterCause(cause));
-    logError(getMessage(), inputNode, templateNode, ruleNode);
   }
 
   private static String toBetterMessage(String message, Throwable cause) {
@@ -54,18 +59,5 @@ public class GenerationFailureException extends GenerationException {
       return cause.getCause();
     }
     return cause;
-  }
-
-  private void logError(String message, SNode inputNode, SNode templateNode, SNode ruleNode) {
-    LOG.error(message);
-    if (inputNode != null) {
-      LOG.error("-- was input: " + inputNode.getDebugText(), inputNode);
-    }
-    if (templateNode != null) {
-      LOG.error("-- was template: " + templateNode.getDebugText(), templateNode);
-    }
-    if (ruleNode != null) {
-      LOG.error("-- was rule: " + ruleNode.getDebugText(), ruleNode);
-    }
   }
 }
