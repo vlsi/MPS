@@ -42,7 +42,7 @@ public class StructureViewBuilderFactory implements ProjectComponent {
         SNode node = np.getNode();
         for (EditorTabDescriptor tab : tabs) {
           SNode baseNode = tab.getBaseNode(node);
-          if (baseNode != null) {
+          if (baseNode != null && baseNode.getName()!=null) {
             return new NodeStructureViewBuilder(myProject, new SNodePointer(baseNode));
           }
         }
