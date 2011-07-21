@@ -25,6 +25,8 @@ import org.jetbrains.annotations.NotNull;
   @NotNull
   protected abstract AbstractInstaller.State install(boolean dryRun);
 
+  public abstract String getActionTitle();
+
   public static   enum State {
     NOT_INSTALLED(),
     OUTDATED(),
