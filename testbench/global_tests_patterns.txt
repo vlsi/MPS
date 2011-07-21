@@ -1,4 +1,3 @@
-+testbench:**/TestModule*.java
 +miscTests:**/*Test.java
 +kernel:jetbrains/mps/dataFlow/lang/**/*Test.java
 +runtime:jetbrains/mps/runtime/**/*Test.java
