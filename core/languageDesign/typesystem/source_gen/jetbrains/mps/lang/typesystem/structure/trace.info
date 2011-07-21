@@ -339,7 +339,7 @@
     <unitInfo nodeId="1174643105530" fileName="InferenceRule.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InferenceRule" />
   </root>
   <root nodeId="1174648085619">
-    <nodeInfo nodeId="1174648085619" fileName="AbstractRule.java" startLine="16" startPosition="88" endLine="17" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1174648085619" fileName="AbstractRule.java" startLine="16" startPosition="91" endLine="17" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1174648085619" fileName="AbstractRule.java" startLine="17" startPosition="94" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
     <nodeInfo nodeId="1174648085619" fileName="AbstractRule.java" startLine="18" startPosition="43" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1174648085619" fileName="AbstractRule.java" startLine="19" startPosition="68" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
