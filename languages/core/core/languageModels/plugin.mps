@@ -39,7 +39,7 @@
   <import index="qxeo" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="w3e1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.inspector(MPS.Classpath/jetbrains.mps.nodeEditor.inspector@java_stub)" version="-1" />
   <import index="rgbs" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor.checking(MPS.Classpath/jetbrains.mps.nodeEditor.checking@java_stub)" version="-1" />
-  <import index="ppbs" modelUID="f:java_stub#134ef213-c518-42b0-b12c-c109aa13d320#gnu.trove(collections_trove.runtime/gnu.trove@java_stub)" version="-1" />
+  <import index="geq7" modelUID="f:java_stub#134ef213-c518-42b0-b12c-c109aa13d320#gnu.trove(collections_trove.runtime/gnu.trove@java_stub)" version="-1" />
   <import index="g1dt" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.extensions(MPS.Classpath/com.intellij.openapi.extensions@java_stub)" version="-1" />
   <import index="lnp5" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide(MPS.Classpath/jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="wya9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.runtime(MPS.Classpath/jetbrains.mps.smodel.runtime@java_stub)" version="-1" />
@@ -2567,7 +2567,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7390982340086718639">
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086718640">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086718641">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
                     <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086718642" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7390982340086718643">
                       <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -2639,7 +2639,7 @@
                 </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086718671">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086718672">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
                     <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086718673" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7390982340086718674">
                       <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -2886,7 +2886,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7390982340086718778">
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086718779">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086718780">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
                     <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7390982340086718781">
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="w1a4.~IErrorReporter" resolveInfo="IErrorReporter" />
                     </node>
@@ -3198,7 +3198,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086718918">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086718919">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
                 <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086718920" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7390982340086718921">
                   <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -3227,7 +3227,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086718931">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086718932">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
                 <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086718933" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7390982340086718934">
                   <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -3381,7 +3381,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7390982340086718998">
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086718999">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719000">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
                     <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719001" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7390982340086719002">
                       <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -3449,7 +3449,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719026">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719027">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;(int)" resolveInfo="THashSet" />
                 <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7390982340086719028">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="w1a4.~IErrorReporter" resolveInfo="IErrorReporter" />
                 </node>
@@ -3804,7 +3804,7 @@
           </node>
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719179">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719180">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;(java%dutil%dCollection)" resolveInfo="THashSet" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;(java%dutil%dCollection)" resolveInfo="THashSet" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7390982340086719181">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7390982340086719182">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7390982340086719370" resolveInfo="myDependenciesToNodes" />
@@ -3934,7 +3934,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719240">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719241">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;()" resolveInfo="THashSet" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;()" resolveInfo="THashSet" />
                 <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719242" />
               </node>
             </node>
@@ -4244,7 +4244,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719365">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719366">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashMap%d&lt;init&gt;()" resolveInfo="THashMap" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashMap%d&lt;init&gt;()" resolveInfo="THashMap" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719367" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tp2q.SetType" typeId="tp2q.1226511727824" id="7390982340086719368">
             <node role="elementType" roleId="tp2q.1226511765987" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7390982340086719369">
@@ -4265,7 +4265,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719376">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719377">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashMap%d&lt;init&gt;()" resolveInfo="THashMap" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashMap%d&lt;init&gt;()" resolveInfo="THashMap" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719378" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tp2q.SetType" typeId="tp2q.1226511727824" id="7390982340086719379">
             <node role="elementType" roleId="tp2q.1226511765987" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719380" />
@@ -4284,7 +4284,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719387">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719388">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashMap%d&lt;init&gt;()" resolveInfo="THashMap" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashMap%d&lt;init&gt;()" resolveInfo="THashMap" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719389" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tp2q.SetType" typeId="tp2q.1226511727824" id="7390982340086719390">
             <node role="elementType" roleId="tp2q.1226511765987" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719391" />
@@ -4300,7 +4300,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719396">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719397">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;()" resolveInfo="THashSet" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;()" resolveInfo="THashSet" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719398" />
         </node>
       </node>
@@ -4313,7 +4313,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719403">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719404">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;()" resolveInfo="THashSet" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;()" resolveInfo="THashSet" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7390982340086719405" />
         </node>
       </node>
@@ -4352,7 +4352,7 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7390982340086719420">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7390982340086719421">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ppbs.~THashSet%d&lt;init&gt;()" resolveInfo="THashSet" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="geq7.~THashSet%d&lt;init&gt;()" resolveInfo="THashSet" />
           <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7390982340086719422">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lkfb.~SModelDescriptor" resolveInfo="SModelDescriptor" />
           </node>
@@ -9123,6 +9123,9 @@
           </node>
           <node role="presentation" roleId="q9ra.505095865854429687" type="q9ra.Text" typeId="q9ra.505095865854369482" id="6648795410103939616">
             <property name="text" nameId="q9ra.505095865854436862" value="Save transient models?" />
+          </node>
+          <node role="title" roleId="q9ra.3698730011374153266" type="q9ra.Text" typeId="q9ra.505095865854369482" id="3698730011374181900">
+            <property name="text" nameId="q9ra.505095865854436862" value="Generator" />
           </node>
         </node>
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="6648795410103939617">

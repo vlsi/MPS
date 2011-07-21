@@ -21,6 +21,7 @@ public class QueryDefinition extends BaseConcept implements INamedConcept, IWill
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPECTED = "expected";
   public static final String PRESENTATION = "presentation";
+  public static final String TITLE = "title";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public QueryDefinition(SNode node) {
@@ -73,6 +74,14 @@ public class QueryDefinition extends BaseConcept implements INamedConcept, IWill
 
   public void setPresentation(Text node) {
     super.setChild(QueryDefinition.PRESENTATION, node);
+  }
+
+  public Text getTitle() {
+    return (Text) this.getChild(Text.class, QueryDefinition.TITLE);
+  }
+
+  public void setTitle(Text node) {
+    super.setChild(QueryDefinition.TITLE, node);
   }
 
   public int getSmodelAttributesCount() {

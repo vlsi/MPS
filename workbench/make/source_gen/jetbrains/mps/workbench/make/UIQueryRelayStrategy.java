@@ -28,7 +28,7 @@ public class UIQueryRelayStrategy {
     final Wrappers._int res = new Wrappers._int(-1);
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        res.value = Messages.showDialog(context.getProject(), query.getText(), query.getName().toString(), options, defopt, defopt, Messages.getQuestionIcon());
+        res.value = Messages.showDialog(context.getProject(), query.getText(), query.getTitle(), options, defopt, defopt, Messages.getQuestionIcon());
       }
     });
     if (res.value < 0) {

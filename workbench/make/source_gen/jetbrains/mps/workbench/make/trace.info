@@ -1086,7 +1086,7 @@
     <nodeInfo nodeId="792724054878921729" fileName="UIQueryRelayStrategy.java" startLine="23" startPosition="33" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="792724054878921766" fileName="UIQueryRelayStrategy.java" startLine="26" startPosition="36" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="792724054878921783" fileName="UIQueryRelayStrategy.java" startLine="27" startPosition="85" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5428926715065512511" fileName="UIQueryRelayStrategy.java" startLine="30" startPosition="25" endLine="31" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5428926715065512511" fileName="UIQueryRelayStrategy.java" startLine="30" startPosition="25" endLine="31" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="792724054878921811" fileName="UIQueryRelayStrategy.java" startLine="34" startPosition="24" endLine="35" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="792724054878921835" fileName="UIQueryRelayStrategy.java" startLine="36" startPosition="5" endLine="37" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4779623262673908080" fileName="UIQueryRelayStrategy.java" startLine="40" startPosition="42" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeDialogShown#()V" />
@@ -1099,7 +1099,7 @@
     <nodeInfo nodeId="4779623262673897695" fileName="UIQueryRelayStrategy.java" startLine="19" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;Ljetbrains/mps/smodel/IOperationContext;)null" />
     <scopeInfo nodeId="4779623262673897766" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="33" endLine="17" endPosition="33" />
     <scopeInfo nodeId="792724054878921728" fileName="UIQueryRelayStrategy.java" startLine="23" startPosition="33" endLine="24" endPosition="27" />
-    <scopeInfo nodeId="5428926715065522885" fileName="UIQueryRelayStrategy.java" startLine="30" startPosition="25" endLine="31" endPosition="160" />
+    <scopeInfo nodeId="5428926715065522885" fileName="UIQueryRelayStrategy.java" startLine="30" startPosition="25" endLine="31" endPosition="150" />
     <scopeInfo nodeId="792724054878921803" fileName="UIQueryRelayStrategy.java" startLine="34" startPosition="24" endLine="35" endPosition="32" />
     <scopeInfo nodeId="4779623262673908080" fileName="UIQueryRelayStrategy.java" startLine="40" startPosition="42" endLine="41" endPosition="36" />
     <scopeInfo nodeId="4779623262673897763" fileName="UIQueryRelayStrategy.java" startLine="16" startPosition="35" endLine="18" endPosition="3" />

@@ -108,6 +108,10 @@ public class QueriesGenerated {
     return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_3958190066764257030(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "title", true), "text");
+  }
+
   public static Object propertyMacro_GetPropertyValue_2551169102353050546(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "presentation", true), "text");
   }
@@ -181,9 +185,9 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8170824575195233650(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    final SNode ipacls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0mb().createNode(), "classifier", false);
-    final SNode jobcls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0b0mb().createNode(), "classifier", false);
-    final SNode cfgcls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0c0mb().createNode(), "classifier", false);
+    final SNode ipacls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0nb().createNode(), "classifier", false);
+    final SNode jobcls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0b0nb().createNode(), "classifier", false);
+    final SNode cfgcls = SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0c0nb().createNode(), "classifier", false);
     SNode imd = ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode imd) {
         return Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(imd), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), jobcls) || Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(imd), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), cfgcls);
@@ -356,8 +360,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0mb {
-    public QuotationClass_x583g4_a0a0a0mb() {
+  public static class QuotationClass_x583g4_a0a0a0nb {
+    public QuotationClass_x583g4_a0a0a0nb() {
     }
 
     public SNode createNode() {
@@ -374,8 +378,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0b0mb {
-    public QuotationClass_x583g4_a0a0b0mb() {
+  public static class QuotationClass_x583g4_a0a0b0nb {
+    public QuotationClass_x583g4_a0a0b0nb() {
     }
 
     public SNode createNode() {
@@ -392,8 +396,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0c0mb {
-    public QuotationClass_x583g4_a0a0c0mb() {
+  public static class QuotationClass_x583g4_a0a0c0nb {
+    public QuotationClass_x583g4_a0a0c0nb() {
     }
 
     public SNode createNode() {

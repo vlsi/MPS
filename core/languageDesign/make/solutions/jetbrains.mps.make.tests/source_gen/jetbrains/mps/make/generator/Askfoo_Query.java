@@ -16,6 +16,10 @@ public class Askfoo_Query implements IQuery<Bar_Option> {
     return name;
   }
 
+  public String getTitle() {
+    return "Q";
+  }
+
   public String getText() {
     return "Foo?";
   }

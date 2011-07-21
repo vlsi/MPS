@@ -510,10 +510,11 @@
     <nodeInfo nodeId="6648795410103939609" fileName="SaveTransient_Option.java" startLine="12" startPosition="0" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="text" />
     <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="15" startPosition="32" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103939609" fileName="SaveTransient_Option.java" startLine="15" startPosition="37" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="19" startPosition="27" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103939609" fileName="SaveTransient_Option.java" startLine="19" startPosition="27" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="23" startPosition="51" endLine="24" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="27" startPosition="44" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="19" startPosition="28" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="23" startPosition="27" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="27" startPosition="51" endLine="28" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="31" startPosition="44" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="58" startPosition="49" endLine="59" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="59" startPosition="82" endLine="60" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="62" startPosition="27" endLine="63" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -747,11 +748,12 @@
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="745" startPosition="11" endLine="748" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="748" startPosition="11" endLine="751" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/script/IQuery/Name;" />
-    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
     <nodeInfo nodeId="6648795410103939609" fileName="SaveTransient_Option.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="options#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voidOption#()Ljetbrains/mps/lang/core/plugin/SaveTransient_Option;" />
-    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="31" startPosition="47" endLine="35" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="options#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voidOption#()Ljetbrains/mps/lang/core/plugin/SaveTransient_Option;" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="35" startPosition="47" endLine="39" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
@@ -849,7 +851,7 @@
     <nodeInfo nodeId="6648795410103939827" fileName="Generate_Facet.java" startLine="492" startPosition="67" endLine="498" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6648795410103939871" fileName="Generate_Facet.java" startLine="579" startPosition="231" endLine="585" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="712" startPosition="91" endLine="718" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()Ljetbrains/mps/lang/core/plugin/SaveTransient_Option;" />
+    <nodeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()Ljetbrains/mps/lang/core/plugin/SaveTransient_Option;" />
     <nodeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="61" startPosition="0" endLine="68" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Generate_Facet#()V" />
     <nodeInfo nodeId="6648795410103940104" fileName="Generate_Facet.java" startLine="588" startPosition="120" endLine="595" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/resources/GResource;)Ljava/lang/Boolean;" />
     <nodeInfo nodeId="6648795410103940254" fileName="Generate_Facet.java" startLine="631" startPosition="0" endLine="638" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reconcile#()Z" />
@@ -909,10 +911,11 @@
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="753" startPosition="37" endLine="753" endPosition="37" />
     <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="15" startPosition="32" endLine="16" endPosition="16" />
     <scopeInfo nodeId="6648795410103939609" fileName="SaveTransient_Option.java" startLine="15" startPosition="37" endLine="16" endPosition="21" />
-    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="19" startPosition="27" endLine="20" endPosition="36" />
     <scopeInfo nodeId="6648795410103939609" fileName="SaveTransient_Option.java" startLine="19" startPosition="27" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="23" startPosition="51" endLine="24" endPosition="107" />
-    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="27" startPosition="44" endLine="28" endPosition="107" />
+    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="19" startPosition="28" endLine="20" endPosition="23" />
+    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="23" startPosition="27" endLine="24" endPosition="36" />
+    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="27" startPosition="51" endLine="28" endPosition="107" />
+    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="31" startPosition="44" endLine="32" endPosition="107" />
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="70" startPosition="38" endLine="71" endPosition="19" />
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="74" startPosition="43" endLine="75" endPosition="16" />
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="78" startPosition="43" endLine="79" endPosition="98" />
@@ -1049,7 +1052,8 @@
     <scopeInfo nodeId="6648795410103939609" fileName="SaveTransient_Option.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="31" startPosition="47" endLine="35" endPosition="6" />
+    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="35" startPosition="47" endLine="39" endPosition="6" />
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
@@ -1153,7 +1157,7 @@
     <scopeInfo nodeId="6648795410103939855" fileName="Generate_Facet.java" startLine="689" startPosition="0" endLine="694" endPosition="0" />
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="703" startPosition="45" endLine="708" endPosition="107" />
     <scopeInfo nodeId="6648795410103939826" fileName="Generate_Facet.java" startLine="492" startPosition="67" endLine="498" endPosition="27" />
-    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="6648795410103939538" fileName="Generate_Facet.java" startLine="61" startPosition="0" endLine="68" endPosition="3" />
     <scopeInfo nodeId="6648795410103940104" fileName="Generate_Facet.java" startLine="588" startPosition="120" endLine="595" endPosition="0" />
     <scopeInfo nodeId="6648795410103940254" fileName="Generate_Facet.java" startLine="631" startPosition="0" endLine="638" endPosition="0" />
@@ -1230,8 +1234,8 @@
     <unitInfo nodeId="6648795410103939806" fileName="Generate_Facet.java" startLine="486" startPosition="56" endLine="503" endPosition="15" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
     <unitInfo nodeId="6648795410103939542" fileName="Generate_Facet.java" startLine="104" startPosition="17" endLine="125" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$1" />
     <unitInfo nodeId="6648795410103939617" fileName="Generate_Facet.java" startLine="314" startPosition="17" endLine="340" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$1" />
-    <unitInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.SaveTransientModels_Query" />
     <unitInfo nodeId="6648795410103939705" fileName="Generate_Facet.java" startLine="344" startPosition="17" endLine="375" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$2" />
+    <unitInfo nodeId="6648795410103939608" fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.SaveTransientModels_Query" />
     <unitInfo nodeId="6648795410103939783" fileName="Generate_Facet.java" startLine="476" startPosition="17" endLine="510" endPosition="7" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet$1" />
     <unitInfo nodeId="6648795410103939771" fileName="Generate_Facet.java" startLine="426" startPosition="0" endLine="464" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure$Variables" />
     <unitInfo nodeId="6648795410103939574" fileName="Generate_Facet.java" startLine="180" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters$Variables" />
