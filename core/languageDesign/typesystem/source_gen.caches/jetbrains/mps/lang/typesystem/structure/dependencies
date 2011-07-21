@@ -66,8 +66,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IValidIdentifier" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.IConceptAspect" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
