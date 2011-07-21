@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -42,7 +43,7 @@ public class TypeContextManager implements ApplicationComponent {
   private boolean myComputeInNormalMode = false;
   private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
   private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.getLogger(TypeContextManager.class);
-
+  private static boolean myReported = false;
 
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
@@ -159,6 +160,12 @@ public class TypeContextManager implements ApplicationComponent {
           List<ITypeContextOwner> owners = new ArrayList<ITypeContextOwner>(1);
           contextWithOwners = new Pair<TypeCheckingContext, List<ITypeContextOwner>>(newTypeCheckingContext, owners);
           owners.add(owner);
+          if (owners.size()>100){
+            if (!myReported){
+              myReported = true;
+              LOG.warning("Type checking context for node "+ node.getPresentation()+" has too much owners");
+            }
+          }
           myTypeCheckingContexts.put(node, contextWithOwners);
           return newTypeCheckingContext;
         } else {
