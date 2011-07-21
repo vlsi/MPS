@@ -2052,11 +2052,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public TypeCheckingContext getTypeCheckingContext() {
-    return TypeContextManager.getInstance().getOrCreateContext(myNode, this, true);
+    return TypeContextManager.getInstance().getOrCreateContext(getNodeForTypechecking(), this, true);
   }
 
   protected void disposeTypeCheckingContext() {
-    TypeContextManager.getInstance().removeOwnerForRootNodeContext(myNode, this);
+    TypeContextManager.getInstance().removeOwnerForRootNodeContext(getNodeForTypechecking(), this);
+  }
+
+  protected SNode getNodeForTypechecking() {
+    return myNode;
   }
 
   public void sendKeyEvent(KeyEvent keyEvent) {

@@ -31,7 +31,6 @@ import javax.swing.JComponent;
 import java.util.List;
 
 public class InspectorEditorComponent extends EditorComponent {
-  private TypeContextManager myTypeManager = null;
   private SNode myRoot;
 
   public InspectorEditorComponent() {
@@ -43,8 +42,6 @@ public class InspectorEditorComponent extends EditorComponent {
     myNode = null;
     reinitEditor();
   }
-
-  private Object myInspectionSessionId = new Object();
 
   private void reinitEditor() {
     if (getEditedNode() == null) {
@@ -64,7 +61,6 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   public void inspectNode(final SNode node, final IOperationContext context) {
-    myInspectionSessionId = new Object();
     if (getOperationContext() != null) {
       notifyDisposal();
     }
@@ -101,11 +97,6 @@ public class InspectorEditorComponent extends EditorComponent {
     return getEditorContext().createInspectedCell(getEditedNode(), events);
   }
 
-  //inspector is always the same, but inspection sessions differ
-  public Object getInspectionSessionId() {
-    return myInspectionSessionId;
-  }
-
   @Override
   public void dispose() {
     if (getOperationContext() != null) {
@@ -115,17 +106,7 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
-  //todo use super
-  public TypeCheckingContext getTypeCheckingContext() {
-    if (myRoot == null) return null;
-    myTypeManager = TypeContextManager.getInstance();
-    return myTypeManager.getOrCreateContext(myRoot, this, true);
-  }
-
-  @Override
-  //todo use super
-  protected void disposeTypeCheckingContext() {
-    if (myTypeManager == null) return;
-    myTypeManager.removeOwnerForRootNodeContext(myRoot, this);
+  protected SNode getNodeForTypechecking() {
+    return myRoot;
   }
 }
