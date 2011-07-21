@@ -66,6 +66,7 @@
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTransformationTest" file="BaseTransformationTest.java">
     <classNode dependClassName="com.intellij.idea.LoggerFactory" />
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
+    <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
     <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
