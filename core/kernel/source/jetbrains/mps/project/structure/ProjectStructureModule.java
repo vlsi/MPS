@@ -42,7 +42,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 //  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
   private static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
 
-  private Map<SModelFqName, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, ProjectStructureSModelDescriptor>();
+  private Map<SModelReference, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, ProjectStructureSModelDescriptor>();
 
   public static ProjectStructureModule getInstance() {
     return ApplicationManager.getApplication().getComponent(ProjectStructureModule.class);
@@ -85,14 +85,14 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
       return;
     }
 
-    SModelFqName fq = getModelFqName(module);
+    SModelReference ref = getSModelReference(module);
     if (isDeleted) {
-      ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
+      ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
       if (descriptor != null) {
         removeModel(descriptor);
       }
-    } else if (myModels.containsKey(fq)) {
-      ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
+    } else if (myModels.containsKey(ref)) {
+      ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
       descriptor.dropModel();
     } else {
       createModel(module);
@@ -103,32 +103,32 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
     ModelAccess.assertLegalRead();
 
     if(module == null) return null;
-    SModelFqName fq = getModelFqName(module);
+    SModelReference ref = getSModelReference(module);
 
-    ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
+    ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
     return descriptor == null ? null : descriptor.getSModel();
   }
 
   private void refresh() {
     ModelAccess.assertLegalWrite();
 
-    Set<SModelFqName> old = new HashSet<SModelFqName>(myModels.keySet());
+    Set<SModelReference> old = new HashSet<SModelReference>(myModels.keySet());
     for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
       if(!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
         continue;
       }
 
-      SModelFqName fq = getModelFqName(module);
-      if (myModels.containsKey(fq)) {
-        old.remove(fq);
-        ProjectStructureSModelDescriptor descriptor = myModels.get(fq);
+      SModelReference ref = getSModelReference(module);
+      if (myModels.containsKey(ref)) {
+        old.remove(ref);
+        ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
         descriptor.dropModel();
       } else {
         createModel(module);
       }
     }
 
-    for (SModelFqName mm : old) {
+    for (SModelReference mm : old) {
       ProjectStructureSModelDescriptor model = myModels.get(mm);
       if (model != null) {
         removeModel(model);
@@ -209,7 +209,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   }
 
   private void removeModel(SModelDescriptor md) {
-    if (myModels.remove(md.getSModelReference().getSModelFqName()) != null) {
+    if (myModels.remove(md.getSModelReference()) != null) {
       SModelRepository.getInstance().removeModelDescriptor(md);
       if (md instanceof ProjectStructureSModelDescriptor) {
         ((ProjectStructureSModelDescriptor) md).dropModel();
@@ -218,19 +218,22 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
   }
 
   public ProjectStructureSModelDescriptor createModel(IModule module) {
-    SModelFqName fqName = getModelFqName(module);
-    ModuleId moduleId = module.getModuleReference().getModuleId();
-    SModelId id = moduleId != null ? SModelId.foreign("project", moduleId.toString()) : SModelId.generate();
-    ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(new SModelReference(fqName, id), module);
-
-    myModels.put(result.getSModelReference().getSModelFqName(), result);
+    ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(getSModelReference(module), module);
+    myModels.put(result.getSModelReference(), result);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
     invalidateCaches();
     return result;
   }
 
-  private SModelFqName getModelFqName(IModule module) {
+  private static SModelFqName getModelFqName(IModule module) {
     return new SModelFqName(MODULE_REFERENCE.getModuleFqName(), "module." + module.getModuleFqName(), SModelStereotype.getStubStereotypeForId("project"));
+  }
+
+  private static SModelReference getSModelReference(IModule module) {
+    SModelFqName fqName = getModelFqName(module);
+    ModuleId moduleId = module.getModuleReference().getModuleId();
+    SModelId id = moduleId != null ? SModelId.foreign("project", moduleId.toString()) : null;
+    return new SModelReference(fqName, id);
   }
 
   public String toString() {
@@ -329,7 +332,7 @@ public class ProjectStructureModule extends AbstractModule implements Applicatio
 
     @Override
     public SModelDescriptor resolveModel(SModelReference reference) {
-      return myModels.get(reference.getSModelFqName());
+      return myModels.get(reference);
     }
   }
 
