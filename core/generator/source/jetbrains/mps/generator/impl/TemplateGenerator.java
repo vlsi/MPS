@@ -31,7 +31,6 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -47,8 +46,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created once per micro-step.
  */
 public class TemplateGenerator extends AbstractTemplateGenerator {
-
-  private static final Logger LOG = Logger.getLogger(TemplateGenerator.class);
 
   private boolean myChanged = false;
   private final RuleManager myRuleManager;

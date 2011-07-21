@@ -62,7 +62,9 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
     } catch (NoSuchMethodException e) {
       environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", ruleNode, t);
+      environment.getGenerator().getLogger().handleException(t);
+      environment.getGenerator().getLogger().error(ruleNode, "error executing condition " + methodName + " (see exception)");
+      throw new GenerationFailureException(t);
     }
     return false;
   }

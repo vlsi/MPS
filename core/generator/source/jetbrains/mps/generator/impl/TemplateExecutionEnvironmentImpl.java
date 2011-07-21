@@ -54,6 +54,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return generator.getOutputModel();
   }
 
+  @NotNull
   public TemplateGenerator getGenerator() {
     return generator;
   }

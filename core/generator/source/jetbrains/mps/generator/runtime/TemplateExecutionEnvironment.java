@@ -37,6 +37,7 @@ public interface TemplateExecutionEnvironment {
 
   SModel getOutputModel();
 
+  @NotNull
   TemplateGenerator getGenerator();
 
   IGenerationTracer getTracer();
