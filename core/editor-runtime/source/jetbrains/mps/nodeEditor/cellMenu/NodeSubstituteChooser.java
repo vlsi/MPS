@@ -136,6 +136,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           getPopupWindow().setVisible(true);
           getPopupWindow().relayout();
           getPopupWindow().setSelectionIndex(0);
+          getPopupWindow().scrollToSelection();
         } else {
           getPatternEditor().activate(null, myPatternEditorLocation, myPatternEditorSize);
           myNodeSubstituteInfo.invalidateActions();
@@ -608,8 +609,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       initListModel();
 
-      setSelectionIndex(oldIndex);
-      scrollToSelection();
+      if (oldIndex != -1) {
+        setSelectionIndex(oldIndex);
+        scrollToSelection();
+      }
       pack();
 
       if (getPosition() == PopupWindowPosition.TOP) {
