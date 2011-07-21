@@ -13,7 +13,7 @@ public class MergeDriverInstaller {
   }
 
   public static boolean isApplicable(Project project) {
-    Iterable<AbstractInstaller> installers = Arrays.asList(new GitGlobalInstaller(project), new GitRepositoriesInstaller(project), new SvnInstaller(project));
+    Iterable<AbstractInstaller> installers = Arrays.asList(new GitGlobalInstaller(project), new GitRepositoriesInstaller(project), new SvnInstaller(project, false), new SvnInstaller(project, true));
     return Sequence.fromIterable(installers).any(new IWhereFilter<AbstractInstaller>() {
       public boolean accept(AbstractInstaller i) {
         return i.getCurrentState() != AbstractInstaller.State.INSTALLED;

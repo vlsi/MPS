@@ -262,6 +262,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ScriptGenerator" />
     <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.idea.svn.SvnConfiguration" />
     <classNode dependClassName="org.tmatesoft.svn.core.wc.SVNWCUtil" />
     <classNode extendsClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
   </dependency>
