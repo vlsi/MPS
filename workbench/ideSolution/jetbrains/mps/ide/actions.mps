@@ -1160,6 +1160,10 @@
         <property name="name" nameId="tpck.1169194664001" value="newActions" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="5074742289641423366" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="424100430191192417">
+        <property name="name" nameId="tpck.1169194664001" value="make" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="5074742289641429099" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5533671870987200982">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5533671870987188872" resolveInfo="PasteNode" />
       </node>
@@ -1194,10 +1198,6 @@
         <property name="name" nameId="tpck.1169194664001" value="refactoring" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1204909253120" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="424100430191192417">
-        <property name="name" nameId="tpck.1169194664001" value="make" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="5074742289641429099" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3616479296928815">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216120752903" resolveInfo="RevertMemoryChanges" />
       </node>
