@@ -108,7 +108,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
               descriptors.add(value);
             }
           } catch (Exception e) {
-            LOG.error("Cannot index model file " + inputData.getFileName());
+            LOG.error("Cannot index model file " + inputData.getFileName() + "; " + e.getMessage());
           }
         }
       });
