@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
@@ -32,7 +33,7 @@ import java.util.Map;
 public class TextGenerationResult {
   private Object myResult;
   private boolean myContainErrors;
-  private final Collection<String> myErrors;
+  private final Collection<IMessage> myProblems;
   private final Map<SNode, TraceablePositionInfo> myPositions;
   private final Map<SNode, ScopePositionInfo> myScopePositions;
   private final Map<SNode, UnitPositionInfo> myUnitPositions;
@@ -40,14 +41,14 @@ public class TextGenerationResult {
 
   public TextGenerationResult(Object contents,
                               boolean containErrors,
-                              Collection<String> errors,
+                              Collection<IMessage> problems,
                               @Nullable Map<SNode, TraceablePositionInfo> positions,
                               @Nullable Map<SNode, ScopePositionInfo> scopePositions,
                               @Nullable Map<SNode, UnitPositionInfo> unitPositions,
                               Map<String, List<String>> dependencies) {
     myResult = contents;
     myContainErrors = containErrors;
-    myErrors = errors;
+    myProblems = problems;
     myPositions = positions;
     myScopePositions = scopePositions;
     myUnitPositions = unitPositions;
@@ -62,8 +63,8 @@ public class TextGenerationResult {
     return myContainErrors;
   }
 
-  public Collection<String> errors () {
-    return Collections.unmodifiableCollection(myErrors);
+  public Collection<IMessage> problems() {
+    return Collections.unmodifiableCollection(myProblems);
   }
 
   @Nullable

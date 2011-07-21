@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.script.IConfig;
@@ -175,8 +176,8 @@ public class TextGen_Facet extends IFacet.Stub {
                 }
 
                 if (!(ok.value)) {
-                  for (String err : textgen.errors()) {
-                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(err)));
+                  for (IMessage err : textgen.errors()) {
+                    monitor.reportFeedback(new IFeedback.MESSAGE(err));
                   }
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
@@ -324,6 +325,10 @@ public class TextGen_Facet extends IFacet.Stub {
                       TextGenerationResult tgr = TextGenerationUtil.generateText(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
                       errors.value |= tgr.hasErrors();
                       if (errors.value) {
+                        for (IMessage err : tgr.problems()) {
+                          monitor.reportFeedback(new IFeedback.MESSAGE(err));
+                        }
+                        monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                         break;
                       }
                       String ext = TextGenManager.instance().getExtension(root);

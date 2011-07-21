@@ -26,6 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.make.java.RootDependencies;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -43,7 +44,7 @@ public class TextGenerator {
 
   private final StreamHandler myStreamHandler;
   private CacheGenerator[] myCacheGenerators;
-  private List<String> myTextGenErrors = new ArrayList<String>();
+  private List<IMessage> myTextGenProblems = new ArrayList<IMessage>();
   private boolean myFailIfNoTextgen = false;
   private boolean myGenerateDebugInfo = true;
 
@@ -60,8 +61,8 @@ public class TextGenerator {
     myGenerateDebugInfo = needDebugInfo;
   }
 
-  public Collection<String> errors() {
-    return Collections.unmodifiableList(myTextGenErrors);
+  public Collection<IMessage> errors() {
+    return Collections.unmodifiableList(myTextGenProblems);
   }
 
   public boolean handleOutput(IOperationContext context, GenerationStatus status) {
@@ -102,7 +103,7 @@ public class TextGenerator {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, myFailIfNoTextgen, myGenerateDebugInfo, buffers);
         hasErrors |= result.hasErrors();
         if (result.hasErrors()) {
-          myTextGenErrors.addAll(result.errors());
+          myTextGenProblems.addAll(result.problems());
         } else {
           Object contents = result.getResult();
           if (TextGenerationUtil.NO_TEXTGEN != contents) {

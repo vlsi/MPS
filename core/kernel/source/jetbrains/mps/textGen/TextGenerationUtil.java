@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.Collections;
 
@@ -33,9 +37,12 @@ public class TextGenerationUtil {
       return TextGenManager.instance().generateText(context, node, withDebugInfo, buffers);
     } else if (failIfNoTextgen) {
       String error = "Can't generate text from " + node;
-      return new TextGenerationResult(NO_TEXTGEN, true, Collections.singleton(error), null, null, null, null);
-    }
-    else {
+      Message m = new Message(MessageKind.ERROR, error);
+      if (node != null && node.isRegistered() && node.getModel() != null && !node.getModel().isTransient()) {
+        m.setHintObject(new SNodePointer(node));
+      }
+      return new TextGenerationResult(NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);
+    } else {
       return new TextGenerationResult(NO_TEXTGEN, false, null, null, null, null, null);
     }
   }
