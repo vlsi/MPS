@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalBehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
+import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashSet;
@@ -140,13 +141,18 @@ public class ConceptRegistry implements ApplicationComponent {
     try {
       try {
         LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-        descriptor = languageRuntime.getBehaviorAspectDescriptor().getDescriptor(fqName);
+        if (languageRuntime == null) {
+          LOG.warning("No language for: " + fqName + ", while looking for behavior descriptor.");
+        } else {
+          descriptor = languageRuntime.getBehaviorAspectDescriptor().getDescriptor(fqName);
+        }
       } catch (Throwable e) {
         LOG.warning("Exception while behavior descriptor creating", e);
       }
 
       if (descriptor == null) {
-        descriptor = new IllegalBehaviorDescriptor(fqName);
+//        descriptor = new IllegalBehaviorDescriptor(fqName);
+        descriptor = new InterpretedBehaviorDescriptor(fqName);
       }
 
       behaviorDescriptors.put(fqName, descriptor);
