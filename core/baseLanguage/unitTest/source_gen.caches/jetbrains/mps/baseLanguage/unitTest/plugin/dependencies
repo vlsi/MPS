@@ -726,7 +726,9 @@
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.TestStateListener" file="TestStateListener.java">
     <classNode dependClassName="java.lang.String" />
