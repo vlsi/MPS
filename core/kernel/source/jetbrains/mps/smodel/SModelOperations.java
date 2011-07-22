@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -135,11 +136,13 @@ public class SModelOperations {
     List<ModuleReference> devkits = model.importedDevkits();
     Set<ModuleReference> result = new HashSet<ModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);
-    for (ModuleReference dk : devkits) {
-      DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
-      if (devKit == null) continue;
-      for (Language l : devKit.getExportedLanguages()) {
-        result.add(l.getModuleReference());
+    if (MPSCore.getInstance().isMergeDriverMode()) {
+      for (ModuleReference dk : devkits) {
+        DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
+        if (devKit == null) continue;
+        for (Language l : devKit.getExportedLanguages()) {
+          result.add(l.getModuleReference());
+        }
       }
     }
     return result;

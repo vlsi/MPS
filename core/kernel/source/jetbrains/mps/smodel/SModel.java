@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -567,7 +568,7 @@ public class SModel {
     if (importElement != null) return;
     importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
     if (importElement == null) {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance() == null ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
+      SModelDescriptor modelDescriptor = MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
       if (modelDescriptor instanceof EditableSModelDescriptor) {
         usedVersion = ((EditableSModelDescriptor) modelDescriptor).getVersion();
