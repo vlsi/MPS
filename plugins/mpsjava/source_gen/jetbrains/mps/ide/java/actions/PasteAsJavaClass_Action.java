@@ -6,13 +6,16 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.java.util.JavaPaster;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.ide.java.util.JavaPaster;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class PasteAsJavaClass_Action extends GeneratedAction {
@@ -25,9 +28,17 @@ public class PasteAsJavaClass_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    SModel m = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
+    return m != null && SModelOperations.hasLanguage(m, MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference()) && JavaPaster.areDataAvailableInClipboard();
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "PasteAsJavaClass", t);

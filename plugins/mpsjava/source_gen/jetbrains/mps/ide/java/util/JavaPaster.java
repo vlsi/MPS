@@ -26,6 +26,7 @@ import jetbrains.mps.ide.java.parser.ConversionFailedException;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
+import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 
 public class JavaPaster {
   private static Logger LOG = Logger.getLogger(JavaPaster.class);
@@ -142,5 +143,16 @@ public class JavaPaster {
     } catch (ConversionFailedException e) {
     }
     return new ArrayList<SNode>();
+  }
+
+  public static boolean areDataAvailableInClipboard() {
+    Transferable trf = CopyPasteManagerEx.getInstanceEx().getContents();
+    if (trf == null || trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+      return false;
+    }
+    if (trf.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+      return true;
+    }
+    return false;
   }
 }

@@ -6,13 +6,14 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.java.util.JavaPaster;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.java.util.JavaPaster;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.parser.FeatureKind;
 
@@ -26,9 +27,16 @@ public class PasteAsJavaMethods_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return (SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null) && JavaPaster.areDataAvailableInClipboard();
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "PasteAsJavaMethods", t);
