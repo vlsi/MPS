@@ -208,16 +208,19 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   public void dispose() {
     synchronized (myDisposedLock) {
       myDisposed = true;
-    }
-    for (OldChange change : SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
-      unhighlightChange(change);
-    }
-    getHighlightManager().clearForOwner(this);
-    myEditorComponent.getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
-    if (myModelChangesManager != null) {
-      synchronized (this) {
-        myModelChangesManager.removeChangeListener(myChangeListener);
-        myChangeListener = null;
+      try {
+        for (OldChange change : SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
+          unhighlightChange(change);
+        }
+        getHighlightManager().clearForOwner(this);
+        myEditorComponent.getLeftEditorHighlighter().removeFoldingAreaPainter(myFoldingAreaPainter);
+      } finally {
+        if (myModelChangesManager != null) {
+          synchronized (this) {
+            myModelChangesManager.removeChangeListener(myChangeListener);
+            myChangeListener = null;
+          }
+        }
       }
     }
   }
