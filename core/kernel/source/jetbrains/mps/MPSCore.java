@@ -15,6 +15,8 @@
  */
 package jetbrains.mps;
 
+import jetbrains.mps.smodel.SModelRepository;
+
 /**
  * Evgeny Gryaznov, Sep 1, 2010
  */
@@ -37,5 +39,9 @@ public class MPSCore {
 
   public void setTestMode() {
     testMode = true;
+  }
+
+  public boolean isMergeDriverMode() {
+    return SModelRepository.getInstance() == null;
   }
 }

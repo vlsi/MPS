@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -126,7 +127,7 @@ public class StaticReference extends SReferenceBase {
     SModelDescriptor modelDescriptor = null;
     if (current != null) {
       modelDescriptor = current.resolveModel(targetModelReference);
-    } else if (SModelRepository.getInstance() != null) {
+    } else if (!MPSCore.getInstance().isMergeDriverMode()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
     }
     if (modelDescriptor == null) {

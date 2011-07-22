@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -194,7 +195,7 @@ public final class CopyUtil {
       SNode outputNode = mapping.get(inputNode);
 
       for (SReference ref : inputNode.getReferencesArray()) {
-        boolean cloneRefs = forceCloneRefs || SModelRepository.getInstance() == null;
+        boolean cloneRefs = forceCloneRefs || MPSCore.getInstance().isMergeDriverMode();
         SNode inputTargetNode = cloneRefs ? null : ref.getTargetNode();
         if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {
