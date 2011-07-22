@@ -40,7 +40,7 @@ import java.util.regex.Pattern;
 public final class OldBehaviorManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(OldBehaviorManager.class);
 
-  private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.(\\w+)$");
+  private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
