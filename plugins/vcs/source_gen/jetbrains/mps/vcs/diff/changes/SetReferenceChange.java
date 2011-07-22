@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 
 public class SetReferenceChange extends NodeChange {
@@ -21,6 +22,7 @@ public class SetReferenceChange extends NodeChange {
     super(changeSet, sourceNodeId);
     myRole = role;
     myTargetModelReference = targetModelReference;
+    // if target node id is null and resolve info is not-null it's dynamic reference 
     myTargetNodeId = targetNodeId;
     myResolveInfo = resolveInfo;
   }
@@ -51,11 +53,16 @@ public class SetReferenceChange extends NodeChange {
     if (myTargetNodeId == null && myResolveInfo == null) {
       node.setReferent(myRole, null);
     } else {
-      SModelReference targetModel = (myTargetModelReference == null ?
+      SModelReference targetModelReference = (myTargetModelReference == null ?
         model.getSModelReference() :
         myTargetModelReference
       );
-      SReference reference = new StaticReference(myRole, node, targetModel, myTargetNodeId, myResolveInfo);
+      SReference reference;
+      if (myTargetNodeId == null) {
+        reference = new DynamicReference(myRole, node, targetModelReference, myResolveInfo);
+      } else {
+        reference = new StaticReference(myRole, node, targetModelReference, myTargetNodeId, myResolveInfo);
+      }
       node.removeReferent(myRole);
       node.addReference(reference);
     }
