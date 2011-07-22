@@ -21,6 +21,12 @@ import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure.Variables;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.resources.ITResource;
+import jetbrains.mps.smodel.resources.TResource;
+import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.make.script.IFeedback;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -31,6 +37,7 @@ public class Sample_Facet extends IFacet.Stub {
 
   public Sample_Facet() {
     ListSequence.fromList(targets).addElement(new Sample_Facet.Target_readParams());
+    ListSequence.fromList(targets).addElement(new Sample_Facet.Target_reportFiles());
   }
 
   public Iterable<ITarget> targets() {
@@ -42,7 +49,7 @@ public class Sample_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -186,6 +193,89 @@ public class Sample_Facet extends IFacet.Stub {
       public Sample_Facet.Target_readParams.Parameters assignFrom(Tuples._3<String, Integer, String> from) {
         return (Sample_Facet.Target_readParams.Parameters) super.assign(from);
       }
+    }
+  }
+
+  public static class Target_reportFiles implements ITarget {
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
+
+    private ITarget.Name name = new ITarget.Name("sampleFacet.Sample.reportFiles");
+
+    public Target_reportFiles() {
+    }
+
+    public IJob createJob() {
+      return new IJob.Stub() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa) {
+          Iterable<IResource> _output_kf1bs5_a0b = null;
+          switch (0) {
+            case 0:
+              for (IResource resource : input) {
+                TResource tres = (TResource) resource;
+                new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
+                  @Override
+                  public boolean acceptWritten(IFile file) {
+                    monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("written file: " + file)));
+                    return true;
+                  }
+                });
+                _output_kf1bs5_a0b = Sequence.fromIterable(_output_kf1bs5_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+              }
+            default:
+              return new IResult.SUCCESS(_output_kf1bs5_a0b);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile")});
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
+      return true;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Iterable<Class<? extends IResource>> expectedInput() {
+      return Sequence.fromArray(EXPECTED_INPUT);
+    }
+
+    public Iterable<Class<? extends IResource>> expectedOutput() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls, T copyFrom) {
+      T t = createParameters(cls);
+      return t;
     }
   }
 

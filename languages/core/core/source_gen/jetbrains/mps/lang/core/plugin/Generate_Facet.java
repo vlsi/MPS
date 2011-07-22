@@ -53,6 +53,7 @@ import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.generator.TransientModelsComponent;
+import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class Generate_Facet extends IFacet.Stub {
@@ -633,6 +634,10 @@ public class Generate_Facet extends IFacet.Stub {
                   if (!(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
                     pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
                   }
+                  return true;
+                }
+
+                public boolean acceptVisitor(IDeltaVisitor visitor) {
                   return true;
                 }
               })))));

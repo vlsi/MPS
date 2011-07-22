@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -38,6 +39,14 @@ public class DeltaReconciler {
     ListSequence.fromList(topContainer).visitAll(new IVisitor<DeltaReconciler.DeltaContainer>() {
       public void visit(DeltaReconciler.DeltaContainer dc) {
         dc.mergeContent().reconcile();
+      }
+    });
+  }
+
+  public void visitAll(final IDeltaVisitor visitor) {
+    ListSequence.fromList(topContainer).visitAll(new IVisitor<DeltaReconciler.DeltaContainer>() {
+      public void visit(DeltaReconciler.DeltaContainer dc) {
+        dc.mergeContent().acceptVisitor(visitor);
       }
     });
   }

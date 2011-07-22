@@ -234,6 +234,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.SaveTransientModels_Query" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.SaveTransient_Option" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
+    <classNode dependClassName="jetbrains.mps.make.delta.IDeltaVisitor" />
     <classNode dependClassName="jetbrains.mps.make.delta.IInternalDelta" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeGenerationHandler" />
