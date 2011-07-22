@@ -11,6 +11,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JOptionPane" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.SModelDataFlavor" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.ConversionFailedException" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaCompiler" />
