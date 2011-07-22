@@ -135,11 +135,13 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   @Override
   public void updateState() {
     super.updateState();
-    myAuxModel.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        createVars();
-      }
-    });
+    if (myDebugSession.getEvaluationProvider().canEvaluate()) {
+      myAuxModel.getSModel().runLoadingAction(new Runnable() {
+        public void run() {
+          createVars();
+        }
+      });
+    }
   }
 
   @Override
