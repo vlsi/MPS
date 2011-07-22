@@ -7,4 +7,5 @@ public interface IDelta {
   public IDelta merge(IDelta toMerge);
   public boolean contains(IDelta other);
   public boolean reconcile();
+  public boolean acceptVisitor(IDeltaVisitor visitor);
 }

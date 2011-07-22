@@ -9,11 +9,13 @@ import jetbrains.mps.vfs.IFile;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.make.delta.IDeltaVisitor;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -62,6 +64,51 @@ public class FilesDelta implements IDelta {
   }
 
   public boolean reconcile() {
+    return acceptVisitor(new FilesDelta.Visitor() {
+      @Override
+      public boolean acceptDeleted(IFile file) {
+        FilesDelta.LOG.debug("Reconciled: deleting " + file);
+        return file.delete();
+      }
+    });
+  }
+
+  public boolean acceptVisitor(IDeltaVisitor visitor) {
+    if (!(visitor instanceof FilesDelta.Visitor)) {
+      return true;
+    }
+    return acceptFilesVisitor(((FilesDelta.Visitor) visitor));
+  }
+
+  public IDelta merge(IDelta toMerge) {
+    if (!(toMerge instanceof FilesDelta)) {
+      throw new IllegalArgumentException();
+    }
+    if (!(this.contains(toMerge))) {
+      throw new IllegalArgumentException();
+    }
+    return new FilesDelta((FilesDelta) this).copy((FilesDelta) toMerge);
+  }
+
+  private boolean acceptFilesVisitor(final FilesDelta.Visitor visitor) {
+    MapSequence.fromMap(files).visitAll(new IVisitor<IMapping<IFile, FilesDelta.Status>>() {
+      public void visit(IMapping<IFile, FilesDelta.Status> m) {
+        if (m.value() == FilesDelta.Status.KEPT && !(m.key().isDirectory())) {
+          visitor.acceptKept(m.key());
+        } else if (m.value() == FilesDelta.Status.WRITTEN) {
+          visitor.acceptWritten(m.key());
+        }
+      }
+    });
+    ListSequence.fromList(this.collectFilesToDelete()).visitAll(new IVisitor<IFile>() {
+      public void visit(IFile f) {
+        visitor.acceptDeleted(f);
+      }
+    });
+    return true;
+  }
+
+  private List<IFile> collectFilesToDelete() {
     String[] pathsToKeep = MapSequence.fromMap(files).where(new IWhereFilter<IMapping<IFile, FilesDelta.Status>>() {
       public boolean accept(IMapping<IFile, FilesDelta.Status> f) {
         return f.value() != FilesDelta.Status.DELETED;
@@ -121,22 +168,7 @@ public class FilesDelta implements IDelta {
         }
       }
     }
-    boolean res = true;
-    for (IFile td : toDelete) {
-      LOG.debug("Reconciled: deleting " + td);
-      res &= td.delete();
-    }
-    return res;
-  }
-
-  public IDelta merge(IDelta toMerge) {
-    if (!(toMerge instanceof FilesDelta)) {
-      throw new IllegalArgumentException();
-    }
-    if (!(this.contains(toMerge))) {
-      throw new IllegalArgumentException();
-    }
-    return new FilesDelta((FilesDelta) this).copy((FilesDelta) toMerge);
+    return toDelete;
   }
 
   private String urlToPath(String maybeUrl) {
@@ -193,12 +225,29 @@ public class FilesDelta implements IDelta {
     }
     if (path1.length() > path2.length()) {
       {
-        Tuples._2<String, String> _tmp_32m4sw_a0c0l = MultiTuple.<String,String>from(path2, path1);
-        path1 = _tmp_32m4sw_a0c0l._0();
-        path2 = _tmp_32m4sw_a0c0l._1();
+        Tuples._2<String, String> _tmp_32m4sw_a0c0o = MultiTuple.<String,String>from(path2, path1);
+        path1 = _tmp_32m4sw_a0c0o._0();
+        path2 = _tmp_32m4sw_a0c0o._1();
       }
     }
     return path2.startsWith(path1) && path2.charAt(path1.length()) == SLASH_CHAR && (path2.length() - path1.length() == 1);
+  }
+
+  public static class Visitor implements IDeltaVisitor {
+    public Visitor() {
+    }
+
+    public boolean acceptWritten(IFile file) {
+      return true;
+    }
+
+    public boolean acceptKept(IFile file) {
+      return true;
+    }
+
+    public boolean acceptDeleted(IFile file) {
+      return true;
+    }
   }
 
   public static   enum Status {
