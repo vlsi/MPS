@@ -791,8 +791,10 @@ public class TestMain {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
           public void run() {
-            ProjectContainer.this.lastProject.dispose();
-            ProjectContainer.this.lastProject = null;
+            if (ProjectContainer.this.lastProject != null) {
+              ProjectContainer.this.lastProject.dispose();
+              ProjectContainer.this.lastProject = null;
+            }
             ProjectContainer.this.projectName = null;
           }
         });
