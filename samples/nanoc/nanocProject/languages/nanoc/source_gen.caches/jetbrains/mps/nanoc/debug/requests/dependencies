@@ -5,6 +5,7 @@
     <classNode extendsClassName="jetbrains.mps.nanoc.debug.requests.GDBRequestor" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" file="GDBRequestManager.java">
+    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -12,7 +13,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.debug.api.BreakpointManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
-    <classNode dependClassName="jetbrains.mps.debug.executable.SimpleConsoleProcessHandler" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.ProcessUtil" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.ResultAnswer" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.StreamAnswer" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />

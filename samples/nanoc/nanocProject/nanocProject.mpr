@@ -22,7 +22,7 @@
     <option name="version" value="2.0" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 

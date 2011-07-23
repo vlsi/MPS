@@ -10,20 +10,21 @@ import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
 import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
 import java.util.List;
 import jetbrains.mps.nanoc.debug.answer.StreamAnswer;
-import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
+import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.nanoc.debug.ProcessUtil;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint;
 
 public class GDBRequestManager {
-  private GDBEventsHandler myEventsHandler;
-  private Map<Long, GDBRequestor> myRequestors = new HashMap<Long, GDBRequestor>();
-  private BreakpointManagerComponent myBreakpointManager;
+  private final GDBEventsHandler myEventsHandler;
+  private final Map<Long, GDBRequestor> myRequestors = new HashMap<Long, GDBRequestor>();
+  private final BreakpointManagerComponent myBreakpointManager;
 
   public GDBRequestManager(GDBEventsHandler eventsHandler, BreakpointManagerComponent breakpointManager) {
     myBreakpointManager = breakpointManager;
     myEventsHandler = eventsHandler;
     myEventsHandler.addEventListener(new GDBEventsAdapter() {
-      public void resultReceived(ResultAnswer result, List<StreamAnswer> receivedStreamAnswers, SimpleConsoleProcessHandler gdbProcess) {
+      public void resultReceived(ResultAnswer result, List<StreamAnswer> receivedStreamAnswers, ProcessHandler gdbProcess) {
         requestResultReceived(result, receivedStreamAnswers);
       }
     });
@@ -42,7 +43,7 @@ public class GDBRequestManager {
     long id = requestor.getId();
     myRequestors.put(id, requestor);
     String requestString = requestor.createRequestString();
-    myEventsHandler.getGDBProcessHandler().inputWithFlush(id + requestString + "\n");
+    ProcessUtil.inputWithFlush(myEventsHandler.getGDBProcessHandler(), id + requestString + "\n");
   }
 
   public void createBreakpointRequests() {

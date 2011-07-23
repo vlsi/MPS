@@ -14,6 +14,7 @@
     <nodeInfo nodeId="7530891836727013776" fileName="Hello.c" startLine="15" startPosition="0" endLine="15" endPosition="12" conceptFqName="jetbrains.mps.nanoc.structure.VarDeclStatement" />
     <nodeInfo nodeId="849607630585440652" fileName="Hello.c" startLine="16" startPosition="0" endLine="16" endPosition="10" conceptFqName="jetbrains.mps.nanoc.structure.CExpressionStatement" />
     <nodeInfo nodeId="1485470850545864036" fileName="Hello.c" startLine="3" startPosition="0" endLine="10" endPosition="1" conceptFqName="jetbrains.mps.nanoc.structure.CWhile" />
+    <unitInfo nodeId="6585869519574685729" fileName="Hello.c" startLine="1" startPosition="0" endLine="17" endPosition="1" unitName="Hello" />
   </root>
 </debugInfo>
 
