@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="44je07czcqnojnlc1wtchmzq69z83v1">
+<dependencies version="2" modelHash="1pkq61i25zf0lvmrb85ggyo2zhwq10g">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution(MPS.Classpath/com.intellij.execution@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.actions(MPS.Classpath/com.intellij.execution.actions@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.configurations(MPS.Classpath/com.intellij.execution.configurations@java_stub)" />
@@ -190,7 +190,6 @@
     <file name="RunConfigurationsInitializer_CustomApplicationPlugin.java" />
     <file name="UnitTest_ApplicationPlugin.java" />
     <file name="UnitTest_ProjectPlugin.java" />
-    <file name="_Adapters.java" />
   </common>
   <source id="1208270545572" name="UnitTestViewComponent" hash="-23bp9vq70afh0ieoiau6dlseuz3fn2e">
     <dep root="1208284702582" />
@@ -1808,8 +1807,9 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JUnitRunTypes2.java" />
   </source>
-  <source id="5298715229972355748" name="junit" hash="e9nep5vw8zm5acvhiywdvpeiavmjmx8" dependsOnCreated="true">
+  <source id="5298715229972355748" name="junit" hash="6h7w52e4brn3py0tw53d4jdnf45cena">
     <dep root="4087070200985064052" />
+    <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution(MPS.Classpath/com.intellij.execution@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api(MPS.Classpath/jetbrains.mps.debug.api@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api.run(MPS.Classpath/jetbrains.mps.debug.api.run@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.execution.api.commands(MPS.Classpath/jetbrains.mps.execution.api.commands@java_stub)" />

@@ -11,17 +11,16 @@ import com.intellij.execution.ExecutionException;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.execution.lib.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
@@ -85,7 +84,13 @@ public class Junit_Command {
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {
+    if (tests == null) {
+      throw new ExecutionException("Tests to run are null.");
+    }
     Tuples._2<List<ITestNodeWrapper>, TestRunParameters> testsToRun = Junit_Command.getTestsToRunWithParameters(tests);
+    if (ListSequence.fromList(testsToRun._0()).isEmpty()) {
+      throw new ExecutionException("Could not find tests to run.");
+    }
     return new Java_Command().setVirtualMachineParameter(IterableUtils.join(ListSequence.fromList(testsToRun._1().getVmParameters()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter) ?
       " " + myVirtualMachineParameter :
       ""
@@ -113,32 +118,38 @@ public class Junit_Command {
     return IterableUtils.join(ListSequence.fromList(testsCommandLine.value), " ");
   }
 
-  private static Tuples._2<List<ITestNodeWrapper>, TestRunParameters> getTestsToRunWithParameters(@NotNull final List<ITestNodeWrapper> tests) throws ExecutionException {
+  private static Tuples._2<List<ITestNodeWrapper>, TestRunParameters> getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
+    final Wrappers._T<List<ITestNodeWrapper>> _tests = new Wrappers._T<List<ITestNodeWrapper>>(tests);
     final Wrappers._T<TestRunParameters> runParams = new Wrappers._T<TestRunParameters>();
     final Wrappers._T<List<ITestNodeWrapper>> testsToRun = new Wrappers._T<List<ITestNodeWrapper>>();
     final Wrappers._T<String> skipped = new Wrappers._T<String>();
-    if (ListSequence.fromList(tests).isEmpty()) {
+    _tests.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
+      public boolean accept(ITestNodeWrapper it) {
+        return it != null;
+      }
+    }).toListSequence();
+    if (ListSequence.fromList(_tests.value).isEmpty()) {
       return MultiTuple.<List<ITestNodeWrapper>,TestRunParameters>from(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), new TestRunParameters());
     }
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
-      public String invoke() {
-        runParams.value = check_u7m9j_a0a0a4a1(ListSequence.fromList(tests).first());
-        testsToRun.value = ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        runParams.value = ListSequence.fromList(_tests.value).first().getTestRunParameters();
+        testsToRun.value = ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
-            return eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0a0e0c(check_u7m9j_a0a0a0a0a1a0e0b(it), runParams.value);
+            return eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0g0c(it.getTestRunParameters(), runParams.value);
           }
         }).toListSequence();
-        return skipped.value = IterableUtils.join(ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+        skipped.value = IterableUtils.join(ListSequence.fromList(_tests.value).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
-            return it != null && (neq_yo2c7x_a0a0a0a0a0a0a0a2a0a0a0a0a4a2(it.getTestRunParameters(), runParams.value));
+            return neq_yo2c7x_a0a0a0a0a0a0a2a0a0a0a6a2(it.getTestRunParameters(), runParams.value);
           }
         }).<String>select(new ISelector<ITestNodeWrapper, String>() {
           public String select(ITestNodeWrapper it) {
-            return check_u7m9j_a0a0a0a0c0a4a1(it);
+            return it.getName();
           }
         }), " ");
       }
-    }));
+    });
     if (StringUtils.isNotEmpty(skipped.value)) {
       LOG.warning("All tests could not be executed together. Skipped " + skipped.value);
     }
@@ -196,35 +207,14 @@ public class Junit_Command {
     return null;
   }
 
-  private static TestRunParameters check_u7m9j_a0a0a4a1(ITestNodeWrapper checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTestRunParameters();
-    }
-    return null;
-  }
-
-  private static TestRunParameters check_u7m9j_a0a0a0a0a1a0e0b(ITestNodeWrapper checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTestRunParameters();
-    }
-    return null;
-  }
-
-  private static String check_u7m9j_a0a0a0a0c0a4a1(ITestNodeWrapper checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getName();
-    }
-    return null;
-  }
-
-  private static boolean eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0a0e0c(Object a, Object b) {
+  private static boolean eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0g0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean neq_yo2c7x_a0a0a0a0a0a0a0a2a0a0a0a0a4a2(Object a, Object b) {
+  private static boolean neq_yo2c7x_a0a0a0a0a0a0a2a0a0a0a6a2(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
