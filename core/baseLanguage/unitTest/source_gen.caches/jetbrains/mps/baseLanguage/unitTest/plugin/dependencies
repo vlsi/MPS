@@ -927,6 +927,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.PrintWriter" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Process" />
@@ -955,6 +956,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner" />
