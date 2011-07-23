@@ -1372,26 +1372,26 @@
     <unitInfo nodeId="1208285478260" fileName="TestMethodTreeNode.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestMethodTreeNode" />
   </root>
   <root nodeId="1208285711556">
-    <nodeInfo nodeId="1208286025046" fileName="TestState.java" startLine="21" startPosition="0" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
-    <nodeInfo nodeId="1208357926509" fileName="TestState.java" startLine="24" startPosition="30" endLine="25" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208358070913" fileName="TestState.java" startLine="25" startPosition="197" endLine="26" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208357576253" fileName="TestState.java" startLine="26" startPosition="125" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="497539554675290516" fileName="TestState.java" startLine="31" startPosition="45" endLine="32" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1208286358042" fileName="TestState.java" startLine="33" startPosition="5" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="497539554675290504" fileName="TestState.java" startLine="30" startPosition="25" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1208286032093" fileName="TestState.java" startLine="23" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestState#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1208286358038" fileName="TestState.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <scopeInfo nodeId="497539554675290505" fileName="TestState.java" startLine="31" startPosition="45" endLine="32" endPosition="52" />
-    <scopeInfo nodeId="1208286032096" fileName="TestState.java" startLine="24" startPosition="30" endLine="27" endPosition="57">
+    <nodeInfo nodeId="1208286025046" fileName="TestState.java" startLine="22" startPosition="0" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
+    <nodeInfo nodeId="1208357926509" fileName="TestState.java" startLine="25" startPosition="30" endLine="26" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1208358070913" fileName="TestState.java" startLine="26" startPosition="197" endLine="27" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1208357576253" fileName="TestState.java" startLine="27" startPosition="139" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="497539554675290516" fileName="TestState.java" startLine="32" startPosition="45" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1208286358042" fileName="TestState.java" startLine="34" startPosition="5" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="497539554675290504" fileName="TestState.java" startLine="31" startPosition="25" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1208286032093" fileName="TestState.java" startLine="24" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestState#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1208286358038" fileName="TestState.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <scopeInfo nodeId="497539554675290505" fileName="TestState.java" startLine="32" startPosition="45" endLine="33" endPosition="52" />
+    <scopeInfo nodeId="1208286032096" fileName="TestState.java" startLine="25" startPosition="30" endLine="28" endPosition="57">
       <varInfo nodeId="1208358070914" varName="pathToIcon" />
       <varInfo nodeId="1208357926510" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1208286358041" fileName="TestState.java" startLine="30" startPosition="25" endLine="34" endPosition="23" />
-    <scopeInfo nodeId="1208286032093" fileName="TestState.java" startLine="23" startPosition="0" endLine="28" endPosition="3">
+    <scopeInfo nodeId="1208286358041" fileName="TestState.java" startLine="31" startPosition="25" endLine="35" endPosition="23" />
+    <scopeInfo nodeId="1208286032093" fileName="TestState.java" startLine="24" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="1208286037144" varName="iconName" />
     </scopeInfo>
-    <scopeInfo nodeId="1208286358038" fileName="TestState.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1208285711556" fileName="TestState.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestState" />
+    <scopeInfo nodeId="1208286358038" fileName="TestState.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="1208285711556" fileName="TestState.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestState" />
   </root>
   <root nodeId="1208523052170">
     <nodeInfo nodeId="6780659990277199534" fileName="UnitTestRunner.java" startLine="32" startPosition="48" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAX_COMMAND_LINE" />

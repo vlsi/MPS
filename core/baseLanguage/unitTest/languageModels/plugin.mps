@@ -2509,8 +2509,14 @@
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8405409513051407056">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1208286037144" resolveInfo="iconName" />
                 </node>
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8405409513051407052">
-                  <property name="value" nameId="tpee.1070475926801" value="${language_descriptor}/icons/states/" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="820077593072252620">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="820077593072254785">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="30pf.~MacrosFactory" resolveInfo="MacrosFactory" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="30pf.~MacrosFactory%dLANGUAGE_DESCRIPTOR" resolveInfo="LANGUAGE_DESCRIPTOR" />
+                  </node>
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8405409513051407052">
+                    <property name="value" nameId="tpee.1070475926801" value="/icons/states/" />
+                  </node>
                 </node>
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8405409513051407060">
