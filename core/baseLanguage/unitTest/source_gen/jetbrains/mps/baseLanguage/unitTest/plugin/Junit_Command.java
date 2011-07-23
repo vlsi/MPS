@@ -18,6 +18,7 @@ import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -112,7 +113,7 @@ public class Junit_Command {
     return IterableUtils.join(ListSequence.fromList(testsCommandLine.value), " ");
   }
 
-  private static Tuples._2<List<ITestNodeWrapper>, TestRunParameters> getTestsToRunWithParameters(final List<ITestNodeWrapper> tests) throws ExecutionException {
+  private static Tuples._2<List<ITestNodeWrapper>, TestRunParameters> getTestsToRunWithParameters(@NotNull final List<ITestNodeWrapper> tests) throws ExecutionException {
     final Wrappers._T<TestRunParameters> runParams = new Wrappers._T<TestRunParameters>();
     final Wrappers._T<List<ITestNodeWrapper>> testsToRun = new Wrappers._T<List<ITestNodeWrapper>>();
     final Wrappers._T<String> skipped = new Wrappers._T<String>();
@@ -121,7 +122,7 @@ public class Junit_Command {
     }
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
-        runParams.value = ListSequence.fromList(tests).first().getTestRunParameters();
+        runParams.value = check_u7m9j_a0a0a4a1(ListSequence.fromList(tests).first());
         testsToRun.value = ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
             return eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0a0e0c(check_u7m9j_a0a0a0a0a1a0e0b(it), runParams.value);
@@ -191,6 +192,13 @@ public class Junit_Command {
   private static String check_u7m9j_a0a3a0a0a(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
+    }
+    return null;
+  }
+
+  private static TestRunParameters check_u7m9j_a0a0a4a1(ITestNodeWrapper checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTestRunParameters();
     }
     return null;
   }
