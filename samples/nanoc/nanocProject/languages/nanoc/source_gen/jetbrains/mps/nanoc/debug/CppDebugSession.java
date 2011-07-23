@@ -13,7 +13,6 @@ import jetbrains.mps.nanoc.debug.answer.StreamAnswer;
 import jetbrains.mps.nanoc.debug.requests.PauseRequest;
 import jetbrains.mps.nanoc.debug.requests.StepRequest;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.nanoc.debug.events.GDBEventsAdapter;
@@ -78,19 +77,15 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   public void showEvaluationDialog(IOperationContext operationContext) {
   }
 
-  public SimpleConsoleProcessHandler getProcessHandler() {
-    return (SimpleConsoleProcessHandler) super.getProcessHandler();
-  }
-
   public void setProcessHandler(ProcessHandler processHandler) {
     super.setProcessHandler(processHandler);
-    myEventsHandler = new GDBEventsHandler((SimpleConsoleProcessHandler) processHandler);
+    myEventsHandler = new GDBEventsHandler(processHandler);
     myRequestManager = new GDBRequestManager(myEventsHandler, getProject().getComponent(BreakpointManagerComponent.class));
   }
 
   /*package*/ void setupBreakpointListener() {
     myEventsHandler.addEventListener(new GDBEventsAdapter() {
-      public void paused(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
+      public void paused(AsyncAnswer answer, ProcessHandler gdbProcess) {
         StackInfoRequest request = new StackInfoRequest() {
           public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
             doPause(answer);
@@ -99,11 +94,11 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
         myRequestManager.createRequest(request);
       }
 
-      public void processTerminated(SimpleConsoleProcessHandler gdbProcess) {
+      public void processTerminated(ProcessHandler gdbProcess) {
         doTerminateProcess();
       }
 
-      public void gdbProcessTerminated(SimpleConsoleProcessHandler processHandler) {
+      public void gdbProcessTerminated(ProcessHandler processHandler) {
         doTerminateProcess();
       }
     });

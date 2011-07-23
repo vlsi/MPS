@@ -19,6 +19,7 @@ import jetbrains.mps.nanoc.debug.answer.StringValue;
 import jetbrains.mps.nanoc.debug.requests.RemoveBreakpointRequestor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 
 public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, ILocationBreakpoint {
@@ -85,6 +86,22 @@ public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, IL
   @NotNull
   public BreakpointLocation getLocation() {
     return myLocation;
+  }
+
+  public BreakpointInfo getState() {
+    return new BreakpointInfo(this, myLocation);
+  }
+
+  public static GDBBreakpoint fromInfo(@NotNull BreakpointInfo info, Project project) {
+    return new GDBBreakpoint(new SNodePointer(info.myModelReference, info.myNodeId), project);
+  }
+
+  public class GdbBreakpointState {
+    public String myNodeId;
+    public String myModelId;
+
+    public GdbBreakpointState() {
+    }
   }
 
   public static   enum GDBBreakpointKind implements IBreakpointKind<GDBBreakpoint> {

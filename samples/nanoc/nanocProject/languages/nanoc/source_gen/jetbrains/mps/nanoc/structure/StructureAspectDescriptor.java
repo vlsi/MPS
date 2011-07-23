@@ -52,7 +52,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 17:
         return new CompiledConceptDescriptor("jetbrains.mps.nanoc.structure.EqualOp", "jetbrains.mps.nanoc.structure.CBinaryOp", false, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{}, new String[]{});
       case 18:
-        return new CompiledConceptDescriptor("jetbrains.mps.nanoc.structure.File", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.nanoc.structure.File", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.traceable.structure.UnitConcept"}, new String[]{}, new String[]{});
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.nanoc.structure.GreaterEqOp", "jetbrains.mps.nanoc.structure.CBinaryOp", false, new String[]{"jetbrains.mps.nanoc.structure.CBinaryOp"}, new String[]{}, new String[]{});
       case 20:

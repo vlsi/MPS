@@ -8,7 +8,9 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import org.jdom.Element;
+import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.smodel.SNode;
@@ -27,12 +29,12 @@ public class GDBBreakpointsProvider implements IBreakpointsProvider<GDBBreakpoin
 
   @Nullable
   public Element saveToState(@NotNull GDBBreakpoint breakpoint) {
-    return null;
+    return XmlSerializer.serialize(breakpoint.getState());
   }
 
   @Nullable
   public GDBBreakpoint loadFromState(Element element, GDBBreakpoint.GDBBreakpointKind kind, Project project) {
-    return null;
+    return GDBBreakpoint.fromInfo(XmlSerializer.deserialize(element, BreakpointInfo.class), project);
   }
 
   @Nullable

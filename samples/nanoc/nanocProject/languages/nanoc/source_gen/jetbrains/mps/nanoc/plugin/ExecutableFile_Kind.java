@@ -4,8 +4,7 @@ package jetbrains.mps.nanoc.plugin;
 
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,26 +14,24 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
-public class ExecutableFileRunConfiguration_ConfigurationType implements ConfigurationType {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/executable.png", "jetbrains.mps.nanoc"), true);
+public class ExecutableFile_Kind implements ConfigurationType {
+  private static final Icon ICON = new ImageIcon(ExecutableFile_Kind.class.getResource("executable.png"));
 
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
-  public ExecutableFileRunConfiguration_ConfigurationType() {
+  public ExecutableFile_Kind() {
   }
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-    ListSequence.fromList(result).addElement(new SourceNanocConfiguration_Factory(this));
+    ListSequence.fromList(result).addElement(new NanoCFile_Configuration_Factory(this));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
 
-  public String getConfigurationTypeDescription() {
-    return "";
-  }
-
-  public String getDisplayName() {
+  @NonNls
+  @NotNull
+  public String getId() {
     return "Executable File";
   }
 
@@ -42,17 +39,19 @@ public class ExecutableFileRunConfiguration_ConfigurationType implements Configu
     return ICON;
   }
 
-  @NonNls
-  @NotNull
-  public String getId() {
-    return "ExecutableFileRunConfiguration";
+  public String getConfigurationTypeDescription() {
+    return null;
+  }
+
+  public String getDisplayName() {
+    return "Executable File";
   }
 
   public void addForeignFactory(ConfigurationFactory factory) {
     ListSequence.fromList(myForeignFactories).addElement(factory);
   }
 
-  public static ExecutableFileRunConfiguration_ConfigurationType getInstance() {
-    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), ExecutableFileRunConfiguration_ConfigurationType.class);
+  public static ExecutableFile_Kind getInstance() {
+    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), ExecutableFile_Kind.class);
   }
 }

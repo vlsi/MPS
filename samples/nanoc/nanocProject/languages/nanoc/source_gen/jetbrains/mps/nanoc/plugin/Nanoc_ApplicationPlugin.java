@@ -23,7 +23,7 @@ public class Nanoc_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new CppDebuggerInitializer_CustomApplicationPlugin());
     addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
-    addCustomPart(res, new LegacyRunConfigurationsProvider_CustomApplicationPlugin());
+    addCustomPart(res, new RunConfigurationsInitializer_CustomApplicationPlugin());
     return res;
   }
 

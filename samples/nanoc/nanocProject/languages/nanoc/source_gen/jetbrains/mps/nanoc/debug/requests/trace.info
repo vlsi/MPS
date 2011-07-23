@@ -112,66 +112,66 @@
     <unitInfo nodeId="3990508698139426796" fileName="GDBRequestor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestor" />
   </root>
   <root nodeId="3990508698139429011">
-    <nodeInfo nodeId="3990508698139429013" fileName="GDBRequestManager.java" startLine="17" startPosition="32" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsHandler" />
-    <nodeInfo nodeId="3990508698139429016" fileName="GDBRequestManager.java" startLine="18" startPosition="43" endLine="19" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRequestors" />
-    <nodeInfo nodeId="3990508698139429025" fileName="GDBRequestManager.java" startLine="19" startPosition="83" endLine="20" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointManager" />
-    <nodeInfo nodeId="3990508698139429036" fileName="GDBRequestManager.java" startLine="22" startPosition="106" endLine="23" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429040" fileName="GDBRequestManager.java" startLine="23" startPosition="44" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429155" fileName="GDBRequestManager.java" startLine="26" startPosition="137" endLine="27" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429070" fileName="GDBRequestManager.java" startLine="32" startPosition="107" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139429076" fileName="GDBRequestManager.java" startLine="33" startPosition="48" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139429088" fileName="GDBRequestManager.java" startLine="35" startPosition="31" endLine="36" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429089" fileName="GDBRequestManager.java" startLine="37" startPosition="5" endLine="38" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429101" fileName="GDBRequestManager.java" startLine="41" startPosition="53" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139429107" fileName="GDBRequestManager.java" startLine="42" startPosition="32" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429113" fileName="GDBRequestManager.java" startLine="43" startPosition="36" endLine="44" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139429119" fileName="GDBRequestManager.java" startLine="44" startPosition="59" endLine="45" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429146" fileName="GDBRequestManager.java" startLine="50" startPosition="48" endLine="51" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429083" fileName="GDBRequestManager.java" startLine="34" startPosition="59" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139429141" fileName="GDBRequestManager.java" startLine="49" startPosition="77" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139429051" fileName="GDBRequestManager.java" startLine="25" startPosition="61" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
-    <nodeInfo nodeId="3990508698139429044" fileName="GDBRequestManager.java" startLine="24" startPosition="36" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429134" fileName="GDBRequestManager.java" startLine="48" startPosition="42" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3990508698139429095" fileName="GDBRequestManager.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRequest#(Ljetbrains/mps/nanoc/debug/requests/GDBRequestor;)V" />
-    <nodeInfo nodeId="3990508698139429130" fileName="GDBRequestManager.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBreakpointRequests#()V" />
-    <nodeInfo nodeId="3990508698139429028" fileName="GDBRequestManager.java" startLine="21" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBRequestManager#(Ljetbrains/mps/nanoc/debug/events/GDBEventsHandler;Ljetbrains/mps/debug/api/BreakpointManagerComponent;)V" />
-    <nodeInfo nodeId="3990508698139429061" fileName="GDBRequestManager.java" startLine="31" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requestResultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;)V" />
-    <scopeInfo nodeId="3990508698139429154" fileName="GDBRequestManager.java" startLine="26" startPosition="137" endLine="27" endPosition="61" />
-    <scopeInfo nodeId="3990508698139429087" fileName="GDBRequestManager.java" startLine="35" startPosition="31" endLine="36" endPosition="13" />
-    <scopeInfo nodeId="3990508698139429145" fileName="GDBRequestManager.java" startLine="50" startPosition="48" endLine="51" endPosition="67" />
-    <scopeInfo nodeId="3990508698139429140" fileName="GDBRequestManager.java" startLine="49" startPosition="77" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="3990508698139429051" fileName="GDBRequestManager.java" startLine="25" startPosition="61" endLine="29" endPosition="0">
+    <nodeInfo nodeId="3990508698139429013" fileName="GDBRequestManager.java" startLine="18" startPosition="32" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsHandler" />
+    <nodeInfo nodeId="3990508698139429016" fileName="GDBRequestManager.java" startLine="19" startPosition="49" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRequestors" />
+    <nodeInfo nodeId="3990508698139429025" fileName="GDBRequestManager.java" startLine="20" startPosition="89" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointManager" />
+    <nodeInfo nodeId="3990508698139429036" fileName="GDBRequestManager.java" startLine="23" startPosition="106" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429040" fileName="GDBRequestManager.java" startLine="24" startPosition="44" endLine="25" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429155" fileName="GDBRequestManager.java" startLine="27" startPosition="124" endLine="28" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429070" fileName="GDBRequestManager.java" startLine="33" startPosition="107" endLine="34" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3990508698139429076" fileName="GDBRequestManager.java" startLine="34" startPosition="48" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3990508698139429088" fileName="GDBRequestManager.java" startLine="36" startPosition="31" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429089" fileName="GDBRequestManager.java" startLine="38" startPosition="5" endLine="39" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429101" fileName="GDBRequestManager.java" startLine="42" startPosition="53" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3990508698139429107" fileName="GDBRequestManager.java" startLine="43" startPosition="32" endLine="44" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429113" fileName="GDBRequestManager.java" startLine="44" startPosition="36" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7125917778320166932" fileName="GDBRequestManager.java" startLine="45" startPosition="59" endLine="46" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429146" fileName="GDBRequestManager.java" startLine="51" startPosition="48" endLine="52" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429083" fileName="GDBRequestManager.java" startLine="35" startPosition="59" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139429141" fileName="GDBRequestManager.java" startLine="50" startPosition="77" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139429051" fileName="GDBRequestManager.java" startLine="26" startPosition="61" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139429044" fileName="GDBRequestManager.java" startLine="25" startPosition="36" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429134" fileName="GDBRequestManager.java" startLine="49" startPosition="42" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3990508698139429095" fileName="GDBRequestManager.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRequest#(Ljetbrains/mps/nanoc/debug/requests/GDBRequestor;)V" />
+    <nodeInfo nodeId="3990508698139429130" fileName="GDBRequestManager.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBreakpointRequests#()V" />
+    <nodeInfo nodeId="3990508698139429028" fileName="GDBRequestManager.java" startLine="22" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBRequestManager#(Ljetbrains/mps/nanoc/debug/events/GDBEventsHandler;Ljetbrains/mps/debug/api/BreakpointManagerComponent;)V" />
+    <nodeInfo nodeId="3990508698139429061" fileName="GDBRequestManager.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requestResultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;)V" />
+    <scopeInfo nodeId="3990508698139429154" fileName="GDBRequestManager.java" startLine="27" startPosition="124" endLine="28" endPosition="61" />
+    <scopeInfo nodeId="3990508698139429087" fileName="GDBRequestManager.java" startLine="36" startPosition="31" endLine="37" endPosition="13" />
+    <scopeInfo nodeId="3990508698139429145" fileName="GDBRequestManager.java" startLine="51" startPosition="48" endLine="52" endPosition="67" />
+    <scopeInfo nodeId="3990508698139429140" fileName="GDBRequestManager.java" startLine="50" startPosition="77" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="3990508698139429051" fileName="GDBRequestManager.java" startLine="26" startPosition="61" endLine="30" endPosition="0">
       <varInfo nodeId="3990508698139429054" varName="result" />
       <varInfo nodeId="3990508698139429056" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139429059" varName="gdbProcess" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429100" fileName="GDBRequestManager.java" startLine="41" startPosition="53" endLine="45" endPosition="85">
+    <scopeInfo nodeId="3990508698139429100" fileName="GDBRequestManager.java" startLine="42" startPosition="53" endLine="46" endPosition="98">
       <varInfo nodeId="3990508698139429102" varName="id" />
       <varInfo nodeId="3990508698139429114" varName="requestString" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429133" fileName="GDBRequestManager.java" startLine="48" startPosition="42" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="3990508698139429134" fileName="GDBRequestManager.java" startLine="48" startPosition="42" endLine="53" endPosition="5">
+    <scopeInfo nodeId="3990508698139429133" fileName="GDBRequestManager.java" startLine="49" startPosition="42" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="3990508698139429134" fileName="GDBRequestManager.java" startLine="49" startPosition="42" endLine="54" endPosition="5">
       <varInfo nodeId="3990508698139429138" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429069" fileName="GDBRequestManager.java" startLine="32" startPosition="107" endLine="38" endPosition="73">
+    <scopeInfo nodeId="3990508698139429069" fileName="GDBRequestManager.java" startLine="33" startPosition="107" endLine="39" endPosition="73">
       <varInfo nodeId="3990508698139429077" varName="gdbRequestor" />
       <varInfo nodeId="3990508698139429071" varName="token" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429035" fileName="GDBRequestManager.java" startLine="22" startPosition="106" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="3990508698139429095" fileName="GDBRequestManager.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="3990508698139429035" fileName="GDBRequestManager.java" startLine="23" startPosition="106" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="3990508698139429095" fileName="GDBRequestManager.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="3990508698139429098" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429130" fileName="GDBRequestManager.java" startLine="47" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="3990508698139429028" fileName="GDBRequestManager.java" startLine="21" startPosition="0" endLine="30" endPosition="3">
+    <scopeInfo nodeId="3990508698139429130" fileName="GDBRequestManager.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429028" fileName="GDBRequestManager.java" startLine="22" startPosition="0" endLine="31" endPosition="3">
       <varInfo nodeId="3990508698139429033" varName="breakpointManager" />
       <varInfo nodeId="3990508698139429031" varName="eventsHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429061" fileName="GDBRequestManager.java" startLine="31" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="3990508698139429061" fileName="GDBRequestManager.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3990508698139429066" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139429064" varName="resultAnswer" />
     </scopeInfo>
-    <unitInfo nodeId="3990508698139429050" fileName="GDBRequestManager.java" startLine="25" startPosition="41" endLine="29" endPosition="5" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager$1" />
-    <unitInfo nodeId="3990508698139429011" fileName="GDBRequestManager.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
+    <unitInfo nodeId="3990508698139429050" fileName="GDBRequestManager.java" startLine="26" startPosition="41" endLine="30" endPosition="5" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager$1" />
+    <unitInfo nodeId="3990508698139429011" fileName="GDBRequestManager.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
   </root>
 </debugInfo>
 
