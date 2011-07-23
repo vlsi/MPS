@@ -45,6 +45,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class MergeRootsDialog extends BaseDialog {
   private MergeContext myMergeContext;
+  private boolean myDisposed = false;
   private ChangeEditorMessage.ConflictChecker myConflictChecker;
   private MergeModelsDialog myModelsDialog;
   private SNodeId myRootId;
@@ -276,12 +277,16 @@ public class MergeRootsDialog extends BaseDialog {
 
   @Override
   public void dispose() {
+    if (myDisposed) {
+      return;
+    }
     if (myStateToRestore == null) {
       myModelsDialog.rebuildLater();
     } else {
       resetState();
     }
     myModelsDialog.rootsDialogClosed();
+    myDisposed = true;
     super.dispose();
   }
 
