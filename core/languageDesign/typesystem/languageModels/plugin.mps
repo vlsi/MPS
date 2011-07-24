@@ -104,6 +104,7 @@
   <root id="1205244087094">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205245247513">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1951613054411714136" resolveInfo="DebugActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.7187842510058618974" resolveInfo="types" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148465303">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7796696880649589040">

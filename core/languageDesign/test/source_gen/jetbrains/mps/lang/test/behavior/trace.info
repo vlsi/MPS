@@ -36,11 +36,7 @@
   <unitInfo fileName="BootstrapActionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BootstrapActionReference_BehaviorDescriptor" />
   <unitInfo fileName="AnonymousCellAnnotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="TestNodeAnnotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TestNodeAnnotation_BehaviorDescriptor" />
-  <unitInfo fileName="TestInfo_Behavior.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TestInfo_Behavior" />
-  <unitInfo fileName="ActionReference_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ActionReference_Behavior" />
   <unitInfo fileName="CheckDataFlowOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BootstrapActionReference_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BootstrapActionReference_Behavior" />
-  <unitInfo fileName="MPSActionReference_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.MPSActionReference_Behavior" />
   <unitInfo fileName="TypesCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TypesCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodesTestMethod_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodesTestMethod_BehaviorDescriptor" />
   <unitInfo fileName="EditorOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorOperation_BehaviorDescriptor" />

@@ -28,6 +28,6 @@ public class DataFlow_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(DFAActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(DFAActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_dataFlow);
   }
 }

@@ -24,6 +24,6 @@ public class Test_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(EditorInternalAddition_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(EditorInternalAddition_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_editor);
   }
 }

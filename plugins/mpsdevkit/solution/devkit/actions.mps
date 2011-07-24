@@ -2830,6 +2830,7 @@
   <root id="2662234144540708008">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2662234144540708010">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1951613054411714136" resolveInfo="DebugActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.7187842510058663894" resolveInfo="editor" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2662234144540708054">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2662234144540708067">
@@ -4253,6 +4254,7 @@
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1234869968490316463">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1951613054411714136" resolveInfo="DebugActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.3256786456321456380" resolveInfo="generator" />
     </node>
   </root>
   <root id="2403997762364994115">
@@ -6757,6 +6759,7 @@
   <root id="8513716958726604212">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8513716958726604217">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1951613054411714136" resolveInfo="DebugActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.3256786456321456266" resolveInfo="trace" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8513716958726604215">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8513716958726604216">

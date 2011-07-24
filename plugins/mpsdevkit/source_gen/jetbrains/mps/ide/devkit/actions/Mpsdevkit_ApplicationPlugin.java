@@ -83,7 +83,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(RepositoryToolsGroup_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
-    insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_generator);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);
     insertGroupIntoAnother(LanguageNewActionsEx_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
     insertGroupIntoAnother(GeneratorActions_Delete_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_delete);
@@ -92,9 +92,9 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(LanguageActionsEx_ActionGroup.ID, Analyze_ActionGroup.ID, null);
     insertGroupIntoAnother(DevKitTools_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_devkitTools);
-    insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_editor);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
-    insertGroupIntoAnother(TraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(TraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_trace);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_showIn);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_showIn);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_showIn);
