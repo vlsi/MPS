@@ -202,7 +202,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       for (Intention intention : intentions) {
         if (terminated.compute()) return new ArrayList<Intention>();
         Language language = getIntentionLanguage(intention);
-        if (language != null && !visibleLanguages.contains(language)) continue;
+        if (!intention.getType().equals(IntentionType.MIGRATION) && language != null && !visibleLanguages.contains(language)) continue;
         result.add(intention);
       }
     }
