@@ -321,7 +321,7 @@
                 class="jetbrains.mps.workbench.actions.help.ShowTutorialAction"
                 text="Tutorial"/>
         <action id="ShowDocumentation"
-                class="jetbrains.mps.workbench.actions.help.ShowDocumentationAction"
+                class="jetbrains.mps.workbench.actions.help.ShowDocumentationMenuAction"
                 text="Online Documentation"/>
 
         <separator/>
