@@ -33,7 +33,7 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_types);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
