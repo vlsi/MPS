@@ -165,7 +165,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustInterfaceGroups() {
     insertInterfaceGroupIntoAnother("VcsGroup", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_vcs);
-    insertInterfaceGroupIntoAnother("VcsGroup", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_vcs);
+    insertInterfaceGroupIntoAnother("VcsGroup", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
     insertInterfaceGroupIntoAnother("VcsGroup", EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_vcs);
     insertInterfaceGroupIntoAnother("VcsGroup", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_ideavcs);
     insertInterfaceGroupIntoAnother("NavbarPopupMenu", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);

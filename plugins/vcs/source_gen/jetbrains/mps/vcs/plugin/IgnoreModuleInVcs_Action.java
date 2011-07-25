@@ -9,32 +9,41 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.actionSystem.Presentation;
 import java.util.List;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
 
-public class IgnoreInVcs_Action extends GeneratedAction {
+public class IgnoreModuleInVcs_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(IgnoreInVcs_Action.class);
+  protected static Log log = LogFactory.getLog(IgnoreModuleInVcs_Action.class);
 
-  public IgnoreInVcs_Action() {
-    super("Ignore...", "", ICON);
-    this.setIsAlwaysVisible(true);
+  public IgnoreModuleInVcs_Action() {
+    super("Ignore Module...", "", ICON);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        Presentation presentation = event.getPresentation();
+        presentation.setText(String.format("Ignore %s...", (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ?
+          "Module" :
+          "Modules"
+        )));
+        boolean enabled = ListSequence.fromList(VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
+        presentation.setEnabled(enabled);
+        presentation.setVisible(enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "IgnoreInVcs", t);
+        log.error("User's action doUpdate method failed. Action:" + "IgnoreModuleInVcs", t);
       }
       this.disable(event.getPresentation());
     }
@@ -58,14 +67,10 @@ public class IgnoreInVcs_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
-      if (ListSequence.fromList(unversionedFiles).isEmpty()) {
-        Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "Nothing to ignore", "Ignore..");
-        return;
-      }
       IgnoreUnversionedDialog.ignoreSelectedFiles(((Project) MapSequence.fromMap(_params).get("project")), unversionedFiles);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "IgnoreInVcs", t);
+        log.error("User's action execute method failed. Action:" + "IgnoreModuleInVcs", t);
       }
     }
   }

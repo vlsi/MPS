@@ -23,11 +23,11 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new AddToVcs_Action());
+    addAction(new AddModuleToVcs_Action());
     addAction(new Annotate_Action());
     addAction(new GoToNextChange_Action());
     addAction(new GoToPreviousChange_Action());
-    addAction(new IgnoreInVcs_Action());
+    addAction(new IgnoreModuleInVcs_Action());
     addAction(new InstalVcsAddons_Action());
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new RollbackChanges_Action());
@@ -38,9 +38,9 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ChangesStrip_ActionGroup());
     addGroup(new GoToVCS_ActionGroup());
     addGroup(new InstallVcsAddons_ActionGroup());
+    addGroup(new ModuleVcsActions_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
     addGroup(new VCSModelActions_ActionGroup());
-    addGroup(new VCS_ActionGroup());
   }
 
   public void adjustInterfaceGroups() {
@@ -51,7 +51,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(VCSModelActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_mpsvcs);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);
-    insertGroupIntoAnother(VCS_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_vcs);
+    insertGroupIntoAnother(ModuleVcsActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
     insertGroupIntoAnother(AnnotateGroup_ActionGroup.ID, EditorLeftPanelMenu_ActionGroup.ID, null);
     insertGroupIntoAnother(InstallVcsAddons_ActionGroup.ID, "VcsGlobalGroup", null);
   }
