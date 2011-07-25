@@ -29,14 +29,11 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
     // groups 
     addGroup(new GoToTypeErrorGroup_ActionGroup());
     addGroup(new TypesystemActions_ActionGroup());
-    addGroup(new TypesystemNodeActions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemNodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
