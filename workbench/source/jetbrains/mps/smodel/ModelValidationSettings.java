@@ -42,7 +42,7 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
 
   private MyPreferencesPage myPreferencesPage;
 
-  private boolean myDisableCheckOpenAPI = false;
+  private boolean myDisableCheckOpenAPI = true;
 
   @Override
   public JComponent createComponent() {
@@ -103,7 +103,7 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
   }
 
   public void disposeUIResources() {
-
+    myPreferencesPage = null;
   }
 
   public class MyPreferencesPage extends JPanel {
@@ -142,6 +142,6 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
   }
 
   public static class MyState {
-    public boolean myDisableCheckOpenAPI;
+    public boolean myDisableCheckOpenAPI = true;
   }
 }
