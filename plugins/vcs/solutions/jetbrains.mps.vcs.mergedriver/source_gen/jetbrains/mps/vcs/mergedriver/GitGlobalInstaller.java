@@ -8,7 +8,6 @@ import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import com.intellij.openapi.application.PathManager;
-import com.intellij.openapi.util.SystemInfo;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
@@ -18,6 +17,7 @@ import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
+import com.intellij.openapi.util.SystemInfo;
 import java.io.FileNotFoundException;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
@@ -29,10 +29,7 @@ import java.io.FileNotFoundException;
   public GitGlobalInstaller(Project project) {
     super(project);
     myConfigFile = new File(WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig");
-    myScriptFile = new File(PathManager.getConfigPath() + File.separator + "mps-merger." + ((SystemInfo.isWindows ?
-      "bat" :
-      "sh"
-    )));
+    myScriptFile = new File(PathManager.getConfigPath() + File.separator + "mps-merger.sh");
   }
 
   @NotNull
