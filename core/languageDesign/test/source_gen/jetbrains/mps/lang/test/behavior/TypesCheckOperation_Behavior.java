@@ -33,4 +33,8 @@ public class TypesCheckOperation_Behavior {
       return SPropertyOperations.getString(thisNode, "operationName");
     }
   }
+
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return ITestMethod_Behavior.call_getTestName_1216136419751(thisNode);
+  }
 }

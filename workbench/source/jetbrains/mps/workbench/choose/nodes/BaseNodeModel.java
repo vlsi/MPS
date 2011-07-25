@@ -37,7 +37,11 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
   }
 
   public String doGetObjectName(SNode node) {
-    return node.getName();
+    String name = node.getName();
+    if (name == null) {
+      return node.toString();
+    }
+    return name;
   }
 
   public NavigationItem doGetNavigationItem(SNode node) {
