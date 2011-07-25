@@ -93,7 +93,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     } catch (ModelFileReadException t) {
       return handleExceptionDuringModelRead(dsm, t, false);
     } catch (PersistenceVersionNotFoundException e) {
-      LOG.error(e);
+      LOG.error("Trying to load model " + dsm.getLongName() + " from file " + dsm.getModelFile().toString(), e);
+      VcsMigrationUtil.getHandler().addSuspiciousModel(dsm, false);
       StubModel model = new StubModel(dsmRef);
       return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
     }

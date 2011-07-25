@@ -164,7 +164,7 @@ public class ModelPersistence {
     try {
       SAXParser parser = JDOMUtil.createSAXParser();
       parser.parse(source, handler);
-    } catch (SAXException ex) {
+    } catch (BreakParseSAXException ex) {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
     } catch (Throwable t) {
