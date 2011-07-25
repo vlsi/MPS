@@ -3372,8 +3372,8 @@ __switch__:
             SNode type = TypeChecker.getInstance().getTypeOf(node);
             if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.BooleanType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean")) {
               SNode not = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
+              SLinkOperations.setTarget(not, "expression", SNodeOperations.cast(SNodeOperations.copyNode(node), "jetbrains.mps.baseLanguage.structure.Expression"), true);
               SNodeOperations.replaceWithAnother(node, not);
-              SLinkOperations.setTarget(not, "expression", SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Expression"), true);
               return not;
             }
             node = SNodeOperations.getParent(node);
