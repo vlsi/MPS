@@ -60,6 +60,8 @@
   <dependency className="jetbrains.mps.execution.lib.Java_Command" file="Java_Command.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
+    <classNode dependClassName="com.intellij.util.SystemProperties" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.PrintWriter" />
