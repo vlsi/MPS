@@ -26,6 +26,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.traceInfo.DebugInfo;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -38,7 +39,8 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
   private final CleanupManager myCleanupManager;
 
-  public TraceInfoCache(CleanupManager cleanupManager) {
+  public TraceInfoCache(SModelRepository modelRepository, CleanupManager cleanupManager) {
+    super(modelRepository);
     myCleanupManager = cleanupManager;
   }
 
@@ -62,7 +64,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     });
   }
 
-  protected String getCacheFileName() {
+  public String getCacheFileName() {
     return TRACE_FILE_NAME;
   }
 

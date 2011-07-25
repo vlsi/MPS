@@ -20,6 +20,7 @@ import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -35,7 +36,8 @@ import java.io.InputStream;
 public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   private static final Logger LOG = Logger.getLogger(XmlBasedModelCache.class);
 
-  protected XmlBasedModelCache() {
+  protected XmlBasedModelCache(SModelRepository modelRepository) {
+    super(modelRepository);
   }
 
   protected abstract Element toXml(T t);
