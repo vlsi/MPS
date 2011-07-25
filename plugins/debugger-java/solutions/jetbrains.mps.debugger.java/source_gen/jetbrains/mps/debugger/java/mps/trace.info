@@ -334,7 +334,7 @@
     <nodeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSystemPath#(Ljava/lang/String;)Ljetbrains/mps/debugger/java/mps/Mps_Command;" />
     <nodeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="61" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDebuggerSettings#(Ljava/lang/String;)Ljetbrains/mps/debugger/java/mps/Mps_Command;" />
     <nodeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="77" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultVirtualMachineParameters#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="94" startPosition="230" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="94" startPosition="231" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4505698065304913530" fileName="Mps_Command.java" startLine="93" startPosition="46" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="110" startPosition="67" endLine="120" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="109" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
@@ -380,7 +380,7 @@
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="61" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="77" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="94" startPosition="230" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="94" startPosition="231" endLine="102" endPosition="0" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="110" startPosition="67" endLine="120" endPosition="6" />
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="109" startPosition="0" endLine="122" endPosition="0" />
     <scopeInfo nodeId="6600548944311449759" fileName="Mps_Command.java" startLine="93" startPosition="46" endLine="107" endPosition="24">
@@ -388,7 +388,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="92" startPosition="0" endLine="109" endPosition="0" />
     <unitInfo nodeId="4820256314556385190" fileName="Mps_Command.java" startLine="103" startPosition="61" endLine="107" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$2" />
-    <unitInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="94" startPosition="201" endLine="102" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$1" />
+    <unitInfo nodeId="4505698065304913546" fileName="Mps_Command.java" startLine="94" startPosition="202" endLine="102" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$1" />
     <unitInfo nodeId="6586232406240918737" fileName="Mps_Command.java" startLine="111" startPosition="15" endLine="120" endPosition="5" unitName="jetbrains.mps.debugger.java.mps.Mps_Command$3" />
     <unitInfo nodeId="7364083846322268554" fileName="Mps_Command.java" startLine="24" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.debugger.java.mps.Mps_Command" />
   </root>
