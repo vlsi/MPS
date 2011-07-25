@@ -917,6 +917,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="name" nameId="tpck.1169194664001" value="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap" />
     </node>
+    <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="116409061722759728">
+      <property name="name" nameId="tpck.1169194664001" value="TernaryOperator_Delete" />
+      <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1163668896201" resolveInfo="TernaryOperatorExpression" />
+    </node>
   </roots>
   <root id="1073416106125">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1229447107349">
@@ -7370,6 +7374,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1163668956502">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1163668922816" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="116409061722759728" resolveInfo="TernaryOperator_Delete" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1163668958738">
         <property name="text" nameId="tpc2.1073389577007" value=":" />
@@ -7380,6 +7385,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1163668962067">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1163668934364" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="116409061722759728" resolveInfo="TernaryOperator_Delete" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1237471559613" />
     </node>
@@ -17130,6 +17136,28 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1528454294470173305" resolveInfo="nextCellNode" />
                 </node>
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1528454294470193861" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="116409061722759728">
+    <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="116409061722759729">
+      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
+      <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="116409061722759730">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="116409061722759731">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="116409061722760093">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="116409061722760095">
+              <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1139535439112" id="116409061722760094" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="116409061722760099">
+                <node role="replacementNode" roleId="tp25.1140131861877" type="tpee.DotExpression" typeId="tpee.1197027756228" id="116409061722760102">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpc2.CellActionMap_FunctionParm_selectedNode" typeId="tpc2.1139535439112" id="116409061722760101" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="116409061722760106">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1163668914799" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
