@@ -18,7 +18,8 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_scripts = ID + "scripts";
   public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_favorites = ID + "favorites";
-  public static final String LABEL_ID_vcs = ID + "vcs";
+  public static final String LABEL_ID_mpsvcs = ID + "mpsvcs";
+  public static final String LABEL_ID_ideavcs = ID + "ideavcs";
   public static final String LABEL_ID_run = ID + "run";
 
   public CommonModuleActions_ActionGroup() {
@@ -83,7 +84,13 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
       }
       CommonModuleActions_ActionGroup.this.addSeparator();
       {
-        LabelledAnchor action = new LabelledAnchor(CommonModuleActions_ActionGroup.LABEL_ID_vcs);
+        LabelledAnchor action = new LabelledAnchor(CommonModuleActions_ActionGroup.LABEL_ID_mpsvcs);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        CommonModuleActions_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         CommonModuleActions_ActionGroup.this.addAction(action);
