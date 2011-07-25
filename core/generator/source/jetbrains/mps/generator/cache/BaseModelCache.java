@@ -16,26 +16,29 @@
 package jetbrains.mps.generator.cache;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
+import java.util.*;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   private final Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
+  private final BidirectionalMap<IFile, SModelDescriptor> myFilesToModels = new BidirectionalMap<IFile, SModelDescriptor>();
   private final BaseModelCache<T>.MyCacheGenerator myCacheGenerator;
+  private SModelRepository myModelRepository;
+  private final SModelRepositoryAdapter myModelRepositoryListener = new MyModelRepositoryListener();
 
   @Nullable
   protected abstract T readCache(SModelDescriptor model);
@@ -44,9 +47,12 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   protected abstract T generateCache(GenerationStatus status);
 
-  protected abstract String getCacheFileName();
+  public abstract String getCacheFileName();
 
-  protected BaseModelCache() {
+  protected abstract IFile getCacheFile(SModelDescriptor modelDescriptor);
+
+  protected BaseModelCache(SModelRepository modelRepository) {
+    myModelRepository = modelRepository;
     myCacheGenerator = new MyCacheGenerator();
   }
 
@@ -55,9 +61,11 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   public void initComponent() {
+    myModelRepository.addModelRepositoryListener(myModelRepositoryListener);
   }
 
   public void disposeComponent() {
+    myModelRepository.removeModelRepositoryListener(myModelRepositoryListener);
   }
 
   @Nullable
@@ -67,10 +75,33 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
         return myCache.get(modelDescriptor);
       }
 
+      myFilesToModels.put(getCacheFile(modelDescriptor), modelDescriptor);
       T cache = readCache(modelDescriptor);
       myCache.put(modelDescriptor, cache);
 
       return cache;
+    }
+  }
+
+  public SModelDescriptor invalidateCacheForFile(IFile file) {
+    SModelDescriptor md;
+    synchronized (myCache) {
+      md = myFilesToModels.get(file);
+      if (md != null) {
+        myCache.remove(md);
+        myFilesToModels.remove(file);
+      }
+    }
+    return md;
+  }
+
+  private void invalidateCacheForModel(SModelDescriptor md) {
+    synchronized (myCache) {
+      List<IFile> file = myFilesToModels.getKeysByValue(md);
+      if (file != null && file.size() != 0) {
+        assert file.size() == 1;
+        invalidateCacheForFile(file.get(0));
+      }
     }
   }
 
@@ -121,10 +152,6 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     }
   }
 
-  public boolean isCacheFile(String fileName) {
-    return fileName.endsWith(getCacheFileName());
-  }
-
   protected class MyCacheGenerator implements CacheGenerator {
     public void generateCache(GenerationStatus status, StreamHandler handler) {
       T cache = BaseModelCache.this.generateCache(status);
@@ -149,6 +176,33 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   public void clean(SModelDescriptor model) {
     synchronized (myCache) {
       myCache.remove(model);
+    }
+  }
+
+  private class MyModelRepositoryListener extends SModelRepositoryAdapter {
+    @Override
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      invalidateCacheForModel(modelDescriptor);
+    }
+
+    @Override
+    public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
+      invalidateCacheForModel(modelDescriptor);
+    }
+
+    @Override
+    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+      invalidateCacheForModel(modelDescriptor);
+    }
+
+    @Override
+    public void modelCreated(SModelDescriptor modelDescriptor) {
+      invalidateCacheForModel(modelDescriptor);
+    }
+
+    @Override
+    public void modelAdded(SModelDescriptor modelDescriptor) {
+      invalidateCacheForModel(modelDescriptor);
     }
   }
 }
