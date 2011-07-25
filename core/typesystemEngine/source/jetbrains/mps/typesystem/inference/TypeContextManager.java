@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.inference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import com.intellij.util.ArrayUtil;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
@@ -244,7 +245,12 @@ public class TypeContextManager implements ApplicationComponent {
       myResolveStack.set(resolve);
     }
     if (resolve.size() > 10) {
-      LOG.warning("Type checking failed. Resolve stack:\n " + myResolveStack);
+      Stack<Object> objects = myResolveStack.get();
+      StringBuilder sb = new StringBuilder("Type checking failed. Resolve stack:\n ");
+      for (Object o:objects){
+        sb.append(o.toString()).append("; ");
+      }
+      LOG.warning(sb.toString());
       return null;
     }
 
