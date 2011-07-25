@@ -12,6 +12,10 @@ public class TypesCheckOperation_BehaviorDescriptor extends NodeOperation_Behavi
     return TypesCheckOperation_Behavior.virtual_getName_1217435265700(thisNode);
   }
 
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return TypesCheckOperation_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
   public void virtual_perform_1215601182156(SNode thisNode, SNode node) {
     TypesCheckOperation_Behavior.virtual_perform_1215601182156(thisNode, node);
   }
