@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Typesystem_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin" />
-  <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
+  <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
   <root nodeId="1205244087094">
     <nodeInfo nodeId="1205244087094" fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="73" endLine="9" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1205244087094" fileName="TypesystemActions_ActionGroup.java" startLine="9" startPosition="84" endLine="10" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -22,23 +22,6 @@
     <scopeInfo nodeId="1205244087094" fileName="TypesystemActions_ActionGroup.java" startLine="12" startPosition="42" endLine="24" endPosition="5" />
     <scopeInfo nodeId="1205244087094" fileName="TypesystemActions_ActionGroup.java" startLine="11" startPosition="0" endLine="25" endPosition="3" />
     <unitInfo nodeId="1205244087094" fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
-  </root>
-  <root nodeId="1205244470519">
-    <nodeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="8" startPosition="77" endLine="9" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="9" startPosition="88" endLine="10" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="12" startPosition="46" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="13" startPosition="39" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206107912144" fileName="TypesystemNodeActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypesystemNodeActions_ActionGroup#()V" />
-    <scopeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="120" />
-    <scopeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39" />
-    <scopeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
-    <scopeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="12" startPosition="46" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
-    <unitInfo nodeId="1205244470519" fileName="TypesystemNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup" />
   </root>
   <root nodeId="1206101816406">
     <nodeInfo nodeId="1206101816406" fileName="GoToTypeErrorRule_Action.java" startLine="19" startPosition="63" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

@@ -48,9 +48,6 @@
       <property name="caption" nameId="tp4k.1204991940915" value="Type System" />
       <property name="mnemonic" nameId="tp4k.1205160812895" value="T" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1205244470519">
-      <property name="name" nameId="tpck.1169194664001" value="TypesystemNodeActions" />
-    </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1206101816406">
       <property name="name" nameId="tpck.1169194664001" value="GoToTypeErrorRule" />
       <property name="caption" nameId="tp4k.1205250923097" value="Go to Rule Which Caused Error" />
@@ -120,16 +117,6 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6359146168314538043">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6359146168314435522" resolveInfo="ShowInferredNodeType" />
-      </node>
-    </node>
-  </root>
-  <root id="1205244470519">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205245180119">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1951613054411714136" resolveInfo="DebugActions" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148360291">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1206107912144">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1206101816406" resolveInfo="GoToTypeErrorRule" />
       </node>
     </node>
   </root>
@@ -921,9 +908,6 @@
   <root id="4290387479601537374">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4290387479601584173">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1205244087094" resolveInfo="TypesystemActions" />
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4290387479601584174">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1205244470519" resolveInfo="TypesystemNodeActions" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.UpdateGroupBlock" typeId="tp4k.1239975356883" id="4290387479601539559">
       <node role="updateFunction" roleId="tp4k.1239975488603" type="tp4k.UpdateGroupFunction" typeId="tp4k.1239975436002" id="4290387479601539560">
