@@ -20,10 +20,8 @@ public class AClssssssssssssssssass {
       SNode matchedNode_axt657_b0a = new AClssssssssssssssssass.QuotationClass_axt657_a0a0a1a0().createNode();
       {
         boolean matches_axt657_a1a0 = false;
-        {
-          GeneratedMatchingPattern matchingPattern = new AClssssssssssssssssass.Pattern_axt657_a0a0a1a1a1a0();
-          matches_axt657_a1a0 = matchingPattern.match(matchedNode_axt657_b0a);
-        }
+        GeneratedMatchingPattern matchingPattern = new AClssssssssssssssssass.Pattern_axt657_a0a1a1a1a0();
+        matches_axt657_a1a0 = matchingPattern.match(matchedNode_axt657_b0a);
         if (matches_axt657_a1a0) {
           {
             SNode d = ((SNode) matchingPattern.getFieldValue("patternVar_class"));
@@ -78,10 +76,10 @@ public class AClssssssssssssssssass {
     }
   }
 
-  public static class Pattern_axt657_a0a0a1a1a1a0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_axt657_a0a1a1a1a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_class;
 
-    public Pattern_axt657_a0a0a1a1a1a0() {
+    public Pattern_axt657_a0a1a1a1a0() {
     }
 
     public boolean match(SNode nodeToMatch) {

@@ -1283,7 +1283,7 @@ public class QueriesGenerated {
     return PatternVarsUtil.getFieldTypeReference(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
   }
 
-  public static Object referenceMacro_GetReferent_3311531675558767967(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_7187842510058456784(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.typesystem.structure.MatchStatement"), "matchedNode");
   }
 
@@ -1820,11 +1820,11 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null);
   }
 
-  public static boolean ifMacro_Condition_3311531675558730319(final IOperationContext operationContext, final IfMacroContext _context) {
-    return true;
+  public static boolean ifMacro_Condition_7187842510058456815(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem"), "condition", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_3311531675558730343(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7187842510058456819(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem"), "condition", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition");
   }
 
@@ -2299,7 +2299,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true);
   }
 
-  public static SNode sourceNodeQuery_3311531675558730325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7187842510058456765(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem"), "condition", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true);
   }
 
