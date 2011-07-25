@@ -31,15 +31,22 @@ import jetbrains.mps.debug.api.*;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MPSDebugRunner extends GenericProgramRunner {
+  private static final Logger LOG = Logger.getLogger(MPSDebugRunner.class);
 
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {
+    try {
     return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) &&
       (isOldRunConfiguration(profile) || isNewRunConfiguration(profile));
+    } catch (Throwable throwable) {
+      LOG.error(throwable);
+      return false;
+    }
   }
 
   private boolean isOldRunConfiguration(RunProfile profile) {
