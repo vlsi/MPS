@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.build.ant.make.MakeTask" file="MakeTask.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.build.ant.make.MakeWorker" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.make.MakeWorker" file="MakeWorker.java">
+    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.util.Computable" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuffer" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
+    <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
+    <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
+  </dependency>
+</dependenciesRoot>
+

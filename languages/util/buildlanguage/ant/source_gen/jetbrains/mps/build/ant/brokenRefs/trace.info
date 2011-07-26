@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4003657351907888918">
+    <nodeInfo nodeId="4003657351907889503" fileName="TestBrokenReferencesWorker.java" startLine="31" startPosition="59" endLine="32" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuildServerMessageFormat" />
+    <nodeInfo nodeId="4003657351907889507" fileName="TestBrokenReferencesWorker.java" startLine="32" startPosition="128" endLine="33" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedHeap" />
+    <nodeInfo nodeId="4003657351907889510" fileName="TestBrokenReferencesWorker.java" startLine="33" startPosition="26" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedNonHeap" />
+    <nodeInfo nodeId="4003657351907889521" fileName="TestBrokenReferencesWorker.java" startLine="36" startPosition="93" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4003657351907889524" fileName="TestBrokenReferencesWorker.java" startLine="37" startPosition="37" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889528" fileName="TestBrokenReferencesWorker.java" startLine="38" startPosition="62" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889538" fileName="TestBrokenReferencesWorker.java" startLine="39" startPosition="60" endLine="40" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889583" fileName="TestBrokenReferencesWorker.java" startLine="43" startPosition="22" endLine="44" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889585" fileName="TestBrokenReferencesWorker.java" startLine="44" startPosition="23" endLine="45" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889591" fileName="TestBrokenReferencesWorker.java" startLine="45" startPosition="75" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889595" fileName="TestBrokenReferencesWorker.java" startLine="46" startPosition="48" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889601" fileName="TestBrokenReferencesWorker.java" startLine="47" startPosition="59" endLine="48" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889608" fileName="TestBrokenReferencesWorker.java" startLine="48" startPosition="55" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889613" fileName="TestBrokenReferencesWorker.java" startLine="49" startPosition="69" endLine="50" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889626" fileName="TestBrokenReferencesWorker.java" startLine="51" startPosition="37" endLine="52" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889628" fileName="TestBrokenReferencesWorker.java" startLine="52" startPosition="15" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889622" fileName="TestBrokenReferencesWorker.java" startLine="54" startPosition="12" endLine="55" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889632" fileName="TestBrokenReferencesWorker.java" startLine="56" startPosition="5" endLine="57" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889649" fileName="TestBrokenReferencesWorker.java" startLine="61" startPosition="43" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889662" fileName="TestBrokenReferencesWorker.java" startLine="64" startPosition="39" endLine="65" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889887" fileName="TestBrokenReferencesWorker.java" startLine="70" startPosition="52" endLine="71" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4003657351907889888" fileName="TestBrokenReferencesWorker.java" startLine="72" startPosition="11" endLine="73" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889896" fileName="TestBrokenReferencesWorker.java" startLine="73" startPosition="70" endLine="74" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889902" fileName="TestBrokenReferencesWorker.java" startLine="74" startPosition="71" endLine="75" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889914" fileName="TestBrokenReferencesWorker.java" startLine="76" startPosition="43" endLine="77" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889924" fileName="TestBrokenReferencesWorker.java" startLine="78" startPosition="11" endLine="79" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889684" fileName="TestBrokenReferencesWorker.java" startLine="85" startPosition="41" endLine="86" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889695" fileName="TestBrokenReferencesWorker.java" startLine="89" startPosition="62" endLine="90" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889703" fileName="TestBrokenReferencesWorker.java" startLine="90" startPosition="51" endLine="91" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889931" fileName="TestBrokenReferencesWorker.java" startLine="93" startPosition="37" endLine="94" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907889729" fileName="TestBrokenReferencesWorker.java" startLine="97" startPosition="42" endLine="98" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889734" fileName="TestBrokenReferencesWorker.java" startLine="98" startPosition="33" endLine="99" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889748" fileName="TestBrokenReferencesWorker.java" startLine="101" startPosition="47" endLine="102" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889762" fileName="TestBrokenReferencesWorker.java" startLine="103" startPosition="106" endLine="104" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889767" fileName="TestBrokenReferencesWorker.java" startLine="104" startPosition="49" endLine="105" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889774" fileName="TestBrokenReferencesWorker.java" startLine="105" startPosition="54" endLine="106" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889802" fileName="TestBrokenReferencesWorker.java" startLine="111" startPosition="63" endLine="112" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4003657351907889810" fileName="TestBrokenReferencesWorker.java" startLine="114" startPosition="42" endLine="115" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889815" fileName="TestBrokenReferencesWorker.java" startLine="115" startPosition="60" endLine="116" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889822" fileName="TestBrokenReferencesWorker.java" startLine="116" startPosition="45" endLine="117" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889827" fileName="TestBrokenReferencesWorker.java" startLine="117" startPosition="36" endLine="118" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889832" fileName="TestBrokenReferencesWorker.java" startLine="118" startPosition="37" endLine="119" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889837" fileName="TestBrokenReferencesWorker.java" startLine="122" startPosition="5" endLine="123" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907889846" fileName="TestBrokenReferencesWorker.java" startLine="126" startPosition="34" endLine="127" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889850" fileName="TestBrokenReferencesWorker.java" startLine="127" startPosition="62" endLine="128" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889862" fileName="TestBrokenReferencesWorker.java" startLine="128" startPosition="81" endLine="129" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889555" fileName="TestBrokenReferencesWorker.java" startLine="132" startPosition="42" endLine="133" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889568" fileName="TestBrokenReferencesWorker.java" startLine="133" startPosition="128" endLine="134" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889576" fileName="TestBrokenReferencesWorker.java" startLine="137" startPosition="73" endLine="138" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907889620" fileName="TestBrokenReferencesWorker.java" startLine="54" startPosition="10" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4003657351907889642" fileName="TestBrokenReferencesWorker.java" startLine="60" startPosition="87" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889655" fileName="TestBrokenReferencesWorker.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889882" fileName="TestBrokenReferencesWorker.java" startLine="69" startPosition="52" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907889907" fileName="TestBrokenReferencesWorker.java" startLine="75" startPosition="54" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907889795" fileName="TestBrokenReferencesWorker.java" startLine="110" startPosition="51" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907889678" fileName="TestBrokenReferencesWorker.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="output#(Ljava/lang/CharSequence;)V" />
+    <nodeInfo nodeId="4003657351907889720" fileName="TestBrokenReferencesWorker.java" startLine="92" startPosition="105" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/util/List;" />
+    <nodeInfo nodeId="4003657351907889724" fileName="TestBrokenReferencesWorker.java" startLine="96" startPosition="7" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889572" fileName="TestBrokenReferencesWorker.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBuildServerMessageFormat#()Ljetbrains/mps/build/ant/IBuildServerMessageFormat;" />
+    <nodeInfo nodeId="4003657351907889708" fileName="TestBrokenReferencesWorker.java" startLine="91" startPosition="52" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907889753" fileName="TestBrokenReferencesWorker.java" startLine="102" startPosition="37" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907889548" fileName="TestBrokenReferencesWorker.java" startLine="131" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4003657351907889513" fileName="TestBrokenReferencesWorker.java" startLine="35" startPosition="0" endLine="41" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBrokenReferencesWorker#(Ljetbrains/mps/build/ant/WhatToDo;Ljetbrains/mps/build/ant/MpsWorker/LogLogger;)V" />
+    <nodeInfo nodeId="4003657351907889616" fileName="TestBrokenReferencesWorker.java" startLine="50" startPosition="32" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907889842" fileName="TestBrokenReferencesWorker.java" startLine="125" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showStatistic#()V" />
+    <nodeInfo nodeId="4003657351907889803" fileName="TestBrokenReferencesWorker.java" startLine="113" startPosition="9" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907889739" fileName="TestBrokenReferencesWorker.java" startLine="100" startPosition="5" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889875" fileName="TestBrokenReferencesWorker.java" startLine="68" startPosition="25" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889788" fileName="TestBrokenReferencesWorker.java" startLine="109" startPosition="47" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889779" fileName="TestBrokenReferencesWorker.java" startLine="108" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4003657351907889675" fileName="TestBrokenReferencesWorker.java" startLine="67" startPosition="57" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4003657351907889668" fileName="TestBrokenReferencesWorker.java" startLine="66" startPosition="5" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907889579" fileName="TestBrokenReferencesWorker.java" startLine="42" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="work#()V" />
+    <nodeInfo nodeId="4003657351907889634" fileName="TestBrokenReferencesWorker.java" startLine="59" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeTask#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/build/ant/MpsWorker/ObjectsToProcess;)V" />
+    <nodeInfo nodeId="4003657351907889689" fileName="TestBrokenReferencesWorker.java" startLine="88" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/StringBuffer;" />
+    <scopeInfo nodeId="4003657351907889621" fileName="TestBrokenReferencesWorker.java" startLine="54" startPosition="12" endLine="55" endPosition="48" />
+    <scopeInfo nodeId="4003657351907889648" fileName="TestBrokenReferencesWorker.java" startLine="61" startPosition="43" endLine="62" endPosition="39" />
+    <scopeInfo nodeId="4003657351907889661" fileName="TestBrokenReferencesWorker.java" startLine="64" startPosition="39" endLine="65" endPosition="39" />
+    <scopeInfo nodeId="4003657351907889886" fileName="TestBrokenReferencesWorker.java" startLine="70" startPosition="52" endLine="71" endPosition="21" />
+    <scopeInfo nodeId="4003657351907889913" fileName="TestBrokenReferencesWorker.java" startLine="76" startPosition="43" endLine="77" endPosition="122" />
+    <scopeInfo nodeId="4003657351907889683" fileName="TestBrokenReferencesWorker.java" startLine="85" startPosition="41" endLine="86" endPosition="26" />
+    <scopeInfo nodeId="4003657351907889930" fileName="TestBrokenReferencesWorker.java" startLine="93" startPosition="37" endLine="94" endPosition="66" />
+    <scopeInfo nodeId="4003657351907889801" fileName="TestBrokenReferencesWorker.java" startLine="111" startPosition="63" endLine="112" endPosition="19" />
+    <scopeInfo nodeId="4003657351907889575" fileName="TestBrokenReferencesWorker.java" startLine="137" startPosition="73" endLine="138" endPosition="39" />
+    <scopeInfo nodeId="4003657351907889625" fileName="TestBrokenReferencesWorker.java" startLine="51" startPosition="37" endLine="53" endPosition="31" />
+    <scopeInfo nodeId="4003657351907889728" fileName="TestBrokenReferencesWorker.java" startLine="97" startPosition="42" endLine="99" endPosition="33" />
+    <scopeInfo nodeId="4003657351907889554" fileName="TestBrokenReferencesWorker.java" startLine="132" startPosition="42" endLine="134" endPosition="29">
+      <varInfo nodeId="4003657351907889556" varName="generator" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889642" fileName="TestBrokenReferencesWorker.java" startLine="60" startPosition="87" endLine="63" endPosition="5">
+      <varInfo nodeId="4003657351907889646" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889655" fileName="TestBrokenReferencesWorker.java" startLine="63" startPosition="5" endLine="66" endPosition="5">
+      <varInfo nodeId="4003657351907889659" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889761" fileName="TestBrokenReferencesWorker.java" startLine="103" startPosition="106" endLine="106" endPosition="35" />
+    <scopeInfo nodeId="4003657351907889845" fileName="TestBrokenReferencesWorker.java" startLine="126" startPosition="34" endLine="129" endPosition="91">
+      <varInfo nodeId="4003657351907889847" varName="mmbean" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889520" fileName="TestBrokenReferencesWorker.java" startLine="36" startPosition="93" endLine="40" endPosition="66">
+      <varInfo nodeId="4003657351907889525" varName="mmbean" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889678" fileName="TestBrokenReferencesWorker.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="4003657351907889681" varName="s" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889720" fileName="TestBrokenReferencesWorker.java" startLine="92" startPosition="105" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="4003657351907889724" fileName="TestBrokenReferencesWorker.java" startLine="96" startPosition="7" endLine="100" endPosition="5">
+      <varInfo nodeId="4003657351907889726" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889572" fileName="TestBrokenReferencesWorker.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="4003657351907889809" fileName="TestBrokenReferencesWorker.java" startLine="114" startPosition="42" endLine="119" endPosition="38" />
+    <scopeInfo nodeId="4003657351907889548" fileName="TestBrokenReferencesWorker.java" startLine="131" startPosition="0" endLine="136" endPosition="0">
+      <varInfo nodeId="4003657351907889551" varName="args" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889513" fileName="TestBrokenReferencesWorker.java" startLine="35" startPosition="0" endLine="41" endPosition="3">
+      <varInfo nodeId="4003657351907889516" varName="whatToDo" />
+      <varInfo nodeId="4003657351907889518" varName="systemOutLogger" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889747" fileName="TestBrokenReferencesWorker.java" startLine="101" startPosition="47" endLine="107" endPosition="7" />
+    <scopeInfo nodeId="4003657351907889842" fileName="TestBrokenReferencesWorker.java" startLine="125" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="4003657351907889739" fileName="TestBrokenReferencesWorker.java" startLine="100" startPosition="5" endLine="108" endPosition="5">
+      <varInfo nodeId="4003657351907889745" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889881" fileName="TestBrokenReferencesWorker.java" startLine="69" startPosition="52" endLine="79" endPosition="72">
+      <varInfo nodeId="4003657351907889889" varName="testName" />
+      <varInfo nodeId="4003657351907889903" varName="errorMessages" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889794" fileName="TestBrokenReferencesWorker.java" startLine="110" startPosition="51" endLine="120" endPosition="9" />
+    <scopeInfo nodeId="4003657351907889874" fileName="TestBrokenReferencesWorker.java" startLine="68" startPosition="25" endLine="80" endPosition="9" />
+    <scopeInfo nodeId="4003657351907889875" fileName="TestBrokenReferencesWorker.java" startLine="68" startPosition="25" endLine="80" endPosition="9">
+      <varInfo nodeId="4003657351907889879" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889787" fileName="TestBrokenReferencesWorker.java" startLine="109" startPosition="47" endLine="121" endPosition="7" />
+    <scopeInfo nodeId="4003657351907889788" fileName="TestBrokenReferencesWorker.java" startLine="109" startPosition="47" endLine="121" endPosition="7">
+      <varInfo nodeId="4003657351907889792" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889582" fileName="TestBrokenReferencesWorker.java" startLine="43" startPosition="22" endLine="57" endPosition="14">
+      <varInfo nodeId="4003657351907889596" varName="project" />
+      <varInfo nodeId="4003657351907889592" varName="projectFile" />
+      <varInfo nodeId="4003657351907889586" varName="ideaProject" />
+      <varInfo nodeId="4003657351907889609" varName="go" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889779" fileName="TestBrokenReferencesWorker.java" startLine="108" startPosition="5" endLine="122" endPosition="5">
+      <varInfo nodeId="4003657351907889785" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889675" fileName="TestBrokenReferencesWorker.java" startLine="67" startPosition="57" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="4003657351907889579" fileName="TestBrokenReferencesWorker.java" startLine="42" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="4003657351907889641" fileName="TestBrokenReferencesWorker.java" startLine="60" startPosition="87" endLine="82" endPosition="7" />
+    <scopeInfo nodeId="4003657351907889634" fileName="TestBrokenReferencesWorker.java" startLine="59" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="4003657351907889637" varName="project" />
+      <varInfo nodeId="4003657351907889639" varName="go" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889694" fileName="TestBrokenReferencesWorker.java" startLine="89" startPosition="62" endLine="123" endPosition="72">
+      <varInfo nodeId="4003657351907889696" varName="scope" />
+      <varInfo nodeId="4003657351907889704" varName="errorMessages" />
+      <varInfo nodeId="4003657351907889709" varName="validationResult" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907889689" fileName="TestBrokenReferencesWorker.java" startLine="88" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="4003657351907889692" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="4003657351907889717" fileName="TestBrokenReferencesWorker.java" startLine="92" startPosition="77" endLine="96" endPosition="5" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker$2" />
+    <unitInfo nodeId="4003657351907889674" fileName="TestBrokenReferencesWorker.java" startLine="67" startPosition="45" endLine="82" endPosition="5" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker$1" />
+    <unitInfo nodeId="4003657351907888918" fileName="TestBrokenReferencesWorker.java" startLine="31" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker" />
+  </root>
+  <root nodeId="4003657351907888919">
+    <nodeInfo nodeId="4003657351907888932" fileName="TestBrokenReferencesOnTeamcity.java" startLine="15" startPosition="57" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907888938" fileName="TestBrokenReferencesOnTeamcity.java" startLine="20" startPosition="62" endLine="21" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907888922" fileName="TestBrokenReferencesOnTeamcity.java" startLine="11" startPosition="65" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBrokenReferencesOnTeamcity#()V" />
+    <nodeInfo nodeId="4003657351907888926" fileName="TestBrokenReferencesOnTeamcity.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="4003657351907888934" fileName="TestBrokenReferencesOnTeamcity.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExecuteStreamHandler#()Ljetbrains/mps/build/ant/MyExecuteStreamHandler;" />
+    <scopeInfo nodeId="4003657351907888925" fileName="TestBrokenReferencesOnTeamcity.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="4003657351907888931" fileName="TestBrokenReferencesOnTeamcity.java" startLine="15" startPosition="57" endLine="16" endPosition="44" />
+    <scopeInfo nodeId="4003657351907888937" fileName="TestBrokenReferencesOnTeamcity.java" startLine="20" startPosition="62" endLine="21" endPosition="86" />
+    <scopeInfo nodeId="4003657351907888922" fileName="TestBrokenReferencesOnTeamcity.java" startLine="11" startPosition="65" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="4003657351907888926" fileName="TestBrokenReferencesOnTeamcity.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="4003657351907888934" fileName="TestBrokenReferencesOnTeamcity.java" startLine="18" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="4003657351907888919" fileName="TestBrokenReferencesOnTeamcity.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesOnTeamcity" />
+  </root>
+</debugInfo>
+

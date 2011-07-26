@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.build.ant.generation.ConsoleMessageFormat" file="ConsoleMessageFormat.java">
+    <classNode dependClassName="java.lang.CharSequence" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuffer" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.IBuildServerMessageFormat" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.GenerateTask" file="GenerateTask.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.PerfomanceReport" file="PerfomanceReport.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" file="TestGenerationOnTeamcity.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MyTeamcityAwareExecuteStreamHandler" />
+    <classNode dependClassName="jetbrains.mps.build.ant.ProjectNested" />
+    <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.PerfomanceReport" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" />
+    <classNode dependClassName="org.apache.tools.ant.types.resources.FileResource" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
+  </dependency>
+</dependenciesRoot>
+
