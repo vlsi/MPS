@@ -67,9 +67,12 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
 
-    reload();
-
-    executeTask(project, go);
+    if (go.hasAnythingToGenerate()) {
+      reload();
+      executeTask(project, go);
+    } else {
+      error("Could not find anything to test.");
+    }
 
     dispose();
   }

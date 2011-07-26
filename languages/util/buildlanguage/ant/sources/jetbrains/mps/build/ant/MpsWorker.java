@@ -113,11 +113,15 @@ public abstract class MpsWorker {
 
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
-    reload();
 
-    if (go.getProjects().isEmpty()) {loadPlugins();}
-    executeTask(project, go);
-    if (go.getProjects().isEmpty()) {disposePlugins();}
+    if (go.hasAnythingToGenerate()) {
+      reload();
+      if (go.getProjects().isEmpty()) {loadPlugins();}
+      executeTask(project, go);
+      if (go.getProjects().isEmpty()) {disposePlugins();}
+    } else {
+      error("Could not find anything to generate.");
+    }
 
     disposeProjects(go.getProjects());
     dispose();

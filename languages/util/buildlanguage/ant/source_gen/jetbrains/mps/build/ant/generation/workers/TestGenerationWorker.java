@@ -184,6 +184,9 @@ public class TestGenerationWorker extends MpsWorker {
     if (go.hasAnythingToGenerate()) {
       MPSProject project = createDummyProject();
       executeTask(project, go);
+    } else {
+      error("Could not find anything to generate.");
+      myTestFailed = true;
     }
     generatePerformanceReport();
     dispose();
