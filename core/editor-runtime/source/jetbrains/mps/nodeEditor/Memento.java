@@ -74,10 +74,10 @@ class Memento {
     editor.clearBracesEnabledCells();
     editor.clearLeftMarginListeners();
 
-    // TODO: remove this variable and simply mark editor as "needsRelayout" from the top editor cell + relayout it on .. next paint?
-    boolean needsRelayout = false;
     editor.flushEvents();
 
+    // TODO: remove this variable and simply mark editor as "needsRelayout" from the top editor cell + relayout it on .. next paint?
+    boolean needsRelayout = restoreErrors(editor);
     editor.getSelectionManager().setSelectionInfoStack(mySelectionStack);
     for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {
       EditorCell collection = collectionInfo.findCell(editor);
@@ -92,8 +92,6 @@ class Memento {
       if (!(collection instanceof EditorCell_Collection)) continue;
       ((EditorCell_Collection)collection).fold(true);      
     }
-    
-    needsRelayout = restoreErrors(editor) || needsRelayout;
 
     if (needsRelayout) {
       editor.relayout();
