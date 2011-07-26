@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vcs.diff.oldchanges.OldChange;
 import java.util.Set;
+import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -37,6 +38,7 @@ import com.intellij.openapi.vcs.actions.AnnotationColors;
 import jetbrains.mps.vcs.changesmanager.ChangesManager;
 import jetbrains.mps.vcs.changesmanager.ModelChangesManager;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
@@ -127,6 +129,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
   private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
   private boolean myShowAdditionalInfo = false;
+  private MessageBusConnection myMessageBusConnection;
 
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     super(leftEditorHighlighter);
@@ -196,6 +199,8 @@ public class AnnotationColumn extends AbstractLeftColumn {
         modelChangesManager.addChangeListener(myChangeListener);
       }
     });
+    myMessageBusConnection = getProject().getMessageBus().connect();
+    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new AnnotationColumn.MyEditorComponentCreateListener());
   }
 
   private void saveChange(OldChange ch) {
@@ -456,6 +461,7 @@ __switch__:
 
   @Override
   public void dispose() {
+    myMessageBusConnection.disconnect();
     myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
     final ChangesManager changesManager = ChangesManager.getInstance(getProject());
@@ -793,6 +799,20 @@ __switch__:
             }
           }
         });
+      }
+    }
+  }
+
+  private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
+    public MyEditorComponentCreateListener() {
+    }
+
+    public void editorComponentCreated(@NotNull EditorComponent ec) {
+    }
+
+    public void editorComponentDisposed(@NotNull EditorComponent ec) {
+      if (ec == getEditorComponent()) {
+        close();
       }
     }
   }
