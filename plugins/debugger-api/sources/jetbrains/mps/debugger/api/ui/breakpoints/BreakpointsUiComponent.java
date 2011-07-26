@@ -32,6 +32,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.LeftMarginMouseListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -48,6 +49,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.MouseEvent;
+import java.util.Collections;
 import java.util.Set;
 
 public class BreakpointsUiComponent implements ProjectComponent {
@@ -111,32 +113,45 @@ public class BreakpointsUiComponent implements ProjectComponent {
     breakpointsBrowserDialog.showDialog();
   }
 
-  private void editorComponentCreated(@Nullable EditorComponent editorComponent) {
-    if (editorComponent == null) return;
-    final SNode rootNode = editorComponent.getEditedNode();
-    if (rootNode == null) return;
-    if (!editorComponent.getLeftMarginPressListeners().contains(myMouseListener)) {
-      editorComponent.addLeftMarginPressListener(myMouseListener);
-    }
+  @NotNull
+  private Set<ILocationBreakpoint> getBreakpointsForComponent(@NotNull EditorComponent editorComponent) {
+    final SNode editedNode = editorComponent.getEditedNode();
+    if (editedNode == null) return Collections.emptySet();
     SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
       @Override
       public SNodePointer compute() {
+        final SNode rootNode = editedNode.getContainingRoot();
+        if (rootNode == null) return null;
         return new SNodePointer(rootNode);
       }
     });
+    if (rootPointer == null) return Collections.emptySet();
     Set<ILocationBreakpoint> breakpointsForRoot = myBreakpointsManagerComponent.getBreakpoints(rootPointer);
-    if (breakpointsForRoot != null) {
-      for (ILocationBreakpoint breakpoint : breakpointsForRoot) {
-        editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
-        editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
-      }
-      editorComponent.repaint(); //todo should it be executed in ED thread?
+    if (breakpointsForRoot == null) return Collections.emptySet();
+    return breakpointsForRoot;
+  }
+
+  private void editorComponentCreated(@Nullable EditorComponent editorComponent) {
+    if (editorComponent == null) return;
+    if (!editorComponent.getLeftMarginPressListeners().contains(myMouseListener)) {
+      editorComponent.addLeftMarginPressListener(myMouseListener);
     }
+    Set<ILocationBreakpoint> breakpointsForRoot = getBreakpointsForComponent(editorComponent);
+    for (ILocationBreakpoint breakpoint : breakpointsForRoot) {
+      editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
+      editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
+    }
+    editorComponent.repaint();
   }
 
   private void editorComponentDisposed(@Nullable EditorComponent editorComponent) {
     if (editorComponent == null) return;
     editorComponent.removeLeftMarginPressListener(myMouseListener);
+    Set<ILocationBreakpoint> breakpointsForRoot = getBreakpointsForComponent(editorComponent);
+    for (ILocationBreakpoint breakpoint : breakpointsForRoot) {
+      editorComponent.removeAdditionalPainterByItem(breakpoint);
+      editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getLocation().getSNode(), BreakpointIconRenderer.TYPE);
+    }
   }
 
   public void toggleBreakpoint(EditorCell cell) {
@@ -257,9 +272,15 @@ public class BreakpointsUiComponent implements ProjectComponent {
     }
   }
 
-  private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
+  @Nullable
+  private EditorComponent findComponentForLocationBreakpoint(@NotNull ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
+      InspectorTool tool = myProject.getComponent(InspectorTool.class);
+      EditorComponent inspector = tool.getInspector();
+      if (inspector.getEditedNode().isAncestorOf(node)) {
+        return inspector;
+      }
       SNode root = node.getContainingRoot();
       if (root != null) {
         for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
@@ -267,38 +288,30 @@ public class BreakpointsUiComponent implements ProjectComponent {
           if (editorComponent != null) {
             SNode editedNode = editorComponent.getEditedNode();
             if (root == editedNode) {
-              editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
-              editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
-              editorComponent.repaint(); //todo should it be executed in ED thread?
+              return editorComponent;
             }
           }
         }
       }
     }
+    return null;
+  }
+
+  private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
+    EditorComponent editorComponent = findComponentForLocationBreakpoint(breakpoint);
+    if (editorComponent != null) {
+      editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
+      editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
+      editorComponent.repaint(); //todo should it be executed in ED thread?
+    }
   }
 
   private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
-    final SNode node = breakpoint.getLocation().getSNode();
-    if (node != null) {
-      SNode root = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-        @Override
-        public SNode compute() {
-          return node.getContainingRoot();
-        }
-      });
-      if (root != null) {
-        for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
-          EditorComponent editorComponent = editor.getCurrentEditorComponent();
-          if (editorComponent != null) {
-            SNode editedNode = editorComponent.getEditedNode();
-            if (root == editedNode) {
-              editorComponent.removeAdditionalPainterByItem(breakpoint);
-              editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getLocation().getSNode(), BreakpointIconRenderer.TYPE);
-              editorComponent.repaint(); //todo should it be executed in ED thread?
-            }
-          }
-        }
-      }
+    EditorComponent editorComponent = findComponentForLocationBreakpoint(breakpoint);
+    if (editorComponent != null) {
+      editorComponent.removeAdditionalPainterByItem(breakpoint);
+      editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getLocation().getSNode(), BreakpointIconRenderer.TYPE);
+      editorComponent.repaint(); //todo should it be executed in ED thread?
     }
   }
 
@@ -417,20 +430,9 @@ public class BreakpointsUiComponent implements ProjectComponent {
         @Override
         public void run() {
           if (breakpoint instanceof ILocationBreakpoint) {
-            SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
-            if (node != null) {
-              SNode root = node.getContainingRoot();
-              if (root != null) {
-                for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
-                  EditorComponent editorComponent = editor.getCurrentEditorComponent();
-                  if (editorComponent != null) {
-                    SNode editedNode = editorComponent.getEditedNode();
-                    if (root == editedNode) {
-                      editorComponent.repaint(); //todo should it be executed in ED thread?
-                    }
-                  }
-                }
-              }
+            EditorComponent editorComponent = findComponentForLocationBreakpoint((ILocationBreakpoint) breakpoint);
+            if (editorComponent != null) {
+              editorComponent.repaint();
             }
           }
         }
