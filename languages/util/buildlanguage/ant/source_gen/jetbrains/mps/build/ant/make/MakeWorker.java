@@ -80,6 +80,7 @@ public class MakeWorker extends MpsWorker {
 
   @Override
   protected void showStatistic() {
+    failBuild("make");
   }
 
   public static void main(String[] args) {

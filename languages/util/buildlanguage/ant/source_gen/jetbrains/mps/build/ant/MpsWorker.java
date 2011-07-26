@@ -33,6 +33,8 @@ import java.util.Collections;
 import jetbrains.mps.library.Library;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.MPSCompilationResult;
+import org.apache.commons.lang.StringUtils;
+import org.apache.tools.ant.BuildException;
 import org.apache.log4j.Level;
 import java.util.Map;
 import com.intellij.util.PathUtil;
@@ -62,7 +64,6 @@ import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import com.intellij.openapi.application.PathManager;
-import org.apache.commons.lang.StringUtils;
 import com.intellij.idea.IdeaTestApplication;
 import java.io.StringWriter;
 import java.io.PrintWriter;
@@ -246,6 +247,26 @@ public abstract class MpsWorker {
   protected abstract void executeTask(MPSProject project, MpsWorker.ObjectsToProcess go);
 
   protected abstract void showStatistic();
+
+  protected StringBuffer formatErrorsReport(String taskName) {
+    StringBuffer sb = new StringBuffer();
+    sb.append(StringUtils.repeat("*", 100));
+    sb.append("\n");
+    sb.append(myErrors.size());
+    sb.append(" errors during " + taskName + ":\n");
+    for (String error : myErrors) {
+      sb.append(error);
+      sb.append("\n");
+    }
+    sb.append(StringUtils.repeat("*", 100));
+    return sb;
+  }
+
+  protected void failBuild(String name) {
+    if (!(myErrors.isEmpty()) && myWhatToDo.getFailOnError()) {
+      throw new BuildException(this.formatErrorsReport(name).toString());
+    }
+  }
 
   protected void disposeProjects(Set<MPSProject> projects) {
     ModelAccess.instance().flushEventQueue();

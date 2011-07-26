@@ -127,6 +127,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
     output("Used heap: " + (mmbean.getHeapMemoryUsage().getUsed() - myUsedHeap));
     output("Used non-heap: " + (mmbean.getNonHeapMemoryUsage().getUsed() - myUsedNonHeap));
+    failBuild("broken reference testing");
   }
 
   public static void main(String[] args) {

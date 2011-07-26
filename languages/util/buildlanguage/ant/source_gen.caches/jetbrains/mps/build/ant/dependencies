@@ -163,6 +163,7 @@
     <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.ant.AntLogger" />

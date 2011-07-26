@@ -95,8 +95,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
