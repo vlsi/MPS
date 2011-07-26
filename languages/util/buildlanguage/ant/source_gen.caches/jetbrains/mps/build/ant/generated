@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6zsdyutnxxwfqmo61j3wnzx8vnjwip6">
+<dependencies version="2" modelHash="dtaswfadlnbcn3favnopcao5ui56wbi">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8f40zw2ng3ru04g6jirwqdjoy2uzoh2" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
@@ -21,7 +21,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MpsWorker.java" />
   </source>
-  <source id="4003657351907888741" name="AntBootstrap" hash="591zg7u5cigzv9na1y0ksmucmoj028j">
+  <source id="4003657351907888741" name="AntBootstrap" hash="bwf51ldhk6zqdecnmxbsyldfdxurcep">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -103,7 +103,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TeamCityMessageFormat.java" />
   </source>
-  <source id="2862682737715394935" name="antlib" hash="-ctdugphiybvlufxrhn6zdghe8eensx5">
+  <source id="2862682737715394935" name="antlib" hash="-66qs440iquu72k2b7htexgdod8wue9e">
     <file name="antlib.xml" />
   </source>
 </dependencies>

@@ -5127,6 +5127,14 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4003657351907888791">
                       <property name="value" nameId="tpee.1070475926801" value="main" />
                     </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4006488192209604452">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4006488192209604451">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4003657351907888750" resolveInfo="args" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4006488192209604456">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dgetClass()%cjava%dlang%dClass" resolveInfo="getClass" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -14880,30 +14888,6 @@
       <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394936">
         <property name="name" nameId="tpck.1169194664001" value="taskdef" />
         <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394943">
-          <property name="name" nameId="tpck.1169194664001" value="taskdef" />
-          <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394944">
-            <property name="name" nameId="tpck.1169194664001" value="name" />
-            <property name="value" nameId="tpkv.1107866755246" value="mps.generate" />
-          </node>
-          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394945">
-            <property name="name" nameId="tpck.1169194664001" value="classname" />
-            <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.generation.GenerateTask" />
-          </node>
-        </node>
-        <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="2862682737715394940">
-          <property name="name" nameId="tpck.1169194664001" value="taskdef" />
-          <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
-          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394941">
-            <property name="name" nameId="tpck.1169194664001" value="name" />
-            <property name="value" nameId="tpkv.1107866755246" value="mps.generate" />
-          </node>
-          <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394942">
-            <property name="name" nameId="tpck.1169194664001" value="classname" />
-            <property name="value" nameId="tpkv.1107866755246" value="jetbrains.mps.build.ant.generation.GenerateTask" />
-          </node>
-        </node>
         <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="2862682737715394937">
           <property name="name" nameId="tpck.1169194664001" value="name" />
           <property name="value" nameId="tpkv.1107866755246" value="mps.generate" />
