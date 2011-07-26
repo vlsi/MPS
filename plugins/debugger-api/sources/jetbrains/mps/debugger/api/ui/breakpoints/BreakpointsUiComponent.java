@@ -21,6 +21,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
+import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.debug.api.*;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointManagerListener;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointsIO;
@@ -40,6 +41,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
+import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.workbench.highlighter.EditorOpenListener;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
@@ -59,16 +61,16 @@ public class BreakpointsUiComponent implements ProjectComponent {
   private final BreakpointManagerComponent myBreakpointsManagerComponent;
   private final BreakpointProvidersManager myProvidersManager;
   private final DebugInfoManager myDebugInfoManager;
-  private final EditorsProvider myEditorsProvider;
   private final FileEditorManager myFileEditorManager;
 
-  private final MyEditorOpenListener myEditorOpenListener = new MyEditorOpenListener();
   private final LeftMarginMouseListener myMouseListener = new MyLeftMarginMouseListener();
 
   private final MyBreakpointManagerListener myBreakpointManagerListener = new MyBreakpointManagerListener();
   private final MyBreakpointListener myBreakpointListener = new MyBreakpointListener();
   private final SessionChangeListener myChangeListener = new MySessionChangeAdapter();
   private final DebugSessionListener myDebugSessionListener = new MyDebugSessionAdapter();
+  private final MyEditorComponentCreateListener myEditorComponentCreationHandler = new MyEditorComponentCreateListener();
+  private MessageBusConnection myMessageBusConnection;
 
   public static BreakpointsUiComponent getInstance(Project project) {
     return project.getComponent(BreakpointsUiComponent.class);
@@ -80,7 +82,6 @@ public class BreakpointsUiComponent implements ProjectComponent {
     myDebugInfoManager = debugInfoManager;
     myProvidersManager = providersManager;
     myFileEditorManager = fileEditorManager;
-    myEditorsProvider = new EditorsProvider(project);
     myBreakpointsManagerComponent.setBreakpointsIO(new MyBreakpointsIO());
   }
 
@@ -92,19 +93,19 @@ public class BreakpointsUiComponent implements ProjectComponent {
 
   @Override
   public void initComponent() {
-    myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addDebugSessionListener(myDebugSessionListener);
     myBreakpointsManagerComponent.addChangeListener(myBreakpointManagerListener);
+    myMessageBusConnection = myProject.getMessageBus().connect();
+    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
   }
 
   @Override
   public void disposeComponent() {
+    myMessageBusConnection.disconnect();
     myBreakpointsManagerComponent.removeChangeListener(myBreakpointManagerListener);
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeDebugSessionListener(myDebugSessionListener);
-    myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);
-    myEditorsProvider.dispose();
   }
 
   public void editBreakpointProperties(ILocationBreakpoint breakpoint) {
@@ -312,16 +313,15 @@ public class BreakpointsUiComponent implements ProjectComponent {
   public void projectClosed() {
   }
 
-  private class MyEditorOpenListener implements EditorOpenListener {
-
+  private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
     @Override
-    public void editorOpened(MPSFileNodeEditor editor) {
-      editorComponentOpened(editor.getNodeEditor().getCurrentEditorComponent());
+    public void editorComponentCreated(@NotNull EditorComponent editorComponent) {
+      editorComponentOpened(editorComponent);
     }
 
     @Override
-    public void editorClosed(MPSFileNodeEditor editor) {
-      editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
+    public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
+      editorComponentClosed(editorComponent);
     }
   }
 
