@@ -3139,6 +3139,7 @@
     <classNode dependClassName="jetbrains.mps.reloading.ReflectionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.StaticMethodCall_BehaviorDescriptor" file="StaticMethodCall_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -3149,6 +3150,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior" file="StaticMethodDeclaration_Behavior.java">
