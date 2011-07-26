@@ -584,9 +584,10 @@
     <nodeInfo nodeId="7795897115019501442" fileName="TestGenerationWorker.java" startLine="751" startPosition="7" endLine="752" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7795897115019501447" fileName="TestGenerationWorker.java" startLine="761" startPosition="46" endLine="762" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019501460" fileName="TestGenerationWorker.java" startLine="766" startPosition="73" endLine="767" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7795897115019501481" fileName="TestGenerationWorker.java" startLine="771" startPosition="47" endLine="772" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7795897115019501504" fileName="TestGenerationWorker.java" startLine="777" startPosition="52" endLine="778" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7795897115019501519" fileName="TestGenerationWorker.java" startLine="784" startPosition="62" endLine="785" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="363050166995117813" fileName="TestGenerationWorker.java" startLine="767" startPosition="236" endLine="768" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7795897115019501481" fileName="TestGenerationWorker.java" startLine="772" startPosition="47" endLine="773" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7795897115019501504" fileName="TestGenerationWorker.java" startLine="778" startPosition="52" endLine="779" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7795897115019501519" fileName="TestGenerationWorker.java" startLine="785" startPosition="62" endLine="786" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019499978" fileName="TestGenerationWorker.java" startLine="214" startPosition="14" endLine="216" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7795897115019500073" fileName="TestGenerationWorker.java" startLine="239" startPosition="10" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7795897115019500099" fileName="TestGenerationWorker.java" startLine="268" startPosition="10" endLine="270" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -621,8 +622,8 @@
     <nodeInfo nodeId="7795897115019501312" fileName="TestGenerationWorker.java" startLine="717" startPosition="12" endLine="720" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7795897115019499608" fileName="TestGenerationWorker.java" startLine="725" startPosition="59" endLine="728" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyClassLoader#(Ljava/lang/ClassLoader;)V" />
     <nodeInfo nodeId="7795897115019501404" fileName="TestGenerationWorker.java" startLine="741" startPosition="68" endLine="744" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7795897115019501494" fileName="TestGenerationWorker.java" startLine="776" startPosition="44" endLine="779" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7795897115019501509" fileName="TestGenerationWorker.java" startLine="783" startPosition="47" endLine="786" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7795897115019501494" fileName="TestGenerationWorker.java" startLine="777" startPosition="44" endLine="780" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7795897115019501509" fileName="TestGenerationWorker.java" startLine="784" startPosition="47" endLine="787" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7795897115019501528" fileName="TestGenerationWorker.java" startLine="98" startPosition="33" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassLoader#(Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader;" />
     <nodeInfo nodeId="7795897115019499731" fileName="TestGenerationWorker.java" startLine="112" startPosition="0" endLine="116" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestGenerationWorker#(Ljetbrains/mps/build/ant/WhatToDo;Ljetbrains/mps/build/ant/MpsWorker/AntLogger;)V" />
     <nodeInfo nodeId="7874190907999511616" fileName="TestGenerationWorker.java" startLine="135" startPosition="53" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -683,8 +684,7 @@
     <nodeInfo nodeId="7795897115019499596" fileName="TestGenerationWorker.java" startLine="699" startPosition="0" endLine="704" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="7795897115019501324" fileName="TestGenerationWorker.java" startLine="710" startPosition="41" endLine="715" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7795897115019499635" fileName="TestGenerationWorker.java" startLine="759" startPosition="0" endLine="764" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testStarted#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7795897115019499640" fileName="TestGenerationWorker.java" startLine="764" startPosition="0" endLine="769" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testFailed#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7795897115019499649" fileName="TestGenerationWorker.java" startLine="769" startPosition="0" endLine="774" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testFinished#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7795897115019499649" fileName="TestGenerationWorker.java" startLine="770" startPosition="0" endLine="775" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testFinished#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="7874190907999511560" fileName="TestGenerationWorker.java" startLine="125" startPosition="42" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7795897115019499931" fileName="TestGenerationWorker.java" startLine="200" startPosition="46" endLine="206" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019499993" fileName="TestGenerationWorker.java" startLine="220" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startMake#(Ljava/util/Set;Ljava/util/Set;)V" />
@@ -694,13 +694,14 @@
     <nodeInfo nodeId="7795897115019501663" fileName="TestGenerationWorker.java" startLine="517" startPosition="70" endLine="523" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="7795897115019501279" fileName="TestGenerationWorker.java" startLine="690" startPosition="38" endLine="696" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7795897115019501427" fileName="TestGenerationWorker.java" startLine="745" startPosition="88" endLine="751" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7795897115019499640" fileName="TestGenerationWorker.java" startLine="764" startPosition="0" endLine="770" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testFailed#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
     <nodeInfo nodeId="7874190907999511079" fileName="TestGenerationWorker.java" startLine="117" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeTask#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/build/ant/MpsWorker/ObjectsToProcess;)V" />
     <nodeInfo nodeId="7795897115019499781" fileName="TestGenerationWorker.java" startLine="166" startPosition="19" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="7795897115019499968" fileName="TestGenerationWorker.java" startLine="210" startPosition="35" endLine="217" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7874190907999511977" fileName="TestGenerationWorker.java" startLine="493" startPosition="12" endLine="500" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7795897115019501197" fileName="TestGenerationWorker.java" startLine="579" startPosition="0" endLine="586" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showStatistic#()V" />
-    <nodeInfo nodeId="7795897115019499654" fileName="TestGenerationWorker.java" startLine="774" startPosition="0" endLine="781" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="logMessage#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7795897115019499659" fileName="TestGenerationWorker.java" startLine="781" startPosition="0" endLine="788" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="logError#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7795897115019499654" fileName="TestGenerationWorker.java" startLine="775" startPosition="0" endLine="782" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="logMessage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7795897115019499659" fileName="TestGenerationWorker.java" startLine="782" startPosition="0" endLine="789" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="logError#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="7795897115019499686" fileName="TestGenerationWorker.java" startLine="96" startPosition="100" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJavaCompiler#()Ljetbrains/mps/compiler/JavaCompiler;" />
     <nodeInfo nodeId="7795897115019500067" fileName="TestGenerationWorker.java" startLine="235" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBuildServerMessageFormat#()Ljetbrains/mps/build/ant/IBuildServerMessageFormat;" />
     <nodeInfo nodeId="7795897115019500108" fileName="TestGenerationWorker.java" startLine="250" startPosition="38" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeGeneration#(Ljava/util/List;Ljetbrains/mps/generator/GenerationOptions;Ljetbrains/mps/smodel/IOperationContext;)V" />
@@ -863,10 +864,9 @@
     <scopeInfo nodeId="7795897115019501412" fileName="TestGenerationWorker.java" startLine="742" startPosition="50" endLine="743" endPosition="24" />
     <scopeInfo nodeId="7795897115019501437" fileName="TestGenerationWorker.java" startLine="747" startPosition="13" endLine="748" endPosition="38" />
     <scopeInfo nodeId="7795897115019501446" fileName="TestGenerationWorker.java" startLine="761" startPosition="46" endLine="762" endPosition="126" />
-    <scopeInfo nodeId="7795897115019501459" fileName="TestGenerationWorker.java" startLine="766" startPosition="73" endLine="767" endPosition="236" />
-    <scopeInfo nodeId="7795897115019501480" fileName="TestGenerationWorker.java" startLine="771" startPosition="47" endLine="772" endPosition="127" />
-    <scopeInfo nodeId="7795897115019501503" fileName="TestGenerationWorker.java" startLine="777" startPosition="52" endLine="778" endPosition="22" />
-    <scopeInfo nodeId="7795897115019501518" fileName="TestGenerationWorker.java" startLine="784" startPosition="62" endLine="785" endPosition="28" />
+    <scopeInfo nodeId="7795897115019501480" fileName="TestGenerationWorker.java" startLine="772" startPosition="47" endLine="773" endPosition="127" />
+    <scopeInfo nodeId="7795897115019501503" fileName="TestGenerationWorker.java" startLine="778" startPosition="52" endLine="779" endPosition="22" />
+    <scopeInfo nodeId="7795897115019501518" fileName="TestGenerationWorker.java" startLine="785" startPosition="62" endLine="786" endPosition="28" />
     <scopeInfo nodeId="7795897115019499738" fileName="TestGenerationWorker.java" startLine="113" startPosition="78" endLine="115" endPosition="63" />
     <scopeInfo nodeId="7874190907999511622" fileName="TestGenerationWorker.java" startLine="136" startPosition="43" endLine="138" endPosition="18" />
     <scopeInfo nodeId="7874190907999511639" fileName="TestGenerationWorker.java" startLine="140" startPosition="39" endLine="142" endPosition="18" />
@@ -895,6 +895,7 @@
     <scopeInfo nodeId="7874190907999511845" fileName="TestGenerationWorker.java" startLine="618" startPosition="25" endLine="620" endPosition="16" />
     <scopeInfo nodeId="7874190907999511871" fileName="TestGenerationWorker.java" startLine="633" startPosition="25" endLine="635" endPosition="35" />
     <scopeInfo nodeId="7795897115019499632" fileName="TestGenerationWorker.java" startLine="756" startPosition="59" endLine="758" endPosition="5" />
+    <scopeInfo nodeId="7795897115019501459" fileName="TestGenerationWorker.java" startLine="766" startPosition="73" endLine="768" endPosition="26" />
     <scopeInfo nodeId="7795897115019499689" fileName="TestGenerationWorker.java" startLine="104" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="7795897115019499692" varName="progressHelper" />
     </scopeInfo>
@@ -935,8 +936,8 @@
     <scopeInfo nodeId="7795897115019499608" fileName="TestGenerationWorker.java" startLine="725" startPosition="59" endLine="728" endPosition="5">
       <varInfo nodeId="7795897115019499611" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="7795897115019501493" fileName="TestGenerationWorker.java" startLine="776" startPosition="44" endLine="779" endPosition="7" />
-    <scopeInfo nodeId="7795897115019501508" fileName="TestGenerationWorker.java" startLine="783" startPosition="47" endLine="786" endPosition="7" />
+    <scopeInfo nodeId="7795897115019501493" fileName="TestGenerationWorker.java" startLine="777" startPosition="44" endLine="780" endPosition="7" />
+    <scopeInfo nodeId="7795897115019501508" fileName="TestGenerationWorker.java" startLine="784" startPosition="47" endLine="787" endPosition="7" />
     <scopeInfo nodeId="7795897115019501528" fileName="TestGenerationWorker.java" startLine="98" startPosition="33" endLine="102" endPosition="0">
       <varInfo nodeId="7795897115019501531" varName="parent" />
     </scopeInfo>
@@ -1056,12 +1057,7 @@
     <scopeInfo nodeId="7795897115019499635" fileName="TestGenerationWorker.java" startLine="759" startPosition="0" endLine="764" endPosition="0">
       <varInfo nodeId="7795897115019499638" varName="testName" />
     </scopeInfo>
-    <scopeInfo nodeId="7795897115019499640" fileName="TestGenerationWorker.java" startLine="764" startPosition="0" endLine="769" endPosition="0">
-      <varInfo nodeId="7795897115019499645" varName="message" />
-      <varInfo nodeId="7795897115019499647" varName="details" />
-      <varInfo nodeId="7795897115019499643" varName="test" />
-    </scopeInfo>
-    <scopeInfo nodeId="7795897115019499649" fileName="TestGenerationWorker.java" startLine="769" startPosition="0" endLine="774" endPosition="0">
+    <scopeInfo nodeId="7795897115019499649" fileName="TestGenerationWorker.java" startLine="770" startPosition="0" endLine="775" endPosition="0">
       <varInfo nodeId="7795897115019499652" varName="testName" />
     </scopeInfo>
     <scopeInfo nodeId="7874190907999511559" fileName="TestGenerationWorker.java" startLine="125" startPosition="42" endLine="131" endPosition="5" />
@@ -1098,6 +1094,11 @@
     </scopeInfo>
     <scopeInfo nodeId="7795897115019501662" fileName="TestGenerationWorker.java" startLine="517" startPosition="70" endLine="523" endPosition="13" />
     <scopeInfo nodeId="7795897115019501323" fileName="TestGenerationWorker.java" startLine="710" startPosition="41" endLine="716" endPosition="20" />
+    <scopeInfo nodeId="7795897115019499640" fileName="TestGenerationWorker.java" startLine="764" startPosition="0" endLine="770" endPosition="0">
+      <varInfo nodeId="7795897115019499645" varName="message" />
+      <varInfo nodeId="7795897115019499647" varName="details" />
+      <varInfo nodeId="7795897115019499643" varName="test" />
+    </scopeInfo>
     <scopeInfo nodeId="7874190907999511079" fileName="TestGenerationWorker.java" startLine="117" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="7874190907999511082" varName="project" />
       <varInfo nodeId="7874190907999511084" varName="go" />
@@ -1116,10 +1117,10 @@
     <scopeInfo nodeId="7795897115019501278" fileName="TestGenerationWorker.java" startLine="690" startPosition="38" endLine="697" endPosition="38">
       <varInfo nodeId="7795897115019501280" varName="cp" />
     </scopeInfo>
-    <scopeInfo nodeId="7795897115019499654" fileName="TestGenerationWorker.java" startLine="774" startPosition="0" endLine="781" endPosition="0">
+    <scopeInfo nodeId="7795897115019499654" fileName="TestGenerationWorker.java" startLine="775" startPosition="0" endLine="782" endPosition="0">
       <varInfo nodeId="7795897115019499657" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="7795897115019499659" fileName="TestGenerationWorker.java" startLine="781" startPosition="0" endLine="788" endPosition="0">
+    <scopeInfo nodeId="7795897115019499659" fileName="TestGenerationWorker.java" startLine="782" startPosition="0" endLine="789" endPosition="0">
       <varInfo nodeId="7795897115019499662" varName="errorMessage" />
     </scopeInfo>
     <scopeInfo nodeId="7795897115019499686" fileName="TestGenerationWorker.java" startLine="96" startPosition="100" endLine="104" endPosition="0" />
@@ -1341,10 +1342,10 @@
     <unitInfo nodeId="7795897115019500107" fileName="TestGenerationWorker.java" startLine="250" startPosition="17" endLine="267" endPosition="7" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$3" />
     <unitInfo nodeId="7795897115019500988" fileName="TestGenerationWorker.java" startLine="506" startPosition="45" endLine="527" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$9" />
     <unitInfo nodeId="7795897115019499605" fileName="TestGenerationWorker.java" startLine="725" startPosition="0" endLine="755" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyClassLoader" />
-    <unitInfo nodeId="7795897115019499629" fileName="TestGenerationWorker.java" startLine="756" startPosition="0" endLine="789" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyUnitTestAdapter" />
+    <unitInfo nodeId="7795897115019499629" fileName="TestGenerationWorker.java" startLine="756" startPosition="0" endLine="790" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyUnitTestAdapter" />
     <unitInfo nodeId="7874190907999511758" fileName="TestGenerationWorker.java" startLine="597" startPosition="0" endLine="641" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$MyMessageHandler" />
     <unitInfo nodeId="7795897115019499556" fileName="TestGenerationWorker.java" startLine="642" startPosition="0" endLine="724" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker$ModelCycle" />
-    <unitInfo nodeId="7795897115019499553" fileName="TestGenerationWorker.java" startLine="91" startPosition="0" endLine="790" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" />
+    <unitInfo nodeId="7795897115019499553" fileName="TestGenerationWorker.java" startLine="91" startPosition="0" endLine="791" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" />
   </root>
   <root nodeId="7874190907999476498">
     <nodeInfo nodeId="4427136928946606713" fileName="BuildMakeService.java" startLine="42" startPosition="83" endLine="43" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
