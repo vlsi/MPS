@@ -177,7 +177,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public void setCaretPosition(int position, boolean selection) {
-    assert isCaretPositionAllowed(position);
+    assert isCaretPositionAllowed(position) : "Position " + position + " is not allowed for EditorCell_Label: \"" + myTextLine.getText() + "\"";
     myTextLine.setCaretPosition(position, selection);
     getEditor().getBracesHighlighter().updateBracesSelection(this);
   }
