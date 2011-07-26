@@ -184,6 +184,9 @@ public class TestGenerationWorker extends MpsWorker {
     if (go.hasAnythingToGenerate()) {
       MPSProject project = createDummyProject();
       executeTask(project, go);
+    } else {
+      error("Could not find anything to generate.");
+      myTestFailed = true;
     }
     generatePerformanceReport();
     dispose();
@@ -765,6 +768,7 @@ public class TestGenerationWorker extends MpsWorker {
     @Override
     public void testFailed(String test, String message, String details) {
       System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test), myBuildServerMessageFormat.escapeBuildMessage(message), myBuildServerMessageFormat.escapeBuildMessage(details)));
+      myTestFailed = true;
     }
 
     @Override

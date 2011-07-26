@@ -99,5 +99,6 @@ public class MakeWorker extends MpsWorker {
 
   @Override
   protected void showStatistic() {
+    failBuild("make");
   }
 }

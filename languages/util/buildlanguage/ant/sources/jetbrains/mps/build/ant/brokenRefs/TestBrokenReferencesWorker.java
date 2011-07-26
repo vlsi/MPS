@@ -67,9 +67,12 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
 
-    reload();
-
-    executeTask(project, go);
+    if (go.hasAnythingToGenerate()) {
+      reload();
+      executeTask(project, go);
+    } else {
+      error("Could not find anything to test.");
+    }
 
     dispose();
   }
@@ -147,5 +150,6 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
     output("Used heap: " + (mmbean.getHeapMemoryUsage().getUsed() - myUsedHeap));
     output("Used non-heap: " + (mmbean.getNonHeapMemoryUsage().getUsed() - myUsedNonHeap));
+    failBuild("broken reference testing");
   }
 }

@@ -57,6 +57,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 import org.jetbrains.annotations.NotNull;
@@ -113,11 +114,15 @@ public abstract class MpsWorker {
 
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
-    reload();
 
-    if (go.getProjects().isEmpty()) {loadPlugins();}
-    executeTask(project, go);
-    if (go.getProjects().isEmpty()) {disposePlugins();}
+    if (go.hasAnythingToGenerate()) {
+      reload();
+      if (go.getProjects().isEmpty()) {loadPlugins();}
+      executeTask(project, go);
+      if (go.getProjects().isEmpty()) {disposePlugins();}
+    } else {
+      error("Could not find anything to generate.");
+    }
 
     disposeProjects(go.getProjects());
     dispose();
@@ -283,6 +288,26 @@ public abstract class MpsWorker {
   protected abstract void executeTask(MPSProject project, ObjectsToProcess go);
 
   protected abstract void showStatistic();
+
+  protected StringBuffer formatErrorsReport(String taskName) {
+    StringBuffer sb = new StringBuffer();
+    sb.append(StringUtils.repeat("*", 100));
+    sb.append("\n");
+    sb.append(myErrors.size());
+    sb.append(" errors during " + taskName + ":\n");
+    for (String error : myErrors) {
+      sb.append(error);
+      sb.append("\n");
+    }
+    sb.append(StringUtils.repeat("*", 100));
+    return sb;
+  }
+
+  protected void failBuild(String name) {
+    if (!(myErrors.isEmpty()) && myWhatToDo.getFailOnError()) {
+      throw new BuildException(this.formatErrorsReport(name).toString());
+    }
+  }
 
   protected void disposeProjects(Set<MPSProject> projects) {
     ModelAccess.instance().flushEventQueue();
