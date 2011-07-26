@@ -40,11 +40,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.workbench.highlighter.EditorOpenListener;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
-import jetbrains.mps.workbench.highlighter.EditorsProvider;
 import org.jdom.Attribute;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -114,7 +111,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
     breakpointsBrowserDialog.showDialog();
   }
 
-  private void editorComponentOpened(@Nullable EditorComponent editorComponent) {
+  private void editorComponentCreated(@Nullable EditorComponent editorComponent) {
     if (editorComponent == null) return;
     final SNode rootNode = editorComponent.getEditedNode();
     if (rootNode == null) return;
@@ -137,7 +134,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
     }
   }
 
-  private void editorComponentClosed(@Nullable EditorComponent editorComponent) {
+  private void editorComponentDisposed(@Nullable EditorComponent editorComponent) {
     if (editorComponent == null) return;
     editorComponent.removeLeftMarginPressListener(myMouseListener);
   }
@@ -316,12 +313,12 @@ public class BreakpointsUiComponent implements ProjectComponent {
   private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
     @Override
     public void editorComponentCreated(@NotNull EditorComponent editorComponent) {
-      editorComponentOpened(editorComponent);
+      BreakpointsUiComponent.this.editorComponentCreated(editorComponent);
     }
 
     @Override
     public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
-      editorComponentClosed(editorComponent);
+      BreakpointsUiComponent.this.editorComponentDisposed(editorComponent);
     }
   }
 
