@@ -17,29 +17,25 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.SessionChangeListener;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.NullLocation;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
-import jetbrains.mps.workbench.highlighter.EditorOpenListener;
-import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -59,23 +55,12 @@ public class CurrentLinePositionComponent implements ProjectComponent {
 
   //todo extract and generify
   private final DebugSessionListener myCurrentDebugSessionListener = new MyCurrentDebugSessionListener();
-  private final EditorOpenListener myEditorOpenListener = new EditorOpenListener() {
-    @Override
-    public void editorOpened(MPSFileNodeEditor editor) {
-      editorComponentOpened(editor.getNodeEditor());
-    }
-
-    @Override
-    public void editorClosed(MPSFileNodeEditor editor) {
-      editorComponentClosed(editor.getNodeEditor());
-    }
-  };
-  private final EditorsProvider myEditorsProvider;
+  private final EditorComponentCreateListener myEditorComponentCreationHandler = new MyEditorComponentCreateListener();
+  private MessageBusConnection myMessageBusConnection;
 
   public CurrentLinePositionComponent(Project project, FileEditorManager fileEditorManager, MPSEditorOpener editorOpener) {
     myFileEditorManager = fileEditorManager;
     myEditorOpener = editorOpener;
-    myEditorsProvider = new EditorsProvider(project);
     myProject = project;
   }
 
@@ -84,18 +69,6 @@ public class CurrentLinePositionComponent implements ProjectComponent {
       List<CurrentLinePainter> painters = new ArrayList<CurrentLinePainter>();
       painters.addAll(mySessionToContextPainterMap.values());
       return painters;
-    }
-  }
-
-  private void editorComponentClosed(IEditor editor) {
-    for (CurrentLinePainter p : getAllPainters()) {
-      detach(p, editor);
-    }
-  }
-
-  private void editorComponentOpened(IEditor editor) {
-    for (CurrentLinePainter p : getAllPainters()) {
-      attach(p, editor);
     }
   }
 
@@ -117,16 +90,16 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   public void initComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addDebugSessionListener(myCurrentDebugSessionListener);
-    myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
+    myMessageBusConnection = myProject.getMessageBus().connect();
+    myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
   }
 
   @Override
   public void disposeComponent() {
     myIsDisposed = true;
+    myMessageBusConnection.disconnect();
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeDebugSessionListener(myCurrentDebugSessionListener);
-    myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);
-    myEditorsProvider.dispose();
   }
 
   private void detachPainter(AbstractDebugSession newDebugSession) {
@@ -148,23 +121,19 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   }
 
   private void detachPainter(@NotNull CurrentLinePainter painter) {
-    for (IEditor editor : getAllEditors()) {
+    for (EditorComponent editor : EditorUtil.getAllEditorComponents(myFileEditorManager, true)) {
       detach(painter, editor);
     }
   }
 
-  private void detach(@NotNull final CurrentLinePainter painter, @NotNull final IEditor editor) {
+  private void detach(@NotNull final CurrentLinePainter painter, @NotNull final EditorComponent editorComponent) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNodePointer editedNode = editor.getCurrentlyEditedNode();
-        if (painter.getItem().getContainingRoot() == editedNode.getNode()) {
-          EditorComponent editorComponent = editor.getCurrentEditorComponent();
-          if (editorComponent != null) {
-            editorComponent.removeAdditionalPainter(painter);
-            editorComponent.repaint();
-          }
+        if (EditorUtil.isNodeShownInTheComponent(editorComponent, painter.getItem())) {
+          editorComponent.removeAdditionalPainter(painter);
+          editorComponent.repaint();
         }
       }
     });
@@ -195,39 +164,27 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     }
   }
 
-  private void attachPainterAndOpenEditor(@NotNull CurrentLinePainter painter) {
-    attach(painter, myEditorOpener.openNode(painter.getItem(), ProjectOperationContext.get(myProject), true, false));
+  private void attachPainterAndOpenEditor(@NotNull final CurrentLinePainter painter) {
+    EditorComponent currentEditorComponent = myEditorOpener.openNode(painter.getItem(), ProjectOperationContext.get(myProject), true, false).getCurrentEditorComponent();
+    currentEditorComponent = EditorUtil.scrollToNode(painter.getItem(), currentEditorComponent, myFileEditorManager);
+    if (currentEditorComponent != null) {
+      attach(painter, currentEditorComponent);
+    }
   }
 
-  private void attach(@NotNull final CurrentLinePainter painter, @NotNull final IEditor editor) {
+  private void attach(@NotNull final CurrentLinePainter painter, @NotNull final EditorComponent editorComponent) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNodePointer editedNode = editor.getCurrentlyEditedNode();
-        if (painter.getItem().getContainingRoot() == editedNode.getNode()) {
-          EditorComponent editorComponent = editor.getCurrentEditorComponent();
-          if (editorComponent != null) {
-            editorComponent.scrollToNode(painter.getItem());
+        if (EditorUtil.isNodeShownInTheComponent(editorComponent, painter.getItem())) {
+          if (!editorComponent.getAdditionalPainters().contains(painter)) {
             editorComponent.addAdditionalPainter(painter);
-            editorComponent.repaint();
           }
+          editorComponent.repaint();
         }
       }
     });
-  }
-
-  private List<IEditor> getAllEditors() {
-    List<IEditor> result = new ArrayList<IEditor>();
-    if (myIsDisposed) return result;
-    FileEditor[] allEditors = myFileEditorManager.getAllEditors();
-    for (FileEditor editor : allEditors) {
-      if (editor instanceof MPSFileNodeEditor) {
-        MPSFileNodeEditor mpsEditor = (MPSFileNodeEditor) editor;
-        result.add(mpsEditor.getNodeEditor());
-      }
-    }
-    return result;
   }
 
   private class MyCurrentDebugSessionListener implements DebugSessionListener {
@@ -249,11 +206,8 @@ public class CurrentLinePositionComponent implements ProjectComponent {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {
-          for (IEditor editor : getAllEditors()) {
-            EditorComponent editorComponent = editor.getCurrentEditorComponent();
-            if (editorComponent != null) {
-              editorComponent.repaint();
-            }
+          for (EditorComponent editorComponent : EditorUtil.getAllEditorComponents(myFileEditorManager, true)) {
+            editorComponent.repaint();
           }
         }
       });
@@ -282,6 +236,22 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     @Override
     public void resumed(AbstractDebugSession debugSession) {
       detachPainter(debugSession);
+    }
+  }
+
+  private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
+    @Override
+    public void editorComponentCreated(@NotNull EditorComponent editorComponent) {
+      for (CurrentLinePainter p : getAllPainters()) {
+        attach(p, editorComponent);
+      }
+    }
+
+    @Override
+    public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
+      for (CurrentLinePainter p : getAllPainters()) {
+        detach(p, editorComponent);
+      }
     }
   }
 }
