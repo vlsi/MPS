@@ -4,8 +4,6 @@ package jetbrains.mps.ide.datatransfer;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import java.awt.datatransfer.DataFlavor;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -34,6 +32,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
+import java.awt.datatransfer.DataFlavor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -244,13 +243,13 @@ public class CopyPasteUtil {
 
   /**
    * A workaround for the following problem with CopyPasteManagerEx:
-   *
-   *    if stringContent of one of existing Transferable instances stored inside CopyPasteManagerEx.myDatas
+   * 
+   *          if stringContent of one of existing Transferable instances stored inside CopyPasteManagerEx.myDatas
    * collection is equals to the stringContent of Transferable we are trying to "push" there (used as a parameter
    * of this method) then existing element will "float up" inside CopyPasteManagerEx.myDatas collection and will
    * be used next on next paste operation instead of passed Transferable.
-   *
-   * In case of MPS precondition that string equality of clipboard content meant actual equality of passed Trabsferables
+   * 
+   * In case of MPS precondition that string equality of clipboard ontent meant actual equality of passed Trabsferables
    * (SNodeTransferables) is generally wrong, so we have to work around this logic by deleting all exiting Transferables
    * to avoid possible collisions between copied elements preventing user from copying actual node under mouse in editor.
    */
