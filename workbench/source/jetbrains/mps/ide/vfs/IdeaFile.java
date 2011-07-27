@@ -347,6 +347,10 @@ class IdeaFile implements IFileEx {
     }
   }
 
+  private String getSystemIndependentPath() {
+    return getPath().replace('\\', '/');
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -354,7 +358,7 @@ class IdeaFile implements IFileEx {
 
     IdeaFile ideaFile = (IdeaFile) o;
 
-    return ObjectUtils.equals(getPath(), ideaFile.getPath());
+    return ObjectUtils.equals(getSystemIndependentPath(), ideaFile.getSystemIndependentPath());
   }
 
   @Override
@@ -362,7 +366,7 @@ class IdeaFile implements IFileEx {
     if (getPath() == null) {
       return 0;
     } else {
-      return getPath().hashCode();
+      return getSystemIndependentPath().hashCode();
     }
   }
 
