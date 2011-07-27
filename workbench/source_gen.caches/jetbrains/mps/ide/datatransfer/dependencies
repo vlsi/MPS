@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.datatransfer.CopyPasteUtil" file="CopyPasteUtil.java">
     <classNode dependClassName="com.intellij.ide.CopyPasteManagerEx" />
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
+    <classNode dependClassName="java.awt.datatransfer.DataFlavor" />
     <classNode dependClassName="java.awt.datatransfer.StringSelection" />
     <classNode dependClassName="java.awt.datatransfer.Transferable" />
     <classNode dependClassName="java.awt.datatransfer.UnsupportedFlavorException" />
