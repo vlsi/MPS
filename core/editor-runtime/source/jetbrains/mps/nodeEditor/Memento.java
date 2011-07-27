@@ -32,7 +32,6 @@ class Memento {
 
   private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
   private Point myViewPosition;
-  private List<LeftMarginMouseListener> myLeftMarginMouseListeners = new ArrayList<LeftMarginMouseListener>();
 
   private Memento() {}
 
@@ -54,8 +53,6 @@ class Memento {
       collectErrors(nodeEditor);
     }
     myViewPosition = nodeEditor.getViewport().getViewPosition();
-
-    myLeftMarginMouseListeners.addAll(nodeEditor.getLeftMarginPressListeners());
   }
 
   private void collectErrors(EditorComponent editor) {
@@ -72,7 +69,6 @@ class Memento {
   void restore(EditorComponent editor) {
     editor.clearFoldedCells();
     editor.clearBracesEnabledCells();
-    editor.clearLeftMarginListeners();
 
     editor.flushEvents();
 
@@ -98,10 +94,6 @@ class Memento {
     }
     if (myViewPosition != null) {
       editor.getViewport().setViewPosition(myViewPosition);
-    }
-
-    for (LeftMarginMouseListener l : myLeftMarginMouseListeners) {
-      editor.addLeftMarginPressListener(l);
     }
   }
 
