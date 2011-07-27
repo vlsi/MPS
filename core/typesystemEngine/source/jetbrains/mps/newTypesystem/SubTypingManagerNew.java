@@ -61,6 +61,9 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   public boolean isSubtype(SNode subType, SNode superType, boolean isWeak) {
+    if (TypesUtil.isVariable(subType)) return false;
+    if (TypesUtil.isVariable(superType)) return false;
+
     return isSubType(subType, superType, null, null, isWeak);
   }
 
