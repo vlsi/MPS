@@ -51,7 +51,7 @@
       <property name="name" nameId="tpck.1169194664001" value="old.junit.configuration" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="1720689066387515336">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/workbench/runConfigurations/runConfigurations.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/languages/util/runConfigurations/runConfigurations.mpr" />
     </node>
   </roots>
   <root id="7141662564075383485">

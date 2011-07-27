@@ -20,13 +20,13 @@ import com.intellij.openapi.util.InvalidDataException;
 public class TestConfigurationsMigration_Test extends BaseTransformationTest {
   @Test
   public void test_java() throws Throwable {
-    this.initTest("${mps_home}/workbench/runConfigurations/runConfigurations.mpr", "r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)");
+    this.initTest("${mps_home}/languages/util/runConfigurations/runConfigurations.mpr", "r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)");
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.TestConfigurationsMigration_Test$TestBody", "test_java", true);
   }
 
   @Test
   public void test_junit() throws Throwable {
-    this.initTest("${mps_home}/workbench/runConfigurations/runConfigurations.mpr", "r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)");
+    this.initTest("${mps_home}/languages/util/runConfigurations/runConfigurations.mpr", "r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)");
     this.runTest("jetbrains.mps.execution.impl.configurations.tests.TestConfigurationsMigration_Test$TestBody", "test_junit", true);
   }
 

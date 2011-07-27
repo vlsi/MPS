@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="7141662564075383485">
-    <nodeInfo nodeId="7141662564075383485" fileName="TestConfigurationsMigration_Test.java" startLine="22" startPosition="44" endLine="23" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7141662564075383485" fileName="TestConfigurationsMigration_Test.java" startLine="23" startPosition="182" endLine="24" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7141662564075383485" fileName="TestConfigurationsMigration_Test.java" startLine="28" startPosition="45" endLine="29" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7141662564075383485" fileName="TestConfigurationsMigration_Test.java" startLine="29" startPosition="182" endLine="30" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7141662564075383485" fileName="TestConfigurationsMigration_Test.java" startLine="22" startPosition="44" endLine="23" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7141662564075383485" fileName="TestConfigurationsMigration_Test.java" startLine="23" startPosition="187" endLine="24" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7141662564075383485" fileName="TestConfigurationsMigration_Test.java" startLine="28" startPosition="45" endLine="29" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7141662564075383485" fileName="TestConfigurationsMigration_Test.java" startLine="29" startPosition="187" endLine="30" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5440470834283012108" fileName="TestConfigurationsMigration_Test.java" startLine="35" startPosition="46" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2356551895168359038" fileName="TestConfigurationsMigration_Test.java" startLine="39" startPosition="47" endLine="40" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5440470834283012043" fileName="TestConfigurationsMigration_Test.java" startLine="43" startPosition="62" endLine="44" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
