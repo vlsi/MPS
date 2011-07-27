@@ -2892,9 +2892,9 @@
     <nodeInfo nodeId="2352903979085962793" fileName="ModelChangesManager.java" startLine="1284" startPosition="104" endLine="1285" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2352903979085962809" fileName="ModelChangesManager.java" startLine="1287" startPosition="77" endLine="1288" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2352903979085962820" fileName="ModelChangesManager.java" startLine="1290" startPosition="22" endLine="1291" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2352903979085962825" fileName="ModelChangesManager.java" startLine="1291" startPosition="106" endLine="1292" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2352903979085962832" fileName="ModelChangesManager.java" startLine="1292" startPosition="86" endLine="1293" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2352903979085962843" fileName="ModelChangesManager.java" startLine="1294" startPosition="78" endLine="1295" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2352903979085962825" fileName="ModelChangesManager.java" startLine="1291" startPosition="106" endLine="1292" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2352903979085962832" fileName="ModelChangesManager.java" startLine="1292" startPosition="91" endLine="1293" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2352903979085962843" fileName="ModelChangesManager.java" startLine="1294" startPosition="84" endLine="1295" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2352903979085962847" fileName="ModelChangesManager.java" startLine="1297" startPosition="15" endLine="1298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7601193928418818380" fileName="ModelChangesManager.java" startLine="1298" startPosition="0" endLine="1299" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3367145324776989268" fileName="ModelChangesManager.java" startLine="1301" startPosition="13" endLine="1302" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3102,7 +3102,7 @@
     <nodeInfo nodeId="3367145324776989254" fileName="ModelChangesManager.java" startLine="1263" startPosition="27" endLine="1266" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2352903979085962733" fileName="ModelChangesManager.java" startLine="1270" startPosition="31" endLine="1273" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2352903979085962807" fileName="ModelChangesManager.java" startLine="1286" startPosition="48" endLine="1289" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2352903979085962841" fileName="ModelChangesManager.java" startLine="1293" startPosition="99" endLine="1296" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2352903979085962841" fileName="ModelChangesManager.java" startLine="1293" startPosition="104" endLine="1296" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3367145324776989281" fileName="ModelChangesManager.java" startLine="1311" startPosition="27" endLine="1314" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2352903979085962928" fileName="ModelChangesManager.java" startLine="1318" startPosition="31" endLine="1321" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3367145324776993153" fileName="ModelChangesManager.java" startLine="1344" startPosition="27" endLine="1347" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3550,7 +3550,7 @@
     <scopeInfo nodeId="2352903979085962734" fileName="ModelChangesManager.java" startLine="1271" startPosition="55" endLine="1272" endPosition="23" />
     <scopeInfo nodeId="7601193928418818360" fileName="ModelChangesManager.java" startLine="1279" startPosition="64" endLine="1280" endPosition="111" />
     <scopeInfo nodeId="2352903979085962808" fileName="ModelChangesManager.java" startLine="1287" startPosition="77" endLine="1288" endPosition="25" />
-    <scopeInfo nodeId="2352903979085962842" fileName="ModelChangesManager.java" startLine="1294" startPosition="78" endLine="1295" endPosition="25" />
+    <scopeInfo nodeId="2352903979085962842" fileName="ModelChangesManager.java" startLine="1294" startPosition="84" endLine="1295" endPosition="25" />
     <scopeInfo nodeId="3367145324776989282" fileName="ModelChangesManager.java" startLine="1312" startPosition="33" endLine="1313" endPosition="19" />
     <scopeInfo nodeId="2352903979085962929" fileName="ModelChangesManager.java" startLine="1319" startPosition="55" endLine="1320" endPosition="23" />
     <scopeInfo nodeId="7601193928418818403" fileName="ModelChangesManager.java" startLine="1327" startPosition="65" endLine="1328" endPosition="120" />
@@ -3854,9 +3854,9 @@
     </scopeInfo>
     <scopeInfo nodeId="3854217528818475427" fileName="ModelChangesManager.java" startLine="1152" startPosition="77" endLine="1158" endPosition="9" />
     <scopeInfo nodeId="2352903979085962819" fileName="ModelChangesManager.java" startLine="1290" startPosition="22" endLine="1296" endPosition="17">
-      <varInfo nodeId="2352903979085962833" varName="newInternalValue" />
       <varInfo nodeId="2352903979085962821" varName="propertySupport" />
-      <varInfo nodeId="2352903979085962826" varName="baseInternalValue" />
+      <varInfo nodeId="2352903979085962826" varName="basePresentableValue" />
+      <varInfo nodeId="2352903979085962833" varName="newPresentableValue" />
     </scopeInfo>
     <scopeInfo nodeId="993300782394691290" fileName="ModelChangesManager.java" startLine="114" startPosition="29" endLine="121" endPosition="23">
       <varInfo nodeId="993300782394691567" varName="model" />
