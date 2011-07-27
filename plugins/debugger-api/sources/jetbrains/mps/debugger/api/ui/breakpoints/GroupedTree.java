@@ -60,6 +60,7 @@ abstract class GroupedTree<D extends NodeData> extends MPSTree {
 
   @Nullable
   public MPSTreeNode findNodeForData(D nodeData) {
+    if (this.isEmpty()) return null;
     return findNodeForData((GroupTreeNode) getRootNode(), nodeData);
   }
 

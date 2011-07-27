@@ -109,10 +109,15 @@ public class BreakpointsUiComponent implements ProjectComponent {
     component.removeDebugSessionListener(myDebugSessionListener);
   }
 
-  public void editBreakpointProperties(ILocationBreakpoint breakpoint) {
-    BreakpointsBrowserDialog breakpointsBrowserDialog = new BreakpointsBrowserDialog(ProjectOperationContext.get(myProject));
-    breakpointsBrowserDialog.selectBreakpoint(breakpoint);
+  public void editBreakpointProperties(final ILocationBreakpoint breakpoint) {
+    final BreakpointsBrowserDialog breakpointsBrowserDialog = new BreakpointsBrowserDialog(ProjectOperationContext.get(myProject));
     breakpointsBrowserDialog.showDialog();
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        breakpointsBrowserDialog.selectBreakpoint(breakpoint);
+      }
+    });
   }
 
   @NotNull
