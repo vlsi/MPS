@@ -584,7 +584,6 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6193305307616715384">
       <property name="name" nameId="tpck.1169194664001" value="ShortcutChange" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Keymaps.ShortcutChange" />
-      <link role="extends" roleId="tpce.1169127546356" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6193305307616734266">
       <property name="name" nameId="tpck.1169194664001" value="ParameterizedShortcutChange" />
