@@ -48,6 +48,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.MouseEvent;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 public class BreakpointsUiComponent implements ProjectComponent {
@@ -285,18 +286,18 @@ public class BreakpointsUiComponent implements ProjectComponent {
     }
   }
 
-  @Nullable
-  private EditorComponent findComponentForLocationBreakpoint(@NotNull ILocationBreakpoint breakpoint) {
+  @NotNull
+  private List<EditorComponent> findComponentForLocationBreakpoint(@NotNull ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
       return EditorUtil.findComponentForNode(node, myFileEditorManager);
     }
-    return null;
+    return Collections.emptyList();
   }
 
   private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
-    EditorComponent editorComponent = findComponentForLocationBreakpoint(breakpoint);
-    if (editorComponent != null) {
+    List<EditorComponent> editorComponents = findComponentForLocationBreakpoint(breakpoint);
+    for (EditorComponent editorComponent : editorComponents) {
       editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
       editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
       editorComponent.repaint(); //todo should it be executed in ED thread?
@@ -304,8 +305,8 @@ public class BreakpointsUiComponent implements ProjectComponent {
   }
 
   private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
-    EditorComponent editorComponent = findComponentForLocationBreakpoint(breakpoint);
-    if (editorComponent != null) {
+    List<EditorComponent> editorComponents = findComponentForLocationBreakpoint(breakpoint);
+    for (EditorComponent editorComponent : editorComponents) {
       editorComponent.removeAdditionalPainterByItem(breakpoint);
       editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getLocation().getSNode(), BreakpointIconRenderer.TYPE);
       editorComponent.repaint(); //todo should it be executed in ED thread?
@@ -427,8 +428,8 @@ public class BreakpointsUiComponent implements ProjectComponent {
         @Override
         public void run() {
           if (breakpoint instanceof ILocationBreakpoint) {
-            EditorComponent editorComponent = findComponentForLocationBreakpoint((ILocationBreakpoint) breakpoint);
-            if (editorComponent != null) {
+            List<EditorComponent> editorComponents = findComponentForLocationBreakpoint((ILocationBreakpoint) breakpoint);
+            for (EditorComponent editorComponent : editorComponents) {
               editorComponent.repaint();
             }
           }

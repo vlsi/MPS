@@ -69,21 +69,22 @@ public class EditorUtil {
     return component;
   }
 
-  @Nullable
-  public static EditorComponent findComponentForNode(SNode node, FileEditorManager fileEditorManager) {
+  @NotNull
+  public static List<EditorComponent> findComponentForNode(SNode node, FileEditorManager fileEditorManager) {
     ModelAccess.assertLegalRead();
+    List<EditorComponent> result = new ArrayList<EditorComponent>();
     EditorComponent inspector = findInspector(fileEditorManager);
     if (inspector != null) {
       if (isNodeShownInTheComponent(inspector, node)) {
-        return inspector;
+        result.add(inspector);
       }
     }
     for (EditorComponent editorComponent : getAllEditorComponents(fileEditorManager, false)) {
       if (isNodeShownInTheComponent(editorComponent, node)) {
-        return editorComponent;
+        result.add(editorComponent);
       }
     }
-    return null;
+    return result;
   }
 
   public static boolean isNodeShownInTheComponent(@NotNull EditorComponent component, @NotNull SNode node) {
