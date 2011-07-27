@@ -60,9 +60,9 @@ public class ChangeSetBuilder {
         }
       }
 
-      String oldInternalValue = propertySupport.toInternalValue(MapSequence.fromMap(oldProperties).get(name));
-      String newInternalValue = propertySupport.toInternalValue(MapSequence.fromMap(newProperties).get(name));
-      if (!(ObjectUtils.equals(oldInternalValue, newInternalValue))) {
+      String oldPresentableValue = propertySupport.fromInternalValue(MapSequence.fromMap(oldProperties).get(name));
+      String newPresentableValue = propertySupport.fromInternalValue(MapSequence.fromMap(newProperties).get(name));
+      if (!(ObjectUtils.equals(oldPresentableValue, newPresentableValue))) {
         myChangeSet.add(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, MapSequence.fromMap(newProperties).get(name)));
       }
     }

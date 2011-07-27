@@ -1289,9 +1289,9 @@ __switch__:
                 }
               } else {
                 PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
-                String baseInternalValue = propertySupport.toInternalValue(baseValue);
-                String newInternalValue = propertySupport.toInternalValue(e.getNewPropertyValue());
-                if (ObjectUtils.equals(baseInternalValue, newInternalValue)) {
+                String basePresentableValue = propertySupport.fromInternalValue(baseValue);
+                String newPresentableValue = propertySupport.fromInternalValue(e.getNewPropertyValue());
+                if (ObjectUtils.equals(basePresentableValue, newPresentableValue)) {
                   return;
                 }
               }

@@ -858,14 +858,14 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2732852465125741234" />
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2732852465125741116">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2732852465125741117">
-                <property name="name" nameId="tpck.1169194664001" value="oldInternalValue" />
+                <property name="name" nameId="tpck.1169194664001" value="oldPresentableValue" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2732852465125741118" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2732852465125741119">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2732852465125741120">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2732852465125728813" resolveInfo="propertySupport" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2732852465125741121">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~PropertySupport%dtoInternalValue(java%dlang%dString)%cjava%dlang%dString" resolveInfo="toInternalValue" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~PropertySupport%dfromInternalValue(java%dlang%dString)%cjava%dlang%dString" resolveInfo="fromInternalValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="2732852465125741122">
                       <node role="key" roleId="tp2q.1197932525128" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2732852465125741123">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="2732852465125684149" resolveInfo="name" />
@@ -880,14 +880,14 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2732852465125741784">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2732852465125741785">
-                <property name="name" nameId="tpck.1169194664001" value="newInternalValue" />
+                <property name="name" nameId="tpck.1169194664001" value="newPresentableValue" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2732852465125741786" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2732852465125741787">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2732852465125741788">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2732852465125728813" resolveInfo="propertySupport" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2732852465125741789">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~PropertySupport%dtoInternalValue(java%dlang%dString)%cjava%dlang%dString" resolveInfo="toInternalValue" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lkfb.~PropertySupport%dfromInternalValue(java%dlang%dString)%cjava%dlang%dString" resolveInfo="fromInternalValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.MapElement" typeId="tp2q.1197932370469" id="2732852465125741790">
                       <node role="key" roleId="tp2q.1197932525128" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2732852465125741791">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="2732852465125684149" resolveInfo="name" />
@@ -906,10 +906,10 @@
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="toof.~ObjectUtils" resolveInfo="ObjectUtils" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="toof.~ObjectUtils%dequals(java%dlang%dObject,java%dlang%dObject)%cboolean" resolveInfo="equals" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2732852465125741765">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2732852465125741117" resolveInfo="oldInternalValue" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2732852465125741117" resolveInfo="oldPresentableValue" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2732852465125741794">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2732852465125741785" resolveInfo="newInternalValue" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2732852465125741785" resolveInfo="newPresentableValue" />
                   </node>
                 </node>
               </node>
