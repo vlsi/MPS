@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TextGen_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TextGen_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.StructureAspectDescriptor" />
   <root nodeId="1224137887853744019">
     <nodeInfo nodeId="1224137887853744019" fileName="EncodingDeclaration.java" startLine="14" startPosition="93" endLine="15" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1224137887853744019" fileName="EncodingDeclaration.java" startLine="15" startPosition="98" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -842,18 +842,6 @@
     <scopeInfo nodeId="1237306079178" fileName="AppendOperation.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="1237306079178" fileName="AppendOperation.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <unitInfo nodeId="1237306079178" fileName="AppendOperation.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.AppendOperation" />
-  </root>
-  <root nodeId="3822000666564607196">
-    <nodeInfo nodeId="3822000666564607196" fileName="UnitConcept.java" startLine="7" startPosition="51" endLine="8" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <unitInfo nodeId="3822000666564607196" fileName="UnitConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UnitConcept" />
-  </root>
-  <root nodeId="3822000666564607198">
-    <nodeInfo nodeId="3822000666564607198" fileName="ScopeConcept.java" startLine="7" startPosition="52" endLine="8" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <unitInfo nodeId="3822000666564607198" fileName="ScopeConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
-  </root>
-  <root nodeId="3822000666564607199">
-    <nodeInfo nodeId="3822000666564607199" fileName="TraceableConcept.java" startLine="7" startPosition="56" endLine="8" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <unitInfo nodeId="3822000666564607199" fileName="TraceableConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TraceableConcept" />
   </root>
   <root nodeId="6911933836258445304">
     <nodeInfo nodeId="6911933836258445304" fileName="ReferenceAppendPart.java" startLine="11" startPosition="61" endLine="12" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

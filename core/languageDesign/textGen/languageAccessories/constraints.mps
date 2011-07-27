@@ -7,7 +7,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
+  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="12" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -23,17 +23,17 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="2omo.1233670071145" resolveInfo="ConceptTextGenDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1233929479423">
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="2omo.1233922353619" resolveInfo="LanguageTextGen_ConceptFunction" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="2omo.1233922353619" resolveInfo="OperationDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1233929742891">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="2omo.1233921373471" resolveInfo="LanguageTextGenDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1237206480747">
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="2omo.1234524838116" resolveInfo="PrivateMethodDeclaration" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="2omo.1234524838116" resolveInfo="UtilityMethodDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7166719696753421208">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="2omo.7166719696753421196" resolveInfo="SetEncodingOperation" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="2omo.7166719696753421196" resolveInfo="EncodingLiteral" />
     </node>
   </roots>
   <root id="1233750346381">
@@ -348,12 +348,12 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1237206517642">
               <property name="name" nameId="tpck.1169194664001" value="methods" />
               <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1237206517643">
-                <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="2omo.1234524838116" resolveInfo="PrivateMethodDeclaration" />
+                <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="2omo.1234524838116" resolveInfo="UtilityMethodDeclaration" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1237206536115">
                 <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeListCreator" typeId="tp25.1145567426890" id="1237206536116">
                   <node role="createdType" roleId="tp25.1145567471833" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1237206536117">
-                    <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="2omo.1234524838116" resolveInfo="PrivateMethodDeclaration" />
+                    <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="2omo.1234524838116" resolveInfo="UtilityMethodDeclaration" />
                   </node>
                 </node>
               </node>
@@ -444,7 +444,7 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1237206539838">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1237206567985">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237206517642" resolveInfo="method" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237206517642" resolveInfo="methods" />
             </node>
           </node>
         </node>

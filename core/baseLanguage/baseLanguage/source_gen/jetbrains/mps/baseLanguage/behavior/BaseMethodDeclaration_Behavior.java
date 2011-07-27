@@ -226,11 +226,11 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   @Nullable
-  public static String virtual_getTraceableProperty_3822000666564591088(SNode thisNode) {
+  public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "#" + BaseMethodDeclaration_Behavior.call_jniSignature_8847328628797656446(thisNode);
   }
 
-  public static List<SNode> virtual_getScopeVariables_3822000666564591100(SNode thisNode) {
+  public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "parameter", true);
   }
 
@@ -271,12 +271,12 @@ public class BaseMethodDeclaration_Behavior {
 
   public static String call_getTraceableProperty_2496361171403550883(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550883);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550883);
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550901(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550901);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550901);
   }
 
   public static List<Icon> callSuper_getMarkIcons_5039675756633081786(SNode thisNode, String callerConceptFqName) {
@@ -308,10 +308,10 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static String callSuper_getTraceableProperty_2496361171403550883(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550883);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550883);
   }
 
   public static List<SNode> callSuper_getScopeVariables_2496361171403550901(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550901);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550901);
   }
 }

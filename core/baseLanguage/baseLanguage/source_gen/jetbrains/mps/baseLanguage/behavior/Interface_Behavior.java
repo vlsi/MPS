@@ -55,7 +55,7 @@ public class Interface_Behavior {
     return true;
   }
 
-  public static String virtual_getUnitName_3822000666564591112(SNode thisNode) {
+  public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
       return fqName;
@@ -69,10 +69,10 @@ public class Interface_Behavior {
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551004);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551004);
   }
 
   public static String callSuper_getUnitName_2496361171403551004(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), callerConceptFqName, "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551004);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551004);
   }
 }

@@ -5,7 +5,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
+  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="12" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tp41" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -16,7 +16,7 @@
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1234274918427">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1233924848298" resolveInfo="CallInnerFunctionOperation" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1233924848298" resolveInfo="OperationCall" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1234275154402">
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1233670071145" resolveInfo="ConceptTextGenDeclaration" />
@@ -26,10 +26,10 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1236188139846" resolveInfo="WithIndentOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237297500008">
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1234529062040" resolveInfo="PrivateMethodCall" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1234529062040" resolveInfo="UtilityMethodCall" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237297544949">
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1234524838116" resolveInfo="PrivateMethodDeclaration" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1234524838116" resolveInfo="UtilityMethodDeclaration" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237483202466">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.error" />
@@ -37,27 +37,27 @@
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237483235720">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237306079178" resolveInfo="Append" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237306079178" resolveInfo="AppendOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237483307729">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305491868" resolveInfo="CollectionPart" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305491868" resolveInfo="CollectionAppendPart" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237483338873">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringPart" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringAppendPart" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237483369901">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305275276" resolveInfo="InfoPart" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305275276" resolveInfo="InfoAppendPart" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237483382474">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305208784" resolveInfo="NewLinePart" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305208784" resolveInfo="NewLineAppendPart" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237483388947">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305334312" resolveInfo="NodePart" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="2omo.1237305334312" resolveInfo="NodeAppendPart" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1237483407146">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.indent" />
@@ -359,7 +359,7 @@
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1237483576418">
             <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="1237483601309">
               <node role="codeFor" roleId="tp41.1206454079161" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1237483604999">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237483576421" resolveInfo="node" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1237483576421" resolveInfo="declaration" />
               </node>
             </node>
           </node>
@@ -372,7 +372,7 @@
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1237483576421">
             <property name="name" nameId="tpck.1169194664001" value="declaration" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1237483578003">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="2omo.1234524838116" resolveInfo="PrivateMethodDeclaration" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="2omo.1234524838116" resolveInfo="UtilityMethodDeclaration" />
             </node>
           </node>
         </node>

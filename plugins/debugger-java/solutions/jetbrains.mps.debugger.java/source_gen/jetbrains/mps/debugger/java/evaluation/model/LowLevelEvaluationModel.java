@@ -103,11 +103,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     }
     List<SNode> classifiers = myScope.getNodes(new Condition<SNode>() {
       public boolean met(@NotNull SNode node) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.UnitConcept"))) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"))) {
           return false;
         }
 
-        String nodesUnitName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UnitConcept"), "jetbrains.mps.lang.textGen.structure.UnitConcept"), "virtual_getUnitName_3822000666564591112", new Class[]{SNode.class}));
+        String nodesUnitName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}));
         if (StringUtils.isEmpty(nodesUnitName)) {
           return false;
         }

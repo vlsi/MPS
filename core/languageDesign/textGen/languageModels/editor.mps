@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language-engaged-on-generation namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
+  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="12" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
@@ -29,7 +29,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1233751668642">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1233751620748" resolveInfo="SimplestTextGenOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1233751620748" resolveInfo="SimpleTextGenOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1233922090283">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="root" />
@@ -37,17 +37,17 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1233928609576">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1233922353619" resolveInfo="LanguageTextGen_ConceptFunction" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1233922353619" resolveInfo="OperationDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1234190682269">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1233924848298" resolveInfo="CallInnerFunctionOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1233924848298" resolveInfo="OperationCall" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1234525206228">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1234524838116" resolveInfo="PrivateFunctionDeclaration" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1234524838116" resolveInfo="UtilityMethodDeclaration" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1234529239423">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1234529062040" resolveInfo="CallPrivateFunction" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1234529062040" resolveInfo="UtilityMethodCall" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1236188217155">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.indent" />
@@ -55,27 +55,27 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1237305247896">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305208784" resolveInfo="NewLinePart" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305208784" resolveInfo="NewLineAppendPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1237305588485">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringPart" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringAppendPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1237305816624">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305334312" resolveInfo="NodePart" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305334312" resolveInfo="NodeAppendPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1237305868118">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305275276" resolveInfo="InfoPart" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305275276" resolveInfo="InfoAppendPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1237305966240">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305491868" resolveInfo="CollectionPart" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237305491868" resolveInfo="CollectionAppendPart" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1237306130697">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237306079178" resolveInfo="Append" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.1237306079178" resolveInfo="AppendOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1237470749854">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.error" />
@@ -87,7 +87,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7166719696753421198">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.7166719696753421196" resolveInfo="SetEncodingOperation" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2omo.7166719696753421196" resolveInfo="EncodingLiteral" />
     </node>
   </roots>
   <root id="1233670266779">

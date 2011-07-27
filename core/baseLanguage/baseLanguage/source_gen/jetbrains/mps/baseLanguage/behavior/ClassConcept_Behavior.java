@@ -169,7 +169,7 @@ public class ClassConcept_Behavior {
     return baseMethodDeclarations;
   }
 
-  public static String virtual_getUnitName_3822000666564591112(SNode thisNode) {
+  public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
       return fqName;
@@ -198,7 +198,7 @@ public class ClassConcept_Behavior {
 
   public static String call_getUnitName_2496361171403551057(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551057);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551057);
   }
 
   public static boolean callSuper_isRunnable_7941158526576616766(SNode thisNode, String callerConceptFqName) {
@@ -214,7 +214,7 @@ public class ClassConcept_Behavior {
   }
 
   public static String callSuper_getUnitName_2496361171403551057(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551057);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551057);
   }
 
   public static SNode getContextClass_8008512149545173402(SNode expr) {

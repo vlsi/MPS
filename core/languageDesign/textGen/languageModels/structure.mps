@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11">
+<model modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="12">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -11,7 +11,7 @@
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="acqa" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.textGen(MPS.Classpath/jetbrains.mps.textGen@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" implicit="yes" />
+  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="12" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233670071145">
       <property name="name" nameId="tpck.1169194664001" value="ConceptTextGenDeclaration" />
@@ -37,17 +37,17 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233752719417">
       <property name="name" nameId="tpck.1169194664001" value="IncreaseDepthOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.indent" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1233751620748" resolveInfo="SimplestTextGenOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1233751620748" resolveInfo="SimpleTextGenOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233752780875">
       <property name="name" nameId="tpck.1169194664001" value="DecreaseDepthOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.indent" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1233751620748" resolveInfo="SimplestTextGenOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1233751620748" resolveInfo="SimpleTextGenOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233920501193">
       <property name="name" nameId="tpck.1169194664001" value="IndentBufferOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.indent" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1233751620748" resolveInfo="SimplestTextGenOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1233751620748" resolveInfo="SimpleTextGenOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233921373471">
       <property name="name" nameId="tpck.1169194664001" value="LanguageTextGenDeclaration" />
@@ -148,18 +148,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
     </node>
-    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3822000666564607196">
-      <property name="name" nameId="tpck.1169194664001" value="UnitConcept" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="traceInfo" />
-    </node>
-    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3822000666564607198">
-      <property name="name" nameId="tpck.1169194664001" value="ScopeConcept" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="traceInfo" />
-    </node>
-    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3822000666564607199">
-      <property name="name" nameId="tpck.1169194664001" value="TraceableConcept" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="traceInfo" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7166719696753421196">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
       <property name="name" nameId="tpck.1169194664001" value="EncodingLiteral" />
@@ -183,13 +171,13 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1224137887853744062">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="encoding" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1224137887853744059" resolveInfo="IEncodingDeclaration" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1224137887853744059" resolveInfo="EncodingDeclarationBase" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1233749296504">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="textGenBlock" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1233749247888" resolveInfo="TextGenBlock" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1233749247888" resolveInfo="GenerateTextDeclaration" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1233670257997">
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
@@ -273,13 +261,13 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="operation" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1233922353619" resolveInfo="LanguageTextGen_ConceptFunction" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1233922353619" resolveInfo="OperationDeclaration" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1234526822589">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="function" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1234524838116" resolveInfo="PrivateFunctionDeclaration" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1234524838116" resolveInfo="UtilityMethodDeclaration" />
     </node>
   </root>
   <root id="1233922353619">
@@ -303,7 +291,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="function" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1233922353619" resolveInfo="LanguageTextGen_ConceptFunction" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1233922353619" resolveInfo="OperationDeclaration" />
     </node>
   </root>
   <root id="1234279682891">
@@ -349,7 +337,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="function" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1234524838116" resolveInfo="PrivateFunctionDeclaration" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1234524838116" resolveInfo="UtilityMethodDeclaration" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1234529174917">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -535,9 +523,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
   </root>
-  <root id="3822000666564607196" />
-  <root id="3822000666564607198" />
-  <root id="3822000666564607199" />
   <root id="7166719696753421196">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7166719696753543659">
       <property name="value" nameId="tpce.1105725733873" value="encoding literal" />
@@ -548,7 +533,7 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1224137887853744060">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1224137887853744059" resolveInfo="IEncodingDeclaration" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1224137887853744059" resolveInfo="EncodingDeclarationBase" />
     </node>
   </root>
   <root id="1224137887853744019">

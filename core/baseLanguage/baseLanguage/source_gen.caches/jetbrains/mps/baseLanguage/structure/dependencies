@@ -158,7 +158,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Type" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.UnitConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.UnitConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -341,8 +341,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeAnnotable" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IContainer" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.TraceableConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.ScopeConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.TraceableConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -511,7 +511,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StatementList" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.ScopeConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -551,7 +551,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticInitializer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.UnitConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.UnitConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -987,7 +987,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Visibility" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IResolveInfo" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.TraceableConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.TraceableConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1042,7 +1042,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.ScopeConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1056,7 +1056,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.AbstractForStatement" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.ScopeConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1355,7 +1355,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassifierType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.UnitConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.UnitConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1956,7 +1956,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ILocalVariableElement" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.TraceableConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.TraceableConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1981,7 +1981,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Statement" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IContainer" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.ScopeConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1998,7 +1998,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Visibility" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IResolveInfo" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.structure.TraceableConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.structure.TraceableConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

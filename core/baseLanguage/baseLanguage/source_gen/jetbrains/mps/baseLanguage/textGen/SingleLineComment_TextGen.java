@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior;
+import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SingleLineComment_TextGen extends SNodeTextGen {
@@ -23,7 +23,7 @@ public class SingleLineComment_TextGen extends SNodeTextGen {
       this.append(" ");
     }
     if (getBuffer().hasPositionsSupport()) {
-      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
+      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_5067982036267369901(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept")));
     }
   }
 }

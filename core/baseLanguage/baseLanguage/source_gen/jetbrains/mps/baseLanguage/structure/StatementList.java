@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IContainer;
-import jetbrains.mps.lang.textGen.structure.ScopeConcept;
+import jetbrains.mps.lang.traceable.structure.ScopeConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;

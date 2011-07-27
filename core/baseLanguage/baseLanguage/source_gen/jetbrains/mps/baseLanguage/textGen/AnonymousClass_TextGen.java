@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior;
+import jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior;
 
 public class AnonymousClass_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -68,7 +68,7 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     this.decreaseDepth();
     this.appendWithIndent("}");
     if (getBuffer().hasPositionsSupport()) {
-      TraceInfoGenerationUtil.fillUnitInfo(this, node, UnitConcept_Behavior.call_getUnitName_3822000666564591112(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UnitConcept")));
+      TraceInfoGenerationUtil.fillUnitInfo(this, node, UnitConcept_Behavior.call_getUnitName_5067982036267369911(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept")));
     }
   }
 }

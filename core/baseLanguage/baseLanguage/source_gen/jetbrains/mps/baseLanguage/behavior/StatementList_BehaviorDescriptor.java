@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
-import jetbrains.mps.lang.textGen.behavior.ScopeConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 
@@ -12,8 +12,8 @@ public class StatementList_BehaviorDescriptor extends BaseConcept_BehaviorDescri
   public StatementList_BehaviorDescriptor() {
   }
 
-  public List<SNode> virtual_getScopeVariables_3822000666564591100(SNode thisNode) {
-    return StatementList_Behavior.virtual_getScopeVariables_3822000666564591100(thisNode);
+  public List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
+    return StatementList_Behavior.virtual_getScopeVariables_5067982036267369894(thisNode);
   }
 
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {

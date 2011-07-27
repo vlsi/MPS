@@ -21,14 +21,16 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="1" />
-  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <import index="wbvt" modelUID="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)" version="-1" />
+  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="12" />
+  <import index="wbvt" modelUID="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="1yf" modelUID="f:java_stub#b83431fe-5c8f-40bc-8a36-65e25f4dd253#jetbrains.mps.lang.textGen.structure(jetbrains.mps.lang.textGen.structure@java_stub)" version="-1" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
+  <import index="if8w" modelUID="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
@@ -1813,7 +1815,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3822000666564607410">
                     <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3822000666564607411">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3822000666564607412">
-                        <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607199" resolveInfo="TraceableConcept" />
+                        <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369891" resolveInfo="TraceableConcept" />
                       </node>
                     </node>
                   </node>
@@ -1849,7 +1851,7 @@
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="3410240535682295955">
                           <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
                           <property name="name" nameId="tpck.1169194664001" value="getTraceableProperty" />
-                          <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="wbvt.3822000666564591088" resolveInfo="getTraceableProperty" />
+                          <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="if8w.5067982036267369901" resolveInfo="getTraceableProperty" />
                           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3410240535682295956" />
                           <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3410240535682295957">
                             <link role="annotation" roleId="tpee.1188208074048" targetNodeId="r27b.~Nullable" resolveInfo="Nullable" />
@@ -1998,7 +2000,7 @@
                                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3822000666564662908">
                                       <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3822000666564662909">
                                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3822000666564662910">
-                                          <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607199" resolveInfo="TraceableConcept" />
+                                          <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369891" resolveInfo="TraceableConcept" />
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3822000666564662911">
@@ -2067,7 +2069,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3822000666564662083">
                     <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3822000666564662084">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3822000666564662141">
-                        <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607198" resolveInfo="ScopeConcept" />
+                        <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369890" resolveInfo="ScopeConcept" />
                       </node>
                     </node>
                   </node>
@@ -2101,7 +2103,7 @@
                     <node role="quotedNode" roleId="tp3r.1196350785114" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="3410240535682306603">
                       <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
                       <property name="name" nameId="tpck.1169194664001" value="getScopeVariables" />
-                      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="wbvt.3822000666564591100" resolveInfo="getScopeVariables" />
+                      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="if8w.5067982036267369894" resolveInfo="getScopeVariables" />
                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3410240535682306604" />
                       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="3410240535682306615">
                         <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
@@ -2236,7 +2238,7 @@
                                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3822000666564662886">
                                       <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3822000666564662887">
                                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3822000666564662888">
-                                          <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607198" resolveInfo="ScopeConcept" />
+                                          <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369890" resolveInfo="ScopeConcept" />
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3822000666564662889">
@@ -2305,7 +2307,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3822000666564662610">
                     <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3822000666564662611">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3822000666564662658">
-                        <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607196" resolveInfo="UnitConcept" />
+                        <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369892" resolveInfo="UnitConcept" />
                       </node>
                     </node>
                   </node>
@@ -2339,7 +2341,7 @@
                     <node role="quotedNode" roleId="tp3r.1196350785114" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="3410240535682306653">
                       <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
                       <property name="name" nameId="tpck.1169194664001" value="getUnitName" />
-                      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="wbvt.3822000666564591112" resolveInfo="getUnitName" />
+                      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="if8w.5067982036267369911" resolveInfo="getUnitName" />
                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3410240535682306654" />
                       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="3410240535682306665" />
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3410240535682306667">
@@ -2472,7 +2474,7 @@
                                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3822000666564662864">
                                       <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3822000666564662865">
                                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3822000666564662866">
-                                          <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607196" resolveInfo="UnitConcept" />
+                                          <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369892" resolveInfo="UnitConcept" />
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3822000666564662867">

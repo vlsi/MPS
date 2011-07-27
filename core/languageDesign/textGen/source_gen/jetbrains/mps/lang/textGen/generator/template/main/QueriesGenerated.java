@@ -220,19 +220,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2352568442779188165(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.TraceableConcept");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept");
   }
 
   public static boolean ifMacro_Condition_2352568442779188169(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.ScopeConcept");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept");
   }
 
   public static boolean ifMacro_Condition_2352568442779188173(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.UnitConcept");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
   }
 
   public static boolean ifMacro_Condition_3101153546911107956(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.TraceableConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.ScopeConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.UnitConcept");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
   }
 
   public static boolean ifMacro_Condition_8063439325683021763(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -248,19 +248,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2352568442779188177(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.TraceableConcept");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept");
   }
 
   public static boolean ifMacro_Condition_2352568442779188181(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.ScopeConcept");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept");
   }
 
   public static boolean ifMacro_Condition_2352568442779188185(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.UnitConcept");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
   }
 
   public static boolean ifMacro_Condition_3101153546911107996(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.TraceableConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.ScopeConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.textGen.structure.UnitConcept");
+    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
   }
 
   public static boolean ifMacro_Condition_2341412953773710155(final IOperationContext operationContext, final IfMacroContext _context) {

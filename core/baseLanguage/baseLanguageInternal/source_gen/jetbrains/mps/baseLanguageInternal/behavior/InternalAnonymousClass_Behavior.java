@@ -29,7 +29,7 @@ public class InternalAnonymousClass_Behavior {
     SPropertyOperations.set(thisNode, "nonStatic", "" + true);
   }
 
-  public static String virtual_getUnitName_3822000666564591112(SNode thisNode) {
+  public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     return InternalAnonymousClass_Behavior.call_getJavaName_3421461530438560397(thisNode);
   }
 
@@ -82,7 +82,7 @@ public class InternalAnonymousClass_Behavior {
 
   public static String call_getUnitName_3421461530438560389(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getUnitName_3822000666564591112", PARAMETERS_3421461530438560389);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389);
   }
 
   public static String call_getNestedName_3421461530438560275(SNode thisNode) {
@@ -96,7 +96,7 @@ public class InternalAnonymousClass_Behavior {
   }
 
   public static String callSuper_getUnitName_3421461530438560389(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getUnitName_3822000666564591112", PARAMETERS_3421461530438560389);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389);
   }
 
   public static String callSuper_getNestedName_3421461530438560275(SNode thisNode, String callerConceptFqName) {

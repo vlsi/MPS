@@ -206,7 +206,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodCall_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -421,8 +421,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeAnnotable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Cloneable" />
@@ -809,7 +809,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.CatchClause_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -896,7 +896,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -1573,7 +1573,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Cloneable" />
@@ -1676,7 +1676,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractForStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ForStatement_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -1701,7 +1701,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractForStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ForeachStatement_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -2312,7 +2312,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Interface_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -2999,7 +2999,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -3027,8 +3027,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Cloneable" />
@@ -3070,7 +3070,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StaticFieldDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Cloneable" />
