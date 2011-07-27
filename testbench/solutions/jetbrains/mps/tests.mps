@@ -46,8 +46,8 @@
   <import index="tplo" modelUID="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)" version="-1" />
   <import index="tpk3" modelUID="r:00000000-0000-4000-0000-011c895905bf(ypath_test1)" version="-1" />
   <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
-  <import index="q7wr" modelUID="r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)" version="-1" />
   <import index="mbhy" modelUID="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" version="-1" />
+  <import index="1va8" modelUID="r:4a10d467-ebea-4c93-8251-9563d3485037(jetbrains.mps.execution.impl.tests.tests@tests)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707830840" />
@@ -74,8 +74,8 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1209025552055518728" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="8962644517494419021" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="8962644517494457561" />
-    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="76698190606023524" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3034322180552461514" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1538369951873468539" />
   </roots>
   <root id="2712670354707830840">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707830841">
@@ -1763,15 +1763,6 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="vz87.1957199320903968411" resolveInfo="NotMake_Test" />
     </node>
   </root>
-  <root id="76698190606023524">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="76698190606023526">
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.execution.impl" />
-      <property name="moduleID" nameId="pop3.1280144168199506910" value="365fb593-3c1a-40a0-a7d7-c98144281283" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="76698190606059890">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="q7wr.7141662564075383485" resolveInfo="TestConfigurationsMigration" />
-    </node>
-  </root>
   <root id="3034322180552461514">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="3034322180552461515">
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.baseLanguage.unitTest.sandbox" />
@@ -1785,6 +1776,15 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="3034322180552461518">
       <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="mbhy.4347343044614079991" resolveInfo="Test4" />
+    </node>
+  </root>
+  <root id="1538369951873468539">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="1538369951873468540">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.execution.impl.tests" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="7b15492d-a198-43e2-91e3-4a7e9116ce2b" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1538369951873468541">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="1va8.7141662564075383485" resolveInfo="TestConfigurationsMigration" />
     </node>
   </root>
 </model>

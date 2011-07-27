@@ -52,7 +52,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_execution_impl" file="TestModule_jetbrains_mps_execution_impl.java">
+  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_execution_impl_tests" file="TestModule_jetbrains_mps_execution_impl_tests.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
