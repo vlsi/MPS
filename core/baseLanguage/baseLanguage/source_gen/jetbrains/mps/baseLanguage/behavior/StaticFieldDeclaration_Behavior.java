@@ -77,7 +77,7 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   @Nullable
-  public static String virtual_getTraceableProperty_3822000666564591088(SNode thisNode) {
+  public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name");
   }
 
@@ -113,7 +113,7 @@ public class StaticFieldDeclaration_Behavior {
 
   public static String call_getTraceableProperty_2496361171403550872(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550872);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550872);
   }
 
   public static List<Icon> callSuper_getMarkIcons_5039675756633082276(SNode thisNode, String callerConceptFqName) {
@@ -141,6 +141,6 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static String callSuper_getTraceableProperty_2496361171403550872(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550872);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_2496361171403550872);
   }
 }

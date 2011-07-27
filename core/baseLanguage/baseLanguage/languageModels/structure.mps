@@ -5,7 +5,7 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" implicit="yes" />
+  <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886294">
@@ -1176,7 +1176,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1224848483129" resolveInfo="IBLDeprecatable" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550860">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607199" resolveInfo="TraceableConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369891" resolveInfo="TraceableConcept" />
     </node>
   </root>
   <root id="1068390468198">
@@ -1255,7 +1255,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1224848483129" resolveInfo="IBLDeprecatable" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403551056">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607196" resolveInfo="UnitConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369892" resolveInfo="UnitConcept" />
     </node>
   </root>
   <root id="1068498886292">
@@ -1378,10 +1378,10 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1233920926773" resolveInfo="TypeAnnotable" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550882">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607199" resolveInfo="TraceableConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369891" resolveInfo="TraceableConcept" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550900">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607198" resolveInfo="ScopeConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369890" resolveInfo="ScopeConcept" />
     </node>
   </root>
   <root id="1068580123136">
@@ -1398,7 +1398,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1238805530342" resolveInfo="ILocalVariableElementList" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550910">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607198" resolveInfo="ScopeConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369890" resolveInfo="ScopeConcept" />
     </node>
   </root>
   <root id="1068580123137">
@@ -1471,7 +1471,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1238803202705" resolveInfo="ILocalVariableElement" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550859">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607199" resolveInfo="TraceableConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369891" resolveInfo="TraceableConcept" />
     </node>
   </root>
   <root id="1068580123159">
@@ -1689,7 +1689,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550871">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607199" resolveInfo="TraceableConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369891" resolveInfo="TraceableConcept" />
     </node>
   </root>
   <root id="1070475587102">
@@ -2293,7 +2293,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1224848483129" resolveInfo="IBLDeprecatable" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403551003">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607196" resolveInfo="UnitConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369892" resolveInfo="UnitConcept" />
     </node>
   </root>
   <root id="1109279763828">
@@ -2438,7 +2438,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550945">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607198" resolveInfo="ScopeConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369890" resolveInfo="ScopeConcept" />
     </node>
   </root>
   <root id="1144230876926">
@@ -2480,7 +2480,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550961">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607198" resolveInfo="ScopeConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369890" resolveInfo="ScopeConcept" />
     </node>
   </root>
   <root id="1145552809883">
@@ -2825,7 +2825,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550977">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607198" resolveInfo="ScopeConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369890" resolveInfo="ScopeConcept" />
     </node>
   </root>
   <root id="1164991038168">
@@ -2926,7 +2926,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8972672481958095232" resolveInfo="IControlFlowInterrupter" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550993">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2omo.3822000666564607196" resolveInfo="UnitConcept" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369892" resolveInfo="UnitConcept" />
     </node>
   </root>
   <root id="1171903607971">

@@ -241,7 +241,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)"), SNodeId.fromString("3822000666564607199")));
+        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)"), SNodeId.fromString("5067982036267369891")));
         result = quotedNode1_2;
       }
       return result;
@@ -267,7 +267,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
         SNode quotedNode1_8 = quotedNode_1;
         quotedNode1_8.setProperty("isVirtual", "true");
         quotedNode1_8.setProperty("name", "getTraceableProperty");
-        quotedNode1_8.addReference(SReference.create("overriddenMethod", quotedNode1_8, SModelReference.fromString("r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)"), SNodeId.fromString("3822000666564591088")));
+        quotedNode1_8.addReference(SReference.create("overriddenMethod", quotedNode1_8, SModelReference.fromString("r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)"), SNodeId.fromString("5067982036267369901")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_2;
@@ -333,7 +333,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)"), SNodeId.fromString("3822000666564607199")));
+        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)"), SNodeId.fromString("5067982036267369891")));
         result = quotedNode1_2;
       }
       return result;
@@ -351,7 +351,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)"), SNodeId.fromString("3822000666564607198")));
+        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)"), SNodeId.fromString("5067982036267369890")));
         result = quotedNode1_2;
       }
       return result;
@@ -376,7 +376,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
         SNode quotedNode1_7 = quotedNode_1;
         quotedNode1_7.setProperty("isVirtual", "true");
         quotedNode1_7.setProperty("name", "getScopeVariables");
-        quotedNode1_7.addReference(SReference.create("overriddenMethod", quotedNode1_7, SModelReference.fromString("r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)"), SNodeId.fromString("3822000666564591100")));
+        quotedNode1_7.addReference(SReference.create("overriddenMethod", quotedNode1_7, SModelReference.fromString("r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)"), SNodeId.fromString("5067982036267369894")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
@@ -437,7 +437,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)"), SNodeId.fromString("3822000666564607198")));
+        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)"), SNodeId.fromString("5067982036267369890")));
         result = quotedNode1_2;
       }
       return result;
@@ -455,7 +455,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)"), SNodeId.fromString("3822000666564607196")));
+        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)"), SNodeId.fromString("5067982036267369892")));
         result = quotedNode1_2;
       }
       return result;
@@ -480,7 +480,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
         SNode quotedNode1_7 = quotedNode_1;
         quotedNode1_7.setProperty("isVirtual", "true");
         quotedNode1_7.setProperty("name", "getUnitName");
-        quotedNode1_7.addReference(SReference.create("overriddenMethod", quotedNode1_7, SModelReference.fromString("r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)"), SNodeId.fromString("3822000666564591112")));
+        quotedNode1_7.addReference(SReference.create("overriddenMethod", quotedNode1_7, SModelReference.fromString("r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)"), SNodeId.fromString("5067982036267369911")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_8 = quotedNode_2;
@@ -540,7 +540,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)"), SNodeId.fromString("3822000666564607196")));
+        quotedNode1_2.addReference(SReference.create("intfc", quotedNode1_2, SModelReference.fromString("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)"), SNodeId.fromString("5067982036267369892")));
         result = quotedNode1_2;
       }
       return result;

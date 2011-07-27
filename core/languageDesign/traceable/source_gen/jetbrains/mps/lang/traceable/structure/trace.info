@@ -1,3 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="Traceable_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.Traceable_Language" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.StructureAspectDescriptor" />
+  <root nodeId="5067982036266282555">
+    <nodeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="11" startPosition="46" endLine="12" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="14" startPosition="34" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="18" startPosition="66" endLine="19" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="22" startPosition="52" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DumbConcept#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/traceable/structure/DumbConcept;" />
+    <nodeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/traceable/structure/DumbConcept;" />
+    <scopeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="14" startPosition="34" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="18" startPosition="66" endLine="19" endPosition="174" />
+    <scopeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="22" startPosition="52" endLine="23" endPosition="46" />
+    <scopeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="5067982036266282555" fileName="DumbConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.DumbConcept" />
+  </root>
+  <root nodeId="5067982036267369890">
+    <nodeInfo nodeId="5067982036267369890" fileName="ScopeConcept.java" startLine="7" startPosition="52" endLine="8" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="5067982036267369890" fileName="ScopeConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.ScopeConcept" />
+  </root>
+  <root nodeId="5067982036267369891">
+    <nodeInfo nodeId="5067982036267369891" fileName="TraceableConcept.java" startLine="7" startPosition="56" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="5067982036267369891" fileName="TraceableConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.TraceableConcept" />
+  </root>
+  <root nodeId="5067982036267369892">
+    <nodeInfo nodeId="5067982036267369892" fileName="UnitConcept.java" startLine="7" startPosition="51" endLine="8" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="5067982036267369892" fileName="UnitConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.structure.UnitConcept" />
+  </root>
+</debugInfo>
 

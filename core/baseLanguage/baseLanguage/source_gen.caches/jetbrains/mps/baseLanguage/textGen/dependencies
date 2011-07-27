@@ -42,8 +42,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -59,7 +59,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -79,7 +79,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -129,7 +129,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.AssertStatement_TextGen" file="AssertStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -198,7 +198,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.BlockStatement_TextGen" file="BlockStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -217,7 +217,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
@@ -236,7 +236,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.CatchClause_TextGen" file="CatchClause_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -264,7 +264,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -296,7 +296,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.CommentedStatement_TextGen" file="CommentedStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -306,7 +306,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -327,8 +327,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -338,7 +338,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
@@ -359,7 +359,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -392,7 +392,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -438,7 +438,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.ExpressionStatement_TextGen" file="ExpressionStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -452,7 +452,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -483,8 +483,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -494,8 +494,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -537,7 +537,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -570,8 +570,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -605,7 +605,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -657,7 +657,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.LocalVariableDeclarationStatement_TextGen" file="LocalVariableDeclarationStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -742,8 +742,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.PlaceholderMethodDeclaration_TextGen" file="PlaceholderMethodDeclaration_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
@@ -793,7 +793,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.RemarkStatement_TextGen" file="RemarkStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
@@ -801,7 +801,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.ReturnStatement_TextGen" file="ReturnStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -832,7 +832,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.SingleLineComment_TextGen" file="SingleLineComment_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -846,7 +846,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -856,7 +856,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
@@ -869,7 +869,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -899,8 +899,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -926,7 +926,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -941,7 +941,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -950,7 +950,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.SynchronizedStatement_TextGen" file="SynchronizedStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -971,7 +971,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -986,7 +986,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.ThrowStatement_TextGen" file="ThrowStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -995,7 +995,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.TryCatchStatement_TextGen" file="TryCatchStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -1004,7 +1004,7 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.TryStatement_TextGen" file="TryStatement_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
@@ -1068,7 +1068,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />

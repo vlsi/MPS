@@ -13,8 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior;
-import jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior;
+import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
+import jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior;
 
 public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -75,8 +75,8 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
     this.appendWithIndent("}");
     this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
-      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_3822000666564591088(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.TraceableConcept")));
-      TraceInfoGenerationUtil.fillScopeInfo(this, node, ScopeConcept_Behavior.call_getScopeVariables_3822000666564591100(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ScopeConcept")));
+      TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_5067982036267369901(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept")));
+      TraceInfoGenerationUtil.fillScopeInfo(this, node, ScopeConcept_Behavior.call_getScopeVariables_5067982036267369894(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept")));
     }
   }
 }

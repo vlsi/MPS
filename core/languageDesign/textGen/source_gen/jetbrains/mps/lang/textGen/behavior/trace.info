@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="EncodingDeclarationBase_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.EncodingDeclarationBase_BehaviorDescriptor" />
-  <unitInfo fileName="UnitConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UnitConcept_BehaviorDescriptor" />
-  <unitInfo fileName="ScopeConcept_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_BehaviorDescriptor" />
-  <unitInfo fileName="TraceableConcept_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_BehaviorDescriptor" />
   <unitInfo fileName="ReferenceAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ReferenceAppendPart_BehaviorDescriptor" />
   <unitInfo fileName="CollectionAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart_BehaviorDescriptor" />
   <unitInfo fileName="InfoAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.InfoAppendPart_BehaviorDescriptor" />
@@ -388,58 +385,6 @@
     <scopeInfo nodeId="1260930188116560108" fileName="UtilityMethodCall_Behavior.java" startLine="7" startPosition="41" endLine="10" endPosition="0" />
     <scopeInfo nodeId="1260930188116560108" fileName="UtilityMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="1260930188116560108" fileName="UtilityMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_Behavior" />
-  </root>
-  <root nodeId="3822000666564591085">
-    <nodeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="12" startPosition="40" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3822000666564591088" />
-    <nodeInfo nodeId="3822000666564591093" fileName="TraceableConcept_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="23" startPosition="86" endLine="24" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="24" startPosition="113" endLine="25" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="28" startPosition="119" endLine="29" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTraceableProperty_3822000666564591088#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTraceableProperty_3822000666564591088#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTraceableProperty_3822000666564591088#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="3822000666564591087" fileName="TraceableConcept_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="3822000666564591091" fileName="TraceableConcept_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="28" startPosition="119" endLine="29" endPosition="270" />
-    <scopeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="23" startPosition="86" endLine="25" endPosition="225" />
-    <scopeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
-    <unitInfo nodeId="3822000666564591085" fileName="TraceableConcept_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
-  </root>
-  <root nodeId="3822000666564591097">
-    <nodeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="12" startPosition="36" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3822000666564591100" />
-    <nodeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="18" startPosition="88" endLine="19" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="19" startPosition="113" endLine="20" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="23" startPosition="121" endLine="24" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getScopeVariables_3822000666564591100#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getScopeVariables_3822000666564591100#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="3822000666564591099" fileName="ScopeConcept_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="23" startPosition="121" endLine="24" endPosition="268" />
-    <scopeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="18" startPosition="88" endLine="20" endPosition="223" />
-    <scopeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <unitInfo nodeId="3822000666564591097" fileName="ScopeConcept_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
-  </root>
-  <root nodeId="3822000666564591109">
-    <nodeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="11" startPosition="35" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3822000666564591112" />
-    <nodeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="17" startPosition="77" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="22" startPosition="110" endLine="23" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getUnitName_3822000666564591112#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getUnitName_3822000666564591112#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="3822000666564591111" fileName="UnitConcept_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="22" startPosition="110" endLine="23" endPosition="256" />
-    <scopeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="17" startPosition="77" endLine="19" endPosition="211" />
-    <scopeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="3822000666564591109" fileName="UnitConcept_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
   </root>
 </debugInfo>
 

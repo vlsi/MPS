@@ -5,8 +5,8 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <import index="wbvt" modelUID="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)" version="-1" />
+  <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="12" />
+  <import index="wbvt" modelUID="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp3j" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -85,7 +85,7 @@
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237466416461">
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1237466412522">
-                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringPart" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringAppendPart" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="1237466405798" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1237466417497">
@@ -99,7 +99,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="1237466392852" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1237466394779">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1237466398594">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringPart" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringAppendPart" />
               </node>
             </node>
           </node>
@@ -114,7 +114,7 @@
                   </node>
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237467378597">
                     <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1237467373486">
-                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="2omo.1237305334312" resolveInfo="NodePart" />
+                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="2omo.1237305334312" resolveInfo="NodeAppendPart" />
                       <node role="leftExpression" roleId="tp25.1140138123956" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="1237467371672" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1237467382148">
@@ -136,7 +136,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="1237466253364" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1237466256056">
                 <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1237466263839">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="2omo.1237305334312" resolveInfo="NodePart" />
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="2omo.1237305334312" resolveInfo="NodeAppendPart" />
                 </node>
               </node>
             </node>
@@ -144,7 +144,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="1237466239013" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1237466241611">
                 <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1237466245145">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringPart" />
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="2omo.1237305557638" resolveInfo="ConstantStringAppendPart" />
                 </node>
               </node>
             </node>
