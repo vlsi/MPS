@@ -4,6 +4,8 @@ package jetbrains.mps.ide.datatransfer;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.awt.datatransfer.DataFlavor;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -233,11 +235,43 @@ public class CopyPasteUtil {
   }
 
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, String text) {
-    CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(nodes, text));
+    setClipboardContents(new SNodeTransferable(nodes, text));
   }
 
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, Map<SNode, Set<SNode>> nodesAndAttributes, String text) {
-    CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(nodes, text, nodesAndAttributes));
+    setClipboardContents(new SNodeTransferable(nodes, text, nodesAndAttributes));
+  }
+
+  /**
+   * A workaround for the following problem with CopyPasteManagerEx:
+   *
+   *    if stringContent of one of existing Transferable instances stored inside CopyPasteManagerEx.myDatas
+   * collection is equals to the stringContent of Transferable we are trying to "push" there (used as a parameter
+   * of this method) then existing element will "float up" inside CopyPasteManagerEx.myDatas collection and will
+   * be used next on next paste operation instead of passed Transferable.
+   *
+   * In case of MPS precondition that string equality of clipboard content meant actual equality of passed Trabsferables
+   * (SNodeTransferables) is generally wrong, so we have to work around this logic by deleting all exiting Transferables
+   * to avoid possible collisions between copied elements preventing user from copying actual node under mouse in editor.
+   */
+  private static void setClipboardContents(Transferable content) {
+    try {
+      String stringContent = getStringContent(content);
+      if (stringContent != null) {
+        for (Transferable existingContent : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+          if (stringContent.equals(getStringContent(existingContent))) {
+            CopyPasteManagerEx.getInstanceEx().removeContent(existingContent);
+          }
+        }
+      }
+    } catch (UnsupportedFlavorException e) {
+    } catch (IOException ex) {
+    }
+    CopyPasteManagerEx.getInstanceEx().setContents(content);
+  }
+
+  private static String getStringContent(Transferable content) throws UnsupportedFlavorException, IOException {
+    return (String) content.getTransferData(DataFlavor.stringFlavor);
   }
 
   public static void copyNodesToClipboard(List<SNode> nodes) {
