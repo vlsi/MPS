@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -38,6 +40,8 @@ import javax.swing.tree.TreeNode;
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   protected void visitModelNode(final SModelTreeNode modelNode) {
     if (!ProjectPane.isShowGenStatus()) return;
+    Application application = ApplicationManager.getApplication();
+    if (application.isDisposed() || application.isDisposeInProgress()) return;
 
     SModelDescriptor md = modelNode.getSModelDescriptor();
     if (!(md instanceof EditableSModelDescriptor) && !(md.isGeneratable())) return;
