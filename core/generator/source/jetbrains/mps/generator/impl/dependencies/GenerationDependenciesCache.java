@@ -76,7 +76,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   @Override
   public SModelDescriptor invalidateCacheForFile(IFile file) {
     SModelDescriptor md = super.invalidateCacheForFile(file);
-    if (md != null) {
+    if (md != null && md.getModule() != null) {
       ModelGenerationStatusManager.getInstance().invalidateData(Arrays.asList(md));
     }
     return md;
