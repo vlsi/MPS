@@ -35,6 +35,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_unittest",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_debug_tests",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_execution_impl",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_graphLayout_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_table_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests",

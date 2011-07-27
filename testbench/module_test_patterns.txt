@@ -1,1 +1,2 @@
 +testbench:**/TestModule*.java
+-testbench:**/*sandbox.java
