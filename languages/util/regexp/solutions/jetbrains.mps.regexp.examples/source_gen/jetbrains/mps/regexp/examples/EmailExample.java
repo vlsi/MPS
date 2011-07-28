@@ -9,6 +9,9 @@ import java.util.regex.Matcher;
   private static Pattern REGEXP_qkhp2f_a0a0a0a = Pattern.compile("(\\w+)@(\\w+(?:\\.\\w+))", 0);
   private static Pattern REGEXP_qkhp2f_a0a1a0 = Pattern.compile("(\\A+)", 0);
 
+  public EmailExample() {
+  }
+
   public static void msain(String emailToAnalyse) {
     {
       Pattern _pattern_0 = REGEXP_qkhp2f_a0a0a0a;

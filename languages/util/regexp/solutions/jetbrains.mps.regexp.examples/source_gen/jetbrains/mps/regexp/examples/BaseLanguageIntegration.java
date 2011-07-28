@@ -13,6 +13,9 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   private static Pattern REGEXP_efh9at_b0a0a3 = Pattern.compile("\\((.*?)\\)", 0);
   private static Pattern REGEXP_efh9at_b0a0e = Pattern.compile("\\s+", 0);
 
+  public BaseLanguageIntegration() {
+  }
+
   public static void email(String emailToAnalyse) {
     {
       Pattern _pattern_0 = REGEXP_efh9at_a0a0a0a;
