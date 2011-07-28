@@ -261,7 +261,7 @@ public final class OldBehaviorManager implements ApplicationComponent {
       }
     }
 
-    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConceptFqName());
+    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConceptFqName() + ", superConcepts: " + superConcepts.toString());
   }
 
   private static class MethodInfo {
