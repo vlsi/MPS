@@ -49,6 +49,9 @@ public class BaseEditorTestBody extends BaseTestBody {
   protected CellReference myStart;
   protected CellReference myFinish;
 
+  public BaseEditorTestBody() {
+  }
+
   public IEditor initEditor(final String before, final String after) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
