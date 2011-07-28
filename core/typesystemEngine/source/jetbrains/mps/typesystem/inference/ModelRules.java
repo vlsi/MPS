@@ -48,8 +48,8 @@ public class ModelRules {
   private OverloadedOperationsManager myOverloadedOperationsManager;
   private static final Logger LOG = Logger.getLogger(RulesManager.class);
 
-  public ModelRules(SModel model) {
-    List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());
+  public ModelRules(SModelDescriptor model) {
+    List<Language> languages = SModelOperations.getLanguages(model.getSModel(), GlobalScope.getInstance());
     for (Language language : languages) {
       loadLanguage(language.getModuleFqName());
     }

@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 public class RulesManagerNew {
-  private Map<SModel, ModelRules> myModelsToRules = new HashMap<SModel, ModelRules>();
+  private Map<SModelDescriptor, ModelRules> myModelsToRules = new HashMap<SModelDescriptor, ModelRules>();
   private TypeChecker myTypeChecker;
 
   public RulesManagerNew(TypeChecker typeChecker) {
@@ -33,20 +33,20 @@ public class RulesManagerNew {
     //myOverloadedOperationsManager = new OverloadedOperationsManager(myTypeChecker);
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
-        myModelsToRules.remove(modelDescriptor.getSModel());
+        myModelsToRules.remove(modelDescriptor);
       }
     });
   }
 
   public void clear() {
-    for (Map.Entry<SModel, ModelRules> entry : myModelsToRules.entrySet()) {
+    for (Map.Entry<SModelDescriptor, ModelRules> entry : myModelsToRules.entrySet()) {
       entry.getValue().clear();
     }
     myModelsToRules.clear();
   }
 
   private ModelRules getModelRules(SNode node) {
-    SModel model = node.getModel();
+    SModelDescriptor model = node.getModel().getModelDescriptor();
     ModelRules result = myModelsToRules.get(model);
     if (result == null) {
       result = new ModelRules(model);
