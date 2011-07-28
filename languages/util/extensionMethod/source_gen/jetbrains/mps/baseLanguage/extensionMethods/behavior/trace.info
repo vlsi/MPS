@@ -8,7 +8,7 @@
   <unitInfo fileName="ExtensionStaticFieldDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionStaticFieldDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionMethodDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BaseExtensionMethodContainer_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.BaseExtensionMethodContainer_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ExtensionMethodCall_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodCall_BehaviorDescriptor" />
   <root nodeId="1713017043373861885">
     <nodeInfo nodeId="1713017043373861890" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
