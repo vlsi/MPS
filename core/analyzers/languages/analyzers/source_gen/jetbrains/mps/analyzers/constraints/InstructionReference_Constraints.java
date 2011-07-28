@@ -4,6 +4,11 @@ package jetbrains.mps.analyzers.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
+import java.util.Map;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import java.util.HashMap;
+import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -16,33 +21,41 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InstructionReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_yymroq_a0a1a0a0a1 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.analyzers.constraints)", "4217760266503650626");
+  private static SNodePointer breakingNode_yymroq_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.analyzers.constraints)", "7383406024685167123");
 
   public InstructionReference_Constraints() {
     super("jetbrains.mps.analyzers.structure.InstructionReference");
   }
 
   @Override
-  public boolean hasOwnDefaultScopeProvider() {
-    return true;
-  }
-
-  @Override
-  public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new BaseReferenceScopeProvider() {
+  protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
+    Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
+    references.put("instruction", new BaseReferenceConstraintsDescriptor("instruction", this) {
       @Override
-      public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        List<SNode> result = new ArrayList<SNode>();
-        for (SNode analyzer : SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.analyzers.structure.Analyzer")) {
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(analyzer, "instruction", true)));
-        }
-        return result;
+      public boolean hasOwnScopeProvider() {
+        return true;
       }
 
+      @Nullable
       @Override
-      public SNodePointer getSearchScopeValidatorNode() {
-        return breakingNode_yymroq_a0a1a0a0a1;
+      public ReferenceScopeProvider getScopeProvider() {
+        return new BaseReferenceScopeProvider() {
+          @Override
+          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            List<SNode> result = new ArrayList<SNode>();
+            for (SNode analyzer : SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.analyzers.structure.Analyzer")) {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(analyzer, "instruction", true)));
+            }
+            return result;
+          }
+
+          @Override
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_yymroq_a0a1a0a0a1a0b0a1a0;
+          }
+        };
       }
-    };
+    });
+    return references;
   }
 }
