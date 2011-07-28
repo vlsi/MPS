@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.tree.TreePath;
@@ -89,6 +90,18 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
       MapSequence.fromMap(myStates).get(model).rebuild(rootTreeNode, model);
     }
     return rootTreeNode;
+  }
+
+  /*package*/ void rebuildEvaluationTreeNowIfNotDisposed() {
+    ApplicationManager.getApplication().assertIsDispatchThread();
+    if (!(isDisposed())) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          rebuildNow();
+        }
+      });
+    }
+
   }
 
   @Override

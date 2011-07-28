@@ -109,7 +109,7 @@ public abstract class EvaluationUi extends JPanel {
     invokeLaterIfNeeded(new Runnable() {
       public void run() {
         myTree.setResultProxy(evaluatedValue, model);
-        myTree.rebuildLater();
+        myTree.rebuildEvaluationTreeNowIfNotDisposed();
       }
     });
   }
@@ -118,7 +118,7 @@ public abstract class EvaluationUi extends JPanel {
     invokeLaterIfNeeded(new Runnable() {
       public void run() {
         myTree.setEvaluating(model);
-        myTree.rebuildLater();
+        myTree.rebuildEvaluationTreeNowIfNotDisposed();
       }
     });
   }
@@ -131,7 +131,7 @@ public abstract class EvaluationUi extends JPanel {
         } else {
           myTree.setError(message, model);
         }
-        myTree.rebuildLater();
+        myTree.rebuildEvaluationTreeNowIfNotDisposed();
       }
     });
   }
@@ -194,9 +194,7 @@ public abstract class EvaluationUi extends JPanel {
       if (myDebugSession == session) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            if (!(myDebugSession.isStopped())) {
-              myTree.rebuildLater();
-            }
+            myTree.rebuildEvaluationTreeNowIfNotDisposed();
           }
         });
       }
