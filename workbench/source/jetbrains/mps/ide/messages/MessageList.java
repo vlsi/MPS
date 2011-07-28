@@ -105,6 +105,8 @@ abstract class MessageList implements IMessageList {
 
   public abstract void createContent();
 
+  protected abstract boolean isDisposed();
+
   public void show(boolean setActive) {
     if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
@@ -122,6 +124,9 @@ abstract class MessageList implements IMessageList {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        if (isDisposed()) {
+          return;
+        }
         myModel.clear();
         myMessages.clear();
         myErrors = 0;
@@ -142,6 +147,9 @@ abstract class MessageList implements IMessageList {
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        if (isDisposed()) {
+          return;
+        }
         int messages = myMessagesInProgress.decrementAndGet();
 
         if (myMessages.size() >= MAX_SIZE) {
