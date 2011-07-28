@@ -259,6 +259,8 @@
     <path path="${base_dir}/core/languageDesign/test/test_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/source_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/test_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/source_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/test_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/source_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/test_gen" />
     <path path="${base_dir}/core/languageDesign/make/languages/facet/source_gen" />
@@ -390,10 +392,6 @@
     <path path="${base_dir}/core/languageDesign/smodel/languages/smodelTests/source_gen" />
     <path path="${base_dir}/core/languageDesign/smodel/languages/smodelTests/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.lang.traceable_tjc.src">
-    <path path="${base_dir}/core/languageDesign/traceable/source_gen" />
-    <path path="${base_dir}/core/languageDesign/traceable/test_gen" />
-  </path>
   <path id="cycle.jetbrains.mps.nanoj_tjc.src">
     <path path="${base_dir}/languages/util/mps-lite/languages/nanoj/source_gen" />
     <path path="${base_dir}/languages/util/mps-lite/languages/nanoj/test_gen" />
@@ -493,6 +491,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -589,6 +588,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/core/languageDesign/make/languages/facet/classes_gen" />
     <path path="${base_dir}/core/languageDesign/make/languages/script/classes_gen" />
@@ -661,6 +661,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -762,6 +763,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -854,6 +856,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -944,6 +947,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1035,6 +1039,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1127,6 +1132,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1218,6 +1224,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1310,6 +1317,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1400,6 +1408,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1491,6 +1500,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1583,6 +1593,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1699,6 +1710,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1789,6 +1801,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1882,6 +1895,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -1983,6 +1997,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -2083,6 +2098,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -2180,6 +2196,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -2279,6 +2296,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -2370,6 +2388,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/classes_gen" />
@@ -2462,6 +2481,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -2553,6 +2573,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -2644,6 +2665,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -2731,96 +2753,6 @@
     <path path="${base_dir}/core/languageDesign/sharedConcepts/classes_gen" />
     <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/smodel/languages/smodelTests/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
-    <path path="${base_dir}/languages/core/core/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
-    <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
-    <path path="${base_dir}/languages/util/ypath/classes_gen" />
-    <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="${base_dir}/lib/asm.jar" />
-    <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path path="${base_dir}/lib/commons-logging-1.1.jar" />
-    <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/junit-4.8.2.jar" />
-    <path path="${base_dir}/lib/tools.jar" />
-    <path refid="common.classpath" />
-  </path>
-  <path id="cycle.jetbrains.mps.lang.traceable_tjc.classpaths">
-    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/classifiers/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/actions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/constraints/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/dataFlow/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/languages/table/runtime/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/findUsages/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/intentions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/facet/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/plugin/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/project/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/quotation/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/refactoring/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/sharedConcepts/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
     <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
@@ -2916,6 +2848,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3007,6 +2940,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3098,6 +3032,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3189,6 +3124,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3290,6 +3226,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3403,6 +3340,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3494,6 +3432,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3590,6 +3529,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3681,6 +3621,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3772,6 +3713,7 @@
     <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/core/languageDesign/test/classes_gen" />
     <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
+    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -3810,7 +3752,7 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.lang.traceable_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -3944,6 +3886,8 @@
     <mkdir dir="${base_dir}/core/languageDesign/test/test_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/textGen/source_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/textGen/test_gen" />
+    <mkdir dir="${base_dir}/core/languageDesign/traceable/source_gen" />
+    <mkdir dir="${base_dir}/core/languageDesign/traceable/test_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/typesystem/source_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/typesystem/test_gen" />
     <mkdir dir="${base_dir}/core/languageDesign/make/languages/facet/source_gen" />
@@ -4031,6 +3975,7 @@
     <mkdir dir="${jetbrains.mps.lang.stubs.classes}" />
     <mkdir dir="${jetbrains.mps.lang.test.classes}" />
     <mkdir dir="${jetbrains.mps.lang.textGen.classes}" />
+    <mkdir dir="${jetbrains.mps.lang.traceable.classes}" />
     <mkdir dir="${jetbrains.mps.lang.typesystem.classes}" />
     <mkdir dir="${jetbrains.mps.make.facet.classes}" />
     <mkdir dir="${jetbrains.mps.make.script.classes}" />
@@ -4265,6 +4210,10 @@
     <copy todir="${jetbrains.mps.lang.textGen.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/textGen/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/textGen/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.lang.traceable.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/traceable/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/traceable/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.lang.typesystem.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/typesystem/source_gen" />
@@ -4652,6 +4601,12 @@
       <src>
         <path path="${base_dir}/core/languageDesign/textGen/source_gen" />
         <path path="${base_dir}/core/languageDesign/textGen/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.traceable.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/core/languageDesign/traceable/source_gen" />
+        <path path="${base_dir}/core/languageDesign/traceable/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.typesystem.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -5297,29 +5252,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.traceable_tjc" depends="compile.cycle.jetbrains.mps.lang.smodelTests_tjc">
-    <property name="classes.dump" value="${jetbrains.mps.lang.traceable.classes}.tmp" />
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/languageDesign/traceable/source_gen" />
-    <mkdir dir="${base_dir}/core/languageDesign/traceable/test_gen" />
-    <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.lang.traceable.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.lang.traceable_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src refid="cycle.jetbrains.mps.lang.traceable_tjc.src" />
-    </javac>
-    <copy todir="${jetbrains.mps.lang.traceable.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/traceable/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/core/languageDesign/traceable/test_gen" />
-    </copy>
-    <javac classpathref="cycle.jetbrains.mps.lang.traceable_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.traceable.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/core/languageDesign/traceable/source_gen" />
-        <path path="${base_dir}/core/languageDesign/traceable/test_gen" />
-      </src>
-    </javac>
-    <delete dir="${classes.dump}" />
-  </target>
-  <target name="compile.cycle.jetbrains.mps.nanoj_tjc" depends="compile.cycle.jetbrains.mps.lang.traceable_tjc">
+  <target name="compile.cycle.jetbrains.mps.nanoj_tjc" depends="compile.cycle.jetbrains.mps.lang.smodelTests_tjc">
     <property name="classes.dump" value="${jetbrains.mps.nanoj.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/mps-lite/languages/nanoj/source_gen" />
@@ -5617,6 +5550,7 @@
     <delete dir="${jetbrains.mps.lang.stubs.classes}" />
     <delete dir="${jetbrains.mps.lang.test.classes}" />
     <delete dir="${jetbrains.mps.lang.textGen.classes}" />
+    <delete dir="${jetbrains.mps.lang.traceable.classes}" />
     <delete dir="${jetbrains.mps.lang.typesystem.classes}" />
     <delete dir="${jetbrains.mps.make.facet.classes}" />
     <delete dir="${jetbrains.mps.make.script.classes}" />
@@ -5659,7 +5593,6 @@
     <delete dir="${jetbrains.mps.lang.editor.table.classes}" />
     <delete dir="${jetbrains.mps.lang.pattern.testLang.classes}" />
     <delete dir="${jetbrains.mps.lang.smodelTests.classes}" />
-    <delete dir="${jetbrains.mps.lang.traceable.classes}" />
     <delete dir="${jetbrains.mps.nanoj.classes}" />
     <delete dir="${jetbrains.mps.platform.conf.classes}" />
     <delete dir="${jetbrains.mps.quickQueryLanguage.classes}" />
