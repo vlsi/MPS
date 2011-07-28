@@ -84,5 +84,6 @@
     <classNode dependClassName="jetbrains.mps.execution.sandbox.sandbox.PersonEditor_Configuration" />
     <classNode extendsClassName="javax.swing.JFrame" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.sandbox.sandbox.test" file="test.xml" />
 </dependenciesRoot>
 
