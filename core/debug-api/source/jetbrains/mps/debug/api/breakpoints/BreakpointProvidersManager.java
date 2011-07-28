@@ -17,6 +17,9 @@ package jetbrains.mps.debug.api.breakpoints;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,6 +54,9 @@ public class BreakpointProvidersManager implements ApplicationComponent {
     for (IBreakpointKind kind : provider.getAllKinds()) {
       myKindToProvider.put(kind, provider);
       myNameToKind.put(kind.getName(), kind);
+    }
+    for (Project project : ProjectManager.getInstance().getOpenProjects()){
+      BreakpointManagerComponent.getInstance(project).reReadState();
     }
   }
 
