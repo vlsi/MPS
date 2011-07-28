@@ -90,6 +90,12 @@ public class EditorCell_Property extends EditorCell_Label {
    */
   public void commit() {
     assert ModelAccess.instance().canWrite();
+    // a solution for MPS-13531
+    // better solution is to redispatch all currently waiting EDT commands inside MPSProject.dispose() method
+    // currently not available - not possible to redispatch all waiting commands from AWT Thread.
+    if (getSNode().isDisposed()) {
+      return;
+    }
     if (myCommitInProgress) return;
     myCommitInProgress = true;
     try {
