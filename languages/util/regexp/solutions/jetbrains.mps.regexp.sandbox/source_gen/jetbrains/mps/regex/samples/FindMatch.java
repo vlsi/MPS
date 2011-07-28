@@ -8,6 +8,9 @@ import java.util.regex.Matcher;
 /*package*/ class FindMatch {
   private static Pattern REGEXP_jzh4fq_a0a0b0a = Pattern.compile("(\\d+)", 0);
 
+  public FindMatch() {
+  }
+
   /*package*/ void main() {
     String s = "abcdef2323";
     {

@@ -8,6 +8,9 @@ import java.util.regex.Matcher;
 /*package*/ class Options {
   private static Pattern REGEXP_3flcu7_a0a0a0a = Pattern.compile("abcde", 32);
 
+  public Options() {
+  }
+
   /*package*/ void test() {
     {
       Pattern _pattern_0 = REGEXP_3flcu7_a0a0a0a;

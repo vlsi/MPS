@@ -10,6 +10,9 @@ import java.util.regex.Matcher;
   private static Pattern REGEXP_1x0l1l_a0a0b0b = Pattern.compile("(\\w+)@(\\w+)", 0);
   private static Pattern REGEXP_1x0l1l_a0a0b0c = Pattern.compile("(\\w+)\\1", 0);
 
+  public SimpleMatch() {
+  }
+
   /*package*/ void simplestRegexp() {
     String s = "";
     {

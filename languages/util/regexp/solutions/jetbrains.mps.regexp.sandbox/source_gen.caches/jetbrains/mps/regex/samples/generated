@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c4djyeh1rjefuyy413onb4sxowiz9e4">
+<dependencies version="2" modelHash="-dd3429lffz74b7h5damkah1yvrgew16">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
@@ -14,7 +14,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
   <common hash="-emzqmiglng189owvnhsvx3cn71csx5o" />
-  <source id="1174939589143" name="SimpleMatch" hash="-64tuiol30ui1fixn500uaymddkagzc">
+  <source id="1174939589143" name="SimpleMatch" hash="-bapd237zsw0kuhwyrcs7vez4uwfm3o6">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -46,14 +46,13 @@
     <file name="_Replacer_x5qji9_a0a0b0a.java" />
     <file name="_Replacer_x5qji9_a0a0b0b.java" />
   </source>
-  <source id="1174939905327" name="Regexps" hash="-dlzlzzj8to4nv8sidtokspqxzm4yuvc">
+  <source id="1174939905327" name="Regexps" hash="923j2qy9pmlp2bkp10wkxnoltgib5zz">
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1174939949624" name="PredefinedRegexps" hash="2uc8b3awngrgyksb4g57z3c76q3r7ez">
+  <source id="1174939949624" name="PredefinedRegexps" hash="de8rfgbj5yz30nx003kh3l7fmgz7uoi">
     <dep root="1174939905327" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -67,7 +66,7 @@
     <file name="PredefinedRegexps.java" />
     <file name="_Replacer_90k4hu_a0a0b0b.java" />
   </source>
-  <source id="1175155050941" name="MatchIteration" hash="503c6tl1rhiicx47oj9jeua66dm5o8i">
+  <source id="1175155050941" name="MatchIteration" hash="-ejsuizjq4rf0c7jgc3n8sm5drc6gun7">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -82,7 +81,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MatchIteration.java" />
   </source>
-  <source id="1175164538647" name="Split" hash="5bblxpyybrcbdcfcqer3t72rdk2ry5m">
+  <source id="1175164538647" name="Split" hash="-uymtvyxqzv2hrrqbq2dr8963qk5wk8">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -97,7 +96,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Split.java" />
   </source>
-  <source id="1175169338798" name="FindMatch" hash="1dnflmt4pnr60c6me3nit5boll56syq">
+  <source id="1175169338798" name="FindMatch" hash="dzz5gvecd3w5tqexmsscz69cwf0y7rc">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -112,7 +111,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FindMatch.java" />
   </source>
-  <source id="1175170722314" name="Options" hash="-bnqoda8qr3sqqpcpbeukgmebcraj2ml">
+  <source id="1175170722314" name="Options" hash="-8pxi730pnbzx50in8yijq2hw4kdo4x3">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -125,7 +124,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Options.java" />
   </source>
-  <source id="1178100774077" name="Regexps" hash="3srvd1qp5vdpa59f1eu211pchrfubaz">
+  <source id="1178100774077" name="Regexps" hash="8q7niay2lrb51xxxraqc1ip49rf3shj">
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1220889094624" name="Regexps" hash="-2a8c36nfmzy71zrw70unausmw35b0d0">

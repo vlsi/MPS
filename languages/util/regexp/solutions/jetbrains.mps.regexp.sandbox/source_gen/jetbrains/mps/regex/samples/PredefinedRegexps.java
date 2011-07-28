@@ -10,6 +10,9 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   private static Pattern REGEXP_90k4hu_a0a0b0a = Pattern.compile("(?:(\\w+)@(\\w+))", 0);
   private static Pattern REGEXP_90k4hu_b0a1a1 = Pattern.compile("(?:(\\w+)@(\\w+))", 0);
 
+  public PredefinedRegexps() {
+  }
+
   /*package*/ void matchWithPredefined() {
     String s = "";
     {

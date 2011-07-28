@@ -9,6 +9,9 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   private static Pattern REGEXP_nud8d_b0b0a = Pattern.compile("\\d+", 0);
   private static Pattern REGEXP_nud8d_b0a0b = Pattern.compile("\\s+", 0);
 
+  public Split() {
+  }
+
   /*package*/ void splitTest() {
     String s = "ab23cd23ef";
     for (String st : RegexpOperations.split(s, REGEXP_nud8d_b0b0a)) {
