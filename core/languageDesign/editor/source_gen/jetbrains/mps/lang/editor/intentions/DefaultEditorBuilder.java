@@ -309,7 +309,7 @@ public class DefaultEditorBuilder {
           sb.append(Character.toLowerCase(cs[i]));
           continue;
         }
-        while (i + 1 < cs.length && Character.isUpperCase(cs[i + 1])) {
+        while (i + 1 < cs.length && !(Character.isLowerCase(cs[i + 1]))) {
           sb.append(cs[i]);
           i++;
         }
