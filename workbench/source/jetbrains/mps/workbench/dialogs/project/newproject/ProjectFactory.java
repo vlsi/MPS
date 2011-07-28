@@ -185,6 +185,7 @@ public class ProjectFactory {
     LanguageAspect.STRUCTURE.createNew(language, false);
     LanguageAspect.EDITOR.createNew(language, false);
     LanguageAspect.CONSTRAINTS.createNew(language, false);
+    LanguageAspect.BEHAVIOR.createNew(language, false);
     LanguageAspect.TYPESYSTEM.createNew(language, false);
     
     language.setLanguageDescriptor(languageDescriptor, false);
