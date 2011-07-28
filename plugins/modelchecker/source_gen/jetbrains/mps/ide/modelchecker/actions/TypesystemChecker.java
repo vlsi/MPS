@@ -51,6 +51,7 @@ public class TypesystemChecker extends SpecificChecker implements ITypeContextOw
           addIssue(results, node, errorReporter.reportError(), SpecificChecker.getResultCategory(errorReporter.getMessageStatus()), "type system", fix);
         }
       }
+      TypeContextManager.getInstance().removeContextForNode(rootNode);
       typeCheckingContext.dispose();
     }
     return results;

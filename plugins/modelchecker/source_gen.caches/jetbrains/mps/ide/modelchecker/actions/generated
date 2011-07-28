@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a9z9ucq5sobet6xg3ogcl3wsvkg6qyc">
+<dependencies version="2" modelHash="8vfucjerby21dcbf82m8zx3qr290uzw">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" />
@@ -427,7 +427,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SpecificChecker.java" />
   </source>
-  <source id="1453248744423272852" name="TypesystemChecker" hash="biagge58w21vwgy29uo5u1ith92ouyh">
+  <source id="1453248744423272852" name="TypesystemChecker" hash="-dugd3u3i2jobsiwqjguidfytjgognl7">
     <dep root="1453248744423272806" />
     <dep root="1453248744423273298" />
     <dep root="1453248744423273649" />
