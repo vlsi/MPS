@@ -92,18 +92,11 @@ public class Mps_Command {
   }
 
   private static String getSystemPathArgument(String systemPath) {
-    return Mps_Command.protect("-Didea.system.path=" + systemPath);
+    return Java_Command.protect("-Didea.system.path=" + systemPath);
   }
 
   private static String getConfigPathArgument(String configPath) {
-    return Mps_Command.protect("-Didea.config.path=" + configPath);
-  }
-
-  private static String protect(String result) {
-    if (result.contains(" ")) {
-      return "\"" + result + "\"";
-    }
-    return result;
+    return Java_Command.protect("-Didea.config.path=" + configPath);
   }
 
   private static List<String> getClassPath() {

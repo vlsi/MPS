@@ -9,6 +9,7 @@ import jetbrains.mps.execution.lib.Java_Command;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.application.PathManager;
 import java.io.File;
 import java.util.List;
@@ -16,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
@@ -74,10 +74,14 @@ public class Ant_Command {
     if (StringUtils.isEmpty(jdkHome)) {
       throw new ExecutionException("Could not find valid java home.");
     }
-    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter("-Djava.home=" + jdkHome + " -Dant.home=" + myAntLocation + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()), " ") + " " + ((StringUtils.isNotEmpty(myOptions) ?
+    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter(Java_Command.protect("-Djava.home=" + jdkHome) + " " + Java_Command.protect("-Dant.home=" + myAntLocation) + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()).<String>select(new ISelector<String, String>() {
+      public String select(String it) {
+        return Java_Command.protect(it);
+      }
+    }), " ") + " " + ((StringUtils.isNotEmpty(myOptions) ?
       myOptions + " " :
       ""
-    )) + "-f " + antFilePath + ((StringUtils.isEmpty(myTargetName) ?
+    )) + "-f " + Java_Command.protect(antFilePath) + ((StringUtils.isEmpty(myTargetName) ?
       "" :
       " " + myTargetName
     ))).createProcess("org.apache.tools.ant.launch.Launcher");

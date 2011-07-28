@@ -230,7 +230,7 @@ public class Java_Command {
     return null;
   }
 
-  private static String protect(String result) {
+  public static String protect(String result) {
     if (result.contains(" ")) {
       return "\"" + result + "\"";
     }
