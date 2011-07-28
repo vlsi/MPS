@@ -656,6 +656,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
+    <classNode extendsClassName="jetbrains.mps.typesystem.inference.ITypeContextOwner" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.UnavailableConceptsChecker" file="UnavailableConceptsChecker.java">
     <classNode dependClassName="java.lang.Class" />
