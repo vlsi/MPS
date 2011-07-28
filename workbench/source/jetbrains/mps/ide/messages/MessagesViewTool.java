@@ -58,6 +58,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private Project myProject;
   private Map<Object, List<MessageList>> myMessageLists = new HashMap<Object, List<MessageList>>();
   private Map<Content, MessageList> myContents = new HashMap<Content, MessageList>();
+  private boolean myDisposed = false;
 
   public MessagesViewTool(Project project) {
     myProject = project;
@@ -112,7 +113,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public void disposeComponent() {
-
+    myDisposed = true;
   }
 
   public void projectOpened() {
@@ -239,6 +240,11 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
 
     @Override
+    protected boolean isDisposed() {
+      return myDisposed;
+    }
+
+    @Override
     protected void setDisplayInfo(final String name) {
       final MessageView service = getMessagesService();
       service.runWhenInitialized(new Runnable() {
@@ -295,6 +301,11 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
         }
       });
+    }
+
+    @Override
+    protected boolean isDisposed() {
+      return myDisposed;
     }
 
     @Override
