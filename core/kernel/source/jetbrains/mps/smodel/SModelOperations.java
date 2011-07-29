@@ -136,7 +136,7 @@ public class SModelOperations {
     List<ModuleReference> devkits = model.importedDevkits();
     Set<ModuleReference> result = new HashSet<ModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);
-    if (MPSCore.getInstance().isMergeDriverMode()) {
+    if (!MPSCore.getInstance().isMergeDriverMode()) {
       for (ModuleReference dk : devkits) {
         DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
         if (devKit == null) continue;
