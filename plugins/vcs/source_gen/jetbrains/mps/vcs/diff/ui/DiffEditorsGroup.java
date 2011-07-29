@@ -5,13 +5,14 @@ package jetbrains.mps.vcs.diff.ui;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
 import java.awt.Rectangle;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
@@ -33,41 +34,20 @@ public class DiffEditorsGroup {
     diffEditor.getMainEditor().getViewport().addChangeListener(new DiffEditorsGroup.MyViewportChangeListener(diffEditor));
   }
 
-  private static SNode getFirstVisibleNode(EditorComponent editor, SNode node) {
-    EditorCell cell = editor.findNodeCell(node);
-    if (cell == null) {
-      return null;
-    }
-    if (cell.getY() > editor.getViewport().getViewPosition().y) {
-      return node;
-    }
-    SNode result = null;
-    int resultY = Integer.MAX_VALUE;
-    for (SNode child : node.getChildrenIterable()) {
-      SNode visibleForChild = getFirstVisibleNode(editor, child);
-      if (visibleForChild != null) {
-        EditorCell nodeCell = editor.findNodeCell(visibleForChild);
-        assert nodeCell != null;
-        int thisY = nodeCell.getY();
-        if (thisY < resultY) {
-          resultY = thisY;
-          result = visibleForChild;
-        }
-      }
-    }
-    return result;
-  }
-
   private static void synchronizeViewWithOther(final EditorComponent thisEditor, final EditorComponent otherEditor) {
     if (thisEditor == otherEditor) {
       return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode visibleNode = getFirstVisibleNode(thisEditor, thisEditor.getEditedNode());
-        if (visibleNode != null) {
+        int viewY = thisEditor.getViewport().getViewPosition().y;
+        SNode visibleNode = thisEditor.getEditedNode();
+        if (viewY > thisEditor.getRootCell().getY()) {
+          visibleNode = check_s6qw4f_a0a0c0a1a0(thisEditor.findCellWeak(1, viewY));
+        }
+        while (visibleNode != null) {
           SNodeId id = visibleNode.getSNodeId();
-          int newRelativePos = thisEditor.getViewport().getViewPosition().y - thisEditor.findNodeCell(visibleNode).getY();
+          int newRelativePos = viewY - thisEditor.findNodeCell(visibleNode).getY();
           SNode sNode = otherEditor.getEditedNode();
           if (sNode == null) {
             return;
@@ -81,10 +61,31 @@ public class DiffEditorsGroup {
             if (viewRect.y + viewRect.height > otherEditor.getHeight()) {
               otherEditor.getViewport().setViewPosition(new Point(viewRect.x, otherEditor.getHeight() - viewRect.height));
             }
+            return;
+          }
+          SNode prevSibling = SNodeOperations.getPrevSibling(visibleNode);
+          if (visibleNode.getRole_().equals(check_s6qw4f_a0a9a3a0b0a(prevSibling))) {
+            visibleNode = prevSibling;
+          } else {
+            visibleNode = visibleNode.getParent();
           }
         }
       }
     });
+  }
+
+  private static SNode check_s6qw4f_a0a0c0a1a0(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNode();
+    }
+    return null;
+  }
+
+  private static String check_s6qw4f_a0a9a3a0b0a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRole_();
+    }
+    return null;
   }
 
   private static SNodeId check_s6qw4f_a0a0a0a0a(SNode checkedDotOperand) {
