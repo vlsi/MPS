@@ -6,13 +6,13 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import org.jetbrains.annotations.NotNull;
-import com.sun.jdi.Value;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.evaluation.EvaluationException;
-import jetbrains.mps.debug.evaluation.EvaluationRuntimeException;
+import com.sun.jdi.Value;
 import java.util.List;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
+import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
@@ -26,19 +26,19 @@ public class ListViewer_WrapperFactory extends ValueWrapperFactory {
   }
 
   @Override
-  public boolean canWrapValue(@NotNull JavaValue javaValue) {
-    try {
-      Value value = javaValue.getValue();
-      if (value == null) {
-        return false;
+  public boolean canWrapValue(@NotNull final JavaValue javaValue) {
+    return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<Boolean>() {
+      public Boolean invoke() throws EvaluationException {
+        Value value = javaValue.getValue();
+        if (value == null) {
+          return false;
+        }
+        if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljava/util/List;", value.virtualMachine()))) {
+          return false;
+        }
+        return true;
       }
-      if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljava/util/List;", value.virtualMachine()))) {
-        return false;
-      }
-      return true;
-    } catch (EvaluationException e) {
-      throw new EvaluationRuntimeException(e);
-    }
+    }, false);
   }
 
   public static class ListViewerWrapper extends ValueWrapper {
@@ -47,11 +47,11 @@ public class ListViewer_WrapperFactory extends ValueWrapperFactory {
     }
 
     protected List<CustomJavaWatchable> getSubvaluesImpl() {
-      try {
-        return getSubvaluesImpl((IObjectValueProxy) myValueProxy);
-      } catch (EvaluationException e) {
-        throw new EvaluationRuntimeException(e);
-      }
+      return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<List<CustomJavaWatchable>>() {
+        public List<CustomJavaWatchable> invoke() throws EvaluationException {
+          return getSubvaluesImpl((IObjectValueProxy) myValueProxy);
+        }
+      }, Collections.<CustomJavaWatchable>emptyList());
     }
 
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
