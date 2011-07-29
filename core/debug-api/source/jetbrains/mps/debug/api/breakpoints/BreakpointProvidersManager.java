@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -49,21 +50,29 @@ public class BreakpointProvidersManager implements ApplicationComponent {
   public void disposeComponent() {
   }
 
-  public void registerProvider(IBreakpointsProvider<? extends IBreakpoint, ? extends IBreakpointKind<? extends IBreakpoint>> provider){
+  public void registerProvider(IBreakpointsProvider<? extends IBreakpoint, ? extends IBreakpointKind<? extends IBreakpoint>> provider) {
     // I just love generics in java
     for (IBreakpointKind kind : provider.getAllKinds()) {
       myKindToProvider.put(kind, provider);
       myNameToKind.put(kind.getName(), kind);
     }
-    for (Project project : ProjectManager.getInstance().getOpenProjects()){
+    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
       BreakpointManagerComponent.getInstance(project).reReadState();
     }
   }
 
-  public void unregisterProvider(IBreakpointsProvider<? extends IBreakpoint, ? extends IBreakpointKind<? extends IBreakpoint>> provider){
+  public void unregisterProvider(IBreakpointsProvider<? extends IBreakpoint, ? extends IBreakpointKind<? extends IBreakpoint>> provider) {
+    Map<BreakpointManagerComponent, Element> states = new HashMap<BreakpointManagerComponent, Element>();
+    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+      BreakpointManagerComponent component = BreakpointManagerComponent.getInstance(project);
+      states.put(component, component.getState());
+    }
     for (IBreakpointKind kind : provider.getAllKinds()) {
       myKindToProvider.remove(kind);
       myNameToKind.remove(kind.getName());
+    }
+    for (BreakpointManagerComponent component : states.keySet()) {
+      component.loadState(states.get(component));
     }
   }
 
@@ -77,7 +86,7 @@ public class BreakpointProvidersManager implements ApplicationComponent {
     return myNameToKind.get(name);
   }
 
-  public Set<IBreakpointKind> getAllKinds(){
+  public Set<IBreakpointKind> getAllKinds() {
     return myKindToProvider.keySet();
   }
 }
