@@ -115,6 +115,7 @@ public class LanguageRenamer {
   public void update() {
     updateReferences();
     RefactoringFacade.updateLoadedModels(myContext);
+    SModelRepository.getInstance().saveAll();
   }
 
   private void updateReferences() {
