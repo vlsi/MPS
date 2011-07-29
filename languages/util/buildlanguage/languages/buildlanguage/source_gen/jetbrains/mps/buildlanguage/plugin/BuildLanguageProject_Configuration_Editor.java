@@ -60,7 +60,6 @@ public class BuildLanguageProject_Configuration_Editor extends SettingsEditorEx<
   public void resetEditorFrom(final BuildLanguageProject_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     mySettings.resetEditorFrom(configuration.getSettings());
-    mySettings.resetEditorFrom(configuration.getSettings());
     myTargetChooser.reset(configuration.getNode().getNode(), configuration.getTargetId());
   }
 }

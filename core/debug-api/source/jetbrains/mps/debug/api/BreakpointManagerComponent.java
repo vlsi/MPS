@@ -210,6 +210,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     return rootElement;
   }
 
+  public void reReadState(){
+    loadState(getState());
+  }
+
   //this is called when a breakpoint is hit
 
   public void processBreakpointHit(IBreakpoint breakpoint) {

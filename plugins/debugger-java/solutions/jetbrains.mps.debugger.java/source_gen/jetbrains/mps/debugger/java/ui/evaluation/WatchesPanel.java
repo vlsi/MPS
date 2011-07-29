@@ -28,7 +28,7 @@ public class WatchesPanel extends EvaluationUi {
           public void run() {
             myTree.addModel(model);
             evaluate(model);
-            myTree.rebuildLater();
+            myTree.rebuildEvaluationTreeNowIfNotDisposed();
           }
         });
       }
@@ -49,7 +49,7 @@ public class WatchesPanel extends EvaluationUi {
           @Override
           public void run() {
             myTree.removeModel(model);
-            myTree.rebuildLater();
+            myTree.rebuildEvaluationTreeNowIfNotDisposed();
           }
         });
       }

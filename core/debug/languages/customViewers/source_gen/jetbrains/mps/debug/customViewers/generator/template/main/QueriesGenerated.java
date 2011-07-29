@@ -76,7 +76,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name") + "Wrapper";
   }
 
-  public static Object propertyMacro_GetPropertyValue_6283731996530117461(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5493844864801812961(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return TransformationUtil.getJniSignatureFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
@@ -116,7 +116,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "getPresentation", true) != null);
   }
 
-  public static boolean ifMacro_Condition_2685024263846566714(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5493844864801812989(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "canWrap", true) != null);
   }
 
@@ -196,7 +196,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getPresentation", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_4061114533381592593(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5493844864801812976(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 

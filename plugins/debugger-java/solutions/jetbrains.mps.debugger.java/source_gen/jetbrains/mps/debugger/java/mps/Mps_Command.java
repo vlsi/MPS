@@ -8,6 +8,7 @@ import jetbrains.mps.execution.lib.Java_Command;
 import java.io.File;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.InternalFlag;
+import com.intellij.util.SystemProperties;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class Mps_Command {
   }
 
   public ProcessHandler createProcess() throws ExecutionException {
-    String mpsProperties = "-Didea.config.path=" + myConfigurationPath + " " + "-Didea.system.path=" + mySystemPath;
+    String mpsProperties = Mps_Command.getConfigPathArgument(myConfigurationPath) + " " + Mps_Command.getSystemPathArgument(mySystemPath);
     return new Java_Command().setClassPath(Mps_Command.getClassPath()).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties).setDebuggerSettings(myDebuggerSettings).setWorkingDirectory(new File(System.getProperty("user.dir"))).setJrePath(myJrePath).createProcess("jetbrains.mps.Launcher");
   }
 
@@ -83,11 +84,19 @@ public class Mps_Command {
   }
 
   public static String getDefaultConfigurationPath() {
-    return System.getProperty("user.home").replace(File.separator, "/") + "/" + ".MPSDebug1x/config";
+    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug2x/config";
   }
 
   public static String getDefaultSystemPath() {
-    return System.getProperty("user.home").replace(File.separator, "/") + "/" + ".MPSDebug1x/system";
+    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug2x/system";
+  }
+
+  private static String getSystemPathArgument(String systemPath) {
+    return Java_Command.protect("-Didea.system.path=" + systemPath);
+  }
+
+  private static String getConfigPathArgument(String configPath) {
+    return Java_Command.protect("-Didea.config.path=" + configPath);
   }
 
   private static List<String> getClassPath() {

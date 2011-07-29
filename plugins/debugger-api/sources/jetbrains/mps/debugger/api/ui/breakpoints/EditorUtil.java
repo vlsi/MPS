@@ -90,7 +90,7 @@ public class EditorUtil {
   public static boolean isNodeShownInTheComponent(@NotNull EditorComponent component, @NotNull SNode node) {
     if (component instanceof InspectorEditorComponent) {
       SNode editedNode = component.getEditedNode();
-      return editedNode.isAncestorOf(node) && (editedNode != node);
+      return editedNode != null && editedNode.isAncestorOf(node) && (editedNode != node);
     } else {
       return component.getEditedNode() == node.getContainingRoot();
     }

@@ -17,9 +17,10 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.jetbrains.annotations.Nullable;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
@@ -98,11 +99,20 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
     myState.myTargetId = value;
   }
 
+  @Nullable
   public SNode getTarget() {
+    if (StringUtils.isEmpty(this.getTargetId())) {
+      return null;
+    }
     final Wrappers._T<SNode> target = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        target.value = SNodeOperations.cast(SNodeOperations.getModel(BuildLanguageProject_Configuration.this.getNode().getNode()).getNodeById(BuildLanguageProject_Configuration.this.getTargetId()), "jetbrains.mps.buildlanguage.structure.TargetDeclaration");
+        SNode node = BuildLanguageProject_Configuration.this.getNode().getNode();
+        if (node != null) {
+          target.value = SNodeOperations.cast(SNodeOperations.getModel(node).getNodeById(BuildLanguageProject_Configuration.this.getTargetId()), "jetbrains.mps.buildlanguage.structure.TargetDeclaration");
+        } else {
+          target.value = null;
+        }
       }
     });
     return target.value;

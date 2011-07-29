@@ -46,12 +46,13 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.plugin.SNodeViewer_WrapperFactory" file="SNodeViewer_WrapperFactory.java">
     <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationRuntimeException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
