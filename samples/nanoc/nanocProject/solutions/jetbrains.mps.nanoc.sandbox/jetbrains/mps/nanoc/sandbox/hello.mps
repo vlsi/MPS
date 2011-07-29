@@ -99,8 +99,13 @@
             </node>
           </node>
         </node>
-        <node role="condition" roleId="i1tc.7211731935130600829" type="i1tc.IntConst" typeId="i1tc.7211731935130600899" id="3565731266278471150">
-          <property name="value" nameId="i1tc.7211731935130600902" value="1" />
+        <node role="condition" roleId="i1tc.7211731935130600829" type="i1tc.LessOp" typeId="i1tc.6585869519574780678" id="5894693213360956497">
+          <node role="right" roleId="i1tc.7211731935130600885" type="i1tc.IntConst" typeId="i1tc.7211731935130600899" id="5894693213360956500">
+            <property name="value" nameId="i1tc.7211731935130600902" value="239" />
+          </node>
+          <node role="left" roleId="i1tc.7211731935130600884" type="i1tc.VarRef" typeId="i1tc.6585869519574772762" id="5894693213360956496">
+            <link role="declaration" roleId="i1tc.6585869519574772763" targetNodeId="5698737643333767058" resolveInfo="i" />
+          </node>
         </node>
       </node>
       <node role="statement" roleId="i1tc.7211731935130600481" type="i1tc.CExpressionStatement" typeId="i1tc.6585869519574700068" id="849607630585440638">

@@ -2,15 +2,15 @@
 <debugInfo>
   <root nodeId="3990508698139423539">
     <nodeInfo nodeId="3990508698139425376" fileName="GDBEventsAdapter.java" startLine="11" startPosition="69" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBEventsAdapter#()V" />
-    <nodeInfo nodeId="3990508698139425380" fileName="GDBEventsAdapter.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/nanoc/debug/answer/AsyncAnswer;Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
-    <nodeInfo nodeId="3990508698139425389" fileName="GDBEventsAdapter.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
-    <nodeInfo nodeId="3990508698139425396" fileName="GDBEventsAdapter.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
-    <nodeInfo nodeId="3990508698139425408" fileName="GDBEventsAdapter.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="gdbProcessTerminated#(Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139425380" fileName="GDBEventsAdapter.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/nanoc/debug/answer/AsyncAnswer;Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139425389" fileName="GDBEventsAdapter.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139425396" fileName="GDBEventsAdapter.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139425408" fileName="GDBEventsAdapter.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="gdbProcessTerminated#(Lcom/intellij/execution/process/ProcessHandler;)V" />
     <scopeInfo nodeId="3990508698139425379" fileName="GDBEventsAdapter.java" startLine="12" startPosition="29" endLine="12" endPosition="29" />
-    <scopeInfo nodeId="3990508698139425387" fileName="GDBEventsAdapter.java" startLine="15" startPosition="82" endLine="15" endPosition="82" />
-    <scopeInfo nodeId="3990508698139425394" fileName="GDBEventsAdapter.java" startLine="18" startPosition="73" endLine="18" endPosition="73" />
-    <scopeInfo nodeId="3990508698139425406" fileName="GDBEventsAdapter.java" startLine="21" startPosition="133" endLine="21" endPosition="133" />
-    <scopeInfo nodeId="3990508698139425413" fileName="GDBEventsAdapter.java" startLine="24" startPosition="80" endLine="24" endPosition="80" />
+    <scopeInfo nodeId="3990508698139425387" fileName="GDBEventsAdapter.java" startLine="15" startPosition="69" endLine="15" endPosition="69" />
+    <scopeInfo nodeId="3990508698139425394" fileName="GDBEventsAdapter.java" startLine="18" startPosition="60" endLine="18" endPosition="60" />
+    <scopeInfo nodeId="3990508698139425406" fileName="GDBEventsAdapter.java" startLine="21" startPosition="120" endLine="21" endPosition="120" />
+    <scopeInfo nodeId="3990508698139425413" fileName="GDBEventsAdapter.java" startLine="24" startPosition="67" endLine="24" endPosition="67" />
     <scopeInfo nodeId="3990508698139425376" fileName="GDBEventsAdapter.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
     <scopeInfo nodeId="3990508698139425380" fileName="GDBEventsAdapter.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="3990508698139425385" varName="gdbProcess" />
@@ -30,23 +30,23 @@
     <unitInfo nodeId="3990508698139423539" fileName="GDBEventsAdapter.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.nanoc.debug.events.GDBEventsAdapter" />
   </root>
   <root nodeId="3990508698139426857">
-    <nodeInfo nodeId="3990508698139426859" fileName="GDBEventsListener.java" startLine="11" startPosition="36" endLine="12" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/nanoc/debug/answer/AsyncAnswer;Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
-    <nodeInfo nodeId="3990508698139426867" fileName="GDBEventsListener.java" startLine="12" startPosition="81" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
-    <nodeInfo nodeId="3990508698139426873" fileName="GDBEventsListener.java" startLine="13" startPosition="72" endLine="14" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
-    <nodeInfo nodeId="3990508698139426884" fileName="GDBEventsListener.java" startLine="14" startPosition="132" endLine="15" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="gdbProcessTerminated#(Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
-    <scopeInfo nodeId="3990508698139426859" fileName="GDBEventsListener.java" startLine="11" startPosition="36" endLine="12" endPosition="81">
+    <nodeInfo nodeId="3990508698139426859" fileName="GDBEventsListener.java" startLine="11" startPosition="36" endLine="12" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/nanoc/debug/answer/AsyncAnswer;Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139426867" fileName="GDBEventsListener.java" startLine="12" startPosition="68" endLine="13" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139426873" fileName="GDBEventsListener.java" startLine="13" startPosition="59" endLine="14" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139426884" fileName="GDBEventsListener.java" startLine="14" startPosition="119" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="gdbProcessTerminated#(Lcom/intellij/execution/process/ProcessHandler;)V" />
+    <scopeInfo nodeId="3990508698139426859" fileName="GDBEventsListener.java" startLine="11" startPosition="36" endLine="12" endPosition="68">
       <varInfo nodeId="3990508698139426864" varName="gdbProcess" />
       <varInfo nodeId="3990508698139426862" varName="answer" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426867" fileName="GDBEventsListener.java" startLine="12" startPosition="81" endLine="13" endPosition="72">
+    <scopeInfo nodeId="3990508698139426867" fileName="GDBEventsListener.java" startLine="12" startPosition="68" endLine="13" endPosition="59">
       <varInfo nodeId="3990508698139426870" varName="gdbProcess" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426873" fileName="GDBEventsListener.java" startLine="13" startPosition="72" endLine="14" endPosition="132">
+    <scopeInfo nodeId="3990508698139426873" fileName="GDBEventsListener.java" startLine="13" startPosition="59" endLine="14" endPosition="119">
       <varInfo nodeId="3990508698139426876" varName="result" />
       <varInfo nodeId="3990508698139426878" varName="receivedStreamAnswers" />
       <varInfo nodeId="3990508698139426881" varName="gdbProcess" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139426884" fileName="GDBEventsListener.java" startLine="14" startPosition="132" endLine="15" endPosition="79">
+    <scopeInfo nodeId="3990508698139426884" fileName="GDBEventsListener.java" startLine="14" startPosition="119" endLine="15" endPosition="66">
       <varInfo nodeId="3990508698139426887" varName="processHandler" />
     </scopeInfo>
     <unitInfo nodeId="3990508698139426857" fileName="GDBEventsListener.java" startLine="11" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.debug.events.GDBEventsListener" />
@@ -56,10 +56,10 @@
     <nodeInfo nodeId="3990508698139429176" fileName="GDBEventsHandler.java" startLine="20" startPosition="47" endLine="21" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REASON_BP_HIT" />
     <nodeInfo nodeId="3990508698139429180" fileName="GDBEventsHandler.java" startLine="21" startPosition="62" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REASON_EXITED_NORMALLY" />
     <nodeInfo nodeId="3990508698139429184" fileName="GDBEventsHandler.java" startLine="22" startPosition="72" endLine="23" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REASON_EXITED" />
-    <nodeInfo nodeId="3990508698139429162" fileName="GDBEventsHandler.java" startLine="24" startPosition="0" endLine="25" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessHandler" />
-    <nodeInfo nodeId="3990508698139429165" fileName="GDBEventsHandler.java" startLine="25" startPosition="55" endLine="26" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsListeners" />
+    <nodeInfo nodeId="3990508698139429162" fileName="GDBEventsHandler.java" startLine="24" startPosition="0" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessHandler" />
+    <nodeInfo nodeId="3990508698139429165" fileName="GDBEventsHandler.java" startLine="25" startPosition="42" endLine="26" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsListeners" />
     <nodeInfo nodeId="3990508698139429188" fileName="GDBEventsHandler.java" startLine="26" startPosition="89" endLine="27" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPendingStreamAnswers" />
-    <nodeInfo nodeId="3990508698139429201" fileName="GDBEventsHandler.java" startLine="29" startPosition="67" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429201" fileName="GDBEventsHandler.java" startLine="29" startPosition="54" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139429329" fileName="GDBEventsHandler.java" startLine="32" startPosition="71" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990508698139429335" fileName="GDBEventsHandler.java" startLine="33" startPosition="38" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990508698139429341" fileName="GDBEventsHandler.java" startLine="34" startPosition="65" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -85,7 +85,7 @@
     <nodeInfo nodeId="3990508698139429295" fileName="GDBEventsHandler.java" startLine="99" startPosition="55" endLine="100" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139429306" fileName="GDBEventsHandler.java" startLine="103" startPosition="60" endLine="104" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139429317" fileName="GDBEventsHandler.java" startLine="107" startPosition="63" endLine="108" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429326" fileName="GDBEventsHandler.java" startLine="111" startPosition="61" endLine="112" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429326" fileName="GDBEventsHandler.java" startLine="111" startPosition="48" endLine="112" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139429347" fileName="GDBEventsHandler.java" startLine="35" startPosition="54" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139429410" fileName="GDBEventsHandler.java" startLine="50" startPosition="18" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3990508698139429228" fileName="GDBEventsHandler.java" startLine="75" startPosition="40" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -98,7 +98,7 @@
     <nodeInfo nodeId="3990508698139429290" fileName="GDBEventsHandler.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventsListeners#()Ljava/util/List;" />
     <nodeInfo nodeId="3990508698139429300" fileName="GDBEventsHandler.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEventListener#(Ljetbrains/mps/nanoc/debug/events/GDBEventsListener;)V" />
     <nodeInfo nodeId="3990508698139429311" fileName="GDBEventsHandler.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeEventListener#(Ljetbrains/mps/nanoc/debug/events/GDBEventsListener;)V" />
-    <nodeInfo nodeId="3990508698139429322" fileName="GDBEventsHandler.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGDBProcessHandler#()Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;" />
+    <nodeInfo nodeId="3990508698139429322" fileName="GDBEventsHandler.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGDBProcessHandler#()Lcom/intellij/execution/process/ProcessHandler;" />
     <nodeInfo nodeId="3990508698139429224" fileName="GDBEventsHandler.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireProcessTerminated#()V" />
     <nodeInfo nodeId="3990508698139429238" fileName="GDBEventsHandler.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireGDBProcessTerminated#()V" />
     <nodeInfo nodeId="3990508698139429252" fileName="GDBEventsHandler.java" startLine="86" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="firePaused#(Ljetbrains/mps/nanoc/debug/answer/AsyncAnswer;)V" />
@@ -109,7 +109,7 @@
     <nodeInfo nodeId="3990508698139429357" fileName="GDBEventsHandler.java" startLine="38" startPosition="9" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3990508698139429212" fileName="GDBEventsHandler.java" startLine="31" startPosition="62" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTextAvailable#(Lcom/intellij/execution/process/ProcessEvent;Lcom/intellij/openapi/util/Key;)V" />
     <nodeInfo nodeId="3990508698139429205" fileName="GDBEventsHandler.java" startLine="30" startPosition="34" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429195" fileName="GDBEventsHandler.java" startLine="28" startPosition="0" endLine="73" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBEventsHandler#(Ljetbrains/mps/debug/executable/SimpleConsoleProcessHandler;)V" />
+    <nodeInfo nodeId="3990508698139429195" fileName="GDBEventsHandler.java" startLine="28" startPosition="0" endLine="73" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBEventsHandler#(Lcom/intellij/execution/process/ProcessHandler;)V" />
     <scopeInfo nodeId="3990508698139429355" fileName="GDBEventsHandler.java" startLine="36" startPosition="55" endLine="37" endPosition="17" />
     <scopeInfo nodeId="3990508698139429465" fileName="GDBEventsHandler.java" startLine="69" startPosition="57" endLine="70" endPosition="35" />
     <scopeInfo nodeId="3990508698139429232" fileName="GDBEventsHandler.java" startLine="76" startPosition="61" endLine="77" endPosition="51" />
@@ -119,7 +119,7 @@
     <scopeInfo nodeId="3990508698139429294" fileName="GDBEventsHandler.java" startLine="99" startPosition="55" endLine="100" endPosition="63" />
     <scopeInfo nodeId="3990508698139429305" fileName="GDBEventsHandler.java" startLine="103" startPosition="60" endLine="104" endPosition="36" />
     <scopeInfo nodeId="3990508698139429316" fileName="GDBEventsHandler.java" startLine="107" startPosition="63" endLine="108" endPosition="39" />
-    <scopeInfo nodeId="3990508698139429325" fileName="GDBEventsHandler.java" startLine="111" startPosition="61" endLine="112" endPosition="28" />
+    <scopeInfo nodeId="3990508698139429325" fileName="GDBEventsHandler.java" startLine="111" startPosition="48" endLine="112" endPosition="28" />
     <scopeInfo nodeId="3990508698139429416" fileName="GDBEventsHandler.java" startLine="47" startPosition="122" endLine="49" endPosition="21" />
     <scopeInfo nodeId="3990508698139429411" fileName="GDBEventsHandler.java" startLine="50" startPosition="20" endLine="52" endPosition="21" />
     <scopeInfo nodeId="3990508698139429424" fileName="GDBEventsHandler.java" startLine="56" startPosition="48" endLine="58" endPosition="51">
@@ -181,7 +181,7 @@
       <varInfo nodeId="3990508698139429215" varName="event" />
       <varInfo nodeId="3990508698139429217" varName="outputType" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429200" fileName="GDBEventsHandler.java" startLine="29" startPosition="67" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="3990508698139429200" fileName="GDBEventsHandler.java" startLine="29" startPosition="54" endLine="72" endPosition="7" />
     <scopeInfo nodeId="3990508698139429195" fileName="GDBEventsHandler.java" startLine="28" startPosition="0" endLine="73" endPosition="3">
       <varInfo nodeId="3990508698139429198" varName="gdbProcess" />
     </scopeInfo>

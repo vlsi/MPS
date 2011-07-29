@@ -37,7 +37,7 @@ public class GDBStackFrame implements IStackFrame {
 
   public GDBStackFrame(RecordValue value, DefaultThread thread, String sourceGen) {
     String s = value.getStringValue(LEVEL);
-    myLevel = Integer.parseInt(s.substring(0, s.length() - 1));
+    myLevel = Integer.parseInt(s);
     myRoutine = value.getStringValue(FUNCTION);
     Integer position = value.getIntegerValue(LINE);
     if (position != null) {
