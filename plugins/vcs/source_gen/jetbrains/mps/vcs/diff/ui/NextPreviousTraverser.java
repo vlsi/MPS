@@ -23,6 +23,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
@@ -103,7 +105,7 @@ public class NextPreviousTraverser {
     });
   }
 
-  private int findNeighbourGroupAsLeftOrRight(final int currentY, boolean previous, final boolean left) {
+  private Bounds findNeighbourGroupAsLeftOrRight(final int currentY, boolean previous, final boolean left) {
     assert ListSequence.fromList(myChangeGroupBuilders).any(new IWhereFilter<ChangeGroupBuilder>() {
       public boolean accept(ChangeGroupBuilder b) {
         return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
@@ -115,7 +117,7 @@ public class NextPreviousTraverser {
       getBuilderAsRight()
     );
     if (builder == null) {
-      return -1;
+      return null;
     }
     List<ChangeGroup> changeGroups = builder.getChangeGroups();
     ChangeGroup changeGroup;
@@ -132,13 +134,10 @@ public class NextPreviousTraverser {
         }
       });
     }
-    return (changeGroup == null ?
-      -1 :
-      (int) changeGroup.getBounds(left).start()
-    );
+    return check_mf966z_a7a4(changeGroup, left);
   }
 
-  private int getNeighbourGroupY(boolean previous) {
+  private Bounds getNeighbourGroupBounds(boolean previous) {
     // -1 means that group is not available 
 
     int currentY = myLastEditor.getViewport().getViewPosition().y;
@@ -146,15 +145,44 @@ public class NextPreviousTraverser {
     if (selectedCell != null) {
       currentY = selectedCell.getY();
     }
-    int asLeft = findNeighbourGroupAsLeftOrRight(currentY, previous, true);
-    int asRight = findNeighbourGroupAsLeftOrRight(currentY, previous, false);
-    if (asLeft != -1 && asRight != -1) {
+    Bounds asLeft = findNeighbourGroupAsLeftOrRight(currentY, previous, true);
+    Bounds asRight = findNeighbourGroupAsLeftOrRight(currentY, previous, false);
+    Bounds max;
+    Bounds min;
+    if (asLeft == null) {
+      {
+        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0j0f = MultiTuple.<Bounds,Bounds>from(null, asRight);
+        min = _tmp_mf966z_a0j0f._0();
+        max = _tmp_mf966z_a0j0f._1();
+      }
+    } else if (asRight == null) {
+      {
+        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a9a5 = MultiTuple.<Bounds,Bounds>from(null, asLeft);
+        min = _tmp_mf966z_a0a9a5._0();
+        max = _tmp_mf966z_a0a9a5._1();
+      }
+    } else {
+      if ((int) asLeft.start() < (int) asRight.start()) {
+        {
+          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a9a5 = MultiTuple.<Bounds,Bounds>from(asLeft, asRight);
+          min = _tmp_mf966z_a0a0a9a5._0();
+          max = _tmp_mf966z_a0a0a9a5._1();
+        }
+      } else {
+        {
+          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a0j0f = MultiTuple.<Bounds,Bounds>from(asRight, asLeft);
+          min = _tmp_mf966z_a0a0a0j0f._0();
+          max = _tmp_mf966z_a0a0a0j0f._1();
+        }
+      }
+    }
+    if (asLeft != null && asRight != null) {
       return (previous ?
-        Math.max(asLeft, asRight) :
-        Math.min(asLeft, asRight)
+        max :
+        min
       );
     } else {
-      return Math.max(asLeft, asRight);
+      return max;
     }
   }
 
@@ -166,7 +194,12 @@ public class NextPreviousTraverser {
     return myNextAction;
   }
 
-  private void goToChangeGroup(int y) {
+  private void goToChangeGroup(Bounds bounds) {
+    goToY((int) bounds.end());
+    goToY((int) bounds.start());
+  }
+
+  private void goToY(int y) {
     EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
@@ -174,14 +207,21 @@ public class NextPreviousTraverser {
       if (log.isWarnEnabled()) {
         log.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
           public String compute() {
-            return check_mf966z_a0a0a2a0a0b0i(myLastEditor.getEditedNode());
+            return check_mf966z_a0a0a2a0a0b0j(myLastEditor.getEditedNode());
           }
         })));
       }
     }
   }
 
-  private static String check_mf966z_a0a0a2a0a0b0i(SNode checkedDotOperand) {
+  private static Bounds check_mf966z_a7a4(ChangeGroup checkedDotOperand, boolean left) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getBounds(left);
+    }
+    return null;
+  }
+
+  private static String check_mf966z_a0a0a2a0a0b0j(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConceptFqName();
     }
@@ -205,13 +245,13 @@ public class NextPreviousTraverser {
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-      assert getNeighbourGroupY(myPrevious) != -1;
-      goToChangeGroup(getNeighbourGroupY(myPrevious));
+      assert getNeighbourGroupBounds(myPrevious) != null;
+      goToChangeGroup(getNeighbourGroupBounds(myPrevious));
     }
 
     @Override
     protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
-      event.getPresentation().setEnabled(getNeighbourGroupY(myPrevious) != -1);
+      event.getPresentation().setEnabled(getNeighbourGroupBounds(myPrevious) != null);
     }
   }
 }
