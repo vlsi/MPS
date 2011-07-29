@@ -688,7 +688,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     public void actionPerformed(ActionEvent e) {
       long start = System.currentTimeMillis();
       rebuildNow();
-      System.out.println("rebuilt in " + (System.currentTimeMillis() - start));
     }
   }
 }
