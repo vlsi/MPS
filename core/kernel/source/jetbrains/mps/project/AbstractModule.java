@@ -129,6 +129,7 @@ public abstract class AbstractModule implements IModule {
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
     //setModuleDescriptor(descriptor, true);
+    invalidateCaches();
     save();
   }
 
