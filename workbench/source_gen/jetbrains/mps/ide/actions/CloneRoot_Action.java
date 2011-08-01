@@ -31,6 +31,7 @@ public class CloneRoot_Action extends GeneratedAction {
     super("Clone Root", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
+    this.addPlace(null);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

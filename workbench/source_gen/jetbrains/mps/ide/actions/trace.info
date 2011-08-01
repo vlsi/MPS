@@ -1028,94 +1028,95 @@
     <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="30" startPosition="29" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="31" startPosition="34" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="32" startPosition="34" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="40" startPosition="33" endLine="41" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="42" startPosition="7" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="52" startPosition="59" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="56" startPosition="35" endLine="57" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="58" startPosition="14" endLine="59" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="62" startPosition="60" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="66" startPosition="66" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="68" startPosition="5" endLine="69" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="70" startPosition="62" endLine="71" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="72" startPosition="5" endLine="73" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="74" startPosition="62" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="76" startPosition="5" endLine="77" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218628312771" fileName="CloneRoot_Action.java" startLine="82" startPosition="107" endLine="83" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218628312779" fileName="CloneRoot_Action.java" startLine="83" startPosition="61" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218628312785" fileName="CloneRoot_Action.java" startLine="84" startPosition="58" endLine="85" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218628312792" fileName="CloneRoot_Action.java" startLine="85" startPosition="75" endLine="86" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1705375422255053328" fileName="CloneRoot_Action.java" startLine="88" startPosition="29" endLine="89" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="94" startPosition="33" endLine="95" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="53" startPosition="28" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="58" startPosition="12" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="47" startPosition="95" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="61" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="65" startPosition="88" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="69" startPosition="84" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="73" startPosition="94" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="93" startPosition="27" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="93" startPosition="27" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="68" startPosition="5" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="72" startPosition="5" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1705375422255050211" fileName="CloneRoot_Action.java" startLine="87" startPosition="51" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CloneRoot_Action#()V" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="55" startPosition="7" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1705375422255050208" fileName="CloneRoot_Action.java" startLine="86" startPosition="182" endLine="91" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="36" startPosition="89" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="35" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="50" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218628302807" fileName="CloneRoot_Action.java" startLine="81" startPosition="9" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="50" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="80" startPosition="96" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="79" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="46" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="54" startPosition="26" endLine="54" endPosition="26" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="43" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="40" startPosition="33" endLine="41" endPosition="84" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="56" startPosition="35" endLine="57" endPosition="56" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="58" startPosition="14" endLine="59" endPosition="114" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="62" startPosition="60" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="66" startPosition="66" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="70" startPosition="62" endLine="71" endPosition="19" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="74" startPosition="62" endLine="75" endPosition="19" />
-    <scopeInfo nodeId="1705375422255050212" fileName="CloneRoot_Action.java" startLine="88" startPosition="29" endLine="89" endPosition="121" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="94" startPosition="33" endLine="95" endPosition="83" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="30" startPosition="29" endLine="33" endPosition="41" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="93" startPosition="0" endLine="96" endPosition="7" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="93" startPosition="27" endLine="96" endPosition="7" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="44" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="39" startPosition="27" endLine="43" endPosition="44" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="68" startPosition="5" endLine="72" endPosition="5" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="72" startPosition="5" endLine="76" endPosition="5" />
-    <scopeInfo nodeId="1705375422255050211" fileName="CloneRoot_Action.java" startLine="87" startPosition="51" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="3" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="36" startPosition="89" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="51" startPosition="5" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="1218628302810" fileName="CloneRoot_Action.java" startLine="82" startPosition="107" endLine="91" endPosition="11">
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="33" startPosition="41" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="38" startPosition="9" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="38" startPosition="9" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="41" startPosition="33" endLine="42" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="43" startPosition="7" endLine="44" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="53" startPosition="59" endLine="54" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="57" startPosition="35" endLine="58" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="59" startPosition="14" endLine="60" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="63" startPosition="60" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="65" startPosition="5" endLine="66" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="67" startPosition="66" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="69" startPosition="5" endLine="70" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="71" startPosition="62" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="73" startPosition="5" endLine="74" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="75" startPosition="62" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218628312771" fileName="CloneRoot_Action.java" startLine="83" startPosition="107" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218628312779" fileName="CloneRoot_Action.java" startLine="84" startPosition="61" endLine="85" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218628312785" fileName="CloneRoot_Action.java" startLine="85" startPosition="58" endLine="86" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218628312792" fileName="CloneRoot_Action.java" startLine="86" startPosition="75" endLine="87" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1705375422255053328" fileName="CloneRoot_Action.java" startLine="89" startPosition="29" endLine="90" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="95" startPosition="33" endLine="96" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="54" startPosition="28" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="59" startPosition="12" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="48" startPosition="95" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="62" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="66" startPosition="88" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="70" startPosition="84" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="74" startPosition="94" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="94" startPosition="27" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="94" startPosition="27" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="65" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="69" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1705375422255050211" fileName="CloneRoot_Action.java" startLine="88" startPosition="51" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="56" startPosition="7" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1705375422255050208" fileName="CloneRoot_Action.java" startLine="87" startPosition="182" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="29" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CloneRoot_Action#()V" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="37" startPosition="89" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="36" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="51" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1218628302807" fileName="CloneRoot_Action.java" startLine="82" startPosition="9" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="51" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="81" startPosition="96" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="80" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="47" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="55" startPosition="26" endLine="55" endPosition="26" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="38" startPosition="9" endLine="39" endPosition="43" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="41" startPosition="33" endLine="42" endPosition="84" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="57" startPosition="35" endLine="58" endPosition="56" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="59" startPosition="14" endLine="60" endPosition="114" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="63" startPosition="60" endLine="64" endPosition="19" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="67" startPosition="66" endLine="68" endPosition="19" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="71" startPosition="62" endLine="72" endPosition="19" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="75" startPosition="62" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="1705375422255050212" fileName="CloneRoot_Action.java" startLine="89" startPosition="29" endLine="90" endPosition="121" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="95" startPosition="33" endLine="96" endPosition="83" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="94" startPosition="0" endLine="97" endPosition="7" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="94" startPosition="27" endLine="97" endPosition="7" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="30" startPosition="29" endLine="34" endPosition="24" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="44" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="40" startPosition="27" endLine="44" endPosition="44" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="65" startPosition="5" endLine="69" endPosition="5" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="69" startPosition="5" endLine="73" endPosition="5" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" />
+    <scopeInfo nodeId="1705375422255050211" fileName="CloneRoot_Action.java" startLine="88" startPosition="51" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="29" startPosition="0" endLine="35" endPosition="3" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="37" startPosition="89" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="52" startPosition="5" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="1218628302810" fileName="CloneRoot_Action.java" startLine="83" startPosition="107" endLine="92" endPosition="11">
       <varInfo nodeId="1218628312772" varName="root" />
       <varInfo nodeId="1218628312780" varName="copy" />
     </scopeInfo>
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="35" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="81" startPosition="9" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="1218628302807" fileName="CloneRoot_Action.java" startLine="81" startPosition="9" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="50" startPosition="5" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="80" startPosition="96" endLine="97" endPosition="5" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="79" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="47" startPosition="95" endLine="77" endPosition="16" />
-    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="46" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="1705375422255050211" fileName="CloneRoot_Action.java" startLine="87" startPosition="39" endLine="91" endPosition="9" unitName="jetbrains.mps.ide.actions.CloneRoot_Action$1" />
-    <unitInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.CloneRoot_Action" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="36" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="82" startPosition="9" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="1218628302807" fileName="CloneRoot_Action.java" startLine="82" startPosition="9" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="51" startPosition="5" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="81" startPosition="96" endLine="98" endPosition="5" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="80" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="48" startPosition="95" endLine="78" endPosition="16" />
+    <scopeInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="47" startPosition="0" endLine="80" endPosition="0" />
+    <unitInfo nodeId="1705375422255050211" fileName="CloneRoot_Action.java" startLine="88" startPosition="39" endLine="92" endPosition="9" unitName="jetbrains.mps.ide.actions.CloneRoot_Action$1" />
+    <unitInfo nodeId="1215874930420" fileName="CloneRoot_Action.java" startLine="26" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.CloneRoot_Action" />
   </root>
   <root nodeId="1215881875402">
     <nodeInfo nodeId="1215881875402" fileName="EditNode_Action.java" startLine="21" startPosition="54" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
