@@ -38,7 +38,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage" file="ProjectPropertiesPerfsPage.java">
+  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" file="ProjectPropertiesPrefsPage.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Runnable" />

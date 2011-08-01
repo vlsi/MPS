@@ -13,11 +13,11 @@ import javax.swing.JComponent;
 import com.intellij.openapi.options.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
 
-public final class ProjectPropertiesPerfsPage implements SearchableConfigurable, NonDefaultProjectConfigurable, ProjectComponent {
+public final class ProjectPropertiesPrefsPage implements SearchableConfigurable, NonDefaultProjectConfigurable, ProjectComponent {
   private Project myProject;
   private ProjectPropertiesComponent myComponent;
 
-  public ProjectPropertiesPerfsPage(Project project) {
+  public ProjectPropertiesPrefsPage(Project project) {
     myProject = project;
   }
 

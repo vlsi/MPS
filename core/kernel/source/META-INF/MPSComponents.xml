@@ -257,7 +257,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
+      <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage
       </implementation-class>
     </component>
 
