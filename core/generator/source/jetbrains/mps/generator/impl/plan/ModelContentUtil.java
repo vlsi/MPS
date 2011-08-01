@@ -16,10 +16,8 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.TemplateModelScanner;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -29,8 +27,6 @@ import java.util.Set;
  * evgeny, 4/28/11
  */
 public class ModelContentUtil {
-
-  private static final Logger LOG = Logger.getLogger(ModelContentUtil.class);
 
   public static Collection<String> getUsedLanguageNamespacesInTemplateModel(SModel model) {
     TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
@@ -51,6 +47,11 @@ public class ModelContentUtil {
         String namespace1 = child.getLanguageNamespace();
         namespaces.add(namespace1);
       }
+    }
+    // empty behavior model should have it's behavior aspect descriptor generated
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    if (modelDescriptor != null && modelDescriptor.getModule() instanceof Language && LanguageAspect.BEHAVIOR.is(modelDescriptor)) {
+      namespaces.add(BootstrapLanguages.BEHAVIOR.getModuleFqName());
     }
     return namespaces;
   }
