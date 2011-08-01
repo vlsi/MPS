@@ -52,7 +52,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
       reload();
       executeTask(project, go);
     } else {
-      error("Could not find anything to test.");
+//      error("Could not find anything to test.");
     }
     dispose();
   }
