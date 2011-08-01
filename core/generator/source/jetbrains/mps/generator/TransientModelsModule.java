@@ -279,12 +279,22 @@ public class TransientModelsModule extends AbstractModule {
     }
 
     private void dropModel() {
-      if (mySModel != null) {
-        LOG.debug("Dropped "+getSModelReference());
+      if (mySModel == null) return;
+      final SModel oldSModel = mySModel;
+      oldSModel.setModelDescriptor(null);
+      mySModel = null;
+      setLoadingState(ModelLoadingState.NOT_LOADED);
 
-        this.mySModel = null;
-        fireModelReplaced();
-        setLoadingState(ModelLoadingState.NOT_LOADED);
+      Runnable modelReplacedNotifier = new Runnable() {
+        public void run() {
+          fireModelReplaced();
+          oldSModel.dispose();
+        }
+      };
+      if (ModelAccess.instance().isInEDT()) {
+        modelReplacedNotifier.run();
+      } else {
+        ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
       }
     }
 
