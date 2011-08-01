@@ -121,7 +121,7 @@ public abstract class MpsWorker {
       executeTask(project, go);
       if (go.getProjects().isEmpty()) {disposePlugins();}
     } else {
-      error("Could not find anything to generate.");
+//      error("Could not find anything to generate.");
     }
 
     disposeProjects(go.getProjects());

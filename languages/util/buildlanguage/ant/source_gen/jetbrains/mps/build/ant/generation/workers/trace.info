@@ -361,8 +361,8 @@
     <nodeInfo nodeId="7795897115019499858" fileName="TestGenerationWorker.java" startLine="182" startPosition="34" endLine="183" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7795897115019499871" fileName="TestGenerationWorker.java" startLine="184" startPosition="37" endLine="185" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7795897115019499875" fileName="TestGenerationWorker.java" startLine="185" startPosition="48" endLine="186" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4501880644515758691" fileName="TestGenerationWorker.java" startLine="187" startPosition="12" endLine="188" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907881546" fileName="TestGenerationWorker.java" startLine="188" startPosition="52" endLine="189" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7040983272797349005" fileName="TestGenerationWorker.java" startLine="187" startPosition="12" endLine="188" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7040983272797349007" fileName="TestGenerationWorker.java" startLine="188" startPosition="16" endLine="189" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7795897115019499879" fileName="TestGenerationWorker.java" startLine="190" startPosition="5" endLine="191" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019499881" fileName="TestGenerationWorker.java" startLine="191" startPosition="32" endLine="192" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7795897115019499883" fileName="TestGenerationWorker.java" startLine="192" startPosition="14" endLine="193" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -860,7 +860,7 @@
     <scopeInfo nodeId="7795897115019499870" fileName="TestGenerationWorker.java" startLine="184" startPosition="37" endLine="186" endPosition="31">
       <varInfo nodeId="7795897115019499872" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4501880644515749779" fileName="TestGenerationWorker.java" startLine="187" startPosition="12" endLine="189" endPosition="26" />
+    <scopeInfo nodeId="4501880644515749779" fileName="TestGenerationWorker.java" startLine="187" startPosition="12" endLine="189" endPosition="16" />
     <scopeInfo nodeId="7795897115019500002" fileName="TestGenerationWorker.java" startLine="225" startPosition="84" endLine="227" endPosition="50" />
     <scopeInfo nodeId="7795897115019501579" fileName="TestGenerationWorker.java" startLine="265" startPosition="54" endLine="267" endPosition="63">
       <varInfo nodeId="7795897115019501581" varName="startTime" />
