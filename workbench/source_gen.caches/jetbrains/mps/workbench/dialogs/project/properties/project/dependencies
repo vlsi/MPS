@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" file="ProjectPrefsExtraPanel.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPointName" />
+    <classNode dependClassName="javax.swing.JComponent" />
+  </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" file="ProjectProperties.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -13,14 +17,18 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" file="ProjectPropertiesComponent.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" />
     <classNode extendsClassName="javax.swing.JPanel" />
@@ -31,10 +39,12 @@
     <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.ide.properties.StandardComponents" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.BaseBindedDialog" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog" />
   </dependency>

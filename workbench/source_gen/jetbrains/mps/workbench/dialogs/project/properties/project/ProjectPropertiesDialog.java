@@ -7,6 +7,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.properties.StandardComponents;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -15,6 +16,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   private Project myProject;
   private ProjectProperties myProperties;
+  private ProjectPrefsExtraPanel[] myExtraPanels;
 
   public ProjectPropertiesDialog(final Project project) {
     super(project.getName() + " Properties", ProjectOperationContext.get(project));
@@ -23,16 +25,20 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
     initUI();
   }
 
-  public ProjectPropertiesDialog(final Project project, ProjectProperties properties) {
+  public ProjectPropertiesDialog(final Project project, ProjectProperties properties, ProjectPrefsExtraPanel[] extraPanels) {
     super(project.getName() + " Properties", ProjectOperationContext.get(project));
     myProject = project;
     myProperties = properties;
+    myExtraPanels = extraPanels;
     initUI();
   }
 
   private void initUI() {
     addComponent(StandardComponents.createProjectModulesPanel(this, "Modules", myProperties.getModules()), BaseBindedDialog.ConstraintsType.LIST);
     addComponent(StandardComponents.createTestConfigsPanel(this, "Test Configurations", myProperties.getTestConfigurations(), myProperties), BaseBindedDialog.ConstraintsType.LIST);
+    for (ProjectPrefsExtraPanel extraPanel : Sequence.fromIterable(Sequence.fromArray(myExtraPanels))) {
+      addComponent(extraPanel.getComponent(), BaseBindedDialog.ConstraintsType.LIST);
+    }
   }
 
   private void collectProjectProperties() {
