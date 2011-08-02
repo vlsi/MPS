@@ -30,7 +30,9 @@ public class ModelLoader {
     UnregisteredNodes.instance().clear();
     for (SNode root : myModel.roots()) {
       SNode fullRoot = myFullModel.getNodeById(root.getSNodeId());
-      assert fullRoot != null;
+      if (fullRoot == null) {
+        throw new RuntimeException("Can't load the whole model " + myModel.getLongName() + ". Most probably, the model file is broken. See the previous error - it can show what is broken in model file");
+      }
       for (SNode child : new ArrayList<SNode>(fullRoot.getChildren(true))) {
         String role = child.getRole_();
         fullRoot.removeChild(child);
