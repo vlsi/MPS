@@ -5,7 +5,10 @@ package jetbrains.mps.workbench.dialogs.project.properties.project;
 import javax.swing.JPanel;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.extensions.Extensions;
 import java.awt.BorderLayout;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
@@ -16,10 +19,12 @@ public class ProjectPropertiesComponent extends JPanel {
   private Project myProject;
   private ProjectProperties myEditableDescriptor = new ProjectProperties();
   private ProjectPropertiesDialog myPropertiesDialog;
+  private ProjectPrefsExtraPanel[] myExtraPanels;
 
   public ProjectPropertiesComponent(Project project) {
     myProject = project;
-    myPropertiesDialog = new ProjectPropertiesDialog(myProject, myEditableDescriptor);
+    myExtraPanels = Extensions.getExtensions(ProjectPrefsExtraPanel.EP_NAME, myProject);
+    myPropertiesDialog = new ProjectPropertiesDialog(myProject, myEditableDescriptor, myExtraPanels);
     initUI();
   }
 
@@ -39,7 +44,11 @@ public class ProjectPropertiesComponent extends JPanel {
   }
 
   public boolean isModified() {
-    return !(myEditableDescriptor.isSame(getMPSProject().getProjectDescriptor()));
+    return !(myEditableDescriptor.isSame(getMPSProject().getProjectDescriptor())) || Sequence.fromIterable(Sequence.fromArray(myExtraPanels)).any(new IWhereFilter<ProjectPrefsExtraPanel>() {
+      public boolean accept(ProjectPrefsExtraPanel ep) {
+        return ep.isModified();
+      }
+    });
   }
 
   public void apply() throws ConfigurationException {
@@ -48,9 +57,15 @@ public class ProjectPropertiesComponent extends JPanel {
         myEditableDescriptor.saveTo(getMPSProject());
       }
     });
+    for (ProjectPrefsExtraPanel ep : myExtraPanels) {
+      ep.apply();
+    }
   }
 
   public void reset() {
+    for (ProjectPrefsExtraPanel ep : myExtraPanels) {
+      ep.reset();
+    }
     try {
       myEditableDescriptor.loadFrom(getMPSProject());
     } catch (Throwable t) {
