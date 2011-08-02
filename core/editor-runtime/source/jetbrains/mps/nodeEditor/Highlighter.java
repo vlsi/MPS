@@ -103,7 +103,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     public void modelReplaced(SModelDescriptor sm) {
       for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
         SNode sNode = editorComponent.getEditedNode();
-        if (sNode != null && sNode.getModel().getModelDescriptor() == sm) {
+        if (sNode != null && !sNode.isDisposed() && sNode.getModel().getModelDescriptor() == sm) {
           myCheckedOnceEditors.remove(editorComponent);
         }
       }
