@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.logging.Logger;
+
 import java.util.ArrayList;
 
 public class ModelLoader {
+  private static Logger LOG = Logger.getLogger(ModelLoader.class);
+
   private SModel myModel;
   private SModel myFullModel;
 
@@ -30,7 +34,9 @@ public class ModelLoader {
     UnregisteredNodes.instance().clear();
     for (SNode root : myModel.roots()) {
       SNode fullRoot = myFullModel.getNodeById(root.getSNodeId());
-      assert fullRoot != null;
+      if (fullRoot == null) {
+        throw new RuntimeException("Can't load the whole model " + myModel.getLongName() + ". Most probably, the model file is broken.");
+      }
       for (SNode child : new ArrayList<SNode>(fullRoot.getChildren(true))) {
         String role = child.getRole_();
         fullRoot.removeChild(child);
