@@ -8304,43 +8304,66 @@
                                           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6580055082271834260" />
                                           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6580055082271834261" />
                                           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6580055082271834262">
-                                            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6648795410103966816">
-                                              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6648795410103966817">
-                                                <property name="name" nameId="tpck.1169194664001" value="tmd" />
-                                                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6648795410103966818">
-                                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h5ia.~TransientModelsModule$TransientSModelDescriptor" resolveInfo="TransientModelsModule.TransientSModelDescriptor" />
-                                                </node>
-                                                <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6648795410103966819">
-                                                  <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6648795410103966820">
-                                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103966801" resolveInfo="outputMD" />
+                                            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8228083892348972334">
+                                              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8228083892348972335">
+                                                <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6648795410103966816">
+                                                  <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6648795410103966817">
+                                                    <property name="name" nameId="tpck.1169194664001" value="tmd" />
+                                                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6648795410103966818">
+                                                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h5ia.~TransientModelsModule$TransientSModelDescriptor" resolveInfo="TransientModelsModule.TransientSModelDescriptor" />
+                                                    </node>
+                                                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6648795410103966819">
+                                                      <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6648795410103966820">
+                                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103966801" resolveInfo="outputMD" />
+                                                      </node>
+                                                      <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6648795410103966821">
+                                                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h5ia.~TransientModelsModule$TransientSModelDescriptor" resolveInfo="TransientModelsModule.TransientSModelDescriptor" />
+                                                      </node>
+                                                    </node>
                                                   </node>
-                                                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6648795410103966821">
-                                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h5ia.~TransientModelsModule$TransientSModelDescriptor" resolveInfo="TransientModelsModule.TransientSModelDescriptor" />
+                                                </node>
+                                                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6648795410103966822">
+                                                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6648795410103966823">
+                                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6648795410103966824">
+                                                      <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6648795410103966825">
+                                                        <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6648795410103966826">
+                                                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6648795410103966827">
+                                                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103966817" resolveInfo="tmd" />
+                                                          </node>
+                                                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6648795410103966828">
+                                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h5ia.~TransientModelsModule$TransientSModelDescriptor%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
+                                                          </node>
+                                                        </node>
+                                                        <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6648795410103966829">
+                                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h5ia.~TransientModelsModule" resolveInfo="TransientModelsModule" />
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6648795410103966830">
+                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h5ia.~TransientModelsModule%dremoveModel(jetbrains%dmps%dsmodel%dSModelDescriptor)%cvoid" resolveInfo="removeModel" />
+                                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6648795410103966831">
+                                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103966817" resolveInfo="tmd" />
+                                                      </node>
+                                                    </node>
                                                   </node>
                                                 </node>
                                               </node>
-                                            </node>
-                                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6648795410103966822">
-                                              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6648795410103966823">
-                                                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6648795410103966824">
-                                                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6648795410103966825">
-                                                    <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6648795410103966826">
-                                                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6648795410103966827">
-                                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103966817" resolveInfo="tmd" />
-                                                      </node>
-                                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6648795410103966828">
-                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h5ia.~TransientModelsModule$TransientSModelDescriptor%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
-                                                      </node>
-                                                    </node>
-                                                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6648795410103966829">
-                                                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="h5ia.~TransientModelsModule" resolveInfo="TransientModelsModule" />
-                                                    </node>
+                                              <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="8228083892348972338">
+                                                <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5042902122848376761">
+                                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8228083892348972346">
+                                                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~Boolean%dTRUE" resolveInfo="TRUE" />
                                                   </node>
-                                                </node>
-                                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6648795410103966830">
-                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="h5ia.~TransientModelsModule%dremoveModel(jetbrains%dmps%dsmodel%dSModelDescriptor)%cvoid" resolveInfo="removeModel" />
-                                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6648795410103966831">
-                                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6648795410103966817" resolveInfo="tmd" />
+                                                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5042902122848376765">
+                                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Boolean%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                                    <node role="actualArgument" roleId="tpee.1068499141038" type="vvvw.ForeignParametersComponentExpression" typeId="vvvw.3344436107830227889" id="5042902122848378659">
+                                                      <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="5042902122848378660">
+                                                        <link role="target" roleId="vvvw.3344436107830227902" targetNodeId="6648795410103939606" resolveInfo="configure" />
+                                                      </node>
+                                                      <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="5042902122848378661">
+                                                        <link role="component" roleId="cx9y.1239576542472" targetNodeId="6648795410103939772" resolveInfo="saveTransient" />
+                                                      </node>
+                                                    </node>
                                                   </node>
                                                 </node>
                                               </node>
