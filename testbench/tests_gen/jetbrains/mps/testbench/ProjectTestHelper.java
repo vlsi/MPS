@@ -220,9 +220,7 @@ public class ProjectTestHelper {
           try {
             result.value = new TestMakeService(context, myMessageHandler).make(collectResources(context, module), scr, ctl).get();
           } catch (InterruptedException ignore) {
-            ignore.printStackTrace();
           } catch (ExecutionException ignore) {
-            ignore.printStackTrace();
           }
         }
       });
