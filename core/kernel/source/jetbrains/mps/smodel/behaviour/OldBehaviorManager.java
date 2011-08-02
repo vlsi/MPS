@@ -229,13 +229,14 @@ public final class OldBehaviorManager implements ApplicationComponent {
 
   private <T> T _invokeInternal(Class<T> returnType, @NotNull SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
     List<SNode> superConcepts;
+    SNode concept;
     if (callerConceptFqName == null) {
-      SNode concept = node.getConceptDeclarationNode();
+      concept = node.getConceptDeclarationNode();
       superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
     } else {
-      SNode callerConcept = SModelUtil.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
-      superConcepts = new ArrayList<SNode>(SModelUtil_new.getConceptAndSuperConcepts(callerConcept));
-      superConcepts.remove(callerConcept);
+      concept = SModelUtil.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
+      superConcepts = new ArrayList<SNode>(SModelUtil_new.getConceptAndSuperConcepts(concept));
+      superConcepts.remove(concept);
     }
 
     Method method = null;
@@ -261,7 +262,7 @@ public final class OldBehaviorManager implements ApplicationComponent {
       }
     }
 
-    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConceptFqName() + ", superConcepts: " + superConcepts.toString());
+    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConceptFqName() + ", conceptNode == null: " + (concept == null));
   }
 
   private static class MethodInfo {
