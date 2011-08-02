@@ -109,7 +109,7 @@
     <checkoutListener implementation="jetbrains.mps.vcs.integration.ProjectCheckoutListener"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
-    <projectConfigurable implementation="jetbrains.mps.vcs.VcsGeneratedFilesConfigurable" id="mpsvcs"/>
+    <mps.projectPrefsPanel implementation="jetbrains.mps.vcs.VcsGeneratedFilesPanel"/>
 
     <!--MPS Patch: our own diff request factory-->
     <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"

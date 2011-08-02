@@ -138,19 +138,15 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.vcs.queue.TaskQueue" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.VcsGeneratedFilesConfigurable" file="VcsGeneratedFilesConfigurable.java">
-    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+  <dependency className="jetbrains.mps.vcs.VcsGeneratedFilesPanel" file="VcsGeneratedFilesPanel.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.border.TitledBorder" />
     <classNode dependClassName="jetbrains.mps.vcs.MPSVcsProjectConfiguration" />
-    <classNode dependClassName="org.jetbrains.annotations.Nls" />
-    <classNode extendsClassName="com.intellij.openapi.options.Configurable" />
     <classNode extendsClassName="javax.swing.JPanel" />
+    <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.VcsHelper" file="VcsHelper.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
