@@ -841,7 +841,6 @@ public class SModel {
   }
 
   public void dispose() {
-    ModelChange.assertLegalChange(this);
     if (myDisposed) return;
 
     myDisposed = true;
