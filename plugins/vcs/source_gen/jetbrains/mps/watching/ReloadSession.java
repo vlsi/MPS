@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
@@ -104,6 +106,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
               log.info("Reload finished.");
             }
             fireReloadFinished();
+            for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+              ProjectPane.getInstance(project).rebuild();
+            }
           }
         }
       });
