@@ -6,9 +6,11 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.make.resources.IResourceWithProperties;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.resources.IPropertiesIO;
 
-public class TResource extends MultiTuple._2<IModule, Iterable<IDelta>> implements IResource, ITResource {
+public class TResource extends MultiTuple._2<IModule, Iterable<IDelta>> implements IResource, ITResource, IResourceWithProperties {
   public TResource() {
     super();
   }
@@ -40,5 +42,9 @@ public class TResource extends MultiTuple._2<IModule, Iterable<IDelta>> implemen
 
   public String describe() {
     return null;
+  }
+
+  public IPropertiesIO getProperties() {
+    return new FlatFilePropertiesIO(this.module().getDescriptorFile());
   }
 }
