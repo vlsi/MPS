@@ -21,10 +21,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -40,7 +38,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   public static boolean checkCyclicInheritance(Language lang) {
     List<Language> frontier = lang.getExtendedLanguages();
     ArrayList<Language> passed = new ArrayList<Language>();
-    while (!frontier.isEmpty()){
+    while (!frontier.isEmpty()) {
       List<Language> newFrontier = new ArrayList<Language>();
       for (Language extendedLang : frontier) {
         if (extendedLang == lang && lang != BootstrapLanguages.coreLanguage()) {
@@ -56,6 +54,18 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     return true;
   }
 
+  public static void checkBehaviorAspectPresence(Language lang, List<String> errors) {
+    for (Language language : lang.getAllExtendedLanguages()) {
+      EditableSModelDescriptor descriptor = LanguageAspect.BEHAVIOR.get(language);
+      if (descriptor == null) {
+        if (lang == language)
+          errors.add("Behavior aspect is absent");
+        else
+          errors.add("Cannot extend language without behavior aspect: " + language.getModuleFqName());
+      }
+    }
+  }
+
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
     for (ModuleReference lang : myModule.getExtendedLanguageRefs()) {
@@ -63,14 +73,14 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         errors.add("Can't find extended language: " + lang.getModuleFqName());
       }
     }
-
+    checkBehaviorAspectPresence(myModule, errors);
     if (!checkCyclicInheritance(myModule)) {
       errors.add("Cyclic language hierarchy");
     }
     List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependencies());
-    for (IModule runtimeModule: runtimeModules) {
+    for (IModule runtimeModule : runtimeModules) {
       if (!(runtimeModule instanceof Solution)) {
-        errors.add("Runtime module "+ runtimeModule + " is not a solution");
+        errors.add("Runtime module " + runtimeModule + " is not a solution");
       }
     }
     for (SModelReference accessory : myModule.getModuleDescriptor().getAccessoryModels()) {
@@ -86,7 +96,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     for (ModelRoot stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {
       IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
       if (file == null || !file.exists()) {
-        if(new File(stubModelsEntry.getPath()).exists()) {
+        if (new File(stubModelsEntry.getPath()).exists()) {
           errors.add("Idea VFS is not up-to-date. Can't find library: " + stubModelsEntry.getPath());
         } else {
           errors.add("Can't find library: " + stubModelsEntry.getPath());

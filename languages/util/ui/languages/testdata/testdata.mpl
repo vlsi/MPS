@@ -55,6 +55,7 @@
       </mapping-priorities>
     </generator>
   </generators>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">8a448bd0-1380-4c01-9820-0f051d33888c(jetbrains.mps.ui.modeling)</dependency>
     <dependency reexport="false">8243a5aa-ceff-484d-8124-da694e9f8ef4(jetbrains.mps.ui.unittest)</dependency>

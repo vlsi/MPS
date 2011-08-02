@@ -17,6 +17,7 @@
       <mapping-priorities />
     </generator>
   </generators>
+  <sourcePath />
   <dependencies>
     <dependency reexport="true">b8bf2110-d2b5-478f-87dd-306abe7416fe(jetbrains.mps.samples.complex.runtime)</dependency>
   </dependencies>
