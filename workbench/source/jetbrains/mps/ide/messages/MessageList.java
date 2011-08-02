@@ -34,28 +34,32 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+
 
 import static jetbrains.mps.ide.messages.MessagesViewTool.LOG;
 
@@ -68,6 +72,8 @@ import static jetbrains.mps.ide.messages.MessagesViewTool.LOG;
 */
 abstract class MessageList implements IMessageList {
   static final int MAX_SIZE = 10000;
+
+  private static Logger LOG = Logger.getLogger(MessageList.class);
 
   private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
     protected boolean isEnabled() {
@@ -488,8 +494,14 @@ abstract class MessageList implements IMessageList {
     toShow.printStackTrace(new PrintWriter(writer));
     StringSelection contents = new StringSelection(writer.toString());
     CopyPasteManagerEx.getInstanceEx().setContents(contents);
-//    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
-//    dialog.showDialog();
+    try {
+      Class<?> cls = Class.forName("jetbrains.mps.ide.actions.AnalyzeStacktraceDialog");
+      Constructor<?> ctor = cls.getConstructor(Frame.class, IOperationContext.class, Project.class);
+      BaseDialog dlg = (BaseDialog) ctor.newInstance(frame, null, getProject());
+      dlg.showDialog();
+    } catch (Exception e) {
+      LOG.error(e);
+    }
   }
 
   private Project getProject() {

@@ -303,8 +303,8 @@ __switch__:
             results.addResult(trg.getName(), new IResult.FAILURE(null));
             return;
           } catch (RuntimeException rex) {
-            LOG.error("Exception executing target " + trg.getName(), rex);
-            monit.reportFeedback(new IFeedback.ERROR("Exception executing target " + trg.getName()));
+            LOG.debug("Exception executing target " + trg.getName(), rex);
+            monit.reportFeedback(new IFeedback.ERROR("Exception executing target " + trg.getName(), rex));
             results.addResult(trg.getName(), new IResult.FAILURE(null));
             return;
           }
