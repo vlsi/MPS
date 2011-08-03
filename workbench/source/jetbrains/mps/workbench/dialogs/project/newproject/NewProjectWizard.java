@@ -27,8 +27,11 @@ import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.Project
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NewProjectWizard extends AbstractWizard<BaseStep> {
+  private List<String> myHelpIDs = new ArrayList<String>();
   private ProjectOptions myOptions = new ProjectOptions();
   private Project myCurrentProject;
 
@@ -43,6 +46,11 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     // FIXME contribute from devkit
     addStep(new LanguageStep(myOptions));
     addStep(new SolutionStep(myOptions));
+
+    // MPS-13491
+    myHelpIDs.add("MPS_New_Project_Page_1");
+    myHelpIDs.add("MPS_New_Project_Page_2");
+    myHelpIDs.add("MPS_New_Project_Page_3");
 
     init();
   }
@@ -103,6 +111,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   }
 
   protected String getHelpID() {
-    return null;
+    int idx = getCurrentStep();
+    return idx >= 0 && idx < myHelpIDs.size() ? myHelpIDs.get(idx) : null;
   }
 }

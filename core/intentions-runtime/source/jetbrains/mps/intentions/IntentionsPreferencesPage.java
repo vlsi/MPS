@@ -50,7 +50,8 @@ public class IntentionsPreferencesPage implements Configurable {
 
   @Override
   public String getHelpTopic() {
-    return null;
+    // MPS-13404
+    return "preferences.intentionPowerPack";
   }
 
   @Override
