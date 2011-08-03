@@ -23,6 +23,7 @@ import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
@@ -516,7 +517,8 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       }
       if ("link".equals(tagName)) {
         String[] child = (String[]) value;
-        SNodePointer ptr = fieldhelper.readLinkId(child[1]);
+        Pair<Boolean, SNodePointer> pptr = fieldhelper.readLink_internal(child[1]);
+        SNodePointer ptr = pptr.o2;
         if (ptr == null || ptr.getModelReference() == null) {
           if (log.isErrorEnabled()) {
             log.error("couldn't create reference '" + child[0] + "' from " + child[1]);
@@ -524,7 +526,7 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
           return;
         }
         SReference ref;
-        if (ptr.getNodeId() == null) {
+        if (pptr.o1) {
           ref = new DynamicReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), child[2]);
           fieldlinkMap.addDynamicReference(ptr.getModelReference(), (DynamicReference) ref);
         } else {

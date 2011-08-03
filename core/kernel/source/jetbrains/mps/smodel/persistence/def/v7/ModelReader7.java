@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -134,12 +135,13 @@ public class ModelReader7 implements IModelReader {
       String target = link.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
       String resolveInfo = link.getAttributeValue(ModelPersistence.RESOLVE_INFO);
       String role = myHelper.readRole(link.getAttributeValue(ModelPersistence.ROLE));
-      SNodePointer ptr = myHelper.readLinkId(target);
+      Pair<Boolean, SNodePointer> pptr = myHelper.readLink_internal(target);
+      SNodePointer ptr = pptr.o2;
       if (ptr == null || ptr.getModelReference() == null) {
         LOG.error("couldn't create reference '" + role + "' : from " + target);
         continue;
       }
-      if (ptr.getNodeId() == null) {
+      if (pptr.o1) {
         DynamicReference ref = new DynamicReference(role, node, ptr.getModelReference(), resolveInfo);
         myLinkMap.addDynamicReference(ptr.getModelReference(), ref);
         node.addReference(ref);
