@@ -10,8 +10,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.FileInputStream;
 import de.regnis.q.sequence.line.QSequenceLineRAData;
-import de.regnis.q.sequence.line.QSequenceLineRAByteData;
 import de.regnis.q.sequence.line.QSequenceLineRAFileData;
+import de.regnis.q.sequence.line.QSequenceLineRAByteData;
 import jetbrains.mps.util.FileUtil;
 import org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle;
 import java.io.IOException;
@@ -26,17 +26,17 @@ import java.io.IOException;
 
     FSMergerBySequence merger = new FSMergerBySequence(myConflictStart, mySeparator, myConflictEnd);
     int mergeResult = 0;
-    RandomAccessFile local = null;
+    RandomAccessFile base = null;
+    InputStream local = null;
     RandomAccessFile latest = null;
-    InputStream base = null;
     OutputStream result = null;
     try {
-      local = new RandomAccessFile(localFile, "r");
+      local = new FileInputStream(localFile);
       latest = new RandomAccessFile(latestFile, "r");
-      base = new FileInputStream(baseFile);
+      base = new RandomAccessFile(baseFile, "r");
 
-      QSequenceLineRAData baseData = QSequenceLineRAByteData.create(base);
-      QSequenceLineRAData localData = new QSequenceLineRAFileData(local);
+      QSequenceLineRAData baseData = new QSequenceLineRAFileData(base);
+      QSequenceLineRAData localData = QSequenceLineRAByteData.create(local);
       QSequenceLineRAData latestData = new QSequenceLineRAFileData(latest);
 
       FileUtil.closeFileSafe(local);
