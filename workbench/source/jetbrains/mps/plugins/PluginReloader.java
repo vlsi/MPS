@@ -53,8 +53,9 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   private void loadPlugins() {
+    checkDisposed();
     myPluginManager.loadPlugins();
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+    for (Project p : myProjectManager.getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).loadPlugins();
     }
 
@@ -62,9 +63,11 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   private void disposePlugins() {
+    if (isDisposed()) return;
+
     disposeConfigurations();
 
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+    for (Project p : myProjectManager.getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).disposePlugins();
     }
     myPluginManager.disposePlugins();
@@ -112,6 +115,18 @@ public class PluginReloader implements ApplicationComponent {
 
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
+
+    myClassLoaderManager = null;
+    myProjectManager = null;
+    myPluginManager = null;
+  }
+
+  private void checkDisposed () {
+    if (isDisposed()) throw new IllegalStateException("already disposed");
+  }
+
+  private boolean isDisposed () {
+    return myClassLoaderManager == null || myProjectManager == null || myPluginManager == null;
   }
 
   private class MyReloadAdapter extends ReloadAdapter {
