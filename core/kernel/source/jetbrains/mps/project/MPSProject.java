@@ -180,7 +180,12 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
   public List<IModule> getModules() {
     List<IModule> result = new ArrayList<IModule>();
     for (ModuleReference ref : myModules) {
-      result.add(MPSModuleRepository.getInstance().getModule(ref));
+      IModule module = MPSModuleRepository.getInstance().getModule(ref);
+      if (module != null) {
+        result.add(module);
+      } else {
+        error("Module was not found in MPSModuleRepository: " + ref.toString());
+      }
     }
     return result;
   }
