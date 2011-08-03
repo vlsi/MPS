@@ -58,7 +58,8 @@ public class CustomizationSettings implements PersistentStateComponent<MyState>,
   }
 
   public String getHelpTopic() {
-    return null;
+    // MPS-13112
+    return "mps.editor";
   }
 
   public MyState getState() {
