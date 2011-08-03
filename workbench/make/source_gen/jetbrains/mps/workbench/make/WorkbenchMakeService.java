@@ -205,6 +205,15 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
   }
 
+  private void abortSession() {
+    boolean[] mark = new boolean[1];
+    MakeSession sess = currentSessionStickyMark.get(mark);
+    currentSessionStickyMark.set(null, false);
+    if (sess != null) {
+      notifyListeners(new MakeNotification(this, MakeNotification.Kind.SESSION_CLOSED));
+    }
+  }
+
   private synchronized void awaitCurrentProcess() {
     Future<IResult> proc = this.currentProcess.get();
     try {
@@ -312,19 +321,31 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         }
       };
 
-      WorkbenchMakeService.this.getSession().doExecute(new Runnable() {
-        public void run() {
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              IdeEventQueue.getInstance().flushQueue();
-              if (currentProcess.compareAndSet(null, task)) {
-                ProgressManager.getInstance().run(task);
+      MakeSession session = WorkbenchMakeService.this.getSession();
+      try {
+        session.doExecute(new Runnable() {
+          public void run() {
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                IdeEventQueue.getInstance().flushQueue();
+                if (currentProcess.compareAndSet(null, task)) {
+                  ProgressManager.getInstance().run(task);
+                } else {
+                  throw new IllegalStateException("unexpected: make process already running");
+                }
+                IdeEventQueue.getInstance().flushQueue();
               }
-              IdeEventQueue.getInstance().flushQueue();
-            }
-          });
+            });
+          }
+        });
+
+      } catch (RuntimeException rex) {
+        // abort session 
+        if (currentProcess.get() == null) {
+          abortSession();
         }
-      });
+        throw rex;
+      }
 
       return task;
     }
