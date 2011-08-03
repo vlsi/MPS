@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
 import org.jetbrains.annotations.NotNull;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -56,10 +57,13 @@ public class ReadHelper {
     );
   }
 
-  public SNodePointer readLinkId(String src) {
+  @NotNull
+  public Pair<Boolean, SNodePointer> readLink_internal(String src) {
+    // returns <true, xxx> - if src is Dynamic Reference 
     // [modelID.]nodeID[:version] | [modelID.]^[:version] 
+    Pair<Boolean, SNodePointer> result = new Pair<Boolean, SNodePointer>(false, null);
     if (src == null) {
-      return null;
+      return result;
     }
     int i0 = src.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     int i1 = src.lastIndexOf(WriteHelper.VERSION_SEPARATOR_CHAR);
@@ -67,15 +71,22 @@ public class ReadHelper {
       src.length() :
       i1
     )));
+    result.o1 = WriteHelper.DYNAMIC_REFERENCE_ID.equals(text);
     SModelReference modelRef = getSModelReference((i0 < 0 ?
       "" :
       src.substring(0, i0)
     ));
-    SNodeId nodeId = (WriteHelper.DYNAMIC_REFERENCE_ID.equals(text) ?
+    SNodeId nodeId = (result.o1 ?
       null :
       SNodeId.fromString(text)
     );
-    return new SNodePointer(modelRef, nodeId);
+    result.o2 = new SNodePointer(modelRef, nodeId);
+    return result;
+  }
+
+  public SNodePointer readLinkId(String src) {
+    // [modelID.]nodeID[:version] | [modelID.]^[:version] 
+    return readLink_internal(src).o2;
   }
 
   public String readType(String s) {

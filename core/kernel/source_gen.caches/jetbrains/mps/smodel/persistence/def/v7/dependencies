@@ -18,6 +18,7 @@
     <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.XMLSAXHandler" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v7.ModelReader7Handler" file="ModelReader7Handler.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -39,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
     <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.ReadHelper" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.AttributeUtils" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.BreakParseSAXException" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
@@ -51,6 +53,7 @@
     <classNode extendsClassName="jetbrains.mps.xmlQuery.runtime.XMLSAXHandler" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v7.ReadHelper" file="ReadHelper.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -61,6 +64,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.WriteHelper" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
