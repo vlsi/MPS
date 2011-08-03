@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.xml.sax.SAXParseException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -55,6 +56,8 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
     try {
       is = cacheFile.openInputStream();
       return load(is);
+    } catch (FileNotFoundException e) {
+      // ignoring it - VFS was not refreshed, file doesn't exists.
     } catch (IOException e) {
       /* not a valid XML? ignore */
       if (!(e.getCause() instanceof SAXParseException)) {
