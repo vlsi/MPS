@@ -18,12 +18,11 @@ package jetbrains.mps.typesystem.inference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
-import com.intellij.util.ArrayUtil;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
@@ -48,6 +47,8 @@ public class TypeContextManager implements ApplicationComponent {
 
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
+
+  private Set<SNode> myResolveNodes = new HashSet<SNode>();
 
   private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     public void beforeModelDisposed(SModel sm) {
@@ -244,49 +245,48 @@ public class TypeContextManager implements ApplicationComponent {
       resolve = new Stack<Object>();
       myResolveStack.set(resolve);
     }
-    if (resolve.size() > 10) {
-      Stack<Object> objects = myResolveStack.get();
-      StringBuilder sb = new StringBuilder("Type checking failed. Resolve stack:\n ");
-      for (Object o:objects){
-        sb.append(o.toString()).append("; ");
+    if (!resolve.isEmpty()) {
+      if (myResolveNodes.contains(node)) {
+        return TypesUtil.createRuntimeErrorType();
       }
-      LOG.warning(sb.toString());
-      return null;
+      myResolveNodes.add(node);
     }
-
-    if (generationMode) {
-      TypeCheckingContext context = tracer == null ? createTypeCheckingContext(node) : createTracingTypeCheckingContext(node);
-      if (context == null) return null;
-
-      try {
-        return context.getTypeOf_generationMode(node);
-      } finally {
-        context.dispose();
-      }
-    }
-    //now we are not in generation mode
-
-    TypeCheckingContext context = getOrCreateContext(root, owner, true);
     try {
-      if (myComputeInNormalMode && context != null && context.isCheckedRoot(false)) {
-        myComputeInNormalMode = false;
-        SNode type = context.getTypeOf_normalMode(node);
-        myComputeInNormalMode = true;
-        return type;
-      }
-      if (!resolve.isEmpty()) {
-        if (context == null || !context.isNonTypesystemComputation()) {
-          TypeCheckingContext resolveContext = createTypeCheckingContextForResolve(node);
-          SNode type = resolveContext.getTypeOf(node, myTypeChecker);
-          resolveContext.dispose();
-          return type;
+      if (generationMode) {
+        TypeCheckingContext context = tracer == null ? createTypeCheckingContext(node) : createTracingTypeCheckingContext(node);
+        if (context == null) return null;
+        try {
+          return context.getTypeOf_generationMode(node);
+        } finally {
+          context.dispose();
         }
       }
+      //now we are not in generation mode
 
-      if (context == null) return null;
-      return context.getTypeOf(node, myTypeChecker);
+      TypeCheckingContext context = getOrCreateContext(root, owner, true);
+      try {
+        if (myComputeInNormalMode && context != null && context.isCheckedRoot(false)) {
+          myComputeInNormalMode = false;
+          SNode type = context.getTypeOf_normalMode(node);
+          myComputeInNormalMode = true;
+          return type;
+        }
+        if (!resolve.isEmpty()) {
+          if (context == null || !context.isNonTypesystemComputation()) {
+            TypeCheckingContext resolveContext = createTypeCheckingContextForResolve(node);
+            SNode type = resolveContext.getTypeOf(node, myTypeChecker);
+            resolveContext.dispose();
+            return type;
+          }
+        }
+
+        if (context == null) return null;
+        return context.getTypeOf(node, myTypeChecker);
+      } finally {
+        removeOwnerForRootNodeContext(root, owner);
+      }
     } finally {
-      removeOwnerForRootNodeContext(root, owner);
+      myResolveNodes.remove(node);
     }
   }
 
