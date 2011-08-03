@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -257,18 +258,26 @@ public abstract class AbstractModule implements IModule {
     if (bundleHomeFile == null) return;
 
     IFile bundleParent = bundleHomeFile.getParent();
-    if(bundleParent == null || !bundleParent.exists()) return;
+    if (bundleParent == null || !bundleParent.exists()) return;
 
-    descriptor.getStubModelEntries().clear();
+    List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
+    for (ModelRoot sme : descriptor.getStubModelEntries()) {
+      String path = sme.getPath();
+      String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+      if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      toRemove.add(sme);
+    }
+    descriptor.getStubModelEntries().removeAll(toRemove);
+
 
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
-    if(dd == null) return;
+    if (dd == null) return;
 
     for (String jarFile : dd.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
-         ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
-         : bundleParent.getDescendant(jarFile);
-      if(jar.exists()) {
+        ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
+        : bundleParent.getDescendant(jarFile);
+      if (jar.exists()) {
         ClassPathEntry jarEntry = new ClassPathEntry();
         jarEntry.setPath(jar.getPath());
         descriptor.getStubModelEntries().add(jetbrains.mps.project.structure.model.ModelRootUtil.fromClassPathEntry(jarEntry));
