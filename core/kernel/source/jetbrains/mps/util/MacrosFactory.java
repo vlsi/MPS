@@ -31,6 +31,19 @@ public class MacrosFactory {
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String PROJECT = "${project}";
 
+  public static boolean containsNonMPSMacros(String path) {
+    return path.contains("${") && !MacrosFactory.containsMPSMacros(path);
+  }
+
+  public static boolean containsMPSMacros(String path){
+    return path.contains(SOLUTION_DESCRIPTOR)||
+      path.contains(LIBRARY_DESCRIPTOR)||
+      path.contains(DEVKIT_DESCRIPTOR)||
+      path.contains(LANGUAGE_DESCRIPTOR)||
+      path.contains(PROJECT)||
+      path.contains(Macros.MPS_HOME);
+  }
+
   public static Macros languageDescriptor() {
     return new DescriptorMacros(LANGUAGE_DESCRIPTOR);
   }
