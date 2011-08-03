@@ -21,11 +21,8 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -160,11 +157,5 @@ public class TypesUtil {
       childEQs.clear();
     }
   }
-
-  public static SNode createRuntimeErrorType() {
-    return SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType",
-      TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-  }
-
 }
 

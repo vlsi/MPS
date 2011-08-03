@@ -18,11 +18,12 @@ package jetbrains.mps.typesystem.inference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import com.intellij.util.ArrayUtil;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
@@ -47,8 +48,6 @@ public class TypeContextManager implements ApplicationComponent {
 
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
-
-  private Set<SNode> myResolveNodes = new HashSet<SNode>();
 
   private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     public void beforeModelDisposed(SModel sm) {
@@ -245,16 +244,20 @@ public class TypeContextManager implements ApplicationComponent {
       resolve = new Stack<Object>();
       myResolveStack.set(resolve);
     }
-    if (!resolve.isEmpty()) {
-      if (myResolveNodes.contains(node)) {
-        return TypesUtil.createRuntimeErrorType();
+    if (resolve.size() > 10) {
+      Stack<Object> objects = myResolveStack.get();
+      StringBuilder sb = new StringBuilder("Type checking failed. Resolve stack:\n ");
+      for (Object o:objects){
+        sb.append(o.toString()).append("; ");
       }
-      myResolveNodes.add(node);
+      LOG.warning(sb.toString());
+      return null;
     }
 
     if (generationMode) {
       TypeCheckingContext context = tracer == null ? createTypeCheckingContext(node) : createTracingTypeCheckingContext(node);
       if (context == null) return null;
+
       try {
         return context.getTypeOf_generationMode(node);
       } finally {
@@ -284,7 +287,6 @@ public class TypeContextManager implements ApplicationComponent {
       return context.getTypeOf(node, myTypeChecker);
     } finally {
       removeOwnerForRootNodeContext(root, owner);
-      myResolveNodes.remove(node);
     }
   }
 
