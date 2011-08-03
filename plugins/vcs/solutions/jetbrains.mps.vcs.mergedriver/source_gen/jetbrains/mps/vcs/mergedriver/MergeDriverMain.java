@@ -40,7 +40,11 @@ public class MergeDriverMain {
   }
 
   private static AbstractFileMerger selectMerger(File file) {
-    switch (FileType.get(file)) {
+    FileType fileType = FileType.get(file);
+    if (fileType == null) {
+      return new TextMerger();
+    }
+    switch (fileType) {
       case MODEL:
         return new ModelMerger();
       case TRACE_CACHE:
