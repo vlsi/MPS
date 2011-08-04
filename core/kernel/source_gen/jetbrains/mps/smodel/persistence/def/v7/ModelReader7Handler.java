@@ -525,14 +525,19 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
           }
           return;
         }
-        SReference ref;
-        if (pptr.o1) {
-          ref = new DynamicReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), child[2]);
-          fieldlinkMap.addDynamicReference(ptr.getModelReference(), (DynamicReference) ref);
-        } else {
-          ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
-          fieldlinkMap.addTargetLocation(ptr, (StaticReference) ref);
-        }
+        /*
+          SReference ref;
+          if (pptr.o1) {
+            ref = new DynamicReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), child[2]);
+            fieldlinkMap.addDynamicReference(ptr.getModelReference(), (DynamicReference) ref);
+          } else {
+            ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
+            fieldlinkMap.addTargetLocation(ptr, (StaticReference) ref);
+          }
+        */
+        StaticReference ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
+        fieldlinkMap.addTargetLocation(ptr, ref);
+
         result.addReference(ref);
         fieldlinkMap.addRoleLocation(fieldhelper.readLinkId(child[3]), ref);
         return;
