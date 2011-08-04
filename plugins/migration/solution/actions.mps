@@ -43,7 +43,7 @@
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="1.5" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="2.0" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides actions to migrate models and languages developed using previous versions of MPS" />
       <property name="name" nameId="tp4k.5023285075122009367" value="Migration" />
     </node>

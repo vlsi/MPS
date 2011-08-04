@@ -18,7 +18,7 @@
   <id>jetbrains.mps.ide.make</id>
   <name>Make</name>
   <description>Allows to transform models</description>
-  <version>1.5</version>
+  <version>2.0</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>
 

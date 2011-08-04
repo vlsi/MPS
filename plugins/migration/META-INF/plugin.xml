@@ -18,7 +18,7 @@
   <id>jetbrains.mps.ide.migration</id>
   <name>Migration</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
-  <version>1.5</version>
+  <version>2.0</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>
   <depends>jetbrains.mps.ide.make</depends>
