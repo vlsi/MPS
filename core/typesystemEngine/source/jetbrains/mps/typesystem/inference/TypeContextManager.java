@@ -48,7 +48,7 @@ public class TypeContextManager implements ApplicationComponent {
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
 
-  private Set<SNode> myResolveNodes = new HashSet<SNode>();
+  private ThreadLocal<Set<SNode>> myResolveNodes = new ThreadLocal<Set<SNode>>();
 
   private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     public void beforeModelDisposed(SModel sm) {
@@ -232,24 +232,40 @@ public class TypeContextManager implements ApplicationComponent {
     return new TypeCheckingContextNew(root, myTypeChecker, true);
   }
 
-  @Nullable
-  public SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
-    if (node == null) return null;
-
-    ITypeContextOwner owner = new ITypeContextOwner() {
-    };
-    SNode root = node.getContainingRoot();
-
+  private Stack<Object> getMyResolveStack() {
     Stack<Object> resolve = myResolveStack.get();
     if (resolve == null) {
       resolve = new Stack<Object>();
       myResolveStack.set(resolve);
     }
+    return resolve;
+  }
+
+  private Set<SNode> getMyResolveNodes() {
+    Set<SNode> nodes = myResolveNodes.get();
+    if (nodes == null) {
+      nodes = new HashSet<SNode>();
+      myResolveNodes.set(nodes);
+    }
+    return nodes;
+  }
+
+  @Nullable
+  public SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
+    if (node == null) return null;
+    ITypeContextOwner owner = new ITypeContextOwner(){};
+    SNode root = node.getContainingRoot();
+    Stack<Object> resolve = getMyResolveStack();
+    Set<SNode> resolveNodes = getMyResolveNodes();
     if (!resolve.isEmpty()) {
-      if (myResolveNodes.contains(node)) {
+      if (resolveNodes.contains(node)) {
         return TypesUtil.createRuntimeErrorType();
       }
-      myResolveNodes.add(node);
+      resolveNodes.add(node);
+      if (resolveNodes.size() > 10) {
+        LOG.warning("There are too many nodes in resolve");
+        resolveNodes.clear();
+      }
     }
     try {
       if (generationMode) {
@@ -286,7 +302,7 @@ public class TypeContextManager implements ApplicationComponent {
         removeOwnerForRootNodeContext(root, owner);
       }
     } finally {
-      myResolveNodes.remove(node);
+      resolveNodes.remove(node);
     }
   }
 
