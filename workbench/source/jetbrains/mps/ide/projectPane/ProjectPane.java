@@ -217,7 +217,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   public void rebuild() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        if (isDisposed()) return;
+        if (isDisposed() || getTree() == null) return;
         rebuildTree();
       }
     });
