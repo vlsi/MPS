@@ -45,6 +45,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
     SModelDescriptor md = modelNode.getSModelDescriptor();
     if (!(md instanceof EditableSModelDescriptor) && !(md.isGeneratable())) return;
+    if (md.getModule() == null) return;
 
     TreeNode node = modelNode;
     do {
@@ -68,6 +69,10 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
     GenerationStatus modelStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
       public GenerationStatus compute() {
+        // extra check before read action
+        if (modelNode.getSModelDescriptor().getModule() == null) {
+          return GenerationStatus.NOT_REQUIRED;
+        }
         return getGenerationStatus(modelNode);
       }
     });
