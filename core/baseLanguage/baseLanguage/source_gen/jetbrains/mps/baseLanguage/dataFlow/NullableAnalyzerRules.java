@@ -30,14 +30,6 @@ public class NullableAnalyzerRules {
       myApplicableMap.get(conceptName).add(rule);
     }
     {
-      DataFlowConstructor rule = new WhileNotNull();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.WhileStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
-    {
       DataFlowConstructor rule = new RuleAssertNull();
       String conceptName = "jetbrains.mps.baseLanguage.structure.AssertStatement";
       if (!(myApplicableMap.containsKey(conceptName))) {
@@ -55,6 +47,7 @@ public class NullableAnalyzerRules {
     myConceptRules.add(new RuleTernaryOperation());
     myConceptRules.add(new IfNotNullAll());
     myConceptRules.add(new ForLoopNotNull());
+    myConceptRules.add(new RuleWhileNotNull());
   }
 
   public void apply(SNode nodeToApply, Program program) {

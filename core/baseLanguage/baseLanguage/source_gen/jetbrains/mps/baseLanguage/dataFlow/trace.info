@@ -1642,80 +1642,76 @@
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="28" startPosition="90" endLine="29" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="29" startPosition="7" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="29" startPosition="21" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="32" startPosition="5" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="32" startPosition="5" endLine="33" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="33" startPosition="33" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="33" startPosition="52" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="33" startPosition="54" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="35" startPosition="56" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="37" startPosition="7" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="40" startPosition="5" endLine="41" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="41" startPosition="54" endLine="42" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="39" startPosition="5" endLine="40" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="40" startPosition="53" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="41" startPosition="42" endLine="42" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432058" fileName="NullableAnalyzerRunner.java" startLine="41" startPosition="63" endLine="42" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="42" startPosition="49" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432067" fileName="NullableAnalyzerRunner.java" startLine="42" startPosition="77" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="43" startPosition="56" endLine="44" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="45" startPosition="7" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="43" startPosition="45" endLine="44" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="44" startPosition="46" endLine="45" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="45" startPosition="54" endLine="46" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="46" startPosition="46" endLine="47" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432071" fileName="NullableAnalyzerRunner.java" startLine="46" startPosition="100" endLine="47" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="47" startPosition="5" endLine="48" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="48" startPosition="53" endLine="49" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="49" startPosition="42" endLine="50" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="47" startPosition="51" endLine="48" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="48" startPosition="43" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="49" startPosition="45" endLine="50" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4212311917866530324" fileName="NullableAnalyzerRunner.java" startLine="49" startPosition="79" endLine="50" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4212311917866530330" fileName="NullableAnalyzerRunner.java" startLine="50" startPosition="38" endLine="51" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="50" startPosition="49" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="51" startPosition="45" endLine="52" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4212311917866530336" fileName="NullableAnalyzerRunner.java" startLine="51" startPosition="49" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="52" startPosition="46" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4212311917866530345" fileName="NullableAnalyzerRunner.java" startLine="53" startPosition="33" endLine="54" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="53" startPosition="54" endLine="54" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="54" startPosition="46" endLine="55" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="54" startPosition="59" endLine="55" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4212311917866530352" fileName="NullableAnalyzerRunner.java" startLine="55" startPosition="11" endLine="56" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="55" startPosition="51" endLine="56" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="56" startPosition="43" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432131" fileName="NullableAnalyzerRunner.java" startLine="58" startPosition="7" endLine="59" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="61" startPosition="59" endLine="62" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="58" startPosition="46" endLine="59" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432135" fileName="NullableAnalyzerRunner.java" startLine="62" startPosition="95" endLine="63" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6868777471677432141" fileName="NullableAnalyzerRunner.java" startLine="63" startPosition="47" endLine="64" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="63" startPosition="61" endLine="64" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432147" fileName="NullableAnalyzerRunner.java" startLine="64" startPosition="55" endLine="65" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="65" startPosition="46" endLine="66" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432153" fileName="NullableAnalyzerRunner.java" startLine="66" startPosition="56" endLine="67" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6868777471677432167" fileName="NullableAnalyzerRunner.java" startLine="68" startPosition="56" endLine="69" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="70" startPosition="61" endLine="71" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="69" startPosition="57" endLine="70" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="70" startPosition="64" endLine="71" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6868777471677432175" fileName="NullableAnalyzerRunner.java" startLine="71" startPosition="57" endLine="72" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="72" startPosition="31" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="74" startPosition="5" endLine="75" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6868777471677432183" fileName="NullableAnalyzerRunner.java" startLine="74" startPosition="53" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="76" startPosition="57" endLine="77" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="77" startPosition="64" endLine="78" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="77" startPosition="36" endLine="78" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432191" fileName="NullableAnalyzerRunner.java" startLine="77" startPosition="107" endLine="78" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="79" startPosition="31" endLine="80" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="80" startPosition="5" endLine="81" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432204" fileName="NullableAnalyzerRunner.java" startLine="80" startPosition="27" endLine="81" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="81" startPosition="5" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="84" startPosition="36" endLine="85" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="81" startPosition="45" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6868777471677432220" fileName="NullableAnalyzerRunner.java" startLine="84" startPosition="52" endLine="85" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6868777471677432226" fileName="NullableAnalyzerRunner.java" startLine="85" startPosition="64" endLine="86" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="87" startPosition="5" endLine="88" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="86" startPosition="27" endLine="87" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432236" fileName="NullableAnalyzerRunner.java" startLine="87" startPosition="108" endLine="88" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="88" startPosition="45" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="88" startPosition="5" endLine="89" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6868777471677432247" fileName="NullableAnalyzerRunner.java" startLine="89" startPosition="9" endLine="90" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6868777471677432256" fileName="NullableAnalyzerRunner.java" startLine="91" startPosition="33" endLine="92" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868777471677432263" fileName="NullableAnalyzerRunner.java" startLine="93" startPosition="9" endLine="94" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="93" startPosition="27" endLine="94" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="95" startPosition="5" endLine="96" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6868777471677432276" fileName="NullableAnalyzerRunner.java" startLine="95" startPosition="7" endLine="96" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="99" startPosition="45" endLine="100" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="37" startPosition="95" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullableAnalyzer#()V" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="26" startPosition="78" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="34" startPosition="81" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="42" startPosition="82" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="34" startPosition="82" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4212311917866530343" fileName="NullableAnalyzerRunner.java" startLine="52" startPosition="52" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="64" startPosition="67" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="57" startPosition="67" endLine="60" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="62" startPosition="7" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6868777471677432165" fileName="NullableAnalyzerRunner.java" startLine="67" startPosition="83" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="69" startPosition="7" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6868777471677432173" fileName="NullableAnalyzerRunner.java" startLine="70" startPosition="9" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="71" startPosition="77" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432181" fileName="NullableAnalyzerRunner.java" startLine="73" startPosition="9" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432189" fileName="NullableAnalyzerRunner.java" startLine="76" startPosition="9" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="78" startPosition="77" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="76" startPosition="53" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432202" fileName="NullableAnalyzerRunner.java" startLine="79" startPosition="9" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="83" startPosition="53" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="85" startPosition="53" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432234" fileName="NullableAnalyzerRunner.java" startLine="86" startPosition="47" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432254" fileName="NullableAnalyzerRunner.java" startLine="90" startPosition="53" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="92" startPosition="53" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getexpression#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getexpression#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getexpression#()Ljetbrains/mps/smodel/SNode;" />
@@ -1725,26 +1721,25 @@
     <nodeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="commandPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="commandPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initial#(Ljetbrains/mps/lang/dataFlow/framework/Program;)Ljava/util/Map;" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="63" startPosition="45" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="82" startPosition="73" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="56" startPosition="45" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="75" startPosition="73" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="24" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullableAnalyzerRunner#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="62" startPosition="49" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="91" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/baseLanguage/dataFlow/NullableAnalyzerRules;" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="55" startPosition="49" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="84" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/baseLanguage/dataFlow/NullableAnalyzerRules;" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="23" startPosition="34" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="31" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="39" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="notNullInstruction#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="nullableInstruction#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="nullInstruction#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4212311917866530318" fileName="NullableAnalyzerRunner.java" startLine="48" startPosition="60" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4212311917866530301" fileName="NullableAnalyzerRunner.java" startLine="47" startPosition="77" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6868777471677432218" fileName="NullableAnalyzerRunner.java" startLine="83" startPosition="7" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="60" startPosition="57" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="53" startPosition="57" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="45" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="merge#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljava/util/List;)Ljava/util/Map;" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="59" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="75" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRules#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="52" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/dataFlow/framework/Program;)V" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="68" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRules#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Set;" />
     <nodeInfo nodeId="6868777471677432151" fileName="NullableAnalyzerRunner.java" startLine="65" startPosition="58" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="22" startPosition="0" endLine="58" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullableAnalyzerRules#()V" />
+    <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="22" startPosition="0" endLine="51" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullableAnalyzerRules#()V" />
     <nodeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="61" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fun#(Ljava/util/Map;Ljetbrains/mps/lang/dataFlow/framework/ProgramState;)Ljava/util/Map;" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="38" startPosition="31" endLine="38" endPosition="31" />
     <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="23" startPosition="39" endLine="24" endPosition="26" />
@@ -1756,44 +1751,42 @@
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="27" startPosition="56" endLine="28" endPosition="80" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="33" startPosition="33" endLine="34" endPosition="65" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="35" startPosition="56" endLine="36" endPosition="80" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="43" startPosition="56" endLine="44" endPosition="80" />
     <scopeInfo nodeId="4212311917866530344" fileName="NullableAnalyzerRunner.java" startLine="53" startPosition="33" endLine="54" endPosition="46" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="65" startPosition="46" endLine="66" endPosition="53" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="58" startPosition="46" endLine="59" endPosition="53" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="63" startPosition="61" endLine="64" endPosition="49" />
     <scopeInfo nodeId="6868777471677432166" fileName="NullableAnalyzerRunner.java" startLine="68" startPosition="56" endLine="69" endPosition="48" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="70" startPosition="61" endLine="71" endPosition="49" />
     <scopeInfo nodeId="6868777471677432174" fileName="NullableAnalyzerRunner.java" startLine="71" startPosition="57" endLine="72" endPosition="49" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="72" startPosition="31" endLine="73" endPosition="26" />
     <scopeInfo nodeId="6868777471677432182" fileName="NullableAnalyzerRunner.java" startLine="74" startPosition="53" endLine="75" endPosition="45" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="77" startPosition="36" endLine="78" endPosition="25" />
     <scopeInfo nodeId="6868777471677432190" fileName="NullableAnalyzerRunner.java" startLine="77" startPosition="107" endLine="78" endPosition="159" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="79" startPosition="31" endLine="80" endPosition="26" />
     <scopeInfo nodeId="6868777471677432203" fileName="NullableAnalyzerRunner.java" startLine="80" startPosition="27" endLine="81" endPosition="50" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="84" startPosition="36" endLine="85" endPosition="25" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="86" startPosition="27" endLine="87" endPosition="45" />
     <scopeInfo nodeId="6868777471677432235" fileName="NullableAnalyzerRunner.java" startLine="87" startPosition="108" endLine="88" endPosition="161" />
     <scopeInfo nodeId="6868777471677432255" fileName="NullableAnalyzerRunner.java" startLine="91" startPosition="33" endLine="92" endPosition="45" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="93" startPosition="27" endLine="94" endPosition="45" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="99" startPosition="45" endLine="100" endPosition="39" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="37" startPosition="95" endLine="39" endPosition="5" />
     <scopeInfo nodeId="6868777471677432057" fileName="NullableAnalyzerRunner.java" startLine="41" startPosition="63" endLine="43" endPosition="20">
       <varInfo nodeId="6868777471677432059" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="64" startPosition="67" endLine="67" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="69" startPosition="7" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="83" startPosition="53" endLine="86" endPosition="7" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="57" startPosition="67" endLine="60" endPosition="11" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="62" startPosition="7" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="76" startPosition="53" endLine="79" endPosition="7" />
     <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="92" startPosition="53" endLine="96" endPosition="20" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="85" startPosition="53" endLine="89" endPosition="20" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="25" startPosition="45" endLine="30" endPosition="63" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="63" startPosition="45" endLine="68" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="82" startPosition="73" endLine="87" endPosition="5" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="56" startPosition="45" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="75" startPosition="73" endLine="80" endPosition="5" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="24" startPosition="5" endLine="30" endPosition="49" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="32" startPosition="5" endLine="38" endPosition="49" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="40" startPosition="5" endLine="46" endPosition="49" />
     <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="12" startPosition="44" endLine="19" endPosition="35" />
     <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="12" startPosition="47" endLine="19" endPosition="35" />
     <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="12" startPosition="48" endLine="19" endPosition="35" />
@@ -1803,7 +1796,7 @@
       <varInfo nodeId="4212311917866530325" varName="expr" />
       <varInfo nodeId="4212311917866530337" varName="resValue" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="91" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="84" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" />
     <scopeInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" />
     <scopeInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="11" startPosition="0" endLine="20" endPosition="3" />
@@ -1819,32 +1812,32 @@
     <scopeInfo nodeId="4212311917866530301" fileName="NullableAnalyzerRunner.java" startLine="47" startPosition="77" endLine="58" endPosition="7">
       <varInfo nodeId="4212311917866530302" varName="inputElement" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="61" startPosition="59" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="54" startPosition="59" endLine="65" endPosition="7" />
     <scopeInfo nodeId="6868777471677432070" fileName="NullableAnalyzerRunner.java" startLine="46" startPosition="100" endLine="59" endPosition="20">
       <varInfo nodeId="6868777471677432072" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="60" startPosition="57" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="76" startPosition="57" endLine="89" endPosition="18" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="53" startPosition="57" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="69" startPosition="57" endLine="82" endPosition="18" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="59" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="52" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="6868777471677432152" fileName="NullableAnalyzerRunner.java" startLine="66" startPosition="56" endLine="82" endPosition="9">
       <varInfo nodeId="6868777471677432154" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="75" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="23" startPosition="34" endLine="57" endPosition="45" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="68" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="23" startPosition="34" endLine="50" endPosition="47" />
+    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="22" startPosition="0" endLine="51" endPosition="3" />
     <scopeInfo nodeId="6868777471677432134" fileName="NullableAnalyzerRunner.java" startLine="62" startPosition="95" endLine="96" endPosition="20">
       <varInfo nodeId="6868777471677432148" varName="nullableState" />
       <varInfo nodeId="6868777471677432136" varName="result" />
       <varInfo nodeId="6868777471677432142" varName="instruction" />
     </scopeInfo>
-    <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="22" startPosition="0" endLine="58" endPosition="3" />
     <scopeInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="61" startPosition="0" endLine="98" endPosition="0" />
     <unitInfo nodeId="6868777471677432047" fileName="notNullInstruction.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
     <unitInfo nodeId="6868777471677432050" fileName="nullableInstruction.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.nullableInstruction" />
     <unitInfo nodeId="6868777471677432053" fileName="nullInstruction.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.nullInstruction" />
     <unitInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="37" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner$NullableAnalyzer" />
+    <unitInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRules" />
     <unitInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRunner.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" />
-    <unitInfo nodeId="6868777471677432036" fileName="NullableAnalyzerRules.java" startLine="16" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRules" />
   </root>
   <root nodeId="6868777471677432282">
     <nodeInfo nodeId="6868777471677432312" fileName="NullableState.java" startLine="17" startPosition="29" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2484,292 +2477,6 @@
     <scopeInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="26" startPosition="0" endLine="58" endPosition="0" />
     <unitInfo nodeId="6868777471677432624" fileName="RuleVariableDeclaration.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
   </root>
-  <root nodeId="6868777471677432673">
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="53" startPosition="15" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="168" startPosition="17" endLine="168" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="214" startPosition="17" endLine="214" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="12" startPosition="55" endLine="13" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPattern" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="18" startPosition="43" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="22" startPosition="59" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="26" startPosition="103" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_p" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="27" startPosition="35" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_body" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="28" startPosition="38" endLine="29" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOrPattern_pezsk4_a0a0" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="35" startPosition="7" endLine="36" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="36" startPosition="50" endLine="37" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="38" startPosition="134" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="41" startPosition="9" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="43" startPosition="103" endLine="44" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="46" startPosition="11" endLine="47" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="48" startPosition="13" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="49" startPosition="57" endLine="50" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="51" startPosition="140" endLine="52" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="54" startPosition="13" endLine="55" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="58" startPosition="9" endLine="59" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="60" startPosition="105" endLine="61" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="63" startPosition="11" endLine="64" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="65" startPosition="13" endLine="66" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="66" startPosition="59" endLine="67" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="68" startPosition="15" endLine="69" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="69" startPosition="42" endLine="70" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="70" startPosition="51" endLine="71" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="72" startPosition="78" endLine="73" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="73" startPosition="35" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="75" startPosition="17" endLine="76" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="77" startPosition="78" endLine="78" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="78" startPosition="35" endLine="79" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="81" startPosition="35" endLine="82" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="88" startPosition="7" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="92" startPosition="40" endLine="93" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="97" startPosition="69" endLine="98" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="98" startPosition="69" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="104" startPosition="45" endLine="105" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="107" startPosition="48" endLine="108" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="109" startPosition="7" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="114" startPosition="7" endLine="115" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="116" startPosition="45" endLine="117" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="117" startPosition="32" endLine="118" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="119" startPosition="23" endLine="120" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="121" startPosition="18" endLine="122" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="123" startPosition="11" endLine="124" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="124" startPosition="98" endLine="125" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="125" startPosition="66" endLine="126" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="136" startPosition="9" endLine="137" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="137" startPosition="55" endLine="138" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="139" startPosition="144" endLine="140" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="142" startPosition="11" endLine="143" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="144" startPosition="110" endLine="145" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="147" startPosition="13" endLine="148" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="149" startPosition="15" endLine="150" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="150" startPosition="62" endLine="151" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="151" startPosition="95" endLine="152" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="151" startPosition="95" endLine="152" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="156" startPosition="11" endLine="157" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="158" startPosition="110" endLine="159" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="161" startPosition="13" endLine="162" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="163" startPosition="15" endLine="164" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="164" startPosition="64" endLine="165" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="166" startPosition="145" endLine="167" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="172" startPosition="9" endLine="173" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="176" startPosition="42" endLine="177" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="183" startPosition="53" endLine="184" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="196" startPosition="9" endLine="197" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="197" startPosition="55" endLine="198" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="199" startPosition="144" endLine="200" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="202" startPosition="11" endLine="203" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="204" startPosition="110" endLine="205" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="207" startPosition="13" endLine="208" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="209" startPosition="15" endLine="210" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="210" startPosition="62" endLine="211" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="212" startPosition="143" endLine="213" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="218" startPosition="11" endLine="219" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="220" startPosition="110" endLine="221" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="223" startPosition="13" endLine="224" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="225" startPosition="15" endLine="226" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="226" startPosition="64" endLine="227" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="227" startPosition="99" endLine="228" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="227" startPosition="99" endLine="228" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="232" startPosition="9" endLine="233" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="236" startPosition="42" endLine="237" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="243" startPosition="53" endLine="244" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="14" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WhileNotNull#()V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="30" startPosition="0" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_pezsk4_a0a#()V" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="121" startPosition="16" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="131" startPosition="122" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a#()V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="191" startPosition="122" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a#()V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="37" startPosition="58" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="42" startPosition="57" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="50" startPosition="87" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="50" startPosition="87" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="59" startPosition="64" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="80" startPosition="17" endLine="83" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="103" startPosition="51" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="103" startPosition="51" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="106" startPosition="7" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="106" startPosition="7" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="138" startPosition="63" endLine="141" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="143" startPosition="71" endLine="146" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="157" startPosition="72" endLine="160" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="165" startPosition="99" endLine="168" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="165" startPosition="99" endLine="168" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="179" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="186" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="198" startPosition="63" endLine="201" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="203" startPosition="71" endLine="206" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="211" startPosition="95" endLine="214" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="211" startPosition="95" endLine="214" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="219" startPosition="72" endLine="222" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="239" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="246" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="71" startPosition="109" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="76" startPosition="109" endLine="80" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="96" startPosition="71" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="175" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="182" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="235" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="242" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="70" startPosition="51" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="75" startPosition="17" endLine="80" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="118" startPosition="23" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="148" startPosition="151" endLine="153" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="224" startPosition="153" endLine="229" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="47" startPosition="141" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="95" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="162" startPosition="153" endLine="169" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="208" startPosition="151" endLine="215" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="146" startPosition="13" endLine="154" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="222" startPosition="13" endLine="230" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="102" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="160" startPosition="13" endLine="170" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="206" startPosition="13" endLine="216" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="45" startPosition="11" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="143" startPosition="71" endLine="154" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="219" startPosition="72" endLine="230" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="115" startPosition="57" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="157" startPosition="72" endLine="170" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="203" startPosition="71" endLine="216" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="42" startPosition="57" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="141" startPosition="11" endLine="155" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="217" startPosition="11" endLine="231" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="113" startPosition="42" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="155" startPosition="11" endLine="171" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="201" startPosition="11" endLine="217" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="40" startPosition="9" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="67" startPosition="91" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="112" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="64" startPosition="145" endLine="85" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="62" startPosition="11" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="59" startPosition="64" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="57" startPosition="9" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="141" startPosition="11" endLine="171" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="201" startPosition="11" endLine="231" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="138" startPosition="63" endLine="171" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="198" startPosition="63" endLine="231" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="135" startPosition="47" endLine="172" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="195" startPosition="47" endLine="232" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="134" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="194" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="40" startPosition="9" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="37" startPosition="58" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="34" startPosition="45" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="33" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="15" startPosition="25" endLine="15" endPosition="25" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="31" startPosition="33" endLine="31" endPosition="33" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="53" startPosition="15" endLine="53" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="132" startPosition="59" endLine="132" endPosition="59" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="168" startPosition="17" endLine="168" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="180" startPosition="73" endLine="180" endPosition="73" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="187" startPosition="44" endLine="187" endPosition="44" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="192" startPosition="59" endLine="192" endPosition="59" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="214" startPosition="17" endLine="214" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="240" startPosition="73" endLine="240" endPosition="73" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="247" startPosition="44" endLine="247" endPosition="44" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="18" startPosition="43" endLine="19" endPosition="33" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="22" startPosition="59" endLine="23" endPosition="38" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="38" startPosition="134" endLine="39" endPosition="23" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="43" startPosition="103" endLine="44" endPosition="25" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="51" startPosition="140" endLine="52" endPosition="29" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="60" startPosition="105" endLine="61" endPosition="25" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="81" startPosition="35" endLine="82" endPosition="31" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="92" startPosition="40" endLine="93" endPosition="19" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="104" startPosition="45" endLine="105" endPosition="28" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="107" startPosition="48" endLine="108" endPosition="31" />
-    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="119" startPosition="23" endLine="120" endPosition="56" />
-    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="121" startPosition="18" endLine="122" endPosition="54" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="139" startPosition="144" endLine="140" endPosition="25" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="144" startPosition="110" endLine="145" endPosition="27" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="151" startPosition="95" endLine="152" endPosition="71" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="158" startPosition="110" endLine="159" endPosition="27" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="166" startPosition="145" endLine="167" endPosition="31" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="176" startPosition="42" endLine="177" endPosition="21" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="183" startPosition="53" endLine="184" endPosition="20" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="199" startPosition="144" endLine="200" endPosition="25" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="204" startPosition="110" endLine="205" endPosition="27" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="212" startPosition="143" endLine="213" endPosition="31" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="220" startPosition="110" endLine="221" endPosition="27" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="227" startPosition="99" endLine="228" endPosition="73" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="236" startPosition="42" endLine="237" endPosition="21" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="243" startPosition="53" endLine="244" endPosition="20" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="14" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="30" startPosition="0" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="72" startPosition="78" endLine="74" endPosition="54" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="77" startPosition="78" endLine="79" endPosition="54" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="97" startPosition="69" endLine="99" endPosition="75" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="131" startPosition="122" endLine="133" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="191" startPosition="122" endLine="193" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="50" startPosition="87" endLine="53" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="103" startPosition="51" endLine="106" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="106" startPosition="7" endLine="109" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="149" startPosition="15" endLine="152" endPosition="71" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="165" startPosition="99" endLine="168" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="179" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="186" startPosition="0" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="211" startPosition="95" endLine="214" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="225" startPosition="15" endLine="228" endPosition="73" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="239" startPosition="0" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="246" startPosition="0" endLine="249" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="96" startPosition="71" endLine="100" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="175" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="235" startPosition="0" endLine="239" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="242" startPosition="0" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="48" startPosition="13" endLine="53" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="70" startPosition="51" endLine="75" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="75" startPosition="17" endLine="80" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="163" startPosition="15" endLine="168" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="209" startPosition="15" endLine="214" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="147" startPosition="13" endLine="153" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="223" startPosition="13" endLine="229" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="95" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="103" startPosition="51" endLine="110" endPosition="18" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="161" startPosition="13" endLine="169" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="207" startPosition="13" endLine="215" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="46" startPosition="11" endLine="55" endPosition="69" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="102" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="116" startPosition="45" endLine="126" endPosition="70" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="143" startPosition="71" endLine="154" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="219" startPosition="72" endLine="230" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="142" startPosition="11" endLine="154" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="218" startPosition="11" endLine="230" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432690" fileName="WhileNotNull.java" startLine="114" startPosition="7" endLine="127" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="157" startPosition="72" endLine="170" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="203" startPosition="71" endLine="216" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="42" startPosition="57" endLine="56" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="156" startPosition="11" endLine="170" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="202" startPosition="11" endLine="216" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="41" startPosition="9" endLine="56" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="68" startPosition="15" endLine="83" endPosition="17" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="113" startPosition="42" endLine="128" endPosition="7" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="112" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="65" startPosition="13" endLine="84" endPosition="15" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="63" startPosition="11" endLine="85" endPosition="13" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="59" startPosition="64" endLine="86" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="58" startPosition="9" endLine="86" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="141" startPosition="11" endLine="171" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="201" startPosition="11" endLine="231" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="138" startPosition="63" endLine="171" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="198" startPosition="63" endLine="231" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="136" startPosition="9" endLine="171" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="196" startPosition="9" endLine="231" endPosition="11" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="135" startPosition="47" endLine="173" endPosition="20" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="195" startPosition="47" endLine="233" endPosition="20" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="134" startPosition="0" endLine="175" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="194" startPosition="0" endLine="235" endPosition="0" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="40" startPosition="9" endLine="87" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="37" startPosition="58" endLine="87" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="35" startPosition="7" endLine="87" endPosition="9" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="34" startPosition="45" endLine="89" endPosition="18" />
-    <scopeInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="33" startPosition="0" endLine="91" endPosition="0" />
-    <unitInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="131" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a2a2a1a1a1a1a1a2a0a0a0a" />
-    <unitInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="191" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull.Pattern_pezsk4_a0a$Pattern_pezsk4_a0a0a3a2a1a1a1a1a1a2a0a0a0a" />
-    <unitInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="26" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull$Pattern_pezsk4_a0a" />
-    <unitInfo nodeId="6868777471677432673" fileName="WhileNotNull.java" startLine="12" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull" />
-  </root>
   <root nodeId="7597254041024463759">
     <nodeInfo nodeId="7597254041024527612" fileName="DataFlowTryCatchUtil.java" startLine="25" startPosition="88" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7597254041024527699" fileName="DataFlowTryCatchUtil.java" startLine="26" startPosition="48" endLine="27" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2886,6 +2593,60 @@
     <unitInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DataFlowTryCatchUtil$QuotationClass_l1x7gt_a0a0a1a3a0" />
     <unitInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="98" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DataFlowTryCatchUtil$QuotationClass_l1x7gt_a0a0a0a0a1a3a0" />
     <unitInfo nodeId="7597254041024463759" fileName="DataFlowTryCatchUtil.java" startLine="21" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DataFlowTryCatchUtil" />
+  </root>
+  <root nodeId="7718715537694335441">
+    <nodeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="20" startPosition="43" endLine="21" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="24" startPosition="46" endLine="25" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7718715537694335462" fileName="RuleWhileNotNull.java" startLine="28" startPosition="53" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335457" fileName="RuleWhileNotNull.java" startLine="29" startPosition="48" endLine="30" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7718715537694335477" fileName="RuleWhileNotNull.java" startLine="32" startPosition="112" endLine="33" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="35" startPosition="11" endLine="36" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="37" startPosition="49" endLine="38" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="38" startPosition="37" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="39" startPosition="60" endLine="40" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="40" startPosition="76" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="41" startPosition="42" endLine="42" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="45" startPosition="11" endLine="46" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="47" startPosition="49" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="48" startPosition="37" endLine="49" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="49" startPosition="60" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="50" startPosition="77" endLine="51" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="51" startPosition="42" endLine="52" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7718715537694335455" fileName="RuleWhileNotNull.java" startLine="57" startPosition="5" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="16" startPosition="59" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleWhileNotNull#()V" />
+    <nodeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="36" startPosition="38" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="46" startPosition="33" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="34" startPosition="34" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="44" startPosition="11" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7718715537694335483" fileName="RuleWhileNotNull.java" startLine="33" startPosition="147" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7718715537694335475" fileName="RuleWhileNotNull.java" startLine="31" startPosition="36" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7718715537694335471" fileName="RuleWhileNotNull.java" startLine="30" startPosition="95" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="27" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="17" startPosition="29" endLine="17" endPosition="29" />
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="20" startPosition="43" endLine="21" endPosition="174" />
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="24" startPosition="46" endLine="25" endPosition="65" />
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="16" startPosition="59" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="37" startPosition="49" endLine="42" endPosition="74" />
+    <scopeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="47" startPosition="49" endLine="52" endPosition="74" />
+    <scopeInfo nodeId="7718715537694335485" fileName="RuleWhileNotNull.java" startLine="35" startPosition="11" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="7718715537694335490" fileName="RuleWhileNotNull.java" startLine="45" startPosition="11" endLine="53" endPosition="13" />
+    <scopeInfo nodeId="7718715537694335484" fileName="RuleWhileNotNull.java" startLine="34" startPosition="34" endLine="54" endPosition="11" />
+    <scopeInfo nodeId="7718715537694335476" fileName="RuleWhileNotNull.java" startLine="32" startPosition="112" endLine="55" endPosition="9">
+      <varInfo nodeId="7718715537694335478" varName="notNullNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7718715537694335474" fileName="RuleWhileNotNull.java" startLine="31" startPosition="36" endLine="56" endPosition="7" />
+    <scopeInfo nodeId="7718715537694335471" fileName="RuleWhileNotNull.java" startLine="30" startPosition="95" endLine="57" endPosition="5">
+      <varInfo nodeId="7718715537694335472" varName="condition" />
+    </scopeInfo>
+    <scopeInfo nodeId="7718715537694335444" fileName="RuleWhileNotNull.java" startLine="28" startPosition="53" endLine="58" endPosition="0">
+      <varInfo nodeId="7718715537694335463" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="27" startPosition="0" endLine="60" endPosition="0" />
+    <unitInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleWhileNotNull" />
   </root>
 </debugInfo>
 
