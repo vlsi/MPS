@@ -14,6 +14,8 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.BaseGroup;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,12 +45,12 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
         return;
       }
       event.getPresentation().setEnabled(true);
-      // 
+
       ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(true);
-      ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByCategoryPopup());
-      ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByBuildPopup());
-      ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByLanguagePopup());
-      // 
+      BaseGroup catGroup = menuBuilder.create_ByCategoryPopup();
+      for (AnAction a : catGroup.getChildren(null)) {
+        ScriptsForSelection_ActionGroup.this.add(a);
+      }
       ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder.getAllScripts(), true), PluginId.getId("jetbrains.mps.lang.script"), menuBuilder.getAllScripts(), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);

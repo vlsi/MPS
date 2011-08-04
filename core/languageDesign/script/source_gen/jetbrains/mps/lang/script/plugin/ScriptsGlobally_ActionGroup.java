@@ -46,7 +46,7 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
         return;
       }
       event.getPresentation().setEnabled(true);
-      // 
+
       ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(false);
       BaseGroup catGroup = menuBuilder.create_ByCategoryPopup();
       for (AnAction a : catGroup.getChildren(null)) {
