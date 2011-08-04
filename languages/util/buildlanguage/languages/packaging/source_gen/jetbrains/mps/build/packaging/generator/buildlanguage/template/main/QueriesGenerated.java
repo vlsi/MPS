@@ -458,7 +458,16 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8795525031433494646(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "textColor", true));
+    if ((SLinkOperations.getTarget(_context.getNode(), "textColor", true) != null)) {
+      try {
+        String res = IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "textColor", true));
+        Integer.parseInt(res, 16);
+        return res;
+      } catch (Exception ex) {
+        _context.showErrorMessage(_context.getNode(), "bad text color: " + IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "textColor", true)));
+      }
+    }
+    return "002387";
   }
 
   public static Object propertyMacro_GetPropertyValue_6108265972537229298(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -954,10 +963,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
   }
 
-  public static boolean ifMacro_Condition_8795525031433494662(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "textColor", true) != null);
-  }
-
   public static boolean ifMacro_Condition_6108265972537197112(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "splashScreen", true) != null);
   }
@@ -1324,8 +1329,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0nj;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0nj_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0mj;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0mj_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -1348,13 +1353,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0nj_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0mj_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0nj_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0mj_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0nj = this._7__yield_x583g4_a0a0a0a0a0nj_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0mj = this._7__yield_x583g4_a0a0a0a0a0mj_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -1366,7 +1371,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0nj);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0mj);
                       return true;
                     case 12:
                       this.__CP__ = 3;

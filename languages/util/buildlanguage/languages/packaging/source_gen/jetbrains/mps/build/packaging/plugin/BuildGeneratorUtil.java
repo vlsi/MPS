@@ -83,11 +83,7 @@ public class BuildGeneratorUtil {
     mr.setPath(solutionDescriptorFile.getParent().getPath());
     descriptor.getModelRoots().add(mr);
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor);
-    return ModelAccess.instance().runWriteAction(new Computable<Solution>() {
-      public Solution compute() {
-        return MPSModuleRepository.getInstance().registerModule(solutionDescriptorFile, mpsProject, Solution.class);
-      }
-    });
+    return MPSModuleRepository.getInstance().registerModule(solutionDescriptorFile, mpsProject, Solution.class);
   }
 
   public static ModuleReference getPackagingLanguageReference() {

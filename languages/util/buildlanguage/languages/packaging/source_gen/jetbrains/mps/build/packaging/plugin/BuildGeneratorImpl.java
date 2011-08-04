@@ -4,20 +4,20 @@ package jetbrains.mps.build.packaging.plugin;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import java.util.List;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.application.ModalityState;
 import java.util.Arrays;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -56,38 +56,27 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   public void generate() {
-    ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Generating Build Script", false) {
-      public void run(@NotNull ProgressIndicator progressIndicator) {
-        progressIndicator.setIndeterminate(true);
-        progressIndicator.setText("Preparing...");
-        final SModelDescriptor descriptor = BuildGeneratorImpl.this.getSModelDescriptor(progressIndicator);
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
+      public void run() {
+        final SModelDescriptor descriptor = BuildGeneratorImpl.this.getSModelDescriptor(new EmptyProgressIndicator());
         final String projectName = BuildGeneratorImpl.this.getProjectName();
-        final String projectBasedirPath = this.myProject.getBaseDir().getPath();
+        final String projectBasedirPath = BuildGeneratorImpl.this.myProject.getBaseDir().getPath();
         final List<NodeData> modules = BuildGeneratorImpl.this.getModules();
-        progressIndicator.setText("Creating Script...");
         final List<ModuleReference> moduleReferencesToAdd = BuildGeneratorImpl.this.getModuleReferencesToAdd();
+        Runnable runnable;
+        Solution solution = (Solution) descriptor.getModule();
+        for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
+          (solution).getModuleDescriptor().getUsedLanguages().add(ref);
+        }
+        for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
+          descriptor.getSModel().addLanguage(ref);
+        }
+        runnable = BuildGeneratorImpl.this.generate(((EditableSModelDescriptor) descriptor), projectName, projectBasedirPath, modules);
+        runnable.run();
+        final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
+        project.getProjectDescriptor().addModule(solution.getDescriptorFile().getPath());
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            final Wrappers._T<Runnable> runnable = new Wrappers._T<Runnable>();
-            final Solution solution = (Solution) descriptor.getModule();
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
-                  (solution).getModuleDescriptor().getUsedLanguages().add(ref);
-                }
-              }
-            });
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
-                  descriptor.getSModel().addLanguage(ref);
-                }
-                runnable.value = BuildGeneratorImpl.this.generate(((EditableSModelDescriptor) descriptor), projectName, projectBasedirPath, modules);
-              }
-            });
-            runnable.value.run();
-            final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
-            project.getProjectDescriptor().addModule(solution.getDescriptorFile().getPath());
             ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Reloading Classes", false) {
               public void run(@NotNull ProgressIndicator progressIndicator) {
                 progressIndicator.setIndeterminate(true);
@@ -102,7 +91,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           }
         }, ModalityState.NON_MODAL);
       }
-    });
+    }, myProject);
   }
 
   protected List<ModuleReference> getModuleReferencesToAdd() {
