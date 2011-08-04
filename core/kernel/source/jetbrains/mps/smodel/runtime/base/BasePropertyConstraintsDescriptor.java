@@ -50,15 +50,15 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
         setterDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), SETTER_INHERITANCE_PARAMETERS);
       }
 
-      if (hasOwnValidator()) {
-        validatorDescriptor = this;
-      } else {
-        validatorDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), VALIDATOR_INHERITANCE_PARAMETERS);
-      }
     } else {
       getterDescriptor = null;
       setterDescriptor = null;
-      validatorDescriptor = null;
+    }
+
+    if (hasOwnValidator()) {
+      validatorDescriptor = this;
+    } else {
+      validatorDescriptor = getSomethingUsingInheritance(getContainer().getConceptFqName(), getName(), VALIDATOR_INHERITANCE_PARAMETERS);
     }
   }
 
