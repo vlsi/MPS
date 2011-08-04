@@ -141,17 +141,17 @@ public class ModelReader7 implements IModelReader {
         LOG.error("couldn't create reference '" + role + "' : from " + target);
         continue;
       }
-      if (pptr.o1) {
-        DynamicReference ref = new DynamicReference(role, node, ptr.getModelReference(), resolveInfo);
-        myLinkMap.addDynamicReference(ptr.getModelReference(), ref);
-        node.addReference(ref);
-        myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
-      } else {
+//      if (pptr.o1) {
+//        DynamicReference ref = new DynamicReference(role, node, ptr.getModelReference(), resolveInfo);
+//        myLinkMap.addDynamicReference(ptr.getModelReference(), ref);
+//        node.addReference(ref);
+//        myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
+//      } else {
         StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ptr.getNodeId(), resolveInfo);
-        myLinkMap.addRoleLocation(ptr, ref);
+        myLinkMap.addTargetLocation(ptr, ref);
         node.addReference(ref);
         myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
-      }
+//      }
     }
 
     if (!isRootStub)
