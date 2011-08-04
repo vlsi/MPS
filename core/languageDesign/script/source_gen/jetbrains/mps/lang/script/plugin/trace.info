@@ -3,59 +3,63 @@
   <unitInfo fileName="Script_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.Script_ProjectPlugin" />
   <unitInfo fileName="Script_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.Script_ApplicationPlugin" />
   <root nodeId="1207489199158">
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="20" startPosition="75" endLine="21" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="21" startPosition="86" endLine="22" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="23" startPosition="0" endLine="24" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlaces" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="26" startPosition="44" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="27" startPosition="25" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="28" startPosition="30" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="31" startPosition="27" endLine="32" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207492364648" fileName="ScriptsForSelection_ActionGroup.java" startLine="37" startPosition="9" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213721126934" fileName="ScriptsForSelection_ActionGroup.java" startLine="38" startPosition="55" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213721811106" fileName="ScriptsForSelection_ActionGroup.java" startLine="39" startPosition="47" endLine="40" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215713391992" fileName="ScriptsForSelection_ActionGroup.java" startLine="41" startPosition="60" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215011589024" fileName="ScriptsForSelection_ActionGroup.java" startLine="42" startPosition="50" endLine="43" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213721605251" fileName="ScriptsForSelection_ActionGroup.java" startLine="44" startPosition="7" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453073" fileName="ScriptsForSelection_ActionGroup.java" startLine="45" startPosition="47" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1215714794128" fileName="ScriptsForSelection_ActionGroup.java" startLine="46" startPosition="9" endLine="47" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207493200349" fileName="ScriptsForSelection_ActionGroup.java" startLine="47" startPosition="68" endLine="48" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207493320317" fileName="ScriptsForSelection_ActionGroup.java" startLine="48" startPosition="85" endLine="49" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207493396093" fileName="ScriptsForSelection_ActionGroup.java" startLine="49" startPosition="82" endLine="50" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453733" fileName="ScriptsForSelection_ActionGroup.java" startLine="50" startPosition="85" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="765469998256375243" fileName="ScriptsForSelection_ActionGroup.java" startLine="51" startPosition="9" endLine="52" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="53" startPosition="27" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="56" startPosition="70" endLine="57" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="61" startPosition="81" endLine="62" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="65" startPosition="29" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="29" startPosition="24" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1215011571609" fileName="ScriptsForSelection_ActionGroup.java" startLine="40" startPosition="79" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Ljetbrains/mps/util/Condition;)V" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStrict#()Z" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="25" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ScriptsForSelection_ActionGroup#()V" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="36" startPosition="45" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="35" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="30" startPosition="9" endLine="30" endPosition="9" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="31" startPosition="0" endLine="32" endPosition="39" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="31" startPosition="27" endLine="32" endPosition="39" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="53" startPosition="0" endLine="54" endPosition="39" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="53" startPosition="27" endLine="54" endPosition="39" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="56" startPosition="70" endLine="57" endPosition="39" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="61" startPosition="81" endLine="62" endPosition="109" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="65" startPosition="29" endLine="66" endPosition="17" />
-    <scopeInfo nodeId="1215011571611" fileName="ScriptsForSelection_ActionGroup.java" startLine="41" startPosition="60" endLine="43" endPosition="15" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="55" startPosition="5" endLine="58" endPosition="5" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="26" startPosition="44" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="25" startPosition="0" endLine="34" endPosition="3" />
-    <scopeInfo nodeId="1207490769340" fileName="ScriptsForSelection_ActionGroup.java" startLine="37" startPosition="9" endLine="52" endPosition="213">
-      <varInfo nodeId="1213721811107" varName="context" />
-      <varInfo nodeId="1215714794129" varName="menuBuilder" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="22" startPosition="75" endLine="23" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="23" startPosition="86" endLine="24" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="25" startPosition="0" endLine="26" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlaces" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="28" startPosition="44" endLine="29" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="29" startPosition="25" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="30" startPosition="30" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="33" startPosition="27" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207492364648" fileName="ScriptsForSelection_ActionGroup.java" startLine="39" startPosition="9" endLine="40" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213721126934" fileName="ScriptsForSelection_ActionGroup.java" startLine="40" startPosition="55" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213721811106" fileName="ScriptsForSelection_ActionGroup.java" startLine="41" startPosition="47" endLine="42" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215713391992" fileName="ScriptsForSelection_ActionGroup.java" startLine="43" startPosition="60" endLine="44" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215011589024" fileName="ScriptsForSelection_ActionGroup.java" startLine="44" startPosition="50" endLine="45" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213721605251" fileName="ScriptsForSelection_ActionGroup.java" startLine="46" startPosition="7" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3858440078841939448" fileName="ScriptsForSelection_ActionGroup.java" startLine="47" startPosition="47" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3858440078841939450" fileName="ScriptsForSelection_ActionGroup.java" startLine="48" startPosition="0" endLine="49" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3858440078841939456" fileName="ScriptsForSelection_ActionGroup.java" startLine="49" startPosition="68" endLine="50" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3858440078841939464" fileName="ScriptsForSelection_ActionGroup.java" startLine="51" startPosition="53" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3858440078841939472" fileName="ScriptsForSelection_ActionGroup.java" startLine="53" startPosition="7" endLine="54" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="55" startPosition="27" endLine="56" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="58" startPosition="70" endLine="59" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="63" startPosition="81" endLine="64" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="67" startPosition="29" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3858440078841939462" fileName="ScriptsForSelection_ActionGroup.java" startLine="50" startPosition="64" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="31" startPosition="24" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1215011571609" fileName="ScriptsForSelection_ActionGroup.java" startLine="42" startPosition="79" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Ljetbrains/mps/util/Condition;)V" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStrict#()Z" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="27" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ScriptsForSelection_ActionGroup#()V" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="38" startPosition="45" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="37" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="32" startPosition="9" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="33" startPosition="0" endLine="34" endPosition="39" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="33" startPosition="27" endLine="34" endPosition="39" />
+    <scopeInfo nodeId="3858440078841939463" fileName="ScriptsForSelection_ActionGroup.java" startLine="51" startPosition="53" endLine="52" endPosition="52" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="55" startPosition="0" endLine="56" endPosition="39" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="55" startPosition="27" endLine="56" endPosition="39" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="58" startPosition="70" endLine="59" endPosition="39" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="63" startPosition="81" endLine="64" endPosition="109" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="67" startPosition="29" endLine="68" endPosition="17" />
+    <scopeInfo nodeId="1215011571611" fileName="ScriptsForSelection_ActionGroup.java" startLine="43" startPosition="60" endLine="45" endPosition="15" />
+    <scopeInfo nodeId="3858440078841939462" fileName="ScriptsForSelection_ActionGroup.java" startLine="50" startPosition="64" endLine="53" endPosition="7">
+      <varInfo nodeId="3858440078841939466" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="36" startPosition="45" endLine="58" endPosition="5" />
-    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="35" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="20" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="57" startPosition="5" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="28" startPosition="44" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="27" startPosition="0" endLine="36" endPosition="3" />
+    <scopeInfo nodeId="1207490769340" fileName="ScriptsForSelection_ActionGroup.java" startLine="39" startPosition="9" endLine="54" endPosition="213">
+      <varInfo nodeId="3858440078841939457" varName="catGroup" />
+      <varInfo nodeId="1213721811107" varName="context" />
+      <varInfo nodeId="3858440078841939451" varName="menuBuilder" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="38" startPosition="45" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="37" startPosition="0" endLine="62" endPosition="0" />
+    <unitInfo nodeId="1207489199158" fileName="ScriptsForSelection_ActionGroup.java" startLine="22" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup" />
   </root>
   <root nodeId="1215713862581">
     <nodeInfo nodeId="1215714508667" fileName="ScriptsMenuBuilder.java" startLine="15" startPosition="33" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="applyToSelection" />
@@ -126,8 +130,8 @@
     <nodeInfo nodeId="1215715702666" fileName="ScriptsGlobally_ActionGroup.java" startLine="44" startPosition="28" endLine="45" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215715702673" fileName="ScriptsGlobally_ActionGroup.java" startLine="45" startPosition="50" endLine="46" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215715702674" fileName="ScriptsGlobally_ActionGroup.java" startLine="47" startPosition="7" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7376433222636453047" fileName="ScriptsGlobally_ActionGroup.java" startLine="48" startPosition="47" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1215715702682" fileName="ScriptsGlobally_ActionGroup.java" startLine="49" startPosition="9" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3858440078841939447" fileName="ScriptsGlobally_ActionGroup.java" startLine="48" startPosition="47" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1215715702682" fileName="ScriptsGlobally_ActionGroup.java" startLine="49" startPosition="0" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5066936557122800165" fileName="ScriptsGlobally_ActionGroup.java" startLine="50" startPosition="69" endLine="51" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5066936557122858156" fileName="ScriptsGlobally_ActionGroup.java" startLine="52" startPosition="53" endLine="53" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="765469998256375574" fileName="ScriptsGlobally_ActionGroup.java" startLine="54" startPosition="7" endLine="55" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
