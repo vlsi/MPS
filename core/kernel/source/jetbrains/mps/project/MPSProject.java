@@ -162,6 +162,7 @@ public class MPSProject implements MPSModuleOwner, ProjectComponent, PersistentS
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
+        ClassLoaderManager.getInstance().updateClassPath();
       }
     });
 
