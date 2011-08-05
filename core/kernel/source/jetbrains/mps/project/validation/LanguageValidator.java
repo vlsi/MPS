@@ -74,9 +74,6 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
       }
     }
     checkBehaviorAspectPresence(myModule, errors);
-    if (!checkCyclicInheritance(myModule)) {
-      errors.add("Cyclic language hierarchy");
-    }
     List<IModule> runtimeModules = ModuleUtil.depsToModules(myModule.getRuntimeDependencies());
     for (IModule runtimeModule : runtimeModules) {
       if (!(runtimeModule instanceof Solution)) {
@@ -104,5 +101,14 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
       }
     }
     return errors;
+  }
+
+  @Override
+  public List<String> getWarnings() {
+    List<String> warnings = new ArrayList<String>();
+    if (!checkCyclicInheritance(myModule)) {
+      warnings.add("Cyclic language hierarchy");
+    }
+    return warnings;
   }
 }

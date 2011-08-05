@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
@@ -70,7 +71,7 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
       for (ModelRoot stubModelsEntry : descriptor.getStubModelEntries()) {
         IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
         if (file == null || !file.exists()) {
-          if(new File(stubModelsEntry.getPath()).exists()) {
+          if (new File(stubModelsEntry.getPath()).exists()) {
             errors.add("Idea VFS is not up-to-date. Can't find library: " + stubModelsEntry.getPath());
           } else {
             errors.add("Can't find library: " + stubModelsEntry.getPath());
@@ -79,6 +80,11 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
       }
     }
     return errors;
+  }
+
+  @Override
+  public List<String> getWarnings() {
+    return Collections.emptyList();
   }
 
   public final boolean isValid() {

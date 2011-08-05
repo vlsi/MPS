@@ -20,5 +20,7 @@ import java.util.List;
 public interface ModuleValidator {
   List<String> getErrors();
 
+  List<String> getWarnings();
+
   public boolean isValid();
 }
