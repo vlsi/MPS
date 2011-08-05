@@ -1,16 +1,16 @@
-JETBRAINS MPS README FILE
+JETBRAINS MPS 2.0 README FILE
 
 Thank you for downloading JetBrains MPS!
 
 CONTENTS
 	bin/                startup files
 	Contents/           configuration directory for Mac OS X (in Mac Os X distributions only)
+	help/               help files
+	languages/          packaged languages
 	lib/                libraries
 	license/            license files
-	languages/          packaged languages
 	plugin/             MPS plugin for IntelliJ IDEA
 	plugins/            plugins for MPS
-	workbench/          workbench languages
 	about.txt           about software included in JetBrains MPS
 	build.number        file with information about current build
 	mps.bat             bat-file for starting JetBrains MPS on Windows (may not be present for some distributions)
@@ -50,9 +50,10 @@ HOW TO ADJUST JVM OPTIONS
 GETTING HELP AND REPORTING BUGS
     For getting help you can visit several locations:
     - home http://www.jetbrains.com/mps/
+    - documentation http://confluence.jetbrains.net/display/MPSD2/MPS+User%27s+Guide
     - JetBrains MPS space http://www.jetbrains.net/confluence/display/MPS/Welcome+to+JetBrains+MPS+Space
     - issue tracker http://www.jetbrains.net/tracker/issues/MPS
-    - forum http://www.jetbrains.net/devnet/community/mps?view=discussions
+    - forum http://forum.jetbrains.com/forum/Meta-Programming-System
 
 ----------------------
 Develop with pleasure!
