@@ -23,8 +23,10 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.validation.ModelValidator;
+import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
 
 import javax.swing.SwingUtilities;
 import java.util.Collections;
@@ -49,39 +51,54 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
         }
       }
 
-      updateNodeLater(node, result);
+      updateNodeLater(node, result, false);
     }
   }
 
   protected void visitModuleNode(final ProjectModuleTreeNode node) {
-    List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
+    Pair<List<String>,List<String>> problems = ModelAccess.instance().runReadAction(new Computable<Pair<List<String>,List<String>>>() {
+      public Pair<List<String>,List<String>> compute() {
         IModule module = node.getModule();
-        if (module==null) return Collections.emptyList();
-        return ModuleValidatorFactory.createValidator(module).getErrors();
+        if (module==null) return null;
+        ModuleValidator validator = ModuleValidatorFactory.createValidator(module);
+        return new Pair(validator.getErrors(), validator.getWarnings());
       }
     });
 
     String result = null;
-    if (!errors.isEmpty()) {
-      result = "<html>";
-      for (String error : errors) {
-        result += error + "<br>";
+    boolean hasErrors = false;
+    if(problems != null) {
+      List<String> errors = problems.o1;
+      List<String> warns = problems.o2;
+
+      if (!errors.isEmpty()) {
+        result = "<html>";
+        for (String error : errors) {
+          result += error + "<br>";
+        }
+        hasErrors = true;
+      }
+      if(!warns.isEmpty()) {
+        if(result == null) {
+          result = "<html>";
+        }
+        for (String warn : warns) {
+          result += "warn: " + warn + "<br>";
+        }
       }
     }
-
-    updateNodeLater(node, result);
+    updateNodeLater(node, result, !hasErrors);
   }
 
   protected void visitProjectNode(final ProjectTreeNode node) {
     String errors = node.getProject().getErrors();
-    updateNodeLater(node, errors);
+    updateNodeLater(node, errors, false);
   }
 
-  private void updateNodeLater(final MPSTreeNode node, final String tooltipText) {
+  private void updateNodeLater(final MPSTreeNode node, final String tooltipText, final boolean isWarning) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        node.setErrorState(tooltipText == null ? ErrorState.NONE : ErrorState.ERROR);
+        node.setErrorState(tooltipText == null ? ErrorState.NONE : (isWarning ? ErrorState.WARNING : ErrorState.ERROR));
         node.setTooltipText(tooltipText);
         node.updateNodePresentationInTree();
       }

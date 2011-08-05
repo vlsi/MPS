@@ -23,6 +23,11 @@ public class EmptyValidator implements ModuleValidator {
     return new ArrayList<String>();
   }
 
+  @Override
+  public List<String> getWarnings() {
+    return new ArrayList<String>();
+  }
+
   public boolean isValid() {
     return true;
   }
