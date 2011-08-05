@@ -232,9 +232,15 @@ public final class OldBehaviorManager implements ApplicationComponent {
     SNode concept;
     if (callerConceptFqName == null) {
       concept = node.getConceptDeclarationNode();
+      if (concept == null) {
+        concept = SModelUtil.getBaseConcept();
+      }
       superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
     } else {
       concept = SModelUtil.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
+      if (concept == null) {
+        concept = SModelUtil.getBaseConcept();
+      }
       superConcepts = new ArrayList<SNode>(SModelUtil_new.getConceptAndSuperConcepts(concept));
       superConcepts.remove(concept);
     }
