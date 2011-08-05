@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9ca850zjul8cjnucvx760kzg806xfvg">
+<dependencies version="2" modelHash="-9u3o48xlh7q9npgfoag3j7fmo6vqls5">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
@@ -241,7 +241,7 @@
   <source id="1215266411913" name="Plugin" hash="56f364ygaeay53mz18p07xzs29ziw8e">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1215266495083" name="GeneratedApplicationPlugin" hash="9sygyzugziqrrsznrswzqncvn5vv107">
+  <source id="1215266495083" name="GeneratedApplicationPlugin" hash="-4ivd792aq0qbezvcq1ktjaw2vcbayov">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1215281686832" name="GeneratedCustomApplicationPlugin" hash="6a31o8mmb0b57zbwbc0007rverf9xzy">

@@ -947,7 +947,7 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(it), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
       }
-    }).isNotEmpty();
+    }).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1218034184599(final IOperationContext operationContext, final IfMacroContext _context) {
