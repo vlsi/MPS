@@ -1,10 +1,10 @@
-New Features in 1.5
+New Features in MPS 2.0
 
-- Fully-functioning custom DSL debugger for languages reducing into MPS base language
-- Version Control integration with Editor and Project pane
-- Parallel generation usable for multi-core systems
-- Overall generator and platfrom performance improvements
-- DSL for creating and editing GWT client application manifests
-- Various MPS DSLs changes introducing more "sintactic sugar" there
+- Customized Language IDEs (The MPS Rich Client Platform)
+- Make and build scripting
+- Run configurations - MPS debugging
+- Type-system tracing
+- VCS improvements
+- Performance and memory optimizations
 
 See more on MPS web site: http://www.jetbrains.com/mps/whatsnew/index.html
