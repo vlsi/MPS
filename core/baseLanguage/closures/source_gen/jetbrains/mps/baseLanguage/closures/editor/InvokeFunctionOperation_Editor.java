@@ -21,11 +21,6 @@ import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -102,13 +97,11 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_9wclje_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    SNode functionType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(node)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
-    return ListSequence.fromList(SLinkOperations.getTargets(functionType, "parameterType", true)).isNotEmpty();
+    return false;
   }
 
   private static boolean renderingCondition_9wclje_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    SNode functionType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(node)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
-    return ListSequence.fromList(SLinkOperations.getTargets(functionType, "parameterType", true)).isEmpty();
+    return false;
   }
 
   private static class parameterListHandler_9wclje_c0 extends RefNodeListHandler {
