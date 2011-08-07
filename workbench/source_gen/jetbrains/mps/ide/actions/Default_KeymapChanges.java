@@ -56,7 +56,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowImplementations_Action", getShortcut("ctrl shift I"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.ShowInProject_Action", getShortcut("alt F2"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.ShowInLogicalView_Action", getShortcut("alt F2"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInInspector_Action", getShortcut("ctrl I"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", getShortcut("ctrl Q"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowParameters_Action", getShortcut("ctrl P"));
