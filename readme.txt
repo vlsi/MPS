@@ -16,7 +16,7 @@ CONTENTS
 	mps.bat             bat-file for starting JetBrains MPS on Windows (may not be present for some distributions)
 	mps.sh              sh-file for starting JetBrains MPS on Unix (may not be present for some distributions)
 	readme.txt          this file
-	releaseNotes.txt    MPS 1.5 release notes
+	releaseNotes.txt    MPS 2.0 release notes
 	samples.zip         sample projects
 
 SYSTEM REQUIREMENTS
