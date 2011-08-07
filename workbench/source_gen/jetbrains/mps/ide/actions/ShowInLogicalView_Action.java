@@ -16,12 +16,12 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
 
-public class ShowInProject_Action extends GeneratedAction {
-  private static final Icon ICON = new ImageIcon(ShowInProject_Action.class.getResource("project.png"));
-  protected static Log log = LogFactory.getLog(ShowInProject_Action.class);
+public class ShowInLogicalView_Action extends GeneratedAction {
+  private static final Icon ICON = new ImageIcon(ShowInLogicalView_Action.class.getResource("logical_view.png"));
+  protected static Log log = LogFactory.getLog(ShowInLogicalView_Action.class);
 
-  public ShowInProject_Action() {
-    super("Show Node in Project", "", ICON);
+  public ShowInLogicalView_Action() {
+    super("Show Node in Logical View", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
@@ -31,7 +31,7 @@ public class ShowInProject_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowInProject", t);
+        log.error("User's action doUpdate method failed. Action:" + "ShowInLogicalView", t);
       }
       this.disable(event.getPresentation());
     }
@@ -62,7 +62,7 @@ public class ShowInProject_Action extends GeneratedAction {
       pane.selectNode(((SNode) MapSequence.fromMap(_params).get("node")), true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowInProject", t);
+        log.error("User's action execute method failed. Action:" + "ShowInLogicalView", t);
       }
     }
   }

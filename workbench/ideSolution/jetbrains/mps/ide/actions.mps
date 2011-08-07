@@ -344,7 +344,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model.Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1216124527478">
-      <property name="name" nameId="tpck.1169194664001" value="ShowInProject" />
+      <property name="name" nameId="tpck.1169194664001" value="ShowInLogicalView" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Node in Project" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions" />
@@ -1396,7 +1396,7 @@
         <property name="name" nameId="tpck.1169194664001" value="showIn" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6925945455225236218">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216124527478" resolveInfo="ShowInProject" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216124527478" resolveInfo="ShowInLogicalView" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5535460359399605860">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216125431295" resolveInfo="ShowNodeInInspector" />
@@ -3839,7 +3839,7 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dNODE" resolveInfo="NODE" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="4470409037201091410">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/project.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/logical_view.png" />
     </node>
   </root>
   <root id="1216125431295">
@@ -27131,7 +27131,7 @@
       </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="6925945455225309686">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1216124527478" resolveInfo="ShowInProject" />
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1216124527478" resolveInfo="ShowInLogicalView" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6925945455225309687">
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_F2" />
