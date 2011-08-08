@@ -28,9 +28,9 @@ import com.intellij.ui.components.JBList;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
-// TODO import jetbrains.mps.baseLanguage.plugin.AnalyzeStacktraceDialog;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
@@ -60,12 +60,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static jetbrains.mps.ide.messages.MessagesViewTool.LOG;
 
 /**
-* Created by IntelliJ IDEA.
-* User: fyodor
-* Date: 4/21/11
-* Time: 12:33 PM
-* To change this template use File | Settings | File Templates.
-*/
+ * Created by IntelliJ IDEA.
+ * User: fyodor
+ * Date: 4/21/11
+ * Time: 12:33 PM
+ * To change this template use File | Settings | File Templates.
+ */
 abstract class MessageList implements IMessageList {
   static final int MAX_SIZE = 10000;
 
@@ -204,7 +204,7 @@ abstract class MessageList implements IMessageList {
     myList.setAutoscrolls(true);
   }
 
-  public JComponent getComponent () {
+  public JComponent getComponent() {
     return myComponent;
   }
 
@@ -349,7 +349,7 @@ abstract class MessageList implements IMessageList {
   private ToolWindow getToolWindow() {
     return ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
   }
-  
+
   private void showPopupMenu(MouseEvent evt) {
     if (myList.getSelectedValue() == null) return;
 
@@ -488,8 +488,8 @@ abstract class MessageList implements IMessageList {
     toShow.printStackTrace(new PrintWriter(writer));
     StringSelection contents = new StringSelection(writer.toString());
     CopyPasteManagerEx.getInstanceEx().setContents(contents);
-//    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
-//    dialog.showDialog();
+    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
+    dialog.showDialog();
   }
 
   private Project getProject() {
