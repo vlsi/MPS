@@ -192,7 +192,7 @@ public class GenerationOptions {
 
     private GenerationParametersProvider myParametersProvider = null;
 
-    private IGenerationTracer myGenerationTracer = NullGenerationTracer.INSTANCE;
+    private IGenerationTracer myGenerationTracer = null;
     private boolean myKeepOutputModel;
 
     private OptionsBuilder() {
@@ -205,8 +205,9 @@ public class GenerationOptions {
 
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
-        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer, myIncrementalStrategy,
-        myParametersProvider, myKeepOutputModel);
+        myKeepModelsWithWarnings, myNumberOfModelsToKeep,
+        myGenerationTracer == null ? NullGenerationTracer.INSTANCE : myGenerationTracer,
+        myIncrementalStrategy, myParametersProvider, myKeepOutputModel);
     }
 
     public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
