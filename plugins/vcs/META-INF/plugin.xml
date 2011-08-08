@@ -23,6 +23,7 @@
   <idea-version since-build="3000"/>
 
   <depends optional="true">Subversion</depends>
+  <depends optional="true">Git4Idea</depends>
 
   <application-components>
     <component>

@@ -25,7 +25,7 @@ public class MergeDriverInstaller {
   }
 
   public static AbstractInstaller.State getCompositeState(Project project, boolean allVcses) {
-    Iterable<AbstractInstaller> installers = Arrays.asList(new GitGlobalInstaller(project), new GitRepositoriesInstaller(project), new SvnInstaller(project, false), new SvnInstaller(project, true));
+    Iterable<AbstractInstaller> installers = Arrays.asList(new GitGlobalInstaller(project), new GitGlobalInstaller(project), new GitRepositoriesInstaller(project), new SvnInstaller(project, false), new SvnInstaller(project, true));
     if (!(allVcses)) {
       final List<VcsDirectoryMapping> directoryMappings = ProjectLevelVcsManager.getInstance(project).getDirectoryMappings();
       installers = Sequence.fromIterable(installers).where(new IWhereFilter<AbstractInstaller>() {

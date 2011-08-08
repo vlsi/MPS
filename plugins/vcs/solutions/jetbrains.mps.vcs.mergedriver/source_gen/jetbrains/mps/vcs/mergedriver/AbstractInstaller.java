@@ -27,6 +27,10 @@ import org.jetbrains.annotations.NotNull;
 
   public abstract String getActionTitle();
 
+  public String getActionTooltip() {
+    return null;
+  }
+
   public abstract String getAffectedVcsName();
 
   public static   enum State {

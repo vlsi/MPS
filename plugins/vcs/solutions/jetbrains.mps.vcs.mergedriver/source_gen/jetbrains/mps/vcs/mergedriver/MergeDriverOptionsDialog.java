@@ -19,6 +19,7 @@ public class MergeDriverOptionsDialog extends BaseDialog {
   private JPanel myPanel = new JPanel(new GridLayout(0, 1));
   private JPanel myMainPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
   private Project myProject;
+  private MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalConfigFixesInstaller> myGitFixes;
   private MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalInstaller> myGitGlobal;
   private MergeDriverOptionsDialog.InstallerCheckBox<GitRepositoriesInstaller> myGitRepos;
   private MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller> myCommonSvn;
@@ -26,7 +27,9 @@ public class MergeDriverOptionsDialog extends BaseDialog {
 
   public MergeDriverOptionsDialog(Project project) {
     super(WindowManager.getInstance().getFrame(project), "MPS VCS Add-ons");
+    // TODO get rid of code duplication 
     myProject = project;
+    myGitFixes = new MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalConfigFixesInstaller>(new GitGlobalConfigFixesInstaller(myProject));
     myGitGlobal = new MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalInstaller>(new GitGlobalInstaller(myProject));
     myGitRepos = new MergeDriverOptionsDialog.InstallerCheckBox<GitRepositoriesInstaller>(new GitRepositoriesInstaller(myProject));
     myCommonSvn = new MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller>(new SvnInstaller(myProject, false));
@@ -35,6 +38,7 @@ public class MergeDriverOptionsDialog extends BaseDialog {
       myIdeSvn = null;
     }
 
+    myGitFixes.adIfNeeded();
     myGitGlobal.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
         myGitRepos.setEnabled(myGitGlobal.isSelected());
@@ -62,6 +66,7 @@ public class MergeDriverOptionsDialog extends BaseDialog {
   public void ok() {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
+        myGitFixes.installIfNeeded();
         myGitGlobal.installIfNeeded();
         if (myGitGlobal.myInstaller.getCurrentState() == AbstractInstaller.State.INSTALLED) {
           myGitRepos.installIfNeeded();
@@ -99,6 +104,7 @@ public class MergeDriverOptionsDialog extends BaseDialog {
           " (update)" :
           ""
         )));
+        setToolTipText(myInstaller.getActionTooltip());
         setSelected(true);
       }
     }
