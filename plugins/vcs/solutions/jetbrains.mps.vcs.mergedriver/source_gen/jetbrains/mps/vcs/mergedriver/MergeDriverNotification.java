@@ -14,8 +14,9 @@ import java.util.List;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
@@ -69,6 +70,10 @@ public class MergeDriverNotification {
     final Set<String> vcsNames = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(((List<VcsDirectoryMapping>) ProjectLevelVcsManager.getInstance(myProject).getDirectoryMappings())).<String>select(new ISelector<VcsDirectoryMapping, String>() {
       public String select(VcsDirectoryMapping dm) {
         return dm.getVcs();
+      }
+    }).where(new IWhereFilter<String>() {
+      public boolean accept(String vn) {
+        return StringUtils.isNotEmpty(vn);
       }
     }));
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
