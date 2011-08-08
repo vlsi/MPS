@@ -60,6 +60,10 @@ def layoutFull(String home, String targetDirectory) {
             exclude(name: "**/IdeaPlugin.xml")
             exclude(name: "componentSets/*")
           }
+          module("community-resources"){
+            exclude(name: "**/*")
+            include(name: "CommunityFileTypes.xml")
+          }
           module("platform-resources") {
             exclude(name: "META-INF/LangExtensions.xml")
             exclude(name: "META-INF/PlatformLangPlugin.xml")
