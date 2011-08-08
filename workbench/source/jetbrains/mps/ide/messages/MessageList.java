@@ -28,52 +28,46 @@ import com.intellij.ui.components.JBList;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
-// TODO import jetbrains.mps.baseLanguage.plugin.AnalyzeStacktraceDialog;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.*;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-
 
 import static jetbrains.mps.ide.messages.MessagesViewTool.LOG;
 
 /**
-* Created by IntelliJ IDEA.
-* User: fyodor
-* Date: 4/21/11
-* Time: 12:33 PM
-* To change this template use File | Settings | File Templates.
-*/
+ * Created by IntelliJ IDEA.
+ * User: fyodor
+ * Date: 4/21/11
+ * Time: 12:33 PM
+ * To change this template use File | Settings | File Templates.
+ */
 abstract class MessageList implements IMessageList {
   static final int MAX_SIZE = 10000;
-
-  private static Logger LOG = Logger.getLogger(MessageList.class);
 
   private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
     protected boolean isEnabled() {
@@ -117,8 +111,6 @@ abstract class MessageList implements IMessageList {
     if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     ToolWindow window = getToolWindow();
-    if (window == null) return;
-
     if (!window.isAvailable()) window.setAvailable(true, null);
     if (!window.isVisible()) window.show(null);
     if (setActive) window.activate(null);
@@ -212,7 +204,7 @@ abstract class MessageList implements IMessageList {
     myList.setAutoscrolls(true);
   }
 
-  public JComponent getComponent () {
+  public JComponent getComponent() {
     return myComponent;
   }
 
@@ -357,7 +349,7 @@ abstract class MessageList implements IMessageList {
   private ToolWindow getToolWindow() {
     return ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
   }
-  
+
   private void showPopupMenu(MouseEvent evt) {
     if (myList.getSelectedValue() == null) return;
 
@@ -496,14 +488,8 @@ abstract class MessageList implements IMessageList {
     toShow.printStackTrace(new PrintWriter(writer));
     StringSelection contents = new StringSelection(writer.toString());
     CopyPasteManagerEx.getInstanceEx().setContents(contents);
-    try {
-      Class<?> cls = Class.forName("jetbrains.mps.ide.actions.AnalyzeStacktraceDialog");
-      Constructor<?> ctor = cls.getConstructor(Frame.class, IOperationContext.class, Project.class);
-      BaseDialog dlg = (BaseDialog) ctor.newInstance(frame, null, getProject());
-      dlg.showDialog();
-    } catch (Exception e) {
-      LOG.error(e);
-    }
+    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
+    dialog.showDialog();
   }
 
   private Project getProject() {
