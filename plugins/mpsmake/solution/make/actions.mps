@@ -1167,7 +1167,7 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreator" typeId="tpee.1184950988562" id="6942777512604597501">
                 <node role="dimensionExpression" roleId="tpee.1184952969026" type="tpee.DimensionExpression" typeId="tpee.1184952934362" id="6942777512604597502">
                   <node role="expression" roleId="tpee.1184953288404" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6942777512604597505">
-                    <property name="value" nameId="tpee.1068580320021" value="0" />
+                    <property name="value" nameId="tpee.1068580320021" value="1" />
                   </node>
                 </node>
                 <node role="componentType" roleId="tpee.1184951007469" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6942777512604597504" />
