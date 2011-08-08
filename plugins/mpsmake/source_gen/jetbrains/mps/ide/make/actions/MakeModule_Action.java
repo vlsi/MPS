@@ -63,7 +63,7 @@ public class MakeModule_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Set<IModule> modules = CollectionUtil.set(((IModule) MapSequence.fromMap(_params).get("module")));
-      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Making", modules, false));
+      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, false));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MakeModule", t);

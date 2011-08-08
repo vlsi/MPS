@@ -60,7 +60,7 @@ public class CompileProject_Action extends GeneratedAction {
     try {
       Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class)));
-      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Making", modules, false));
+      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Compiling", modules, false));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CompileProject", t);

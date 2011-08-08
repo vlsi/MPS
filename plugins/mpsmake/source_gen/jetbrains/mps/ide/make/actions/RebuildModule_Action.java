@@ -63,7 +63,7 @@ public class RebuildModule_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Set<IModule> modules = CollectionUtil.set(((IModule) MapSequence.fromMap(_params).get("module")));
-      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Rebuilding", modules, true));
+      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, true));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RebuildModule", t);

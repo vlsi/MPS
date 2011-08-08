@@ -26,6 +26,7 @@ public class DefaultMakeTask extends Task.Modal {
   }
 
   public void run(@NotNull final ProgressIndicator indicator) {
+    final boolean[] reloadingNeeded = new boolean[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ModuleMaker maker = new ModuleMaker();
@@ -33,10 +34,15 @@ public class DefaultMakeTask extends Task.Modal {
           maker.clean(modules, indicator);
         }
         MPSCompilationResult compilationResult = maker.make(modules, indicator);
-        if (compilationResult.isReloadingNeeded()) {
-          ClassLoaderManager.getInstance().reloadAll(indicator);
-        }
+        reloadingNeeded[0] = compilationResult.isReloadingNeeded();
       }
     });
+    if (reloadingNeeded[0]) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadAll(indicator);
+        }
+      });
+    }
   }
 }
