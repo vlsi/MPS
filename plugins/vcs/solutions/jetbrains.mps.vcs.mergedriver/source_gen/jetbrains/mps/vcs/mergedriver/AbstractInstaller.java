@@ -27,6 +27,8 @@ import org.jetbrains.annotations.NotNull;
 
   public abstract String getActionTitle();
 
+  public abstract String getAffectedVcsName();
+
   public static   enum State {
     NOT_INSTALLED(),
     OUTDATED(),

@@ -9,6 +9,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import jetbrains.mps.generator.GenerationListener;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
+import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.AbstractVcs;
@@ -17,6 +18,8 @@ import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.ChangeProvider;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.vcs.VcsException;
+import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
+import com.intellij.openapi.vcs.VcsListener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.GeneratorManager;
@@ -49,6 +52,7 @@ public class MPSVcsManager implements ProjectComponent {
       myChangeListManagerInitialized = true;
     }
   };
+  private MessageBusConnection myMessageBusConnection;
 
   public MPSVcsManager(Project project, ProjectLevelVcsManager manager, ChangeListManager clmanager) {
     myProject = project;
@@ -80,9 +84,19 @@ public class MPSVcsManager implements ProjectComponent {
   }
 
   public void projectOpened() {
+    final MergeDriverNotification mergeDriverNotification = MergeDriverNotification.getInstance(myProject);
+    mergeDriverNotification.showNotificationIfNeeded();
+    myMessageBusConnection = myProject.getMessageBus().connect();
+    VcsListener vcsListener = new VcsListener() {
+      public void directoryMappingChanged() {
+        mergeDriverNotification.showNotificationIfNeeded();
+      }
+    };
+    myMessageBusConnection.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, vcsListener);
   }
 
   public void projectClosed() {
+    myMessageBusConnection.disconnect();
   }
 
   @NonNls

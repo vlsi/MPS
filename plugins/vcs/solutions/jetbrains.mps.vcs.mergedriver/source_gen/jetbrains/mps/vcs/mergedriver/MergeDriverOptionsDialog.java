@@ -18,6 +18,7 @@ import javax.swing.JCheckBox;
 public class MergeDriverOptionsDialog extends BaseDialog {
   private JPanel myPanel = new JPanel(new GridLayout(0, 1));
   private JPanel myMainPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+  private Project myProject;
   private MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalInstaller> myGitGlobal;
   private MergeDriverOptionsDialog.InstallerCheckBox<GitRepositoriesInstaller> myGitRepos;
   private MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller> myCommonSvn;
@@ -25,10 +26,11 @@ public class MergeDriverOptionsDialog extends BaseDialog {
 
   public MergeDriverOptionsDialog(Project project) {
     super(WindowManager.getInstance().getFrame(project), "MPS VCS Add-ons");
-    myGitGlobal = new MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalInstaller>(new GitGlobalInstaller(project));
-    myGitRepos = new MergeDriverOptionsDialog.InstallerCheckBox<GitRepositoriesInstaller>(new GitRepositoriesInstaller(project));
-    myCommonSvn = new MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller>(new SvnInstaller(project, false));
-    myIdeSvn = new MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller>(new SvnInstaller(project, true));
+    myProject = project;
+    myGitGlobal = new MergeDriverOptionsDialog.InstallerCheckBox<GitGlobalInstaller>(new GitGlobalInstaller(myProject));
+    myGitRepos = new MergeDriverOptionsDialog.InstallerCheckBox<GitRepositoriesInstaller>(new GitRepositoriesInstaller(myProject));
+    myCommonSvn = new MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller>(new SvnInstaller(myProject, false));
+    myIdeSvn = new MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller>(new SvnInstaller(myProject, true));
     if (myCommonSvn.myInstaller.sameAs(myIdeSvn.myInstaller)) {
       myIdeSvn = null;
     }
@@ -104,6 +106,7 @@ public class MergeDriverOptionsDialog extends BaseDialog {
     private void installIfNeeded() {
       if (isSelected() && isEnabled()) {
         myInstaller.install();
+        MergeDriverNotification.getInstance(myProject).setNotificationsSuppressed(false);
       }
     }
   }

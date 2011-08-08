@@ -105,6 +105,10 @@ import java.io.IOException;
     return "Git file attributes for " + NameUtil.formatNumericalString(getRootsToInstall(), "repository") + "  (.gitattributes)";
   }
 
+  public String getAffectedVcsName() {
+    return "Git";
+  }
+
   @NotNull
   private static AbstractInstaller.State installForRoot(VirtualFile vcsRootPath, boolean dryRun) {
     VirtualFile attributesFile = vcsRootPath.findChild(ATTRIBUTES_FILE);

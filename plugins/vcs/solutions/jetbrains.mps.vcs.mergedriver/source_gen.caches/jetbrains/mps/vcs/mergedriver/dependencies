@@ -138,11 +138,15 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverInstaller" file="MergeDriverInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsDirectoryMapping" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalInstaller" />
@@ -161,6 +165,35 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.ModelMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.TextMerger" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" file="MergeDriverNotification.java">
+    <classNode dependClassName="com.intellij.ide.BrowserUtil" />
+    <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
+    <classNode dependClassName="com.intellij.notification.Notification" />
+    <classNode dependClassName="com.intellij.notification.NotificationDisplayType" />
+    <classNode dependClassName="com.intellij.notification.NotificationListener" />
+    <classNode dependClassName="com.intellij.notification.NotificationType" />
+    <classNode dependClassName="com.intellij.notification.Notifications" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsDirectoryMapping" />
+    <classNode dependClassName="com.intellij.openapi.vcs.impl.projectlevelman.AllVcses" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
+    <classNode dependClassName="jetbrains.mps.InternalFlag" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverInstaller" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog" file="MergeDriverOptionsDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
@@ -177,6 +210,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SvnInstaller" />
     <classNode extendsClassName="javax.swing.JCheckBox" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />

@@ -183,8 +183,12 @@ import java.io.IOException;
     ), myConfigFile.getAbsolutePath());
   }
 
+  public String getAffectedVcsName() {
+    return "svn";
+  }
+
   public boolean sameAs(SvnInstaller other) {
-    return eq_k2wvr2_a0a0c(other.myConfigDir.getAbsolutePath(), myConfigDir.getAbsolutePath());
+    return eq_k2wvr2_a0a0d(other.myConfigDir.getAbsolutePath(), myConfigDir.getAbsolutePath());
   }
 
   private static boolean neq_k2wvr2_a0a2a2a3a1a11a0(Object a, Object b) {
@@ -201,7 +205,7 @@ import java.io.IOException;
     );
   }
 
-  private static boolean eq_k2wvr2_a0a0c(Object a, Object b) {
+  private static boolean eq_k2wvr2_a0a0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
