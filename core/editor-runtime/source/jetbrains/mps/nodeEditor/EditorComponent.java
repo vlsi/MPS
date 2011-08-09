@@ -225,7 +225,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myNoVirtualFile;
 
   @Nullable
-  private SNodePointer myNodePointer;
+  protected SNodePointer myNodePointer;
   private EditorContext myEditorContext;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;

@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -41,6 +42,7 @@ public class InspectorEditorComponent extends EditorComponent {
   public InspectorEditorComponent(boolean rightToLeft) {
     super(null, false, rightToLeft);
     myNode = null;
+    myNodePointer = null;
     reinitEditor();
   }
 
@@ -71,6 +73,7 @@ public class InspectorEditorComponent extends EditorComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myNode = node;
+        myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
         myRoot = myNode == null ? null : myNode.getContainingRoot();
         setReadOnly(node == null || node.isDeleted() || node.getModel().isDisposed() || node.getModel().isNotEditable());
         if (node == null) {
