@@ -21,7 +21,7 @@ public class ShowInLogicalView_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(ShowInLogicalView_Action.class);
 
   public ShowInLogicalView_Action() {
-    super("Show Node in Logical View", "", ICON);
+    super("Show Node in Project", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
