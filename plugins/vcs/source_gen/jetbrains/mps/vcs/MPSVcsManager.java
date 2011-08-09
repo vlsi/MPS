@@ -18,6 +18,7 @@ import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.ChangeProvider;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.vcs.VcsException;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
 import org.jetbrains.annotations.NonNls;
@@ -84,6 +85,9 @@ public class MPSVcsManager implements ProjectComponent {
   }
 
   public void projectOpened() {
+    if (ApplicationManager.getApplication().isUnitTestMode() || myProject.isDefault()) {
+      return;
+    }
     final MergeDriverNotification mergeDriverNotification = MergeDriverNotification.getInstance(myProject);
     mergeDriverNotification.showNotificationIfNeeded();
     myMessageBusConnection = myProject.getMessageBus().connect();
@@ -96,7 +100,7 @@ public class MPSVcsManager implements ProjectComponent {
   }
 
   public void projectClosed() {
-    myMessageBusConnection.disconnect();
+    check_2eqssr_a0a2(myMessageBusConnection);
   }
 
   @NonNls
@@ -125,6 +129,13 @@ public class MPSVcsManager implements ProjectComponent {
 
   public static MPSVcsManager getInstance(@NotNull Project project) {
     return project.getComponent(MPSVcsManager.class);
+  }
+
+  private static void check_2eqssr_a0a2(MessageBusConnection checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.disconnect();
+    }
+
   }
 
   private class GenerationWatcher implements GenerationListener {

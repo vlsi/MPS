@@ -1,247 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3613324658897711340">
-    <nodeInfo nodeId="3613324658897711481" fileName="MPSVcsManager.java" startLine="42" startPosition="56" endLine="43" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3613324658897711486" fileName="MPSVcsManager.java" startLine="44" startPosition="0" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="3613324658897711489" fileName="MPSVcsManager.java" startLine="45" startPosition="34" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myManager" />
-    <nodeInfo nodeId="3613324658897711492" fileName="MPSVcsManager.java" startLine="46" startPosition="49" endLine="47" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListManager" />
-    <nodeInfo nodeId="3613324658897711499" fileName="MPSVcsManager.java" startLine="47" startPosition="54" endLine="48" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListManagerInitialized" />
-    <nodeInfo nodeId="3613324658897711503" fileName="MPSVcsManager.java" startLine="48" startPosition="66" endLine="49" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerationListener" />
-    <nodeInfo nodeId="3613324658897711844" fileName="MPSVcsManager.java" startLine="51" startPosition="40" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7794712048471485909" fileName="MPSVcsManager.java" startLine="54" startPosition="4" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageBusConnection" />
-    <nodeInfo nodeId="3613324658897711539" fileName="MPSVcsManager.java" startLine="57" startPosition="102" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711543" fileName="MPSVcsManager.java" startLine="58" startPosition="24" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711547" fileName="MPSVcsManager.java" startLine="59" startPosition="24" endLine="60" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711564" fileName="MPSVcsManager.java" startLine="64" startPosition="63" endLine="65" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711575" fileName="MPSVcsManager.java" startLine="66" startPosition="5" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897711587" fileName="MPSVcsManager.java" startLine="68" startPosition="22" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711589" fileName="MPSVcsManager.java" startLine="70" startPosition="5" endLine="71" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897711596" fileName="MPSVcsManager.java" startLine="71" startPosition="68" endLine="72" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711604" fileName="MPSVcsManager.java" startLine="72" startPosition="88" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897711615" fileName="MPSVcsManager.java" startLine="74" startPosition="33" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711617" fileName="MPSVcsManager.java" startLine="76" startPosition="5" endLine="77" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897711634" fileName="MPSVcsManager.java" startLine="78" startPosition="9" endLine="79" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711626" fileName="MPSVcsManager.java" startLine="80" startPosition="30" endLine="81" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711644" fileName="MPSVcsManager.java" startLine="82" startPosition="5" endLine="83" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7307809004211498227" fileName="MPSVcsManager.java" startLine="86" startPosition="31" endLine="87" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1138176312634851279" fileName="MPSVcsManager.java" startLine="87" startPosition="107" endLine="88" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7794712048471485912" fileName="MPSVcsManager.java" startLine="88" startPosition="55" endLine="89" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7794712048471487319" fileName="MPSVcsManager.java" startLine="91" startPosition="45" endLine="92" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7794712048471485435" fileName="MPSVcsManager.java" startLine="94" startPosition="6" endLine="95" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7794712048471485935" fileName="MPSVcsManager.java" startLine="98" startPosition="31" endLine="99" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711660" fileName="MPSVcsManager.java" startLine="104" startPosition="36" endLine="105" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711684" fileName="MPSVcsManager.java" startLine="108" startPosition="51" endLine="109" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711690" fileName="MPSVcsManager.java" startLine="112" startPosition="31" endLine="113" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711698" fileName="MPSVcsManager.java" startLine="113" startPosition="95" endLine="114" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711707" fileName="MPSVcsManager.java" startLine="117" startPosition="34" endLine="118" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711715" fileName="MPSVcsManager.java" startLine="118" startPosition="98" endLine="119" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711725" fileName="MPSVcsManager.java" startLine="122" startPosition="71" endLine="123" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711524" fileName="MPSVcsManager.java" startLine="126" startPosition="69" endLine="127" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711749" fileName="MPSVcsManager.java" startLine="136" startPosition="133" endLine="137" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711756" fileName="MPSVcsManager.java" startLine="137" startPosition="73" endLine="138" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711769" fileName="MPSVcsManager.java" startLine="154" startPosition="49" endLine="155" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711772" fileName="MPSVcsManager.java" startLine="159" startPosition="56" endLine="160" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711776" fileName="MPSVcsManager.java" startLine="163" startPosition="71" endLine="164" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711779" fileName="MPSVcsManager.java" startLine="167" startPosition="74" endLine="168" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711786" fileName="MPSVcsManager.java" startLine="183" startPosition="58" endLine="184" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711442" fileName="MPSVcsManager.java" startLine="188" startPosition="75" endLine="189" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFile" />
-    <nodeInfo nodeId="3613324658897711445" fileName="MPSVcsManager.java" startLine="189" startPosition="44" endLine="190" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsMergedWithConflict" />
-    <nodeInfo nodeId="3613324658897711789" fileName="MPSVcsManager.java" startLine="192" startPosition="51" endLine="193" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711794" fileName="MPSVcsManager.java" startLine="196" startPosition="100" endLine="197" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711800" fileName="MPSVcsManager.java" startLine="200" startPosition="90" endLine="201" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711813" fileName="MPSVcsManager.java" startLine="205" startPosition="76" endLine="206" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897711836" fileName="MPSVcsManager.java" startLine="208" startPosition="104" endLine="209" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3613324658897711841" fileName="MPSVcsManager.java" startLine="215" startPosition="35" endLine="216" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3613324658897711346" fileName="MPSVcsManager.java" startLine="130" startPosition="65" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerationWatcher#()V" />
-    <nodeInfo nodeId="3613324658897711380" fileName="MPSVcsManager.java" startLine="150" startPosition="82" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubChangeListManagerGate#()V" />
-    <nodeInfo nodeId="3613324658897711558" fileName="MPSVcsManager.java" startLine="63" startPosition="84" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897711582" fileName="MPSVcsManager.java" startLine="67" startPosition="49" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897711610" fileName="MPSVcsManager.java" startLine="73" startPosition="60" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897711359" fileName="MPSVcsManager.java" startLine="142" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelsGenerated#(Ljava/util/List;Z)V" />
-    <nodeInfo nodeId="3613324658897711367" fileName="MPSVcsManager.java" startLine="145" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterGeneration#(Ljava/util/List;Ljetbrains/mps/generator/GenerationOptions;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="3613324658897711406" fileName="MPSVcsManager.java" startLine="170" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editComment#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3613324658897711413" fileName="MPSVcsManager.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editName#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3613324658897711420" fileName="MPSVcsManager.java" startLine="176" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveChanges#(Ljava/lang/String;Ljava/util/Collection;)V" />
-    <nodeInfo nodeId="3613324658897711428" fileName="MPSVcsManager.java" startLine="179" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setListsToDisappear#(Ljava/util/Collection;)V" />
-    <nodeInfo nodeId="3613324658897711448" fileName="MPSVcsManager.java" startLine="191" startPosition="0" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyChangelistBuilder#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <nodeInfo nodeId="3613324658897711824" fileName="MPSVcsManager.java" startLine="207" startPosition="38" endLine="210" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897711514" fileName="MPSVcsManager.java" startLine="50" startPosition="88" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeListUpdateDone#()V" />
-    <nodeInfo nodeId="7794712048471487317" fileName="MPSVcsManager.java" startLine="90" startPosition="49" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="directoryMappingChanged#()V" />
-    <nodeInfo nodeId="3613324658897711652" fileName="MPSVcsManager.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="3613324658897711680" fileName="MPSVcsManager.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChangeListManagerInitialized#()Z" />
-    <nodeInfo nodeId="3613324658897711720" fileName="MPSVcsManager.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnversionedFilesFromChangeListManager#()Ljava/util/List;" />
-    <nodeInfo nodeId="3613324658897711517" fileName="MPSVcsManager.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/MPSVcsManager;" />
-    <nodeInfo nodeId="3613324658897711737" fileName="MPSVcsManager.java" startLine="135" startPosition="61" endLine="139" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897711383" fileName="MPSVcsManager.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListsCopy#()Ljava/util/List;" />
-    <nodeInfo nodeId="3613324658897711392" fileName="MPSVcsManager.java" startLine="162" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addChangeList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
-    <nodeInfo nodeId="3613324658897711399" fileName="MPSVcsManager.java" startLine="166" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findOrCreateList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
-    <nodeInfo nodeId="3613324658897711434" fileName="MPSVcsManager.java" startLine="182" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatus#(Lcom/intellij/openapi/vfs/VirtualFile;)Lcom/intellij/openapi/vcs/FileStatus;" />
-    <nodeInfo nodeId="3613324658897711453" fileName="MPSVcsManager.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/changes/ChangeList;Lcom/intellij/openapi/vcs/VcsKey;)V" />
-    <nodeInfo nodeId="3613324658897711462" fileName="MPSVcsManager.java" startLine="199" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Ljava/lang/String;Lcom/intellij/openapi/vcs/VcsKey;)V" />
-    <nodeInfo nodeId="3613324658897711478" fileName="MPSVcsManager.java" startLine="214" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInConflict#()Z" />
-    <nodeInfo nodeId="3613324658897711508" fileName="MPSVcsManager.java" startLine="49" startPosition="96" endLine="54" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListUpdateListener" />
-    <nodeInfo nodeId="3613324658897711529" fileName="MPSVcsManager.java" startLine="56" startPosition="0" endLine="61" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSVcsManager#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;Lcom/intellij/openapi/vcs/changes/ChangeListManager;)V" />
-    <nodeInfo nodeId="3613324658897711623" fileName="MPSVcsManager.java" startLine="77" startPosition="99" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7794712048471487315" fileName="MPSVcsManager.java" startLine="89" startPosition="65" endLine="94" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3613324658897711686" fileName="MPSVcsManager.java" startLine="111" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="3613324658897711703" fileName="MPSVcsManager.java" startLine="116" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="3613324658897711387" fileName="MPSVcsManager.java" startLine="157" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findChangeList#(Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
-    <nodeInfo nodeId="3613324658897711819" fileName="MPSVcsManager.java" startLine="206" startPosition="68" endLine="211" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897711656" fileName="MPSVcsManager.java" startLine="101" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3613324658897711732" fileName="MPSVcsManager.java" startLine="134" startPosition="133" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3613324658897711805" fileName="MPSVcsManager.java" startLine="204" startPosition="61" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3613324658897711349" fileName="MPSVcsManager.java" startLine="133" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeGeneration#(Ljava/util/List;Ljetbrains/mps/generator/GenerationOptions;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="3613324658897711471" fileName="MPSVcsManager.java" startLine="203" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChange#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/VcsKey;)V" />
-    <nodeInfo nodeId="3613324658897711648" fileName="MPSVcsManager.java" startLine="85" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="3613324658897711551" fileName="MPSVcsManager.java" startLine="62" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInConflict#(Lcom/intellij/openapi/vfs/VirtualFile;Z)Z" />
-    <scopeInfo nodeId="3613324658897711730" fileName="MPSVcsManager.java" startLine="131" startPosition="33" endLine="131" endPosition="33" />
-    <scopeInfo nodeId="3613324658897711765" fileName="MPSVcsManager.java" startLine="143" startPosition="81" endLine="143" endPosition="81" />
-    <scopeInfo nodeId="3613324658897711766" fileName="MPSVcsManager.java" startLine="146" startPosition="132" endLine="146" endPosition="132" />
-    <scopeInfo nodeId="3613324658897711767" fileName="MPSVcsManager.java" startLine="151" startPosition="40" endLine="151" endPosition="40" />
-    <scopeInfo nodeId="3613324658897711781" fileName="MPSVcsManager.java" startLine="171" startPosition="58" endLine="171" endPosition="58" />
-    <scopeInfo nodeId="3613324658897711782" fileName="MPSVcsManager.java" startLine="174" startPosition="58" endLine="174" endPosition="58" />
-    <scopeInfo nodeId="3613324658897711783" fileName="MPSVcsManager.java" startLine="177" startPosition="72" endLine="177" endPosition="72" />
-    <scopeInfo nodeId="3613324658897711784" fileName="MPSVcsManager.java" startLine="180" startPosition="63" endLine="180" endPosition="63" />
-    <scopeInfo nodeId="3613324658897711843" fileName="MPSVcsManager.java" startLine="51" startPosition="40" endLine="52" endPosition="44" />
-    <scopeInfo nodeId="3613324658897711563" fileName="MPSVcsManager.java" startLine="64" startPosition="63" endLine="65" endPosition="112" />
-    <scopeInfo nodeId="3613324658897711586" fileName="MPSVcsManager.java" startLine="68" startPosition="22" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="3613324658897711614" fileName="MPSVcsManager.java" startLine="74" startPosition="33" endLine="75" endPosition="19" />
-    <scopeInfo nodeId="3613324658897711633" fileName="MPSVcsManager.java" startLine="78" startPosition="9" endLine="79" endPosition="125" />
-    <scopeInfo nodeId="3613324658897711624" fileName="MPSVcsManager.java" startLine="80" startPosition="0" endLine="81" endPosition="19">
+    <nodeInfo nodeId="3613324658897711481" fileName="MPSVcsManager.java" startLine="43" startPosition="56" endLine="44" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3613324658897711486" fileName="MPSVcsManager.java" startLine="45" startPosition="0" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="3613324658897711489" fileName="MPSVcsManager.java" startLine="46" startPosition="34" endLine="47" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myManager" />
+    <nodeInfo nodeId="3613324658897711492" fileName="MPSVcsManager.java" startLine="47" startPosition="49" endLine="48" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListManager" />
+    <nodeInfo nodeId="3613324658897711499" fileName="MPSVcsManager.java" startLine="48" startPosition="54" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListManagerInitialized" />
+    <nodeInfo nodeId="3613324658897711503" fileName="MPSVcsManager.java" startLine="49" startPosition="66" endLine="50" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerationListener" />
+    <nodeInfo nodeId="3613324658897711844" fileName="MPSVcsManager.java" startLine="52" startPosition="40" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7794712048471485909" fileName="MPSVcsManager.java" startLine="55" startPosition="4" endLine="56" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageBusConnection" />
+    <nodeInfo nodeId="3613324658897711539" fileName="MPSVcsManager.java" startLine="58" startPosition="102" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711543" fileName="MPSVcsManager.java" startLine="59" startPosition="24" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711547" fileName="MPSVcsManager.java" startLine="60" startPosition="24" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711564" fileName="MPSVcsManager.java" startLine="65" startPosition="63" endLine="66" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711575" fileName="MPSVcsManager.java" startLine="67" startPosition="5" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897711587" fileName="MPSVcsManager.java" startLine="69" startPosition="22" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711589" fileName="MPSVcsManager.java" startLine="71" startPosition="5" endLine="72" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897711596" fileName="MPSVcsManager.java" startLine="72" startPosition="68" endLine="73" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711604" fileName="MPSVcsManager.java" startLine="73" startPosition="88" endLine="74" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897711615" fileName="MPSVcsManager.java" startLine="75" startPosition="33" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711617" fileName="MPSVcsManager.java" startLine="77" startPosition="5" endLine="78" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897711634" fileName="MPSVcsManager.java" startLine="79" startPosition="9" endLine="80" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711626" fileName="MPSVcsManager.java" startLine="81" startPosition="30" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711644" fileName="MPSVcsManager.java" startLine="83" startPosition="5" endLine="84" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7860944453394967816" fileName="MPSVcsManager.java" startLine="88" startPosition="88" endLine="89" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7307809004211498227" fileName="MPSVcsManager.java" startLine="90" startPosition="5" endLine="91" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1138176312634851279" fileName="MPSVcsManager.java" startLine="91" startPosition="107" endLine="92" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7794712048471485912" fileName="MPSVcsManager.java" startLine="92" startPosition="55" endLine="93" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7794712048471487319" fileName="MPSVcsManager.java" startLine="95" startPosition="45" endLine="96" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7794712048471485435" fileName="MPSVcsManager.java" startLine="98" startPosition="6" endLine="99" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7794712048471485935" fileName="MPSVcsManager.java" startLine="102" startPosition="31" endLine="103" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711660" fileName="MPSVcsManager.java" startLine="108" startPosition="36" endLine="109" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711684" fileName="MPSVcsManager.java" startLine="112" startPosition="51" endLine="113" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711690" fileName="MPSVcsManager.java" startLine="116" startPosition="31" endLine="117" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711698" fileName="MPSVcsManager.java" startLine="117" startPosition="95" endLine="118" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711707" fileName="MPSVcsManager.java" startLine="121" startPosition="34" endLine="122" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711715" fileName="MPSVcsManager.java" startLine="122" startPosition="98" endLine="123" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711725" fileName="MPSVcsManager.java" startLine="126" startPosition="71" endLine="127" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711524" fileName="MPSVcsManager.java" startLine="130" startPosition="69" endLine="131" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="135" startPosition="36" endLine="136" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="137" startPosition="5" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3613324658897711749" fileName="MPSVcsManager.java" startLine="147" startPosition="133" endLine="148" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711756" fileName="MPSVcsManager.java" startLine="148" startPosition="73" endLine="149" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711769" fileName="MPSVcsManager.java" startLine="165" startPosition="49" endLine="166" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711772" fileName="MPSVcsManager.java" startLine="170" startPosition="56" endLine="171" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711776" fileName="MPSVcsManager.java" startLine="174" startPosition="71" endLine="175" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711779" fileName="MPSVcsManager.java" startLine="178" startPosition="74" endLine="179" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711786" fileName="MPSVcsManager.java" startLine="194" startPosition="58" endLine="195" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711442" fileName="MPSVcsManager.java" startLine="199" startPosition="75" endLine="200" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFile" />
+    <nodeInfo nodeId="3613324658897711445" fileName="MPSVcsManager.java" startLine="200" startPosition="44" endLine="201" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsMergedWithConflict" />
+    <nodeInfo nodeId="3613324658897711789" fileName="MPSVcsManager.java" startLine="203" startPosition="51" endLine="204" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711794" fileName="MPSVcsManager.java" startLine="207" startPosition="100" endLine="208" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711800" fileName="MPSVcsManager.java" startLine="211" startPosition="90" endLine="212" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711813" fileName="MPSVcsManager.java" startLine="216" startPosition="76" endLine="217" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897711836" fileName="MPSVcsManager.java" startLine="219" startPosition="104" endLine="220" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3613324658897711841" fileName="MPSVcsManager.java" startLine="226" startPosition="35" endLine="227" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3613324658897711346" fileName="MPSVcsManager.java" startLine="141" startPosition="65" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerationWatcher#()V" />
+    <nodeInfo nodeId="3613324658897711380" fileName="MPSVcsManager.java" startLine="161" startPosition="82" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubChangeListManagerGate#()V" />
+    <nodeInfo nodeId="3613324658897711558" fileName="MPSVcsManager.java" startLine="64" startPosition="84" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897711582" fileName="MPSVcsManager.java" startLine="68" startPosition="49" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897711610" fileName="MPSVcsManager.java" startLine="74" startPosition="60" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7860944453394967332" fileName="MPSVcsManager.java" startLine="87" startPosition="31" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="134" startPosition="81" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897711359" fileName="MPSVcsManager.java" startLine="153" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelsGenerated#(Ljava/util/List;Z)V" />
+    <nodeInfo nodeId="3613324658897711367" fileName="MPSVcsManager.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterGeneration#(Ljava/util/List;Ljetbrains/mps/generator/GenerationOptions;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="3613324658897711406" fileName="MPSVcsManager.java" startLine="181" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editComment#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3613324658897711413" fileName="MPSVcsManager.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editName#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3613324658897711420" fileName="MPSVcsManager.java" startLine="187" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveChanges#(Ljava/lang/String;Ljava/util/Collection;)V" />
+    <nodeInfo nodeId="3613324658897711428" fileName="MPSVcsManager.java" startLine="190" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setListsToDisappear#(Ljava/util/Collection;)V" />
+    <nodeInfo nodeId="3613324658897711448" fileName="MPSVcsManager.java" startLine="202" startPosition="0" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyChangelistBuilder#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+    <nodeInfo nodeId="3613324658897711824" fileName="MPSVcsManager.java" startLine="218" startPosition="38" endLine="221" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897711514" fileName="MPSVcsManager.java" startLine="51" startPosition="88" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeListUpdateDone#()V" />
+    <nodeInfo nodeId="7794712048471487317" fileName="MPSVcsManager.java" startLine="94" startPosition="49" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="directoryMappingChanged#()V" />
+    <nodeInfo nodeId="3613324658897711652" fileName="MPSVcsManager.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="3613324658897711680" fileName="MPSVcsManager.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isChangeListManagerInitialized#()Z" />
+    <nodeInfo nodeId="3613324658897711720" fileName="MPSVcsManager.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnversionedFilesFromChangeListManager#()Ljava/util/List;" />
+    <nodeInfo nodeId="3613324658897711517" fileName="MPSVcsManager.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/vcs/MPSVcsManager;" />
+    <nodeInfo nodeId="3613324658897711737" fileName="MPSVcsManager.java" startLine="146" startPosition="61" endLine="150" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897711383" fileName="MPSVcsManager.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListsCopy#()Ljava/util/List;" />
+    <nodeInfo nodeId="3613324658897711392" fileName="MPSVcsManager.java" startLine="173" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addChangeList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
+    <nodeInfo nodeId="3613324658897711399" fileName="MPSVcsManager.java" startLine="177" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findOrCreateList#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
+    <nodeInfo nodeId="3613324658897711434" fileName="MPSVcsManager.java" startLine="193" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatus#(Lcom/intellij/openapi/vfs/VirtualFile;)Lcom/intellij/openapi/vcs/FileStatus;" />
+    <nodeInfo nodeId="3613324658897711453" fileName="MPSVcsManager.java" startLine="206" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/changes/ChangeList;Lcom/intellij/openapi/vcs/VcsKey;)V" />
+    <nodeInfo nodeId="3613324658897711462" fileName="MPSVcsManager.java" startLine="210" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChangeInList#(Lcom/intellij/openapi/vcs/changes/Change;Ljava/lang/String;Lcom/intellij/openapi/vcs/VcsKey;)V" />
+    <nodeInfo nodeId="3613324658897711478" fileName="MPSVcsManager.java" startLine="225" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInConflict#()Z" />
+    <nodeInfo nodeId="3613324658897711508" fileName="MPSVcsManager.java" startLine="50" startPosition="96" endLine="55" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListUpdateListener" />
+    <nodeInfo nodeId="3613324658897711529" fileName="MPSVcsManager.java" startLine="57" startPosition="0" endLine="62" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSVcsManager#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;Lcom/intellij/openapi/vcs/changes/ChangeListManager;)V" />
+    <nodeInfo nodeId="3613324658897711623" fileName="MPSVcsManager.java" startLine="78" startPosition="99" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7794712048471487315" fileName="MPSVcsManager.java" startLine="93" startPosition="65" endLine="98" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3613324658897711686" fileName="MPSVcsManager.java" startLine="115" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="3613324658897711703" fileName="MPSVcsManager.java" startLine="120" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="3613324658897711387" fileName="MPSVcsManager.java" startLine="168" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findChangeList#(Ljava/lang/String;)Lcom/intellij/openapi/vcs/changes/LocalChangeList;" />
+    <nodeInfo nodeId="3613324658897711819" fileName="MPSVcsManager.java" startLine="217" startPosition="68" endLine="222" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897711656" fileName="MPSVcsManager.java" startLine="105" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3613324658897711732" fileName="MPSVcsManager.java" startLine="145" startPosition="133" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="133" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_2eqssr_a0a2#(Lcom/intellij/util/messages/MessageBusConnection;)V" />
+    <nodeInfo nodeId="3613324658897711805" fileName="MPSVcsManager.java" startLine="215" startPosition="61" endLine="223" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3613324658897711349" fileName="MPSVcsManager.java" startLine="144" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeGeneration#(Ljava/util/List;Ljetbrains/mps/generator/GenerationOptions;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="3613324658897711471" fileName="MPSVcsManager.java" startLine="214" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChange#(Lcom/intellij/openapi/vcs/changes/Change;Lcom/intellij/openapi/vcs/VcsKey;)V" />
+    <nodeInfo nodeId="3613324658897711648" fileName="MPSVcsManager.java" startLine="86" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
+    <nodeInfo nodeId="3613324658897711551" fileName="MPSVcsManager.java" startLine="63" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInConflict#(Lcom/intellij/openapi/vfs/VirtualFile;Z)Z" />
+    <scopeInfo nodeId="3613324658897711730" fileName="MPSVcsManager.java" startLine="142" startPosition="33" endLine="142" endPosition="33" />
+    <scopeInfo nodeId="3613324658897711765" fileName="MPSVcsManager.java" startLine="154" startPosition="81" endLine="154" endPosition="81" />
+    <scopeInfo nodeId="3613324658897711766" fileName="MPSVcsManager.java" startLine="157" startPosition="132" endLine="157" endPosition="132" />
+    <scopeInfo nodeId="3613324658897711767" fileName="MPSVcsManager.java" startLine="162" startPosition="40" endLine="162" endPosition="40" />
+    <scopeInfo nodeId="3613324658897711781" fileName="MPSVcsManager.java" startLine="182" startPosition="58" endLine="182" endPosition="58" />
+    <scopeInfo nodeId="3613324658897711782" fileName="MPSVcsManager.java" startLine="185" startPosition="58" endLine="185" endPosition="58" />
+    <scopeInfo nodeId="3613324658897711783" fileName="MPSVcsManager.java" startLine="188" startPosition="72" endLine="188" endPosition="72" />
+    <scopeInfo nodeId="3613324658897711784" fileName="MPSVcsManager.java" startLine="191" startPosition="63" endLine="191" endPosition="63" />
+    <scopeInfo nodeId="3613324658897711843" fileName="MPSVcsManager.java" startLine="52" startPosition="40" endLine="53" endPosition="44" />
+    <scopeInfo nodeId="3613324658897711563" fileName="MPSVcsManager.java" startLine="65" startPosition="63" endLine="66" endPosition="112" />
+    <scopeInfo nodeId="3613324658897711586" fileName="MPSVcsManager.java" startLine="69" startPosition="22" endLine="70" endPosition="19" />
+    <scopeInfo nodeId="3613324658897711614" fileName="MPSVcsManager.java" startLine="75" startPosition="33" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="3613324658897711633" fileName="MPSVcsManager.java" startLine="79" startPosition="9" endLine="80" endPosition="125" />
+    <scopeInfo nodeId="3613324658897711624" fileName="MPSVcsManager.java" startLine="81" startPosition="0" endLine="82" endPosition="19">
       <varInfo nodeId="3613324658897711631" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711625" fileName="MPSVcsManager.java" startLine="80" startPosition="30" endLine="81" endPosition="19" />
-    <scopeInfo nodeId="7794712048471487318" fileName="MPSVcsManager.java" startLine="91" startPosition="45" endLine="92" endPosition="59" />
-    <scopeInfo nodeId="3613324658897711655" fileName="MPSVcsManager.java" startLine="98" startPosition="31" endLine="99" endPosition="40" />
-    <scopeInfo nodeId="3613324658897711659" fileName="MPSVcsManager.java" startLine="104" startPosition="36" endLine="105" endPosition="25" />
-    <scopeInfo nodeId="3613324658897711683" fileName="MPSVcsManager.java" startLine="108" startPosition="51" endLine="109" endPosition="42" />
-    <scopeInfo nodeId="3613324658897711724" fileName="MPSVcsManager.java" startLine="122" startPosition="71" endLine="123" endPosition="82" />
-    <scopeInfo nodeId="3613324658897711523" fileName="MPSVcsManager.java" startLine="126" startPosition="69" endLine="127" endPosition="53" />
-    <scopeInfo nodeId="3613324658897711768" fileName="MPSVcsManager.java" startLine="154" startPosition="49" endLine="155" endPosition="18" />
-    <scopeInfo nodeId="3613324658897711771" fileName="MPSVcsManager.java" startLine="159" startPosition="56" endLine="160" endPosition="18" />
-    <scopeInfo nodeId="3613324658897711775" fileName="MPSVcsManager.java" startLine="163" startPosition="71" endLine="164" endPosition="18" />
-    <scopeInfo nodeId="3613324658897711778" fileName="MPSVcsManager.java" startLine="167" startPosition="74" endLine="168" endPosition="18" />
-    <scopeInfo nodeId="3613324658897711785" fileName="MPSVcsManager.java" startLine="183" startPosition="58" endLine="184" endPosition="36" />
-    <scopeInfo nodeId="3613324658897711788" fileName="MPSVcsManager.java" startLine="192" startPosition="51" endLine="193" endPosition="28" />
-    <scopeInfo nodeId="3613324658897711793" fileName="MPSVcsManager.java" startLine="196" startPosition="100" endLine="197" endPosition="36" />
-    <scopeInfo nodeId="3613324658897711799" fileName="MPSVcsManager.java" startLine="200" startPosition="90" endLine="201" endPosition="36" />
-    <scopeInfo nodeId="3613324658897711835" fileName="MPSVcsManager.java" startLine="208" startPosition="104" endLine="209" endPosition="42" />
-    <scopeInfo nodeId="3613324658897711840" fileName="MPSVcsManager.java" startLine="215" startPosition="35" endLine="216" endPosition="36" />
-    <scopeInfo nodeId="3613324658897711689" fileName="MPSVcsManager.java" startLine="112" startPosition="31" endLine="114" endPosition="74" />
-    <scopeInfo nodeId="3613324658897711706" fileName="MPSVcsManager.java" startLine="117" startPosition="34" endLine="119" endPosition="77" />
-    <scopeInfo nodeId="3613324658897711346" fileName="MPSVcsManager.java" startLine="130" startPosition="65" endLine="132" endPosition="5" />
-    <scopeInfo nodeId="3613324658897711748" fileName="MPSVcsManager.java" startLine="136" startPosition="133" endLine="138" endPosition="87" />
-    <scopeInfo nodeId="3613324658897711380" fileName="MPSVcsManager.java" startLine="150" startPosition="82" endLine="152" endPosition="5" />
-    <scopeInfo nodeId="3613324658897711538" fileName="MPSVcsManager.java" startLine="57" startPosition="102" endLine="60" endPosition="36" />
-    <scopeInfo nodeId="3613324658897711359" fileName="MPSVcsManager.java" startLine="142" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="3613324658897711625" fileName="MPSVcsManager.java" startLine="81" startPosition="30" endLine="82" endPosition="19" />
+    <scopeInfo nodeId="7860944453394967333" fileName="MPSVcsManager.java" startLine="88" startPosition="88" endLine="89" endPosition="13" />
+    <scopeInfo nodeId="7794712048471487318" fileName="MPSVcsManager.java" startLine="95" startPosition="45" endLine="96" endPosition="59" />
+    <scopeInfo nodeId="3613324658897711655" fileName="MPSVcsManager.java" startLine="102" startPosition="31" endLine="103" endPosition="46" />
+    <scopeInfo nodeId="3613324658897711659" fileName="MPSVcsManager.java" startLine="108" startPosition="36" endLine="109" endPosition="25" />
+    <scopeInfo nodeId="3613324658897711683" fileName="MPSVcsManager.java" startLine="112" startPosition="51" endLine="113" endPosition="42" />
+    <scopeInfo nodeId="3613324658897711724" fileName="MPSVcsManager.java" startLine="126" startPosition="71" endLine="127" endPosition="82" />
+    <scopeInfo nodeId="3613324658897711523" fileName="MPSVcsManager.java" startLine="130" startPosition="69" endLine="131" endPosition="53" />
+    <scopeInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="135" startPosition="36" endLine="136" endPosition="37" />
+    <scopeInfo nodeId="3613324658897711768" fileName="MPSVcsManager.java" startLine="165" startPosition="49" endLine="166" endPosition="18" />
+    <scopeInfo nodeId="3613324658897711771" fileName="MPSVcsManager.java" startLine="170" startPosition="56" endLine="171" endPosition="18" />
+    <scopeInfo nodeId="3613324658897711775" fileName="MPSVcsManager.java" startLine="174" startPosition="71" endLine="175" endPosition="18" />
+    <scopeInfo nodeId="3613324658897711778" fileName="MPSVcsManager.java" startLine="178" startPosition="74" endLine="179" endPosition="18" />
+    <scopeInfo nodeId="3613324658897711785" fileName="MPSVcsManager.java" startLine="194" startPosition="58" endLine="195" endPosition="36" />
+    <scopeInfo nodeId="3613324658897711788" fileName="MPSVcsManager.java" startLine="203" startPosition="51" endLine="204" endPosition="28" />
+    <scopeInfo nodeId="3613324658897711793" fileName="MPSVcsManager.java" startLine="207" startPosition="100" endLine="208" endPosition="36" />
+    <scopeInfo nodeId="3613324658897711799" fileName="MPSVcsManager.java" startLine="211" startPosition="90" endLine="212" endPosition="36" />
+    <scopeInfo nodeId="3613324658897711835" fileName="MPSVcsManager.java" startLine="219" startPosition="104" endLine="220" endPosition="42" />
+    <scopeInfo nodeId="3613324658897711840" fileName="MPSVcsManager.java" startLine="226" startPosition="35" endLine="227" endPosition="36" />
+    <scopeInfo nodeId="3613324658897711689" fileName="MPSVcsManager.java" startLine="116" startPosition="31" endLine="118" endPosition="74" />
+    <scopeInfo nodeId="3613324658897711706" fileName="MPSVcsManager.java" startLine="121" startPosition="34" endLine="123" endPosition="77" />
+    <scopeInfo nodeId="3613324658897711346" fileName="MPSVcsManager.java" startLine="141" startPosition="65" endLine="143" endPosition="5" />
+    <scopeInfo nodeId="3613324658897711748" fileName="MPSVcsManager.java" startLine="147" startPosition="133" endLine="149" endPosition="87" />
+    <scopeInfo nodeId="3613324658897711380" fileName="MPSVcsManager.java" startLine="161" startPosition="82" endLine="163" endPosition="5" />
+    <scopeInfo nodeId="3613324658897711538" fileName="MPSVcsManager.java" startLine="58" startPosition="102" endLine="61" endPosition="36" />
+    <scopeInfo nodeId="3613324658897711359" fileName="MPSVcsManager.java" startLine="153" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="3613324658897711362" varName="models" />
       <varInfo nodeId="3613324658897711365" varName="success" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711367" fileName="MPSVcsManager.java" startLine="145" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="3613324658897711367" fileName="MPSVcsManager.java" startLine="156" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="3613324658897711370" varName="inputModels" />
       <varInfo nodeId="3613324658897711375" varName="operationContext" />
       <varInfo nodeId="3613324658897711373" varName="options" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711406" fileName="MPSVcsManager.java" startLine="170" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="3613324658897711406" fileName="MPSVcsManager.java" startLine="181" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="3613324658897711409" varName="name" />
       <varInfo nodeId="3613324658897711411" varName="comment" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711413" fileName="MPSVcsManager.java" startLine="173" startPosition="0" endLine="176" endPosition="0">
+    <scopeInfo nodeId="3613324658897711413" fileName="MPSVcsManager.java" startLine="184" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="3613324658897711418" varName="newName" />
       <varInfo nodeId="3613324658897711416" varName="oldName" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711420" fileName="MPSVcsManager.java" startLine="176" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="3613324658897711420" fileName="MPSVcsManager.java" startLine="187" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="3613324658897711423" varName="toList" />
       <varInfo nodeId="3613324658897711425" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711428" fileName="MPSVcsManager.java" startLine="179" startPosition="0" endLine="182" endPosition="0">
+    <scopeInfo nodeId="3613324658897711428" fileName="MPSVcsManager.java" startLine="190" startPosition="0" endLine="193" endPosition="0">
       <varInfo nodeId="3613324658897711431" varName="names" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711448" fileName="MPSVcsManager.java" startLine="191" startPosition="0" endLine="194" endPosition="5">
+    <scopeInfo nodeId="3613324658897711448" fileName="MPSVcsManager.java" startLine="202" startPosition="0" endLine="205" endPosition="5">
       <varInfo nodeId="3613324658897711451" varName="vfile" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711823" fileName="MPSVcsManager.java" startLine="207" startPosition="38" endLine="210" endPosition="11" />
-    <scopeInfo nodeId="3613324658897711514" fileName="MPSVcsManager.java" startLine="50" startPosition="88" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="7794712048471487317" fileName="MPSVcsManager.java" startLine="90" startPosition="49" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711652" fileName="MPSVcsManager.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711680" fileName="MPSVcsManager.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711720" fileName="MPSVcsManager.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711517" fileName="MPSVcsManager.java" startLine="125" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="3613324658897711823" fileName="MPSVcsManager.java" startLine="218" startPosition="38" endLine="221" endPosition="11" />
+    <scopeInfo nodeId="3613324658897711514" fileName="MPSVcsManager.java" startLine="51" startPosition="88" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="7794712048471487317" fileName="MPSVcsManager.java" startLine="94" startPosition="49" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711652" fileName="MPSVcsManager.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711680" fileName="MPSVcsManager.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711720" fileName="MPSVcsManager.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711517" fileName="MPSVcsManager.java" startLine="129" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="3613324658897711520" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711736" fileName="MPSVcsManager.java" startLine="135" startPosition="61" endLine="139" endPosition="9" />
-    <scopeInfo nodeId="3613324658897711383" fileName="MPSVcsManager.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711392" fileName="MPSVcsManager.java" startLine="162" startPosition="0" endLine="166" endPosition="0">
+    <scopeInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="134" startPosition="81" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711736" fileName="MPSVcsManager.java" startLine="146" startPosition="61" endLine="150" endPosition="9" />
+    <scopeInfo nodeId="3613324658897711383" fileName="MPSVcsManager.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711392" fileName="MPSVcsManager.java" startLine="173" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="3613324658897711395" varName="name" />
       <varInfo nodeId="3613324658897711397" varName="comment" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711399" fileName="MPSVcsManager.java" startLine="166" startPosition="0" endLine="170" endPosition="0">
+    <scopeInfo nodeId="3613324658897711399" fileName="MPSVcsManager.java" startLine="177" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="3613324658897711402" varName="name" />
       <varInfo nodeId="3613324658897711404" varName="comment" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711434" fileName="MPSVcsManager.java" startLine="182" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="3613324658897711434" fileName="MPSVcsManager.java" startLine="193" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="3613324658897711437" varName="virtualFile" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711453" fileName="MPSVcsManager.java" startLine="195" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="3613324658897711453" fileName="MPSVcsManager.java" startLine="206" startPosition="0" endLine="210" endPosition="0">
       <varInfo nodeId="3613324658897711460" varName="vcsKey" />
       <varInfo nodeId="3613324658897711456" varName="change" />
       <varInfo nodeId="3613324658897711458" varName="changeList" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711462" fileName="MPSVcsManager.java" startLine="199" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="3613324658897711462" fileName="MPSVcsManager.java" startLine="210" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="3613324658897711469" varName="vcsKey" />
       <varInfo nodeId="3613324658897711467" varName="changeListName" />
       <varInfo nodeId="3613324658897711465" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711478" fileName="MPSVcsManager.java" startLine="214" startPosition="0" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711529" fileName="MPSVcsManager.java" startLine="56" startPosition="0" endLine="61" endPosition="3">
+    <scopeInfo nodeId="3613324658897711478" fileName="MPSVcsManager.java" startLine="225" startPosition="0" endLine="229" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711529" fileName="MPSVcsManager.java" startLine="57" startPosition="0" endLine="62" endPosition="3">
       <varInfo nodeId="3613324658897711532" varName="project" />
       <varInfo nodeId="3613324658897711534" varName="manager" />
       <varInfo nodeId="3613324658897711536" varName="clmanager" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711686" fileName="MPSVcsManager.java" startLine="111" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711703" fileName="MPSVcsManager.java" startLine="116" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711387" fileName="MPSVcsManager.java" startLine="157" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="3613324658897711686" fileName="MPSVcsManager.java" startLine="115" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711703" fileName="MPSVcsManager.java" startLine="120" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711387" fileName="MPSVcsManager.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="3613324658897711390" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711656" fileName="MPSVcsManager.java" startLine="101" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711731" fileName="MPSVcsManager.java" startLine="134" startPosition="133" endLine="140" endPosition="7" />
-    <scopeInfo nodeId="3613324658897711732" fileName="MPSVcsManager.java" startLine="134" startPosition="133" endLine="140" endPosition="7">
+    <scopeInfo nodeId="3613324658897711656" fileName="MPSVcsManager.java" startLine="105" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711731" fileName="MPSVcsManager.java" startLine="145" startPosition="133" endLine="151" endPosition="7" />
+    <scopeInfo nodeId="3613324658897711732" fileName="MPSVcsManager.java" startLine="145" startPosition="133" endLine="151" endPosition="7">
       <varInfo nodeId="3613324658897711734" varName="smodelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711812" fileName="MPSVcsManager.java" startLine="205" startPosition="76" endLine="211" endPosition="9">
+    <scopeInfo nodeId="3613324658897711812" fileName="MPSVcsManager.java" startLine="216" startPosition="76" endLine="222" endPosition="9">
       <varInfo nodeId="3613324658897711814" varName="contentRevision" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711804" fileName="MPSVcsManager.java" startLine="204" startPosition="61" endLine="212" endPosition="7" />
-    <scopeInfo nodeId="3613324658897711651" fileName="MPSVcsManager.java" startLine="86" startPosition="31" endLine="95" endPosition="100">
-      <varInfo nodeId="7307809004211498228" varName="mergeDriverNotification" />
-      <varInfo nodeId="7794712048471487316" varName="vcsListener" />
-    </scopeInfo>
-    <scopeInfo nodeId="3613324658897711349" fileName="MPSVcsManager.java" startLine="133" startPosition="0" endLine="142" endPosition="0">
+    <scopeInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="133" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711804" fileName="MPSVcsManager.java" startLine="215" startPosition="61" endLine="223" endPosition="7" />
+    <scopeInfo nodeId="3613324658897711349" fileName="MPSVcsManager.java" startLine="144" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="3613324658897711352" varName="inputModels" />
       <varInfo nodeId="3613324658897711357" varName="operationContext" />
       <varInfo nodeId="3613324658897711355" varName="options" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711471" fileName="MPSVcsManager.java" startLine="203" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="3613324658897711471" fileName="MPSVcsManager.java" startLine="214" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="3613324658897711476" varName="vcsKey" />
       <varInfo nodeId="3613324658897711474" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711648" fileName="MPSVcsManager.java" startLine="85" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="3613324658897711557" fileName="MPSVcsManager.java" startLine="63" startPosition="84" endLine="83" endPosition="34">
+    <scopeInfo nodeId="3613324658897711651" fileName="MPSVcsManager.java" startLine="87" startPosition="31" endLine="99" endPosition="100">
+      <varInfo nodeId="7307809004211498228" varName="mergeDriverNotification" />
+      <varInfo nodeId="7794712048471487316" varName="vcsListener" />
+    </scopeInfo>
+    <scopeInfo nodeId="3613324658897711648" fileName="MPSVcsManager.java" startLine="86" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="3613324658897711557" fileName="MPSVcsManager.java" startLine="64" startPosition="84" endLine="84" endPosition="34">
       <varInfo nodeId="3613324658897711590" varName="scope" />
       <varInfo nodeId="3613324658897711576" varName="vcs" />
       <varInfo nodeId="3613324658897711605" varName="changeProvider" />
       <varInfo nodeId="3613324658897711618" varName="builder" />
     </scopeInfo>
-    <scopeInfo nodeId="3613324658897711551" fileName="MPSVcsManager.java" startLine="62" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="3613324658897711551" fileName="MPSVcsManager.java" startLine="63" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="3613324658897711555" varName="synchronously" />
       <varInfo nodeId="3613324658897711553" varName="vfile" />
     </scopeInfo>
-    <unitInfo nodeId="3613324658897711513" fileName="MPSVcsManager.java" startLine="50" startPosition="67" endLine="54" endPosition="3" unitName="jetbrains.mps.vcs.MPSVcsManager$1" />
-    <unitInfo nodeId="7794712048471487317" fileName="MPSVcsManager.java" startLine="90" startPosition="34" endLine="94" endPosition="5" unitName="jetbrains.mps.vcs.MPSVcsManager$2" />
-    <unitInfo nodeId="3613324658897711343" fileName="MPSVcsManager.java" startLine="130" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$GenerationWatcher" />
-    <unitInfo nodeId="3613324658897711439" fileName="MPSVcsManager.java" startLine="188" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$MyChangelistBuilder" />
-    <unitInfo nodeId="3613324658897711377" fileName="MPSVcsManager.java" startLine="150" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$StubChangeListManagerGate" />
-    <unitInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="42" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager" />
+    <unitInfo nodeId="3613324658897711513" fileName="MPSVcsManager.java" startLine="51" startPosition="67" endLine="55" endPosition="3" unitName="jetbrains.mps.vcs.MPSVcsManager$1" />
+    <unitInfo nodeId="7794712048471487317" fileName="MPSVcsManager.java" startLine="94" startPosition="34" endLine="98" endPosition="5" unitName="jetbrains.mps.vcs.MPSVcsManager$2" />
+    <unitInfo nodeId="3613324658897711343" fileName="MPSVcsManager.java" startLine="141" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$GenerationWatcher" />
+    <unitInfo nodeId="3613324658897711439" fileName="MPSVcsManager.java" startLine="199" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$MyChangelistBuilder" />
+    <unitInfo nodeId="3613324658897711377" fileName="MPSVcsManager.java" startLine="161" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager$StubChangeListManagerGate" />
+    <unitInfo nodeId="3613324658897711340" fileName="MPSVcsManager.java" startLine="43" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsManager" />
   </root>
   <root nodeId="3613324658897712806">
     <nodeInfo nodeId="3613324658897712831" fileName="SuspiciousModelIndex.java" startLine="36" startPosition="67" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
