@@ -41,15 +41,23 @@ public class SideTransformHintSubstituteActionsHelper {
       sourceNode = sourceNode.getParent();
     }
     mySourceNode = sourceNode;
-    if (transformTags != null) {
-      for (StringTokenizer tokenizer = new StringTokenizer(transformTags, SIDE_TRANSFORM_TAG_SEPARATOR); tokenizer.hasMoreTokens();) {
-        myTransformTags.add(tokenizer.nextToken());
+    if (mySourceNode != null) {
+      if (transformTags != null) {
+        for (StringTokenizer tokenizer = new StringTokenizer(transformTags, SIDE_TRANSFORM_TAG_SEPARATOR); tokenizer.hasMoreTokens();) {
+          myTransformTags.add(tokenizer.nextToken());
+        }
       }
+      mySide = side;
     }
-    mySide = side;
+  }
+
+  public boolean isValid () {
+    return mySourceNode != null;
   }
 
   public boolean canCreateActions() {
+    if (!isValid()) return false;
+
     TypeChecker.getInstance().enableTypesComputingForCompletion();
     try {
       return SideTransformUtil.getApplicableActionsBuilders(mySourceNode, myTransformTags, mySide, myContext).iterator().hasNext();
@@ -59,16 +67,18 @@ public class SideTransformHintSubstituteActionsHelper {
   }
 
   public List<INodeSubstituteAction> createActions() {
+    if (!isValid()) return Collections.emptyList();
+
     final List<INodeSubstituteAction>[] result = new List[1];
     // enable R/O access
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         TypeChecker.getInstance().enableTypesComputingForCompletion();
         try {
-          result[0] = SideTransformUtil.createActions(mySourceNode, myTransformTags, mySide, myContext);
+          result[0] = Collections.unmodifiableList(SideTransformUtil.createActions(mySourceNode, myTransformTags, mySide, myContext));
         } catch (Throwable t) {
           LOG.error(t);
-          result[0] = new ArrayList<INodeSubstituteAction>();
+          result[0] = Collections.emptyList();
         } finally {
           TypeChecker.getInstance().clearTypesComputedForCompletion();
         }
