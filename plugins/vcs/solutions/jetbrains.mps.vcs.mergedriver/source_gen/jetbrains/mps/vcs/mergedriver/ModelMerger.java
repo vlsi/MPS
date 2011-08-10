@@ -71,7 +71,7 @@ import jetbrains.mps.util.FileUtil;
         }).count();
         if (conflictingChangesCount == 0) {
           if (log.isInfoEnabled()) {
-            log.info(String.format("%s: %d changes detected: %d local and %d latest", Sequence.fromIterable(mergeContext.getAllChanges()).count(), ListSequence.fromList(mergeContext.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeContext.getRepositoryChangeSet().getModelChanges()).count()));
+            log.info(String.format("%s: %d changes detected: %d local and %d latest", baseModel.getLongName(), Sequence.fromIterable(mergeContext.getAllChanges()).count(), ListSequence.fromList(mergeContext.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeContext.getRepositoryChangeSet().getModelChanges()).count()));
           }
           mergeContext.getResultModel().setLoading(true);
           Runnable applyAction = new Runnable() {
