@@ -25,6 +25,7 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import jetbrains.mps.ide.IdeMain;
@@ -172,7 +173,12 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     }
     for (int i=lists.size()-1; i>=0; --i) {
       MessageList messageList = lists.get(i);
-      Content content = getMessagesService().getContentManager().getContent(messageList.getComponent());
+      ContentManager contentManager = null;
+      try {
+      contentManager = getMessagesService().getContentManager();
+      }
+      catch (NullPointerException dumb) {}
+      Content content = contentManager != null ? contentManager.getContent(messageList.getComponent()) : null;
       if (content == null || !content.isPinned()) {
         return messageList;
       }
