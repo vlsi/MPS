@@ -117,6 +117,8 @@ abstract class MessageList implements IMessageList {
     if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     ToolWindow window = getToolWindow();
+    if (window == null) return;
+
     if (!window.isAvailable()) window.setAvailable(true, null);
     if (!window.isVisible()) window.show(null);
     if (setActive) window.activate(null);
