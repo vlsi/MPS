@@ -5,6 +5,7 @@ package jetbrains.mps.make.service;
 import com.intellij.openapi.progress.Task;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.logging.Logger;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 import jetbrains.mps.make.script.IScript;
@@ -30,6 +31,8 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MakeTask extends Task.Backgroundable implements Future<IResult> {
+  private static Logger LOG = Logger.getLogger(MakeTask.class);
+
   private CountDownLatch myLatch = new CountDownLatch(1);
   private AtomicReference<MakeTask.TaskState> myState = new AtomicReference<MakeTask.TaskState>(MakeTask.TaskState.NOT_STARTED);
   private final Iterable<IScript> myScripts;
@@ -55,7 +58,8 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       } finally {
         try {
           reconcile();
-        } catch (RuntimeException ignore) {
+        } catch (RuntimeException ex) {
+          LOG.debug("Unexpected exception", ex);
         }
       }
     }
@@ -164,22 +168,25 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   }
 
   private void reconcile() {
-    if (this.myResult == null) {
-      String msg = this.myScrName + " aborted";
-      displayInfo(msg);
-      this.myState.set(MakeTask.TaskState.CANCELLED);
-    } else if (!(this.myResult.isSucessful())) {
-      String msg = this.myScrName + " failed";
-      myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
-      displayInfo(msg);
-      this.myState.set(MakeTask.TaskState.DONE);
-    } else {
-      String msg = this.myScrName + " successful";
-      displayInfo(msg);
-      this.myState.set(MakeTask.TaskState.DONE);
+    this.myState.set(MakeTask.TaskState.DONE);
+    try {
+      if (this.myResult == null) {
+        this.myState.set(MakeTask.TaskState.CANCELLED);
+        String msg = this.myScrName + " aborted";
+        displayInfo(msg);
+      } else if (!(this.myResult.isSucessful())) {
+        String msg = this.myScrName + " failed";
+        myMessageHandler.handle(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
+        displayInfo(msg);
+      } else {
+        String msg = this.myScrName + " successful";
+        displayInfo(msg);
+      }
+
+    } finally {
+      myLatch.countDown();
+      done();
     }
-    myLatch.countDown();
-    done();
   }
 
   private static   enum TaskState {
