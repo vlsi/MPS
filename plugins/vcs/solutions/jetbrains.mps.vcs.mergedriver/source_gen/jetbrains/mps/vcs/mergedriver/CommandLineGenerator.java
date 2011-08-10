@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Arrays;
 import java.io.File;
 import org.apache.commons.lang.StringUtils;
+import com.intellij.openapi.application.PathManager;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
@@ -23,7 +24,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.util.PathUtil;
-import jetbrains.mps.util.PathManager;
 
 public class CommandLineGenerator {
   protected static Log log = LogFactory.getLog(CommandLineGenerator.class);
@@ -42,7 +42,8 @@ public class CommandLineGenerator {
     }
     String javaExecutable = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
     String classpathString = StringUtils.join(Sequence.fromIterable(classpath).toListSequence(), File.pathSeparator);
-    return String.format("\"%s\" -cp \"%s\" %s", javaExecutable, classpathString, MergeDriverMain.class.getName());
+    String escapedLogPath = (PathManager.getLogPath() + File.separator + "mergedriver.log").replace("\\", "\\\\");
+    return String.format("\"%s\" -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());
   }
 
   /*package*/ static String getSvnkitJar() {
@@ -75,9 +76,9 @@ public class CommandLineGenerator {
         return PathUtil.getJarPathForClass(c);
       }
     }));
-    SetSequence.fromSet(classpathItems).addElement(PathManager.getHomePath() + File.separator + "lib" + File.separator + "resources.jar");
-    SetSequence.fromSet(classpathItems).addElement(PathManager.getHomePath() + File.separator + "lib" + File.separator + "resources_en.jar");
-    SetSequence.fromSet(classpathItems).addElement(PathManager.getHomePath() + File.separator + "lib" + File.separator + "icons.jar");
+    SetSequence.fromSet(classpathItems).addElement(jetbrains.mps.util.PathManager.getHomePath() + File.separator + "lib" + File.separator + "resources.jar");
+    SetSequence.fromSet(classpathItems).addElement(jetbrains.mps.util.PathManager.getHomePath() + File.separator + "lib" + File.separator + "resources_en.jar");
+    SetSequence.fromSet(classpathItems).addElement(jetbrains.mps.util.PathManager.getHomePath() + File.separator + "lib" + File.separator + "icons.jar");
     if (withSvnkit) {
       SetSequence.fromSet(classpathItems).addElement(getSvnkitJar());
     }

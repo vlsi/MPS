@@ -37,6 +37,16 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../plugins/svn4idea/lib/svn4idea.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 
