@@ -32,8 +32,10 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.vcs.FileStatus;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.IFile;
+import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -173,13 +175,17 @@ __switch__:
     }.invoke();
   }
 
-  public static Iterable<VirtualFile> getUnversionedFilesForModule(Project project, IModule module) {
-    IFile moduleDir = module.getDescriptorFile().getParent();
+  public static Iterable<VirtualFile> getUnversionedFilesForModule(@NotNull Project project, @NotNull IModule module) {
+    IFile descriptorFile = module.getDescriptorFile();
+    if (descriptorFile == null) {
+      return Sequence.fromIterable(Collections.<VirtualFile>emptyList());
+    }
+    IFile moduleDir = descriptorFile.getParent();
     VcsFileStatusProvider statusProvider = project.getComponent(VcsFileStatusProvider.class);
     return collectUnversionedFiles(statusProvider, VirtualFileUtils.getVirtualFile(moduleDir));
   }
 
-  public static List<VirtualFile> getUnversionedFilesForModules(final Project project, List<IModule> module) {
+  public static List<VirtualFile> getUnversionedFilesForModules(@NotNull final Project project, List<IModule> module) {
     return ListSequence.fromList(module).<VirtualFile>translate(new ITranslator2<IModule, VirtualFile>() {
       public Iterable<VirtualFile> translate(IModule m) {
         return getUnversionedFilesForModule(project, m);
