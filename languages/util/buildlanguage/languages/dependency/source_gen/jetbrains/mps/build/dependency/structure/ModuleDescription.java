@@ -14,6 +14,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ModuleDescription extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.dependency.structure.ModuleDescription";
+  public static final String INCLUDE_RESOURCES = "includeResources";
+  public static final String EXCLUDE_RESOURCES = "excludeResources";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -25,6 +27,22 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
 
   public ModuleDescription(SNode node) {
     super(node);
+  }
+
+  public String getIncludeResources() {
+    return this.getProperty(ModuleDescription.INCLUDE_RESOURCES);
+  }
+
+  public void setIncludeResources(String value) {
+    this.setProperty(ModuleDescription.INCLUDE_RESOURCES, value);
+  }
+
+  public String getExcludeResources() {
+    return this.getProperty(ModuleDescription.EXCLUDE_RESOURCES);
+  }
+
+  public void setExcludeResources(String value) {
+    this.setProperty(ModuleDescription.EXCLUDE_RESOURCES, value);
   }
 
   public String getName() {
