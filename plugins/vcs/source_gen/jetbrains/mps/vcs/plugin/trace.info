@@ -510,208 +510,213 @@
     <unitInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup" />
   </root>
   <root nodeId="7545884443035906924">
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="151" startPosition="27" endLine="151" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="154" startPosition="27" endLine="154" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="157" startPosition="27" endLine="157" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="160" startPosition="28" endLine="160" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7545884443035906924" fileName="VcsActionsHelper.java" startLine="41" startPosition="31" endLine="42" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="7545884443035906931" fileName="VcsActionsHelper.java" startLine="48" startPosition="9" endLine="49" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035906943" fileName="VcsActionsHelper.java" startLine="49" startPosition="129" endLine="50" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035906951" fileName="VcsActionsHelper.java" startLine="50" startPosition="84" endLine="51" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035906960" fileName="VcsActionsHelper.java" startLine="51" startPosition="94" endLine="52" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035906970" fileName="VcsActionsHelper.java" startLine="52" startPosition="94" endLine="53" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2090008153514954446" fileName="VcsActionsHelper.java" startLine="54" startPosition="45" endLine="55" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2090008153514961911" fileName="VcsActionsHelper.java" startLine="55" startPosition="104" endLine="56" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2090008153514961908" fileName="VcsActionsHelper.java" startLine="58" startPosition="29" endLine="59" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514961918" fileName="VcsActionsHelper.java" startLine="59" startPosition="167" endLine="60" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954463" fileName="VcsActionsHelper.java" startLine="62" startPosition="11" endLine="63" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954404" fileName="VcsActionsHelper.java" startLine="63" startPosition="57" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7545884443035906980" fileName="VcsActionsHelper.java" startLine="65" startPosition="14" endLine="66" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035906993" fileName="VcsActionsHelper.java" startLine="68" startPosition="29" endLine="69" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907003" fileName="VcsActionsHelper.java" startLine="71" startPosition="11" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="75" startPosition="33" endLine="76" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907038" fileName="VcsActionsHelper.java" startLine="82" startPosition="9" endLine="83" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035907044" fileName="VcsActionsHelper.java" startLine="85" startPosition="27" endLine="86" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907055" fileName="VcsActionsHelper.java" startLine="88" startPosition="9" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907061" fileName="VcsActionsHelper.java" startLine="90" startPosition="27" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907065" fileName="VcsActionsHelper.java" startLine="92" startPosition="5" endLine="93" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="101" startPosition="56" endLine="102" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="102" startPosition="37" endLine="103" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5_child" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="103" startPosition="43" endLine="104" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5_child_it" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="104" startPosition="56" endLine="105" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_8__yield_deu5rm_a0b0a0a0c" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="105" startPosition="61" endLine="106" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_8__yield_deu5rm_a0b0a0a0c_it" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="113" startPosition="28" endLine="114" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="114" startPosition="54" endLine="115" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="116" startPosition="27" endLine="117" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="119" startPosition="58" endLine="120" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="120" startPosition="40" endLine="121" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="122" startPosition="23" endLine="123" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="123" startPosition="62" endLine="124" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="124" startPosition="38" endLine="125" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="126" startPosition="27" endLine="127" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="129" startPosition="76" endLine="130" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="130" startPosition="40" endLine="131" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="132" startPosition="23" endLine="133" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="133" startPosition="98" endLine="134" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="134" startPosition="39" endLine="135" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="137" startPosition="88" endLine="138" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="138" startPosition="40" endLine="139" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="140" startPosition="23" endLine="141" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="141" startPosition="38" endLine="142" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="143" startPosition="27" endLine="144" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="144" startPosition="38" endLine="145" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="145" startPosition="38" endLine="146" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="147" startPosition="28" endLine="148" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="148" startPosition="38" endLine="149" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="149" startPosition="61" endLine="150" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="151" startPosition="27" endLine="152" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="152" startPosition="38" endLine="153" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="154" startPosition="27" endLine="155" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="155" startPosition="38" endLine="156" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="157" startPosition="27" endLine="158" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="158" startPosition="38" endLine="159" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="160" startPosition="28" endLine="161" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="161" startPosition="39" endLine="162" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="163" startPosition="28" endLine="164" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="166" startPosition="31" endLine="167" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907112" fileName="VcsActionsHelper.java" startLine="176" startPosition="101" endLine="177" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035907120" fileName="VcsActionsHelper.java" startLine="177" startPosition="61" endLine="178" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035907127" fileName="VcsActionsHelper.java" startLine="178" startPosition="93" endLine="179" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907150" fileName="VcsActionsHelper.java" startLine="184" startPosition="57" endLine="185" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907162" fileName="VcsActionsHelper.java" startLine="43" startPosition="0" endLine="45" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsActionsHelper#()V" />
-    <nodeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="74" startPosition="30" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="74" startPosition="30" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7545884443035906991" fileName="VcsActionsHelper.java" startLine="67" startPosition="61" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7545884443035907042" fileName="VcsActionsHelper.java" startLine="84" startPosition="59" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="118" startPosition="27" endLine="122" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="128" startPosition="27" endLine="132" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="136" startPosition="27" endLine="140" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7545884443035907148" fileName="VcsActionsHelper.java" startLine="183" startPosition="106" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2090008153514954415" fileName="VcsActionsHelper.java" startLine="57" startPosition="61" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7545884443035906990" fileName="VcsActionsHelper.java" startLine="66" startPosition="111" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907041" fileName="VcsActionsHelper.java" startLine="83" startPosition="67" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907142" fileName="VcsActionsHelper.java" startLine="182" startPosition="110" endLine="187" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514954414" fileName="VcsActionsHelper.java" startLine="56" startPosition="67" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035907107" fileName="VcsActionsHelper.java" startLine="175" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnversionedFilesForModule#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2090008153514954411" fileName="VcsActionsHelper.java" startLine="65" startPosition="12" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7545884443035907137" fileName="VcsActionsHelper.java" startLine="181" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnversionedFilesForModules#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="7545884443035907029" fileName="VcsActionsHelper.java" startLine="81" startPosition="85" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7545884443035907025" fileName="VcsActionsHelper.java" startLine="80" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadModel#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="2090008153514954402" fileName="VcsActionsHelper.java" startLine="53" startPosition="107" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7545884443035906929" fileName="VcsActionsHelper.java" startLine="47" startPosition="148" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7545884443035906925" fileName="VcsActionsHelper.java" startLine="46" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showRootDifference#(Ljava/awt/Frame;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="110" startPosition="20" endLine="165" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="108" startPosition="46" endLine="166" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="107" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="100" startPosition="51" endLine="169" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="99" startPosition="44" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="98" startPosition="45" endLine="171" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="97" startPosition="70" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7545884443035907076" fileName="VcsActionsHelper.java" startLine="96" startPosition="135" endLine="173" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035907071" fileName="VcsActionsHelper.java" startLine="95" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectUnversionedFiles#(Lcom/intellij/openapi/vcs/impl/VcsFileStatusProvider;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="7545884443035907165" fileName="VcsActionsHelper.java" startLine="44" startPosition="29" endLine="44" endPosition="29" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="151" startPosition="27" endLine="151" endPosition="27" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="154" startPosition="27" endLine="154" endPosition="27" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="157" startPosition="27" endLine="157" endPosition="27" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="160" startPosition="28" endLine="160" endPosition="28" />
-    <scopeInfo nodeId="7545884443035906992" fileName="VcsActionsHelper.java" startLine="68" startPosition="29" endLine="69" endPosition="99" />
-    <scopeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="75" startPosition="33" endLine="76" endPosition="25" />
-    <scopeInfo nodeId="7545884443035907043" fileName="VcsActionsHelper.java" startLine="85" startPosition="27" endLine="86" endPosition="73" />
-    <scopeInfo nodeId="7545884443035907057" fileName="VcsActionsHelper.java" startLine="90" startPosition="0" endLine="91" endPosition="26">
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="153" startPosition="27" endLine="153" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="156" startPosition="27" endLine="156" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="159" startPosition="27" endLine="159" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="162" startPosition="28" endLine="162" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035906924" fileName="VcsActionsHelper.java" startLine="43" startPosition="31" endLine="44" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="7545884443035906931" fileName="VcsActionsHelper.java" startLine="50" startPosition="9" endLine="51" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035906943" fileName="VcsActionsHelper.java" startLine="51" startPosition="129" endLine="52" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035906951" fileName="VcsActionsHelper.java" startLine="52" startPosition="84" endLine="53" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035906960" fileName="VcsActionsHelper.java" startLine="53" startPosition="94" endLine="54" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035906970" fileName="VcsActionsHelper.java" startLine="54" startPosition="94" endLine="55" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2090008153514954446" fileName="VcsActionsHelper.java" startLine="56" startPosition="45" endLine="57" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2090008153514961911" fileName="VcsActionsHelper.java" startLine="57" startPosition="104" endLine="58" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2090008153514961908" fileName="VcsActionsHelper.java" startLine="60" startPosition="29" endLine="61" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514961918" fileName="VcsActionsHelper.java" startLine="61" startPosition="167" endLine="62" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954463" fileName="VcsActionsHelper.java" startLine="64" startPosition="11" endLine="65" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954404" fileName="VcsActionsHelper.java" startLine="65" startPosition="57" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7545884443035906980" fileName="VcsActionsHelper.java" startLine="67" startPosition="14" endLine="68" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035906993" fileName="VcsActionsHelper.java" startLine="70" startPosition="29" endLine="71" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907003" fileName="VcsActionsHelper.java" startLine="73" startPosition="11" endLine="74" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="77" startPosition="33" endLine="78" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907038" fileName="VcsActionsHelper.java" startLine="84" startPosition="9" endLine="85" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035907044" fileName="VcsActionsHelper.java" startLine="87" startPosition="27" endLine="88" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907055" fileName="VcsActionsHelper.java" startLine="90" startPosition="9" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907061" fileName="VcsActionsHelper.java" startLine="92" startPosition="27" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907065" fileName="VcsActionsHelper.java" startLine="94" startPosition="5" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="103" startPosition="56" endLine="104" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="104" startPosition="37" endLine="105" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5_child" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="105" startPosition="43" endLine="106" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5_child_it" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="106" startPosition="56" endLine="107" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_8__yield_deu5rm_a0b0a0a0c" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="107" startPosition="61" endLine="108" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_8__yield_deu5rm_a0b0a0a0c_it" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="115" startPosition="28" endLine="116" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="116" startPosition="54" endLine="117" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="118" startPosition="27" endLine="119" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="121" startPosition="58" endLine="122" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="122" startPosition="40" endLine="123" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="124" startPosition="23" endLine="125" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="125" startPosition="62" endLine="126" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="126" startPosition="38" endLine="127" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="128" startPosition="27" endLine="129" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="131" startPosition="76" endLine="132" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="132" startPosition="40" endLine="133" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="134" startPosition="23" endLine="135" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="135" startPosition="98" endLine="136" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="136" startPosition="39" endLine="137" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="139" startPosition="88" endLine="140" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="140" startPosition="40" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="142" startPosition="23" endLine="143" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="143" startPosition="38" endLine="144" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="145" startPosition="27" endLine="146" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="146" startPosition="38" endLine="147" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="147" startPosition="38" endLine="148" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="149" startPosition="28" endLine="150" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="150" startPosition="38" endLine="151" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="151" startPosition="61" endLine="152" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="153" startPosition="27" endLine="154" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="154" startPosition="38" endLine="155" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="156" startPosition="27" endLine="157" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="157" startPosition="38" endLine="158" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="159" startPosition="27" endLine="160" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="160" startPosition="38" endLine="161" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="162" startPosition="28" endLine="163" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="163" startPosition="39" endLine="164" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="165" startPosition="28" endLine="166" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="168" startPosition="31" endLine="169" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7373702339210791661" fileName="VcsActionsHelper.java" startLine="178" startPosition="119" endLine="179" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7373702339210791678" fileName="VcsActionsHelper.java" startLine="180" startPosition="33" endLine="181" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907112" fileName="VcsActionsHelper.java" startLine="182" startPosition="5" endLine="183" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035907120" fileName="VcsActionsHelper.java" startLine="183" startPosition="49" endLine="184" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035907127" fileName="VcsActionsHelper.java" startLine="184" startPosition="93" endLine="185" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907150" fileName="VcsActionsHelper.java" startLine="190" startPosition="57" endLine="191" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907162" fileName="VcsActionsHelper.java" startLine="45" startPosition="0" endLine="47" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsActionsHelper#()V" />
+    <nodeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="76" startPosition="30" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="76" startPosition="30" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7373702339210791669" fileName="VcsActionsHelper.java" startLine="179" startPosition="54" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035906991" fileName="VcsActionsHelper.java" startLine="69" startPosition="61" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7545884443035907042" fileName="VcsActionsHelper.java" startLine="86" startPosition="59" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="120" startPosition="27" endLine="124" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="130" startPosition="27" endLine="134" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="138" startPosition="27" endLine="142" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035907148" fileName="VcsActionsHelper.java" startLine="189" startPosition="106" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2090008153514954415" fileName="VcsActionsHelper.java" startLine="59" startPosition="61" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7545884443035906990" fileName="VcsActionsHelper.java" startLine="68" startPosition="111" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907041" fileName="VcsActionsHelper.java" startLine="85" startPosition="67" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035907142" fileName="VcsActionsHelper.java" startLine="188" startPosition="119" endLine="193" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2090008153514954414" fileName="VcsActionsHelper.java" startLine="58" startPosition="67" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954411" fileName="VcsActionsHelper.java" startLine="67" startPosition="12" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035907137" fileName="VcsActionsHelper.java" startLine="187" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnversionedFilesForModules#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="7545884443035907107" fileName="VcsActionsHelper.java" startLine="177" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnversionedFilesForModule#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7545884443035907029" fileName="VcsActionsHelper.java" startLine="83" startPosition="85" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035907025" fileName="VcsActionsHelper.java" startLine="82" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadModel#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="2090008153514954402" fileName="VcsActionsHelper.java" startLine="55" startPosition="107" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035906929" fileName="VcsActionsHelper.java" startLine="49" startPosition="148" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035906925" fileName="VcsActionsHelper.java" startLine="48" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showRootDifference#(Ljava/awt/Frame;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="112" startPosition="20" endLine="167" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="110" startPosition="46" endLine="168" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="109" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="102" startPosition="51" endLine="171" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="101" startPosition="44" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="100" startPosition="45" endLine="173" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="99" startPosition="70" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7545884443035907076" fileName="VcsActionsHelper.java" startLine="98" startPosition="135" endLine="175" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035907071" fileName="VcsActionsHelper.java" startLine="97" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectUnversionedFiles#(Lcom/intellij/openapi/vcs/impl/VcsFileStatusProvider;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="7545884443035907165" fileName="VcsActionsHelper.java" startLine="46" startPosition="29" endLine="46" endPosition="29" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="153" startPosition="27" endLine="153" endPosition="27" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="156" startPosition="27" endLine="156" endPosition="27" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="159" startPosition="27" endLine="159" endPosition="27" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="162" startPosition="28" endLine="162" endPosition="28" />
+    <scopeInfo nodeId="7545884443035906992" fileName="VcsActionsHelper.java" startLine="70" startPosition="29" endLine="71" endPosition="99" />
+    <scopeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="77" startPosition="33" endLine="78" endPosition="25" />
+    <scopeInfo nodeId="7545884443035907043" fileName="VcsActionsHelper.java" startLine="87" startPosition="27" endLine="88" endPosition="73" />
+    <scopeInfo nodeId="7545884443035907057" fileName="VcsActionsHelper.java" startLine="92" startPosition="0" endLine="93" endPosition="26">
       <varInfo nodeId="7545884443035907058" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035907060" fileName="VcsActionsHelper.java" startLine="90" startPosition="27" endLine="91" endPosition="26" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="116" startPosition="27" endLine="117" endPosition="113" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="126" startPosition="27" endLine="127" endPosition="147" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="163" startPosition="28" endLine="164" endPosition="37" />
-    <scopeInfo nodeId="7545884443035907149" fileName="VcsActionsHelper.java" startLine="184" startPosition="57" endLine="185" endPosition="56" />
-    <scopeInfo nodeId="7545884443035907162" fileName="VcsActionsHelper.java" startLine="43" startPosition="0" endLine="45" endPosition="3" />
-    <scopeInfo nodeId="2090008153514954416" fileName="VcsActionsHelper.java" startLine="58" startPosition="29" endLine="60" endPosition="41" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="113" startPosition="28" endLine="115" endPosition="35" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="119" startPosition="58" endLine="121" endPosition="30" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="129" startPosition="76" endLine="131" endPosition="30" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="137" startPosition="88" endLine="139" endPosition="30" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="151" startPosition="27" endLine="153" endPosition="28" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="154" startPosition="27" endLine="156" endPosition="28" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="157" startPosition="27" endLine="159" endPosition="28" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="160" startPosition="28" endLine="162" endPosition="28" />
-    <scopeInfo nodeId="7545884443035907007" fileName="VcsActionsHelper.java" startLine="74" startPosition="0" endLine="77" endPosition="7">
+    <scopeInfo nodeId="7545884443035907060" fileName="VcsActionsHelper.java" startLine="92" startPosition="27" endLine="93" endPosition="26" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="118" startPosition="27" endLine="119" endPosition="113" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="128" startPosition="27" endLine="129" endPosition="147" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="165" startPosition="28" endLine="166" endPosition="37" />
+    <scopeInfo nodeId="7373702339210791670" fileName="VcsActionsHelper.java" startLine="180" startPosition="33" endLine="181" endPosition="73" />
+    <scopeInfo nodeId="7545884443035907149" fileName="VcsActionsHelper.java" startLine="190" startPosition="57" endLine="191" endPosition="56" />
+    <scopeInfo nodeId="7545884443035907162" fileName="VcsActionsHelper.java" startLine="45" startPosition="0" endLine="47" endPosition="3" />
+    <scopeInfo nodeId="2090008153514954416" fileName="VcsActionsHelper.java" startLine="60" startPosition="29" endLine="62" endPosition="41" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="115" startPosition="28" endLine="117" endPosition="35" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="121" startPosition="58" endLine="123" endPosition="30" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="131" startPosition="76" endLine="133" endPosition="30" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="139" startPosition="88" endLine="141" endPosition="30" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="153" startPosition="27" endLine="155" endPosition="28" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="156" startPosition="27" endLine="158" endPosition="28" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="159" startPosition="27" endLine="161" endPosition="28" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="162" startPosition="28" endLine="164" endPosition="28" />
+    <scopeInfo nodeId="7545884443035907007" fileName="VcsActionsHelper.java" startLine="76" startPosition="0" endLine="79" endPosition="7">
       <varInfo nodeId="7545884443035907008" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035907010" fileName="VcsActionsHelper.java" startLine="74" startPosition="30" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="74" startPosition="30" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="143" startPosition="27" endLine="146" endPosition="34" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="147" startPosition="28" endLine="150" endPosition="34" />
-    <scopeInfo nodeId="7545884443035907111" fileName="VcsActionsHelper.java" startLine="176" startPosition="101" endLine="179" endPosition="95">
-      <varInfo nodeId="7545884443035907121" varName="statusProvider" />
-      <varInfo nodeId="7545884443035907113" varName="moduleDir" />
-    </scopeInfo>
-    <scopeInfo nodeId="7545884443035906991" fileName="VcsActionsHelper.java" startLine="67" startPosition="61" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="7545884443035907042" fileName="VcsActionsHelper.java" startLine="84" startPosition="59" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="7545884443035907148" fileName="VcsActionsHelper.java" startLine="183" startPosition="106" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="2090008153514954415" fileName="VcsActionsHelper.java" startLine="57" startPosition="61" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="7545884443035907141" fileName="VcsActionsHelper.java" startLine="182" startPosition="110" endLine="187" endPosition="24" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="136" startPosition="27" endLine="142" endPosition="28" />
-    <scopeInfo nodeId="7545884443035907107" fileName="VcsActionsHelper.java" startLine="175" startPosition="0" endLine="181" endPosition="0">
-      <varInfo nodeId="7545884443035907133" varName="project" />
-      <varInfo nodeId="7545884443035907135" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="2090008153514954412" fileName="VcsActionsHelper.java" startLine="65" startPosition="14" endLine="72" endPosition="28">
+    <scopeInfo nodeId="7545884443035907010" fileName="VcsActionsHelper.java" startLine="76" startPosition="30" endLine="79" endPosition="7" />
+    <scopeInfo nodeId="7590932940322140496" fileName="VcsActionsHelper.java" startLine="76" startPosition="30" endLine="79" endPosition="7" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="145" startPosition="27" endLine="148" endPosition="34" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="149" startPosition="28" endLine="152" endPosition="34" />
+    <scopeInfo nodeId="7545884443035906991" fileName="VcsActionsHelper.java" startLine="69" startPosition="61" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="7545884443035907042" fileName="VcsActionsHelper.java" startLine="86" startPosition="59" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="7545884443035907148" fileName="VcsActionsHelper.java" startLine="189" startPosition="106" endLine="193" endPosition="0" />
+    <scopeInfo nodeId="2090008153514954415" fileName="VcsActionsHelper.java" startLine="59" startPosition="61" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="7545884443035907141" fileName="VcsActionsHelper.java" startLine="188" startPosition="119" endLine="193" endPosition="24" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="138" startPosition="27" endLine="144" endPosition="28" />
+    <scopeInfo nodeId="2090008153514954412" fileName="VcsActionsHelper.java" startLine="67" startPosition="14" endLine="74" endPosition="28">
       <varInfo nodeId="7545884443035906981" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035907030" fileName="VcsActionsHelper.java" startLine="82" startPosition="9" endLine="89" endPosition="26">
+    <scopeInfo nodeId="7545884443035907030" fileName="VcsActionsHelper.java" startLine="84" startPosition="9" endLine="91" endPosition="26">
       <varInfo nodeId="7545884443035907039" varName="sModel" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="118" startPosition="27" endLine="125" endPosition="28" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="128" startPosition="27" endLine="135" endPosition="28" />
-    <scopeInfo nodeId="7545884443035907137" fileName="VcsActionsHelper.java" startLine="181" startPosition="0" endLine="189" endPosition="0">
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="120" startPosition="27" endLine="127" endPosition="28" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="130" startPosition="27" endLine="137" endPosition="28" />
+    <scopeInfo nodeId="7545884443035907111" fileName="VcsActionsHelper.java" startLine="178" startPosition="119" endLine="185" endPosition="95">
+      <varInfo nodeId="7545884443035907121" varName="statusProvider" />
+      <varInfo nodeId="7373702339210791662" varName="descriptorFile" />
+      <varInfo nodeId="7545884443035907113" varName="moduleDir" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035907137" fileName="VcsActionsHelper.java" startLine="187" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="7545884443035907156" varName="project" />
       <varInfo nodeId="7545884443035907158" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="2090008153514954403" fileName="VcsActionsHelper.java" startLine="54" startPosition="45" endLine="64" endPosition="0">
+    <scopeInfo nodeId="2090008153514954403" fileName="VcsActionsHelper.java" startLine="56" startPosition="45" endLine="66" endPosition="0">
       <varInfo nodeId="2090008153514961912" varName="id" />
       <varInfo nodeId="2090008153514954447" varName="modelDialog" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035907028" fileName="VcsActionsHelper.java" startLine="81" startPosition="85" endLine="93" endPosition="16" />
-    <scopeInfo nodeId="7545884443035907025" fileName="VcsActionsHelper.java" startLine="80" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="7545884443035907107" fileName="VcsActionsHelper.java" startLine="177" startPosition="0" endLine="187" endPosition="0">
+      <varInfo nodeId="7545884443035907133" varName="project" />
+      <varInfo nodeId="7545884443035907135" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="7545884443035907028" fileName="VcsActionsHelper.java" startLine="83" startPosition="85" endLine="95" endPosition="16" />
+    <scopeInfo nodeId="7545884443035907025" fileName="VcsActionsHelper.java" startLine="82" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="7545884443035907069" varName="model" />
       <varInfo nodeId="7545884443035907067" varName="modelContent" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035906930" fileName="VcsActionsHelper.java" startLine="48" startPosition="9" endLine="73" endPosition="7">
+    <scopeInfo nodeId="7545884443035906930" fileName="VcsActionsHelper.java" startLine="50" startPosition="9" endLine="75" endPosition="7">
       <varInfo nodeId="7545884443035906961" varName="content" />
       <varInfo nodeId="7545884443035906952" varName="revisionNumber" />
       <varInfo nodeId="7545884443035906944" varName="vcs" />
       <varInfo nodeId="7545884443035906932" varName="file" />
       <varInfo nodeId="7545884443035906971" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035906928" fileName="VcsActionsHelper.java" startLine="47" startPosition="148" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="7545884443035906925" fileName="VcsActionsHelper.java" startLine="46" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="7545884443035906928" fileName="VcsActionsHelper.java" startLine="49" startPosition="148" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="7545884443035906925" fileName="VcsActionsHelper.java" startLine="48" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="7545884443035907023" varName="project" />
       <varInfo nodeId="7545884443035907021" varName="node" />
       <varInfo nodeId="7545884443035907019" varName="model" />
       <varInfo nodeId="7545884443035907015" varName="frame" />
       <varInfo nodeId="7545884443035907017" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="110" startPosition="20" endLine="165" endPosition="19" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="108" startPosition="46" endLine="167" endPosition="29" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="107" startPosition="0" endLine="169" endPosition="0" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="100" startPosition="51" endLine="169" endPosition="14" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="99" startPosition="44" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="98" startPosition="45" endLine="171" endPosition="10" />
-    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="97" startPosition="70" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="7545884443035907075" fileName="VcsActionsHelper.java" startLine="96" startPosition="135" endLine="173" endPosition="15" />
-    <scopeInfo nodeId="7545884443035907071" fileName="VcsActionsHelper.java" startLine="95" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="112" startPosition="20" endLine="167" endPosition="19" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="110" startPosition="46" endLine="169" endPosition="29" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="109" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="102" startPosition="51" endLine="171" endPosition="14" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="101" startPosition="44" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="100" startPosition="45" endLine="173" endPosition="10" />
+    <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="99" startPosition="70" endLine="175" endPosition="0" />
+    <scopeInfo nodeId="7545884443035907075" fileName="VcsActionsHelper.java" startLine="98" startPosition="135" endLine="175" endPosition="15" />
+    <scopeInfo nodeId="7545884443035907071" fileName="VcsActionsHelper.java" startLine="97" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="7545884443035907103" varName="fileStatusProvider" />
       <varInfo nodeId="7545884443035907105" varName="dir" />
     </scopeInfo>
-    <unitInfo nodeId="7545884443035906991" fileName="VcsActionsHelper.java" startLine="67" startPosition="49" endLine="71" endPosition="9" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$2" />
-    <unitInfo nodeId="7545884443035907042" fileName="VcsActionsHelper.java" startLine="84" startPosition="47" endLine="88" endPosition="7" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$3" />
-    <unitInfo nodeId="7545884443035907148" fileName="VcsActionsHelper.java" startLine="183" startPosition="68" endLine="187" endPosition="5" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$5" />
-    <unitInfo nodeId="2090008153514954415" fileName="VcsActionsHelper.java" startLine="57" startPosition="49" endLine="62" endPosition="9" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$1" />
-    <unitInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="101" startPosition="23" endLine="169" endPosition="13" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$6" />
-    <unitInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="99" startPosition="19" endLine="171" endPosition="9" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$5" />
-    <unitInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="97" startPosition="15" endLine="173" endPosition="5" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$4" />
-    <unitInfo nodeId="7545884443035906924" fileName="VcsActionsHelper.java" startLine="41" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
+    <unitInfo nodeId="7545884443035906991" fileName="VcsActionsHelper.java" startLine="69" startPosition="49" endLine="73" endPosition="9" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$2" />
+    <unitInfo nodeId="7545884443035907042" fileName="VcsActionsHelper.java" startLine="86" startPosition="47" endLine="90" endPosition="7" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$3" />
+    <unitInfo nodeId="7545884443035907148" fileName="VcsActionsHelper.java" startLine="189" startPosition="68" endLine="193" endPosition="5" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$5" />
+    <unitInfo nodeId="2090008153514954415" fileName="VcsActionsHelper.java" startLine="59" startPosition="49" endLine="64" endPosition="9" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$1" />
+    <unitInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="103" startPosition="23" endLine="171" endPosition="13" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$6" />
+    <unitInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="101" startPosition="19" endLine="173" endPosition="9" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$5" />
+    <unitInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="99" startPosition="15" endLine="175" endPosition="5" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper$4" />
+    <unitInfo nodeId="7545884443035906924" fileName="VcsActionsHelper.java" startLine="43" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
   </root>
   <root nodeId="7545884443035919781">
     <nodeInfo nodeId="7545884443035919781" fileName="ShowDiffererenceWithCurrentRevision_Action.java" startLine="27" startPosition="81" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
