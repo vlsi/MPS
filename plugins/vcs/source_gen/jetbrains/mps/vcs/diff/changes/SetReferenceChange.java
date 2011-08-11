@@ -58,7 +58,7 @@ public class SetReferenceChange extends NodeChange {
         myTargetModelReference
       );
       SReference reference;
-      if (myTargetNodeId == null) {
+      if (getChangeSet().getNewModel().getNodeById(getAffectedNodeId()).getReference(myRole) instanceof DynamicReference) {
         reference = new DynamicReference(myRole, node, targetModelReference, myResolveInfo);
       } else {
         reference = new StaticReference(myRole, node, targetModelReference, myTargetNodeId, myResolveInfo);
