@@ -98,7 +98,7 @@ public class PropertyAccessor implements ModelAccessor {
 
     if (myReadOnly) {
       String propertyValue = getText();
-      return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
+      return (text == null && (propertyValue == null || propertyValue.isEmpty())) || (text != null && text.equals(propertyValue));
     }
 
     if (myPropertyDeclaration != null) {
