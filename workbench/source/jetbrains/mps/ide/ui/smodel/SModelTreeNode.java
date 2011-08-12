@@ -167,7 +167,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
       if (myInitialized || myInitializing) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-        treeModel.insertNodeInto(groupTreeNode, this, index);
+        treeModel.insertNodeInto(groupTreeNode, this, index + myChildModelTreeNodes.size());
       }
     } else {
       int index = -1;
