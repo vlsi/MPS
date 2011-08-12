@@ -10,8 +10,12 @@ import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
+import org.apache.commons.lang.StringUtils;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
+import junit.framework.Assert;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import javax.swing.SwingUtilities;
@@ -21,7 +25,6 @@ import jetbrains.mps.smodel.SModelReference;
 import java.awt.Toolkit;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.commons.lang.StringUtils;
 import com.intellij.util.PathUtil;
 import java.io.File;
 import com.intellij.openapi.application.PathMacros;
@@ -50,13 +53,24 @@ public abstract class BaseTransformationTest extends TestCase {
     setModelDescriptor(modelDescriptor);
   }
 
-  public void initTest(String projectName, final String model) throws Exception {
+  public void initTest(@NotNull String projectName, final String model) throws Exception {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
     clearSystemClipboard();
     // see MPS-10568 
     readSystemMacro();
-    this.myProject = TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null)));
+    if (StringUtils.isEmpty(projectName)) {
+      for (Project project : ProjectManagerEx.getInstanceEx().getOpenProjects()) {
+        if ((myProject = project.getComponent(MPSProject.class)) != null) {
+          break;
+        }
+      }
+      if (myProject == null) {
+        Assert.fail("MPS Project was not specfied in test class, no currently open project was not found");
+      }
+    } else {
+      this.myProject = TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null)));
+    }
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
