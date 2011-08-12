@@ -348,8 +348,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       myPackageNodes.clear();
       myRootGroups.clear();
 
-      for (SNodeGroupTreeNode group : myRootGroups) {
-        add(group);
+      for (SModelTreeNode newChildModel : myChildModelTreeNodes) {
+        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+        int index = myChildModelTreeNodes.indexOf(newChildModel);
+        treeModel.insertNodeInto(newChildModel, this, index);
       }
       SModel model = getSModel();
       Iterable<SNode> iter = new ConditionalIterable(model.roots(), myNodesCondition);
@@ -371,12 +373,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         } else {
           add(treeNode);
         }
-      }
-
-      for (SModelTreeNode newChildModel : myChildModelTreeNodes) {
-        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-        int index = myChildModelTreeNodes.indexOf(newChildModel);
-        treeModel.insertNodeInto(newChildModel, this, index);
       }
 
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
