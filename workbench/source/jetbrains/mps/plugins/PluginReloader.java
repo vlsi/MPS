@@ -144,7 +144,7 @@ public class PluginReloader implements ApplicationComponent {
       Runnable runnable = new Runnable() {
         public void run() {
           //write action is needed the because user can acquire write action inside of this [see MPS-9139]
-          loadPlugins();
+          if (!isDisposed()) loadPlugins();
         }
       };
       if (myLoadPluginsRunnable.compareAndSet(null, runnable)) {
