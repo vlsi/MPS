@@ -9,18 +9,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class FastFindNodeUsages_Action extends GeneratedAction {
   private static final Icon ICON = new ImageIcon(FastFindNodeUsages_Action.class.getResource("find.png"));
@@ -33,7 +30,7 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return FastFindNodeUsages_Action.this.getTool(_params) != null;
+    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -68,29 +65,28 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
       return false;
     }
     MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode operationNode = (((EditorCell) MapSequence.fromMap(_params).get("cell")) != null ?
-        ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference() :
-        ((SNode) MapSequence.fromMap(_params).get("node"))
-      );
-      IResultProvider provider = (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") ?
-        FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"), FindUtils.getFinderByClassName("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder")) :
-        FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"))
-      );
-      SearchQuery query = new SearchQuery(operationNode, GlobalScope.getInstance());
-      FastFindNodeUsages_Action.this.getTool(_params).findUsages(provider, query, true, false, false, "No usages for that node");
+      new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "FastFindNodeUsages", t);
       }
     }
-  }
-
-  private UsagesViewTool getTool(final Map<String, Object> _params) {
-    return ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class);
   }
 }
