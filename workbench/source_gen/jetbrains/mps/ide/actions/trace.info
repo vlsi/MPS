@@ -5172,6 +5172,79 @@
     <unitInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="96" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$SetBookmark_ShortcutChange_qjewi8_fc" />
     <unitInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="12" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
   </root>
+  <root nodeId="2557058267217516060">
+    <nodeInfo nodeId="2557058267217525595" fileName="FindUsagesHelper.java" startLine="23" startPosition="36" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="2557058267217525624" fileName="FindUsagesHelper.java" startLine="24" startPosition="28" endLine="25" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWithDialog" />
+    <nodeInfo nodeId="2557058267217525601" fileName="FindUsagesHelper.java" startLine="27" startPosition="69" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217525629" fileName="FindUsagesHelper.java" startLine="28" startPosition="24" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516648" fileName="FindUsagesHelper.java" startLine="32" startPosition="63" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217516661" fileName="FindUsagesHelper.java" startLine="36" startPosition="36" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217565873" fileName="FindUsagesHelper.java" startLine="40" startPosition="38" endLine="41" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217516263" fileName="FindUsagesHelper.java" startLine="44" startPosition="144" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2557058267217516265" fileName="FindUsagesHelper.java" startLine="45" startPosition="16" endLine="46" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516288" fileName="FindUsagesHelper.java" startLine="54" startPosition="7" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2557058267217516290" fileName="FindUsagesHelper.java" startLine="55" startPosition="19" endLine="56" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516298" fileName="FindUsagesHelper.java" startLine="56" startPosition="135" endLine="57" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516313" fileName="FindUsagesHelper.java" startLine="58" startPosition="23" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516322" fileName="FindUsagesHelper.java" startLine="60" startPosition="33" endLine="61" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217516327" fileName="FindUsagesHelper.java" startLine="63" startPosition="5" endLine="64" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516333" fileName="FindUsagesHelper.java" startLine="64" startPosition="39" endLine="65" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516340" fileName="FindUsagesHelper.java" startLine="65" startPosition="65" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2557058267217516342" fileName="FindUsagesHelper.java" startLine="66" startPosition="13" endLine="67" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516345" fileName="FindUsagesHelper.java" startLine="67" startPosition="85" endLine="68" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516348" fileName="FindUsagesHelper.java" startLine="68" startPosition="74" endLine="69" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516354" fileName="FindUsagesHelper.java" startLine="71" startPosition="25" endLine="72" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516363" fileName="FindUsagesHelper.java" startLine="72" startPosition="83" endLine="73" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516379" fileName="FindUsagesHelper.java" startLine="73" startPosition="113" endLine="74" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516386" fileName="FindUsagesHelper.java" startLine="76" startPosition="7" endLine="77" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516317" fileName="FindUsagesHelper.java" startLine="59" startPosition="26" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2557058267217516062" fileName="FindUsagesHelper.java" startLine="26" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindUsagesHelper#(Lcom/intellij/openapi/project/Project;Z)V" />
+    <nodeInfo nodeId="2557058267217525607" fileName="FindUsagesHelper.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOptionsComponent#()Ljetbrains/mps/ide/findusages/view/optionseditor/DefaultSearchOptionsComponent;" />
+    <nodeInfo nodeId="2557058267217525610" fileName="FindUsagesHelper.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#()Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />
+    <nodeInfo nodeId="2557058267217565863" fileName="FindUsagesHelper.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#()Z" />
+    <nodeInfo nodeId="2557058267217516271" fileName="FindUsagesHelper.java" startLine="48" startPosition="25" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516311" fileName="FindUsagesHelper.java" startLine="57" startPosition="105" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2557058267217516352" fileName="FindUsagesHelper.java" startLine="70" startPosition="57" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2557058267217516269" fileName="FindUsagesHelper.java" startLine="47" startPosition="57" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2557058267217516351" fileName="FindUsagesHelper.java" startLine="69" startPosition="80" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516268" fileName="FindUsagesHelper.java" startLine="46" startPosition="70" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217525617" fileName="FindUsagesHelper.java" startLine="43" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljava/awt/Frame;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SModelDescriptor;)V" />
+    <scopeInfo nodeId="2557058267217516643" fileName="FindUsagesHelper.java" startLine="32" startPosition="63" endLine="33" endPosition="71" />
+    <scopeInfo nodeId="2557058267217516660" fileName="FindUsagesHelper.java" startLine="36" startPosition="36" endLine="37" endPosition="56" />
+    <scopeInfo nodeId="2557058267217565865" fileName="FindUsagesHelper.java" startLine="40" startPosition="38" endLine="41" endPosition="62" />
+    <scopeInfo nodeId="2557058267217516321" fileName="FindUsagesHelper.java" startLine="60" startPosition="33" endLine="61" endPosition="15" />
+    <scopeInfo nodeId="2557058267217516065" fileName="FindUsagesHelper.java" startLine="27" startPosition="69" endLine="29" endPosition="30" />
+    <scopeInfo nodeId="2557058267217516353" fileName="FindUsagesHelper.java" startLine="71" startPosition="25" endLine="74" endPosition="71" />
+    <scopeInfo nodeId="2557058267217516062" fileName="FindUsagesHelper.java" startLine="26" startPosition="0" endLine="30" endPosition="3">
+      <varInfo nodeId="2557058267217525599" varName="project" />
+      <varInfo nodeId="2557058267217525621" varName="withDialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="2557058267217525607" fileName="FindUsagesHelper.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2557058267217525610" fileName="FindUsagesHelper.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="2557058267217565863" fileName="FindUsagesHelper.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2557058267217516270" fileName="FindUsagesHelper.java" startLine="48" startPosition="25" endLine="52" endPosition="10" />
+    <scopeInfo nodeId="2557058267217516312" fileName="FindUsagesHelper.java" startLine="58" startPosition="23" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="2557058267217516352" fileName="FindUsagesHelper.java" startLine="70" startPosition="57" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="2557058267217516269" fileName="FindUsagesHelper.java" startLine="47" startPosition="57" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="2557058267217516072" fileName="FindUsagesHelper.java" startLine="44" startPosition="144" endLine="77" endPosition="150">
+      <varInfo nodeId="2557058267217516349" varName="viewOptions" />
+      <varInfo nodeId="2557058267217516346" varName="query" />
+      <varInfo nodeId="2557058267217516343" varName="provider" />
+      <varInfo nodeId="2557058267217516266" varName="operationNode" />
+      <varInfo nodeId="2557058267217516299" varName="dialog" />
+      <varInfo nodeId="2557058267217516291" varName="options" />
+    </scopeInfo>
+    <scopeInfo nodeId="2557058267217525617" fileName="FindUsagesHelper.java" startLine="43" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="2557058267217525651" varName="model" />
+      <varInfo nodeId="2557058267217516634" varName="node" />
+      <varInfo nodeId="2557058267217525640" varName="frame" />
+      <varInfo nodeId="2557058267217516402" varName="cell" />
+      <varInfo nodeId="2557058267217525648" varName="context" />
+    </scopeInfo>
+    <unitInfo nodeId="2557058267217516352" fileName="FindUsagesHelper.java" startLine="70" startPosition="45" endLine="76" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$2" />
+    <unitInfo nodeId="2557058267217516269" fileName="FindUsagesHelper.java" startLine="47" startPosition="45" endLine="54" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$1" />
+    <unitInfo nodeId="2557058267217516060" fileName="FindUsagesHelper.java" startLine="23" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.FindUsagesHelper" />
+  </root>
   <root nodeId="2589658255268083871">
     <nodeInfo nodeId="2589658255268083871" fileName="RenameFileOrDirectory_Action.java" startLine="24" startPosition="67" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2589658255268083871" fileName="RenameFileOrDirectory_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -7413,220 +7486,183 @@
     <unitInfo nodeId="5033107305426722313" fileName="CutNode_Action.java" startLine="24" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.ide.actions.CutNode_Action" />
   </root>
   <root nodeId="5033107305426734988">
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="25" startPosition="64" endLine="26" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="26" startPosition="106" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="29" startPosition="38" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="30" startPosition="60" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="31" startPosition="34" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426735002" fileName="FastFindNodeUsages_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="41" startPosition="7" endLine="42" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="42" startPosition="60" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="46" startPosition="33" endLine="47" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="48" startPosition="7" endLine="49" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="57" startPosition="5" endLine="58" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="60" startPosition="7" endLine="61" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="63" startPosition="59" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="65" startPosition="5" endLine="66" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="67" startPosition="62" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="69" startPosition="5" endLine="70" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="69" startPosition="5" endLine="70" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="70" startPosition="85" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426736109" fileName="FastFindNodeUsages_Action.java" startLine="83" startPosition="8" endLine="84" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426736136" fileName="FastFindNodeUsages_Action.java" startLine="84" startPosition="84" endLine="85" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="22" startPosition="64" endLine="23" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="23" startPosition="106" endLine="24" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="26" startPosition="38" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="27" startPosition="60" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="28" startPosition="34" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217565954" fileName="FastFindNodeUsages_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="39" startPosition="60" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="43" startPosition="33" endLine="44" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="45" startPosition="7" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="57" startPosition="7" endLine="58" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="60" startPosition="59" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="67" startPosition="85" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="69" startPosition="62" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="73" startPosition="60" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="77" startPosition="60" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217565930" fileName="FastFindNodeUsages_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="391" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="87" startPosition="33" endLine="88" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426736125" fileName="FastFindNodeUsages_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="58" startPosition="51" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="53" startPosition="95" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="62" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="66" startPosition="94" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="55" startPosition="51" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="50" startPosition="95" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="59" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="63" startPosition="94" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="68" startPosition="84" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="72" startPosition="80" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="76" startPosition="88" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="86" startPosition="27" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="86" startPosition="27" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="40" startPosition="9" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="65" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426735019" fileName="FastFindNodeUsages_Action.java" startLine="75" startPosition="9" endLine="79" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7228605397000733622" fileName="FastFindNodeUsages_Action.java" startLine="79" startPosition="8" endLine="83" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426736121" fileName="FastFindNodeUsages_Action.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#(Ljava/util/Map;)Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FastFindNodeUsages_Action#()V" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="56" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="56" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="39" startPosition="89" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="38" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="74" startPosition="96" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="73" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="52" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="59" startPosition="25" endLine="59" endPosition="25" />
-    <scopeInfo nodeId="5033107305426735001" fileName="FastFindNodeUsages_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="67" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="46" startPosition="33" endLine="47" endPosition="93" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="63" startPosition="59" endLine="64" endPosition="19" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="67" startPosition="62" endLine="68" endPosition="19" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="69" startPosition="5" endLine="70" endPosition="85" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="67" startPosition="85" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FastFindNodeUsages_Action#()V" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="53" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="83" startPosition="96" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="53" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="82" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="36" startPosition="89" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="35" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="49" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="56" startPosition="25" endLine="56" endPosition="25" />
+    <scopeInfo nodeId="5033107305426735001" fileName="FastFindNodeUsages_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="111" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="43" startPosition="33" endLine="44" endPosition="93" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="60" startPosition="59" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="85" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="69" startPosition="62" endLine="70" endPosition="19" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="73" startPosition="60" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="77" startPosition="60" endLine="78" endPosition="19" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="391" />
     <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="87" startPosition="33" endLine="88" endPosition="92" />
-    <scopeInfo nodeId="5033107305426736124" fileName="FastFindNodeUsages_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="112" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="41" startPosition="7" endLine="43" endPosition="63" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="29" startPosition="38" endLine="32" endPosition="41" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="26" startPosition="38" endLine="29" endPosition="41" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" />
     <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="86" startPosition="0" endLine="89" endPosition="7" />
     <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="86" startPosition="27" endLine="89" endPosition="7" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="40" startPosition="9" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="45" startPosition="0" endLine="49" endPosition="44" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="45" startPosition="27" endLine="49" endPosition="44" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="57" startPosition="5" endLine="61" endPosition="53" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="65" startPosition="5" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="5033107305426736121" fileName="FastFindNodeUsages_Action.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="3" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="56" startPosition="5" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="75" startPosition="9" endLine="85" endPosition="129">
-      <varInfo nodeId="5033107305426736110" varName="query" />
-      <varInfo nodeId="7228605397000733623" varName="provider" />
-      <varInfo nodeId="5033107305426735020" varName="operationNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="39" startPosition="89" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="38" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="74" startPosition="96" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="53" startPosition="95" endLine="71" endPosition="16" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="73" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="52" startPosition="0" endLine="73" endPosition="0" />
-    <unitInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="25" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="44" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="42" startPosition="27" endLine="46" endPosition="44" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="54" startPosition="5" endLine="58" endPosition="53" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="67" startPosition="85" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="83" startPosition="96" endLine="90" endPosition="5" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="53" startPosition="5" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="82" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="36" startPosition="89" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="35" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="50" startPosition="95" endLine="80" endPosition="16" />
+    <scopeInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="49" startPosition="0" endLine="82" endPosition="0" />
+    <unitInfo nodeId="5033107305426734988" fileName="FastFindNodeUsages_Action.java" startLine="22" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
   </root>
   <root nodeId="5033107305426766812">
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="33" startPosition="68" endLine="34" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="34" startPosition="110" endLine="35" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="37" startPosition="42" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="38" startPosition="38" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="39" startPosition="34" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="40" startPosition="40" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426767034" fileName="FindSpecificNodeUsages_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="50" startPosition="7" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="51" startPosition="60" endLine="52" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="55" startPosition="33" endLine="56" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="57" startPosition="7" endLine="58" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="63" startPosition="53" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="69" startPosition="7" endLine="70" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="72" startPosition="59" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="74" startPosition="5" endLine="75" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="78" startPosition="5" endLine="79" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="80" startPosition="60" endLine="81" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="82" startPosition="5" endLine="83" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="84" startPosition="62" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="86" startPosition="5" endLine="87" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="88" startPosition="60" endLine="89" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="90" startPosition="5" endLine="91" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="90" startPosition="5" endLine="91" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="91" startPosition="85" endLine="92" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7236590470026152760" fileName="FindSpecificNodeUsages_Action.java" startLine="96" startPosition="9" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5033107305426767004" fileName="FindSpecificNodeUsages_Action.java" startLine="97" startPosition="18" endLine="98" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7236590470026152788" fileName="FindSpecificNodeUsages_Action.java" startLine="106" startPosition="9" endLine="107" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5033107305426767026" fileName="FindSpecificNodeUsages_Action.java" startLine="107" startPosition="21" endLine="108" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426767230" fileName="FindSpecificNodeUsages_Action.java" startLine="108" startPosition="179" endLine="109" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426767251" fileName="FindSpecificNodeUsages_Action.java" startLine="109" startPosition="199" endLine="110" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426769232" fileName="FindSpecificNodeUsages_Action.java" startLine="111" startPosition="33" endLine="112" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426769234" fileName="FindSpecificNodeUsages_Action.java" startLine="113" startPosition="7" endLine="114" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426769241" fileName="FindSpecificNodeUsages_Action.java" startLine="114" startPosition="41" endLine="115" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7236590470026152768" fileName="FindSpecificNodeUsages_Action.java" startLine="115" startPosition="109" endLine="116" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5033107305426769272" fileName="FindSpecificNodeUsages_Action.java" startLine="116" startPosition="15" endLine="117" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426769276" fileName="FindSpecificNodeUsages_Action.java" startLine="117" startPosition="87" endLine="118" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426769434" fileName="FindSpecificNodeUsages_Action.java" startLine="118" startPosition="76" endLine="119" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5033107305426769437" fileName="FindSpecificNodeUsages_Action.java" startLine="121" startPosition="27" endLine="122" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426769468" fileName="FindSpecificNodeUsages_Action.java" startLine="122" startPosition="85" endLine="123" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426769553" fileName="FindSpecificNodeUsages_Action.java" startLine="123" startPosition="230" endLine="124" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426769256" fileName="FindSpecificNodeUsages_Action.java" startLine="126" startPosition="9" endLine="127" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="129" startPosition="33" endLine="130" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426767166" fileName="FindSpecificNodeUsages_Action.java" startLine="135" startPosition="96" endLine="136" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426767182" fileName="FindSpecificNodeUsages_Action.java" startLine="139" startPosition="69" endLine="140" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="67" startPosition="51" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="54" startPosition="27" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="54" startPosition="27" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="62" startPosition="95" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="71" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="75" startPosition="84" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="79" startPosition="80" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="83" startPosition="94" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="87" startPosition="88" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426767259" fileName="FindSpecificNodeUsages_Action.java" startLine="110" startPosition="26" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="128" startPosition="27" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="128" startPosition="27" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="49" startPosition="9" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="78" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="82" startPosition="5" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="86" startPosition="5" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426767007" fileName="FindSpecificNodeUsages_Action.java" startLine="100" startPosition="27" endLine="104" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426767162" fileName="FindSpecificNodeUsages_Action.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOptionsComponent#(Ljava/util/Map;)Ljetbrains/mps/ide/findusages/view/optionseditor/DefaultSearchOptionsComponent;" />
-    <nodeInfo nodeId="5033107305426767178" fileName="FindSpecificNodeUsages_Action.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#(Ljava/util/Map;)Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="36" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindSpecificNodeUsages_Action#()V" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="65" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426769253" fileName="FindSpecificNodeUsages_Action.java" startLine="120" startPosition="59" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5033107305426766998" fileName="FindSpecificNodeUsages_Action.java" startLine="99" startPosition="59" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5033107305426769252" fileName="FindSpecificNodeUsages_Action.java" startLine="119" startPosition="82" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766997" fileName="FindSpecificNodeUsages_Action.java" startLine="98" startPosition="72" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="65" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="48" startPosition="89" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="47" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="61" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="95" startPosition="96" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="94" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="68" startPosition="25" endLine="68" endPosition="25" />
-    <scopeInfo nodeId="5033107305426767031" fileName="FindSpecificNodeUsages_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="146" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="55" startPosition="33" endLine="56" endPosition="97" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="63" startPosition="53" endLine="64" endPosition="19" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="72" startPosition="59" endLine="73" endPosition="19" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="80" startPosition="60" endLine="81" endPosition="19" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="84" startPosition="62" endLine="85" endPosition="19" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="88" startPosition="60" endLine="89" endPosition="19" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="90" startPosition="5" endLine="91" endPosition="85" />
-    <scopeInfo nodeId="5033107305426769230" fileName="FindSpecificNodeUsages_Action.java" startLine="111" startPosition="33" endLine="112" endPosition="15" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="129" startPosition="33" endLine="130" endPosition="96" />
-    <scopeInfo nodeId="5033107305426767165" fileName="FindSpecificNodeUsages_Action.java" startLine="135" startPosition="96" endLine="136" endPosition="117" />
-    <scopeInfo nodeId="5033107305426767181" fileName="FindSpecificNodeUsages_Action.java" startLine="139" startPosition="69" endLine="140" endPosition="102" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="50" startPosition="7" endLine="52" endPosition="63" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="54" startPosition="27" endLine="57" endPosition="7" />
-    <scopeInfo nodeId="5033107305426769254" fileName="FindSpecificNodeUsages_Action.java" startLine="121" startPosition="27" endLine="124" endPosition="73" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="128" startPosition="0" endLine="131" endPosition="7" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="128" startPosition="27" endLine="131" endPosition="7" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="37" startPosition="42" endLine="41" endPosition="36" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="49" startPosition="9" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="54" startPosition="0" endLine="58" endPosition="44" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="54" startPosition="27" endLine="58" endPosition="44" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="53" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="78" startPosition="5" endLine="82" endPosition="5" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="82" startPosition="5" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="86" startPosition="5" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="5033107305426766999" fileName="FindSpecificNodeUsages_Action.java" startLine="100" startPosition="27" endLine="104" endPosition="12" />
-    <scopeInfo nodeId="5033107305426767162" fileName="FindSpecificNodeUsages_Action.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="5033107305426767178" fileName="FindSpecificNodeUsages_Action.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="36" startPosition="0" endLine="42" endPosition="3" />
-    <scopeInfo nodeId="5033107305426769253" fileName="FindSpecificNodeUsages_Action.java" startLine="120" startPosition="59" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="5033107305426766998" fileName="FindSpecificNodeUsages_Action.java" startLine="99" startPosition="59" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="65" startPosition="5" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="48" startPosition="89" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="47" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="62" startPosition="95" endLine="92" endPosition="16" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="96" startPosition="9" endLine="127" endPosition="194">
-      <varInfo nodeId="5033107305426769435" varName="viewOptions" />
-      <varInfo nodeId="5033107305426769277" varName="query" />
-      <varInfo nodeId="5033107305426769273" varName="provider" />
-      <varInfo nodeId="5033107305426767005" varName="operationNode" />
-      <varInfo nodeId="5033107305426767231" varName="dialog" />
-      <varInfo nodeId="5033107305426767027" varName="options" />
-    </scopeInfo>
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="61" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="95" startPosition="96" endLine="132" endPosition="5" />
-    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="94" startPosition="0" endLine="134" endPosition="0" />
-    <unitInfo nodeId="5033107305426769253" fileName="FindSpecificNodeUsages_Action.java" startLine="120" startPosition="47" endLine="126" endPosition="7" unitName="jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action$2" />
-    <unitInfo nodeId="5033107305426766998" fileName="FindSpecificNodeUsages_Action.java" startLine="99" startPosition="47" endLine="106" endPosition="7" unitName="jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action$1" />
-    <unitInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="33" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="22" startPosition="68" endLine="23" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="23" startPosition="110" endLine="24" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="26" startPosition="42" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="27" startPosition="38" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="28" startPosition="34" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="29" startPosition="40" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217565892" fileName="FindSpecificNodeUsages_Action.java" startLine="33" startPosition="87" endLine="34" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="39" startPosition="7" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="40" startPosition="60" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="44" startPosition="33" endLine="45" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="46" startPosition="7" endLine="47" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="52" startPosition="53" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="55" startPosition="5" endLine="56" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="58" startPosition="7" endLine="59" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="61" startPosition="59" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="65" startPosition="62" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="67" startPosition="5" endLine="68" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="69" startPosition="60" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="77" startPosition="60" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="80" startPosition="85" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217526555" fileName="FindSpecificNodeUsages_Action.java" startLine="85" startPosition="9" endLine="86" endPosition="390" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="88" startPosition="33" endLine="89" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="56" startPosition="51" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="43" startPosition="27" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="43" startPosition="27" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="51" startPosition="95" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="60" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="64" startPosition="84" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="68" startPosition="80" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="72" startPosition="94" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="76" startPosition="88" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="87" startPosition="27" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="87" startPosition="27" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="38" startPosition="9" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="25" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindSpecificNodeUsages_Action#()V" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="54" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="84" startPosition="96" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="54" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="83" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="37" startPosition="89" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="36" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="50" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="57" startPosition="25" endLine="57" endPosition="25" />
+    <scopeInfo nodeId="5033107305426767031" fileName="FindSpecificNodeUsages_Action.java" startLine="33" startPosition="87" endLine="34" endPosition="110" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="44" startPosition="33" endLine="45" endPosition="97" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="61" startPosition="59" endLine="62" endPosition="19" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="65" startPosition="62" endLine="66" endPosition="19" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="69" startPosition="60" endLine="70" endPosition="19" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="77" startPosition="60" endLine="78" endPosition="19" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="85" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="85" startPosition="9" endLine="86" endPosition="390" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="88" startPosition="33" endLine="89" endPosition="96" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="39" startPosition="7" endLine="41" endPosition="63" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="43" startPosition="27" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="87" startPosition="0" endLine="90" endPosition="7" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="87" startPosition="27" endLine="90" endPosition="7" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="26" startPosition="42" endLine="30" endPosition="36" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="38" startPosition="9" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="44" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="43" startPosition="27" endLine="47" endPosition="44" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="55" startPosition="5" endLine="59" endPosition="53" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="25" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="84" startPosition="96" endLine="91" endPosition="5" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="54" startPosition="5" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="83" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="37" startPosition="89" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="36" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="51" startPosition="95" endLine="81" endPosition="16" />
+    <scopeInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="50" startPosition="0" endLine="83" endPosition="0" />
+    <unitInfo nodeId="5033107305426766812" fileName="FindSpecificNodeUsages_Action.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action" />
   </root>
   <root nodeId="5307017976806272107">
     <nodeInfo nodeId="5307017976806272107" fileName="ShowStructure_Action.java" startLine="22" startPosition="59" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

@@ -9,26 +9,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
-import com.intellij.openapi.project.Project;
 import java.awt.Frame;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindSpecificNodeUsages_Action extends GeneratedAction {
   private static final Icon ICON = new ImageIcon(FindSpecificNodeUsages_Action.class.getResource("find.png"));
@@ -42,7 +31,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return FindSpecificNodeUsages_Action.this.getTool(_params) != null && FindSpecificNodeUsages_Action.this.getOptionsComponent(_params) != null;
+    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), true).isApplicable();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -94,49 +83,11 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      // get node 
-      final Wrappers._T<SNode> operationNode = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          operationNode.value = (((EditorCell) MapSequence.fromMap(_params).get("cell")) == null ?
-            ((SNode) MapSequence.fromMap(_params).get("node")) :
-            ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference()
-          );
-        }
-      });
-      // show dialog 
-      final Wrappers._T<FindUsagesOptions> options = new Wrappers._T<FindUsagesOptions>(FindSpecificNodeUsages_Action.this.getOptionsComponent(_params).getDefaultSearchOptions());
-      FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, ((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")));
-      dialog.showDialog();
-      if (dialog.isCancelled()) {
-        return;
-      }
-      options.value = dialog.getResult();
-      FindSpecificNodeUsages_Action.this.getOptionsComponent(_params).setDefaultSearchOptions(options.value);
-      // start 
-      final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
-      final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
-      final Wrappers._T<ViewOptions> viewOptions = new Wrappers._T<ViewOptions>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          provider.value = options.value.getOption(FindersOptions.class).getResult();
-          query.value = options.value.getOption(ScopeOptions.class).getResult(operationNode.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
-          viewOptions.value = options.value.getOption(ViewOptions.class);
-        }
-      });
-      FindSpecificNodeUsages_Action.this.getTool(_params).findUsages(provider.value, query.value, true, viewOptions.value.myShowOneResult, viewOptions.value.myNewTab, "No usages for that node");
+      new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), true).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "FindSpecificNodeUsages", t);
       }
     }
-  }
-
-  private DefaultSearchOptionsComponent getOptionsComponent(final Map<String, Object> _params) {
-    return ((Project) MapSequence.fromMap(_params).get("project")).getComponent(DefaultSearchOptionsComponent.class);
-  }
-
-  private UsagesViewTool getTool(final Map<String, Object> _params) {
-    return ((Project) MapSequence.fromMap(_params).get("project")).getComponent(UsagesViewTool.class);
   }
 }
