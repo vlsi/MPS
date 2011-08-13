@@ -25,7 +25,9 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -76,6 +78,15 @@ public class CreateGroupsBuilder {
     return group;
   }
 
+  private static String getConceptAlias(SNode concept) {
+    String alias = SNodeUtil.getConceptAlias(concept);
+    if (StringUtils.isEmpty(alias)) {
+      return concept.getName();
+    } else {
+      return alias;
+    }
+  }
+
   private static class CreateAction extends AnAction {
     private final SNode myConcept;
     private final EditorTabDescriptor myDescriptor;
@@ -83,7 +94,7 @@ public class CreateGroupsBuilder {
     private NodeChangeCallback myCallback;
 
     public CreateAction(SNode concept, EditorTabDescriptor descriptor, SNodePointer baseNode, NodeChangeCallback callback) {
-      super(concept.getName().replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
+      super(getConceptAlias(concept).replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myDescriptor = descriptor;
       myBaseNode = baseNode;
