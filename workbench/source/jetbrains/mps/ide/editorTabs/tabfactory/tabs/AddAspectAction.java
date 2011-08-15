@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.openapi.actionSystem.*;
+import jetbrains.mps.ide.actions.CreateAspect_Action;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.smodel.ModelAccess;
@@ -36,10 +37,11 @@ public abstract class AddAspectAction extends AnAction {
   private NodeChangeCallback myCallback;
 
   public AddAspectAction(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, NodeChangeCallback callback) {
-    super("", "", ADD_ICON);
+    super("Add Aspect", "", ADD_ICON);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myCallback = callback;
+    setShortcutSet(ActionManager.getInstance().getAction(CreateAspect_Action.class.getName()).getShortcutSet());
   }
 
   public boolean displayTextInToolbar() {
