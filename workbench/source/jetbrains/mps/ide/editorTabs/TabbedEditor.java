@@ -187,7 +187,7 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private AnAction getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    List<DefaultActionGroup> groups = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, null, new NodeChangeCallback() {
+    List<DefaultActionGroup> groups = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, getCurrentEditorComponent().getEditedNode(), new NodeChangeCallback() {
       public void changeNode(SNode node) {
         myTabsComponent.setLastNode(new SNodePointer(node));
         showNode(node, !node.isRoot());
