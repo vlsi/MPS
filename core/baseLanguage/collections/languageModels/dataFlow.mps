@@ -16,6 +16,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.1153943597977" resolveInfo="ForEachStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207062862628">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="collection" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.1160666733551" resolveInfo="AddAllElementsOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207074632097">
@@ -39,9 +40,11 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.1172667724288" resolveInfo="PageOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207323745154">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="collection" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.1173946412755" resolveInfo="RemoveAllElementsOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207323786137">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="collection" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.1167380149909" resolveInfo="RemoveElementOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207323906741">
@@ -51,6 +54,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.1172664342967" resolveInfo="TakeOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207324044355">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="collection" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2q.1160612413312" resolveInfo="AddElementOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207324132959">

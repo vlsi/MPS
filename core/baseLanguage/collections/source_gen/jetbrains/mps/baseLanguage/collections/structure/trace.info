@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Collections_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.Collections_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="339" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.StructureAspectDescriptor" />
   <root nodeId="1151688443754">
     <nodeInfo nodeId="1151688443754" fileName="ListType.java" startLine="11" startPosition="36" endLine="12" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1151688443754" fileName="ListType.java" startLine="12" startPosition="99" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_TYPE" />
@@ -3919,7 +3919,7 @@
     <unitInfo nodeId="2141797557972817928" fileName="IContainerOperation.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IContainerOperation" />
   </root>
   <root nodeId="2141797557973018607">
-    <nodeInfo nodeId="2141797557973018607" fileName="IListOperation.java" startLine="6" startPosition="61" endLine="7" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="2141797557973018607" fileName="IListOperation.java" startLine="6" startPosition="62" endLine="7" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="2141797557973018607" fileName="IListOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IListOperation" />
   </root>
   <root nodeId="3055999550620853964">
@@ -4185,6 +4185,10 @@
     <scopeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="4020503625588385966" fileName="GetLastIndexOfOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.GetLastIndexOfOperation" />
+  </root>
+  <root nodeId="4327124999333572296">
+    <nodeInfo nodeId="4327124999333572296" fileName="ICollectionOperation.java" startLine="6" startPosition="67" endLine="7" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="4327124999333572296" fileName="ICollectionOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ICollectionOperation" />
   </root>
   <root nodeId="497032923610827734">
     <nodeInfo nodeId="497032923610827734" fileName="IQueueOperation.java" startLine="6" startPosition="62" endLine="7" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -4822,6 +4826,22 @@
   <root nodeId="6801639034384909355">
     <nodeInfo nodeId="6801639034384909355" fileName="IStackOperation.java" startLine="6" startPosition="62" endLine="7" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="6801639034384909355" fileName="IStackOperation.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.IStackOperation" />
+  </root>
+  <root nodeId="7125221305512719026">
+    <nodeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="10" startPosition="59" endLine="11" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="13" startPosition="37" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="17" startPosition="69" endLine="18" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="21" startPosition="55" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CollectionType#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/collections/structure/CollectionType;" />
+    <nodeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/collections/structure/CollectionType;" />
+    <scopeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="13" startPosition="37" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="17" startPosition="69" endLine="18" endPosition="190" />
+    <scopeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="21" startPosition="55" endLine="22" endPosition="49" />
+    <scopeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="7125221305512719026" fileName="CollectionType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.CollectionType" />
   </root>
   <root nodeId="8293956702609956630">
     <nodeInfo nodeId="8293956702609956630" fileName="MultiForEachVariableReference.java" startLine="11" startPosition="63" endLine="12" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

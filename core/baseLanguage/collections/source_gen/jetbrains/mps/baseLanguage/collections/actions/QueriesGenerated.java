@@ -382,6 +382,14 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_CollectionType_7886927014685056896(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "elementType", "jetbrains.mps.baseLanguage.structure.Type");
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+      SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
+      SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
+    }
+  }
+
   public static void nodeFactory_NodeSetup_ListType_7246115176735618986(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
       SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
@@ -876,7 +884,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setTarget(_context.getSourceNode(), "comparator", new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a1a0a1a37().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true))), true);
+          return SLinkOperations.setTarget(_context.getSourceNode(), "comparator", new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a1a0a1a47().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true))), true);
         }
 
         public String getMatchingText(String pattern) {
@@ -895,8 +903,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a2a0a0a0a0a1a0a1a37 {
-    public QuotationClass_x583g4_a2a0a0a0a0a1a0a1a37() {
+  public static class QuotationClass_x583g4_a2a0a0a0a0a1a0a1a47 {
+    public QuotationClass_x583g4_a2a0a0a0a0a1a0a1a47() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {

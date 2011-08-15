@@ -28,6 +28,7 @@ import gnu.trove.decorator.TByteObjectHashMapDecorator;
 import gnu.trove.TByteObjectHashMap;
 import gnu.trove.decorator.TObjectIntHashMapDecorator;
 import gnu.trove.TObjectIntHashMap;
+import java.util.Collection;
 
 public class Foo {
   public Foo() {
@@ -256,5 +257,13 @@ __switch__:
 
     }
 
+  }
+
+  public static void collection() {
+    Collection<Integer> ci = ListSequence.fromList(new ArrayList<Integer>());
+    Set<Integer> si = SetSequence.fromSet(new HashSet<Integer>());
+    ci = si;
+    Iterable<Integer> sqi = si;
+    sqi = si;
   }
 }

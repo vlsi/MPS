@@ -512,6 +512,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_CollectionType_CollectionType_withWildcard_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_CollectionType_SequenceType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_ContainerIteratorType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -556,6 +568,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_List_Collection_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_QueueType_ClassiType_Queue_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -578,6 +594,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_linkedlist_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_set_collection_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new collection_comparableWith_Collection_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
     }
     {
       ComparisonRule_Runtime comparisonRule = new deque_type_comparableWith_Deque_ComparisonRule();
@@ -606,6 +630,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       ComparisonRule_Runtime comparisonRule = new stack_type_comparableWith_Deque_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new collection_covariant_extends_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
     }
     {
       InequationReplacementRule_Runtime eliminationRule = new containerIterator_subtrypeOf_containerIterator_InequationReplacementRule();

@@ -6,9 +6,10 @@ import java.util.Collection;
 import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence;
 
 public abstract class CollectionSequence<T> extends Sequence<T> implements ICollectionSequence<T>, Collection<T> {
-  public CollectionSequence() {
+  protected CollectionSequence() {
   }
 
   public T addElement(T t) {
@@ -166,4 +167,20 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
   }
 
   protected abstract Collection<T> getCollection();
+
+  public static <U> ICollectionSequence<U> fromCollection(final Collection<U> coll) {
+    if (USE_NULL_SEQUENCE) {
+      if (coll == null) {
+        return NullCollectionSequence.instance();
+      }
+    }
+    if (coll instanceof ICollectionSequence<?>) {
+      return (ICollectionSequence<U>) coll;
+    }
+    return new CollectionSequence<U>() {
+      protected Collection<U> getCollection() {
+        return coll;
+      }
+    };
+  }
 }

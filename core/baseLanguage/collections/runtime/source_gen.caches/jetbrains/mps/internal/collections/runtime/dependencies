@@ -37,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" />
     <classNode extendsClassName="java.util.Collection" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ICollectionSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
