@@ -32,18 +32,24 @@
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner" file="MPSOpenProjectRunner.java">
+    <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
+    <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.annotation.ElementType" />
     <classNode dependClassName="java.lang.annotation.Retention" />
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
     <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.testbench.Testbench" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
