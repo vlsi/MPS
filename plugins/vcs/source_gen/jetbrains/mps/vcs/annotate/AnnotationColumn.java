@@ -44,10 +44,10 @@ import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
+import jetbrains.mps.smodel.ModelAccess;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics2D;
-import jetbrains.mps.smodel.ModelAccess;
 import java.awt.FontMetrics;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import org.jetbrains.annotations.Nullable;
@@ -123,7 +123,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private List<LineContent> myFileLineToContent;
   private Map<OldChange, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<OldChange, LineContent>());
   private Set<Integer> myCurrentPseudoLines = null;
-  private final Object myCurrentPseudoLinesLock = new Object();
   private VcsRevisionRange myRevisionRange;
   private ViewActionGroup myViewActionGroup;
   private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
@@ -213,23 +212,26 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
   }
 
-  private void assureCurrentPseudoLinesCalculated() {
-    if (myCurrentPseudoLines == null) {
-      myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
-      for (LineContent lineContent : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
-        SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lineContent)));
+  private void calculateCurrentPseudoLinesLater() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
+        for (LineContent lineContent : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
+          SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lineContent)));
+        }
+        getLeftEditorHighlighter().repaint();
       }
-    }
+    });
   }
 
   public String getName() {
     return "Annotations";
   }
 
-  public void paint(final Graphics graphics) {
+  public void paint(Graphics graphics) {
     graphics.setFont(myFont);
     EditorComponent.turnOnAliasingIfPossible((Graphics2D) graphics);
-    final Map<AnnotationAspectSubcolumn, Integer> subcolumnToX = MapSequence.fromMap(new HashMap<AnnotationAspectSubcolumn, Integer>());
+    Map<AnnotationAspectSubcolumn, Integer> subcolumnToX = MapSequence.fromMap(new HashMap<AnnotationAspectSubcolumn, Integer>());
     int x = getX() + 1;
     for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       MapSequence.fromMap(subcolumnToX).put(subcolumn, x);
@@ -237,52 +239,45 @@ public class AnnotationColumn extends AbstractLeftColumn {
         x += subcolumn.getWidth() + mySubcolumnInterval;
       }
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        synchronized (myCurrentPseudoLinesLock) {
-          assureCurrentPseudoLinesCalculated();
-          for (int pseudoLine = 0; pseudoLine < ListSequence.fromList(myPseudoLinesY).count(); pseudoLine++) {
-            if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
-              continue;
-            }
-
-            int fileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
-            int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
-              getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
-              ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
-            );
-            if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
-              String author = myAuthorAnnotationAspect.getValue(fileLine);
-              graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
-              graphics.fillRect(getX(), ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
-            }
-
-            graphics.setColor(ANNOTATION_COLOR);
-            if (myRevisionRange.isFileLineHighlighted(fileLine)) {
-              graphics.setFont(myFont.deriveFont(Font.BOLD));
-            } else {
-              graphics.setFont(myFont);
-            }
-            FontMetrics metrics = graphics.getFontMetrics();
-            if (height < metrics.getHeight()) {
-              continue;
-            }
-            for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns).where(new IWhereFilter<AnnotationAspectSubcolumn>() {
-              public boolean accept(AnnotationAspectSubcolumn s) {
-                return myShowAdditionalInfo || s.isEnabled();
-              }
-            })) {
-              String text = subcolumn.getTextForFileLine(fileLine);
-              int textX = MapSequence.fromMap(subcolumnToX).get(subcolumn);
-              if (subcolumn.isRightAligned()) {
-                textX += subcolumn.getWidth() - metrics.stringWidth(text);
-              }
-              graphics.drawString(text, textX, metrics.getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
-            }
-          }
-        }
+    for (int pseudoLine = 0; pseudoLine < ListSequence.fromList(myPseudoLinesY).count(); pseudoLine++) {
+      if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
+        continue;
       }
-    });
+
+      int fileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
+      int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
+        getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
+        ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
+      );
+      if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
+        String author = myAuthorAnnotationAspect.getValue(fileLine);
+        graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
+        graphics.fillRect(getX(), ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
+      }
+
+      graphics.setColor(ANNOTATION_COLOR);
+      if (myRevisionRange.isFileLineHighlighted(fileLine)) {
+        graphics.setFont(myFont.deriveFont(Font.BOLD));
+      } else {
+        graphics.setFont(myFont);
+      }
+      FontMetrics metrics = graphics.getFontMetrics();
+      if (height < metrics.getHeight()) {
+        continue;
+      }
+      for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns).where(new IWhereFilter<AnnotationAspectSubcolumn>() {
+        public boolean accept(AnnotationAspectSubcolumn s) {
+          return myShowAdditionalInfo || s.isEnabled();
+        }
+      })) {
+        String text = subcolumn.getTextForFileLine(fileLine);
+        int textX = MapSequence.fromMap(subcolumnToX).get(subcolumn);
+        if (subcolumn.isRightAligned()) {
+          textX += subcolumn.getWidth() - metrics.stringWidth(text);
+        }
+        graphics.drawString(text, textX, metrics.getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
+      }
+    }
   }
 
   public int getWidth() {
@@ -427,6 +422,7 @@ __switch__:
       aspectSubcolumn.computeWidth(metrics, myPseudoLinesToFileLines);
     }
     mySubcolumnInterval = metrics.stringWidth(" ");
+    calculateCurrentPseudoLinesLater();
   }
 
   @Override
@@ -493,10 +489,8 @@ __switch__:
     if (pseudoLine == -1) {
       return -1;
     } else {
-      synchronized (myCurrentPseudoLinesLock) {
-        if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
-          return -1;
-        }
+      if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
+        return -1;
       }
       return ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
     }
@@ -635,15 +629,7 @@ __switch__:
     }
 
     public void changeUpdateFinished() {
-      synchronized (myCurrentPseudoLinesLock) {
-        myCurrentPseudoLines = null;
-      }
-    }
-
-    public void changeUpdateStarted() {
-      synchronized (myCurrentPseudoLinesLock) {
-        myCurrentPseudoLines = null;
-      }
+      calculateCurrentPseudoLinesLater();
     }
 
     public void changeRemoved(@NotNull OldChange change, @NotNull SModel model) {
