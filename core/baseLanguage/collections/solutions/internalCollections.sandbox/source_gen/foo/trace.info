@@ -117,8 +117,8 @@
     <nodeInfo nodeId="4863683935051177546" fileName="Foo.java" startLine="268" startPosition="66" endLine="269" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4863683935051177556" fileName="Foo.java" startLine="269" startPosition="42" endLine="270" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4863683935051177566" fileName="Foo.java" startLine="270" startPosition="42" endLine="271" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4863683935051177576" fileName="Foo.java" startLine="271" startPosition="45" endLine="272" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4863683935051551580" fileName="Foo.java" startLine="272" startPosition="45" endLine="273" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2792466051886052407" fileName="Foo.java" startLine="271" startPosition="45" endLine="272" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4863683935051551580" fileName="Foo.java" startLine="272" startPosition="70" endLine="273" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4863683935051550825" fileName="Foo.java" startLine="273" startPosition="67" endLine="274" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4863683935051550061" fileName="Foo.java" startLine="274" startPosition="83" endLine="275" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4863683935051427659" fileName="Foo.java" startLine="275" startPosition="65" endLine="276" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -269,7 +269,7 @@ __switch__:
     SetSequence.fromSet(si).addElement(1);
     SetSequence.fromSet(si).addElement(2);
     SetSequence.fromSet(si).removeElement(1);
-    SetSequence.fromSet(si).removeElement(2);
+    SetSequence.fromSet(si).removeSequence(Sequence.fromIterable(ci));
     SetSequence.fromSet(si).addSequence(Sequence.fromIterable(ci));
     Set<Integer> is = SetSequence.fromSet(si).addSequence(SetSequence.fromSet(si));
     SetSequence.fromSet(si).addSequence(SetSequence.fromSet(si));
