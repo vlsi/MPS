@@ -261,9 +261,37 @@ __switch__:
 
   public static void collection() {
     Collection<Integer> ci = ListSequence.fromList(new ArrayList<Integer>());
+    Sequence.fromIterable(ci).addElement(1);
+    Sequence.fromIterable(ci).removeElement(2);
+    Sequence.fromIterable(ci).removeSequence(null);
+    Sequence.fromIterable(ci).addSequence(Sequence.fromIterable(ci));
     Set<Integer> si = SetSequence.fromSet(new HashSet<Integer>());
+    SetSequence.fromSet(si).addElement(1);
+    SetSequence.fromSet(si).addElement(2);
+    SetSequence.fromSet(si).removeElement(1);
+    SetSequence.fromSet(si).removeElement(2);
+    SetSequence.fromSet(si).addSequence(Sequence.fromIterable(ci));
+    Set<Integer> is = SetSequence.fromSet(si).addSequence(SetSequence.fromSet(si));
+    SetSequence.fromSet(si).addSequence(SetSequence.fromSet(si));
+    SetSequence.fromSet(si).removeSequence(Sequence.fromIterable(ci));
+    SetSequence.fromSet(si).removeSequence(SetSequence.fromSet(si));
+    List<Integer> li = ListSequence.fromList(new ArrayList<Integer>());
+    ListSequence.fromList(li).addElement(1);
+    ListSequence.fromList(li).removeElement(1);
+    ListSequence.fromList(li).removeSequence(SetSequence.fromSet(si));
     ci = si;
     Iterable<Integer> sqi = si;
     sqi = si;
+    Sequence.fromIterable(ci).addElement(2);
+    Queue<Integer> qi = QueueSequence.fromQueue(new LinkedList<Integer>());
+    QueueSequence.fromQueue(qi).removeElement(3);
+    QueueSequence.fromQueue(qi).removeElement(1);
+    QueueSequence.fromQueue(qi).addLastElement(3);
+    QueueSequence.fromQueue(qi).removeSequence(ListSequence.fromList(li));
+    Deque<Integer> sti = DequeSequence.fromDeque(new LinkedList<Integer>());
+    DequeSequence.fromDeque(sti).pushElement(2);
+    DequeSequence.fromDeque(sti).removeElement(1);
+    DequeSequence.fromDeque(sti).addSequence(QueueSequence.fromQueue(qi));
+
   }
 }

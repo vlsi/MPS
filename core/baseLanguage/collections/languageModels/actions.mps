@@ -88,6 +88,22 @@
     <node type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="7212626807240862097">
       <property name="name" nameId="tpck.1169194664001" value="single_argument_operations" />
     </node>
+    <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="4863683935051512067">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+      <property name="name" nameId="tpck.1169194664001" value="AddSetElementOperation_remove" />
+    </node>
+    <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="4863683935051512070">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveSetElementOperation_remove" />
+    </node>
+    <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="4863683935051551598">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveAllSetElementsOperation_remove" />
+    </node>
+    <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="4863683935051551602">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+      <property name="name" nameId="tpck.1169194664001" value="AddAllSetElementsOperation_remove" />
+    </node>
   </roots>
   <root id="1151703690959">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1197932848431">
@@ -5053,6 +5069,38 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="4863683935051512067">
+    <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="4863683935051512068">
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tp2q.1226566855640" resolveInfo="AddSetElementOperation" />
+      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="4863683935051512069">
+        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tp2q.1226566855640" resolveInfo="AddSetElementOperation" />
+      </node>
+    </node>
+  </root>
+  <root id="4863683935051512070">
+    <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="4863683935051512071">
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tp2q.1226591481394" resolveInfo="RemoveSetElementOperation" />
+      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="4863683935051512072">
+        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tp2q.1226591481394" resolveInfo="RemoveSetElementOperation" />
+      </node>
+    </node>
+  </root>
+  <root id="4863683935051551598">
+    <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="4863683935051551599">
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tp2q.1226593880804" resolveInfo="RemoveAllSetElementsOperation" />
+      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="4863683935051551601">
+        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tp2q.1226593880804" resolveInfo="RemoveAllSetElementsOperation" />
+      </node>
+    </node>
+  </root>
+  <root id="4863683935051551602">
+    <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="4863683935051551603">
+      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tp2q.1226592602759" resolveInfo="AddAllSetElementsOperation" />
+      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="4863683935051551605">
+        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="tp2q.1226592602759" resolveInfo="AddAllSetElementsOperation" />
       </node>
     </node>
   </root>
