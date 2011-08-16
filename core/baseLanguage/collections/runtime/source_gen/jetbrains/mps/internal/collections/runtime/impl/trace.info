@@ -17,7 +17,7 @@
     <unitInfo nodeId="6543581031674022257" fileName="NegateWhereFilter.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NegateWhereFilter" />
   </root>
   <root nodeId="6543581031674022292">
-    <nodeInfo nodeId="6543581031674022301" fileName="NullSetSequence.java" startLine="10" startPosition="92" endLine="11" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
+    <nodeInfo nodeId="6543581031674022301" fileName="NullSetSequence.java" startLine="10" startPosition="102" endLine="11" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="6543581031674022310" fileName="NullSetSequence.java" startLine="11" startPosition="54" endLine="12" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="6543581031674022341" fileName="NullSetSequence.java" startLine="17" startPosition="27" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674022351" fileName="NullSetSequence.java" startLine="21" startPosition="52" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

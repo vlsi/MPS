@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 
-public class NullSetSequence<T> extends NullSequence<T> implements ISetSequence<T>, Set<T> {
+public class NullSetSequence<T> extends NullCollectionSequence<T> implements ISetSequence<T>, Set<T> {
   private static Object[] EMPTY_ARRAY = new Object[0];
   private static final NullSetSequence<Object> INSTANCE = new NullSetSequence<Object>();
 

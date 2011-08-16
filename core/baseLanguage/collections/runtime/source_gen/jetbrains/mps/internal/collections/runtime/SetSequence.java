@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.impl.NullSetSequence;
 import java.util.List;
 import java.util.Arrays;
 
-public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<T>, Serializable {
+public class SetSequence<T> extends CollectionSequence<T> implements ISetSequence<T>, Set<T>, Serializable {
   private static final long serialVersionUID = -5489490742621116508L;
 
   private Set<T> set;
@@ -181,6 +181,10 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
   }
 
   protected Set<T> getSet() {
+    return set;
+  }
+
+  protected Collection<T> getCollection() {
     return set;
   }
 

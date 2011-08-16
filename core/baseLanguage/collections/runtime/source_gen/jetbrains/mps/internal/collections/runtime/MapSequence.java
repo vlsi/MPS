@@ -264,7 +264,7 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
   }
 
   @SuppressWarnings(value = "unchecked")
-  private class MappingsSetSequence extends Sequence implements ISetSequence, Set {
+  private class MappingsSetSequence extends CollectionSequence implements ISetSequence, Set {
     private MappingsSetSequence() {
     }
 
@@ -389,6 +389,10 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
         arr[size] = null;
       }
       return arr;
+    }
+
+    protected Collection getCollection() {
+      return map.entrySet();
     }
   }
 }

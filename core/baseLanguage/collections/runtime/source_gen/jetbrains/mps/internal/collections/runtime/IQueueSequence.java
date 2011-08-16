@@ -6,7 +6,7 @@ import java.util.Queue;
 import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
-public interface IQueueSequence<T> extends ISequence<T>, ICollectionSequence<T>, Queue<T> {
+public interface IQueueSequence<T> extends ICollectionSequence<T>, Queue<T> {
   public T addLastElement(T t);
   public T removeFirstElement();
   public IQueueSequence<T> addSequence(ISequence<? extends T> seq);

@@ -172,7 +172,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode extendsClassName="java.util.Set" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
+    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.NullSortedMapSequence" file="NullSortedMapSequence.java">
     <classNode dependClassName="java.lang.Object" />

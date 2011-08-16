@@ -176,7 +176,7 @@
       <property name="name" nameId="tpck.1169194664001" value="T" />
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6543581031674022295">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6543581031674029595" resolveInfo="NullSequence" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6543581031674024631" resolveInfo="NullCollectionSequence" />
       <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6543581031674022296">
         <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="6543581031674022294" resolveInfo="T" />
       </node>
