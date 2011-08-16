@@ -88,6 +88,16 @@ public class NullSetSequence<T> extends NullCollectionSequence<T> implements ISe
     return this;
   }
 
+  @Override
+  public ISetSequence<T> asSynchronized() {
+    return this;
+  }
+
+  @Override
+  public ISetSequence<T> asUnmodifiable() {
+    return this;
+  }
+
   @SuppressWarnings(value = "unchecked")
   public static <U> NullSetSequence<U> instance() {
     return (NullSetSequence<U>) INSTANCE;

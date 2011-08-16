@@ -4791,6 +4791,22 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2526372162255443209">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.2526372162255441536" resolveInfo="AsUnmodifiableOperation" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2526372162255446579">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2526372162255446589">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="urs3.6543581031674026317" resolveInfo="asUnmodifiable" />
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4611582986551054648">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.4611582986551020933" resolveInfo="AsSynchronizedOperation" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4611582986551058018">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4611582986551058028">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="urs3.6543581031674026322" resolveInfo="asSynchronized" />
+        </node>
+      </node>
+    </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1227023260981">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1227022196108" resolveInfo="RemoveAtElementOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1227023260982">

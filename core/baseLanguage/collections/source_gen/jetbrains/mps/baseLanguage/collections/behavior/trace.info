@@ -104,6 +104,8 @@
   <unitInfo fileName="ForEachStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ForEachStatement_BehaviorDescriptor" />
   <unitInfo fileName="AsSequenceOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AsSequenceOperation_BehaviorDescriptor" />
   <unitInfo fileName="CustomContainerDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainerDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="AsSynchronizedOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AsSynchronizedOperation_BehaviorDescriptor" />
+  <unitInfo fileName="AsUnmodifiableOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AsUnmodifiableOperation_BehaviorDescriptor" />
   <unitInfo fileName="CustomContainerCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainerCreator_BehaviorDescriptor" />
   <unitInfo fileName="TailListOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.TailListOperation_BehaviorDescriptor" />
   <unitInfo fileName="HeadListOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.HeadListOperation_BehaviorDescriptor" />
@@ -158,7 +160,7 @@
   <unitInfo fileName="CollectionType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_BehaviorDescriptor" />
   <unitInfo fileName="SetType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_BehaviorDescriptor" />
   <unitInfo fileName="ListType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877245174">
     <nodeInfo nodeId="1213877245179" fileName="SequenceType_Behavior.java" startLine="27" startPosition="78" endLine="28" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877245192" fileName="SequenceType_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

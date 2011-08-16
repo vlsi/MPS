@@ -791,6 +791,16 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4327124999333572296">
       <property name="name" nameId="tpck.1169194664001" value="ICollectionOperation" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2526372162255441536">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="collection" />
+      <property name="name" nameId="tpck.1169194664001" value="AsUnmodifiableOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4611582986551020933">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="collection" />
+      <property name="name" nameId="tpck.1169194664001" value="AsSynchronizedOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
+    </node>
   </roots>
   <root id="1151688443754">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1151689702213">
@@ -3215,6 +3225,50 @@
   <root id="4327124999333572296">
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4327124999333572297">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2141797557972817928" resolveInfo="IContainerOperation" />
+    </node>
+  </root>
+  <root id="2526372162255441536">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2526372162255441537">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4327124999333572296" resolveInfo="ICollectionOperation" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2526372162255441539">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2526372162255441540">
+      <property name="value" nameId="tpce.1105725733873" value="asUnmodifiable" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2526372162255441542">
+      <property name="value" nameId="tpce.1105725733873" value="unmodifiable collection" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="2526372162255441545">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" roleId="tpce.1105736901241" type="tp2q.CollectionType" typeId="7125221305512719026" id="2526372162255441547">
+        <node role="elementType" roleId="5686963296372573084" type="tpee.WildCardType" typeId="tpee.1171903607971" id="2526372162255441549" />
+      </node>
+    </node>
+  </root>
+  <root id="4611582986551020933">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4611582986551020943">
+      <property name="value" nameId="tpce.1105725733873" value="asSynchronized" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4611582986551020945">
+      <property name="value" nameId="tpce.1105725733873" value="synchronized collection" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4611582986551020940">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4327124999333572296" resolveInfo="ICollectionOperation" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4611582986551020941">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
+    </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="4611582986551058030">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" roleId="tpce.1105736901241" type="tp2q.CollectionType" typeId="7125221305512719026" id="4611582986551058032">
+        <node role="elementType" roleId="5686963296372573084" type="tpee.WildCardType" typeId="tpee.1171903607971" id="4611582986551058034" />
+      </node>
     </node>
   </root>
 </model>

@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.impl.NullSetSequence;
 import java.util.List;
 import java.util.Arrays;
@@ -178,6 +179,16 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
 
   public Set<T> toSet() {
     return set;
+  }
+
+  @Override
+  public ISetSequence<T> asUnmodifiable() {
+    return new SetSequence(Collections.unmodifiableSet(getSet()));
+  }
+
+  @Override
+  public ISetSequence<T> asSynchronized() {
+    return new SetSequence(Collections.unmodifiableSet(getSet()));
   }
 
   protected Set<T> getSet() {

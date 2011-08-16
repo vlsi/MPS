@@ -391,6 +391,16 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
       return arr;
     }
 
+    @Override
+    public ISetSequence<Object> asUnmodifiable() {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public ISetSequence<Object> asSynchronized() {
+      throw new UnsupportedOperationException();
+    }
+
     protected Collection getCollection() {
       return map.entrySet();
     }

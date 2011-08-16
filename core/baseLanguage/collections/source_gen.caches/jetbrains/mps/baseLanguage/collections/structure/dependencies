@@ -194,6 +194,34 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.structure.AsSynchronizedOperation" file="AsSynchronizedOperation.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.ICollectionOperation" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.IListOperation" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.structure.AsUnmodifiableOperation" file="AsUnmodifiableOperation.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.ICollectionOperation" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.IListOperation" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" file="BinaryOperation.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.SequenceOperation" />

@@ -265,12 +265,14 @@ __switch__:
     Sequence.fromIterable(ci).removeElement(2);
     Sequence.fromIterable(ci).removeSequence(null);
     Sequence.fromIterable(ci).addSequence(Sequence.fromIterable(ci));
+    Sequence.fromIterable(ci).asUnmodifiable();
     Set<Integer> si = SetSequence.fromSet(new HashSet<Integer>());
     SetSequence.fromSet(si).addElement(1);
     SetSequence.fromSet(si).addElement(2);
     SetSequence.fromSet(si).removeElement(1);
     SetSequence.fromSet(si).removeSequence(Sequence.fromIterable(ci));
     SetSequence.fromSet(si).addSequence(Sequence.fromIterable(ci));
+    SetSequence.fromSet(si).asUnmodifiable();
     Set<Integer> is = SetSequence.fromSet(si).addSequence(SetSequence.fromSet(si));
     SetSequence.fromSet(si).addSequence(SetSequence.fromSet(si));
     SetSequence.fromSet(si).removeSequence(Sequence.fromIterable(ci));
@@ -279,6 +281,7 @@ __switch__:
     ListSequence.fromList(li).addElement(1);
     ListSequence.fromList(li).removeElement(1);
     ListSequence.fromList(li).removeSequence(SetSequence.fromSet(si));
+    ListSequence.fromList(li).asUnmodifiable();
     ci = si;
     Iterable<Integer> sqi = si;
     sqi = si;
