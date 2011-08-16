@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -618,10 +619,13 @@ public class ClassifierUpdater {
       return;
     }
 
-    SModelReference targetModelRef = getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()), sourceNode.getModel());
+    SModelReference targetModelRef = getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()), SNodeOperations.getModel(sourceNode));
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
 
-    sourceNode.addReference(SReference.create(role, sourceNode, targetModelRef, nodeId));
+    SReference ref = SReference.create(role, sourceNode, targetModelRef, nodeId);
+    ref.setResolveInfo(NameUtil.shortNameFromLongName(clsType.getName()));
+
+    sourceNode.addReference(ref);
   }
 
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
@@ -631,7 +635,10 @@ public class ClassifierUpdater {
 
     SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()), sourceNode.getModel());
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
-    sourceNode.addReference(SReference.create(role, sourceNode, targetRef, nodeId));
+
+    SReference ref = SReference.create(role, sourceNode, targetRef, nodeId);
+    ref.setResolveInfo(NameUtil.shortNameFromLongName(annotationType.getName()));
+    sourceNode.addReference(ref);
   }
 
   private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
@@ -642,7 +649,9 @@ public class ClassifierUpdater {
     ASMClassType classType = (ASMClassType) enumValue.getType();
     SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()), sourceNode.getModel());
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
-    sourceNode.addReference(SReference.create(role, sourceNode, targetRef, nodeId));
+    SReference ref = SReference.create(role, sourceNode, targetRef, nodeId);
+    ref.setResolveInfo(NameUtil.shortNameFromLongName(classType.getName()));
+    sourceNode.addReference(ref);
   }
 
   public SModelReference getModelReferenceFor(String packageName, SModel model) {
