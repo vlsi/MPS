@@ -69,6 +69,7 @@
     <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
     <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
     <classNode dependClassName="java.awt.Toolkit" />
     <classNode dependClassName="java.awt.datatransfer.StringSelection" />
@@ -100,7 +101,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.CellReference" file="CellReference.java">
