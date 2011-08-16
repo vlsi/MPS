@@ -484,7 +484,6 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage">
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/core/baseLanguage/baseLanguage/classes" />
     <mkdir dir="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.jar.jtmp/module.xml">
@@ -603,7 +602,6 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
         <runtime jar="/lib/commons-lang-2.4.jar" />
-        <library jar="jetbrains.mps.baseLanguage.jar" />
         <library jar="/lib/asm.jar" />
         <sources jar="jetbrains.mps.baseLanguage-src.jar" descriptor="baseLanguage.mpl" />
       </module>
@@ -619,7 +617,6 @@
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage" includes="icons/**, resources/**" />
-      <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/classes" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.jar.jtmp" />
@@ -1588,6 +1585,7 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.index">
     <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.index.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.index.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.baseLanguage.index" uuid="cab85f8b-9525-42cb-8e6d-258ca6e56432" type="solution">
@@ -1716,6 +1714,7 @@
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.index.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.index.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.index.jar.jtmp" />
   </target>
@@ -1994,6 +1993,7 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.search">
     <fail unless="base_dir" message="Property base_dir unspecified." />
+    <mkdir dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.search.jar.jtmp" />
     <echoxml file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.search.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.baseLanguage.search" uuid="a0c108f0-1637-416e-a249-3effbaa4c998" type="solution">
@@ -2122,6 +2122,7 @@
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.search.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.search.jar.jtmp/module.xml" prefix="META-INF" />
       <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="icons/**, resources/**" />
+      <zipfileset dir="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     </jar>
     <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.search.jar.jtmp" />
   </target>

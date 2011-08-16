@@ -154,7 +154,10 @@
       <fileset dir="${mps_home}/core/make-runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/classes" />
+      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
+      <fileset dir="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/baseLanguage/closures/runtime/classes" />

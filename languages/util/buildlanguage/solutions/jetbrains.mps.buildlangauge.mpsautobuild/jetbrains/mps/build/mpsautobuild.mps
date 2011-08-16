@@ -1698,8 +1698,43 @@
             <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8340725549277608430">
               <property name="path" nameId="tps4.1220974398640" value="baseLanguage" />
             </node>
-            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="8340725549277608432">
-              <property name="path" nameId="tps4.1220974398640" value="classes" />
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137819">
+              <property name="path" nameId="tps4.1220974398640" value="solutions" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137821">
+              <property name="path" nameId="tps4.1220974398640" value="jetbrains.mps.baseLanguage.index" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137808">
+              <property name="path" nameId="tps4.1220974398640" value="classes_gen" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="7834882906175137822">
+        <property name="name" nameId="tpck.1169194664001" value="" />
+        <property name="excludes" nameId="tps4.1204107538752" value="" />
+        <node role="sourcePath" roleId="tps4.1220974847213" type="tps4.Path" typeId="tps4.1220973916698" id="7834882906175137823">
+          <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="7834882906175137824">
+            <property name="name" nameId="tps4.1220976068141" value="mps_home" />
+          </node>
+          <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="7834882906175137825">
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137826">
+              <property name="path" nameId="tps4.1220974398640" value="core" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137827">
+              <property name="path" nameId="tps4.1220974398640" value="baseLanguage" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137828">
+              <property name="path" nameId="tps4.1220974398640" value="baseLanguage" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137829">
+              <property name="path" nameId="tps4.1220974398640" value="solutions" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137832">
+              <property name="path" nameId="tps4.1220974398640" value="jetbrains.mps.baseLanguage.search" />
+            </node>
+            <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="7834882906175137831">
+              <property name="path" nameId="tps4.1220974398640" value="classes_gen" />
             </node>
           </node>
         </node>
