@@ -24,7 +24,6 @@
   <import index="bw1v" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="tp68" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9071178110302103533">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -80,8 +79,8 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~ModuleId%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.WeakClassReference" typeId="tp68.8791205313600585946" id="7599992184560242667">
-              <link role="classifier" roleId="tp68.8791205313600585947" targetNodeId="8uhb.~JavaStubs" resolveInfo="JavaStubs" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8434269976171946569">
+              <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
             </node>
           </node>
         </node>
@@ -106,8 +105,8 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~ModuleId%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.WeakClassReference" typeId="tp68.8791205313600585946" id="7599992184560281082">
-              <link role="classifier" roleId="tp68.8791205313600585947" targetNodeId="8uhb.~AllMembersJavaStubs" resolveInfo="AllMembersJavaStubs" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8434269976171946571">
+              <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs" />
             </node>
           </node>
         </node>
