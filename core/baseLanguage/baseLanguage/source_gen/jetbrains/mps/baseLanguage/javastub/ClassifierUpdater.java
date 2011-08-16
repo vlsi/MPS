@@ -43,7 +43,6 @@ import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.ide.IdeMain;
@@ -57,6 +56,7 @@ public class ClassifierUpdater {
   private static Logger LOG = Logger.getLogger(ClassifierUpdater.class);
 
   private IModule myModule;
+  private SNode myClassifier;
   private final boolean mySkipPrivate;
   private String myLanguageId;
 
@@ -66,7 +66,8 @@ public class ClassifierUpdater {
   }
 
   public void updateClassifier(IModule module, final SNode clsfr, ASMClass ac) {
-    this.myModule = module;
+    myModule = module;
+    myClassifier = clsfr;
 
     if (SNodeOperations.isInstanceOf(clsfr, "jetbrains.mps.baseLanguage.structure.Annotation")) {
       SNode annotation = SNodeOperations.cast(clsfr, "jetbrains.mps.baseLanguage.structure.Annotation");
@@ -99,7 +100,7 @@ public class ClassifierUpdater {
     }
 
     SLinkOperations.setTarget(clsfr, "visibility", (ac.isPublic() ?
-      new ClassifierUpdater.QuotationClass_ol94f8_a0a0e0a().createNode() :
+      new ClassifierUpdater.QuotationClass_ol94f8_a0a0f0a().createNode() :
       null
     ), true);
   }
@@ -619,7 +620,7 @@ public class ClassifierUpdater {
       return;
     }
 
-    SModelReference targetModelRef = getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()), SNodeOperations.getModel(sourceNode));
+    SModelReference targetModelRef = getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()), sourceNode);
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
 
     SReference ref = SReference.create(role, sourceNode, targetModelRef, nodeId);
@@ -633,7 +634,7 @@ public class ClassifierUpdater {
       return;
     }
 
-    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()), sourceNode.getModel());
+    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()), sourceNode);
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
 
     SReference ref = SReference.create(role, sourceNode, targetRef, nodeId);
@@ -647,26 +648,29 @@ public class ClassifierUpdater {
     }
 
     ASMClassType classType = (ASMClassType) enumValue.getType();
-    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()), sourceNode.getModel());
+    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()), sourceNode);
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
     SReference ref = SReference.create(role, sourceNode, targetRef, nodeId);
     ref.setResolveInfo(NameUtil.shortNameFromLongName(classType.getName()));
     sourceNode.addReference(ref);
   }
 
-  public SModelReference getModelReferenceFor(String packageName, SModel model) {
+  public SModelReference getModelReferenceFor(String packageName, SNode node) {
     ModuleReference module = myModule.getModuleFor(packageName, this.getLanguageId());
     if (module == null) {
-      Tuples._2<String, String> p = MultiTuple.<String,String>from(packageName, myModule.getModuleFqName());
+      String moduleName = myModule.getModuleFqName();
+      Tuples._2<String, String> p = MultiTuple.<String,String>from(packageName, moduleName);
       if (!(SetSequence.fromSet(reported).contains(p))) {
         SetSequence.fromSet(reported).addElement(p);
         if (IdeMain.getTestMode() == IdeMain.TestMode.NO_TEST) {
-          LOG.warning("no module found for: " + packageName + " in " + myModule.getModuleFqName());
+          String modelName = SNodeOperations.getModel(myClassifier).getLongName();
+          String rootName = SNodeOperations.getContainingRoot(myClassifier).getPresentation();
+          LOG.warning("no module found for: " + packageName + " in " + moduleName + "(referenced from " + modelName + "/" + rootName + ")");
         }
       }
     }
     SModelReference ref = StubHelper.uidForPackageInStubs(packageName, this.getLanguageId(), module);
-    model.addModelImport(ref, false);
+    SNodeOperations.getModel(node).addModelImport(ref, false);
     return ref;
   }
 
@@ -685,8 +689,8 @@ public class ClassifierUpdater {
     );
   }
 
-  public static class QuotationClass_ol94f8_a0a0e0a {
-    public QuotationClass_ol94f8_a0a0e0a() {
+  public static class QuotationClass_ol94f8_a0a0f0a {
+    public QuotationClass_ol94f8_a0a0f0a() {
     }
 
     public SNode createNode() {
