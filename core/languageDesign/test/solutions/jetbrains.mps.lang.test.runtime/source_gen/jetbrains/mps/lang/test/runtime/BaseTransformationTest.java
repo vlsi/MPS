@@ -13,6 +13,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import junit.framework.Assert;
@@ -56,6 +57,8 @@ public abstract class BaseTransformationTest extends TestCase {
   public void initTest(@NotNull String projectName, final String model) throws Exception {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
+    // we do not want to save our project, see MPS-13352 
+    ApplicationManagerEx.getApplicationEx().doNotSave();
     clearSystemClipboard();
     // see MPS-10568 
     readSystemMacro();
