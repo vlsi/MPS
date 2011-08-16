@@ -168,12 +168,12 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
 
   @Override
   public ILinkedListSequence<T> asUnmodifiable() {
-    return (ILinkedListSequence<T>) super.asUnmodifiable();
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public ILinkedListSequence<T> addSequence(ISequence<? extends T> seq) {
-    return (ILinkedListSequence<T>) super.addSequence(seq);
+    throw new UnsupportedOperationException();
   }
 
   @Override

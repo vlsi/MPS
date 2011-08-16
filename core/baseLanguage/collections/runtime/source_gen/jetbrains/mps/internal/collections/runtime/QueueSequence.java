@@ -77,12 +77,12 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
 
   @Override
   public IQueueSequence<T> asUnmodifiable() {
-    return (IQueueSequence<T>) super.asUnmodifiable();
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public IQueueSequence<T> asSynchronized() {
-    return (IQueueSequence<T>) super.asSynchronized();
+    throw new UnsupportedOperationException();
   }
 
   public Queue<T> toQueue() {

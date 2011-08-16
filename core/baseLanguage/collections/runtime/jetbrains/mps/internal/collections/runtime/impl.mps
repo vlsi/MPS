@@ -1165,17 +1165,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674022734">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6543581031674022735">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6543581031674022736">
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6543581031674022737">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674027667" resolveInfo="asUnmodifiable" />
-            </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6543581031674022738">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="urs3.6543581031674024899" resolveInfo="IDequeSequence" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6543581031674022739">
-                <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="6543581031674022506" resolveInfo="T" />
-              </node>
-            </node>
-          </node>
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4279878350705234072" />
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6543581031674022740">
@@ -1193,17 +1183,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674022745">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6543581031674022746">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6543581031674022747">
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6543581031674022748">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674027678" resolveInfo="asSynchronized" />
-            </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6543581031674022749">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="urs3.6543581031674024899" resolveInfo="IDequeSequence" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6543581031674022750">
-                <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="6543581031674022506" resolveInfo="T" />
-              </node>
-            </node>
-          </node>
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4279878350705234074" />
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6543581031674022751">
@@ -4386,17 +4366,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674027205">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6543581031674027206">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6543581031674027207">
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6543581031674027208">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674024773" resolveInfo="asSynchronized" />
-            </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6543581031674027209">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="urs3.6543581031674030017" resolveInfo="IListSequence" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6543581031674027210">
-                <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="6543581031674026914" resolveInfo="T" />
-              </node>
-            </node>
-          </node>
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4279878350705234076" />
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6543581031674027211">
@@ -4414,17 +4384,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674027216">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6543581031674027217">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6543581031674027218">
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6543581031674027219">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674024766" resolveInfo="asUnmodifiable" />
-            </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6543581031674027220">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="urs3.6543581031674030017" resolveInfo="IListSequence" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6543581031674027221">
-                <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="6543581031674026914" resolveInfo="T" />
-              </node>
-            </node>
-          </node>
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4279878350705234078" />
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6543581031674027222">
@@ -5261,17 +5221,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674027671">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6543581031674027672">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6543581031674027673">
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6543581031674027674">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674024766" resolveInfo="asUnmodifiable" />
-            </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6543581031674027675">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="urs3.6543581031674036013" resolveInfo="IQueueSequence" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6543581031674027676">
-                <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="6543581031674027578" resolveInfo="T" />
-              </node>
-            </node>
-          </node>
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4279878350705234080" />
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6543581031674027677">
@@ -5289,17 +5239,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674027682">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6543581031674027683">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6543581031674027684">
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6543581031674027685">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674024773" resolveInfo="asSynchronized" />
-            </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6543581031674027686">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="urs3.6543581031674036013" resolveInfo="IQueueSequence" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="6543581031674027687">
-                <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="6543581031674027578" resolveInfo="T" />
-              </node>
-            </node>
-          </node>
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4279878350705234082" />
         </node>
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6543581031674027688">
