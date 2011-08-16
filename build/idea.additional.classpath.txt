@@ -14,7 +14,8 @@ core/generator/classes
 core/typesystemEngine/classes
 core/typesystemIntegration/classes
 core/make-runtime/classes
-core/baseLanguage/baseLanguage/classes
+core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen
+core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen
 core/baseLanguage/closures/runtime/classes
 core/baseLanguage/collections/runtime/classes
 core/baseLanguage/collections/languages/trove/runtime/classes

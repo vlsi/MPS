@@ -24,7 +24,6 @@
     <orderEntry type="module" module-name="runtime" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="analyzers" />
-    <orderEntry type="module" module-name="baseLanguage" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="debug" />
@@ -51,6 +50,8 @@
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="baseLanguage-index" />
+    <orderEntry type="module" module-name="baseLanguage-search" />
   </component>
 </module>
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.search" uuid="a0c108f0-1637-416e-a249-3effbaa4c998" compileInMPS="false" generatorOutputPath="${solution_descriptor}/source_gen">
+<solution name="jetbrains.mps.baseLanguage.search" uuid="a0c108f0-1637-416e-a249-3effbaa4c998" compileInMPS="true" generatorOutputPath="${solution_descriptor}/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
   </dependencies>
