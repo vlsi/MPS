@@ -7,7 +7,8 @@ import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class MPS_StubDescriptor extends BaseLibStubDescriptor {
     dep.setReexport(true);
     solution.getDependencies().add(dep);
 
-    solution.getUsedLanguages().add(BaseLanguage_Language.MODULE_REFERENCE);
+    solution.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference());
   }
 
   public List<String> getPaths() {

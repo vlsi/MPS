@@ -825,7 +825,6 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
