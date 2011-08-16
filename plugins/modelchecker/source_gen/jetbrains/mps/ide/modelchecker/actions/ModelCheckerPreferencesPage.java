@@ -16,6 +16,7 @@ public class ModelCheckerPreferencesPage {
   private JCheckBox myCheckConstraintsCheckBox = new JCheckBox("Check constraints");
   private JCheckBox myCheckScopesCheckBox = new JCheckBox("Check references for valid search scopes");
   private JCheckBox myCheckTypesystemCheckBox = new JCheckBox("Perform typesystem checks");
+  private JCheckBox myCheckStubsCheckBox = new JCheckBox("Check stub models");
   private ModelCheckerSettings myModelCheckerSettings;
 
   public ModelCheckerPreferencesPage(ModelCheckerSettings settings) {
@@ -26,6 +27,7 @@ public class ModelCheckerPreferencesPage {
       myCheckScopesCheckBox.setSelected(myModelCheckerSettings.isCheckScopes());
     */
     myCheckTypesystemCheckBox.setSelected(myModelCheckerSettings.isCheckTypesystem());
+    myCheckStubsCheckBox.setSelected(myModelCheckerSettings.isCheckStubs());
 
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(myCheckUnresolvedReferencesCheckBox);
@@ -35,6 +37,7 @@ public class ModelCheckerPreferencesPage {
       optionsPanel.add(myCheckScopesCheckBox);
     */
     optionsPanel.add(myCheckTypesystemCheckBox);
+    optionsPanel.add(myCheckStubsCheckBox);
 
     myPage = new JPanel(new BorderLayout());
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -62,6 +65,7 @@ public class ModelCheckerPreferencesPage {
     myModelCheckerSettings.setCheckConstraints(myCheckConstraintsCheckBox.isSelected());
     myModelCheckerSettings.setCheckScopes(myCheckScopesCheckBox.isSelected());
     myModelCheckerSettings.setCheckTypesystem(myCheckTypesystemCheckBox.isSelected());
+    myModelCheckerSettings.setCheckStubs(myCheckStubsCheckBox.isSelected());
   }
 
   public boolean isModified() {
@@ -75,6 +79,9 @@ public class ModelCheckerPreferencesPage {
       return true;
     }
     if (myModelCheckerSettings.isCheckTypesystem() != myCheckTypesystemCheckBox.isSelected()) {
+      return true;
+    }
+    if (myModelCheckerSettings.isCheckStubs() != myCheckStubsCheckBox.isSelected()) {
       return true;
     }
     return false;

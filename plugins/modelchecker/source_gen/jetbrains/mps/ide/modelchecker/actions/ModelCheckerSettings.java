@@ -154,6 +154,14 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     myState.myCheckTypesystem = checkTypesystem;
   }
 
+  public boolean isCheckStubs() {
+    return myState.myCheckStubs;
+  }
+
+  public void setCheckStubs(boolean checkStubs) {
+    myState.myCheckStubs = checkStubs;
+  }
+
   public boolean isCheckBeforeCommit() {
     return myState.myCheckBeforeCommit;
   }
@@ -181,6 +189,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     private boolean myCheckScopes = true;
     private boolean myCheckTypesystem = true;
     private boolean myCheckBeforeCommit = true;
+    private boolean myCheckStubs = false;
 
     public MyState() {
     }
@@ -225,6 +234,14 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
 
     public void setCheckBeforeCommit(boolean checkBeforeCommit) {
       myCheckBeforeCommit = checkBeforeCommit;
+    }
+
+    public boolean isCheckStubs() {
+      return myCheckStubs;
+    }
+
+    public void setCheckStubs(boolean checkStubs) {
+      myCheckStubs = checkStubs;
     }
   }
 }

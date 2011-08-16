@@ -29,6 +29,9 @@ public class ModelCheckerUtils {
       if (SModelStereotype.isUserModel(modelDescriptor)) {
         ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
       }
+      if (ModelCheckerSettings.getInstance().isCheckStubs() && SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
+        ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
+      }
     }
     if (module instanceof Language) {
       Language language = (Language) module;
