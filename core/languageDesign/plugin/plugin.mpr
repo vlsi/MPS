@@ -25,6 +25,7 @@
     <projectModules>
       <modulePath path="${mps_home}/plugins/vcs/jetbrains.mps.vcs.msd" />
       <modulePath path="${project}/plugin.mpl" />
+      <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
     </projectModules>
     <genConfs>
       <genConfModule name="pluginLanguage" moduleRef="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
