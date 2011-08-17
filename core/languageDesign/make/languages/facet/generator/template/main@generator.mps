@@ -2018,7 +2018,7 @@
                     </node>
                     <node role="type" roleId="tp68.1179332974947" type="tp68.InternalClassifierType" typeId="tp68.1174914042989" id="3868725017587329805">
                       <property name="fqClassName" nameId="tp68.1174914081067" value="Variables" />
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ikqy.~EnumClass" resolveInfo="EnumClass" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3868725017587343024">
                         <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
                         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="3868725017587343025">
