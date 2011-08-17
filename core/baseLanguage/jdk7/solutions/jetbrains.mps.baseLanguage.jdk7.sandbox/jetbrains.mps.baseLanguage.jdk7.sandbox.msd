@@ -4,7 +4,6 @@
     <modelRoot path="${solution_descriptor}/models" namespacePrefix="jetbrains.mps.baseLanguage.jdk7.sandbox" />
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <sourcePath />
   <usedLanguages>
     <usedLanguage>96ee7a94-411d-4cf8-9b94-96cad7e52411(jetbrains.mps.baseLanguage.jdk7)</usedLanguage>
   </usedLanguages>

@@ -3,7 +3,6 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <sourcePath />
   <dependencies>
     <dependency reexport="true">343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)</dependency>
   </dependencies>

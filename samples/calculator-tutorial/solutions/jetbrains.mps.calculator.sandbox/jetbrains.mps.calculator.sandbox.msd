@@ -3,7 +3,6 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <sourcePath />
   <usedLanguages>
     <usedLanguage>26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1(jetbrains.mps.calculator)</usedLanguage>
   </usedLanguages>

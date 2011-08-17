@@ -3,7 +3,6 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <sourcePath />
   <dependencies>
     <dependency reexport="false">02f6bdf3-0540-48d1-8551-1d3619454f47(jetbrains.mps.baseLanguage.tuples.shared)</dependency>
   </dependencies>
