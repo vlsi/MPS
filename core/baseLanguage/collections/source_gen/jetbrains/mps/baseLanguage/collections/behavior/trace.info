@@ -6,6 +6,7 @@
   <unitInfo fileName="IQueueOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IQueueOperation_BehaviorDescriptor" />
   <unitInfo fileName="IListOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_BehaviorDescriptor" />
   <unitInfo fileName="IContainerOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_BehaviorDescriptor" />
+  <unitInfo fileName="OfTypeOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.OfTypeOperation_BehaviorDescriptor" />
   <unitInfo fileName="GetLastIndexOfOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.GetLastIndexOfOperation_BehaviorDescriptor" />
   <unitInfo fileName="FoldRightOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.FoldRightOperation_BehaviorDescriptor" />
   <unitInfo fileName="FoldLeftOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.FoldLeftOperation_BehaviorDescriptor" />
@@ -160,7 +161,7 @@
   <unitInfo fileName="CollectionType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_BehaviorDescriptor" />
   <unitInfo fileName="SetType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_BehaviorDescriptor" />
   <unitInfo fileName="ListType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="302" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877245174">
     <nodeInfo nodeId="1213877245179" fileName="SequenceType_Behavior.java" startLine="27" startPosition="78" endLine="28" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877245192" fileName="SequenceType_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -373,6 +373,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp2q.8293956702609956630" resolveInfo="MultiForEachVariableReference" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4611582986551314334">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp2q.4611582986551314327" resolveInfo="OfTypeOperation" />
+    </node>
   </roots>
   <root id="1203518207327">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1203518210010">
@@ -3415,6 +3419,26 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="4611582986551314334">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4611582986551314336">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="4611582986551635505">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4611582986551314341">
+        <property name="text" nameId="tpc2.1073389577007" value="&lt;" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215709345400" resolveInfo="LeftAngleBracket" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4611582986551314346">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp2q.4611582986551314344" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4611582986551314343">
+        <property name="text" nameId="tpc2.1073389577007" value="&gt;" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215709621223" resolveInfo="RightAngleBracket" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="4611582986551314337" />
     </node>
   </root>
 </model>

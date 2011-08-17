@@ -14,6 +14,7 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
   public boolean all(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
   public <U> ISequence<U> translate(@AdapterClass(value = "ITranslator2") _FunctionTypes._return_P1_E0<? extends Iterable<U>, ? super T> translator);
   public <U> ISequence<U> select(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends U, ? super T> selector);
+  public <U> ISequence<U> ofType(Class<U> type);
   public ISequence<T> sort(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super T> selector, boolean ascending);
   public ISequence<T> alsoSort(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super T> selector, boolean ascending);
   public ISequence<T> sort(Comparator<T> comparator, boolean ascending);

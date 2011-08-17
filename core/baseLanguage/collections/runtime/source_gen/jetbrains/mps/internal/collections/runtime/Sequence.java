@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.impl.FilteringSequence;
 import jetbrains.mps.internal.collections.runtime.impl.NegateWhereFilter;
 import jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence;
 import jetbrains.mps.internal.collections.runtime.impl.SelectingSequence;
+import jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence;
 import jetbrains.mps.internal.collections.runtime.impl.SortingSequence;
 import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.impl.LimitedCardinalitySequence;
@@ -58,6 +59,10 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
 
   public <U> ISequence<U> select(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends U, ? super T> selector) {
     return new SelectingSequence<T, U>(this, selector);
+  }
+
+  public <U> ISequence<U> ofType(Class<U> type) {
+    return new OfTypeSequence(this, type);
   }
 
   public ISequence<T> sort(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super T> selector, boolean ascending) {

@@ -193,6 +193,15 @@
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ISortedSetSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullSetSequence" />
   </dependency>
+  <dependency className="jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence" file="OfTypeSequence.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.NoSuchElementException" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
+    <classNode extendsClassName="java.lang.Iterable" />
+    <classNode extendsClassName="java.util.Iterator" />
+    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
+  </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.PagingSequence" file="PagingSequence.java">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Math" />

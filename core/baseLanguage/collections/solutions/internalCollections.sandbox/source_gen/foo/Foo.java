@@ -295,6 +295,8 @@ __switch__:
     DequeSequence.fromDeque(sti).pushElement(2);
     DequeSequence.fromDeque(sti).removeElement(1);
     DequeSequence.fromDeque(sti).addSequence(QueueSequence.fromQueue(qi));
+    DequeSequence.fromDeque(sti).<String>ofType(String.class);
+    DequeSequence.fromDeque(sti).<List<String>>ofType(List.class);
 
   }
 }

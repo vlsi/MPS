@@ -1018,7 +1018,28 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4327124999333612865" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4611582986551635494">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4611582986551635496">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4611582986551635495">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4327124999333612840" resolveInfo="sti" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.OfTypeOperation" typeId="tp2q.4611582986551314327" id="4611582986551746649">
+              <node role="requestedType" roleId="tp2q.4611582986551314344" type="tpee.StringType" typeId="tpee.1225271177708" id="4611582986551746651" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4611582986551831332">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4611582986551831333">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4611582986551831334">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4327124999333612840" resolveInfo="sti" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.OfTypeOperation" typeId="tp2q.4611582986551314327" id="4611582986551831335">
+              <node role="requestedType" roleId="tp2q.4611582986551314344" type="tp2q.ListType" typeId="tp2q.1151688443754" id="4611582986551831337">
+                <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="4611582986551831339" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1228171888559" />

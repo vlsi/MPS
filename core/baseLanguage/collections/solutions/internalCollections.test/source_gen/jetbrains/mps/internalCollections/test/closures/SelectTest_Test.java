@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public class SelectTest_Test extends Util_Test {
   public void test_selectMethod() throws Exception {
@@ -153,5 +154,18 @@ __switch__:
       }
     });
     Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 11, 11, 11, 11, 11, 11, 11, 11, 11), plusten);
+  }
+
+  public void test_ofType() throws Exception {
+    List<Object> lo = ListSequence.fromListAndArray(new ArrayList<Object>(), 1, "foo", Boolean.TRUE, -1L, "bar", ListSequence.fromListAndArray(new ArrayList<String>(), "baz"));
+    Iterable<String> seqs = ListSequence.fromList(lo).ofType(String.class);
+    Assert.assertEquals("foo bar", IterableUtils.join(Sequence.fromIterable(seqs), " "));
+    Iterable<Long> seql = ListSequence.fromList(lo).ofType(Long.class);
+    Assert.assertTrue(Sequence.fromIterable(seql).count() == 1 && Sequence.fromIterable(seql).first() == -1L);
+    Iterable<List> seqlist = ListSequence.fromList(lo).ofType(List.class);
+    Assert.assertTrue(Sequence.fromIterable(seqlist).count() == 1);
+    Assert.assertEquals("baz", ListSequence.fromList(Sequence.fromIterable(seqlist).first()).first());
+    Assert.assertTrue(ListSequence.fromList(lo).ofType(Boolean.class).count() == 1);
+    Assert.assertTrue(ListSequence.fromList(lo).ofType(Float.class).isEmpty());
   }
 }

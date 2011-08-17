@@ -281,6 +281,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachVariableReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachVariable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.OfTypeOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.PageOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.PeekOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.PopOperation_BehaviorDescriptor" />
@@ -1141,6 +1142,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.NoArgumentsSequenceOperation_BehaviorDescriptor" file="NoArgumentsSequenceOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.OfTypeOperation_BehaviorDescriptor" file="OfTypeOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />

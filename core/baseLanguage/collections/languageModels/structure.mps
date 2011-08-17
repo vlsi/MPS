@@ -801,6 +801,11 @@
       <property name="name" nameId="tpck.1169194664001" value="AsSynchronizedOperation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4611582986551314327">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence" />
+      <property name="name" nameId="tpck.1169194664001" value="OfTypeOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    </node>
   </roots>
   <root id="1151688443754">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1151689702213">
@@ -3269,6 +3274,22 @@
       <node role="target" roleId="tpce.1105736901241" type="tp2q.CollectionType" typeId="7125221305512719026" id="4611582986551058032">
         <node role="elementType" roleId="5686963296372573084" type="tpee.WildCardType" typeId="tpee.1171903607971" id="4611582986551058034" />
       </node>
+    </node>
+  </root>
+  <root id="4611582986551314327">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4611582986551314344">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="requestedType" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4611582986551314331">
+      <property name="value" nameId="tpce.1105725733873" value="ofType" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4611582986551314333">
+      <property name="value" nameId="tpce.1105725733873" value="select elements of the specified type" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
   </root>
 </model>

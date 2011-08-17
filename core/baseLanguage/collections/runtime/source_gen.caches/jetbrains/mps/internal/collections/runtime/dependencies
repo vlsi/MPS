@@ -332,6 +332,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NegateWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSetSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.OfTypeSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.PagingSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.ReversingSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.SelectingSequence" />
