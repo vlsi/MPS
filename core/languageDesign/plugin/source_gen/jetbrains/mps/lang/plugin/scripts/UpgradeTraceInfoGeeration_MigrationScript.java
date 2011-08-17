@@ -18,7 +18,8 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.textGen.structure.TextGen_Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -88,7 +89,7 @@ public class UpgradeTraceInfoGeeration_MigrationScript extends BaseMigrationScri
           }
         };
 
-        SNodeOperations.getModel(node).getModelDescriptor().getModule().addDependency(TextGen_Language.MODULE_REFERENCE, false);
+        SNodeOperations.getModel(node).getModelDescriptor().getModule().addDependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b83431fe-5c8f-40bc-8a36-65e25f4dd253")).getModuleReference(), false);
 
         // traceable concepts 
         for (SNode traceableConcept : ListSequence.fromList(SLinkOperations.getTargets(node, "conceptsToDebug", true)).where(new IWhereFilter<SNode>() {
