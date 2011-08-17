@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IStructureDeprecatable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_BehaviorDescriptor" />
+  <unitInfo fileName="ConceptLinkDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.ConceptLinkDeclaration_Behavior" />
+  <unitInfo fileName="ConceptLink_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.ConceptLink_Behavior" />
+  <unitInfo fileName="AnnotationLinkDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AnnotationLinkDeclaration_Behavior" />
+  <unitInfo fileName="ReferenceConceptLink_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.ReferenceConceptLink_Behavior" />
+  <unitInfo fileName="ConceptProperty_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.ConceptProperty_Behavior" />
   <unitInfo fileName="IConceptAspect_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor" />
   <unitInfo fileName="ReferenceConceptLinkDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.ReferenceConceptLinkDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="AggregationConceptLinkDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AggregationConceptLinkDeclaration_BehaviorDescriptor" />
