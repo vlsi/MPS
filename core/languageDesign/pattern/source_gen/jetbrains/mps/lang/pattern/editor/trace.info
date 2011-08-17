@@ -1556,50 +1556,50 @@
     <unitInfo nodeId="4855904478356877906" fileName="OrPatternClause_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.OrPatternClause_Editor" />
   </root>
   <root nodeId="5121729553547267722">
-    <nodeInfo nodeId="5121729553547267734" fileName="PatternAddingUtil.java" startLine="22" startPosition="68" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267745" fileName="PatternAddingUtil.java" startLine="24" startPosition="30" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5121729553547267747" fileName="PatternAddingUtil.java" startLine="26" startPosition="5" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267759" fileName="PatternAddingUtil.java" startLine="28" startPosition="23" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5121729553547267761" fileName="PatternAddingUtil.java" startLine="30" startPosition="5" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5121729553547267774" fileName="PatternAddingUtil.java" startLine="34" startPosition="64" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267780" fileName="PatternAddingUtil.java" startLine="35" startPosition="55" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267792" fileName="PatternAddingUtil.java" startLine="36" startPosition="40" endLine="37" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="42695640867183255" fileName="PatternAddingUtil.java" startLine="37" startPosition="141" endLine="38" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5121729553547267827" fileName="PatternAddingUtil.java" startLine="39" startPosition="129" endLine="40" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8843103228116876136" fileName="PatternAddingUtil.java" startLine="40" startPosition="82" endLine="41" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8843103228116875985" fileName="PatternAddingUtil.java" startLine="42" startPosition="12" endLine="43" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5121729553547267724" fileName="PatternAddingUtil.java" startLine="18" startPosition="32" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternAddingUtil#()V" />
-    <nodeInfo nodeId="5121729553547267807" fileName="PatternAddingUtil.java" startLine="42" startPosition="10" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5121729553547267740" fileName="PatternAddingUtil.java" startLine="23" startPosition="55" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5121729553547267754" fileName="PatternAddingUtil.java" startLine="27" startPosition="69" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5121729553547267798" fileName="PatternAddingUtil.java" startLine="38" startPosition="89" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5121729553547267728" fileName="PatternAddingUtil.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPatternApplicable#(Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="5121729553547267768" fileName="PatternAddingUtil.java" startLine="33" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addVariablePattern#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <scopeInfo nodeId="5121729553547267727" fileName="PatternAddingUtil.java" startLine="19" startPosition="30" endLine="19" endPosition="30" />
-    <scopeInfo nodeId="5121729553547267744" fileName="PatternAddingUtil.java" startLine="24" startPosition="30" endLine="25" endPosition="19" />
-    <scopeInfo nodeId="5121729553547267758" fileName="PatternAddingUtil.java" startLine="28" startPosition="23" endLine="29" endPosition="19" />
-    <scopeInfo nodeId="5121729553547267808" fileName="PatternAddingUtil.java" startLine="42" startPosition="12" endLine="43" endPosition="252" />
-    <scopeInfo nodeId="5121729553547267724" fileName="PatternAddingUtil.java" startLine="18" startPosition="32" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="5121729553547267821" fileName="PatternAddingUtil.java" startLine="39" startPosition="129" endLine="41" endPosition="285">
+    <nodeInfo nodeId="5121729553547267734" fileName="PatternAddingUtil.java" startLine="19" startPosition="68" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267745" fileName="PatternAddingUtil.java" startLine="21" startPosition="30" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8396224535200564881" fileName="PatternAddingUtil.java" startLine="23" startPosition="5" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267759" fileName="PatternAddingUtil.java" startLine="25" startPosition="23" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5121729553547267761" fileName="PatternAddingUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5121729553547267774" fileName="PatternAddingUtil.java" startLine="31" startPosition="64" endLine="32" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267780" fileName="PatternAddingUtil.java" startLine="32" startPosition="55" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267792" fileName="PatternAddingUtil.java" startLine="33" startPosition="40" endLine="34" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="42695640867183255" fileName="PatternAddingUtil.java" startLine="34" startPosition="141" endLine="35" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5121729553547267827" fileName="PatternAddingUtil.java" startLine="36" startPosition="129" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8843103228116876136" fileName="PatternAddingUtil.java" startLine="37" startPosition="82" endLine="38" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8843103228116875985" fileName="PatternAddingUtil.java" startLine="39" startPosition="12" endLine="40" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5121729553547267724" fileName="PatternAddingUtil.java" startLine="15" startPosition="32" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternAddingUtil#()V" />
+    <nodeInfo nodeId="5121729553547267807" fileName="PatternAddingUtil.java" startLine="39" startPosition="10" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5121729553547267740" fileName="PatternAddingUtil.java" startLine="20" startPosition="55" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5121729553547267754" fileName="PatternAddingUtil.java" startLine="24" startPosition="40" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5121729553547267798" fileName="PatternAddingUtil.java" startLine="35" startPosition="89" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5121729553547267728" fileName="PatternAddingUtil.java" startLine="18" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPatternApplicable#(Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="5121729553547267768" fileName="PatternAddingUtil.java" startLine="30" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addVariablePattern#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <scopeInfo nodeId="5121729553547267727" fileName="PatternAddingUtil.java" startLine="16" startPosition="30" endLine="16" endPosition="30" />
+    <scopeInfo nodeId="5121729553547267744" fileName="PatternAddingUtil.java" startLine="21" startPosition="30" endLine="22" endPosition="19" />
+    <scopeInfo nodeId="5121729553547267758" fileName="PatternAddingUtil.java" startLine="25" startPosition="23" endLine="26" endPosition="19" />
+    <scopeInfo nodeId="5121729553547267808" fileName="PatternAddingUtil.java" startLine="39" startPosition="12" endLine="40" endPosition="252" />
+    <scopeInfo nodeId="5121729553547267724" fileName="PatternAddingUtil.java" startLine="15" startPosition="32" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="5121729553547267821" fileName="PatternAddingUtil.java" startLine="36" startPosition="129" endLine="38" endPosition="285">
       <varInfo nodeId="5121729553547267828" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="5121729553547267733" fileName="PatternAddingUtil.java" startLine="22" startPosition="68" endLine="31" endPosition="60">
-      <varInfo nodeId="5121729553547267748" varName="node" />
+    <scopeInfo nodeId="5121729553547267733" fileName="PatternAddingUtil.java" startLine="19" startPosition="68" endLine="28" endPosition="124">
+      <varInfo nodeId="8396224535200564882" varName="node" />
       <varInfo nodeId="5121729553547267735" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5121729553547267773" fileName="PatternAddingUtil.java" startLine="34" startPosition="64" endLine="44" endPosition="5">
+    <scopeInfo nodeId="5121729553547267773" fileName="PatternAddingUtil.java" startLine="31" startPosition="64" endLine="41" endPosition="5">
       <varInfo nodeId="42695640867183256" varName="genuineLinkDeclaration" />
       <varInfo nodeId="5121729553547267793" varName="linkDeclaration" />
       <varInfo nodeId="5121729553547267781" varName="node" />
       <varInfo nodeId="5121729553547267775" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5121729553547267728" fileName="PatternAddingUtil.java" startLine="21" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="5121729553547267728" fileName="PatternAddingUtil.java" startLine="18" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5121729553547267731" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="5121729553547267768" fileName="PatternAddingUtil.java" startLine="33" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="5121729553547267768" fileName="PatternAddingUtil.java" startLine="30" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="5121729553547267771" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="5121729553547267722" fileName="PatternAddingUtil.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternAddingUtil" />
+    <unitInfo nodeId="5121729553547267722" fileName="PatternAddingUtil.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.pattern.editor.PatternAddingUtil" />
   </root>
   <root nodeId="6989090701195487794">
     <nodeInfo nodeId="6989090701195487794" fileName="InsertAfterPosition_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

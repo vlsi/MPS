@@ -4,9 +4,6 @@ package jetbrains.mps.lang.pattern.editor;
 
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.lang.pattern.structure.PatternExpression;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -24,11 +21,11 @@ public class PatternAddingUtil {
     if (contextCell == null) {
       return false;
     }
-    INodeAdapter node = BaseAdapter.fromNode(contextCell.getSNode());
+    SNode node = contextCell.getSNode();
     if (node == null) {
       return false;
     }
-    return node.findParent(PatternExpression.class) != null;
+    return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.pattern.structure.PatternExpression", true, false) != null;
   }
 
   public static void addVariablePattern(EditorContext context) {
