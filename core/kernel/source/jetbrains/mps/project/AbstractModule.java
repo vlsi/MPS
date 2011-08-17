@@ -191,7 +191,7 @@ public abstract class AbstractModule implements IModule {
   //----stubs
 
   public boolean areJavaStubsEnabled() {
-    return true;
+    return false;
   }
 
   public List<StubPath> getAllStubPaths() {
