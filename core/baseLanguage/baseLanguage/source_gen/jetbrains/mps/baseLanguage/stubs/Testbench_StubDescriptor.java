@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.stubs;
 
 import jetbrains.mps.stubs.BaseLibStubDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -12,6 +15,13 @@ import jetbrains.mps.reloading.CommonPaths;
 public class Testbench_StubDescriptor extends BaseLibStubDescriptor {
   public Testbench_StubDescriptor() {
     super("Testbench", "920eaa0e-ecca-46bc-bee7-4e5c59213dd6", new ModelRootManager("f3061a53-9226-4cc5-a443-f952ceaf5816", "jetbrains.mps.baseLanguage.stubs.JavaStubs_Testbench"));
+  }
+
+  public void init(SolutionDescriptor solution) {
+    Dependency dep = new Dependency();
+    dep.setModuleRef(new ModuleReference("jetbrains.mps.build.antsupport"));
+    dep.setReexport(true);
+    solution.getDependencies().add(dep);
   }
 
   public List<String> getPaths() {

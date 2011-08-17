@@ -18,7 +18,6 @@
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="ho7a" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project.structure.modules(MPS.Classpath/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="fims" modelUID="f:java_stub#e9000334-f5e2-4a2f-a0fc-9afd1d31e048#jetbrains.mps.testbench.junit(jetbrains.mps.testbench/jetbrains.mps.testbench.junit@java_stub)" version="-1" />
   <import index="xirj" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.make(MPS.Classpath/jetbrains.mps.make@java_stub)" version="-1" />
   <import index="i82i" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.progress(MPS.Classpath/com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" version="-1" />
@@ -35,9 +34,9 @@
   <import index="tpe5" modelUID="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" version="-1" />
   <import index="s9ox" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util(MPS.Classpath/com.intellij.util@java_stub)" version="-1" />
   <import index="lkw3" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.application(MPS.Classpath/com.intellij.openapi.application@java_stub)" version="-1" />
+  <import index="k0af" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps.testbench.junit(Testbench/jetbrains.mps.testbench.junit@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
-  <import index="t5sk" modelUID="f:java_stub#e9000334-f5e2-4a2f-a0fc-9afd1d31e048#jetbrains.mps.testbench(jetbrains.mps.testbench/jetbrains.mps.testbench@java_stub)" version="-1" implicit="yes" />
   <import index="cbee" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.junit.runner.manipulation(MPS.Classpath/org.junit.runner.manipulation@java_stub)" version="-1" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="27v0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" implicit="yes" />
@@ -159,11 +158,11 @@
             <property name="name" nameId="tpck.1169194664001" value="runNotifier" />
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="935017990628671511">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fims.~WatchingRunNotifier" resolveInfo="WatchingRunNotifier" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k0af.~WatchingRunNotifier" resolveInfo="WatchingRunNotifier" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="935017990628671512">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="935017990628671513">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fims.~WatchingRunNotifier%d&lt;init&gt;(org%djunit%drunner%dnotification%dRunNotifier)" resolveInfo="WatchingRunNotifier" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k0af.~WatchingRunNotifier%d&lt;init&gt;(org%djunit%drunner%dnotification%dRunNotifier)" resolveInfo="WatchingRunNotifier" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="935017990628671514">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935017990628671506" resolveInfo="notifier" />
                 </node>
@@ -176,11 +175,11 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="935017990628671517">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="935017990628671518">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="935017990628671519">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t5sk.~PerformanceMessenger" resolveInfo="PerformanceMessenger" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t5sk.~PerformanceMessenger%dgetInstance()%cjetbrains%dmps%dtestbench%dPerformanceMessenger" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3kmv.~PerformanceMessenger" resolveInfo="PerformanceMessenger" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3kmv.~PerformanceMessenger%dgetInstance()%cjetbrains%dmps%dtestbench%dPerformanceMessenger" resolveInfo="getInstance" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="935017990628671520">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t5sk.~PerformanceMessenger%dgenerateReport()%cvoid" resolveInfo="generateReport" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3kmv.~PerformanceMessenger%dgenerateReport()%cvoid" resolveInfo="generateReport" />
                 </node>
               </node>
             </node>
@@ -190,7 +189,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935017990628671510" resolveInfo="runNotifier" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="935017990628671524">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fims.~WatchingRunNotifier%ddispose()%cvoid" resolveInfo="dispose" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k0af.~WatchingRunNotifier%ddispose()%cvoid" resolveInfo="dispose" />
                 </node>
               </node>
             </node>
@@ -1703,11 +1702,11 @@
             <property name="name" nameId="tpck.1169194664001" value="runNotifier" />
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="935017990628672088">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fims.~WatchingRunNotifier" resolveInfo="WatchingRunNotifier" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k0af.~WatchingRunNotifier" resolveInfo="WatchingRunNotifier" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="935017990628672089">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="935017990628672090">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fims.~WatchingRunNotifier%d&lt;init&gt;(org%djunit%drunner%dnotification%dRunNotifier)" resolveInfo="WatchingRunNotifier" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k0af.~WatchingRunNotifier%d&lt;init&gt;(org%djunit%drunner%dnotification%dRunNotifier)" resolveInfo="WatchingRunNotifier" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="935017990628672091">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935017990628672083" resolveInfo="notifier" />
                 </node>
@@ -1744,7 +1743,7 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cbee.~Sorter%d&lt;init&gt;(java%dutil%dComparator)" resolveInfo="Sorter" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="935017990628672106">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="935017990628672107">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fims.~OrderComparator%d&lt;init&gt;()" resolveInfo="OrderComparator" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k0af.~OrderComparator%d&lt;init&gt;()" resolveInfo="OrderComparator" />
                         </node>
                       </node>
                     </node>
@@ -1762,7 +1761,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="935017990628672087" resolveInfo="runNotifier" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="935017990628672113">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fims.~WatchingRunNotifier%ddispose()%cvoid" resolveInfo="dispose" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k0af.~WatchingRunNotifier%ddispose()%cvoid" resolveInfo="dispose" />
                 </node>
               </node>
             </node>
