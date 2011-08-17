@@ -157,7 +157,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected void doInit() {
     this.removeAllChildren();
     SNode n = getSNode();
-    if (n == null) return;
+    if (n == null || n.isDisposed()) return;
 
     if (showPropertiesAndReferences()) {
       add(new ConceptTreeNode(getOperationContext(),n));
