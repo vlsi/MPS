@@ -8,5 +8,6 @@
       <manager moduleId="86ef8290-12bb-4ca7-947f-093788f263a9" className="jetbrains.mps.lang.project.stubs.ProjectStubs" />
     </stubModelEntry>
   </stubModelEntries>
+  <sourcePath />
 </solution>
 

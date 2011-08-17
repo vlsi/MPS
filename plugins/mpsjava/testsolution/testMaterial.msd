@@ -3,6 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.ide" />
   </models>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

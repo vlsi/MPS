@@ -3,6 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
+  <sourcePath />
   <dependencies>
     <dependency reexport="true">0452c5e6-046a-41b1-a1c2-bfa47ef3ae0b(jetbrains.mps.nanoj)</dependency>
     <dependency reexport="true">3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)</dependency>

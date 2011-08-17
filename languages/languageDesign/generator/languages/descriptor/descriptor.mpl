@@ -27,6 +27,7 @@
       <mapping-priorities />
     </generator>
   </generators>
+  <sourcePath />
   <usedLanguages>
     <usedLanguage>d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)</usedLanguage>
   </usedLanguages>

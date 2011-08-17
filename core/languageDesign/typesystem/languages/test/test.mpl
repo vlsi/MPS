@@ -5,6 +5,7 @@
   </models>
   <accessoryModels />
   <generators />
+  <sourcePath />
   <dependencies>
     <dependency reexport="true">7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</dependency>
   </dependencies>

@@ -26,6 +26,7 @@
       <mapping-priorities />
     </generator>
   </generators>
+  <sourcePath />
   <dependencies>
     <dependency reexport="true">3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</dependency>
   </dependencies>
