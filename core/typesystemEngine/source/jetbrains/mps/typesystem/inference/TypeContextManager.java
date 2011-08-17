@@ -22,6 +22,7 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
@@ -43,9 +44,10 @@ public class TypeContextManager implements ApplicationComponent {
   private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
   private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.getLogger(TypeContextManager.class);
 
-
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
+
+  private Set<SNode> myResolveNodes = new HashSet<SNode>();
 
   private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     public void beforeModelDisposed(SModel sm) {
@@ -236,44 +238,48 @@ public class TypeContextManager implements ApplicationComponent {
       resolve = new Stack<Object>();
       myResolveStack.set(resolve);
     }
-    if (resolve.size() > 10) {
-      LOG.warning("Type checking failed. Resolve stack:\n " + myResolveStack);
-      return null;
-    }
-
-    if (generationMode) {
-      TypeCheckingContext context = tracer == null ? createTypeCheckingContext(node) : createTracingTypeCheckingContext(node);
-      if (context == null) return null;
-
-      try {
-        return context.getTypeOf_generationMode(node);
-      } finally {
-        context.dispose();
+    if (!resolve.isEmpty()) {
+      if (myResolveNodes.contains(node)) {
+        return TypesUtil.createRuntimeErrorType();
       }
+      myResolveNodes.add(node);
     }
-    //now we are not in generation mode
-
-    TypeCheckingContext context = getOrCreateContext(root, owner, true);
     try {
-      if (myComputeInNormalMode && context != null && context.isCheckedRoot(false)) {
-        myComputeInNormalMode = false;
-        SNode type = context.getTypeOf_normalMode(node);
-        myComputeInNormalMode = true;
-        return type;
-      }
-      if (!resolve.isEmpty()) {
-        if (context == null || !context.isNonTypesystemComputation()) {
-          TypeCheckingContext resolveContext = createTypeCheckingContextForResolve(node);
-          SNode type = resolveContext.getTypeOf(node, myTypeChecker);
-          resolveContext.dispose();
-          return type;
+      if (generationMode) {
+        TypeCheckingContext context = tracer == null ? createTypeCheckingContext(node) : createTracingTypeCheckingContext(node);
+        if (context == null) return null;
+        try {
+          return context.getTypeOf_generationMode(node);
+        } finally {
+          context.dispose();
         }
       }
+      //now we are not in generation mode
 
-      if (context == null) return null;
-      return context.getTypeOf(node, myTypeChecker);
+      TypeCheckingContext context = getOrCreateContext(root, owner, true);
+      try {
+        if (myComputeInNormalMode && context != null && context.isCheckedRoot(false)) {
+          myComputeInNormalMode = false;
+          SNode type = context.getTypeOf_normalMode(node);
+          myComputeInNormalMode = true;
+          return type;
+        }
+        if (!resolve.isEmpty()) {
+          if (context == null || !context.isNonTypesystemComputation()) {
+            TypeCheckingContext resolveContext = createTypeCheckingContextForResolve(node);
+            SNode type = resolveContext.getTypeOf(node, myTypeChecker);
+            resolveContext.dispose();
+            return type;
+          }
+        }
+
+        if (context == null) return null;
+        return context.getTypeOf(node, myTypeChecker);
+      } finally {
+        removeOwnerForRootNodeContext(root, owner);
+      }
     } finally {
-      removeOwnerForRootNodeContext(root, owner);
+      myResolveNodes.remove(node);
     }
   }
 
