@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import java.util.Arrays;
 import jetbrains.mps.util.WeakSet;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Set_Test extends Util_Test {
   public void test_initSize() throws Exception {
@@ -146,6 +149,52 @@ public class Set_Test extends Util_Test {
     }
     System.gc();
     Assert.assertTrue(SetSequence.fromSet(ws).isEmpty());
+  }
+
+  public void test_collection() throws Exception {
+    Set<String> hss = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b");
+    Collection<String> cs = hss;
+    Assert.assertEquals("a b", IterableUtils.join(Sequence.fromIterable(cs).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true), " "));
+    SetSequence.fromSet(hss).addElement("c");
+    Assert.assertEquals("a b c", IterableUtils.join(Sequence.fromIterable(cs).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true), " "));
+  }
+
+  public void test_unmodifiable() throws Exception {
+    Set<String> hss = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b", "c");
+    SetSequence.fromSet(hss).addElement("d");
+    SetSequence.fromSet(hss).removeElement("b");
+    Assert.assertEquals("a c d", IterableUtils.join(SetSequence.fromSet(hss).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true), " "));
+    Set<String> uhss = SetSequence.fromSet(hss).asUnmodifiable();
+    try {
+      SetSequence.fromSet(uhss).addElement("e");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
+    SetSequence.fromSet(hss).removeElement("a");
+    Assert.assertEquals("c d", IterableUtils.join(SetSequence.fromSet(uhss).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true), " "));
+    try {
+      SetSequence.fromSet(uhss).removeElement("c");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
   }
 
   private static boolean eq_c8cpc7_a0a2a41(Object a, Object b) {

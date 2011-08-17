@@ -24,6 +24,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
@@ -365,6 +367,36 @@ __switch__:
   public void test_linkedlist() throws Exception {
     Deque<Integer> ll = LinkedListSequence.fromLinkedList(new LinkedList<Integer>());
     Assert.assertTrue(LinkedListSequence.fromLinkedList(ll).isEmpty());
+  }
+
+  public void test_collection() throws Exception {
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
+    Collection<String> cs = ls;
+    Assert.assertEquals("a b", IterableUtils.join(Sequence.fromIterable(cs), " "));
+    ListSequence.fromList(ls).addElement("c");
+    Assert.assertEquals("a b c", IterableUtils.join(Sequence.fromIterable(cs), " "));
+  }
+
+  public void test_unmodifiable() throws Exception {
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b", "c");
+    ListSequence.fromList(ls).addElement("d");
+    ListSequence.fromList(ls).removeElement("b");
+    Assert.assertEquals("a c d", IterableUtils.join(ListSequence.fromList(ls), " "));
+    List<String> uls = ListSequence.fromList(ls).asUnmodifiable();
+    try {
+      ListSequence.fromList(uls).addElement("e");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
+    ListSequence.fromList(ls).removeElement("a");
+    Assert.assertEquals("c d", IterableUtils.join(ListSequence.fromList(uls), " "));
+    try {
+      ListSequence.fromList(uls).removeElement("c");
+      Assert.fail();
+    } catch (UnsupportedOperationException e) {
+      // expected exception 
+    }
   }
 
   public List<Foo> mps5684helper() {
