@@ -5,10 +5,10 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -23,7 +23,7 @@ public class SNodeTypeCastExpression_Behavior {
 
   public static boolean call_isSNodeCast_1238686302573(SNode thisNode) {
     SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "leftExpression", true));
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new SNodeTypeCastExpression_Behavior.QuotationClass_cjhknp_a1a0a0b0b().createNode(), false)) || SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType");
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new SNodeTypeCastExpression_Behavior.QuotationClass_cjhknp_a1a0a1a1().createNode(), false));
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -42,8 +42,8 @@ public class SNodeTypeCastExpression_Behavior {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841);
   }
 
-  public static class QuotationClass_cjhknp_a1a0a0b0b {
-    public QuotationClass_cjhknp_a1a0a0b0b() {
+  public static class QuotationClass_cjhknp_a1a0a1a1 {
+    public QuotationClass_cjhknp_a1a0a1a1() {
     }
 
     public SNode createNode() {

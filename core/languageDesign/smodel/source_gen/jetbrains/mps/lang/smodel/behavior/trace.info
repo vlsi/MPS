@@ -816,7 +816,7 @@
   <root nodeId="1238686292741">
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="18" startPosition="47" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2749027262099690841" />
     <nodeInfo nodeId="1239015290033" fileName="SNodeTypeCastExpression_Behavior.java" startLine="24" startPosition="72" endLine="25" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238686311409" fileName="SNodeTypeCastExpression_Behavior.java" startLine="25" startPosition="118" endLine="26" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238686311409" fileName="SNodeTypeCastExpression_Behavior.java" startLine="25" startPosition="118" endLine="26" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="36" startPosition="81" endLine="37" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="37" startPosition="113" endLine="38" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="41" startPosition="114" endLine="42" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -827,7 +827,7 @@
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="54" startPosition="160" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="55" startPosition="43" endLine="56" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="57" startPosition="7" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="45" startPosition="55" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_cjhknp_a1a0a0b0b#()V" />
+    <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="45" startPosition="54" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_cjhknp_a1a0a1a1#()V" />
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="2749027262099690848" fileName="SNodeTypeCastExpression_Behavior.java" startLine="29" startPosition="78" endLine="33" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPresentation_2749027262099690841#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
@@ -838,13 +838,13 @@
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="48" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1238686292743" fileName="SNodeTypeCastExpression_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="46" startPosition="46" endLine="46" endPosition="46" />
+    <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="46" startPosition="45" endLine="46" endPosition="45" />
     <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="41" startPosition="114" endLine="42" endPosition="265" />
-    <scopeInfo nodeId="1238686302576" fileName="SNodeTypeCastExpression_Behavior.java" startLine="24" startPosition="72" endLine="26" endPosition="265">
+    <scopeInfo nodeId="1238686302576" fileName="SNodeTypeCastExpression_Behavior.java" startLine="24" startPosition="72" endLine="26" endPosition="173">
       <varInfo nodeId="1239015290034" varName="leftType" />
     </scopeInfo>
     <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="36" startPosition="81" endLine="38" endPosition="220" />
-    <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="45" startPosition="55" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="45" startPosition="54" endLine="47" endPosition="5" />
     <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="53" startPosition="7" endLine="56" endPosition="31" />
     <scopeInfo nodeId="2749027262099690843" fileName="SNodeTypeCastExpression_Behavior.java" startLine="29" startPosition="78" endLine="33" endPosition="6" />
@@ -855,7 +855,7 @@
     <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="49" startPosition="31" endLine="58" endPosition="20" />
     <scopeInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="48" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="45" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior$QuotationClass_cjhknp_a1a0a0b0b" />
+    <unitInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="45" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior$QuotationClass_cjhknp_a1a0a1a1" />
     <unitInfo nodeId="1238686292741" fileName="SNodeTypeCastExpression_Behavior.java" startLine="18" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior" />
   </root>
   <root nodeId="1240334100559">

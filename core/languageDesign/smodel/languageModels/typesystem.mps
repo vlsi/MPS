@@ -122,6 +122,7 @@
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1178287491408">
       <property name="name" nameId="tpck.1169194664001" value="supertypesOf_SConceptType_SNodeType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1178287491431">
       <property name="name" nameId="tpck.1169194664001" value="typeOf_ConceptRefExpression" />
@@ -204,6 +205,7 @@
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1180462861797">
       <property name="name" nameId="tpck.1169194664001" value="supertypesOf_SNodeType_SConceptType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1180547887028">
       <property name="name" nameId="tpck.1169194664001" value="supertypesOf_SConceptTypeType_SConceptTypeType" />

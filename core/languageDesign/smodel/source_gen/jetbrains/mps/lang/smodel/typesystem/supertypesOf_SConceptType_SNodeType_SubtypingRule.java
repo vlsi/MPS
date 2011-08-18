@@ -52,7 +52,7 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
   }
 
   public boolean isWeak() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_6unv0u_a0a0a0b0a {
