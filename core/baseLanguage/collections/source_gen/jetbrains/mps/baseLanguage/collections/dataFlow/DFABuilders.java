@@ -51,6 +51,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", new RemoveSetElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", new SequenceCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", new SetElementOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", new SingleArgumentSequenceOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", new SingletonSequenceCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SkipOperation", new SkipOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SortOperation", new SortOperation_DataFlow());

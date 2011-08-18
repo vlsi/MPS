@@ -7,9 +7,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
-import junit.framework.Assert;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
@@ -47,6 +47,14 @@ public class List_Test extends Util_Test {
     this.assertIterableEquals(this.expect5(), test);
   }
 
+  public void test_testAdd() throws Exception {
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
+    Assert.assertTrue(ListSequence.fromList(ls).add("c"));
+    Assert.assertTrue(ListSequence.fromList(ls).add("b"));
+    ListSequence.fromList(ls).removeElement("b");
+    Assert.assertTrue(ListSequence.fromList(ls).add("b"));
+  }
+
   public void test_addAll() throws Exception {
     List<Integer> test = ListSequence.fromList(new ArrayList<Integer>());
     ListSequence.fromList(test).addSequence(Sequence.fromIterable(this.input5()));
@@ -78,6 +86,15 @@ public class List_Test extends Util_Test {
     Assert.assertTrue(ListSequence.fromList(test).isEmpty());
     Assert.assertSame(0, ListSequence.fromList(test).count());
     Assert.assertSame(0, ListSequence.fromList(test).count());
+  }
+
+  public void test_testRemove() throws Exception {
+    List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b");
+    Assert.assertTrue(ListSequence.fromList(ls).remove("a"));
+    Assert.assertTrue(ListSequence.fromList(ls).remove("b"));
+    Assert.assertFalse(ListSequence.fromList(ls).remove("c"));
+    ListSequence.fromList(ls).addElement("b");
+    Assert.assertTrue(ListSequence.fromList(ls).remove("b"));
   }
 
   public void test_removeAll() throws Exception {

@@ -58,6 +58,14 @@ public class Set_Test extends Util_Test {
     Assert.assertEquals(5, SetSequence.fromSet(test).count());
   }
 
+  public void test_testAdd() throws Exception {
+    Set<String> sets = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b");
+    Assert.assertTrue(SetSequence.fromSet(sets).add("c"));
+    Assert.assertFalse(SetSequence.fromSet(sets).add("b"));
+    SetSequence.fromSet(sets).removeElement("b");
+    Assert.assertTrue(SetSequence.fromSet(sets).add("b"));
+  }
+
   public void test_addAll() throws Exception {
     Set<String> test = SetSequence.fromSetAndArray(new HashSet<String>(), "A", "B", "C");
     this.assertIterableEqualsIgnoreOrder(this.inputABC(), test);
@@ -80,6 +88,15 @@ public class Set_Test extends Util_Test {
     SetSequence.fromSet(test).removeElement("D");
     SetSequence.fromSet(test).removeElement("E");
     this.assertIterableEqualsIgnoreOrder(this.inputABC(), test);
+  }
+
+  public void test_testRemove() throws Exception {
+    Set<String> sets = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b");
+    Assert.assertTrue(SetSequence.fromSet(sets).remove("a"));
+    Assert.assertTrue(SetSequence.fromSet(sets).remove("b"));
+    Assert.assertFalse(SetSequence.fromSet(sets).remove("c"));
+    SetSequence.fromSet(sets).addElement("c");
+    Assert.assertTrue(SetSequence.fromSet(sets).remove("c"));
   }
 
   public void test_removeAll() throws Exception {
@@ -125,7 +142,7 @@ public class Set_Test extends Util_Test {
   public void test_eq() throws Exception {
     Set<Integer> seta = SetSequence.fromSetAndArray(new HashSet<Integer>(), 111, 222, 333);
     Set<Integer> setb = SetSequence.fromSetAndArray(new HashSet<Integer>(), 333, 222, 111);
-    Assert.assertTrue(eq_c8cpc7_a0a2a41(seta, setb));
+    Assert.assertTrue(eq_c8cpc7_a0a2a61(seta, setb));
   }
 
   public void test_mps6232() throws Exception {
@@ -197,7 +214,7 @@ public class Set_Test extends Util_Test {
     }
   }
 
-  private static boolean eq_c8cpc7_a0a2a41(Object a, Object b) {
+  private static boolean eq_c8cpc7_a0a2a61(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

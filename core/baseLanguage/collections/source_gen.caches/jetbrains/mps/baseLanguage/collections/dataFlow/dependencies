@@ -143,6 +143,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.RemoveSetElementOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SequenceCreator_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SetElementOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SingleArgumentSequenceOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SingletonSequenceCreator_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SkipOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.dataFlow.SortOperation_DataFlow" />
@@ -362,6 +363,13 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.SetElementOperation_DataFlow" file="SetElementOperation_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.dataFlow.SingleArgumentSequenceOperation_DataFlow" file="SingleArgumentSequenceOperation_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
