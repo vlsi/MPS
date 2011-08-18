@@ -677,7 +677,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return FileSystem.getInstance().getFileByPath(s).exists();
   }
 
-  private static JComponent _QueryFunction_JComponent_ueqr71_a2c0(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_ueqr71_a2c0(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, editorContext);
   }
 

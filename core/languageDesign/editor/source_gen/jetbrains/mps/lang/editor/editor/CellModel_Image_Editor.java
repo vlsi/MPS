@@ -240,7 +240,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static JComponent _QueryFunction_JComponent_yczb8_a1b1d0(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_yczb8_a1b1d0(final SNode node, final EditorContext editorContext) {
     return new SelectImageFileButton(node);
   }
 }

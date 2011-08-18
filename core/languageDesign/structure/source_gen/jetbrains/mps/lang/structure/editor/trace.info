@@ -2167,7 +2167,7 @@
     <nodeInfo nodeId="1161166135928" fileName="ConceptDeclaration_Editor.java" startLine="672" startPosition="5" endLine="673" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1161722913887" fileName="ConceptDeclaration_Editor.java" startLine="674" startPosition="20" endLine="675" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1161166287878" fileName="ConceptDeclaration_Editor.java" startLine="676" startPosition="5" endLine="677" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176492672998" fileName="ConceptDeclaration_Editor.java" startLine="680" startPosition="108" endLine="681" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1176492672998" fileName="ConceptDeclaration_Editor.java" startLine="680" startPosition="120" endLine="681" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1087215312703" fileName="ConceptDeclaration_Editor.java" startLine="685" startPosition="36" endLine="686" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1087215312703" fileName="ConceptDeclaration_Editor.java" startLine="689" startPosition="69" endLine="690" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1087215312703" fileName="ConceptDeclaration_Editor.java" startLine="693" startPosition="81" endLine="694" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2610,7 +2610,7 @@
     <scopeInfo nodeId="1087215312703" fileName="ConceptDeclaration_Editor.java" startLine="655" startPosition="58" endLine="656" endPosition="46" />
     <scopeInfo nodeId="1162559216420" fileName="ConceptDeclaration_Editor.java" startLine="670" startPosition="20" endLine="671" endPosition="19" />
     <scopeInfo nodeId="1161722900537" fileName="ConceptDeclaration_Editor.java" startLine="674" startPosition="20" endLine="675" endPosition="19" />
-    <scopeInfo nodeId="1176492331667" fileName="ConceptDeclaration_Editor.java" startLine="680" startPosition="108" endLine="681" endPosition="66" />
+    <scopeInfo nodeId="1176492331667" fileName="ConceptDeclaration_Editor.java" startLine="680" startPosition="120" endLine="681" endPosition="66" />
     <scopeInfo nodeId="1087215312703" fileName="ConceptDeclaration_Editor.java" startLine="685" startPosition="36" endLine="686" endPosition="14" />
     <scopeInfo nodeId="1087215312703" fileName="ConceptDeclaration_Editor.java" startLine="689" startPosition="69" endLine="690" endPosition="67" />
     <scopeInfo nodeId="1087215312703" fileName="ConceptDeclaration_Editor.java" startLine="693" startPosition="81" endLine="694" endPosition="69" />

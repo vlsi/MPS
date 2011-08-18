@@ -1206,7 +1206,7 @@
     <nodeInfo nodeId="5117350825036256264" fileName="CustomWatchable_Editor.java" startLine="176" startPosition="23" endLine="177" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5117350825036256271" fileName="CustomWatchable_Editor.java" startLine="178" startPosition="25" endLine="179" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256284" fileName="CustomWatchable_Editor.java" startLine="180" startPosition="5" endLine="181" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5117350825036256309" fileName="CustomWatchable_Editor.java" startLine="184" startPosition="108" endLine="185" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5117350825036256309" fileName="CustomWatchable_Editor.java" startLine="184" startPosition="120" endLine="185" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="41" startPosition="10" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="143" startPosition="26" endLine="146" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="161" startPosition="26" endLine="164" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1262,7 +1262,7 @@
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="144" startPosition="58" endLine="145" endPosition="42" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="162" startPosition="58" endLine="163" endPosition="46" />
     <scopeInfo nodeId="5117350825036256270" fileName="CustomWatchable_Editor.java" startLine="178" startPosition="25" endLine="179" endPosition="110" />
-    <scopeInfo nodeId="5117350825036256308" fileName="CustomWatchable_Editor.java" startLine="184" startPosition="108" endLine="185" endPosition="78" />
+    <scopeInfo nodeId="5117350825036256308" fileName="CustomWatchable_Editor.java" startLine="184" startPosition="120" endLine="185" endPosition="78" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="58" startPosition="5" endLine="60" endPosition="51" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="70" startPosition="5" endLine="72" endPosition="51" />
     <scopeInfo nodeId="5117350825036235733" fileName="CustomWatchable_Editor.java" startLine="83" startPosition="5" endLine="85" endPosition="51" />

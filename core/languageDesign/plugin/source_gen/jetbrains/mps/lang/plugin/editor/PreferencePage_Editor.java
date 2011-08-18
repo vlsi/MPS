@@ -471,7 +471,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static JComponent _QueryFunction_JComponent_fl5ndt_a3b1b0(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_fl5ndt_a3b1b0(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 }

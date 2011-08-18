@@ -159,7 +159,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return IconResource_Behavior.call_isValid_4076419548984269320(node);
   }
 
-  private static JComponent _QueryFunction_JComponent_79r3b6_a1a(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_79r3b6_a1a(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "path", editorContext);
   }
 

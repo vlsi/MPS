@@ -100,7 +100,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
     });
   }
 
-  private static JComponent _QueryFunction_JComponent_bx3ota_a0b0a(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_bx3ota_a0b0a(final SNode node, final EditorContext editorContext) {
     String txt = Sequence.fromIterable(((Iterable<SReference>) node.getReferencesIterable())).where(new IWhereFilter<SReference>() {
       public boolean accept(SReference ref) {
         return ref.getTargetNode() == null;

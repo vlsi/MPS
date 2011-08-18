@@ -181,7 +181,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }
 
-  private static JComponent _QueryFunction_JComponent_rpujt6_a2b0(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_rpujt6_a2b0(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "iconPath", editorContext);
   }
 }
