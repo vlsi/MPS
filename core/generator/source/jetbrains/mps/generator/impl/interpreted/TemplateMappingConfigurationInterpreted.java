@@ -49,6 +49,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   public TemplateMappingConfigurationInterpreted(TemplateModel model, SNode mappingConfiguration) {
     myModel = model;
     myMappingConfiguration = mappingConfiguration;
+    int patternRulesCount = 0;
 
     for (SNode child : mappingConfiguration.getChildrenIterable()) {
       String conceptName = child.getConceptFqName();
@@ -58,7 +59,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
         myRootMappingRules.add(new TemplateRootMappingRuleInterpreted(child));
       } else if (conceptName.equals(RuleUtil.concept_PatternReduction_MappingRule)) {
         // TODO make more effective
-        myReductionRules.add(0, new TemplateReductionPatternRuleInterpreted(child));
+        myReductionRules.add(patternRulesCount++, new TemplateReductionPatternRuleInterpreted(child));
       } else if (conceptName.equals(RuleUtil.concept_CreateRootRule)) {
         myCreateRootRules.add(new TemplateCreateRootRuleInterpreted(child));
       } else if (conceptName.equals(RuleUtil.concept_Weaving_MappingRule)) {
