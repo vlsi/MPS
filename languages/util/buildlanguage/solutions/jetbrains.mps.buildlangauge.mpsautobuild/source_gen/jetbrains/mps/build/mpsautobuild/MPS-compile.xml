@@ -116,7 +116,27 @@
     <path path="${base_dir}/classes" />
     <path path="${base_dir}/core/actions-runtime/classes" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
+    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
+    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
     <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
+    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
     <path path="${base_dir}/core/debug-api/classes" />
     <path path="${base_dir}/core/debug/classes" />
     <path path="${base_dir}/core/editor-runtime/classes" />
@@ -133,6 +153,7 @@
     <path path="${base_dir}/core/typesystemEngine/classes" />
     <path path="${base_dir}/core/typesystemIntegration/classes" />
     <path path="${base_dir}/languages/util/runConfigurations/classes" />
+    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/lib/annotations.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/ecj.jar" />
@@ -191,6 +212,12 @@
     <path path="${base_dir}/core/baseLanguage/unitTest/test_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/source_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/test_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
     <path path="${base_dir}/core/debug-api/languages/api/source_gen" />
     <path path="${base_dir}/core/debug-api/languages/api/test_gen" />
     <path path="${base_dir}/core/debug/languages/customViewers/source_gen" />
@@ -289,6 +316,8 @@
     <path path="${base_dir}/languages/util/uiLanguage/test_gen" />
     <path path="${base_dir}/languages/util/xml/xml/source_gen" />
     <path path="${base_dir}/languages/util/xml/xml/test_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/source_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/test_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/source_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/test_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/source_gen" />
@@ -362,14 +391,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/source_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/test_gen" />
   </path>
-  <path id="cycle.jetbrains.mps.build.generictasks_tjc.src">
-    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
-  </path>
   <path id="cycle.jetbrains.mps.build.packaging_tjc.src">
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/source_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/test_gen" />
@@ -421,10 +442,6 @@
   <path id="cycle.jetbrains.mps.ui.swt.runtime_tjc.src">
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/source_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/test_gen" />
-  </path>
-  <path id="cycle.jetbrains.mps.xml.deprecated_tjc.src">
-    <path path="${base_dir}/languages/util/xmlDeprecated/source_gen" />
-    <path path="${base_dir}/languages/util/xmlDeprecated/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.xmlQuery_tjc.src">
     <path path="${base_dir}/languages/util/xml/xmlQuery/source_gen" />
@@ -504,8 +521,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -523,11 +545,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -557,6 +583,9 @@
     <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
     <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
     <path path="${base_dir}/core/debug/languages/customViewers/classes_gen" />
     <path path="${base_dir}/core/debug/languages/evaluation/classes_gen" />
@@ -609,6 +638,7 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
@@ -676,6 +706,10 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -705,12 +739,16 @@
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -780,8 +818,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/builders/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -799,11 +842,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -873,8 +920,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -892,11 +944,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -965,9 +1021,14 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -985,11 +1046,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1058,10 +1123,15 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/classes_gen" />
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1079,11 +1149,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1152,9 +1226,14 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1172,11 +1251,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1245,9 +1328,14 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1265,11 +1353,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1339,8 +1431,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1358,11 +1455,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1431,8 +1532,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
@@ -1451,11 +1557,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1524,8 +1634,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/classes_gen" />
@@ -1544,11 +1659,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1618,8 +1737,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1637,11 +1761,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1736,8 +1864,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -1755,11 +1888,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1829,6 +1966,10 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -1849,11 +1990,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -1923,6 +2068,7 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
@@ -1958,6 +2104,7 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2026,6 +2173,7 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
@@ -2058,107 +2206,7 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path path="${base_dir}/lib/commons-logging-1.1.jar" />
-    <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/junit-4.8.2.jar" />
-    <path path="${base_dir}/lib/tools.jar" />
-    <path refid="common.classpath" />
-  </path>
-  <path id="cycle.jetbrains.mps.build.generictasks_tjc.classpaths">
-    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/classifiers/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/actions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/constraints/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/dataFlow/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/languages/table/runtime/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/findUsages/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/intentions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/facet/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/plugin/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/project/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/quotation/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/refactoring/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/sharedConcepts/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
-    <path path="${base_dir}/languages/core/core/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
-    <path path="${base_dir}/languages/util/gtext/classes_gen" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
-    <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
-    <path path="${base_dir}/languages/util/ypath/classes_gen" />
-    <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
-    <path path="${base_dir}/lib/ant/lib/ant.jar" />
-    <path path="${base_dir}/lib/asm.jar" />
-    <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2227,6 +2275,7 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
@@ -2260,6 +2309,7 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2328,8 +2378,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2347,11 +2402,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2422,8 +2481,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2441,11 +2505,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2515,8 +2583,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2534,11 +2607,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2608,8 +2685,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2627,11 +2709,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2701,8 +2787,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2720,11 +2811,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2794,8 +2889,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2813,11 +2913,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2886,8 +2990,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2906,11 +3015,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -2979,9 +3092,14 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -2999,11 +3117,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -3072,8 +3194,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3092,11 +3219,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -3165,6 +3296,10 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3195,11 +3330,15 @@
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -3268,6 +3407,10 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3301,11 +3444,15 @@
     <path path="${base_dir}/languages/util/xml/xml/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -3320,99 +3467,6 @@
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swt/runtime/lib/linux/swt.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path refid="common.classpath" />
-  </path>
-  <path id="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths">
-    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.index/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/blTypes/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/classifiers/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/closures/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/collections/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/javadoc/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/logging/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/runConfigurations/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/tuples/languages/tuples/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/tuples/runtime/classes" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/classes_gen" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <path path="${base_dir}/core/baseLanguage/unitTest/solutions/runtime/classes" />
-    <path path="${base_dir}/core/debug-api/languages/api/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/actions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/behavior/languages/behavior/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/constraints/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/dataFlow/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/editor/languages/table/runtime/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/findUsages/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/intentions/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/facet/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/make/languages/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/pattern/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/plugin/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/project/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/quotation/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/refactoring/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/script/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/sharedConcepts/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/smodel/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/structure/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/stubs/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/test/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/textGen/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/traceable/classes_gen" />
-    <path path="${base_dir}/core/languageDesign/typesystem/classes_gen" />
-    <path path="${base_dir}/languages/core/core/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
-    <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/classes_gen" />
-    <path path="${base_dir}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
-    <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
-    <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
-    <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
-    <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
-    <path path="${base_dir}/languages/util/ypath/classes_gen" />
-    <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
-    <path path="${base_dir}/lib/asm.jar" />
-    <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/commons-lang-2.4.jar" />
-    <path path="${base_dir}/lib/commons-logging-1.1.jar" />
-    <path path="${base_dir}/lib/guava-r06.jar" />
-    <path path="${base_dir}/lib/junit-4.8.2.jar" />
-    <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.xmlQuery_tjc.classpaths">
@@ -3477,6 +3531,10 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/builders/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -3501,11 +3559,15 @@
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlQuery/classes_gen" />
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -3574,8 +3636,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3594,11 +3661,15 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -3667,8 +3738,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3686,12 +3762,16 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/main/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -3760,8 +3840,13 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="${base_dir}/languages/util/gtext/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/math/runtimeSolution/classes_gen" />
     <path path="${base_dir}/languages/util/money/runtimeSolution/classes_gen" />
@@ -3779,13 +3864,17 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/classes" />
     <path path="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
     <path path="${base_dir}/languages/util/ypath/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/main/classes_gen" />
     <path path="${base_dir}/languages/util/ypath/solutions/test/classes_gen" />
+    <path path="${base_dir}/lib/ant/lib/ant-launcher.jar" />
+    <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
+    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.jar" />
     <path path="${base_dir}/lib/guava-r06.jar" />
@@ -3793,7 +3882,7 @@
     <path path="${base_dir}/lib/tools.jar" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.baseLanguage_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.constructors_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.datesInternal_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.jdk7_tjc,compile.cycle.jetbrains.mps.baseLanguage.math_tjc,compile.cycle.jetbrains.mps.baseLanguage.money_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.runConfigurations_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.packaging_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.lang.descriptor_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.editor.table_tjc,compile.cycle.jetbrains.mps.lang.pattern.testLang_tjc,compile.cycle.jetbrains.mps.lang.smodelTests_tjc,compile.cycle.jetbrains.mps.nanoj_tjc,compile.cycle.jetbrains.mps.platform.conf_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swt_tjc,compile.cycle.jetbrains.mps.ui.swt.runtime_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mpslite_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -3857,6 +3946,12 @@
     <mkdir dir="${base_dir}/core/baseLanguage/unitTest/test_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/baseLanguageInternal/source_gen" />
     <mkdir dir="${base_dir}/core/baseLanguage/baseLanguageInternal/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
     <mkdir dir="${base_dir}/core/debug-api/languages/api/source_gen" />
     <mkdir dir="${base_dir}/core/debug-api/languages/api/test_gen" />
     <mkdir dir="${base_dir}/core/debug/languages/customViewers/source_gen" />
@@ -3955,6 +4050,8 @@
     <mkdir dir="${base_dir}/languages/util/uiLanguage/test_gen" />
     <mkdir dir="${base_dir}/languages/util/xml/xml/source_gen" />
     <mkdir dir="${base_dir}/languages/util/xml/xml/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/xmlDeprecated/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/xmlDeprecated/test_gen" />
     <mkdir dir="${base_dir}/languages/util/xml/xmlInternal/source_gen" />
     <mkdir dir="${base_dir}/languages/util/xml/xmlInternal/test_gen" />
     <mkdir dir="${base_dir}/languages/util/xml/xmlSchema/source_gen" />
@@ -3985,6 +4082,9 @@
     <mkdir dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <mkdir dir="${jetbrains.mps.baseLanguageInternal.classes}" />
+    <mkdir dir="${jetbrains.mps.build.generictasks.classes}" />
+    <mkdir dir="${jetbrains.mps.build.property.classes}" />
+    <mkdir dir="${jetbrains.mps.buildlanguage.classes}" />
     <mkdir dir="${jetbrains.mps.debug.apiLang.classes}" />
     <mkdir dir="${jetbrains.mps.debug.customViewers.classes}" />
     <mkdir dir="${jetbrains.mps.debug.evaluation.classes}" />
@@ -4034,6 +4134,7 @@
     <mkdir dir="${jetbrains.mps.ui.swing.runtime.classes}" />
     <mkdir dir="${jetbrains.mps.uiLanguage.classes}" />
     <mkdir dir="${jetbrains.mps.xml.classes}" />
+    <mkdir dir="${jetbrains.mps.xml.deprecated.classes}" />
     <mkdir dir="${jetbrains.mps.xmlInternal.classes}" />
     <mkdir dir="${jetbrains.mps.xmlSchema.classes}" />
     <mkdir dir="${jetbrains.mps.xmlUnitTest.classes}" />
@@ -4117,6 +4218,18 @@
     <copy todir="${jetbrains.mps.baseLanguageInternal.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/baseLanguageInternal/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/core/baseLanguage/baseLanguageInternal/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.build.generictasks.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.build.property.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.buildlanguage.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.debug.apiLang.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/core/debug-api/languages/api/source_gen" />
@@ -4314,6 +4427,10 @@
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xml/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xml/test_gen" />
     </copy>
+    <copy todir="${jetbrains.mps.xml.deprecated.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlDeprecated/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlDeprecated/test_gen" />
+    </copy>
     <copy todir="${jetbrains.mps.xmlInternal.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xmlInternal/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/xml/xmlInternal/test_gen" />
@@ -4446,6 +4563,24 @@
       <src>
         <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/source_gen" />
         <path path="${base_dir}/core/baseLanguage/baseLanguageInternal/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.generictasks.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
+        <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.property.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
+        <path path="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.buildlanguage.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
+        <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.apiLang.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -4740,6 +4875,12 @@
       <src>
         <path path="${base_dir}/languages/util/xml/xml/source_gen" />
         <path path="${base_dir}/languages/util/xml/xml/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.deprecated.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/util/xmlDeprecated/source_gen" />
+        <path path="${base_dir}/languages/util/xmlDeprecated/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xmlInternal.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -5095,7 +5236,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.build.dependency_tjc" depends="compile.cycle.jetbrains.mps.build.generictasks_tjc">
+  <target name="compile.cycle.jetbrains.mps.build.dependency_tjc" depends="compile.cycle.jetbrains.mps.bash_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.dependency.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/dependency/source_gen" />
@@ -5113,54 +5254,6 @@
       <src>
         <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/source_gen" />
         <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/test_gen" />
-      </src>
-    </javac>
-    <delete dir="${classes.dump}" />
-  </target>
-  <target name="compile.cycle.jetbrains.mps.build.generictasks_tjc" depends="compile.cycle.jetbrains.mps.xml.deprecated_tjc">
-    <property name="classes.dump" value="${jetbrains.mps.build.generictasks.classes}.tmp" />
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
-    <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.build.generictasks.classes}" />
-    <mkdir dir="${jetbrains.mps.build.property.classes}" />
-    <mkdir dir="${jetbrains.mps.buildlanguage.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src refid="cycle.jetbrains.mps.build.generictasks_tjc.src" />
-    </javac>
-    <copy todir="${jetbrains.mps.build.generictasks.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
-    </copy>
-    <copy todir="${jetbrains.mps.build.property.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
-    </copy>
-    <copy todir="${jetbrains.mps.buildlanguage.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
-    </copy>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.generictasks.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/source_gen" />
-        <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/test_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.property.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/util/buildlanguage/languages/property/source_gen" />
-        <path path="${base_dir}/languages/util/buildlanguage/languages/property/test_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.generictasks_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.buildlanguage.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/source_gen" />
-        <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -5451,28 +5544,6 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xml.deprecated_tjc" depends="compile.cycle.jetbrains.mps.bash_tjc">
-    <property name="classes.dump" value="${jetbrains.mps.xml.deprecated.classes}.tmp" />
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/util/xmlDeprecated/source_gen" />
-    <mkdir dir="${base_dir}/languages/util/xmlDeprecated/test_gen" />
-    <mkdir dir="${classes.dump}" />
-    <mkdir dir="${jetbrains.mps.xml.deprecated.classes}" />
-    <javac classpathref="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
-      <src refid="cycle.jetbrains.mps.xml.deprecated_tjc.src" />
-    </javac>
-    <copy todir="${jetbrains.mps.xml.deprecated.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlDeprecated/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/xmlDeprecated/test_gen" />
-    </copy>
-    <javac classpathref="cycle.jetbrains.mps.xml.deprecated_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.xml.deprecated.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/util/xmlDeprecated/source_gen" />
-        <path path="${base_dir}/languages/util/xmlDeprecated/test_gen" />
-      </src>
-    </javac>
-    <delete dir="${classes.dump}" />
-  </target>
   <target name="compile.cycle.jetbrains.mps.xmlQuery_tjc" depends="compile.cycle.jetbrains.mps.ui.swt_tjc">
     <property name="classes.dump" value="${jetbrains.mps.xmlQuery.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
@@ -5582,6 +5653,9 @@
     <delete dir="${jetbrains.mps.baseLanguage.tuples.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.classes}" />
     <delete dir="${jetbrains.mps.baseLanguageInternal.classes}" />
+    <delete dir="${jetbrains.mps.build.generictasks.classes}" />
+    <delete dir="${jetbrains.mps.build.property.classes}" />
+    <delete dir="${jetbrains.mps.buildlanguage.classes}" />
     <delete dir="${jetbrains.mps.debug.apiLang.classes}" />
     <delete dir="${jetbrains.mps.debug.customViewers.classes}" />
     <delete dir="${jetbrains.mps.debug.evaluation.classes}" />
@@ -5631,6 +5705,7 @@
     <delete dir="${jetbrains.mps.ui.swing.runtime.classes}" />
     <delete dir="${jetbrains.mps.uiLanguage.classes}" />
     <delete dir="${jetbrains.mps.xml.classes}" />
+    <delete dir="${jetbrains.mps.xml.deprecated.classes}" />
     <delete dir="${jetbrains.mps.xmlInternal.classes}" />
     <delete dir="${jetbrains.mps.xmlSchema.classes}" />
     <delete dir="${jetbrains.mps.xmlUnitTest.classes}" />
@@ -5652,9 +5727,6 @@
     <delete dir="${jetbrains.mps.build.custommps.classes}" />
     <delete dir="${jetbrains.mps.build.distrib.classes}" />
     <delete dir="${jetbrains.mps.build.dependency.classes}" />
-    <delete dir="${jetbrains.mps.build.generictasks.classes}" />
-    <delete dir="${jetbrains.mps.build.property.classes}" />
-    <delete dir="${jetbrains.mps.buildlanguage.classes}" />
     <delete dir="${jetbrains.mps.build.packaging.classes}" />
     <delete dir="${jetbrains.mps.ide.uiLanguage.classes}" />
     <delete dir="${jetbrains.mps.lang.descriptor.classes}" />
@@ -5668,7 +5740,6 @@
     <delete dir="${jetbrains.mps.ui.swing.classes}" />
     <delete dir="${jetbrains.mps.ui.swt.classes}" />
     <delete dir="${jetbrains.mps.ui.swt.runtime.classes}" />
-    <delete dir="${jetbrains.mps.xml.deprecated.classes}" />
     <delete dir="${jetbrains.mps.xmlQuery.classes}" />
     <delete dir="${jetbrains.mpslite.classes}" />
     <delete dir="${ypath.main.classes}" />
