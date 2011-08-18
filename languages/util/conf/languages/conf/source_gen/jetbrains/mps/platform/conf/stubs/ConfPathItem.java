@@ -5,6 +5,7 @@ package jetbrains.mps.platform.conf.stubs;
 import jetbrains.mps.stubs.util.PathItem;
 import java.io.InputStream;
 import org.jdom.input.SAXBuilder;
+import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.stubs.util.PathItemsReloadableCache;
@@ -24,7 +25,8 @@ public class ConfPathItem extends PathItem {
     InputStream is = null;
     try {
       is = this.openResource(pkg, res);
-      return ConfReader.canRead(new SAXBuilder().build(is));
+      SAXBuilder saxBuilder = JDOMUtil.createBuilder();
+      return ConfReader.canRead(saxBuilder.build(is));
     } catch (IOException e) {
       return false;
     } catch (JDOMException e) {
