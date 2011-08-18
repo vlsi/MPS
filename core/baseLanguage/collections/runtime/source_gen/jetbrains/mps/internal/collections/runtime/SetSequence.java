@@ -25,10 +25,6 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
     this.set = new HashSet<T>(other.set);
   }
 
-  public boolean add(T e) {
-    return set.add(e);
-  }
-
   public boolean addAll(Collection<? extends T> c) {
     return set.addAll(c);
   }
@@ -59,10 +55,6 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
 
   public Iterator<T> iterator() {
     return set.iterator();
-  }
-
-  public boolean remove(Object o) {
-    return set.remove(o);
   }
 
   public boolean removeAll(Collection<?> c) {
@@ -120,16 +112,6 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
     return super.union(that);
   }
 
-  public T addElement(T t) {
-    if (Sequence.IGNORE_NULL_VALUES) {
-      if (t == null) {
-        return null;
-      }
-    }
-    set.add(t);
-    return t;
-  }
-
   public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (seq == null) {
@@ -145,13 +127,6 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
       set.add(t);
     }
     return this;
-  }
-
-  public T removeElement(T t) {
-    if (remove((Object) t)) {
-      return t;
-    }
-    return null;
   }
 
   public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {

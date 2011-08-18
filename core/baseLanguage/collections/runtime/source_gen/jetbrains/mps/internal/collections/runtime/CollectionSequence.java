@@ -22,8 +22,10 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
         return null;
       }
     }
-    getCollection().add(t);
-    return t;
+    if (getCollection().add(t)) {
+      return t;
+    }
+    return null;
   }
 
   public T removeElement(T t) {
@@ -75,6 +77,11 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
   }
 
   public boolean add(T e) {
+    if (IGNORE_NULL_VALUES) {
+      if (e == null) {
+        return false;
+      }
+    }
     return getCollection().add(e);
   }
 
@@ -100,6 +107,11 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
   }
 
   public boolean remove(Object o) {
+    if (IGNORE_NULL_VALUES) {
+      if (o == null) {
+        return false;
+      }
+    }
     return getCollection().remove(o);
   }
 
