@@ -69,6 +69,7 @@
     <classNode dependClassName="jetbrains.mps.stubs.StubSource" />
     <classNode dependClassName="jetbrains.mps.stubs.util.PathItem" />
     <classNode dependClassName="jetbrains.mps.stubs.util.StubModelDescriptors" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
