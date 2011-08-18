@@ -114,7 +114,7 @@ public class JDOMUtil {
     }
   }
 
-  private static SAXBuilder createBuilder() {
+  public static SAXBuilder createBuilder() {
     final SAXBuilder saxBuilder = new SAXBuilder();
     saxBuilder.setEntityResolver(new EntityResolver() {
       public InputSource resolveEntity(String publicId,

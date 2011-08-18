@@ -7,6 +7,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.platform.conf.stubs.ConfReader" />
     <classNode dependClassName="jetbrains.mps.stubs.util.PathItemsReloadableCache" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
     <classNode extendsClassName="jetbrains.mps.stubs.util.PathItem" />
