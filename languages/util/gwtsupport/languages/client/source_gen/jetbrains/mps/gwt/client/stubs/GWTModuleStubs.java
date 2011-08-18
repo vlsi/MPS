@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelReference;
 import java.io.InputStream;
 import org.jdom.input.SAXBuilder;
+import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -87,7 +88,8 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
       InputStream is = null;
       try {
         is = pi.openResource(modpair._0(), modpair._1());
-        reader.read(modpair._2(), new SAXBuilder().build(is));
+        SAXBuilder saxBuilder = JDOMUtil.createBuilder();
+        reader.read(modpair._2(), saxBuilder.build(is));
       } catch (IOException e) {
         e.printStackTrace();
       } catch (JDOMException e) {
