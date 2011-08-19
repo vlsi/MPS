@@ -63,8 +63,6 @@ public abstract class AbstractModule implements IModule {
   private CompositeClassPathItem myCachedClassPathItem;
   private DependenciesManager myDependenciesManager;
 
-  private Map<Pair<String, String>, ModuleReference> myStubModulesCache = new HashMap<Pair<String, String>, ModuleReference>();
-
   //----model creation
 
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
@@ -502,34 +500,6 @@ public abstract class AbstractModule implements IModule {
     if (timestampString == null) return true;
     long timestamp = Long.decode(timestampString);
     return timestamp != myDescriptorFile.lastModified();
-  }
-
-  @Override
-  public ModuleReference getModuleFor(String packageName, String langID) {
-    Pair<String, String> id = new Pair<String, String>(packageName, langID);
-    if (myStubModulesCache.containsKey(id)) return myStubModulesCache.get(id);
-
-
-    for (SModelDescriptor model : getOwnModelDescriptors()) {
-      if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
-        myStubModulesCache.put(id, getModuleReference());
-        return getModuleReference();
-      }
-    }
-
-    Collection<IModule> scopeModules = IterableUtil.asCollection(getScope().getVisibleModules());
-    Set<IModule> deps = new HashSet<IModule>(scopeModules);
-    for (IModule module : deps) {
-      for (SModelDescriptor model : module.getOwnModelDescriptors()) {
-        if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
-          myStubModulesCache.put(id, module.getModuleReference());
-          return module.getModuleReference();
-        }
-      }
-    }
-
-    myStubModulesCache.put(id, null);
-    return null;
   }
 
   public String getOutputFor(SModelDescriptor model) {

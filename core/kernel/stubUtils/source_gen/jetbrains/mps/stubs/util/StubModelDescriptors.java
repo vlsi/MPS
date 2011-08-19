@@ -66,16 +66,6 @@ public class StubModelDescriptors {
   }
 
   public SModelReference javaStubRef(String pkg) {
-    ModuleReference mr = this.stubLoc.getModule().getModuleFor(pkg, "java");
-    String mfq = "MPS.Classpath";
-    String muid = "37a3367b-1fb2-44d8-aa6b-18075e74e003";
-    if (mr != null) {
-      mfq = mr.getModuleFqName();
-      muid = mr.getModuleId().toString();
-    }
-    String stereo = SModelStereotype.getStubStereotypeForId("java");
-    SModelFqName fqname = new SModelFqName(mfq, pkg, stereo);
-    SModelId modelId = SModelId.foreign(stereo, muid, pkg);
-    return new SModelReference(fqname, modelId);
+    return null;
   }
 }
