@@ -6,8 +6,8 @@
                  url="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page"
                  feedback="http://youtrack.jetbrains.net"
                  majorVersion="2">
-            <build number="20.7555" version="JetBrains MPS 2.0">
-                <message>JetBrains MPS 2.0 RC4 is available.</message>
+            <build number="20.7566" version="JetBrains MPS 2.0">
+                <message>JetBrains MPS 2.0 RC5 is available.</message>
             </build>
         </channel>
 
@@ -15,8 +15,8 @@
                url="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page"
                feedback="http://youtrack.jetbrains.net"
                majorVersion="2">
-          <build number="20.7555" version="JetBrains MPS 2.0">
-              <message>JetBrains MPS 2.0 RC4 is available.</message>
+          <build number="20.7566" version="JetBrains MPS 2.0">
+              <message>JetBrains MPS 2.0 RC5 is available.</message>
           </build>
       </channel>
     </product>
