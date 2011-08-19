@@ -35,24 +35,28 @@ public class StubHelper {
 
   }
 
-  public SModelReference resolveModel(IModule module, SModelFqName name, @Nullable SNodeId nodeId) {
-    ensureInitialized(module, name);
+  public List<SModelReference> resolveModel(IModule module, SModelFqName name, @Nullable SNodeId nodeId) {
+    Pair<ModuleReference, SModelFqName> key = new Pair<ModuleReference, SModelFqName>(module.getModuleReference(), name);
+    ensureInitialized(key);
 
-    List<SModelReference> models = myStubModulesCache.get(new Pair<ModuleReference, SModelFqName>(module.getModuleReference(), name));
-    if (nodeId == null) return models.isEmpty() ? null : models.get(0);
+    List<SModelReference> models = myStubModulesCache.get(key);
+    if (nodeId == null) return models;
 
+    List<SModelReference> result = new ArrayList<SModelReference>();
     for (SModelReference ref : models) {
       SModel m = SModelRepository.getInstance().getModelDescriptor(ref).getSModel();
-      if (m.getNodeById(nodeId)!=null) return ref;
+      if (m.getNodeById(nodeId) != null) {
+        result.add(ref);
+      }
     }
 
-    return null;
+    return result;
   }
 
-  private void ensureInitialized(IModule module, SModelFqName name) {
-    Pair<ModuleReference, SModelFqName> key = new Pair<ModuleReference, SModelFqName>(module.getModuleReference(), name);
+  private void ensureInitialized(Pair<ModuleReference, SModelFqName> key) {
     if (myStubModulesCache.containsKey(key)) return;
 
+    IModule module = MPSModuleRepository.getInstance().getModule(key.o1);
     fillCacheWithModels(key, module.getOwnModelDescriptors());
 
     Set<SModelDescriptor> visibleModels = new HashSet<SModelDescriptor>();
@@ -64,12 +68,12 @@ public class StubHelper {
   }
 
   private void fillCacheWithModels(Pair<ModuleReference, SModelFqName> key, Iterable<SModelDescriptor> models) {
+    if (!myStubModulesCache.containsKey(key)) {
+      myStubModulesCache.put(key, new ArrayList<SModelReference>());
+    }
+
     for (SModelDescriptor model : models) {
       if (!model.getSModelReference().getSModelFqName().equals(key.o2)) continue;
-
-      if (!myStubModulesCache.containsKey(key)) {
-        myStubModulesCache.put(key, new ArrayList<SModelReference>());
-      }
       List<SModelReference> modelsFromCache = myStubModulesCache.get(key);
       modelsFromCache.add(model.getSModelReference());
     }
