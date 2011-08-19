@@ -26,11 +26,11 @@ import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -642,11 +642,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5913000247864739362(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())) + "." + SPropertyOperations.getString(_context.getNode(), "name");
+    return INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_5913000247864923130(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())) + "." + SPropertyOperations.getString(_context.getNode(), "name");
+    return INamedConcept_Behavior.call_getFqName_1213877404258(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_996730828437274956(final IOperationContext operationContext, final PropertyMacroContext _context) {

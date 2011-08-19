@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1yhh102u0fwu3md0fuav1hhq6ri9zit">
+<dependencies version="2" modelHash="-86o1js3xz64xlsyr26zjjntw1whbnw6">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.nodeEditor(MPS.Classpath/jetbrains.mps.nodeEditor@java_stub)" />
@@ -431,7 +431,7 @@
   <source id="3219221556189195367" name="MatchingLabelStyleClassItem_Query" hash="-6sopd61j7v0wlhp9k8wv3v4eqewktvp">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5170495790389304146" name="template_cellSetupBlock" hash="bdh9km0zwqblzfkns6ywk26kjelxvtr">
+  <source id="5170495790389304146" name="template_cellSetupBlock" hash="29g506o42km0y6t5itg2fkai7kclmgs">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="996730828437272666" name="weave_CellModel_JComponent" hash="-a27wf95o13wzk8xpdtizeu4pri6m115">
