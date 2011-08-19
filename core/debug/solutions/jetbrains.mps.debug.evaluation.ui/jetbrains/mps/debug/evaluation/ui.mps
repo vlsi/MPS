@@ -11,6 +11,7 @@
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="fmwj" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.cleanup(MPS.Classpath/jetbrains.mps.cleanup@java_stub)" version="-1" />
   <import index="r27b" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="bcsp" modelUID="r:d0deafb6-c4af-4c30-b09c-3ec1bfe23ece(jetbrains.mps.baseLanguage.stubs)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -23,6 +24,7 @@
   <import index="bw1v" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.components(MPS.Classpath/com.intellij.openapi.components@java_stub)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="rkd4" modelUID="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9071178110302103533">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -78,8 +80,14 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~ModuleId%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8434269976171946569">
-              <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="265011600932467923">
+              <node role="operand" roleId="tpee.1197027771414" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="265011600932421680">
+                <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="bcsp.5516999836374025628" resolveInfo="JavaStubs" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="265011600932467929">
+                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rkd4.5553449326502826666" resolveInfo="getGeneratedClassFQName" />
+              </node>
             </node>
           </node>
         </node>
@@ -104,8 +112,14 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~ModuleId%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8434269976171946571">
-              <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="265011600932467932">
+              <node role="operand" roleId="tpee.1197027771414" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="265011600932467931">
+                <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="bcsp.2076500701550165036" resolveInfo="AllMembersJavaStubs" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="265011600932467936">
+                <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rkd4.5553449326502826666" resolveInfo="getGeneratedClassFQName" />
+              </node>
             </node>
           </node>
         </node>

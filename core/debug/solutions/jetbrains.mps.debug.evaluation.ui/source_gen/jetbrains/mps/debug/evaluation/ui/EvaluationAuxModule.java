@@ -6,6 +6,9 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import java.util.List;
@@ -32,8 +35,8 @@ public class EvaluationAuxModule extends AbstractModule {
   public static boolean JAVA_STUBS = true;
   @NotNull
   private static final ModelRootManager STUBS_MANAGER = (JAVA_STUBS ?
-    new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs") :
-    new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs")
+    new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:d0deafb6-c4af-4c30-b09c-3ec1bfe23ece(jetbrains.mps.baseLanguage.stubs)", "5516999836374025628"), "jetbrains.mps.lang.stubs.structure.AbstractModelCreator"), "call_getGeneratedClassFQName_5553449326502826666", new Class[]{SNode.class}))) :
+    new ModelRootManager(MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.baseLanguage").getModuleReference().getModuleId().toString(), ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:d0deafb6-c4af-4c30-b09c-3ec1bfe23ece(jetbrains.mps.baseLanguage.stubs)", "2076500701550165036"), "jetbrains.mps.lang.stubs.structure.AbstractModelCreator"), "call_getGeneratedClassFQName_5553449326502826666", new Class[]{SNode.class})))
   );
 
   private Project myProject;
