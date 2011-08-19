@@ -1525,6 +1525,18 @@
         </node>
       </node>
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="8736635924683117826">
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="8736635924683117827">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="8736635924683117828">
+          <property name="text" nameId="m373.8970989240999019144" value="Use commands language to start processes instead" />
+        </node>
+      </node>
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="8736635924683117829">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="8736635924683117830">
+          <property name="text" nameId="m373.8970989240999019144" value="http://confluence.jetbrains.net/display/MPSD2/Run+Configurations#RunConfigurations-Commands" />
+        </node>
+      </node>
+    </node>
   </root>
   <root id="8492459591399147955">
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="8492459591399147956">
