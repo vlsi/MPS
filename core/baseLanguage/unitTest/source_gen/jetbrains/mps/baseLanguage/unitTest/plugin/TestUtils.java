@@ -17,6 +17,9 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -25,9 +28,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.MPSProject;
@@ -138,6 +139,18 @@ __switch__:
         };
       }
     });
+  }
+
+  public static ClonableList nodesToCloneableList(List<SNode> nodes) {
+    return new ClonableList(ListSequence.fromList(nodes).<String>select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return TestUtils.pointerToString(new SNodePointer(it));
+      }
+    }).toListSequence());
+  }
+
+  public static ClonableList nodeToCloneableList(SNode node) {
+    return new ClonableList(TestUtils.pointerToString(new SNodePointer(node)));
   }
 
   @Nullable

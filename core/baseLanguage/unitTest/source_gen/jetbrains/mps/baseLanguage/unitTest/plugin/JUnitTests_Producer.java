@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 
@@ -145,7 +144,7 @@ public class JUnitTests_Producer {
 
       JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(testNode, "name"));
       configuration.setRunType(JUnitRunTypes2.NODE);
-      configuration.setTestCases(new ClonableList<String>(TestUtils.pointerToString(new SNodePointer(testNode))));
+      configuration.setTestCases(TestUtils.nodeToCloneableList(testNode));
       return configuration;
     }
 
@@ -185,14 +184,9 @@ public class JUnitTests_Producer {
         return null;
       }
 
-      List<String> nodeNames = ListSequence.fromList(new ArrayList<String>());
-      for (SNode testCase : source) {
-        ListSequence.fromList(nodeNames).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
-      }
-
       JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
       configuration.setRunType(JUnitRunTypes2.NODE);
-      configuration.setTestCases(new ClonableList<String>(nodeNames));
+      configuration.setTestCases(TestUtils.nodesToCloneableList(source));
       return configuration;
     }
 
@@ -223,11 +217,7 @@ public class JUnitTests_Producer {
       setSourceElement(new MPSPsiElement(source));
       JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), ITestMethod_Behavior.call_getTestName_1216136419751(ListSequence.fromList(source).first()) + ",...");
       configuration.setRunType(JUnitRunTypes2.METHOD);
-      configuration.setTestCases(new ClonableList(ListSequence.fromList(source).<String>select(new ISelector<SNode, String>() {
-        public String select(SNode it) {
-          return TestUtils.pointerToString(new SNodePointer(it));
-        }
-      }).toListSequence()));
+      configuration.setTestMethods(TestUtils.nodesToCloneableList(source));
       return configuration;
     }
 
@@ -255,7 +245,7 @@ public class JUnitTests_Producer {
 
       JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(source, "name"));
       configuration.setRunType(JUnitRunTypes2.METHOD);
-      configuration.setTestMethods(new ClonableList<String>(TestUtils.pointerToString(new SNodePointer(source))));
+      configuration.setTestMethods(TestUtils.nodeToCloneableList(source));
       return configuration;
     }
 
