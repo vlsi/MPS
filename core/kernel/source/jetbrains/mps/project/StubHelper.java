@@ -34,7 +34,7 @@ public class StubHelper {
     return ourInstance;
   }
 
-  private Map<Pair<ModuleReference, SModelFqName>, List<SModelReference>> myStubModulesCache = new HashMap<Pair<ModuleReference, SModelFqName>, List<SModelReference>>();
+  private Map<Pair<ModuleReference, SModelFqName>, Set<SModelReference>> myStubModulesCache = new HashMap<Pair<ModuleReference, SModelFqName>, Set<SModelReference>>();
 
   private StubHelper() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
@@ -49,8 +49,8 @@ public class StubHelper {
     Pair<ModuleReference, SModelFqName> key = new Pair<ModuleReference, SModelFqName>(module.getModuleReference(), name);
     ensureInitialized(key);
 
-    List<SModelReference> models = myStubModulesCache.get(key);
-    if (nodeId == null) return models;
+    Set<SModelReference> models = myStubModulesCache.get(key);
+    if (nodeId == null) return new ArrayList<SModelReference>(models);
 
     List<SModelReference> result = new ArrayList<SModelReference>();
     for (SModelReference ref : models) {
@@ -79,12 +79,12 @@ public class StubHelper {
 
   private void fillCacheWithModels(Pair<ModuleReference, SModelFqName> key, Iterable<SModelDescriptor> models) {
     if (!myStubModulesCache.containsKey(key)) {
-      myStubModulesCache.put(key, new ArrayList<SModelReference>());
+      myStubModulesCache.put(key, new HashSet<SModelReference>());
     }
 
     for (SModelDescriptor model : models) {
       if (!model.getSModelReference().getSModelFqName().equals(key.o2)) continue;
-      List<SModelReference> modelsFromCache = myStubModulesCache.get(key);
+      Set<SModelReference> modelsFromCache = myStubModulesCache.get(key);
       modelsFromCache.add(model.getSModelReference());
     }
   }
