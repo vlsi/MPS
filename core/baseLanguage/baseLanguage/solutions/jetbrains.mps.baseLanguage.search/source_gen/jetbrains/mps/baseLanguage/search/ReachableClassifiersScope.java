@@ -21,8 +21,8 @@ import java.util.Collection;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
   protected static Log log = LogFactory.getLog(ReachableClassifiersScope.class);
@@ -99,6 +99,12 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         return null;
       }
       if (ListSequence.fromList(classifiers).count() > 1) {
+        for (SNode cls : ListSequence.fromList(classifiers)) {
+          if (SNodeOperations.getModel(cls) == myModel) {
+            return cls;
+          }
+        }
+
         final StringBuilder warn = new StringBuilder();
         warn.append("reference can't be resolved: ");
         warn.append(referenceInfo);
