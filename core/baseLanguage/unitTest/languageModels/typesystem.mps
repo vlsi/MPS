@@ -17,6 +17,7 @@
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7080278351417151336">
       <property name="name" nameId="tpck.1169194664001" value="typeof_Message" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
     </node>
   </roots>
   <root id="7080278351417151336">

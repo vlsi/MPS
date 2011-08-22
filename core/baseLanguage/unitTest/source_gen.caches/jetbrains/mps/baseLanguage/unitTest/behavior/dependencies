@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.AfterTest_BehaviorDescriptor" file="AfterTest_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.AssertEquals_BehaviorDescriptor" file="AssertEquals_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -85,9 +91,16 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" file="BeforeTest_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.AfterTest_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertEquals_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertFalse_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertInNotNull_BehaviorDescriptor" />
@@ -96,6 +109,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertThrows_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertTrue_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.Fail_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.Message_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethodList_BehaviorDescriptor" />
@@ -177,6 +191,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" file="PrepareMethod_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethodList_BehaviorDescriptor" file="TestMethodList_BehaviorDescriptor.java">

@@ -31,10 +31,12 @@
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="7080278351417190887">
       <property name="name" nameId="tpck.1169194664001" value="AddRemoveMessage" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpe3.1172075514136" resolveInfo="MessageHolder" />
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="7523560072226634120">
       <property name="name" nameId="tpck.1169194664001" value="FlipAssertEquals" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpe3.8427750732757990717" resolveInfo="BinaryAssert" />
     </node>
   </roots>

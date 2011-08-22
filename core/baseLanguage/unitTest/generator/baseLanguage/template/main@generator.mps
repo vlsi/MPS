@@ -24,38 +24,46 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1171932074441">
       <property name="name" nameId="tpck.1169194664001" value="reduce_TestMethod" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171931690126" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171931690126" resolveInfo="TestMethod" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1171978794607">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssertEquals" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171978097730" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171978097730" resolveInfo="AssertEquals" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1171981127059">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssertTrue" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171981022339" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171981022339" resolveInfo="AssertTrue" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1171983925138">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssertFalse" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171983834376" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171983834376" resolveInfo="AssertFalse" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1171985835469">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssertSame" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171985735491" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1171985735491" resolveInfo="AssertSame" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1172017454869">
       <property name="name" nameId="tpck.1169194664001" value="reduce_Fail" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1172017222794" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1172017222794" resolveInfo="Fail" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1172028338402">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssertIsNull" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1172028177041" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1172028177041" resolveInfo="AssertIsNull" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1172070774330">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssertThrows" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1172069869612" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.1172069869612" resolveInfo="AssertThrows" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7080278351417106707">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AssertInNotNull" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpe3.7080278351417106679" resolveInfo="AssertInNotNull" />
     </node>
   </roots>
@@ -123,8 +131,94 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1178546169548" />
     </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8243879142738651516">
+      <property name="name" nameId="tpck.1169194664001" value="setUp" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8243879142738651517" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8243879142738651518" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8243879142738651519">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="8243879142738651538">
+          <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="8243879142738651539">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8243879142738651540">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8243879142738651541">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8243879142738651548">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8243879142738651543">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="8243879142738651542" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8243879142738651547">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpe3.8243879142738613219" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8243879142738651552">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1137022507850" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="8243879142738651521">
+        <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="8243879142738651522">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8243879142738651523">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8243879142738651524">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8243879142738651531">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8243879142738651526">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="8243879142738651525" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8243879142738651530">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpe3.8243879142738613219" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="8243879142738651535" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8243879142738651562">
+      <property name="name" nameId="tpck.1169194664001" value="tearDown" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8243879142738651563" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8243879142738651564" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8243879142738651565">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="8243879142738651566">
+          <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="8243879142738651567">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8243879142738651568">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8243879142738651569">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8243879142738651570">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8243879142738651571">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="8243879142738651572" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8243879142738651585">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpe3.8243879142738613220" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8243879142738651574">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1137022507850" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="8243879142738651575">
+        <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="8243879142738651576">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8243879142738651577">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8243879142738651578">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8243879142738651579">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8243879142738651580">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="8243879142738651581" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8243879142738651584">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpe3.8243879142738613220" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="8243879142738651583" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1171932074419">
-      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpe3.1171931851043" />
+      <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpe3.1171931851043" resolveInfo="BTestCase" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1171932074420">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -150,7 +244,7 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1171976695239">
                 <property name="name" nameId="tpck.1169194664001" value="superclass" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1171976695241">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227960223">
                   <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1171932074435" />
@@ -240,64 +334,73 @@
   </root>
   <root id="1171932074437">
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1171978784621">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171978097730" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171978097730" resolveInfo="AssertEquals" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1171978807438">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1171978794607" resolveInfo="reduce_AssertEquals" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1171983901308">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171983834376" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171983834376" resolveInfo="AssertFalse" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1171983936833">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1171983925138" resolveInfo="reduce_AssertFalse" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7080278351417106732">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.7080278351417106679" resolveInfo="AssertInNotNull" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7080278351417106734">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7080278351417106707" resolveInfo="reduce_AssertInNotNull" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1172028314084">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1172028177041" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1172028177041" resolveInfo="AssertIsNull" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1172028351426">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1172028338402" resolveInfo="reduce_AssertIsNull" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1171985821900">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171985735491" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171985735491" resolveInfo="AssertSame" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1171985847602">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1171985835469" resolveInfo="reduce_AssertSame" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1172070757325">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1172069869612" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1172069869612" resolveInfo="AssertThrows" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1172070789228">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1172070774330" resolveInfo="reduce_AssertThrows" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1171981105256">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171981022339" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171981022339" resolveInfo="AssertTrue" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1171981141316">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1171981127059" resolveInfo="reduce_AssertTrue" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1172017448139">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1172017222794" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1172017222794" resolveInfo="Fail" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1172017464762">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1172017454869" resolveInfo="reduce_Fail" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1171932074438">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171931690126" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171931690126" resolveInfo="TestMethod" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1171932074439">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1171932074441" resolveInfo="reduce_TestMethod" />
       </node>
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1171932074440">
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1171932074406" resolveInfo="BTestCaseImpl" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171931851043" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.1171931851043" resolveInfo="BTestCase" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7080278351417106704">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpe3.7080278351417106679" resolveInfo="AssertInNotNull" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7080278351417106706">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7080278351417106707" resolveInfo="reduce_AssertInNotNull" />

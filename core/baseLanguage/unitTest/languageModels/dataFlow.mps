@@ -9,23 +9,30 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp41" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" implicit="yes" />
+  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207074074329">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpe3.1171981022339" resolveInfo="AssertTrue" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207074236137">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpe3.1171978097730" resolveInfo="AssertEquals" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207074444912">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpe3.1171983834376" resolveInfo="AssertFalse" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1207074533735">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpe3.1172028177041" resolveInfo="AssertIsNull" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1228580711772">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpe3.1171985735491" resolveInfo="AssertSame" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="7080278351417106693">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tpe3.7080278351417106679" resolveInfo="AssertInNotNull" />
     </node>
   </roots>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bas5jpo68gu6mxu2at578nh46keya1z">
+<dependencies version="2" modelHash="-6wp038sttetj58we9rjs5u9cih0x9hp">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8f40zw2ng3ru04g6jirwqdjoy2uzoh2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-789q3w4cshodavjk9kxx2t7ghrr4ojj" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="cbxbas4wcql77jgbid2dra89g3u345r" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-cdzfn4p1jcvpfs9gteqku1nwd21geb4" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-6r5i332c87x8xyc3ivazsp5i0nmdz40" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="9v8g968ied55x8a7g8f19hktpunvvv4" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="9xygshpq819xdym3g17jum1cd49eftm" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="33wkjgiezx0fo2ce3ik1767insl4n2e" />
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="cd2q6hwcrnuw95blfx8ni4sa5soh6lr" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="cjb3uo0m6bhznlx33d9ca1f6rshkyq2" />
@@ -43,37 +43,37 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1171932074406" name="BTestCaseImpl" hash="5w501jnjje0enmrl9pm5598nnhx3ah0">
+  <source id="1171932074406" name="BTestCaseImpl" hash="6zobq5hjdlrrzmlzjdk4vlxe5fgj6gi">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1171932074437" name="main_unitTest" hash="d5va0rsp90myzkt8rfu6heu5f8j4t3o">
+  <source id="1171932074437" name="main_unitTest" hash="-udo13ap6g8lfza6t19b198o696tu63">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1171932074441" name="reduce_TestMethod" hash="-89rnmbf26x9b97zn8v15pynrgb7io80">
+  <source id="1171932074441" name="reduce_TestMethod" hash="-5b5btw5g4jt9j8jhxc91ys8oduw58ab">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1171978794607" name="reduce_AssertEquals" hash="-6n6zye3b2rzayox4cjqb7gvzpd3grh8">
+  <source id="1171978794607" name="reduce_AssertEquals" hash="-blfw0y738g971ci8bhulx80nyioul4i">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1171981127059" name="reduce_AssertTrue" hash="-8q4b7s58xbq7tnw11fcnzp84pjk8378">
+  <source id="1171981127059" name="reduce_AssertTrue" hash="-a9ryoc6fuxy7b8xmcufkuecp916wtj2">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1171983925138" name="reduce_AssertFalse" hash="-1t6uusx72uf5c16ty59sz3axzuwow82">
+  <source id="1171983925138" name="reduce_AssertFalse" hash="7umktr5yxyd9v84v2jwx8bm0axk0viy">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1171985835469" name="reduce_AssertSame" hash="-8w6b4osuijxflzjpu71qy1tp5mkx09p">
+  <source id="1171985835469" name="reduce_AssertSame" hash="92obmhbt91z7bli5kjmpvjbh70y8dk">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1172017454869" name="reduce_Fail" hash="-asch4jj5wxnp9qyo5gts6v1zlz9ro3s">
+  <source id="1172017454869" name="reduce_Fail" hash="dpn8oc2v8vbmtnusskpojwtdn3woh1i">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1172028338402" name="reduce_AssertIsNull" hash="5j7l6s59s3a1z54zc7sapsc08eq9fwv">
+  <source id="1172028338402" name="reduce_AssertIsNull" hash="d5m3oecyvc4sp3x4oqm8p2y1jzzxgf1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1172070774330" name="reduce_AssertThrows" hash="-7b701nnr3cv1eseq3bp4g78sueqz3jc">
+  <source id="1172070774330" name="reduce_AssertThrows" hash="-qxzd4u4agwzu33ubs0nvvj0l9dzgce">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7080278351417106707" name="reduce_AssertInNotNull" hash="9ffw9qkzq7equyg7krdcuhfvifgr3pt">
+  <source id="7080278351417106707" name="reduce_AssertInNotNull" hash="-635zej20u79zlx9qdscwcbm0mlvg5g0">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

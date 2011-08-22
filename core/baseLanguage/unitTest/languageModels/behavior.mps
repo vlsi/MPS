@@ -34,12 +34,15 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpe3.1171931851043" resolveInfo="BTestCase" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1215620458415">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpe3.1215620452633" resolveInfo="ITestable" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1216130717292">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1216134497652">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpe3.1216134482493" resolveInfo="ITestMethod" />
     </node>
   </roots>

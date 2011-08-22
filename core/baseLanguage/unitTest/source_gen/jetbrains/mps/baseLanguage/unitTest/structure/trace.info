@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="UnitTest_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.UnitTest_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" />
   <root nodeId="1171931690126">
     <nodeInfo nodeId="1171931690126" fileName="TestMethod.java" startLine="14" startPosition="82" endLine="15" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1171931690126" fileName="TestMethod.java" startLine="15" startPosition="98" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="METHOD_NAME" />
@@ -83,88 +83,106 @@
     <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
     <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
     <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="20" startPosition="64" endLine="21" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEST_METHOD_LIST" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="21" startPosition="65" endLine="22" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="24" startPosition="32" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="28" startPosition="35" endLine="29" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="32" startPosition="45" endLine="33" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="36" startPosition="27" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="40" startPosition="37" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="44" startPosition="39" endLine="45" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="48" startPosition="49" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="52" startPosition="28" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="56" startPosition="38" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="60" startPosition="37" endLine="61" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="64" startPosition="47" endLine="65" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="68" startPosition="45" endLine="69" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="72" startPosition="54" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="76" startPosition="41" endLine="77" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="80" startPosition="49" endLine="81" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="84" startPosition="48" endLine="85" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="88" startPosition="50" endLine="89" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="92" startPosition="69" endLine="93" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="96" startPosition="64" endLine="97" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="100" startPosition="50" endLine="101" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BTestCase#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestCaseName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTestCaseName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestMethodList#()Ljetbrains/mps/smodel/INodeAdapter;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTestMethodList#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/unitTest/structure/BTestCase;" />
-    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/unitTest/structure/BTestCase;" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="24" startPosition="32" endLine="25" endPosition="16" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="28" startPosition="35" endLine="29" endPosition="54" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="32" startPosition="45" endLine="33" endPosition="54" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="36" startPosition="27" endLine="37" endPosition="44" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="40" startPosition="37" endLine="41" endPosition="44" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="44" startPosition="39" endLine="45" endPosition="57" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="48" startPosition="49" endLine="49" endPosition="57" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="52" startPosition="28" endLine="53" endPosition="45" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="56" startPosition="38" endLine="57" endPosition="45" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="60" startPosition="37" endLine="61" endPosition="55" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="64" startPosition="47" endLine="65" endPosition="55" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="68" startPosition="45" endLine="69" endPosition="92" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="72" startPosition="54" endLine="73" endPosition="53" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="76" startPosition="41" endLine="77" endPosition="58" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="80" startPosition="49" endLine="81" endPosition="70" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="84" startPosition="48" endLine="85" endPosition="73" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="88" startPosition="50" endLine="89" endPosition="52" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="92" startPosition="69" endLine="93" endPosition="61" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="96" startPosition="64" endLine="97" endPosition="177" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="100" startPosition="50" endLine="101" endPosition="44" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <unitInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="21" startPosition="65" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BEFORE_TEST" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="22" startPosition="56" endLine="23" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AFTER_TEST" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="23" startPosition="54" endLine="24" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="26" startPosition="32" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="30" startPosition="35" endLine="31" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="34" startPosition="45" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="38" startPosition="27" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="42" startPosition="37" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="46" startPosition="39" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="50" startPosition="49" endLine="51" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="54" startPosition="28" endLine="55" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="58" startPosition="38" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="62" startPosition="37" endLine="63" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="66" startPosition="47" endLine="67" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="70" startPosition="45" endLine="71" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="74" startPosition="54" endLine="75" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="78" startPosition="37" endLine="79" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="82" startPosition="46" endLine="83" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="86" startPosition="35" endLine="87" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="90" startPosition="44" endLine="91" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="94" startPosition="41" endLine="95" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="98" startPosition="49" endLine="99" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="102" startPosition="48" endLine="103" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="106" startPosition="50" endLine="107" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="110" startPosition="69" endLine="111" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="114" startPosition="64" endLine="115" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="118" startPosition="50" endLine="119" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BTestCase#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestCaseName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTestCaseName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestMethodList#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTestMethodList#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBeforeTest#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBeforeTest#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAfterTest#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAfterTest#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/unitTest/structure/BTestCase;" />
+    <nodeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/unitTest/structure/BTestCase;" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="26" startPosition="32" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="30" startPosition="35" endLine="31" endPosition="54" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="34" startPosition="45" endLine="35" endPosition="54" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="38" startPosition="27" endLine="39" endPosition="44" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="42" startPosition="37" endLine="43" endPosition="44" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="46" startPosition="39" endLine="47" endPosition="57" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="50" startPosition="49" endLine="51" endPosition="57" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="54" startPosition="28" endLine="55" endPosition="45" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="58" startPosition="38" endLine="59" endPosition="45" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="62" startPosition="37" endLine="63" endPosition="55" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="66" startPosition="47" endLine="67" endPosition="55" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="70" startPosition="45" endLine="71" endPosition="92" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="74" startPosition="54" endLine="75" endPosition="53" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="78" startPosition="37" endLine="79" endPosition="79" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="82" startPosition="46" endLine="83" endPosition="48" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="86" startPosition="35" endLine="87" endPosition="76" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="90" startPosition="44" endLine="91" endPosition="47" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="94" startPosition="41" endLine="95" endPosition="58" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="98" startPosition="49" endLine="99" endPosition="70" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="102" startPosition="48" endLine="103" endPosition="73" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="106" startPosition="50" endLine="107" endPosition="52" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="110" startPosition="69" endLine="111" endPosition="61" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="114" startPosition="64" endLine="115" endPosition="177" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="118" startPosition="50" endLine="119" endPosition="44" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="25" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
+    <unitInfo nodeId="1171931851043" fileName="BTestCase.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" />
   </root>
   <root nodeId="1171931858461">
     <nodeInfo nodeId="1171931858461" fileName="TestMethodList.java" startLine="13" startPosition="49" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -772,6 +790,54 @@
     <scopeInfo nodeId="7080278351417106679" fileName="AssertInNotNull.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
     <scopeInfo nodeId="7080278351417106679" fileName="AssertInNotNull.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
     <unitInfo nodeId="7080278351417106679" fileName="AssertInNotNull.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" />
+  </root>
+  <root nodeId="8243879142738608185">
+    <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="10" startPosition="47" endLine="11" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="13" startPosition="33" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="17" startPosition="65" endLine="18" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="21" startPosition="51" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BeforeTest#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/unitTest/structure/BeforeTest;" />
+    <nodeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/unitTest/structure/BeforeTest;" />
+    <scopeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="13" startPosition="33" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="17" startPosition="65" endLine="18" endPosition="179" />
+    <scopeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="21" startPosition="51" endLine="22" endPosition="45" />
+    <scopeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="8243879142738608185" fileName="BeforeTest.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest" />
+  </root>
+  <root nodeId="8243879142738613213">
+    <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="10" startPosition="46" endLine="11" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="13" startPosition="32" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="17" startPosition="64" endLine="18" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="21" startPosition="50" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AfterTest#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/unitTest/structure/AfterTest;" />
+    <nodeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/unitTest/structure/AfterTest;" />
+    <scopeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="13" startPosition="32" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="17" startPosition="64" endLine="18" endPosition="177" />
+    <scopeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="21" startPosition="50" endLine="22" endPosition="44" />
+    <scopeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="8243879142738613213" fileName="AfterTest.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" />
+  </root>
+  <root nodeId="8243879142738615226">
+    <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="11" startPosition="52" endLine="12" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="14" startPosition="36" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="18" startPosition="68" endLine="19" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="22" startPosition="54" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrepareMethod#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/unitTest/structure/PrepareMethod;" />
+    <nodeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/unitTest/structure/PrepareMethod;" />
+    <scopeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="14" startPosition="36" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="18" startPosition="68" endLine="19" endPosition="185" />
+    <scopeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="22" startPosition="54" endLine="23" endPosition="48" />
+    <scopeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="8243879142738615226" fileName="PrepareMethod.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod" />
   </root>
   <root nodeId="8427750732757990717">
     <nodeInfo nodeId="8427750732757990717" fileName="BinaryAssert.java" startLine="15" startPosition="70" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

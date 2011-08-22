@@ -19,6 +19,8 @@ public class BTestCase extends ClassConcept implements ITestCase {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TEST_METHOD_LIST = "testMethodList";
+  public static final String BEFORE_TEST = "beforeTest";
+  public static final String AFTER_TEST = "afterTest";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BTestCase(SNode node) {
@@ -71,6 +73,22 @@ public class BTestCase extends ClassConcept implements ITestCase {
 
   public void setTestMethodList(TestMethodList node) {
     super.setChild(BTestCase.TEST_METHOD_LIST, node);
+  }
+
+  public BeforeTest getBeforeTest() {
+    return (BeforeTest) this.getChild(BeforeTest.class, BTestCase.BEFORE_TEST);
+  }
+
+  public void setBeforeTest(BeforeTest node) {
+    super.setChild(BTestCase.BEFORE_TEST, node);
+  }
+
+  public AfterTest getAfterTest() {
+    return (AfterTest) this.getChild(AfterTest.class, BTestCase.AFTER_TEST);
+  }
+
+  public void setAfterTest(AfterTest node) {
+    super.setChild(BTestCase.AFTER_TEST, node);
   }
 
   public int getSmodelAttributesCount() {

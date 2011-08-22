@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" file="AfterTest.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" file="AssertEquals.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" />
@@ -98,9 +107,20 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.ITestCase" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest" file="BeforeTest.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -164,6 +184,15 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.structure.Message" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod" file="PrepareMethod.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />

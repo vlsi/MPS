@@ -26,6 +26,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.sandbox.Test_Test" file="Test_Test.java">
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>

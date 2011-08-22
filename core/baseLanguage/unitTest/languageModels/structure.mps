@@ -2,6 +2,7 @@
 <model modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)">
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -24,55 +25,81 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171978097730">
       <property name="name" nameId="tpck.1169194664001" value="AssertEquals" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8427750732757990717" resolveInfo="BinaryAssert" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171981022339">
       <property name="name" nameId="tpck.1169194664001" value="AssertTrue" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171983834376">
       <property name="name" nameId="tpck.1169194664001" value="AssertFalse" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171985735491">
       <property name="name" nameId="tpck.1169194664001" value="AssertSame" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8427750732757990717" resolveInfo="BinaryAssert" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1172017222794">
       <property name="name" nameId="tpck.1169194664001" value="Fail" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1172028177041">
       <property name="name" nameId="tpck.1169194664001" value="AssertIsNull" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1172069869612">
       <property name="name" nameId="tpck.1169194664001" value="AssertThrows" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1172073500303">
       <property name="name" nameId="tpck.1169194664001" value="Message" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1172075514136">
       <property name="name" nameId="tpck.1169194664001" value="MessageHolder" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1215620452633">
       <property name="name" nameId="tpck.1169194664001" value="ITestable" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1216130694486">
       <property name="name" nameId="tpck.1169194664001" value="ITestCase" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1216134482493">
       <property name="name" nameId="tpck.1169194664001" value="ITestMethod" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7080278351417106679">
       <property name="name" nameId="tpck.1169194664001" value="AssertInNotNull" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8427750732757990717">
       <property name="name" nameId="tpck.1169194664001" value="BinaryAssert" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assert" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8243879142738608185">
+      <property name="name" nameId="tpck.1169194664001" value="BeforeTest" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="8243879142738615226" resolveInfo="PrepareMethod" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8243879142738613213">
+      <property name="name" nameId="tpck.1169194664001" value="AfterTest" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="8243879142738615226" resolveInfo="PrepareMethod" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8243879142738615226">
+      <property name="name" nameId="tpck.1169194664001" value="PrepareMethod" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
   </roots>
   <root id="1171931690126">
@@ -93,6 +120,16 @@
       <property name="role" nameId="tpce.1071599776563" value="testMethodList" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1171931858461" resolveInfo="TestMethodList" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8243879142738613219">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="beforeTest" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8243879142738608185" resolveInfo="BeforeTest" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8243879142738613220">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="afterTest" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8243879142738613213" resolveInfo="AfterTest" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1171931851045">
       <property name="name" nameId="tpck.1169194664001" value="testCaseName" />
@@ -260,6 +297,31 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="8427750732757990723">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
+  </root>
+  <root id="8243879142738608185">
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="8243879142738608187">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" roleId="tpce.1105736901241" type="tpee.VoidType" typeId="tpee.1068581517677" id="8243879142738613211" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8243879142738613212">
+      <property name="value" nameId="tpce.1105725733873" value="beforeTest" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="8243879142738613213">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8243879142738613215">
+      <property name="value" nameId="tpce.1105725733873" value="afterTest" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="8243879142738613216">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" roleId="tpce.1105736901241" type="tpee.VoidType" typeId="tpee.1068581517677" id="8243879142738613218" />
+    </node>
+  </root>
+  <root id="8243879142738615226">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="8243879142738615227">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
     </node>
   </root>

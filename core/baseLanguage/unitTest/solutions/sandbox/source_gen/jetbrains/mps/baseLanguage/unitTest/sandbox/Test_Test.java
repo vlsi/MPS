@@ -9,4 +9,16 @@ public class Test_Test extends TestCase {
   public void test_test1() throws Exception {
     Assert.assertFalse(false);
   }
+
+  public void test_test2() throws Exception {
+    Assert.assertTrue(true);
+  }
+
+  public void setUp() {
+    System.err.println("setup test!");
+  }
+
+  public void tearDown() {
+    System.err.println("teardown test!");
+  }
 }

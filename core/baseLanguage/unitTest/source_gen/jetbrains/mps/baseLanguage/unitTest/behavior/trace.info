@@ -4,8 +4,11 @@
   <unitInfo fileName="ITestable_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
   <unitInfo fileName="ITestMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
   <unitInfo fileName="ITestCase_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
+  <unitInfo fileName="AfterTest_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AfterTest_BehaviorDescriptor" />
+  <unitInfo fileName="BeforeTest_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" />
   <unitInfo fileName="AssertSame_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertSame_BehaviorDescriptor" />
   <unitInfo fileName="AssertEquals_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertEquals_BehaviorDescriptor" />
+  <unitInfo fileName="PrepareMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" />
   <unitInfo fileName="BinaryAssert_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BinaryAssert_BehaviorDescriptor" />
   <unitInfo fileName="AssertInNotNull_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.AssertInNotNull_BehaviorDescriptor" />
   <unitInfo fileName="Message_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.Message_BehaviorDescriptor" />
@@ -17,7 +20,7 @@
   <unitInfo fileName="TestMethodList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethodList_BehaviorDescriptor" />
   <unitInfo fileName="TestMethod_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_BehaviorDescriptor" />
   <unitInfo fileName="BTestCase_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
   <root nodeId="1213877238815">
     <nodeInfo nodeId="1216135819363" fileName="TestMethod_Behavior.java" startLine="24" startPosition="73" endLine="25" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1216135832838" fileName="TestMethod_Behavior.java" startLine="25" startPosition="28" endLine="26" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

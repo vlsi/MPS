@@ -31,6 +31,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static boolean ifMacro_Condition_8243879142738651522(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "beforeTest", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_8243879142738651576(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "afterTest", true) != null);
+  }
+
   public static boolean ifMacro_Condition_7080278351417154660(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "message", true), "message", true) != null);
   }
@@ -59,10 +67,18 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "message", true), "message", true) != null);
   }
 
+  public static SNode sourceNodeQuery_8243879142738651539(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "beforeTest", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_8243879142738651567(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "afterTest", true), "body", true);
+  }
+
   public static SNode sourceNodeQuery_1171932074431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode superclass = SLinkOperations.getTarget(_context.getNode(), "superclass", true);
     if ((superclass == null)) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0b0k().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0b0o().createNode();
     }
     return superclass;
   }
@@ -167,8 +183,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
 
-  public static class QuotationClass_x583g4_a0a0b0k {
-    public QuotationClass_x583g4_a0a0b0k() {
+  public static class QuotationClass_x583g4_a0a0b0o {
+    public QuotationClass_x583g4_a0a0b0o() {
     }
 
     public SNode createNode() {
