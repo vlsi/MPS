@@ -161,11 +161,11 @@ __switch__:
     Iterable<String> seqs = ListSequence.fromList(lo).ofType(String.class);
     Assert.assertEquals("foo bar", IterableUtils.join(Sequence.fromIterable(seqs), " "));
     Iterable<Long> seql = ListSequence.fromList(lo).ofType(Long.class);
-    Assert.assertTrue(Sequence.fromIterable(seql).count() == 1 && Sequence.fromIterable(seql).first() == -1L);
+    Assert.assertTrue((int) Sequence.fromIterable(seql).count() == 1 && (long) Sequence.fromIterable(seql).first() == -1L);
     Iterable<List> seqlist = ListSequence.fromList(lo).ofType(List.class);
-    Assert.assertTrue(Sequence.fromIterable(seqlist).count() == 1);
+    Assert.assertTrue((int) Sequence.fromIterable(seqlist).count() == 1);
     Assert.assertEquals("baz", ListSequence.fromList(Sequence.fromIterable(seqlist).first()).first());
-    Assert.assertTrue(ListSequence.fromList(lo).ofType(Boolean.class).count() == 1);
+    Assert.assertTrue((int) ListSequence.fromList(lo).ofType(Boolean.class).count() == 1);
     Assert.assertTrue(ListSequence.fromList(lo).ofType(Float.class).isEmpty());
   }
 }

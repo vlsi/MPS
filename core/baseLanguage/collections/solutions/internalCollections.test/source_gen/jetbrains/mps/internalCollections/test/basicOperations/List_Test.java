@@ -416,6 +416,16 @@ __switch__:
     }
   }
 
+  public void test_primitiveValues() throws Exception {
+    List<Integer> listi = ListSequence.fromListAndArray(new ArrayList<Integer>(), 333, 444, 555);
+    Integer ttt = 333;
+    Integer ooo = 444;
+    Integer fff = 555;
+    Assert.assertTrue((int) ListSequence.fromList(listi).getElement(0) == ttt);
+    Assert.assertTrue(fff == (int) ListSequence.fromList(listi).getElement(2));
+    Assert.assertTrue((int) ListSequence.fromList(listi).addElement(444) == ooo);
+  }
+
   public List<Foo> mps5684helper() {
     List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
     return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);

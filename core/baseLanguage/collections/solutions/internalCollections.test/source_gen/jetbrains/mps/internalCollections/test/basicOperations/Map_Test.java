@@ -213,4 +213,11 @@ public class Map_Test extends Util_Test {
     Assert.assertSame(0, MapSequence.fromMap(moi).count());
 
   }
+
+  public void test_primitiveValues() throws Exception {
+    Map<String, Integer> msi = MapSequence.<String, Integer>fromMapAndKeysArray(new HashMap<String, Integer>(), "A", "B", "C").withValues(333, 444, 333);
+    Assert.assertTrue(444 == (int) MapSequence.fromMap(msi).get("B"));
+    Assert.assertTrue((int) MapSequence.fromMap(msi).get("B") == 444);
+    Assert.assertTrue((int) MapSequence.fromMap(msi).get("A") == (int) MapSequence.fromMap(msi).get("C"));
+  }
 }

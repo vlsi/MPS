@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Sequence_Test extends Util_Test {
   public void test_sequenceMethods() throws Exception {
@@ -533,6 +534,21 @@ __switch__:
     });
     Iterable is = si;
     this.assertIterableEquals(this.input5(), is);
+  }
+
+  public void test_primitiveValues() throws Exception {
+    final Integer fff = 555;
+    Integer ttt = 333;
+    Integer ooo = 444;
+    Iterable<Integer> seqi = ListSequence.fromListAndArray(new ArrayList<Integer>(), 333, 444, 555);
+    Assert.assertTrue((int) Sequence.fromIterable(seqi).first() == ttt);
+    Assert.assertTrue(fff == (int) Sequence.fromIterable(seqi).last());
+    Assert.assertTrue((int) Sequence.fromIterable(seqi).skip(1).first() == ooo);
+    Assert.assertTrue(fff == (int) Sequence.fromIterable(seqi).findFirst(new IWhereFilter<Integer>() {
+      public boolean accept(Integer it) {
+        return it == (int) fff;
+      }
+    }));
   }
 
   public Iterable<Integer> abc(final int j) {
