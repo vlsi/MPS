@@ -20,10 +20,12 @@ import jetbrains.mps.util.PathManager;
 import sun.misc.Launcher;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class CommonPaths {
   private static final Logger LOG = Logger.getLogger(CommonPaths.class);
@@ -55,7 +57,7 @@ public class CommonPaths {
   }
 
 
-  //------classpaths--------
+  //------classpaths : JDK--------
 
   private static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
@@ -80,106 +82,13 @@ public class CommonPaths {
     return composite;
   }
 
-  public static IClassPathItem getMPSClassPath() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    result.add(getBaseMPSClassPath());
-
-    addIfExists(result, "/core/analyzers/classes");
-    addIfExists(result, "/core/idea-patch/classes");
-    addIfExists(result, "/core/kernel/classes");
-    addIfExists(result, "/core/generator/classes");
-    addIfExists(result, "/core/make-runtime/classes");
-    addIfExists(result, "/core/typesystemEngine/classes");
-    addIfExists(result, "/core/typesystemIntegration/classes");
-    addIfExists(result, "/core/debug/classes");
-    addIfExists(result, "/core/debug-api/classes");
-    addIfExists(result, "/MPSPlugin/apiclasses");
-    addIfExists(result, "/workbench/classes");
-    addIfExists(result, "/core/actions-runtime/classes");
-    addIfExists(result, "/core/editor-runtime/classes");
-    addIfExists(result, "/core/intentions-runtime/classes");
-    addIfExists(result, "/core/plugin-runtime/classes");
-    addIfExists(result, "/core/findUsages-runtime/classes");
-    addIfExists(result, "/core/refactoring-runtime/classes");
-    addIfExists(result, "/core/runtime/classes");
-    addIfExists(result, "/core/languageDesign/test/classes");
-    addIfExists(result, "/workbench/typesystemUi/classes");
-    addIfExists(result, "/core/baseLanguage/runConfigurations/runtime/classes");
-    addIfExists(result, "/languages/util/runConfigurations/classes");
-    addIfExists(result, "/lib/platform-api.jar");
-    addIfExists(result, "/lib/platform.jar");
-    addIfExists(result, "/lib/annotations.jar");
-    addIfExists(result, "/lib/execution-api.jar");
-    addIfExists(result, "/lib/util.jar");
-    addIfExists(result, "/lib/extensions.jar");
-    addIfExists(result, "/lib/junit-4.8.2.jar");
-    addIfExists(result, "/lib/log4j.jar");
-    addIfExists(result, "/lib/commons-lang-2.4.jar");
-    addIfExists(result, "/lib/picocontainer.jar");
-    addIfExists(result, "/lib/jdom.jar");
-    addIfExists(result, "/lib/ecj.jar");
-
-    return result;
-  }
-
-
-  public static IClassPathItem getTestbenchClassPath() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-
-    addIfExists(result, "/testbench/classes");
-    addIfExists(result, "/testbench/testclasses");
-
-    return result;
-  }
-
-  //--------private----------
-
-  private static IClassPathItem getBaseMPSClassPath() {
-    String path = getBaseMPSPath();
-
-    if (path != null) {
-      if (path.endsWith(".jar")) {
-        try {
-          return ClassPathFactory.getInstance().createFromPath(path);
-        } catch (Throwable e) {
-          LOG.error(e);
-        }
-      } else {
-        return ClassPathFactory.getInstance().createFromPath(path);
-      }
+  private static void addJarForName(CompositeClassPathItem composite, String name) {
+    RealClassPathItem rtJar = findBootstrapJarByName(name);
+    if (rtJar != null) {
+      composite.add(rtJar);
+    } else {
+      LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
     }
-
-    File file = new File(PathManager.getResourceRoot(ClassLoaderManager.class, "/" + ClassLoaderManager.class.getName().replace('.', '/') + ".class"));
-    if (file.exists()) {
-      return ClassPathFactory.getInstance().createFromPath(file.getAbsolutePath());
-    }
-
-    LOG.error("Can't find mps classpath");
-    return null;
-  }
-
-  //----constant paths------
-
-  private static String libPath() {
-    return PathManager.getHomePath() + File.separator + "lib"
-      + File.separator;
-  }
-
-  //--------utils-----------
-
-  private static List<String> itemToPath(IClassPathItem cp) {
-    List<String> result = new ArrayList<String>();
-    for (IClassPathItem item : cp.flatten()) {
-      if (item instanceof FileClassPathItem) {
-        result.add(((FileClassPathItem) item).getClassPath());
-      } else if (item instanceof JarFileClassPathItem) {
-        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
-      } else {
-        throw new IllegalArgumentException(item.getClass().getName());
-      }
-    }
-
-    return result;
   }
 
   private static RealClassPathItem findBootstrapJarByName(String name) {
@@ -201,6 +110,73 @@ public class CommonPaths {
     return null;
   }
 
+  //------classpaths : MPS--------
+
+  public static IClassPathItem getMPSClassPath() {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+    addJars(result, new File(libPath()));
+    addClasses(result, PathManager.getHomePath());
+    return result;
+  }
+
+  private static void addJars(CompositeClassPathItem result, File dir) {
+/*
+    for (File child:dir.listFiles()){
+      if (child.isDirectory()){
+        addJars(result,child);
+      } else if (child.getName().endsWith(".jar")){
+        result.add(ClassPathFactory.getInstance().createFromPath(child.getAbsolutePath()));
+      }
+    }
+*/
+    addIfExists(result, "/lib/mps.jar");
+    addIfExists(result, "/lib/platform-api.jar");
+    addIfExists(result, "/lib/platform.jar");
+    addIfExists(result, "/lib/annotations.jar");
+    addIfExists(result, "/lib/execution-api.jar");
+    addIfExists(result, "/lib/util.jar");
+    addIfExists(result, "/lib/extensions.jar");
+    addIfExists(result, "/lib/junit-4.8.2.jar");
+    addIfExists(result, "/lib/log4j.jar");
+    addIfExists(result, "/lib/commons-lang-2.4.jar");
+    addIfExists(result, "/lib/picocontainer.jar");
+    addIfExists(result, "/lib/jdom.jar");
+    addIfExists(result, "/lib/ecj.jar");
+  }
+
+  private static void addClasses(CompositeClassPathItem result, String homePath) {
+    File acp = new File(homePath + File.separator + "build" + File.separator + "idea.additional.classpath.txt");
+    if (!acp.exists()) return;
+
+    try {
+      Scanner sc;
+      for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine();) {
+        File dir = new File(homePath, sc.nextLine());
+        if (dir.exists()) {
+          result.add(ClassPathFactory.getInstance().createFromPath(dir.getAbsolutePath()));
+        }
+      }
+      sc.close();
+    } catch (FileNotFoundException ignore) {
+    }
+  }
+
+  private static String libPath() {
+    return PathManager.getHomePath() + File.separator + "lib"
+      + File.separator;
+  }
+
+  //------classpaths : Testbench--------
+
+  public static IClassPathItem getTestbenchClassPath() {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+
+    addIfExists(result, "/testbench/classes");
+    addIfExists(result, "/testbench/testclasses");
+
+    return result;
+  }
+
   private static void addIfExists(CompositeClassPathItem item, String path) {
     path = PathManager.getHomePath() + path.replace('/', File.separatorChar);
     File file = new File(path);
@@ -213,12 +189,20 @@ public class CommonPaths {
     }
   }
 
-  private static void addJarForName(CompositeClassPathItem composite, String name) {
-    RealClassPathItem rtJar = findBootstrapJarByName(name);
-    if (rtJar != null) {
-      composite.add(rtJar);
-    } else {
-      LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
+  //--------utils-----------
+
+  private static List<String> itemToPath(IClassPathItem cp) {
+    List<String> result = new ArrayList<String>();
+    for (IClassPathItem item : cp.flatten()) {
+      if (item instanceof FileClassPathItem) {
+        result.add(((FileClassPathItem) item).getClassPath());
+      } else if (item instanceof JarFileClassPathItem) {
+        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
+      } else {
+        throw new IllegalArgumentException(item.getClass().getName());
+      }
     }
+
+    return result;
   }
 }

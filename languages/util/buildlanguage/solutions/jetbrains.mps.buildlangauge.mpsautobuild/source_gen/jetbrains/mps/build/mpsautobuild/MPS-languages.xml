@@ -602,9 +602,7 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
-        <runtime jar="/lib/commons-lang-2.4.jar" />
         <library jar="jetbrains.mps.baseLanguage.jar" />
-        <library jar="/lib/asm.jar" />
         <sources jar="jetbrains.mps.baseLanguage-src.jar" descriptor="baseLanguage.mpl" />
       </module>
     </echoxml>
@@ -1973,8 +1971,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
-        <runtime jar="/lib/commons-logging-1.1.jar" />
-        <library jar="/lib/commons-logging-1.1.jar" />
         <sources jar="jetbrains.mps.baseLanguage.logging-src.jar" descriptor="logging.mpl" />
       </module>
     </echoxml>
@@ -2325,7 +2321,6 @@
         <library jar="jmock-junit3-2.5.1.jar" />
         <library jar="jmock-junit4-2.5.1.jar" />
         <library jar="objenesis-1.0.jar" />
-        <library jar="/lib/junit-4.8.2.jar" />
         <sources jar="jetbrains.mps.baseLanguage.unitTest.lib-src.jar" descriptor="jetbrains.mps.baseLnaguage.unitTest.lib.msd" />
       </module>
     </echoxml>
@@ -5229,7 +5224,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
-        <runtime jar="/lib/guava-r06.jar" />
         <runtime jar="jetbrains.mps.lang.structure-runtime.jar" />
         <library jar="jetbrains.mps.lang.structure.jar" />
         <sources jar="jetbrains.mps.lang.structure-src.jar" descriptor="languageDescriptor.mpl" />
@@ -7336,7 +7330,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
-        <library jar="/lib/tools.jar" />
         <sources jar="jetbrains.mps.debug.evaluation-src.jar" descriptor="evaluation.mpl" />
       </module>
     </echoxml>
@@ -7476,7 +7469,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
-        <runtime jar="/lib/tools.jar" />
         <sources jar="jetbrains.mps.debug.customViewers-src.jar" descriptor="customViewers.mpl" />
       </module>
     </echoxml>
@@ -8966,9 +8958,7 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
-        <runtime jar="/lib/beansbinding-1.2.1.jar" />
         <runtime jar="jetbrains.mps.uiLanguage-runtime.jar" />
-        <library jar="/lib/beansbinding-1.2.1.jar" />
         <sources jar="jetbrains.mps.uiLanguage-src.jar" descriptor="uiLanguage.mpl" />
       </module>
     </echoxml>
@@ -10649,8 +10639,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
         </dependencies>
-        <library jar="/lib/ant/lib/ant-launcher.jar" />
-        <library jar="/lib/ant/lib/ant.jar" />
         <sources jar="jetbrains.mps.build.generictasks-src.jar" descriptor="generictasks.mpl" />
       </module>
     </echoxml>
@@ -14224,7 +14212,6 @@
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
         </dependencies>
-        <library jar="/lib/commons-lang-2.4.jar" />
         <sources jar="jetbrains.mps.gtext.runtime-src.jar" descriptor="jetbrains.mps.gtext.runtime.msd" />
       </module>
     </echoxml>

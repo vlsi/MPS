@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.project.StubModelsResolver;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelStereotype;
 
@@ -66,14 +68,25 @@ public class StubModelDescriptors {
   }
 
   public SModelReference javaStubRef(String pkg) {
-    ModuleReference mr = this.stubLoc.getModule().getModuleFor(pkg, "java");
+    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(this.stubLoc.getModule(), new SModelFqName(pkg, LanguageID.JAVA), null);
+    SModelReference mr = (models.isEmpty() ?
+      null :
+      models.iterator().next()
+    );
+    ModuleReference moduleRef = (mr == null ?
+      null :
+      SModelRepository.getInstance().getModelDescriptor(mr).getModule().getModuleReference()
+    );
+
     String mfq = "MPS.Classpath";
     String muid = "37a3367b-1fb2-44d8-aa6b-18075e74e003";
-    if (mr != null) {
-      mfq = mr.getModuleFqName();
-      muid = mr.getModuleId().toString();
+
+
+    if (moduleRef != null) {
+      mfq = moduleRef.getModuleFqName();
+      muid = moduleRef.getModuleId().toString();
     }
-    String stereo = SModelStereotype.getStubStereotypeForId("java");
+    String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     SModelFqName fqname = new SModelFqName(mfq, pkg, stereo);
     SModelId modelId = SModelId.foreign(stereo, muid, pkg);
     return new SModelReference(fqname, modelId);
