@@ -15,6 +15,10 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelReference;
+import java.util.Collection;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.SModelRepository;
 
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
   private IScope myScope;
@@ -63,13 +67,24 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     }
 
     public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
-      SModelDescriptor targetModel = this.myScope.getModelDescriptor(targetModelReference);
-      if (targetModel == null) {
-        return null;
+      if (targetModelReference.getSModelId() != null) {
+        SModelDescriptor targetModel = this.myScope.getModelDescriptor(targetModelReference);
+        if (targetModel == null) {
+          return null;
+        }
+        return ListSequence.fromList(ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(referenceInfo)).first();
       }
-      List<SNode> classifiers = ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(referenceInfo);
-      if (ListSequence.fromList(classifiers).isNotEmpty()) {
-        return ListSequence.fromList(classifiers).first();
+
+      Collection<IModule> visibleModules = IterableUtil.asCollection(myScope.getVisibleModules());
+      for (SModelDescriptor model : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+        if (visibleModules.contains(model.getModule())) {
+          if (model.getSModelReference().getSModelFqName().equals(targetModelReference.getSModelFqName())) {
+            List<SNode> classifiers = ClassifiersCache.getInstance(model).getClassifiersByRefName(referenceInfo);
+            if (ListSequence.fromList(classifiers).isNotEmpty()) {
+              return ListSequence.fromList(classifiers).first();
+            }
+          }
+        }
       }
       return null;
     }
