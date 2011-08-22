@@ -67,8 +67,6 @@ public class StubHelper {
     if (myStubModulesCache.containsKey(key)) return;
 
     IModule module = MPSModuleRepository.getInstance().getModule(key.o1);
-    fillCacheWithModels(key, module.getOwnModelDescriptors());
-
     Set<SModelDescriptor> visibleModels = new HashSet<SModelDescriptor>();
     for (IModule visibleModule : module.getScope().getVisibleModules()) {
       visibleModels.addAll(visibleModule.getOwnModelDescriptors());
