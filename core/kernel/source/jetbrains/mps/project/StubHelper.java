@@ -17,22 +17,32 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
 public class StubHelper {
-  private static StubHelper ourInstance = new StubHelper();
+  private static StubHelper ourInstance;
 
   public static StubHelper getInstance() {
+    if (ourInstance == null) {
+      ourInstance = new StubHelper();
+    }
     return ourInstance;
   }
 
   private Map<Pair<ModuleReference, SModelFqName>, List<SModelReference>> myStubModulesCache = new HashMap<Pair<ModuleReference, SModelFqName>, List<SModelReference>>();
 
   private StubHelper() {
-
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      public void eventsHappenedInCommand(List<SModelEvent> events) {
+        //make it more optimal
+        myStubModulesCache.clear();
+      }
+    });
   }
 
   public List<SModelReference> resolveModel(IModule module, SModelFqName name, @Nullable SNodeId nodeId) {
