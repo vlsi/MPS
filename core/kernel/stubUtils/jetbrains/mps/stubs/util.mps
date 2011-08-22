@@ -2307,11 +2307,11 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3337801829813864758">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3337801829813864759">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~StubHelper%dgetInstance()%cjetbrains%dmps%dproject%dStubHelper" resolveInfo="getInstance" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="afxk.~StubHelper" resolveInfo="StubHelper" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="afxk.~StubModelsResolver" resolveInfo="StubModelsResolver" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~StubModelsResolver%dgetInstance()%cjetbrains%dmps%dproject%dStubModelsResolver" resolveInfo="getInstance" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3337801829813864760">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~StubHelper%dresolveModel(jetbrains%dmps%dproject%dIModule,jetbrains%dmps%dsmodel%dSModelFqName,jetbrains%dmps%dsmodel%dSNodeId)%cjava%dutil%dList" resolveInfo="resolveModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="afxk.~StubModelsResolver%dresolveModel(jetbrains%dmps%dproject%dIModule,jetbrains%dmps%dsmodel%dSModelFqName,jetbrains%dmps%dsmodel%dSNodeId)%cjava%dutil%dList" resolveInfo="resolveModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3337801829813864761">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3337801829813864762">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3337801829813864763" />

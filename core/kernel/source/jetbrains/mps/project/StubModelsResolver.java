@@ -24,19 +24,19 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class StubHelper {
-  private static StubHelper ourInstance;
+public class StubModelsResolver {
+  private static StubModelsResolver ourInstance;
 
-  public static StubHelper getInstance() {
+  public static StubModelsResolver getInstance() {
     if (ourInstance == null) {
-      ourInstance = new StubHelper();
+      ourInstance = new StubModelsResolver();
     }
     return ourInstance;
   }
 
   private Map<Pair<ModuleReference, SModelFqName>, Set<SModelReference>> myStubModulesCache = new HashMap<Pair<ModuleReference, SModelFqName>, Set<SModelReference>>();
 
-  private StubHelper() {
+  private StubModelsResolver() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         //make it more optimal

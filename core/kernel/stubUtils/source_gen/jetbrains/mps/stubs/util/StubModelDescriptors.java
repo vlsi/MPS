@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import java.util.List;
-import jetbrains.mps.project.StubHelper;
+import jetbrains.mps.project.StubModelsResolver;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -69,7 +69,7 @@ public class StubModelDescriptors {
   }
 
   public SModelReference javaStubRef(String pkg) {
-    List<SModelReference> models = StubHelper.getInstance().resolveModel(this.stubLoc.getModule(), new SModelFqName(pkg, LanguageID.JAVA), null);
+    List<SModelReference> models = StubModelsResolver.getInstance().resolveModel(this.stubLoc.getModule(), new SModelFqName(pkg, LanguageID.JAVA), null);
     SModelReference mr = (models.isEmpty() ?
       null :
       models.get(0)
