@@ -137,7 +137,7 @@ public class List_Test extends Util_Test {
     Assert.assertEquals(4, insElm);
     Assert.assertEquals(Arrays.asList(new Integer[]{1, 2, 3, 4, 5}), test);
     int setElm = ListSequence.fromList(test).setElement(2, 0);
-    Assert.assertEquals(3, setElm);
+    Assert.assertEquals(0, setElm);
   }
 
   public void test_elementAccess() throws Exception {
@@ -424,6 +424,16 @@ __switch__:
     Assert.assertTrue((int) ListSequence.fromList(listi).getElement(0) == ttt);
     Assert.assertTrue(fff == (int) ListSequence.fromList(listi).getElement(2));
     Assert.assertTrue((int) ListSequence.fromList(listi).addElement(444) == ooo);
+  }
+
+  public void test_opAssign() throws Exception {
+    List<Integer> listi = ListSequence.fromListAndArray(new ArrayList<Integer>(), 345, 543, 1111);
+    Assert.assertTrue(645 == (int) ListSequence.fromList(listi).setElement(0, ListSequence.fromList(listi).getElement(0) + (300)));
+    Assert.assertTrue(645 == (int) ListSequence.fromList(listi).getElement(0));
+    Assert.assertTrue((int) ListSequence.fromList(listi).setElement(1, ListSequence.fromList(listi).getElement(1) - (40)) == 503);
+    Assert.assertTrue((int) ListSequence.fromList(listi).getElement(1) == 503);
+    Assert.assertTrue(9999 == (int) ListSequence.fromList(listi).setElement(2, ListSequence.fromList(listi).getElement(2) * (9)));
+    Assert.assertTrue(9999 == (int) ListSequence.fromList(listi).getElement(2));
   }
 
   public List<Foo> mps5684helper() {

@@ -15389,8 +15389,8 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6543581031674031824">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6543581031674031825">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3009044146621318762">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6543581031674031825">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674031585" resolveInfo="set" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6543581031674031826">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6543581031674031789" resolveInfo="idx" />
@@ -15398,6 +15398,11 @@
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6543581031674031827">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6543581031674031791" resolveInfo="t" />
             </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3009044146621318765">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3009044146621318767">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6543581031674031791" resolveInfo="t" />
           </node>
         </node>
       </node>
@@ -15841,7 +15846,7 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6543581031674031996">
               <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6543581031674031997">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6543581031674033682" resolveInfo="ArrayUtils" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674033969" resolveInfo="newArrayInstance" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6543581031674033956" resolveInfo="newArrayInstance" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6543581031674031998">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6543581031674031988" resolveInfo="runtimeClass" />
                 </node>

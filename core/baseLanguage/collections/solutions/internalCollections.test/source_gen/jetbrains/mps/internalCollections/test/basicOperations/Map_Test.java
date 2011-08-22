@@ -220,4 +220,14 @@ public class Map_Test extends Util_Test {
     Assert.assertTrue((int) MapSequence.fromMap(msi).get("B") == 444);
     Assert.assertTrue((int) MapSequence.fromMap(msi).get("A") == (int) MapSequence.fromMap(msi).get("C"));
   }
+
+  public void test_opAssign() throws Exception {
+    Map<String, Integer> mapsi = MapSequence.<String, Integer>fromMapAndKeysArray(new HashMap<String, Integer>(), "A", "B", "C").withValues(345, 543, 1111);
+    Assert.assertTrue(645 == (int) MapSequence.fromMap(mapsi).putValue("A", MapSequence.fromMap(mapsi).get("A") + (300)));
+    Assert.assertTrue(645 == (int) MapSequence.fromMap(mapsi).get("A"));
+    Assert.assertTrue((int) MapSequence.fromMap(mapsi).putValue("B", MapSequence.fromMap(mapsi).get("B") - (40)) == 503);
+    Assert.assertTrue((int) MapSequence.fromMap(mapsi).get("B") == 503);
+    Assert.assertTrue(9999 == (int) MapSequence.fromMap(mapsi).putValue("C", MapSequence.fromMap(mapsi).get("C") * (9)));
+    Assert.assertTrue(9999 == (int) MapSequence.fromMap(mapsi).get("C"));
+  }
 }

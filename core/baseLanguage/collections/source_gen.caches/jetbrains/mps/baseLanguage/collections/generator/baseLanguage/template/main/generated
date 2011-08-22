@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1ki3zopxhb1rg56aewbg94nyzi6husm">
+<dependencies version="2" modelHash="-ee27pj0snwcxfvbho2kfzz8dnhhrnhx">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.typesystem.inference(MPS.Classpath/jetbrains.mps.typesystem.inference@java_stub)" />
@@ -27,9 +27,8 @@
   <dep model="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" hash="7s8dj2j7dndhhc665y2lskw6f9w0n5w" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="bs12zx6bureypbcmufkaon2v0z94d94" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cenf4n6cafns3rh67gtc531ejx8bg4m" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-43wh01onabvwy9s5tyv4yxofdjxsmwy" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="9gsrblz09ks4c4fg3fgyn64pi8f1wd1" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="1lo8k3db4yw2pa7ucs61wl597srws64" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="9mp1kfp8azj5csfgz0isk6f9hnid4yd" />
   <common hash="-2f4d2o2h75kht7xphyclly6hptki78n" dependsOnNodes="true">
     <dep root="1201792021422" />
     <dep root="1202904627607" />
@@ -46,10 +45,12 @@
     <dep root="169948565229768333" />
     <dep root="1848858642723003330" />
     <dep root="1848858642723005414" />
+    <dep root="3009044146621230795" />
     <dep root="3358009230509159495" />
     <dep root="3358009230509159937" />
     <dep root="3444116434173272078" />
     <dep root="3444116434173277285" />
+    <dep root="3452893138210504745" />
     <dep root="5478544378670483530" />
     <dep root="6622338713620383726" />
     <dep root="6651873253983905945" />
@@ -82,7 +83,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
@@ -96,7 +96,7 @@
   <source id="1203340411125" name="switch_sequence_operation_toSequence" hash="4olgj1ws5h4p5t8lm3hthfo9jude4p6">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1204989320848" name="legacy" hash="-50fr1i11xum4ov4etc07y95ihwkyuko">
+  <source id="1204989320848" name="legacy" hash="-bgppcnyndifyf0kodmobgxtm8k51lt1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1205836166464" name="switch_closure_body" hash="-5ctupbczejehx9fne34l7o8c8t4qfq6">
@@ -156,7 +156,13 @@
   <source id="8293956702610522400" name="reduce_MultiForEachStatement" hash="73tmpcxib1pt6h3x65rs54tl7qotbju">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6622338713620383726" name="primitive" hash="-4ry16qob0zkxfmkouz86odfdokeb19s">
+  <source id="6622338713620383726" name="primitive" hash="-cdf21ynvtj9xexp3xayfxuxqer8bdgb">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3452893138210504745" name="switch_opAssignment_mapAccess" hash="p657j88zvuu03of7xw9h2350g5mpts">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3009044146621230795" name="switch_opAssignment_listAccess" hash="5584rx49vo4w7f9n319o4i36c2x5vyt">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
