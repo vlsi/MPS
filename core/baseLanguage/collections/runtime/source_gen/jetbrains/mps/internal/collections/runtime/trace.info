@@ -3639,107 +3639,111 @@
     <nodeInfo nodeId="6543581031674035307" fileName="MapSequence.java" startLine="103" startPosition="80" endLine="104" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674035312" fileName="MapSequence.java" startLine="104" startPosition="25" endLine="105" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674035320" fileName="MapSequence.java" startLine="108" startPosition="27" endLine="109" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035331" fileName="MapSequence.java" startLine="112" startPosition="28" endLine="113" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035340" fileName="MapSequence.java" startLine="117" startPosition="53" endLine="118" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035357" fileName="MapSequence.java" startLine="121" startPosition="32" endLine="122" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034881" fileName="MapSequence.java" startLine="132" startPosition="90" endLine="133" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674034890" fileName="MapSequence.java" startLine="133" startPosition="40" endLine="134" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034916" fileName="MapSequence.java" startLine="137" startPosition="111" endLine="138" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034940" fileName="MapSequence.java" startLine="141" startPosition="81" endLine="142" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674034956" fileName="MapSequence.java" startLine="143" startPosition="40" endLine="144" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674034966" fileName="MapSequence.java" startLine="145" startPosition="5" endLine="146" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034990" fileName="MapSequence.java" startLine="151" startPosition="43" endLine="152" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034996" fileName="MapSequence.java" startLine="153" startPosition="5" endLine="154" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674035012" fileName="MapSequence.java" startLine="155" startPosition="42" endLine="156" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035022" fileName="MapSequence.java" startLine="157" startPosition="5" endLine="158" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035051" fileName="MapSequence.java" startLine="163" startPosition="24" endLine="164" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035060" fileName="MapSequence.java" startLine="167" startPosition="38" endLine="168" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035066" fileName="MapSequence.java" startLine="169" startPosition="5" endLine="170" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034659" fileName="MapSequence.java" startLine="173" startPosition="52" endLine="174" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="keys" />
-    <nodeInfo nodeId="6543581031674034663" fileName="MapSequence.java" startLine="174" startPosition="27" endLine="175" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mapSeq" />
-    <nodeInfo nodeId="6543581031674035385" fileName="MapSequence.java" startLine="177" startPosition="76" endLine="178" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035391" fileName="MapSequence.java" startLine="178" startPosition="27" endLine="179" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035416" fileName="MapSequence.java" startLine="183" startPosition="66" endLine="184" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035426" fileName="MapSequence.java" startLine="185" startPosition="7" endLine="186" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034692" fileName="MapSequence.java" startLine="190" startPosition="69" endLine="191" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="entriesIt" />
-    <nodeInfo nodeId="6543581031674035429" fileName="MapSequence.java" startLine="193" startPosition="30" endLine="194" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035438" fileName="MapSequence.java" startLine="197" startPosition="30" endLine="198" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035443" fileName="MapSequence.java" startLine="201" startPosition="34" endLine="202" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035452" fileName="MapSequence.java" startLine="205" startPosition="26" endLine="206" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674034719" fileName="MapSequence.java" startLine="210" startPosition="69" endLine="211" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="entry" />
-    <nodeInfo nodeId="6543581031674035457" fileName="MapSequence.java" startLine="213" startPosition="48" endLine="214" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035464" fileName="MapSequence.java" startLine="217" startPosition="20" endLine="218" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035469" fileName="MapSequence.java" startLine="221" startPosition="22" endLine="222" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035474" fileName="MapSequence.java" startLine="225" startPosition="32" endLine="226" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035480" fileName="MapSequence.java" startLine="229" startPosition="38" endLine="230" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035483" fileName="MapSequence.java" startLine="234" startPosition="27" endLine="235" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035494" fileName="MapSequence.java" startLine="241" startPosition="25" endLine="242" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035505" fileName="MapSequence.java" startLine="244" startPosition="47" endLine="245" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035524" fileName="MapSequence.java" startLine="247" startPosition="37" endLine="248" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035542" fileName="MapSequence.java" startLine="249" startPosition="7" endLine="250" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035549" fileName="MapSequence.java" startLine="254" startPosition="30" endLine="255" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035576" fileName="MapSequence.java" startLine="271" startPosition="40" endLine="272" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674035580" fileName="MapSequence.java" startLine="275" startPosition="52" endLine="276" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674035599" fileName="MapSequence.java" startLine="280" startPosition="66" endLine="281" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035601" fileName="MapSequence.java" startLine="282" startPosition="7" endLine="283" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035612" fileName="MapSequence.java" startLine="288" startPosition="26" endLine="289" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035621" fileName="MapSequence.java" startLine="292" startPosition="41" endLine="293" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035635" fileName="MapSequence.java" startLine="294" startPosition="7" endLine="295" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035638" fileName="MapSequence.java" startLine="298" startPosition="39" endLine="299" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035653" fileName="MapSequence.java" startLine="302" startPosition="38" endLine="303" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674035662" fileName="MapSequence.java" startLine="303" startPosition="43" endLine="304" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674035681" fileName="MapSequence.java" startLine="305" startPosition="42" endLine="306" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035689" fileName="MapSequence.java" startLine="307" startPosition="7" endLine="308" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035692" fileName="MapSequence.java" startLine="311" startPosition="56" endLine="312" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674035702" fileName="MapSequence.java" startLine="312" startPosition="82" endLine="313" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035706" fileName="MapSequence.java" startLine="316" startPosition="24" endLine="317" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035709" fileName="MapSequence.java" startLine="320" startPosition="32" endLine="321" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035714" fileName="MapSequence.java" startLine="324" startPosition="34" endLine="325" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674035718" fileName="MapSequence.java" startLine="328" startPosition="41" endLine="329" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674035722" fileName="MapSequence.java" startLine="332" startPosition="25" endLine="333" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035754" fileName="MapSequence.java" startLine="338" startPosition="69" endLine="339" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035756" fileName="MapSequence.java" startLine="341" startPosition="7" endLine="342" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035759" fileName="MapSequence.java" startLine="345" startPosition="37" endLine="346" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035771" fileName="MapSequence.java" startLine="349" startPosition="44" endLine="350" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674035791" fileName="MapSequence.java" startLine="352" startPosition="36" endLine="353" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035795" fileName="MapSequence.java" startLine="353" startPosition="22" endLine="354" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035799" fileName="MapSequence.java" startLine="356" startPosition="7" endLine="357" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035802" fileName="MapSequence.java" startLine="360" startPosition="44" endLine="361" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674035823" fileName="MapSequence.java" startLine="363" startPosition="39" endLine="364" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035827" fileName="MapSequence.java" startLine="364" startPosition="22" endLine="365" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035831" fileName="MapSequence.java" startLine="367" startPosition="7" endLine="368" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035834" fileName="MapSequence.java" startLine="371" startPosition="23" endLine="372" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035841" fileName="MapSequence.java" startLine="375" startPosition="31" endLine="376" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674035844" fileName="MapSequence.java" startLine="379" startPosition="43" endLine="380" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674035855" fileName="MapSequence.java" startLine="381" startPosition="30" endLine="382" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035868" fileName="MapSequence.java" startLine="383" startPosition="7" endLine="384" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674035882" fileName="MapSequence.java" startLine="385" startPosition="38" endLine="386" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035897" fileName="MapSequence.java" startLine="388" startPosition="30" endLine="389" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674035903" fileName="MapSequence.java" startLine="390" startPosition="7" endLine="391" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4611582986551239987" fileName="MapSequence.java" startLine="395" startPosition="50" endLine="396" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4611582986551239982" fileName="MapSequence.java" startLine="400" startPosition="50" endLine="401" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2792466051886054801" fileName="MapSequence.java" startLine="404" startPosition="42" endLine="405" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034770" fileName="MapSequence.java" startLine="267" startPosition="93" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingsSetSequence#()V" />
+    <nodeInfo nodeId="3452893138210588510" fileName="MapSequence.java" startLine="114" startPosition="26" endLine="115" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3452893138210588533" fileName="MapSequence.java" startLine="117" startPosition="5" endLine="118" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3452893138210588544" fileName="MapSequence.java" startLine="118" startPosition="29" endLine="119" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035331" fileName="MapSequence.java" startLine="122" startPosition="28" endLine="123" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035340" fileName="MapSequence.java" startLine="127" startPosition="53" endLine="128" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035357" fileName="MapSequence.java" startLine="131" startPosition="32" endLine="132" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034881" fileName="MapSequence.java" startLine="142" startPosition="90" endLine="143" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674034890" fileName="MapSequence.java" startLine="143" startPosition="40" endLine="144" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034916" fileName="MapSequence.java" startLine="147" startPosition="111" endLine="148" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034940" fileName="MapSequence.java" startLine="151" startPosition="81" endLine="152" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674034956" fileName="MapSequence.java" startLine="153" startPosition="40" endLine="154" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674034966" fileName="MapSequence.java" startLine="155" startPosition="5" endLine="156" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034990" fileName="MapSequence.java" startLine="161" startPosition="43" endLine="162" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034996" fileName="MapSequence.java" startLine="163" startPosition="5" endLine="164" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674035012" fileName="MapSequence.java" startLine="165" startPosition="42" endLine="166" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035022" fileName="MapSequence.java" startLine="167" startPosition="5" endLine="168" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035051" fileName="MapSequence.java" startLine="173" startPosition="24" endLine="174" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035060" fileName="MapSequence.java" startLine="177" startPosition="38" endLine="178" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035066" fileName="MapSequence.java" startLine="179" startPosition="5" endLine="180" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034659" fileName="MapSequence.java" startLine="183" startPosition="52" endLine="184" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="keys" />
+    <nodeInfo nodeId="6543581031674034663" fileName="MapSequence.java" startLine="184" startPosition="27" endLine="185" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mapSeq" />
+    <nodeInfo nodeId="6543581031674035385" fileName="MapSequence.java" startLine="187" startPosition="76" endLine="188" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035391" fileName="MapSequence.java" startLine="188" startPosition="27" endLine="189" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035416" fileName="MapSequence.java" startLine="193" startPosition="66" endLine="194" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035426" fileName="MapSequence.java" startLine="195" startPosition="7" endLine="196" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034692" fileName="MapSequence.java" startLine="200" startPosition="69" endLine="201" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="entriesIt" />
+    <nodeInfo nodeId="6543581031674035429" fileName="MapSequence.java" startLine="203" startPosition="30" endLine="204" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035438" fileName="MapSequence.java" startLine="207" startPosition="30" endLine="208" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035443" fileName="MapSequence.java" startLine="211" startPosition="34" endLine="212" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035452" fileName="MapSequence.java" startLine="215" startPosition="26" endLine="216" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674034719" fileName="MapSequence.java" startLine="220" startPosition="69" endLine="221" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="entry" />
+    <nodeInfo nodeId="6543581031674035457" fileName="MapSequence.java" startLine="223" startPosition="48" endLine="224" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035464" fileName="MapSequence.java" startLine="227" startPosition="20" endLine="228" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035469" fileName="MapSequence.java" startLine="231" startPosition="22" endLine="232" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035474" fileName="MapSequence.java" startLine="235" startPosition="32" endLine="236" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035480" fileName="MapSequence.java" startLine="239" startPosition="38" endLine="240" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035483" fileName="MapSequence.java" startLine="244" startPosition="27" endLine="245" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035494" fileName="MapSequence.java" startLine="251" startPosition="25" endLine="252" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035505" fileName="MapSequence.java" startLine="254" startPosition="47" endLine="255" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035524" fileName="MapSequence.java" startLine="257" startPosition="37" endLine="258" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035542" fileName="MapSequence.java" startLine="259" startPosition="7" endLine="260" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035549" fileName="MapSequence.java" startLine="264" startPosition="30" endLine="265" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035576" fileName="MapSequence.java" startLine="281" startPosition="40" endLine="282" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674035580" fileName="MapSequence.java" startLine="285" startPosition="52" endLine="286" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674035599" fileName="MapSequence.java" startLine="290" startPosition="66" endLine="291" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035601" fileName="MapSequence.java" startLine="292" startPosition="7" endLine="293" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035612" fileName="MapSequence.java" startLine="298" startPosition="26" endLine="299" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035621" fileName="MapSequence.java" startLine="302" startPosition="41" endLine="303" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035635" fileName="MapSequence.java" startLine="304" startPosition="7" endLine="305" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035638" fileName="MapSequence.java" startLine="308" startPosition="39" endLine="309" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035653" fileName="MapSequence.java" startLine="312" startPosition="38" endLine="313" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674035662" fileName="MapSequence.java" startLine="313" startPosition="43" endLine="314" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674035681" fileName="MapSequence.java" startLine="315" startPosition="42" endLine="316" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035689" fileName="MapSequence.java" startLine="317" startPosition="7" endLine="318" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035692" fileName="MapSequence.java" startLine="321" startPosition="56" endLine="322" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674035702" fileName="MapSequence.java" startLine="322" startPosition="82" endLine="323" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035706" fileName="MapSequence.java" startLine="326" startPosition="24" endLine="327" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035709" fileName="MapSequence.java" startLine="330" startPosition="32" endLine="331" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035714" fileName="MapSequence.java" startLine="334" startPosition="34" endLine="335" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674035718" fileName="MapSequence.java" startLine="338" startPosition="41" endLine="339" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674035722" fileName="MapSequence.java" startLine="342" startPosition="25" endLine="343" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035754" fileName="MapSequence.java" startLine="348" startPosition="69" endLine="349" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035756" fileName="MapSequence.java" startLine="351" startPosition="7" endLine="352" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035759" fileName="MapSequence.java" startLine="355" startPosition="37" endLine="356" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035771" fileName="MapSequence.java" startLine="359" startPosition="44" endLine="360" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674035791" fileName="MapSequence.java" startLine="362" startPosition="36" endLine="363" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035795" fileName="MapSequence.java" startLine="363" startPosition="22" endLine="364" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035799" fileName="MapSequence.java" startLine="366" startPosition="7" endLine="367" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035802" fileName="MapSequence.java" startLine="370" startPosition="44" endLine="371" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674035823" fileName="MapSequence.java" startLine="373" startPosition="39" endLine="374" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035827" fileName="MapSequence.java" startLine="374" startPosition="22" endLine="375" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035831" fileName="MapSequence.java" startLine="377" startPosition="7" endLine="378" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035834" fileName="MapSequence.java" startLine="381" startPosition="23" endLine="382" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035841" fileName="MapSequence.java" startLine="385" startPosition="31" endLine="386" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674035844" fileName="MapSequence.java" startLine="389" startPosition="43" endLine="390" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674035855" fileName="MapSequence.java" startLine="391" startPosition="30" endLine="392" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035868" fileName="MapSequence.java" startLine="393" startPosition="7" endLine="394" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674035882" fileName="MapSequence.java" startLine="395" startPosition="38" endLine="396" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035897" fileName="MapSequence.java" startLine="398" startPosition="30" endLine="399" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674035903" fileName="MapSequence.java" startLine="400" startPosition="7" endLine="401" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551239987" fileName="MapSequence.java" startLine="405" startPosition="50" endLine="406" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4611582986551239982" fileName="MapSequence.java" startLine="410" startPosition="50" endLine="411" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2792466051886054801" fileName="MapSequence.java" startLine="414" startPosition="42" endLine="415" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034770" fileName="MapSequence.java" startLine="277" startPosition="93" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingsSetSequence#()V" />
     <nodeInfo nodeId="6543581031674035072" fileName="MapSequence.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapSequence#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6543581031674034949" fileName="MapSequence.java" startLine="142" startPosition="40" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6543581031674034985" fileName="MapSequence.java" startLine="150" startPosition="91" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035005" fileName="MapSequence.java" startLine="154" startPosition="40" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6543581031674035046" fileName="MapSequence.java" startLine="162" startPosition="37" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035055" fileName="MapSequence.java" startLine="166" startPosition="5" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035398" fileName="MapSequence.java" startLine="182" startPosition="55" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6543581031674034698" fileName="MapSequence.java" startLine="192" startPosition="0" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingIterator#()V" />
-    <nodeInfo nodeId="6543581031674034724" fileName="MapSequence.java" startLine="212" startPosition="0" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EntryMapping#(Ljava/util/Map/Entry;)V" />
-    <nodeInfo nodeId="6543581031674035489" fileName="MapSequence.java" startLine="240" startPosition="40" endLine="243" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035496" fileName="MapSequence.java" startLine="243" startPosition="7" endLine="246" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035519" fileName="MapSequence.java" startLine="246" startPosition="7" endLine="249" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035584" fileName="MapSequence.java" startLine="279" startPosition="43" endLine="282" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035607" fileName="MapSequence.java" startLine="287" startPosition="39" endLine="290" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035614" fileName="MapSequence.java" startLine="291" startPosition="7" endLine="294" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6543581031674035671" fileName="MapSequence.java" startLine="304" startPosition="64" endLine="307" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6543581031674035739" fileName="MapSequence.java" startLine="337" startPosition="55" endLine="340" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035848" fileName="MapSequence.java" startLine="380" startPosition="24" endLine="383" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035872" fileName="MapSequence.java" startLine="384" startPosition="31" endLine="387" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6543581031674035890" fileName="MapSequence.java" startLine="387" startPosition="7" endLine="390" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3452893138210588502" fileName="MapSequence.java" startLine="113" startPosition="38" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674034949" fileName="MapSequence.java" startLine="152" startPosition="40" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6543581031674034985" fileName="MapSequence.java" startLine="160" startPosition="91" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035005" fileName="MapSequence.java" startLine="164" startPosition="40" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6543581031674035046" fileName="MapSequence.java" startLine="172" startPosition="37" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035055" fileName="MapSequence.java" startLine="176" startPosition="5" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035398" fileName="MapSequence.java" startLine="192" startPosition="55" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="6543581031674034698" fileName="MapSequence.java" startLine="202" startPosition="0" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingIterator#()V" />
+    <nodeInfo nodeId="6543581031674034724" fileName="MapSequence.java" startLine="222" startPosition="0" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EntryMapping#(Ljava/util/Map/Entry;)V" />
+    <nodeInfo nodeId="6543581031674035489" fileName="MapSequence.java" startLine="250" startPosition="40" endLine="253" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035496" fileName="MapSequence.java" startLine="253" startPosition="7" endLine="256" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035519" fileName="MapSequence.java" startLine="256" startPosition="7" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035584" fileName="MapSequence.java" startLine="289" startPosition="43" endLine="292" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035607" fileName="MapSequence.java" startLine="297" startPosition="39" endLine="300" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035614" fileName="MapSequence.java" startLine="301" startPosition="7" endLine="304" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6543581031674035671" fileName="MapSequence.java" startLine="314" startPosition="64" endLine="317" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="6543581031674035739" fileName="MapSequence.java" startLine="347" startPosition="55" endLine="350" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035848" fileName="MapSequence.java" startLine="390" startPosition="24" endLine="393" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035872" fileName="MapSequence.java" startLine="394" startPosition="31" endLine="397" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="6543581031674035890" fileName="MapSequence.java" startLine="397" startPosition="7" endLine="400" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6543581031674035086" fileName="MapSequence.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
     <nodeInfo nodeId="6543581031674035094" fileName="MapSequence.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="containsKey#(Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="6543581031674035105" fileName="MapSequence.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="containsValue#(Ljava/lang/Object;)Z" />
@@ -3756,65 +3760,67 @@
     <nodeInfo nodeId="6543581031674035222" fileName="MapSequence.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="values#()Ljava/util/Collection;" />
     <nodeInfo nodeId="6543581031674035285" fileName="MapSequence.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
     <nodeInfo nodeId="6543581031674035314" fileName="MapSequence.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(null)null" />
-    <nodeInfo nodeId="6543581031674035325" fileName="MapSequence.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toMap#()Ljava/util/Map;" />
-    <nodeInfo nodeId="6543581031674035351" fileName="MapSequence.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMap#()Ljava/util/Map;" />
-    <nodeInfo nodeId="6543581031674035367" fileName="MapSequence.java" startLine="125" startPosition="42" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034901" fileName="MapSequence.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromMapAndKeysArray#(Ljava/util/Map;null)Ljetbrains/mps/internal/collections/runtime/MapSequence/MapSequenceInitializer;" />
-    <nodeInfo nodeId="6543581031674034668" fileName="MapSequence.java" startLine="176" startPosition="0" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapSequenceInitializer#(Ljetbrains/mps/internal/collections/runtime/IMapSequence;null)V" />
-    <nodeInfo nodeId="6543581031674034701" fileName="MapSequence.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
-    <nodeInfo nodeId="6543581031674034704" fileName="MapSequence.java" startLine="200" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()Ljetbrains/mps/internal/collections/runtime/IMapping;" />
-    <nodeInfo nodeId="6543581031674034709" fileName="MapSequence.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="6543581031674034731" fileName="MapSequence.java" startLine="216" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="key#()null" />
-    <nodeInfo nodeId="6543581031674034734" fileName="MapSequence.java" startLine="220" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#()null" />
-    <nodeInfo nodeId="6543581031674034737" fileName="MapSequence.java" startLine="224" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(null)null" />
-    <nodeInfo nodeId="6543581031674034742" fileName="MapSequence.java" startLine="228" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toEntry#()Ljava/util/Map/Entry;" />
-    <nodeInfo nodeId="6543581031674035557" fileName="MapSequence.java" startLine="258" startPosition="44" endLine="262" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034773" fileName="MapSequence.java" startLine="270" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addElement#(Ljava/lang/Object;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6543581031674034778" fileName="MapSequence.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
-    <nodeInfo nodeId="6543581031674034793" fileName="MapSequence.java" startLine="297" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674034808" fileName="MapSequence.java" startLine="315" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toSet#()Ljava/util/Set;" />
-    <nodeInfo nodeId="6543581031674034811" fileName="MapSequence.java" startLine="319" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="6543581031674034814" fileName="MapSequence.java" startLine="323" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674034819" fileName="MapSequence.java" startLine="327" startPosition="0" endLine="331" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAll#(Ljava/util/Collection;)Z" />
-    <nodeInfo nodeId="6543581031674034824" fileName="MapSequence.java" startLine="331" startPosition="0" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="6543581031674034832" fileName="MapSequence.java" startLine="344" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674035783" fileName="MapSequence.java" startLine="351" startPosition="53" endLine="355" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674035814" fileName="MapSequence.java" startLine="362" startPosition="53" endLine="366" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674034847" fileName="MapSequence.java" startLine="370" startPosition="0" endLine="374" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
-    <nodeInfo nodeId="6543581031674034850" fileName="MapSequence.java" startLine="374" startPosition="0" endLine="378" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#()[Ljava/lang/Object;" />
-    <nodeInfo nodeId="2792466051886054780" fileName="MapSequence.java" startLine="403" startPosition="0" endLine="407" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCollection#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="6543581031674035325" fileName="MapSequence.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="6543581031674035351" fileName="MapSequence.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="6543581031674035367" fileName="MapSequence.java" startLine="135" startPosition="42" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034901" fileName="MapSequence.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromMapAndKeysArray#(Ljava/util/Map;null)Ljetbrains/mps/internal/collections/runtime/MapSequence/MapSequenceInitializer;" />
+    <nodeInfo nodeId="6543581031674034668" fileName="MapSequence.java" startLine="186" startPosition="0" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapSequenceInitializer#(Ljetbrains/mps/internal/collections/runtime/IMapSequence;null)V" />
+    <nodeInfo nodeId="6543581031674034701" fileName="MapSequence.java" startLine="206" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
+    <nodeInfo nodeId="6543581031674034704" fileName="MapSequence.java" startLine="210" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()Ljetbrains/mps/internal/collections/runtime/IMapping;" />
+    <nodeInfo nodeId="6543581031674034709" fileName="MapSequence.java" startLine="214" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="6543581031674034731" fileName="MapSequence.java" startLine="226" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="key#()null" />
+    <nodeInfo nodeId="6543581031674034734" fileName="MapSequence.java" startLine="230" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#()null" />
+    <nodeInfo nodeId="6543581031674034737" fileName="MapSequence.java" startLine="234" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(null)null" />
+    <nodeInfo nodeId="6543581031674034742" fileName="MapSequence.java" startLine="238" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toEntry#()Ljava/util/Map/Entry;" />
+    <nodeInfo nodeId="6543581031674035557" fileName="MapSequence.java" startLine="268" startPosition="44" endLine="272" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034773" fileName="MapSequence.java" startLine="280" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addElement#(Ljava/lang/Object;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="6543581031674034778" fileName="MapSequence.java" startLine="284" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="6543581031674034793" fileName="MapSequence.java" startLine="307" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674034808" fileName="MapSequence.java" startLine="325" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toSet#()Ljava/util/Set;" />
+    <nodeInfo nodeId="6543581031674034811" fileName="MapSequence.java" startLine="329" startPosition="0" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6543581031674034814" fileName="MapSequence.java" startLine="333" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674034819" fileName="MapSequence.java" startLine="337" startPosition="0" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAll#(Ljava/util/Collection;)Z" />
+    <nodeInfo nodeId="6543581031674034824" fileName="MapSequence.java" startLine="341" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="6543581031674034832" fileName="MapSequence.java" startLine="354" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674035783" fileName="MapSequence.java" startLine="361" startPosition="53" endLine="365" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035814" fileName="MapSequence.java" startLine="372" startPosition="53" endLine="376" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674034847" fileName="MapSequence.java" startLine="380" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
+    <nodeInfo nodeId="6543581031674034850" fileName="MapSequence.java" startLine="384" startPosition="0" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#()[Ljava/lang/Object;" />
+    <nodeInfo nodeId="2792466051886054780" fileName="MapSequence.java" startLine="413" startPosition="0" endLine="417" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCollection#()Ljava/util/Collection;" />
     <nodeInfo nodeId="6543581031674035255" fileName="MapSequence.java" startLine="83" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="count#()I" />
     <nodeInfo nodeId="6543581031674035264" fileName="MapSequence.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="distinct#()Ljetbrains/mps/internal/collections/runtime/ISequence;" />
     <nodeInfo nodeId="6543581031674035274" fileName="MapSequence.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotEmpty#()Z" />
     <nodeInfo nodeId="6543581031674035295" fileName="MapSequence.java" startLine="102" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putAll#(Ljetbrains/mps/internal/collections/runtime/IMapSequence;)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
-    <nodeInfo nodeId="6543581031674035333" fileName="MapSequence.java" startLine="115" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mappingsSet#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
-    <nodeInfo nodeId="6543581031674034870" fileName="MapSequence.java" startLine="131" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromKeysArray#(null)Ljetbrains/mps/internal/collections/runtime/MapSequence/MapSequenceInitializer;" />
-    <nodeInfo nodeId="6543581031674035043" fileName="MapSequence.java" startLine="161" startPosition="66" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674034747" fileName="MapSequence.java" startLine="232" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="6543581031674034755" fileName="MapSequence.java" startLine="252" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6543581031674035604" fileName="MapSequence.java" startLine="286" startPosition="55" endLine="291" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674034802" fileName="MapSequence.java" startLine="310" startPosition="0" endLine="315" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toGenericArray#(Ljava/lang/Class;)[Ljava/lang/Object;" />
-    <nodeInfo nodeId="6543581031674035729" fileName="MapSequence.java" startLine="336" startPosition="46" endLine="341" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4611582986551239935" fileName="MapSequence.java" startLine="393" startPosition="0" endLine="398" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asUnmodifiable#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
-    <nodeInfo nodeId="4611582986551239930" fileName="MapSequence.java" startLine="398" startPosition="0" endLine="403" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asSynchronized#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="3452893138210588487" fileName="MapSequence.java" startLine="112" startPosition="37" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674035333" fileName="MapSequence.java" startLine="125" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mappingsSet#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="6543581031674034870" fileName="MapSequence.java" startLine="141" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromKeysArray#(null)Ljetbrains/mps/internal/collections/runtime/MapSequence/MapSequenceInitializer;" />
+    <nodeInfo nodeId="6543581031674035043" fileName="MapSequence.java" startLine="171" startPosition="66" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674034747" fileName="MapSequence.java" startLine="242" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
+    <nodeInfo nodeId="6543581031674034755" fileName="MapSequence.java" startLine="262" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6543581031674035604" fileName="MapSequence.java" startLine="296" startPosition="55" endLine="301" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674034802" fileName="MapSequence.java" startLine="320" startPosition="0" endLine="325" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toGenericArray#(Ljava/lang/Class;)[Ljava/lang/Object;" />
+    <nodeInfo nodeId="6543581031674035729" fileName="MapSequence.java" startLine="346" startPosition="46" endLine="351" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4611582986551239935" fileName="MapSequence.java" startLine="403" startPosition="0" endLine="408" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asUnmodifiable#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="4611582986551239930" fileName="MapSequence.java" startLine="408" startPosition="0" endLine="413" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asSynchronized#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
     <nodeInfo nodeId="6543581031674035231" fileName="MapSequence.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/internal/collections/runtime/IMapping;)Z" />
-    <nodeInfo nodeId="6543581031674035775" fileName="MapSequence.java" startLine="350" startPosition="31" endLine="356" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6543581031674035806" fileName="MapSequence.java" startLine="361" startPosition="31" endLine="367" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6543581031674035359" fileName="MapSequence.java" startLine="124" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="eq#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674034678" fileName="MapSequence.java" startLine="181" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="withValues#(null)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
-    <nodeInfo nodeId="6543581031674034758" fileName="MapSequence.java" startLine="257" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="eq#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674034783" fileName="MapSequence.java" startLine="278" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeElement#(Ljava/lang/Object;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6543581031674034927" fileName="MapSequence.java" startLine="140" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromArray#(null)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
-    <nodeInfo nodeId="6543581031674034798" fileName="MapSequence.java" startLine="301" startPosition="0" endLine="310" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toGenericArray#()[Ljava/lang/Object;" />
-    <nodeInfo nodeId="6543581031674034827" fileName="MapSequence.java" startLine="335" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="containsAll#(Ljava/util/Collection;)Z" />
-    <nodeInfo nodeId="6543581031674034837" fileName="MapSequence.java" startLine="348" startPosition="0" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeAll#(Ljava/util/Collection;)Z" />
-    <nodeInfo nodeId="6543581031674034842" fileName="MapSequence.java" startLine="359" startPosition="0" endLine="370" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retainAll#(Ljava/util/Collection;)Z" />
-    <nodeInfo nodeId="6543581031674034972" fileName="MapSequence.java" startLine="148" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromIterable#(Ljava/lang/Iterable;)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
-    <nodeInfo nodeId="6543581031674035031" fileName="MapSequence.java" startLine="160" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromMap#(Ljava/util/Map;)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
-    <nodeInfo nodeId="6543581031674034788" fileName="MapSequence.java" startLine="285" startPosition="0" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
-    <nodeInfo nodeId="6543581031674034750" fileName="MapSequence.java" startLine="237" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674034854" fileName="MapSequence.java" startLine="378" startPosition="0" endLine="393" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#([Ljava/lang/Object;)[Ljava/lang/Object;" />
-    <scopeInfo nodeId="6543581031674035574" fileName="MapSequence.java" startLine="268" startPosition="35" endLine="268" endPosition="35" />
+    <nodeInfo nodeId="6543581031674035775" fileName="MapSequence.java" startLine="360" startPosition="31" endLine="366" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="6543581031674035806" fileName="MapSequence.java" startLine="371" startPosition="31" endLine="377" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="6543581031674035359" fileName="MapSequence.java" startLine="134" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="eq#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674034678" fileName="MapSequence.java" startLine="191" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="withValues#(null)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
+    <nodeInfo nodeId="6543581031674034758" fileName="MapSequence.java" startLine="267" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="eq#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674034783" fileName="MapSequence.java" startLine="288" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeElement#(Ljava/lang/Object;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="6543581031674034927" fileName="MapSequence.java" startLine="150" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromArray#(null)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
+    <nodeInfo nodeId="6543581031674034798" fileName="MapSequence.java" startLine="311" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toGenericArray#()[Ljava/lang/Object;" />
+    <nodeInfo nodeId="6543581031674034827" fileName="MapSequence.java" startLine="345" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="containsAll#(Ljava/util/Collection;)Z" />
+    <nodeInfo nodeId="3452893138210588476" fileName="MapSequence.java" startLine="111" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putValue#(nullnull)null" />
+    <nodeInfo nodeId="6543581031674034837" fileName="MapSequence.java" startLine="358" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeAll#(Ljava/util/Collection;)Z" />
+    <nodeInfo nodeId="6543581031674034842" fileName="MapSequence.java" startLine="369" startPosition="0" endLine="380" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retainAll#(Ljava/util/Collection;)Z" />
+    <nodeInfo nodeId="6543581031674034972" fileName="MapSequence.java" startLine="158" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromIterable#(Ljava/lang/Iterable;)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
+    <nodeInfo nodeId="6543581031674035031" fileName="MapSequence.java" startLine="170" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromMap#(Ljava/util/Map;)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
+    <nodeInfo nodeId="6543581031674034788" fileName="MapSequence.java" startLine="295" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeSequence#(Ljetbrains/mps/internal/collections/runtime/ISequence;)Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="6543581031674034750" fileName="MapSequence.java" startLine="247" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674034854" fileName="MapSequence.java" startLine="388" startPosition="0" endLine="403" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toArray#([Ljava/lang/Object;)[Ljava/lang/Object;" />
+    <scopeInfo nodeId="6543581031674035574" fileName="MapSequence.java" startLine="278" startPosition="35" endLine="278" endPosition="35" />
     <scopeInfo nodeId="6543581031674035079" fileName="MapSequence.java" startLine="18" startPosition="40" endLine="19" endPosition="19" />
     <scopeInfo nodeId="6543581031674035089" fileName="MapSequence.java" startLine="22" startPosition="23" endLine="23" endPosition="16" />
     <scopeInfo nodeId="6543581031674035099" fileName="MapSequence.java" startLine="26" startPosition="42" endLine="27" endPosition="32" />
@@ -3835,92 +3841,94 @@
     <scopeInfo nodeId="6543581031674035277" fileName="MapSequence.java" startLine="95" startPosition="31" endLine="96" endPosition="30" />
     <scopeInfo nodeId="6543581031674035291" fileName="MapSequence.java" startLine="99" startPosition="46" endLine="100" endPosition="45" />
     <scopeInfo nodeId="6543581031674035319" fileName="MapSequence.java" startLine="108" startPosition="27" endLine="109" endPosition="30" />
-    <scopeInfo nodeId="6543581031674035330" fileName="MapSequence.java" startLine="112" startPosition="28" endLine="113" endPosition="16" />
-    <scopeInfo nodeId="6543581031674035339" fileName="MapSequence.java" startLine="117" startPosition="53" endLine="118" endPosition="80" />
-    <scopeInfo nodeId="6543581031674035356" fileName="MapSequence.java" startLine="121" startPosition="32" endLine="122" endPosition="15" />
-    <scopeInfo nodeId="6543581031674034915" fileName="MapSequence.java" startLine="137" startPosition="111" endLine="138" endPosition="90" />
-    <scopeInfo nodeId="6543581031674034955" fileName="MapSequence.java" startLine="143" startPosition="40" endLine="144" endPosition="36" />
-    <scopeInfo nodeId="6543581031674034989" fileName="MapSequence.java" startLine="151" startPosition="43" endLine="152" endPosition="43" />
-    <scopeInfo nodeId="6543581031674035011" fileName="MapSequence.java" startLine="155" startPosition="42" endLine="156" endPosition="40" />
-    <scopeInfo nodeId="6543581031674035050" fileName="MapSequence.java" startLine="163" startPosition="24" endLine="164" endPosition="47" />
-    <scopeInfo nodeId="6543581031674035059" fileName="MapSequence.java" startLine="167" startPosition="38" endLine="168" endPosition="38" />
-    <scopeInfo nodeId="6543581031674035415" fileName="MapSequence.java" startLine="183" startPosition="66" endLine="184" endPosition="39" />
-    <scopeInfo nodeId="6543581031674035428" fileName="MapSequence.java" startLine="193" startPosition="30" endLine="194" endPosition="45" />
-    <scopeInfo nodeId="6543581031674035437" fileName="MapSequence.java" startLine="197" startPosition="30" endLine="198" endPosition="33" />
-    <scopeInfo nodeId="6543581031674035442" fileName="MapSequence.java" startLine="201" startPosition="34" endLine="202" endPosition="66" />
-    <scopeInfo nodeId="6543581031674035451" fileName="MapSequence.java" startLine="205" startPosition="26" endLine="206" endPosition="25" />
-    <scopeInfo nodeId="6543581031674035456" fileName="MapSequence.java" startLine="213" startPosition="48" endLine="214" endPosition="25" />
-    <scopeInfo nodeId="6543581031674035463" fileName="MapSequence.java" startLine="217" startPosition="20" endLine="218" endPosition="28" />
-    <scopeInfo nodeId="6543581031674035468" fileName="MapSequence.java" startLine="221" startPosition="22" endLine="222" endPosition="30" />
-    <scopeInfo nodeId="6543581031674035473" fileName="MapSequence.java" startLine="225" startPosition="32" endLine="226" endPosition="38" />
-    <scopeInfo nodeId="6543581031674035479" fileName="MapSequence.java" startLine="229" startPosition="38" endLine="230" endPosition="19" />
-    <scopeInfo nodeId="6543581031674035482" fileName="MapSequence.java" startLine="234" startPosition="27" endLine="235" endPosition="30" />
-    <scopeInfo nodeId="6543581031674035493" fileName="MapSequence.java" startLine="241" startPosition="25" endLine="242" endPosition="21" />
-    <scopeInfo nodeId="6543581031674035504" fileName="MapSequence.java" startLine="244" startPosition="47" endLine="245" endPosition="80" />
-    <scopeInfo nodeId="6543581031674035523" fileName="MapSequence.java" startLine="247" startPosition="37" endLine="248" endPosition="92" />
-    <scopeInfo nodeId="6543581031674035548" fileName="MapSequence.java" startLine="254" startPosition="30" endLine="255" endPosition="35" />
-    <scopeInfo nodeId="6543581031674035575" fileName="MapSequence.java" startLine="271" startPosition="40" endLine="272" endPosition="48" />
-    <scopeInfo nodeId="6543581031674035579" fileName="MapSequence.java" startLine="275" startPosition="52" endLine="276" endPosition="48" />
-    <scopeInfo nodeId="6543581031674035598" fileName="MapSequence.java" startLine="280" startPosition="66" endLine="281" endPosition="17" />
-    <scopeInfo nodeId="6543581031674035611" fileName="MapSequence.java" startLine="288" startPosition="26" endLine="289" endPosition="22" />
-    <scopeInfo nodeId="6543581031674035620" fileName="MapSequence.java" startLine="292" startPosition="41" endLine="293" endPosition="62" />
-    <scopeInfo nodeId="6543581031674035637" fileName="MapSequence.java" startLine="298" startPosition="39" endLine="299" endPosition="69" />
-    <scopeInfo nodeId="6543581031674035680" fileName="MapSequence.java" startLine="305" startPosition="42" endLine="306" endPosition="30" />
-    <scopeInfo nodeId="6543581031674035705" fileName="MapSequence.java" startLine="316" startPosition="24" endLine="317" endPosition="18" />
-    <scopeInfo nodeId="6543581031674035708" fileName="MapSequence.java" startLine="320" startPosition="32" endLine="321" endPosition="41" />
-    <scopeInfo nodeId="6543581031674035713" fileName="MapSequence.java" startLine="324" startPosition="34" endLine="325" endPosition="48" />
-    <scopeInfo nodeId="6543581031674035717" fileName="MapSequence.java" startLine="328" startPosition="41" endLine="329" endPosition="48" />
-    <scopeInfo nodeId="6543581031674035721" fileName="MapSequence.java" startLine="332" startPosition="25" endLine="333" endPosition="29" />
-    <scopeInfo nodeId="6543581031674035753" fileName="MapSequence.java" startLine="338" startPosition="69" endLine="339" endPosition="23" />
-    <scopeInfo nodeId="6543581031674035758" fileName="MapSequence.java" startLine="345" startPosition="37" endLine="346" endPosition="55" />
-    <scopeInfo nodeId="6543581031674035833" fileName="MapSequence.java" startLine="371" startPosition="23" endLine="372" endPosition="35" />
-    <scopeInfo nodeId="6543581031674035840" fileName="MapSequence.java" startLine="375" startPosition="31" endLine="376" endPosition="30" />
-    <scopeInfo nodeId="6543581031674035854" fileName="MapSequence.java" startLine="381" startPosition="30" endLine="382" endPosition="94" />
-    <scopeInfo nodeId="6543581031674035881" fileName="MapSequence.java" startLine="385" startPosition="38" endLine="386" endPosition="27" />
-    <scopeInfo nodeId="6543581031674035896" fileName="MapSequence.java" startLine="388" startPosition="30" endLine="389" endPosition="25" />
-    <scopeInfo nodeId="4611582986551239939" fileName="MapSequence.java" startLine="395" startPosition="50" endLine="396" endPosition="48" />
-    <scopeInfo nodeId="4611582986551239934" fileName="MapSequence.java" startLine="400" startPosition="50" endLine="401" endPosition="48" />
-    <scopeInfo nodeId="2792466051886054784" fileName="MapSequence.java" startLine="404" startPosition="42" endLine="405" endPosition="28" />
+    <scopeInfo nodeId="3452893138210588504" fileName="MapSequence.java" startLine="114" startPosition="26" endLine="115" endPosition="20" />
+    <scopeInfo nodeId="6543581031674035330" fileName="MapSequence.java" startLine="122" startPosition="28" endLine="123" endPosition="16" />
+    <scopeInfo nodeId="6543581031674035339" fileName="MapSequence.java" startLine="127" startPosition="53" endLine="128" endPosition="80" />
+    <scopeInfo nodeId="6543581031674035356" fileName="MapSequence.java" startLine="131" startPosition="32" endLine="132" endPosition="15" />
+    <scopeInfo nodeId="6543581031674034915" fileName="MapSequence.java" startLine="147" startPosition="111" endLine="148" endPosition="90" />
+    <scopeInfo nodeId="6543581031674034955" fileName="MapSequence.java" startLine="153" startPosition="40" endLine="154" endPosition="36" />
+    <scopeInfo nodeId="6543581031674034989" fileName="MapSequence.java" startLine="161" startPosition="43" endLine="162" endPosition="43" />
+    <scopeInfo nodeId="6543581031674035011" fileName="MapSequence.java" startLine="165" startPosition="42" endLine="166" endPosition="40" />
+    <scopeInfo nodeId="6543581031674035050" fileName="MapSequence.java" startLine="173" startPosition="24" endLine="174" endPosition="47" />
+    <scopeInfo nodeId="6543581031674035059" fileName="MapSequence.java" startLine="177" startPosition="38" endLine="178" endPosition="38" />
+    <scopeInfo nodeId="6543581031674035415" fileName="MapSequence.java" startLine="193" startPosition="66" endLine="194" endPosition="39" />
+    <scopeInfo nodeId="6543581031674035428" fileName="MapSequence.java" startLine="203" startPosition="30" endLine="204" endPosition="45" />
+    <scopeInfo nodeId="6543581031674035437" fileName="MapSequence.java" startLine="207" startPosition="30" endLine="208" endPosition="33" />
+    <scopeInfo nodeId="6543581031674035442" fileName="MapSequence.java" startLine="211" startPosition="34" endLine="212" endPosition="66" />
+    <scopeInfo nodeId="6543581031674035451" fileName="MapSequence.java" startLine="215" startPosition="26" endLine="216" endPosition="25" />
+    <scopeInfo nodeId="6543581031674035456" fileName="MapSequence.java" startLine="223" startPosition="48" endLine="224" endPosition="25" />
+    <scopeInfo nodeId="6543581031674035463" fileName="MapSequence.java" startLine="227" startPosition="20" endLine="228" endPosition="28" />
+    <scopeInfo nodeId="6543581031674035468" fileName="MapSequence.java" startLine="231" startPosition="22" endLine="232" endPosition="30" />
+    <scopeInfo nodeId="6543581031674035473" fileName="MapSequence.java" startLine="235" startPosition="32" endLine="236" endPosition="38" />
+    <scopeInfo nodeId="6543581031674035479" fileName="MapSequence.java" startLine="239" startPosition="38" endLine="240" endPosition="19" />
+    <scopeInfo nodeId="6543581031674035482" fileName="MapSequence.java" startLine="244" startPosition="27" endLine="245" endPosition="30" />
+    <scopeInfo nodeId="6543581031674035493" fileName="MapSequence.java" startLine="251" startPosition="25" endLine="252" endPosition="21" />
+    <scopeInfo nodeId="6543581031674035504" fileName="MapSequence.java" startLine="254" startPosition="47" endLine="255" endPosition="80" />
+    <scopeInfo nodeId="6543581031674035523" fileName="MapSequence.java" startLine="257" startPosition="37" endLine="258" endPosition="92" />
+    <scopeInfo nodeId="6543581031674035548" fileName="MapSequence.java" startLine="264" startPosition="30" endLine="265" endPosition="35" />
+    <scopeInfo nodeId="6543581031674035575" fileName="MapSequence.java" startLine="281" startPosition="40" endLine="282" endPosition="48" />
+    <scopeInfo nodeId="6543581031674035579" fileName="MapSequence.java" startLine="285" startPosition="52" endLine="286" endPosition="48" />
+    <scopeInfo nodeId="6543581031674035598" fileName="MapSequence.java" startLine="290" startPosition="66" endLine="291" endPosition="17" />
+    <scopeInfo nodeId="6543581031674035611" fileName="MapSequence.java" startLine="298" startPosition="26" endLine="299" endPosition="22" />
+    <scopeInfo nodeId="6543581031674035620" fileName="MapSequence.java" startLine="302" startPosition="41" endLine="303" endPosition="62" />
+    <scopeInfo nodeId="6543581031674035637" fileName="MapSequence.java" startLine="308" startPosition="39" endLine="309" endPosition="69" />
+    <scopeInfo nodeId="6543581031674035680" fileName="MapSequence.java" startLine="315" startPosition="42" endLine="316" endPosition="30" />
+    <scopeInfo nodeId="6543581031674035705" fileName="MapSequence.java" startLine="326" startPosition="24" endLine="327" endPosition="18" />
+    <scopeInfo nodeId="6543581031674035708" fileName="MapSequence.java" startLine="330" startPosition="32" endLine="331" endPosition="41" />
+    <scopeInfo nodeId="6543581031674035713" fileName="MapSequence.java" startLine="334" startPosition="34" endLine="335" endPosition="48" />
+    <scopeInfo nodeId="6543581031674035717" fileName="MapSequence.java" startLine="338" startPosition="41" endLine="339" endPosition="48" />
+    <scopeInfo nodeId="6543581031674035721" fileName="MapSequence.java" startLine="342" startPosition="25" endLine="343" endPosition="29" />
+    <scopeInfo nodeId="6543581031674035753" fileName="MapSequence.java" startLine="348" startPosition="69" endLine="349" endPosition="23" />
+    <scopeInfo nodeId="6543581031674035758" fileName="MapSequence.java" startLine="355" startPosition="37" endLine="356" endPosition="55" />
+    <scopeInfo nodeId="6543581031674035833" fileName="MapSequence.java" startLine="381" startPosition="23" endLine="382" endPosition="35" />
+    <scopeInfo nodeId="6543581031674035840" fileName="MapSequence.java" startLine="385" startPosition="31" endLine="386" endPosition="30" />
+    <scopeInfo nodeId="6543581031674035854" fileName="MapSequence.java" startLine="391" startPosition="30" endLine="392" endPosition="94" />
+    <scopeInfo nodeId="6543581031674035881" fileName="MapSequence.java" startLine="395" startPosition="38" endLine="396" endPosition="27" />
+    <scopeInfo nodeId="6543581031674035896" fileName="MapSequence.java" startLine="398" startPosition="30" endLine="399" endPosition="25" />
+    <scopeInfo nodeId="4611582986551239939" fileName="MapSequence.java" startLine="405" startPosition="50" endLine="406" endPosition="48" />
+    <scopeInfo nodeId="4611582986551239934" fileName="MapSequence.java" startLine="410" startPosition="50" endLine="411" endPosition="48" />
+    <scopeInfo nodeId="2792466051886054784" fileName="MapSequence.java" startLine="414" startPosition="42" endLine="415" endPosition="28" />
     <scopeInfo nodeId="6543581031674035238" fileName="MapSequence.java" startLine="79" startPosition="45" endLine="81" endPosition="28">
       <varInfo nodeId="6543581031674035240" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674035306" fileName="MapSequence.java" startLine="103" startPosition="80" endLine="105" endPosition="16" />
-    <scopeInfo nodeId="6543581031674034880" fileName="MapSequence.java" startLine="132" startPosition="90" endLine="134" endPosition="90">
+    <scopeInfo nodeId="6543581031674034880" fileName="MapSequence.java" startLine="142" startPosition="90" endLine="144" endPosition="90">
       <varInfo nodeId="6543581031674034882" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035384" fileName="MapSequence.java" startLine="177" startPosition="76" endLine="179" endPosition="23" />
-    <scopeInfo nodeId="6543581031674034770" fileName="MapSequence.java" startLine="267" startPosition="93" endLine="269" endPosition="5" />
-    <scopeInfo nodeId="6543581031674035691" fileName="MapSequence.java" startLine="311" startPosition="56" endLine="313" endPosition="26">
+    <scopeInfo nodeId="6543581031674035384" fileName="MapSequence.java" startLine="187" startPosition="76" endLine="189" endPosition="23" />
+    <scopeInfo nodeId="6543581031674034770" fileName="MapSequence.java" startLine="277" startPosition="93" endLine="279" endPosition="5" />
+    <scopeInfo nodeId="6543581031674035691" fileName="MapSequence.java" startLine="321" startPosition="56" endLine="323" endPosition="26">
       <varInfo nodeId="6543581031674035693" varName="arr" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035790" fileName="MapSequence.java" startLine="352" startPosition="36" endLine="354" endPosition="26" />
-    <scopeInfo nodeId="6543581031674035822" fileName="MapSequence.java" startLine="363" startPosition="39" endLine="365" endPosition="26" />
+    <scopeInfo nodeId="6543581031674035790" fileName="MapSequence.java" startLine="362" startPosition="36" endLine="364" endPosition="26" />
+    <scopeInfo nodeId="6543581031674035822" fileName="MapSequence.java" startLine="373" startPosition="39" endLine="375" endPosition="26" />
     <scopeInfo nodeId="6543581031674035072" fileName="MapSequence.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
       <varInfo nodeId="6543581031674035075" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034949" fileName="MapSequence.java" startLine="142" startPosition="40" endLine="145" endPosition="5">
+    <scopeInfo nodeId="3452893138210588489" fileName="MapSequence.java" startLine="113" startPosition="38" endLine="116" endPosition="7" />
+    <scopeInfo nodeId="6543581031674034949" fileName="MapSequence.java" startLine="152" startPosition="40" endLine="155" endPosition="5">
       <varInfo nodeId="6543581031674034951" varName="mp" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035005" fileName="MapSequence.java" startLine="154" startPosition="40" endLine="157" endPosition="5">
+    <scopeInfo nodeId="6543581031674035005" fileName="MapSequence.java" startLine="164" startPosition="40" endLine="167" endPosition="5">
       <varInfo nodeId="6543581031674035007" varName="mpng" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035045" fileName="MapSequence.java" startLine="162" startPosition="37" endLine="165" endPosition="7" />
-    <scopeInfo nodeId="6543581031674035398" fileName="MapSequence.java" startLine="182" startPosition="55" endLine="185" endPosition="7">
+    <scopeInfo nodeId="6543581031674035045" fileName="MapSequence.java" startLine="172" startPosition="37" endLine="175" endPosition="7" />
+    <scopeInfo nodeId="6543581031674035398" fileName="MapSequence.java" startLine="192" startPosition="55" endLine="195" endPosition="7">
       <varInfo nodeId="6543581031674035410" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034698" fileName="MapSequence.java" startLine="192" startPosition="0" endLine="195" endPosition="5" />
-    <scopeInfo nodeId="6543581031674034724" fileName="MapSequence.java" startLine="212" startPosition="0" endLine="215" endPosition="5">
+    <scopeInfo nodeId="6543581031674034698" fileName="MapSequence.java" startLine="202" startPosition="0" endLine="205" endPosition="5" />
+    <scopeInfo nodeId="6543581031674034724" fileName="MapSequence.java" startLine="222" startPosition="0" endLine="225" endPosition="5">
       <varInfo nodeId="6543581031674034727" varName="entry" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035606" fileName="MapSequence.java" startLine="287" startPosition="39" endLine="290" endPosition="9" />
-    <scopeInfo nodeId="6543581031674035614" fileName="MapSequence.java" startLine="291" startPosition="7" endLine="294" endPosition="7">
+    <scopeInfo nodeId="6543581031674035606" fileName="MapSequence.java" startLine="297" startPosition="39" endLine="300" endPosition="9" />
+    <scopeInfo nodeId="6543581031674035614" fileName="MapSequence.java" startLine="301" startPosition="7" endLine="304" endPosition="7">
       <varInfo nodeId="6543581031674035618" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035671" fileName="MapSequence.java" startLine="304" startPosition="64" endLine="307" endPosition="7">
+    <scopeInfo nodeId="6543581031674035671" fileName="MapSequence.java" startLine="314" startPosition="64" endLine="317" endPosition="7">
       <varInfo nodeId="6543581031674035675" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035738" fileName="MapSequence.java" startLine="337" startPosition="55" endLine="340" endPosition="9" />
-    <scopeInfo nodeId="6543581031674035872" fileName="MapSequence.java" startLine="384" startPosition="31" endLine="387" endPosition="7">
+    <scopeInfo nodeId="6543581031674035738" fileName="MapSequence.java" startLine="347" startPosition="55" endLine="350" endPosition="9" />
+    <scopeInfo nodeId="6543581031674035872" fileName="MapSequence.java" startLine="394" startPosition="31" endLine="397" endPosition="7">
       <varInfo nodeId="6543581031674035876" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674035086" fileName="MapSequence.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
@@ -3956,155 +3964,160 @@
     <scopeInfo nodeId="6543581031674035314" fileName="MapSequence.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="6543581031674035317" varName="u" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035325" fileName="MapSequence.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="6543581031674035351" fileName="MapSequence.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="6543581031674035366" fileName="MapSequence.java" startLine="125" startPosition="42" endLine="129" endPosition="7" />
-    <scopeInfo nodeId="6543581031674034901" fileName="MapSequence.java" startLine="136" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="6543581031674035325" fileName="MapSequence.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="6543581031674035351" fileName="MapSequence.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="6543581031674035366" fileName="MapSequence.java" startLine="135" startPosition="42" endLine="139" endPosition="7" />
+    <scopeInfo nodeId="6543581031674034901" fileName="MapSequence.java" startLine="146" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="6543581031674034912" varName="keys" />
       <varInfo nodeId="6543581031674034908" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034668" fileName="MapSequence.java" startLine="176" startPosition="0" endLine="180" endPosition="5">
+    <scopeInfo nodeId="6543581031674034668" fileName="MapSequence.java" startLine="186" startPosition="0" endLine="190" endPosition="5">
       <varInfo nodeId="6543581031674034675" varName="keys" />
       <varInfo nodeId="6543581031674034671" varName="mapSeq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035397" fileName="MapSequence.java" startLine="182" startPosition="55" endLine="186" endPosition="20" />
-    <scopeInfo nodeId="6543581031674034701" fileName="MapSequence.java" startLine="196" startPosition="0" endLine="200" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034704" fileName="MapSequence.java" startLine="200" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034709" fileName="MapSequence.java" startLine="204" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034731" fileName="MapSequence.java" startLine="216" startPosition="0" endLine="220" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034734" fileName="MapSequence.java" startLine="220" startPosition="0" endLine="224" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034737" fileName="MapSequence.java" startLine="224" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="6543581031674035397" fileName="MapSequence.java" startLine="192" startPosition="55" endLine="196" endPosition="20" />
+    <scopeInfo nodeId="6543581031674034701" fileName="MapSequence.java" startLine="206" startPosition="0" endLine="210" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034704" fileName="MapSequence.java" startLine="210" startPosition="0" endLine="214" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034709" fileName="MapSequence.java" startLine="214" startPosition="0" endLine="218" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034731" fileName="MapSequence.java" startLine="226" startPosition="0" endLine="230" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034734" fileName="MapSequence.java" startLine="230" startPosition="0" endLine="234" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034737" fileName="MapSequence.java" startLine="234" startPosition="0" endLine="238" endPosition="0">
       <varInfo nodeId="6543581031674034740" varName="newValue" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034742" fileName="MapSequence.java" startLine="228" startPosition="0" endLine="232" endPosition="0" />
-    <scopeInfo nodeId="6543581031674035556" fileName="MapSequence.java" startLine="258" startPosition="44" endLine="262" endPosition="9" />
-    <scopeInfo nodeId="6543581031674034773" fileName="MapSequence.java" startLine="270" startPosition="0" endLine="274" endPosition="0">
+    <scopeInfo nodeId="6543581031674034742" fileName="MapSequence.java" startLine="238" startPosition="0" endLine="242" endPosition="0" />
+    <scopeInfo nodeId="6543581031674035556" fileName="MapSequence.java" startLine="268" startPosition="44" endLine="272" endPosition="9" />
+    <scopeInfo nodeId="6543581031674034773" fileName="MapSequence.java" startLine="280" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="6543581031674034776" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034778" fileName="MapSequence.java" startLine="274" startPosition="0" endLine="278" endPosition="0">
+    <scopeInfo nodeId="6543581031674034778" fileName="MapSequence.java" startLine="284" startPosition="0" endLine="288" endPosition="0">
       <varInfo nodeId="6543581031674034781" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035583" fileName="MapSequence.java" startLine="279" startPosition="43" endLine="283" endPosition="18" />
-    <scopeInfo nodeId="6543581031674034793" fileName="MapSequence.java" startLine="297" startPosition="0" endLine="301" endPosition="0">
+    <scopeInfo nodeId="6543581031674035583" fileName="MapSequence.java" startLine="289" startPosition="43" endLine="293" endPosition="18" />
+    <scopeInfo nodeId="6543581031674034793" fileName="MapSequence.java" startLine="307" startPosition="0" endLine="311" endPosition="0">
       <varInfo nodeId="6543581031674034796" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034808" fileName="MapSequence.java" startLine="315" startPosition="0" endLine="319" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034811" fileName="MapSequence.java" startLine="319" startPosition="0" endLine="323" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034814" fileName="MapSequence.java" startLine="323" startPosition="0" endLine="327" endPosition="0">
+    <scopeInfo nodeId="6543581031674034808" fileName="MapSequence.java" startLine="325" startPosition="0" endLine="329" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034811" fileName="MapSequence.java" startLine="329" startPosition="0" endLine="333" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034814" fileName="MapSequence.java" startLine="333" startPosition="0" endLine="337" endPosition="0">
       <varInfo nodeId="6543581031674034817" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034819" fileName="MapSequence.java" startLine="327" startPosition="0" endLine="331" endPosition="0">
+    <scopeInfo nodeId="6543581031674034819" fileName="MapSequence.java" startLine="337" startPosition="0" endLine="341" endPosition="0">
       <varInfo nodeId="6543581031674034822" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034824" fileName="MapSequence.java" startLine="331" startPosition="0" endLine="335" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034832" fileName="MapSequence.java" startLine="344" startPosition="0" endLine="348" endPosition="0">
+    <scopeInfo nodeId="6543581031674034824" fileName="MapSequence.java" startLine="341" startPosition="0" endLine="345" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034832" fileName="MapSequence.java" startLine="354" startPosition="0" endLine="358" endPosition="0">
       <varInfo nodeId="6543581031674034835" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035782" fileName="MapSequence.java" startLine="351" startPosition="53" endLine="355" endPosition="9" />
-    <scopeInfo nodeId="6543581031674035813" fileName="MapSequence.java" startLine="362" startPosition="53" endLine="366" endPosition="9" />
-    <scopeInfo nodeId="6543581031674034847" fileName="MapSequence.java" startLine="370" startPosition="0" endLine="374" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034850" fileName="MapSequence.java" startLine="374" startPosition="0" endLine="378" endPosition="0" />
-    <scopeInfo nodeId="2792466051886054780" fileName="MapSequence.java" startLine="403" startPosition="0" endLine="407" endPosition="0" />
+    <scopeInfo nodeId="6543581031674035782" fileName="MapSequence.java" startLine="361" startPosition="53" endLine="365" endPosition="9" />
+    <scopeInfo nodeId="6543581031674035813" fileName="MapSequence.java" startLine="372" startPosition="53" endLine="376" endPosition="9" />
+    <scopeInfo nodeId="6543581031674034847" fileName="MapSequence.java" startLine="380" startPosition="0" endLine="384" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034850" fileName="MapSequence.java" startLine="384" startPosition="0" endLine="388" endPosition="0" />
+    <scopeInfo nodeId="2792466051886054780" fileName="MapSequence.java" startLine="413" startPosition="0" endLine="417" endPosition="0" />
     <scopeInfo nodeId="6543581031674035255" fileName="MapSequence.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="6543581031674035264" fileName="MapSequence.java" startLine="88" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="6543581031674035274" fileName="MapSequence.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="6543581031674035295" fileName="MapSequence.java" startLine="102" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="6543581031674035300" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035333" fileName="MapSequence.java" startLine="115" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034870" fileName="MapSequence.java" startLine="131" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="6543581031674035333" fileName="MapSequence.java" startLine="125" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034870" fileName="MapSequence.java" startLine="141" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="6543581031674034877" varName="keys" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034939" fileName="MapSequence.java" startLine="141" startPosition="81" endLine="146" endPosition="38">
+    <scopeInfo nodeId="6543581031674034939" fileName="MapSequence.java" startLine="151" startPosition="81" endLine="156" endPosition="38">
       <varInfo nodeId="6543581031674034941" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034747" fileName="MapSequence.java" startLine="232" startPosition="0" endLine="237" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034755" fileName="MapSequence.java" startLine="252" startPosition="0" endLine="257" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034802" fileName="MapSequence.java" startLine="310" startPosition="0" endLine="315" endPosition="0">
+    <scopeInfo nodeId="6543581031674034747" fileName="MapSequence.java" startLine="242" startPosition="0" endLine="247" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034755" fileName="MapSequence.java" startLine="262" startPosition="0" endLine="267" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034802" fileName="MapSequence.java" startLine="320" startPosition="0" endLine="325" endPosition="0">
       <varInfo nodeId="6543581031674034806" varName="runtimeClass" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035729" fileName="MapSequence.java" startLine="336" startPosition="46" endLine="341" endPosition="7">
+    <scopeInfo nodeId="6543581031674035729" fileName="MapSequence.java" startLine="346" startPosition="46" endLine="351" endPosition="7">
       <varInfo nodeId="6543581031674035733" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4611582986551239935" fileName="MapSequence.java" startLine="393" startPosition="0" endLine="398" endPosition="0" />
-    <scopeInfo nodeId="4611582986551239930" fileName="MapSequence.java" startLine="398" startPosition="0" endLine="403" endPosition="0" />
+    <scopeInfo nodeId="4611582986551239935" fileName="MapSequence.java" startLine="403" startPosition="0" endLine="408" endPosition="0" />
+    <scopeInfo nodeId="4611582986551239930" fileName="MapSequence.java" startLine="408" startPosition="0" endLine="413" endPosition="0" />
     <scopeInfo nodeId="6543581031674035231" fileName="MapSequence.java" startLine="77" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="6543581031674035234" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035652" fileName="MapSequence.java" startLine="302" startPosition="38" endLine="308" endPosition="20">
+    <scopeInfo nodeId="6543581031674035652" fileName="MapSequence.java" startLine="312" startPosition="38" endLine="318" endPosition="20">
       <varInfo nodeId="6543581031674035654" varName="result" />
       <varInfo nodeId="6543581031674035663" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035728" fileName="MapSequence.java" startLine="336" startPosition="46" endLine="342" endPosition="18" />
-    <scopeInfo nodeId="6543581031674035775" fileName="MapSequence.java" startLine="350" startPosition="31" endLine="356" endPosition="7">
+    <scopeInfo nodeId="6543581031674035728" fileName="MapSequence.java" startLine="346" startPosition="46" endLine="352" endPosition="18" />
+    <scopeInfo nodeId="6543581031674035775" fileName="MapSequence.java" startLine="360" startPosition="31" endLine="366" endPosition="7">
       <varInfo nodeId="6543581031674035779" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035806" fileName="MapSequence.java" startLine="361" startPosition="31" endLine="367" endPosition="7">
+    <scopeInfo nodeId="6543581031674035806" fileName="MapSequence.java" startLine="371" startPosition="31" endLine="377" endPosition="7">
       <varInfo nodeId="6543581031674035810" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035359" fileName="MapSequence.java" startLine="124" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="3452893138210588483" fileName="MapSequence.java" startLine="112" startPosition="37" endLine="119" endPosition="17" />
+    <scopeInfo nodeId="6543581031674035359" fileName="MapSequence.java" startLine="134" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="6543581031674035364" varName="b" />
       <varInfo nodeId="6543581031674035362" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034678" fileName="MapSequence.java" startLine="181" startPosition="0" endLine="188" endPosition="0">
+    <scopeInfo nodeId="6543581031674034678" fileName="MapSequence.java" startLine="191" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="6543581031674034683" varName="values" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034758" fileName="MapSequence.java" startLine="257" startPosition="0" endLine="264" endPosition="0">
+    <scopeInfo nodeId="6543581031674034758" fileName="MapSequence.java" startLine="267" startPosition="0" endLine="274" endPosition="0">
       <varInfo nodeId="6543581031674034763" varName="b" />
       <varInfo nodeId="6543581031674034761" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034783" fileName="MapSequence.java" startLine="278" startPosition="0" endLine="285" endPosition="0">
+    <scopeInfo nodeId="6543581031674034783" fileName="MapSequence.java" startLine="288" startPosition="0" endLine="295" endPosition="0">
       <varInfo nodeId="6543581031674034786" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034927" fileName="MapSequence.java" startLine="140" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="6543581031674034927" fileName="MapSequence.java" startLine="150" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="6543581031674034934" varName="mappings" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034984" fileName="MapSequence.java" startLine="150" startPosition="91" endLine="158" endPosition="38">
+    <scopeInfo nodeId="6543581031674034984" fileName="MapSequence.java" startLine="160" startPosition="91" endLine="168" endPosition="38">
       <varInfo nodeId="6543581031674034997" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035770" fileName="MapSequence.java" startLine="349" startPosition="44" endLine="357" endPosition="22">
+    <scopeInfo nodeId="6543581031674035770" fileName="MapSequence.java" startLine="359" startPosition="44" endLine="367" endPosition="22">
       <varInfo nodeId="6543581031674035772" varName="modified" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035801" fileName="MapSequence.java" startLine="360" startPosition="44" endLine="368" endPosition="22">
+    <scopeInfo nodeId="6543581031674035801" fileName="MapSequence.java" startLine="370" startPosition="44" endLine="378" endPosition="22">
       <varInfo nodeId="6543581031674035803" varName="modified" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035042" fileName="MapSequence.java" startLine="161" startPosition="66" endLine="170" endPosition="38" />
-    <scopeInfo nodeId="6543581031674035603" fileName="MapSequence.java" startLine="286" startPosition="55" endLine="295" endPosition="18" />
-    <scopeInfo nodeId="6543581031674034798" fileName="MapSequence.java" startLine="301" startPosition="0" endLine="310" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034827" fileName="MapSequence.java" startLine="335" startPosition="0" endLine="344" endPosition="0">
+    <scopeInfo nodeId="6543581031674035042" fileName="MapSequence.java" startLine="171" startPosition="66" endLine="180" endPosition="38" />
+    <scopeInfo nodeId="6543581031674035603" fileName="MapSequence.java" startLine="296" startPosition="55" endLine="305" endPosition="18" />
+    <scopeInfo nodeId="6543581031674034798" fileName="MapSequence.java" startLine="311" startPosition="0" endLine="320" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034827" fileName="MapSequence.java" startLine="345" startPosition="0" endLine="354" endPosition="0">
       <varInfo nodeId="6543581031674034830" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035488" fileName="MapSequence.java" startLine="240" startPosition="40" endLine="250" endPosition="19" />
-    <scopeInfo nodeId="6543581031674034837" fileName="MapSequence.java" startLine="348" startPosition="0" endLine="359" endPosition="0">
+    <scopeInfo nodeId="3452893138210588476" fileName="MapSequence.java" startLine="111" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="3452893138210588479" varName="value" />
+      <varInfo nodeId="3452893138210588477" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674035488" fileName="MapSequence.java" startLine="250" startPosition="40" endLine="260" endPosition="19" />
+    <scopeInfo nodeId="6543581031674034837" fileName="MapSequence.java" startLine="358" startPosition="0" endLine="369" endPosition="0">
       <varInfo nodeId="6543581031674034840" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034842" fileName="MapSequence.java" startLine="359" startPosition="0" endLine="370" endPosition="0">
+    <scopeInfo nodeId="6543581031674034842" fileName="MapSequence.java" startLine="369" startPosition="0" endLine="380" endPosition="0">
       <varInfo nodeId="6543581031674034845" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034972" fileName="MapSequence.java" startLine="148" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="6543581031674034972" fileName="MapSequence.java" startLine="158" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="6543581031674034979" varName="iterable" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035031" fileName="MapSequence.java" startLine="160" startPosition="0" endLine="172" endPosition="0">
+    <scopeInfo nodeId="6543581031674035031" fileName="MapSequence.java" startLine="170" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="6543581031674035038" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034788" fileName="MapSequence.java" startLine="285" startPosition="0" endLine="297" endPosition="0">
+    <scopeInfo nodeId="6543581031674034788" fileName="MapSequence.java" startLine="295" startPosition="0" endLine="307" endPosition="0">
       <varInfo nodeId="6543581031674034791" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674035843" fileName="MapSequence.java" startLine="379" startPosition="43" endLine="391" endPosition="17">
+    <scopeInfo nodeId="6543581031674035843" fileName="MapSequence.java" startLine="389" startPosition="43" endLine="401" endPosition="17">
       <varInfo nodeId="6543581031674035869" varName="it" />
       <varInfo nodeId="6543581031674035845" varName="size" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034750" fileName="MapSequence.java" startLine="237" startPosition="0" endLine="252" endPosition="0">
+    <scopeInfo nodeId="6543581031674034750" fileName="MapSequence.java" startLine="247" startPosition="0" endLine="262" endPosition="0">
       <varInfo nodeId="6543581031674034753" varName="that" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034854" fileName="MapSequence.java" startLine="378" startPosition="0" endLine="393" endPosition="0">
+    <scopeInfo nodeId="6543581031674034854" fileName="MapSequence.java" startLine="388" startPosition="0" endLine="403" endPosition="0">
       <varInfo nodeId="6543581031674034858" varName="arr" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674034655" fileName="MapSequence.java" startLine="173" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MapSequenceInitializer" />
-    <unitInfo nodeId="6543581031674034686" fileName="MapSequence.java" startLine="190" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MappingIterator" />
-    <unitInfo nodeId="6543581031674034712" fileName="MapSequence.java" startLine="210" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$EntryMapping" />
-    <unitInfo nodeId="6543581031674034765" fileName="MapSequence.java" startLine="266" startPosition="0" endLine="408" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MappingsSetSequence" />
-    <unitInfo nodeId="6543581031674034640" fileName="MapSequence.java" startLine="13" startPosition="0" endLine="409" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <unitInfo nodeId="6543581031674034655" fileName="MapSequence.java" startLine="183" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MapSequenceInitializer" />
+    <unitInfo nodeId="6543581031674034686" fileName="MapSequence.java" startLine="200" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MappingIterator" />
+    <unitInfo nodeId="6543581031674034712" fileName="MapSequence.java" startLine="220" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$EntryMapping" />
+    <unitInfo nodeId="6543581031674034765" fileName="MapSequence.java" startLine="276" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence$MappingsSetSequence" />
+    <unitInfo nodeId="6543581031674034640" fileName="MapSequence.java" startLine="13" startPosition="0" endLine="419" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.MapSequence" />
   </root>
   <root nodeId="6543581031674036013">
     <nodeInfo nodeId="6543581031674036022" fileName="IQueueSequence.java" startLine="9" startPosition="77" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLastElement#(null)null" />
@@ -4172,17 +4185,22 @@
   <root nodeId="6543581031674036653">
     <nodeInfo nodeId="6543581031674036664" fileName="IMapSequence.java" startLine="7" startPosition="82" endLine="8" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mappingsSet#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
     <nodeInfo nodeId="6543581031674036671" fileName="IMapSequence.java" startLine="8" startPosition="52" endLine="9" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putAll#(Ljetbrains/mps/internal/collections/runtime/IMapSequence;)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
-    <nodeInfo nodeId="6543581031674036683" fileName="IMapSequence.java" startLine="9" startPosition="79" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(null)null" />
-    <nodeInfo nodeId="6543581031674036689" fileName="IMapSequence.java" startLine="10" startPosition="26" endLine="11" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="3452893138210588459" fileName="IMapSequence.java" startLine="9" startPosition="79" endLine="10" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putValue#(nullnull)null" />
+    <nodeInfo nodeId="6543581031674036683" fileName="IMapSequence.java" startLine="10" startPosition="36" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(null)null" />
+    <nodeInfo nodeId="6543581031674036689" fileName="IMapSequence.java" startLine="11" startPosition="26" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toMap#()Ljava/util/Map;" />
     <scopeInfo nodeId="6543581031674036664" fileName="IMapSequence.java" startLine="7" startPosition="82" endLine="8" endPosition="52" />
     <scopeInfo nodeId="6543581031674036671" fileName="IMapSequence.java" startLine="8" startPosition="52" endLine="9" endPosition="79">
       <varInfo nodeId="6543581031674036676" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674036683" fileName="IMapSequence.java" startLine="9" startPosition="79" endLine="10" endPosition="26">
+    <scopeInfo nodeId="3452893138210588459" fileName="IMapSequence.java" startLine="9" startPosition="79" endLine="10" endPosition="36">
+      <varInfo nodeId="3452893138210588467" varName="value" />
+      <varInfo nodeId="3452893138210588464" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674036683" fileName="IMapSequence.java" startLine="10" startPosition="36" endLine="11" endPosition="26">
       <varInfo nodeId="6543581031674036686" varName="u" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674036689" fileName="IMapSequence.java" startLine="10" startPosition="26" endLine="11" endPosition="27" />
-    <unitInfo nodeId="6543581031674036653" fileName="IMapSequence.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.IMapSequence" />
+    <scopeInfo nodeId="6543581031674036689" fileName="IMapSequence.java" startLine="11" startPosition="26" endLine="12" endPosition="27" />
+    <unitInfo nodeId="6543581031674036653" fileName="IMapSequence.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.IMapSequence" />
   </root>
   <root nodeId="6543581031674036880">
     <nodeInfo nodeId="6543581031674036887" fileName="ISortedSetSequence.java" startLine="7" startPosition="78" endLine="8" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="headSet#(null)Ljetbrains/mps/internal/collections/runtime/ISortedSetSequence;" />

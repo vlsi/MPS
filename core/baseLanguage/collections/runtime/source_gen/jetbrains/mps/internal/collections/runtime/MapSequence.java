@@ -109,6 +109,16 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
     return getMap().remove(u);
   }
 
+  public V putValue(U key, V value) {
+    if (Sequence.IGNORE_NULL_VALUES) {
+      if (value == null) {
+        return null;
+      }
+    }
+    getMap().put(key, value);
+    return value;
+  }
+
   public Map<U, V> toMap() {
     return this;
   }

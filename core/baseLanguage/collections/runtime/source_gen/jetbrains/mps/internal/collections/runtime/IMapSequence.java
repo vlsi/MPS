@@ -7,6 +7,7 @@ import java.util.Map;
 public interface IMapSequence<U, V> extends ISequence<IMapping<U, V>>, Map<U, V> {
   public ISetSequence<IMapping<U, V>> mappingsSet();
   public IMapSequence<U, V> putAll(IMapSequence<? extends U, ? extends V> map);
+  public V putValue(U key, V value);
   public V removeKey(U u);
   public Map<U, V> toMap();
 }

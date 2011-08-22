@@ -2320,11 +2320,12 @@
     <nodeInfo nodeId="6543581031674036815" fileName="NullMapSequence.java" startLine="55" startPosition="21" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674036822" fileName="NullMapSequence.java" startLine="59" startPosition="33" endLine="60" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674036836" fileName="NullMapSequence.java" startLine="63" startPosition="80" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036844" fileName="NullMapSequence.java" startLine="67" startPosition="27" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036852" fileName="NullMapSequence.java" startLine="71" startPosition="28" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036861" fileName="NullMapSequence.java" startLine="75" startPosition="46" endLine="76" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036874" fileName="NullMapSequence.java" startLine="79" startPosition="53" endLine="80" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674036726" fileName="NullMapSequence.java" startLine="84" startPosition="57" endLine="85" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3452893138210588559" fileName="NullMapSequence.java" startLine="67" startPosition="37" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036844" fileName="NullMapSequence.java" startLine="71" startPosition="27" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036852" fileName="NullMapSequence.java" startLine="75" startPosition="28" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036861" fileName="NullMapSequence.java" startLine="79" startPosition="46" endLine="80" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036874" fileName="NullMapSequence.java" startLine="83" startPosition="53" endLine="84" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674036726" fileName="NullMapSequence.java" startLine="88" startPosition="57" endLine="89" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674036735" fileName="NullMapSequence.java" startLine="17" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullMapSequence#()V" />
     <nodeInfo nodeId="6543581031674036739" fileName="NullMapSequence.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
     <nodeInfo nodeId="6543581031674036793" fileName="NullMapSequence.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putAll#(Ljava/util/Map;)V" />
@@ -2338,11 +2339,12 @@
     <nodeInfo nodeId="6543581031674036811" fileName="NullMapSequence.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
     <nodeInfo nodeId="6543581031674036817" fileName="NullMapSequence.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="values#()Ljava/util/Collection;" />
     <nodeInfo nodeId="6543581031674036824" fileName="NullMapSequence.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putAll#(Ljetbrains/mps/internal/collections/runtime/IMapSequence;)Ljetbrains/mps/internal/collections/runtime/IMapSequence;" />
-    <nodeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(null)null" />
-    <nodeInfo nodeId="6543581031674036846" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toMap#()Ljava/util/Map;" />
-    <nodeInfo nodeId="6543581031674036854" fileName="NullMapSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="6543581031674036867" fileName="NullMapSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mappingsSet#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
-    <nodeInfo nodeId="6543581031674036718" fileName="NullMapSequence.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullMapSequence;" />
+    <nodeInfo nodeId="3452893138210588551" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putValue#(nullnull)null" />
+    <nodeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeKey#(null)null" />
+    <nodeInfo nodeId="6543581031674036846" fileName="NullMapSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="6543581031674036854" fileName="NullMapSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6543581031674036867" fileName="NullMapSequence.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mappingsSet#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="6543581031674036718" fileName="NullMapSequence.java" startLine="86" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/NullMapSequence;" />
     <scopeInfo nodeId="6543581031674036738" fileName="NullMapSequence.java" startLine="18" startPosition="31" endLine="18" endPosition="31" />
     <scopeInfo nodeId="6543581031674036742" fileName="NullMapSequence.java" startLine="21" startPosition="23" endLine="21" endPosition="23" />
     <scopeInfo nodeId="6543581031674036802" fileName="NullMapSequence.java" startLine="48" startPosition="55" endLine="48" endPosition="55" />
@@ -2356,11 +2358,12 @@
     <scopeInfo nodeId="6543581031674036814" fileName="NullMapSequence.java" startLine="55" startPosition="21" endLine="56" endPosition="13" />
     <scopeInfo nodeId="6543581031674036821" fileName="NullMapSequence.java" startLine="59" startPosition="33" endLine="60" endPosition="34" />
     <scopeInfo nodeId="6543581031674036835" fileName="NullMapSequence.java" startLine="63" startPosition="80" endLine="64" endPosition="16" />
-    <scopeInfo nodeId="6543581031674036843" fileName="NullMapSequence.java" startLine="67" startPosition="27" endLine="68" endPosition="16" />
-    <scopeInfo nodeId="6543581031674036851" fileName="NullMapSequence.java" startLine="71" startPosition="28" endLine="72" endPosition="16" />
-    <scopeInfo nodeId="6543581031674036860" fileName="NullMapSequence.java" startLine="75" startPosition="46" endLine="76" endPosition="60" />
-    <scopeInfo nodeId="6543581031674036873" fileName="NullMapSequence.java" startLine="79" startPosition="53" endLine="80" endPosition="71" />
-    <scopeInfo nodeId="6543581031674036725" fileName="NullMapSequence.java" startLine="84" startPosition="57" endLine="85" endPosition="44" />
+    <scopeInfo nodeId="3452893138210588558" fileName="NullMapSequence.java" startLine="67" startPosition="37" endLine="68" endPosition="16" />
+    <scopeInfo nodeId="6543581031674036843" fileName="NullMapSequence.java" startLine="71" startPosition="27" endLine="72" endPosition="16" />
+    <scopeInfo nodeId="6543581031674036851" fileName="NullMapSequence.java" startLine="75" startPosition="28" endLine="76" endPosition="16" />
+    <scopeInfo nodeId="6543581031674036860" fileName="NullMapSequence.java" startLine="79" startPosition="46" endLine="80" endPosition="60" />
+    <scopeInfo nodeId="6543581031674036873" fileName="NullMapSequence.java" startLine="83" startPosition="53" endLine="84" endPosition="71" />
+    <scopeInfo nodeId="6543581031674036725" fileName="NullMapSequence.java" startLine="88" startPosition="57" endLine="89" endPosition="44" />
     <scopeInfo nodeId="6543581031674036735" fileName="NullMapSequence.java" startLine="17" startPosition="0" endLine="19" endPosition="3" />
     <scopeInfo nodeId="6543581031674036739" fileName="NullMapSequence.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="6543581031674036793" fileName="NullMapSequence.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
@@ -2389,14 +2392,18 @@
     <scopeInfo nodeId="6543581031674036824" fileName="NullMapSequence.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="6543581031674036829" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="3452893138210588551" fileName="NullMapSequence.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="3452893138210588554" varName="value" />
+      <varInfo nodeId="3452893138210588552" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674036838" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="6543581031674036841" varName="u" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674036846" fileName="NullMapSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6543581031674036854" fileName="NullMapSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6543581031674036867" fileName="NullMapSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6543581031674036718" fileName="NullMapSequence.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="6543581031674036695" fileName="NullMapSequence.java" startLine="15" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullMapSequence" />
+    <scopeInfo nodeId="6543581031674036846" fileName="NullMapSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="6543581031674036854" fileName="NullMapSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6543581031674036867" fileName="NullMapSequence.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="6543581031674036718" fileName="NullMapSequence.java" startLine="86" startPosition="0" endLine="91" endPosition="0" />
+    <unitInfo nodeId="6543581031674036695" fileName="NullMapSequence.java" startLine="15" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullMapSequence" />
   </root>
 </debugInfo>
 
