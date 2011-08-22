@@ -354,6 +354,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.plugin.Junit_Command" file="Junit_Command.java">
