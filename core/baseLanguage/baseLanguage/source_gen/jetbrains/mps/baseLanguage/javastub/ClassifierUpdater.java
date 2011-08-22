@@ -45,7 +45,6 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
@@ -660,25 +659,22 @@ public class ClassifierUpdater {
 
   private SReference createSReference(SNode source, String packageName, SNodeId targetNodeId, String role, String resolveInfo) {
     List<SModelReference> models = getModelReferencesFor(packageName);
+
+    if (ListSequence.fromList(models).isEmpty()) {
+      return SReference.create(role, source, null, targetNodeId, resolveInfo);
+    }
+
     if (ListSequence.fromList(models).count() > 1) {
       for (SModelReference model : models) {
         SNodeOperations.getModel(source).addModelImport(model, false);
       }
-      return new DynamicReference(role, source, new SModelReference(packageName, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA)), resolveInfo);
+      return new DynamicReference(role, source, new SModelReference(packageName, SModelStereotype.getStubStereotypeForId(getLanguageId())), resolveInfo);
     }
 
-    SModelReference model = (ListSequence.fromList(models).isEmpty() ?
-      null :
-      ListSequence.fromList(models).getElement(0)
-    );
-    ModuleReference moduleRef = (model == null ?
-      null :
-      SModelRepository.getInstance().getModelDescriptor(model).getModule().getModuleReference()
-    );
+    SModelReference model = ListSequence.fromList(models).getElement(0);
+    ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(model).getModule().getModuleReference();
     SModelReference ref = StubHelper.uidForPackageInStubs(packageName, this.getLanguageId(), moduleRef);
-    if (model != null) {
-      SNodeOperations.getModel(source).addModelImport(model, false);
-    }
+    SNodeOperations.getModel(source).addModelImport(model, false);
     return SReference.create(role, source, ref, targetNodeId, resolveInfo);
   }
 
