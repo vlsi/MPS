@@ -627,6 +627,7 @@ public class ClassifierUpdater {
 
     String pack = NodeNameUtil.getNamespace(clsType.getName());
     String resolve = NameUtil.shortNameFromLongName(clsType.getName());
+    resolve = resolve.replaceAll("\\$", ".");
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
     SReference ref = createSReference(sourceNode, pack, nodeId, role, resolve);
     sourceNode.addReference(ref);
@@ -657,7 +658,7 @@ public class ClassifierUpdater {
     sourceNode.addReference(ref);
   }
 
-  public SReference createSReference(SNode source, String packageName, SNodeId targetNodeId, String role, String resolveInfo) {
+  private SReference createSReference(SNode source, String packageName, SNodeId targetNodeId, String role, String resolveInfo) {
     List<SModelReference> models = getModelReferencesFor(packageName);
     if (ListSequence.fromList(models).count() > 1) {
       for (SModelReference model : models) {
