@@ -10882,7 +10882,7 @@
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~String" resolveInfo="String" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dformat(java%dlang%dString,java%dlang%dObject%d%d%d)%cjava%dlang%dString" resolveInfo="format" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6989360587248027503">
-                        <property name="value" nameId="tpee.1070475926801" value="&lt;p&gt;You are using %s. %s.&lt;/p&gt;&lt;p&gt;&lt;a href=\&quot;http://confluence.jetbrains.net/display/MPSD2/Version+Control\&quot;&gt;More info&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=\&quot;dismiss\&quot;&gt;Don't offer again&lt;/a&gt;.&lt;/p&gt;" />
+                        <property name="value" nameId="tpee.1070475926801" value="&lt;p&gt;You are using %s. %s.&lt;/p&gt;&lt;p&gt;&lt;a href=\&quot;http://confluence.jetbrains.com/display/MPSD2/Version+Control\&quot;&gt;More info&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=\&quot;dismiss\&quot;&gt;Don't offer again&lt;/a&gt;.&lt;/p&gt;" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6989360587248027504">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6989360587248026905" resolveInfo="whichVcses" />

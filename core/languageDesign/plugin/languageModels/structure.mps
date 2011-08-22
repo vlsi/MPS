@@ -1219,7 +1219,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ActionDeclaration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/actionNew.png" />
-      <property name="helpURL" nameId="tpce.2465654535473034588" value="http://www.jetbrains.net/confluence/display/MPSD1/Plugin#Plugin-actionsandactiongroups" />
+      <property name="helpURL" nameId="tpce.2465654535473034588" value="http://confluence.jetbrains.com/display/MPSD2/Plugin#Plugin-actionsandactiongroups" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>

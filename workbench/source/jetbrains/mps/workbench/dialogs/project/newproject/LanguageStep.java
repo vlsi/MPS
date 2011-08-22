@@ -103,7 +103,7 @@ public class LanguageStep extends BaseStep {
 
   @Nullable
   public String getURL() {
-    return "http://www.jetbrains.net/confluence/display/MPSD1/MPS+project+structure#MPSprojectstructure-languages";
+    return "http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-languages";
   }
 
   public void _init() {

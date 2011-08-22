@@ -941,7 +941,7 @@
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7vsr.~BrowserUtil" resolveInfo="BrowserUtil" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7vsr.~BrowserUtil%dlaunchBrowser(java%dlang%dString)%cvoid" resolveInfo="launchBrowser" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2510134983999478880">
-                    <property name="value" nameId="tpee.1070475926801" value="http://www.jetbrains.net/confluence/display/MPSD1/Generator#Generator-aboutgenerator" />
+                    <property name="value" nameId="tpee.1070475926801" value="http://confluence.jetbrains.com/display/MPSD2/Generator#Generator-aboutgenerator" />
                   </node>
                 </node>
               </node>
