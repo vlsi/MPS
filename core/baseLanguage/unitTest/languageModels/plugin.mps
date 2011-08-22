@@ -32993,8 +32993,12 @@
                       <property name="value" nameId="tpee.1070475926801" value="'" />
                     </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2379775828906108691">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2379775828906108692">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2379775828906105755" resolveInfo="name" />
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8243879142738686758">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~NameUtil%dshortNameFromLongName(java%dlang%dString)%cjava%dlang%dString" resolveInfo="shortNameFromLongName" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~NameUtil" resolveInfo="NameUtil" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8243879142738686759">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2379775828906105755" resolveInfo="name" />
+                        </node>
                       </node>
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2379775828906108693">
                         <property name="value" nameId="tpee.1070475926801" value="Tests in '" />
@@ -33114,8 +33118,12 @@
                       <property name="value" nameId="tpee.1070475926801" value="'" />
                     </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2379775828906110172">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2379775828906110173">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2379775828906110139" resolveInfo="name" />
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8243879142738686760">
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="30pf.~NameUtil" resolveInfo="NameUtil" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="30pf.~NameUtil%dshortNameFromLongName(java%dlang%dString)%cjava%dlang%dString" resolveInfo="shortNameFromLongName" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8243879142738686761">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2379775828906110139" resolveInfo="name" />
+                        </node>
                       </node>
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2379775828906110174">
                         <property name="value" nameId="tpee.1070475926801" value="Tests in '" />
