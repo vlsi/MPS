@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
@@ -55,7 +56,7 @@ public class JUnitTests_Producer {
         return null;
       }
       String name = SModelOperations.getModelName(source);
-      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), "Tests in '" + name + "'");
+      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), "Tests in '" + NameUtil.shortNameFromLongName(name) + "'");
       configuration.setRunType(JUnitRunTypes2.MODEL);
       configuration.setModel(source.getSModelFqName().toString());
       return configuration;
@@ -81,7 +82,7 @@ public class JUnitTests_Producer {
       // commented out due to perfomance problems 
       // <node> 
       String name = source.getModuleFqName();
-      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), "Tests in '" + name + "'");
+      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), "Tests in '" + NameUtil.shortNameFromLongName(name) + "'");
       configuration.setRunType(JUnitRunTypes2.MODULE);
       configuration.setModule(source.getModuleFqName());
       return configuration;
