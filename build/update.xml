@@ -7,7 +7,7 @@
                  feedback="http://youtrack.jetbrains.net"
                  majorVersion="2">
             <build number="20.7566" version="JetBrains MPS 2.0">
-                <message>JetBrains MPS 2.0 RC5 is available.</message>
+                <message>JetBrains MPS 2.0 is available.</message>
             </build>
         </channel>
 
@@ -16,7 +16,7 @@
                feedback="http://youtrack.jetbrains.net"
                majorVersion="2">
           <build number="20.7566" version="JetBrains MPS 2.0">
-              <message>JetBrains MPS 2.0 RC5 is available.</message>
+              <message>JetBrains MPS 2.0 is available.</message>
           </build>
       </channel>
     </product>
