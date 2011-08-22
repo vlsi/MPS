@@ -659,7 +659,7 @@ public class ClassifierUpdater {
 
   public SReference createSReference(SNode source, String packageName, SNodeId targetNodeId, String role, String resolveInfo) {
     List<SModelReference> models = getModelReferencesFor(packageName);
-    if (packageName.equals(SNodeOperations.getModel(myClassifier).getLongName())) {
+    if (ListSequence.fromList(models).count() > 1) {
       for (SModelReference model : models) {
         SNodeOperations.getModel(source).addModelImport(model, false);
       }
