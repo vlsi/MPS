@@ -50,8 +50,8 @@ HOW TO ADJUST JVM OPTIONS
 GETTING HELP AND REPORTING BUGS
     For getting help you can visit several locations:
     - home http://www.jetbrains.com/mps/
-    - documentation http://confluence.jetbrains.net/display/MPSD2/MPS+User%27s+Guide
-    - JetBrains MPS space http://www.jetbrains.net/confluence/display/MPS/Welcome+to+JetBrains+MPS+Space
+    - documentation http://confluence.jetbrains.com/display/MPSD2/MPS+User%27s+Guide
+    - JetBrains MPS space http://confluence.jetbrains.com/display/MPS/Welcome+to+JetBrains+MPS+Space
     - issue tracker http://www.jetbrains.net/tracker/issues/MPS
     - forum http://forum.jetbrains.com/forum/Meta-Programming-System
 

@@ -93,7 +93,7 @@ public class ProjectStep extends BaseStep {
 
   @Nullable
   public String getURL() {
-    return "http://www.jetbrains.net/confluence/display/MPSD1/MPS+project+structure#MPSprojectstructure-projects";
+    return "http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-projects";
   }
 
   public void _init() {
