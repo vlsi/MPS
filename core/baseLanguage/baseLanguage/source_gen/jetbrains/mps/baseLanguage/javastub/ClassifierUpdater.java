@@ -48,6 +48,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.project.StubModelsResolver;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.ide.IdeMain;
@@ -640,6 +641,7 @@ public class ClassifierUpdater {
     String pack = NodeNameUtil.getNamespace(annotationType.getName());
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
     String resolve = NameUtil.shortNameFromLongName(annotationType.getName());
+    resolve = resolve.replaceAll("\\$", ".");
     SReference ref = createSReference(sourceNode, pack, nodeId, role, resolve);
     sourceNode.addReference(ref);
   }
@@ -652,36 +654,42 @@ public class ClassifierUpdater {
     ASMClassType classType = (ASMClassType) enumValue.getType();
     String pack = NodeNameUtil.getNamespace(classType.getName());
     String resolve = NameUtil.shortNameFromLongName(classType.getName());
+    resolve = resolve.replaceAll("\\$", ".");
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
     SReference ref = createSReference(sourceNode, pack, nodeId, role, resolve);
     sourceNode.addReference(ref);
   }
 
   private SReference createSReference(SNode source, String packageName, SNodeId targetNodeId, String role, String resolveInfo) {
-    List<SModelReference> models = getModelReferencesFor(packageName);
+    SNode nodeInSameModel = SNodeOperations.getModel(myClassifier).getNodeById(targetNodeId);
+    if (nodeInSameModel != null) {
+      return SReference.create(role, source, SNodeOperations.getModel(myClassifier).getSModelReference(), targetNodeId, resolveInfo);
+    }
 
-    if (ListSequence.fromList(models).isEmpty()) {
+    Set<SModelReference> models = getModelReferencesFor(packageName);
+
+    if (SetSequence.fromSet(models).isEmpty()) {
       return SReference.create(role, source, null, targetNodeId, resolveInfo);
     }
 
-    if (ListSequence.fromList(models).count() > 1) {
+    if (SetSequence.fromSet(models).count() > 1) {
       for (SModelReference model : models) {
         SNodeOperations.getModel(source).addModelImport(model, false);
       }
       return new DynamicReference(role, source, new SModelReference(packageName, SModelStereotype.getStubStereotypeForId(getLanguageId())), resolveInfo);
     }
 
-    SModelReference model = ListSequence.fromList(models).getElement(0);
+    SModelReference model = SetSequence.fromSet(models).first();
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(model).getModule().getModuleReference();
     SModelReference ref = StubHelper.uidForPackageInStubs(packageName, this.getLanguageId(), moduleRef);
     SNodeOperations.getModel(source).addModelImport(model, false);
     return SReference.create(role, source, ref, targetNodeId, resolveInfo);
   }
 
-  private List<SModelReference> getModelReferencesFor(String packageName) {
-    List<SModelReference> models = jetbrains.mps.project.StubHelper.getInstance().resolveModel(myModule, new SModelFqName(packageName, SModelStereotype.getStubStereotypeForId(this.getLanguageId())), null);
+  private Set<SModelReference> getModelReferencesFor(String packageName) {
+    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(myModule, new SModelFqName(packageName, SModelStereotype.getStubStereotypeForId(this.getLanguageId())), null);
 
-    if (ListSequence.fromList(models).isEmpty()) {
+    if (SetSequence.fromSet(models).isEmpty()) {
       String moduleName = myModule.getModuleFqName();
       Tuples._2<String, String> p = MultiTuple.<String,String>from(packageName, moduleName);
       if (!(SetSequence.fromSet(reported).contains(p))) {

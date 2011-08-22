@@ -45,14 +45,14 @@ public class StubModelsResolver {
     });
   }
 
-  public List<SModelReference> resolveModel(IModule module, SModelFqName name, @Nullable SNodeId nodeId) {
+  public Set<SModelReference> resolveModel(IModule module, SModelFqName name, @Nullable SNodeId nodeId) {
     Pair<ModuleReference, SModelFqName> key = new Pair<ModuleReference, SModelFqName>(module.getModuleReference(), name);
     ensureInitialized(key);
 
     Set<SModelReference> models = myStubModulesCache.get(key);
-    if (nodeId == null) return new ArrayList<SModelReference>(models);
+    if (nodeId == null) return new HashSet<SModelReference>(models);
 
-    List<SModelReference> result = new ArrayList<SModelReference>();
+    Set<SModelReference> result = new HashSet<SModelReference>();
     for (SModelReference ref : models) {
       SModel m = SModelRepository.getInstance().getModelDescriptor(ref).getSModel();
       if (m.getNodeById(nodeId) != null) {
