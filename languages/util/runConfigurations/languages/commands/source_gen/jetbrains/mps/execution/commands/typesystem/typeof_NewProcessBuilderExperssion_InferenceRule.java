@@ -43,7 +43,7 @@ public class typeof_NewProcessBuilderExperssion_InferenceRule extends AbstractIn
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.execution.commands.structure.NewProcessBuilderExperssion";
+    return "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

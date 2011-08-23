@@ -586,7 +586,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="889694274152052325">
       <property name="name" nameId="tpck.1169194664001" value="newProcessBuilderExpression" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.2343546112398330898" resolveInfo="NewProcessBuilderExperssion" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="rzqf.2343546112398330898" resolveInfo="ProcessBuilderExpression" />
     </node>
   </root>
   <root id="889694274152216013">

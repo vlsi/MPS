@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
-public class NewProcessBuilderExperssion_Behavior {
+public class NewProcessBuilderExpression_Behavior {
   private static Class[] PARAMETERS_889694274152026870 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -20,10 +20,10 @@ public class NewProcessBuilderExperssion_Behavior {
 
   public static boolean call_isLegalAsStatement_889694274152026870(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.NewProcessBuilderExperssion"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_889694274152026870);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_889694274152026870);
   }
 
   public static boolean callSuper_isLegalAsStatement_889694274152026870(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.NewProcessBuilderExperssion"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_889694274152026870);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_889694274152026870);
   }
 }

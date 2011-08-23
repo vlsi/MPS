@@ -82,7 +82,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2343546112398330904">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.2343546112398330898" resolveInfo="NewProcessBuilderExperssion" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.2343546112398330898" resolveInfo="ProcessBuilderExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="889694274152179964">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />

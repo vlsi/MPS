@@ -87,7 +87,7 @@
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="8980950851470008444">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ProcessBuilderExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="rzqf.2343546112398330898" resolveInfo="NewProcessBuilderExperssion" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="rzqf.2343546112398330898" resolveInfo="ProcessBuilderExpression" />
     </node>
   </roots>
   <root id="865001690840232870">
@@ -2777,7 +2777,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8980950851470012986">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.2343546112398330898" resolveInfo="NewProcessBuilderExperssion" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.2343546112398330898" resolveInfo="ProcessBuilderExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="8980950851470012989">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8980950851470008444" resolveInfo="reduce_ProcessBuilderExpression" />
       </node>

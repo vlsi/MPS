@@ -126,7 +126,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2343546112398330898">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
-      <property name="name" nameId="tpck.1169194664001" value="NewProcessBuilderExperssion" />
+      <property name="name" nameId="tpck.1169194664001" value="NewProcessBuilderExpression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="889694274152177535">
@@ -457,7 +457,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="889694274152177541">
-      <property name="value" nameId="tpce.1105725733873" value="(key value)" />
+      <property name="value" nameId="tpce.1105725733873" value="[key value]" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>

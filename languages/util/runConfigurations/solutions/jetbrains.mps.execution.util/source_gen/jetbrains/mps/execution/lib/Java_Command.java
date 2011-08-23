@@ -91,7 +91,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(String className) throws ExecutionException {
-    String java = Java_Command.getJavaCommand(myJrePath);
+    File java = Java_Command.getJavaCommand(myJrePath);
     String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         return Java_Command.protect(it);
@@ -109,12 +109,12 @@ public class Java_Command {
         writer.append(myProgramParameter);
         writer.flush();
         writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).append(new KeyValueCommandPart("-classpath", classPathString)).append(ClassRunner.class.getName()).append(new KeyValueCommandPart("-" + ClassRunner.CLASS_PREFIX, className)).append(new KeyValueCommandPart("-" + ClassRunner.FILE_PREFIX, tmpFile)).build();
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", classPathString)).append(ClassRunner.class.getName()).append(new KeyValueCommandPart("-" + ClassRunner.CLASS_PREFIX, className)).append(new KeyValueCommandPart("-" + ClassRunner.FILE_PREFIX, tmpFile)).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(className).append(myProgramParameter).build(myWorkingDirectory);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", classPathString)).append(className).append(myProgramParameter).build(myWorkingDirectory);
     }
   }
 
@@ -183,17 +183,17 @@ public class Java_Command {
     return visited;
   }
 
-  public static String getJavaCommand(@Nullable String javaHome) throws ExecutionException {
+  public static File getJavaCommand(@Nullable String javaHome) throws ExecutionException {
     if (StringUtils.isEmpty(javaHome) || !(new File(javaHome).exists())) {
       javaHome = Java_Command.getJdkHome();
     }
     if (StringUtils.isEmpty(javaHome)) {
       throw new ExecutionException("Could not find valid java home.");
     }
-    return Java_Command.protect(Java_Command.getJavaCommandUnprotected(javaHome));
+    return new File(Java_Command.getJavaCommandPath(javaHome));
   }
 
-  public static String getJavaCommandUnprotected(String javaHome) {
+  public static String getJavaCommandPath(String javaHome) {
     String result = javaHome + File.separator + "bin" + File.separator;
     String java = "java";
     if (SystemInfo.isMac) {
@@ -224,7 +224,7 @@ public class Java_Command {
   public static String getJdkHome() {
     List<String> homes = Java_Command.getJavaHomes();
     for (String javaHome : ListSequence.fromList(homes)) {
-      if (new File(Java_Command.getJavaCommandUnprotected(javaHome)).exists()) {
+      if (new File(Java_Command.getJavaCommandPath(javaHome)).exists()) {
         return javaHome;
       }
     }

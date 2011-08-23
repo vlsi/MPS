@@ -72,7 +72,7 @@
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="889694274151974335">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="rzqf.2343546112398330898" resolveInfo="NewProcessBuilderExperssion" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="rzqf.2343546112398330898" resolveInfo="ProcessBuilderExpression" />
     </node>
   </roots>
   <root id="856705193941281983">

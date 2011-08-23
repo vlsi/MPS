@@ -24,7 +24,7 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExplicitCommandParameterDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.KeyValueCommandPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExperssion_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPartType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ProcessBuilderExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ProcessBuilderKeyPart_BehaviorDescriptor" />
@@ -268,7 +268,7 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPart_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExperssion_Behavior" file="NewProcessBuilderExperssion_Behavior.java">
+  <dependency className="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExpression_Behavior" file="NewProcessBuilderExpression_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
@@ -278,11 +278,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExperssion_BehaviorDescriptor" file="NewProcessBuilderExperssion_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExpression_BehaviorDescriptor" file="NewProcessBuilderExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExperssion_Behavior" />
+    <classNode dependClassName="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>

@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class NewProcessBuilderExperssion_DataFlow extends DataFlowBuilder {
-  public NewProcessBuilderExperssion_DataFlow() {
+public class NewProcessBuilderExpression_DataFlow extends DataFlowBuilder {
+  public NewProcessBuilderExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

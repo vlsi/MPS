@@ -11,33 +11,24 @@
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="21" startPosition="5" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="26" startPosition="36" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2098491881345815326" fileName="Exec_Command.java" startLine="32" startPosition="82" endLine="33" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2098491881345839382" fileName="Exec_Command.java" startLine="37" startPosition="34" endLine="38" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2098491881345839392" fileName="Exec_Command.java" startLine="39" startPosition="5" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2098491881345815326" fileName="Exec_Command.java" startLine="32" startPosition="82" endLine="33" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="14" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Exec_Command#()V" />
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="18" startPosition="66" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="25" startPosition="70" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2098491881345839380" fileName="Exec_Command.java" startLine="36" startPosition="51" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Ljava/io/File;)Lcom/intellij/execution/process/ProcessHandler;" />
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setWorkingDirectory#(Ljava/io/File;)Ljetbrains/mps/nanoc/plugin/Exec_Command;" />
     <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProgramParameters#(Ljava/lang/String;)Ljetbrains/mps/nanoc/plugin/Exec_Command;" />
-    <nodeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="protect#(Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="15" startPosition="25" endLine="15" endPosition="25" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="19" startPosition="35" endLine="20" endPosition="44" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="26" startPosition="36" endLine="27" endPosition="46" />
-    <scopeInfo nodeId="2098491881345802128" fileName="Exec_Command.java" startLine="32" startPosition="82" endLine="33" endPosition="152" />
-    <scopeInfo nodeId="2098491881345839381" fileName="Exec_Command.java" startLine="37" startPosition="34" endLine="38" endPosition="37" />
+    <scopeInfo nodeId="2098491881345802128" fileName="Exec_Command.java" startLine="32" startPosition="82" endLine="33" endPosition="112" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="14" startPosition="0" endLine="16" endPosition="3" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="18" startPosition="66" endLine="22" endPosition="16" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="25" startPosition="70" endLine="29" endPosition="16" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="2098491881345839376" fileName="Exec_Command.java" startLine="36" startPosition="51" endLine="40" endPosition="21" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="17" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="2098491881345839378" varName="rawString" />
-    </scopeInfo>
-    <unitInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Exec_Command" />
+    <unitInfo nodeId="2098491881345802123" fileName="Exec_Command.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Exec_Command" />
   </root>
   <root nodeId="226334238991953693">
     <nodeInfo nodeId="226334238991953693" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="92" endLine="16" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

@@ -32,7 +32,7 @@
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="889694274152095752">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
-      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.2343546112398330898" resolveInfo="NewProcessBuilderExperssion" />
+      <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="rzqf.2343546112398330898" resolveInfo="ProcessBuilderExpression" />
     </node>
   </roots>
   <root id="856705193941282484">

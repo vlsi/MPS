@@ -30,13 +30,6 @@ public class Exec_Command {
   }
 
   public ProcessHandler createProcess(File executable) throws ExecutionException {
-    return new ProcessHandlerBuilder().append(Exec_Command.protect(executable.getAbsolutePath())).append(myProgramParameters).build(myWorkingDirectory);
-  }
-
-  private static String protect(String rawString) {
-    if (rawString.contains(" ")) {
-      return "\"" + rawString + "\"";
-    }
-    return rawString;
+    return new ProcessHandlerBuilder().append(executable).append(myProgramParameters).build(myWorkingDirectory);
   }
 }
