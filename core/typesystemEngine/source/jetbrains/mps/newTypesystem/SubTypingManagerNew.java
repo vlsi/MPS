@@ -300,6 +300,9 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
     int newNodesSize = 1;
     while (types.size() > newNodesSize) {
+      if (types.size() == 1) {
+        return types.remove(0);
+      }
       SNode left = types.remove(0);
       SNode right = types.remove(0);
       List<SNode> newNodes = eliminateSubOrSuperTypes(leastCommonSuperTypes(left, right, context), true);
