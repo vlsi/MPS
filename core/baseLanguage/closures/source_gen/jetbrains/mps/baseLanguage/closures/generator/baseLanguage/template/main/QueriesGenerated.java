@@ -423,7 +423,7 @@ public class QueriesGenerated {
     List<SNode> allYAS = SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"});
     List<SNode> allYS = SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"});
     return (ListSequence.fromList(allYS).isEmpty() ?
-      (ListSequence.fromList(allYAS).count() == 1 && ListSequence.fromList(allYAS).first() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(cl, "body", true), "statement", true)).last()) :
+      ((int) ListSequence.fromList(allYAS).count() == 1 && ListSequence.fromList(allYAS).first() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(cl, "body", true), "statement", true)).last()) :
       false
     );
   }
@@ -1713,12 +1713,12 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1201421585183(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = (List<SNode>) Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
-    return ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+    return (int) ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1201421814921(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = (List<SNode>) Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
-    return ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+    return (int) ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1201276700612(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2854,7 +2854,7 @@ public class QueriesGenerated {
         lastStmt = StatementListUtil.nextSibling(cstmt);
         while ((lastStmt != null)) {
           stmts = StatementListUtil.selectStatementsUntilControlStatement(_context.getNode(), lastStmt);
-          if (ListSequence.fromList(stmts).count() == 0) {
+          if ((int) ListSequence.fromList(stmts).count() == 0) {
             cstmt = lastStmt;
             lastStmt = StatementListUtil.nextSibling(lastStmt);
           } else {

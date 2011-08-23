@@ -166,15 +166,15 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1177505734541(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "parameter", true)).count() == 0;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "parameter", true)).count() == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1177506104970(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeVariableDeclaration", true)).count() == 0 && !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Annotation") || SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeVariableDeclaration", true)).count() == 0 && !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Annotation") || SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassCreator_1212701643023(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).count() == 0;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).count() == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_TryCatchStatement_1237896443301(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -414,7 +414,7 @@ __switch__:
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       SNode annotationInstance = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
       List<SNode> annotationMethodDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(annotationInstance, "annotation", false), "method", true);
-      if (ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
+      if ((int) ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
         SLinkOperations.setTarget(_context.getNewNode(), "key", ListSequence.fromList(annotationMethodDeclarations).first(), false);
       }
     }
@@ -1864,7 +1864,7 @@ __switch__:
           if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
             SNode annotationInstance = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             List<SNode> annotationMethodDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(annotationInstance, "annotation", false), "method", true);
-            if (ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
+            if ((int) ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
               SLinkOperations.setTarget(result, "key", ListSequence.fromList(annotationMethodDeclarations).first(), false);
             }
           }

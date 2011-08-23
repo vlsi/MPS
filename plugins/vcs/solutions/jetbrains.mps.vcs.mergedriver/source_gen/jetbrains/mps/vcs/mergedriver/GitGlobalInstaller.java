@@ -13,11 +13,11 @@ import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
+import com.intellij.openapi.util.SystemInfo;
 import java.io.FileNotFoundException;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
@@ -34,9 +34,6 @@ import java.io.FileNotFoundException;
 
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
-    if (!(PluginUtil.isGitPluginEnabled())) {
-      return AbstractInstaller.State.INSTALLED;
-    }
     // TODO rewrite it using git4idea util classes 
     if (!(myConfigFile.exists())) {
       if (dryRun) {
@@ -63,41 +60,27 @@ import java.io.FileNotFoundException;
       return createScriptResult;
     }
 
-    String scriptPath = myScriptFile.getAbsolutePath();
-    if (SystemInfo.isWindows) {
-      scriptPath = CommandLineGenerator.adaptPathForMsysGit(scriptPath);
-    }
-    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"\\\"%s\\\" %%O %%A %%B %%L\"", scriptPath));
+    ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"\\\"%s\\\" %%O %%A %%B %%L\"", myScriptFile.getAbsolutePath().replace("\\", "\\\\")));
+    ListSequence.fromList(newConfigLines).addElement("");
 
     List<String> configLines = StringsIO.readLines(myConfigFile);
     int sectionStart = ListSequence.fromList(configLines).indexOf(ListSequence.fromList(configLines).findFirst(new IWhereFilter<String>() {
       public boolean accept(String line) {
-        return line.trim().matches("\\[merge\\s+\"mps\"\\]");
+        return line.matches("\\s*\\[merge\\s+\"mps\"\\]\\s*");
       }
     }));
     if (sectionStart != -1) {
-      int toSkip = sectionStart + 1;
-      Iterable<String> skipped = ListSequence.fromList(configLines).skip(toSkip);
+      Iterable<String> skipped = ListSequence.fromList(configLines).skip(sectionStart);
       int sectionEnd = Sequence.fromIterable(skipped).indexOf(Sequence.fromIterable(skipped).findFirst(new IWhereFilter<String>() {
         public boolean accept(String line) {
-          return line.trim().startsWith("[");
+          return line.trim().isEmpty();
         }
-      }));
-      if (sectionEnd == -1) {
-        // last section 
-        sectionEnd = ListSequence.fromList(configLines).count();
-      } else {
-        sectionEnd = sectionEnd + toSkip;
-      }
-      List<String> section = ListSequence.fromList(configLines).page(sectionStart, sectionEnd).where(new IWhereFilter<String>() {
-        public boolean accept(String line) {
-          return !(line.trim().isEmpty());
-        }
-      }).toListSequence();
-      boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
+      })) + sectionStart + 1;
+      List<String> section = ListSequence.fromList(configLines).page(sectionStart, sectionEnd).toListSequence();
+      boolean equal = (int) ListSequence.fromList(section).count() == (int) ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0g0u0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0e0s0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -146,7 +129,7 @@ import java.io.FileNotFoundException;
     return "Git";
   }
 
-  private static boolean neq_btx4zt_a0a0a0g0u0a(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0e0s0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

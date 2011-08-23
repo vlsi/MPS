@@ -4481,7 +4481,7 @@
     <unitInfo nodeId="7388416617632229272" fileName="typeof_ConjugateOperation_InferenceRule.java" startLine="24" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_ConjugateOperation_InferenceRule" />
   </root>
   <root nodeId="757772128651891024">
-    <nodeInfo nodeId="757772128652074250" fileName="DimensionUtil.java" startLine="26" startPosition="57" endLine="27" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757772128652074250" fileName="DimensionUtil.java" startLine="26" startPosition="63" endLine="27" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="757772128652074266" fileName="DimensionUtil.java" startLine="27" startPosition="101" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="757772128652074280" fileName="DimensionUtil.java" startLine="28" startPosition="16" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="757772128652074274" fileName="DimensionUtil.java" startLine="29" startPosition="16" endLine="30" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4835,7 +4835,7 @@
     <scopeInfo nodeId="757772128652074253" fileName="DimensionUtil.java" startLine="33" startPosition="9" endLine="164" endPosition="11" />
     <scopeInfo nodeId="757772128652074244" fileName="DimensionUtil.java" startLine="32" startPosition="55" endLine="165" endPosition="9" />
     <scopeInfo nodeId="757772128652074241" fileName="DimensionUtil.java" startLine="31" startPosition="25" endLine="166" endPosition="7" />
-    <scopeInfo nodeId="757772128651891044" fileName="DimensionUtil.java" startLine="26" startPosition="57" endLine="195" endPosition="7">
+    <scopeInfo nodeId="757772128651891044" fileName="DimensionUtil.java" startLine="26" startPosition="63" endLine="195" endPosition="7">
       <varInfo nodeId="757772128652074281" varName="f" />
       <varInfo nodeId="757772128652355847" varName="result" />
       <varInfo nodeId="757772128652074275" varName="cbd" />

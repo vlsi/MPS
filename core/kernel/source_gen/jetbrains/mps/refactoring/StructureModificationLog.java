@@ -23,7 +23,7 @@ public class StructureModificationLog {
   }
 
   public int getLatestVersion(SModelReference modelRef) {
-    if (ListSequence.fromList(myDataList).count() == 0) {
+    if ((int) ListSequence.fromList(myDataList).count() == 0) {
       return -1;
     }
     return MapSequence.fromMap(ListSequence.fromList(myDataList).last().getDependencies()).get(modelRef) + 1;

@@ -267,7 +267,7 @@
     <nodeInfo nodeId="3161373106581138834" fileName="ClassifierAndSuperClassifiersCache.java" startLine="334" startPosition="16" endLine="335" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3161373106581138840" fileName="ClassifierAndSuperClassifiersCache.java" startLine="335" startPosition="125" endLine="336" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3161373106581138848" fileName="ClassifierAndSuperClassifiersCache.java" startLine="336" startPosition="69" endLine="337" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581138883" fileName="ClassifierAndSuperClassifiersCache.java" startLine="339" startPosition="206" endLine="340" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581138883" fileName="ClassifierAndSuperClassifiersCache.java" startLine="339" startPosition="212" endLine="340" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6374270137333887567" fileName="ClassifierAndSuperClassifiersCache.java" startLine="344" startPosition="43" endLine="345" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581138913" fileName="ClassifierAndSuperClassifiersCache.java" startLine="345" startPosition="159" endLine="346" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="3161373106581138914" fileName="ClassifierAndSuperClassifiersCache.java" startLine="347" startPosition="13" endLine="348" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -498,7 +498,7 @@
     <scopeInfo nodeId="3161373106581138767" fileName="ClassifierAndSuperClassifiersCache.java" startLine="314" startPosition="108" endLine="315" endPosition="167" />
     <scopeInfo nodeId="3161373106581138807" fileName="ClassifierAndSuperClassifiersCache.java" startLine="322" startPosition="124" endLine="323" endPosition="19" />
     <scopeInfo nodeId="3161373106581138819" fileName="ClassifierAndSuperClassifiersCache.java" startLine="326" startPosition="27" endLine="327" endPosition="20" />
-    <scopeInfo nodeId="3161373106581138882" fileName="ClassifierAndSuperClassifiersCache.java" startLine="339" startPosition="206" endLine="340" endPosition="48" />
+    <scopeInfo nodeId="3161373106581138882" fileName="ClassifierAndSuperClassifiersCache.java" startLine="339" startPosition="212" endLine="340" endPosition="48" />
     <scopeInfo nodeId="3161373106581139031" fileName="ClassifierAndSuperClassifiersCache.java" startLine="363" startPosition="44" endLine="364" endPosition="74" />
     <scopeInfo nodeId="3161373106581139072" fileName="ClassifierAndSuperClassifiersCache.java" startLine="370" startPosition="29" endLine="371" endPosition="21" />
     <scopeInfo nodeId="3161373106581139125" fileName="ClassifierAndSuperClassifiersCache.java" startLine="384" startPosition="34" endLine="385" endPosition="29" />

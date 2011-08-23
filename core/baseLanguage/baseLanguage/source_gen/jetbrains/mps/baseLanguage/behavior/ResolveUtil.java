@@ -66,7 +66,7 @@ public class ResolveUtil {
     SNode result = SNodeOperations.copyNode(typeWithVars);
     List<SNode> varRefs = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
     List<SNode> params = ListSequence.fromList(SLinkOperations.getTargets(classifierSubtype, "parameter", true)).toListSequence();
-    if (ListSequence.fromList(params).count() == ListSequence.fromList(varRefs).count()) {
+    if ((int) ListSequence.fromList(params).count() == (int) ListSequence.fromList(varRefs).count()) {
       for (SNode varRef : varRefs) {
         SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false)))));
       }
@@ -211,7 +211,7 @@ outer:
         }
       }
       return true;
-    } else if (Sequence.fromIterable(parameterTypes).count() == ListSequence.fromList(arguments).count()) {
+    } else if ((int) Sequence.fromIterable(parameterTypes).count() == (int) ListSequence.fromList(arguments).count()) {
       {
         SNode parameterType;
         SNode argument;

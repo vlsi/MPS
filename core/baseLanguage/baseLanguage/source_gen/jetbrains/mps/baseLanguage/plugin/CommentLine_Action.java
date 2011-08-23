@@ -32,7 +32,7 @@ public class CommentLine_Action extends GeneratedAction {
     }
     SNode singleLineComment = CommentLine_Action.this.getSingleLineComment(_params);
     if (singleLineComment != null) {
-      return ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+      return (int) ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
     }
     SNode statement = CommentLine_Action.this.getStatement(_params);
     if (statement == null) {

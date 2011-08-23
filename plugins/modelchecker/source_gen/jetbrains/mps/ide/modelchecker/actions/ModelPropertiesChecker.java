@@ -31,7 +31,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
       List<String> errors = new ModelValidator(modelDescriptor.getSModel()).validate(scope);
       if (!(ListSequence.fromList(errors).isEmpty())) {
         String extraMessage = ListSequence.fromList(errors).getElement(0);
-        if (ListSequence.fromList(errors).count() == 2) {
+        if ((int) ListSequence.fromList(errors).count() == 2) {
           extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
         } else if (ListSequence.fromList(errors).count() > 2) {
           extraMessage += "; ...";

@@ -786,7 +786,7 @@ __switch__:
         ListSequence.fromList(changesToAdd).addElement(new SubstituteNodeChange(node.getConceptFqName(), currentNodeId, role, parentNode.getSNodeId(), null, null, baseNodeId));
       }
 
-      if (commonGroupSize == ListSequence.fromList(baseNodeGroup).count()) {
+      if (commonGroupSize == (int) ListSequence.fromList(baseNodeGroup).count()) {
         for (final SNodeId nodeId : ListSequence.fromList(currentNodeGroup).skip(commonGroupSize)) {
           SNode node = ListSequence.fromList(currentChildren).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode n) {

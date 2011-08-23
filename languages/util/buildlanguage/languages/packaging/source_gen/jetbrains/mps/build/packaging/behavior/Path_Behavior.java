@@ -23,7 +23,7 @@ public class Path_Behavior {
   }
 
   public static String call_getFullPathWithoutMacro_1226511495568(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "compositePathComponent", true) == null) || ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).count() == 0) {
+    if ((SLinkOperations.getTarget(thisNode, "compositePathComponent", true) == null) || (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).count() == 0) {
       return "";
     }
     StringBuffer sb = new StringBuffer();
@@ -36,7 +36,7 @@ public class Path_Behavior {
   }
 
   public static String virtual_getName_1221141245424(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "compositePathComponent", true) == null) || ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).count() == 0) {
+    if ((SLinkOperations.getTarget(thisNode, "compositePathComponent", true) == null) || (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).count() == 0) {
       return "";
     }
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true)).last(), "path");

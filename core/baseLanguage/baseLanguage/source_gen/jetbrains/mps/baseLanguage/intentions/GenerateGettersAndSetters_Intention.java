@@ -124,7 +124,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode method) {
-          if (setterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1) {
+          if (setterName.equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1) {
             setterIsAbsent.value = false;
           }
         }
