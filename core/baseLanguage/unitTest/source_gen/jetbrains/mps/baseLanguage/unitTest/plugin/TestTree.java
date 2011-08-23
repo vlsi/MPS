@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.util.Disposer;
 import java.util.List;
@@ -23,13 +24,14 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class TestTree extends MPSTree implements TestView, Disposable {
   private final Project myProject;
+  @NotNull
   private final IOperationContext myOperationContext;
   private final TestRunState myState;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> myMap;
   private boolean isAllTree = true;
   private TestTreeIconAnimator myAnimator;
 
-  public TestTree(Project project, TestRunState state, IOperationContext context, Disposable disposable) {
+  public TestTree(Project project, TestRunState state, @NotNull IOperationContext context, Disposable disposable) {
     Disposer.register(disposable, this);
     this.myProject = project;
     this.myState = state;
