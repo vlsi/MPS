@@ -255,8 +255,8 @@ public class OptimizeImportsHelper {
 
   private static class Result {
     public String myReport = "";
-    public List<Language> myUsedLanguages = new ArrayList<Language>();
-    public List<SModelReference> myUsedModels = new ArrayList<SModelReference>();
+    public Set<Language> myUsedLanguages = new HashSet<Language>();
+    public Set<SModelReference> myUsedModels = new HashSet<SModelReference>();
 
     public void add(Result addition) {
       myReport = myReport + addition.myReport + "\n";
