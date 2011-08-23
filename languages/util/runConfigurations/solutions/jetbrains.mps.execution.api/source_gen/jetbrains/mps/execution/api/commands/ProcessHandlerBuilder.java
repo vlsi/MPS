@@ -9,14 +9,16 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.io.File;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
-import java.io.File;
+import com.intellij.util.SystemProperties;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
 import com.intellij.execution.process.ProcessNotCreatedException;
 import com.intellij.execution.configurations.GeneralCommandLine;
+import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -37,6 +39,13 @@ public class ProcessHandlerBuilder {
     return this;
   }
 
+  public ProcessHandlerBuilder append(@Nullable File file) {
+    if (file != null) {
+      ListSequence.fromList(myCommandLine).addElement(file.getAbsolutePath());
+    }
+    return this;
+  }
+
   public ProcessHandlerBuilder append(String... command) {
     for (String commandPart : Sequence.fromIterable(Sequence.fromArray(command))) {
       append(commandPart);
@@ -51,13 +60,12 @@ public class ProcessHandlerBuilder {
     return this;
   }
 
+  @Deprecated
   public ProcessHandlerBuilder appendKey(@Nullable String key, @Nullable String parameter) {
-    if (StringUtils.isNotEmpty(key) && StringUtils.isNotEmpty(parameter)) {
-      return append("-" + key).append(parameter);
-    }
-    return this;
+    return append(new KeyValueCommandPart(key, parameter));
   }
 
+  @Deprecated
   public ProcessHandlerBuilder appendKey(@Nullable String key, String... parameter) {
     if (StringUtils.isNotEmpty(key) && parameter.length > 0) {
       return append("-" + key).append(parameter);
@@ -65,6 +73,7 @@ public class ProcessHandlerBuilder {
     return this;
   }
 
+  @Deprecated
   public ProcessHandlerBuilder appendKey(@Nullable String key, @NotNull List<String> parameters) {
     if (StringUtils.isNotEmpty(key) && ListSequence.fromList(parameters).isNotEmpty()) {
       return append("-" + key).append(parameters);
@@ -72,8 +81,15 @@ public class ProcessHandlerBuilder {
     return this;
   }
 
+  public ProcessHandlerBuilder append(@Nullable CommandPart commandPart) {
+    if (commandPart != null) {
+      ListSequence.fromList(myCommandLine).addSequence(ListSequence.fromList(commandPart.getCommandList()));
+    }
+    return this;
+  }
+
   public ProcessHandler build() throws ExecutionException {
-    return build(new File(System.getProperty("user.dir")));
+    return build(new File(SystemProperties.getUserHome()));
   }
 
   public ProcessHandler build(@NotNull File workingDirectory) throws ExecutionException {
@@ -113,6 +129,10 @@ public class ProcessHandlerBuilder {
   public static Iterable<String> splitCommandInParts(@NotNull String command) {
     if (!(command.contains(" "))) {
       return Sequence.<String>singleton(command.replace("\"", ""));
+    }
+    if (!(command.contains("\""))) {
+      // no double-quotes => split by spaces 
+      return Arrays.asList(command.split("(\\s)+"));
     }
     // TODO this is actually slow, so test&optimize 
     // this mega-regexp finds a space outside of " 

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="KeyValueCommandPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.KeyValueCommandPart_BehaviorDescriptor" />
   <unitInfo fileName="CommandProcessType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandProcessType_BehaviorDescriptor" />
   <unitInfo fileName="DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ProcessBuilderPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessBuilderPart_BehaviorDescriptor" />
   <unitInfo fileName="ProcessBuilderKeyPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessBuilderKeyPart_BehaviorDescriptor" />
+  <unitInfo fileName="ProcessBuilderCommandPartType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPartType_BehaviorDescriptor" />
+  <unitInfo fileName="ProcessBuilderCommandPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPart_BehaviorDescriptor" />
   <unitInfo fileName="RedirectOutputExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_BehaviorDescriptor" />
   <unitInfo fileName="ProcessType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessType_BehaviorDescriptor" />
   <unitInfo fileName="AbstractProcessBuilderPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.AbstractProcessBuilderPart_BehaviorDescriptor" />
@@ -14,6 +17,7 @@
   <unitInfo fileName="CommandParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandParameterReference_BehaviorDescriptor" />
   <unitInfo fileName="CommandReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandReferenceExpression_BehaviorDescriptor" />
   <unitInfo fileName="ReportExecutionError_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ReportExecutionError_BehaviorDescriptor" />
+  <unitInfo fileName="NewProcessBuilderExperssion_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExperssion_BehaviorDescriptor" />
   <unitInfo fileName="CommandParameterDeclaration_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ProcessBuilderExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessBuilderExpression_BehaviorDescriptor" />
   <unitInfo fileName="CommandType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandType_BehaviorDescriptor" />
@@ -22,8 +26,8 @@
   <unitInfo fileName="ReportErrorStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_BehaviorDescriptor" />
   <unitInfo fileName="CommandDebuggerOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandDebuggerOperation_BehaviorDescriptor" />
   <unitInfo fileName="ExecuteCommandPart_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CommandDeclaration_BehaviorDescriptor.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.BehaviorAspectDescriptor" />
   <root nodeId="6129022259108621140">
     <nodeInfo nodeId="6129022259108621140" fileName="ExecuteCommandPart_Behavior.java" startLine="24" startPosition="42" endLine="25" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_558680274511380755" />
     <nodeInfo nodeId="6129022259108621140" fileName="ExecuteCommandPart_Behavior.java" startLine="25" startPosition="71" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_558680274511380765" />
@@ -518,6 +522,26 @@
     <scopeInfo nodeId="856705193941282225" fileName="ProcessBuilderExpression_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="856705193941282225" fileName="ProcessBuilderExpression_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="856705193941282225" fileName="ProcessBuilderExpression_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessBuilderExpression_Behavior" />
+  </root>
+  <root nodeId="889694274151974335">
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="11" startPosition="51" endLine="12" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_889694274152026870" />
+    <nodeInfo nodeId="889694274152042464" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="21" startPosition="84" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="22" startPosition="113" endLine="23" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="26" startPosition="117" endLine="27" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isLegalAsStatement_889694274152026870#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isLegalAsStatement_889694274152026870#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="889694274151974337" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="889694274152026872" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="26" startPosition="117" endLine="27" endPosition="280" />
+    <scopeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="21" startPosition="84" endLine="23" endPosition="235" />
+    <scopeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="889694274151974335" fileName="NewProcessBuilderExperssion_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExperssion_Behavior" />
   </root>
 </debugInfo>
 

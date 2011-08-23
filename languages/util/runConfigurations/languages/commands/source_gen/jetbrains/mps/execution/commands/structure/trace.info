@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Commands_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.Commands_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.StructureAspectDescriptor" />
+  <root nodeId="2343546112398330898">
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="13" startPosition="61" endLine="14" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="14" startPosition="112" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WORKING_DIRECTORY" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="15" startPosition="68" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMAND_PART" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="18" startPosition="50" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="22" startPosition="43" endLine="23" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="26" startPosition="52" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="30" startPosition="37" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="34" startPosition="46" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="38" startPosition="45" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="42" startPosition="47" endLine="43" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="46" startPosition="67" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="50" startPosition="82" endLine="51" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="54" startPosition="68" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewProcessBuilderExperssion#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkingDirectory#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setWorkingDirectory#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandPartsCount#()I" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="commandParts#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandParts#()Ljava/util/List;" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addCommandPart#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertCommandPart#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/execution/commands/structure/NewProcessBuilderExperssion;" />
+    <nodeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/execution/commands/structure/NewProcessBuilderExperssion;" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="18" startPosition="50" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="22" startPosition="43" endLine="23" endPosition="103" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="26" startPosition="52" endLine="27" endPosition="72" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="30" startPosition="37" endLine="31" endPosition="72" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="34" startPosition="46" endLine="35" endPosition="85" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="38" startPosition="45" endLine="39" endPosition="88" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="42" startPosition="47" endLine="43" endPosition="66" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="46" startPosition="67" endLine="47" endPosition="75" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="50" startPosition="82" endLine="51" endPosition="210" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="54" startPosition="68" endLine="55" endPosition="62" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <unitInfo nodeId="2343546112398330898" fileName="NewProcessBuilderExperssion.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.NewProcessBuilderExperssion" />
+  </root>
   <root nodeId="612376536074296995">
     <nodeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="10" startPosition="53" endLine="11" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="612376536074296995" fileName="CommandProcessType.java" startLine="11" startPosition="103" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMAND_DECLARATION" />
@@ -815,6 +861,72 @@
     <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <unitInfo nodeId="856705193941281812" fileName="RedirectOutputExpression.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.RedirectOutputExpression" />
+  </root>
+  <root nodeId="889694274152177535">
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="11" startPosition="68" endLine="12" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="12" startPosition="104" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KEY" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="13" startPosition="41" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="16" startPosition="42" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="20" startPosition="30" endLine="21" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="24" startPosition="39" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="28" startPosition="32" endLine="29" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="32" startPosition="41" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="36" startPosition="74" endLine="37" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="40" startPosition="60" endLine="41" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="KeyValueCommandPart#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKey#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setKey#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/execution/commands/structure/KeyValueCommandPart;" />
+    <nodeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/execution/commands/structure/KeyValueCommandPart;" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="16" startPosition="42" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="20" startPosition="30" endLine="21" endPosition="81" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="24" startPosition="39" endLine="25" endPosition="50" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="28" startPosition="32" endLine="29" endPosition="83" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="32" startPosition="41" endLine="33" endPosition="52" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="36" startPosition="74" endLine="37" endPosition="194" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="40" startPosition="60" endLine="41" endPosition="54" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="889694274152177535" fileName="KeyValueCommandPart.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.KeyValueCommandPart" />
+  </root>
+  <root nodeId="889694274152177536">
+    <nodeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="11" startPosition="59" endLine="12" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="14" startPosition="48" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="18" startPosition="80" endLine="19" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="22" startPosition="66" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProcessBuilderCommandPart#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/execution/commands/structure/ProcessBuilderCommandPart;" />
+    <nodeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/execution/commands/structure/ProcessBuilderCommandPart;" />
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="14" startPosition="48" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="18" startPosition="80" endLine="19" endPosition="206" />
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="22" startPosition="66" endLine="23" endPosition="60" />
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="889694274152177536" fileName="ProcessBuilderCommandPart.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPart" />
+  </root>
+  <root nodeId="889694274152216058">
+    <nodeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="11" startPosition="57" endLine="12" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="14" startPosition="52" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="18" startPosition="84" endLine="19" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="22" startPosition="70" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProcessBuilderCommandPartType#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/execution/commands/structure/ProcessBuilderCommandPartType;" />
+    <nodeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/execution/commands/structure/ProcessBuilderCommandPartType;" />
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="14" startPosition="52" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="18" startPosition="84" endLine="19" endPosition="214" />
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="22" startPosition="70" endLine="23" endPosition="64" />
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="889694274152216058" fileName="ProcessBuilderCommandPartType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType" />
   </root>
 </debugInfo>
 

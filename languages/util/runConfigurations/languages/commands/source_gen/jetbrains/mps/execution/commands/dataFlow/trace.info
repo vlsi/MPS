@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.execution.commands.dataFlow.DFABuilders" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.execution.commands.dataFlow.DFABuilders" />
   <root nodeId="1594211126127613592">
     <nodeInfo nodeId="1594211126127687503" fileName="RedirectOutputExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1594211126127687512" fileName="RedirectOutputExpression_DataFlow.java" startLine="16" startPosition="111" endLine="17" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -59,6 +59,20 @@
     <scopeInfo nodeId="856705193941282508" fileName="ProcessBuilderPart_DataFlow.java" startLine="11" startPosition="66" endLine="13" endPosition="3" />
     <scopeInfo nodeId="856705193941282508" fileName="ProcessBuilderPart_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="856705193941282508" fileName="ProcessBuilderPart_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.execution.commands.dataFlow.ProcessBuilderPart_DataFlow" />
+  </root>
+  <root nodeId="889694274152095752">
+    <nodeInfo nodeId="889694274152095761" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="17" startPosition="115" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="889694274152095765" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="19" startPosition="5" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="889694274152095752" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="12" startPosition="75" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewProcessBuilderExperssion_DataFlow#()V" />
+    <nodeInfo nodeId="889694274152095755" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="889694274152095752" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="889694274152095752" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="13" startPosition="49" endLine="13" endPosition="49" />
+    <scopeInfo nodeId="889694274152095760" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="17" startPosition="115" endLine="18" endPosition="48" />
+    <scopeInfo nodeId="889694274152095752" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="12" startPosition="75" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="889694274152095755" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="889694274152095754" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="16" startPosition="102" endLine="20" endPosition="113" />
+    <scopeInfo nodeId="889694274152095752" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="15" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="889694274152095752" fileName="NewProcessBuilderExperssion_DataFlow.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.execution.commands.dataFlow.NewProcessBuilderExperssion_DataFlow" />
   </root>
 </debugInfo>
 

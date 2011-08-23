@@ -15,6 +15,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
+import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.FileNotFoundException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunParameters;
@@ -108,7 +109,7 @@ public class Java_Command {
         writer.append(myProgramParameter);
         writer.flush();
         writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, className).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).append(new KeyValueCommandPart("-classpath", classPathString)).append(ClassRunner.class.getName()).append(new KeyValueCommandPart("-" + ClassRunner.CLASS_PREFIX, className)).append(new KeyValueCommandPart("-" + ClassRunner.FILE_PREFIX, tmpFile)).build();
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
