@@ -306,8 +306,8 @@
                           <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7197035105459954540" resolveInfo="ClassRunner" />
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7197035105459954574" resolveInfo="CLASS_PREFIX" />
                         </node>
-                        <node role="value" roleId="rzqf.856705193941281805" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="6129022259108656909">
-                          <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6129022259108656813" resolveInfo="classPath" />
+                        <node role="value" roleId="rzqf.856705193941281805" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="2343546112398284554">
+                          <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="6129022259108656811" resolveInfo="className" />
                         </node>
                       </node>
                       <node role="part" roleId="rzqf.856705193941281800" type="rzqf.ProcessBuilderKeyPart" typeId="rzqf.856705193941281803" id="6129022259108656910">

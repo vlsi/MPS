@@ -108,7 +108,7 @@ public class Java_Command {
         writer.append(myProgramParameter);
         writer.flush();
         writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, className).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
