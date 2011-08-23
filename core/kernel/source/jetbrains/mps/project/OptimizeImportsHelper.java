@@ -85,6 +85,11 @@ public class OptimizeImportsHelper {
     Result result = optimizeModelsImports_internal(modelsToOptimize);
 
     LanguageDescriptor descriptor = language.getModuleDescriptor();
+    for (Generator g : language.getGenerators()) {
+      GeneratorDescriptor gd = g.getModuleDescriptor();
+      result.myReport = optimizeModuleImports(gd, result) + "\n\n" + result.myReport;
+      g.setModuleDescriptor(gd, false);
+    }
     result.myReport = optimizeModuleImports(descriptor, result) + "\n\n" + result.myReport;
     language.setLanguageDescriptor(descriptor, false);
 
@@ -103,6 +108,9 @@ public class OptimizeImportsHelper {
   private Result optimizeModelImports_internal(SModelDescriptor modelDescriptor) {
     Result result = new Result();
 
+    for (ModuleReference ref:modelDescriptor.getSModel().engagedOnGenerationLanguages()){
+      result.myUsedLanguages.add(MPSModuleRepository.getInstance().getLanguage(ref));
+    }
     for (SNode node : modelDescriptor.getSModel().nodes()) {
       result.myUsedLanguages.add(node.getLanguage());
       for (SReference ref : node.getReferences()) {
@@ -113,6 +121,13 @@ public class OptimizeImportsHelper {
       }
     }
 
+    Set<SModelReference> unusedModels = new HashSet<SModelReference>();
+    for (SModelReference model : SModelOperations.getImportedModelUIDs(modelDescriptor.getSModel())) {
+      if (!result.myUsedModels.contains(model)) {
+        unusedModels.add(model);
+      }
+    }
+
     Set<ModuleReference> unusedLanguages = new HashSet<ModuleReference>();
     for (ModuleReference languageRef : modelDescriptor.getSModel().importedLanguages()) {
       ModuleReference ref = getUnusedLanguageRef(result, languageRef);
@@ -120,18 +135,9 @@ public class OptimizeImportsHelper {
     }
 
     Set<ModuleReference> unusedDevkits = new HashSet<ModuleReference>();
-/*
-    for (ModuleReference devkitRef : modelDescriptor.getSModel().getDevKitRefs()) {
+    for (ModuleReference devkitRef : modelDescriptor.getSModel().importedDevkits()) {
       ModuleReference ref = getUnusedDevkitRef(result, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
-    }
-*/
-
-    Set<SModelReference> unusedModels = new HashSet<SModelReference>();
-    for (SModelReference model : SModelOperations.getImportedModelUIDs(modelDescriptor.getSModel())) {
-      if (!result.myUsedModels.contains(model)) {
-        unusedModels.add(model);
-      }
     }
 
     result.myReport = removeFromImports(modelDescriptor, unusedModels, unusedLanguages, unusedDevkits);
@@ -141,6 +147,12 @@ public class OptimizeImportsHelper {
   //----additional methods--------
 
   private String optimizeModuleImports(ModuleDescriptor descriptor, Result result) {
+    List<Dependency> unusedDeps = new ArrayList<Dependency>();
+    for (Dependency d : descriptor.getDependencies()) {
+      Dependency dep = getUnusedDependency(result, d);
+      if (dep != null) unusedDeps.add(dep);
+    }
+
     List<ModuleReference> unusedLanguages = new ArrayList<ModuleReference>();
     for (ModuleReference langRef : descriptor.getUsedLanguages()) {
       ModuleReference ref = getUnusedLanguageRef(result, langRef);
@@ -148,17 +160,9 @@ public class OptimizeImportsHelper {
     }
 
     List<ModuleReference> unusedDevkits = new ArrayList<ModuleReference>();
-/*
     for (ModuleReference devkitRef : descriptor.getUsedDevkits()) {
       ModuleReference ref = getUnusedDevkitRef(result, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
-    }
-*/
-
-    List<Dependency> unusedDeps = new ArrayList<Dependency>();
-    for (Dependency d : descriptor.getDependencies()) {
-      Dependency dep = getUnusedDependency(result, d);
-      if (dep != null) unusedDeps.add(dep);
     }
 
     return removeFromImports(descriptor, unusedLanguages, unusedDevkits, unusedDeps);
@@ -202,12 +206,12 @@ public class OptimizeImportsHelper {
   private ModuleReference getUnusedLanguageRef(Result result, ModuleReference languageRef) {
     Language language = GlobalScope.getInstance().getLanguage(languageRef);
     if (language == null) return languageRef;
+    if (result.myUsedLanguages.contains(language)) return null;
 
-    for (Dependency dep : language.getDependencies()) {
-      if (getUnusedDependency(result, dep) == null) return null;
+    for (SModelDescriptor md : language.getAccessoryModels()) {
+      if (result.myUsedModels.contains(md.getSModelReference())) return null;
     }
 
-    if (result.myUsedLanguages.contains(language)) return null;
     return language.getModuleReference();
   }
 
