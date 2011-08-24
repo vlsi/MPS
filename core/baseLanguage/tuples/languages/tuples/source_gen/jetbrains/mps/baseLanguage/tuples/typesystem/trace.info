@@ -1036,7 +1036,7 @@
     <nodeInfo nodeId="5264858465808082927" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="31" startPosition="120" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5264858465808082939" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="32" startPosition="48" endLine="33" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5264858465808079267" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="33" startPosition="119" endLine="34" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5264858465808082895" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="36" startPosition="71" endLine="37" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5264858465808082895" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="36" startPosition="92" endLine="37" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5264858465808124463" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="37" startPosition="161" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="974579920306770545" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="39" startPosition="87" endLine="40" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5264858465808082902" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="40" startPosition="87" endLine="41" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1122,7 +1122,7 @@
     <scopeInfo nodeId="5264858465808079239" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="84" startPosition="7" endLine="88" endPosition="31" />
     <scopeInfo nodeId="5264858465808079239" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="102" startPosition="7" endLine="106" endPosition="31" />
     <scopeInfo nodeId="5264858465808079239" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="115" startPosition="7" endLine="119" endPosition="31" />
-    <scopeInfo nodeId="5264858465808079305" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="36" startPosition="71" endLine="42" endPosition="9">
+    <scopeInfo nodeId="5264858465808079305" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="36" startPosition="92" endLine="42" endPosition="9">
       <varInfo nodeId="5264858465808082896" varName="supertype" />
     </scopeInfo>
     <scopeInfo nodeId="5264858465808079239" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="70" startPosition="32" endLine="76" endPosition="7" />
