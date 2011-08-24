@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,13 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/11/11
- * Time: 10:26 AM
- * To change this template use File | Settings | File Templates.
- */
 public class NodesReader {
   protected static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
@@ -85,7 +79,7 @@ public class NodesReader {
     for (; references > 0; references--) {
       int kind = is.readInt();
       SNodeId targetNodeId = kind == 1 ? is.readNodeId() : null;
-
+      DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
       String role = is.readString();
       SModelReference modelRef = is.readModelReference();
       if(modelRef != null && LOCAL.equals(modelRef)) {
@@ -100,14 +94,18 @@ public class NodesReader {
             modelRef,
             targetNodeId,
             resolveInfo));
-      } else if (kind == 2) {
+      } else if (kind == 2 || kind == 3) {
         assert modelRef != null;
+        DynamicReference reference = new DynamicReference(
+          role,
+          node,
+          modelRef,
+          resolveInfo);
+        if(origin != null) {
+          reference.setOrigin(origin);
+        }
         node.addReference(
-          new DynamicReference(
-            role,
-            node,
-            modelRef,
-            resolveInfo));
+          reference);
       } else {
         throw new IOException("unknown reference type");
       }

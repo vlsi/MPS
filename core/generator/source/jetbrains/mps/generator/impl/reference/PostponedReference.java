@@ -19,6 +19,7 @@ import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -93,11 +94,19 @@ public class PostponedReference extends SReference {
 //        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
 //      }
     } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode) && myReferenceInfo.getResolveInfoForDynamicResolve() != null) {
-      myReplacementReference = new DynamicReference(
+      DynamicReference dynamicReference = new DynamicReference(
         role,
         outputSourceNode,
         targetModelReference,
         myReferenceInfo.getResolveInfoForDynamicResolve());
+
+      SNode templateNode = myReferenceInfo instanceof ReferenceInfo_Macro ? ((ReferenceInfo_Macro) myReferenceInfo).getMacroNode() : null;
+      SNode inputNode = myReferenceInfo.getInputNode();
+      if(inputNode != null || templateNode != null) {
+        dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new SNodePointer(templateNode) : null, inputNode != null ? new SNodePointer(inputNode) : null));
+      }
+      myReplacementReference = dynamicReference;
+
     } else {
       outputTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
       if (outputTargetNode != null) {
