@@ -10,11 +10,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class KeyValueCommandPart extends ProcessBuilderCommandPart {
   public static final String concept = "jetbrains.mps.execution.commands.structure.KeyValueCommandPart";
+  public static final String DASH = "dash";
   public static final String KEY = "key";
   public static final String VALUE = "value";
 
   public KeyValueCommandPart(SNode node) {
     super(node);
+  }
+
+  public boolean getDash() {
+    return this.getBooleanProperty(KeyValueCommandPart.DASH);
+  }
+
+  public void setDash(boolean value) {
+    this.setBooleanProperty(KeyValueCommandPart.DASH, value);
   }
 
   public Expression getKey() {
