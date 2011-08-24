@@ -5,13 +5,15 @@ package jetbrains.mps.debugger.java.mps;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.execution.lib.Java_Command;
+import jetbrains.mps.execution.api.commands.ListCommandPart;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.execution.api.commands.PropertyCommandPart;
 import java.io.File;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.InternalFlag;
 import com.intellij.util.SystemProperties;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -68,8 +70,7 @@ public class Mps_Command {
   }
 
   public ProcessHandler createProcess() throws ExecutionException {
-    String mpsProperties = Mps_Command.getConfigPathArgument(myConfigurationPath) + " " + Mps_Command.getSystemPathArgument(mySystemPath);
-    return new Java_Command().setClassPath(Mps_Command.getClassPath()).setVirtualMachineParameter(myVirtualMachineParameters + " " + mpsProperties).setDebuggerSettings(myDebuggerSettings).setWorkingDirectory(new File(System.getProperty("user.dir"))).setJrePath(myJrePath).createProcess("jetbrains.mps.Launcher");
+    return new Java_Command().setVirtualMachineParameterCommand(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameters, new PropertyCommandPart("idea.system.path", mySystemPath), new PropertyCommandPart("idea.config.path", myConfigurationPath)))).setDebuggerSettings(myDebuggerSettings).setWorkingDirectory(new File(System.getProperty("user.dir"))).setJrePath(myJrePath).createProcess(null, "jetbrains.mps.Launcher", Mps_Command.getClassPath());
   }
 
   public static IDebugger getDebugger() {
@@ -91,15 +92,7 @@ public class Mps_Command {
     return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug2x/system";
   }
 
-  private static String getSystemPathArgument(String systemPath) {
-    return Java_Command.protect("-Didea.system.path=" + systemPath);
-  }
-
-  private static String getConfigPathArgument(String configPath) {
-    return Java_Command.protect("-Didea.config.path=" + configPath);
-  }
-
-  private static List<String> getClassPath() {
+  private static List<File> getClassPath() {
     Iterable<String> currentClassPath = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), System.getProperty("java.class.path").split(File.pathSeparator))).<String>select(new ISelector<String, String>() {
       public String select(String it) {
         try {
@@ -112,6 +105,10 @@ public class Mps_Command {
     return Sequence.fromIterable(currentClassPath).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return !(it.startsWith(System.getProperty("java.home")));
+      }
+    }).<File>select(new ISelector<String, File>() {
+      public File select(String it) {
+        return new File(it);
       }
     }).toListSequence();
   }

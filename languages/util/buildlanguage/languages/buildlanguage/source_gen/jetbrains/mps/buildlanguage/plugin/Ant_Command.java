@@ -7,16 +7,19 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.execution.lib.Java_Command;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import com.intellij.openapi.application.PathManager;
-import java.io.File;
-import java.util.List;
+import jetbrains.mps.execution.api.commands.ListCommandPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.execution.api.commands.PropertyCommandPart;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
+import java.io.File;
+import com.intellij.openapi.application.PathManager;
+import java.util.List;
+import jetbrains.mps.execution.api.commands.CommandPart;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
@@ -74,49 +77,45 @@ public class Ant_Command {
     if (StringUtils.isEmpty(jdkHome)) {
       throw new ExecutionException("Could not find valid java home.");
     }
-    return new Java_Command().setClassPath(Ant_Command.getAntClassPath(myAntLocation)).setProgramParameter(Java_Command.protect("-Djava.home=" + jdkHome) + " " + Java_Command.protect("-Dant.home=" + myAntLocation) + " " + IterableUtils.join(Sequence.fromIterable(Ant_Command.getMacroValues()).<String>select(new ISelector<String, String>() {
-      public String select(String it) {
-        return Java_Command.protect(it);
-      }
-    }), " ") + " " + ((StringUtils.isNotEmpty(myOptions) ?
+    return new Java_Command().createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart("java.home", jdkHome), new PropertyCommandPart("ant.home", myAntLocation), new ListCommandPart(Sequence.fromIterable(Ant_Command.getMacroValues()).toListSequence()), ((StringUtils.isNotEmpty(myOptions) ?
       myOptions + " " :
       ""
-    )) + "-f " + Java_Command.protect(antFilePath) + ((StringUtils.isEmpty(myTargetName) ?
+    )), new KeyValueCommandPart("-" + "f", new File(antFilePath)), ((StringUtils.isEmpty(myTargetName) ?
       "" :
       " " + myTargetName
-    ))).createProcess("org.apache.tools.ant.launch.Launcher");
+    )))), "org.apache.tools.ant.launch.Launcher", Ant_Command.getAntClassPath(myAntLocation));
   }
 
   private static String getDefaultAntHome() {
     return PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant";
   }
 
-  private static List<String> getAntClassPath(String antHome) throws ExecutionException {
+  private static List<File> getAntClassPath(String antHome) throws ExecutionException {
     String antlib = antHome + File.separator + "lib";
     File antLibFile = new File(antlib);
     if (!(antLibFile.exists())) {
       throw new ExecutionException("Ant directory " + antlib + " does not exist.");
     }
-    List<String> classPath = ListSequence.fromList(new ArrayList<String>());
+    List<File> classPath = ListSequence.fromList(new ArrayList<File>());
     for (File jarFile : antLibFile.listFiles()) {
       String jarFilePath = jarFile.getAbsolutePath();
       if (jarFilePath.endsWith(".jar")) {
-        ListSequence.fromList(classPath).addElement(jarFilePath);
+        ListSequence.fromList(classPath).addElement(jarFile);
       }
     }
     return classPath;
   }
 
-  private static Iterable<String> getMacroValues() {
+  private static Iterable<CommandPart> getMacroValues() {
     final PathMacros pathMacros = PathMacros.getInstance();
-    List<String> macroValues = ListSequence.fromListAndArray(new ArrayList<String>(), "-D" + "mps_home" + "=" + jetbrains.mps.util.PathManager.getHomePath());
+    List<CommandPart> macroValues = ListSequence.fromListAndArray(new ArrayList<CommandPart>(), new PropertyCommandPart("mps_home", jetbrains.mps.util.PathManager.getHomePath()));
     return ListSequence.fromList(macroValues).union(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return pathMacros.getUserMacroNames();
       }
-    })).<String>select(new ISelector<String, String>() {
-      public String select(String it) {
-        return "-D" + it + "=" + pathMacros.getValue(it);
+    })).<CommandPart>select(new ISelector<String, CommandPart>() {
+      public CommandPart select(String it) {
+        return (CommandPart) new PropertyCommandPart(it, pathMacros.getValue(it));
       }
     }));
   }

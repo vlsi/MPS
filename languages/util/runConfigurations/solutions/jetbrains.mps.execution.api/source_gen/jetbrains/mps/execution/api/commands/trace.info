@@ -310,6 +310,18 @@
     <unitInfo nodeId="6868250101935612751" fileName="ListCommandPart.java" startLine="33" startPosition="61" endLine="56" endPosition="5" unitName="jetbrains.mps.execution.api.commands.ListCommandPart$1" />
     <unitInfo nodeId="6868250101935612520" fileName="ListCommandPart.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.execution.api.commands.ListCommandPart" />
   </root>
+  <root nodeId="8234001627574071091">
+    <nodeInfo nodeId="8234001627574071124" fileName="PropertyCommandPart.java" startLine="9" startPosition="71" endLine="10" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8234001627574071106" fileName="PropertyCommandPart.java" startLine="8" startPosition="56" endLine="11" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8234001627574071093" fileName="PropertyCommandPart.java" startLine="7" startPosition="85" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyCommandPart#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="8234001627574071108" fileName="PropertyCommandPart.java" startLine="9" startPosition="71" endLine="10" endPosition="44" />
+    <scopeInfo nodeId="8234001627574071096" fileName="PropertyCommandPart.java" startLine="8" startPosition="56" endLine="11" endPosition="5" />
+    <scopeInfo nodeId="8234001627574071093" fileName="PropertyCommandPart.java" startLine="7" startPosition="85" endLine="12" endPosition="3">
+      <varInfo nodeId="8234001627574071101" varName="value" />
+      <varInfo nodeId="8234001627574071099" varName="key" />
+    </scopeInfo>
+    <unitInfo nodeId="8234001627574071091" fileName="PropertyCommandPart.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.execution.api.commands.PropertyCommandPart" />
+  </root>
   <root nodeId="889694274152177226">
     <nodeInfo nodeId="6868250101935612147" fileName="KeyValueCommandPart.java" startLine="13" startPosition="71" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6868250101935612152" fileName="KeyValueCommandPart.java" startLine="14" startPosition="23" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -249,13 +249,6 @@ public class Java_Command {
     return null;
   }
 
-  public static String protect(String result) {
-    if (result.contains(" ")) {
-      return "\"" + result + "\"";
-    }
-    return result;
-  }
-
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
       @Nullable
