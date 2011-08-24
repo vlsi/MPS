@@ -510,13 +510,9 @@
                         <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="8478830098674649607" />
                       </node>
                       <node role="commandPart" roleId="rzqf.2343546112398330901" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="8234001627573899296">
-                        <node role="key" roleId="rzqf.889694274152177539" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8234001627573899297">
-                          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627573899298">
-                            <property name="value" nameId="tpee.1070475926801" value="-" />
-                          </node>
-                          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627573899299">
-                            <property name="value" nameId="tpee.1070475926801" value="classpath" />
-                          </node>
+                        <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
+                        <node role="key" roleId="rzqf.889694274152177539" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627573899299">
+                          <property name="value" nameId="tpee.1070475926801" value="classpath" />
                         </node>
                         <node role="value" roleId="rzqf.889694274152177540" type="rzqf.ListCommandPart" typeId="rzqf.6868250101935610313" id="8234001627573899300">
                           <node role="list" roleId="rzqf.6868250101935610315" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="8234001627573899301">
@@ -537,31 +533,23 @@
                         </node>
                       </node>
                       <node role="commandPart" roleId="rzqf.2343546112398330901" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="8234001627573899306">
+                        <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
                         <node role="value" roleId="rzqf.889694274152177540" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="8234001627573899307">
                           <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="8234001627573899234" resolveInfo="className" />
                         </node>
-                        <node role="key" roleId="rzqf.889694274152177539" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8234001627573899308">
-                          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627573899309">
-                            <property name="value" nameId="tpee.1070475926801" value="-" />
-                          </node>
-                          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8234001627573899310">
-                            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7197035105459954540" resolveInfo="ClassRunner" />
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7197035105459954574" resolveInfo="CLASS_PREFIX" />
-                          </node>
+                        <node role="key" roleId="rzqf.889694274152177539" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8234001627573899310">
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7197035105459954540" resolveInfo="ClassRunner" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7197035105459954574" resolveInfo="CLASS_PREFIX" />
                         </node>
                       </node>
                       <node role="commandPart" roleId="rzqf.2343546112398330901" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="8234001627573899311">
+                        <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
                         <node role="value" roleId="rzqf.889694274152177540" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8234001627573899312">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8234001627573899261" resolveInfo="tmpFile" />
                         </node>
-                        <node role="key" roleId="rzqf.889694274152177539" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8234001627573899313">
-                          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627573899314">
-                            <property name="value" nameId="tpee.1070475926801" value="-" />
-                          </node>
-                          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8234001627573899315">
-                            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7197035105459954540" resolveInfo="ClassRunner" />
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7197035105459954582" resolveInfo="FILE_PREFIX" />
-                          </node>
+                        <node role="key" roleId="rzqf.889694274152177539" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8234001627573899315">
+                          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7197035105459954540" resolveInfo="ClassRunner" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7197035105459954582" resolveInfo="FILE_PREFIX" />
                         </node>
                       </node>
                       <node role="workingDirectory" roleId="rzqf.2343546112398330902" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="8234001627573899316">
@@ -618,13 +606,9 @@
                       <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="8478830098674649607" />
                     </node>
                     <node role="commandPart" roleId="rzqf.2343546112398330901" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="8234001627573899338">
-                      <node role="key" roleId="rzqf.889694274152177539" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8234001627573899339">
-                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627573899340">
-                          <property name="value" nameId="tpee.1070475926801" value="-" />
-                        </node>
-                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627573899341">
-                          <property name="value" nameId="tpee.1070475926801" value="classpath" />
-                        </node>
+                      <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
+                      <node role="key" roleId="rzqf.889694274152177539" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627573899341">
+                        <property name="value" nameId="tpee.1070475926801" value="classpath" />
                       </node>
                       <node role="value" roleId="rzqf.889694274152177540" type="rzqf.ListCommandPart" typeId="rzqf.6868250101935610313" id="8234001627573899342">
                         <node role="list" roleId="rzqf.6868250101935610315" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="8234001627573899343">
