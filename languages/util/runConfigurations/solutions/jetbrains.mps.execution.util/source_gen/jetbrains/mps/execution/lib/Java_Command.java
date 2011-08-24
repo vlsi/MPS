@@ -7,15 +7,18 @@ import com.intellij.util.SystemProperties;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.execution.api.commands.CommandPart;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.execution.api.commands.ListCommandPart;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
-import jetbrains.mps.execution.api.commands.ListCommandPart;
 import java.io.FileNotFoundException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunParameters;
@@ -44,6 +47,7 @@ public class Java_Command {
   private String myVirtualMachineParameter;
   private List<String> myClassPath = ListSequence.fromList(new ArrayList<String>());
   private String myDebuggerSettings;
+  private CommandPart myVirtualMachineParameterCommand;
 
   public Java_Command() {
   }
@@ -90,8 +94,15 @@ public class Java_Command {
     return this;
   }
 
+  public Java_Command setVirtualMachineParameterCommand(CommandPart virtualMachineParameterCommand) {
+    if (virtualMachineParameterCommand != null) {
+      myVirtualMachineParameterCommand = virtualMachineParameterCommand;
+    }
+    return this;
+  }
+
   public ProcessHandler createProcess(String className) throws ExecutionException {
-    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).createProcess(className, ListSequence.fromList(myClassPath).<File>select(new ISelector<String, File>() {
+    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setDebuggerSettings(myDebuggerSettings).createProcess(className, ListSequence.fromList(myClassPath).<File>select(new ISelector<String, File>() {
       public File select(String it) {
         return new File(it);
       }
@@ -99,25 +110,29 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(String className, List<File> classPathFiles) throws ExecutionException {
+    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setVirtualMachineParameterCommand(new ListCommandPart(Sequence.fromIterable(Sequence.<String>singleton(myVirtualMachineParameter)).toListSequence())).setDebuggerSettings(myDebuggerSettings).createProcess(new ListCommandPart(Sequence.fromIterable(Sequence.<String>singleton(myProgramParameter)).toListSequence()), className, classPathFiles);
+  }
+
+  public ProcessHandler createProcess(CommandPart programParameterCommand, String className, List<File> classPathFiles) throws ExecutionException {
     File java = Java_Command.getJavaCommand(myJrePath);
     if (StringUtils.isEmpty(className)) {
       throw new ExecutionException("Classname is empty");
     }
-    if (check_yvpt_a0c0a1(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
+    if (check_yvpt_a0c0a2(programParameterCommand) >= Java_Command.getMaxCommandLine()) {
       File tmpFile = FileUtil.createTmpFile();
       // we want to be sure that file is deleted, even when process is not started 
       tmpFile.deleteOnExit();
       try {
         PrintWriter writer = new PrintWriter(tmpFile);
-        writer.append(myProgramParameter);
+        writer.append(IterableUtils.join(ListSequence.fromList(programParameterCommand.getCommandList()), " "));
         writer.flush();
         writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPathFiles, File.pathSeparator))).append(ClassRunner.class.getName()).append(new KeyValueCommandPart("-" + ClassRunner.CLASS_PREFIX, className)).append(new KeyValueCommandPart("-" + ClassRunner.FILE_PREFIX, tmpFile)).build(myWorkingDirectory);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPathFiles, File.pathSeparator))).append(ClassRunner.class.getName()).append(new KeyValueCommandPart("-" + ClassRunner.CLASS_PREFIX, className)).append(new KeyValueCommandPart("-" + ClassRunner.FILE_PREFIX, tmpFile)).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPathFiles, File.pathSeparator))).append(className).append(myProgramParameter).build(myWorkingDirectory);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPathFiles, File.pathSeparator))).append(className).append(programParameterCommand).build(myWorkingDirectory);
     }
   }
 
@@ -126,9 +141,9 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNode node) throws ExecutionException {
-    return new Java_Command().setJrePath(check_yvpt_a0a0a0d(runParameters)).setProgramParameter(check_yvpt_a2a0a0d(runParameters)).setVirtualMachineParameter(check_yvpt_a3a0a0d(runParameters)).setWorkingDirectory((check_yvpt_a0a4a0a0d(runParameters) == null ?
+    return new Java_Command().setJrePath(check_yvpt_a0a0a0e(runParameters)).setProgramParameter(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory((check_yvpt_a0a4a0a0e(runParameters) == null ?
       null :
-      new File(check_yvpt_a0a0e0a0a3(runParameters))
+      new File(check_yvpt_a0a0e0a0a4(runParameters))
     )).setDebuggerSettings(myDebuggerSettings).createProcess(node);
   }
 
@@ -254,42 +269,42 @@ public class Java_Command {
     };
   }
 
-  private static int check_yvpt_a0c0a1(String checkedDotOperand) {
+  private static int check_yvpt_a0c0a2(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.length();
+      return checkedDotOperand.getLength();
     }
     return 0;
   }
 
-  private static String check_yvpt_a0a0a0d(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a0a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAlternativeJre();
     }
     return null;
   }
 
-  private static String check_yvpt_a2a0a0d(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a2a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.programParameters();
     }
     return null;
   }
 
-  private static String check_yvpt_a3a0a0d(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a3a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
     }
     return null;
   }
 
-  private static String check_yvpt_a0a0e0a0a3(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a0a0e0a0a4(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }
     return null;
   }
 
-  private static String check_yvpt_a0a4a0a0d(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a0a4a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }

@@ -7,20 +7,20 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.execution.commands.structure.BuilderBlockStatement", "jetbrains.mps.execution.commands.structure.BuilderParameter", "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandDeclaration", "jetbrains.mps.execution.commands.structure.CommandMethod", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.CommandReferenceExpression", "jetbrains.mps.execution.commands.structure.CommandType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.KeyValueCommandPart", "jetbrains.mps.execution.commands.structure.ListCommandPart", "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType", "jetbrains.mps.execution.commands.structure.ProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart", "jetbrains.mps.execution.commands.structure.ProcessBuilderPart", "jetbrains.mps.execution.commands.structure.ProcessType", "jetbrains.mps.execution.commands.structure.RedirectOutputExpression", "jetbrains.mps.execution.commands.structure.ReportExecutionError"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.execution.commands.structure.BuilderBlockStatement", "jetbrains.mps.execution.commands.structure.BuilderParameter", "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandDeclaration", "jetbrains.mps.execution.commands.structure.CommandMethod", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation", "jetbrains.mps.execution.commands.structure.CommandPartToListOperation", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.CommandReferenceExpression", "jetbrains.mps.execution.commands.structure.CommandType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.KeyValueCommandPart", "jetbrains.mps.execution.commands.structure.ListCommandPart", "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType", "jetbrains.mps.execution.commands.structure.ProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.ProcessBuilderKeyPart", "jetbrains.mps.execution.commands.structure.ProcessBuilderPart", "jetbrains.mps.execution.commands.structure.ProcessType", "jetbrains.mps.execution.commands.structure.RedirectOutputExpression", "jetbrains.mps.execution.commands.structure.ReportExecutionError"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 10:
+      case 12:
         return new CommandType_BehaviorDescriptor();
-      case 9:
+      case 11:
         return new CommandReferenceExpression_BehaviorDescriptor();
       case 7:
         return new CommandParameterReference_BehaviorDescriptor();
-      case 13:
+      case 15:
         return new ExplicitCommandParameterDeclaration_BehaviorDescriptor();
       case 6:
         return new CommandParameterAssignment_BehaviorDescriptor();
@@ -36,32 +36,36 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BuilderBlockStatement_BehaviorDescriptor();
       case 1:
         return new BuilderParameter_BehaviorDescriptor();
-      case 23:
+      case 25:
         return new ReportExecutionError_BehaviorDescriptor();
-      case 18:
-        return new ProcessBuilderExpression_BehaviorDescriptor();
-      case 19:
-        return new ProcessBuilderKeyPart_BehaviorDescriptor();
       case 20:
-        return new ProcessBuilderPart_BehaviorDescriptor();
+        return new ProcessBuilderExpression_BehaviorDescriptor();
       case 21:
-        return new ProcessType_BehaviorDescriptor();
+        return new ProcessBuilderKeyPart_BehaviorDescriptor();
       case 22:
+        return new ProcessBuilderPart_BehaviorDescriptor();
+      case 23:
+        return new ProcessType_BehaviorDescriptor();
+      case 24:
         return new RedirectOutputExpression_BehaviorDescriptor();
-      case 11:
+      case 13:
         return new DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor();
-      case 12:
-        return new ExecuteCommandPart_BehaviorDescriptor();
-      case 8:
-        return new CommandProcessType_BehaviorDescriptor();
-      case 16:
-        return new NewProcessBuilderExpression_BehaviorDescriptor();
       case 14:
+        return new ExecuteCommandPart_BehaviorDescriptor();
+      case 10:
+        return new CommandProcessType_BehaviorDescriptor();
+      case 18:
+        return new NewProcessBuilderExpression_BehaviorDescriptor();
+      case 16:
         return new KeyValueCommandPart_BehaviorDescriptor();
-      case 17:
+      case 19:
         return new ProcessBuilderCommandPartType_BehaviorDescriptor();
-      case 15:
+      case 17:
         return new ListCommandPart_BehaviorDescriptor();
+      case 8:
+        return new CommandPartLengthOperation_BehaviorDescriptor();
+      case 9:
+        return new CommandPartToListOperation_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

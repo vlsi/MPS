@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CommandPart {
   public List<String> getCommandList();
+  public int getLength();
 }

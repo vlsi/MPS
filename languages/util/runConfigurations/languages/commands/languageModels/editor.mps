@@ -92,6 +92,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.6868250101935610313" resolveInfo="ListCommandPart" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1616228152992023916">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.1616228152992023913" resolveInfo="CommandPartLengthOperation" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8234001627573935234">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="rzqf.8234001627573935224" resolveInfo="CommandPartToListOperation" />
+    </node>
   </roots>
   <root id="856705193941281818">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="856705193941281819">
@@ -867,6 +875,16 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6868250101935613888">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="rzqf.6868250101935610316" />
       </node>
+    </node>
+  </root>
+  <root id="1616228152992023916">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1616228152992023918">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="8234001627573935234">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="8234001627573935236">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

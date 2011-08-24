@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public abstract class AbstractCommandPart implements CommandPart {
   private final List<String> myCommand = ListSequence.fromList(new ArrayList<String>());
@@ -37,5 +38,9 @@ public abstract class AbstractCommandPart implements CommandPart {
 
   protected final void addCommands(String... list) {
     addCommands(Sequence.fromArray(list));
+  }
+
+  public int getLength() {
+    return IterableUtils.join(ListSequence.fromList(myCommand), " ").length();
   }
 }

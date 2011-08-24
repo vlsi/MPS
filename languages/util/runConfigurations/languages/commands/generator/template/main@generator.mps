@@ -8,6 +8,7 @@
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
+  <language namespace="f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="rzqf" modelUID="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" version="0" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
@@ -3054,6 +3055,50 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1616228152992005663">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.889694274152216058" resolveInfo="ProcessBuilderCommandPartType" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1616228152992009037">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1616228152992009828">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cv0j.~CommandPart" resolveInfo="CommandPart" />
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1616228152992024999">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.1616228152992023913" resolveInfo="CommandPartLengthOperation" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="1616228152992025000">
+        <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8234001627573828356">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1616228152992025002">
+            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1616228152992025004">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1616228152992025005" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8234001627573828360">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~AbstractCommandPart%dgetLength()%cint" resolveInfo="getLength" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8234001627573843463" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8234001627573935269">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.8234001627573935224" resolveInfo="CommandPartToListOperation" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="8234001627573935270">
+        <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8234001627573935271">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8234001627573935272">
+            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8234001627573935273">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~ListCommandPart%d&lt;init&gt;(java%dutil%dList)" resolveInfo="ListCommandPart" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8234001627573935274" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8234001627573935275">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cv0j.~AbstractCommandPart%dgetCommandList()%cjava%dutil%dList" resolveInfo="getCommandList" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="8234001627573935276" />
           </node>
         </node>
       </node>
