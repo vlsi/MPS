@@ -30,7 +30,6 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
   private static ModelAccess ourInstance = new DefaultModelAccess();
 
-  private final boolean allowSharedRead;
   private final ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock(true);
 
   /* support of temporary downgrading write lock to shared read lock */
@@ -44,7 +43,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   };
 
   protected ModelAccess() {
-    allowSharedRead = !("false".equalsIgnoreCase(System.getProperty("mps.sharedread")));
+
   }
 
   public static ModelAccess instance() {
@@ -56,11 +55,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   }
 
   protected Lock getReadLock() {
-    if (allowSharedRead) {
-      return myReadWriteLock.readLock();
-    } else {
-      return myReadWriteLock.writeLock();
-    }
+    return myReadWriteLock.readLock();
   }
 
   protected Lock getWriteLock() {
@@ -69,11 +64,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   @Override
   public boolean canRead() {
-    if (allowSharedRead) {
-      if (isReadEnabledFlag() || myReadWriteLock.getReadHoldCount() != 0) {
-        return true;
-      }
-    }
+    if (isReadEnabledFlag() || myReadWriteLock.getReadHoldCount() != 0) return true;
     return myReadWriteLock.isWriteLockedByCurrentThread() ||
       (mySharedReadInWriteMode && mySharedReadInWriteLock.getReadHoldCount() != 0);
   }
@@ -86,7 +77,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     return myReadWriteLock.isWriteLockedByCurrentThread();
   }
 
-  protected boolean isSharedReadInWriteMode () {
+  protected boolean isSharedReadInWriteMode() {
     return mySharedReadInWriteMode;
   }
 
@@ -182,7 +173,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
     return oldValue;
   }
 
-  private boolean isReadEnabledFlag () {
+  private boolean isReadEnabledFlag() {
     return Boolean.TRUE == myReadEnabledFlag.get();
   }
 }
