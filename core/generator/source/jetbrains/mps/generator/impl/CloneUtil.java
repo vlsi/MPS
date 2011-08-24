@@ -68,6 +68,7 @@ public class CloneUtil {
             outputNode,
             targetModelReference,
             reference.getResolveInfo());
+          outputReference.setOrigin(((DynamicReference) reference).getOrigin());
           outputNode.addReference(outputReference);
         } else {
           LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);

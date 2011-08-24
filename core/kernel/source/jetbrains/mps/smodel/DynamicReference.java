@@ -27,11 +27,16 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.smodel.search.ISearchScope;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Igor Alshannikov
  * Dec 10, 2007
  */
 public class DynamicReference extends SReferenceBase {
+
+  private DynamicReferenceOrigin myOrigin;
 
   /**
    * create 'young' reference
@@ -59,7 +64,7 @@ public class DynamicReference extends SReferenceBase {
 
     if (getResolveInfo() == null) {
       if (!silently) {
-        error("bad reference: no resolve info");
+        reportErrorWithOrigin("bad reference: no resolve info");
       }
       return null;
     }
@@ -75,7 +80,7 @@ public class DynamicReference extends SReferenceBase {
       new ReferenceResolvingContext(getModule()));
     if (status.isError()) {
       if (!silently) {
-        error("cannot obtain search scope: " + status.getMessage());
+        reportErrorWithOrigin("cannot obtain search scope: " + status.getMessage());
       }
       return null;
     }
@@ -83,7 +88,7 @@ public class DynamicReference extends SReferenceBase {
     SNode mostSpecificForRole = new ConceptAndSuperConceptsScope(referenceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
     if (mostSpecificForRole == null) {
       if (!silently) {
-        error("cannot find link declaration '" + getRole() + "' in concept '" + referenceNode.getConceptFqName() + "'");
+        reportErrorWithOrigin("cannot find link declaration '" + getRole() + "' in concept '" + referenceNode.getConceptFqName() + "'");
       }
       return null;
     }
@@ -92,7 +97,7 @@ public class DynamicReference extends SReferenceBase {
     IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(referenceNode, SModelUtil.getLinkDeclarationTarget(mostSpecificForRole));
     if (infoResolver == null) {
       if (!silently) {
-        error("cannot obtain resolver for reference: '" + getRole() + "'");
+        reportErrorWithOrigin("cannot obtain resolver for reference: '" + getRole() + "'");
       }
       return null;
     }
@@ -100,12 +105,29 @@ public class DynamicReference extends SReferenceBase {
     SNode targetNode = infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     if (targetNode == null) {
       if (!silently) {
-        error("cannot resolve reference by string: '" + getResolveInfo() + "'");
+        reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
       }
 //      infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
     }
 
     return targetNode;
+  }
+
+  private final void reportErrorWithOrigin(String message) {
+    if(myOrigin != null) {
+      List<ProblemDescription> result = new ArrayList<ProblemDescription>(2);
+      if(myOrigin.getInputNode() != null) {
+        result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().getDebugText()));
+      }
+      if(myOrigin.getTemplate() != null) {
+        result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().getDebugText()));
+      }
+      if(result.size() > 0) {
+        error(message, result.toArray(new ProblemDescription[result.size()]));
+        return;
+      }
+    }
+    error(message);
   }
 
   private IModule getModule() {
@@ -117,6 +139,14 @@ public class DynamicReference extends SReferenceBase {
       }
     }
     return null;
+  }
+
+  public DynamicReferenceOrigin getOrigin() {
+    return myOrigin;
+  }
+
+  public void setOrigin(DynamicReferenceOrigin origin) {
+    myOrigin = origin;
   }
 
   public class ReferenceResolvingContext extends StandaloneMPSContext {
@@ -142,6 +172,24 @@ public class DynamicReference extends SReferenceBase {
     @Override
     public IScope getScope() {
       return module != null ? module.getScope() : GlobalScope.getInstance() /* FIXME */;
+    }
+  }
+
+  public static class DynamicReferenceOrigin {
+    private final SNodePointer template;
+    private final SNodePointer inputNode;
+
+    public DynamicReferenceOrigin(SNodePointer template, SNodePointer inputNode) {
+      this.template = template;
+      this.inputNode = inputNode;
+    }
+
+    public SNodePointer getTemplate() {
+      return template;
+    }
+
+    public SNodePointer getInputNode() {
+      return inputNode;
     }
   }
 }

@@ -126,7 +126,7 @@ public abstract class SReference {
     ourLoggingOff = false;
   }
 
-  protected final void error(String message) {
+  protected final void error(String message, ProblemDescription... problems) {
     if (ourLoggingOff) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
@@ -138,7 +138,31 @@ public abstract class SReference {
 
       Logger log = Logger.getLogger(this.getClass());
       log.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      if (message != null) log.error(message);
+      if (message != null) log.error(" -- " + message);
+      if(problems != null) {
+        for(ProblemDescription pd : problems) {
+          log.error(pd.getMessage(), pd.getNode());
+        }
+      }
+    }
+  }
+
+  public static class ProblemDescription {
+
+    private SNodePointer myNode;
+    private String myMessage;
+
+    public ProblemDescription(SNodePointer node, String message) {
+      myNode = node;
+      myMessage = message;
+    }
+
+    public SNodePointer getNode() {
+      return myNode;
+    }
+
+    public String getMessage() {
+      return myMessage;
     }
   }
 }

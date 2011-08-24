@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -41,9 +41,9 @@ public class ModelInputStream extends DataInputStream {
 
   public String readString() throws IOException {
     int c = readByte();
-    if(c == 0x70) {
+    if (c == 0x70) {
       return null;
-    } else if(c == 1) {
+    } else if (c == 1) {
       int index = readInt();
       return myStrings.get(index);
     }
@@ -54,15 +54,15 @@ public class ModelInputStream extends DataInputStream {
 
   public SModelReference readModelReference() throws IOException {
     int c = readByte();
-    if(c == 0x70) {
+    if (c == 0x70) {
       return null;
-    } else if(c == 9) {
+    } else if (c == 9) {
       int index = readInt();
       return myModelRefs.get(index);
     }
 
     SModelId id = null;
-    if(c == 7) {
+    if (c == 7) {
       id = readModelID();
     }
     SModelReference ref = new SModelReference(SModelFqName.fromString(readString()), id);
@@ -72,12 +72,12 @@ public class ModelInputStream extends DataInputStream {
 
   public SModelId readModelID() throws IOException {
     int c = readByte();
-    if(c == 0x70) {
+    if (c == 0x70) {
       return null;
-    } else if(c == 0x28) {
+    } else if (c == 0x28) {
       UUID uuid = new UUID(readLong(), readLong());
       return SModelId.regular(uuid);
-    } else if(c == 0x27) {
+    } else if (c == 0x27) {
       return SModelId.foreign(readString());
     } else {
       throw new IOException("unknown id");
@@ -86,13 +86,22 @@ public class ModelInputStream extends DataInputStream {
 
   public SNodeId readNodeId() throws IOException {
     int c = readByte();
-    if(c == 0x70) {
+    if (c == 0x70) {
       return null;
-    } else if(c == 0x18) {
+    } else if (c == 0x18) {
       return new Regular(readLong());
-    } else if(c == 0x17) {
+    } else if (c == 0x17) {
       return new Foreign(readString());
     }
     throw new IOException("no id");
+  }
+
+  public SNodePointer readNodePointer() throws IOException {
+    int b = readByte();
+    if (b == 0x70) {
+      return null;
+    } else {
+      return new SNodePointer(readModelReference(), readNodeId());
+    }
   }
 }

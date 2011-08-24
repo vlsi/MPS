@@ -91,6 +91,13 @@ public class SNodePointer {
     return getNode().toString();
   }
 
+  public String getDebugText() {
+    if (getNode() == null) {
+      return "<unknown node> model=" + getCurrentSModelReference(myModelReference, myTimestamp) + " node id=" + myNodeId;
+    }
+    return getNode().getDebugText();
+  }
+
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || !(o instanceof SNodePointer)) return false;

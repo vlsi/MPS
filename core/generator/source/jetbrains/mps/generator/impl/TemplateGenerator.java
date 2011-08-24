@@ -538,11 +538,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             inputReference.getTargetNodeId(),
             inputReference.getResolveInfo()));
         } else if (inputReference instanceof DynamicReference) {
-          outputNode.addReference(new DynamicReference(
+          DynamicReference outputReference = new DynamicReference(
             inputReference.getRole(),
             outputNode,
             targetModelReference,
-            inputReference.getResolveInfo()));
+            inputReference.getResolveInfo());
+          outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
+          outputNode.addReference(outputReference);
         } else {
           myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
             new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
