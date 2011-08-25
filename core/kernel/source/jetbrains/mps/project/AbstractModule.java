@@ -362,11 +362,6 @@ public abstract class AbstractModule implements IModule {
     return Collections.emptyList();
   }
 
-  @Override
-  public List<SModelDescriptor> getEditableUserModels() {
-    return Collections.emptyList();
-  }
-
   public IFile getClassesGen() {
     return ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
   }

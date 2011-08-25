@@ -523,50 +523,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
-  @Override
-  public List<SModelDescriptor> getEditableUserModels() {
-    List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
-
-    // language aspects
-    for (LanguageAspect aspect : LanguageAspect.values()) {
-      SModelDescriptor model = aspect.get(this);
-      if (model instanceof EditableSModelDescriptor && !((EditableSModelDescriptor) model).isPackaged()) {
-        inputModels.add(model);
-      }
-    }
-
-    // accessory models
-    Set<SModelDescriptor> ownModels = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
-    for (SModelDescriptor sm : getAccessoryModels()) {
-      if (!SModelStereotype.isUserModel(sm)) continue;
-      if (!(sm instanceof EditableSModelDescriptor)) continue;
-      if (((EditableSModelDescriptor) sm).isPackaged()) continue;
-
-      if (ownModels.contains(sm)) {
-        inputModels.add(sm);
-      }
-    }
-
-    // util models
-    for (EditableSModelDescriptor esmd : getUtilModels()) {
-      if (!esmd.isPackaged()) {
-        inputModels.add(esmd);
-      }
-    }
-
-    // generators
-    List<Generator> list = getGenerators();
-    for (Generator generator : list) {
-      for (SModelDescriptor smd : generator.getGeneratorModels()) {
-        if (smd instanceof EditableSModelDescriptor && !((EditableSModelDescriptor) smd).isPackaged()) {
-          inputModels.add(smd);
-        }
-      }
-    }
-
-    return inputModels;
-  }
-
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {

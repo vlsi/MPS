@@ -151,19 +151,6 @@ public class Solution extends AbstractModule {
     return mySolutionDescriptor;
   }
 
-  @Override
-  public List<SModelDescriptor> getEditableUserModels() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor sm : getOwnModelDescriptors()) {
-      if (SModelStereotype.isUserModel(sm) &&
-        (sm instanceof EditableSModelDescriptor) &&
-        !((EditableSModelDescriptor) sm).isPackaged()) {
-        models.add(sm);
-      }
-    }
-    return models;
-  }
-
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
   }

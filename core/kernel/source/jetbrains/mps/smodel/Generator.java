@@ -316,17 +316,6 @@ public class Generator extends AbstractModule {
     return descriptorChanged[0];
   }
 
-  @Override
-  public List<SModelDescriptor> getEditableUserModels() {
-    List<SModelDescriptor> emodels = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor smd: getGeneratorModels()) {
-      if (smd instanceof EditableSModelDescriptor && !((EditableSModelDescriptor)smd).isPackaged()) {
-        emodels.add(smd);
-      }
-    }
-    return emodels;
-  }
-
   public List<SModelDescriptor> getGeneratorModels() {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> ownModels = this.getOwnModelDescriptors();
