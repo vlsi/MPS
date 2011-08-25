@@ -103,6 +103,9 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           if (SNodeOperations.getModel(cls) == myModel) {
             return cls;
           }
+          if (check_x9ho2v_a0b0a0i0a0_0(check_x9ho2v_a0a1a0a8a0a_0(myModel)) == check_x9ho2v_a0b0a0i0a0(check_x9ho2v_a0a1a0a8a0a(SNodeOperations.getModel(cls)))) {
+            return cls;
+          }
         }
 
         final StringBuilder warn = new StringBuilder();
@@ -123,6 +126,34 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         return null;
       }
       return ListSequence.fromList(classifiers).getElement(0);
+    }
+
+    private static IModule check_x9ho2v_a0b0a0i0a0(SModelDescriptor checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModule();
+      }
+      return null;
+    }
+
+    private static SModelDescriptor check_x9ho2v_a0a1a0a8a0a(SModel checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModelDescriptor();
+      }
+      return null;
+    }
+
+    private static IModule check_x9ho2v_a0b0a0i0a0_0(SModelDescriptor checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModule();
+      }
+      return null;
+    }
+
+    private static SModelDescriptor check_x9ho2v_a0a1a0a8a0a_0(SModel checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModelDescriptor();
+      }
+      return null;
     }
   }
 }
