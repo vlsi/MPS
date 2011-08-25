@@ -5,14 +5,14 @@ package jetbrains.mps.baseLanguage.checkedDots.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_Behavior;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -29,7 +29,8 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_3905905920761714586(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", false, false) != null;
+    SNode checkedDot = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", false, false);
+    return checkedDot != null && SLinkOperations.getTarget(checkedDot, "operation", true) != null && SLinkOperations.getTarget(checkedDot, "operation", true).isAncestorOf(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4549711462050029098(final IOperationContext operationContext, final PropertyMacroContext _context) {

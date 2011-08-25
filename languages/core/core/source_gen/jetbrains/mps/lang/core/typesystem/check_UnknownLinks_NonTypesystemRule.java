@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -62,6 +63,11 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
     }
 
     for (String propname : SetSequence.fromSet(node.getProperties().keySet())) {
+      // Skipping left/right_transform_hint properties - these are internal editor properties, 
+      // can be attached to edited node while editing 
+      if (SNodeEditorUtil.LEFT_TRANSFORM_HINT.equals(propname) || SNodeEditorUtil.RIGHT_TRANSFORM_HINT.equals(propname)) {
+        continue;
+      }
       if (node.getPropertyDeclaration(propname) == null) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
