@@ -52,7 +52,11 @@ public class ClosuresUtil {
 
   public static boolean isVariableUsedInClosure(SNode contextOwner, SNode var, ITemplateGenerator generator) {
     ensureClosureContextOwnerProcessed(contextOwner, generator);
-    return getClosureContextData(contextOwner, generator).hasVariable(var);
+    ClosuresUtil.ClosureContextData contextData = getClosureContextData(contextOwner, generator);
+    return (contextData != null ?
+      contextData.hasVariable(var) :
+      false
+    );
   }
 
   public static boolean hasVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {
