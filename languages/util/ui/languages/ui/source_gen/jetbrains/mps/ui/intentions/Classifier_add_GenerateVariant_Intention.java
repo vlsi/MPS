@@ -69,7 +69,7 @@ public class Classifier_add_GenerateVariant_Intention extends BaseIntention impl
     Language langToDep = Variants.languageToGenerate(this.myParameter);
     ModuleReference langRefToEng = langToDep.getModuleReference();
     IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
-    for (IModule depOn : ModuleUtil.depsToModules(module.getDependOn())) {
+    for (IModule depOn : ModuleUtil.depsToModules(module.getDependencies())) {
       if (depOn.equals(langToDep)) {
         langToDep = null;
         break;

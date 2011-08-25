@@ -23,7 +23,6 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/plugins/vcs/jetbrains.mps.vcs.msd" />
       <modulePath path="${project}/plugin.mpl" />
       <modulePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
     </projectModules>
@@ -36,6 +35,20 @@
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="pluginLanguage" />
+  </component>
+  <component name="ProjectLibraryManager">
+    <option name="libraries">
+      <map>
+        <entry key="mps">
+          <value>
+            <Library>
+              <option name="name" value="mps" />
+              <option name="path" value="${mps_home}/" />
+            </Library>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="ProjectModuleManager">
     <modules />

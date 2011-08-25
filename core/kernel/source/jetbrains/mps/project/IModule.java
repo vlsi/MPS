@@ -136,7 +136,4 @@ public interface IModule extends ModelOwner {
 
   //todo used only in solution
   String getTestsGeneratorOutputPath();
-
-  @Deprecated
-  List<Dependency> getDependOn();
 }

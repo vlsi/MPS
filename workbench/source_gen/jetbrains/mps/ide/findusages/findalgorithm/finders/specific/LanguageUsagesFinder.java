@@ -60,7 +60,7 @@ public class LanguageUsagesFinder implements IFinder {
   }
 
   private void collectUsagesInSolution(Language searchedLanguage, Solution solution, SearchResults searchResults) {
-    if (ModuleUtil.depsToModules(solution.getDependOn()).contains(searchedLanguage)) {
+    if (ModuleUtil.depsToModules(solution.getDependencies()).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
     }
     if (solution.getDependenciesManager().getAllUsedLanguages().contains(searchedLanguage)) {
@@ -86,7 +86,7 @@ public class LanguageUsagesFinder implements IFinder {
     if (devKit.getExportedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
     }
-    if (ModuleUtil.depsToModules(devKit.getDependOn()).contains(searchedLanguage)) {
+    if (ModuleUtil.depsToModules(devKit.getDependencies()).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
     }
   }

@@ -600,9 +600,4 @@ public abstract class AbstractModule implements IModule {
       return getClassPathItem().getResource(name);
     }
   }
-
-  @Override
-  public List<Dependency> getDependOn() {
-    return getDependencies();
-  }
 }
