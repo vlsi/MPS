@@ -24,10 +24,7 @@ import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.ArrayList;
@@ -99,6 +96,9 @@ public class GeneratorManager {
     ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         fireBeforeGeneration(inputModels, options, invocationContext);
+        for(SModelDescriptor d : inputModels) {
+          transientModelsComponent.createModule(d.getModule());
+        }
       }
     });
 
