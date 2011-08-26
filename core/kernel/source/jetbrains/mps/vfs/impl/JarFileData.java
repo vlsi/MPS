@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy.Log;
+import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,8 +26,9 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 class JarFileData {
+  private static Logger LOG = Logger.getLogger(JarFileData.class);
+
   private File myFile;
-  private ZipFile myZipFile;
 
   private Map<String, Set<String>> myFiles = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> mySubDirectories = new HashMap<String, Set<String>>();
@@ -34,7 +36,6 @@ class JarFileData {
 
   JarFileData(File file) throws IOException {
     myFile = file;
-    myZipFile = new ZipFile(file);
     buildCaches();
   }
 
@@ -63,48 +64,56 @@ class JarFileData {
   }
 
   InputStream openStream(String path) throws IOException {
-    return myZipFile.getInputStream(myEntries.get(path));
+    ZipFile zipFile = new ZipFile(myFile);
+    ZipEntry entry = myEntries.get(path);
+    return new MyInputStream(zipFile, entry);
   }
 
   long getLength(String path) {
     return myEntries.get(path).getSize();
   }
 
-  private void buildCaches() {
-    Enumeration<? extends ZipEntry> entries = myZipFile.entries();
+  private void buildCaches() throws IOException {
+    ZipFile zipFile = new ZipFile(myFile);
 
-    while (entries.hasMoreElements()){
-      ZipEntry entry = entries.nextElement();
-      if (entry.isDirectory()) {
-        String name = entry.getName();
-        if (name.endsWith("/")) {
-          name = name.substring(0, name.length() - 1);
-        }
+    try {
+      Enumeration<? extends ZipEntry> entries = zipFile.entries();
 
-        buildDirectoryCaches(name);
-      } else {
-        String name = entry.getName();
+      while (entries.hasMoreElements()) {
+        ZipEntry entry = entries.nextElement();
+        if (entry.isDirectory()) {
+          String name = entry.getName();
+          if (name.endsWith("/")) {
+            name = name.substring(0, name.length() - 1);
+          }
 
-        int packEnd = name.lastIndexOf('/');
-        String dir;
-        String fileName;
-        if (packEnd == -1) {
-          dir = "";
-          fileName = name;
+          buildDirectoryCaches(name);
         } else {
-          dir = packEnd > 0 ? name.substring(0, packEnd) : name;
-          fileName = name.substring(packEnd + 1);
-        }
+          String name = entry.getName();
 
-        buildDirectoryCaches(dir);
-        getFilesFor(dir).add(fileName);
+          int packEnd = name.lastIndexOf('/');
+          String dir;
+          String fileName;
+          if (packEnd == -1) {
+            dir = "";
+            fileName = name;
+          } else {
+            dir = packEnd > 0 ? name.substring(0, packEnd) : name;
+            fileName = name.substring(packEnd + 1);
+          }
 
-        if (dir.length() > 0) {
-          myEntries.put(dir + "/" + fileName, entry);
-        } else {
-          myEntries.put(fileName, entry);
+          buildDirectoryCaches(dir);
+          getFilesFor(dir).add(fileName);
+
+          if (dir.length() > 0) {
+            myEntries.put(dir + "/" + fileName, entry);
+          } else {
+            myEntries.put(fileName, entry);
+          }
         }
       }
+    } finally {
+      zipFile.close();
     }
   }
 
@@ -137,5 +146,67 @@ class JarFileData {
       myFiles.put(dir, new HashSet<String>());
     }
     return myFiles.get(dir);
+  }
+
+  private class MyInputStream extends InputStream {
+    private InputStream stream;
+    private ZipFile myZipFile;
+
+    public MyInputStream(ZipFile zipFile, ZipEntry entry) {
+      myZipFile = zipFile;
+      try {
+        stream = zipFile.getInputStream(entry);
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
+
+    @Override
+    public int read() throws IOException {
+      return stream.read();
+    }
+
+    @Override
+    public int read(byte[] b) throws IOException {
+      return stream.read(b);
+    }
+
+    @Override
+    public int read(byte[] b, int off, int len) throws IOException {
+      return stream.read(b, off, len);
+    }
+
+    @Override
+    public long skip(long n) throws IOException {
+      return stream.skip(n);
+    }
+
+    @Override
+    public int available() throws IOException {
+      return stream.available();
+    }
+
+    @Override
+    public void close() throws IOException {
+      super.close();
+      stream.close();
+      myZipFile.close();
+    }
+
+    @Override
+    public void mark(int readlimit) {
+      stream.mark(readlimit);
+    }
+
+    @Override
+    public void reset() throws IOException {
+      stream.reset();
+    }
+
+    @Override
+    public boolean markSupported() {
+      return stream.markSupported();
+    }
+
   }
 }
