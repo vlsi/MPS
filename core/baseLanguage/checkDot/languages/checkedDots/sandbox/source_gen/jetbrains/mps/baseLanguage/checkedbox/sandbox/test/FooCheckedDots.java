@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.checkedbox.sandbox.test;
 
 public class FooCheckedDots {
   private String myString;
+  private boolean myBoolean;
+  private int myInt;
 
   public FooCheckedDots() {
   }
@@ -28,6 +30,19 @@ public class FooCheckedDots {
 
   public int intFunc() {
     return 2;
+  }
+
+  public void checkThisBeforCheckedDot() {
+    // http://youtrack.jetbrains.net/issue/MPS-13818 
+    check_7013wl_a1a3(getInstance(this.myInt, this.myBoolean), this);
+  }
+
+  private String getString(int i, boolean b) {
+    return myString;
+  }
+
+  private FooCheckedDots getInstance(int i, boolean b) {
+    return null;
   }
 
   private static char check_7013wl_a0a0(String checkedDotOperand) {
@@ -84,5 +99,12 @@ public class FooCheckedDots {
       return checkedDotOperand.equals(checkedDotThisExpression.myString);
     }
     return false;
+  }
+
+  private static void check_7013wl_a1a3(FooCheckedDots checkedDotOperand, FooCheckedDots checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.foo(checkedDotThisExpression.getString(checkedDotThisExpression.myInt, checkedDotThisExpression.myBoolean));
+    }
+
   }
 }
