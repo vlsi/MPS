@@ -76,8 +76,7 @@ public class Solution extends AbstractModule {
     return solution;
   }
 
-  //this is for stubs framework only
-
+  //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution() {
       public String getGeneratorOutputPath() {

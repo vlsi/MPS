@@ -75,6 +75,30 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return createLanguage(namespace, new ModuleHandle(descriptorFile, desciptor), moduleOwner);
   }
 
+  //this is for stubs framework & tests only. Can be later converted into subclass
+  public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
+    Language language = new Language() {
+      public String getGeneratorOutputPath() {
+        return null;
+      }
+
+      public String getTestsGeneratorOutputPath() {
+        return null;
+      }
+    };
+
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (repository.existsModule(descriptor.getModuleReference())) {
+      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
+      return repository.getLanguage(descriptor.getModuleReference());
+    }
+
+    language.setLanguageDescriptor(descriptor, false);
+    repository.addModule(language, moduleOwner);
+
+    return language;
+  }
+
   public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     LanguageDescriptor languageDescriptor;
@@ -520,6 +544,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
       return;
     }
+    if (getDescriptorFile() == null) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
@@ -741,8 +766,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
       for (String jarFile : dd.getRuntimeJars()) {
         IFile jar = jarFile.startsWith("/")
-           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
-           : bundleParent.getDescendant(jarFile);
+          ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
+          : bundleParent.getDescendant(jarFile);
         if (jar.exists()) {
           ClassPathEntry jarEntry = new ClassPathEntry();
           jarEntry.setPath(jar.getPath());
