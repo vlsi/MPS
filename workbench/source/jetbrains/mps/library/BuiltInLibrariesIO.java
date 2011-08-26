@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -47,8 +48,10 @@ public class BuiltInLibrariesIO {
     URL resource = BuiltInLibrariesIO.class.getResource(CONFIG_FILE_WHOLE_NAME);
     if (resource == null) return result;
 
+    InputStream in = null;
     try {
-      Document document = JDOMUtil.loadDocument(resource.openStream());
+      in = resource.openStream();
+      Document document = JDOMUtil.loadDocument(in);
       Element element = document.getRootElement();
       List children = element.getChildren(LIBRARY_TAG);
       for (Object childObj : children) {
@@ -70,6 +73,14 @@ public class BuiltInLibrariesIO {
       LOG.error(e);
     } catch (IOException e) {
       LOG.error(e);
+    } finally {
+       if (in != null) {
+        try {
+          in.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
     return result;
   }

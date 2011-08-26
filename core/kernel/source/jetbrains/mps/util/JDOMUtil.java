@@ -46,14 +46,24 @@ public class JDOMUtil {
 
   public static Document loadDocument(IFile file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
+    InputStream in = null;
     try {
-      return saxBuilder.build(new InputStreamReader(file.openInputStream(), ENCODING));
+      in = file.openInputStream();
+      return saxBuilder.build(new InputStreamReader(in, ENCODING));
     } catch (JDOMException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getPath());
       throw e;
     } catch (IOException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getPath());
       throw e;
+    }finally {
+       if (in != null) {
+        try {
+          in.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
   }
 
