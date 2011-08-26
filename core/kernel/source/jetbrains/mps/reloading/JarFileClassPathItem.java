@@ -120,16 +120,16 @@ public class JarFileClassPathItem extends RealClassPathItem {
       LOG.error(e);
       return null;
     } finally {
-      if (zf != null) {
+      if (inp != null) {
         try {
-          zf.close();
+          inp.close();
         } catch (IOException e) {
           LOG.error(e);
         }
       }
-      if (inp != null) {
+      if (zf != null) {
         try {
-          inp.close();
+          zf.close();
         } catch (IOException e) {
           LOG.error(e);
         }
