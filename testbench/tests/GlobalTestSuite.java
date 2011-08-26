@@ -34,6 +34,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.ide.blame.command.YouTrackURLTest",
   "jetbrains.mps.ide.messages.MessageViewListModelTest",
   "jetbrains.mps.make.TestMakeOnRealProject",
+  "jetbrains.mps.project.DependenciesTest",
   "jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase",
   "jetbrains.mps.make.dependencies.GraphTestCase",
   "jetbrains.mps.packaged.PackagedLanguageTest",
