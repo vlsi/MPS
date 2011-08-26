@@ -44,20 +44,26 @@ public class JDOMUtil {
     return factory.newSAXParser();
   }
 
-  public static InputSource loadSource(IFile file) throws IOException {
-    return new InputSource(new InputStreamReader(file.openInputStream(), ENCODING));
-  }
-
   public static Document loadDocument(IFile file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
+    InputStream in = null;
     try {
-      return saxBuilder.build(new InputStreamReader(file.openInputStream(), ENCODING));
+      in = file.openInputStream();
+      return saxBuilder.build(new InputStreamReader(in, ENCODING));
     } catch (JDOMException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getPath());
       throw e;
     } catch (IOException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getPath());
       throw e;
+    } finally {
+      if (in != null) {
+        try {
+          in.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
   }
 
@@ -76,14 +82,17 @@ public class JDOMUtil {
 
   public static Document loadDocument(File file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
+    FileInputStream in = new FileInputStream(file);
     try {
-      return saxBuilder.build(new InputStreamReader(new FileInputStream(file), ENCODING));
+      return saxBuilder.build(new InputStreamReader(in, ENCODING));
     } catch (JDOMException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     } catch (IOException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
+    } finally {
+      in.close();
     }
   }
 
@@ -108,8 +117,7 @@ public class JDOMUtil {
     OutputStream stream = new BufferedOutputStream(new FileOutputStream(filePath));
     try {
       writeDocument(document, stream);
-    }
-    finally {
+    } finally {
       stream.close();
     }
   }
@@ -134,8 +142,7 @@ public class JDOMUtil {
     OutputStream stream = new BufferedOutputStream(file.openOutputStream());
     try {
       writeDocument(document, stream);
-    }
-    finally {
+    } finally {
       stream.close();
     }
   }
@@ -152,8 +159,7 @@ public class JDOMUtil {
     OutputStream stream = new BufferedOutputStream(new FileOutputStream(file));
     try {
       writeDocument(document, stream);
-    }
-    finally {
+    } finally {
       stream.close();
     }
   }

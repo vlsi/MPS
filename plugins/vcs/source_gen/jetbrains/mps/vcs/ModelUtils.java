@@ -155,19 +155,29 @@ public class ModelUtils {
   }
 
   public static SModel readModel(final String path) throws IOException {
-    return ModelUtils.readModel(new ModelUtils.InputSourceFactory() {
-      public InputSource create() throws IOException {
-        return new InputSource(new FileInputStream(path));
-      }
-    }, path);
+    final FileInputStream stream = new FileInputStream(path);
+    try {
+      return ModelUtils.readModel(new ModelUtils.InputSourceFactory() {
+        public InputSource create() throws IOException {
+          return new InputSource(stream);
+        }
+      }, path);
+    } finally {
+      stream.close();
+    }
   }
 
   public static SModel readModel(final File file) throws IOException {
-    return ModelUtils.readModel(new ModelUtils.InputSourceFactory() {
-      public InputSource create() throws IOException {
-        return new InputSource(new FileInputStream(file));
-      }
-    }, file.getAbsolutePath());
+    final FileInputStream stream = new FileInputStream(file);
+    try {
+      return ModelUtils.readModel(new ModelUtils.InputSourceFactory() {
+        public InputSource create() throws IOException {
+          return new InputSource(stream);
+        }
+      }, file.getAbsolutePath());
+    } finally {
+      stream.close();
+    }
   }
 
   private static SModel readModel(final ModelUtils.InputSourceFactory inputSourceFactory, String path) throws IOException {

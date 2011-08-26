@@ -18,12 +18,12 @@ package jetbrains.mps.generator.traceInfo;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
+  private static Logger LOG = Logger.getLogger(TraceInfoCache.class);
+
   public static final String TRACE_FILE_NAME = "trace.info";
   private final CleanupManager myCleanupManager;
 
@@ -94,13 +96,17 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   public DebugInfo getCacheFromClassloader(@NotNull SModelDescriptor sm, @NotNull ClassLoader classLoader) {
     InputStream stream = classLoader.getResourceAsStream(sm.getLongName().replace(".", "/") + "/" + TRACE_FILE_NAME);
-    if (stream == null) {
-      return null;
-    }
+    if (stream == null) return null;
     try {
       return load(stream);
     } catch (IOException e) {
       return null;
+    } finally {
+      try {
+        stream.close();
+      } catch (IOException e) {
+        LOG.error(e);
+      }
     }
   }
 

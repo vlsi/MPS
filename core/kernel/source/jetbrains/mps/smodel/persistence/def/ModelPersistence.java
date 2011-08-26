@@ -43,9 +43,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.StringReader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -107,7 +105,7 @@ public class ModelPersistence {
   @NotNull
   private static IModelPersistence getCurrentModelPersistence() {
     IModelPersistence modelPersistence = getModelPersistence(SModelHeader.create(getCurrentPersistenceVersion()));
-    if(modelPersistence == null) {
+    if (modelPersistence == null) {
       modelPersistence = myModelPersistenceFactory[myModelPersistenceFactory.length - 1];
     }
     return modelPersistence;
@@ -116,12 +114,34 @@ public class ModelPersistence {
   @Nullable
   private static IModelPersistence getModelPersistence(SModelHeader header) {
     int persistenceID = header.getPersistenceVersion();
-    if(persistenceID < 0 || persistenceID >= myModelPersistenceFactory.length) {
+    if (persistenceID < 0 || persistenceID >= myModelPersistenceFactory.length) {
       return null;
     }
     return myModelPersistenceFactory[persistenceID];
   }
   //--------read--------
+
+  private static void loadDescriptor(final DescriptorLoadResult result, IFile file) {
+    InputStream in = null;
+    try {
+      in = file.openInputStream();
+      InputSource source = new InputSource(new InputStreamReader(in, "UTF-8"));
+
+      loadDescriptor(result, source);
+    } catch (UnsupportedEncodingException e) {
+      LOG.error(e);
+    } catch (IOException e) {
+      LOG.error(e);
+    } finally {
+      if (in != null) {
+        try {
+          in.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
+    }
+  }
 
   private static void loadDescriptor(final DescriptorLoadResult result, InputSource source) {
     DefaultHandler handler = new DefaultHandler() {
@@ -168,6 +188,7 @@ public class ModelPersistence {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
     } catch (Throwable t) {
+      LOG.error(t);
     }
   }
 
@@ -182,42 +203,46 @@ public class ModelPersistence {
     Map<String, String> metadata = loadMetadata(file);
     if (metadata != null) {
       result.setMetadata(metadata);
-      if(metadata.containsKey(SModelHeader.VERSION)) {
+      if (metadata.containsKey(SModelHeader.VERSION)) {
         try {
           result.setVersion(Integer.parseInt(metadata.remove(SModelHeader.VERSION)));
         } catch (NumberFormatException ex) {
         }
       }
-      if(metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
+      if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
         result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
       }
     }
 
-    try {
-      loadDescriptor(result, JDOMUtil.loadSource(file));
-    } catch (IOException ignored) {
-    }
+    loadDescriptor(result, file);
 
     return result;
   }
 
   @NotNull
   public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull IFile file, ModelLoadingState state) {
-
-    InputSource source;
+    InputStream in = null;
     try {
-      source = JDOMUtil.loadSource(file);
+      in = file.openInputStream();
+      InputSource source = new InputSource(new InputStreamReader(in, "UTF-8"));
+      return readModel(header, source, state);
     } catch (Throwable t) {
       SModelReference ref = header.getModelReference();
-      if(ref == null) {
+      if (ref == null) {
         ref = SModelReference.fromPath(file.getPath());
       }
       LOG.error("Error while loading model from file: " + file.getPath(), t);
       StubModel model = new StubModel(ref);
       return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+    } finally {
+      if (in != null) {
+        try {
+          in.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
-
-    return readModel(header, source, state);
   }
 
   public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) {
@@ -302,16 +327,16 @@ public class ModelPersistence {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof DefaultSModelDescriptor) {
       DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
-      Map<String,String> metadata = md.getMetaData();
+      Map<String, String> metadata = md.getMetaData();
 
       // for old persistence, push version/doNotGenerator options => metadata back
       SModelHeader header = model.getSModelHeader();
-      if(persistenceVersion < 7 && (header.getVersion() != -1 || header.isDoNotGenerate())) {
-        metadata = new HashMap<String,String>(metadata);
-        if(header.getVersion() != -1) {
+      if (persistenceVersion < 7 && (header.getVersion() != -1 || header.isDoNotGenerate())) {
+        metadata = new HashMap<String, String>(metadata);
+        if (header.getVersion() != -1) {
           metadata.put(SModelHeader.VERSION, Integer.toString(header.getVersion()));
         }
-        if(header.isDoNotGenerate()) {
+        if (header.isDoNotGenerate()) {
           metadata.put(SModelHeader.DO_NOT_GENERATE, "true");
         }
       }
@@ -345,7 +370,7 @@ public class ModelPersistence {
     }
 
     IModelPersistence modelPersistence = getModelPersistence(sourceModel.getSModelHeader());
-    if(modelPersistence == null) {
+    if (modelPersistence == null) {
       modelPersistence = getCurrentModelPersistence();
     }
 
@@ -378,7 +403,7 @@ public class ModelPersistence {
   }
 
   public static int getCurrentPersistenceVersion() {
-    return  ModelPersistence.LAST_VERSION;
+    return ModelPersistence.LAST_VERSION;
   }
 
   private static ModelLoadResult handleNullReaderForPersistence(String modelTitle) {
@@ -390,7 +415,7 @@ public class ModelPersistence {
     SModelHeader header = getModelHeader(new InputSource(new ByteArrayInputStream(modelBytes)));
     IModelPersistence mp = getModelPersistence(header);
     Map<String, String> result;
-    if(mp != null) {
+    if (mp != null) {
       IHashProvider hashProvider = mp.getHashProvider();
       result = hashProvider.getRootHashes(modelBytes);
       result.put(ModelDigestHelper.FILE, hashProvider.getHash(modelBytes));
