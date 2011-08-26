@@ -29,6 +29,7 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="library" name="JDOM" level="project" />
   </component>
 </module>
 
