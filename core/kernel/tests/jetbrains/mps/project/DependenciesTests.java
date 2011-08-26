@@ -51,6 +51,8 @@ public class DependenciesTests {
     MPSModuleRepository.getInstance().unRegisterModules(OWNER);
   }
 
+  //------------module depends on solution------------
+
   @Test
   public void testDependencyInScope() {
     Solution s1 = createSolution();
@@ -85,6 +87,8 @@ public class DependenciesTests {
     assertFalse(s1.getDependenciesManager().getAllVisibleModules().contains(s3));
   }
 
+  //------------module uses language------------
+
   @Test
   public void testUsedLanguageDependencyNotInScope() {
     Solution s1 = createSolution();
@@ -97,6 +101,13 @@ public class DependenciesTests {
 
     assertFalse(s1.getDependenciesManager().getAllVisibleModules().contains(ld));
   }
+
+  //------------module uses devkit------------
+
+
+
+
+  //----------------------------------------------
 
   private Solution createSolution() {
     SolutionDescriptor d = new SolutionDescriptor();
