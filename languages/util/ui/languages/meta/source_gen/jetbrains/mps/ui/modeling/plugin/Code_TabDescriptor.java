@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.awt.Frame;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
@@ -49,6 +51,10 @@ public class Code_TabDescriptor extends EditorTabDescriptor {
 
   public boolean isSingle() {
     return false;
+  }
+
+  public List<SNode> getConcepts(final SNode node) {
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.EventHandlerTemplate"));
   }
 
   public SNode createNode(final SNode node, final SNode concept) {
