@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="XMLTreeSimple_Test.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="ypath_test1.XMLTreeSimple_Test" />
   <root nodeId="1178886476824">
     <nodeInfo nodeId="1179329286838" fileName="XMLTreeSimple_Test.java" startLine="18" startPosition="50" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SINGLE_NODE" />
     <nodeInfo nodeId="1179400521623" fileName="XMLTreeSimple_Test.java" startLine="19" startPosition="47" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SIMPLE_TREE" />
@@ -88,6 +87,7 @@
     <scopeInfo nodeId="1181230758114" fileName="XMLTreeSimple_Test.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1181230773329" varName="nodes" />
     </scopeInfo>
+    <unitInfo nodeId="1178886476824" fileName="XMLTreeSimple_Test.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="ypath_test1.XMLTreeSimple_Test" />
   </root>
 </debugInfo>
 
