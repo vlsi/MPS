@@ -18,7 +18,9 @@ package jetbrains.mps.project;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.junit.After;
@@ -28,6 +30,7 @@ import org.junit.Test;
 
 import java.util.UUID;
 
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 public class DependenciesTests {
@@ -58,11 +61,56 @@ public class DependenciesTests {
     assertTrue(s1.getDependenciesManager().getAllVisibleModules().contains(s2));
   }
 
+  @Test
+  public void testReexportDependencyInScope() {
+    Solution s1 = createSolution();
+    Solution s2 = createSolution();
+    Solution s3 = createSolution();
+
+    s2.addDependency(s3.getModuleReference(), true);
+    s1.addDependency(s2.getModuleReference(), false);
+
+    assertTrue(s1.getDependenciesManager().getAllVisibleModules().contains(s3));
+  }
+
+  @Test
+  public void testNonReexportDependencyNotInScope() {
+    Solution s1 = createSolution();
+    Solution s2 = createSolution();
+    Solution s3 = createSolution();
+
+    s2.addDependency(s3.getModuleReference(), false);
+    s1.addDependency(s2.getModuleReference(), false);
+
+    assertFalse(s1.getDependenciesManager().getAllVisibleModules().contains(s3));
+  }
+
+  @Test
+  public void testUsedLanguageDependencyNotInScope() {
+    Solution s1 = createSolution();
+
+    Solution ld = createSolution();
+    Language l1 = createLanguage();
+    l1.addDependency(ld.getModuleReference(),true);
+
+    s1.addUsedLanguage(l1.getModuleReference());
+
+    assertFalse(s1.getDependenciesManager().getAllVisibleModules().contains(ld));
+  }
+
   private Solution createSolution() {
     SolutionDescriptor d = new SolutionDescriptor();
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setUUID(uuid);
     return Solution.newInstance(d, OWNER);
+  }
+
+  private Language createLanguage() {
+    LanguageDescriptor d = new LanguageDescriptor();
+    String uuid = UUID.randomUUID().toString();
+    d.setNamespace(uuid);
+    d.setUUID(uuid);
+    return Language.newInstance(d, OWNER);
   }
 }
