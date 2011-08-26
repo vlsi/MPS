@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.CheckValid" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Keys" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
