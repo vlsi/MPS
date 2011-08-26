@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -49,6 +50,7 @@ public class DependenciesTests {
   @After
   public void afterTest() {
     MPSModuleRepository.getInstance().unRegisterModules(OWNER);
+    CleanupManager.getInstance().cleanup();
   }
 
   //------------module depends on solution------------
