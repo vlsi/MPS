@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
@@ -324,6 +325,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(expression), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true);
   }
 
+  public static SNode sourceNodeQuery_696966808743886516(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return IFeature_Behavior.call_getTargetType_1213877499617(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false));
+  }
+
   public static SNode sourceNodeQuery_1225096836804(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "operand", true)));
   }
@@ -332,12 +337,20 @@ public class QueriesGenerated {
     return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "operand", true));
   }
 
+  public static SNode sourceNodeQuery_696966808743920694(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return IFeature_Behavior.call_getTargetType_1213877499617(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false));
+  }
+
   public static SNode sourceNodeQuery_1225096837038(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "operand", true)));
   }
 
   public static SNode sourceNodeQuery_1225096837052(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return OperationsUtil.unwrapExpression(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.ypath.structure.TreePathOperationExpression"), "operand", true));
+  }
+
+  public static SNode sourceNodeQuery_696966808743920714(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return IFeature_Behavior.call_getTargetType_1213877499617(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false));
   }
 
   public static SNode sourceNodeQuery_1225096836323(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
