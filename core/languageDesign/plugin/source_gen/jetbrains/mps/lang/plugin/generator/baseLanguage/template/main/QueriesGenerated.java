@@ -1067,15 +1067,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6769912430828993346(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "conceptsBlock", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "createTabBlock", true) != null);
   }
 
   public static boolean ifMacro_Condition_8204570419206398665(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "createBlock", true) != null) && !(SPropertyOperations.getBoolean(_context.getNode(), "commandOnCreate"));
+    return (SLinkOperations.getTarget(_context.getNode(), "createTabBlock", true) != null) && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "createTabBlock", true), "commandOnCreate"));
   }
 
   public static boolean ifMacro_Condition_6769912430828998368(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "createBlock", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "createTabBlock", true) != null);
   }
 
   public static SNode sourceNodeQuery_1227015265334(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1352,11 +1352,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6769912430828993331(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptsBlock", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createTabBlock", true), "conceptsBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_6769912430828998384(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBlock", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createTabBlock", true), "createBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_5162650640893865616(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

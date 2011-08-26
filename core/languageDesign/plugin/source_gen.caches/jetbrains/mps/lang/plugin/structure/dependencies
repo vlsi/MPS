@@ -855,6 +855,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.structure.CreateTabBlock" file="CreateTabBlock.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.GetConceptsBlock" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.NewCreateBlock" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.structure.DebugInfoInitializer" file="DebugInfoInitializer.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -944,6 +954,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.BaseNodeBlock" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.structure.CreateTabBlock" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.GetConceptsBlock" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.IconResource" />
