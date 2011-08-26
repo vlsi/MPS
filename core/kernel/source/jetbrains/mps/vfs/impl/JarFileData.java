@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy.Log;
 import jetbrains.mps.logging.Logger;
 
 import java.io.File;
@@ -152,13 +151,9 @@ class JarFileData {
     private InputStream stream;
     private ZipFile myZipFile;
 
-    public MyInputStream(ZipFile zipFile, ZipEntry entry) {
+    public MyInputStream(ZipFile zipFile, ZipEntry entry) throws IOException {
       myZipFile = zipFile;
-      try {
-        stream = zipFile.getInputStream(entry);
-      } catch (IOException e) {
-        LOG.error(e);
-      }
+      stream = zipFile.getInputStream(entry);
     }
 
     @Override
@@ -188,9 +183,15 @@ class JarFileData {
 
     @Override
     public void close() throws IOException {
-      super.close();
-      stream.close();
-      myZipFile.close();
+      try {
+        super.close();
+      } finally {
+        try {
+          stream.close();
+        } finally {
+          myZipFile.close();
+        }
+      }
     }
 
     @Override
@@ -207,6 +208,5 @@ class JarFileData {
     public boolean markSupported() {
       return stream.markSupported();
     }
-
   }
 }
