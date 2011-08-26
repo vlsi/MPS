@@ -23,6 +23,7 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="Closures-runtime" />
   </component>
 </module>
 
