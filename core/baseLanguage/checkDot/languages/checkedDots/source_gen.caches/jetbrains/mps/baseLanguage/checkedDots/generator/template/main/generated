@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1c56kwowyxuhyaf1wf0skg1yb2kczjz">
+<dependencies version="2" modelHash="40m2qas87y2vv2m5yz1pvmwc2cm355a">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-3y2r6y3czb0h44qur9lgd1udqb2qdek" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-4m219evq63e9r8b1e1kmope2oa43rvk" />
@@ -46,7 +46,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="4549711462050000012" name="main" hash="3qpilfn8wmpvklcbht8klii85692pno">
+  <source id="4549711462050000012" name="main" hash="3zz2dht5tbvpu2apd6xj5acgmn623qh">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="4549711462050000016" name="reduce_CheckedDotExpression" hash="-b522bdm84p0jqbpsi7nnzzjkl4875qg">
@@ -55,7 +55,7 @@
   <source id="53796356308780401" name="ReturnTypeSwitch" hash="7rv22cacbj28rg31b8tsm52446ccf8l">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2319519288049960714" name="reduce_LocalInstanceMethodCall" hash="eiwksxirosvtayh53q4o8ekebhcipzj">
+  <source id="2319519288049960714" name="reduce_LocalInstanceMethodCall" hash="-c2uzca0fj38ow99vyhevvesc11rrsbj">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="3905905920761682656" name="reduce_This" hash="67oc5fk26jdd2p0fsklgv1014wbdsjf">
