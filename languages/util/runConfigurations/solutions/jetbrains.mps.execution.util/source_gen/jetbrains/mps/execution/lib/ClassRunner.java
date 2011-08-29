@@ -6,11 +6,16 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.commons.lang.StringUtils;
 import java.util.List;
 import java.io.IOException;
-import java.lang.reflect.Method;
+import java.net.URL;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URLClassLoader;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 import java.io.LineNumberReader;
 import java.io.FileReader;
 import java.util.Arrays;
@@ -20,6 +25,8 @@ public class ClassRunner {
   public static final String CLASS_PREFIX = "c";
   @NotNull
   public static final String FILE_PREFIX = "f";
+  @NotNull
+  public static final String CLASSPATH_PREFIX = "p";
 
   public ClassRunner() {
   }
@@ -27,6 +34,7 @@ public class ClassRunner {
   public static void main(String[] args) {
     String className = null;
     String fileName = null;
+    String classpathFileName = null;
 
     // parse args 
     for (int i = 0; i < args.length; i++) {
@@ -43,6 +51,12 @@ public class ClassRunner {
           return;
         }
         fileName = args[i + 1];
+      } else if (getCommandLineFromPrefix(CLASSPATH_PREFIX).equals(args[i])) {
+        if (i >= args.length - 1) {
+          System.err.println("Classpath file name after " + getCommandLineFromPrefix(CLASSPATH_PREFIX) + " expected.");
+          return;
+        }
+        classpathFileName = args[i + 1];
       }
     }
 
@@ -58,18 +72,37 @@ public class ClassRunner {
     // read 
     List<String> fileContents;
     try {
-      fileContents = readArguments(fileName);
+      fileContents = readArguments(fileName, "(\\s)+");
     } catch (IOException e) {
       System.err.println("Could not read file with arguments.");
       e.printStackTrace();
       return;
     }
 
+    List<URL> classPath = ListSequence.fromList(new ArrayList<URL>());
+    if (StringUtils.isNotEmpty(classpathFileName)) {
+      try {
+        classPath = ListSequence.fromList(readArguments(classpathFileName, ":")).<URL>translate(new ITranslator2<String, URL>() {
+          public Iterable<URL> translate(String it) {
+            try {
+              return Sequence.<URL>singleton(new File(it).toURI().toURL());
+            } catch (MalformedURLException e) {
+              e.printStackTrace();
+              return ListSequence.fromList(new ArrayList<URL>());
+            }
+          }
+        }).toListSequence();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
     // execute 
     try {
-      Class<?> classToStart = Class.forName(className);
+      URLClassLoader classLoader = new URLClassLoader(ListSequence.fromList(classPath).toGenericArray(URL.class));
+      Class<?> classToStart = classLoader.loadClass(className);
       Method method = classToStart.getMethod("main", args.getClass());
-      method.invoke(null, ListSequence.fromList(fileContents).toGenericArray(String.class));
+      method.invoke(null, new Object[]{ListSequence.fromList(fileContents).toGenericArray(String.class)});
     } catch (ClassNotFoundException c) {
       System.err.println("Class " + className + " was not found.");
       c.printStackTrace();
@@ -85,7 +118,7 @@ public class ClassRunner {
 
   }
 
-  public static List<String> readArguments(String fileName) throws IOException {
+  public static List<String> readArguments(String fileName, String split) throws IOException {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     new File(fileName).deleteOnExit();
     LineNumberReader reader = new LineNumberReader(new FileReader(fileName));
@@ -97,7 +130,7 @@ public class ClassRunner {
       if (StringUtils.isEmpty(line)) {
         continue;
       }
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(Arrays.asList(line.split("(\\s)+"))));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(Arrays.asList(line.split(split))));
     }
     return result;
   }

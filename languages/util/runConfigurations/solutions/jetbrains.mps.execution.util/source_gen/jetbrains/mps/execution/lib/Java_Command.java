@@ -12,8 +12,6 @@ import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.util.FileUtil;
-import java.io.PrintWriter;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
 import jetbrains.mps.smodel.SNode;
@@ -31,6 +29,8 @@ import jetbrains.mps.reloading.CommonPaths;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.util.FileUtil;
+import java.io.PrintWriter;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
@@ -99,16 +99,15 @@ public class Java_Command {
     if (StringUtils.isEmpty(className)) {
       throw new ExecutionException("Classname is empty");
     }
-    if (check_yvpt_a0d0a0(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
-      File tmpFile = FileUtil.createTmpFile();
-      // we want to be sure that file is deleted, even when process is not started 
-      tmpFile.deleteOnExit();
+    if (check_yvpt_a0a3a0a(myProgramParameter) + classPathString.length() >= Java_Command.getMaxCommandLine()) {
       try {
-        PrintWriter writer = new PrintWriter(tmpFile);
-        writer.append(myProgramParameter);
-        writer.flush();
-        writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, className).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
+        String parametersFile = Java_Command.writeToTmpFile(myProgramParameter);
+        String classpathFile = Java_Command.writeToTmpFile(classPathString);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", IterableUtils.join(ListSequence.fromList(Java_Command.getMpsClassPath()).<String>select(new ISelector<String, String>() {
+          public String select(String it) {
+            return Java_Command.protect(it);
+          }
+        }), File.pathSeparator)).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, className).appendKey(ClassRunner.CLASSPATH_PREFIX, classpathFile).appendKey(ClassRunner.FILE_PREFIX, parametersFile).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
@@ -147,6 +146,9 @@ public class Java_Command {
   }
 
   private static int getMaxCommandLine() {
+    // the command line limit on win is 32767 characters 
+    // (see http://blogs.msdn.com/b/oldnewthing/archive/2003/12/10/56028.aspx) 
+    // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
 
@@ -180,6 +182,12 @@ public class Java_Command {
     visited.removeAll(CommonPaths.getJDKPath());
 
     return visited;
+  }
+
+  private static List<String> getMpsClassPath() {
+    ClasspathStringCollector visitor = new ClasspathStringCollector(ListSequence.fromList(new ArrayList<String>()));
+    CommonPaths.getMPSClassPath().accept(visitor);
+    return visitor.getResultAndReInit();
   }
 
   public static String getJavaCommand(@Nullable String javaHome) throws ExecutionException {
@@ -237,6 +245,16 @@ public class Java_Command {
     return result;
   }
 
+  private static String writeToTmpFile(String text) throws FileNotFoundException {
+    File tmpFile = FileUtil.createTmpFile();
+    tmpFile.deleteOnExit();
+    PrintWriter writer = new PrintWriter(tmpFile);
+    writer.append(text);
+    writer.flush();
+    writer.close();
+    return tmpFile.getAbsolutePath();
+  }
+
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
       @Nullable
@@ -250,7 +268,7 @@ public class Java_Command {
     };
   }
 
-  private static int check_yvpt_a0d0a0(String checkedDotOperand) {
+  private static int check_yvpt_a0a3a0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }
