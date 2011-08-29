@@ -29,7 +29,7 @@ import com.intellij.util.messages.MessageBus;
 import org.jetbrains.annotations.Nullable;
 
 
-@State(
+@com.intellij.openapi.components.State(
   name = "RecentMPSProjectsManager",
   storages = {
     @Storage(
