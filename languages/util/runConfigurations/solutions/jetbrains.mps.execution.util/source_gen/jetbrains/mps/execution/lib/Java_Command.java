@@ -12,8 +12,6 @@ import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.util.FileUtil;
-import java.io.PrintWriter;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
 import jetbrains.mps.smodel.SNode;
@@ -28,9 +26,13 @@ import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.util.FileUtil;
+import java.io.PrintWriter;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
@@ -99,16 +101,16 @@ public class Java_Command {
     if (StringUtils.isEmpty(className)) {
       throw new ExecutionException("Classname is empty");
     }
-    if (check_yvpt_a0d0a0(myProgramParameter) >= Java_Command.getMaxCommandLine()) {
-      File tmpFile = FileUtil.createTmpFile();
-      // we want to be sure that file is deleted, even when process is not started 
-      tmpFile.deleteOnExit();
+    if (check_yvpt_a0a3a0a(myProgramParameter) + classPathString.length() >= Java_Command.getMaxCommandLine()) {
       try {
-        PrintWriter writer = new PrintWriter(tmpFile);
-        writer.append(myProgramParameter);
-        writer.flush();
-        writer.close();
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classPathString).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, myClassPath).appendKey(ClassRunner.FILE_PREFIX, tmpFile.getAbsolutePath()).build(myWorkingDirectory);
+        String parametersFile = Java_Command.writeToTmpFile(myProgramParameter);
+        String classPathFile = Java_Command.writeToTmpFile(classPathString);
+        String classRunnerClassPath = IterableUtils.join(ListSequence.<String>fromList(Java_Command.getClassRunnerClassPath()).<String>select(new ISelector<String, String>() {
+          public String select(String it) {
+            return Java_Command.protect(it);
+          }
+        }), File.pathSeparator);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classRunnerClassPath).append("jetbrains.mps.execution.lib.startup.ClassRunner").appendKey(("c"), className).appendKey(("p"), classPathFile).appendKey(("f"), parametersFile).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
@@ -147,6 +149,9 @@ public class Java_Command {
   }
 
   private static int getMaxCommandLine() {
+    // the command line limit on win is 32767 characters 
+    // (see http://blogs.msdn.com/b/oldnewthing/archive/2003/12/10/56028.aspx) 
+    // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
 
@@ -180,6 +185,20 @@ public class Java_Command {
     visited.removeAll(CommonPaths.getJDKPath());
 
     return visited;
+  }
+
+  private static List<String> getClassRunnerClassPath() {
+    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        module.value = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("5b247b59-8fd0-4475-a767-9e9ff6a9d01c"));
+      }
+    });
+
+    List<String> cp = ListSequence.<String>fromList(new ArrayList<String>());
+    ClasspathStringCollector visitor = new ClasspathStringCollector(cp);
+    module.value.getClassPathItem().accept(visitor);
+    return visitor.getResultAndReInit();
   }
 
   public static String getJavaCommand(@Nullable String javaHome) throws ExecutionException {
@@ -237,6 +256,16 @@ public class Java_Command {
     return result;
   }
 
+  private static String writeToTmpFile(String text) throws FileNotFoundException {
+    File tmpFile = FileUtil.createTmpFile();
+    tmpFile.deleteOnExit();
+    PrintWriter writer = new PrintWriter(tmpFile);
+    writer.append(text);
+    writer.flush();
+    writer.close();
+    return tmpFile.getAbsolutePath();
+  }
+
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
       @Nullable
@@ -250,7 +279,7 @@ public class Java_Command {
     };
   }
 
-  private static int check_yvpt_a0d0a0(String checkedDotOperand) {
+  private static int check_yvpt_a0a3a0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }

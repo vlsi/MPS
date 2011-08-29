@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguageInternal_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.BaseLanguageInternal_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.StructureAspectDescriptor" />
   <root nodeId="1173990517731">
     <nodeInfo nodeId="1173990517731" fileName="InternalStaticMethodCall.java" startLine="14" startPosition="58" endLine="15" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1173990517731" fileName="InternalStaticMethodCall.java" startLine="15" startPosition="111" endLine="16" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FQ_CLASS_NAME" />
@@ -585,6 +585,40 @@
     <scopeInfo nodeId="1238251434034" fileName="ExtractToConstantExpression.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1238251434034" fileName="ExtractToConstantExpression.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="1238251434034" fileName="ExtractToConstantExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression" />
+  </root>
+  <root nodeId="1585405235656310154">
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="12" startPosition="47" endLine="13" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="13" startPosition="100" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASS_NAME" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="14" startPosition="54" endLine="15" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONSTANT" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="17" startPosition="36" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="21" startPosition="32" endLine="22" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="25" startPosition="42" endLine="26" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="29" startPosition="47" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="33" startPosition="56" endLine="34" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="37" startPosition="68" endLine="38" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="41" startPosition="54" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstantValue#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setClassName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConstant#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setConstant#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguageInternal/structure/ConstantValue;" />
+    <nodeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguageInternal/structure/ConstantValue;" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="17" startPosition="36" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="21" startPosition="32" endLine="22" endPosition="54" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="25" startPosition="42" endLine="26" endPosition="54" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="29" startPosition="47" endLine="30" endPosition="107" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="33" startPosition="56" endLine="34" endPosition="52" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="37" startPosition="68" endLine="38" endPosition="184" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="41" startPosition="54" endLine="42" endPosition="48" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <unitInfo nodeId="1585405235656310154" fileName="ConstantValue.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ConstantValue" />
   </root>
   <root nodeId="3196918548952765095">
     <nodeInfo nodeId="3196918548952765095" fileName="ExtractStatementListExpression.java" startLine="16" startPosition="101" endLine="17" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
