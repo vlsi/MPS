@@ -142,6 +142,61 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_2168104298250406559(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.ListCommandPart");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode node = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.ListCommandPart", null);
+            SLinkOperations.setNewChild(node, "list", "jetbrains.mps.baseLanguage.structure.Expression");
+            return node;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "list command part from list";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "<list";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.ListCommandPart");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode node = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.ListCommandPart", null);
+            SLinkOperations.addNewChild(node, "items", "jetbrains.mps.baseLanguage.structure.Expression");
+            return node;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "list command part from items";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "<items";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_5365453833390719311(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
@@ -188,7 +243,7 @@ public class QueriesGenerated {
         }
 
         public SNode getActionType(String pattern) {
-          return new QueriesGenerated.QuotationClass_x583g4_a0a0e0a0a0b0a0b0f().createNode();
+          return new QueriesGenerated.QuotationClass_x583g4_a0a0e0a0a0b0a0b0g().createNode();
         }
       });
     }
@@ -212,8 +267,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0e0a0a0b0a0b0f {
-    public QuotationClass_x583g4_a0a0e0a0a0b0a0b0f() {
+  public static class QuotationClass_x583g4_a0a0e0a0a0b0a0b0g {
+    public QuotationClass_x583g4_a0a0e0a0a0b0a0b0g() {
     }
 
     public SNode createNode() {

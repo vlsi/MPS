@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.api.commands.PropertyCommandPart;
 import java.io.File;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.InternalFlag;
 import com.intellij.util.SystemProperties;
 import java.util.List;
@@ -78,10 +79,10 @@ public class Mps_Command {
   }
 
   public static String getDefaultVirtualMachineParameters() {
-    return "-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=150m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" + ((InternalFlag.isInternalMode() ?
+    return IterableUtils.join(ListSequence.fromList(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), "-client", "-Xss1024k", "-ea", "-Xmx1200m", "-XX:MaxPermSize=150m", "-XX:+HeapDumpOnOutOfMemoryError", "-Dfile.encoding=UTF-8", ((InternalFlag.isInternalMode() ?
       " -Dmps.internal=true" :
       ""
-    ));
+    )))).getCommandList()), " ");
   }
 
   public static String getDefaultConfigurationPath() {

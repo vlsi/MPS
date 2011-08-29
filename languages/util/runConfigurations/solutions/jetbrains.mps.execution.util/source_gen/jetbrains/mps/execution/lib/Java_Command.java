@@ -12,7 +12,6 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
@@ -110,7 +109,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(String className, List<File> classPathFiles) throws ExecutionException {
-    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setVirtualMachineParameterCommand(new ListCommandPart(Sequence.fromIterable(Sequence.<String>singleton(myVirtualMachineParameter)).toListSequence())).setDebuggerSettings(myDebuggerSettings).createProcess(new ListCommandPart(Sequence.fromIterable(Sequence.<String>singleton(myProgramParameter)).toListSequence()), className, classPathFiles);
+    return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setVirtualMachineParameterCommand(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameter))).setDebuggerSettings(myDebuggerSettings).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myProgramParameter)), className, classPathFiles);
   }
 
   public ProcessHandler createProcess(CommandPart programParameterCommand, String className, List<File> classPathFiles) throws ExecutionException {
@@ -132,7 +131,7 @@ public class Java_Command {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
     } else {
-      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPathFiles, File.pathSeparator))).append(className).append(programParameterCommand).build(myWorkingDirectory);
+      return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameterCommand).append(myDebuggerSettings).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), classPathFiles, className), File.pathSeparator))).append(className).append(programParameterCommand).build(myWorkingDirectory);
     }
   }
 

@@ -817,30 +817,58 @@
     <node role="method" roleId="rzqf.856705193941281774" type="rzqf.CommandMethod" typeId="rzqf.856705193941281767" id="6269383727488505973">
       <property name="name" nameId="tpck.1169194664001" value="getDefaultVirtualMachineParameters" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6269383727488505977" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="6269383727488505978" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6269383727488505976">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6269383727488505979">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7010193184180440884">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7010193184180449351">
-              <node role="expression" roleId="tpee.1079359253376" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7010193184180450571">
-                <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7010193184180450575">
-                  <property name="value" nameId="tpee.1070475926801" value=" -Dmps.internal=true" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2168104298250619554">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2168104298250619580">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2168104298250619575">
+              <node role="operand" roleId="tpee.1197027771414" type="rzqf.ListCommandPart" typeId="rzqf.6868250101935610313" id="2168104298250619555">
+                <node role="items" roleId="rzqf.2168104298250244983" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2168104298250619557">
+                  <property name="value" nameId="tpee.1070475926801" value="-client" />
                 </node>
-                <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7010193184180450576">
-                  <property name="value" nameId="tpee.1070475926801" value="" />
+                <node role="items" roleId="rzqf.2168104298250244983" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2168104298250619559">
+                  <property name="value" nameId="tpee.1070475926801" value="-Xss1024k" />
                 </node>
-                <node role="condition" roleId="tpee.1163668914799" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7010193184180450570">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~InternalFlag%disInternalMode()%cboolean" resolveInfo="isInternalMode" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="up6l.~InternalFlag" resolveInfo="InternalFlag" />
+                <node role="items" roleId="rzqf.2168104298250244983" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2168104298250619561">
+                  <property name="value" nameId="tpee.1070475926801" value="-ea" />
+                </node>
+                <node role="items" roleId="rzqf.2168104298250244983" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2168104298250619563">
+                  <property name="value" nameId="tpee.1070475926801" value="-Xmx1200m" />
+                </node>
+                <node role="items" roleId="rzqf.2168104298250244983" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2168104298250619565">
+                  <property name="value" nameId="tpee.1070475926801" value="-XX:MaxPermSize=150m" />
+                </node>
+                <node role="items" roleId="rzqf.2168104298250244983" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2168104298250619567">
+                  <property name="value" nameId="tpee.1070475926801" value="-XX:+HeapDumpOnOutOfMemoryError" />
+                </node>
+                <node role="items" roleId="rzqf.2168104298250244983" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2168104298250619569">
+                  <property name="value" nameId="tpee.1070475926801" value="-Dfile.encoding=UTF-8" />
+                </node>
+                <node role="items" roleId="rzqf.2168104298250244983" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7010193184180449351">
+                  <node role="expression" roleId="tpee.1079359253376" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7010193184180450571">
+                    <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7010193184180450575">
+                      <property name="value" nameId="tpee.1070475926801" value=" -Dmps.internal=true" />
+                    </node>
+                    <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7010193184180450576">
+                      <property name="value" nameId="tpee.1070475926801" value="" />
+                    </node>
+                    <node role="condition" roleId="tpee.1163668914799" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7010193184180450570">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="up6l.~InternalFlag%disInternalMode()%cboolean" resolveInfo="isInternalMode" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="up6l.~InternalFlag" resolveInfo="InternalFlag" />
+                    </node>
+                  </node>
                 </node>
               </node>
+              <node role="operation" roleId="tpee.1197027833540" type="rzqf.CommandPartToListOperation" typeId="rzqf.8234001627573935224" id="2168104298250619579" />
             </node>
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6269383727488505980">
-              <property name="value" nameId="tpee.1070475926801" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=150m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.JoinOperation" typeId="tp2q.1240687580870" id="2168104298250619584">
+              <node role="delimiter" roleId="tp2q.1240687658305" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2168104298250619585">
+                <property name="value" nameId="tpee.1070475926801" value=" " />
+              </node>
             </node>
           </node>
         </node>
       </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="2168104298250619574" />
     </node>
     <node role="method" roleId="rzqf.856705193941281774" type="rzqf.CommandMethod" typeId="rzqf.856705193941281767" id="2397785969255970519">
       <property name="name" nameId="tpck.1169194664001" value="getDefaultConfigurationPath" />
@@ -1062,7 +1090,7 @@
     <node role="executePart" roleId="rzqf.6129022259108579262" type="rzqf.ExecuteCommandPart" typeId="rzqf.6129022259108579244" id="1715641077095443972">
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="1715641077095443975">
         <property name="name" nameId="tpck.1169194664001" value="virtualMachineParameters" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1715641077095443976" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2168104298250619573" />
         <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1715641077095443977">
           <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1715641077095443978" />
           <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="1715641077095443979">
@@ -1117,27 +1145,23 @@
               <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7986696453016948279">
                 <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="awpe.8234001627573899232" resolveInfo="virtualMachineParameterCommand" />
                 <node role="value" roleId="rzqf.856705193941281766" type="rzqf.ListCommandPart" typeId="rzqf.6868250101935610313" id="7986696453016996702">
-                  <node role="list" roleId="rzqf.6868250101935610315" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7986696453016996704">
-                    <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="7986696453016996706">
-                      <node role="initValue" roleId="tp2q.1237721435808" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="7986696453016996708">
-                        <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095443975" resolveInfo="virtualMachineParameters" />
-                      </node>
-                      <node role="initValue" roleId="tp2q.1237721435808" type="rzqf.PropertyCommandPart" typeId="rzqf.8234001627574071406" id="7986696453016996710">
-                        <node role="key" roleId="rzqf.8234001627574071407" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7986696453016996713">
-                          <property name="value" nameId="tpee.1070475926801" value="idea.system.path" />
-                        </node>
-                        <node role="value" roleId="rzqf.8234001627574071408" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="7986696453016996714">
-                          <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095443987" resolveInfo="systemPath" />
-                        </node>
-                      </node>
-                      <node role="initValue" roleId="tp2q.1237721435808" type="rzqf.PropertyCommandPart" typeId="rzqf.8234001627574071406" id="7986696453016996716">
-                        <node role="key" roleId="rzqf.8234001627574071407" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7986696453016996717">
-                          <property name="value" nameId="tpee.1070475926801" value="idea.config.path" />
-                        </node>
-                        <node role="value" roleId="rzqf.8234001627574071408" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="7986696453016996719">
-                          <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095443982" resolveInfo="configurationPath" />
-                        </node>
-                      </node>
+                  <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="7986696453016996708">
+                    <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095443975" resolveInfo="virtualMachineParameters" />
+                  </node>
+                  <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.PropertyCommandPart" typeId="rzqf.8234001627574071406" id="7986696453016996710">
+                    <node role="key" roleId="rzqf.8234001627574071407" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7986696453016996713">
+                      <property name="value" nameId="tpee.1070475926801" value="idea.system.path" />
+                    </node>
+                    <node role="value" roleId="rzqf.8234001627574071408" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="7986696453016996714">
+                      <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095443987" resolveInfo="systemPath" />
+                    </node>
+                  </node>
+                  <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.PropertyCommandPart" typeId="rzqf.8234001627574071406" id="7986696453016996716">
+                    <node role="key" roleId="rzqf.8234001627574071407" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7986696453016996717">
+                      <property name="value" nameId="tpee.1070475926801" value="idea.config.path" />
+                    </node>
+                    <node role="value" roleId="rzqf.8234001627574071408" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="7986696453016996719">
+                      <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1715641077095443982" resolveInfo="configurationPath" />
                     </node>
                   </node>
                 </node>
