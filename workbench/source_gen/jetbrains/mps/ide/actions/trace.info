@@ -1,7 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.actions.IconContainer" />
+  <unitInfo fileName="NewModelUtil.java" startLine="18" startPosition="47" endLine="22" endPosition="7" unitName="jetbrains.mps.ide.actions.NewModelUtil$1" />
+  <unitInfo fileName="NewModelUtil.java" startLine="24" startPosition="47" endLine="28" endPosition="7" unitName="jetbrains.mps.ide.actions.NewModelUtil$2" />
+  <unitInfo fileName="SetNodePackageDialog.java" startLine="39" startPosition="38" endLine="43" endPosition="5" unitName="jetbrains.mps.ide.actions.SetNodePackageDialog$1" />
+  <unitInfo fileName="NewLibrary_Action.java" startLine="74" startPosition="48" endLine="78" endPosition="7" unitName="jetbrains.mps.ide.actions.NewLibrary_Action$1" />
+  <unitInfo fileName="NewSolution_Action.java" startLine="74" startPosition="48" endLine="78" endPosition="7" unitName="jetbrains.mps.ide.actions.NewSolution_Action$1" />
+  <unitInfo fileName="CloneModel_Action.java" startLine="81" startPosition="47" endLine="85" endPosition="7" unitName="jetbrains.mps.ide.actions.CloneModel_Action$1" />
+  <unitInfo fileName="RenameModel_Action.java" startLine="82" startPosition="47" endLine="86" endPosition="7" unitName="jetbrains.mps.ide.actions.RenameModel_Action$1" />
+  <unitInfo fileName="CloneRoot_Action.java" startLine="88" startPosition="39" endLine="92" endPosition="9" unitName="jetbrains.mps.ide.actions.CloneRoot_Action$1" />
+  <unitInfo fileName="NewRuntimeModule_Action.java" startLine="91" startPosition="47" endLine="95" endPosition="7" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$1" />
+  <unitInfo fileName="DeleteNode_Action.java" startLine="94" startPosition="57" endLine="98" endPosition="7" unitName="jetbrains.mps.ide.actions.DeleteNode_Action$2" />
+  <unitInfo fileName="NewDirectory_Action.java" startLine="95" startPosition="39" endLine="99" endPosition="9" unitName="jetbrains.mps.ide.actions.NewDirectory_Action$2" />
+  <unitInfo fileName="NewFile_Action.java" startLine="95" startPosition="39" endLine="99" endPosition="9" unitName="jetbrains.mps.ide.actions.NewFile_Action$2" />
+  <unitInfo fileName="NewRuntimeModule_Action.java" startLine="98" startPosition="76" endLine="102" endPosition="11" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$3" />
+  <unitInfo fileName="PasteNode_Action.java" startLine="122" startPosition="41" endLine="126" endPosition="11" unitName="jetbrains.mps.ide.actions.PasteNode_Action$2" />
+  <unitInfo fileName="NewRuntimeModule_Action.java" startLine="127" startPosition="23" endLine="131" endPosition="7" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$3" />
+  <unitInfo fileName="PasteNode_Action.java" startLine="138" startPosition="45" endLine="142" endPosition="5" unitName="jetbrains.mps.ide.actions.PasteNode_Action$2" />
+  <unitInfo fileName="OptimizeModelImports_Action.java" startLine="67" startPosition="57" endLine="72" endPosition="7" unitName="jetbrains.mps.ide.actions.OptimizeModelImports_Action$1" />
+  <unitInfo fileName="NewSubModel_Action.java" startLine="88" startPosition="47" endLine="93" endPosition="7" unitName="jetbrains.mps.ide.actions.NewSubModel_Action$1" />
+  <unitInfo fileName="NewModel_Action.java" startLine="113" startPosition="47" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.actions.NewModel_Action$1" />
+  <unitInfo fileName="NewRuntimeModule_Action.java" startLine="116" startPosition="55" endLine="121" endPosition="15" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$4" />
+  <unitInfo fileName="HighlightConstants.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightConstants" />
+  <unitInfo fileName="SetNodePackageDialog.java" startLine="44" startPosition="68" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.actions.SetNodePackageDialog$2" />
+  <unitInfo fileName="FindUsagesHelper.java" startLine="70" startPosition="45" endLine="76" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$2" />
+  <unitInfo fileName="DeleteModules_Action.java" startLine="92" startPosition="57" endLine="98" endPosition="7" unitName="jetbrains.mps.ide.actions.DeleteModules_Action$1" />
+  <unitInfo fileName="GoByCurrentReference_Action.java" startLine="120" startPosition="53" endLine="126" endPosition="13" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$2" />
+  <unitInfo fileName="FindUsagesHelper.java" startLine="47" startPosition="45" endLine="54" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$1" />
+  <unitInfo fileName="NewDirectory_Action.java" startLine="81" startPosition="52" endLine="88" endPosition="11" unitName="jetbrains.mps.ide.actions.NewDirectory_Action$2" />
+  <unitInfo fileName="NewFile_Action.java" startLine="81" startPosition="52" endLine="88" endPosition="11" unitName="jetbrains.mps.ide.actions.NewFile_Action$2" />
+  <unitInfo fileName="StringAction.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ide.actions.StringAction" />
+  <unitInfo fileName="AddToNewFavoritesList_Action.java" startLine="65" startPosition="213" endLine="73" endPosition="7" unitName="jetbrains.mps.ide.actions.AddToNewFavoritesList_Action$1" />
+  <unitInfo fileName="PersistentOptions_PreferencesComponent.java" startLine="50" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent$MyState" />
+  <unitInfo fileName="OptimizeProjectImports_Action.java" startLine="74" startPosition="57" endLine="83" endPosition="7" unitName="jetbrains.mps.ide.actions.OptimizeProjectImports_Action$1" />
+  <unitInfo fileName="DeleteNode_Action.java" startLine="75" startPosition="47" endLine="84" endPosition="7" unitName="jetbrains.mps.ide.actions.DeleteNode_Action$1" />
+  <unitInfo fileName="DeleteModels_Action.java" startLine="76" startPosition="57" endLine="85" endPosition="7" unitName="jetbrains.mps.ide.actions.DeleteModels_Action$1" />
+  <unitInfo fileName="CreateAspect_Action.java" startLine="59" startPosition="47" endLine="69" endPosition="7" unitName="jetbrains.mps.ide.actions.CreateAspect_Action$1" />
+  <unitInfo fileName="GoByCurrentReference_Action.java" startLine="117" startPosition="12" endLine="128" endPosition="9" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$1" />
+  <unitInfo fileName="QuickCreate_Action.java" startLine="61" startPosition="47" endLine="73" endPosition="7" unitName="jetbrains.mps.ide.actions.QuickCreate_Action$1" />
+  <unitInfo fileName="OptimizeModuleImports_Action.java" startLine="70" startPosition="57" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.actions.OptimizeModuleImports_Action$1" />
+  <unitInfo fileName="ToolsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
+  <unitInfo fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup" />
+  <unitInfo fileName="JUnitTestMethodActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup" />
+  <unitInfo fileName="JUnitTestCaseActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup" />
+  <unitInfo fileName="ModelActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
+  <unitInfo fileName="RuntimeFolderActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.RuntimeFolderActions_ActionGroup" />
+  <unitInfo fileName="ModelRefactoring_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup" />
+  <unitInfo fileName="PropertyNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup" />
+  <unitInfo fileName="ReferenceNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup" />
+  <unitInfo fileName="SolutionRefactoring_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionRefactoring_ActionGroup" />
+  <unitInfo fileName="TransientModulesActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup" />
+  <unitInfo fileName="RemoveModuleFromProject_Action.java" startLine="82" startPosition="40" endLine="97" endPosition="7" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action$1" />
+  <unitInfo fileName="Analyze_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.Analyze_ActionGroup" />
   <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
+  <unitInfo fileName="ModuleProperties_Action.java" startLine="66" startPosition="47" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.actions.ModuleProperties_Action$1" />
+  <unitInfo fileName="TraceActions_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.actions.TraceActions_KeymapChanges" />
+  <unitInfo fileName="NewSubTestModel_Action.java" startLine="87" startPosition="57" endLine="104" endPosition="7" unitName="jetbrains.mps.ide.actions.NewSubTestModel_Action$1" />
+  <unitInfo fileName="NewRuntimeModule_Action.java" startLine="106" startPosition="21" endLine="123" endPosition="11" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$3" />
+  <unitInfo fileName="NamespaceMakeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup" />
+  <unitInfo fileName="NamespaceActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceActions_ActionGroup" />
+  <unitInfo fileName="ModuleActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleActions_ActionGroup" />
+  <unitInfo fileName="FolderActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.FolderActions_ActionGroup" />
+  <unitInfo fileName="FileActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.FileActions_ActionGroup" />
+  <unitInfo fileName="NewModelUtil.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModelUtil" />
+  <unitInfo fileName="Search_ActionGroup.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.actions.Search_ActionGroup" />
+  <unitInfo fileName="GeneratorNewActions_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup" />
+  <unitInfo fileName="SolutionNewActions_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionNewActions_ActionGroup" />
+  <unitInfo fileName="NewDirectory_Action.java" startLine="69" startPosition="37" endLine="91" endPosition="7" unitName="jetbrains.mps.ide.actions.NewDirectory_Action$1" />
+  <unitInfo fileName="NewFile_Action.java" startLine="69" startPosition="37" endLine="91" endPosition="7" unitName="jetbrains.mps.ide.actions.NewFile_Action$1" />
+  <unitInfo fileName="ProjectNewActions_ActionGroup.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup" />
+  <unitInfo fileName="ModelNewActions_ActionGroup.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelNewActions_ActionGroup" />
+  <unitInfo fileName="Bookmarks_ActionGroup.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.actions.Bookmarks_ActionGroup" />
+  <unitInfo fileName="PasteNode_Action.java" startLine="102" startPosition="57" endLine="128" endPosition="7" unitName="jetbrains.mps.ide.actions.PasteNode_Action$1" />
+  <unitInfo fileName="HighlightUsages_Action.java" startLine="71" startPosition="47" endLine="100" endPosition="7" unitName="jetbrains.mps.ide.actions.HighlightUsages_Action$1" />
+  <unitInfo fileName="NewRuntimeModule_Action.java" startLine="96" startPosition="46" endLine="125" endPosition="7" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$2" />
+  <unitInfo fileName="Edit_ActionGroup.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
+  <unitInfo fileName="Code_ActionGroup.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.actions.Code_ActionGroup" />
+  <unitInfo fileName="DevkitActions_ActionGroup.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
+  <unitInfo fileName="Build_ActionGroup.java" startLine="11" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.ide.actions.Build_ActionGroup" />
+  <unitInfo fileName="GeneratorActions_ActionGroup.java" startLine="11" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
+  <unitInfo fileName="SolutionActions_ActionGroup.java" startLine="11" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
+  <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="23" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeStacktrace_Tool" />
+  <unitInfo fileName="LanguageNewActions_ActionGroup.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup" />
+  <unitInfo fileName="CopyModuleName_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyModuleName_Action" />
+  <unitInfo fileName="CopyModelName_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyModelName_Action" />
+  <unitInfo fileName="ShowBookmarks_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowBookmarks_Action" />
+  <unitInfo fileName="RemoveAllBookmarks_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveAllBookmarks_Action" />
+  <unitInfo fileName="Find_Action.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.Find_Action" />
+  <unitInfo fileName="MPSProjectPaths_Action.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.actions.MPSProjectPaths_Action" />
+  <unitInfo fileName="ShowErrorMessage_Action.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowErrorMessage_Action" />
+  <unitInfo fileName="PersistentOptions_PreferencesComponent.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent" />
+  <unitInfo fileName="ShowBookmarksDialog_Action.java" startLine="18" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowBookmarksDialog_Action" />
+  <unitInfo fileName="RemoveTransientModels_Action.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
+  <unitInfo fileName="AddMissingImports_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.actions.AddMissingImports_Action" />
+  <unitInfo fileName="GoToRule_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToRule_Action" />
+  <unitInfo fileName="GoToNode_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNode_Action" />
+  <unitInfo fileName="Tools_ActionGroup.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
+  <unitInfo fileName="SetBookmarkNoNumber_Action.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action" />
+  <unitInfo fileName="ShowModuleDependencies_Action.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModuleDependencies_Action" />
+  <unitInfo fileName="AnalyzeClasspath_Action.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeClasspath_Action" />
+  <unitInfo fileName="RevertMemoryChanges_Action.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.RevertMemoryChanges_Action" />
+  <unitInfo fileName="AnalyzeStacktraceDialog.java" startLine="20" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeStacktraceDialog" />
+  <unitInfo fileName="FindPrevious_Action.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.FindPrevious_Action" />
+  <unitInfo fileName="FindNext_Action.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.FindNext_Action" />
+  <unitInfo fileName="ShowInLogicalView_Action.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowInLogicalView_Action" />
+  <unitInfo fileName="ExpandNode_Action.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.ExpandNode_Action" />
+  <unitInfo fileName="RenameSolution_Action.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameSolution_Action" />
+  <unitInfo fileName="ShowNodeInInspector_Action.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowNodeInInspector_Action" />
+  <unitInfo fileName="GoToFile_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToFile_Action" />
+  <unitInfo fileName="GoToModule_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToModule_Action" />
+  <unitInfo fileName="GoToModel_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToModel_Action" />
+  <unitInfo fileName="GoToNamedNode_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNamedNode_Action" />
+  <unitInfo fileName="GoToRootNode_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
+  <unitInfo fileName="GoToAction_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToAction_Action" />
+  <unitInfo fileName="DeleteFavoritesList_Action.java" startLine="20" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteFavoritesList_Action" />
+  <unitInfo fileName="LibraryActions_ActionGroup.java" startLine="11" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.actions.LibraryActions_ActionGroup" />
+  <unitInfo fileName="ProjectActions_ActionGroup.java" startLine="11" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
+  <unitInfo fileName="GoToBookmark_Action.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark_Action" />
+  <unitInfo fileName="DeletePropertyAction_Action.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.DeletePropertyAction_Action" />
+  <unitInfo fileName="DeleteReferenceAction_Action.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteReferenceAction_Action" />
+  <unitInfo fileName="EditorTabActions_ActionGroup.java" startLine="11" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorTabActions_ActionGroup" />
+  <unitInfo fileName="AddLanguageImport_Action.java" startLine="20" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.AddLanguageImport_Action" />
+  <unitInfo fileName="AddModelImport_Action.java" startLine="20" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModelImport_Action" />
+  <unitInfo fileName="CopyNodeReference_Action.java" startLine="21" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNodeReference_Action" />
+  <unitInfo fileName="FindUsagesHelper.java" startLine="23" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.FindUsagesHelper" />
+  <unitInfo fileName="CreateAspect_Action.java" startLine="24" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.actions.CreateAspect_Action" />
+  <unitInfo fileName="OptimizeModelImports_Action.java" startLine="24" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.actions.OptimizeModelImports_Action" />
+  <unitInfo fileName="NamespaceInternalActions_ActionGroup.java" startLine="25" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup" />
+  <unitInfo fileName="FoldSelection_Action.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.FoldSelection_Action" />
+  <unitInfo fileName="CollapseAll_Action.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.CollapseAll_Action" />
+  <unitInfo fileName="ExpandAll_Action.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.ExpandAll_Action" />
+  <unitInfo fileName="Collapse_Action.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.Collapse_Action" />
+  <unitInfo fileName="LanguageActions_ActionGroup.java" startLine="11" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
+  <unitInfo fileName="SetBookmark_Action.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark_Action" />
+  <unitInfo fileName="QuickCreate_Action.java" startLine="26" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.QuickCreate_Action" />
+  <unitInfo fileName="ModelProperties_Action.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelProperties_Action" />
+  <unitInfo fileName="EditNode_Action.java" startLine="21" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.actions.EditNode_Action" />
+  <unitInfo fileName="Expand_Action.java" startLine="19" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.actions.Expand_Action" />
+  <unitInfo fileName="ShowStructure_Action.java" startLine="22" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowStructure_Action" />
+  <unitInfo fileName="RenameFavoritesList_Action.java" startLine="23" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameFavoritesList_Action" />
+  <unitInfo fileName="FileDelete_Action.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.actions.FileDelete_Action" />
+  <unitInfo fileName="AddModuleToProject_Action.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModuleToProject_Action" />
+  <unitInfo fileName="RemoveFromFavorites_Action.java" startLine="22" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveFromFavorites_Action" />
+  <unitInfo fileName="AddToNewFavoritesList_Action.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToNewFavoritesList_Action" />
+  <unitInfo fileName="OptimizeModuleImports_Action.java" startLine="27" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.actions.OptimizeModuleImports_Action" />
+  <unitInfo fileName="ModuleProperties_Action.java" startLine="27" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleProperties_Action" />
+  <unitInfo fileName="CopyNode_Action.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNode_Action" />
+  <unitInfo fileName="OptimizeProjectImports_Action.java" startLine="27" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ide.actions.OptimizeProjectImports_Action" />
+  <unitInfo fileName="DeleteModels_Action.java" startLine="24" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteModels_Action" />
+  <unitInfo fileName="AddModelImportByRoot_Action.java" startLine="24" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModelImportByRoot_Action" />
+  <unitInfo fileName="HighlightInstances_Action.java" startLine="24" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightInstances_Action" />
+  <unitInfo fileName="RenameModel_Action.java" startLine="25" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameModel_Action" />
+  <unitInfo fileName="EditGivenNode_Action.java" startLine="19" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ide.actions.EditGivenNode_Action" />
+  <unitInfo fileName="FastFindNodeUsages_Action.java" startLine="22" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
+  <unitInfo fileName="AddToFavorites_Action.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToFavorites_Action" />
+  <unitInfo fileName="SetModuleFolder_Action.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.SetModuleFolder_Action" />
+  <unitInfo fileName="FindSpecificNodeUsages_Action.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action" />
+  <unitInfo fileName="CloneModel_Action.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.CloneModel_Action" />
+  <unitInfo fileName="ShowParameters_Action.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowParameters_Action" />
+  <unitInfo fileName="CloneRoot_Action.java" startLine="26" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.CloneRoot_Action" />
+  <unitInfo fileName="RenameNamespace_Action.java" startLine="24" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameNamespace_Action" />
+  <unitInfo fileName="SetNodePackageDialog.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.SetNodePackageDialog" />
+  <unitInfo fileName="HighlightUsages_Action.java" startLine="29" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightUsages_Action" />
+  <unitInfo fileName="ShowClassInHierarchy_Action.java" startLine="20" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowClassInHierarchy_Action" />
+  <unitInfo fileName="NewLibrary_Action.java" startLine="22" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.actions.NewLibrary_Action" />
+  <unitInfo fileName="NewSolution_Action.java" startLine="22" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.actions.NewSolution_Action" />
+  <unitInfo fileName="DeleteModules_Action.java" startLine="25" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteModules_Action" />
+  <unitInfo fileName="DeleteNode_Action.java" startLine="24" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteNode_Action" />
+  <unitInfo fileName="NewSubModel_Action.java" startLine="25" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.actions.NewSubModel_Action" />
+  <unitInfo fileName="NewDirectory_Action.java" startLine="26" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.NewDirectory_Action" />
+  <unitInfo fileName="NewFile_Action.java" startLine="26" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.NewFile_Action" />
+  <unitInfo fileName="RemoveModuleFromProject_Action.java" startLine="27" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
+  <unitInfo fileName="CutNode_Action.java" startLine="24" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.ide.actions.CutNode_Action" />
+  <unitInfo fileName="ShowConceptInHierarchy_Action.java" startLine="23" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action" />
+  <unitInfo fileName="CommonModuleActions_ActionGroup.java" startLine="11" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup" />
+  <unitInfo fileName="NewRuntimeModule_Action.java" startLine="37" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action" />
+  <unitInfo fileName="NewSubTestModel_Action.java" startLine="30" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.ide.actions.NewSubTestModel_Action" />
+  <unitInfo fileName="ModelActions_ActionGroup.java" startLine="11" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
+  <unitInfo fileName="PasteNode_Action.java" startLine="34" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.ide.actions.PasteNode_Action" />
+  <unitInfo fileName="NewModel_Action.java" startLine="29" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModel_Action" />
+  <unitInfo fileName="GoByCurrentReference_Action.java" startLine="35" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action" />
   <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
   <root nodeId="1204991215587">
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="11" startPosition="67" endLine="12" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1841,8 +2019,8 @@
     <scopeInfo nodeId="1216120033386" fileName="ShowConceptInHierarchy_Action.java" startLine="36" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="2925366645633918953" fileName="ShowConceptInHierarchy_Action.java" startLine="91" startPosition="67" endLine="115" endPosition="113">
       <varInfo nodeId="6223531255410204737" varName="refNode" />
-      <varInfo nodeId="2925366645633918976" varName="editedNode" />
       <varInfo nodeId="2925366645633918968" varName="tabbedEditor" />
+      <varInfo nodeId="2925366645633918976" varName="editedNode" />
       <varInfo nodeId="6223531255410204775" varName="outerConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1216120033386" fileName="ShowConceptInHierarchy_Action.java" startLine="51" startPosition="95" endLine="76" endPosition="16" />
@@ -5129,8 +5307,8 @@
     <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="65" startPosition="161" endLine="66" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="66" startPosition="166" endLine="67" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="67" startPosition="164" endLine="68" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="68" startPosition="169" endLine="69" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="69" startPosition="199" endLine="70" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="68" startPosition="169" endLine="69" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="69" startPosition="203" endLine="70" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="70" startPosition="173" endLine="71" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="71" startPosition="162" endLine="72" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2443880313834662249" fileName="Default_KeymapChanges.java" startLine="72" startPosition="15" endLine="73" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5229,14 +5407,14 @@
     <scopeInfo nodeId="2557058267217516072" fileName="FindUsagesHelper.java" startLine="44" startPosition="144" endLine="77" endPosition="150">
       <varInfo nodeId="2557058267217516349" varName="viewOptions" />
       <varInfo nodeId="2557058267217516346" varName="query" />
-      <varInfo nodeId="2557058267217516343" varName="provider" />
       <varInfo nodeId="2557058267217516266" varName="operationNode" />
+      <varInfo nodeId="2557058267217516343" varName="provider" />
       <varInfo nodeId="2557058267217516299" varName="dialog" />
       <varInfo nodeId="2557058267217516291" varName="options" />
     </scopeInfo>
     <scopeInfo nodeId="2557058267217525617" fileName="FindUsagesHelper.java" startLine="43" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="2557058267217525651" varName="model" />
       <varInfo nodeId="2557058267217516634" varName="node" />
+      <varInfo nodeId="2557058267217525651" varName="model" />
       <varInfo nodeId="2557058267217525640" varName="frame" />
       <varInfo nodeId="2557058267217516402" varName="cell" />
       <varInfo nodeId="2557058267217525648" varName="context" />
@@ -7994,8 +8172,8 @@
       <varInfo nodeId="8625430239852275622" varName="classifierName" />
     </scopeInfo>
     <scopeInfo nodeId="6105093990493768785" fileName="GoByCurrentReference_Action.java" startLine="185" startPosition="0" endLine="191" endPosition="0">
-      <varInfo nodeId="6105093990493768790" varName="ref" />
       <varInfo nodeId="6105093990493768788" varName="targetNode" />
+      <varInfo nodeId="6105093990493768790" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="8625430239852275555" fileName="GoByCurrentReference_Action.java" startLine="159" startPosition="197" endLine="166" endPosition="7">
       <varInfo nodeId="8625430239852275556" varName="np" />
@@ -8020,9 +8198,9 @@
     <scopeInfo nodeId="5357294907628536183" fileName="GoByCurrentReference_Action.java" startLine="70" startPosition="95" endLine="90" endPosition="16" />
     <scopeInfo nodeId="5357294907628536183" fileName="GoByCurrentReference_Action.java" startLine="69" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="5735282328623448752" fileName="GoByCurrentReference_Action.java" startLine="101" startPosition="14" endLine="128" endPosition="18">
-      <varInfo nodeId="5735282328623448893" varName="module" />
-      <varInfo nodeId="5735282328623448887" varName="model" />
       <varInfo nodeId="5735282328623448879" varName="node" />
+      <varInfo nodeId="5735282328623448887" varName="model" />
+      <varInfo nodeId="5735282328623448893" varName="module" />
       <varInfo nodeId="5735282328623449455" varName="modulePath" />
     </scopeInfo>
     <scopeInfo nodeId="5357294907628536183" fileName="GoByCurrentReference_Action.java" startLine="94" startPosition="9" endLine="129" endPosition="7">
@@ -8170,8 +8348,8 @@
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="49" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="5533671870987099240" fileName="HighlightUsages_Action.java" startLine="72" startPosition="27" endLine="98" endPosition="61">
       <varInfo nodeId="5533671870987099313" varName="node" />
-      <varInfo nodeId="5533671870987100178" varName="usages" />
       <varInfo nodeId="5533671870987099294" varName="highlightManager" />
+      <varInfo nodeId="5533671870987100178" varName="usages" />
       <varInfo nodeId="5533671870987099302" varName="messageOwner" />
       <varInfo nodeId="5533671870987100197" varName="highlight" />
     </scopeInfo>
@@ -11152,8 +11330,8 @@
       <varInfo nodeId="4910920182626568593" varName="newName" />
       <varInfo nodeId="4910920182626568542" varName="favoritesManager" />
       <varInfo nodeId="4910920182626568635" varName="objects" />
-      <varInfo nodeId="4910920182626568624" varName="oldName" />
       <varInfo nodeId="4910920182626568534" varName="pane" />
+      <varInfo nodeId="4910920182626568624" varName="oldName" />
     </scopeInfo>
     <scopeInfo nodeId="8243555296290550384" fileName="RenameFavoritesList_Action.java" startLine="62" startPosition="96" endLine="82" endPosition="5" />
     <scopeInfo nodeId="8243555296290550384" fileName="RenameFavoritesList_Action.java" startLine="61" startPosition="0" endLine="84" endPosition="0" />
