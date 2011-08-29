@@ -103,6 +103,9 @@ public class Java_Command {
   public ProcessHandler createProcess(String className) throws ExecutionException {
     return new Java_Command().setWorkingDirectory(myWorkingDirectory).setJrePath(myJrePath).setProgramParameter(myProgramParameter).setVirtualMachineParameter(myVirtualMachineParameter).setDebuggerSettings(myDebuggerSettings).createProcess(className, ListSequence.fromList(myClassPath).<File>select(new ISelector<String, File>() {
       public File select(String it) {
+        if (it.startsWith("\"") && it.endsWith("\"")) {
+          return new File(it.substring(1, it.length() - 2));
+        }
         return new File(it);
       }
     }).toListSequence());
