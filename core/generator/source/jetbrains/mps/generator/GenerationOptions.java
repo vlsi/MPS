@@ -50,6 +50,7 @@ public class GenerationOptions {
   private final boolean myShowInfo;
   private final boolean myShowWarnings;
   private final boolean myKeepModelsWithWarnings;
+  private final boolean myShowBadChildWarning;
   private final int myNumberOfModelsToKeep;
 
   private IGenerationTracer myGenerationTracer;
@@ -58,7 +59,7 @@ public class GenerationOptions {
                             boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
                             @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
-                            GenerationParametersProvider parametersProvider, boolean keepOutputModel) {
+                            GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
@@ -73,6 +74,7 @@ public class GenerationOptions {
     myIncrementalStrategy = incrementalStrategy;
     myParametersProvider = parametersProvider;
     myKeepOutputModel = keepOutputModel;
+    myShowBadChildWarning = showBadChildWarning;
   }
 
   public boolean isSaveTransientModels() {
@@ -126,6 +128,10 @@ public class GenerationOptions {
     return myKeepModelsWithWarnings;
   }
 
+  public boolean isShowBadChildWarning() {
+    return myShowBadChildWarning;
+  }
+
   public int getNumberOfModelsToKeep() {
     return myNumberOfModelsToKeep;
   }
@@ -142,7 +148,8 @@ public class GenerationOptions {
     return new OptionsBuilder().
       strictMode(settings.isStrictMode()).
       generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).
-      reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep());
+      reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).
+      showBadChildWarning(settings.isShowBadChildWarning());
   }
 
 
@@ -188,6 +195,7 @@ public class GenerationOptions {
     private boolean myShowInfo = false;
     private boolean myShowWarnings = true;
     private boolean myKeepModelsWithWarnings = true;
+    private boolean myShowBadChildWarning = true;
     private int myNumberOfModelsToKeep = 16;
 
     private GenerationParametersProvider myParametersProvider = null;
@@ -207,7 +215,7 @@ public class GenerationOptions {
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep,
         myGenerationTracer == null ? NullGenerationTracer.INSTANCE : myGenerationTracer,
-        myIncrementalStrategy, myParametersProvider, myKeepOutputModel);
+        myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning);
     }
 
     public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
@@ -222,6 +230,11 @@ public class GenerationOptions {
 
     public OptionsBuilder strictMode(boolean strictMode) {
       myStrictMode = strictMode;
+      return this;
+    }
+
+    public OptionsBuilder showBadChildWarning(boolean value) {
+      myShowBadChildWarning = value;
       return this;
     }
 

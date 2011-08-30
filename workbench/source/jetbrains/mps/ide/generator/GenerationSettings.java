@@ -266,6 +266,13 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myGenerateDebugInfo = generateDebugInfo;
   }
 
+  public boolean isShowBadChildWarning() {
+    return myState.myShowBadChildWarning;
+  }
+
+  public void setShowBadChildWarning(boolean showBadChildWarning) {
+    myState.myShowBadChildWarning = showBadChildWarning;
+  }
 
   public enum GenerateRequirementsPolicy {
     ALWAYS("Always generate"), ASK("Ask"), NEVER("Never generate");
@@ -301,6 +308,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myIncrementalUseCache = false;
     private boolean myFailOnMissingTextGen = false;
     private boolean myGenerateDebugInfo = true;
+    private boolean myShowBadChildWarning = true;
 
     public int getNumberOfModelsToKeep() {
       return myNumberOfModelsToKeep;
@@ -428,6 +436,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setGenerateDebugInfo(boolean generateDebugInfo) {
       myGenerateDebugInfo = generateDebugInfo;
+    }
+
+    public boolean isShowBadChildWarning() {
+      return myShowBadChildWarning;
+    }
+
+    public void setShowBadChildWarning(boolean showBadChildWarning) {
+      myShowBadChildWarning = showBadChildWarning;
     }
   }
 }
