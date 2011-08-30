@@ -2435,6 +2435,10 @@
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472980">
       <property name="id" nameId="tps4.1222447189012" value="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc" />
     </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="5838274581609105550">
+      <property name="id" nameId="tps4.1222447189012" value="77c9a130-703f-4530-bf21-6580757768d0" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.antsupport" />
+    </node>
   </root>
   <root id="8431776905956472981">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472982">
