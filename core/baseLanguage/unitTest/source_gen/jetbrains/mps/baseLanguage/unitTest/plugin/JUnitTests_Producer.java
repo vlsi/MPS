@@ -185,11 +185,6 @@ public class JUnitTests_Producer {
         return null;
       }
 
-      List<String> nodeNames = ListSequence.fromList(new ArrayList<String>());
-      for (SNode testCase : source) {
-        ListSequence.fromList(nodeNames).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
-      }
-
       JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
       configuration.setRunType(JUnitRunTypes2.NODE);
       configuration.setTestCases(TestUtils.nodesToCloneableList(source));
