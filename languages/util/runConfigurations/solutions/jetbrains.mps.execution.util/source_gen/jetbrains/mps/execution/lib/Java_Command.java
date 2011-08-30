@@ -26,6 +26,9 @@ import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -102,12 +105,13 @@ public class Java_Command {
     if (check_yvpt_a0a3a0a(myProgramParameter) + classPathString.length() >= Java_Command.getMaxCommandLine()) {
       try {
         String parametersFile = Java_Command.writeToTmpFile(myProgramParameter);
-        String classpathFile = Java_Command.writeToTmpFile(classPathString);
-        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", IterableUtils.join(ListSequence.fromList(Java_Command.getMpsClassPath()).<String>select(new ISelector<String, String>() {
+        String classPathFile = Java_Command.writeToTmpFile(classPathString);
+        String classRunnerClassPath = IterableUtils.join(ListSequence.fromList(Java_Command.getClassRunnerClassPath()).<String>select(new ISelector<String, String>() {
           public String select(String it) {
             return Java_Command.protect(it);
           }
-        }), File.pathSeparator)).append(ClassRunner.class.getName()).appendKey(ClassRunner.CLASS_PREFIX, className).appendKey(ClassRunner.CLASSPATH_PREFIX, classpathFile).appendKey(ClassRunner.FILE_PREFIX, parametersFile).build(myWorkingDirectory);
+        }), File.pathSeparator);
+        return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append(myDebuggerSettings).appendKey("classpath", classRunnerClassPath).append("jetbrains.mps.execution.lib.startup.ClassRunner").appendKey(("c"), className).appendKey(("p"), classPathFile).appendKey(("f"), parametersFile).build(myWorkingDirectory);
       } catch (FileNotFoundException e) {
         throw new ExecutionException("Could not create temporal file for program parameters.", e);
       }
@@ -184,10 +188,14 @@ public class Java_Command {
     return visited;
   }
 
-  private static List<String> getMpsClassPath() {
-    ClasspathStringCollector visitor = new ClasspathStringCollector(ListSequence.fromList(new ArrayList<String>()));
-    CommonPaths.getMPSClassPath().accept(visitor);
-    return visitor.getResultAndReInit();
+  private static List<String> getClassRunnerClassPath() {
+    final Wrappers._T<List<String>> cp = new Wrappers._T<List<String>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        cp.value = Sequence.fromIterable(Sequence.<String>singleton(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("5b247b59-8fd0-4475-a767-9e9ff6a9d01c")).getClassesGen().getAbsolutePath())).toListSequence();
+      }
+    });
+    return cp.value;
   }
 
   public static String getJavaCommand(@Nullable String javaHome) throws ExecutionException {

@@ -386,6 +386,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.common" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.settings" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.util" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.execution.lib.startup" />
     <mkdir dir="${deploy.dir}/MPS/languages/execution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage" />

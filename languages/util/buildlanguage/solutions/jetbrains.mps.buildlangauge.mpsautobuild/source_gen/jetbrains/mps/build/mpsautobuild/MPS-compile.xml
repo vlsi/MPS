@@ -47,6 +47,7 @@
   <property name="jetbrains.mps.execution.commands.classes" value="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
   <property name="jetbrains.mps.execution.common.classes" value="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
   <property name="jetbrains.mps.execution.configurations.classes" value="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+  <property name="jetbrains.mps.execution.lib.startup.classes" value="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
   <property name="jetbrains.mps.execution.settings.classes" value="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
   <property name="jetbrains.mps.execution.util.classes" value="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
   <property name="jetbrains.mps.gtext.classes" value="${base_dir}/languages/util/gtext/classes_gen" />
@@ -232,6 +233,8 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/source_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/test_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" />
@@ -539,6 +542,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -593,6 +597,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/commands/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />
@@ -726,6 +731,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
@@ -836,6 +842,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -938,6 +945,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1040,6 +1048,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1143,6 +1152,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1245,6 +1255,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1347,6 +1358,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1449,6 +1461,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1551,6 +1564,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1653,6 +1667,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1755,6 +1770,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1882,6 +1898,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -1984,6 +2001,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2090,6 +2108,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2192,6 +2211,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2295,6 +2315,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2396,6 +2417,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2499,6 +2521,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2601,6 +2624,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2703,6 +2727,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2805,6 +2830,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -2907,6 +2933,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3009,6 +3036,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3111,6 +3139,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3213,6 +3242,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3316,6 +3346,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
@@ -3427,6 +3458,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
@@ -3549,6 +3581,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3655,6 +3688,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3756,6 +3790,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3858,6 +3893,7 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
+    <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/ui/languages/swing/runtime/lib/swingx-1.6.jar" />
@@ -3966,6 +4002,8 @@
     <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/common/test_gen" />
     <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" />
     <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/source_gen" />
+    <mkdir dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/test_gen" />
     <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
     <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/settings/test_gen" />
     <mkdir dir="${base_dir}/languages/util/runConfigurations/languages/util/source_gen" />
@@ -4092,6 +4130,7 @@
     <mkdir dir="${jetbrains.mps.execution.commands.classes}" />
     <mkdir dir="${jetbrains.mps.execution.common.classes}" />
     <mkdir dir="${jetbrains.mps.execution.configurations.classes}" />
+    <mkdir dir="${jetbrains.mps.execution.lib.startup.classes}" />
     <mkdir dir="${jetbrains.mps.execution.settings.classes}" />
     <mkdir dir="${jetbrains.mps.execution.util.classes}" />
     <mkdir dir="${jetbrains.mps.gtext.classes}" />
@@ -4258,6 +4297,10 @@
     <copy todir="${jetbrains.mps.execution.configurations.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" />
+    </copy>
+    <copy todir="${jetbrains.mps.execution.lib.startup.classes}">
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/test_gen" />
     </copy>
     <copy todir="${jetbrains.mps.execution.settings.classes}">
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/runConfigurations/languages/settings/source_gen" />
@@ -4623,6 +4666,12 @@
       <src>
         <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/source_gen" />
         <path path="${base_dir}/languages/util/runConfigurations/languages/configurations/test_gen" />
+      </src>
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.lib.startup.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
+      <src>
+        <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/source_gen" />
+        <path path="${base_dir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.lib.startup/test_gen" />
       </src>
     </javac>
     <javac classpathref="cycle.jetbrains.mps.baseLanguage_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.execution.settings.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
@@ -5663,6 +5712,7 @@
     <delete dir="${jetbrains.mps.execution.commands.classes}" />
     <delete dir="${jetbrains.mps.execution.common.classes}" />
     <delete dir="${jetbrains.mps.execution.configurations.classes}" />
+    <delete dir="${jetbrains.mps.execution.lib.startup.classes}" />
     <delete dir="${jetbrains.mps.execution.settings.classes}" />
     <delete dir="${jetbrains.mps.execution.util.classes}" />
     <delete dir="${jetbrains.mps.gtext.classes}" />

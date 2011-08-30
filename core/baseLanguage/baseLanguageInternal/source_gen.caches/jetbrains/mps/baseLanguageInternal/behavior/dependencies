@@ -25,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.behavior.TypeHintExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.behavior.WeakClassReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.behavior.WeakConstantReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
@@ -245,6 +246,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.behavior.WeakClassReference_BehaviorDescriptor" file="WeakClassReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguageInternal.behavior.WeakConstantReference_BehaviorDescriptor" file="WeakConstantReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
