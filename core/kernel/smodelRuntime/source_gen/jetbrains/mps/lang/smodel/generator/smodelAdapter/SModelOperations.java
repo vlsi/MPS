@@ -12,9 +12,11 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -70,7 +72,7 @@ public class SModelOperations {
       return Collections.emptyList();
     }
 
-    return allNodesIncludingImported(model, scope, true, new IsInstanceCondition(concept));
+    return allNodesIncludingImported(model, scope, true, concept);
   }
 
   public static List<SNode> getNodesIncludingImported(SModel model, IScope scope, String conceptFqName) {
@@ -84,10 +86,10 @@ public class SModelOperations {
     if (concept == null) {
       return Collections.emptyList();
     }
-    return allNodesIncludingImported(model, scope, false, new IsInstanceCondition(concept));
+    return allNodesIncludingImported(model, scope, false, concept);
   }
 
-  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable Condition<SNode> condition) {
+  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
     List<SModelDescriptor> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
@@ -100,12 +102,12 @@ public class SModelOperations {
         aModel.roots() :
         aModel.nodes()
       );
-      Iterable<SNode> iter = (condition == null ?
-        nodes :
-        new ConditionalIterable<SNode>(nodes, condition)
-      );
-      for (SNode node : iter) {
-        resultNodes.add(node);
+      if (concept == null) {
+        resultNodes.addAll(IterableUtil.asList(nodes));
+      } else if (roots) {
+        resultNodes.addAll(IterableUtil.asList(new ConditionalIterable(nodes, new IsInstanceCondition(concept))));
+      } else {
+        resultNodes.addAll(IterableUtil.asList(aModel.getFastNodeFinder().getNodes(NameUtil.nodeFQName(concept), true)));
       }
     }
     return resultNodes;
