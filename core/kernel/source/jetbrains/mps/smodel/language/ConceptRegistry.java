@@ -58,8 +58,13 @@ public class ConceptRegistry implements ApplicationComponent {
   public ConceptRegistry() {
   }
 
+  private static ConceptRegistry ourInstance = null;
+
   public static ConceptRegistry getInstance() {
-    return ApplicationManager.getApplication().getComponent(ConceptRegistry.class);
+    if (ourInstance == null) {
+      ourInstance = ApplicationManager.getApplication().getComponent(ConceptRegistry.class);
+    }
+    return ourInstance;
   }
 
   @NotNull
@@ -106,7 +111,7 @@ public class ConceptRegistry implements ApplicationComponent {
     try {
       try {
         LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-        if(languageRuntime == null) {
+        if (languageRuntime == null) {
           LOG.warning("No language for: " + fqName);
         } else {
           descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
