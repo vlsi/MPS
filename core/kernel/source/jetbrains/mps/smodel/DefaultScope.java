@@ -96,25 +96,19 @@ public abstract class DefaultScope extends BaseScope {
     return result;
   }
 
-  //todo replace with iterable
-  public List<SModelDescriptor> getModelDescriptors() {
-    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+  public Iterable<SModelDescriptor> getModelDescriptors() {
+    LinkedHashSet<SModelDescriptor> uniqueResult = new LinkedHashSet<SModelDescriptor>();
     synchronized (LOCK) {
       initialize();
-      for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
-        IModule module = d.getModule();
-        if (myVisibleModules.contains(module)) {
-          result.add(d);
-        }
+      for(IModule m : myVisibleModules) {
+        uniqueResult.addAll(m.getOwnModelDescriptors());
       }
 
       for (Language l : myUsedLanguages) {
-        for (SModelDescriptor accessory : l.getAccessoryModels()) {
-          result.add(accessory);
-        }
+        uniqueResult.addAll(l.getAccessoryModels());
       }
     }
-    return result;
+    return uniqueResult;
   }
 
   //todo replace with iterable
