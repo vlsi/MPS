@@ -72,7 +72,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                            SModel inputModel, SModel outputModel, GenerationOptions options,
                            DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
 
-    super(operationContext, progressMonitor, logger, inputModel, outputModel);
+    super(operationContext, progressMonitor, logger, inputModel, outputModel, options.isShowBadChildWarning());
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
     myIsStrict = options.isStrictMode();

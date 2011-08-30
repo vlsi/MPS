@@ -48,6 +48,7 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myShowInfo = new JCheckBox("Show informational messages");
   private JCheckBox myShowWarnings = new JCheckBox("Show warnings");
   private JCheckBox myKeepModelsWithWarnings = new JCheckBox("Keep transient models with warnings");
+  private JCheckBox myShowBadChildWarnings = new JCheckBox("Warn when child cannot be placed into role");
   private JCheckBox myLimitNumberOfModels = new JCheckBox("Maximum number of transient models to keep:");
   private JFormattedTextField myNumberOfModelsToKeep = new JFormattedTextField(new RangeDecimalFormatter(0, 1000));
 
@@ -170,10 +171,12 @@ class GenerationSettingsPreferencesPage {
     panel.add(myShowWarnings, c);
     c.insets.left = 16;
     panel.add(myKeepModelsWithWarnings, c);
+    panel.add(myShowBadChildWarnings, c);
     c.insets.left = 0;
     final ChangeListener listener = new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         myKeepModelsWithWarnings.setEnabled(myShowWarnings.isSelected());
+        myShowBadChildWarnings.setEnabled(myShowWarnings.isSelected());
       }
     };
     myShowWarnings.addChangeListener(listener);
@@ -244,6 +247,7 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.setShowInfo(myShowInfo.isSelected());
     myGenerationSettings.setShowWarnings(myShowWarnings.isSelected());
     myGenerationSettings.setKeepModelsWithWarnings(myKeepModelsWithWarnings.isSelected());
+    myGenerationSettings.setShowBadChildWarning(myShowBadChildWarnings.isSelected());
     myGenerationSettings.setNumberOfModelsToKeep(getNumberOfModelsToKeep());
     myGenerationSettings.setIncremental(myIncremental.isSelected());
     myGenerationSettings.setIncrementalUseCache(myIncrementalCache.isSelected());
@@ -271,6 +275,7 @@ class GenerationSettingsPreferencesPage {
       myGenerationSettings.isShowInfo() == myShowInfo.isSelected() &&
       myGenerationSettings.isShowWarnings() == myShowWarnings.isSelected() &&
       myGenerationSettings.isKeepModelsWithWarnings() == myKeepModelsWithWarnings.isSelected() &&
+      myGenerationSettings.isShowBadChildWarning() == myShowBadChildWarnings.isSelected() &&
       myGenerationSettings.getNumberOfModelsToKeep() == getNumberOfModelsToKeep() &&
       myGenerationSettings.getNumberOfParallelThreads() == ((Integer) myNumberOfParallelThreads.getValue()).intValue() &&
       myGenerationSettings.getPerformanceTracingLevel() == getTracingLevel() &&
@@ -300,6 +305,8 @@ class GenerationSettingsPreferencesPage {
     myShowWarnings.setSelected(myGenerationSettings.isShowWarnings());
     myKeepModelsWithWarnings.setEnabled(myGenerationSettings.isShowWarnings());
     myKeepModelsWithWarnings.setSelected(myGenerationSettings.isKeepModelsWithWarnings());
+    myShowBadChildWarnings.setEnabled(myGenerationSettings.isShowWarnings());
+    myShowBadChildWarnings.setSelected(myGenerationSettings.isShowBadChildWarning());
     myNumberOfModelsToKeep.setEditable(myGenerationSettings.getNumberOfModelsToKeep() != -1);
     myNumberOfModelsToKeep.setValue(myGenerationSettings.getNumberOfModelsToKeep() == -1 ? 16 : myGenerationSettings.getNumberOfModelsToKeep());
     myLimitNumberOfModels.setSelected(myGenerationSettings.getNumberOfModelsToKeep() != -1);
