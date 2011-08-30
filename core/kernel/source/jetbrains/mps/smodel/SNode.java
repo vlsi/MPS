@@ -1557,17 +1557,18 @@ public final class SNode {
     }
   }
 
-  private static class DescendantsIterable implements Iterator<SNode>, Iterable<SNode> {
+  private static class DescendantsIterable implements TreeIterator<SNode>, Iterable<SNode> {
     private SNode original;
     private SNode current;
     private Condition<SNode> condition;
+    private SNode prev;
 
     DescendantsIterable(SNode original, SNode first, @Nullable Condition<SNode> condition) {
       this.original = original;
       this.current = first;
       this.condition = condition;
       while (current != null && condition != null && !condition.met(current)) {
-        current = nextInternal(current);
+        current = nextInternal(current, false);
       }
     }
 
@@ -1578,15 +1579,26 @@ public final class SNode {
     public SNode next() {
       SNode result = current;
       do {
-        current = nextInternal(current);
+        current = nextInternal(current, false);
       } while (current != null && condition != null && !condition.met(current));
+      prev = result;
       return result;
     }
 
-    private SNode nextInternal(SNode curr) {
+    public void skipChildren() {
+      if(prev == null) throw new IllegalStateException("no element");
+      current = nextInternal(prev, true);
+      while (current != null && condition != null && !condition.met(current)) {
+        current = nextInternal(current, false);
+      }
+    }
+
+    private SNode nextInternal(SNode curr, boolean skipChildren) {
       if (curr == null) return null;
-      SNode firstChild = curr.getFirstChild();
-      if (firstChild != null) return firstChild;
+      if (!skipChildren) {
+        SNode firstChild = curr.getFirstChild();
+        if (firstChild != null) return firstChild;
+      }
       if (curr == original) return null;
       do {
         if (curr.myNextSibling != null) {
