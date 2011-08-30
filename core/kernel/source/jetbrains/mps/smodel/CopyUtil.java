@@ -19,11 +19,9 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.util.TreeIterator;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public final class CopyUtil {
@@ -186,11 +184,18 @@ public final class CopyUtil {
   }
 
   private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean copyAttributes, boolean forceCloneRefs) {
-    for (SNode inputNode : root.getDescendantsIterable(null, true)) {
-      if (inputNode == null || !copyAttributes && AttributeOperations.isAttribute(inputNode)) {
+    if(root == null) return;
+    final Iterator<SNode> nodesIterator = root.getDescendantsIterable(null, true).iterator();
+    while(nodesIterator.hasNext()) {
+      SNode inputNode = nodesIterator.next();
+      if (!copyAttributes && AttributeOperations.isAttribute(inputNode)) {
+        ((TreeIterator)nodesIterator).skipChildren();
         continue;
       }
       SNode outputNode = mapping.get(inputNode);
+      if(outputNode == null) {
+        throw new IllegalStateException();
+      }
 
       for (SReference ref : inputNode.getReferencesIterable()) {
         boolean cloneRefs = forceCloneRefs || MPSCore.getInstance().isMergeDriverMode();
