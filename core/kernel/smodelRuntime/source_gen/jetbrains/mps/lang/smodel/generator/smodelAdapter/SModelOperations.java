@@ -13,6 +13,7 @@ import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -82,11 +83,7 @@ public class SModelOperations {
       return Collections.emptyList();
     }
     if (conceptFqName == null) {
-      return allNodesIncludingImported(model, scope, new Condition<SNode>() {
-        public boolean met(SNode n) {
-          return true;
-        }
-      });
+      return allNodesIncludingImported(model, scope, null);
     }
     final SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) {
@@ -95,7 +92,7 @@ public class SModelOperations {
     return allNodesIncludingImported(model, scope, new IsInstanceCondition(concept));
   }
 
-  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, Condition<SNode> condition) {
+  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, @Nullable Condition<SNode> condition) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
     List<SModelDescriptor> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
@@ -104,7 +101,10 @@ public class SModelOperations {
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
-      Iterable<SNode> iter = new ConditionalIterable<SNode>(aModel.nodes(), condition);
+      Iterable<SNode> iter = (condition == null ?
+        aModel.nodes() :
+        new ConditionalIterable<SNode>(aModel.nodes(), condition)
+      );
       for (SNode node : iter) {
         resultNodes.add(node);
       }
