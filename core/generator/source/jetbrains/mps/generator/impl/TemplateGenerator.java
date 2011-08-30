@@ -625,8 +625,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
-    List<SNode> children = node.getChildren();
-    for (SNode child : children) {
+    for (SNode child : node.getChildrenIterable()) {
       revalidateAllReferences(child);
     }
   }

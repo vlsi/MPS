@@ -1250,7 +1250,7 @@ public final class SNode {
     return getDescendants(null);
   }
 
-  public Iterable<SNode> getDescendantsIterable(final Condition<SNode> condition, final boolean includeFirst) {
+  public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
     return new DescendantsIterable(this, includeFirst ? this : getFirstChild(), condition);
   }
 
@@ -1562,7 +1562,7 @@ public final class SNode {
     private SNode current;
     private Condition<SNode> condition;
 
-    DescendantsIterable(SNode original, SNode first, Condition<SNode> condition) {
+    DescendantsIterable(SNode original, SNode first, @Nullable Condition<SNode> condition) {
       this.original = original;
       this.current = first;
       this.condition = condition;

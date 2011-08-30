@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Collection;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -57,7 +57,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
 
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
-    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))) {
+    if (SModelUtil.isAssignableConcept(targetConcept, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       return new ReachableClassifiersScope.ClassifierReferenceInfoResolver(this.myModel, this.myScope);
     }
     return super.getReferenceInfoResolver(referenceNode, targetConcept);
@@ -84,10 +84,11 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       Collection<IModule> visibleModules = IterableUtil.asCollection(myScope.getVisibleModules());
 
       List<SNode> classifiers = new ArrayList<SNode>();
-      for (SModelDescriptor model : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-        if (!(visibleModules.contains(model.getModule()))) {
-          continue;
+      for (SModelDescriptor model : Sequence.fromIterable(((Iterable<IModule>) visibleModules)).<SModelDescriptor>translate(new ITranslator2<IModule, SModelDescriptor>() {
+        public Iterable<SModelDescriptor> translate(IModule it) {
+          return it.getOwnModelDescriptors();
         }
+      }).distinct()) {
         if (!(model.getSModelReference().getSModelFqName().equals(targetModelReference.getSModelFqName()))) {
           continue;
         }

@@ -15,19 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.util.Computable;
-
-import java.util.HashSet;
-import java.util.Set;
-
 public class ModelChange {
-  private static final boolean FREEZE_CHECKS_ENABLED = true;
-
   static void assertLegalNodeChange(SNode node) {
-    //noinspection PointlessBooleanExpression,ConstantConditions
-    if (FREEZE_CHECKS_ENABLED && myFrozenNodes.get().contains(node)) {
-      throw new IllegalModelChangeError("can't modify a frozen node" + node.getDebugText());
-    }
     if (!node.getModelInternal().isLoading() && node.isRegistered() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + node.getDebugText());
     }
@@ -53,43 +42,5 @@ public class ModelChange {
 
   static boolean needFireEvents(SModel model, SNode node) {
     return node.isRegistered() && !(model.isLoading());
-  }
-
-  //----------frozen mode---------
-
-  private static final ThreadLocal<Set<SNode>> myFrozenNodes = new ThreadLocal<Set<SNode>>() {
-    @Override
-    protected Set<SNode> initialValue() {
-      return new HashSet<SNode>();
-    }
-  };
-
-  public static <T> T freezeAndCompute(SNode node, Computable<T> computable) {
-    assert ModelAccess.instance().canRead();
-    SModel model = node.getModel();
-    if (model != null && !model.isLoading()) {
-      // normal node => do not freeze, we believe in ModelAccess
-      if (ModelAccess.instance().canWrite()) {
-        return ModelAccess.instance().runReadInWriteAction(computable);
-      } else {
-        return computable.compute();
-      }
-    }
-
-    Set<SNode> frozen = myFrozenNodes.get();
-    if (frozen.contains(node)) {
-      return computable.compute();
-    }
-
-    try {
-      for (SNode desc : node.getDescendantsIterable(null, true)) {
-        frozen.add(desc);
-      }
-      return computable.compute();
-    } finally {
-      for (SNode desc : node.getDescendantsIterable(null, true)) {
-        frozen.remove(desc);
-      }
-    }
   }
 }
