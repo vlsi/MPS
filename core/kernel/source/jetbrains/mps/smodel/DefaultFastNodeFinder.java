@@ -60,6 +60,10 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
     // notify 'model nodes read access'
     myModel.rootsIterator();
 
+    // pre-loading model to avoid deadlock (model loading process requires a lock)
+    // model cannot be unloaded afterwards, because we have model read access
+    myModel.enforceFullLoad();
+
     synchronized (myLock) {
       if (!myInitialized) {
         initCache();
