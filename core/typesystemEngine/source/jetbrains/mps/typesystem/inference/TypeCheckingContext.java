@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.newTypesystem.NodeTypesComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -160,9 +161,9 @@ public abstract class TypeCheckingContext {
 
   public abstract SNode getNode();
 
-  public abstract INodeTypesComponent getNodeTypesComponent();
+  public abstract NodeTypesComponent getNodeTypesComponent();
 
-  public abstract INodeTypesComponent getBaseNodeTypesComponent();
+  public abstract NodeTypesComponent getBaseNodeTypesComponent();
 
   public abstract void setOperationContext(IOperationContext context);
 

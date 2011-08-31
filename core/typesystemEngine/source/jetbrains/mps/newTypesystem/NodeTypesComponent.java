@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class NodeTypesComponentNew implements INodeTypesComponent {
+public class NodeTypesComponent {
   private SNode myRootNode;
 
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
@@ -49,12 +49,12 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
   private TypeSystemComponent myTypeSystemComponent;
   private boolean myIsSpecial = false;
 
-  private static final Logger LOG = Logger.getLogger(NodeTypesComponentNew.class);
+  private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
 
   private boolean myIsNonTypeSystemCheckingInProgress = false;
   private TypeCheckingContext myTypeCheckingContext;
 
-  public NodeTypesComponentNew(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
+  public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
     myRootNode = rootNode;
     myTypeCheckingContext = typeCheckingContext;
     myTypeSystemComponent = new TypeSystemComponent(typeChecker, typeCheckingContext.getState(), this);
@@ -151,7 +151,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
     myNonTypeSystemComponent.dispose();
   }
 
-  @Override
   public Map<SNode, SNode> getMainContext() {
     return null;
   }
@@ -184,7 +183,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
     myTypeSystemComponent.addDependencyForCurrent(node, current);
   }
 
-  @Override
   public void addDependencyOnCurrent(SNode node) {
     myTypeSystemComponent.addDependencyOnCurrent(node);
   }
@@ -230,12 +228,10 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
     return result;
   }
 
-  @Override
   public SNode[] getVariables(String varName) {
     return new SNode[0];
   }
 
-  @Override
   public void registerTypeVariable(SNode variable) {
 
   }

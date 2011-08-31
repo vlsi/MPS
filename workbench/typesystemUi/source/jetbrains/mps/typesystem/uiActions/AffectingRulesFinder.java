@@ -21,11 +21,11 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.newTypesystem.NodeTypesComponent;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.INodeTypesComponent;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -44,7 +44,7 @@ public class AffectingRulesFinder implements IFinder {
     ITypeContextOwner owner = new MyTypeContextOwner();
     TypeContextManager manager = TypeContextManager.getInstance();
     TypeCheckingContext context = manager.getOrCreateContext(root, owner, true);
-    INodeTypesComponent component = context.getBaseNodeTypesComponent();
+    NodeTypesComponent component = context.getBaseNodeTypesComponent();
 
     try{
       List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();

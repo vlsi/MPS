@@ -41,7 +41,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private State myState;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
-  private INodeTypesComponent myNodeTypesComponent;
+  private NodeTypesComponent myNodeTypesComponent;
   private boolean myIsNonTypesystemComputation = false;
   private boolean myIsResolving = false;
   private boolean myIsTraceMode = false;
@@ -51,14 +51,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     myState = new State(this);
     myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
+    myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
   }
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean resolving) {
     myState = new State(this);
     myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
+    myNodeTypesComponent = new NodeTypesComponent(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
     myIsResolving = resolving;
   }
@@ -138,7 +138,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
     if (node == null) return null;
-    INodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
+    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
@@ -243,7 +243,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public INodeTypesComponent getNodeTypesComponent() {
+  public NodeTypesComponent getNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
@@ -280,7 +280,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public INodeTypesComponent getBaseNodeTypesComponent() {
+  public NodeTypesComponent getBaseNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
