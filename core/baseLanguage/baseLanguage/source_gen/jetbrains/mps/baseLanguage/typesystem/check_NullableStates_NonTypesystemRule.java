@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.dataFlow.NullableState;
@@ -14,7 +15,6 @@ import jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.IfJumpInstruction;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
@@ -35,6 +35,9 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode iMethodLike, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SNodeOperations.getModel(iMethodLike).isTransient()) {
+      return;
+    }
     // Find possible NPE 
     CustomAnalyzerRunner<Map<SNode, NullableState>> nullableRunner = new NullableAnalyzerRunner(iMethodLike);
     AnalysisResult<Map<SNode, NullableState>> result = nullableRunner.analyze();
