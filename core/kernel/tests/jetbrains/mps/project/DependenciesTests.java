@@ -24,6 +24,8 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.IterableUtil;
+import org.apache.commons.collections.IteratorUtils;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -63,6 +65,7 @@ public class DependenciesTests {
     s1.addDependency(s2.getModuleReference(), false);
 
     assertTrue(s1.getDependenciesManager().getAllVisibleModules().contains(s2));
+    assertTrue(IterableUtil.asCollection(s1.getScope().getVisibleModules()).contains(s2));
   }
 
   @Test
@@ -75,6 +78,7 @@ public class DependenciesTests {
     s1.addDependency(s2.getModuleReference(), false);
 
     assertTrue(s1.getDependenciesManager().getAllVisibleModules().contains(s3));
+    assertTrue(IterableUtil.asCollection(s1.getScope().getVisibleModules()).contains(s3));
   }
 
   @Test
@@ -87,6 +91,7 @@ public class DependenciesTests {
     s1.addDependency(s2.getModuleReference(), false);
 
     assertFalse(s1.getDependenciesManager().getAllVisibleModules().contains(s3));
+    assertFalse(IterableUtil.asCollection(s1.getScope().getVisibleModules()).contains(s3));
   }
 
   //------------module uses language------------
@@ -97,16 +102,15 @@ public class DependenciesTests {
 
     Solution ld = createSolution();
     Language l1 = createLanguage();
-    l1.addDependency(ld.getModuleReference(),true);
+    l1.addDependency(ld.getModuleReference(), true);
 
     s1.addUsedLanguage(l1.getModuleReference());
 
     assertFalse(s1.getDependenciesManager().getAllVisibleModules().contains(ld));
+    assertFalse(IterableUtil.asCollection(s1.getScope().getVisibleModules()).contains(ld));
   }
 
   //------------module uses devkit------------
-
-
 
 
   //----------------------------------------------
