@@ -19,13 +19,13 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new AddMissingImportsInGlobalScope_Action());
     addAction(new BuildAllBehaviors_Action());
     addAction(new BuildAllConstraints_Action());
     addAction(new BuildAllGenerators_Action());
     addAction(new BuildAllLanguageDescriptors_Action());
     addAction(new BuildAllStructures_Action());
     addAction(new FindDuplicatedStubs_Action());
-    addAction(new FixMissingImportsInGlobalScope_Action());
     addAction(new FixModuleDependencies_Action());
     addAction(new LoadNonStubModels_Action());
     addAction(new MigrateStubs_Action());
